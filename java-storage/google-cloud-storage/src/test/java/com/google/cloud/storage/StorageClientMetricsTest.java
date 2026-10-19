@@ -350,6 +350,15 @@ public final class StorageClientMetricsTest {
     assertThat(built).isEqualTo(metrics.getClientAttributes());
   }
 
+  @Test
+  public void attributeKeys_haveExpectedNames() {
+    assertThat(StorageClientMetrics.KEY_URL_TEMPLATE.getKey()).isEqualTo("url.template");
+    assertThat(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD.getKey())
+        .isEqualTo("http.request.method");
+    assertThat(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE.getKey())
+        .isEqualTo("http.response.status_code");
+  }
+
   private static int findBucketIndex(List<Double> boundaries, double value) {
     for (int i = 0; i < boundaries.size(); i++) {
       if (value <= boundaries.get(i)) {

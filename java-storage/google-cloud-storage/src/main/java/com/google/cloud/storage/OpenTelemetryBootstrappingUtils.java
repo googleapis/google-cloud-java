@@ -299,6 +299,7 @@ final class OpenTelemetryBootstrappingUtils {
         projectIdToUse,
         null,
         "grpc",
+        "storage.googleapis.com/Client",
         detectedAttributes,
         Duration.ofSeconds(60),
         shouldSuppressExceptions);
@@ -340,8 +341,9 @@ final class OpenTelemetryBootstrappingUtils {
   }
 
   /**
-   * Creates an {@link SdkMeterProvider} configured for the {@code storage.googleapis.com/Client}
-   * monitored resource with client metric views and Cloud Monitoring exporter.
+   * Creates an {@link SdkMeterProvider} configured for custom client metrics with the {@code
+   * custom.googleapis.com} prefix and default monitored resource with client metric views and Cloud
+   * Monitoring exporter.
    *
    * @param metricServiceEndpoint the Cloud Monitoring service endpoint to export metrics to
    * @param projectIdToUse the GCP project ID to associate with the monitored resource
@@ -365,20 +367,13 @@ final class OpenTelemetryBootstrappingUtils {
       String api) {
     Objects.requireNonNull(api, "api must not be null");
 
-    MonitoredResourceDescription monitoredResourceDescription =
-        new MonitoredResourceDescription(
-            "storage.googleapis.com/Client",
-            ImmutableSet.of(
-                "project_id", "location", "cloud_platform", "host_id", "instance_id", "api"));
-
     MetricExporter cloudMonitoringExporter =
         GoogleCloudMetricExporter.createWithConfiguration(
             MetricConfiguration.builder()
-                .setMonitoredResourceDescription(monitoredResourceDescription)
                 .setInstrumentationLibraryLabelsEnabled(false)
                 .setMetricServiceEndpoint(metricServiceEndpoint)
-                .setPrefix("storage.googleapis.com/client")
-                .setUseServiceTimeSeries(true)
+                .setPrefix("custom.googleapis.com")
+                .setUseServiceTimeSeries(false)
                 .setProjectId(projectIdToUse)
                 .build());
 
@@ -393,6 +388,7 @@ final class OpenTelemetryBootstrappingUtils {
         projectIdToUse,
         instanceId,
         api,
+        null,
         detectedAttributes,
         metricInterval,
         shouldSuppressExceptions);
@@ -404,6 +400,7 @@ final class OpenTelemetryBootstrappingUtils {
       String projectIdToUse,
       @Nullable String instanceId,
       String api,
+      @Nullable String customResourceType,
       Attributes detectedAttributes,
       @Nullable Duration metricInterval,
       boolean shouldSuppressExceptions) {
@@ -413,10 +410,12 @@ final class OpenTelemetryBootstrappingUtils {
             : cloudMonitoringExporter;
     AttributesBuilder attributesBuilder =
         Attributes.builder()
-            .put("gcp.resource_type", "storage.googleapis.com/Client")
             .put("project_id", projectIdToUse)
             .put("instance_id", instanceId != null ? instanceId : UUID.randomUUID().toString())
             .put("api", api);
+    if (customResourceType != null) {
+      attributesBuilder.put("gcp.resource_type", customResourceType);
+    }
     String detectedLocation = detectedAttributes.get(AttributeKey.stringKey("cloud.region"));
     attributesBuilder.put("location", detectedLocation != null ? detectedLocation : "global");
     String detectedCloudPlatform = detectedAttributes.get(AttributeKey.stringKey("cloud.platform"));

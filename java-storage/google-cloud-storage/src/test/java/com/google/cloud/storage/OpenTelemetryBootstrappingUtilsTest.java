@@ -137,6 +137,8 @@ public final class OpenTelemetryBootstrappingUtilsTest {
             true,
             "grpc")) {
       assertThat(grpcProvider.toString()).contains("api=\"grpc\"");
+      assertThat(grpcProvider.toString())
+          .doesNotContain("gcp.resource_type=\"storage.googleapis.com/Client\"");
     }
 
     try (SdkMeterProvider jsonProvider =
@@ -148,6 +150,8 @@ public final class OpenTelemetryBootstrappingUtilsTest {
             true,
             "json")) {
       assertThat(jsonProvider.toString()).contains("api=\"json\"");
+      assertThat(jsonProvider.toString())
+          .doesNotContain("gcp.resource_type=\"storage.googleapis.com/Client\"");
     }
 
     assertThrows(
@@ -165,6 +169,8 @@ public final class OpenTelemetryBootstrappingUtilsTest {
         OpenTelemetryBootstrappingUtils.createMeterProvider(
             "monitoring.googleapis.com:443", "test-project", detectedAttributes, true)) {
       assertThat(legacyProvider.toString()).contains("api=\"grpc\"");
+      assertThat(legacyProvider.toString())
+          .contains("gcp.resource_type=\"storage.googleapis.com/Client\"");
     }
   }
 

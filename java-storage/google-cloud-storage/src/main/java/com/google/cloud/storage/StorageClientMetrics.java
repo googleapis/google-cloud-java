@@ -54,6 +54,7 @@ final class StorageClientMetrics {
       AttributeKey.stringKey("http.request.method");
   static final AttributeKey<Long> KEY_HTTP_RESPONSE_STATUS_CODE =
       AttributeKey.longKey("http.response.status_code");
+  static final AttributeKey<String> KEY_URL_TEMPLATE = AttributeKey.stringKey("url.template");
   static final AttributeKey<String> KEY_SERVER_ADDRESS = AttributeKey.stringKey("server.address");
   static final AttributeKey<Long> KEY_SERVER_PORT = AttributeKey.longKey("server.port");
   static final AttributeKey<String> KEY_ERROR_TYPE = AttributeKey.stringKey("error.type");
