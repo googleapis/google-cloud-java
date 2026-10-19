@@ -148,6 +148,30 @@ class DivertingUnaryCallableTest {
   }
 
   @Test
+  void fallbackEnabled_noDiversionConfig_usesGlobalSessionLoad() {
+    stubSessionLoad(1.0f);
+    DivertingUnaryCallable<String, String> callable =
+        callable(/* fallbackToGlobalSessionLoad= */ true);
+
+    @SuppressWarnings("unused")
+    ApiFuture<?> ignored = callable.futureCall("req", GrpcCallContext.createDefault());
+
+    assertThat(experimental.callCount).isEqualTo(1);
+  }
+
+  @Test
+  void fallbackDisabled_noDiversionConfig_routesToClassic() throws Exception {
+    stubSessionLoad(1.0f);
+    DivertingUnaryCallable<String, String> callable =
+        callable(/* fallbackToGlobalSessionLoad= */ false);
+
+    ApiFuture<String> result = callable.futureCall("req", GrpcCallContext.createDefault());
+
+    assertThat(result.get()).isEqualTo("classic");
+    assertThat(experimental.callCount).isEqualTo(0);
+  }
+
+  @Test
   void perScopeDiversion_nonMatchingScope_routesToClassic() throws Exception {
     stubPerScopeDiversion("method:Bigtable.MutateRow", 1.0f);
     DivertingUnaryCallable<String, String> callable = callable();
@@ -161,8 +185,18 @@ class DivertingUnaryCallableTest {
   // --- helpers ---
 
   private DivertingUnaryCallable<String, String> callable() {
+    return callable(true);
+  }
+
+  private DivertingUnaryCallable<String, String> callable(boolean fallbackToGlobalSessionLoad) {
     return new DivertingUnaryCallable<>(
-        configManager, classic, experimental, Duration.ofSeconds(10), tracer, "method:Bigtable.ReadRow");
+        configManager,
+        classic,
+        experimental,
+        Duration.ofSeconds(10),
+        tracer,
+        "method:Bigtable.ReadRow",
+        fallbackToGlobalSessionLoad);
   }
 
   private void stubSessionLoad(float load) {

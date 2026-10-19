@@ -377,7 +377,8 @@ public class ShimImpl implements Shim {
         new RowBuilderShim<>(readRowShim, rowAdapter, r -> r.hasRow() ? r.getRow() : null),
         Util.extractTimeout(settings),
         debugTagTracer,
-        "method:Bigtable.ReadRow");
+        "method:Bigtable.ReadRow",
+        /* fallbackToGlobalSessionLoad= */ true);
   }
 
   @Override
@@ -389,22 +390,21 @@ public class ShimImpl implements Shim {
         mutateRowShim,
         Util.extractTimeout(settings),
         debugTagTracer,
-        "method:Bigtable.MutateRow");
+        "method:Bigtable.MutateRow",
+        /* fallbackToGlobalSessionLoad= */ true);
   }
 
   @Override
   public UnaryCallable<ConditionalRowMutation, Boolean> decorateCheckAndMutateRow(
       UnaryCallable<ConditionalRowMutation, Boolean> classic, UnaryCallSettings<?, ?> settings) {
-    if (!WipFeatures.CHECK_AND_MUTATE_ROW_ENABLED) {
-      return classic;
-    }
     return new DivertingUnaryCallable<>(
         configManager,
         classic,
         checkAndMutateRowShim,
         Util.extractTimeout(settings),
         debugTagTracer,
-        "method:Bigtable.CheckAndMutateRow");
+        "method:Bigtable.CheckAndMutateRow",
+        /* fallbackToGlobalSessionLoad= */ false);
   }
 
   @Override
@@ -412,9 +412,6 @@ public class ShimImpl implements Shim {
       UnaryCallable<ReadModifyWriteRow, RowT> classic,
       RowAdapter<RowT> rowAdapter,
       UnaryCallSettings<?, ?> settings) {
-    if (!WipFeatures.READ_MODIFY_WRITE_ROW_ENABLED) {
-      return classic;
-    }
     return new DivertingUnaryCallable<>(
         configManager,
         classic,
@@ -422,6 +419,7 @@ public class ShimImpl implements Shim {
             readModifyWriteRowShim, rowAdapter, r -> r.hasRow() ? r.getRow() : null),
         Util.extractTimeout(settings),
         debugTagTracer,
-        "method:Bigtable.ReadModifyWriteRow");
+        "method:Bigtable.ReadModifyWriteRow",
+        /* fallbackToGlobalSessionLoad= */ false);
   }
 }

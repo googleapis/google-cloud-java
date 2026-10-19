@@ -54,6 +54,10 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   private final DebugTagTracer debugTagTracer;
   // Scope key for per-method diversion lookup, e.g. "method:Bigtable.ReadRow".
   private final String methodScopeKey;
+  // When true, falls back to the flat SessionClientConfiguration.session_load when no
+  // SessionDiversionConfiguration is present. Used for ReadRow/MutateRow during the server
+  // rollout window before the server starts sending SessionDiversionConfiguration.
+  private final boolean fallbackToGlobalSessionLoad;
 
   public DivertingUnaryCallable(
       ClientConfigurationManager configurationManager,
@@ -61,13 +65,15 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
       UnaryShim<ReqT, RespT> experimental,
       Duration defaultTimeout,
       DebugTagTracer debugTagTracer,
-      String methodScopeKey) {
+      String methodScopeKey,
+      boolean fallbackToGlobalSessionLoad) {
     this.configurationManager = configurationManager;
     this.classic = classic;
     this.experimental = experimental;
     this.defaultTimeout = defaultTimeout;
     this.debugTagTracer = debugTagTracer;
     this.methodScopeKey = methodScopeKey;
+    this.fallbackToGlobalSessionLoad = fallbackToGlobalSessionLoad;
   }
 
   @Override
@@ -136,7 +142,8 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
         configurationManager.getClientConfiguration().getSessionConfiguration();
 
     if (sessionConfig.hasSessionDiversionConfiguration()) {
-      SessionDiversionConfiguration diversionConfig = sessionConfig.getSessionDiversionConfiguration();
+      SessionDiversionConfiguration diversionConfig =
+          sessionConfig.getSessionDiversionConfiguration();
       switch (diversionConfig.getDiversionStrategyCase()) {
         case GLOBAL_DIVERSION:
           return diversionConfig.getGlobalDiversion().getSessionLoad();
@@ -149,7 +156,7 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
       }
     }
 
-    return sessionConfig.getSessionLoad();
+    return fallbackToGlobalSessionLoad ? sessionConfig.getSessionLoad() : 0f;
   }
 
   ApiException translateException(Throwable e) {
