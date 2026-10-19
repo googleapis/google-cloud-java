@@ -321,6 +321,7 @@ public final class GrpcStorageOptions extends StorageOptions
     InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setEndpoint(endpoint)
+            .setMaxInboundMetadataSize(64 * 1024)
             .setAllowNonDefaultServiceAccount(true)
             .setAttemptDirectPath(attemptDirectPath);
 
