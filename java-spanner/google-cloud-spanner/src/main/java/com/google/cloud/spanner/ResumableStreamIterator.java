@@ -86,9 +86,10 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
   private CloseableIterator<PartialResultSet> stream;
 
   /**
-   * Set when {@link #close(String)} is called. {@link #close(String)} can be called from a different
-   * thread than the thread that is consuming (and starting) the stream. This flag is used to ensure
-   * that a stream that is started concurrently with a call to {@link #close(String)} is also closed.
+   * Set when {@link #close(String)} is called. {@link #close(String)} can be called from a
+   * different thread than the thread that is consuming (and starting) the stream. This flag is used
+   * to ensure that a stream that is started concurrently with a call to {@link #close(String)} is
+   * also closed.
    */
   @GuardedBy("this")
   private boolean closed;
