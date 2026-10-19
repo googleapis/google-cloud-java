@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -48,7 +49,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.LongSupplier;
 import javax.annotation.Nullable;
 import org.junit.Before;
@@ -259,6 +266,85 @@ public class ResumableStreamIteratorTest {
 
     resumableStreamIterator.close("closed");
     verify(mockSpan).end(OpenCensusSpan.END_SPAN_OPTIONS);
+  }
+
+  @Test
+  public void closeWhileStreamIsBeingStartedClosesTheStartedStream() throws Exception {
+    ResultSetStream s1 = Mockito.mock(ResultSetStream.class);
+    CountDownLatch startStreamEntered = new CountDownLatch(1);
+    CountDownLatch closeCalled = new CountDownLatch(1);
+    Mockito.when(starter.startStream(null, null))
+        .thenAnswer(
+            invocation -> {
+              startStreamEntered.countDown();
+              // Block the stream start until close() has been called on another thread. This
+              // simulates a ResultSet that is closed while the RPC has been sent, but before the
+              // stream has been handed back to the ResumableStreamIterator.
+              assertTrue(closeCalled.await(10, TimeUnit.SECONDS));
+              return new ResultSetIterator(s1) {
+                @Override
+                public boolean isWithBeginTransaction() {
+                  return true;
+                }
+              };
+            });
+    Mockito.when(s1.next()).thenReturn(resultSet(null, "a")).thenReturn(null);
+    AtomicReference<Boolean> reportedWithBeginTransaction = new AtomicReference<>();
+    resumableStreamIterator =
+        new ResumableStreamIterator(
+            Integer.MAX_VALUE,
+            "",
+            new OpenTelemetrySpan(mock(io.opentelemetry.api.trace.Span.class)),
+            new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
+            DefaultErrorHandler.INSTANCE,
+            RetrySettings.newBuilder().build(),
+            SpannerStubSettings.newBuilder().executeStreamingSqlSettings().getRetryableCodes(),
+            NoopRequestIdCreator.INSTANCE) {
+          @Override
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+              @Nullable ByteString resumeToken,
+              AsyncResultSet.StreamMessageListener streamMessageListener,
+              XGoogSpannerRequestId requestId) {
+            return starter.startStream(resumeToken, null);
+          }
+
+          @Override
+          void onStreamClosedWhileStarting(boolean withBeginTransaction) {
+            reportedWithBeginTransaction.set(withBeginTransaction);
+          }
+        };
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try {
+      Future<Boolean> hasNext = executor.submit(resumableStreamIterator::hasNext);
+      assertTrue(startStreamEntered.await(10, TimeUnit.SECONDS));
+      resumableStreamIterator.close("ResultSet closed");
+      closeCalled.countDown();
+
+      ExecutionException executionException =
+          assertThrows(ExecutionException.class, () -> hasNext.get(10, TimeUnit.SECONDS));
+      assertThat(executionException.getCause()).isInstanceOf(SpannerException.class);
+      SpannerException spannerException = (SpannerException) executionException.getCause();
+      assertEquals(ErrorCode.CANCELLED, spannerException.getErrorCode());
+      // The stream that was started concurrently with close() must be closed (cancelled).
+      verify(s1).close();
+      // The iterator must report that the stream that it closed included a BeginTransaction, as
+      // the ResultSet could not see this when it was closed.
+      assertEquals(Boolean.TRUE, reportedWithBeginTransaction.get());
+      // No new stream should be started for a closed iterator.
+      verify(starter, Mockito.times(1)).startStream(null, null);
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void closeBeforeStreamIsStartedDoesNotStartStream() {
+    resumableStreamIterator.close("ResultSet closed");
+
+    SpannerException spannerException =
+        assertThrows(SpannerException.class, () -> resumableStreamIterator.hasNext());
+    assertEquals(ErrorCode.CANCELLED, spannerException.getErrorCode());
+    verify(starter, Mockito.never()).startStream(Mockito.any(), Mockito.any());
   }
 
   @Test

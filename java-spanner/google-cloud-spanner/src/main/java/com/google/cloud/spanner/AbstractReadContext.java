@@ -557,6 +557,13 @@ abstract class AbstractReadContext
           boolean prepareIteratorForRetryOnDifferentGrpcChannel() {
             return AbstractReadContext.this.prepareRetryOnDifferentGrpcChannel();
           }
+
+          @Override
+          void onStreamClosedWhileStarting(boolean withBeginTransaction) {
+            // The ResultSet was closed while this stream was being started. GrpcResultSet#close()
+            // could therefore not see whether the stream included a BeginTransaction option.
+            AbstractReadContext.this.onDone(withBeginTransaction);
+          }
         };
     return new GrpcResultSet(
         stream, this, options.hasDecodeMode() ? options.decodeMode() : defaultDecodeMode);

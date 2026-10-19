@@ -44,6 +44,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
+import javax.annotation.concurrent.GuardedBy;
 
 /**
  * Wraps an iterator over partial result sets, supporting resuming RPCs on error. This class keeps
@@ -83,6 +84,22 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
   private final ISpan span;
   private final TraceWrapper tracer;
   private CloseableIterator<PartialResultSet> stream;
+
+  /**
+   * Set when {@link #close(String)} is called. {@link #close(String)} can be called from a different
+   * thread than the thread that is consuming (and starting) the stream. This flag is used to ensure
+   * that a stream that is started concurrently with a call to {@link #close(String)} is also closed.
+   */
+  @GuardedBy("this")
+  private boolean closed;
+
+  @GuardedBy("this")
+  @Nullable
+  private String closeMessage;
+
+  /** Whether the stream that was closed by {@link #close(String)} included a BeginTransaction. */
+  @GuardedBy("this")
+  private boolean closedStreamWithBeginTransaction;
 
   /**
    * The number of consecutive failed attempts without any progress on the stream. Reset to zero
@@ -266,18 +283,45 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     return false;
   }
 
+  /**
+   * Called when a stream was started concurrently with a call to {@link #close(String)}. The stream
+   * has already been closed when this method is called. Subclasses can override this method to
+   * handle the fact that the stream was closed before it returned any results, for example to
+   * notify statements that are waiting for a transaction id that will never be returned.
+   */
+  void onStreamClosedWhileStarting(boolean withBeginTransaction) {}
+
   @Override
   public void close(@Nullable String message) {
-    if (stream != null) {
-      stream.close(message);
-      span.end();
+    CloseableIterator<PartialResultSet> streamToClose;
+    synchronized (this) {
+      if (closed) {
+        return;
+      }
+      closed = true;
+      closeMessage = message;
+      streamToClose = stream;
       stream = null;
+      closedStreamWithBeginTransaction =
+          streamToClose != null && streamToClose.isWithBeginTransaction();
+    }
+    if (streamToClose != null) {
+      streamToClose.close(message);
+      span.end();
     }
   }
 
   @Override
-  public boolean isWithBeginTransaction() {
-    return stream != null && stream.isWithBeginTransaction();
+  public synchronized boolean isWithBeginTransaction() {
+    if (stream != null) {
+      return stream.isWithBeginTransaction();
+    }
+    return closedStreamWithBeginTransaction;
+  }
+
+  private synchronized SpannerException newClosedException() {
+    return SpannerExceptionFactory.newSpannerException(
+        ErrorCode.CANCELLED, closeMessage == null ? "ResultSet closed" : closeMessage);
   }
 
   @Override
@@ -426,6 +470,11 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
 
   private void startGrpcStreaming() {
     if (stream == null) {
+      synchronized (this) {
+        if (closed) {
+          throw newClosedException();
+        }
+      }
       span.addAnnotation(
           "Starting/Resuming stream",
           "ResumeToken",
@@ -433,8 +482,26 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
       try (IScope scope = tracer.withSpan(span)) {
         // When start a new stream set the Span as current to make the gRPC Span a child of
         // this Span.
-        stream = checkNotNull(startStream(resumeToken, streamMessageListener, requestId));
-        stream.requestPrefetchChunks();
+        CloseableIterator<PartialResultSet> newStream =
+            checkNotNull(startStream(resumeToken, streamMessageListener, requestId));
+        boolean closedWhileStarting;
+        String message;
+        synchronized (this) {
+          closedWhileStarting = closed;
+          message = closeMessage;
+          if (!closedWhileStarting) {
+            stream = newStream;
+          }
+        }
+        if (closedWhileStarting) {
+          // close() was called while the stream was being started. Close (cancel) the stream that
+          // was just started, as close() could not see it.
+          newStream.close(message);
+          span.end();
+          onStreamClosedWhileStarting(newStream.isWithBeginTransaction());
+          throw newClosedException();
+        }
+        newStream.requestPrefetchChunks();
       }
     }
   }

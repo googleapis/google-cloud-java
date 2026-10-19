@@ -142,7 +142,11 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
     }
     boolean withBeginTransaction = iterator.isWithBeginTransaction();
     iterator.close("ResultSet closed");
-    listener.onDone(withBeginTransaction);
+    // Also check after closing the iterator, as a stream could have been started concurrently on
+    // another thread after the first check. ResumableStreamIterator remembers whether the stream
+    // that it closed included a BeginTransaction option, and reports a stream that it sees was
+    // closed while it was being started itself.
+    listener.onDone(withBeginTransaction || iterator.isWithBeginTransaction());
   }
 
   @Override
