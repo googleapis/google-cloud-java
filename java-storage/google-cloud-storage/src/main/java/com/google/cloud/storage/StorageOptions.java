@@ -336,7 +336,13 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
    */
   @BetaApi
   public Duration getMetricInterval() {
-    return metricInterval != null ? metricInterval : Duration.ofSeconds(60);
+    Duration interval = metricInterval != null ? metricInterval : Duration.ofSeconds(60);
+    if (meterProvider == null && !customOpenTelemetryConfigured) {
+      if (interval.compareTo(Duration.ofSeconds(60)) < 0) {
+        return Duration.ofSeconds(60);
+      }
+    }
+    return interval;
   }
 
   @SuppressWarnings("unchecked")

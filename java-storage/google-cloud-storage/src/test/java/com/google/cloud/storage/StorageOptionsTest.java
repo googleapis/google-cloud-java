@@ -394,6 +394,55 @@ public final class StorageOptionsTest {
   }
 
   @Test
+  public void serializationRoundTrip_customMeterProviderWithSub60sInterval_clampsToSixtySeconds()
+      throws Exception {
+    MeterProvider customMeterProvider = SdkMeterProvider.builder().build();
+    HttpStorageOptions httpOptions =
+        HttpStorageOptions.http()
+            .setMeterProvider(customMeterProvider)
+            .setMetricInterval(Duration.ofSeconds(30))
+            .build();
+    assertThat(httpOptions.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
+
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+      oos.writeObject(httpOptions);
+    }
+
+    HttpStorageOptions deserializedHttp;
+    try (ObjectInputStream ois =
+        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      deserializedHttp = (HttpStorageOptions) ois.readObject();
+    }
+
+    assertThat(deserializedHttp).isNotNull();
+    assertThat(deserializedHttp.getMeterProvider()).isNull();
+    assertThat(deserializedHttp.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+
+    GrpcStorageOptions grpcOptions =
+        GrpcStorageOptions.grpc()
+            .setMeterProvider(customMeterProvider)
+            .setMetricInterval(Duration.ofSeconds(30))
+            .build();
+    assertThat(grpcOptions.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
+
+    baos = new ByteArrayOutputStream();
+    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+      oos.writeObject(grpcOptions);
+    }
+
+    GrpcStorageOptions deserializedGrpc;
+    try (ObjectInputStream ois =
+        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      deserializedGrpc = (GrpcStorageOptions) ois.readObject();
+    }
+
+    assertThat(deserializedGrpc).isNotNull();
+    assertThat(deserializedGrpc.getMeterProvider()).isNull();
+    assertThat(deserializedGrpc.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+  }
+
+  @Test
   public void deserializationWithNullMetricInterval_defaultsToSixtySeconds() throws Exception {
     Field httpBuilderField = StorageOptions.Builder.class.getDeclaredField("metricInterval");
     httpBuilderField.setAccessible(true);
