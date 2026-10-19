@@ -46,6 +46,14 @@ import org.junit.runners.JUnit4;
 public class CloseSpannerWithOpenResultSetTest extends AbstractMockServerTest {
 
   Spanner createSpanner() {
+    return spannerOptionsBuilder().build().getService();
+  }
+
+  Spanner createSpanner(int prefetchChunks) {
+    return spannerOptionsBuilder().setPrefetchChunks(prefetchChunks).build().getService();
+  }
+
+  private SpannerOptions.Builder spannerOptionsBuilder() {
     return SpannerOptions.newBuilder()
         .setProjectId("p")
         .setHost(String.format("http://localhost:%d", getPort()))
@@ -54,9 +62,7 @@ public class CloseSpannerWithOpenResultSetTest extends AbstractMockServerTest {
         .setSessionPoolOption(
             SessionPoolOptions.newBuilder()
                 .setWaitForMinSessionsDuration(Duration.ofSeconds(5L))
-                .build())
-        .build()
-        .getService();
+                .build());
   }
 
   @BeforeClass
@@ -118,6 +124,67 @@ public class CloseSpannerWithOpenResultSetTest extends AbstractMockServerTest {
       }
       assertTrue(service.awaitTermination(1L, TimeUnit.MINUTES));
       // Verify that all response observers have been unregistered.
+      assertEquals(
+          0, ((GapicSpannerRpc) ((SpannerImpl) spanner).getRpc()).getNumActiveResponseObservers());
+    }
+  }
+
+  @Test(timeout = 30000)
+  public void testQueryWithPrefetchChunksOne() {
+    try (Spanner spanner = createSpanner(1)) {
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      for (int i = 0; i < 10; i++) {
+        try (ResultSet resultSet = client.singleUse().executeQuery(SELECT_RANDOM_STATEMENT)) {
+          int count = 0;
+          while (resultSet.next()) {
+            assertNotNull(resultSet.getCurrentRowAsStruct());
+            count++;
+          }
+          assertTrue(count > 0);
+        }
+      }
+      assertEquals(
+          0, ((GapicSpannerRpc) ((SpannerImpl) spanner).getRpc()).getNumActiveResponseObservers());
+    }
+  }
+
+  @Test(timeout = 30000)
+  public void testQueryWithPrefetchChunksOneAndError() {
+    String errorSql = "select * from will_fail";
+    Statement errorStatement = Statement.of(errorSql);
+    mockSpanner.putStatementResult(
+        StatementResult.exception(
+            errorStatement,
+            Status.INVALID_ARGUMENT.withDescription("Invalid syntax").asRuntimeException()));
+    try (Spanner spanner = createSpanner(1)) {
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      try (ResultSet resultSet = client.singleUse().executeQuery(errorStatement)) {
+        SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
+        assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
+      }
+      assertEquals(
+          0, ((GapicSpannerRpc) ((SpannerImpl) spanner).getRpc()).getNumActiveResponseObservers());
+    }
+  }
+
+  @Test(timeout = 30000)
+  public void testCloseResultSetCleansUpResponseObservers() {
+    try (Spanner spanner = createSpanner()) {
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+      // 1. Partial consumption then close:
+      try (ResultSet resultSet = client.singleUse().executeQuery(SELECT_RANDOM_STATEMENT)) {
+        assertTrue(resultSet.next());
+        assertNotNull(resultSet.getCurrentRowAsStruct());
+      }
+      assertEquals(
+          0, ((GapicSpannerRpc) ((SpannerImpl) spanner).getRpc()).getNumActiveResponseObservers());
+
+      // 2. Full consumption then close:
+      try (ResultSet resultSet = client.singleUse().executeQuery(SELECT_RANDOM_STATEMENT)) {
+        while (resultSet.next()) {
+          assertNotNull(resultSet.getCurrentRowAsStruct());
+        }
+      }
       assertEquals(
           0, ((GapicSpannerRpc) ((SpannerImpl) spanner).getRpc()).getNumActiveResponseObservers());
     }

@@ -577,7 +577,7 @@ public class AsyncReadOnlyTransactionTest extends AbstractAsyncTransactionTest {
         () -> {
           initStartedLatch.countDown();
           try {
-            ((AbstractReadContext.MultiUseReadOnlyTransaction) transaction).initTransaction();
+            ((MultiUseReadOnlyTransaction) transaction).initTransaction();
           } finally {
             initFinishedLatch.countDown();
           }
