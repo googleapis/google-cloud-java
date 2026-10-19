@@ -56,6 +56,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
@@ -2693,12 +2694,7 @@ public class ITBigQueryJDBCTest extends ITBase {
         DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
     String expectedTimestampString =
         timestampFormatter.format(
-            Instant.parse("2023-07-28T12:30:00Z").atZone(ZoneId.systemDefault()).toLocalDateTime());
-    String expectedArrayTimestamp =
-        String.format(
-            "[%s, %s]",
-            Timestamp.from(Instant.parse("2023-01-01T01:00:00Z")),
-            Timestamp.from(Instant.parse("2023-01-01T02:00:00Z")));
+            Instant.parse("2023-07-28T12:30:00Z").atZone(ZoneOffset.UTC).toLocalDateTime());
 
     final ImmutableMap<String, Object> stringResults =
         new ImmutableMap.Builder<String, Object>()
@@ -2726,7 +2722,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             .put("arrayNumeric", "[10.5, 20.5]")
             .put("arrayBignumeric", "[100.1, 200.2]")
             .put("arrayBoolean", "[true, false]")
-            .put("arrayTimestamp", expectedArrayTimestamp)
+            .put("arrayTimestamp", "[2023-01-01 01:00:00.0, 2023-01-01 02:00:00.0]")
             .put("arrayDate", "[2023-01-01, 2023-01-02]")
             .put("arrayTime", "[01:00:00, 02:00:00]")
             .put("arrayDatetime", "[2023-01-01 01:00:00.0, 2023-01-01 02:00:00.0]")
@@ -2901,11 +2897,13 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void validateGetDate() throws Exception {
+    LocalDate expectedTimestampLocalDate =
+        Instant.parse("2023-07-28T12:30:00Z").atZone(ZoneId.systemDefault()).toLocalDate();
     final ImmutableMap<String, Object> result =
         new ImmutableMap.Builder<String, Object>()
             .put("dateField", Date.valueOf("2023-07-28"))
             .put("dateTimeField", Date.valueOf("2023-07-28"))
-            .put("timestampFiled", Date.valueOf("2023-07-28"))
+            .put("timestampFiled", Date.valueOf(expectedTimestampLocalDate))
             .build();
     BiFunction<ResultSet, Integer, Object> getter =
         (s, i) -> {

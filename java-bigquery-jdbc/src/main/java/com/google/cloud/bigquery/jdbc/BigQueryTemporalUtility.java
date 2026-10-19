@@ -33,7 +33,9 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoField;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -49,6 +51,12 @@ final class BigQueryTemporalUtility {
   private static final BigDecimal MICROS_PER_SECOND = new BigDecimal("1000000");
   private static final DateTimeFormatter BASE_FORMATTER =
       DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.");
+  private static final DateTimeFormatter UTC_TIMESTAMP_TO_STRING_FORMATTER =
+      new DateTimeFormatterBuilder()
+          .appendPattern("uuuu-MM-dd HH:mm:ss.")
+          .appendFraction(ChronoField.NANO_OF_SECOND, 1, 9, false)
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
   static final String TIMESTAMP_PICOSECONDS_TYPE_NAME = "TIMESTAMP_PICOSECONDS";
 
   private BigQueryTemporalUtility() {}
@@ -334,6 +342,17 @@ final class BigQueryTemporalUtility {
   }
 
   /**
+   * Formats a {@link Timestamp} in UTC using {@link Timestamp#toString()}'s fractional-second
+   * convention (1 to 9 digits with trailing zeros stripped after the first decimal place).
+   */
+  static String formatTimestampToUtcString(Timestamp ts) {
+    if (ts == null) {
+      return null;
+    }
+    return UTC_TIMESTAMP_TO_STRING_FORMATTER.format(ts.toInstant());
+  }
+
+  /**
    * Formats a timestamp value (which may be a {@link Long} epoch microsecond, an ISO-8601 string, a
    * {@link java.sql.Timestamp}, or an epoch decimal string) into a standard UTC JDBC timestamp
    * string with 6 or 12 fractional digits according to {@code enableTimestampPicos}.
@@ -345,6 +364,10 @@ final class BigQueryTemporalUtility {
     }
     if (value instanceof Long) {
       return formatTimestampStringFromMicroseconds((Long) value, enableTimestampPicos);
+    }
+    if (value instanceof Timestamp) {
+      return formatTimestampStringFromIso(
+          formatTimestampToUtcString((Timestamp) value), enableTimestampPicos);
     }
     String str = value.toString();
     if (str.indexOf(':') >= 0) {
