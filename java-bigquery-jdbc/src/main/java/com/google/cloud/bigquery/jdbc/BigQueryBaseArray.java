@@ -30,6 +30,7 @@ import java.lang.reflect.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Struct;
+import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Map;
@@ -174,6 +175,20 @@ abstract class BigQueryBaseArray implements java.sql.Array {
             .map(
                 element ->
                     element == null ? "null" : Base64.getEncoder().encodeToString((byte[]) element))
+            .collect(Collectors.joining(", ", "[", "]"));
+      }
+      if (this.schema.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP) {
+        return Arrays.stream(array)
+            .map(
+                element -> {
+                  if (element == null) {
+                    return "null";
+                  }
+                  if (element instanceof Timestamp) {
+                    return BigQueryTemporalUtility.formatTimestampToUtcString((Timestamp) element);
+                  }
+                  return element.toString();
+                })
             .collect(Collectors.joining(", ", "[", "]"));
       }
       return Arrays.deepToString(array);

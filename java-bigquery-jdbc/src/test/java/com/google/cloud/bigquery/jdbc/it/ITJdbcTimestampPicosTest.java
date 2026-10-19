@@ -40,9 +40,7 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Random;
 import java.util.TimeZone;
@@ -78,9 +76,6 @@ public class ITJdbcTimestampPicosTest extends ITBase {
 
   private static final String TIMESTAMP_BOUNDARY_STANDARD = "2025-06-15 10:20:30.999999";
   private static final String TIMESTAMP_BOUNDARY_PICOS = "2025-06-15 10:20:30.999999999999";
-
-  private static final DateTimeFormatter JVM_ZONE_FORMATTER =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
 
   private static final String DDL_CREATE_PICOS_TABLE =
       "CREATE OR REPLACE TABLE `%1$s.%2$s.%3$s` (\n"
@@ -235,18 +230,6 @@ public class ITJdbcTimestampPicosTest extends ITBase {
                 + rs.getClass().getSimpleName()));
   }
 
-  /**
-   * Renders a UTC wall-clock literal in the JVM default time zone, with the fixed microsecond
-   * precision that {@code getString} applies to a plain {@code TIMESTAMP} column. Those values are
-   * zone dependent, whereas {@code TIMESTAMP(12)} values are returned as verbatim UTC strings.
-   */
-  private static String atJvmZone(String utcLiteral) {
-    return LocalDateTime.parse(utcLiteral.replace(' ', 'T'))
-        .atOffset(ZoneOffset.UTC)
-        .atZoneSameInstant(ZoneId.systemDefault())
-        .format(JVM_ZONE_FORMATTER);
-  }
-
   @Test
   public void testDefaultBehavior_picosDisabled_returnsMicrosecondsAndTimestampType()
       throws SQLException {
@@ -261,9 +244,9 @@ public class ITJdbcTimestampPicosTest extends ITBase {
         ResultSet rs = stmt.executeQuery(query)) {
 
       assertTrue(rs.next());
-      assertEquals(atJvmZone(TIMESTAMP_MODERN_STANDARD), rs.getString("ts_standard"));
+      assertEquals(TIMESTAMP_MODERN_STANDARD, rs.getString("ts_standard"));
       // When EnableTimestampPicos is false, picosecond columns truncate to 6 digits
-      assertEquals(atJvmZone(TIMESTAMP_MODERN_STANDARD), rs.getString("ts_picos"));
+      assertEquals(TIMESTAMP_MODERN_STANDARD, rs.getString("ts_picos"));
 
       Object obj = rs.getObject("ts_picos");
       assertTrue(obj instanceof Timestamp, "getObject must return java.sql.Timestamp by default");
@@ -299,7 +282,7 @@ public class ITJdbcTimestampPicosTest extends ITBase {
       // Row 1: Modern timestamp
       assertTrue(rs.next());
       assertEquals(1, rs.getInt("id"));
-      assertEquals(atJvmZone(TIMESTAMP_MODERN_STANDARD), rs.getString("ts_standard"));
+      assertEquals(TIMESTAMP_MODERN_STANDARD, rs.getString("ts_standard"));
       assertEquals(TIMESTAMP_MODERN_PICOS, rs.getString("ts_picos"));
       Object obj1 = rs.getObject("ts_picos");
       assertTrue(obj1 instanceof String, "getObject must return String for TIMESTAMP(12)");
@@ -340,7 +323,7 @@ public class ITJdbcTimestampPicosTest extends ITBase {
       // Row 1
       assertTrue(rs.next());
       assertEquals(1, rs.getInt("id"));
-      assertEquals(atJvmZone(TIMESTAMP_MODERN_STANDARD), rs.getString("ts_standard"));
+      assertEquals(TIMESTAMP_MODERN_STANDARD, rs.getString("ts_standard"));
       assertEquals(TIMESTAMP_MODERN_PICOS, rs.getString("ts_picos"));
       assertEquals(TIMESTAMP_MODERN_PICOS, rs.getObject("ts_picos"));
 
@@ -623,13 +606,17 @@ public class ITJdbcTimestampPicosTest extends ITBase {
    * Temporal accessors on a {@code TIMESTAMP(12)} value truncate to the Java type's precision. The
    * value is a moment, so a Calendar does not change the result.
    */
-  @Test
+  @ParameterizedTest(name = "JVM zone {0}, arrow={1}")
+  @MethodSource("jvmZonesAndReadPaths")
   @Tag("advanced")
-  public void testTemporalAccessors_picosEnabled_truncateToJavaPrecision() throws SQLException {
-    String url = getPicosConnectionUrl(true, false);
+  public void testTemporalAccessors_picosEnabled_truncateToJavaPrecision(String zone, boolean arrow)
+      throws SQLException {
+    useJvmZone(zone);
+    String url = getPicosConnectionUrl(true, arrow);
     String query =
         String.format(
-            "SELECT ts_picos FROM `%s.%s.%s` WHERE id = 1", DEFAULT_CATALOG, DATASET, TABLE_NAME);
+            "SELECT ts_picos FROM `%s.%s.%s` ORDER BY id ASC",
+            DEFAULT_CATALOG, DATASET, TABLE_NAME);
     Instant moment = Instant.parse("2025-01-01T12:34:56.123456789Z");
     ZonedDateTime local = moment.atZone(ZoneId.systemDefault());
     Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
@@ -637,36 +624,52 @@ public class ITJdbcTimestampPicosTest extends ITBase {
     try (Connection conn = DriverManager.getConnection(url);
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(query)) {
-
+      assertReadPath(rs, arrow, zone);
       assertTrue(rs.next());
       assertAll(
-          () -> assertEquals(moment, rs.getTimestamp("ts_picos").toInstant(), "getTimestamp"),
-          () -> assertEquals(moment, rs.getObject("ts_picos", Instant.class), "getObject(Instant)"),
+          () ->
+              assertEquals(
+                  moment, rs.getTimestamp("ts_picos").toInstant(), label(zone, "getTimestamp")),
+          () ->
+              assertEquals(
+                  moment,
+                  rs.getObject("ts_picos", Instant.class),
+                  label(zone, "getObject(Instant)")),
           () ->
               assertEquals(
                   moment,
                   rs.getObject("ts_picos", OffsetDateTime.class).toInstant(),
-                  "getObject(OffsetDateTime)"),
+                  label(zone, "getObject(OffsetDateTime)")),
           () ->
               assertEquals(
                   local.toLocalDateTime(),
                   rs.getObject("ts_picos", LocalDateTime.class),
-                  "getObject(LocalDateTime)"),
-          () -> assertEquals(local.toLocalDate(), rs.getDate("ts_picos").toLocalDate(), "getDate"),
+                  label(zone, "getObject(LocalDateTime)")),
           () ->
               assertEquals(
-                  local.toLocalTime().withNano(0), rs.getTime("ts_picos").toLocalTime(), "getTime"),
+                  local.toLocalDate(),
+                  rs.getDate("ts_picos").toLocalDate(),
+                  label(zone, "getDate")),
           () ->
               assertEquals(
-                  moment, rs.getTimestamp("ts_picos", cal).toInstant(), "getTimestamp(cal)"),
+                  local.toLocalTime().withNano(0),
+                  rs.getTime("ts_picos").toLocalTime(),
+                  label(zone, "getTime")),
           () ->
               assertEquals(
-                  local.toLocalDate(), rs.getDate("ts_picos", cal).toLocalDate(), "getDate(cal)"),
+                  moment,
+                  rs.getTimestamp("ts_picos", cal).toInstant(),
+                  label(zone, "getTimestamp(cal)")),
+          () ->
+              assertEquals(
+                  local.toLocalDate(),
+                  rs.getDate("ts_picos", cal).toLocalDate(),
+                  label(zone, "getDate(cal)")),
           () ->
               assertEquals(
                   local.toLocalTime().withNano(0),
                   rs.getTime("ts_picos", cal).toLocalTime(),
-                  "getTime(cal)"));
+                  label(zone, "getTime(cal)")));
     }
   }
 
