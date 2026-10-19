@@ -21,10 +21,8 @@ import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.common.base.Stopwatch;
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Durations;
-import com.google.rpc.RetryInfo;
 import io.grpc.Context;
 import io.grpc.Status;
-import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 import java.util.logging.Level;
@@ -36,6 +34,9 @@ import javax.annotation.Nullable;
 public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
 
   private static final Logger LOG = Logger.getLogger(RetryingVRpc.class.getName());
+
+  static final long INITIAL_TRANSPORT_FAILURE_BACKOFF_MS = 10L;
+  static final long MAX_TRANSPORT_FAILURE_BACKOFF_MS = 1000L;
 
   private final Context grpcContext;
   private final io.opentelemetry.context.Context otelContext;
@@ -239,12 +240,9 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
                 return;
               }
               finishAttempt(result);
-              if (shouldRetry(result)) {
+              Duration retryDelay = getRetryDelay(result);
+              if (shouldRetry(result, retryDelay)) {
                 context = context.createForNextAttempt();
-                Duration retryDelay =
-                    Optional.ofNullable(result.getRetryInfo())
-                        .map(RetryInfo::getRetryDelay)
-                        .orElse(Durations.ZERO);
                 if (Durations.compare(retryDelay, Durations.ZERO) > 0) {
                   Scheduled scheduled = new Scheduled(retryDelay);
                   onStateChange(scheduled);
@@ -284,17 +282,34 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
               Status.CANCELLED.withDescription("attempt abandoned during transition")));
     }
 
-    boolean shouldRetry(VRpcResult result) {
+    Duration getRetryDelay(VRpcResult result) {
+      if (result.getRetryInfo() != null && result.getRetryInfo().hasRetryDelay()) {
+        return result.getRetryInfo().getRetryDelay();
+      }
+      if (result.getState() == VRpcResult.State.TRANSPORT_FAILURE) {
+        int attemptNumber = context.getOperationInfo().getAttemptNumber();
+        long delayMs =
+            Math.min(
+                MAX_TRANSPORT_FAILURE_BACKOFF_MS,
+                INITIAL_TRANSPORT_FAILURE_BACKOFF_MS * (1L << Math.min(attemptNumber, 16)));
+        return Durations.fromMillis(delayMs);
+      }
+      return Durations.ZERO;
+    }
+
+    boolean shouldRetry(VRpcResult result, Duration retryDelay) {
+      long retryDelayMs = Durations.toMillis(retryDelay);
+      // only schedule retry if there's still a chance for the request to succeed
+      boolean hasRemainingTime =
+          context.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MILLISECONDS)
+                  - retryDelayMs
+              > 1;
       // If the error has RetryInfo, it means it comes from the server and should
       // be retried.
       if (!result.getStatus().isOk()
           && result.getRetryInfo() != null
           && result.getRetryInfo().hasRetryDelay()) {
-        long retryDelay = Durations.toMillis(result.getRetryInfo().getRetryDelay());
-        // only schedule retry if there's still a chance for the request to succeed
-        return context.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MILLISECONDS)
-                - retryDelay
-            > 1;
+        return hasRemainingTime;
       }
       // Do not retry result that is explicitly rejected
       if (result.getRejected()) {
@@ -307,7 +322,7 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
               || (context.getOperationInfo().isIdempotent()
                   && result.getState() == VRpcResult.State.TRANSPORT_FAILURE);
       if (isRetryable && context.getOperationInfo().getAttemptNumber() < 3) {
-        return true;
+        return hasRemainingTime;
       }
       return false;
     }

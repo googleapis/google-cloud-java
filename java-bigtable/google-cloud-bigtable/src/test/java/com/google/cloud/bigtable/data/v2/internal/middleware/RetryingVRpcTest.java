@@ -61,10 +61,16 @@ import io.grpc.Metadata;
 import io.grpc.Server;
 import io.grpc.Status;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import javax.annotation.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -413,5 +419,125 @@ public class RetryingVRpcTest {
     assertThat(executionException.getCause()).isInstanceOf(VRpcException.class);
     VRpcException vRpcException = (VRpcException) executionException.getCause();
     assertThat(vRpcException.getStatus().getCode()).isEqualTo(Status.Code.CANCELLED);
+  }
+
+  @Test
+  void retryTransportFailureWithExponentialBackoff() throws Exception {
+    List<Long> scheduledDelaysMs = Collections.synchronizedList(new ArrayList<>());
+    BigtableTimer recordingTimer =
+        new BigtableTimer() {
+          @Override
+          public Timeout newTimeout(Runnable task, Executor exec, long delay, TimeUnit unit) {
+            scheduledDelaysMs.add(unit.toMillis(delay));
+            return timer.newTimeout(task, exec, delay, unit);
+          }
+
+          @Override
+          public void stop() {
+            timer.stop();
+          }
+
+          @Override
+          public Registration onStop(Runnable hook) {
+            return timer.onStop(hook);
+          }
+        };
+
+    AtomicInteger attemptCount = new AtomicInteger();
+    RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
+        new RetryingVRpc<>(
+            () ->
+                new VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse>() {
+                  @Override
+                  public void start(
+                      SessionFakeScriptedRequest req,
+                      VRpc.VRpcCallContext ctx,
+                      VRpc.VRpcListener<SessionFakeScriptedResponse> listener) {
+                    int attempt = attemptCount.getAndIncrement();
+                    ctx.getExecutor()
+                        .execute(
+                            () -> {
+                              if (attempt < 3) {
+                                listener.onClose(
+                                    VRpc.VRpcResult.createLocalTransportError(
+                                        Status.UNAVAILABLE.withDescription("missed heartbeat")));
+                              } else {
+                                listener.onMessage(
+                                    SessionFakeScriptedResponse.getDefaultInstance());
+                                listener.onClose(
+                                    VRpc.VRpcResult.createServerOk(
+                                        VirtualRpcResponse.getDefaultInstance()));
+                              }
+                            });
+                  }
+
+                  @Override
+                  public void cancel(@Nullable String message, @Nullable Throwable cause) {}
+
+                  @Override
+                  public boolean isDone() {
+                    return true;
+                  }
+
+                  @Override
+                  public void requestNext() {}
+                },
+            recordingTimer);
+
+    UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+    retrying.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
+        f);
+
+    assertThat(f.get()).isEqualTo(SessionFakeScriptedResponse.getDefaultInstance());
+    assertThat(attemptCount.get()).isEqualTo(4);
+    assertThat(scheduledDelaysMs).containsExactly(10L, 20L, 40L).inOrder();
+  }
+
+  @Test
+  void retryTransportFailureDeadlineExceeded() {
+    AtomicInteger attemptCount = new AtomicInteger();
+    RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
+        new RetryingVRpc<>(
+            () ->
+                new VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse>() {
+                  @Override
+                  public void start(
+                      SessionFakeScriptedRequest req,
+                      VRpc.VRpcCallContext ctx,
+                      VRpc.VRpcListener<SessionFakeScriptedResponse> listener) {
+                    attemptCount.incrementAndGet();
+                    ctx.getExecutor()
+                        .execute(
+                            () ->
+                                listener.onClose(
+                                    VRpc.VRpcResult.createLocalTransportError(
+                                        Status.UNAVAILABLE.withDescription("missed heartbeat"))));
+                  }
+
+                  @Override
+                  public void cancel(@Nullable String message, @Nullable Throwable cause) {}
+
+                  @Override
+                  public boolean isDone() {
+                    return true;
+                  }
+
+                  @Override
+                  public void requestNext() {}
+                },
+            timer);
+
+    UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+    // Initial transport failure retry delay is 10ms, which exceeds a 5ms deadline.
+    retrying.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpc.VRpcCallContext.create(Deadline.after(5, TimeUnit.MILLISECONDS), true, tracer),
+        f);
+
+    ExecutionException exception = assertThrows(ExecutionException.class, f::get);
+    assertThat(exception).hasMessageThat().contains("missed heartbeat");
+    assertThat(attemptCount.get()).isEqualTo(1);
   }
 }
