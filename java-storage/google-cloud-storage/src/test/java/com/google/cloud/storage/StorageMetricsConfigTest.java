@@ -17,6 +17,7 @@
 package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,48 +32,54 @@ public final class StorageMetricsConfigTest {
   }
 
   @Test
-  public void isEnableOtelMetrics_precedenceOrder() {
+  public void isEnableOtelMetrics_explicitBuilderSettingTakesPrecedenceOverEnvVar() {
     Map<String, String> env = new HashMap<>();
-
-    // 1. Explicit programmatic builder setting takes precedence over environment variable
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "true");
     assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, false)).isFalse();
 
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "false");
     assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, true)).isTrue();
+  }
 
-    // 2. When builder setting is null, environment variable is respected
+  @Test
+  public void isEnableOtelMetrics_envVarRespectedWhenBuilderSettingNull() {
+    Map<String, String> env = new HashMap<>();
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "true");
     assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, null)).isTrue();
 
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "false");
     assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, null)).isFalse();
+  }
 
-    // 3. When both builder setting and env var are absent/null, default is false
-    env.clear();
+  @Test
+  public void isEnableOtelMetrics_defaultsToFalseWhenUnset() {
+    Map<String, String> env = new HashMap<>();
     assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, null)).isFalse();
   }
 
   @Test
-  public void isEnableOtelDebugMetrics_precedenceOrder() {
+  public void isEnableOtelDebugMetrics_explicitBuilderSettingTakesPrecedenceOverEnvVar() {
     Map<String, String> env = new HashMap<>();
-
-    // 1. Explicit programmatic builder setting takes precedence over environment variable
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "true");
     assertThat(StorageMetricsConfig.isEnableOtelDebugMetrics(env::get, false)).isFalse();
 
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "false");
     assertThat(StorageMetricsConfig.isEnableOtelDebugMetrics(env::get, true)).isTrue();
+  }
 
-    // 2. When builder setting is null, environment variable is respected
+  @Test
+  public void isEnableOtelDebugMetrics_envVarRespectedWhenBuilderSettingNull() {
+    Map<String, String> env = new HashMap<>();
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "true");
     assertThat(StorageMetricsConfig.isEnableOtelDebugMetrics(env::get, null)).isTrue();
 
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "false");
     assertThat(StorageMetricsConfig.isEnableOtelDebugMetrics(env::get, null)).isFalse();
+  }
 
-    // 3. When both builder setting and env var are absent/null, default is false
-    env.clear();
+  @Test
+  public void isEnableOtelDebugMetrics_defaultsToFalseWhenUnset() {
+    Map<String, String> env = new HashMap<>();
     assertThat(StorageMetricsConfig.isEnableOtelDebugMetrics(env::get, null)).isFalse();
   }
 
@@ -80,17 +87,23 @@ public final class StorageMetricsConfigTest {
   public void parseBooleanValue_handlesPermissiveValues() {
     String[] trueValues = {"1", "t", "T", "true", "TRUE", "True", "  true  "};
     for (String val : trueValues) {
-      assertThat(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR")).isTrue();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR"))
+          .isTrue();
     }
 
     String[] falseValues = {"0", "f", "F", "false", "FALSE", "False", "  false  "};
     for (String val : falseValues) {
-      assertThat(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR")).isFalse();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR"))
+          .isFalse();
     }
 
     String[] invalidValues = {"invalid", "2", "yes", "no", "enabled", ""};
     for (String val : invalidValues) {
-      assertThat(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR")).isNull();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR"))
+          .isNull();
     }
 
     assertThat(StorageMetricsConfig.parseBooleanValue(null, "TEST_VAR")).isNull();

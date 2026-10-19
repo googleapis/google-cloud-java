@@ -51,25 +51,22 @@ final class StorageMetricsConfig {
   @VisibleForTesting
   static boolean isEnableOtelMetrics(
       Function<String, String> env, @Nullable Boolean builderSetting) {
-    if (builderSetting != null) {
-      return builderSetting;
-    }
-    String javaEnv = env.apply(ENV_ENABLE_OTEL_METRICS_JAVA);
-    Boolean parsed = parseBooleanValue(javaEnv, ENV_ENABLE_OTEL_METRICS_JAVA);
-    if (parsed != null) {
-      return parsed;
-    }
-    return false;
+    return resolveFlag(env, builderSetting, ENV_ENABLE_OTEL_METRICS_JAVA);
   }
 
   @VisibleForTesting
   static boolean isEnableOtelDebugMetrics(
       Function<String, String> env, @Nullable Boolean builderSetting) {
+    return resolveFlag(env, builderSetting, ENV_ENABLE_OTEL_DEBUG_METRICS);
+  }
+
+  private static boolean resolveFlag(
+      Function<String, String> env, @Nullable Boolean builderSetting, String envVarName) {
     if (builderSetting != null) {
       return builderSetting;
     }
-    String javaEnv = env.apply(ENV_ENABLE_OTEL_DEBUG_METRICS);
-    Boolean parsed = parseBooleanValue(javaEnv, ENV_ENABLE_OTEL_DEBUG_METRICS);
+    String javaEnv = env.apply(envVarName);
+    Boolean parsed = parseBooleanValue(javaEnv, envVarName);
     if (parsed != null) {
       return parsed;
     }

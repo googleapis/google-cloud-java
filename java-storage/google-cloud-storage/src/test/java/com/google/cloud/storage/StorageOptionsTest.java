@@ -17,6 +17,7 @@
 package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assert.assertThrows;
 
 import io.opentelemetry.api.metrics.MeterProvider;
@@ -178,44 +179,76 @@ public final class StorageOptionsTest {
   }
 
   @Test
-  public void permissiveBooleanParsing() {
+  public void permissiveBooleanParsing_trueValues() {
     String[] trueValues = {"1", "t", "T", "true", "TRUE", "True", "  true  "};
     for (String val : trueValues) {
-      assertThat(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR")).isTrue();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR"))
+          .isTrue();
       Map<String, String> env = new HashMap<>();
       env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, val);
       // When builderSetting is null, env var is parsed and respected
-      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, null)).isTrue();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.isEnableOtelMetrics(env::get, null))
+          .isTrue();
       // When builderSetting is provided, builder takes precedence over env var
-      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, false)).isFalse();
-      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, true)).isTrue();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.isEnableOtelMetrics(env::get, false))
+          .isFalse();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.isEnableOtelMetrics(env::get, true))
+          .isTrue();
     }
+  }
 
+  @Test
+  public void permissiveBooleanParsing_falseValues() {
     String[] falseValues = {"0", "f", "F", "false", "FALSE", "False", "  false  "};
     for (String val : falseValues) {
-      assertThat(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR")).isFalse();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR"))
+          .isFalse();
       Map<String, String> env = new HashMap<>();
       env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, val);
       // When builderSetting is null, env var is parsed and respected
-      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, null)).isFalse();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.isEnableOtelMetrics(env::get, null))
+          .isFalse();
       // When builderSetting is provided, builder takes precedence over env var
-      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, true)).isTrue();
-      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, false)).isFalse();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.isEnableOtelMetrics(env::get, true))
+          .isTrue();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.isEnableOtelMetrics(env::get, false))
+          .isFalse();
     }
+  }
 
+  @Test
+  public void permissiveBooleanParsing_invalidValuesFallback() {
     String[] invalidValues = {"invalid", "2", "yes", "no", "enabled", ""};
     for (String val : invalidValues) {
-      assertThat(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR")).isNull();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.parseBooleanValue(val, "TEST_VAR"))
+          .isNull();
       Map<String, String> env = new HashMap<>();
       env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, val);
       // Unrecognized values fall back to builder setting if provided
-      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, true)).isTrue();
-      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, false)).isFalse();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.isEnableOtelMetrics(env::get, true))
+          .isTrue();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.isEnableOtelMetrics(env::get, false))
+          .isFalse();
       // When builder setting is null, falls back to default false
-      assertThat(StorageMetricsConfig.isEnableOtelMetrics(env::get, null)).isFalse();
+      assertWithMessage("Failed for input value: '%s'", val)
+          .that(StorageMetricsConfig.isEnableOtelMetrics(env::get, null))
+          .isFalse();
     }
+  }
 
-    // When both are absent/null, default is false
+  @Test
+  public void permissiveBooleanParsing_nullHandled() {
     Map<String, String> emptyEnv = new HashMap<>();
     assertThat(StorageMetricsConfig.isEnableOtelMetrics(emptyEnv::get, null)).isFalse();
     assertThat(StorageMetricsConfig.parseBooleanValue(null, "TEST_VAR")).isNull();
@@ -268,9 +301,7 @@ public final class StorageOptionsTest {
   }
 
   @Test
-  public void setMetricInterval_validation() {
-    MeterProvider customMeterProvider = SdkMeterProvider.builder().build();
-
+  public void setMetricInterval_rejectsNullZeroOrNegative() {
     assertThrows(
         IllegalArgumentException.class,
         () -> HttpStorageOptions.http().setMetricInterval(Duration.ofSeconds(-1)));
@@ -288,7 +319,10 @@ public final class StorageOptionsTest {
         () -> GrpcStorageOptions.grpc().setMetricInterval(Duration.ZERO));
     assertThrows(
         IllegalArgumentException.class, () -> GrpcStorageOptions.grpc().setMetricInterval(null));
+  }
 
+  @Test
+  public void setMetricInterval_rejectsSubSixtySecondsWithoutCustomProvider() {
     // Reject intervals < 60s when meterProvider == null (SDK-owned Cloud Monitoring exporter)
     assertThrows(
         IllegalArgumentException.class,
@@ -303,8 +337,10 @@ public final class StorageOptionsTest {
     assertThrows(
         IllegalArgumentException.class,
         () -> GrpcStorageOptions.grpc().setMetricInterval(Duration.ofSeconds(30)).build());
+  }
 
-    // Accept intervals >= 60s when meterProvider == null
+  @Test
+  public void setMetricInterval_acceptsSixtySecondsOrGreaterWithDefaultProvider() {
     HttpStorageOptions http60 =
         HttpStorageOptions.http().setMetricInterval(Duration.ofSeconds(60)).build();
     assertThat(http60.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
@@ -312,8 +348,12 @@ public final class StorageOptionsTest {
     GrpcStorageOptions grpc60 =
         GrpcStorageOptions.grpc().setMetricInterval(Duration.ofSeconds(60)).build();
     assertThat(grpc60.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+  }
 
-    // Accept intervals < 60s when custom meterProvider is configured
+  @Test
+  public void setMetricInterval_acceptsSubSixtySecondsWithCustomMeterProvider() {
+    MeterProvider customMeterProvider = SdkMeterProvider.builder().build();
+
     HttpStorageOptions httpCustom =
         HttpStorageOptions.http()
             .setMeterProvider(customMeterProvider)
@@ -327,9 +367,12 @@ public final class StorageOptionsTest {
             .setMetricInterval(Duration.ofSeconds(30))
             .build();
     assertThat(grpcCustom.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
+  }
 
-    // Accept intervals < 60s when explicit openTelemetry is configured
+  @Test
+  public void setMetricInterval_acceptsSubSixtySecondsWithCustomOpenTelemetry() {
     io.opentelemetry.api.OpenTelemetry customOtel = io.opentelemetry.api.OpenTelemetry.noop();
+
     HttpStorageOptions httpCustomOtel =
         HttpStorageOptions.http()
             .setOpenTelemetry(customOtel)
