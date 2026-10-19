@@ -40,6 +40,7 @@ import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadModifyWriteRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.RowBuilderShim;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.SessionPoolMap;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
@@ -85,6 +86,7 @@ public class ShimImpl implements Shim {
   private final Resource<ClientConfigurationManager> configManagerResource;
   private final Client client;
   private final DebugTagTracer debugTagTracer;
+  private final SessionPoolMap sessionMap;
 
   private final ReadRowShim readRowShim;
   private final MutateRowShim mutateRowShim;
@@ -202,11 +204,12 @@ public class ShimImpl implements Shim {
     this.configManager = configManagerResource.get();
     this.client = client;
     this.debugTagTracer = debugTagTracer;
+    this.sessionMap = new SessionPoolMap(client);
 
-    this.readRowShim = new ReadRowShim(client);
-    this.mutateRowShim = new MutateRowShim(client);
-    this.checkAndMutateRowShim = new CheckAndMutateRowShim(client);
-    this.readModifyWriteRowShim = new ReadModifyWriteRowShim(client);
+    this.readRowShim = new ReadRowShim(sessionMap);
+    this.mutateRowShim = new MutateRowShim(sessionMap);
+    this.checkAndMutateRowShim = new CheckAndMutateRowShim(sessionMap);
+    this.readModifyWriteRowShim = new ReadModifyWriteRowShim(sessionMap);
   }
 
   /**
@@ -358,6 +361,7 @@ public class ShimImpl implements Shim {
 
   @Override
   public void close() {
+    sessionMap.invalidateAll();
     client.close();
     configManagerResource.close();
   }

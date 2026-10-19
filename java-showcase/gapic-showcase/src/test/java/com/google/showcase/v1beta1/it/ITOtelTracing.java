@@ -127,6 +127,7 @@ class ITOtelTracing {
   private static final String VALUE_SERVICE_UNAVAILABLE = "Service Unavailable";
   private static final String SPAN_NAME_ECHO_GRPC = "google.showcase.v1beta1.Echo/Echo";
   private static final String SPAN_NAME_ECHO_HTTP = "POST v1beta1/echo:echo";
+  private static final String SPAN_NAME_OPERATION_ECHO = "google.showcase.v1beta1.Echo.Echo";
   private static final String SPAN_NAME_GET_USER_GRPC = "google.showcase.v1beta1.Identity/GetUser";
   private static final String SPAN_NAME_GET_USER_HTTP = "GET v1beta1/{name=users/*}";
 
@@ -501,14 +502,24 @@ class ITOtelTracing {
       parentSpan.end();
     }
 
-    List<SpanData> spans = spanExporter.getFinishedSpanItems();
-    assertThat(spans).hasSize(attempts + 1);
+    List<SpanData> spans = waitForSpans(attempts + 2);
+    assertThat(spans).hasSize(attempts + 2);
 
     SpanData rootSpan =
         spans.stream()
             .filter(span -> span.getName().equals("application-parent-operation"))
             .findFirst()
             .orElseThrow(() -> new AssertionError("Parent span not found"));
+
+    SpanData operationSpan =
+        spans.stream()
+            .filter(span -> span.getName().equals(SPAN_NAME_OPERATION_ECHO))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Operation span not found"));
+    assertThat(operationSpan.getKind()).isEqualTo(SpanKind.INTERNAL);
+    assertThat(operationSpan.getParentSpanId()).isEqualTo(rootSpan.getSpanContext().getSpanId());
+    assertThat(operationSpan.getSpanContext().getTraceId())
+        .isEqualTo(rootSpan.getSpanContext().getTraceId());
 
     List<SpanData> attemptSpans =
         spans.stream()
@@ -518,7 +529,8 @@ class ITOtelTracing {
 
     for (SpanData attemptSpan : attemptSpans) {
       assertThat(attemptSpan.getKind()).isEqualTo(SpanKind.CLIENT);
-      assertThat(attemptSpan.getParentSpanId()).isEqualTo(rootSpan.getSpanContext().getSpanId());
+      assertThat(attemptSpan.getParentSpanId())
+          .isEqualTo(operationSpan.getSpanContext().getSpanId());
       assertThat(attemptSpan.getSpanContext().getTraceId())
           .isEqualTo(rootSpan.getSpanContext().getTraceId());
     }
@@ -642,14 +654,24 @@ class ITOtelTracing {
       parentSpan.end();
     }
 
-    List<SpanData> spans = spanExporter.getFinishedSpanItems();
-    assertThat(spans).hasSize(attempts + 1);
+    List<SpanData> spans = waitForSpans(attempts + 2);
+    assertThat(spans).hasSize(attempts + 2);
 
     SpanData rootSpan =
         spans.stream()
             .filter(span -> span.getName().equals("application-parent-operation"))
             .findFirst()
             .orElseThrow(() -> new AssertionError("Parent span not found"));
+
+    SpanData operationSpan =
+        spans.stream()
+            .filter(span -> span.getName().equals(SPAN_NAME_OPERATION_ECHO))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Operation span not found"));
+    assertThat(operationSpan.getKind()).isEqualTo(SpanKind.INTERNAL);
+    assertThat(operationSpan.getParentSpanId()).isEqualTo(rootSpan.getSpanContext().getSpanId());
+    assertThat(operationSpan.getSpanContext().getTraceId())
+        .isEqualTo(rootSpan.getSpanContext().getTraceId());
 
     List<SpanData> attemptSpans =
         spans.stream()
@@ -659,7 +681,8 @@ class ITOtelTracing {
 
     for (SpanData attemptSpan : attemptSpans) {
       assertThat(attemptSpan.getKind()).isEqualTo(SpanKind.CLIENT);
-      assertThat(attemptSpan.getParentSpanId()).isEqualTo(rootSpan.getSpanContext().getSpanId());
+      assertThat(attemptSpan.getParentSpanId())
+          .isEqualTo(operationSpan.getSpanContext().getSpanId());
       assertThat(attemptSpan.getSpanContext().getTraceId())
           .isEqualTo(rootSpan.getSpanContext().getTraceId());
     }

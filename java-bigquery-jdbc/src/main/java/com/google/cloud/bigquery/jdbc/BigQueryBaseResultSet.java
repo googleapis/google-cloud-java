@@ -236,6 +236,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
         throw logAndCreateException("Invalid column index: " + columnIndex);
       }
       Field field = this.schemaFieldList.get(columnIndex - 1);
+      if (BigQueryBaseArray.isArray(field)) {
+        return StandardSQLTypeName.ARRAY;
+      }
       return field.getType().getStandardType();
     }
   }
@@ -338,12 +341,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public String getString(int columnIndex) throws SQLException {
     LOG.finestTrace("getString");
-    try {
-      Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, String.class);
-    } catch (BigQueryJdbcException e) {
-      throw createCoercionException(columnIndex, String.class, e);
-    }
+    return getObject(columnIndex, String.class);
   }
 
   @Override
