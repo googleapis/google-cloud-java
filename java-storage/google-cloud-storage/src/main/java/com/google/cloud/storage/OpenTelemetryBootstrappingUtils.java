@@ -505,7 +505,6 @@ final class OpenTelemetryBootstrappingUtils {
     provider.registerView(selector.build(), view.build());
   }
 
-  @VisibleForTesting
   static List<Double> latencyHistogramBoundaries() {
     List<Double> boundaries = new ArrayList<>();
     BigDecimal boundary = new BigDecimal(0, MathContext.UNLIMITED);
@@ -531,7 +530,6 @@ final class OpenTelemetryBootstrappingUtils {
     return boundaries;
   }
 
-  @VisibleForTesting
   static List<Double> sizeHistogramBoundaries() {
     long kb = 1024;
     long mb = 1024 * kb;
