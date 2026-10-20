@@ -28,7 +28,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>26.91.0-SNAPSHOT</version><!-- {x-version-update:libraries-bom:current} -->
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:libraries-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
