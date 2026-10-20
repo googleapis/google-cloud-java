@@ -23,6 +23,7 @@ import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
 import com.google.bigtable.v2.SessionClientConfiguration;
 import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration.DirectAccessOnly;
+import com.google.bigtable.v2.SessionDiversionConfiguration;
 import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.Util;
@@ -447,11 +448,8 @@ public class ClientConfigurationManager implements AutoCloseable {
 
     // When sessions are disabled make sure to clear out the config. Read from the builder, not
     // cfg, so that a nonzero session_load supplied via the override sys-prop is honoured even when
-    // the server-returned config has session_load=0. Preserve the config if a diversion
-    // configuration is present even when session_load is 0, since diversion config encodes its own
-    // per-scope session loads.
-    if (builder.getSessionConfiguration().getSessionLoad() == 0
-        && !builder.getSessionConfiguration().hasSessionDiversionConfiguration()) {
+    // the server-returned config has session_load=0.
+    if (!divertsAnyTrafficToSessions(builder.getSessionConfiguration())) {
       builder.clearSessionConfiguration();
       return builder.build();
     }
@@ -459,13 +457,30 @@ public class ClientConfigurationManager implements AutoCloseable {
     return builder.build();
   }
 
+  /**
+   * Returns true if the configuration routes a nonzero share of traffic to sessions, either via the
+   * flat {@code session_load} or via a diversion configuration that carries a nonzero load.
+   */
+  private static boolean divertsAnyTrafficToSessions(SessionClientConfiguration session) {
+    if (session.getSessionLoad() > 0) {
+      return true;
+    }
+
+    SessionDiversionConfiguration diversion = session.getSessionDiversionConfiguration();
+    switch (diversion.getDiversionStrategyCase()) {
+      case GLOBAL_DIVERSION:
+        return diversion.getGlobalDiversion().getSessionLoad() > 0;
+      case PER_SCOPE_DIVERSION:
+        return diversion.getPerScopeDiversion().getScopeDiversionsMap().values().stream()
+            .anyMatch(scope -> scope.getSessionLoad() > 0);
+      default:
+        return false;
+    }
+  }
+
   public boolean areSessionsRequired() {
     return overrideConfig
-        .map(
-            c -> {
-              SessionClientConfiguration session = c.getSessionConfiguration();
-              return session.getSessionLoad() > 0 || session.hasSessionDiversionConfiguration();
-            })
+        .map(c -> divertsAnyTrafficToSessions(c.getSessionConfiguration()))
         .orElse(false);
   }
 
