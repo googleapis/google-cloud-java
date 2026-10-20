@@ -39,6 +39,20 @@
       <artifactId>dependencies</artifactId>
       <version>1.5.13</version>
       <scope>test</scope>
+      <!-- isorelax:isorelax:20030108 has no license metadata (b/568717591). Use the
+           same JARV classes from org.netbeans.external:isorelax (MIT, version 20041111). -->
+      <exclusions>
+        <exclusion>
+          <groupId>isorelax</groupId>
+          <artifactId>isorelax</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.netbeans.external</groupId>
+      <artifactId>isorelax</artifactId>
+      <version>RELEASE310</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

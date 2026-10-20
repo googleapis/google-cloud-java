@@ -119,6 +119,19 @@
       <groupId>com.google.cloud.tools</groupId>
       <artifactId>dependencies</artifactId>
       <version>1.5.15</version>
+      <!-- isorelax:isorelax:20030108 has no license metadata (b/568717591). Use the
+           same JARV classes from org.netbeans.external:isorelax (MIT, version 20041111). -->
+      <exclusions>
+        <exclusion>
+          <groupId>isorelax</groupId>
+          <artifactId>isorelax</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.netbeans.external</groupId>
+      <artifactId>isorelax</artifactId>
+      <version>RELEASE310</version>
     </dependency>
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
@@ -134,6 +147,13 @@
 
   <build>
     <plugins>
+      <!-- The parent (dependencies-parent 1.5.15) pins surefire 2.22.2, which pulls slf4j-api:1.5.6
+           and classworlds:1.1. Those are not in Airlock (b/568717591). -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.3</version>
+      </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
