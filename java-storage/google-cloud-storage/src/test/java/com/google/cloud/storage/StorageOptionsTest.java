@@ -179,6 +179,77 @@ public final class StorageOptionsTest {
   }
 
   @Test
+  public void debugMetricsGatedOnBaseMetrics_builder() {
+    HttpStorageOptions httpDebugOnly =
+        HttpStorageOptions.http()
+            .setEnableOtelMetrics(false)
+            .setEnableOtelDebugMetrics(true)
+            .build();
+    assertThat(httpDebugOnly.isEnableOtelMetrics()).isFalse();
+    assertThat(httpDebugOnly.isEnableOtelDebugMetrics()).isFalse();
+
+    GrpcStorageOptions grpcDebugOnly =
+        GrpcStorageOptions.grpc()
+            .setEnableOtelMetrics(false)
+            .setEnableOtelDebugMetrics(true)
+            .build();
+    assertThat(grpcDebugOnly.isEnableOtelMetrics()).isFalse();
+    assertThat(grpcDebugOnly.isEnableOtelDebugMetrics()).isFalse();
+
+    HttpStorageOptions httpBoth =
+        HttpStorageOptions.http()
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .build();
+    assertThat(httpBoth.isEnableOtelMetrics()).isTrue();
+    assertThat(httpBoth.isEnableOtelDebugMetrics()).isTrue();
+
+    GrpcStorageOptions grpcBoth =
+        GrpcStorageOptions.grpc()
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .build();
+    assertThat(grpcBoth.isEnableOtelMetrics()).isTrue();
+    assertThat(grpcBoth.isEnableOtelDebugMetrics()).isTrue();
+  }
+
+  @Test
+  public void debugMetricsGatedOnBaseMetrics_env() {
+    Map<String, String> env = new HashMap<>();
+    env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "true");
+    StorageMetricsConfig.setEnvResolverForTesting(env::get);
+
+    // Base metrics unset (defaults to false) -> debug metrics should evaluate to false
+    HttpStorageOptions httpEnvDebugOnly = HttpStorageOptions.http().build();
+    assertThat(httpEnvDebugOnly.isEnableOtelMetrics()).isFalse();
+    assertThat(httpEnvDebugOnly.isEnableOtelDebugMetrics()).isFalse();
+
+    GrpcStorageOptions grpcEnvDebugOnly = GrpcStorageOptions.grpc().build();
+    assertThat(grpcEnvDebugOnly.isEnableOtelMetrics()).isFalse();
+    assertThat(grpcEnvDebugOnly.isEnableOtelDebugMetrics()).isFalse();
+
+    // Base metrics explicitly false in env -> debug metrics should evaluate to false
+    env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "false");
+    HttpStorageOptions httpEnvExplicitFalse = HttpStorageOptions.http().build();
+    assertThat(httpEnvExplicitFalse.isEnableOtelMetrics()).isFalse();
+    assertThat(httpEnvExplicitFalse.isEnableOtelDebugMetrics()).isFalse();
+
+    GrpcStorageOptions grpcEnvExplicitFalse = GrpcStorageOptions.grpc().build();
+    assertThat(grpcEnvExplicitFalse.isEnableOtelMetrics()).isFalse();
+    assertThat(grpcEnvExplicitFalse.isEnableOtelDebugMetrics()).isFalse();
+
+    // Base metrics enabled in env -> debug metrics should evaluate to true
+    env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "true");
+    HttpStorageOptions httpEnvBoth = HttpStorageOptions.http().build();
+    assertThat(httpEnvBoth.isEnableOtelMetrics()).isTrue();
+    assertThat(httpEnvBoth.isEnableOtelDebugMetrics()).isTrue();
+
+    GrpcStorageOptions grpcEnvBoth = GrpcStorageOptions.grpc().build();
+    assertThat(grpcEnvBoth.isEnableOtelMetrics()).isTrue();
+    assertThat(grpcEnvBoth.isEnableOtelDebugMetrics()).isTrue();
+  }
+
+  @Test
   public void permissiveBooleanParsing_trueValues() {
     String[] trueValues = {"1", "t", "T", "true", "TRUE", "True", "  true  "};
     for (String val : trueValues) {

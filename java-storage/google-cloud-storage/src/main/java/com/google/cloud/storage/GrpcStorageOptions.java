@@ -434,8 +434,8 @@ public final class GrpcStorageOptions extends StorageOptions
         grpcInterceptorProvider,
         blobWriteSessionConfig,
         openTelemetry,
-        enableOtelMetrics,
-        enableOtelDebugMetrics,
+        isEnableOtelMetrics(),
+        isEnableOtelDebugMetrics(),
         getMeterProvider(),
         getMetricInterval(),
         baseHashCode());
@@ -452,8 +452,8 @@ public final class GrpcStorageOptions extends StorageOptions
     GrpcStorageOptions that = (GrpcStorageOptions) o;
     return attemptDirectPath == that.attemptDirectPath
         && enableGrpcClientMetrics == that.enableGrpcClientMetrics
-        && enableOtelMetrics == that.enableOtelMetrics
-        && enableOtelDebugMetrics == that.enableOtelDebugMetrics
+        && isEnableOtelMetrics() == that.isEnableOtelMetrics()
+        && isEnableOtelDebugMetrics() == that.isEnableOtelDebugMetrics()
         && Objects.equals(retryAlgorithmManager, that.retryAlgorithmManager)
         && Objects.equals(terminationAwaitDuration, that.terminationAwaitDuration)
         && Objects.equals(grpcInterceptorProvider, that.grpcInterceptorProvider)
@@ -757,7 +757,7 @@ public final class GrpcStorageOptions extends StorageOptions
     public GrpcStorageOptions.Builder setOpenTelemetry(OpenTelemetry openTelemetry) {
       requireNonNull(openTelemetry, "openTelemetry must be non null");
       this.openTelemetry = openTelemetry;
-      this.customOpenTelemetryConfigured = true;
+      setCustomOpenTelemetryConfigured(true);
       return this;
     }
 
@@ -765,7 +765,7 @@ public final class GrpcStorageOptions extends StorageOptions
      * Enable or disable OpenTelemetry client metrics.
      *
      * @param enableOtelMetrics whether OpenTelemetry client metrics should be enabled
-     * @since 2.74.0 This new api is in preview and is subject to breaking changes.
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
      */
     @BetaApi
     @Override
@@ -778,7 +778,7 @@ public final class GrpcStorageOptions extends StorageOptions
      * Enable or disable OpenTelemetry debug client metrics.
      *
      * @param enableOtelDebugMetrics whether OpenTelemetry debug client metrics should be enabled
-     * @since 2.74.0 This new api is in preview and is subject to breaking changes.
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
      */
     @BetaApi
     @Override
@@ -791,7 +791,7 @@ public final class GrpcStorageOptions extends StorageOptions
      * Set a custom {@link MeterProvider} for recording client metrics.
      *
      * @param meterProvider custom MeterProvider to use, or null to use the default
-     * @since 2.74.0 This new api is in preview and is subject to breaking changes.
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
      */
     @BetaApi
     @Override
@@ -809,7 +809,7 @@ public final class GrpcStorageOptions extends StorageOptions
      * OpenTelemetry is configured via {@link #setOpenTelemetry(OpenTelemetry)}.
      *
      * @param metricInterval interval duration
-     * @since 2.74.0 This new api is in preview and is subject to breaking changes.
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
      */
     @BetaApi
     @Override

@@ -121,4 +121,64 @@ public final class StorageMetricsConfigTest {
 
     StorageMetricsConfig.resetResolversForTesting();
   }
+
+  @Test
+  public void debugMetricsGatedOnBaseMetrics_inStorageOptions() {
+    Map<String, String> env = new HashMap<>();
+    env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "true");
+    StorageMetricsConfig.setEnvResolverForTesting(env::get);
+
+    // Base metrics unset in env (defaults to false) -> options evaluate debug metrics to false
+    HttpStorageOptions httpEnvDebugOnly = HttpStorageOptions.http().build();
+    assertThat(httpEnvDebugOnly.isEnableOtelMetrics()).isFalse();
+    assertThat(httpEnvDebugOnly.isEnableOtelDebugMetrics()).isFalse();
+
+    GrpcStorageOptions grpcEnvDebugOnly = GrpcStorageOptions.grpc().build();
+    assertThat(grpcEnvDebugOnly.isEnableOtelMetrics()).isFalse();
+    assertThat(grpcEnvDebugOnly.isEnableOtelDebugMetrics()).isFalse();
+
+    // Base metrics set to true in env -> options evaluate debug metrics to true
+    env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "true");
+    HttpStorageOptions httpEnvBoth = HttpStorageOptions.http().build();
+    assertThat(httpEnvBoth.isEnableOtelMetrics()).isTrue();
+    assertThat(httpEnvBoth.isEnableOtelDebugMetrics()).isTrue();
+
+    GrpcStorageOptions grpcEnvBoth = GrpcStorageOptions.grpc().build();
+    assertThat(grpcEnvBoth.isEnableOtelMetrics()).isTrue();
+    assertThat(grpcEnvBoth.isEnableOtelDebugMetrics()).isTrue();
+
+    // Explicit builder disabling base metrics overrides env and keeps debug metrics false
+    HttpStorageOptions httpBuilderGated =
+        HttpStorageOptions.http()
+            .setEnableOtelMetrics(false)
+            .setEnableOtelDebugMetrics(true)
+            .build();
+    assertThat(httpBuilderGated.isEnableOtelMetrics()).isFalse();
+    assertThat(httpBuilderGated.isEnableOtelDebugMetrics()).isFalse();
+
+    GrpcStorageOptions grpcBuilderGated =
+        GrpcStorageOptions.grpc()
+            .setEnableOtelMetrics(false)
+            .setEnableOtelDebugMetrics(true)
+            .build();
+    assertThat(grpcBuilderGated.isEnableOtelMetrics()).isFalse();
+    assertThat(grpcBuilderGated.isEnableOtelDebugMetrics()).isFalse();
+
+    // Explicit builder enabling both evaluates debug metrics to true
+    HttpStorageOptions httpBuilderBoth =
+        HttpStorageOptions.http()
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .build();
+    assertThat(httpBuilderBoth.isEnableOtelMetrics()).isTrue();
+    assertThat(httpBuilderBoth.isEnableOtelDebugMetrics()).isTrue();
+
+    GrpcStorageOptions grpcBuilderBoth =
+        GrpcStorageOptions.grpc()
+            .setEnableOtelMetrics(true)
+            .setEnableOtelDebugMetrics(true)
+            .build();
+    assertThat(grpcBuilderBoth.isEnableOtelMetrics()).isTrue();
+    assertThat(grpcBuilderBoth.isEnableOtelDebugMetrics()).isTrue();
+  }
 }

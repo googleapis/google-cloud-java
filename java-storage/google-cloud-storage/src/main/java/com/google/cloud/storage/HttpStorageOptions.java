@@ -116,8 +116,8 @@ public class HttpStorageOptions extends StorageOptions {
         retryAlgorithmManager,
         blobWriteSessionConfig,
         openTelemetry,
-        enableOtelMetrics,
-        enableOtelDebugMetrics,
+        isEnableOtelMetrics(),
+        isEnableOtelDebugMetrics(),
         getMeterProvider(),
         getMetricInterval(),
         baseHashCode());
@@ -135,8 +135,8 @@ public class HttpStorageOptions extends StorageOptions {
     return Objects.equals(retryAlgorithmManager, that.retryAlgorithmManager)
         && Objects.equals(blobWriteSessionConfig, that.blobWriteSessionConfig)
         && Objects.equals(openTelemetry, that.openTelemetry)
-        && enableOtelMetrics == that.enableOtelMetrics
-        && enableOtelDebugMetrics == that.enableOtelDebugMetrics
+        && isEnableOtelMetrics() == that.isEnableOtelMetrics()
+        && isEnableOtelDebugMetrics() == that.isEnableOtelDebugMetrics()
         && Objects.equals(getMeterProvider(), that.getMeterProvider())
         && Objects.equals(getMetricInterval(), that.getMetricInterval())
         && this.baseEquals(that);
@@ -329,7 +329,7 @@ public class HttpStorageOptions extends StorageOptions {
     public HttpStorageOptions.Builder setOpenTelemetry(OpenTelemetry openTelemetry) {
       requireNonNull(openTelemetry, "openTelemetry must be non null");
       this.openTelemetry = openTelemetry;
-      this.customOpenTelemetryConfigured = true;
+      setCustomOpenTelemetryConfigured(true);
       return this;
     }
 
@@ -337,7 +337,7 @@ public class HttpStorageOptions extends StorageOptions {
      * Enable or disable OpenTelemetry client metrics.
      *
      * @param enableOtelMetrics whether OpenTelemetry client metrics should be enabled
-     * @since 2.74.0 This new api is in preview and is subject to breaking changes.
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
      */
     @BetaApi
     @Override
@@ -350,7 +350,7 @@ public class HttpStorageOptions extends StorageOptions {
      * Enable or disable OpenTelemetry debug client metrics.
      *
      * @param enableOtelDebugMetrics whether OpenTelemetry debug client metrics should be enabled
-     * @since 2.74.0 This new api is in preview and is subject to breaking changes.
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
      */
     @BetaApi
     @Override
@@ -363,7 +363,7 @@ public class HttpStorageOptions extends StorageOptions {
      * Set a custom {@link MeterProvider} for recording client metrics.
      *
      * @param meterProvider custom MeterProvider to use, or null to use the default
-     * @since 2.74.0 This new api is in preview and is subject to breaking changes.
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
      */
     @BetaApi
     @Override
@@ -381,7 +381,7 @@ public class HttpStorageOptions extends StorageOptions {
      * OpenTelemetry is configured via {@link #setOpenTelemetry(OpenTelemetry)}.
      *
      * @param metricInterval interval duration
-     * @since 2.74.0 This new api is in preview and is subject to breaking changes.
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
      */
     @BetaApi
     @Override
