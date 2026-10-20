@@ -47,6 +47,10 @@ import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions;
@@ -105,6 +109,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private static final String JDBC_JOB_PREFIX = "google-jdbc-";
   private static final int MAX_RETRY_COUNT = 5;
   private static final long RETRY_DELAY_MS = 2000L;
+  // Reported when a failure carries no BigQuery or SQL error code, matching the fallback used by
+  // TelemetryManager#extractErrorCode.
+  private static final int UNKNOWN_ERROR_CODE = 1000;
   protected ResultSet currentResultSet;
   protected long currentUpdateCount = -1;
   protected List<JobId> jobIds = new ArrayList<>();
@@ -148,6 +155,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private static final ThreadFactory JDBC_THREAD_FACTORY =
       new BigQueryThreadFactory("BigQuery-Thread-");
 
+  protected StatementExecution.Builder currentExecutionBuilder = StatementExecution.newBuilder();
+
   static {
     BigQueryDaemonPollingTask.startGcDaemonTask(
         referenceQueueArrowRs,
@@ -170,6 +179,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     this.parentJobId = null;
     this.currentJobIdIndex = -1;
     this.currentUpdateCount = -1;
+
+    this.currentExecutionBuilder = StatementExecution.newBuilder();
   }
 
   private BigQuerySettings generateBigQuerySettings() throws SQLException {
@@ -473,6 +484,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // If a ResultSet exists, then it will be closed as well, closing the
     // ownedThreads
     closeStatementResources();
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL);
   }
 
   @Override
@@ -560,6 +573,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (result instanceof TableResult) {
       TableResult tableResult = (TableResult) result;
       saveSessionIdIfPresent(tableResult);
+      this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_JOBLESS_QUERY);
       return new ExecuteResult(tableResult, null);
     }
 
@@ -590,6 +604,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         job = refreshedJob;
       }
     }
+    this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_STANDARD_REST_API);
     return new ExecuteResult(tableResult, job);
   }
 
@@ -640,20 +655,54 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           jobConfiguration.toBuilder().setJobTimeoutMs(Long.valueOf(queryTimeout) * 1000).build();
     }
 
+    long startTime = System.currentTimeMillis();
+    // Overwritten by the catch blocks below. The initial value covers failures that reach none of
+    // them, such as an uncaught RuntimeException, so a failure is never reported without a code.
+    int errorCode = UNKNOWN_ERROR_CODE;
+
     try {
       resetStatementFields();
       ExecuteResult executeResult = executeJob(jobConfiguration);
       StatementType statementType = getStatementType(executeResult);
+
+      this.currentExecutionBuilder.setStatementType(
+          TelemetryManager.toStatementType(statementType));
+
       SqlType queryType = getQueryType(jobConfiguration, statementType);
       handleQueryResult(query, executeResult.tableResult, queryType, executeResult.job);
+
+      this.currentExecutionBuilder.setStatus(
+          com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_SUCCESS);
+
     } catch (InterruptedException ex) {
+      errorCode = TelemetryManager.extractErrorCode(ex);
       Thread.currentThread().interrupt();
       throw new BigQueryJdbcException("Interrupted during runQuery", ex);
     } catch (BigQueryException ex) {
+      errorCode = TelemetryManager.extractErrorCode(ex);
       if (ex.getMessage().contains("Syntax error")) {
         throw new BigQueryJdbcSqlSyntaxErrorException("BigQueryException during runQuery", ex);
       }
       throw new BigQueryJdbcException("BigQueryException during runQuery", ex);
+    } catch (SQLException | RuntimeException ex) {
+      errorCode = TelemetryManager.extractErrorCode(ex);
+      throw ex;
+    } finally {
+      long durationMs = System.currentTimeMillis() - startTime;
+
+      // Any path that did not reach STATUS_SUCCESS is a failure, whether it was caught above or
+      // propagated as an uncaught RuntimeException, so failures are never reported as UNSPECIFIED.
+      if (this.currentExecutionBuilder.getStatus()
+          == com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_UNSPECIFIED) {
+        this.currentExecutionBuilder
+            .setStatus(
+                isCanceled
+                    ? com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_CANCELLED
+                    : com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+            .setErrorCode(errorCode);
+      }
+
+      TelemetryManager.recordStatementExecution(this.currentExecutionBuilder, durationMs);
     }
   }
 
@@ -817,7 +866,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private void updateAffectedRowCount(Long count) throws SQLException {
-    // TODO(neenu): check if this need to be closed vs removed)
     if (this.currentResultSet != null) {
       try {
         this.currentResultSet.close();
@@ -1056,6 +1104,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       try {
         LOG.info("Using ReadAPI to read the data.");
         resultSet = processArrowResultSet(results, job);
+        this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_READ_API);
       } catch (SQLException e) {
         if (!isPermissionDeniedException(e)) {
           throw e;
@@ -1067,6 +1116,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (resultSet == null) {
       LOG.info("Using Standard API to read the data.");
       resultSet = processJsonResultSet(results, job);
+
+      // Jobless vs Standard REST
+      if (jobId == null) {
+        this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_JOBLESS_QUERY);
+      } else {
+        this.currentExecutionBuilder.setQueryApiType(QueryApiType.QUERY_API_TYPE_STANDARD_REST_API);
+      }
     }
     this.currentResultSet = resultSet;
     this.currentUpdateCount = -1;
@@ -1716,6 +1772,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
 
     clearBatch();
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
+
     return result;
   }
 

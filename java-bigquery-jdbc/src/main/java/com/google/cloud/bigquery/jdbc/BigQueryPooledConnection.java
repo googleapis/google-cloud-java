@@ -16,8 +16,11 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.common.annotations.VisibleForTesting;
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
 import java.util.UUID;
 import java.util.concurrent.Executor;
@@ -231,7 +234,8 @@ class BigQueryPooledConnection implements PooledConnection {
     }
 
     @Override
-    public java.sql.DatabaseMetaData getMetaData() throws SQLException {
+    public DatabaseMetaData getMetaData() throws SQLException {
+      TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL);
       return bqConnectionDelegate.getMetaData();
     }
 
