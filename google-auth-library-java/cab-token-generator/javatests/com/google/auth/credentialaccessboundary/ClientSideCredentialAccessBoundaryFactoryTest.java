@@ -69,6 +69,7 @@ import java.time.Duration;
 import java.util.Base64;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -96,9 +97,27 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
 
   static class MockStsTransportFactory implements HttpTransportFactory {
     MockStsTransport transport = new MockStsTransport();
+    private CountDownLatch refreshEntryLatch = new CountDownLatch(0);
+
+    void setRefreshEntryLatch(CountDownLatch refreshEntryLatch) {
+      this.refreshEntryLatch = refreshEntryLatch;
+    }
 
     @Override
     public HttpTransport create() {
+      // Request 0 is the initial token fetch. On subsequent refresh requests (requestCount >= 1)
+      // in multi-threaded tests, pause the in-flight STS request until all concurrent threads have
+      // evaluated determineRefreshType() and attached to the existing refreshTask.
+      if (transport.getRequestCount() >= 1) {
+        try {
+          if (!refreshEntryLatch.await(5, TimeUnit.SECONDS)) {
+            throw new AssertionError("Timed out waiting for concurrent threads to coalesce");
+          }
+        } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+          throw new RuntimeException(e);
+        }
+      }
       return transport;
     }
   }
@@ -270,24 +289,34 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
 
   @Test
   void refreshCredentialsIfRequired_asyncSingleThread() throws IOException {
+    int numRefresh = 3;
+    // Wait for all numRefresh calls to make both clock.currentTimeMillis() calls (numRefresh * 2)
+    // plus 1 extra permit so the background STS request remains paused in
+    // MockStsTransportFactory.create() until after we assert that the request count is still 1.
+    CountDownLatch refreshEntryLatch = new CountDownLatch(numRefresh * 2 + 1);
     final ClientSideCredentialAccessBoundaryFactory factory =
-        getClientSideCredentialAccessBoundaryFactory(RefreshType.ASYNC);
+        getClientSideCredentialAccessBoundaryFactory(RefreshType.ASYNC, refreshEntryLatch);
 
     // Call refreshCredentialsIfRequired() once to initialize the intermediate credentials. This
     // should make one request to the STS endpoint.
     factory.refreshCredentialsIfRequired();
     assertEquals(1, mockStsTransportFactory.transport.getRequestCount());
 
-    // Subsequent calls to refreshCredentialsIfRequired() in an async mode should NOT
-    // immediately call the STS endpoint. They should schedule an asynchronous refresh.
-    int numRefresh = 3;
-    for (int i = 0; i < numRefresh; i++) {
-      factory.refreshCredentialsIfRequired();
-    }
+    try {
+      // Subsequent calls to refreshCredentialsIfRequired() in an async mode should NOT
+      // immediately call the STS endpoint. They should schedule an asynchronous refresh.
+      for (int i = 0; i < numRefresh; i++) {
+        factory.refreshCredentialsIfRequired();
+      }
 
-    // Verify that only the initial call resulted in an immediate STS request. The async refresh
-    // is still pending.
-    assertEquals(1, mockStsTransportFactory.transport.getRequestCount());
+      // Verify that only the initial call resulted in an immediate STS request. The async refresh
+      // is still pending.
+      assertEquals(1, mockStsTransportFactory.transport.getRequestCount());
+    } finally {
+      while (refreshEntryLatch.getCount() > 0) {
+        refreshEntryLatch.countDown();
+      }
+    }
 
     // Introduce a small delay to allow the asynchronous refresh task to complete.  This is
     // necessary because the async task runs on a separate thread.
@@ -583,17 +612,26 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
 
   private ClientSideCredentialAccessBoundaryFactory getClientSideCredentialAccessBoundaryFactory(
       RefreshType refreshType) throws IOException {
+    return getClientSideCredentialAccessBoundaryFactory(refreshType, new CountDownLatch(0));
+  }
+
+  private ClientSideCredentialAccessBoundaryFactory getClientSideCredentialAccessBoundaryFactory(
+      RefreshType refreshType, CountDownLatch refreshEntryLatch) throws IOException {
     GoogleCredentials sourceCredentials =
         getServiceAccountSourceCredentials(mockTokenServerTransportFactory);
+    mockStsTransportFactory.setRefreshEntryLatch(refreshEntryLatch);
 
     return ClientSideCredentialAccessBoundaryFactory.newBuilder()
         .setSourceCredential(sourceCredentials)
         .setHttpTransportFactory(mockStsTransportFactory)
-        .setClock(createMockClock(refreshType, sourceCredentials))
+        .setClock(createMockClock(refreshType, sourceCredentials, refreshEntryLatch))
         .build();
   }
 
-  private Clock createMockClock(RefreshType refreshType, GoogleCredentials sourceCredentials) {
+  private Clock createMockClock(
+      RefreshType refreshType,
+      GoogleCredentials sourceCredentials,
+      CountDownLatch refreshEntryLatch) {
     Clock mockClock = mock(Clock.class);
     long currentTimeInMillis = Clock.SYSTEM.currentTimeMillis();
     long mockedTimeInMillis;
@@ -623,6 +661,7 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
         when(mockClock.currentTimeMillis())
             .thenAnswer(
                 invocation -> {
+                  refreshEntryLatch.countDown();
                   // If the async refresh has already been triggered (request count >= 2),
                   // return the fresh time to skip redundant refreshes.
                   // Note: 1st request was the initial blocking refresh.
@@ -636,7 +675,12 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
         // Set mocked time so that the token requires immediate refresh (just after the minimum
         // token lifetime).
         mockedTimeInMillis = expirationTimeInMillis - minimumTokenLifetimeMillis + 60000;
-        when(mockClock.currentTimeMillis()).thenReturn(mockedTimeInMillis);
+        when(mockClock.currentTimeMillis())
+            .thenAnswer(
+                invocation -> {
+                  refreshEntryLatch.countDown();
+                  return mockedTimeInMillis;
+                });
         break;
       default:
         throw new IllegalArgumentException("Unexpected RefreshType: " + refreshType);
