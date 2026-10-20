@@ -35,218 +35,159 @@ import org.junit.Test;
 
 public final class StorageOptionsTest {
 
+  @FunctionalInterface
+  private interface BuilderConsumer {
+    void accept(StorageOptions.Builder builder) throws Exception;
+  }
+
+  private static void forEachTransport(BuilderConsumer consumer) throws Exception {
+    consumer.accept(HttpStorageOptions.http());
+    consumer.accept(GrpcStorageOptions.grpc());
+  }
+
   @After
   public void tearDown() {
     StorageMetricsConfig.resetResolversForTesting();
   }
 
   @Test
-  public void defaultState_metricsDisabled() {
-    HttpStorageOptions httpOptions = HttpStorageOptions.http().build();
-    assertThat(httpOptions.isEnableOtelMetrics()).isFalse();
-    assertThat(httpOptions.isEnableOtelDebugMetrics()).isFalse();
-    assertThat(httpOptions.getMeterProvider()).isNull();
-    assertThat(httpOptions.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
-
-    GrpcStorageOptions grpcOptions = GrpcStorageOptions.grpc().build();
-    assertThat(grpcOptions.isEnableOtelMetrics()).isFalse();
-    assertThat(grpcOptions.isEnableOtelDebugMetrics()).isFalse();
-    assertThat(grpcOptions.getMeterProvider()).isNull();
-    assertThat(grpcOptions.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+  public void defaultState_metricsDisabled() throws Exception {
+    forEachTransport(
+        builder -> {
+          StorageOptions options = builder.build();
+          assertThat(options.isEnableOtelMetrics()).isFalse();
+          assertThat(options.isEnableOtelDebugMetrics()).isFalse();
+          assertThat(options.getMeterProvider()).isNull();
+          assertThat(options.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+        });
   }
 
   @Test
-  public void builder_explicitEnabling() {
+  public void builder_explicitEnabling() throws Exception {
     MeterProvider mockMeterProvider = SdkMeterProvider.builder().build();
     Duration interval = Duration.ofSeconds(30);
 
-    HttpStorageOptions httpOptions =
-        HttpStorageOptions.http()
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .setMeterProvider(mockMeterProvider)
-            .setMetricInterval(interval)
-            .build();
-    assertThat(httpOptions.isEnableOtelMetrics()).isTrue();
-    assertThat(httpOptions.isEnableOtelDebugMetrics()).isTrue();
-    assertThat(httpOptions.getMeterProvider()).isSameInstanceAs(mockMeterProvider);
-    assertThat(httpOptions.getMetricInterval()).isEqualTo(interval);
+    forEachTransport(
+        builder -> {
+          StorageOptions options =
+              builder
+                  .setEnableOtelMetrics(true)
+                  .setEnableOtelDebugMetrics(true)
+                  .setMeterProvider(mockMeterProvider)
+                  .setMetricInterval(interval)
+                  .build();
+          assertThat(options.isEnableOtelMetrics()).isTrue();
+          assertThat(options.isEnableOtelDebugMetrics()).isTrue();
+          assertThat(options.getMeterProvider()).isSameInstanceAs(mockMeterProvider);
+          assertThat(options.getMetricInterval()).isEqualTo(interval);
 
-    HttpStorageOptions rebuiltHttp = httpOptions.toBuilder().build();
-    assertThat(rebuiltHttp.isEnableOtelMetrics()).isTrue();
-    assertThat(rebuiltHttp.isEnableOtelDebugMetrics()).isTrue();
-    assertThat(rebuiltHttp.getMeterProvider()).isSameInstanceAs(mockMeterProvider);
-    assertThat(rebuiltHttp.getMetricInterval()).isEqualTo(interval);
-
-    GrpcStorageOptions grpcOptions =
-        GrpcStorageOptions.grpc()
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .setMeterProvider(mockMeterProvider)
-            .setMetricInterval(interval)
-            .build();
-    assertThat(grpcOptions.isEnableOtelMetrics()).isTrue();
-    assertThat(grpcOptions.isEnableOtelDebugMetrics()).isTrue();
-    assertThat(grpcOptions.getMeterProvider()).isSameInstanceAs(mockMeterProvider);
-    assertThat(grpcOptions.getMetricInterval()).isEqualTo(interval);
-
-    GrpcStorageOptions rebuiltGrpc = grpcOptions.toBuilder().build();
-    assertThat(rebuiltGrpc.isEnableOtelMetrics()).isTrue();
-    assertThat(rebuiltGrpc.isEnableOtelDebugMetrics()).isTrue();
-    assertThat(rebuiltGrpc.getMeterProvider()).isSameInstanceAs(mockMeterProvider);
-    assertThat(rebuiltGrpc.getMetricInterval()).isEqualTo(interval);
+          StorageOptions rebuilt = options.toBuilder().build();
+          assertThat(rebuilt.isEnableOtelMetrics()).isTrue();
+          assertThat(rebuilt.isEnableOtelDebugMetrics()).isTrue();
+          assertThat(rebuilt.getMeterProvider()).isSameInstanceAs(mockMeterProvider);
+          assertThat(rebuilt.getMetricInterval()).isEqualTo(interval);
+        });
   }
 
   @Test
-  public void precedence_builderTakesPrecedenceOverEnv() {
+  public void precedence_builderTakesPrecedenceOverEnv() throws Exception {
     Map<String, String> env = new HashMap<>();
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "true");
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "true");
     StorageMetricsConfig.setEnvResolverForTesting(env::get);
 
-    HttpStorageOptions httpDisabled =
-        HttpStorageOptions.http()
-            .setEnableOtelMetrics(false)
-            .setEnableOtelDebugMetrics(false)
-            .build();
-    assertThat(httpDisabled.isEnableOtelMetrics()).isFalse();
-    assertThat(httpDisabled.isEnableOtelDebugMetrics()).isFalse();
-
-    GrpcStorageOptions grpcDisabled =
-        GrpcStorageOptions.grpc()
-            .setEnableOtelMetrics(false)
-            .setEnableOtelDebugMetrics(false)
-            .build();
-    assertThat(grpcDisabled.isEnableOtelMetrics()).isFalse();
-    assertThat(grpcDisabled.isEnableOtelDebugMetrics()).isFalse();
+    forEachTransport(
+        builder -> {
+          StorageOptions disabled =
+              builder.setEnableOtelMetrics(false).setEnableOtelDebugMetrics(false).build();
+          assertThat(disabled.isEnableOtelMetrics()).isFalse();
+          assertThat(disabled.isEnableOtelDebugMetrics()).isFalse();
+        });
 
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "false");
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "false");
 
-    HttpStorageOptions httpEnabled =
-        HttpStorageOptions.http()
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .build();
-    assertThat(httpEnabled.isEnableOtelMetrics()).isTrue();
-    assertThat(httpEnabled.isEnableOtelDebugMetrics()).isTrue();
-
-    GrpcStorageOptions grpcEnabled =
-        GrpcStorageOptions.grpc()
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .build();
-    assertThat(grpcEnabled.isEnableOtelMetrics()).isTrue();
-    assertThat(grpcEnabled.isEnableOtelDebugMetrics()).isTrue();
+    forEachTransport(
+        builder -> {
+          StorageOptions enabled =
+              builder.setEnableOtelMetrics(true).setEnableOtelDebugMetrics(true).build();
+          assertThat(enabled.isEnableOtelMetrics()).isTrue();
+          assertThat(enabled.isEnableOtelDebugMetrics()).isTrue();
+        });
   }
 
   @Test
-  public void precedence_builderTakesPrecedenceOverDefaultWhenEnvUnset() {
+  public void precedence_builderTakesPrecedenceOverDefaultWhenEnvUnset() throws Exception {
     Map<String, String> env = new HashMap<>();
     StorageMetricsConfig.setEnvResolverForTesting(env::get);
 
-    HttpStorageOptions httpEnabled =
-        HttpStorageOptions.http()
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .build();
-    assertThat(httpEnabled.isEnableOtelMetrics()).isTrue();
-    assertThat(httpEnabled.isEnableOtelDebugMetrics()).isTrue();
+    forEachTransport(
+        builder -> {
+          StorageOptions enabled =
+              builder.setEnableOtelMetrics(true).setEnableOtelDebugMetrics(true).build();
+          assertThat(enabled.isEnableOtelMetrics()).isTrue();
+          assertThat(enabled.isEnableOtelDebugMetrics()).isTrue();
+        });
 
-    GrpcStorageOptions grpcEnabled =
-        GrpcStorageOptions.grpc()
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .build();
-    assertThat(grpcEnabled.isEnableOtelMetrics()).isTrue();
-    assertThat(grpcEnabled.isEnableOtelDebugMetrics()).isTrue();
-
-    HttpStorageOptions httpDisabled =
-        HttpStorageOptions.http()
-            .setEnableOtelMetrics(false)
-            .setEnableOtelDebugMetrics(false)
-            .build();
-    assertThat(httpDisabled.isEnableOtelMetrics()).isFalse();
-    assertThat(httpDisabled.isEnableOtelDebugMetrics()).isFalse();
-
-    GrpcStorageOptions grpcDisabled =
-        GrpcStorageOptions.grpc()
-            .setEnableOtelMetrics(false)
-            .setEnableOtelDebugMetrics(false)
-            .build();
-    assertThat(grpcDisabled.isEnableOtelMetrics()).isFalse();
-    assertThat(grpcDisabled.isEnableOtelDebugMetrics()).isFalse();
+    forEachTransport(
+        builder -> {
+          StorageOptions disabled =
+              builder.setEnableOtelMetrics(false).setEnableOtelDebugMetrics(false).build();
+          assertThat(disabled.isEnableOtelMetrics()).isFalse();
+          assertThat(disabled.isEnableOtelDebugMetrics()).isFalse();
+        });
   }
 
   @Test
-  public void debugMetricsGatedOnBaseMetrics_builder() {
-    HttpStorageOptions httpDebugOnly =
-        HttpStorageOptions.http()
-            .setEnableOtelMetrics(false)
-            .setEnableOtelDebugMetrics(true)
-            .build();
-    assertThat(httpDebugOnly.isEnableOtelMetrics()).isFalse();
-    assertThat(httpDebugOnly.isEnableOtelDebugMetrics()).isFalse();
+  public void debugMetricsGatedOnBaseMetrics_builder() throws Exception {
+    forEachTransport(
+        builder -> {
+          StorageOptions debugOnly =
+              builder.setEnableOtelMetrics(false).setEnableOtelDebugMetrics(true).build();
+          assertThat(debugOnly.isEnableOtelMetrics()).isFalse();
+          assertThat(debugOnly.isEnableOtelDebugMetrics()).isFalse();
+        });
 
-    GrpcStorageOptions grpcDebugOnly =
-        GrpcStorageOptions.grpc()
-            .setEnableOtelMetrics(false)
-            .setEnableOtelDebugMetrics(true)
-            .build();
-    assertThat(grpcDebugOnly.isEnableOtelMetrics()).isFalse();
-    assertThat(grpcDebugOnly.isEnableOtelDebugMetrics()).isFalse();
-
-    HttpStorageOptions httpBoth =
-        HttpStorageOptions.http()
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .build();
-    assertThat(httpBoth.isEnableOtelMetrics()).isTrue();
-    assertThat(httpBoth.isEnableOtelDebugMetrics()).isTrue();
-
-    GrpcStorageOptions grpcBoth =
-        GrpcStorageOptions.grpc()
-            .setEnableOtelMetrics(true)
-            .setEnableOtelDebugMetrics(true)
-            .build();
-    assertThat(grpcBoth.isEnableOtelMetrics()).isTrue();
-    assertThat(grpcBoth.isEnableOtelDebugMetrics()).isTrue();
+    forEachTransport(
+        builder -> {
+          StorageOptions both =
+              builder.setEnableOtelMetrics(true).setEnableOtelDebugMetrics(true).build();
+          assertThat(both.isEnableOtelMetrics()).isTrue();
+          assertThat(both.isEnableOtelDebugMetrics()).isTrue();
+        });
   }
 
   @Test
-  public void debugMetricsGatedOnBaseMetrics_env() {
+  public void debugMetricsGatedOnBaseMetrics_env() throws Exception {
     Map<String, String> env = new HashMap<>();
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "true");
     StorageMetricsConfig.setEnvResolverForTesting(env::get);
 
     // Base metrics unset (defaults to false) -> debug metrics should evaluate to false
-    HttpStorageOptions httpEnvDebugOnly = HttpStorageOptions.http().build();
-    assertThat(httpEnvDebugOnly.isEnableOtelMetrics()).isFalse();
-    assertThat(httpEnvDebugOnly.isEnableOtelDebugMetrics()).isFalse();
-
-    GrpcStorageOptions grpcEnvDebugOnly = GrpcStorageOptions.grpc().build();
-    assertThat(grpcEnvDebugOnly.isEnableOtelMetrics()).isFalse();
-    assertThat(grpcEnvDebugOnly.isEnableOtelDebugMetrics()).isFalse();
+    forEachTransport(
+        builder -> {
+          StorageOptions envDebugOnly = builder.build();
+          assertThat(envDebugOnly.isEnableOtelMetrics()).isFalse();
+          assertThat(envDebugOnly.isEnableOtelDebugMetrics()).isFalse();
+        });
 
     // Base metrics explicitly false in env -> debug metrics should evaluate to false
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "false");
-    HttpStorageOptions httpEnvExplicitFalse = HttpStorageOptions.http().build();
-    assertThat(httpEnvExplicitFalse.isEnableOtelMetrics()).isFalse();
-    assertThat(httpEnvExplicitFalse.isEnableOtelDebugMetrics()).isFalse();
-
-    GrpcStorageOptions grpcEnvExplicitFalse = GrpcStorageOptions.grpc().build();
-    assertThat(grpcEnvExplicitFalse.isEnableOtelMetrics()).isFalse();
-    assertThat(grpcEnvExplicitFalse.isEnableOtelDebugMetrics()).isFalse();
+    forEachTransport(
+        builder -> {
+          StorageOptions envExplicitFalse = builder.build();
+          assertThat(envExplicitFalse.isEnableOtelMetrics()).isFalse();
+          assertThat(envExplicitFalse.isEnableOtelDebugMetrics()).isFalse();
+        });
 
     // Base metrics enabled in env -> debug metrics should evaluate to true
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "true");
-    HttpStorageOptions httpEnvBoth = HttpStorageOptions.http().build();
-    assertThat(httpEnvBoth.isEnableOtelMetrics()).isTrue();
-    assertThat(httpEnvBoth.isEnableOtelDebugMetrics()).isTrue();
-
-    GrpcStorageOptions grpcEnvBoth = GrpcStorageOptions.grpc().build();
-    assertThat(grpcEnvBoth.isEnableOtelMetrics()).isTrue();
-    assertThat(grpcEnvBoth.isEnableOtelDebugMetrics()).isTrue();
+    forEachTransport(
+        builder -> {
+          StorageOptions envBoth = builder.build();
+          assertThat(envBoth.isEnableOtelMetrics()).isTrue();
+          assertThat(envBoth.isEnableOtelDebugMetrics()).isTrue();
+        });
   }
 
   @Test
@@ -326,286 +267,195 @@ public final class StorageOptionsTest {
   }
 
   @Test
-  public void toBuilder_doesNotBakeInEnvironmentVariable() {
+  public void toBuilder_doesNotBakeInEnvironmentVariable() throws Exception {
+    Map<String, String> env = new HashMap<>();
+
+    forEachTransport(
+        builder -> {
+          env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "true");
+          env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "true");
+          StorageMetricsConfig.setEnvResolverForTesting(env::get);
+
+          StorageOptions options = builder.build();
+          assertThat(options.isEnableOtelMetrics()).isTrue();
+          assertThat(options.isEnableOtelDebugMetrics()).isTrue();
+
+          // Clear environment variable and rebuild
+          env.clear();
+          StorageOptions rebuilt = options.toBuilder().build();
+          assertThat(rebuilt.isEnableOtelMetrics()).isFalse();
+          assertThat(rebuilt.isEnableOtelDebugMetrics()).isFalse();
+        });
+  }
+
+  @Test
+  public void environmentVariableJava() throws Exception {
     Map<String, String> env = new HashMap<>();
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "true");
     env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "true");
     StorageMetricsConfig.setEnvResolverForTesting(env::get);
 
-    HttpStorageOptions httpOptions = HttpStorageOptions.http().build();
-    assertThat(httpOptions.isEnableOtelMetrics()).isTrue();
-    assertThat(httpOptions.isEnableOtelDebugMetrics()).isTrue();
-
-    // Clear environment variable and rebuild
-    env.clear();
-    HttpStorageOptions rebuiltHttp = httpOptions.toBuilder().build();
-    assertThat(rebuiltHttp.isEnableOtelMetrics()).isFalse();
-    assertThat(rebuiltHttp.isEnableOtelDebugMetrics()).isFalse();
-
-    // Repeat for GrpcStorageOptions
-    env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "true");
-    env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "true");
-    GrpcStorageOptions grpcOptions = GrpcStorageOptions.grpc().build();
-    assertThat(grpcOptions.isEnableOtelMetrics()).isTrue();
-    assertThat(grpcOptions.isEnableOtelDebugMetrics()).isTrue();
-
-    env.clear();
-    GrpcStorageOptions rebuiltGrpc = grpcOptions.toBuilder().build();
-    assertThat(rebuiltGrpc.isEnableOtelMetrics()).isFalse();
-    assertThat(rebuiltGrpc.isEnableOtelDebugMetrics()).isFalse();
+    forEachTransport(
+        builder -> {
+          StorageOptions options = builder.build();
+          assertThat(options.isEnableOtelMetrics()).isTrue();
+          assertThat(options.isEnableOtelDebugMetrics()).isTrue();
+        });
   }
 
   @Test
-  public void environmentVariableJava() {
-    Map<String, String> env = new HashMap<>();
-    env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_METRICS_JAVA, "true");
-    env.put(StorageMetricsConfig.ENV_ENABLE_OTEL_DEBUG_METRICS, "true");
-    StorageMetricsConfig.setEnvResolverForTesting(env::get);
-
-    HttpStorageOptions httpOptions = HttpStorageOptions.http().build();
-    assertThat(httpOptions.isEnableOtelMetrics()).isTrue();
-    assertThat(httpOptions.isEnableOtelDebugMetrics()).isTrue();
-
-    GrpcStorageOptions grpcOptions = GrpcStorageOptions.grpc().build();
-    assertThat(grpcOptions.isEnableOtelMetrics()).isTrue();
-    assertThat(grpcOptions.isEnableOtelDebugMetrics()).isTrue();
+  public void setMetricInterval_rejectsNullZeroOrNegative() throws Exception {
+    forEachTransport(
+        builder -> {
+          assertThrows(
+              IllegalArgumentException.class,
+              () -> builder.setMetricInterval(Duration.ofSeconds(-1)));
+          assertThrows(
+              IllegalArgumentException.class, () -> builder.setMetricInterval(Duration.ZERO));
+          assertThrows(IllegalArgumentException.class, () -> builder.setMetricInterval(null));
+        });
   }
 
   @Test
-  public void setMetricInterval_rejectsNullZeroOrNegative() {
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> HttpStorageOptions.http().setMetricInterval(Duration.ofSeconds(-1)));
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> HttpStorageOptions.http().setMetricInterval(Duration.ZERO));
-    assertThrows(
-        IllegalArgumentException.class, () -> HttpStorageOptions.http().setMetricInterval(null));
-
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> GrpcStorageOptions.grpc().setMetricInterval(Duration.ofSeconds(-1)));
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> GrpcStorageOptions.grpc().setMetricInterval(Duration.ZERO));
-    assertThrows(
-        IllegalArgumentException.class, () -> GrpcStorageOptions.grpc().setMetricInterval(null));
-  }
-
-  @Test
-  public void setMetricInterval_rejectsSubSixtySecondsWithoutCustomProvider() {
+  public void setMetricInterval_rejectsSubSixtySecondsWithoutCustomProvider() throws Exception {
     // Reject intervals < 60s when meterProvider == null (SDK-owned Cloud Monitoring exporter)
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> HttpStorageOptions.http().setMetricInterval(Duration.ofSeconds(59)).build());
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> HttpStorageOptions.http().setMetricInterval(Duration.ofSeconds(30)).build());
-
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> GrpcStorageOptions.grpc().setMetricInterval(Duration.ofSeconds(59)).build());
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> GrpcStorageOptions.grpc().setMetricInterval(Duration.ofSeconds(30)).build());
+    forEachTransport(
+        builder -> {
+          assertThrows(
+              IllegalArgumentException.class,
+              () -> builder.setMetricInterval(Duration.ofSeconds(59)).build());
+          assertThrows(
+              IllegalArgumentException.class,
+              () -> builder.setMetricInterval(Duration.ofSeconds(30)).build());
+        });
   }
 
   @Test
-  public void setMetricInterval_acceptsSixtySecondsOrGreaterWithDefaultProvider() {
-    HttpStorageOptions http60 =
-        HttpStorageOptions.http().setMetricInterval(Duration.ofSeconds(60)).build();
-    assertThat(http60.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
-
-    GrpcStorageOptions grpc60 =
-        GrpcStorageOptions.grpc().setMetricInterval(Duration.ofSeconds(60)).build();
-    assertThat(grpc60.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+  public void setMetricInterval_acceptsSixtySecondsOrGreaterWithDefaultProvider() throws Exception {
+    forEachTransport(
+        builder -> {
+          StorageOptions options = builder.setMetricInterval(Duration.ofSeconds(60)).build();
+          assertThat(options.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+        });
   }
 
   @Test
-  public void setMetricInterval_acceptsSubSixtySecondsWithCustomMeterProvider() {
+  public void setMetricInterval_acceptsSubSixtySecondsWithCustomMeterProvider() throws Exception {
     MeterProvider customMeterProvider = SdkMeterProvider.builder().build();
 
-    HttpStorageOptions httpCustom =
-        HttpStorageOptions.http()
-            .setMeterProvider(customMeterProvider)
-            .setMetricInterval(Duration.ofSeconds(30))
-            .build();
-    assertThat(httpCustom.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
-
-    GrpcStorageOptions grpcCustom =
-        GrpcStorageOptions.grpc()
-            .setMeterProvider(customMeterProvider)
-            .setMetricInterval(Duration.ofSeconds(30))
-            .build();
-    assertThat(grpcCustom.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
+    forEachTransport(
+        builder -> {
+          StorageOptions customOptions =
+              builder
+                  .setMeterProvider(customMeterProvider)
+                  .setMetricInterval(Duration.ofSeconds(30))
+                  .build();
+          assertThat(customOptions.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
+        });
   }
 
   @Test
-  public void setMetricInterval_acceptsSubSixtySecondsWithCustomOpenTelemetry() {
+  public void setMetricInterval_acceptsSubSixtySecondsWithCustomOpenTelemetry() throws Exception {
     io.opentelemetry.api.OpenTelemetry customOtel = io.opentelemetry.api.OpenTelemetry.noop();
 
-    HttpStorageOptions httpCustomOtel =
-        HttpStorageOptions.http()
-            .setOpenTelemetry(customOtel)
-            .setMetricInterval(Duration.ofSeconds(30))
-            .build();
-    assertThat(httpCustomOtel.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
-
-    GrpcStorageOptions grpcCustomOtel =
-        GrpcStorageOptions.grpc()
-            .setOpenTelemetry(customOtel)
-            .setMetricInterval(Duration.ofSeconds(30))
-            .build();
-    assertThat(grpcCustomOtel.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
+    forEachTransport(
+        builder -> {
+          StorageOptions customOptionsOtel =
+              builder
+                  .setOpenTelemetry(customOtel)
+                  .setMetricInterval(Duration.ofSeconds(30))
+                  .build();
+          assertThat(customOptionsOtel.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
+        });
   }
 
   @Test
   public void serializationRoundTrip_customMeterProviderDoesNotCarryOver() throws Exception {
     MeterProvider customMeterProvider = SdkMeterProvider.builder().build();
-    HttpStorageOptions httpOptions =
-        HttpStorageOptions.http()
-            .setEnableOtelMetrics(true)
-            .setMeterProvider(customMeterProvider)
-            .build();
 
-    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
-      oos.writeObject(httpOptions);
-    }
+    forEachTransport(
+        builder -> {
+          StorageOptions options =
+              builder.setEnableOtelMetrics(true).setMeterProvider(customMeterProvider).build();
 
-    HttpStorageOptions deserializedHttp;
-    try (ObjectInputStream ois =
-        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
-      deserializedHttp = (HttpStorageOptions) ois.readObject();
-    }
+          ByteArrayOutputStream baos = new ByteArrayOutputStream();
+          try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+            oos.writeObject(options);
+          }
 
-    assertThat(deserializedHttp).isNotNull();
-    assertThat(deserializedHttp.isEnableOtelMetrics()).isTrue();
-    // Transient meterProvider does not carry over; returns null
-    assertThat(deserializedHttp.getMeterProvider()).isNull();
+          StorageOptions deserialized;
+          try (ObjectInputStream ois =
+              new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+            deserialized = (StorageOptions) ois.readObject();
+          }
 
-    GrpcStorageOptions grpcOptions =
-        GrpcStorageOptions.grpc()
-            .setEnableOtelMetrics(true)
-            .setMeterProvider(customMeterProvider)
-            .build();
-
-    baos = new ByteArrayOutputStream();
-    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
-      oos.writeObject(grpcOptions);
-    }
-
-    GrpcStorageOptions deserializedGrpc;
-    try (ObjectInputStream ois =
-        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
-      deserializedGrpc = (GrpcStorageOptions) ois.readObject();
-    }
-
-    assertThat(deserializedGrpc).isNotNull();
-    assertThat(deserializedGrpc.isEnableOtelMetrics()).isTrue();
-    // Transient meterProvider does not carry over; returns null
-    assertThat(deserializedGrpc.getMeterProvider()).isNull();
+          assertThat(deserialized).isNotNull();
+          assertThat(deserialized.isEnableOtelMetrics()).isTrue();
+          // Transient meterProvider does not carry over; returns null
+          assertThat(deserialized.getMeterProvider()).isNull();
+        });
   }
 
   @Test
   public void serializationRoundTrip_customMeterProviderWithSub60sInterval_clampsToSixtySeconds()
       throws Exception {
     MeterProvider customMeterProvider = SdkMeterProvider.builder().build();
-    HttpStorageOptions httpOptions =
-        HttpStorageOptions.http()
-            .setMeterProvider(customMeterProvider)
-            .setMetricInterval(Duration.ofSeconds(30))
-            .build();
-    assertThat(httpOptions.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
 
-    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
-      oos.writeObject(httpOptions);
-    }
+    forEachTransport(
+        builder -> {
+          StorageOptions options =
+              builder
+                  .setMeterProvider(customMeterProvider)
+                  .setMetricInterval(Duration.ofSeconds(30))
+                  .build();
+          assertThat(options.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
 
-    HttpStorageOptions deserializedHttp;
-    try (ObjectInputStream ois =
-        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
-      deserializedHttp = (HttpStorageOptions) ois.readObject();
-    }
+          ByteArrayOutputStream baos = new ByteArrayOutputStream();
+          try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+            oos.writeObject(options);
+          }
 
-    assertThat(deserializedHttp).isNotNull();
-    assertThat(deserializedHttp.getMeterProvider()).isNull();
-    assertThat(deserializedHttp.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+          StorageOptions deserialized;
+          try (ObjectInputStream ois =
+              new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+            deserialized = (StorageOptions) ois.readObject();
+          }
 
-    GrpcStorageOptions grpcOptions =
-        GrpcStorageOptions.grpc()
-            .setMeterProvider(customMeterProvider)
-            .setMetricInterval(Duration.ofSeconds(30))
-            .build();
-    assertThat(grpcOptions.getMetricInterval()).isEqualTo(Duration.ofSeconds(30));
-
-    baos = new ByteArrayOutputStream();
-    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
-      oos.writeObject(grpcOptions);
-    }
-
-    GrpcStorageOptions deserializedGrpc;
-    try (ObjectInputStream ois =
-        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
-      deserializedGrpc = (GrpcStorageOptions) ois.readObject();
-    }
-
-    assertThat(deserializedGrpc).isNotNull();
-    assertThat(deserializedGrpc.getMeterProvider()).isNull();
-    assertThat(deserializedGrpc.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+          assertThat(deserialized).isNotNull();
+          assertThat(deserialized.getMeterProvider()).isNull();
+          assertThat(deserialized.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+        });
   }
 
   @Test
   public void deserializationWithNullMetricInterval_defaultsToSixtySeconds() throws Exception {
-    Field httpBuilderField = StorageOptions.Builder.class.getDeclaredField("metricInterval");
-    httpBuilderField.setAccessible(true);
-    HttpStorageOptions.Builder httpBuilder = HttpStorageOptions.http();
-    httpBuilderField.set(httpBuilder, null);
-    HttpStorageOptions httpWithNullInterval = httpBuilder.build();
+    Field builderField = StorageOptions.Builder.class.getDeclaredField("metricInterval");
+    builderField.setAccessible(true);
 
-    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
-      oos.writeObject(httpWithNullInterval);
-    }
+    forEachTransport(
+        builder -> {
+          StorageOptions defaultOptions = builder.build();
+          builderField.set(builder, null);
+          StorageOptions optionsWithNullInterval = builder.build();
 
-    HttpStorageOptions deserializedHttp;
-    try (ObjectInputStream ois =
-        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
-      deserializedHttp = (HttpStorageOptions) ois.readObject();
-    }
+          ByteArrayOutputStream baos = new ByteArrayOutputStream();
+          try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+            oos.writeObject(optionsWithNullInterval);
+          }
 
-    assertThat(deserializedHttp).isNotNull();
-    // Verify NPE guard defaults to 60 seconds
-    assertThat(deserializedHttp.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
-    // Verify equals and hashCode match a default instance
-    HttpStorageOptions defaultHttp = HttpStorageOptions.http().build();
-    assertThat(deserializedHttp).isEqualTo(defaultHttp);
-    assertThat(defaultHttp).isEqualTo(deserializedHttp);
-    assertThat(deserializedHttp.hashCode()).isEqualTo(defaultHttp.hashCode());
+          StorageOptions deserialized;
+          try (ObjectInputStream ois =
+              new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+            deserialized = (StorageOptions) ois.readObject();
+          }
 
-    Field grpcBuilderField = StorageOptions.Builder.class.getDeclaredField("metricInterval");
-    grpcBuilderField.setAccessible(true);
-    GrpcStorageOptions.Builder grpcBuilder = GrpcStorageOptions.grpc();
-    grpcBuilderField.set(grpcBuilder, null);
-    GrpcStorageOptions grpcWithNullInterval = grpcBuilder.build();
-
-    baos = new ByteArrayOutputStream();
-    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
-      oos.writeObject(grpcWithNullInterval);
-    }
-
-    GrpcStorageOptions deserializedGrpc;
-    try (ObjectInputStream ois =
-        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
-      deserializedGrpc = (GrpcStorageOptions) ois.readObject();
-    }
-
-    assertThat(deserializedGrpc).isNotNull();
-    assertThat(deserializedGrpc.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
-    GrpcStorageOptions defaultGrpc = GrpcStorageOptions.grpc().build();
-    assertThat(deserializedGrpc).isEqualTo(defaultGrpc);
-    assertThat(defaultGrpc).isEqualTo(deserializedGrpc);
-    assertThat(deserializedGrpc.hashCode()).isEqualTo(defaultGrpc.hashCode());
+          assertThat(deserialized).isNotNull();
+          // Verify NPE guard defaults to 60 seconds
+          assertThat(deserialized.getMetricInterval()).isEqualTo(Duration.ofSeconds(60));
+          // Verify equals and hashCode match a default instance
+          assertThat(deserialized).isEqualTo(defaultOptions);
+          assertThat(defaultOptions).isEqualTo(deserialized);
+          assertThat(deserialized.hashCode()).isEqualTo(defaultOptions.hashCode());
+        });
   }
 }
