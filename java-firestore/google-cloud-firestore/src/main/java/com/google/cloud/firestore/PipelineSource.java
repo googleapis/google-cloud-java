@@ -182,20 +182,6 @@ public final class PipelineSource {
   }
 
   /**
-   * Creates a new {@link Pipeline} that operates on a static set of documents represented as Maps.
-   * Equivalent to {@link #literals(java.util.Map...)}.
-   *
-   * @param data The Maps representing documents to include in the pipeline.
-   * @return A new {@code Pipeline} instance with a literals source.
-   */
-  @Nonnull
-  @SuppressWarnings("unchecked")
-  public Pipeline literals(@Nonnull java.util.List<java.util.Map<String, Object>> data) {
-    Preconditions.checkNotNull(data, "Documents must not be null.");
-    return literals(data.toArray(new java.util.Map[0]));
-  }
-
-  /**
    * Creates a new {@link Pipeline} from the given {@link Query}. Under the hood, this will
    * translate the query semantics (order by document ID, etc.) to an equivalent pipeline.
    *

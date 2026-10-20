@@ -20,7 +20,6 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.add;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.constant;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.field;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.firestore.pipeline.stages.Insert;
 import com.google.cloud.firestore.pipeline.stages.PipelineExecuteOptions;
@@ -468,96 +467,7 @@ public class PipelineProtoTest {
   }
 
   @Test
-  public void testLiteralsValidation() {
-    FirestoreOptions options =
-        FirestoreOptions.newBuilder()
-            .setProjectId("new-project")
-            .setDatabaseId("(default)")
-            .build();
-    Firestore firestore = options.getService();
-
-    Stage emptyStage = firestore.pipeline().literals().toProto().getStages(0);
-    assertThat(emptyStage.getName()).isEqualTo("literals");
-    assertThat(emptyStage.getArgsCount()).isEqualTo(0);
-
-    NullPointerException nullArray =
-        assertThrows(
-            NullPointerException.class,
-            () -> firestore.pipeline().literals((java.util.Map<String, Object>[]) null));
-    assertThat(nullArray).hasMessageThat().isEqualTo("Documents must not be null.");
-
-    NullPointerException nullDoc =
-        assertThrows(
-            NullPointerException.class,
-            () -> firestore.pipeline().literals((java.util.Map<String, Object>) null));
-    assertThat(nullDoc).hasMessageThat().isEqualTo("Document 0 must not be null.");
-
-    java.util.Map<String, Object> nested = new java.util.HashMap<>();
-    nested.put("b", FieldValue.serverTimestamp());
-    java.util.Map<String, Object> doc = new java.util.HashMap<>();
-    doc.put("a", nested);
-    IllegalArgumentException sentinel =
-        assertThrows(
-            IllegalArgumentException.class, () -> firestore.pipeline().literals(doc).toProto());
-    assertThat(sentinel).hasMessageThat().contains("FieldValue.serverTimestamp()");
-
-    java.util.Map<String, Object> inList = new java.util.HashMap<>();
-    inList.put("list", java.util.Arrays.asList(1, FieldValue.increment(1)));
-    IllegalArgumentException listSentinel =
-        assertThrows(
-            IllegalArgumentException.class, () -> firestore.pipeline().literals(inList).toProto());
-    assertThat(listSentinel).hasMessageThat().contains("FieldValue.increment()");
-
-    java.util.Map<String, Object> deleteDoc = new java.util.HashMap<>();
-    deleteDoc.put("a.b", FieldValue.delete());
-    IllegalArgumentException delete =
-        assertThrows(
-            IllegalArgumentException.class,
-            () -> firestore.pipeline().literals(deleteDoc).toProto());
-    assertThat(delete).hasMessageThat().contains("FieldValue.delete()");
-
-    // Null field values are allowed.
-    java.util.Map<String, Object> withNull = new java.util.HashMap<>();
-    withNull.put("n", null);
-    Stage stage = firestore.pipeline().literals(withNull).toProto().getStages(0);
-    assertThat(stage.getArgs(0).getMapValue().getFieldsMap().get("n").hasNullValue()).isTrue();
-  }
-
-  @Test
-  public void testListOverloadsProtoEncoding() {
-    FirestoreOptions options =
-        FirestoreOptions.newBuilder()
-            .setProjectId("new-project")
-            .setDatabaseId("(default)")
-            .build();
-    Firestore firestore = options.getService();
-
-    java.util.Map<String, Object> doc1 = new java.util.HashMap<>();
-    doc1.put("title", "Book 1");
-    java.util.Map<String, Object> doc2 = new java.util.HashMap<>();
-    doc2.put("title", "Book 2");
-
-    assertThat(firestore.pipeline().literals(java.util.Arrays.asList(doc1, doc2)).toProto())
-        .isEqualTo(firestore.pipeline().literals(doc1, doc2).toProto());
-    assertThat(firestore.pipeline().literals(java.util.Collections.emptyList()).toProto())
-        .isEqualTo(firestore.pipeline().literals().toProto());
-
-    com.google.cloud.firestore.pipeline.stages.Update fromList =
-        new com.google.cloud.firestore.pipeline.stages.Update()
-            .withTransformedFields(
-                java.util.Arrays.asList(
-                    constant("Updated").as("status"),
-                    add(field("count"), constant(1)).as("count")));
-    com.google.cloud.firestore.pipeline.stages.Update fromVarargs =
-        new com.google.cloud.firestore.pipeline.stages.Update()
-            .withTransformedFields(
-                constant("Updated").as("status"), add(field("count"), constant(1)).as("count"));
-    assertThat(firestore.pipeline().collection("books").update(fromList).toProto())
-        .isEqualTo(firestore.pipeline().collection("books").update(fromVarargs).toProto());
-  }
-
-  @Test
-  public void testInsertAndDeleteConvenienceOverloadsProtoEncoding() {
+  public void testInsertConvenienceOverloadProtoEncoding() {
     FirestoreOptions options =
         FirestoreOptions.newBuilder()
             .setProjectId("new-project")
@@ -570,14 +480,5 @@ public class PipelineProtoTest {
     assertThat(insertProto)
         .isEqualTo(firestore.pipeline().collection("books").insert(new Insert()).toProto());
     assertThat(insertProto.getStages(1).getName()).isEqualTo("insert");
-
-    com.google.firestore.v1.Pipeline deleteProto =
-        firestore
-            .pipeline()
-            .collection("books")
-            .delete(new com.google.cloud.firestore.pipeline.stages.Delete())
-            .toProto();
-    assertThat(deleteProto).isEqualTo(firestore.pipeline().collection("books").delete().toProto());
-    assertThat(deleteProto.getStages(1).getName()).isEqualTo("delete");
   }
 }

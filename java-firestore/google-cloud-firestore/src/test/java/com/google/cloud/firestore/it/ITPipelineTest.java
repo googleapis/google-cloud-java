@@ -5234,13 +5234,4 @@ public class ITPipelineTest extends ITBaseTest {
     assertThat(results.get(0).getData().get("nestedList"))
         .isEqualTo(java.util.Arrays.asList(1L, 3L));
   }
-
-  @Test
-  public void testLiteralsWithNoDocumentsIsRejectedByBackend() throws Exception {
-    ExecutionException exception =
-        assertThrows(
-            ExecutionException.class, () -> firestore.pipeline().literals().execute().get());
-    assertThat(exception).hasMessageThat().contains("INVALID_ARGUMENT");
-    assertThat(exception).hasMessageThat().contains("at least one document");
-  }
 }

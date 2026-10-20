@@ -50,10 +50,6 @@ public final class Update extends Stage {
     return new Update(transformedFields, this.options);
   }
 
-  public Update withTransformedFields(List<Selectable> transformedFields) {
-    return withTransformedFields(transformedFields.toArray(new Selectable[0]));
-  }
-
   @Override
   Iterable<Value> toStageArgs() {
     List<Value> args = new ArrayList<>();

@@ -16,15 +16,11 @@
 
 package com.google.cloud.firestore.pipeline.stages;
 
+import com.google.api.core.InternalApi;
 import com.google.firestore.v1.Value;
 import java.util.ArrayList;
 
-/**
- * A pipeline stage that deletes the documents produced by the previous stages.
- *
- * <p>Use with {@link com.google.cloud.firestore.Pipeline#delete(Delete)}, or call {@link
- * com.google.cloud.firestore.Pipeline#delete()} directly.
- */
+@InternalApi
 public final class Delete extends Stage {
   private Delete(InternalOptions options) {
     super("delete", options);

@@ -19,7 +19,6 @@ package com.google.cloud.firestore.pipeline.stages;
 import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.PipelineUtils;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
-import com.google.common.base.Preconditions;
 import com.google.firestore.v1.Value;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,10 +33,6 @@ public final class Literals extends Stage {
 
   public Literals(Map<String, Object>... data) {
     super("literals", InternalOptions.EMPTY);
-    Preconditions.checkNotNull(data, "Documents must not be null.");
-    for (int i = 0; i < data.length; i++) {
-      Preconditions.checkNotNull(data[i], "Document %s must not be null.", i);
-    }
     this.data = Arrays.asList(data);
   }
 
