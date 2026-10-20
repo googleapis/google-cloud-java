@@ -200,7 +200,7 @@ final class StorageClientMetrics {
           meter
               .counterBuilder(METRIC_GCP_STORAGE_CLIENT_OPERATIONS)
               .setDescription("Number of GCS client operations")
-              .setUnit("1")
+              .setUnit("{operation}")
               .build();
       this.attempts =
           meter
@@ -208,19 +208,19 @@ final class StorageClientMetrics {
               .setDescription(
                   "Number of GCS client attempts (individual HTTP requests or gRPC calls), including"
                       + " retries, resumable upload chunks and list pages.")
-              .setUnit("1")
+              .setUnit("{attempt}")
               .build();
       this.retries =
           meter
               .counterBuilder(METRIC_GCP_STORAGE_CLIENT_RETRIES)
               .setDescription("Number of GCS client retry attempts.")
-              .setUnit("1")
+              .setUnit("{retry}")
               .build();
       this.errors =
           meter
               .counterBuilder(METRIC_GCP_STORAGE_CLIENT_ERRORS)
               .setDescription("Number of failed GCS client attempts, by error.type.")
-              .setUnit("1")
+              .setUnit("{error}")
               .build();
       this.ttfb =
           meter
@@ -272,7 +272,7 @@ final class StorageClientMetrics {
           meter
               .upDownCounterBuilder(METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE)
               .setDescription("Number of active GCS client requests")
-              .setUnit("1")
+              .setUnit("{request}")
               .build();
       this.serverDuration =
           meter
@@ -291,7 +291,7 @@ final class StorageClientMetrics {
                   "Number of attempts that received no response from a GCS server (gRPC:"
                       + " grpc-server-stats-bin trailer absent; HTTP: X-GUploader-UploadID header"
                       + " absent).")
-              .setUnit("1")
+              .setUnit("{attempt}")
               .build();
       this.stallDuration =
           meter

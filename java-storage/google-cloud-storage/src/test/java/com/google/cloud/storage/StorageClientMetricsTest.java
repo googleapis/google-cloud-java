@@ -234,21 +234,34 @@ public final class StorageClientMetricsTest {
         StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE,
         expectedSizeBoundaries);
 
-    // Verify counter metrics
-    assertThat(metricsMap)
-        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS.replace(".", "/"));
-    assertThat(metricsMap)
-        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS.replace(".", "/"));
-    assertThat(metricsMap)
-        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES.replace(".", "/"));
-    assertThat(metricsMap)
-        .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS.replace(".", "/"));
-    assertThat(metricsMap)
-        .containsKey(
-            StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE.replace(".", "/"));
-    assertThat(metricsMap)
-        .containsKey(
-            StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED.replace(".", "/"));
+    // Verify counter metrics and units
+    String operationsName =
+        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS.replace(".", "/");
+    assertThat(metricsMap).containsKey(operationsName);
+    assertThat(metricsMap.get(operationsName).getUnit()).isEqualTo("{operation}");
+
+    String attemptsName = StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS.replace(".", "/");
+    assertThat(metricsMap).containsKey(attemptsName);
+    assertThat(metricsMap.get(attemptsName).getUnit()).isEqualTo("{attempt}");
+
+    String retriesName = StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES.replace(".", "/");
+    assertThat(metricsMap).containsKey(retriesName);
+    assertThat(metricsMap.get(retriesName).getUnit()).isEqualTo("{retry}");
+
+    String errorsName = StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS.replace(".", "/");
+    assertThat(metricsMap).containsKey(errorsName);
+    assertThat(metricsMap.get(errorsName).getUnit()).isEqualTo("{error}");
+
+    String requestActiveName =
+        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE.replace(".", "/");
+    assertThat(metricsMap).containsKey(requestActiveName);
+    assertThat(metricsMap.get(requestActiveName).getUnit()).isEqualTo("{request}");
+
+    String serverUnreachedName =
+        StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED.replace(".", "/");
+    assertThat(metricsMap).containsKey(serverUnreachedName);
+    assertThat(metricsMap.get(serverUnreachedName).getUnit()).isEqualTo("{attempt}");
+
     assertThat(metricsMap)
         .containsKey(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_NETWORK_IO.replace(".", "/"));
   }
