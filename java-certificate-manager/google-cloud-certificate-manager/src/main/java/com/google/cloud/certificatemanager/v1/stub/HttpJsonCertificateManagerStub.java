@@ -77,6 +77,7 @@ import com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest;
 import com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse;
 import com.google.cloud.certificatemanager.v1.OperationMetadata;
 import com.google.cloud.certificatemanager.v1.TrustConfig;
+import com.google.cloud.certificatemanager.v1.UpdateCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateRequest;
@@ -1058,6 +1059,54 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpdateCertificateIssuanceConfigRequest, Operation>
+      updateCertificateIssuanceConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCertificateIssuanceConfigRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/UpdateCertificateIssuanceConfig")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCertificateIssuanceConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{certificateIssuanceConfig.name=projects/*/locations/*/certificateIssuanceConfigs/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCertificateIssuanceConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "certificateIssuanceConfig.name",
+                                request.getCertificateIssuanceConfig().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCertificateIssuanceConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "certificateIssuanceConfig",
+                                      request.getCertificateIssuanceConfig(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateCertificateIssuanceConfigRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteCertificateIssuanceConfigRequest, Operation>
       deleteCertificateIssuanceConfigMethodDescriptor =
           ApiMethodDescriptor.<DeleteCertificateIssuanceConfigRequest, Operation>newBuilder()
@@ -1445,6 +1494,11 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
   private final OperationCallable<
           CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
       createCertificateIssuanceConfigOperationCallable;
+  private final UnaryCallable<UpdateCertificateIssuanceConfigRequest, Operation>
+      updateCertificateIssuanceConfigCallable;
+  private final OperationCallable<
+          UpdateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      updateCertificateIssuanceConfigOperationCallable;
   private final UnaryCallable<DeleteCertificateIssuanceConfigRequest, Operation>
       deleteCertificateIssuanceConfigCallable;
   private final OperationCallable<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
@@ -1845,6 +1899,20 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<UpdateCertificateIssuanceConfigRequest, Operation>
+        updateCertificateIssuanceConfigTransportSettings =
+            HttpJsonCallSettings.<UpdateCertificateIssuanceConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateCertificateIssuanceConfigMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "certificate_issuance_config.name",
+                          String.valueOf(request.getCertificateIssuanceConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteCertificateIssuanceConfigRequest, Operation>
         deleteCertificateIssuanceConfigTransportSettings =
             HttpJsonCallSettings.<DeleteCertificateIssuanceConfigRequest, Operation>newBuilder()
@@ -2155,6 +2223,17 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
             settings.createCertificateIssuanceConfigOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateCertificateIssuanceConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateCertificateIssuanceConfigTransportSettings,
+            settings.updateCertificateIssuanceConfigSettings(),
+            clientContext);
+    this.updateCertificateIssuanceConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateCertificateIssuanceConfigTransportSettings,
+            settings.updateCertificateIssuanceConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.deleteCertificateIssuanceConfigCallable =
         callableFactory.createUnaryCallable(
             deleteCertificateIssuanceConfigTransportSettings,
@@ -2248,6 +2327,7 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
     methodDescriptors.add(listCertificateIssuanceConfigsMethodDescriptor);
     methodDescriptors.add(getCertificateIssuanceConfigMethodDescriptor);
     methodDescriptors.add(createCertificateIssuanceConfigMethodDescriptor);
+    methodDescriptors.add(updateCertificateIssuanceConfigMethodDescriptor);
     methodDescriptors.add(deleteCertificateIssuanceConfigMethodDescriptor);
     methodDescriptors.add(listTrustConfigsMethodDescriptor);
     methodDescriptors.add(getTrustConfigMethodDescriptor);
@@ -2498,6 +2578,19 @@ public class HttpJsonCertificateManagerStub extends CertificateManagerStub {
           CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
       createCertificateIssuanceConfigOperationCallable() {
     return createCertificateIssuanceConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCertificateIssuanceConfigRequest, Operation>
+      updateCertificateIssuanceConfigCallable() {
+    return updateCertificateIssuanceConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      updateCertificateIssuanceConfigOperationCallable() {
+    return updateCertificateIssuanceConfigOperationCallable;
   }
 
   @Override

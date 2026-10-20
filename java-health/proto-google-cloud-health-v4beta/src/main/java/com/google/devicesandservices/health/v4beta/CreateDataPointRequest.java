@@ -81,7 +81,15 @@ public final class CreateDataPointRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent resource name where the data point will be created.
-   * Format: `users/{user}/dataTypes/{data_type}`
+   *
+   * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+   *
+   * - `users/me/dataTypes/steps`
+   * - `users/1234567890/dataTypes/steps`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    * </pre>
    *
    * <code>
@@ -108,7 +116,15 @@ public final class CreateDataPointRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Required. The parent resource name where the data point will be created.
-   * Format: `users/{user}/dataTypes/{data_type}`
+   *
+   * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+   *
+   * - `users/me/dataTypes/steps`
+   * - `users/1234567890/dataTypes/steps`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    * </pre>
    *
    * <code>
@@ -559,7 +575,15 @@ public final class CreateDataPointRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name where the data point will be created.
-     * Format: `users/{user}/dataTypes/{data_type}`
+     *
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+     *
+     * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      * </pre>
      *
      * <code>
@@ -585,7 +609,15 @@ public final class CreateDataPointRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name where the data point will be created.
-     * Format: `users/{user}/dataTypes/{data_type}`
+     *
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+     *
+     * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      * </pre>
      *
      * <code>
@@ -611,7 +643,15 @@ public final class CreateDataPointRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name where the data point will be created.
-     * Format: `users/{user}/dataTypes/{data_type}`
+     *
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+     *
+     * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      * </pre>
      *
      * <code>
@@ -636,7 +676,15 @@ public final class CreateDataPointRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name where the data point will be created.
-     * Format: `users/{user}/dataTypes/{data_type}`
+     *
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+     *
+     * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      * </pre>
      *
      * <code>
@@ -657,7 +705,15 @@ public final class CreateDataPointRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Required. The parent resource name where the data point will be created.
-     * Format: `users/{user}/dataTypes/{data_type}`
+     *
+     * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+     *
+     * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      * </pre>
      *
      * <code>

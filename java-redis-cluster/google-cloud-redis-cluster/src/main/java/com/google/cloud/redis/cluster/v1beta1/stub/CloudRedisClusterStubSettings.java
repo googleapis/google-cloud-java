@@ -18,10 +18,12 @@ package com.google.cloud.redis.cluster.v1beta1.stub;
 
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAclPoliciesPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAclPolicyRevisionsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListLocationsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -60,6 +62,9 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.redis.cluster.v1beta1.AclPolicy;
 import com.google.cloud.redis.cluster.v1beta1.AclPolicyRevision;
+import com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest;
+import com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest;
+import com.google.cloud.redis.cluster.v1beta1.AuthToken;
 import com.google.cloud.redis.cluster.v1beta1.Backup;
 import com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest;
 import com.google.cloud.redis.cluster.v1beta1.BackupCollection;
@@ -68,29 +73,38 @@ import com.google.cloud.redis.cluster.v1beta1.Cluster;
 import com.google.cloud.redis.cluster.v1beta1.CreateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1beta1.CreateClusterRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteAclPolicyRequest;
+import com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest;
 import com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetAclPolicyRevisionRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetSharedRegionalCertificateAuthorityRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListAclPoliciesRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListAclPoliciesResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListAclPolicyRevisionsRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListAclPolicyRevisionsResponse;
+import com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersResponse;
+import com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse;
 import com.google.cloud.redis.cluster.v1beta1.OperationMetadata;
 import com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest;
 import com.google.cloud.redis.cluster.v1beta1.SharedRegionalCertificateAuthority;
+import com.google.cloud.redis.cluster.v1beta1.TokenAuthUser;
 import com.google.cloud.redis.cluster.v1beta1.UpdateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1beta1.UpdateClusterRequest;
 import com.google.common.collect.ImmutableList;
@@ -252,6 +266,27 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
   private final UnaryCallSettings<BackupClusterRequest, Operation> backupClusterSettings;
   private final OperationCallSettings<BackupClusterRequest, Cluster, Any>
       backupClusterOperationSettings;
+  private final PagedCallSettings<
+          ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersSettings;
+  private final UnaryCallSettings<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserSettings;
+  private final PagedCallSettings<
+          ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+      listAuthTokensSettings;
+  private final UnaryCallSettings<GetAuthTokenRequest, AuthToken> getAuthTokenSettings;
+  private final UnaryCallSettings<AddTokenAuthUserRequest, Operation> addTokenAuthUserSettings;
+  private final OperationCallSettings<AddTokenAuthUserRequest, Cluster, OperationMetadata>
+      addTokenAuthUserOperationSettings;
+  private final UnaryCallSettings<DeleteTokenAuthUserRequest, Operation>
+      deleteTokenAuthUserSettings;
+  private final OperationCallSettings<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationSettings;
+  private final UnaryCallSettings<AddAuthTokenRequest, Operation> addAuthTokenSettings;
+  private final OperationCallSettings<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationSettings;
+  private final UnaryCallSettings<DeleteAuthTokenRequest, Operation> deleteAuthTokenSettings;
+  private final OperationCallSettings<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -442,6 +477,79 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
             }
           };
 
+  private static final PagedListDescriptor<
+          ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, TokenAuthUser>
+      LIST_TOKEN_AUTH_USERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, TokenAuthUser>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTokenAuthUsersRequest injectToken(
+                ListTokenAuthUsersRequest payload, String token) {
+              return ListTokenAuthUsersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTokenAuthUsersRequest injectPageSize(
+                ListTokenAuthUsersRequest payload, int pageSize) {
+              return ListTokenAuthUsersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTokenAuthUsersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTokenAuthUsersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TokenAuthUser> extractResources(ListTokenAuthUsersResponse payload) {
+              return payload.getTokenAuthUsersList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListAuthTokensRequest, ListAuthTokensResponse, AuthToken>
+      LIST_AUTH_TOKENS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAuthTokensRequest, ListAuthTokensResponse, AuthToken>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAuthTokensRequest injectToken(ListAuthTokensRequest payload, String token) {
+              return ListAuthTokensRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAuthTokensRequest injectPageSize(
+                ListAuthTokensRequest payload, int pageSize) {
+              return ListAuthTokensRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAuthTokensRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAuthTokensResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AuthToken> extractResources(ListAuthTokensResponse payload) {
+              return payload.getAuthTokensList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -575,6 +683,44 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
               PageContext<ListBackupsRequest, ListBackupsResponse, Backup> pageContext =
                   PageContext.create(callable, LIST_BACKUPS_PAGE_STR_DESC, request, context);
               return ListBackupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+      LIST_TOKEN_AUTH_USERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTokenAuthUsersRequest,
+              ListTokenAuthUsersResponse,
+              ListTokenAuthUsersPagedResponse>() {
+            @Override
+            public ApiFuture<ListTokenAuthUsersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse> callable,
+                ListTokenAuthUsersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTokenAuthUsersResponse> futureResponse) {
+              PageContext<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, TokenAuthUser>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TOKEN_AUTH_USERS_PAGE_STR_DESC, request, context);
+              return ListTokenAuthUsersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+      LIST_AUTH_TOKENS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>() {
+            @Override
+            public ApiFuture<ListAuthTokensPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse> callable,
+                ListAuthTokensRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAuthTokensResponse> futureResponse) {
+              PageContext<ListAuthTokensRequest, ListAuthTokensResponse, AuthToken> pageContext =
+                  PageContext.create(callable, LIST_AUTH_TOKENS_PAGE_STR_DESC, request, context);
+              return ListAuthTokensPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -776,6 +922,74 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     return backupClusterOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listTokenAuthUsers. */
+  public PagedCallSettings<
+          ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersSettings() {
+    return listTokenAuthUsersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getTokenAuthUser. */
+  public UnaryCallSettings<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserSettings() {
+    return getTokenAuthUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAuthTokens. */
+  public PagedCallSettings<
+          ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+      listAuthTokensSettings() {
+    return listAuthTokensSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAuthToken. */
+  public UnaryCallSettings<GetAuthTokenRequest, AuthToken> getAuthTokenSettings() {
+    return getAuthTokenSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addTokenAuthUser. */
+  public UnaryCallSettings<AddTokenAuthUserRequest, Operation> addTokenAuthUserSettings() {
+    return addTokenAuthUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addTokenAuthUser. */
+  public OperationCallSettings<AddTokenAuthUserRequest, Cluster, OperationMetadata>
+      addTokenAuthUserOperationSettings() {
+    return addTokenAuthUserOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTokenAuthUser. */
+  public UnaryCallSettings<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserSettings() {
+    return deleteTokenAuthUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTokenAuthUser. */
+  public OperationCallSettings<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationSettings() {
+    return deleteTokenAuthUserOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addAuthToken. */
+  public UnaryCallSettings<AddAuthTokenRequest, Operation> addAuthTokenSettings() {
+    return addAuthTokenSettings;
+  }
+
+  /** Returns the object with the settings used for calls to addAuthToken. */
+  public OperationCallSettings<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationSettings() {
+    return addAuthTokenOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthToken. */
+  public UnaryCallSettings<DeleteAuthTokenRequest, Operation> deleteAuthTokenSettings() {
+    return deleteAuthTokenSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAuthToken. */
+  public OperationCallSettings<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationSettings() {
+    return deleteAuthTokenOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -933,6 +1147,19 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     exportBackupOperationSettings = settingsBuilder.exportBackupOperationSettings().build();
     backupClusterSettings = settingsBuilder.backupClusterSettings().build();
     backupClusterOperationSettings = settingsBuilder.backupClusterOperationSettings().build();
+    listTokenAuthUsersSettings = settingsBuilder.listTokenAuthUsersSettings().build();
+    getTokenAuthUserSettings = settingsBuilder.getTokenAuthUserSettings().build();
+    listAuthTokensSettings = settingsBuilder.listAuthTokensSettings().build();
+    getAuthTokenSettings = settingsBuilder.getAuthTokenSettings().build();
+    addTokenAuthUserSettings = settingsBuilder.addTokenAuthUserSettings().build();
+    addTokenAuthUserOperationSettings = settingsBuilder.addTokenAuthUserOperationSettings().build();
+    deleteTokenAuthUserSettings = settingsBuilder.deleteTokenAuthUserSettings().build();
+    deleteTokenAuthUserOperationSettings =
+        settingsBuilder.deleteTokenAuthUserOperationSettings().build();
+    addAuthTokenSettings = settingsBuilder.addAuthTokenSettings().build();
+    addAuthTokenOperationSettings = settingsBuilder.addAuthTokenOperationSettings().build();
+    deleteAuthTokenSettings = settingsBuilder.deleteAuthTokenSettings().build();
+    deleteAuthTokenOperationSettings = settingsBuilder.deleteAuthTokenOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1015,6 +1242,32 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     private final OperationCallSettings.Builder<BackupClusterRequest, Cluster, Any>
         backupClusterOperationSettings;
     private final PagedCallSettings.Builder<
+            ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+        listTokenAuthUsersSettings;
+    private final UnaryCallSettings.Builder<GetTokenAuthUserRequest, TokenAuthUser>
+        getTokenAuthUserSettings;
+    private final PagedCallSettings.Builder<
+            ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+        listAuthTokensSettings;
+    private final UnaryCallSettings.Builder<GetAuthTokenRequest, AuthToken> getAuthTokenSettings;
+    private final UnaryCallSettings.Builder<AddTokenAuthUserRequest, Operation>
+        addTokenAuthUserSettings;
+    private final OperationCallSettings.Builder<AddTokenAuthUserRequest, Cluster, OperationMetadata>
+        addTokenAuthUserOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteTokenAuthUserRequest, Operation>
+        deleteTokenAuthUserSettings;
+    private final OperationCallSettings.Builder<
+            DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+        deleteTokenAuthUserOperationSettings;
+    private final UnaryCallSettings.Builder<AddAuthTokenRequest, Operation> addAuthTokenSettings;
+    private final OperationCallSettings.Builder<
+            AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+        addAuthTokenOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteAuthTokenRequest, Operation>
+        deleteAuthTokenSettings;
+    private final OperationCallSettings.Builder<DeleteAuthTokenRequest, Empty, OperationMetadata>
+        deleteAuthTokenOperationSettings;
+    private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
@@ -1089,6 +1342,19 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       exportBackupOperationSettings = OperationCallSettings.newBuilder();
       backupClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       backupClusterOperationSettings = OperationCallSettings.newBuilder();
+      listTokenAuthUsersSettings =
+          PagedCallSettings.newBuilder(LIST_TOKEN_AUTH_USERS_PAGE_STR_FACT);
+      getTokenAuthUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAuthTokensSettings = PagedCallSettings.newBuilder(LIST_AUTH_TOKENS_PAGE_STR_FACT);
+      getAuthTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addTokenAuthUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addTokenAuthUserOperationSettings = OperationCallSettings.newBuilder();
+      deleteTokenAuthUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTokenAuthUserOperationSettings = OperationCallSettings.newBuilder();
+      addAuthTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      addAuthTokenOperationSettings = OperationCallSettings.newBuilder();
+      deleteAuthTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAuthTokenOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1116,6 +1382,14 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
               deleteBackupSettings,
               exportBackupSettings,
               backupClusterSettings,
+              listTokenAuthUsersSettings,
+              getTokenAuthUserSettings,
+              listAuthTokensSettings,
+              getAuthTokenSettings,
+              addTokenAuthUserSettings,
+              deleteTokenAuthUserSettings,
+              addAuthTokenSettings,
+              deleteAuthTokenSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1159,6 +1433,19 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
       exportBackupOperationSettings = settings.exportBackupOperationSettings.toBuilder();
       backupClusterSettings = settings.backupClusterSettings.toBuilder();
       backupClusterOperationSettings = settings.backupClusterOperationSettings.toBuilder();
+      listTokenAuthUsersSettings = settings.listTokenAuthUsersSettings.toBuilder();
+      getTokenAuthUserSettings = settings.getTokenAuthUserSettings.toBuilder();
+      listAuthTokensSettings = settings.listAuthTokensSettings.toBuilder();
+      getAuthTokenSettings = settings.getAuthTokenSettings.toBuilder();
+      addTokenAuthUserSettings = settings.addTokenAuthUserSettings.toBuilder();
+      addTokenAuthUserOperationSettings = settings.addTokenAuthUserOperationSettings.toBuilder();
+      deleteTokenAuthUserSettings = settings.deleteTokenAuthUserSettings.toBuilder();
+      deleteTokenAuthUserOperationSettings =
+          settings.deleteTokenAuthUserOperationSettings.toBuilder();
+      addAuthTokenSettings = settings.addAuthTokenSettings.toBuilder();
+      addAuthTokenOperationSettings = settings.addAuthTokenOperationSettings.toBuilder();
+      deleteAuthTokenSettings = settings.deleteAuthTokenSettings.toBuilder();
+      deleteAuthTokenOperationSettings = settings.deleteAuthTokenOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1186,6 +1473,14 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
               deleteBackupSettings,
               exportBackupSettings,
               backupClusterSettings,
+              listTokenAuthUsersSettings,
+              getTokenAuthUserSettings,
+              listAuthTokensSettings,
+              getAuthTokenSettings,
+              addTokenAuthUserSettings,
+              deleteTokenAuthUserSettings,
+              addAuthTokenSettings,
+              deleteAuthTokenSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1324,6 +1619,46 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
           .backupClusterSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listTokenAuthUsersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getTokenAuthUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAuthTokensSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getAuthTokenSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .addTokenAuthUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteTokenAuthUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .addAuthTokenSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteAuthTokenSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -1545,6 +1880,102 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .addTokenAuthUserOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddTokenAuthUserRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Cluster.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteTokenAuthUserOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteTokenAuthUserRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .addAuthTokenOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<AddAuthTokenRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(TokenAuthUser.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteAuthTokenOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteAuthTokenRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1747,6 +2178,77 @@ public class CloudRedisClusterStubSettings extends StubSettings<CloudRedisCluste
     public OperationCallSettings.Builder<BackupClusterRequest, Cluster, Any>
         backupClusterOperationSettings() {
       return backupClusterOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listTokenAuthUsers. */
+    public PagedCallSettings.Builder<
+            ListTokenAuthUsersRequest, ListTokenAuthUsersResponse, ListTokenAuthUsersPagedResponse>
+        listTokenAuthUsersSettings() {
+      return listTokenAuthUsersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getTokenAuthUser. */
+    public UnaryCallSettings.Builder<GetTokenAuthUserRequest, TokenAuthUser>
+        getTokenAuthUserSettings() {
+      return getTokenAuthUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAuthTokens. */
+    public PagedCallSettings.Builder<
+            ListAuthTokensRequest, ListAuthTokensResponse, ListAuthTokensPagedResponse>
+        listAuthTokensSettings() {
+      return listAuthTokensSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAuthToken. */
+    public UnaryCallSettings.Builder<GetAuthTokenRequest, AuthToken> getAuthTokenSettings() {
+      return getAuthTokenSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addTokenAuthUser. */
+    public UnaryCallSettings.Builder<AddTokenAuthUserRequest, Operation>
+        addTokenAuthUserSettings() {
+      return addTokenAuthUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addTokenAuthUser. */
+    public OperationCallSettings.Builder<AddTokenAuthUserRequest, Cluster, OperationMetadata>
+        addTokenAuthUserOperationSettings() {
+      return addTokenAuthUserOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTokenAuthUser. */
+    public UnaryCallSettings.Builder<DeleteTokenAuthUserRequest, Operation>
+        deleteTokenAuthUserSettings() {
+      return deleteTokenAuthUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTokenAuthUser. */
+    public OperationCallSettings.Builder<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+        deleteTokenAuthUserOperationSettings() {
+      return deleteTokenAuthUserOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addAuthToken. */
+    public UnaryCallSettings.Builder<AddAuthTokenRequest, Operation> addAuthTokenSettings() {
+      return addAuthTokenSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to addAuthToken. */
+    public OperationCallSettings.Builder<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+        addAuthTokenOperationSettings() {
+      return addAuthTokenOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthToken. */
+    public UnaryCallSettings.Builder<DeleteAuthTokenRequest, Operation> deleteAuthTokenSettings() {
+      return deleteAuthTokenSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAuthToken. */
+    public OperationCallSettings.Builder<DeleteAuthTokenRequest, Empty, OperationMetadata>
+        deleteAuthTokenOperationSettings() {
+      return deleteAuthTokenOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

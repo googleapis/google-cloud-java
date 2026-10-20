@@ -139,12 +139,12 @@ public final class DeleteTrustConfigRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The current etag of the TrustConfig.
+   * Optional. The current etag of the TrustConfig.
    * If an etag is provided and does not match the current etag of the resource,
    * deletion will be blocked and an ABORTED error will be returned.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -165,12 +165,12 @@ public final class DeleteTrustConfigRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The current etag of the TrustConfig.
+   * Optional. The current etag of the TrustConfig.
    * If an etag is provided and does not match the current etag of the resource,
    * deletion will be blocked and an ABORTED error will be returned.
    * </pre>
    *
-   * <code>string etag = 2;</code>
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -658,12 +658,12 @@ public final class DeleteTrustConfigRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The current etag of the TrustConfig.
+     * Optional. The current etag of the TrustConfig.
      * If an etag is provided and does not match the current etag of the resource,
      * deletion will be blocked and an ABORTED error will be returned.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -683,12 +683,12 @@ public final class DeleteTrustConfigRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The current etag of the TrustConfig.
+     * Optional. The current etag of the TrustConfig.
      * If an etag is provided and does not match the current etag of the resource,
      * deletion will be blocked and an ABORTED error will be returned.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -708,12 +708,12 @@ public final class DeleteTrustConfigRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The current etag of the TrustConfig.
+     * Optional. The current etag of the TrustConfig.
      * If an etag is provided and does not match the current etag of the resource,
      * deletion will be blocked and an ABORTED error will be returned.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -732,12 +732,12 @@ public final class DeleteTrustConfigRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The current etag of the TrustConfig.
+     * Optional. The current etag of the TrustConfig.
      * If an etag is provided and does not match the current etag of the resource,
      * deletion will be blocked and an ABORTED error will be returned.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -752,12 +752,12 @@ public final class DeleteTrustConfigRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The current etag of the TrustConfig.
+     * Optional. The current etag of the TrustConfig.
      * If an etag is provided and does not match the current etag of the resource,
      * deletion will be blocked and an ABORTED error will be returned.
      * </pre>
      *
-     * <code>string etag = 2;</code>
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.

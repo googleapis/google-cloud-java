@@ -55,14 +55,14 @@ public final class NotificationProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n-google/cloud/batch/v1alpha/notificatio"
           + "n.proto\022\032google.cloud.batch.v1alpha\032\037goo"
-          + "gle/api/field_behavior.proto\")\n\014Notifica"
-          + "tion\022\031\n\014pubsub_topic\030\001 \001(\tB\003\340A\002B\313\001\n\036com."
-          + "google.cloud.batch.v1alphaB\021Notification"
-          + "ProtoP\001Z4cloud.google.com/go/batch/apiv1"
-          + "alpha/batchpb;batchpb\242\002\003GCB\252\002\032Google.Clo"
-          + "ud.Batch.V1Alpha\312\002\032Google\\Cloud\\Batch\\V1"
-          + "alpha\352\002\035Google::Cloud::Batch::V1alphab\006p"
-          + "roto3"
+          + "gle/api/field_behavior.proto\"*\n\014Notifica"
+          + "tion\022\032\n\014pubsub_topic\030\001 \001(\tB\004\342A\001\002B\313\001\n\036com"
+          + ".google.cloud.batch.v1alphaB\021Notificatio"
+          + "nProtoP\001Z4cloud.google.com/go/batch/apiv"
+          + "1alpha/batchpb;batchpb\242\002\003GCB\252\002\032Google.Cl"
+          + "oud.Batch.V1Alpha\312\002\032Google\\Cloud\\Batch\\V"
+          + "1alpha\352\002\035Google::Cloud::Batch::V1alphab\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
