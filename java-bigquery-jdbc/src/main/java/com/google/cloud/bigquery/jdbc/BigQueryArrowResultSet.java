@@ -25,7 +25,6 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import io.opentelemetry.context.Scope;
@@ -36,6 +35,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
@@ -280,7 +280,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           try (Scope scope = makeOriginalContextCurrent()) {
             BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
             if (batchWrapper.getException() != null) {
-              throw new BigQueryJdbcRuntimeException(batchWrapper.getException());
+              throw backgroundFetchError(batchWrapper.getException());
             }
             if (batchWrapper.isLast()) {
               /* Marks the end of the records */
@@ -309,9 +309,14 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           this.rowCount++;
           return true;
         }
-      } catch (InterruptedException | SQLException ex) {
+      } catch (SQLException ex) {
         throw new BigQueryJdbcException(
             "Error occurred while advancing the cursor. This could happen when connection is closed while the next method is being called.",
+            ex);
+      } catch (InterruptedException ex) {
+        Thread.currentThread().interrupt();
+        throw new BigQueryJdbcException(
+            "Interrupted while advancing the cursor. This could happen when connection is closed while the next method is being called.",
             ex);
       }
     }
@@ -365,6 +370,11 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public Object getObject(int columnIndex) throws SQLException {
+    return getObject(columnIndex, (ZoneId) null);
+  }
+
+  @Override
+  protected Object getObject(int columnIndex, ZoneId zone) throws SQLException {
 
     // columnIndex is SQL index starting at 1
     LOG.finestTrace("getObject");
@@ -394,7 +404,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(arrayField)) {
         return BigQueryTemporalUtility.formatTimestampValue(value, true);
       }
-      return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), null);
+      return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), zone);
     }
 
     int fieldIndex = this.isNested ? 0 : columnIndex - 1;
@@ -474,7 +484,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(fieldSchema)) {
       return BigQueryTemporalUtility.formatTimestampValue(value, true);
     }
-    return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), null);
+    return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), zone);
   }
 
   private StandardSQLTypeName getRangeElementType(Field field, Object representativeElement) {

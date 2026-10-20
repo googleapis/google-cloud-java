@@ -1,0 +1,119 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.spanner;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.CALLS_REAL_METHODS;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
+@RunWith(JUnit4.class)
+public class StreamingUtilTest {
+
+  @Test
+  public void testInitiateStreamingOnStreamingResultSet() {
+    StreamingResultSet streamingResultSet = mock(StreamingResultSet.class);
+    AsyncResultSet.StreamMessageListener listener =
+        mock(AsyncResultSet.StreamMessageListener.class);
+    when(streamingResultSet.initiateStreaming(listener)).thenReturn(true);
+
+    assertTrue(StreamingUtil.initiateStreaming(streamingResultSet, listener));
+    verify(streamingResultSet).initiateStreaming(listener);
+  }
+
+  @Test
+  public void testInitiateStreamingOnNonStreamingResultSetReturnsFalse() {
+    ResultSet nonStreamingResultSet = mock(ResultSet.class);
+    AsyncResultSet.StreamMessageListener listener =
+        mock(AsyncResultSet.StreamMessageListener.class);
+
+    assertFalse(StreamingUtil.initiateStreaming(nonStreamingResultSet, listener));
+  }
+
+  @Test
+  public void testIsDataAvailableOnStreamingResultSet() {
+    StreamingResultSet streamingResultSet = mock(StreamingResultSet.class);
+    when(streamingResultSet.isDataAvailable()).thenReturn(false, true);
+
+    assertFalse(StreamingUtil.isDataAvailable(streamingResultSet));
+    assertTrue(StreamingUtil.isDataAvailable(streamingResultSet));
+  }
+
+  @Test
+  public void testDefaultIsDataAvailableOnStreamingResultSet() {
+    StreamingResultSet streamingResultSet = mock(StreamingResultSet.class, CALLS_REAL_METHODS);
+    assertTrue(streamingResultSet.isDataAvailable());
+  }
+
+  @Test
+  public void testIsDataAvailableOnNonStreamingResultSetReturnsTrue() {
+    ResultSet nonStreamingResultSet = mock(ResultSet.class);
+    assertTrue(StreamingUtil.isDataAvailable(nonStreamingResultSet));
+  }
+
+  @Test
+  public void testIsDataAvailableOnNestedForwardingResultSet() {
+    StreamingResultSet underlyingStreamingResultSet = mock(StreamingResultSet.class);
+    try (ForwardingResultSet innerForwarder =
+            new ForwardingResultSet(underlyingStreamingResultSet);
+        ForwardingResultSet outerForwarder = new ForwardingResultSet(innerForwarder)) {
+      when(underlyingStreamingResultSet.isDataAvailable()).thenReturn(false);
+      assertFalse(StreamingUtil.isDataAvailable(outerForwarder));
+
+      when(underlyingStreamingResultSet.isDataAvailable()).thenReturn(true);
+      assertTrue(StreamingUtil.isDataAvailable(outerForwarder));
+    }
+  }
+
+  @Test
+  public void testInitiateStreamingOnForwardingResultSet() {
+    StreamingResultSet underlyingStreamingResultSet = mock(StreamingResultSet.class);
+    AsyncResultSet.StreamMessageListener listener =
+        mock(AsyncResultSet.StreamMessageListener.class);
+    try (ForwardingResultSet forwarder = new ForwardingResultSet(underlyingStreamingResultSet)) {
+      when(underlyingStreamingResultSet.initiateStreaming(listener)).thenReturn(true);
+      assertTrue(StreamingUtil.initiateStreaming(forwarder, listener));
+      verify(underlyingStreamingResultSet).initiateStreaming(listener);
+    }
+  }
+
+  @Test
+  public void testIsDataAvailableOnForwardingResultSetSubclassOverridingIsDataAvailable() {
+    ResultSet nonStreamingDelegate = mock(ResultSet.class);
+    try (ForwardingResultSet customForwarder =
+        new ForwardingResultSet(nonStreamingDelegate) {
+          @Override
+          public boolean isDataAvailable() {
+            return false;
+          }
+        }) {
+      assertFalse(StreamingUtil.isDataAvailable(customForwarder));
+    }
+  }
+
+  @Test
+  public void testIsDataAvailableWithNullResultSetThrows() {
+    assertThrows(NullPointerException.class, () -> StreamingUtil.isDataAvailable(null));
+  }
+}

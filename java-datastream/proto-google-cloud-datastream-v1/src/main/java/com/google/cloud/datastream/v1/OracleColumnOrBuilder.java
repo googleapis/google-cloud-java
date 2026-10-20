@@ -30,7 +30,7 @@ public interface OracleColumnOrBuilder
    *
    *
    * <pre>
-   * Column name.
+   * The column name.
    * </pre>
    *
    * <code>string column = 1;</code>
@@ -43,7 +43,7 @@ public interface OracleColumnOrBuilder
    *
    *
    * <pre>
-   * Column name.
+   * The column name.
    * </pre>
    *
    * <code>string column = 1;</code>

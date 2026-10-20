@@ -53,20 +53,21 @@ public final class LineItemDiscountProto extends com.google.protobuf.GeneratedFi
 
   static {
     java.lang.String[] descriptorData = {
-      "\n0google/ads/admanager/v1/line_item_disc"
+      "\n"
+          + "0google/ads/admanager/v1/line_item_disc"
           + "ount.proto\022\027google.ads.admanager.v1\0320goo"
           + "gle/ads/admanager/v1/discount_type_enum."
-          + "proto\032\037google/api/field_behavior.proto\"\246"
-          + "\001\n\020LineItemDiscount\022W\n\rdiscount_type\030\001 \001"
-          + "(\01626.google.ads.admanager.v1.DiscountTyp"
-          + "eEnum.DiscountTypeB\003\340A\001H\000\210\001\001\022\032\n\010discount"
-          + "\030\002 \001(\001B\003\340A\001H\001\210\001\001B\020\n\016_discount_typeB\013\n\t_d"
-          + "iscountB\311\001\n\033com.google.ads.admanager.v1B"
-          + "\025LineItemDiscountProtoP\001Z@google.golang."
-          + "org/genproto/googleapis/ads/admanager/v1"
-          + ";admanager\252\002\027Google.Ads.AdManager.V1\312\002\027G"
-          + "oogle\\Ads\\AdManager\\V1\352\002\032Google::Ads::Ad"
-          + "Manager::V1b\006proto3"
+          + "proto\032\037google/api/field_behavior.proto\"\250\001\n"
+          + "\020LineItemDiscount\022X\n\r"
+          + "discount_type\030\001 \001"
+          + "(\01626.google.ads.admanager.v1.DiscountTypeEnum.DiscountTypeB\004\342A\001\001H\000\210\001\001\022\033\n"
+          + "\010discount\030\002 \001(\001B\004\342A\001\001H\001\210\001\001B\020\n"
+          + "\016_discount_typeB\013\n"
+          + "\t_discountB\311\001\n"
+          + "\033com.google.ads.admanager.v1B\025LineItemDiscountProtoP\001Z@google.golan"
+          + "g.org/genproto/googleapis/ads/admanager/"
+          + "v1;admanager\252\002\027Google.Ads.AdManager.V1\312\002"
+          + "\027Google\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

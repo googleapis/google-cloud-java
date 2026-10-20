@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [ListPartners][] method.
+ * Request object for `ListPartners` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.ListPartnersRequest}
@@ -83,7 +83,7 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The parent, which owns this collection of
-   * [Partner][google.ads.admanager.v1.Partner]s. Format:
+   * [Partners][google.ads.admanager.v1.Partner]. Format:
    * `networks/{network_code}`
    * </pre>
    *
@@ -111,7 +111,7 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Required. The parent, which owns this collection of
-   * [Partner][google.ads.admanager.v1.Partner]s. Format:
+   * [Partners][google.ads.admanager.v1.Partner]. Format:
    * `networks/{network_code}`
    * </pre>
    *
@@ -141,9 +141,9 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The maximum number of [Partner][google.ads.admanager.v1.Partner]s
+   * Optional. The maximum number of [Partners][google.ads.admanager.v1.Partner]
    * to return. The service may return fewer than this value. If unspecified, at
-   * most 50 [Partner][google.ads.admanager.v1.Partner]s will be returned. The
+   * most 50 [Partners][google.ads.admanager.v1.Partner] will be returned. The
    * maximum value is 1000; values greater than 1000 will be coerced to 1000.
    * </pre>
    *
@@ -165,10 +165,10 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous [ListPartners][] call.
+   * Optional. A page token, received from a previous `ListPartners` call.
    * Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to [ListPartners][] must
+   * When paginating, all other parameters provided to `ListPartners` must
    * match the call that provided the page token.
    * </pre>
    *
@@ -193,10 +193,10 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous [ListPartners][] call.
+   * Optional. A page token, received from a previous `ListPartners` call.
    * Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to [ListPartners][] must
+   * When paginating, all other parameters provided to `ListPartners` must
    * match the call that provided the page token.
    * </pre>
    *
@@ -583,7 +583,7 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request object for [ListPartners][] method.
+   * Request object for `ListPartners` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.ListPartnersRequest}
@@ -807,7 +807,7 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent, which owns this collection of
-     * [Partner][google.ads.admanager.v1.Partner]s. Format:
+     * [Partners][google.ads.admanager.v1.Partner]. Format:
      * `networks/{network_code}`
      * </pre>
      *
@@ -834,7 +834,7 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent, which owns this collection of
-     * [Partner][google.ads.admanager.v1.Partner]s. Format:
+     * [Partners][google.ads.admanager.v1.Partner]. Format:
      * `networks/{network_code}`
      * </pre>
      *
@@ -861,7 +861,7 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent, which owns this collection of
-     * [Partner][google.ads.admanager.v1.Partner]s. Format:
+     * [Partners][google.ads.admanager.v1.Partner]. Format:
      * `networks/{network_code}`
      * </pre>
      *
@@ -887,7 +887,7 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent, which owns this collection of
-     * [Partner][google.ads.admanager.v1.Partner]s. Format:
+     * [Partners][google.ads.admanager.v1.Partner]. Format:
      * `networks/{network_code}`
      * </pre>
      *
@@ -909,7 +909,7 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Required. The parent, which owns this collection of
-     * [Partner][google.ads.admanager.v1.Partner]s. Format:
+     * [Partners][google.ads.admanager.v1.Partner]. Format:
      * `networks/{network_code}`
      * </pre>
      *
@@ -937,9 +937,9 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The maximum number of [Partner][google.ads.admanager.v1.Partner]s
+     * Optional. The maximum number of [Partners][google.ads.admanager.v1.Partner]
      * to return. The service may return fewer than this value. If unspecified, at
-     * most 50 [Partner][google.ads.admanager.v1.Partner]s will be returned. The
+     * most 50 [Partners][google.ads.admanager.v1.Partner] will be returned. The
      * maximum value is 1000; values greater than 1000 will be coerced to 1000.
      * </pre>
      *
@@ -956,9 +956,9 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The maximum number of [Partner][google.ads.admanager.v1.Partner]s
+     * Optional. The maximum number of [Partners][google.ads.admanager.v1.Partner]
      * to return. The service may return fewer than this value. If unspecified, at
-     * most 50 [Partner][google.ads.admanager.v1.Partner]s will be returned. The
+     * most 50 [Partners][google.ads.admanager.v1.Partner] will be returned. The
      * maximum value is 1000; values greater than 1000 will be coerced to 1000.
      * </pre>
      *
@@ -979,9 +979,9 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The maximum number of [Partner][google.ads.admanager.v1.Partner]s
+     * Optional. The maximum number of [Partners][google.ads.admanager.v1.Partner]
      * to return. The service may return fewer than this value. If unspecified, at
-     * most 50 [Partner][google.ads.admanager.v1.Partner]s will be returned. The
+     * most 50 [Partners][google.ads.admanager.v1.Partner] will be returned. The
      * maximum value is 1000; values greater than 1000 will be coerced to 1000.
      * </pre>
      *
@@ -1002,10 +1002,10 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous [ListPartners][] call.
+     * Optional. A page token, received from a previous `ListPartners` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to [ListPartners][] must
+     * When paginating, all other parameters provided to `ListPartners` must
      * match the call that provided the page token.
      * </pre>
      *
@@ -1029,10 +1029,10 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous [ListPartners][] call.
+     * Optional. A page token, received from a previous `ListPartners` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to [ListPartners][] must
+     * When paginating, all other parameters provided to `ListPartners` must
      * match the call that provided the page token.
      * </pre>
      *
@@ -1056,10 +1056,10 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous [ListPartners][] call.
+     * Optional. A page token, received from a previous `ListPartners` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to [ListPartners][] must
+     * When paginating, all other parameters provided to `ListPartners` must
      * match the call that provided the page token.
      * </pre>
      *
@@ -1082,10 +1082,10 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous [ListPartners][] call.
+     * Optional. A page token, received from a previous `ListPartners` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to [ListPartners][] must
+     * When paginating, all other parameters provided to `ListPartners` must
      * match the call that provided the page token.
      * </pre>
      *
@@ -1104,10 +1104,10 @@ public final class ListPartnersRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. A page token, received from a previous [ListPartners][] call.
+     * Optional. A page token, received from a previous `ListPartners` call.
      * Provide this to retrieve the subsequent page.
      *
-     * When paginating, all other parameters provided to [ListPartners][] must
+     * When paginating, all other parameters provided to `ListPartners` must
      * match the call that provided the page token.
      * </pre>
      *

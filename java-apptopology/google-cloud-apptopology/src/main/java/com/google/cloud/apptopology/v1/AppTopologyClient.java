@@ -109,6 +109,26 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExploreSchema</td>
+ *      <td><p> Explores the topology schema starting from given node types or label names up to a specified hop depth.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exploreSchema(ExploreSchemaRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> exploreSchema(SchemaName name)
+ *           <li><p> exploreSchema(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exploreSchemaPagedCallable()
+ *           <li><p> exploreSchemaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetDomain</td>
  *      <td><p> Retrieves the specified topology domain.</td>
  *      <td>
@@ -545,6 +565,179 @@ public class AppTopologyClient implements BackgroundResource {
    */
   public final UnaryCallable<GetSchemaRequest, Schema> getSchemaCallable() {
     return stub.getSchemaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Explores the topology schema starting from given node types or label names up to a specified
+   * hop depth.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppTopologyClient appTopologyClient = AppTopologyClient.create()) {
+   *   SchemaName name = SchemaName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+   *   for (NodeType element : appTopologyClient.exploreSchema(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the singleton domain schema resource. Format:
+   *     `projects/{project}/locations/{location}/domains/{domain}/schema`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExploreSchemaPagedResponse exploreSchema(@Nullable SchemaName name) {
+    ExploreSchemaRequest request =
+        ExploreSchemaRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return exploreSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Explores the topology schema starting from given node types or label names up to a specified
+   * hop depth.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppTopologyClient appTopologyClient = AppTopologyClient.create()) {
+   *   String name = SchemaName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString();
+   *   for (NodeType element : appTopologyClient.exploreSchema(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the singleton domain schema resource. Format:
+   *     `projects/{project}/locations/{location}/domains/{domain}/schema`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExploreSchemaPagedResponse exploreSchema(String name) {
+    ExploreSchemaRequest request = ExploreSchemaRequest.newBuilder().setName(name).build();
+    return exploreSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Explores the topology schema starting from given node types or label names up to a specified
+   * hop depth.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppTopologyClient appTopologyClient = AppTopologyClient.create()) {
+   *   ExploreSchemaRequest request =
+   *       ExploreSchemaRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .addAllStartLabels(new ArrayList<String>())
+   *           .setDepth(95472323)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (NodeType element : appTopologyClient.exploreSchema(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ExploreSchemaPagedResponse exploreSchema(ExploreSchemaRequest request) {
+    return exploreSchemaPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Explores the topology schema starting from given node types or label names up to a specified
+   * hop depth.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppTopologyClient appTopologyClient = AppTopologyClient.create()) {
+   *   ExploreSchemaRequest request =
+   *       ExploreSchemaRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .addAllStartLabels(new ArrayList<String>())
+   *           .setDepth(95472323)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<NodeType> future =
+   *       appTopologyClient.exploreSchemaPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (NodeType element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExploreSchemaRequest, ExploreSchemaPagedResponse>
+      exploreSchemaPagedCallable() {
+    return stub.exploreSchemaPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Explores the topology schema starting from given node types or label names up to a specified
+   * hop depth.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AppTopologyClient appTopologyClient = AppTopologyClient.create()) {
+   *   ExploreSchemaRequest request =
+   *       ExploreSchemaRequest.newBuilder()
+   *           .setName(SchemaName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]").toString())
+   *           .addAllStartLabels(new ArrayList<String>())
+   *           .setDepth(95472323)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ExploreSchemaResponse response = appTopologyClient.exploreSchemaCallable().call(request);
+   *     for (NodeType element : response.getNodeTypesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExploreSchemaRequest, ExploreSchemaResponse> exploreSchemaCallable() {
+    return stub.exploreSchemaCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1044,6 +1237,83 @@ public class AppTopologyClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ExploreSchemaPagedResponse
+      extends AbstractPagedListResponse<
+          ExploreSchemaRequest,
+          ExploreSchemaResponse,
+          NodeType,
+          ExploreSchemaPage,
+          ExploreSchemaFixedSizeCollection> {
+
+    public static ApiFuture<ExploreSchemaPagedResponse> createAsync(
+        PageContext<ExploreSchemaRequest, ExploreSchemaResponse, NodeType> context,
+        ApiFuture<ExploreSchemaResponse> futureResponse) {
+      ApiFuture<ExploreSchemaPage> futurePage =
+          ExploreSchemaPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ExploreSchemaPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ExploreSchemaPagedResponse(ExploreSchemaPage page) {
+      super(page, ExploreSchemaFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ExploreSchemaPage
+      extends AbstractPage<
+          ExploreSchemaRequest, ExploreSchemaResponse, NodeType, ExploreSchemaPage> {
+
+    private ExploreSchemaPage(
+        @Nullable PageContext<ExploreSchemaRequest, ExploreSchemaResponse, NodeType> context,
+        @Nullable ExploreSchemaResponse response) {
+      super(context, response);
+    }
+
+    private static ExploreSchemaPage createEmptyPage() {
+      return new ExploreSchemaPage(null, null);
+    }
+
+    @Override
+    protected ExploreSchemaPage createPage(
+        @Nullable PageContext<ExploreSchemaRequest, ExploreSchemaResponse, NodeType> context,
+        @Nullable ExploreSchemaResponse response) {
+      return new ExploreSchemaPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ExploreSchemaPage> createPageAsync(
+        @Nullable PageContext<ExploreSchemaRequest, ExploreSchemaResponse, NodeType> context,
+        ApiFuture<ExploreSchemaResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ExploreSchemaFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ExploreSchemaRequest,
+          ExploreSchemaResponse,
+          NodeType,
+          ExploreSchemaPage,
+          ExploreSchemaFixedSizeCollection> {
+
+    private ExploreSchemaFixedSizeCollection(
+        @Nullable List<ExploreSchemaPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ExploreSchemaFixedSizeCollection createEmptyCollection() {
+      return new ExploreSchemaFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ExploreSchemaFixedSizeCollection createCollection(
+        @Nullable List<ExploreSchemaPage> pages, int collectionSize) {
+      return new ExploreSchemaFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListDomainsPagedResponse

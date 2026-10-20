@@ -102,6 +102,27 @@ public class MockAppTopologyImpl extends AppTopologyImplBase {
   }
 
   @Override
+  public void exploreSchema(
+      ExploreSchemaRequest request, StreamObserver<ExploreSchemaResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExploreSchemaResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ExploreSchemaResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExploreSchema, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExploreSchemaResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getDomain(GetDomainRequest request, StreamObserver<Domain> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Domain) {

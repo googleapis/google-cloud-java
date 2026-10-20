@@ -480,14 +480,12 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Timestamp getTimestamp(int parameterIndex, Calendar calendar) throws SQLException {
-    Timestamp ts = getTimestamp(parameterIndex);
-    return BigQueryTemporalUtility.convertTimestampWithCalendar(ts, calendar);
+    return getTimestamp(parameterIndex);
   }
 
   @Override
   public Timestamp getTimestamp(String parameterName, Calendar calendar) throws SQLException {
-    Timestamp ts = getTimestamp(parameterName);
-    return BigQueryTemporalUtility.convertTimestampWithCalendar(ts, calendar);
+    return getTimestamp(parameterName);
   }
 
   @Override
@@ -860,7 +858,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     checkClosed();
     this.parameterHandler.setParameter(
         parameterName,
-        value == null ? null : BigQueryTemporalUtility.convertTimeWithCalendar(value, calendar),
+        value == null ? null : BigQueryTemporalUtility.convertTimeToCalendar(value, calendar),
         Time.class,
         BigQueryStatementParameterType.IN,
         0);
@@ -877,12 +875,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   public void setTimestamp(String parameterName, Timestamp value, Calendar calendar)
       throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(
-        parameterName,
-        BigQueryTemporalUtility.convertTimestampWithCalendar(value, calendar),
-        Timestamp.class,
-        BigQueryStatementParameterType.IN,
-        0);
+    setTimestamp(parameterName, value);
   }
 
   @Override

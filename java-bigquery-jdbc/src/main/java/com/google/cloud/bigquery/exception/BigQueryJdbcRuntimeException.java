@@ -36,16 +36,6 @@ public class BigQueryJdbcRuntimeException extends RuntimeException {
     super(ex);
   }
 
-  /**
-   * Constructs a new BigQueryJdbcRuntimeException from a Throwable exception and a message.
-   *
-   * @param message The detail message.
-   * @param ex Throwable to be thrown.
-   */
-  public BigQueryJdbcRuntimeException(String message, InterruptedException ex) {
-    super(message, ex);
-  }
-
   public BigQueryJdbcRuntimeException(String message, Throwable ex) {
     super(BigQueryJdbcExceptionUtils.formatMessage(message, ex), ex);
   }

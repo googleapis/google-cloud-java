@@ -846,6 +846,14 @@ public class GrpcStorageControlStub extends StorageControlStub {
                   builder.add(request.getParent(), "bucket", LIST_FOLDERS_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setRequestMutator(
+                request -> {
+                  ListFoldersRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RenameFolderRequest, Operation> renameFolderTransportSettings =
@@ -1002,6 +1010,14 @@ public class GrpcStorageControlStub extends StorageControlStub {
                       }
                       return builder.build();
                     })
+                .setRequestMutator(
+                    request -> {
+                      UpdateManagedFolderRequest.Builder requestBuilder = request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
+                    })
                 .build();
     GrpcCallSettings<CreateAnywhereCacheRequest, Operation> createAnywhereCacheTransportSettings =
         GrpcCallSettings.<CreateAnywhereCacheRequest, Operation>newBuilder()
@@ -1155,6 +1171,14 @@ public class GrpcStorageControlStub extends StorageControlStub {
                   builder.add(request.getParent(), "bucket", CREATE_RAPID_CACHE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setRequestMutator(
+                request -> {
+                  CreateRapidCacheRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRapidCacheRequest, Operation> updateRapidCacheTransportSettings =
@@ -1171,6 +1195,14 @@ public class GrpcStorageControlStub extends StorageControlStub {
                   }
                   return builder.build();
                 })
+            .setRequestMutator(
+                request -> {
+                  UpdateRapidCacheRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
             .build();
     GrpcCallSettings<DisableRapidCacheRequest, Operation> disableRapidCacheTransportSettings =
         GrpcCallSettings.<DisableRapidCacheRequest, Operation>newBuilder()
@@ -1180,6 +1212,14 @@ public class GrpcStorageControlStub extends StorageControlStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add(request.getName(), "bucket", DISABLE_RAPID_CACHE_0_PATH_TEMPLATE);
                   return builder.build();
+                })
+            .setRequestMutator(
+                request -> {
+                  DisableRapidCacheRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
@@ -1192,6 +1232,14 @@ public class GrpcStorageControlStub extends StorageControlStub {
                   builder.add(request.getName(), "bucket", GET_RAPID_CACHE_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setRequestMutator(
+                request -> {
+                  GetRapidCacheRequest.Builder requestBuilder = request.toBuilder();
+                  if (Strings.isNullOrEmpty(request.getRequestId())) {
+                    requestBuilder.setRequestId(UUID.randomUUID().toString());
+                  }
+                  return requestBuilder.build();
+                })
             .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRapidCachesRequest, ListRapidCachesResponse>
@@ -1203,6 +1251,14 @@ public class GrpcStorageControlStub extends StorageControlStub {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add(request.getParent(), "bucket", LIST_RAPID_CACHES_0_PATH_TEMPLATE);
                       return builder.build();
+                    })
+                .setRequestMutator(
+                    request -> {
+                      ListRapidCachesRequest.Builder requestBuilder = request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
@@ -1231,6 +1287,15 @@ public class GrpcStorageControlStub extends StorageControlStub {
                           String.valueOf(request.getIntelligenceConfig().getName()));
                       return builder.build();
                     })
+                .setRequestMutator(
+                    request -> {
+                      UpdateProjectIntelligenceConfigRequest.Builder requestBuilder =
+                          request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
+                    })
                 .build();
     GrpcCallSettings<GetFolderIntelligenceConfigRequest, IntelligenceConfig>
         getFolderIntelligenceConfigTransportSettings =
@@ -1255,6 +1320,15 @@ public class GrpcStorageControlStub extends StorageControlStub {
                           "intelligence_config.name",
                           String.valueOf(request.getIntelligenceConfig().getName()));
                       return builder.build();
+                    })
+                .setRequestMutator(
+                    request -> {
+                      UpdateFolderIntelligenceConfigRequest.Builder requestBuilder =
+                          request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
                     })
                 .build();
     GrpcCallSettings<GetOrganizationIntelligenceConfigRequest, IntelligenceConfig>
@@ -1282,6 +1356,15 @@ public class GrpcStorageControlStub extends StorageControlStub {
                           "intelligence_config.name",
                           String.valueOf(request.getIntelligenceConfig().getName()));
                       return builder.build();
+                    })
+                .setRequestMutator(
+                    request -> {
+                      UpdateOrganizationIntelligenceConfigRequest.Builder requestBuilder =
+                          request.toBuilder();
+                      if (Strings.isNullOrEmpty(request.getRequestId())) {
+                        requestBuilder.setRequestId(UUID.randomUUID().toString());
+                      }
+                      return requestBuilder.build();
                     })
                 .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =

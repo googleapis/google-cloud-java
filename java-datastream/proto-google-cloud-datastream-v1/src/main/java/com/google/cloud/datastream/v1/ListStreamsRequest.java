@@ -137,12 +137,12 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Maximum number of streams to return.
+   * Optional. Maximum number of streams to return.
    * If unspecified, at most 50 streams will  be returned. The maximum
    * value is 1000; values above 1000 will be coerced to 1000.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -160,14 +160,14 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Page token received from a previous `ListStreams` call.
+   * Optional. Page token received from a previous `ListStreams` call.
    * Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to `ListStreams`
    * must match the call that provided the page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -188,14 +188,14 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Page token received from a previous `ListStreams` call.
+   * Optional. Page token received from a previous `ListStreams` call.
    * Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to `ListStreams`
    * must match the call that provided the page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -221,10 +221,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Filter request.
+   * Optional. Filter request.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -245,10 +245,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Filter request.
+   * Optional. Filter request.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -274,10 +274,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Order by fields for the result.
+   * Optional. Order by fields for the result.
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -298,10 +298,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Order by fields for the result.
+   * Optional. Order by fields for the result.
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */
@@ -849,12 +849,12 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Maximum number of streams to return.
+     * Optional. Maximum number of streams to return.
      * If unspecified, at most 50 streams will  be returned. The maximum
      * value is 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -867,12 +867,12 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Maximum number of streams to return.
+     * Optional. Maximum number of streams to return.
      * If unspecified, at most 50 streams will  be returned. The maximum
      * value is 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -889,12 +889,12 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Maximum number of streams to return.
+     * Optional. Maximum number of streams to return.
      * If unspecified, at most 50 streams will  be returned. The maximum
      * value is 1000; values above 1000 will be coerced to 1000.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -911,14 +911,14 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Page token received from a previous `ListStreams` call.
+     * Optional. Page token received from a previous `ListStreams` call.
      * Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to `ListStreams`
      * must match the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -938,14 +938,14 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Page token received from a previous `ListStreams` call.
+     * Optional. Page token received from a previous `ListStreams` call.
      * Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to `ListStreams`
      * must match the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -965,14 +965,14 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Page token received from a previous `ListStreams` call.
+     * Optional. Page token received from a previous `ListStreams` call.
      * Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to `ListStreams`
      * must match the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -991,14 +991,14 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Page token received from a previous `ListStreams` call.
+     * Optional. Page token received from a previous `ListStreams` call.
      * Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to `ListStreams`
      * must match the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1013,14 +1013,14 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Page token received from a previous `ListStreams` call.
+     * Optional. Page token received from a previous `ListStreams` call.
      * Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to `ListStreams`
      * must match the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
@@ -1042,10 +1042,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Filter request.
+     * Optional. Filter request.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -1065,10 +1065,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Filter request.
+     * Optional. Filter request.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -1088,10 +1088,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Filter request.
+     * Optional. Filter request.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1110,10 +1110,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Filter request.
+     * Optional. Filter request.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1128,10 +1128,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Filter request.
+     * Optional. Filter request.
      * </pre>
      *
-     * <code>string filter = 4;</code>
+     * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1153,10 +1153,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Order by fields for the result.
+     * Optional. Order by fields for the result.
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The orderBy.
      */
@@ -1176,10 +1176,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Order by fields for the result.
+     * Optional. Order by fields for the result.
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for orderBy.
      */
@@ -1199,10 +1199,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Order by fields for the result.
+     * Optional. Order by fields for the result.
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The orderBy to set.
      * @return This builder for chaining.
@@ -1221,10 +1221,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Order by fields for the result.
+     * Optional. Order by fields for the result.
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1239,10 +1239,10 @@ public final class ListStreamsRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Order by fields for the result.
+     * Optional. Order by fields for the result.
      * </pre>
      *
-     * <code>string order_by = 5;</code>
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for orderBy to set.
      * @return This builder for chaining.

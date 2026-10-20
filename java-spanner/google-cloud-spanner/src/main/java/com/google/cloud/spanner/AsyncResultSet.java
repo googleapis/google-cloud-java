@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.InternalApi;
 import com.google.common.base.Function;
 import com.google.spanner.v1.PartialResultSet;
 import java.util.List;
@@ -226,10 +227,36 @@ public interface AsyncResultSet extends ResultSet {
   <T> List<T> toList(Function<StructReader, T> transformer) throws SpannerException;
 
   /**
-   * An interface to register the listener for streaming gRPC request. It will be called when a
-   * chunk is received from gRPC streaming call.
+   * An internal notification listener for a streaming gRPC request.
+   *
+   * <p>This listener is purely a notification mechanism to signal that messages or stream events
+   * are buffered in the underlying stream iterator. It is <b>not</b> a data consumer and does not
+   * process or reconstruct rows. All query results and data chunks must be consumed sequentially
+   * via the iterator's FIFO queue (e.g. {@link ResultSet#next()}).
    */
+  @InternalApi
   interface StreamMessageListener {
+    /**
+     * Invoked to notify that a message or stream event has arrived in the stream's buffer.
+     *
+     * <p>Implementations of this method <b>must be thread-safe, idempotent, and order-agnostic</b>.
+     * Because notifications may be dispatched concurrently by gRPC network threads and iterator
+     * initialization/flushing threads:
+     *
+     * <ul>
+     *   <li>Notifications may arrive concurrently from multiple threads.
+     *   <li>The same {@code partialResultSet} may be delivered more than once.
+     *   <li>Notifications for different chunks may arrive <b>out of order</b>.
+     * </ul>
+     *
+     * <p>Implementations must tolerate out-of-order and duplicate notifications without adverse
+     * side effects, and must not assume that this method delivers chunks sequentially for data
+     * processing.
+     *
+     * @param partialResultSet the chunk received from the stream, or an empty sentinel {@link
+     *     PartialResultSet} if the stream has completed
+     * @param bufferIsFull whether the stream iterator's internal buffer capacity is currently full
+     */
     void onStreamMessage(PartialResultSet partialResultSet, boolean bufferIsFull);
   }
 }

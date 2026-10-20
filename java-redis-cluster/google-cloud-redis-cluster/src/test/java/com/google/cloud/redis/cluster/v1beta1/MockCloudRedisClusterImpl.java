@@ -81,6 +81,27 @@ public class MockCloudRedisClusterImpl extends CloudRedisClusterImplBase {
   }
 
   @Override
+  public void listAclPolicies(
+      ListAclPoliciesRequest request, StreamObserver<ListAclPoliciesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAclPoliciesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAclPoliciesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAclPolicies, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAclPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getCluster(GetClusterRequest request, StreamObserver<Cluster> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Cluster) {
@@ -101,6 +122,27 @@ public class MockCloudRedisClusterImpl extends CloudRedisClusterImplBase {
   }
 
   @Override
+  public void getAclPolicy(
+      GetAclPolicyRequest request, StreamObserver<AclPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AclPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((AclPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAclPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AclPolicy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateCluster(
       UpdateClusterRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -115,6 +157,27 @@ public class MockCloudRedisClusterImpl extends CloudRedisClusterImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method UpdateCluster, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAclPolicy(
+      UpdateAclPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAclPolicy, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -143,6 +206,72 @@ public class MockCloudRedisClusterImpl extends CloudRedisClusterImplBase {
   }
 
   @Override
+  public void deleteAclPolicy(
+      DeleteAclPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAclPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAclPolicyRevision(
+      GetAclPolicyRevisionRequest request, StreamObserver<AclPolicyRevision> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AclPolicyRevision) {
+      requests.add(request);
+      responseObserver.onNext(((AclPolicyRevision) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAclPolicyRevision, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AclPolicyRevision.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAclPolicyRevisions(
+      ListAclPolicyRevisionsRequest request,
+      StreamObserver<ListAclPolicyRevisionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAclPolicyRevisionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAclPolicyRevisionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAclPolicyRevisions, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAclPolicyRevisionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createCluster(
       CreateClusterRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -159,6 +288,27 @@ public class MockCloudRedisClusterImpl extends CloudRedisClusterImplBase {
                   "Unrecognized response type %s for method CreateCluster, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAclPolicy(
+      CreateAclPolicyRequest request, StreamObserver<AclPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AclPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((AclPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAclPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AclPolicy.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -373,6 +523,175 @@ public class MockCloudRedisClusterImpl extends CloudRedisClusterImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method BackupCluster, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listTokenAuthUsers(
+      ListTokenAuthUsersRequest request,
+      StreamObserver<ListTokenAuthUsersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListTokenAuthUsersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListTokenAuthUsersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTokenAuthUsers, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListTokenAuthUsersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getTokenAuthUser(
+      GetTokenAuthUserRequest request, StreamObserver<TokenAuthUser> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof TokenAuthUser) {
+      requests.add(request);
+      responseObserver.onNext(((TokenAuthUser) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTokenAuthUser, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  TokenAuthUser.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAuthTokens(
+      ListAuthTokensRequest request, StreamObserver<ListAuthTokensResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAuthTokensResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAuthTokensResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAuthTokens, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAuthTokensResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAuthToken(
+      GetAuthTokenRequest request, StreamObserver<AuthToken> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AuthToken) {
+      requests.add(request);
+      responseObserver.onNext(((AuthToken) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAuthToken, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AuthToken.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void addTokenAuthUser(
+      AddTokenAuthUserRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddTokenAuthUser, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteTokenAuthUser(
+      DeleteTokenAuthUserRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTokenAuthUser, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void addAuthToken(
+      AddAuthTokenRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddAuthToken, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAuthToken(
+      DeleteAuthTokenRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAuthToken, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

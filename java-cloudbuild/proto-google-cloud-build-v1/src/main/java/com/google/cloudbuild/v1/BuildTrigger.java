@@ -1425,6 +1425,62 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
         : sourceToBuild_;
   }
 
+  public static final int APPROVAL_CONFIG_FIELD_NUMBER = 28;
+  private com.google.cloudbuild.v1.ApprovalConfig approvalConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for manual approval to start a build invocation of this
+   * BuildTrigger.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+   *
+   * @return Whether the approvalConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasApprovalConfig() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for manual approval to start a build invocation of this
+   * BuildTrigger.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+   *
+   * @return The approvalConfig.
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.ApprovalConfig getApprovalConfig() {
+    return approvalConfig_ == null
+        ? com.google.cloudbuild.v1.ApprovalConfig.getDefaultInstance()
+        : approvalConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for manual approval to start a build invocation of this
+   * BuildTrigger.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+   */
+  @java.lang.Override
+  public com.google.cloudbuild.v1.ApprovalConfigOrBuilder getApprovalConfigOrBuilder() {
+    return approvalConfig_ == null
+        ? com.google.cloudbuild.v1.ApprovalConfig.getDefaultInstance()
+        : approvalConfig_;
+  }
+
   public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 33;
 
   @SuppressWarnings("serial")
@@ -1505,7 +1561,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRepositoryEventConfig() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -1606,6 +1662,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(26, getSourceToBuild());
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(28, getApprovalConfig());
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(29, getPubsubConfig());
     }
@@ -1621,7 +1680,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resourceName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 34, resourceName_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(39, getRepositoryEventConfig());
     }
     getUnknownFields().writeTo(output);
@@ -1709,6 +1768,9 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getSourceToBuild());
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getApprovalConfig());
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(29, getPubsubConfig());
     }
@@ -1724,7 +1786,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(resourceName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(34, resourceName_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(39, getRepositoryEventConfig());
     }
@@ -1776,6 +1838,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
     if (hasSourceToBuild() != other.hasSourceToBuild()) return false;
     if (hasSourceToBuild()) {
       if (!getSourceToBuild().equals(other.getSourceToBuild())) return false;
+    }
+    if (hasApprovalConfig() != other.hasApprovalConfig()) return false;
+    if (hasApprovalConfig()) {
+      if (!getApprovalConfig().equals(other.getApprovalConfig())) return false;
     }
     if (!getServiceAccount().equals(other.getServiceAccount())) return false;
     if (hasRepositoryEventConfig() != other.hasRepositoryEventConfig()) return false;
@@ -1861,6 +1927,10 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
     if (hasSourceToBuild()) {
       hash = (37 * hash) + SOURCE_TO_BUILD_FIELD_NUMBER;
       hash = (53 * hash) + getSourceToBuild().hashCode();
+    }
+    if (hasApprovalConfig()) {
+      hash = (37 * hash) + APPROVAL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getApprovalConfig().hashCode();
     }
     hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getServiceAccount().hashCode();
@@ -2057,6 +2127,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
         internalGetWebhookConfigFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetSourceToBuildFieldBuilder();
+        internalGetApprovalConfigFieldBuilder();
         internalGetRepositoryEventConfigFieldBuilder();
       }
     }
@@ -2110,6 +2181,11 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
       if (sourceToBuildBuilder_ != null) {
         sourceToBuildBuilder_.dispose();
         sourceToBuildBuilder_ = null;
+      }
+      approvalConfig_ = null;
+      if (approvalConfigBuilder_ != null) {
+        approvalConfigBuilder_.dispose();
+        approvalConfigBuilder_ = null;
       }
       serviceAccount_ = "";
       repositoryEventConfig_ = null;
@@ -2220,14 +2296,19 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.serviceAccount_ = serviceAccount_;
+        result.approvalConfig_ =
+            approvalConfigBuilder_ == null ? approvalConfig_ : approvalConfigBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.serviceAccount_ = serviceAccount_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.repositoryEventConfig_ =
             repositoryEventConfigBuilder_ == null
                 ? repositoryEventConfig_
                 : repositoryEventConfigBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2333,9 +2414,12 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
       if (other.hasSourceToBuild()) {
         mergeSourceToBuild(other.getSourceToBuild());
       }
+      if (other.hasApprovalConfig()) {
+        mergeApprovalConfig(other.getApprovalConfig());
+      }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasRepositoryEventConfig()) {
@@ -2505,6 +2589,13 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00080000;
                 break;
               } // case 210
+            case 226:
+              {
+                input.readMessage(
+                    internalGetApprovalConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 226
             case 234:
               {
                 input.readMessage(
@@ -2528,7 +2619,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
             case 266:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 266
             case 274:
@@ -2541,7 +2632,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetRepositoryEventConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 314
             default:
@@ -6100,6 +6191,210 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
       return sourceToBuildBuilder_;
     }
 
+    private com.google.cloudbuild.v1.ApprovalConfig approvalConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloudbuild.v1.ApprovalConfig,
+            com.google.cloudbuild.v1.ApprovalConfig.Builder,
+            com.google.cloudbuild.v1.ApprovalConfigOrBuilder>
+        approvalConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for manual approval to start a build invocation of this
+     * BuildTrigger.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+     *
+     * @return Whether the approvalConfig field is set.
+     */
+    public boolean hasApprovalConfig() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for manual approval to start a build invocation of this
+     * BuildTrigger.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+     *
+     * @return The approvalConfig.
+     */
+    public com.google.cloudbuild.v1.ApprovalConfig getApprovalConfig() {
+      if (approvalConfigBuilder_ == null) {
+        return approvalConfig_ == null
+            ? com.google.cloudbuild.v1.ApprovalConfig.getDefaultInstance()
+            : approvalConfig_;
+      } else {
+        return approvalConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for manual approval to start a build invocation of this
+     * BuildTrigger.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+     */
+    public Builder setApprovalConfig(com.google.cloudbuild.v1.ApprovalConfig value) {
+      if (approvalConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        approvalConfig_ = value;
+      } else {
+        approvalConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for manual approval to start a build invocation of this
+     * BuildTrigger.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+     */
+    public Builder setApprovalConfig(
+        com.google.cloudbuild.v1.ApprovalConfig.Builder builderForValue) {
+      if (approvalConfigBuilder_ == null) {
+        approvalConfig_ = builderForValue.build();
+      } else {
+        approvalConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for manual approval to start a build invocation of this
+     * BuildTrigger.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+     */
+    public Builder mergeApprovalConfig(com.google.cloudbuild.v1.ApprovalConfig value) {
+      if (approvalConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && approvalConfig_ != null
+            && approvalConfig_ != com.google.cloudbuild.v1.ApprovalConfig.getDefaultInstance()) {
+          getApprovalConfigBuilder().mergeFrom(value);
+        } else {
+          approvalConfig_ = value;
+        }
+      } else {
+        approvalConfigBuilder_.mergeFrom(value);
+      }
+      if (approvalConfig_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for manual approval to start a build invocation of this
+     * BuildTrigger.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+     */
+    public Builder clearApprovalConfig() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      approvalConfig_ = null;
+      if (approvalConfigBuilder_ != null) {
+        approvalConfigBuilder_.dispose();
+        approvalConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for manual approval to start a build invocation of this
+     * BuildTrigger.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+     */
+    public com.google.cloudbuild.v1.ApprovalConfig.Builder getApprovalConfigBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return internalGetApprovalConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for manual approval to start a build invocation of this
+     * BuildTrigger.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+     */
+    public com.google.cloudbuild.v1.ApprovalConfigOrBuilder getApprovalConfigOrBuilder() {
+      if (approvalConfigBuilder_ != null) {
+        return approvalConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return approvalConfig_ == null
+            ? com.google.cloudbuild.v1.ApprovalConfig.getDefaultInstance()
+            : approvalConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for manual approval to start a build invocation of this
+     * BuildTrigger.
+     * </pre>
+     *
+     * <code>.google.devtools.cloudbuild.v1.ApprovalConfig approval_config = 28;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloudbuild.v1.ApprovalConfig,
+            com.google.cloudbuild.v1.ApprovalConfig.Builder,
+            com.google.cloudbuild.v1.ApprovalConfigOrBuilder>
+        internalGetApprovalConfigFieldBuilder() {
+      if (approvalConfigBuilder_ == null) {
+        approvalConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloudbuild.v1.ApprovalConfig,
+                com.google.cloudbuild.v1.ApprovalConfig.Builder,
+                com.google.cloudbuild.v1.ApprovalConfigOrBuilder>(
+                getApprovalConfig(), getParentForChildren(), isClean());
+        approvalConfig_ = null;
+      }
+      return approvalConfigBuilder_;
+    }
+
     private java.lang.Object serviceAccount_ = "";
 
     /**
@@ -6180,7 +6475,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       serviceAccount_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6203,7 +6498,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -6231,7 +6526,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6257,7 +6552,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
      * @return Whether the repositoryEventConfig field is set.
      */
     public boolean hasRepositoryEventConfig() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -6303,7 +6598,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
       } else {
         repositoryEventConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6326,7 +6621,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
       } else {
         repositoryEventConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6345,7 +6640,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
     public Builder mergeRepositoryEventConfig(
         com.google.cloudbuild.v1.RepositoryEventConfig value) {
       if (repositoryEventConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && repositoryEventConfig_ != null
             && repositoryEventConfig_
                 != com.google.cloudbuild.v1.RepositoryEventConfig.getDefaultInstance()) {
@@ -6357,7 +6652,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
         repositoryEventConfigBuilder_.mergeFrom(value);
       }
       if (repositoryEventConfig_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -6375,7 +6670,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRepositoryEventConfig() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       repositoryEventConfig_ = null;
       if (repositoryEventConfigBuilder_ != null) {
         repositoryEventConfigBuilder_.dispose();
@@ -6398,7 +6693,7 @@ public final class BuildTrigger extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloudbuild.v1.RepositoryEventConfig.Builder
         getRepositoryEventConfigBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return internalGetRepositoryEventConfigFieldBuilder().getBuilder();
     }

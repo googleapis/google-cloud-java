@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [BatchUpdatePartners][] method.
+ * Request object for `BatchUpdatePartners` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchUpdatePartnersRequest}
@@ -81,10 +81,9 @@ public final class BatchUpdatePartnersRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The parent resource where
-   * [Partner][google.ads.admanager.v1.Partner]s will be updated. Format:
-   * `networks/{network_code}` The parent field in the
-   * [UpdatePartnerRequest][google.ads.admanager.v1.UpdatePartnerRequest] must
-   * match this field.
+   * [Partners][google.ads.admanager.v1.Partner] will be updated. Format:
+   * `networks/{network_code}` The parent field in the `UpdatePartnerRequest`
+   * must match this field.
    * </pre>
    *
    * <code>
@@ -111,10 +110,9 @@ public final class BatchUpdatePartnersRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The parent resource where
-   * [Partner][google.ads.admanager.v1.Partner]s will be updated. Format:
-   * `networks/{network_code}` The parent field in the
-   * [UpdatePartnerRequest][google.ads.admanager.v1.UpdatePartnerRequest] must
-   * match this field.
+   * [Partners][google.ads.admanager.v1.Partner] will be updated. Format:
+   * `networks/{network_code}` The parent field in the `UpdatePartnerRequest`
+   * must match this field.
    * </pre>
    *
    * <code>
@@ -403,7 +401,7 @@ public final class BatchUpdatePartnersRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request object for [BatchUpdatePartners][] method.
+   * Request object for `BatchUpdatePartners` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchUpdatePartnersRequest}
@@ -618,10 +616,9 @@ public final class BatchUpdatePartnersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent resource where
-     * [Partner][google.ads.admanager.v1.Partner]s will be updated. Format:
-     * `networks/{network_code}` The parent field in the
-     * [UpdatePartnerRequest][google.ads.admanager.v1.UpdatePartnerRequest] must
-     * match this field.
+     * [Partners][google.ads.admanager.v1.Partner] will be updated. Format:
+     * `networks/{network_code}` The parent field in the `UpdatePartnerRequest`
+     * must match this field.
      * </pre>
      *
      * <code>
@@ -647,10 +644,9 @@ public final class BatchUpdatePartnersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent resource where
-     * [Partner][google.ads.admanager.v1.Partner]s will be updated. Format:
-     * `networks/{network_code}` The parent field in the
-     * [UpdatePartnerRequest][google.ads.admanager.v1.UpdatePartnerRequest] must
-     * match this field.
+     * [Partners][google.ads.admanager.v1.Partner] will be updated. Format:
+     * `networks/{network_code}` The parent field in the `UpdatePartnerRequest`
+     * must match this field.
      * </pre>
      *
      * <code>
@@ -676,10 +672,9 @@ public final class BatchUpdatePartnersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent resource where
-     * [Partner][google.ads.admanager.v1.Partner]s will be updated. Format:
-     * `networks/{network_code}` The parent field in the
-     * [UpdatePartnerRequest][google.ads.admanager.v1.UpdatePartnerRequest] must
-     * match this field.
+     * [Partners][google.ads.admanager.v1.Partner] will be updated. Format:
+     * `networks/{network_code}` The parent field in the `UpdatePartnerRequest`
+     * must match this field.
      * </pre>
      *
      * <code>
@@ -704,10 +699,9 @@ public final class BatchUpdatePartnersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent resource where
-     * [Partner][google.ads.admanager.v1.Partner]s will be updated. Format:
-     * `networks/{network_code}` The parent field in the
-     * [UpdatePartnerRequest][google.ads.admanager.v1.UpdatePartnerRequest] must
-     * match this field.
+     * [Partners][google.ads.admanager.v1.Partner] will be updated. Format:
+     * `networks/{network_code}` The parent field in the `UpdatePartnerRequest`
+     * must match this field.
      * </pre>
      *
      * <code>
@@ -728,10 +722,9 @@ public final class BatchUpdatePartnersRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The parent resource where
-     * [Partner][google.ads.admanager.v1.Partner]s will be updated. Format:
-     * `networks/{network_code}` The parent field in the
-     * [UpdatePartnerRequest][google.ads.admanager.v1.UpdatePartnerRequest] must
-     * match this field.
+     * [Partners][google.ads.admanager.v1.Partner] will be updated. Format:
+     * `networks/{network_code}` The parent field in the `UpdatePartnerRequest`
+     * must match this field.
      * </pre>
      *
      * <code>

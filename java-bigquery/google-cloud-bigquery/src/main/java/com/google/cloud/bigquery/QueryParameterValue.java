@@ -65,9 +65,8 @@ import org.threeten.extra.PeriodDuration;
  *   <li>Double: StandardSQLTypeName.FLOAT64
  *   <li>Float: StandardSQLTypeName.FLOAT64
  *   <li>BigDecimal: StandardSQLTypeName.NUMERIC
- *   <li>BigNumeric: StandardSQLTypeName.BIGNUMERIC
- *   <li>JSON: StandardSQLTypeName.JSON
- *   <li>INTERVAL: StandardSQLTypeName.INTERVAL
+ *   <li>Date: StandardSQLTypeName.DATE
+ *   <li>JsonObject: StandardSQLTypeName.JSON
  * </ul>
  *
  * <p>No other types are supported through that entry point. The other types can be created by
@@ -424,13 +423,27 @@ public abstract class QueryParameterValue implements Serializable {
         .build();
   }
 
+  /**
+   * Default instances created automatically by the static {@link #of(Object, Class)} method.
+   * Contains these mappings ONLY for natively supported types.
+   *
+   * <ul>
+   *   <li>Boolean: StandardSQLTypeName.BOOL
+   *   <li>String: StandardSQLTypeName.STRING
+   *   <li>Integer: StandardSQLTypeName.INT64
+   *   <li>Long: StandardSQLTypeName.INT64
+   *   <li>Double: StandardSQLTypeName.FLOAT64
+   *   <li>Float: StandardSQLTypeName.FLOAT64
+   *   <li>BigDecimal: StandardSQLTypeName.NUMERIC
+   *   <li>Date: StandardSQLTypeName.DATE
+   *   <li>JsonObject: StandardSQLTypeName.JSON
+   * </ul>
+   */
   private static <T> StandardSQLTypeName classToType(Class<T> type) {
     if (Boolean.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.BOOL;
     } else if (String.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.STRING;
-    } else if (String.class.isAssignableFrom(type)) {
-      return StandardSQLTypeName.GEOGRAPHY;
     } else if (Integer.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.INT64;
     } else if (Long.class.isAssignableFrom(type)) {
@@ -443,8 +456,6 @@ public abstract class QueryParameterValue implements Serializable {
       return StandardSQLTypeName.NUMERIC;
     } else if (Date.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.DATE;
-    } else if (String.class.isAssignableFrom(type)) {
-      return StandardSQLTypeName.JSON;
     } else if (JsonObject.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.JSON;
     }
@@ -487,9 +498,14 @@ public abstract class QueryParameterValue implements Serializable {
       case GEOGRAPHY:
         return value.toString();
       case JSON:
-        if (value instanceof String || value instanceof JsonObject) return value.toString();
+        if (value instanceof String || value instanceof JsonObject) {
+          return value.toString();
+        }
+        break;
       case INTERVAL:
-        if (value instanceof String || value instanceof PeriodDuration) return value.toString();
+        if (value instanceof String || value instanceof PeriodDuration) {
+          return value.toString();
+        }
         break;
       case STRUCT:
         throw new IllegalArgumentException("Cannot convert STRUCT to String value");

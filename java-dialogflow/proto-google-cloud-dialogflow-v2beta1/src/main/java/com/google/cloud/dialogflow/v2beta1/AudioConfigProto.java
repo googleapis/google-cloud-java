@@ -80,6 +80,10 @@ public final class AudioConfigProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_GeminiAsrConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_GeminiAsrConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -92,10 +96,10 @@ public final class AudioConfigProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "2google/cloud/dialogflow/v2beta1/audio_config.proto\022\037google.cloud.dialogflow.v2"
           + "beta1\032\037google/api/field_behavior.proto\032\031"
-          + "google/api/resource.proto\032\036google/protobuf/duration.proto\"9\n\r"
-          + "SpeechContext\022\024\n"
-          + "\007phrases\030\001 \003(\tB\003\340A\001\022\022\n"
-          + "\005boost\030\002 \001(\002B\003\340A\001\"\222\001\n"
+          + "google/api/resource.proto\032\036google/protobuf/duration.proto\";\n\r"
+          + "SpeechContext\022\025\n"
+          + "\007phrases\030\001 \003(\tB\004\342A\001\001\022\023\n"
+          + "\005boost\030\002 \001(\002B\004\342A\001\001\"\222\001\n"
           + "\016SpeechWordInfo\022\014\n"
           + "\004word\030\003 \001(\t\022/\n"
           + "\014start_offset\030\001 \001(\0132\031.google.protobuf.Duration\022-\n\n"
@@ -103,22 +107,23 @@ public final class AudioConfigProto extends com.google.protobuf.GeneratedFile {
           + "confidence\030\004 \001(\002\"{\n\r"
           + "BargeInConfig\0227\n"
           + "\024no_barge_in_duration\030\001 \001(\0132\031.google.protobuf.Duration\0221\n"
-          + "\016total_duration\030\002 \001(\0132\031.google.protobuf.Duration\"\367\005\n"
-          + "\020InputAudioConfig\022K\n"
-          + "\016audio_encoding\030\001 \001(\0162..go"
-          + "ogle.cloud.dialogflow.v2beta1.AudioEncodingB\003\340A\002\022\036\n"
-          + "\021sample_rate_hertz\030\002 \001(\005B\003\340A\002\022\032\n\r"
-          + "language_code\030\003 \001(\tB\003\340A\002\022\030\n"
+          + "\016total_duration\030\002 \001(\0132\031.google.protobuf.Duration\"\227\007\n"
+          + "\020InputAudioConfig\022L\n"
+          + "\016audio_encoding\030\001 \001(\0162.."
+          + "google.cloud.dialogflow.v2beta1.AudioEncodingB\004\342A\001\002\022\037\n"
+          + "\021sample_rate_hertz\030\002 \001(\005B\004\342A\001\002\022\033\n\r"
+          + "language_code\030\003 \001(\tB\004\342A\001\002\022\030\n"
           + "\020enable_word_info\030\r"
           + " \001(\010\022\030\n"
           + "\014phrase_hints\030\004 \003(\tB\002\030\001\022G\n"
           + "\017speech_contexts\030\013"
-          + " \003(\0132..google.cloud.dialogflow.v2beta1.SpeechContext\022\r\n"
+          + " \003(\0132..google.cloud.dialogflow.v2beta1.SpeechContext\022\r"
+          + "\n"
           + "\005model\030\007 \001(\t\022J\n\r"
           + "model_variant\030\n"
           + " \001(\01623.google.cloud.dialogflow.v2beta1.SpeechModelVariant\022\030\n"
-          + "\020single_utterance\030\010 \001(\010\022)\n"
-          + "\034enable_voice_activity_events\030\033 \001(\010B\003\340A\001\022*\n"
+          + "\020single_utterance\030\010 \001(\010\022*\n"
+          + "\034enable_voice_activity_events\030\033 \001(\010B\004\342A\001\001\022*\n"
           + "\"disable_no_speech_recognized_event\030\016 \001(\010\022G\n"
           + "\017barge_in_config\030\017"
           + " \001(\0132..google.cloud.dialogflow.v2beta1.BargeInConfig\022$\n"
@@ -126,42 +131,45 @@ public final class AudioConfigProto extends com.google.protobuf.GeneratedFile {
           + "\031default_no_speech_timeout\030\022 \001(\0132\031.google.protobuf.Duration\0229\n"
           + "\013phrase_sets\030\024 \003(\tB$\372A!\n"
           + "\037speech.googleapis.com/PhraseSet\022)\n"
-          + "!opt_out_conformer_model_migration\030\032 \001(\010\"u\n"
-          + "\024VoiceSelectionParams\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\001\022J\n"
+          + "!opt_out_conformer_model_migration\030\032 \001(\010\022d\n"
+          + "\021gemini_asr_config\030\036 \001(\0132C.google.cloud"
+          + ".dialogflow.v2beta1.SpeechToTextConfig.GeminiAsrConfigB\004\342A\001\001\022!\n"
+          + "\016use_gemini_asr\030\037 \001(\010B\004\342A\001\001H\000\210\001\001B\021\n"
+          + "\017_use_gemini_asr\"w\n"
+          + "\024VoiceSelectionParams\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\001\022K\n"
           + "\013ssml_gender\030\002"
-          + " \001(\01620.google.cloud.dialogflow.v2beta1.SsmlVoiceGenderB\003\340A\001\"\245\002\n"
-          + "\026SynthesizeSpeechConfig\022\032\n\r"
-          + "speaking_rate\030\001 \001(\001B\003\340A\001\022\022\n"
-          + "\005pitch\030\002 \001(\001B\003\340A\001\022\033\n"
-          + "\016volume_gain_db\030\003 \001(\001B\003\340A\001\022\037\n"
-          + "\022effects_profile_id\030\005 \003(\tB\003\340A\001\022I\n"
-          + "\005voice\030\004 \001(\01325.google.cloud.d"
-          + "ialogflow.v2beta1.VoiceSelectionParamsB\003\340A\001\022R\n"
-          + "\016pronunciations\030\006 \003(\0132:.google.clo"
-          + "ud.dialogflow.v2beta1.CustomPronunciationParams\"\233\002\n"
+          + " \001(\01620.google.cloud.dialogflow.v2beta1.SsmlVoiceGenderB\004\342A\001\001\"\252\002\n"
+          + "\026SynthesizeSpeechConfig\022\033\n\r"
+          + "speaking_rate\030\001 \001(\001B\004\342A\001\001\022\023\n"
+          + "\005pitch\030\002 \001(\001B\004\342A\001\001\022\034\n"
+          + "\016volume_gain_db\030\003 \001(\001B\004\342A\001\001\022 \n"
+          + "\022effects_profile_id\030\005 \003(\tB\004\342A\001\001\022J\n"
+          + "\005voice\030\004 \001(\01325.google"
+          + ".cloud.dialogflow.v2beta1.VoiceSelectionParamsB\004\342A\001\001\022R\n"
+          + "\016pronunciations\030\006 \003(\0132:.g"
+          + "oogle.cloud.dialogflow.v2beta1.CustomPronunciationParams\"\233\002\n"
           + "\031CustomPronunciationParams\022\016\n"
           + "\006phrase\030\001 \001(\t\022f\n"
-          + "\021phonetic_encoding\030\002 \001(\016"
-          + "2K.google.cloud.dialogflow.v2beta1.CustomPronunciationParams.PhoneticEncoding\022\025\n"
-          + "\r"
+          + "\021phonetic_encoding\030\002 \001(\0162K.google.cloud.dialogflow.v2be"
+          + "ta1.CustomPronunciationParams.PhoneticEncoding\022\025\n\r"
           + "pronunciation\030\003 \001(\t\"o\n"
           + "\020PhoneticEncoding\022!\n"
           + "\035PHONETIC_ENCODING_UNSPECIFIED\020\000\022\031\n"
           + "\025PHONETIC_ENCODING_IPA\020\001\022\035\n"
-          + "\031PHONETIC_ENCODING_X_SAMPA\020\002\"\334\001\n"
-          + "\021OutputAudioConfig\022Q\n"
-          + "\016audio_encoding\030\001 \001(\01624.google.cloud.dialo"
-          + "gflow.v2beta1.OutputAudioEncodingB\003\340A\002\022\031\n"
+          + "\031PHONETIC_ENCODING_X_SAMPA\020\002\"\335\001\n"
+          + "\021OutputAudioConfig\022R\n"
+          + "\016audio_encoding\030\001 \001(\01624.google.cl"
+          + "oud.dialogflow.v2beta1.OutputAudioEncodingB\004\342A\001\002\022\031\n"
           + "\021sample_rate_hertz\030\002 \001(\005\022Y\n"
-          + "\030synthesize_speech_config\030\003"
-          + " \001(\01327.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig\"Z\n"
+          + "\030synthesize_speech_config\030\003 \001(\01327.google.c"
+          + "loud.dialogflow.v2beta1.SynthesizeSpeechConfig\"Z\n"
           + "\023TelephonyDtmfEvents\022C\n"
-          + "\013dtmf_events\030\001 \003(\016"
-          + "2..google.cloud.dialogflow.v2beta1.TelephonyDtmf\"\354\002\n"
+          + "\013dtmf_events\030\001"
+          + " \003(\0162..google.cloud.dialogflow.v2beta1.TelephonyDtmf\"\262\010\n"
           + "\022SpeechToTextConfig\022Q\n"
-          + "\024speech_model_variant\030\001"
-          + " \001(\01623.google.cloud.dialogflow.v2beta1.SpeechModelVariant\022\r\n"
+          + "\024speech_model_variant\030\001 \001(\01623.google"
+          + ".cloud.dialogflow.v2beta1.SpeechModelVariant\022\r\n"
           + "\005model\030\002 \001(\t\0229\n"
           + "\013phrase_sets\030\004 \003(\tB$\372A!\n"
           + "\037speech.googleapis.com/PhraseSet\022F\n"
@@ -170,7 +178,28 @@ public final class AudioConfigProto extends com.google.protobuf.GeneratedFile {
           + "\021sample_rate_hertz\030\007 \001(\005\022\025\n\r"
           + "language_code\030\010 \001(\t\022\030\n"
           + "\020enable_word_info\030\t \001(\010\022%\n"
-          + "\035use_timeout_based_endpointing\030\013 \001(\010*\224\002\n\r"
+          + "\035use_timeout_based_endpointing\030\013 \001(\010\022d\n"
+          + "\021gemini_asr_config\030\017 \001(\0132C.google.cloud.dialogflow.v"
+          + "2beta1.SpeechToTextConfig.GeminiAsrConfigB\004\342A\001\001\022\034\n"
+          + "\016use_gemini_asr\030\020 \001(\010B\004\342A\001\001\032\277\004\n"
+          + "\017GeminiAsrConfig\022\026\n"
+          + "\010model_id\030\001 \001(\tB\004\342A\001\001\022!\n"
+          + "\023silence_duration_ms\030\002 \001(\005B\004\342A\001\001\022\037\n"
+          + "\021prefix_padding_ms\030\003 \001(\005B\004\342A\001\001\022\177\n"
+          + "\033start_of_speech_sensitivity\030\004 \001(\0162T.google.clou"
+          + "d.dialogflow.v2beta1.SpeechToTextConfig."
+          + "GeminiAsrConfig.StartSensitivityB\004\342A\001\001\022{\n"
+          + "\031end_of_speech_sensitivity\030\005 \001(\0162R.goog"
+          + "le.cloud.dialogflow.v2beta1.SpeechToText"
+          + "Config.GeminiAsrConfig.EndSensitivityB\004\342A\001\001\"l\n"
+          + "\020StartSensitivity\022!\n"
+          + "\035START_SENSITIVITY_UNSPECIFIED\020\000\022\032\n"
+          + "\026START_SENSITIVITY_HIGH\020\001\022\031\n"
+          + "\025START_SENSITIVITY_LOW\020\002\"d\n"
+          + "\016EndSensitivity\022\037\n"
+          + "\033END_SENSITIVITY_UNSPECIFIED\020\000\022\030\n"
+          + "\024END_SENSITIVITY_HIGH\020\001\022\027\n"
+          + "\023END_SENSITIVITY_LOW\020\002*\224\002\n\r"
           + "TelephonyDtmf\022\036\n"
           + "\032TELEPHONY_DTMF_UNSPECIFIED\020\000\022\014\n"
           + "\010DTMF_ONE\020\001\022\014\n"
@@ -281,6 +310,8 @@ public final class AudioConfigProto extends com.google.protobuf.GeneratedFile {
               "DefaultNoSpeechTimeout",
               "PhraseSets",
               "OptOutConformerModelMigration",
+              "GeminiAsrConfig",
+              "UseGeminiAsr",
             });
     internal_static_google_cloud_dialogflow_v2beta1_VoiceSelectionParams_descriptor =
         getDescriptor().getMessageType(4);
@@ -341,6 +372,21 @@ public final class AudioConfigProto extends com.google.protobuf.GeneratedFile {
               "LanguageCode",
               "EnableWordInfo",
               "UseTimeoutBasedEndpointing",
+              "GeminiAsrConfig",
+              "UseGeminiAsr",
+            });
+    internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_GeminiAsrConfig_descriptor =
+        internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_descriptor.getNestedType(
+            0);
+    internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_GeminiAsrConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_GeminiAsrConfig_descriptor,
+            new java.lang.String[] {
+              "ModelId",
+              "SilenceDurationMs",
+              "PrefixPaddingMs",
+              "StartOfSpeechSensitivity",
+              "EndOfSpeechSensitivity",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

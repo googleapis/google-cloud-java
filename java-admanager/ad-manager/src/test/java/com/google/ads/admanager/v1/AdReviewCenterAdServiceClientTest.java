@@ -32,6 +32,7 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -367,6 +368,184 @@ public class AdReviewCenterAdServiceClientTest {
       client.batchBlockAdReviewCenterAdsAsync(parent).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void fetchAdReviewCenterCustomLabelsTest() throws Exception {
+    FetchAdReviewCenterCustomLabelsResponse expectedResponse =
+        FetchAdReviewCenterCustomLabelsResponse.newBuilder()
+            .addAllCustomLabels(
+                new ArrayList<FetchAdReviewCenterCustomLabelsResponse.CustomLabel>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    WebPropertyName parent = WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]");
+
+    FetchAdReviewCenterCustomLabelsResponse actualResponse =
+        client.fetchAdReviewCenterCustomLabels(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchAdReviewCenterCustomLabelsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      WebPropertyName parent = WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]");
+      client.fetchAdReviewCenterCustomLabels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchAdReviewCenterCustomLabelsTest2() throws Exception {
+    FetchAdReviewCenterCustomLabelsResponse expectedResponse =
+        FetchAdReviewCenterCustomLabelsResponse.newBuilder()
+            .addAllCustomLabels(
+                new ArrayList<FetchAdReviewCenterCustomLabelsResponse.CustomLabel>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-8813/webProperties/webPropertie-8813";
+
+    FetchAdReviewCenterCustomLabelsResponse actualResponse =
+        client.fetchAdReviewCenterCustomLabels(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchAdReviewCenterCustomLabelsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-8813/webProperties/webPropertie-8813";
+      client.fetchAdReviewCenterCustomLabels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchApplyAdReviewCenterCustomLabelsTest() throws Exception {
+    BatchApplyAdReviewCenterCustomLabelsResponse expectedResponse =
+        BatchApplyAdReviewCenterCustomLabelsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    WebPropertyName parent = WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]");
+
+    BatchApplyAdReviewCenterCustomLabelsResponse actualResponse =
+        client.batchApplyAdReviewCenterCustomLabels(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchApplyAdReviewCenterCustomLabelsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      WebPropertyName parent = WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]");
+      client.batchApplyAdReviewCenterCustomLabels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchApplyAdReviewCenterCustomLabelsTest2() throws Exception {
+    BatchApplyAdReviewCenterCustomLabelsResponse expectedResponse =
+        BatchApplyAdReviewCenterCustomLabelsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-8813/webProperties/webPropertie-8813";
+
+    BatchApplyAdReviewCenterCustomLabelsResponse actualResponse =
+        client.batchApplyAdReviewCenterCustomLabels(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchApplyAdReviewCenterCustomLabelsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-8813/webProperties/webPropertie-8813";
+      client.batchApplyAdReviewCenterCustomLabels(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

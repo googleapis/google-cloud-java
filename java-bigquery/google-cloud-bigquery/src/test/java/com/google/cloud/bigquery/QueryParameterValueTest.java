@@ -195,6 +195,9 @@ public class QueryParameterValueTest {
     assertThat(value1.getArrayType()).isNull();
     assertThat(value.getArrayValues()).isNull();
     assertThat(value1.getArrayType()).isNull();
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> QueryParameterValue.of(123, StandardSQLTypeName.JSON));
   }
 
   @Test
@@ -213,6 +216,9 @@ public class QueryParameterValueTest {
     assertThat(value.getArrayType()).isNull();
     assertThat(value1.getArrayType()).isNull();
     assertThat(value2.getArrayType()).isNull();
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> QueryParameterValue.of(123, StandardSQLTypeName.INTERVAL));
   }
 
   @Test

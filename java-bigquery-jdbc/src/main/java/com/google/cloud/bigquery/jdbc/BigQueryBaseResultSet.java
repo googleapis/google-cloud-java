@@ -115,6 +115,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     return queryStatistics;
   }
 
+  protected void setQueryStatistics(QueryStatistics queryStatistics) {
+    this.queryStatistics = queryStatistics;
+  }
+
   public void setJobId(JobId jobId) {
     this.jobId = jobId;
   }
@@ -232,6 +236,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
         throw logAndCreateException("Invalid column index: " + columnIndex);
       }
       Field field = this.schemaFieldList.get(columnIndex - 1);
+      if (BigQueryBaseArray.isArray(field)) {
+        return StandardSQLTypeName.ARRAY;
+      }
       return field.getType().getStandardType();
     }
   }
@@ -292,6 +299,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   public abstract Object getObject(int columnIndex) throws SQLException;
 
+  protected Object getObject(int columnIndex, ZoneId zone) throws SQLException {
+    return getObject(columnIndex);
+  }
+
   @Override
   public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
     LOG.finestTrace("getObject");
@@ -299,6 +310,12 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
       Object value = getObject(columnIndex);
       if (value == null) {
         return null;
+      }
+      if (type != null && !type.isInstance(value)) {
+        StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+        if (bqType == StandardSQLTypeName.TIMESTAMP) {
+          return BigQueryTypeRegistry.convert(value, bqType, type, null);
+        }
       }
       return BigQueryTypeRegistry.convert(value, type);
     } catch (RuntimeException e) {
@@ -324,12 +341,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public String getString(int columnIndex) throws SQLException {
     LOG.finestTrace("getString");
-    try {
-      Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, String.class);
-    } catch (BigQueryJdbcException e) {
-      throw createCoercionException(columnIndex, String.class, e);
-    }
+    return getObject(columnIndex, String.class);
   }
 
   @Override
@@ -450,43 +462,17 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   @Override
   public Date getDate(int columnIndex) throws SQLException {
-    LOG.finestTrace("getDate");
-    try {
-      Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Date.class);
-    } catch (BigQueryJdbcException e) {
-      throw createCoercionException(columnIndex, Date.class, e);
-    }
+    return getDate(columnIndex, null);
   }
 
   @Override
   public Time getTime(int columnIndex) throws SQLException {
-    LOG.finestTrace("getTime");
-    StandardSQLTypeName type = getStandardSQLTypeName(columnIndex);
-    if (type == StandardSQLTypeName.INT64) {
-      throw createCoercionException(columnIndex, Time.class, null);
-    }
-    try {
-      Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Time.class);
-    } catch (BigQueryJdbcException e) {
-      throw createCoercionException(columnIndex, Time.class, e);
-    }
+    return getTime(columnIndex, null);
   }
 
   @Override
   public Timestamp getTimestamp(int columnIndex) throws SQLException {
-    LOG.finestTrace("getTimestamp");
-    StandardSQLTypeName type = getStandardSQLTypeName(columnIndex);
-    if (type == StandardSQLTypeName.INT64) {
-      throw createCoercionException(columnIndex, Timestamp.class, null);
-    }
-    try {
-      Object value = getObject(columnIndex);
-      return BigQueryTypeRegistry.convert(value, Timestamp.class);
-    } catch (BigQueryJdbcException e) {
-      throw createCoercionException(columnIndex, Timestamp.class, e);
-    }
+    return getTimestamp(columnIndex, null);
   }
 
   @Override
@@ -560,13 +546,19 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     return bytes == null ? null : new ByteArrayInputStream(bytes);
   }
 
+  private static ZoneId getEffectiveZone(StandardSQLTypeName bqType, Calendar cal) {
+    return (cal == null || bqType == StandardSQLTypeName.TIMESTAMP)
+        ? null
+        : cal.getTimeZone().toZoneId();
+  }
+
   @Override
   public Date getDate(int columnIndex, Calendar cal) throws SQLException {
     LOG.finestTrace("getDate");
+    StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+    ZoneId zone = getEffectiveZone(bqType, cal);
     try {
-      Object value = getObject(columnIndex);
-      StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
-      ZoneId zone = (cal == null) ? null : cal.getTimeZone().toZoneId();
+      Object value = getObject(columnIndex, zone);
       return BigQueryTypeRegistry.convert(value, bqType, Date.class, zone);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Date.class, e);
@@ -576,10 +568,13 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public Time getTime(int columnIndex, Calendar cal) throws SQLException {
     LOG.finestTrace("getTime");
+    StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+    if (bqType == StandardSQLTypeName.INT64) {
+      throw createCoercionException(columnIndex, Time.class, null);
+    }
+    ZoneId zone = getEffectiveZone(bqType, cal);
     try {
-      Object value = getObject(columnIndex);
-      StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
-      ZoneId zone = (cal == null) ? null : cal.getTimeZone().toZoneId();
+      Object value = getObject(columnIndex, zone);
       return BigQueryTypeRegistry.convert(value, bqType, Time.class, zone);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Time.class, e);
@@ -589,10 +584,13 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public Timestamp getTimestamp(int columnIndex, Calendar cal) throws SQLException {
     LOG.finestTrace("getTimestamp");
+    StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+    if (bqType == StandardSQLTypeName.INT64) {
+      throw createCoercionException(columnIndex, Timestamp.class, null);
+    }
+    ZoneId zone = getEffectiveZone(bqType, cal);
     try {
-      Object value = getObject(columnIndex);
-      StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
-      ZoneId zone = (cal == null) ? null : cal.getTimeZone().toZoneId();
+      Object value = getObject(columnIndex, zone);
       return BigQueryTypeRegistry.convert(value, bqType, Timestamp.class, zone);
     } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Timestamp.class, e);
@@ -838,5 +836,12 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     // Clears the cached warnings chain.
     this.warnings = null;
     this.warningsLoaded = true;
+  }
+
+  static BigQueryJdbcException backgroundFetchError(Exception cause) {
+    String msg = "Error occurred while fetching query results";
+    return cause instanceof BigQueryException
+        ? new BigQueryJdbcException(msg, (BigQueryException) cause)
+        : new BigQueryJdbcException(msg, cause);
   }
 }

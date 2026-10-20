@@ -189,10 +189,12 @@ public interface GrpSettingsOrBuilder
    * Optional. Estimate for the in-target ratio given the line item's audience
    * targeting. This field is only applicable if
    * [provider][google.ads.admanager.v1.GrpSettings.provider] is Nielsen,
-   * [LineItem.primary_goal.unit_type][] is in-target impressions, and
-   * [LineItemCostType] is in-target CPM. This field determines the in-target
-   * ratio to use for pacing Nielsen line items before Nielsen reporting data is
-   * available. Represented as a milli percent, so 55.7% becomes 55700.
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] is in-target
+   * impressions, and
+   * [LineItemCostTypeEnum.LineItemCostType][google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType]
+   * is in-target CPM. This field determines the in-target ratio to use for
+   * pacing Nielsen line items before Nielsen reporting data is available.
+   * Represented as a milli percent, so 55.7% becomes 55700.
    * </pre>
    *
    * <code>
@@ -210,10 +212,12 @@ public interface GrpSettingsOrBuilder
    * Optional. Estimate for the in-target ratio given the line item's audience
    * targeting. This field is only applicable if
    * [provider][google.ads.admanager.v1.GrpSettings.provider] is Nielsen,
-   * [LineItem.primary_goal.unit_type][] is in-target impressions, and
-   * [LineItemCostType] is in-target CPM. This field determines the in-target
-   * ratio to use for pacing Nielsen line items before Nielsen reporting data is
-   * available. Represented as a milli percent, so 55.7% becomes 55700.
+   * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type] is in-target
+   * impressions, and
+   * [LineItemCostTypeEnum.LineItemCostType][google.ads.admanager.v1.LineItemCostTypeEnum.LineItemCostType]
+   * is in-target CPM. This field determines the in-target ratio to use for
+   * pacing Nielsen line items before Nielsen reporting data is available.
+   * Represented as a milli percent, so 55.7% becomes 55700.
    * </pre>
    *
    * <code>
@@ -327,7 +331,7 @@ public interface GrpSettingsOrBuilder
    * <pre>
    * Optional. Specifies whether to apply true coviewing in Nielsen Line Item
    * auto pacing. This field can only be true if
-   * [nielsen_ctv_pacing_type][google.ads.admanager.v1.GrpSettings.nielsen_ctv_pacing_type]
+   * [nielsenCtvPacingType][google.ads.admanager.v1.GrpSettings.nielsen_ctv_pacing_type]
    * is not NONE.
    * </pre>
    *
@@ -343,7 +347,7 @@ public interface GrpSettingsOrBuilder
    * <pre>
    * Optional. Specifies whether to apply true coviewing in Nielsen Line Item
    * auto pacing. This field can only be true if
-   * [nielsen_ctv_pacing_type][google.ads.admanager.v1.GrpSettings.nielsen_ctv_pacing_type]
+   * [nielsenCtvPacingType][google.ads.admanager.v1.GrpSettings.nielsen_ctv_pacing_type]
    * is not NONE.
    * </pre>
    *

@@ -40,6 +40,7 @@ import com.google.auth.mtls.MtlsProvider;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 public abstract class AbstractMtlsTransportChannelTest {
   /**
@@ -63,9 +64,10 @@ public abstract class AbstractMtlsTransportChannelTest {
 
   @Test
   void testUseClientCertificate() throws IOException, GeneralSecurityException {
-    CertificateBasedAccess certificateBasedAccess =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "auto" : "true");
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+        .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     MtlsProvider provider =
         new FakeMtlsProvider(FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
     assertNotNull(getMtlsObjectFromTransportChannel(provider, certificateBasedAccess));
@@ -73,9 +75,10 @@ public abstract class AbstractMtlsTransportChannelTest {
 
   @Test
   void testNoClientCertificate() throws IOException, GeneralSecurityException {
-    CertificateBasedAccess certificateBasedAccess =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "auto" : "true");
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+        .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     MtlsProvider provider = new FakeMtlsProvider(null, "", false);
     assertNull(getMtlsObjectFromTransportChannel(provider, certificateBasedAccess));
   }
@@ -83,9 +86,10 @@ public abstract class AbstractMtlsTransportChannelTest {
   @Test
   void testGetKeyStoreThrows() throws GeneralSecurityException {
     // Test the case where provider.getKeyStore() throws.
-    CertificateBasedAccess certificateBasedAccess =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "auto" : "true");
+    CertificateBasedAccess certificateBasedAccess = Mockito.mock(CertificateBasedAccess.class);
+    Mockito.when(certificateBasedAccess.getMtlsEndpointUsagePolicy())
+        .thenReturn(CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO);
+    Mockito.when(certificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
     MtlsProvider provider = new FakeMtlsProvider(null, "", true);
     IOException actual =
         assertThrows(

@@ -16,6 +16,8 @@
 
 package com.google.cloud.memorystore.v1beta;
 
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListAclPolicyRevisionsPagedResponse;
 import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListBackupsPagedResponse;
@@ -90,6 +92,106 @@ public class MemorystoreClientHttpJsonTest {
   @After
   public void tearDown() throws Exception {
     mockService.reset();
+  }
+
+  @Test
+  public void listAclPoliciesTest() throws Exception {
+    AclPolicy responsesElement = AclPolicy.newBuilder().build();
+    ListAclPoliciesResponse expectedResponse =
+        ListAclPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAclPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAclPoliciesPagedResponse pagedListResponse = client.listAclPolicies(parent);
+
+    List<AclPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAclPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAclPoliciesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAclPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAclPoliciesTest2() throws Exception {
+    AclPolicy responsesElement = AclPolicy.newBuilder().build();
+    ListAclPoliciesResponse expectedResponse =
+        ListAclPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAclPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListAclPoliciesPagedResponse pagedListResponse = client.listAclPolicies(parent);
+
+    List<AclPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAclPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAclPoliciesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listAclPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test
@@ -193,6 +295,104 @@ public class MemorystoreClientHttpJsonTest {
   }
 
   @Test
+  public void getAclPolicyTest() throws Exception {
+    AclPolicy expectedResponse =
+        AclPolicy.newBuilder()
+            .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .addAllRules(new ArrayList<AclRule>())
+            .setEtag("etag3123477")
+            .addAllInstanceAclPolicyAttachments(new ArrayList<InstanceAclPolicyAttachment>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AclPolicyName name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+
+    AclPolicy actualResponse = client.getAclPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAclPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AclPolicyName name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+      client.getAclPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAclPolicyTest2() throws Exception {
+    AclPolicy expectedResponse =
+        AclPolicy.newBuilder()
+            .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .addAllRules(new ArrayList<AclRule>())
+            .setEtag("etag3123477")
+            .addAllInstanceAclPolicyAttachments(new ArrayList<InstanceAclPolicyAttachment>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-7152/locations/location-7152/aclPolicies/aclPolicie-7152";
+
+    AclPolicy actualResponse = client.getAclPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAclPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7152/locations/location-7152/aclPolicies/aclPolicie-7152";
+      client.getAclPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
@@ -235,6 +435,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -317,6 +519,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -350,6 +554,112 @@ public class MemorystoreClientHttpJsonTest {
     try {
       String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
       client.getInstance(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAclPolicyTest() throws Exception {
+    AclPolicy expectedResponse =
+        AclPolicy.newBuilder()
+            .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .addAllRules(new ArrayList<AclRule>())
+            .setEtag("etag3123477")
+            .addAllInstanceAclPolicyAttachments(new ArrayList<InstanceAclPolicyAttachment>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+    String aclPolicyId = "aclPolicyId-1805591401";
+
+    AclPolicy actualResponse = client.createAclPolicy(parent, aclPolicy, aclPolicyId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAclPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+      String aclPolicyId = "aclPolicyId-1805591401";
+      client.createAclPolicy(parent, aclPolicy, aclPolicyId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAclPolicyTest2() throws Exception {
+    AclPolicy expectedResponse =
+        AclPolicy.newBuilder()
+            .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .addAllRules(new ArrayList<AclRule>())
+            .setEtag("etag3123477")
+            .addAllInstanceAclPolicyAttachments(new ArrayList<InstanceAclPolicyAttachment>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+    String aclPolicyId = "aclPolicyId-1805591401";
+
+    AclPolicy actualResponse = client.createAclPolicy(parent, aclPolicy, aclPolicyId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAclPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      AclPolicy aclPolicy = AclPolicy.newBuilder().build();
+      String aclPolicyId = "aclPolicyId-1805591401";
+      client.createAclPolicy(parent, aclPolicy, aclPolicyId);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -399,6 +709,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -490,6 +802,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -539,6 +853,78 @@ public class MemorystoreClientHttpJsonTest {
   }
 
   @Test
+  public void updateAclPolicyTest() throws Exception {
+    AclPolicy expectedResponse =
+        AclPolicy.newBuilder()
+            .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .addAllRules(new ArrayList<AclRule>())
+            .setEtag("etag3123477")
+            .addAllInstanceAclPolicyAttachments(new ArrayList<InstanceAclPolicyAttachment>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAclPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AclPolicy aclPolicy =
+        AclPolicy.newBuilder()
+            .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .addAllRules(new ArrayList<AclRule>())
+            .setEtag("etag3123477")
+            .addAllInstanceAclPolicyAttachments(new ArrayList<InstanceAclPolicyAttachment>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AclPolicy actualResponse = client.updateAclPolicyAsync(aclPolicy, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAclPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AclPolicy aclPolicy =
+          AclPolicy.newBuilder()
+              .setName(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+              .addAllRules(new ArrayList<AclRule>())
+              .setEtag("etag3123477")
+              .addAllInstanceAclPolicyAttachments(new ArrayList<InstanceAclPolicyAttachment>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAclPolicyAsync(aclPolicy, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void updateInstanceTest() throws Exception {
     Instance expectedResponse =
         Instance.newBuilder()
@@ -581,6 +967,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -631,6 +1019,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -702,11 +1092,307 @@ public class MemorystoreClientHttpJsonTest {
               .setServerCaPool("serverCaPool1433802429")
               .setRotateServerCertificate(true)
               .setMigrationConfig(MigrationConfig.newBuilder().build())
+              .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+              .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAclPolicyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAclPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AclPolicyName name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+
+    client.deleteAclPolicyAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAclPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AclPolicyName name = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+      client.deleteAclPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAclPolicyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAclPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-7152/locations/location-7152/aclPolicies/aclPolicie-7152";
+
+    client.deleteAclPolicyAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAclPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7152/locations/location-7152/aclPolicies/aclPolicie-7152";
+      client.deleteAclPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getAclPolicyRevisionTest() throws Exception {
+    AclPolicyRevision expectedResponse =
+        AclPolicyRevision.newBuilder()
+            .setName(
+                AclPolicyRevisionName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]", "[REVISION]")
+                    .toString())
+            .setRevisionNumber(-1651923923)
+            .setSnapshot(AclPolicy.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAttachedInstances(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AclPolicyRevisionName name =
+        AclPolicyRevisionName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]", "[REVISION]");
+
+    AclPolicyRevision actualResponse = client.getAclPolicyRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAclPolicyRevisionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AclPolicyRevisionName name =
+          AclPolicyRevisionName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]", "[REVISION]");
+      client.getAclPolicyRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAclPolicyRevisionTest2() throws Exception {
+    AclPolicyRevision expectedResponse =
+        AclPolicyRevision.newBuilder()
+            .setName(
+                AclPolicyRevisionName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]", "[REVISION]")
+                    .toString())
+            .setRevisionNumber(-1651923923)
+            .setSnapshot(AclPolicy.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllAttachedInstances(new ArrayList<String>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-644/locations/location-644/aclPolicies/aclPolicie-644/revisions/revision-644";
+
+    AclPolicyRevision actualResponse = client.getAclPolicyRevision(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAclPolicyRevisionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-644/locations/location-644/aclPolicies/aclPolicie-644/revisions/revision-644";
+      client.getAclPolicyRevision(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAclPolicyRevisionsTest() throws Exception {
+    AclPolicyRevision responsesElement = AclPolicyRevision.newBuilder().build();
+    ListAclPolicyRevisionsResponse expectedResponse =
+        ListAclPolicyRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAclPolicyRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AclPolicyName parent = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+
+    ListAclPolicyRevisionsPagedResponse pagedListResponse = client.listAclPolicyRevisions(parent);
+
+    List<AclPolicyRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAclPolicyRevisionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAclPolicyRevisionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AclPolicyName parent = AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]");
+      client.listAclPolicyRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAclPolicyRevisionsTest2() throws Exception {
+    AclPolicyRevision responsesElement = AclPolicyRevision.newBuilder().build();
+    ListAclPolicyRevisionsResponse expectedResponse =
+        ListAclPolicyRevisionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAclPolicyRevisions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9295/locations/location-9295/aclPolicies/aclPolicie-9295";
+
+    ListAclPolicyRevisionsPagedResponse pagedListResponse = client.listAclPolicyRevisions(parent);
+
+    List<AclPolicyRevision> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAclPolicyRevisionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAclPolicyRevisionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9295/locations/location-9295/aclPolicies/aclPolicie-9295";
+      client.listAclPolicyRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -1022,6 +1708,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1116,6 +1804,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1806,6 +2496,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1893,6 +2585,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1980,6 +2674,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2073,6 +2769,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2162,6 +2860,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2663,6 +3363,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2752,6 +3454,8 @@ public class MemorystoreClientHttpJsonTest {
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
             .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .setAclPolicy(AclPolicyName.of("[PROJECT]", "[LOCATION]", "[ACL_POLICY]").toString())
+            .setAclPolicyInfo(AclPolicyInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -30,12 +30,12 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the Certificate Map Entry. Certificate Map Entry
-   * names must be unique globally and match pattern
+   * Identifier. A user-defined name of the Certificate Map Entry. Certificate
+   * Map Entry names must be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,12 +45,12 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the Certificate Map Entry. Certificate Map Entry
-   * names must be unique globally and match pattern
+   * Identifier. A user-defined name of the Certificate Map Entry. Certificate
+   * Map Entry names must be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -60,10 +60,11 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a certificate map entry.
+   * Optional. One or more paragraphs of text description of a certificate map
+   * entry.
    * </pre>
    *
-   * <code>string description = 9;</code>
+   * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -73,10 +74,11 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a certificate map entry.
+   * Optional. One or more paragraphs of text description of a certificate map
+   * entry.
    * </pre>
    *
-   * <code>string description = 9;</code>
+   * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -166,10 +168,10 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map Entry.
+   * Optional. Set of labels associated with a Certificate Map Entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
 
@@ -177,10 +179,10 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map Entry.
+   * Optional. Set of labels associated with a Certificate Map Entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
 
@@ -192,10 +194,10 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map Entry.
+   * Optional. Set of labels associated with a Certificate Map Entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
 
@@ -203,10 +205,10 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map Entry.
+   * Optional. Set of labels associated with a Certificate Map Entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -218,10 +220,10 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map Entry.
+   * Optional. Set of labels associated with a Certificate Map Entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -313,12 +315,14 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * A set of Certificates defines for the given `hostname`. There can be
-   * defined up to four certificates in each Certificate Map Entry. Each
+   * Optional. A set of Certificates defines for the given `hostname`. There can
+   * be defined up to four certificates in each Certificate Map Entry. Each
    * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
-   * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return A list containing the certificates.
    */
@@ -328,12 +332,14 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * A set of Certificates defines for the given `hostname`. There can be
-   * defined up to four certificates in each Certificate Map Entry. Each
+   * Optional. A set of Certificates defines for the given `hostname`. There can
+   * be defined up to four certificates in each Certificate Map Entry. Each
    * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
-   * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The count of certificates.
    */
@@ -343,12 +349,14 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * A set of Certificates defines for the given `hostname`. There can be
-   * defined up to four certificates in each Certificate Map Entry. Each
+   * Optional. A set of Certificates defines for the given `hostname`. There can
+   * be defined up to four certificates in each Certificate Map Entry. Each
    * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
-   * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The certificates at the given index.
@@ -359,12 +367,14 @@ public interface CertificateMapEntryOrBuilder
    *
    *
    * <pre>
-   * A set of Certificates defines for the given `hostname`. There can be
-   * defined up to four certificates in each Certificate Map Entry. Each
+   * Optional. A set of Certificates defines for the given `hostname`. There can
+   * be defined up to four certificates in each Certificate Map Entry. Each
    * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
-   * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the certificates at the given index.

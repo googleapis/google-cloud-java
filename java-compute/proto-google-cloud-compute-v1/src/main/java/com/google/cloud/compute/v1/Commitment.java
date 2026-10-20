@@ -624,6 +624,16 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
     COMPUTE_OPTIMIZED_H3(428004939),
     /** <code>COMPUTE_OPTIMIZED_H4D = 383251320;</code> */
     COMPUTE_OPTIMIZED_H4D(383251320),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for COMPUTE_OPTIMIZED_H4D_3TB machines.
+     * </pre>
+     *
+     * <code>COMPUTE_OPTIMIZED_H4D_3TB = 443379866;</code>
+     */
+    COMPUTE_OPTIMIZED_H4D_3TB(443379866),
     /** <code>GENERAL_PURPOSE = 299793543;</code> */
     GENERAL_PURPOSE(299793543),
     /** <code>GENERAL_PURPOSE_C4 = 301911817;</code> */
@@ -876,6 +886,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
 
     /** <code>COMPUTE_OPTIMIZED_H4D = 383251320;</code> */
     public static final int COMPUTE_OPTIMIZED_H4D_VALUE = 383251320;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for COMPUTE_OPTIMIZED_H4D_3TB machines.
+     * </pre>
+     *
+     * <code>COMPUTE_OPTIMIZED_H4D_3TB = 443379866;</code>
+     */
+    public static final int COMPUTE_OPTIMIZED_H4D_3TB_VALUE = 443379866;
 
     /** <code>GENERAL_PURPOSE = 299793543;</code> */
     public static final int GENERAL_PURPOSE_VALUE = 299793543;
@@ -1158,6 +1179,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
           return COMPUTE_OPTIMIZED_H3;
         case 383251320:
           return COMPUTE_OPTIMIZED_H4D;
+        case 443379866:
+          return COMPUTE_OPTIMIZED_H4D_3TB;
         case 299793543:
           return GENERAL_PURPOSE;
         case 301911817:

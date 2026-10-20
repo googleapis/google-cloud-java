@@ -25,8 +25,8 @@ package com.google.ads.admanager.v1;
  *
  * <pre>
  * Represents a
- * [ConversionEventEnum][google.ads.admanager.v1.ConversionEventEnum] to URL
- * pair that will be pinged when the event happens.
+ * [ConversionEvent][google.ads.admanager.v1.ConversionEventEnum.ConversionEvent]
+ * to URL pair that will be pinged when the event happens.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.VideoTrackingUrl}
@@ -349,8 +349,8 @@ public final class VideoTrackingUrl extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Represents a
-   * [ConversionEventEnum][google.ads.admanager.v1.ConversionEventEnum] to URL
-   * pair that will be pinged when the event happens.
+   * [ConversionEvent][google.ads.admanager.v1.ConversionEventEnum.ConversionEvent]
+   * to URL pair that will be pinged when the event happens.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.VideoTrackingUrl}

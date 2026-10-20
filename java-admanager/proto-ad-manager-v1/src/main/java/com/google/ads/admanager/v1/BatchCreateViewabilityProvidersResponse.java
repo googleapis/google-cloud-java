@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response object for [BatchCreateViewabilityProviders][] method.
+ * Response object for `BatchCreateViewabilityProviders` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchCreateViewabilityProvidersResponse}
@@ -324,7 +324,7 @@ public final class BatchCreateViewabilityProvidersResponse
    *
    *
    * <pre>
-   * Response object for [BatchCreateViewabilityProviders][] method.
+   * Response object for `BatchCreateViewabilityProviders` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchCreateViewabilityProvidersResponse}

@@ -53,20 +53,19 @@ public final class LiveStreamEventMessagesProto extends com.google.protobuf.Gene
 
   static {
     java.lang.String[] descriptorData = {
-      "\n8google/ads/admanager/v1/live_stream_ev"
-          + "ent_messages.proto\022\027google.ads.admanager"
-          + ".v1\032\037google/api/field_behavior.proto\032\031go"
-          + "ogle/api/resource.proto\"\266\001\n\017LiveStreamEv"
-          + "ent\022\021\n\004name\030\001 \001(\tB\003\340A\010:\217\001\352A\213\001\n(admanager"
-          + ".googleapis.com/LiveStreamEvent\022<network"
-          + "s/{network_code}/liveStreamEvents/{live_"
-          + "stream_event}*\020liveStreamEvents2\017liveStr"
-          + "eamEventB\320\001\n\033com.google.ads.admanager.v1"
-          + "B\034LiveStreamEventMessagesProtoP\001Z@google"
-          + ".golang.org/genproto/googleapis/ads/adma"
-          + "nager/v1;admanager\252\002\027Google.Ads.AdManage"
-          + "r.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google:"
-          + ":Ads::AdManager::V1b\006proto3"
+      "\n"
+          + "8google/ads/admanager/v1/live_stream_event_messages.proto\022\027google.ads.admanager"
+          + ".v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\267\001\n"
+          + "\017LiveStreamEvent\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010:\217\001\352A\213\001\n"
+          + "(admanager.googleapis.com/LiveStreamEvent\022<networ"
+          + "ks/{network_code}/liveStreamEvents/{live"
+          + "_stream_event}*\020liveStreamEvents2\017liveStreamEventB\320\001\n"
+          + "\033com.google.ads.admanager.v1B\034LiveStreamEventMessagesProtoP\001Z@googl"
+          + "e.golang.org/genproto/googleapis/ads/adm"
+          + "anager/v1;admanager\252\002\027Google.Ads.AdManag"
+          + "er.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Google"
+          + "::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

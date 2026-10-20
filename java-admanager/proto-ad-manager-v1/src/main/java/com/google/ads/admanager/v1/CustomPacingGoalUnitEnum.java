@@ -94,7 +94,8 @@ public final class CustomPacingGoalUnitEnum extends com.google.protobuf.Generate
      *
      * <pre>
      * The custom pacing goal amounts represent absolute numbers corresponding
-     * to the line item's [Goal.unitType][].
+     * to the line item's
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type].
      * </pre>
      *
      * <code>ABSOLUTE = 1;</code>
@@ -140,7 +141,8 @@ public final class CustomPacingGoalUnitEnum extends com.google.protobuf.Generate
      *
      * <pre>
      * The custom pacing goal amounts represent absolute numbers corresponding
-     * to the line item's [Goal.unitType][].
+     * to the line item's
+     * [Goal.unitType][google.ads.admanager.v1.Goal.unit_type].
      * </pre>
      *
      * <code>ABSOLUTE = 1;</code>

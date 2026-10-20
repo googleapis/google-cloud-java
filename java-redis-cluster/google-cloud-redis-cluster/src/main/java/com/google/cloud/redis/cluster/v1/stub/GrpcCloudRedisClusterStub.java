@@ -16,10 +16,14 @@
 
 package com.google.cloud.redis.cluster.v1.stub;
 
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListAclPolicyRevisionsPagedResponse;
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListLocationsPagedResponse;
+import static com.google.cloud.redis.cluster.v1.CloudRedisClusterClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -33,28 +37,52 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1.AclPolicy;
+import com.google.cloud.redis.cluster.v1.AclPolicyRevision;
+import com.google.cloud.redis.cluster.v1.AddAuthTokenRequest;
+import com.google.cloud.redis.cluster.v1.AddTokenAuthUserRequest;
+import com.google.cloud.redis.cluster.v1.AuthToken;
 import com.google.cloud.redis.cluster.v1.Backup;
 import com.google.cloud.redis.cluster.v1.BackupClusterRequest;
 import com.google.cloud.redis.cluster.v1.BackupCollection;
 import com.google.cloud.redis.cluster.v1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1.Cluster;
+import com.google.cloud.redis.cluster.v1.CreateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1.CreateClusterRequest;
+import com.google.cloud.redis.cluster.v1.DeleteAclPolicyRequest;
+import com.google.cloud.redis.cluster.v1.DeleteAuthTokenRequest;
 import com.google.cloud.redis.cluster.v1.DeleteBackupRequest;
 import com.google.cloud.redis.cluster.v1.DeleteClusterRequest;
+import com.google.cloud.redis.cluster.v1.DeleteTokenAuthUserRequest;
 import com.google.cloud.redis.cluster.v1.ExportBackupRequest;
+import com.google.cloud.redis.cluster.v1.GetAclPolicyRequest;
+import com.google.cloud.redis.cluster.v1.GetAclPolicyRevisionRequest;
+import com.google.cloud.redis.cluster.v1.GetAuthTokenRequest;
 import com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest;
 import com.google.cloud.redis.cluster.v1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterRequest;
 import com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest;
+import com.google.cloud.redis.cluster.v1.GetTokenAuthUserRequest;
+import com.google.cloud.redis.cluster.v1.ListAclPoliciesRequest;
+import com.google.cloud.redis.cluster.v1.ListAclPoliciesResponse;
+import com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsRequest;
+import com.google.cloud.redis.cluster.v1.ListAclPolicyRevisionsResponse;
+import com.google.cloud.redis.cluster.v1.ListAuthTokensRequest;
+import com.google.cloud.redis.cluster.v1.ListAuthTokensResponse;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsResponse;
 import com.google.cloud.redis.cluster.v1.ListBackupsRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersResponse;
+import com.google.cloud.redis.cluster.v1.ListTokenAuthUsersRequest;
+import com.google.cloud.redis.cluster.v1.ListTokenAuthUsersResponse;
+import com.google.cloud.redis.cluster.v1.OperationMetadata;
 import com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest;
 import com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority;
+import com.google.cloud.redis.cluster.v1.TokenAuthUser;
+import com.google.cloud.redis.cluster.v1.UpdateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1.UpdateClusterRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -87,6 +115,18 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ListAclPoliciesRequest, ListAclPoliciesResponse>
+      listAclPoliciesMethodDescriptor =
+          MethodDescriptor.<ListAclPoliciesRequest, ListAclPoliciesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/ListAclPolicies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAclPoliciesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAclPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
       MethodDescriptor.<GetClusterRequest, Cluster>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -96,6 +136,16 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<GetAclPolicyRequest, AclPolicy>
+      getAclPolicyMethodDescriptor =
+          MethodDescriptor.<GetAclPolicyRequest, AclPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/GetAclPolicy")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetAclPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AclPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<UpdateClusterRequest, Operation>
       updateClusterMethodDescriptor =
           MethodDescriptor.<UpdateClusterRequest, Operation>newBuilder()
@@ -103,6 +153,17 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
               .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/UpdateCluster")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClusterRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateAclPolicyRequest, Operation>
+      updateAclPolicyMethodDescriptor =
+          MethodDescriptor.<UpdateAclPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/UpdateAclPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAclPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -118,6 +179,44 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<DeleteAclPolicyRequest, Operation>
+      deleteAclPolicyMethodDescriptor =
+          MethodDescriptor.<DeleteAclPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/DeleteAclPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAclPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionMethodDescriptor =
+          MethodDescriptor.<GetAclPolicyRevisionRequest, AclPolicyRevision>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/GetAclPolicyRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAclPolicyRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AclPolicyRevision.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsMethodDescriptor =
+          MethodDescriptor
+              .<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/ListAclPolicyRevisions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAclPolicyRevisionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAclPolicyRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<CreateClusterRequest, Operation>
       createClusterMethodDescriptor =
           MethodDescriptor.<CreateClusterRequest, Operation>newBuilder()
@@ -126,6 +225,17 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateAclPolicyRequest, AclPolicy>
+      createAclPolicyMethodDescriptor =
+          MethodDescriptor.<CreateAclPolicyRequest, AclPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/CreateAclPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAclPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AclPolicy.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -247,6 +357,96 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersMethodDescriptor =
+          MethodDescriptor.<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/ListTokenAuthUsers")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListTokenAuthUsersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListTokenAuthUsersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetTokenAuthUserRequest, TokenAuthUser>
+      getTokenAuthUserMethodDescriptor =
+          MethodDescriptor.<GetTokenAuthUserRequest, TokenAuthUser>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/GetTokenAuthUser")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetTokenAuthUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TokenAuthUser.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListAuthTokensRequest, ListAuthTokensResponse>
+      listAuthTokensMethodDescriptor =
+          MethodDescriptor.<ListAuthTokensRequest, ListAuthTokensResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/ListAuthTokens")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAuthTokensRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAuthTokensResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAuthTokenRequest, AuthToken>
+      getAuthTokenMethodDescriptor =
+          MethodDescriptor.<GetAuthTokenRequest, AuthToken>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/GetAuthToken")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetAuthTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AuthToken.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<AddTokenAuthUserRequest, Operation>
+      addTokenAuthUserMethodDescriptor =
+          MethodDescriptor.<AddTokenAuthUserRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/AddTokenAuthUser")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AddTokenAuthUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteTokenAuthUserRequest, Operation>
+      deleteTokenAuthUserMethodDescriptor =
+          MethodDescriptor.<DeleteTokenAuthUserRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1.CloudRedisCluster/DeleteTokenAuthUser")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteTokenAuthUserRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<AddAuthTokenRequest, Operation>
+      addAuthTokenMethodDescriptor =
+          MethodDescriptor.<AddAuthTokenRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/AddAuthToken")
+              .setRequestMarshaller(ProtoUtils.marshaller(AddAuthTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteAuthTokenRequest, Operation>
+      deleteAuthTokenMethodDescriptor =
+          MethodDescriptor.<DeleteAuthTokenRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.redis.cluster.v1.CloudRedisCluster/DeleteAuthToken")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAuthTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -271,15 +471,33 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<ListClustersRequest, ListClustersPagedResponse>
       listClustersPagedCallable;
+  private final UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse>
+      listAclPoliciesCallable;
+  private final UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable;
   private final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable;
+  private final UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable;
   private final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable;
   private final OperationCallable<UpdateClusterRequest, Cluster, Any>
       updateClusterOperationCallable;
+  private final UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable;
+  private final OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable;
   private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
   private final OperationCallable<DeleteClusterRequest, Empty, Any> deleteClusterOperationCallable;
+  private final UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable;
+  private final OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable;
+  private final UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable;
+  private final UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable;
+  private final UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable;
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
   private final OperationCallable<CreateClusterRequest, Cluster, Any>
       createClusterOperationCallable;
+  private final UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable;
   private final UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthorityCallable;
   private final UnaryCallable<
@@ -306,6 +524,27 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
   private final UnaryCallable<BackupClusterRequest, Operation> backupClusterCallable;
   private final OperationCallable<BackupClusterRequest, Cluster, Any>
       backupClusterOperationCallable;
+  private final UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersCallable;
+  private final UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersPagedCallable;
+  private final UnaryCallable<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserCallable;
+  private final UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse> listAuthTokensCallable;
+  private final UnaryCallable<ListAuthTokensRequest, ListAuthTokensPagedResponse>
+      listAuthTokensPagedCallable;
+  private final UnaryCallable<GetAuthTokenRequest, AuthToken> getAuthTokenCallable;
+  private final UnaryCallable<AddTokenAuthUserRequest, Operation> addTokenAuthUserCallable;
+  private final OperationCallable<AddTokenAuthUserRequest, Cluster, OperationMetadata>
+      addTokenAuthUserOperationCallable;
+  private final UnaryCallable<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserCallable;
+  private final OperationCallable<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationCallable;
+  private final UnaryCallable<AddAuthTokenRequest, Operation> addAuthTokenCallable;
+  private final OperationCallable<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationCallable;
+  private final UnaryCallable<DeleteAuthTokenRequest, Operation> deleteAuthTokenCallable;
+  private final OperationCallable<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -366,9 +605,32 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<ListAclPoliciesRequest, ListAclPoliciesResponse>
+        listAclPoliciesTransportSettings =
+            GrpcCallSettings.<ListAclPoliciesRequest, ListAclPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listAclPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
             .setMethodDescriptor(getClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetAclPolicyRequest, AclPolicy> getAclPolicyTransportSettings =
+        GrpcCallSettings.<GetAclPolicyRequest, AclPolicy>newBuilder()
+            .setMethodDescriptor(getAclPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -387,6 +649,16 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateAclPolicyRequest, Operation> updateAclPolicyTransportSettings =
+        GrpcCallSettings.<UpdateAclPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAclPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("acl_policy.name", String.valueOf(request.getAclPolicy().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         GrpcCallSettings.<DeleteClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
@@ -398,9 +670,56 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<DeleteAclPolicyRequest, Operation> deleteAclPolicyTransportSettings =
+        GrpcCallSettings.<DeleteAclPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAclPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetAclPolicyRevisionRequest, AclPolicyRevision>
+        getAclPolicyRevisionTransportSettings =
+            GrpcCallSettings.<GetAclPolicyRevisionRequest, AclPolicyRevision>newBuilder()
+                .setMethodDescriptor(getAclPolicyRevisionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+        listAclPolicyRevisionsTransportSettings =
+            GrpcCallSettings
+                .<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>newBuilder()
+                .setMethodDescriptor(listAclPolicyRevisionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(createClusterMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<CreateAclPolicyRequest, AclPolicy> createAclPolicyTransportSettings =
+        GrpcCallSettings.<CreateAclPolicyRequest, AclPolicy>newBuilder()
+            .setMethodDescriptor(createAclPolicyMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -529,6 +848,96 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+        listTokenAuthUsersTransportSettings =
+            GrpcCallSettings.<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>newBuilder()
+                .setMethodDescriptor(listTokenAuthUsersMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserTransportSettings =
+        GrpcCallSettings.<GetTokenAuthUserRequest, TokenAuthUser>newBuilder()
+            .setMethodDescriptor(getTokenAuthUserMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListAuthTokensRequest, ListAuthTokensResponse>
+        listAuthTokensTransportSettings =
+            GrpcCallSettings.<ListAuthTokensRequest, ListAuthTokensResponse>newBuilder()
+                .setMethodDescriptor(listAuthTokensMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<GetAuthTokenRequest, AuthToken> getAuthTokenTransportSettings =
+        GrpcCallSettings.<GetAuthTokenRequest, AuthToken>newBuilder()
+            .setMethodDescriptor(getAuthTokenMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<AddTokenAuthUserRequest, Operation> addTokenAuthUserTransportSettings =
+        GrpcCallSettings.<AddTokenAuthUserRequest, Operation>newBuilder()
+            .setMethodDescriptor(addTokenAuthUserMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("cluster", String.valueOf(request.getCluster()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getCluster())
+            .build();
+    GrpcCallSettings<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserTransportSettings =
+        GrpcCallSettings.<DeleteTokenAuthUserRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteTokenAuthUserMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<AddAuthTokenRequest, Operation> addAuthTokenTransportSettings =
+        GrpcCallSettings.<AddAuthTokenRequest, Operation>newBuilder()
+            .setMethodDescriptor(addAuthTokenMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("token_auth_user", String.valueOf(request.getTokenAuthUser()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getTokenAuthUser())
+            .build();
+    GrpcCallSettings<DeleteAuthTokenRequest, Operation> deleteAuthTokenTransportSettings =
+        GrpcCallSettings.<DeleteAuthTokenRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAuthTokenMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -556,9 +965,18 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
     this.listClustersPagedCallable =
         callableFactory.createPagedCallable(
             listClustersTransportSettings, settings.listClustersSettings(), clientContext);
+    this.listAclPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listAclPoliciesTransportSettings, settings.listAclPoliciesSettings(), clientContext);
+    this.listAclPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAclPoliciesTransportSettings, settings.listAclPoliciesSettings(), clientContext);
     this.getClusterCallable =
         callableFactory.createUnaryCallable(
             getClusterTransportSettings, settings.getClusterSettings(), clientContext);
+    this.getAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getAclPolicyTransportSettings, settings.getAclPolicySettings(), clientContext);
     this.updateClusterCallable =
         callableFactory.createUnaryCallable(
             updateClusterTransportSettings, settings.updateClusterSettings(), clientContext);
@@ -566,6 +984,15 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
         callableFactory.createOperationCallable(
             updateClusterTransportSettings,
             settings.updateClusterOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateAclPolicyTransportSettings, settings.updateAclPolicySettings(), clientContext);
+    this.updateAclPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAclPolicyTransportSettings,
+            settings.updateAclPolicyOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteClusterCallable =
@@ -577,6 +1004,30 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
             settings.deleteClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.deleteAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteAclPolicyTransportSettings, settings.deleteAclPolicySettings(), clientContext);
+    this.deleteAclPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAclPolicyTransportSettings,
+            settings.deleteAclPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getAclPolicyRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getAclPolicyRevisionTransportSettings,
+            settings.getAclPolicyRevisionSettings(),
+            clientContext);
+    this.listAclPolicyRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listAclPolicyRevisionsTransportSettings,
+            settings.listAclPolicyRevisionsSettings(),
+            clientContext);
+    this.listAclPolicyRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAclPolicyRevisionsTransportSettings,
+            settings.listAclPolicyRevisionsSettings(),
+            clientContext);
     this.createClusterCallable =
         callableFactory.createUnaryCallable(
             createClusterTransportSettings, settings.createClusterSettings(), clientContext);
@@ -586,6 +1037,9 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
             settings.createClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.createAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createAclPolicyTransportSettings, settings.createAclPolicySettings(), clientContext);
     this.getClusterCertificateAuthorityCallable =
         callableFactory.createUnaryCallable(
             getClusterCertificateAuthorityTransportSettings,
@@ -658,6 +1112,66 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
             settings.backupClusterOperationSettings(),
             clientContext,
             operationsStub);
+    this.listTokenAuthUsersCallable =
+        callableFactory.createUnaryCallable(
+            listTokenAuthUsersTransportSettings,
+            settings.listTokenAuthUsersSettings(),
+            clientContext);
+    this.listTokenAuthUsersPagedCallable =
+        callableFactory.createPagedCallable(
+            listTokenAuthUsersTransportSettings,
+            settings.listTokenAuthUsersSettings(),
+            clientContext);
+    this.getTokenAuthUserCallable =
+        callableFactory.createUnaryCallable(
+            getTokenAuthUserTransportSettings, settings.getTokenAuthUserSettings(), clientContext);
+    this.listAuthTokensCallable =
+        callableFactory.createUnaryCallable(
+            listAuthTokensTransportSettings, settings.listAuthTokensSettings(), clientContext);
+    this.listAuthTokensPagedCallable =
+        callableFactory.createPagedCallable(
+            listAuthTokensTransportSettings, settings.listAuthTokensSettings(), clientContext);
+    this.getAuthTokenCallable =
+        callableFactory.createUnaryCallable(
+            getAuthTokenTransportSettings, settings.getAuthTokenSettings(), clientContext);
+    this.addTokenAuthUserCallable =
+        callableFactory.createUnaryCallable(
+            addTokenAuthUserTransportSettings, settings.addTokenAuthUserSettings(), clientContext);
+    this.addTokenAuthUserOperationCallable =
+        callableFactory.createOperationCallable(
+            addTokenAuthUserTransportSettings,
+            settings.addTokenAuthUserOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteTokenAuthUserCallable =
+        callableFactory.createUnaryCallable(
+            deleteTokenAuthUserTransportSettings,
+            settings.deleteTokenAuthUserSettings(),
+            clientContext);
+    this.deleteTokenAuthUserOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTokenAuthUserTransportSettings,
+            settings.deleteTokenAuthUserOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.addAuthTokenCallable =
+        callableFactory.createUnaryCallable(
+            addAuthTokenTransportSettings, settings.addAuthTokenSettings(), clientContext);
+    this.addAuthTokenOperationCallable =
+        callableFactory.createOperationCallable(
+            addAuthTokenTransportSettings,
+            settings.addAuthTokenOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteAuthTokenCallable =
+        callableFactory.createUnaryCallable(
+            deleteAuthTokenTransportSettings, settings.deleteAuthTokenSettings(), clientContext);
+    this.deleteAuthTokenOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAuthTokenTransportSettings,
+            settings.deleteAuthTokenOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -687,8 +1201,24 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
   }
 
   @Override
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse> listAclPoliciesCallable() {
+    return listAclPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable() {
+    return listAclPoliciesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return getClusterCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable() {
+    return getAclPolicyCallable;
   }
 
   @Override
@@ -702,6 +1232,17 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
   }
 
   @Override
+  public UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable() {
+    return updateAclPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable() {
+    return updateAclPolicyOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return deleteClusterCallable;
   }
@@ -712,6 +1253,35 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
   }
 
   @Override
+  public UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable() {
+    return deleteAclPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable() {
+    return deleteAclPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable() {
+    return getAclPolicyRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable() {
+    return listAclPolicyRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable() {
+    return listAclPolicyRevisionsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return createClusterCallable;
   }
@@ -719,6 +1289,11 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
   @Override
   public OperationCallable<CreateClusterRequest, Cluster, Any> createClusterOperationCallable() {
     return createClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable() {
+    return createAclPolicyCallable;
   }
 
   @Override
@@ -806,6 +1381,83 @@ public class GrpcCloudRedisClusterStub extends CloudRedisClusterStub {
   @Override
   public OperationCallable<BackupClusterRequest, Cluster, Any> backupClusterOperationCallable() {
     return backupClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersCallable() {
+    return listTokenAuthUsersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersPagedCallable() {
+    return listTokenAuthUsersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserCallable() {
+    return getTokenAuthUserCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse> listAuthTokensCallable() {
+    return listAuthTokensCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthTokensRequest, ListAuthTokensPagedResponse>
+      listAuthTokensPagedCallable() {
+    return listAuthTokensPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAuthTokenRequest, AuthToken> getAuthTokenCallable() {
+    return getAuthTokenCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddTokenAuthUserRequest, Operation> addTokenAuthUserCallable() {
+    return addTokenAuthUserCallable;
+  }
+
+  @Override
+  public OperationCallable<AddTokenAuthUserRequest, Cluster, OperationMetadata>
+      addTokenAuthUserOperationCallable() {
+    return addTokenAuthUserOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserCallable() {
+    return deleteTokenAuthUserCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationCallable() {
+    return deleteTokenAuthUserOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddAuthTokenRequest, Operation> addAuthTokenCallable() {
+    return addAuthTokenCallable;
+  }
+
+  @Override
+  public OperationCallable<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationCallable() {
+    return addAuthTokenOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAuthTokenRequest, Operation> deleteAuthTokenCallable() {
+    return deleteAuthTokenCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationCallable() {
+    return deleteAuthTokenOperationCallable;
   }
 
   @Override

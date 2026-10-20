@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Exception thrown when the request does not have valid authentication credentials for the
@@ -37,18 +38,33 @@ import org.jspecify.annotations.NullMarked;
  */
 @NullMarked
 public class UnauthenticatedException extends ApiException {
+  // Pinned to the value computed for previous releases (gax 2.83.0 to 2.87.0) so that adding
+  // members does not break Java serialization compatibility with them.
+  private static final long serialVersionUID = 6971115068105015909L;
+
+  /**
+   * Whether this failure happened on a transport channel that has since been refreshed (for
+   * example, after an mTLS certificate rotation), making the request eligible for a single
+   * immediate retry on the refreshed channel. Only meaningful within the process that observed the
+   * failure, so it is not serialized.
+   */
+  private final transient boolean channelRefreshed;
+
   public UnauthenticatedException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);
+    this.channelRefreshed = false;
   }
 
   public UnauthenticatedException(
       String message, Throwable cause, StatusCode statusCode, boolean retryable) {
     super(message, cause, statusCode, retryable);
+    this.channelRefreshed = false;
   }
 
   public UnauthenticatedException(
       Throwable cause, StatusCode statusCode, boolean retryable, ErrorDetails errorDetails) {
     super(cause, statusCode, retryable, errorDetails);
+    this.channelRefreshed = false;
   }
 
   public UnauthenticatedException(
@@ -58,5 +74,38 @@ public class UnauthenticatedException extends ApiException {
       boolean retryable,
       ErrorDetails errorDetails) {
     super(message, cause, statusCode, retryable, errorDetails);
+    this.channelRefreshed = false;
+  }
+
+  private UnauthenticatedException(
+      @Nullable String message,
+      @Nullable Throwable cause,
+      StatusCode statusCode,
+      boolean retryable,
+      @Nullable ErrorDetails errorDetails,
+      boolean channelRefreshed) {
+    super(message, cause, statusCode, retryable, errorDetails);
+    this.channelRefreshed = channelRefreshed;
+  }
+
+  /** Returns whether this failure happened on a transport channel that has since been refreshed. */
+  boolean isChannelRefreshed() {
+    return channelRefreshed;
+  }
+
+  /**
+   * Returns a copy of this exception marked as having happened on a channel that has since been
+   * refreshed. The copy keeps the message, cause, status code, {@link #isRetryable()} value, error
+   * details, stack trace and suppressed exceptions of this exception.
+   */
+  UnauthenticatedException withChannelRefreshed() {
+    UnauthenticatedException newEx =
+        new UnauthenticatedException(
+            getMessage(), getCause(), getStatusCode(), isRetryable(), getErrorDetails(), true);
+    newEx.setStackTrace(getStackTrace());
+    for (Throwable suppressed : getSuppressed()) {
+      newEx.addSuppressed(suppressed);
+    }
+    return newEx;
   }
 }

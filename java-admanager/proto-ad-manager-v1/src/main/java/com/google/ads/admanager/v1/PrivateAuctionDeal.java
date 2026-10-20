@@ -922,7 +922,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. The ID of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>optional int64 private_auction_id = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -939,7 +939,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. The ID of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>optional int64 private_auction_id = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -961,7 +961,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. The display name of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>
@@ -980,7 +980,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. The display name of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>
@@ -1007,7 +1007,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. The display name of the
-   * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+   * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
    * </pre>
    *
    * <code>
@@ -3118,7 +3118,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. The ID of the
-     * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+     * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
      * </pre>
      *
      * <code>optional int64 private_auction_id = 3 [(.google.api.field_behavior) = IMMUTABLE];
@@ -3136,7 +3136,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. The ID of the
-     * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+     * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
      * </pre>
      *
      * <code>optional int64 private_auction_id = 3 [(.google.api.field_behavior) = IMMUTABLE];
@@ -3154,7 +3154,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. The ID of the
-     * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+     * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
      * </pre>
      *
      * <code>optional int64 private_auction_id = 3 [(.google.api.field_behavior) = IMMUTABLE];
@@ -3176,7 +3176,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. The ID of the
-     * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+     * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
      * </pre>
      *
      * <code>optional int64 private_auction_id = 3 [(.google.api.field_behavior) = IMMUTABLE];
@@ -3198,7 +3198,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The display name of the
-     * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+     * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
      * </pre>
      *
      * <code>
@@ -3216,7 +3216,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The display name of the
-     * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+     * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
      * </pre>
      *
      * <code>
@@ -3242,7 +3242,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The display name of the
-     * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+     * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
      * </pre>
      *
      * <code>
@@ -3268,7 +3268,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The display name of the
-     * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+     * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
      * </pre>
      *
      * <code>
@@ -3293,7 +3293,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The display name of the
-     * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+     * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
      * </pre>
      *
      * <code>
@@ -3314,7 +3314,7 @@ public final class PrivateAuctionDeal extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. The display name of the
-     * [PrivateAuction](google.ads.admanager.v1.PrivateAuction).
+     * [PrivateAuction][google.ads.admanager.v1.PrivateAuction].
      * </pre>
      *
      * <code>

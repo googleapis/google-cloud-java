@@ -45,6 +45,7 @@ jobs:
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+            - 'java-shared-config/**/pom.xml'
   units:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}

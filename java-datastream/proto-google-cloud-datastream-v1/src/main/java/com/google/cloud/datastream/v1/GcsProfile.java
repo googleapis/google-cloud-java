@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * Cloud Storage bucket profile.
+ * Profile for connecting to a Cloud Storage destination.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.GcsProfile}
@@ -133,10 +133,10 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The root path inside the Cloud Storage bucket.
+   * Optional. The root path inside the Cloud Storage bucket.
    * </pre>
    *
-   * <code>string root_path = 2;</code>
+   * <code>string root_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The rootPath.
    */
@@ -157,10 +157,10 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The root path inside the Cloud Storage bucket.
+   * Optional. The root path inside the Cloud Storage bucket.
    * </pre>
    *
-   * <code>string root_path = 2;</code>
+   * <code>string root_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for rootPath.
    */
@@ -350,7 +350,7 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Cloud Storage bucket profile.
+   * Profile for connecting to a Cloud Storage destination.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.GcsProfile}
@@ -627,10 +627,10 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The root path inside the Cloud Storage bucket.
+     * Optional. The root path inside the Cloud Storage bucket.
      * </pre>
      *
-     * <code>string root_path = 2;</code>
+     * <code>string root_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The rootPath.
      */
@@ -650,10 +650,10 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The root path inside the Cloud Storage bucket.
+     * Optional. The root path inside the Cloud Storage bucket.
      * </pre>
      *
-     * <code>string root_path = 2;</code>
+     * <code>string root_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for rootPath.
      */
@@ -673,10 +673,10 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The root path inside the Cloud Storage bucket.
+     * Optional. The root path inside the Cloud Storage bucket.
      * </pre>
      *
-     * <code>string root_path = 2;</code>
+     * <code>string root_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The rootPath to set.
      * @return This builder for chaining.
@@ -695,10 +695,10 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The root path inside the Cloud Storage bucket.
+     * Optional. The root path inside the Cloud Storage bucket.
      * </pre>
      *
-     * <code>string root_path = 2;</code>
+     * <code>string root_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -713,10 +713,10 @@ public final class GcsProfile extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The root path inside the Cloud Storage bucket.
+     * Optional. The root path inside the Cloud Storage bucket.
      * </pre>
      *
-     * <code>string root_path = 2;</code>
+     * <code>string root_path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for rootPath to set.
      * @return This builder for chaining.

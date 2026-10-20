@@ -68,7 +68,10 @@ import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanKind;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
@@ -78,7 +81,9 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 import java.util.List;
+import org.awaitility.Awaitility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -122,11 +127,13 @@ class ITOtelTracing {
   private static final String VALUE_SERVICE_UNAVAILABLE = "Service Unavailable";
   private static final String SPAN_NAME_ECHO_GRPC = "google.showcase.v1beta1.Echo/Echo";
   private static final String SPAN_NAME_ECHO_HTTP = "POST v1beta1/echo:echo";
+  private static final String SPAN_NAME_OPERATION_ECHO = "google.showcase.v1beta1.Echo.Echo";
   private static final String SPAN_NAME_GET_USER_GRPC = "google.showcase.v1beta1.Identity/GetUser";
   private static final String SPAN_NAME_GET_USER_HTTP = "GET v1beta1/{name=users/*}";
 
   private InMemorySpanExporter spanExporter;
   private OpenTelemetrySdk openTelemetrySdk;
+  private Tracer tracer;
 
   @BeforeEach
   void setup() {
@@ -139,6 +146,7 @@ class ITOtelTracing {
 
     openTelemetrySdk =
         OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).buildAndRegisterGlobal();
+    tracer = openTelemetrySdk.getTracer("it-otel-tracing-test");
   }
 
   @AfterEach
@@ -147,6 +155,19 @@ class ITOtelTracing {
       openTelemetrySdk.close();
     }
     GlobalOpenTelemetry.resetForTest();
+  }
+
+  /**
+   * Waits for the expected number of spans to be exported and returns the finished spans.
+   *
+   * @param expectedCount the expected number of exported spans
+   * @return the list of finished spans
+   */
+  private List<SpanData> waitForSpans(int expectedCount) {
+    Awaitility.await()
+        .atMost(Duration.ofSeconds(5))
+        .until(() -> spanExporter.getFinishedSpanItems().size() == expectedCount);
+    return spanExporter.getFinishedSpanItems();
   }
 
   @Test
@@ -160,7 +181,7 @@ class ITOtelTracing {
 
       client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
 
-      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      List<SpanData> spans = waitForSpans(2);
       assertThat(spans).isNotEmpty();
 
       SpanData attemptSpan =
@@ -229,7 +250,7 @@ class ITOtelTracing {
 
       client.echo(EchoRequest.newBuilder().setContent("tracing-test").build());
 
-      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      List<SpanData> spans = waitForSpans(2);
       assertThat(spans).isNotEmpty();
 
       SpanData attemptSpan =
@@ -327,7 +348,7 @@ class ITOtelTracing {
         // generated.
       }
 
-      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      List<SpanData> spans = waitForSpans(2);
       assertThat(spans).isNotEmpty();
 
       SpanData attemptSpan =
@@ -356,7 +377,7 @@ class ITOtelTracing {
         // generated.
       }
 
-      List<SpanData> spans = spanExporter.getFinishedSpanItems();
+      List<SpanData> spans = waitForSpans(2);
       assertThat(spans).isNotEmpty();
 
       SpanData attemptSpan =
@@ -413,8 +434,8 @@ class ITOtelTracing {
 
     assertThrows(UnavailableException.class, () -> grpcClient.echo(echoRequest));
 
-    List<SpanData> spans = spanExporter.getFinishedSpanItems();
-    assertThat(spans).hasSize(attempts); // Expect exactly one span for the successful retry
+    List<SpanData> spans = waitForSpans(attempts + 1);
+    assertThat(spans).hasSize(attempts + 1); // attempts CLIENT spans + 1 INTERNAL operation span
 
     // This single span represents the successful retry, which has resend_count=1
     // The first attempt has no resend_count. The subsequent retries will have a
@@ -439,6 +460,80 @@ class ITOtelTracing {
             .boxed()
             .collect(java.util.stream.Collectors.toList());
     assertThat(resendCounts).containsExactlyElementsIn(expectedCounts).inOrder();
+  }
+
+  /**
+   * Verifies that when an RPC is invoked within an active OpenTelemetry trace context, all attempt
+   * spans (including the initial call and retries scheduled on background threads) properly link to
+   * the parent span context using gRPC transport.
+   */
+  @Test
+  void testTracing_retry_grpc_linkedToParentContext() throws Exception {
+    final int attempts = 5;
+    final StatusCode.Code statusCode = StatusCode.Code.UNAVAILABLE;
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setTotalTimeout(org.threeten.bp.Duration.ofMillis(5000L))
+            .setMaxAttempts(attempts)
+            .build();
+
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
+
+    EchoSettings grpcEchoSettings = createEchoSettings(false);
+    EchoStubSettings.Builder grpcEchoSettingsBuilder =
+        (EchoStubSettings.Builder) grpcEchoSettings.getStubSettings().toBuilder();
+    grpcEchoSettingsBuilder
+        .echoSettings()
+        .setRetrySettings(retrySettings)
+        .setRetryableCodes(statusCode);
+    grpcEchoSettingsBuilder.setTracerFactory(tracingFactory);
+    EchoStub stub = new ExtendedEchoStubSettings(grpcEchoSettingsBuilder).createStub();
+    EchoClient grpcClient = EchoClient.create(stub);
+
+    EchoRequest echoRequest =
+        EchoRequest.newBuilder()
+            .setError(Status.newBuilder().setCode(statusCode.ordinal()).build())
+            .build();
+
+    Span parentSpan = tracer.spanBuilder("application-parent-operation").startSpan();
+    try (Scope scope = parentSpan.makeCurrent()) {
+      assertThrows(UnavailableException.class, () -> grpcClient.echo(echoRequest));
+    } finally {
+      parentSpan.end();
+    }
+
+    List<SpanData> spans = waitForSpans(attempts + 2);
+    assertThat(spans).hasSize(attempts + 2);
+
+    SpanData rootSpan =
+        spans.stream()
+            .filter(span -> span.getName().equals("application-parent-operation"))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Parent span not found"));
+
+    SpanData operationSpan =
+        spans.stream()
+            .filter(span -> span.getName().equals(SPAN_NAME_OPERATION_ECHO))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Operation span not found"));
+    assertThat(operationSpan.getKind()).isEqualTo(SpanKind.INTERNAL);
+    assertThat(operationSpan.getParentSpanId()).isEqualTo(rootSpan.getSpanContext().getSpanId());
+    assertThat(operationSpan.getSpanContext().getTraceId())
+        .isEqualTo(rootSpan.getSpanContext().getTraceId());
+
+    List<SpanData> attemptSpans =
+        spans.stream()
+            .filter(span -> span.getName().equals(SPAN_NAME_ECHO_GRPC))
+            .collect(java.util.stream.Collectors.toList());
+    assertThat(attemptSpans).hasSize(attempts);
+
+    for (SpanData attemptSpan : attemptSpans) {
+      assertThat(attemptSpan.getKind()).isEqualTo(SpanKind.CLIENT);
+      assertThat(attemptSpan.getParentSpanId())
+          .isEqualTo(operationSpan.getSpanContext().getSpanId());
+      assertThat(attemptSpan.getSpanContext().getTraceId())
+          .isEqualTo(rootSpan.getSpanContext().getTraceId());
+    }
   }
 
   @Test
@@ -491,8 +586,8 @@ class ITOtelTracing {
 
     assertThrows(InvalidArgumentException.class, () -> httpClient.echo(echoRequest));
 
-    List<SpanData> spans = spanExporter.getFinishedSpanItems();
-    assertThat(spans).hasSize(attempts); // Expect exactly one span for the successful retry
+    List<SpanData> spans = waitForSpans(attempts + 1);
+    assertThat(spans).hasSize(attempts + 1); // attempts CLIENT spans + 1 INTERNAL operation span
 
     // This single span represents the successful retry, which has resend_count=1
     // The first attempt has no resend_count. The subsequent retries will have a
@@ -519,7 +614,87 @@ class ITOtelTracing {
     assertThat(resendCounts).containsExactlyElementsIn(expectedCounts).inOrder();
   }
 
+  /**
+   * Verifies that when an RPC is invoked within an active OpenTelemetry trace context, all attempt
+   * spans (including the initial call and retries scheduled on background threads) properly link to
+   * the parent span context using HTTP/JSON transport.
+   */
+  @Test
+  void testTracing_retry_httpjson_linkedToParentContext() throws Exception {
+    final int attempts = 5;
+    final StatusCode.Code statusCode = StatusCode.Code.INVALID_ARGUMENT;
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setTotalTimeout(org.threeten.bp.Duration.ofMillis(5000L))
+            .setMaxAttempts(attempts)
+            .build();
+
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
+
+    EchoSettings httpJsonEchoSettings = createEchoSettings(true);
+    EchoStubSettings.Builder httpJsonEchoSettingsBuilder =
+        (EchoStubSettings.Builder) httpJsonEchoSettings.getStubSettings().toBuilder();
+    httpJsonEchoSettingsBuilder
+        .echoSettings()
+        .setRetrySettings(retrySettings)
+        .setRetryableCodes(statusCode);
+    httpJsonEchoSettingsBuilder.setTracerFactory(tracingFactory);
+    EchoStub stub = new ExtendedEchoStubSettings(httpJsonEchoSettingsBuilder).createStub();
+    EchoClient httpClient = EchoClient.create(stub);
+
+    EchoRequest echoRequest =
+        EchoRequest.newBuilder()
+            .setError(Status.newBuilder().setCode(statusCode.ordinal()).build())
+            .build();
+
+    Span parentSpan = tracer.spanBuilder("application-parent-operation").startSpan();
+    try (Scope scope = parentSpan.makeCurrent()) {
+      assertThrows(InvalidArgumentException.class, () -> httpClient.echo(echoRequest));
+    } finally {
+      parentSpan.end();
+    }
+
+    List<SpanData> spans = waitForSpans(attempts + 2);
+    assertThat(spans).hasSize(attempts + 2);
+
+    SpanData rootSpan =
+        spans.stream()
+            .filter(span -> span.getName().equals("application-parent-operation"))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Parent span not found"));
+
+    SpanData operationSpan =
+        spans.stream()
+            .filter(span -> span.getName().equals(SPAN_NAME_OPERATION_ECHO))
+            .findFirst()
+            .orElseThrow(() -> new AssertionError("Operation span not found"));
+    assertThat(operationSpan.getKind()).isEqualTo(SpanKind.INTERNAL);
+    assertThat(operationSpan.getParentSpanId()).isEqualTo(rootSpan.getSpanContext().getSpanId());
+    assertThat(operationSpan.getSpanContext().getTraceId())
+        .isEqualTo(rootSpan.getSpanContext().getTraceId());
+
+    List<SpanData> attemptSpans =
+        spans.stream()
+            .filter(span -> span.getName().equals(SPAN_NAME_ECHO_HTTP))
+            .collect(java.util.stream.Collectors.toList());
+    assertThat(attemptSpans).hasSize(attempts);
+
+    for (SpanData attemptSpan : attemptSpans) {
+      assertThat(attemptSpan.getKind()).isEqualTo(SpanKind.CLIENT);
+      assertThat(attemptSpan.getParentSpanId())
+          .isEqualTo(operationSpan.getSpanContext().getSpanId());
+      assertThat(attemptSpan.getSpanContext().getTraceId())
+          .isEqualTo(rootSpan.getSpanContext().getTraceId());
+    }
+  }
+
   private SpanData getErrorSpan() {
+    Awaitility.await()
+        .atMost(Duration.ofSeconds(5))
+        .until(
+            () ->
+                spanExporter.getFinishedSpanItems().stream()
+                    .anyMatch(span -> !span.getParentSpanContext().isValid()));
     List<SpanData> spans = spanExporter.getFinishedSpanItems();
     assertThat(spans).isNotEmpty();
 
@@ -707,26 +882,30 @@ class ITOtelTracing {
           com.google.api.gax.rpc.InvalidArgumentException.class,
           () -> grpcClient.echo(errorRequest));
 
-      List<SpanData> spans = spanExporter.getFinishedSpanItems();
-      assertThat(spans).hasSize(2);
+      List<SpanData> spans = waitForSpans(4);
+      assertThat(spans).hasSize(4);
 
-      SpanData grpcSuccessSpan = spans.get(0);
-      assertThat(
-              grpcSuccessSpan
-                  .getAttributes()
-                  .get(
-                      AttributeKey.stringKey(
-                          ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
-          .isEqualTo("OK");
+      for (int i = 0; i < 2; i++) {
+        assertThat(
+                spans
+                    .get(i)
+                    .getAttributes()
+                    .get(
+                        AttributeKey.stringKey(
+                            ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+            .isEqualTo("OK");
+      }
 
-      SpanData grpcErrorSpan = spans.get(1);
-      assertThat(
-              grpcErrorSpan
-                  .getAttributes()
-                  .get(
-                      AttributeKey.stringKey(
-                          ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
-          .isEqualTo("INVALID_ARGUMENT");
+      for (int i = 2; i < 4; i++) {
+        assertThat(
+                spans
+                    .get(i)
+                    .getAttributes()
+                    .get(
+                        AttributeKey.stringKey(
+                            ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+            .isEqualTo("INVALID_ARGUMENT");
+      }
     }
   }
 
@@ -748,24 +927,30 @@ class ITOtelTracing {
           com.google.api.gax.rpc.InvalidArgumentException.class,
           () -> httpClient.echo(errorRequest));
 
-      List<SpanData> spans = spanExporter.getFinishedSpanItems();
-      assertThat(spans).hasSize(2);
+      List<SpanData> spans = waitForSpans(4);
+      assertThat(spans).hasSize(4);
 
-      SpanData httpSuccessSpan = spans.get(0);
-      assertThat(
-              httpSuccessSpan
-                  .getAttributes()
-                  .get(
-                      AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
-          .isEqualTo(200L);
+      for (int i = 0; i < 2; i++) {
+        assertThat(
+                spans
+                    .get(i)
+                    .getAttributes()
+                    .get(
+                        AttributeKey.longKey(
+                            ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
+            .isEqualTo(200L);
+      }
 
-      SpanData httpErrorSpan = spans.get(1);
-      assertThat(
-              httpErrorSpan
-                  .getAttributes()
-                  .get(
-                      AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
-          .isEqualTo((long) StatusCode.Code.INVALID_ARGUMENT.getHttpStatusCode());
+      for (int i = 2; i < 4; i++) {
+        assertThat(
+                spans
+                    .get(i)
+                    .getAttributes()
+                    .get(
+                        AttributeKey.longKey(
+                            ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
+            .isEqualTo((long) StatusCode.Code.INVALID_ARGUMENT.getHttpStatusCode());
+      }
     }
   }
 

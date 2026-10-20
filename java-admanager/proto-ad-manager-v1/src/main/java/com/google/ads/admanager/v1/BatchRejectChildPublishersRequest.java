@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request message for [BatchRejectChildPublishers][] method.
+ * Request message for `BatchRejectChildPublishers` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchRejectChildPublishersRequest}
@@ -140,7 +140,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
    * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
    *
@@ -159,7 +159,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
    * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
    *
@@ -178,7 +178,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
    * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
    *
@@ -198,7 +198,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
    *
    * <pre>
    * Required. Resource names of the
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
    * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
    * </pre>
    *
@@ -394,7 +394,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Request message for [BatchRejectChildPublishers][] method.
+   * Request message for `BatchRejectChildPublishers` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchRejectChildPublishersRequest}
@@ -701,7 +701,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -721,7 +721,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -740,7 +740,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -760,7 +760,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -780,7 +780,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -808,7 +808,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -835,7 +835,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -859,7 +859,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
@@ -882,7 +882,7 @@ public final class BatchRejectChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. Resource names of the
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] to reject.
      * Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
      * </pre>
      *
