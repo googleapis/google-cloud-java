@@ -19,7 +19,7 @@ package com.google.devicesandservices.health.v4beta.samples;
 // [START health_v4beta_generated_DataPointsService_DailyRollUpDataPoints_sync]
 import com.google.devicesandservices.health.v4beta.CivilTimeInterval;
 import com.google.devicesandservices.health.v4beta.DailyRollUpDataPointsRequest;
-import com.google.devicesandservices.health.v4beta.DailyRollUpDataPointsResponse;
+import com.google.devicesandservices.health.v4beta.DailyRollupDataPoint;
 import com.google.devicesandservices.health.v4beta.DataPointsServiceClient;
 import com.google.devicesandservices.health.v4beta.DataTypeName;
 
@@ -45,8 +45,10 @@ public class SyncDailyRollUpDataPoints {
               .setPageToken("pageToken873572522")
               .setDataSourceFamily("dataSourceFamily586548265")
               .build();
-      DailyRollUpDataPointsResponse response =
-          dataPointsServiceClient.dailyRollUpDataPoints(request);
+      for (DailyRollupDataPoint element :
+          dataPointsServiceClient.dailyRollUpDataPoints(request).iterateAll()) {
+        // doThingsWith(element);
+      }
     }
   }
 }

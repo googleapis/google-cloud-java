@@ -87,7 +87,13 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
    * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
    *
    * - `users/me/dataTypes/steps`
+   * - `users/1234567890/dataTypes/steps`
    * - `users/me/dataTypes/distance`
+   * - `users/1234567890/dataTypes/distance`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    *
    * For a list of the supported data types see the [DailyRollupDataPoint
    * value][google.devicesandservices.health.v4beta.DailyRollupDataPoint]
@@ -122,7 +128,13 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
    * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
    *
    * - `users/me/dataTypes/steps`
+   * - `users/1234567890/dataTypes/steps`
    * - `users/me/dataTypes/distance`
+   * - `users/1234567890/dataTypes/distance`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    *
    * For a list of the supported data types see the [DailyRollupDataPoint
    * value][google.devicesandservices.health.v4beta.DailyRollupDataPoint]
@@ -275,7 +287,7 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The `next_page_token` from a previous request, if any.
+   * Optional. The next_page_token from a previous request, if any.
    * All other request fields need to be the same as in the initial request
    * when the page token is specified.
    * </pre>
@@ -301,7 +313,7 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The `next_page_token` from a previous request, if any.
+   * Optional. The next_page_token from a previous request, if any.
    * All other request fields need to be the same as in the initial request
    * when the page token is specified.
    * </pre>
@@ -335,20 +347,26 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
    * Optional. The data source family name to roll up.
    * If empty, data points from all available data sources will be rolled up.
    *
-   * Format: `users/me/dataSourceFamilies/{data_source_family}`
+   * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID, retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+   * (e.g. `users/me/dataSourceFamilies/...` or
+   * `users/1234567890/dataSourceFamilies/...`).
    *
    * The supported values are:
    *
-   * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
-   * from all available data sources.
-   * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+   * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+   * data from all available data sources.
+   * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
    * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
    * Watch). Excludes manually logged data.
-   * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+   * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
    * Google data, such as data from tracker devices, manually logged data, and
    * Health Connect.
-   * - `users/me/dataSourceFamilies/self-sources` - Includes only the data the
-   * calling client wrote through this API, that is, data points whose data
+   * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+   * the calling client wrote through this API, that is, data points whose data
    * source was registered through this API with the same OAuth client ID as
    * the caller.
    *
@@ -385,20 +403,26 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
    * Optional. The data source family name to roll up.
    * If empty, data points from all available data sources will be rolled up.
    *
-   * Format: `users/me/dataSourceFamilies/{data_source_family}`
+   * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID, retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+   * (e.g. `users/me/dataSourceFamilies/...` or
+   * `users/1234567890/dataSourceFamilies/...`).
    *
    * The supported values are:
    *
-   * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
-   * from all available data sources.
-   * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+   * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+   * data from all available data sources.
+   * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
    * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
    * Watch). Excludes manually logged data.
-   * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+   * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
    * Google data, such as data from tracker devices, manually logged data, and
    * Health Connect.
-   * - `users/me/dataSourceFamilies/self-sources` - Includes only the data the
-   * calling client wrote through this API, that is, data points whose data
+   * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+   * the calling client wrote through this API, that is, data points whose data
    * source was registered through this API with the same OAuth client ID as
    * the caller.
    *
@@ -897,7 +921,13 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/distance`
+     * - `users/1234567890/dataTypes/distance`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the [DailyRollupDataPoint
      * value][google.devicesandservices.health.v4beta.DailyRollupDataPoint]
@@ -931,7 +961,13 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/distance`
+     * - `users/1234567890/dataTypes/distance`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the [DailyRollupDataPoint
      * value][google.devicesandservices.health.v4beta.DailyRollupDataPoint]
@@ -965,7 +1001,13 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/distance`
+     * - `users/1234567890/dataTypes/distance`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the [DailyRollupDataPoint
      * value][google.devicesandservices.health.v4beta.DailyRollupDataPoint]
@@ -998,7 +1040,13 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/distance`
+     * - `users/1234567890/dataTypes/distance`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the [DailyRollupDataPoint
      * value][google.devicesandservices.health.v4beta.DailyRollupDataPoint]
@@ -1027,7 +1075,13 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      * Format: `users/{user}/dataTypes/{data_type}`, e.g.:
      *
      * - `users/me/dataTypes/steps`
+     * - `users/1234567890/dataTypes/steps`
      * - `users/me/dataTypes/distance`
+     * - `users/1234567890/dataTypes/distance`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      *
      * For a list of the supported data types see the [DailyRollupDataPoint
      * value][google.devicesandservices.health.v4beta.DailyRollupDataPoint]
@@ -1446,7 +1500,7 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The `next_page_token` from a previous request, if any.
+     * Optional. The next_page_token from a previous request, if any.
      * All other request fields need to be the same as in the initial request
      * when the page token is specified.
      * </pre>
@@ -1471,7 +1525,7 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The `next_page_token` from a previous request, if any.
+     * Optional. The next_page_token from a previous request, if any.
      * All other request fields need to be the same as in the initial request
      * when the page token is specified.
      * </pre>
@@ -1496,7 +1550,7 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The `next_page_token` from a previous request, if any.
+     * Optional. The next_page_token from a previous request, if any.
      * All other request fields need to be the same as in the initial request
      * when the page token is specified.
      * </pre>
@@ -1520,7 +1574,7 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The `next_page_token` from a previous request, if any.
+     * Optional. The next_page_token from a previous request, if any.
      * All other request fields need to be the same as in the initial request
      * when the page token is specified.
      * </pre>
@@ -1540,7 +1594,7 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The `next_page_token` from a previous request, if any.
+     * Optional. The next_page_token from a previous request, if any.
      * All other request fields need to be the same as in the initial request
      * when the page token is specified.
      * </pre>
@@ -1570,20 +1624,26 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      * Optional. The data source family name to roll up.
      * If empty, data points from all available data sources will be rolled up.
      *
-     * Format: `users/me/dataSourceFamilies/{data_source_family}`
+     * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (e.g. `users/me/dataSourceFamilies/...` or
+     * `users/1234567890/dataSourceFamilies/...`).
      *
      * The supported values are:
      *
-     * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
-     * from all available data sources.
-     * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+     * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+     * data from all available data sources.
+     * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
      * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
      * Watch). Excludes manually logged data.
-     * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+     * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
      * Google data, such as data from tracker devices, manually logged data, and
      * Health Connect.
-     * - `users/me/dataSourceFamilies/self-sources` - Includes only the data the
-     * calling client wrote through this API, that is, data points whose data
+     * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+     * the calling client wrote through this API, that is, data points whose data
      * source was registered through this API with the same OAuth client ID as
      * the caller.
      *
@@ -1619,20 +1679,26 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      * Optional. The data source family name to roll up.
      * If empty, data points from all available data sources will be rolled up.
      *
-     * Format: `users/me/dataSourceFamilies/{data_source_family}`
+     * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (e.g. `users/me/dataSourceFamilies/...` or
+     * `users/1234567890/dataSourceFamilies/...`).
      *
      * The supported values are:
      *
-     * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
-     * from all available data sources.
-     * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+     * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+     * data from all available data sources.
+     * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
      * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
      * Watch). Excludes manually logged data.
-     * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+     * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
      * Google data, such as data from tracker devices, manually logged data, and
      * Health Connect.
-     * - `users/me/dataSourceFamilies/self-sources` - Includes only the data the
-     * calling client wrote through this API, that is, data points whose data
+     * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+     * the calling client wrote through this API, that is, data points whose data
      * source was registered through this API with the same OAuth client ID as
      * the caller.
      *
@@ -1668,20 +1734,26 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      * Optional. The data source family name to roll up.
      * If empty, data points from all available data sources will be rolled up.
      *
-     * Format: `users/me/dataSourceFamilies/{data_source_family}`
+     * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (e.g. `users/me/dataSourceFamilies/...` or
+     * `users/1234567890/dataSourceFamilies/...`).
      *
      * The supported values are:
      *
-     * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
-     * from all available data sources.
-     * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+     * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+     * data from all available data sources.
+     * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
      * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
      * Watch). Excludes manually logged data.
-     * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+     * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
      * Google data, such as data from tracker devices, manually logged data, and
      * Health Connect.
-     * - `users/me/dataSourceFamilies/self-sources` - Includes only the data the
-     * calling client wrote through this API, that is, data points whose data
+     * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+     * the calling client wrote through this API, that is, data points whose data
      * source was registered through this API with the same OAuth client ID as
      * the caller.
      *
@@ -1716,20 +1788,26 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      * Optional. The data source family name to roll up.
      * If empty, data points from all available data sources will be rolled up.
      *
-     * Format: `users/me/dataSourceFamilies/{data_source_family}`
+     * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (e.g. `users/me/dataSourceFamilies/...` or
+     * `users/1234567890/dataSourceFamilies/...`).
      *
      * The supported values are:
      *
-     * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
-     * from all available data sources.
-     * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+     * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+     * data from all available data sources.
+     * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
      * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
      * Watch). Excludes manually logged data.
-     * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+     * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
      * Google data, such as data from tracker devices, manually logged data, and
      * Health Connect.
-     * - `users/me/dataSourceFamilies/self-sources` - Includes only the data the
-     * calling client wrote through this API, that is, data points whose data
+     * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+     * the calling client wrote through this API, that is, data points whose data
      * source was registered through this API with the same OAuth client ID as
      * the caller.
      *
@@ -1760,20 +1838,26 @@ public final class DailyRollUpDataPointsRequest extends com.google.protobuf.Gene
      * Optional. The data source family name to roll up.
      * If empty, data points from all available data sources will be rolled up.
      *
-     * Format: `users/me/dataSourceFamilies/{data_source_family}`
+     * Format: `users/{user}/dataSourceFamilies/{data_source_family}`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID, retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]
+     * (e.g. `users/me/dataSourceFamilies/...` or
+     * `users/1234567890/dataSourceFamilies/...`).
      *
      * The supported values are:
      *
-     * - `users/me/dataSourceFamilies/all-sources` - Default value. Includes data
-     * from all available data sources.
-     * - `users/me/dataSourceFamilies/google-wearables` - Includes data from
+     * - `users/{user}/dataSourceFamilies/all-sources` - Default value. Includes
+     * data from all available data sources.
+     * - `users/{user}/dataSourceFamilies/google-wearables` - Includes data from
      * Google and Fitbit tracker devices (such as Fitbit trackers and Pixel
      * Watch). Excludes manually logged data.
-     * - `users/me/dataSourceFamilies/google-sources` - Includes first-party
+     * - `users/{user}/dataSourceFamilies/google-sources` - Includes first-party
      * Google data, such as data from tracker devices, manually logged data, and
      * Health Connect.
-     * - `users/me/dataSourceFamilies/self-sources` - Includes only the data the
-     * calling client wrote through this API, that is, data points whose data
+     * - `users/{user}/dataSourceFamilies/self-sources` - Includes only the data
+     * the calling client wrote through this API, that is, data points whose data
      * source was registered through this API with the same OAuth client ID as
      * the caller.
      *

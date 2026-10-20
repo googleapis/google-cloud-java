@@ -109,15 +109,16 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   }
 
   private boolean useExperimental(ReqT req) {
-    if (!experimental.supports(req)) {
-      return false;
-    }
-
     float ratio =
         configurationManager.getClientConfiguration().getSessionConfiguration().getSessionLoad();
     if (ratio == 0) {
       return false;
     }
+
+    if (!experimental.supports(req)) {
+      return false;
+    }
+
     if (ratio != 1.0 && ThreadLocalRandom.current().nextFloat() > ratio) {
       return false;
     }

@@ -296,12 +296,12 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A user-defined name of the Certificate Map Entry. Certificate Map Entry
-   * names must be unique globally and match pattern
+   * Identifier. A user-defined name of the Certificate Map Entry. Certificate
+   * Map Entry names must be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -322,12 +322,12 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A user-defined name of the Certificate Map Entry. Certificate Map Entry
-   * names must be unique globally and match pattern
+   * Identifier. A user-defined name of the Certificate Map Entry. Certificate
+   * Map Entry names must be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -353,10 +353,11 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a certificate map entry.
+   * Optional. One or more paragraphs of text description of a certificate map
+   * entry.
    * </pre>
    *
-   * <code>string description = 9;</code>
+   * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -377,10 +378,11 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a certificate map entry.
+   * Optional. One or more paragraphs of text description of a certificate map
+   * entry.
    * </pre>
    *
-   * <code>string description = 9;</code>
+   * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -532,10 +534,10 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map Entry.
+   * Optional. Set of labels associated with a Certificate Map Entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -556,10 +558,10 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map Entry.
+   * Optional. Set of labels associated with a Certificate Map Entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -570,10 +572,10 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map Entry.
+   * Optional. Set of labels associated with a Certificate Map Entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -591,10 +593,10 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Set of labels associated with a Certificate Map Entry.
+   * Optional. Set of labels associated with a Certificate Map Entry.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -755,12 +757,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A set of Certificates defines for the given `hostname`. There can be
-   * defined up to four certificates in each Certificate Map Entry. Each
+   * Optional. A set of Certificates defines for the given `hostname`. There can
+   * be defined up to four certificates in each Certificate Map Entry. Each
    * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
-   * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return A list containing the certificates.
    */
@@ -772,12 +776,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A set of Certificates defines for the given `hostname`. There can be
-   * defined up to four certificates in each Certificate Map Entry. Each
+   * Optional. A set of Certificates defines for the given `hostname`. There can
+   * be defined up to four certificates in each Certificate Map Entry. Each
    * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
-   * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The count of certificates.
    */
@@ -789,12 +795,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A set of Certificates defines for the given `hostname`. There can be
-   * defined up to four certificates in each Certificate Map Entry. Each
+   * Optional. A set of Certificates defines for the given `hostname`. There can
+   * be defined up to four certificates in each Certificate Map Entry. Each
    * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
-   * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @param index The index of the element to return.
    * @return The certificates at the given index.
@@ -807,12 +815,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A set of Certificates defines for the given `hostname`. There can be
-   * defined up to four certificates in each Certificate Map Entry. Each
+   * Optional. A set of Certificates defines for the given `hostname`. There can
+   * be defined up to four certificates in each Certificate Map Entry. Each
    * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
    * </pre>
    *
-   * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the certificates at the given index.
@@ -1496,12 +1506,12 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A user-defined name of the Certificate Map Entry. Certificate Map Entry
-     * names must be unique globally and match pattern
+     * Identifier. A user-defined name of the Certificate Map Entry. Certificate
+     * Map Entry names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1521,12 +1531,12 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A user-defined name of the Certificate Map Entry. Certificate Map Entry
-     * names must be unique globally and match pattern
+     * Identifier. A user-defined name of the Certificate Map Entry. Certificate
+     * Map Entry names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1546,12 +1556,12 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A user-defined name of the Certificate Map Entry. Certificate Map Entry
-     * names must be unique globally and match pattern
+     * Identifier. A user-defined name of the Certificate Map Entry. Certificate
+     * Map Entry names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1570,12 +1580,12 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A user-defined name of the Certificate Map Entry. Certificate Map Entry
-     * names must be unique globally and match pattern
+     * Identifier. A user-defined name of the Certificate Map Entry. Certificate
+     * Map Entry names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1590,12 +1600,12 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A user-defined name of the Certificate Map Entry. Certificate Map Entry
-     * names must be unique globally and match pattern
+     * Identifier. A user-defined name of the Certificate Map Entry. Certificate
+     * Map Entry names must be unique globally and match pattern
      * `projects/&#42;&#47;locations/&#42;&#47;certificateMaps/&#42;&#47;certificateMapEntries/&#42;`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1617,10 +1627,11 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a certificate map entry.
+     * Optional. One or more paragraphs of text description of a certificate map
+     * entry.
      * </pre>
      *
-     * <code>string description = 9;</code>
+     * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -1640,10 +1651,11 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a certificate map entry.
+     * Optional. One or more paragraphs of text description of a certificate map
+     * entry.
      * </pre>
      *
-     * <code>string description = 9;</code>
+     * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -1663,10 +1675,11 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a certificate map entry.
+     * Optional. One or more paragraphs of text description of a certificate map
+     * entry.
      * </pre>
      *
-     * <code>string description = 9;</code>
+     * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1685,10 +1698,11 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a certificate map entry.
+     * Optional. One or more paragraphs of text description of a certificate map
+     * entry.
      * </pre>
      *
-     * <code>string description = 9;</code>
+     * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1703,10 +1717,11 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * One or more paragraphs of text description of a certificate map entry.
+     * Optional. One or more paragraphs of text description of a certificate map
+     * entry.
      * </pre>
      *
-     * <code>string description = 9;</code>
+     * <code>string description = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2176,10 +2191,10 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Set of labels associated with a Certificate Map Entry.
+     * Optional. Set of labels associated with a Certificate Map Entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -2200,10 +2215,10 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Set of labels associated with a Certificate Map Entry.
+     * Optional. Set of labels associated with a Certificate Map Entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -2214,10 +2229,10 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Set of labels associated with a Certificate Map Entry.
+     * Optional. Set of labels associated with a Certificate Map Entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -2235,10 +2250,10 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Set of labels associated with a Certificate Map Entry.
+     * Optional. Set of labels associated with a Certificate Map Entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -2262,10 +2277,10 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Set of labels associated with a Certificate Map Entry.
+     * Optional. Set of labels associated with a Certificate Map Entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -2286,10 +2301,10 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Set of labels associated with a Certificate Map Entry.
+     * Optional. Set of labels associated with a Certificate Map Entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2307,10 +2322,10 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Set of labels associated with a Certificate Map Entry.
+     * Optional. Set of labels associated with a Certificate Map Entry.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -2604,12 +2619,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to four certificates in each Certificate Map Entry. Each
+     * Optional. A set of Certificates defines for the given `hostname`. There can
+     * be defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
-     * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return A list containing the certificates.
      */
@@ -2622,12 +2639,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to four certificates in each Certificate Map Entry. Each
+     * Optional. A set of Certificates defines for the given `hostname`. There can
+     * be defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
-     * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The count of certificates.
      */
@@ -2639,12 +2658,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to four certificates in each Certificate Map Entry. Each
+     * Optional. A set of Certificates defines for the given `hostname`. There can
+     * be defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
-     * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param index The index of the element to return.
      * @return The certificates at the given index.
@@ -2657,12 +2678,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to four certificates in each Certificate Map Entry. Each
+     * Optional. A set of Certificates defines for the given `hostname`. There can
+     * be defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
-     * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the certificates at the given index.
@@ -2675,12 +2698,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to four certificates in each Certificate Map Entry. Each
+     * Optional. A set of Certificates defines for the given `hostname`. There can
+     * be defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
-     * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param index The index to set the value at.
      * @param value The certificates to set.
@@ -2701,12 +2726,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to four certificates in each Certificate Map Entry. Each
+     * Optional. A set of Certificates defines for the given `hostname`. There can
+     * be defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
-     * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The certificates to add.
      * @return This builder for chaining.
@@ -2726,12 +2753,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to four certificates in each Certificate Map Entry. Each
+     * Optional. A set of Certificates defines for the given `hostname`. There can
+     * be defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
-     * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param values The certificates to add.
      * @return This builder for chaining.
@@ -2748,12 +2777,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to four certificates in each Certificate Map Entry. Each
+     * Optional. A set of Certificates defines for the given `hostname`. There can
+     * be defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
-     * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2769,12 +2800,14 @@ public final class CertificateMapEntry extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A set of Certificates defines for the given `hostname`. There can be
-     * defined up to four certificates in each Certificate Map Entry. Each
+     * Optional. A set of Certificates defines for the given `hostname`. There can
+     * be defined up to four certificates in each Certificate Map Entry. Each
      * certificate must match pattern `projects/&#42;&#47;locations/&#42;&#47;certificates/&#42;`.
      * </pre>
      *
-     * <code>repeated string certificates = 7 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * repeated string certificates = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes of the certificates to add.
      * @return This builder for chaining.

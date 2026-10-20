@@ -54,6 +54,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
 import javax.annotation.Nullable;
 import org.junit.Before;
 import org.junit.Test;
@@ -1253,5 +1254,52 @@ public class GrpcResultSetTest {
             });
     assertEquals("DEADLINE_EXCEEDED: stream wait timeout", spannerException.getMessage());
     consumer.onCompleted();
+  }
+
+  @Test
+  public void testClosePreservesWithBeginTransactionForListener() {
+    AtomicBoolean listenerReceivedWithBeginTransaction = new AtomicBoolean();
+    AbstractResultSet.Listener listener =
+        new NoOpListener() {
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            listenerReceivedWithBeginTransaction.set(withBeginTransaction);
+          }
+        };
+    AbstractResultSet.CloseableIterator<PartialResultSet> iterator =
+        new AbstractResultSet.CloseableIterator<PartialResultSet>() {
+          private boolean closed;
+
+          @Override
+          public void close(@Nullable String message) {
+            this.closed = true;
+          }
+
+          @Override
+          public boolean isWithBeginTransaction() {
+            // Emulate ResumableStreamIterator: stream is nulled upon close,
+            // so isWithBeginTransaction() returns false once closed.
+            return !closed;
+          }
+
+          @Override
+          public boolean isLastStatement() {
+            return false;
+          }
+
+          @Override
+          public boolean hasNext() {
+            return false;
+          }
+
+          @Override
+          public PartialResultSet next() {
+            throw new java.util.NoSuchElementException();
+          }
+        };
+
+    GrpcResultSet resultSet = new GrpcResultSet(iterator, listener);
+    resultSet.close();
+    assertTrue(listenerReceivedWithBeginTransaction.get());
   }
 }

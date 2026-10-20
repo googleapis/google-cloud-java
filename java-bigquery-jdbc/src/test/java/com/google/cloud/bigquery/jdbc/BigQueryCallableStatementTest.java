@@ -1029,19 +1029,22 @@ public class BigQueryCallableStatementTest {
     assertEquals(expected, actual);
   }
 
-  @Test
-  public void testSetTimeCalParamByName() throws SQLException {
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testSetTimeCalParamByName(String zoneId) throws SQLException {
     BigQueryCallableStatement statement =
         new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
     assertNotNull(statement);
-    Time expectedTime = Time.valueOf("12:34:56");
-    Calendar expectedCal = Calendar.getInstance();
+    Calendar expectedCal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
+    expectedCal.clear();
+    expectedCal.set(1970, Calendar.JANUARY, 1, 12, 34, 56);
+    Time expectedTime = new Time(expectedCal.getTimeInMillis());
 
     statement.setTime(PARAM_KEY, expectedTime, expectedCal);
     Time actual = statement.getTime(PARAM_KEY);
-    assertNotNull(actual);
+    assertEquals("12:34:56", actual.toString());
     actual = statement.getTime(PARAM_KEY, expectedCal);
-    assertNotNull(actual);
+    assertEquals(expectedTime, actual);
   }
 
   @Test

@@ -59,7 +59,7 @@ class ReadModifyWriteRowShimTest {
     doReturn(tablePool).when(tableAsync).getSessionPool();
     doReturn(authViewPool).when(authViewAsync).getSessionPool();
 
-    shim = new ReadModifyWriteRowShim(client);
+    shim = new ReadModifyWriteRowShim(new SessionPoolMap(client));
   }
 
   @Test
@@ -112,9 +112,8 @@ class ReadModifyWriteRowShimTest {
   void call_tableId_returnsResponse() throws Exception {
     SessionReadModifyWriteRowResponse response =
         SessionReadModifyWriteRowResponse.getDefaultInstance();
-    CompletableFuture<SessionReadModifyWriteRowResponse> future =
-        CompletableFuture.completedFuture(response);
-    when(tableAsync.readModifyWriteRow(any(), any())).thenReturn(future);
+    when(tableAsync.readModifyWriteRow(any(), any()))
+        .thenReturn(CompletableFuture.completedFuture(response));
 
     ReadModifyWriteRow request = ReadModifyWriteRow.create("table1", "key");
     Deadline deadline = Deadline.after(1, TimeUnit.SECONDS);
@@ -127,9 +126,8 @@ class ReadModifyWriteRowShimTest {
   void call_authorizedViewId_returnsResponse() throws Exception {
     SessionReadModifyWriteRowResponse response =
         SessionReadModifyWriteRowResponse.getDefaultInstance();
-    CompletableFuture<SessionReadModifyWriteRowResponse> future =
-        CompletableFuture.completedFuture(response);
-    when(authViewAsync.readModifyWriteRow(any(), any())).thenReturn(future);
+    when(authViewAsync.readModifyWriteRow(any(), any()))
+        .thenReturn(CompletableFuture.completedFuture(response));
 
     ReadModifyWriteRow request =
         ReadModifyWriteRow.create(AuthorizedViewId.of("table1", "view1"), "key");

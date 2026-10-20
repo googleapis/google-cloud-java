@@ -35,6 +35,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
@@ -369,6 +370,11 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public Object getObject(int columnIndex) throws SQLException {
+    return getObject(columnIndex, (ZoneId) null);
+  }
+
+  @Override
+  protected Object getObject(int columnIndex, ZoneId zone) throws SQLException {
 
     // columnIndex is SQL index starting at 1
     LOG.finestTrace("getObject");
@@ -398,7 +404,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(arrayField)) {
         return BigQueryTemporalUtility.formatTimestampValue(value, true);
       }
-      return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), null);
+      return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), zone);
     }
 
     int fieldIndex = this.isNested ? 0 : columnIndex - 1;
@@ -478,7 +484,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(fieldSchema)) {
       return BigQueryTemporalUtility.formatTimestampValue(value, true);
     }
-    return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), null);
+    return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), zone);
   }
 
   private StandardSQLTypeName getRangeElementType(Field field, Object representativeElement) {

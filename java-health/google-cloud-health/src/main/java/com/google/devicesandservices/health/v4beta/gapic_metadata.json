@@ -17,7 +17,7 @@
               "methods": ["createDataPointAsync", "createDataPointAsync", "createDataPointAsync", "createDataPointOperationCallable", "createDataPointCallable"]
             },
             "DailyRollUpDataPoints": {
-              "methods": ["dailyRollUpDataPoints", "dailyRollUpDataPointsCallable"]
+              "methods": ["dailyRollUpDataPoints", "dailyRollUpDataPointsPagedCallable", "dailyRollUpDataPointsCallable"]
             },
             "ExportExerciseTcx": {
               "methods": ["exportExerciseTcx", "exportExerciseTcx", "exportExerciseTcx", "exportExerciseTcxCallable"]

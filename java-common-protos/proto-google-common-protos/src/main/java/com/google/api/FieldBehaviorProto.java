@@ -85,12 +85,12 @@ public final class FieldBehaviorProto extends com.google.protobuf.GeneratedFile 
           + "ECIFIED\020\000\022\014\n\010OPTIONAL\020\001\022\014\n\010REQUIRED\020\002\022\017\n"
           + "\013OUTPUT_ONLY\020\003\022\016\n\nINPUT_ONLY\020\004\022\r\n\tIMMUTA"
           + "BLE\020\005\022\022\n\016UNORDERED_LIST\020\006\022\025\n\021NON_EMPTY_D"
-          + "EFAULT\020\007\022\016\n\nIDENTIFIER\020\010:U\n\016field_behavi"
+          + "EFAULT\020\007\022\016\n\nIDENTIFIER\020\010:Q\n\016field_behavi"
           + "or\022\035.google.protobuf.FieldOptions\030\234\010 \003(\016"
-          + "2\031.google.api.FieldBehaviorB\002\020\000Bp\n\016com.g"
-          + "oogle.apiB\022FieldBehaviorProtoP\001ZAgoogle."
-          + "golang.org/genproto/googleapis/api/annot"
-          + "ations;annotations\242\002\004GAPIb\006proto3"
+          + "2\031.google.api.FieldBehaviorBp\n\016com.googl"
+          + "e.apiB\022FieldBehaviorProtoP\001ZAgoogle.gola"
+          + "ng.org/genproto/googleapis/api/annotatio"
+          + "ns;annotations\242\002\004GAPIb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

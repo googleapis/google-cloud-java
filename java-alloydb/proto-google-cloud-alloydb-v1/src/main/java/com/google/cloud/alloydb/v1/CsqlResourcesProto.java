@@ -55,14 +55,15 @@ public final class CsqlResourcesProto extends com.google.protobuf.GeneratedFile 
     java.lang.String[] descriptorData = {
       "\n,google/cloud/alloydb/v1/csql_resources"
           + ".proto\022\027google.cloud.alloydb.v1\032\037google/"
-          + "api/field_behavior.proto\"`\n\027CloudSQLBack"
-          + "upRunSource\022\017\n\007project\030\001 \001(\t\022\030\n\013instance"
-          + "_id\030\002 \001(\tB\003\340A\002\022\032\n\rbackup_run_id\030\003 \001(\003B\003\340"
-          + "A\002B\273\001\n\033com.google.cloud.alloydb.v1B\022Csql"
-          + "ResourcesProtoP\001Z5cloud.google.com/go/al"
-          + "loydb/apiv1/alloydbpb;alloydbpb\252\002\027Google"
-          + ".Cloud.AlloyDb.V1\312\002\027Google\\Cloud\\AlloyDb"
-          + "\\V1\352\002\032Google::Cloud::AlloyDB::V1b\006proto3"
+          + "api/field_behavior.proto\"b\n\027CloudSQLBack"
+          + "upRunSource\022\017\n\007project\030\001 \001(\t\022\031\n\013instance"
+          + "_id\030\002 \001(\tB\004\342A\001\002\022\033\n\rbackup_run_id\030\003 \001(\003B\004"
+          + "\342A\001\002B\273\001\n\033com.google.cloud.alloydb.v1B\022Cs"
+          + "qlResourcesProtoP\001Z5cloud.google.com/go/"
+          + "alloydb/apiv1/alloydbpb;alloydbpb\252\002\027Goog"
+          + "le.Cloud.AlloyDb.V1\312\002\027Google\\Cloud\\Alloy"
+          + "Db\\V1\352\002\032Google::Cloud::AlloyDB::V1b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

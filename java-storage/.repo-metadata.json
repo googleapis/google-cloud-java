@@ -14,6 +14,5 @@
   "library_type": "GAPIC_COMBO",
   "codeowner_team": "@googleapis/gcs-team",
   "issue_tracker": "https://issuetracker.google.com/savedsearches/559782",
-  "extra_versioned_modules": "gapic-google-cloud-storage-v2",
   "recommended_package": "com.google.cloud.storage"
 }

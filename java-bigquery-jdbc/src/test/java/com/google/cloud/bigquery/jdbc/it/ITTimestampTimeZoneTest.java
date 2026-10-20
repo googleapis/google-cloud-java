@@ -47,7 +47,6 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -219,7 +218,6 @@ public class ITTimestampTimeZoneTest extends ITBase {
    */
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
-  @Disabled
   public void testSetTimeWithCalendar_sendsTimeInCalendarZone(String zone) throws SQLException {
     useJvmZone(zone);
     Time time = Time.valueOf("12:34:56");
@@ -413,7 +411,6 @@ public class ITTimestampTimeZoneTest extends ITBase {
   }
 
   /** For DATETIME, DATE and TIME the Calendar is the zone the digits are interpreted in. */
-  @Disabled
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
   public void testCalendarGettersOnWallClockTypes_useCalendarZone(String zone) throws SQLException {
@@ -452,7 +449,6 @@ public class ITTimestampTimeZoneTest extends ITBase {
   }
 
   /** A TIMESTAMP is already a moment, so the Calendar does not change the result. */
-  @Disabled
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
   public void testCalendarGettersOnTimestamp_matchNoCalendarGetters(String zone)
@@ -482,7 +478,6 @@ public class ITTimestampTimeZoneTest extends ITBase {
     }
   }
 
-  @Disabled
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
   public void testGetString_returnsUtcDigits(String zone) throws SQLException {
@@ -525,7 +520,6 @@ public class ITTimestampTimeZoneTest extends ITBase {
 
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
-  @Disabled
   public void testRoundTrip_getStringThenSetString(String zone) throws SQLException {
     useJvmZone(zone);
     try (Connection conn = connect();

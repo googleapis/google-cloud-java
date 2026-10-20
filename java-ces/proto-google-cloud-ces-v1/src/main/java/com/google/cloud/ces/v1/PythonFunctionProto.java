@@ -56,15 +56,15 @@ public final class PythonFunctionProto extends com.google.protobuf.GeneratedFile
       "\n"
           + ")google/cloud/ces/v1/python_function.pr"
           + "oto\022\023google.cloud.ces.v1\032\037google/api/field_behavior.proto\032"
-          + " google/cloud/ces/v1/common.proto\"\253\001\n"
-          + "\016PythonFunction\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\001\022\030\n"
-          + "\013python_code\030\002 \001(\tB\003\340A\001\022\030\n"
-          + "\013description\030\003 \001(\tB\003\340A\003\022R\n"
+          + " google/cloud/ces/v1/common.proto\"\257\001\n"
+          + "\016PythonFunction\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\001\022\031\n"
+          + "\013python_code\030\002 \001(\tB\004\342A\001\001\022\031\n"
+          + "\013description\030\003 \001(\tB\004\342A\001\003\022S\n"
           + "\030service_directory_config\030\004"
-          + " \001(\0132+.google.cloud.ces.v1.ServiceDirectoryConfigB\003\340A\001B[\n"
-          + "\027com.google.cloud.ces.v1B\023PythonFunctionProtoP\001Z)clo"
-          + "ud.google.com/go/ces/apiv1/cespb;cespbb\006proto3"
+          + " \001(\0132+.google.cloud.ces.v1.ServiceDirectoryConfigB\004\342A\001\001B[\n"
+          + "\027com.google.cloud.ces.v1B\023PythonFunctionProtoP\001Z"
+          + ")cloud.google.com/go/ces/apiv1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

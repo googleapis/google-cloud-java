@@ -858,7 +858,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     checkClosed();
     this.parameterHandler.setParameter(
         parameterName,
-        value == null ? null : BigQueryTemporalUtility.convertTimeWithCalendar(value, calendar),
+        value == null ? null : BigQueryTemporalUtility.convertTimeToCalendar(value, calendar),
         Time.class,
         BigQueryStatementParameterType.IN,
         0);
