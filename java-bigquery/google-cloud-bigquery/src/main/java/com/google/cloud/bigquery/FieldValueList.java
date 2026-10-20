@@ -112,7 +112,7 @@ public class FieldValueList extends AbstractList<FieldValue> implements Serializ
   }
 
   static FieldValueList fromPb(List<?> rowPb, FieldList schema) {
-    return fromPb(rowPb, schema, DataFormatOptions.newBuilder().build());
+    return fromPb(rowPb, schema, DataFormatOptions.DEFAULT_INSTANCE);
   }
 
   static FieldValueList fromPb(

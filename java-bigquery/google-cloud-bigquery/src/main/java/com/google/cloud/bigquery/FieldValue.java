@@ -75,7 +75,7 @@ public class FieldValue implements Serializable {
   }
 
   private FieldValue(Attribute attribute, Object value) {
-    this(attribute, value, DataFormatOptions.newBuilder().build());
+    this(attribute, value, DataFormatOptions.DEFAULT_INSTANCE);
   }
 
   private FieldValue(Attribute attribute, Object value, DataFormatOptions dataFormatOptions) {
@@ -373,7 +373,7 @@ public class FieldValue implements Serializable {
    */
   @BetaApi
   public static FieldValue of(Attribute attribute, Object value) {
-    return of(attribute, value, DataFormatOptions.newBuilder().build());
+    return of(attribute, value, DataFormatOptions.DEFAULT_INSTANCE);
   }
 
   @BetaApi
@@ -391,7 +391,7 @@ public class FieldValue implements Serializable {
   }
 
   static FieldValue fromPb(Object cellPb) {
-    return fromPb(cellPb, null, DataFormatOptions.newBuilder().build());
+    return fromPb(cellPb, null, DataFormatOptions.DEFAULT_INSTANCE);
   }
 
   @SuppressWarnings("unchecked")
