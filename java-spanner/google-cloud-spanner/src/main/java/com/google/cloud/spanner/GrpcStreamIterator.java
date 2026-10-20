@@ -76,7 +76,7 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
   private static final Logger logger = Logger.getLogger(GrpcStreamIterator.class.getName());
   static final PartialResultSet END_OF_STREAM = PartialResultSet.newBuilder().build();
   private final int prefetchChunks;
-  private AsyncResultSet.StreamMessageListener streamMessageListener;
+  private volatile AsyncResultSet.StreamMessageListener streamMessageListener;
 
   private final ConsumerImpl consumer;
   private final BlockingQueue<PartialResultSet> stream;
@@ -91,6 +91,8 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
   @Nullable private volatile Timeout streamWaitTimeout;
   @Nullable private volatile SpannerException error;
   private volatile boolean done;
+  private volatile boolean callInitialized;
+  private volatile boolean endOfStreamReached;
 
   @VisibleForTesting
   GrpcStreamIterator(
@@ -118,6 +120,20 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
 
   void registerListener(AsyncResultSet.StreamMessageListener streamMessageListener) {
     this.streamMessageListener = Preconditions.checkNotNull(streamMessageListener);
+    // If setCall() has already completed, flush notifications for any messages that were buffered
+    // before this listener was registered.
+    //
+    // This check is safe from races with concurrent setCall() execution:
+    // 1. streamMessageListener is set before reading callInitialized (both volatile). If this check
+    //    observes false, setCall() is guaranteed to observe the non-null listener and perform the
+    //    flush itself.
+    // 2. If both registerListener() and setCall() run the flush concurrently, duplicate deliveries
+    //    are safe because onStreamMessage() is idempotent.
+    if (this.callInitialized) {
+      for (PartialResultSet pending : stream) {
+        onStreamMessage(pending);
+      }
+    }
   }
 
   public void setCall(SpannerRpc.StreamingCall call, boolean withBeginTransaction) {
@@ -130,6 +146,7 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
       if (!this.callCleared && !this.closed) {
         this.call = call;
       }
+      this.callInitialized = true;
       if (timeout != null) {
         this.streamWaitTimeout = timeout;
       }
@@ -137,6 +154,21 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
     }
     if (shouldCancel) {
       call.cancel(messageToCancel);
+      return;
+    }
+    // Flush notifications for any messages that arrived before setCall() completed.
+    // While callInitialized was false, addToStream() suppressed onStreamMessage() notifications
+    // to prevent asynchronous consumers from processing rows before the underlying StreamingCall
+    // was established.
+    //
+    // This is safe with concurrent stream activity because:
+    // 1. LinkedBlockingQueue's iterator is weakly consistent and thread-safe.
+    // 2. Since callInitialized was set to true above, any chunk added concurrently during or after
+    //    this loop will trigger onStreamMessage() in addToStream(). If this loop also visits a
+    //    concurrently added chunk during iteration, duplicate onStreamMessage() invocations are
+    //    completely idempotent in AsyncResultSetImpl.
+    for (PartialResultSet pending : stream) {
+      onStreamMessage(pending);
     }
   }
 
@@ -209,6 +241,45 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
     return lastStatement;
   }
 
+  /**
+   * Returns true if this iterator is ready to allow polling or error delivery.
+   *
+   * <p>When an asynchronous {@link AsyncResultSet.StreamMessageListener} is registered, consumption
+   * is gated until the underlying {@link SpannerRpc.StreamingCall} is initialized via {@link
+   * #setCall(SpannerRpc.StreamingCall, boolean)} so that call context, cancellation hooks, and
+   * listener notifications are properly established. In synchronous mode (where no listener is
+   * registered, e.g. {@code streamMessageListener == null}), this gating is not needed because
+   * callers invoke {@link #next()} directly on the iterator.
+   */
+  private boolean isReadyForConsumption() {
+    return callInitialized || streamMessageListener == null;
+  }
+
+  @Override
+  public boolean canPollWithoutErrorOrBlocking() {
+    // A client can poll without error or blocking on network I/O if:
+    // 1. The iterator is ready for consumption (call is initialized or iterator is synchronous).
+    // 2. AND either:
+    //    a) The stream has already reached EOF (computeNext() will return null immediately), OR
+    //    b) The next message at the head of the stream is an unconsumed data chunk (which next()
+    //       will return immediately without error and without I/O), OR
+    //    c) The next message is EOF and no stream error occurred.
+    PartialResultSet head = stream.peek();
+    return isReadyForConsumption()
+        && (endOfStreamReached || (head != null && (head != END_OF_STREAM || error == null)));
+  }
+
+  @Override
+  public boolean isDataAvailable() {
+    // Data is available without blocking on network I/O if:
+    // 1. canPollWithoutErrorOrBlocking() is true (a normal chunk or EOF is ready to read
+    //    immediately), OR
+    // 2. An error has occurred and is buffered in memory, ready to be thrown immediately by
+    //    computeNext() without waiting on network I/O (assuming the iterator is ready for
+    //    consumption).
+    return canPollWithoutErrorOrBlocking() || (isReadyForConsumption() && error != null);
+  }
+
   @Override
   protected final PartialResultSet computeNext() {
     PartialResultSet next = takeNextFromStream();
@@ -227,6 +298,7 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
     if (error != null) {
       throw SpannerExceptionFactory.asSpannerException(error);
     }
+    endOfStreamReached = true;
     endOfData();
     return null;
   }
@@ -261,7 +333,9 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
   private void addToStream(PartialResultSet results) {
     // We assume that nothing from the user will interrupt gRPC event threads.
     Uninterruptibles.putUninterruptibly(stream, results);
-    onStreamMessage(results);
+    if (callInitialized) {
+      onStreamMessage(results);
+    }
   }
 
   private class ConsumerImpl implements SpannerRpc.ResultStreamConsumer {
@@ -320,6 +394,8 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
 
   private void onStreamMessage(PartialResultSet partialResultSet) {
     Optional.ofNullable(streamMessageListener)
-        .ifPresent(sl -> sl.onStreamMessage(partialResultSet, stream.remainingCapacity() <= 1));
+        .ifPresent(
+            listener ->
+                listener.onStreamMessage(partialResultSet, stream.remainingCapacity() <= 1));
   }
 }

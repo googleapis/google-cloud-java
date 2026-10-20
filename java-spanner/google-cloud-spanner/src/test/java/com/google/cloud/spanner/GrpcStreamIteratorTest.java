@@ -24,6 +24,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -33,17 +34,21 @@ import static org.mockito.Mockito.when;
 
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.cloud.spanner.AbstractResultSet.CloseableIterator;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Value;
 import com.google.spanner.v1.PartialResultSet;
 import java.time.Duration;
+import java.util.NoSuchElementException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import org.jspecify.annotations.Nullable;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -797,5 +802,773 @@ public class GrpcStreamIteratorTest {
     SpannerException spannerException = (SpannerException) thrown.get();
     assertEquals(ErrorCode.CANCELLED, spannerException.getErrorCode());
     assertTrue(spannerException.getCause() instanceof InterruptedException);
+  }
+
+  @Test
+  public void dataAvailableAndCanPollWithoutErrorOrBlockingEmptyStream() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 10,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    assertFalse(streamIterator.isDataAvailable());
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    assertFalse(streamIterator.isDataAvailable());
+  }
+
+  @Test
+  public void dataAvailableAndCanPollWithoutErrorOrBlockingWithBufferedChunksAndConsumption() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 10,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    PartialResultSet chunk1 =
+        PartialResultSet.newBuilder()
+            .setResumeToken(ByteString.copyFromUtf8("token-1"))
+            .addValues(Value.newBuilder().setStringValue("value-1"))
+            .build();
+    PartialResultSet chunk2 =
+        PartialResultSet.newBuilder()
+            .setResumeToken(ByteString.copyFromUtf8("token-2"))
+            .addValues(Value.newBuilder().setStringValue("value-2"))
+            .build();
+
+    streamIterator.consumer().onPartialResultSet(chunk1);
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    streamIterator.consumer().onPartialResultSet(chunk2);
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    assertEquals(chunk1, streamIterator.next());
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    assertEquals(chunk2, streamIterator.next());
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    assertFalse(streamIterator.isDataAvailable());
+  }
+
+  @Test
+  public void dataAvailableAndCanPollWithoutErrorOrBlockingWhenEndOfStreamReached() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 10,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    PartialResultSet lastChunk =
+        PartialResultSet.newBuilder()
+            .setResumeToken(ByteString.copyFromUtf8("token-1"))
+            .setLast(true)
+            .addValues(Value.newBuilder().setStringValue("value-1"))
+            .build();
+
+    streamIterator.consumer().onPartialResultSet(lastChunk);
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    assertEquals(lastChunk, streamIterator.next());
+    // The END_OF_STREAM token is still queued in the stream queue, so data availability remains
+    // true.
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    assertFalse(streamIterator.hasNext());
+    // After EOF is processed by computeNext(), endOfStreamReached is set to true.
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+  }
+
+  @Test
+  public void dataAvailableAndCanPollWithoutErrorOrBlockingWhenStreamErrorOccurs() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 10,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    SpannerException spannerException =
+        SpannerExceptionFactory.newSpannerException(ErrorCode.UNAVAILABLE, "network unavailable");
+    streamIterator.consumer().onError(spannerException);
+
+    // An error is present, so polling cannot succeed without throwing an exception.
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    // However, data (the error) is available immediately without blocking on I/O.
+    assertTrue(streamIterator.isDataAvailable());
+
+    SpannerException thrown = assertThrows(SpannerException.class, streamIterator::next);
+    assertEquals(ErrorCode.UNAVAILABLE, thrown.getErrorCode());
+  }
+
+  @Test
+  public void listenerRegisteredBeforeSetCallDelaysEventDeliveryUntilCallInitialized() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 10,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    AtomicReference<PartialResultSet> receivedMessage = new AtomicReference<>();
+    AtomicBoolean receivedBlockedState = new AtomicBoolean();
+    streamIterator.registerListener(
+        (partialResultSet, isBlocked) -> {
+          receivedMessage.set(partialResultSet);
+          receivedBlockedState.set(isBlocked);
+        });
+
+    PartialResultSet chunk =
+        PartialResultSet.newBuilder()
+            .setResumeToken(ByteString.copyFromUtf8("token-1"))
+            .addValues(Value.newBuilder().setStringValue("value-1"))
+            .build();
+
+    // Delivering chunk before setCall must not notify listener yet.
+    streamIterator.consumer().onPartialResultSet(chunk);
+    assertNull(receivedMessage.get());
+
+    // Because a listener is registered but callInitialized is false, canPollWithoutErrorOrBlocking
+    // is false.
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    assertFalse(streamIterator.isDataAvailable());
+
+    // Now initialize call via setCall.
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    // Flushing pending message in setCall notifies the listener.
+    assertEquals(chunk, receivedMessage.get());
+    assertFalse(receivedBlockedState.get());
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+  }
+
+  @Test
+  public void listenerRegisteredAfterSetCallReceivesMessagesImmediately() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 1,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    AtomicReference<PartialResultSet> receivedMessage = new AtomicReference<>();
+    AtomicBoolean receivedBlockedState = new AtomicBoolean();
+    streamIterator.registerListener(
+        (partialResultSet, isBlocked) -> {
+          receivedMessage.set(partialResultSet);
+          receivedBlockedState.set(isBlocked);
+        });
+
+    PartialResultSet chunk =
+        PartialResultSet.newBuilder()
+            .setResumeToken(ByteString.copyFromUtf8("token-1"))
+            .addValues(Value.newBuilder().setStringValue("value-1"))
+            .build();
+
+    streamIterator.consumer().onPartialResultSet(chunk);
+    assertEquals(chunk, receivedMessage.get());
+    // Stream queue has capacity 2 (prefetchChunks 1 + 1), and contains 1 element, so remaining
+    // capacity is 1 <= 1 (isBlocked = true).
+    assertTrue(receivedBlockedState.get());
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+  }
+
+  @Test
+  public void closeBeforeSetCallSafelyNoOpsRequestPrefetchChunks() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 10,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    streamIterator.close("Cancelled before setCall");
+    // Since streamIterator was already closed, requestPrefetchChunks should safely no-op
+    // without throwing IllegalStateException, even though setCall was never invoked.
+    streamIterator.requestPrefetchChunks();
+  }
+
+  @Test
+  public void dataAvailableAndCanPollWithoutErrorOrBlockingWhenStreamCompletesWithZeroRows() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 10,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    // Initial state: No messages received yet. Polling would block on network I/O.
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    assertFalse(streamIterator.isDataAvailable());
+
+    // Server finishes query with 0 rows via onCompleted().
+    streamIterator.consumer().onCompleted();
+
+    // The stream has an EOF token queued. Polling will immediately return false/EOF without
+    // blocking.
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    // Calling hasNext() consumes the EOF marker.
+    assertFalse(streamIterator.hasNext());
+
+    // After EOF has been processed, the stream remains non-blocking and ready for callers.
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+  }
+
+  @Test
+  public void dataAvailableAndCanPollWithoutErrorOrBlockingWhenAllDataConsumedWithPendingEof() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 10,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    PartialResultSet chunk =
+        PartialResultSet.newBuilder()
+            .setResumeToken(ByteString.copyFromUtf8("token-1"))
+            .addValues(Value.newBuilder().setStringValue("value-1"))
+            .build();
+
+    // Server sends a data chunk followed immediately by completion.
+    streamIterator.consumer().onPartialResultSet(chunk);
+    streamIterator.consumer().onCompleted();
+
+    // Both data chunk and EOF are in the queue.
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    // Client consumes the data chunk.
+    assertEquals(chunk, streamIterator.next());
+
+    // All data chunks are consumed, but there is still a pending EOF in the stream queue.
+    // Fetching the EOF does not block on network I/O.
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    // Client verifies stream completion.
+    assertFalse(streamIterator.hasNext());
+
+    // Stream has reached EOF. Both methods remain true.
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+  }
+
+  @Test
+  public void dataAvailableWhenServerReturnsErrorAfterDrainingBuffer() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 10,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    PartialResultSet chunk =
+        PartialResultSet.newBuilder()
+            .setResumeToken(ByteString.copyFromUtf8("token-1"))
+            .addValues(Value.newBuilder().setStringValue("value-1"))
+            .build();
+
+    // Chunk arrives and is consumed by client.
+    streamIterator.consumer().onPartialResultSet(chunk);
+    assertEquals(chunk, streamIterator.next());
+
+    // Buffer is now drained and client is waiting for server.
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    assertFalse(streamIterator.isDataAvailable());
+
+    // Server encounters an error.
+    SpannerException spannerException =
+        SpannerExceptionFactory.newSpannerException(
+            ErrorCode.DEADLINE_EXCEEDED, "deadline exceeded");
+    streamIterator.consumer().onError(spannerException);
+
+    // Because an error occurred, normal polling cannot proceed.
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    // But data availability is true because the error is ready to be thrown immediately without
+    // network I/O.
+    assertTrue(streamIterator.isDataAvailable());
+
+    SpannerException thrown = assertThrows(SpannerException.class, streamIterator::next);
+    assertEquals(ErrorCode.DEADLINE_EXCEEDED, thrown.getErrorCode());
+  }
+
+  @Test(timeout = 10000)
+  public void concurrentSetCallAndOnPartialResultSet() throws Exception {
+    ExecutorService executorService = Executors.newFixedThreadPool(2);
+    try {
+      for (int i = 0; i < 50; i++) {
+        SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+        when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+
+        GrpcStreamIterator streamIterator =
+            new GrpcStreamIterator(
+                /* statement= */ null,
+                /* lastStatement= */ false,
+                /* prefetchChunks= */ 5,
+                /* cancelQueryWhenClientIsClosed= */ false);
+
+        AtomicInteger listenerInvocations = new AtomicInteger();
+        streamIterator.registerListener(
+            (message, isBufferFull) -> listenerInvocations.incrementAndGet());
+
+        PartialResultSet chunk =
+            PartialResultSet.newBuilder()
+                .setResumeToken(ByteString.copyFromUtf8("token-" + i))
+                .addValues(Value.newBuilder().setStringValue("value-" + i))
+                .build();
+
+        CountDownLatch startLatch = new CountDownLatch(1);
+        CountDownLatch doneLatch = new CountDownLatch(2);
+        AtomicReference<Throwable> threadError = new AtomicReference<>();
+
+        executorService.submit(
+            () -> {
+              try {
+                startLatch.await();
+                streamIterator.setCall(call, /* withBeginTransaction= */ false);
+              } catch (Throwable throwable) {
+                threadError.set(throwable);
+              } finally {
+                doneLatch.countDown();
+              }
+            });
+
+        executorService.submit(
+            () -> {
+              try {
+                startLatch.await();
+                streamIterator.consumer().onPartialResultSet(chunk);
+              } catch (Throwable throwable) {
+                threadError.set(throwable);
+              } finally {
+                doneLatch.countDown();
+              }
+            });
+
+        startLatch.countDown();
+        assertTrue(doneLatch.await(5, TimeUnit.SECONDS));
+        if (threadError.get() != null) {
+          throw new AssertionError(threadError.get());
+        }
+
+        assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+        assertTrue(streamIterator.isDataAvailable());
+        assertTrue(listenerInvocations.get() >= 1);
+        assertEquals(chunk, streamIterator.next());
+        assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+        assertFalse(streamIterator.isDataAvailable());
+      }
+    } finally {
+      executorService.shutdownNow();
+    }
+  }
+
+  @Test(timeout = 10000)
+  public void concurrentSetCallAndOnError() throws Exception {
+    ExecutorService executorService = Executors.newFixedThreadPool(2);
+    try {
+      for (int i = 0; i < 50; i++) {
+        SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+        when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+
+        GrpcStreamIterator streamIterator =
+            new GrpcStreamIterator(
+                /* statement= */ null,
+                /* lastStatement= */ false,
+                /* prefetchChunks= */ 5,
+                /* cancelQueryWhenClientIsClosed= */ false);
+
+        SpannerException spannerException =
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.UNAVAILABLE, "network unavailable " + i);
+
+        CountDownLatch startLatch = new CountDownLatch(1);
+        CountDownLatch doneLatch = new CountDownLatch(2);
+        AtomicReference<Throwable> threadError = new AtomicReference<>();
+
+        executorService.submit(
+            () -> {
+              try {
+                startLatch.await();
+                streamIterator.setCall(call, /* withBeginTransaction= */ false);
+              } catch (Throwable throwable) {
+                threadError.set(throwable);
+              } finally {
+                doneLatch.countDown();
+              }
+            });
+
+        executorService.submit(
+            () -> {
+              try {
+                startLatch.await();
+                streamIterator.consumer().onError(spannerException);
+              } catch (Throwable throwable) {
+                threadError.set(throwable);
+              } finally {
+                doneLatch.countDown();
+              }
+            });
+
+        startLatch.countDown();
+        assertTrue(doneLatch.await(5, TimeUnit.SECONDS));
+        if (threadError.get() != null) {
+          throw new AssertionError(threadError.get());
+        }
+
+        assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+        assertTrue(streamIterator.isDataAvailable());
+        SpannerException thrown = assertThrows(SpannerException.class, streamIterator::next);
+        assertEquals(ErrorCode.UNAVAILABLE, thrown.getErrorCode());
+      }
+    } finally {
+      executorService.shutdownNow();
+    }
+  }
+
+  @Test(timeout = 10000)
+  public void concurrentSetCallAndOnCompleted() throws Exception {
+    ExecutorService executorService = Executors.newFixedThreadPool(2);
+    try {
+      for (int i = 0; i < 50; i++) {
+        SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+        when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+
+        GrpcStreamIterator streamIterator =
+            new GrpcStreamIterator(
+                /* statement= */ null,
+                /* lastStatement= */ false,
+                /* prefetchChunks= */ 5,
+                /* cancelQueryWhenClientIsClosed= */ false);
+
+        CountDownLatch startLatch = new CountDownLatch(1);
+        CountDownLatch doneLatch = new CountDownLatch(2);
+        AtomicReference<Throwable> threadError = new AtomicReference<>();
+
+        executorService.submit(
+            () -> {
+              try {
+                startLatch.await();
+                streamIterator.setCall(call, /* withBeginTransaction= */ false);
+              } catch (Throwable throwable) {
+                threadError.set(throwable);
+              } finally {
+                doneLatch.countDown();
+              }
+            });
+
+        executorService.submit(
+            () -> {
+              try {
+                startLatch.await();
+                streamIterator.consumer().onCompleted();
+              } catch (Throwable throwable) {
+                threadError.set(throwable);
+              } finally {
+                doneLatch.countDown();
+              }
+            });
+
+        startLatch.countDown();
+        assertTrue(doneLatch.await(5, TimeUnit.SECONDS));
+        if (threadError.get() != null) {
+          throw new AssertionError(threadError.get());
+        }
+
+        assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+        assertTrue(streamIterator.isDataAvailable());
+        assertFalse(streamIterator.hasNext());
+        assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+        assertTrue(streamIterator.isDataAvailable());
+      }
+    } finally {
+      executorService.shutdownNow();
+    }
+  }
+
+  @Test
+  public void closeableIteratorDefaultMethodsReturnExpectedValues() {
+    CloseableIterator<String> iterator =
+        new CloseableIterator<String>() {
+          @Override
+          public void close(@Nullable String message) {}
+
+          @Override
+          public boolean isWithBeginTransaction() {
+            return false;
+          }
+
+          @Override
+          public boolean isLastStatement() {
+            return false;
+          }
+
+          @Override
+          public boolean hasNext() {
+            return false;
+          }
+
+          @Override
+          public String next() {
+            throw new NoSuchElementException();
+          }
+        };
+
+    assertTrue(iterator.isDataAvailable());
+    assertFalse(iterator.canPollWithoutErrorOrBlocking());
+  }
+
+  @Test
+  public void listenerRegisteredBeforeSetCallFlushesAllQueuedMessages() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 5,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    AsyncResultSet.StreamMessageListener listener =
+        mock(AsyncResultSet.StreamMessageListener.class);
+    streamIterator.registerListener(listener);
+
+    PartialResultSet chunk1 =
+        PartialResultSet.newBuilder().setResumeToken(ByteString.copyFromUtf8("token-1")).build();
+    PartialResultSet chunk2 =
+        PartialResultSet.newBuilder().setResumeToken(ByteString.copyFromUtf8("token-2")).build();
+
+    streamIterator.consumer().onPartialResultSet(chunk1);
+    streamIterator.consumer().onPartialResultSet(chunk2);
+
+    verify(listener, never()).onStreamMessage(any(), anyBoolean());
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    assertFalse(streamIterator.isDataAvailable());
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    verify(listener, times(1)).onStreamMessage(chunk1, false);
+    verify(listener, times(1)).onStreamMessage(chunk2, false);
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+  }
+
+  @Test
+  public void listenerRegisteredAfterSetCallFlushesAllQueuedMessages() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 5,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    PartialResultSet chunk1 =
+        PartialResultSet.newBuilder().setResumeToken(ByteString.copyFromUtf8("token-1")).build();
+    PartialResultSet chunk2 =
+        PartialResultSet.newBuilder().setResumeToken(ByteString.copyFromUtf8("token-2")).build();
+
+    streamIterator.consumer().onPartialResultSet(chunk1);
+    streamIterator.consumer().onPartialResultSet(chunk2);
+
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    AsyncResultSet.StreamMessageListener listener =
+        mock(AsyncResultSet.StreamMessageListener.class);
+    streamIterator.registerListener(listener);
+
+    verify(listener, times(1)).onStreamMessage(chunk1, false);
+    verify(listener, times(1)).onStreamMessage(chunk2, false);
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    PartialResultSet chunk3 =
+        PartialResultSet.newBuilder().setResumeToken(ByteString.copyFromUtf8("token-3")).build();
+    streamIterator.consumer().onPartialResultSet(chunk3);
+
+    verify(listener, times(1)).onStreamMessage(chunk3, false);
+    assertEquals(chunk1, streamIterator.next());
+    assertEquals(chunk2, streamIterator.next());
+    assertEquals(chunk3, streamIterator.next());
+  }
+
+  @Test
+  public void listenerRegisteredBeforeSetCallDelaysErrorUntilSetCall() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 5,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    AsyncResultSet.StreamMessageListener listener =
+        mock(AsyncResultSet.StreamMessageListener.class);
+    streamIterator.registerListener(listener);
+
+    SpannerException spannerException =
+        SpannerExceptionFactory.newSpannerException(ErrorCode.UNAVAILABLE, "temporary outage");
+    streamIterator.consumer().onError(spannerException);
+
+    verify(listener, never()).onStreamMessage(any(), anyBoolean());
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    assertFalse(streamIterator.isDataAvailable());
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    verify(listener, times(1)).onStreamMessage(GrpcStreamIterator.END_OF_STREAM, false);
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    SpannerException thrown = assertThrows(SpannerException.class, streamIterator::next);
+    assertEquals(ErrorCode.UNAVAILABLE, thrown.getErrorCode());
+  }
+
+  @Test
+  public void listenerRegisteredBeforeSetCallDelaysCompletionUntilSetCall() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 5,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    AsyncResultSet.StreamMessageListener listener =
+        mock(AsyncResultSet.StreamMessageListener.class);
+    streamIterator.registerListener(listener);
+
+    streamIterator.consumer().onCompleted();
+
+    verify(listener, never()).onStreamMessage(any(), anyBoolean());
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    assertFalse(streamIterator.isDataAvailable());
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    verify(listener, times(1)).onStreamMessage(GrpcStreamIterator.END_OF_STREAM, false);
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+    assertFalse(streamIterator.hasNext());
+  }
+
+  @Test
+  public void dataAvailableAndCanPollWithoutErrorOrBlockingWithBufferedChunksBeforeError() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 10,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
+    when(call.getCallContext()).thenReturn(GrpcCallContext.createDefault());
+    streamIterator.setCall(call, /* withBeginTransaction= */ false);
+
+    PartialResultSet chunk =
+        PartialResultSet.newBuilder()
+            .setResumeToken(ByteString.copyFromUtf8("token-1"))
+            .addValues(Value.newBuilder().setStringValue("value-1"))
+            .build();
+
+    streamIterator.consumer().onPartialResultSet(chunk);
+    SpannerException spannerException =
+        SpannerExceptionFactory.newSpannerException(ErrorCode.UNAVAILABLE, "network unavailable");
+    streamIterator.consumer().onError(spannerException);
+
+    // Chunk is buffered at the head of the stream: it can be polled without error or blocking.
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    // Consuming the buffered chunk succeeds without error.
+    assertEquals(chunk, streamIterator.next());
+
+    // Now only the error/END_OF_STREAM remains in the stream: it cannot be polled without error.
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    SpannerException thrown = assertThrows(SpannerException.class, streamIterator::next);
+    assertEquals(ErrorCode.UNAVAILABLE, thrown.getErrorCode());
+  }
+
+  @Test
+  public void synchronousModeAllowsImmediatePollingBeforeSetCall() {
+    GrpcStreamIterator streamIterator =
+        new GrpcStreamIterator(
+            /* statement= */ null,
+            /* lastStatement= */ false,
+            /* prefetchChunks= */ 5,
+            /* cancelQueryWhenClientIsClosed= */ false);
+
+    PartialResultSet chunk =
+        PartialResultSet.newBuilder()
+            .setResumeToken(ByteString.copyFromUtf8("token-1"))
+            .addValues(Value.newBuilder().setStringValue("value-1"))
+            .build();
+
+    // In synchronous mode (streamMessageListener == null), pre-setCall chunks are immediately
+    // available.
+    streamIterator.consumer().onPartialResultSet(chunk);
+    assertTrue(streamIterator.canPollWithoutErrorOrBlocking());
+    assertTrue(streamIterator.isDataAvailable());
+
+    assertEquals(chunk, streamIterator.next());
+    assertFalse(streamIterator.canPollWithoutErrorOrBlocking());
+    assertFalse(streamIterator.isDataAvailable());
   }
 }
