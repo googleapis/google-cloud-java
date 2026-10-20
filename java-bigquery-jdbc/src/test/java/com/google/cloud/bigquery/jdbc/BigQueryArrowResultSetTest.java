@@ -24,6 +24,8 @@ import static org.apache.arrow.vector.types.Types.MinorType.VARCHAR;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Mode;
@@ -337,6 +339,34 @@ public class BigQueryArrowResultSetTest {
   @Test
   public void testIsClosed() {
     assertThat(bigQueryArrowResultSet.isClosed()).isFalse();
+  }
+
+  @Test
+  public void testCloseCancelsProducerClearsBufferAndIsIdempotent()
+      throws SQLException, IOException {
+    ArrowSchema arrowSchema =
+        ArrowSchema.newBuilder()
+            .setSerializedSchema(serializeSchema(vectorSchemaRoot.getSchema()))
+            .build();
+    Future<?> workerTask = mock(Future.class);
+    BlockingQueue<BigQueryArrowBatchWrapper> queue = new LinkedBlockingDeque<>(4);
+    queue.add(arrowBatchWrapper);
+    queue.add(arrowBatchWrapperLast);
+
+    BigQueryArrowResultSet rs =
+        BigQueryArrowResultSet.of(QUERY_SCHEMA, arrowSchema, 1, statement, queue, workerTask, null);
+
+    assertThat(rs.isClosed()).isFalse();
+    assertThat(queue).hasSize(2);
+
+    rs.close();
+    assertThat(rs.isClosed()).isTrue();
+    assertThat(queue).isEmpty();
+    verify(workerTask, times(1)).cancel(true);
+
+    // Second close() call should be a no-op
+    rs.close();
+    verify(workerTask, times(1)).cancel(true);
   }
 
   @Test

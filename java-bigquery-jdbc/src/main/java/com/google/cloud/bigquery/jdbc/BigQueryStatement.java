@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery;
@@ -62,7 +63,6 @@ import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.util.concurrent.Uninterruptibles;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.AttributeKey;
@@ -535,6 +535,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       tmp.close();
     }
     this.batchQueries.clear();
+    this.arrowBatchWrapperBlockingQueue = null;
+    this.bigQueryFieldValueListWrapperBlockingQueue = null;
     this.currentUpdateCount = -1;
     this.currentJobIdIndex = -1;
     if (this.connection != null) {
@@ -1005,6 +1007,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                     String streamName = readSession.getStreams(0).getName();
 
                     while (true) {
+                      ServerStream<ReadRowsResponse> stream = null;
+                      boolean streamCompleted = false;
                       try {
                         ReadRowsRequest readRowsRequest =
                             ReadRowsRequest.newBuilder()
@@ -1014,18 +1018,22 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
                         // Process each block of rows as they arrive and decode using our simple row
                         // reader.
-                        com.google.api.gax.rpc.ServerStream<ReadRowsResponse> stream =
-                            bqReadClient.readRowsCallable().call(readRowsRequest);
+                        stream = bqReadClient.readRowsCallable().call(readRowsRequest);
                         for (ReadRowsResponse response : stream) {
                           if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
+                            arrowBatchWrapperBlockingQueue.clear();
                             break;
                           }
 
                           ArrowRecordBatch currentBatch = response.getArrowRecordBatch();
-                          Uninterruptibles.putUninterruptibly(
-                              arrowBatchWrapperBlockingQueue,
+                          arrowBatchWrapperBlockingQueue.put(
                               BigQueryArrowBatchWrapper.of(currentBatch));
                           rowsRead += response.getRowCount();
+                        }
+                        if (!Thread.currentThread().isInterrupted() && !executor.isShutdown()) {
+                          streamCompleted = true;
+                        } else {
+                          arrowBatchWrapperBlockingQueue.clear();
                         }
                         break;
                       } catch (ApiException e) {
@@ -1049,10 +1057,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                             "Connection interrupted during arrow stream read, retrying. attempt: %d",
                             retryCount);
                         Thread.sleep(RETRY_DELAY_MS);
+                      } finally {
+                        if (stream != null && !streamCompleted) {
+                          stream.cancel();
+                        }
                       }
                     }
 
                   } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    arrowBatchWrapperBlockingQueue.clear();
                     LOG.log(
                         Level.WARNING,
                         "\n"
@@ -1060,10 +1074,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                             + " Interrupted @ arrowStreamProcessor",
                         e);
                     enqueueError(arrowBatchWrapperBlockingQueue, e);
-                    Thread.currentThread().interrupt();
                   } catch (Exception e) {
                     if (e.getCause() instanceof InterruptedException
                         || Thread.currentThread().isInterrupted()) {
+                      Thread.currentThread().interrupt();
+                      arrowBatchWrapperBlockingQueue.clear();
                       LOG.log(
                           Level.WARNING,
                           "\n"
@@ -1071,7 +1086,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                               + " Interrupted @ arrowStreamProcessor",
                           e);
                       enqueueError(arrowBatchWrapperBlockingQueue, e);
-                      Thread.currentThread().interrupt();
                     } else {
                       LOG.log(
                           Level.WARNING,
@@ -1338,8 +1352,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                         currentPageToken = currentResults.getNextPageToken();
                         // this will be parsed asynchronously without blocking the current
                         // thread
-                        Uninterruptibles.putUninterruptibly(
-                            rpcResponseQueue, Tuple.of(currentResults, true));
+                        rpcResponseQueue.put(Tuple.of(currentResults, true));
                         LOG.fine(
                             "Fetched %d results from the server in %d ms.",
                             querySettings.getMaxResultPerPage(),
@@ -1348,14 +1361,30 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                         paginationSpan.end();
                       }
                     }
+                  } catch (InterruptedException ex) {
+                    Thread.currentThread().interrupt();
+                    LOG.warning(
+                        "%s Interrupted @ runNextPageTaskAsync: %s",
+                        Thread.currentThread().getName(), ex.getMessage());
                   } catch (Exception ex) {
-                    Uninterruptibles.putUninterruptibly(
-                        bigQueryFieldValueListWrapperBlockingQueue,
-                        BigQueryFieldValueListWrapper.ofError(ex));
+                    if (ex.getCause() instanceof InterruptedException
+                        || Thread.currentThread().isInterrupted()) {
+                      Thread.currentThread().interrupt();
+                    }
+                    enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
                   } finally {
                     // this will stop the parseDataTask as well when the pagination
                     // completes
-                    Uninterruptibles.putUninterruptibly(rpcResponseQueue, Tuple.of(null, false));
+                    Tuple<TableResult, Boolean> endOfRpcTuple = Tuple.of(null, false);
+                    if (Thread.currentThread().isInterrupted() || executor.isShutdown()) {
+                      rpcResponseQueue.offer(endOfRpcTuple);
+                    } else {
+                      try {
+                        rpcResponseQueue.put(endOfRpcTuple);
+                      } catch (InterruptedException ie) {
+                        Thread.currentThread().interrupt();
+                      }
+                    }
                   }
                   // We cannot do queryTaskExecutor.shutdownNow() here as populate buffer method may
                   // not
@@ -1425,8 +1454,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                           // do not process further pages and shutdown (inner loop)
                           break;
                         }
-                        Uninterruptibles.putUninterruptibly(
-                            bigQueryFieldValueListWrapperBlockingQueue,
+                        bigQueryFieldValueListWrapperBlockingQueue.put(
                             BigQueryFieldValueListWrapper.of(
                                 schema.getFields(), fieldValueList, isComplexColumn));
                         results += 1;
@@ -1436,9 +1464,19 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                           results, (int) ((System.nanoTime() - startTime) / 1000000));
                     }
 
+                  } catch (InterruptedException ex) {
+                    Thread.currentThread().interrupt();
+                    LOG.log(
+                        Level.WARNING,
+                        "\n"
+                            + Thread.currentThread().getName()
+                            + " Interrupted @ populateBufferAsync",
+                        ex);
+                    enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
                   } catch (Exception ex) {
                     if (ex.getCause() instanceof InterruptedException
                         || Thread.currentThread().isInterrupted()) {
+                      Thread.currentThread().interrupt();
                       LOG.log(
                           Level.WARNING,
                           "\n"
@@ -1446,7 +1484,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                               + " Interrupted @ populateBufferAsync",
                           ex);
                       enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
-                      Thread.currentThread().interrupt();
                     } else {
                       LOG.log(
                           Level.WARNING,
@@ -1933,20 +1970,68 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     BIG_QUERY
   }
 
+  private boolean isWorkerShuttingDown() {
+    if (Thread.currentThread().isInterrupted()) {
+      return true;
+    }
+    BigQueryConnection conn = this.connection;
+    if (conn == null) {
+      return true;
+    }
+    ExecutorService executor = conn.getExecutorService();
+    return executor != null && executor.isShutdown();
+  }
+
   private void enqueueError(BlockingQueue<BigQueryArrowBatchWrapper> queue, Exception e) {
-    Uninterruptibles.putUninterruptibly(queue, BigQueryArrowBatchWrapper.ofError(e));
+    BigQueryArrowBatchWrapper errorWrapper = BigQueryArrowBatchWrapper.ofError(e);
+    if (isWorkerShuttingDown()) {
+      queue.offer(errorWrapper);
+      return;
+    }
+    try {
+      queue.put(errorWrapper);
+    } catch (InterruptedException ie) {
+      Thread.currentThread().interrupt();
+    }
   }
 
   private void enqueueEndOfStream(BlockingQueue<BigQueryArrowBatchWrapper> queue) {
-    Uninterruptibles.putUninterruptibly(queue, BigQueryArrowBatchWrapper.of(null, true));
+    BigQueryArrowBatchWrapper endWrapper = BigQueryArrowBatchWrapper.of(null, true);
+    if (isWorkerShuttingDown()) {
+      queue.offer(endWrapper);
+      return;
+    }
+    try {
+      queue.put(endWrapper);
+    } catch (InterruptedException ie) {
+      Thread.currentThread().interrupt();
+    }
   }
 
   private void enqueueBufferError(BlockingQueue<BigQueryFieldValueListWrapper> queue, Exception e) {
-    Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.ofError(e));
+    BigQueryFieldValueListWrapper errorWrapper = BigQueryFieldValueListWrapper.ofError(e);
+    if (isWorkerShuttingDown()) {
+      queue.offer(errorWrapper);
+      return;
+    }
+    try {
+      queue.put(errorWrapper);
+    } catch (InterruptedException ie) {
+      Thread.currentThread().interrupt();
+    }
   }
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
-    Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.ofEndOfStream(null));
+    BigQueryFieldValueListWrapper endWrapper = BigQueryFieldValueListWrapper.ofEndOfStream(null);
+    if (isWorkerShuttingDown()) {
+      queue.offer(endWrapper);
+      return;
+    }
+    try {
+      queue.put(endWrapper);
+    } catch (InterruptedException ie) {
+      Thread.currentThread().interrupt();
+    }
   }
 
   QueryStatistics describePositionalParameterQuery(String query)

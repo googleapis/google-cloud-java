@@ -382,6 +382,9 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   @Override
   public void close() {
+    if (this.isClosed) {
+      return;
+    }
     LOG.fineTrace("close", () -> String.format("Closing BigqueryJsonResultSet %s.", this));
     this.isClosed = true;
     if (ownedTasks != null) {
@@ -391,6 +394,10 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         }
       }
     }
+    if (this.buffer != null) {
+      this.buffer.clear();
+    }
+    this.cursor = null;
     super.close();
   }
 
