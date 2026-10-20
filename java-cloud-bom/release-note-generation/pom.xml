@@ -66,6 +66,18 @@
 
 	<build>
 		<plugins>
+			<!-- org.netbeans.external:isorelax replaces isorelax:isorelax (see the dependencies above).
+				 com.google.cloud.tools:dependencies uses it at runtime. No code in this module uses
+				 it directly, so dependency:analyze reports it as unused. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<configuration>
+					<ignoredUnusedDeclaredDependencies>
+						<ignoredUnusedDeclaredDependency>org.netbeans.external:isorelax</ignoredUnusedDeclaredDependency>
+					</ignoredUnusedDeclaredDependencies>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
