@@ -69,6 +69,7 @@ import java.time.Duration;
 import java.util.Base64;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -84,21 +85,34 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
           + "zkd7R9Zdn98Y2rIQC47aAbDfubtkU1U72t4zL11kHvoa0/RuFZjncvlr42X7be7lYh4p3NAgMBAAECgYASk5wDw"
           + "4Az2ZkmeuN6Fk/y9H+Lcb2pskJIXjrL533vrDWGOC48LrsThMQPv8cxBky8HFSEklPpkfTF95tpD43iVwJRB/Gr"
           + "CtGTw65IfJ4/tI09h6zGc4yqvIo1cHX/LQ+SxKLGyir/dQM925rGt/VojxY5ryJR7GLbCzxPnJm/oQJBANwOCO6"
-          + "D2hy1LQYJhXh7O+RLtA/tSnT1xyMQsGT+uUCMiKS2bSKx2wxo9k7h3OegNJIu1q6nZ6AbxDK8H3+d0dUCQQDTrP"
-          + "SXagBxzp8PecbaCHjzNRSQE2in81qYnrAFNB4o3DpHyMMY6s5ALLeHKscEWnqP8Ur6X4PvzZecCWU9BKAZAkAut"
-          + "LPknAuxSCsUOvUfS1i87ex77Ot+w6POp34pEX+UWb+u5iFn2cQacDTHLV1LtE80L8jVLSbrbrlH43H0DjU5AkEA"
-          + "gidhycxS86dxpEljnOMCw8CKoUBd5I880IUahEiUltk7OLJYS/Ts1wbn3kPOVX3wyJs8WBDtBkFrDHW2ezth2QJ"
-          + "ADj3e1YhMVdjJW5jqwlD/VNddGjgzyunmiZg0uOXsHXbytYmsA545S8KRQFaJKFXYYFo2kOjqOiC1T2cAzMDjCQ"
-          + "==\n-----END PRIVATE KEY-----\n";
+          + "D2hy1LQYJhXh7O+RLtA/tSnT1xyMQsGT+uUCMiKS2bSKx2wxo9k7h3OegNJIu1q6nZ6AbxDK8H3+d0dUCQQDTrPSXagBxzp8PecbaCHjzNRSQE2in81qYnrAFNB4o3DpHyMMY6s5ALLeHKscEWnqP8Ur6X4PvzZecCWU9BKAZAkAutLPknAuxSCsUOvUfS1i87ex77Ot+w6POp34pEX+UWb+u5iFn2cQacDTHLV1LtE80L8jVLSbrbrlH43H0DjU5AkEAgidhycxS86dxpEljnOMCw8CKoUBd5I880IUahEiUltk7OLJYS/Ts1wbn3kPOVX3wyJs8WBDtBkFrDHW2ezth2QJADj3e1YhMVdjJW5jqwlD/VNddGjgzyunmiZg0uOXsHXbytYmsA545S8KRQFaJKFXYYFo2kOjqOiC1T2cAzMDjCQ==\n"
+          + "-----END PRIVATE KEY-----\n";
 
   private MockStsTransportFactory mockStsTransportFactory;
   private static MockTokenServerTransportFactory mockTokenServerTransportFactory;
 
-  static class MockStsTransportFactory implements HttpTransportFactory {
+  // Synchronizes concurrent refresh threads in multi-threaded tests so the in-flight mock STS
+  // request pauses until all threads have entered refreshCredentialsIfRequired() and coalesced
+  // onto the single in-flight refresh task. Defaults to 0 permits so single-threaded tests pass
+  // through without blocking.
+  private CountDownLatch refreshEntryLatch = new CountDownLatch(0);
+
+  class MockStsTransportFactory implements HttpTransportFactory {
     MockStsTransport transport = new MockStsTransport();
 
     @Override
     public HttpTransport create() {
+      try {
+        // In multi-threaded refresh tests, pause the in-flight STS request (while refreshLock is
+        // not held and refreshTask is non-null) until all concurrent threads have evaluated
+        // determineRefreshType() and attached to the existing refreshTask.
+        if (!refreshEntryLatch.await(5, TimeUnit.SECONDS)) {
+          throw new AssertionError("Timed out waiting for concurrent threads to coalesce");
+        }
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        throw new RuntimeException(e);
+      }
       return transport;
     }
   }
@@ -471,7 +485,8 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
                     .setUniverseDomain("differentUniverseDomain")
                     .build());
     assertEquals(
-        "The client side access boundary credential's universe domain must be the same as the source credential.",
+        "The client side access boundary credential's universe domain must be the same as the"
+            + " source credential.",
         exception.getMessage());
   }
 
@@ -623,6 +638,7 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
         when(mockClock.currentTimeMillis())
             .thenAnswer(
                 invocation -> {
+                  refreshEntryLatch.countDown();
                   // If the async refresh has already been triggered (request count >= 2),
                   // return the fresh time to skip redundant refreshes.
                   // Note: 1st request was the initial blocking refresh.
@@ -636,7 +652,12 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
         // Set mocked time so that the token requires immediate refresh (just after the minimum
         // token lifetime).
         mockedTimeInMillis = expirationTimeInMillis - minimumTokenLifetimeMillis + 60000;
-        when(mockClock.currentTimeMillis()).thenReturn(mockedTimeInMillis);
+        when(mockClock.currentTimeMillis())
+            .thenAnswer(
+                invocation -> {
+                  refreshEntryLatch.countDown();
+                  return mockedTimeInMillis;
+                });
         break;
       default:
         throw new IllegalArgumentException("Unexpected RefreshType: " + refreshType);
@@ -645,40 +666,61 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
     return mockClock;
   }
 
-  private static void triggerConcurrentRefresh(
+  private void triggerConcurrentRefresh(
       ClientSideCredentialAccessBoundaryFactory factory, int numThreads)
       throws InterruptedException {
     Thread[] threads = new Thread[numThreads];
     CountDownLatch latch = new CountDownLatch(numThreads);
+    // Each thread in refreshCredentialsIfRequired() calls determineRefreshType() (and thus
+    // clock.currentTimeMillis()) twice: once outside refreshLock and once inside
+    // synchronized (refreshLock) right before getOrCreateRefreshTask(). Waiting for numThreads * 2
+    // calls guarantees all threads coalesce onto the in-flight refresh task before it finishes.
+    refreshEntryLatch = new CountDownLatch(numThreads * 2);
     long timeoutMillis = 5000; // 5 seconds
 
-    // Create and start threads to concurrently call refreshCredentialsIfRequired().
-    for (int i = 0; i < numThreads; i++) {
-      threads[i] =
-          new Thread(
-              () -> {
-                try {
-                  latch.countDown();
-                  latch.await();
-                  factory.refreshCredentialsIfRequired();
-                } catch (InterruptedException e) {
-                  Thread.currentThread().interrupt();
-                } catch (IOException e) {
-                  throw new RuntimeException(e);
-                }
-              });
-      threads[i].start();
-    }
+    try {
+      // Create and start threads to concurrently call refreshCredentialsIfRequired().
+      for (int i = 0; i < numThreads; i++) {
+        threads[i] =
+            new Thread(
+                () -> {
+                  try {
+                    // Act as a starting gate: signal that this thread is spawned and ready, then
+                    // wait until all other threads have also started before proceeding together.
+                    latch.countDown();
+                    latch.await();
+                    factory.refreshCredentialsIfRequired();
+                  } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                  } catch (IOException e) {
+                    throw new RuntimeException(e);
+                  }
+                });
+        threads[i].start();
+      }
 
-    // Wait for each thread to complete, with a timeout.
-    for (Thread thread : threads) {
-      thread.join(timeoutMillis);
-      if (thread.isAlive()) {
-        thread.interrupt();
-        throw new AssertionError(
-            "Thread running refreshCredentialsIfRequired timed out after "
-                + timeoutMillis
-                + " milliseconds.");
+      // Wait for each thread to complete, with a timeout.
+      for (Thread thread : threads) {
+        thread.join(timeoutMillis);
+        // Thread.join(long) returns silently when the timeout expires without throwing an
+        // exception. Check isAlive() to detect if the thread timed out and is still hung.
+        if (thread.isAlive()) {
+          thread.interrupt();
+          throw new AssertionError(
+              "Thread running refreshCredentialsIfRequired timed out after "
+                  + timeoutMillis
+                  + " milliseconds.");
+        }
+      }
+    } finally {
+      while (refreshEntryLatch.getCount() > 0) {
+        refreshEntryLatch.countDown();
+      }
+      refreshEntryLatch = new CountDownLatch(0);
+      for (Thread thread : threads) {
+        if (thread != null && thread.isAlive()) {
+          thread.interrupt();
+        }
       }
     }
   }
