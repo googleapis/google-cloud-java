@@ -31,6 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import org.junit.Before;
 import org.junit.Test;
 
 public final class StorageClientMetricsTest {
@@ -57,16 +58,21 @@ public final class StorageClientMetricsTest {
           StorageClientMetrics::getNetworkIo,
           StorageClientMetrics::getCredentialRefreshDuration);
 
+  private InMemoryMetricReader reader;
+
+  @Before
+  public void setUp() {
+    reader = InMemoryMetricReader.create();
+  }
+
   @Test
   public void standardMetrics_initializedWithoutDebug() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
 
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
 
     assertInstruments(metrics, STANDARD_INSTRUMENTS, /* isNull= */ false);
 
-    // Standard client attributes
     assertThat(metrics.getClientAttributes()).isNotNull();
     assertThat(metrics.getClientAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_SERVICE))
         .isEqualTo("storage");
@@ -77,13 +83,11 @@ public final class StorageClientMetricsTest {
     assertThat(metrics.getClientAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID))
         .isNotEmpty();
 
-    // Debug instruments should be null
     assertInstruments(metrics, DEBUG_INSTRUMENTS, /* isNull= */ true);
   }
 
   @Test
   public void debugMetrics_initializedWhenEnabled() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
 
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, true);
@@ -94,7 +98,6 @@ public final class StorageClientMetricsTest {
 
   @Test
   public void debugOnly_standardMetricsNull() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
 
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, false, true);
@@ -105,7 +108,6 @@ public final class StorageClientMetricsTest {
 
   @Test
   public void neitherEnabled_allInstrumentsNull() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
 
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, false, false);
@@ -116,7 +118,6 @@ public final class StorageClientMetricsTest {
 
   @Test
   public void inMemoryMetricReader_verifiesViewsAndBoundaries() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProviderBuilder providerBuilder =
         SdkMeterProvider.builder().registerMetricReader(reader);
     OpenTelemetryBootstrappingUtils.registerClientViews(providerBuilder);
@@ -227,7 +228,6 @@ public final class StorageClientMetricsTest {
 
   @Test
   public void latencyHistogram_recordsSecondsScaleValuesIntoExpectedBuckets() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProviderBuilder providerBuilder =
         SdkMeterProvider.builder().registerMetricReader(reader);
     OpenTelemetryBootstrappingUtils.registerClientViews(providerBuilder);
@@ -280,7 +280,6 @@ public final class StorageClientMetricsTest {
 
   @Test
   public void attachClientAttributes_mergesAdditionalAttributes() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     StorageClientMetrics metrics =
         StorageClientMetrics.create(provider, "test-instance", true, false);
@@ -313,7 +312,6 @@ public final class StorageClientMetricsTest {
 
   @Test
   public void clientAttributesBuilder_containsBaseClientAttributes() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     StorageClientMetrics metrics =
         StorageClientMetrics.create(provider, "test-instance", true, false);
