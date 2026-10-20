@@ -29,13 +29,34 @@
  */
 package com.google.api.gax.retrying;
 
-import com.google.api.core.CurrentMillisClock;
+import com.google.api.core.ApiClock;
+import com.google.api.gax.core.FakeApiClock;
+import java.time.Duration;
 
 class DirectRetryingExecutorTest extends AbstractRetryingExecutorTest {
 
+  // ExponentialRetryAlgorithm and ExponentialPollAlgorithm only compute relative elapsed time
+  // deltas against firstAttemptStartTimeNanos (clock.nanoTime() - firstAttemptStartTimeNanos)
+  // and never treat 0L as a special sentinel value.
+  private final FakeApiClock clock = new FakeApiClock(0L);
+
+  @Override
+  protected ApiClock getClock() {
+    return clock;
+  }
+
   @Override
   protected RetryingExecutorWithContext<String> getExecutor(RetryAlgorithm<String> retryAlgorithm) {
-    return new DirectRetryingExecutor<>(retryAlgorithm);
+    return new DirectRetryingExecutor<String>(retryAlgorithm) {
+      // Advance the fake clock instead of sleeping the current thread so that retry delays
+      // are simulated deterministically without wall-clock pauses on slow CI VMs.
+      @Override
+      protected void sleep(Duration delay) {
+        if (!delay.isZero() && !delay.isNegative()) {
+          clock.incrementNanoTime(delay.toNanos());
+        }
+      }
+    };
   }
 
   @Override
@@ -43,6 +64,6 @@ class DirectRetryingExecutorTest extends AbstractRetryingExecutorTest {
       RetrySettings retrySettings, int apocalypseCountDown, RuntimeException apocalypseException) {
     return new RetryAlgorithm<>(
         new TestResultRetryAlgorithm<String>(apocalypseCountDown, apocalypseException),
-        new ExponentialRetryAlgorithm(retrySettings, CurrentMillisClock.getDefaultClock()));
+        new ExponentialRetryAlgorithm(retrySettings, clock));
   }
 }
