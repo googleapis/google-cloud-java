@@ -28,4 +28,22 @@ interface StreamingResultSet extends ResultSet {
    */
   @InternalApi
   boolean initiateStreaming(AsyncResultSet.StreamMessageListener streamMessageListener);
+
+  /**
+   * Returns true if data (a chunk, row, EOF, or error) is available to read immediately without
+   * blocking the calling thread on network I/O.
+   *
+   * <p>The default implementation returns {@code true} to maintain backward compatibility with
+   * synchronous implementations, conservatively indicating that data may be available rather than
+   * causing the calling thread to wait indefinitely. If the result set has already been closed,
+   * this also returns {@code true} because subsequent read operations will complete or fail fast
+   * without blocking.
+   *
+   * @return true if data (a chunk, row, EOF, or error) is available without blocking on network
+   *     I/O; false otherwise.
+   */
+  @InternalApi
+  default boolean isDataAvailable() {
+    return true;
+  }
 }
