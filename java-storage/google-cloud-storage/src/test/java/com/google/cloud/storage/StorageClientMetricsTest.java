@@ -18,6 +18,7 @@ package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.common.collect.ImmutableList;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
@@ -34,6 +35,28 @@ import org.junit.Test;
 
 public final class StorageClientMetricsTest {
 
+  private static final List<Function<StorageClientMetrics, Object>> STANDARD_INSTRUMENTS =
+      ImmutableList.of(
+          StorageClientMetrics::getRpcClientCallDuration,
+          StorageClientMetrics::getHttpClientRequestDuration,
+          StorageClientMetrics::getGcpClientRequestDuration,
+          StorageClientMetrics::getOperations,
+          StorageClientMetrics::getAttempts,
+          StorageClientMetrics::getRetries,
+          StorageClientMetrics::getErrors,
+          StorageClientMetrics::getTtfb,
+          StorageClientMetrics::getRequestBodySize,
+          StorageClientMetrics::getResponseBodySize);
+
+  private static final List<Function<StorageClientMetrics, Object>> DEBUG_INSTRUMENTS =
+      ImmutableList.of(
+          StorageClientMetrics::getRequestActive,
+          StorageClientMetrics::getServerDuration,
+          StorageClientMetrics::getServerUnreached,
+          StorageClientMetrics::getStallDuration,
+          StorageClientMetrics::getNetworkIo,
+          StorageClientMetrics::getCredentialRefreshDuration);
+
   @Test
   public void standardMetrics_initializedWithoutDebug() {
     InMemoryMetricReader reader = InMemoryMetricReader.create();
@@ -41,16 +64,7 @@ public final class StorageClientMetricsTest {
 
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
 
-    assertThat(metrics.getRpcClientCallDuration()).isNotNull();
-    assertThat(metrics.getHttpClientRequestDuration()).isNotNull();
-    assertThat(metrics.getGcpClientRequestDuration()).isNotNull();
-    assertThat(metrics.getOperations()).isNotNull();
-    assertThat(metrics.getAttempts()).isNotNull();
-    assertThat(metrics.getRetries()).isNotNull();
-    assertThat(metrics.getErrors()).isNotNull();
-    assertThat(metrics.getTtfb()).isNotNull();
-    assertThat(metrics.getRequestBodySize()).isNotNull();
-    assertThat(metrics.getResponseBodySize()).isNotNull();
+    assertInstruments(metrics, STANDARD_INSTRUMENTS, /* isNull= */ false);
 
     // Standard client attributes
     assertThat(metrics.getClientAttributes()).isNotNull();
@@ -64,12 +78,7 @@ public final class StorageClientMetricsTest {
         .isNotEmpty();
 
     // Debug instruments should be null
-    assertThat(metrics.getRequestActive()).isNull();
-    assertThat(metrics.getServerDuration()).isNull();
-    assertThat(metrics.getServerUnreached()).isNull();
-    assertThat(metrics.getStallDuration()).isNull();
-    assertThat(metrics.getNetworkIo()).isNull();
-    assertThat(metrics.getCredentialRefreshDuration()).isNull();
+    assertInstruments(metrics, DEBUG_INSTRUMENTS, /* isNull= */ true);
   }
 
   @Test
@@ -79,24 +88,8 @@ public final class StorageClientMetricsTest {
 
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, true);
 
-    assertThat(metrics.getRpcClientCallDuration()).isNotNull();
-    assertThat(metrics.getHttpClientRequestDuration()).isNotNull();
-    assertThat(metrics.getGcpClientRequestDuration()).isNotNull();
-    assertThat(metrics.getOperations()).isNotNull();
-    assertThat(metrics.getAttempts()).isNotNull();
-    assertThat(metrics.getRetries()).isNotNull();
-    assertThat(metrics.getErrors()).isNotNull();
-    assertThat(metrics.getTtfb()).isNotNull();
-    assertThat(metrics.getRequestBodySize()).isNotNull();
-    assertThat(metrics.getResponseBodySize()).isNotNull();
-
-    // Debug instruments should be present
-    assertThat(metrics.getRequestActive()).isNotNull();
-    assertThat(metrics.getServerDuration()).isNotNull();
-    assertThat(metrics.getServerUnreached()).isNotNull();
-    assertThat(metrics.getStallDuration()).isNotNull();
-    assertThat(metrics.getNetworkIo()).isNotNull();
-    assertThat(metrics.getCredentialRefreshDuration()).isNotNull();
+    assertInstruments(metrics, STANDARD_INSTRUMENTS, /* isNull= */ false);
+    assertInstruments(metrics, DEBUG_INSTRUMENTS, /* isNull= */ false);
   }
 
   @Test
@@ -106,25 +99,8 @@ public final class StorageClientMetricsTest {
 
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, false, true);
 
-    // Standard instruments should be null
-    assertThat(metrics.getRpcClientCallDuration()).isNull();
-    assertThat(metrics.getHttpClientRequestDuration()).isNull();
-    assertThat(metrics.getGcpClientRequestDuration()).isNull();
-    assertThat(metrics.getOperations()).isNull();
-    assertThat(metrics.getAttempts()).isNull();
-    assertThat(metrics.getRetries()).isNull();
-    assertThat(metrics.getErrors()).isNull();
-    assertThat(metrics.getTtfb()).isNull();
-    assertThat(metrics.getRequestBodySize()).isNull();
-    assertThat(metrics.getResponseBodySize()).isNull();
-
-    // Debug instruments should be present
-    assertThat(metrics.getRequestActive()).isNotNull();
-    assertThat(metrics.getServerDuration()).isNotNull();
-    assertThat(metrics.getServerUnreached()).isNotNull();
-    assertThat(metrics.getStallDuration()).isNotNull();
-    assertThat(metrics.getNetworkIo()).isNotNull();
-    assertThat(metrics.getCredentialRefreshDuration()).isNotNull();
+    assertInstruments(metrics, STANDARD_INSTRUMENTS, /* isNull= */ true);
+    assertInstruments(metrics, DEBUG_INSTRUMENTS, /* isNull= */ false);
   }
 
   @Test
@@ -134,25 +110,8 @@ public final class StorageClientMetricsTest {
 
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, false, false);
 
-    // Standard instruments should be null
-    assertThat(metrics.getRpcClientCallDuration()).isNull();
-    assertThat(metrics.getHttpClientRequestDuration()).isNull();
-    assertThat(metrics.getGcpClientRequestDuration()).isNull();
-    assertThat(metrics.getOperations()).isNull();
-    assertThat(metrics.getAttempts()).isNull();
-    assertThat(metrics.getRetries()).isNull();
-    assertThat(metrics.getErrors()).isNull();
-    assertThat(metrics.getTtfb()).isNull();
-    assertThat(metrics.getRequestBodySize()).isNull();
-    assertThat(metrics.getResponseBodySize()).isNull();
-
-    // Debug instruments should be null
-    assertThat(metrics.getRequestActive()).isNull();
-    assertThat(metrics.getServerDuration()).isNull();
-    assertThat(metrics.getServerUnreached()).isNull();
-    assertThat(metrics.getStallDuration()).isNull();
-    assertThat(metrics.getNetworkIo()).isNull();
-    assertThat(metrics.getCredentialRefreshDuration()).isNull();
+    assertInstruments(metrics, STANDARD_INSTRUMENTS, /* isNull= */ true);
+    assertInstruments(metrics, DEBUG_INSTRUMENTS, /* isNull= */ true);
   }
 
   @Test
@@ -388,5 +347,18 @@ public final class StorageClientMetricsTest {
     MetricData metricData = metricsMap.get(viewName);
     HistogramPointData pointData = metricData.getHistogramData().getPoints().iterator().next();
     assertThat(pointData.getBoundaries()).isEqualTo(expectedBoundaries);
+  }
+
+  private static void assertInstruments(
+      StorageClientMetrics metrics,
+      List<Function<StorageClientMetrics, Object>> instruments,
+      boolean isNull) {
+    for (Function<StorageClientMetrics, Object> getter : instruments) {
+      if (isNull) {
+        assertThat(getter.apply(metrics)).isNull();
+      } else {
+        assertThat(getter.apply(metrics)).isNotNull();
+      }
+    }
   }
 }
