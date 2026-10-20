@@ -69,6 +69,13 @@ class CancellationTest {
           .setTotalTimeoutDuration(java.time.Duration.ofMillis(20L))
           .build();
 
+  // Disable jitter so ExponentialRetryAlgorithm.createNextAttempt always schedules the full
+  // 3000ms retry delay instead of picking a random delay in [0, 3000) ms via
+  // ThreadLocalRandom.current().nextLong(bound), which can otherwise expire before the
+  // cancellation thread calls resultFuture.cancel(true).
+  // totalTimeoutDuration must exceed initialRetryDelayDuration (10000ms > 3000ms) because
+  // ExponentialRetryAlgorithm.shouldRetry checks (totalTimeout - timeElapsed - retryDelay) > 0
+  // before scheduling the next attempt.
   private static final RetrySettings SLOW_RETRY_SETTINGS =
       RetrySettings.newBuilder()
           .setInitialRetryDelayDuration(java.time.Duration.ofMillis(3000L))
@@ -77,7 +84,8 @@ class CancellationTest {
           .setInitialRpcTimeoutDuration(java.time.Duration.ofMillis(3000L))
           .setRpcTimeoutMultiplier(1)
           .setMaxRpcTimeoutDuration(java.time.Duration.ofMillis(3000L))
-          .setTotalTimeoutDuration(java.time.Duration.ofMillis(3000L))
+          .setTotalTimeoutDuration(java.time.Duration.ofMillis(10000L))
+          .setJittered(false)
           .build();
 
   private FakeApiClock fakeClock;
@@ -197,6 +205,10 @@ class CancellationTest {
     Throwable throwable =
         new UnavailableException(null, FakeStatusCode.of(StatusCode.Code.UNAVAILABLE), true);
     CancellationTrackingFuture<Integer> innerFuture = CancellationTrackingFuture.create();
+    // Attempt 1 fails immediately with UNAVAILABLE, causing CallbackChainRetryingFuture to
+    // schedule Attempt 2 on the executor with SLOW_RETRY_SETTINGS's retry delay.
+    // innerFuture is queued in Mockito for Attempt 2 and is only returned if the retry delay
+    // expires and AttemptCallable.call() invokes callInt.futureCall() a second time.
     Mockito.when(callInt.futureCall((Integer) Mockito.any(), (ApiCallContext) Mockito.any()))
         .thenReturn(RetryingTest.<Integer>immediateFailedFuture(throwable))
         .thenReturn(innerFuture);
@@ -220,6 +232,12 @@ class CancellationTest {
     Truth.assertThat(gotException).isNotNull();
     Truth.assertThat(resultFuture.isDone()).isTrue();
     Truth.assertThat(resultFuture.isCancelled()).isTrue();
+    // CallbackChainRetryingFuture replaces its active attemptFuture at each step of the retry
+    // loop (Attempt 1 future -> scheduled retry-delay timer future -> Attempt 2 future via
+    // AttemptCallable.call()). While waiting in the retry delay, attemptFuture points to the
+    // scheduled timer future from ScheduledRetryingExecutor.submit(). Cancelling resultFuture
+    // during this delay cancels that timer task before AttemptCallable.call() runs Attempt 2,
+    // so callInt.futureCall() is never called a second time and innerFuture is never cancelled.
     Truth.assertThat(innerFuture.isCancelled()).isFalse();
 
     scheduler.shutdownNow();
