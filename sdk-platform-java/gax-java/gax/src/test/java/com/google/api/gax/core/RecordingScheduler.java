@@ -29,11 +29,7 @@
  */
 package com.google.api.gax.core;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
@@ -41,67 +37,68 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.mockito.Mockito;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
 
-public abstract class RecordingScheduler implements ScheduledExecutorService {
+/**
+ * A test {@link ScheduledExecutorService} that records scheduled delays and advances a {@link
+ * FakeApiClock} instead of sleeping in real time.
+ *
+ * <p>When {@link #schedule(Runnable, long, TimeUnit)} is called, this scheduler records the
+ * requested delay, increments the {@link FakeApiClock} by that delay, and immediately submits the
+ * task with zero delay to the underlying single-threaded executor. This allows multi-attempt retry
+ * and polling tests to execute without real-time backoff sleeps while still exercising simulated
+ * elapsed time calculations and preserving asynchronous callback ordering on {@code
+ * CallbackChainRetryingFuture}.
+ */
+public class RecordingScheduler extends ScheduledThreadPoolExecutor {
+  /**
+   * A single worker thread executes zero-delay scheduled tasks sequentially in FIFO order. Running
+   * tasks asynchronously on a dedicated worker thread avoids lock-inversion and reentrant race
+   * conditions when registering attempt futures in CallbackChainRetryingFuture.
+   */
+  private static final int CORE_POOL_SIZE = 1;
 
-  public abstract List<java.time.Duration> getSleepDurations();
+  private final FakeApiClock clock;
+  private final List<Duration> sleepDurations = new ArrayList<>();
+  private final AtomicInteger iterationsCount = new AtomicInteger(0);
 
-  public abstract int getIterationsCount();
+  private RecordingScheduler(FakeApiClock clock) {
+    super(CORE_POOL_SIZE);
+    this.clock = clock;
+  }
 
-  public static RecordingScheduler create(final FakeApiClock clock) {
-    RecordingScheduler mock =
-        mock(RecordingScheduler.class, Mockito.withSettings().withoutAnnotations());
+  /**
+   * Creates a new {@link RecordingScheduler} bound to the given {@link FakeApiClock}.
+   *
+   * @param clock the fake clock to advance whenever a delayed task is scheduled
+   */
+  public static RecordingScheduler create(FakeApiClock clock) {
+    return new RecordingScheduler(clock);
+  }
 
-    // mock class fields:
-    final ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1);
-    final List<java.time.Duration> sleepDurations = new ArrayList<>();
-    final AtomicInteger iterationsCount = new AtomicInteger(0);
+  /**
+   * Schedules a task by recording the requested delay, advancing the {@link FakeApiClock} by that
+   * duration, and immediately submitting the task with zero delay to the worker thread.
+   *
+   * <p>Advancing the fake clock simulates the passage of backoff time deterministically without
+   * sleeping in real time. Submitting with zero delay to the worker thread preserves asynchronous
+   * execution so that attempt registration in {@code CallbackChainRetryingFuture} completes
+   * cleanly before the scheduled attempt runs.
+   */
+  @Override
+  public ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit) {
+    iterationsCount.incrementAndGet();
+    sleepDurations.add(Duration.ofMillis(TimeUnit.MILLISECONDS.convert(delay, unit)));
+    clock.incrementNanoTime(TimeUnit.NANOSECONDS.convert(delay, unit));
+    return super.schedule(command, 0, TimeUnit.NANOSECONDS);
+  }
 
-    // mock class methods:
-    // ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit);
-    when(mock.schedule(any(Runnable.class), anyLong(), any(TimeUnit.class)))
-        .then(
-            new Answer<ScheduledFuture<?>>() {
-              @Override
-              public ScheduledFuture<?> answer(InvocationOnMock invocation) throws Throwable {
-                Object[] args = invocation.getArguments();
-                Runnable runnable = (Runnable) args[0];
-                Long delay = (Long) args[1];
-                TimeUnit unit = (TimeUnit) args[2];
-                iterationsCount.incrementAndGet();
-                sleepDurations.add(
-                    java.time.Duration.ofMillis(TimeUnit.MILLISECONDS.convert(delay, unit)));
-                clock.incrementNanoTime(TimeUnit.NANOSECONDS.convert(delay, unit));
-                return executor.schedule(runnable, 0, TimeUnit.NANOSECONDS);
-              }
-            });
+  /** Returns the retry or poll delays passed to {@link #schedule(Runnable, long, TimeUnit)}. */
+  public List<Duration> getSleepDurations() {
+    return sleepDurations;
+  }
 
-    // List<Runnable> shutdownNow()
-    when(mock.shutdownNow())
-        .then(
-            new Answer<List<Runnable>>() {
-              @Override
-              public List<Runnable> answer(InvocationOnMock invocation) throws Throwable {
-                return executor.shutdownNow();
-              }
-            });
-
-    // List<java.time.Duration> getSleepDurations()
-    when(mock.getSleepDurations()).thenReturn(sleepDurations);
-
-    // int getIterationsCount()
-    when(mock.getIterationsCount())
-        .then(
-            new Answer<Integer>() {
-              @Override
-              public Integer answer(InvocationOnMock invocation) throws Throwable {
-                return iterationsCount.get();
-              }
-            });
-
-    return mock;
+  /** Returns the total number of tasks scheduled via {@link #schedule(Runnable, long, TimeUnit)}. */
+  public int getIterationsCount() {
+    return iterationsCount.get();
   }
 }
