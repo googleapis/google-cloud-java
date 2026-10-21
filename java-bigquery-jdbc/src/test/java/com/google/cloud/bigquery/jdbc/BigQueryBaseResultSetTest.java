@@ -42,6 +42,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLWarning;
 import java.util.Arrays;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -340,5 +342,22 @@ public class BigQueryBaseResultSetTest {
     assertThat(stats.getCacheHit()).isFalse();
     assertThat(stats.getTotalSlotMs()).isEqualTo(250L);
     verify(bigQuery, never()).getJob(any(JobId.class));
+  }
+
+  @Test
+  public void testCloseClearsBufferAndOffersEndOfStreamSentinel() throws Exception {
+    BlockingQueue<Object> queue = new LinkedBlockingDeque<>(4);
+    queue.add("row1");
+    queue.add("row2");
+    Object sentinel = new Object();
+
+    Field bufferField = BigQueryBaseResultSet.class.getDeclaredField("buffer");
+    bufferField.setAccessible(true);
+    bufferField.set(resultSet, queue);
+    doReturn(sentinel).when(resultSet).getEndOfStreamSentinel();
+
+    resultSet.close();
+
+    assertThat(queue).containsExactly(sentinel);
   }
 }

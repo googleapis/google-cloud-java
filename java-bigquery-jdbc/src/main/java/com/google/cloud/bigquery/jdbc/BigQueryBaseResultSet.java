@@ -55,10 +55,11 @@ import java.sql.Timestamp;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.List;
+import java.util.concurrent.BlockingQueue;
 import javax.sql.rowset.serial.SerialBlob;
 import javax.sql.rowset.serial.SerialClob;
 
-public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
+public abstract class BigQueryBaseResultSet<T> extends BigQueryNoOpsResultSet
     implements BigQueryResultSet {
   protected final BigQueryJdbcResultSetLogger LOG;
   private BigQuery bigQuery;
@@ -69,6 +70,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   protected final Schema schema;
   protected final FieldList schemaFieldList;
   protected final boolean isNested;
+  protected final BlockingQueue<T> buffer;
   protected boolean isClosed = false;
   protected boolean wasNull = false;
   private int fetchSize = -1;
@@ -80,16 +82,27 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   protected BigQueryBaseResultSet(
       BigQuery bigQuery, BigQueryStatement statement, Schema schema, boolean isNested) {
-    this(bigQuery, statement, schema, isNested, null);
+    this(bigQuery, statement, schema, isNested, null, null);
   }
 
   protected BigQueryBaseResultSet(
       BigQuery bigQuery, BigQueryStatement statement, Schema schema, boolean isNested, Job job) {
+    this(bigQuery, statement, schema, isNested, job, null);
+  }
+
+  protected BigQueryBaseResultSet(
+      BigQuery bigQuery,
+      BigQueryStatement statement,
+      Schema schema,
+      boolean isNested,
+      Job job,
+      BlockingQueue<T> buffer) {
     this.bigQuery = bigQuery;
     this.statement = statement;
     this.schema = schema;
     this.schemaFieldList = schema != null ? schema.getFields() : null;
     this.isNested = isNested;
+    this.buffer = buffer;
     this.originalSpanContext = Span.current().getSpanContext();
     this.job = job;
     if (job != null) {
@@ -151,8 +164,20 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     return queryId;
   }
 
+  protected T getEndOfStreamSentinel() {
+    return null;
+  }
+
   @Override
   public void close() {
+    if (this.buffer != null) {
+      this.buffer.clear();
+      // Unblock any consumer thread currently waiting on buffer.take() in next()
+      T sentinel = getEndOfStreamSentinel();
+      if (sentinel != null) {
+        this.buffer.offer(sentinel);
+      }
+    }
     try {
       if (statement != null && statement.isCloseOnCompletion() && !statement.hasMoreResults()) {
         statement.close();

@@ -54,13 +54,10 @@ import org.apache.arrow.vector.util.JsonStringHashMap;
 import org.apache.arrow.vector.util.Text;
 
 /** {@link ResultSet} Implementation for Arrow datasource (Using Storage Read APIs) */
-class BigQueryArrowResultSet extends BigQueryBaseResultSet {
+class BigQueryArrowResultSet extends BigQueryBaseResultSet<BigQueryArrowBatchWrapper> {
   private final long totalRows;
   // count of rows read by the current instance of ResultSet
   private long rowCount = 0;
-  // IMP: This is a buffer of Arrow batches, the max size should be kept at min as
-  // possible to avoid holding too much memory
-  private final BlockingQueue<BigQueryArrowBatchWrapper> buffer;
 
   // TODO(neenu): See if it makes sense to have the nested batch represented by
   // 'JsonStringArrayList' directly
@@ -103,10 +100,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       Job job,
       boolean enableTimestampPicos)
       throws SQLException {
-    super(bigQuery, statement, schema, isNested, job);
+    super(bigQuery, statement, schema, isNested, job, buffer);
     LOG.finestTrace("<init>");
     this.totalRows = totalRows;
-    this.buffer = buffer;
     this.currentNestedBatch = currentNestedBatch;
     this.fromIndex = fromIndex;
     this.toIndexExclusive = toIndexExclusive;
@@ -169,7 +165,6 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   BigQueryArrowResultSet() throws SQLException {
     super(null, null, null, false);
     this.totalRows = 0;
-    this.buffer = null;
     this.currentNestedBatch = null;
     this.fromIndex = 0;
     this.toIndexExclusive = 0;
@@ -546,6 +541,11 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   }
 
   @Override
+  protected BigQueryArrowBatchWrapper getEndOfStreamSentinel() {
+    return BigQueryArrowBatchWrapper.of(null, true);
+  }
+
+  @Override
   public void close() {
     if (this.isClosed) {
       return;
@@ -556,11 +556,6 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       if (ownedTask != null) {
         // cancel the producer task when result set is closed
         ownedTask.cancel(true);
-      }
-      if (this.buffer != null) {
-        this.buffer.clear();
-        // Unblock any consumer thread currently waiting on buffer.take() in next()
-        this.buffer.offer(BigQueryArrowBatchWrapper.of(null, true));
       }
       if (this.arrowDeserializer != null) {
         this.arrowDeserializer.close();
