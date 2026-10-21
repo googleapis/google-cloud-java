@@ -35,8 +35,9 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Future;
 
 /** {@link ResultSet} Implementation for JSON datasource (Using REST APIs) */
-class BigQueryJsonResultSet extends BigQueryBaseResultSet<BigQueryFieldValueListWrapper> {
+class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   private final long totalRows;
+  private final BlockingQueue<BigQueryFieldValueListWrapper> buffer;
   private boolean hasReachedEnd = false;
   // Points to the current record
   private BigQueryFieldValueListWrapper cursor;
@@ -62,8 +63,9 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet<BigQueryFieldValueList
       BigQuery bigQuery,
       Job job,
       boolean enableTimestampPicos) {
-    super(bigQuery, statement, schema, isNested, job, buffer);
+    super(bigQuery, statement, schema, isNested, job);
     this.totalRows = totalRows;
+    this.buffer = buffer;
     this.cursor = cursor;
     this.fromIndex = fromIndex;
     this.toIndexExclusive = toIndexExclusive;
@@ -155,6 +157,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet<BigQueryFieldValueList
   BigQueryJsonResultSet() {
     super(null, null, null, false);
     totalRows = 0;
+    buffer = null;
     fromIndex = 0;
     ownedTasks = new Future<?>[0];
     toIndexExclusive = 0;
@@ -379,11 +382,6 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet<BigQueryFieldValueList
   }
 
   @Override
-  protected BigQueryFieldValueListWrapper getEndOfStreamSentinel() {
-    return BigQueryFieldValueListWrapper.ofEndOfStream(null);
-  }
-
-  @Override
   public void close() {
     if (this.isClosed) {
       return;
@@ -397,6 +395,11 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet<BigQueryFieldValueList
             ownedTask.cancel(true);
           }
         }
+      }
+      if (this.buffer != null) {
+        this.buffer.clear();
+        // Unblock any consumer thread currently waiting on buffer.take() in next()
+        this.buffer.offer(BigQueryFieldValueListWrapper.ofEndOfStream(null));
       }
       this.cursor = null;
     } finally {
