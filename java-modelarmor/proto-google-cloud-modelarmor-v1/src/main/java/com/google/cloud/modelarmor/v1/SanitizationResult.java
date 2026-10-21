@@ -183,6 +183,52 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     com.google.cloud.modelarmor.v1.DataItemOrBuilder getStreamChunkProcessedOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the Filter Version configuration used
+     * to sanitize this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the filterVersionConfig field is set.
+     */
+    boolean hasFilterVersionConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the Filter Version configuration used
+     * to sanitize this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The filterVersionConfig.
+     */
+    com.google.cloud.modelarmor.v1.FilterVersionConfig getFilterVersionConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the Filter Version configuration used
+     * to sanitize this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.modelarmor.v1.FilterVersionConfigOrBuilder getFilterVersionConfigOrBuilder();
   }
 
   /**
@@ -386,6 +432,69 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
           : streamChunkProcessed_;
     }
 
+    public static final int FILTER_VERSION_CONFIG_FIELD_NUMBER = 6;
+    private com.google.cloud.modelarmor.v1.FilterVersionConfig filterVersionConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the Filter Version configuration used
+     * to sanitize this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the filterVersionConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasFilterVersionConfig() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the Filter Version configuration used
+     * to sanitize this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The filterVersionConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1.FilterVersionConfig getFilterVersionConfig() {
+      return filterVersionConfig_ == null
+          ? com.google.cloud.modelarmor.v1.FilterVersionConfig.getDefaultInstance()
+          : filterVersionConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the Filter Version configuration used
+     * to sanitize this request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1.FilterVersionConfigOrBuilder
+        getFilterVersionConfigOrBuilder() {
+      return filterVersionConfig_ == null
+          ? com.google.cloud.modelarmor.v1.FilterVersionConfig.getDefaultInstance()
+          : filterVersionConfig_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -412,6 +521,9 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(4, getStreamChunkProcessed());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(6, getFilterVersionConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -435,6 +547,10 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       if (((bitField0_ & 0x00000001) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(4, getStreamChunkProcessed());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(6, getFilterVersionConfig());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -461,6 +577,10 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       if (hasStreamChunkProcessed()) {
         if (!getStreamChunkProcessed().equals(other.getStreamChunkProcessed())) return false;
       }
+      if (hasFilterVersionConfig() != other.hasFilterVersionConfig()) return false;
+      if (hasFilterVersionConfig()) {
+        if (!getFilterVersionConfig().equals(other.getFilterVersionConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -483,6 +603,10 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       if (hasStreamChunkProcessed()) {
         hash = (37 * hash) + STREAM_CHUNK_PROCESSED_FIELD_NUMBER;
         hash = (53 * hash) + getStreamChunkProcessed().hashCode();
+      }
+      if (hasFilterVersionConfig()) {
+        hash = (37 * hash) + FILTER_VERSION_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getFilterVersionConfig().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -630,6 +754,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           internalGetStreamChunkProcessedFieldBuilder();
+          internalGetFilterVersionConfigFieldBuilder();
         }
       }
 
@@ -644,6 +769,11 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         if (streamChunkProcessedBuilder_ != null) {
           streamChunkProcessedBuilder_.dispose();
           streamChunkProcessedBuilder_ = null;
+        }
+        filterVersionConfig_ = null;
+        if (filterVersionConfigBuilder_ != null) {
+          filterVersionConfigBuilder_.dispose();
+          filterVersionConfigBuilder_ = null;
         }
         return this;
       }
@@ -702,6 +832,13 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
                   : streamChunkProcessedBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.filterVersionConfig_ =
+              filterVersionConfigBuilder_ == null
+                  ? filterVersionConfig_
+                  : filterVersionConfigBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -735,6 +872,9 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         }
         if (other.hasStreamChunkProcessed()) {
           mergeStreamChunkProcessed(other.getStreamChunkProcessed());
+        }
+        if (other.hasFilterVersionConfig()) {
+          mergeFilterVersionConfig(other.getFilterVersionConfig());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -788,6 +928,13 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 50:
+                {
+                  input.readMessage(
+                      internalGetFilterVersionConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1247,6 +1394,233 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
         return streamChunkProcessedBuilder_;
       }
 
+      private com.google.cloud.modelarmor.v1.FilterVersionConfig filterVersionConfig_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.modelarmor.v1.FilterVersionConfig,
+              com.google.cloud.modelarmor.v1.FilterVersionConfig.Builder,
+              com.google.cloud.modelarmor.v1.FilterVersionConfigOrBuilder>
+          filterVersionConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Provides details about the Filter Version configuration used
+       * to sanitize this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the filterVersionConfig field is set.
+       */
+      public boolean hasFilterVersionConfig() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Provides details about the Filter Version configuration used
+       * to sanitize this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The filterVersionConfig.
+       */
+      public com.google.cloud.modelarmor.v1.FilterVersionConfig getFilterVersionConfig() {
+        if (filterVersionConfigBuilder_ == null) {
+          return filterVersionConfig_ == null
+              ? com.google.cloud.modelarmor.v1.FilterVersionConfig.getDefaultInstance()
+              : filterVersionConfig_;
+        } else {
+          return filterVersionConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Provides details about the Filter Version configuration used
+       * to sanitize this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setFilterVersionConfig(
+          com.google.cloud.modelarmor.v1.FilterVersionConfig value) {
+        if (filterVersionConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          filterVersionConfig_ = value;
+        } else {
+          filterVersionConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Provides details about the Filter Version configuration used
+       * to sanitize this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setFilterVersionConfig(
+          com.google.cloud.modelarmor.v1.FilterVersionConfig.Builder builderForValue) {
+        if (filterVersionConfigBuilder_ == null) {
+          filterVersionConfig_ = builderForValue.build();
+        } else {
+          filterVersionConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Provides details about the Filter Version configuration used
+       * to sanitize this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeFilterVersionConfig(
+          com.google.cloud.modelarmor.v1.FilterVersionConfig value) {
+        if (filterVersionConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && filterVersionConfig_ != null
+              && filterVersionConfig_
+                  != com.google.cloud.modelarmor.v1.FilterVersionConfig.getDefaultInstance()) {
+            getFilterVersionConfigBuilder().mergeFrom(value);
+          } else {
+            filterVersionConfig_ = value;
+          }
+        } else {
+          filterVersionConfigBuilder_.mergeFrom(value);
+        }
+        if (filterVersionConfig_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Provides details about the Filter Version configuration used
+       * to sanitize this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearFilterVersionConfig() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        filterVersionConfig_ = null;
+        if (filterVersionConfigBuilder_ != null) {
+          filterVersionConfigBuilder_.dispose();
+          filterVersionConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Provides details about the Filter Version configuration used
+       * to sanitize this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.modelarmor.v1.FilterVersionConfig.Builder
+          getFilterVersionConfigBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return internalGetFilterVersionConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Provides details about the Filter Version configuration used
+       * to sanitize this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.modelarmor.v1.FilterVersionConfigOrBuilder
+          getFilterVersionConfigOrBuilder() {
+        if (filterVersionConfigBuilder_ != null) {
+          return filterVersionConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return filterVersionConfig_ == null
+              ? com.google.cloud.modelarmor.v1.FilterVersionConfig.getDefaultInstance()
+              : filterVersionConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Provides details about the Filter Version configuration used
+       * to sanitize this request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.modelarmor.v1.FilterVersionConfig filter_version_config = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.modelarmor.v1.FilterVersionConfig,
+              com.google.cloud.modelarmor.v1.FilterVersionConfig.Builder,
+              com.google.cloud.modelarmor.v1.FilterVersionConfigOrBuilder>
+          internalGetFilterVersionConfigFieldBuilder() {
+        if (filterVersionConfigBuilder_ == null) {
+          filterVersionConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.modelarmor.v1.FilterVersionConfig,
+                  com.google.cloud.modelarmor.v1.FilterVersionConfig.Builder,
+                  com.google.cloud.modelarmor.v1.FilterVersionConfigOrBuilder>(
+                  getFilterVersionConfig(), getParentForChildren(), isClean());
+          filterVersionConfig_ = null;
+        }
+        return filterVersionConfigBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.modelarmor.v1.SanitizationResult.SanitizationMetadata)
     }
 
@@ -1399,7 +1773,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. Results for all filters where the key is the filter name -
-   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
    * </pre>
    *
    * <code>
@@ -1427,7 +1801,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. Results for all filters where the key is the filter name -
-   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
    * </pre>
    *
    * <code>
@@ -1445,7 +1819,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. Results for all filters where the key is the filter name -
-   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
    * </pre>
    *
    * <code>
@@ -1470,7 +1844,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Output only. Results for all filters where the key is the filter name -
-   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
    * </pre>
    *
    * <code>
@@ -2256,7 +2630,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Results for all filters where the key is the filter name -
-     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
      * </pre>
      *
      * <code>
@@ -2284,7 +2658,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Results for all filters where the key is the filter name -
-     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
      * </pre>
      *
      * <code>
@@ -2302,7 +2676,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Results for all filters where the key is the filter name -
-     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
      * </pre>
      *
      * <code>
@@ -2327,7 +2701,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Results for all filters where the key is the filter name -
-     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
      * </pre>
      *
      * <code>
@@ -2359,7 +2733,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Results for all filters where the key is the filter name -
-     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
      * </pre>
      *
      * <code>
@@ -2387,7 +2761,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Results for all filters where the key is the filter name -
-     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
      * </pre>
      *
      * <code>
@@ -2412,7 +2786,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Results for all filters where the key is the filter name -
-     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
      * </pre>
      *
      * <code>
@@ -2437,7 +2811,7 @@ public final class SanitizationResult extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Output only. Results for all filters where the key is the filter name -
-     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+     * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
      * </pre>
      *
      * <code>

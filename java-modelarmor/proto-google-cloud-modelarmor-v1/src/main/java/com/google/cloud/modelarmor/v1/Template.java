@@ -302,6 +302,59 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional. Specifies the configuration for the Filter version to be used.
+     * If this field is populated, it takes precedence over any values set in
+     * the deprecated `filter_version` fields within `RaiFilterSettings`,
+     * `PiAndJailbreakFilterSettings`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the filterVersionSelector field is set.
+     */
+    boolean hasFilterVersionSelector();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the configuration for the Filter version to be used.
+     * If this field is populated, it takes precedence over any values set in
+     * the deprecated `filter_version` fields within `RaiFilterSettings`,
+     * `PiAndJailbreakFilterSettings`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The filterVersionSelector.
+     */
+    com.google.cloud.modelarmor.v1.FilterVersionSelector getFilterVersionSelector();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the configuration for the Filter version to be used.
+     * If this field is populated, it takes precedence over any values set in
+     * the deprecated `filter_version` fields within `RaiFilterSettings`,
+     * `PiAndJailbreakFilterSettings`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.modelarmor.v1.FilterVersionSelectorOrBuilder
+        getFilterVersionSelectorOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. Specifies the modalities to scan.
      * If empty, only text modality will be scanned.
      * </pre>
@@ -379,6 +432,40 @@ public final class Template extends com.google.protobuf.GeneratedMessage
      * @return The enum numeric value on the wire of modalities at the given index.
      */
     int getModalitiesValue(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the template is subject to data residency
+     * compliance. If true (default for new templates), the template is subject
+     * to data residency compliance. If false, the template bypasses data
+     * residency compliance checks.
+     * </pre>
+     *
+     * <code>optional bool data_residency_compliant = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dataResidencyCompliant field is set.
+     */
+    boolean hasDataResidencyCompliant();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the template is subject to data residency
+     * compliance. If true (default for new templates), the template is subject
+     * to data residency compliance. If false, the template bypasses data
+     * residency compliance checks.
+     * </pre>
+     *
+     * <code>optional bool data_residency_compliant = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dataResidencyCompliant.
+     */
+    boolean getDataResidencyCompliant();
   }
 
   /**
@@ -1492,6 +1579,75 @@ public final class Template extends com.google.protobuf.GeneratedMessage
           : multiLanguageDetection_;
     }
 
+    public static final int FILTER_VERSION_SELECTOR_FIELD_NUMBER = 10;
+    private com.google.cloud.modelarmor.v1.FilterVersionSelector filterVersionSelector_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the configuration for the Filter version to be used.
+     * If this field is populated, it takes precedence over any values set in
+     * the deprecated `filter_version` fields within `RaiFilterSettings`,
+     * `PiAndJailbreakFilterSettings`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the filterVersionSelector field is set.
+     */
+    @java.lang.Override
+    public boolean hasFilterVersionSelector() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the configuration for the Filter version to be used.
+     * If this field is populated, it takes precedence over any values set in
+     * the deprecated `filter_version` fields within `RaiFilterSettings`,
+     * `PiAndJailbreakFilterSettings`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The filterVersionSelector.
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1.FilterVersionSelector getFilterVersionSelector() {
+      return filterVersionSelector_ == null
+          ? com.google.cloud.modelarmor.v1.FilterVersionSelector.getDefaultInstance()
+          : filterVersionSelector_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the configuration for the Filter version to be used.
+     * If this field is populated, it takes precedence over any values set in
+     * the deprecated `filter_version` fields within `RaiFilterSettings`,
+     * `PiAndJailbreakFilterSettings`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.modelarmor.v1.FilterVersionSelectorOrBuilder
+        getFilterVersionSelectorOrBuilder() {
+      return filterVersionSelector_ == null
+          ? com.google.cloud.modelarmor.v1.FilterVersionSelector.getDefaultInstance()
+          : filterVersionSelector_;
+    }
+
     public static final int MODALITIES_FIELD_NUMBER = 11;
 
     @SuppressWarnings("serial")
@@ -1611,6 +1767,49 @@ public final class Template extends com.google.protobuf.GeneratedMessage
 
     private int modalitiesMemoizedSerializedSize;
 
+    public static final int DATA_RESIDENCY_COMPLIANT_FIELD_NUMBER = 12;
+    private boolean dataResidencyCompliant_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the template is subject to data residency
+     * compliance. If true (default for new templates), the template is subject
+     * to data residency compliance. If false, the template bypasses data
+     * residency compliance checks.
+     * </pre>
+     *
+     * <code>optional bool data_residency_compliant = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dataResidencyCompliant field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataResidencyCompliant() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the template is subject to data residency
+     * compliance. If true (default for new templates), the template is subject
+     * to data residency compliance. If false, the template bypasses data
+     * residency compliance checks.
+     * </pre>
+     *
+     * <code>optional bool data_residency_compliant = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dataResidencyCompliant.
+     */
+    @java.lang.Override
+    public boolean getDataResidencyCompliant() {
+      return dataResidencyCompliant_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1659,12 +1858,18 @@ public final class Template extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(9, getMultiLanguageDetection());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(10, getFilterVersionSelector());
+      }
       if (getModalitiesList().size() > 0) {
         output.writeUInt32NoTag(90);
         output.writeUInt32NoTag(modalitiesMemoizedSerializedSize);
       }
       for (int i = 0; i < modalities_.size(); i++) {
         output.writeEnumNoTag(modalities_.getInt(i));
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeBool(12, dataResidencyCompliant_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1717,6 +1922,11 @@ public final class Template extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 9, getMultiLanguageDetection());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                10, getFilterVersionSelector());
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < modalities_.size(); i++) {
@@ -1729,6 +1939,9 @@ public final class Template extends com.google.protobuf.GeneratedMessage
           size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
         }
         modalitiesMemoizedSerializedSize = dataSize;
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, dataResidencyCompliant_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1762,7 +1975,15 @@ public final class Template extends com.google.protobuf.GeneratedMessage
       if (hasMultiLanguageDetection()) {
         if (!getMultiLanguageDetection().equals(other.getMultiLanguageDetection())) return false;
       }
+      if (hasFilterVersionSelector() != other.hasFilterVersionSelector()) return false;
+      if (hasFilterVersionSelector()) {
+        if (!getFilterVersionSelector().equals(other.getFilterVersionSelector())) return false;
+      }
       if (!modalities_.equals(other.modalities_)) return false;
+      if (hasDataResidencyCompliant() != other.hasDataResidencyCompliant()) return false;
+      if (hasDataResidencyCompliant()) {
+        if (getDataResidencyCompliant() != other.getDataResidencyCompliant()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1796,9 +2017,17 @@ public final class Template extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + MULTI_LANGUAGE_DETECTION_FIELD_NUMBER;
         hash = (53 * hash) + getMultiLanguageDetection().hashCode();
       }
+      if (hasFilterVersionSelector()) {
+        hash = (37 * hash) + FILTER_VERSION_SELECTOR_FIELD_NUMBER;
+        hash = (53 * hash) + getFilterVersionSelector().hashCode();
+      }
       if (getModalitiesCount() > 0) {
         hash = (37 * hash) + MODALITIES_FIELD_NUMBER;
         hash = (53 * hash) + modalities_.hashCode();
+      }
+      if (hasDataResidencyCompliant()) {
+        hash = (37 * hash) + DATA_RESIDENCY_COMPLIANT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDataResidencyCompliant());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1943,6 +2172,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           internalGetMultiLanguageDetectionFieldBuilder();
+          internalGetFilterVersionSelectorFieldBuilder();
         }
       }
 
@@ -1963,7 +2193,13 @@ public final class Template extends com.google.protobuf.GeneratedMessage
           multiLanguageDetectionBuilder_.dispose();
           multiLanguageDetectionBuilder_ = null;
         }
+        filterVersionSelector_ = null;
+        if (filterVersionSelectorBuilder_ != null) {
+          filterVersionSelectorBuilder_.dispose();
+          filterVersionSelectorBuilder_ = null;
+        }
         modalities_ = emptyIntList();
+        dataResidencyCompliant_ = false;
         return this;
       }
 
@@ -2033,8 +2269,19 @@ public final class Template extends com.google.protobuf.GeneratedMessage
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.filterVersionSelector_ =
+              filterVersionSelectorBuilder_ == null
+                  ? filterVersionSelector_
+                  : filterVersionSelectorBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           modalities_.makeImmutable();
           result.modalities_ = modalities_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.dataResidencyCompliant_ = dataResidencyCompliant_;
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2083,16 +2330,22 @@ public final class Template extends com.google.protobuf.GeneratedMessage
         if (other.hasMultiLanguageDetection()) {
           mergeMultiLanguageDetection(other.getMultiLanguageDetection());
         }
+        if (other.hasFilterVersionSelector()) {
+          mergeFilterVersionSelector(other.getFilterVersionSelector());
+        }
         if (!other.modalities_.isEmpty()) {
           if (modalities_.isEmpty()) {
             modalities_ = other.modalities_;
             modalities_.makeImmutable();
-            bitField0_ |= 0x00000200;
+            bitField0_ |= 0x00000400;
           } else {
             ensureModalitiesIsMutable();
             modalities_.addAll(other.modalities_);
           }
           onChanged();
+        }
+        if (other.hasDataResidencyCompliant()) {
+          setDataResidencyCompliant(other.getDataResidencyCompliant());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2176,6 +2429,14 @@ public final class Template extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000100;
                   break;
                 } // case 74
+              case 82:
+                {
+                  input.readMessage(
+                      internalGetFilterVersionSelectorFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 82
               case 88:
                 {
                   int tmpRaw = input.readEnum();
@@ -2194,6 +2455,12 @@ public final class Template extends com.google.protobuf.GeneratedMessage
                   input.popLimit(limit);
                   break;
                 } // case 90
+              case 96:
+                {
+                  dataResidencyCompliant_ = input.readBool();
+                  bitField0_ |= 0x00000800;
+                  break;
+                } // case 96
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3112,13 +3379,258 @@ public final class Template extends com.google.protobuf.GeneratedMessage
         return multiLanguageDetectionBuilder_;
       }
 
+      private com.google.cloud.modelarmor.v1.FilterVersionSelector filterVersionSelector_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.modelarmor.v1.FilterVersionSelector,
+              com.google.cloud.modelarmor.v1.FilterVersionSelector.Builder,
+              com.google.cloud.modelarmor.v1.FilterVersionSelectorOrBuilder>
+          filterVersionSelectorBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the configuration for the Filter version to be used.
+       * If this field is populated, it takes precedence over any values set in
+       * the deprecated `filter_version` fields within `RaiFilterSettings`,
+       * `PiAndJailbreakFilterSettings`.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the filterVersionSelector field is set.
+       */
+      public boolean hasFilterVersionSelector() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the configuration for the Filter version to be used.
+       * If this field is populated, it takes precedence over any values set in
+       * the deprecated `filter_version` fields within `RaiFilterSettings`,
+       * `PiAndJailbreakFilterSettings`.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The filterVersionSelector.
+       */
+      public com.google.cloud.modelarmor.v1.FilterVersionSelector getFilterVersionSelector() {
+        if (filterVersionSelectorBuilder_ == null) {
+          return filterVersionSelector_ == null
+              ? com.google.cloud.modelarmor.v1.FilterVersionSelector.getDefaultInstance()
+              : filterVersionSelector_;
+        } else {
+          return filterVersionSelectorBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the configuration for the Filter version to be used.
+       * If this field is populated, it takes precedence over any values set in
+       * the deprecated `filter_version` fields within `RaiFilterSettings`,
+       * `PiAndJailbreakFilterSettings`.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setFilterVersionSelector(
+          com.google.cloud.modelarmor.v1.FilterVersionSelector value) {
+        if (filterVersionSelectorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          filterVersionSelector_ = value;
+        } else {
+          filterVersionSelectorBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the configuration for the Filter version to be used.
+       * If this field is populated, it takes precedence over any values set in
+       * the deprecated `filter_version` fields within `RaiFilterSettings`,
+       * `PiAndJailbreakFilterSettings`.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setFilterVersionSelector(
+          com.google.cloud.modelarmor.v1.FilterVersionSelector.Builder builderForValue) {
+        if (filterVersionSelectorBuilder_ == null) {
+          filterVersionSelector_ = builderForValue.build();
+        } else {
+          filterVersionSelectorBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the configuration for the Filter version to be used.
+       * If this field is populated, it takes precedence over any values set in
+       * the deprecated `filter_version` fields within `RaiFilterSettings`,
+       * `PiAndJailbreakFilterSettings`.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeFilterVersionSelector(
+          com.google.cloud.modelarmor.v1.FilterVersionSelector value) {
+        if (filterVersionSelectorBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) != 0)
+              && filterVersionSelector_ != null
+              && filterVersionSelector_
+                  != com.google.cloud.modelarmor.v1.FilterVersionSelector.getDefaultInstance()) {
+            getFilterVersionSelectorBuilder().mergeFrom(value);
+          } else {
+            filterVersionSelector_ = value;
+          }
+        } else {
+          filterVersionSelectorBuilder_.mergeFrom(value);
+        }
+        if (filterVersionSelector_ != null) {
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the configuration for the Filter version to be used.
+       * If this field is populated, it takes precedence over any values set in
+       * the deprecated `filter_version` fields within `RaiFilterSettings`,
+       * `PiAndJailbreakFilterSettings`.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearFilterVersionSelector() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        filterVersionSelector_ = null;
+        if (filterVersionSelectorBuilder_ != null) {
+          filterVersionSelectorBuilder_.dispose();
+          filterVersionSelectorBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the configuration for the Filter version to be used.
+       * If this field is populated, it takes precedence over any values set in
+       * the deprecated `filter_version` fields within `RaiFilterSettings`,
+       * `PiAndJailbreakFilterSettings`.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.modelarmor.v1.FilterVersionSelector.Builder
+          getFilterVersionSelectorBuilder() {
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return internalGetFilterVersionSelectorFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the configuration for the Filter version to be used.
+       * If this field is populated, it takes precedence over any values set in
+       * the deprecated `filter_version` fields within `RaiFilterSettings`,
+       * `PiAndJailbreakFilterSettings`.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.modelarmor.v1.FilterVersionSelectorOrBuilder
+          getFilterVersionSelectorOrBuilder() {
+        if (filterVersionSelectorBuilder_ != null) {
+          return filterVersionSelectorBuilder_.getMessageOrBuilder();
+        } else {
+          return filterVersionSelector_ == null
+              ? com.google.cloud.modelarmor.v1.FilterVersionSelector.getDefaultInstance()
+              : filterVersionSelector_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the configuration for the Filter version to be used.
+       * If this field is populated, it takes precedence over any values set in
+       * the deprecated `filter_version` fields within `RaiFilterSettings`,
+       * `PiAndJailbreakFilterSettings`.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.modelarmor.v1.FilterVersionSelector filter_version_selector = 10 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.modelarmor.v1.FilterVersionSelector,
+              com.google.cloud.modelarmor.v1.FilterVersionSelector.Builder,
+              com.google.cloud.modelarmor.v1.FilterVersionSelectorOrBuilder>
+          internalGetFilterVersionSelectorFieldBuilder() {
+        if (filterVersionSelectorBuilder_ == null) {
+          filterVersionSelectorBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.modelarmor.v1.FilterVersionSelector,
+                  com.google.cloud.modelarmor.v1.FilterVersionSelector.Builder,
+                  com.google.cloud.modelarmor.v1.FilterVersionSelectorOrBuilder>(
+                  getFilterVersionSelector(), getParentForChildren(), isClean());
+          filterVersionSelector_ = null;
+        }
+        return filterVersionSelectorBuilder_;
+      }
+
       private com.google.protobuf.Internal.IntList modalities_ = emptyIntList();
 
       private void ensureModalitiesIsMutable() {
         if (!modalities_.isModifiable()) {
           modalities_ = makeMutableCopy(modalities_);
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
 
       /**
@@ -3269,7 +3781,7 @@ public final class Template extends com.google.protobuf.GeneratedMessage
        */
       public Builder clearModalities() {
         modalities_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
@@ -3377,6 +3889,98 @@ public final class Template extends com.google.protobuf.GeneratedMessage
         for (int value : values) {
           modalities_.addInt(value);
         }
+        onChanged();
+        return this;
+      }
+
+      private boolean dataResidencyCompliant_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates whether the template is subject to data residency
+       * compliance. If true (default for new templates), the template is subject
+       * to data residency compliance. If false, the template bypasses data
+       * residency compliance checks.
+       * </pre>
+       *
+       * <code>
+       * optional bool data_residency_compliant = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the dataResidencyCompliant field is set.
+       */
+      @java.lang.Override
+      public boolean hasDataResidencyCompliant() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates whether the template is subject to data residency
+       * compliance. If true (default for new templates), the template is subject
+       * to data residency compliance. If false, the template bypasses data
+       * residency compliance checks.
+       * </pre>
+       *
+       * <code>
+       * optional bool data_residency_compliant = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The dataResidencyCompliant.
+       */
+      @java.lang.Override
+      public boolean getDataResidencyCompliant() {
+        return dataResidencyCompliant_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates whether the template is subject to data residency
+       * compliance. If true (default for new templates), the template is subject
+       * to data residency compliance. If false, the template bypasses data
+       * residency compliance checks.
+       * </pre>
+       *
+       * <code>
+       * optional bool data_residency_compliant = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The dataResidencyCompliant to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataResidencyCompliant(boolean value) {
+
+        dataResidencyCompliant_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates whether the template is subject to data residency
+       * compliance. If true (default for new templates), the template is subject
+       * to data residency compliance. If false, the template bypasses data
+       * residency compliance checks.
+       * </pre>
+       *
+       * <code>
+       * optional bool data_residency_compliant = 12 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDataResidencyCompliant() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        dataResidencyCompliant_ = false;
         onChanged();
         return this;
       }
