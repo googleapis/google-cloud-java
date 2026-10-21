@@ -34,10 +34,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.retrying.NonCancellableFuture;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.common.base.Preconditions;
-import com.google.common.util.concurrent.MoreExecutors;
 import java.util.concurrent.Callable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -51,7 +48,6 @@ import org.jspecify.annotations.NullMarked;
  */
 @NullMarked
 class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
-  private static final Logger LOG = Logger.getLogger(AttemptCallable.class.getName());
   private final UnaryCallable<RequestT, ResponseT> callable;
   private final RequestT request;
   private final ApiCallContext originalCallContext;
@@ -89,45 +85,8 @@ class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
           .getTracer()
           .attemptStarted(request, externalFuture.getAttemptSettings().getOverallAttemptCount());
 
-      TransportChannel transportChannel = callContext.getTransportChannel();
-      final long attemptGeneration =
-          transportChannel != null ? transportChannel.getGeneration() : 0;
-
       ApiFuture<ResponseT> internalFuture = callable.futureCall(request, callContext);
-      final ApiCallContext finalContext = callContext;
-      ApiFuture<ResponseT> mappedFuture =
-          ApiFutures.catching(
-              internalFuture,
-              UnauthenticatedException.class,
-              unauthenticatedException -> {
-                TransportChannel channel = finalContext.getTransportChannel();
-                if (channel != null) {
-                  // If another request already refreshed the channel, retry without checking the
-                  // certificate on disk again. Otherwise, check for a rotation and refresh.
-                  boolean shouldRetry = channel.getGeneration() > attemptGeneration;
-                  if (!shouldRetry) {
-                    try {
-                      if (channel.shouldRefresh()) {
-                        channel.refresh();
-                      }
-                    } catch (Exception e) {
-                      LOG.log(
-                          Level.WARNING,
-                          "Failed to refresh transport channel after authentication error",
-                          e);
-                    }
-                    shouldRetry = channel.getGeneration() > attemptGeneration;
-                  }
-
-                  if (shouldRetry) {
-                    throw unauthenticatedException.withChannelRefreshed();
-                  }
-                }
-                throw unauthenticatedException;
-              },
-              MoreExecutors.directExecutor());
-
-      externalFuture.setAttemptFuture(mappedFuture);
+      externalFuture.setAttemptFuture(internalFuture);
     } catch (Throwable e) {
       externalFuture.setAttemptFuture(ApiFutures.<ResponseT>immediateFailedFuture(e));
     }

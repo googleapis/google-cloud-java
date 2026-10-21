@@ -49,13 +49,19 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RunWith(StorageITRunner.class)
 @CrossRun(
@@ -75,6 +81,54 @@ public final class ITAppendableUploadTest {
   @Inject public Backend backend;
 
   @Parameter public Param p;
+
+  // --- DIAGNOSTIC ONLY (do not submit) ---------------------------------------
+  // Every 5 minutes, log the running test and the stacks of threads in storage code, so a hang
+  // shows exactly where it is blocked in the CI log.
+  private static final Logger WATCHDOG_LOG =
+      LoggerFactory.getLogger(ITAppendableUploadTest.class);
+  private static volatile String currentTest = "<none>";
+  private static volatile long currentTestStartNanos = System.nanoTime();
+
+  static {
+    // One daemon thread per JVM (each IT class runs in its own JVM in CI).
+    Executors.newSingleThreadScheduledExecutor(
+            r -> {
+              Thread t = new Thread(r, "it-watchdog");
+              t.setDaemon(true);
+              return t;
+            })
+        .scheduleAtFixedRate(ITAppendableUploadTest::dumpStorageThreads, 5, 5, TimeUnit.MINUTES);
+  }
+
+  // Records which test is running. Not a Timeout rule, so the test body stays on the runner thread.
+  @Rule
+  public final TestWatcher watcher =
+      new TestWatcher() {
+        @Override
+        protected void starting(Description d) {
+          currentTest = d.getDisplayName();
+          currentTestStartNanos = System.nanoTime();
+        }
+      };
+
+  private static void dumpStorageThreads() {
+    long secs = TimeUnit.NANOSECONDS.toSeconds(System.nanoTime() - currentTestStartNanos);
+    WATCHDOG_LOG.warn("WATCHDOG current test={} running for {}s", currentTest, secs);
+    for (Map.Entry<Thread, StackTraceElement[]> e : Thread.getAllStackTraces().entrySet()) {
+      StringBuilder sb = new StringBuilder();
+      boolean storage = false;
+      for (StackTraceElement el : e.getValue()) {
+        storage |= el.getClassName().startsWith("com.google.cloud.storage.");
+        sb.append("\n    at ").append(el);
+      }
+      if (storage) {
+        WATCHDOG_LOG.warn(
+            "WATCHDOG thread {} ({}):{}", e.getKey().getName(), e.getKey().getState(), sb);
+      }
+    }
+  }
+  // ---------------------------------------------------------------------------
 
   @Test
   public void appendableUpload_emptyObject()
@@ -103,7 +157,6 @@ public final class ITAppendableUploadTest {
     assertThat(xxd(actualBytes)).isEqualTo(xxd(new byte[0]));
   }
 
-  @Ignore("Flaky test: b/574588650")
   @Test
   public void appendableUpload_bytes()
       throws IOException, ExecutionException, InterruptedException, TimeoutException {
@@ -136,7 +189,6 @@ public final class ITAppendableUploadTest {
     assertThat(xxd(actualBytes)).isEqualTo(xxd(a1_a2.getBytes()));
   }
 
-  @Ignore("Flaky test: b/574588650")
   @Test
   public void explicitFlush()
       throws IOException, ExecutionException, InterruptedException, TimeoutException {

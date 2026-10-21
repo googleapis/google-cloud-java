@@ -459,6 +459,8 @@
         <configuration>
           <forkCount>1</forkCount>
           <reuseForks>false</reuseForks>
+          <!-- Each IT class runs in its own JVM; kill a stuck class instead of hanging the job -->
+          <forkedProcessTimeoutInSeconds>900</forkedProcessTimeoutInSeconds>
           <systemPropertyVariables>
             <logback.statusListenerClass>ch.qos.logback.core.status.NopStatusListener</logback.statusListenerClass>
           </systemPropertyVariables>
