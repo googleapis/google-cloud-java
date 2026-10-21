@@ -5314,11 +5314,13 @@ libraries:
   - name: shopping-merchant-reviews
     version: 0.46.0-SNAPSHOT
     apis:
+      - path: google/shopping/merchant/reviews/v1
       - path: google/shopping/merchant/reviews/v1beta
     java:
       api_description_override: Programmatically manage your Merchant Center Accounts.
       artifact_id: google-shopping-merchant-reviews
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-shopping-merchant-reviews/latest/overview
+      group_id: com.google.shopping
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant API
       product_documentation_override: https://developers.google.com/merchant/api
