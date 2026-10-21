@@ -32,23 +32,21 @@ package com.google.api.gax.rpc.mtls;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
-import com.google.auth.mtls.DefaultMtlsProviderFactory;
-import com.google.auth.mtls.MtlsProvider;
-import com.google.auth.mtls.MtlsUtils;
-import com.google.auth.oauth2.PropertyProvider;
-import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Utility class for handling certificate-based access configurations.
  *
- * <p>This class handles the processing of GOOGLE_API_USE_CLIENT_CERTIFICATE,
- * GOOGLE_API_CERTIFICATE_CONFIG, and GOOGLE_API_USE_MTLS_ENDPOINT configurations.
+ * <p>This class handles the processing of GOOGLE_API_USE_CLIENT_CERTIFICATE and
+ * GOOGLE_API_USE_MTLS_ENDPOINT environment variables according to https://google.aip.dev/auth/4114
  */
+@NullMarked
 @InternalApi
 public class CertificateBasedAccess {
 
   private final EnvironmentProvider envProvider;
 
+  /** The EnvironmentProvider mechanism supports env var injection for unit tests. */
   public CertificateBasedAccess(EnvironmentProvider envProvider) {
     this.envProvider = envProvider;
   }
@@ -68,40 +66,20 @@ public class CertificateBasedAccess {
     ALWAYS;
   }
 
-  private com.google.auth.oauth2.EnvironmentProvider getAuthEnvProvider() {
-    return name -> envProvider.getenv(name);
-  }
-
-  private PropertyProvider getAuthPropertyProvider() {
-    return System::getProperty;
-  }
-
   /** Returns if mutual TLS client certificate should be used. */
   public boolean useMtlsClientCertificate() {
-    return MtlsUtils.useMtlsClientCertificate(getAuthEnvProvider(), getAuthPropertyProvider());
+    String useClientCertificate = envProvider.getenv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    return "true".equals(useClientCertificate);
   }
 
   /** Returns the current mutual TLS endpoint usage policy. */
   public MtlsEndpointUsagePolicy getMtlsEndpointUsagePolicy() {
     String mtlsEndpointUsagePolicy = envProvider.getenv("GOOGLE_API_USE_MTLS_ENDPOINT");
-    if ("never".equalsIgnoreCase(mtlsEndpointUsagePolicy)) {
+    if ("never".equals(mtlsEndpointUsagePolicy)) {
       return MtlsEndpointUsagePolicy.NEVER;
-    } else if ("always".equalsIgnoreCase(mtlsEndpointUsagePolicy)) {
+    } else if ("always".equals(mtlsEndpointUsagePolicy)) {
       return MtlsEndpointUsagePolicy.ALWAYS;
     }
     return MtlsEndpointUsagePolicy.AUTO;
-  }
-
-  /**
-   * Resolves and returns the path to the mutual TLS client certificate, or null if none should be
-   * used.
-   */
-  public String getWorkloadCertPath() {
-    return MtlsUtils.getWorkloadCertPath(getAuthEnvProvider(), getAuthPropertyProvider());
-  }
-
-  /** Creates the default {@link MtlsProvider} for the environment. */
-  public MtlsProvider createDefaultMtlsProvider() throws IOException {
-    return DefaultMtlsProviderFactory.create();
   }
 }

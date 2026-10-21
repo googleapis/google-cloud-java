@@ -29,7 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.mockito.Mockito.mock;
 
@@ -130,7 +129,7 @@ class StreamingCallableTest {
     ClientStreamingCallable<Integer, Integer> callable =
         stashCallable.withDefaultCallContext(defaultCallContext);
     callable.clientStreamingCall(observer);
-    assertNotNull(stashCallable.getActualObserver());
+    assertSame(observer, stashCallable.getActualObserver());
     assertSame(defaultCallContext, stashCallable.getContext());
   }
 
@@ -159,7 +158,7 @@ class StreamingCallableTest {
     ClientStreamingCallable<Integer, Integer> callable =
         stashCallable.withDefaultCallContext(FakeCallContext.createDefault());
     callable.clientStreamingCall(observer, context);
-    assertNotNull(stashCallable.getActualObserver());
+    assertSame(observer, stashCallable.getActualObserver());
     FakeCallContext actualContext = (FakeCallContext) stashCallable.getContext();
     assertSame(channel, actualContext.getChannel());
     assertSame(credentials, actualContext.getCredentials());

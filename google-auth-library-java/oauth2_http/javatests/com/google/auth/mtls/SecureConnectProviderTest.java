@@ -35,12 +35,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.google.auth.TestUtils;
-import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.security.KeyStore;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
@@ -50,16 +47,10 @@ class SecureConnectProviderTest {
 
     private final boolean runForever;
     private final int exitValue;
-    private final InputStream stdout;
 
     public TestCertProviderCommandProcess(int exitValue, boolean runForever) {
-      this(exitValue, runForever, null);
-    }
-
-    TestCertProviderCommandProcess(int exitValue, boolean runForever, InputStream stdout) {
       this.runForever = runForever;
       this.exitValue = exitValue;
-      this.stdout = stdout;
     }
 
     @Override
@@ -69,7 +60,7 @@ class SecureConnectProviderTest {
 
     @Override
     public InputStream getInputStream() {
-      return stdout;
+      return null;
     }
 
     @Override
@@ -108,55 +99,6 @@ class SecureConnectProviderTest {
     public Process createProcess(InputStream metadata) throws IOException {
       return new TestCertProviderCommandProcess(exitCode, false);
     }
-  }
-
-  @Test
-  void testGetKeyStore_certificateChain_keepsFullChain() throws Exception {
-    String stdout =
-        MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH)
-            + "\n"
-            + MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH);
-    SecureConnectProvider.ProcessProvider processProvider =
-        metadata ->
-            new TestCertProviderCommandProcess(0, false, TestUtils.stringToInputStream(stdout));
-
-    KeyStore store =
-        SecureConnectProvider.getKeyStore(TestUtils.stringToInputStream("{}"), processProvider);
-
-    MtlsKeyStoreUtilsTest.assertLeafThenIntermediate(store);
-  }
-
-  @Test
-  void testGetKeyStore_stdoutHeldOpenAfterBufferedBytes_doesNotReadToEof() throws Exception {
-    String stdout =
-        MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_CERT_PATH)
-            + "\n"
-            + MtlsKeyStoreUtilsTest.read(MtlsKeyStoreUtilsTest.CHAIN_KEY_PATH);
-    InputStream neverEndingStdout =
-        new FilterInputStream(TestUtils.stringToInputStream(stdout)) {
-          @Override
-          public int read() throws IOException {
-            if (available() == 0) {
-              throw new AssertionError("Attempted to read past buffered stdout bytes");
-            }
-            return super.read();
-          }
-
-          @Override
-          public int read(byte[] b, int off, int len) throws IOException {
-            if (available() == 0) {
-              throw new AssertionError("Attempted to read past buffered stdout bytes");
-            }
-            return super.read(b, off, len);
-          }
-        };
-    SecureConnectProvider.ProcessProvider processProvider =
-        metadata -> new TestCertProviderCommandProcess(0, false, neverEndingStdout);
-
-    KeyStore store =
-        SecureConnectProvider.getKeyStore(TestUtils.stringToInputStream("{}"), processProvider);
-
-    MtlsKeyStoreUtilsTest.assertLeafThenIntermediate(store);
   }
 
   @Test

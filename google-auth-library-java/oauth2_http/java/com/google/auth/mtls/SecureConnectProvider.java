@@ -32,11 +32,10 @@ package com.google.auth.mtls;
 
 import com.google.api.client.json.JsonParser;
 import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.util.SecurityUtils;
 import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -148,25 +147,8 @@ public class SecureConnectProvider implements MtlsProvider {
           "SecureConnect: Cert provider command failed with exit code: " + exitCode);
     }
 
-    // Create mTLS key store with the input certificates from shell command. Read only the bytes
-    // already buffered now that the process has exited, so a background child process holding
-    // stdout open cannot block waiting for EOF.
-    ByteArrayOutputStream stdout = new ByteArrayOutputStream();
-    try (InputStream processOut = process.getInputStream()) {
-      if (processOut != null) {
-        for (int available = processOut.available();
-            available > 0;
-            available = processOut.available()) {
-          byte[] buffer = new byte[available];
-          int read = processOut.read(buffer);
-          if (read <= 0) {
-            break;
-          }
-          stdout.write(buffer, 0, read);
-        }
-      }
-    }
-    return MtlsKeyStoreUtils.createMtlsKeyStore(new ByteArrayInputStream(stdout.toByteArray()));
+    // Create mTLS key store with the input certificates from shell command.
+    return SecurityUtils.createMtlsKeyStore(process.getInputStream());
   }
 
   @VisibleForTesting
