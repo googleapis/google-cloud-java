@@ -50,10 +50,10 @@ public final class BigQueryJdbcResultSetLogger {
   private final String targetClassName;
   private final String connectionId;
 
-  private BigQueryJdbcResultSetLogger arrowStructLogger;
-  private BigQueryJdbcResultSetLogger jsonStructLogger;
-  private BigQueryJdbcResultSetLogger arrowArrayLogger;
-  private BigQueryJdbcResultSetLogger jsonArrayLogger;
+  private volatile BigQueryJdbcResultSetLogger arrowStructLogger;
+  private volatile BigQueryJdbcResultSetLogger jsonStructLogger;
+  private volatile BigQueryJdbcResultSetLogger arrowArrayLogger;
+  private volatile BigQueryJdbcResultSetLogger jsonArrayLogger;
 
   private BigQueryJdbcResultSetLogger(
       BigQueryJdbcCustomLogger delegate, String targetClassName, String connectionId) {
