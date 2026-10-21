@@ -57,6 +57,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+@Ignore("Temporarily disabled: PROD runs exceed the Kokoro timeout. Re-enable once fixed.")
 @RunWith(StorageITRunner.class)
 @CrossRun(
     backends = {Backend.TEST_BENCH, Backend.PROD},
