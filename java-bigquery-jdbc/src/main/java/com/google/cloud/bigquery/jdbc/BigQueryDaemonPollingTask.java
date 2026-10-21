@@ -87,17 +87,21 @@ class BigQueryDaemonPollingTask extends Thread {
     LOG.finest("++enter++");
     try {
       while (true) {
-        // Blocks until the GC enqueues a reference. Never returns null.
-        Reference<?> reference = referenceQueue.remove();
-        LOG.fine("Clearing ResultSet reference " + reference);
-        if (reference instanceof BigQueryResultSetFinalizers.ResultSetFinalizer) {
-          ((BigQueryResultSetFinalizers.ResultSetFinalizer) reference).finalizeResources();
-        } else {
-          LOG.warning("Unexpected reference type in GC queue: " + reference.getClass());
+        Reference<?> reference =
+            referenceQueue.remove(); // InterruptedException escapes to outer catch
+        try {
+          LOG.fine("Clearing ResultSet reference " + reference);
+          if (reference instanceof ResultSetFinalizer) {
+            ((ResultSetFinalizer) reference).finalizeResources();
+          } else {
+            LOG.warning("Unexpected reference type in GC queue: " + reference.getClass());
+          }
+        } catch (RuntimeException ex) {
+          LOG.warning(ex, "Failed to finalize ResultSet resources; continuing");
+        } finally {
+          reference.clear();
+          finalizers.remove(reference);
         }
-        reference.clear();
-        // Drop our strong reference so the finalizer itself can be collected.
-        finalizers.remove(reference);
       }
     } catch (InterruptedException ex) {
       LOG.warning(ex, "Interrupted in GC daemon task");
