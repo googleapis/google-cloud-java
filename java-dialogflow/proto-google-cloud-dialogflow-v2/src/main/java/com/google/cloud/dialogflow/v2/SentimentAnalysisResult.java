@@ -134,6 +134,61 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
         : queryTextSentiment_;
   }
 
+  public static final int STATUS_FIELD_NUMBER = 3;
+  private com.google.rpc.Status status_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the sentiment analysis operation.
+   * If the operation failed, this field will contain the error details.
+   * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+   * </pre>
+   *
+   * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the sentiment analysis operation.
+   * If the operation failed, this field will contain the error details.
+   * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+   * </pre>
+   *
+   * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The status.
+   */
+  @java.lang.Override
+  public com.google.rpc.Status getStatus() {
+    return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the sentiment analysis operation.
+   * If the operation failed, this field will contain the error details.
+   * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+   * </pre>
+   *
+   * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
+    return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -151,6 +206,9 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getQueryTextSentiment());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getStatus());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -162,6 +220,9 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getQueryTextSentiment());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStatus());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -183,6 +244,10 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     if (hasQueryTextSentiment()) {
       if (!getQueryTextSentiment().equals(other.getQueryTextSentiment())) return false;
     }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (!getStatus().equals(other.getStatus())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -197,6 +262,10 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     if (hasQueryTextSentiment()) {
       hash = (37 * hash) + QUERY_TEXT_SENTIMENT_FIELD_NUMBER;
       hash = (53 * hash) + getQueryTextSentiment().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -353,6 +422,7 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetQueryTextSentimentFieldBuilder();
+        internalGetStatusFieldBuilder();
       }
     }
 
@@ -364,6 +434,11 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
       if (queryTextSentimentBuilder_ != null) {
         queryTextSentimentBuilder_.dispose();
         queryTextSentimentBuilder_ = null;
+      }
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
+        statusBuilder_ = null;
       }
       return this;
     }
@@ -409,6 +484,10 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
                 : queryTextSentimentBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -427,6 +506,9 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
         return this;
       if (other.hasQueryTextSentiment()) {
         mergeQueryTextSentiment(other.getQueryTextSentiment());
+      }
+      if (other.hasStatus()) {
+        mergeStatus(other.getStatus());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -461,6 +543,12 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 26:
+              {
+                input.readMessage(internalGetStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -674,6 +762,209 @@ public final class SentimentAnalysisResult extends com.google.protobuf.Generated
         queryTextSentiment_ = null;
       }
       return queryTextSentimentBuilder_;
+    }
+
+    private com.google.rpc.Status status_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        statusBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the sentiment analysis operation.
+     * If the operation failed, this field will contain the error details.
+     * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the status field is set.
+     */
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the sentiment analysis operation.
+     * If the operation failed, this field will contain the error details.
+     * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The status.
+     */
+    public com.google.rpc.Status getStatus() {
+      if (statusBuilder_ == null) {
+        return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
+      } else {
+        return statusBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the sentiment analysis operation.
+     * If the operation failed, this field will contain the error details.
+     * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setStatus(com.google.rpc.Status value) {
+      if (statusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        status_ = value;
+      } else {
+        statusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the sentiment analysis operation.
+     * If the operation failed, this field will contain the error details.
+     * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
+      if (statusBuilder_ == null) {
+        status_ = builderForValue.build();
+      } else {
+        statusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the sentiment analysis operation.
+     * If the operation failed, this field will contain the error details.
+     * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeStatus(com.google.rpc.Status value) {
+      if (statusBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && status_ != null
+            && status_ != com.google.rpc.Status.getDefaultInstance()) {
+          getStatusBuilder().mergeFrom(value);
+        } else {
+          status_ = value;
+        }
+      } else {
+        statusBuilder_.mergeFrom(value);
+      }
+      if (status_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the sentiment analysis operation.
+     * If the operation failed, this field will contain the error details.
+     * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      status_ = null;
+      if (statusBuilder_ != null) {
+        statusBuilder_.dispose();
+        statusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the sentiment analysis operation.
+     * If the operation failed, this field will contain the error details.
+     * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.rpc.Status.Builder getStatusBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return internalGetStatusFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the sentiment analysis operation.
+     * If the operation failed, this field will contain the error details.
+     * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.rpc.StatusOrBuilder getStatusOrBuilder() {
+      if (statusBuilder_ != null) {
+        return statusBuilder_.getMessageOrBuilder();
+      } else {
+        return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the sentiment analysis operation.
+     * If the operation failed, this field will contain the error details.
+     * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+     * </pre>
+     *
+     * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        internalGetStatusFieldBuilder() {
+      if (statusBuilder_ == null) {
+        statusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(getStatus(), getParentForChildren(), isClean());
+        status_ = null;
+      }
+      return statusBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.SentimentAnalysisResult)
