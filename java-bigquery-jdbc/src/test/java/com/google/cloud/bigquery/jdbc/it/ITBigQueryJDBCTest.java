@@ -42,6 +42,7 @@ import com.google.common.collect.ImmutableMap;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.Driver;
@@ -52,6 +53,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
@@ -2707,7 +2709,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             .put("booleanField", "true")
             .put("timestampFiled", expectedTimestampString)
             .put("dateField", "2023-07-28")
-            .put("timeField", "12:30:00.000")
+            .put("timeField", "12:30:00")
             .put("dateTimeField", "2023-07-28 12:30:00.000000")
             .put("geographyField", "POINT(-74.006 40.7128)")
             .put(
@@ -3089,6 +3091,44 @@ public class ITBigQueryJDBCTest extends ITBase {
         SQLException ex =
             assertThrows(
                 SQLException.class, () -> statement.execute("SELECT * FROM session_temp_table;"));
+      }
+    }
+  }
+
+  @Test
+  public void testTimeMicrosecondPrecisionInArrayAndStruct() throws SQLException {
+    String sql =
+        "SELECT "
+            + "TIME '14:30:00.123456' AS top_level_time, "
+            + "[TIME '14:30:00.123456', TIME '23:59:59.999999'] AS arr_time, "
+            + "STRUCT(TIME '14:30:00.123456' AS t) AS struct_time";
+
+    try (Connection connRegular = DriverManager.getConnection(connection_uri);
+        Connection connHtapi =
+            DriverManager.getConnection(connection_uri + FORCE_READ_API_PROPERTIES);
+        Statement stmtRegular = connRegular.createStatement();
+        Statement stmtHtapi = connHtapi.createStatement();
+        ResultSet rsRegular = stmtRegular.executeQuery(sql);
+        ResultSet rsHtapi = stmtHtapi.executeQuery(sql)) {
+
+      for (ResultSet rs : new ResultSet[] {rsRegular, rsHtapi}) {
+        assertTrue(rs.next());
+
+        // Top-level TIME
+        assertEquals("14:30:00.123456", rs.getString("top_level_time"));
+        assertEquals(
+            LocalTime.of(14, 30, 0, 123_456_000), rs.getObject("top_level_time", LocalTime.class));
+        assertEquals(Time.class, rs.getTime("top_level_time").getClass());
+
+        // ARRAY<TIME>
+        assertEquals("[14:30:00.123456, 23:59:59.999999]", rs.getString("arr_time"));
+        Array arr = rs.getArray("arr_time");
+        assertEquals("[14:30:00.123456, 23:59:59.999999]", arr.toString());
+
+        // STRUCT<t TIME>
+        assertEquals("{\"t\":\"14:30:00.123456\"}", rs.getString("struct_time"));
+        Struct struct = (Struct) rs.getObject("struct_time");
+        assertEquals("{\"t\":\"14:30:00.123456\"}", struct.toString());
       }
     }
   }

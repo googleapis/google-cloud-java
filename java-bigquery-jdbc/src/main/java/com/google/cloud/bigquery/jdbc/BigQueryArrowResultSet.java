@@ -323,7 +323,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     return false;
   }
 
-  private Object getObjectInternal(int columnIndex) throws SQLException {
+  @Override
+  Object getObjectInternal(int columnIndex) throws SQLException {
     LOG.finestTrace("getObjectInternal");
     checkClosed();
     Object value;

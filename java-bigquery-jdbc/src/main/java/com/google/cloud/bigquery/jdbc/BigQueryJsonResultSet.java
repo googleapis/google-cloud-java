@@ -338,7 +338,8 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
    * @param columnIndex the first column is 1, the second is 2, ...
    * @return an instance of {@link FieldValue} represents value at <code>columnIndex</code> column.
    */
-  private FieldValue getObjectInternal(int columnIndex) throws SQLException {
+  @Override
+  FieldValue getObjectInternal(int columnIndex) throws SQLException {
     checkClosed();
     LOG.finestTrace("getObjectInternal");
     FieldValue value;
