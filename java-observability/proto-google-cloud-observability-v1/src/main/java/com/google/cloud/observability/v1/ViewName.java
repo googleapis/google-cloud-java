@@ -1,0 +1,301 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.observability.v1;
+
+import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.resourcenames.ResourceName;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
+@Generated("by gapic-generator-java")
+public class ViewName implements ResourceName {
+  private static final PathTemplate PROJECT_LOCATION_BUCKET_DATASET_VIEW =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/buckets/{bucket}/datasets/{dataset}/views/{view}");
+  private volatile Map<String, String> fieldValuesMap;
+  private final String project;
+  private final String location;
+  private final String bucket;
+  private final String dataset;
+  private final String view;
+
+  @Deprecated
+  protected ViewName() {
+    project = null;
+    location = null;
+    bucket = null;
+    dataset = null;
+    view = null;
+  }
+
+  private ViewName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    bucket = Preconditions.checkNotNull(builder.getBucket());
+    dataset = Preconditions.checkNotNull(builder.getDataset());
+    view = Preconditions.checkNotNull(builder.getView());
+  }
+
+  public String getProject() {
+    return project;
+  }
+
+  public String getLocation() {
+    return location;
+  }
+
+  public String getBucket() {
+    return bucket;
+  }
+
+  public String getDataset() {
+    return dataset;
+  }
+
+  public String getView() {
+    return view;
+  }
+
+  public static Builder newBuilder() {
+    return new Builder();
+  }
+
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  public static ViewName of(
+      String project, String location, String bucket, String dataset, String view) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setBucket(bucket)
+        .setDataset(dataset)
+        .setView(view)
+        .build();
+  }
+
+  public static String format(
+      String project, String location, String bucket, String dataset, String view) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setBucket(bucket)
+        .setDataset(dataset)
+        .setView(view)
+        .build()
+        .toString();
+  }
+
+  public static @Nullable ViewName parse(String formattedString) {
+    if (formattedString.isEmpty()) {
+      return null;
+    }
+    Map<String, String> matchMap =
+        PROJECT_LOCATION_BUCKET_DATASET_VIEW.validatedMatch(
+            formattedString, "ViewName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("location"),
+        matchMap.get("bucket"),
+        matchMap.get("dataset"),
+        matchMap.get("view"));
+  }
+
+  public static List<ViewName> parseList(List<String> formattedStrings) {
+    List<ViewName> list = new ArrayList<>(formattedStrings.size());
+    for (String formattedString : formattedStrings) {
+      list.add(parse(formattedString));
+    }
+    return list;
+  }
+
+  public static List<String> toStringList(List<@Nullable ViewName> values) {
+    List<String> list = new ArrayList<>(values.size());
+    for (ViewName value : values) {
+      if (value == null) {
+        list.add("");
+      } else {
+        list.add(value.toString());
+      }
+    }
+    return list;
+  }
+
+  public static boolean isParsableFrom(String formattedString) {
+    return PROJECT_LOCATION_BUCKET_DATASET_VIEW.matches(formattedString);
+  }
+
+  @Override
+  public Map<String, String> getFieldValuesMap() {
+    if (fieldValuesMap == null) {
+      synchronized (this) {
+        if (fieldValuesMap == null) {
+          ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (bucket != null) {
+            fieldMapBuilder.put("bucket", bucket);
+          }
+          if (dataset != null) {
+            fieldMapBuilder.put("dataset", dataset);
+          }
+          if (view != null) {
+            fieldMapBuilder.put("view", view);
+          }
+          fieldValuesMap = fieldMapBuilder.build();
+        }
+      }
+    }
+    return fieldValuesMap;
+  }
+
+  public String getFieldValue(String fieldName) {
+    return getFieldValuesMap().get(fieldName);
+  }
+
+  @Override
+  public String toString() {
+    return PROJECT_LOCATION_BUCKET_DATASET_VIEW.instantiate(
+        "project",
+        project,
+        "location",
+        location,
+        "bucket",
+        bucket,
+        "dataset",
+        dataset,
+        "view",
+        view);
+  }
+
+  @Override
+  public boolean equals(@Nullable Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null && getClass() == o.getClass()) {
+      ViewName that = ((ViewName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.bucket, that.bucket)
+          && Objects.equals(this.dataset, that.dataset)
+          && Objects.equals(this.view, that.view);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(bucket);
+    h *= 1000003;
+    h ^= Objects.hashCode(dataset);
+    h *= 1000003;
+    h ^= Objects.hashCode(view);
+    return h;
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/buckets/{bucket}/datasets/{dataset}/views/{view}.
+   */
+  public static class Builder {
+    private String project;
+    private String location;
+    private String bucket;
+    private String dataset;
+    private String view;
+
+    protected Builder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getBucket() {
+      return bucket;
+    }
+
+    public String getDataset() {
+      return dataset;
+    }
+
+    public String getView() {
+      return view;
+    }
+
+    public Builder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public Builder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public Builder setBucket(String bucket) {
+      this.bucket = bucket;
+      return this;
+    }
+
+    public Builder setDataset(String dataset) {
+      this.dataset = dataset;
+      return this;
+    }
+
+    public Builder setView(String view) {
+      this.view = view;
+      return this;
+    }
+
+    private Builder(ViewName viewName) {
+      this.project = viewName.project;
+      this.location = viewName.location;
+      this.bucket = viewName.bucket;
+      this.dataset = viewName.dataset;
+      this.view = viewName.view;
+    }
+
+    public ViewName build() {
+      return new ViewName(this);
+    }
+  }
+}
