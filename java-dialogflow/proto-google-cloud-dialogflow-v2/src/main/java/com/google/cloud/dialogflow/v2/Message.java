@@ -54,6 +54,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
   private Message() {
     name_ = "";
     content_ = "";
+    responseMessages_ = java.util.Collections.emptyList();
     languageCode_ = "";
     participant_ = "";
     participantRole_ = 0;
@@ -185,6 +186,93 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int RESPONSE_MESSAGES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage> responseMessages_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage> getResponseMessagesList() {
+    return responseMessages_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>
+      getResponseMessagesOrBuilderList() {
+    return responseMessages_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getResponseMessagesCount() {
+    return responseMessages_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.ResponseMessage getResponseMessages(int index) {
+    return responseMessages_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder getResponseMessagesOrBuilder(
+      int index) {
+    return responseMessages_.get(index);
   }
 
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
@@ -606,6 +694,9 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(9, getSendTime());
     }
+    for (int i = 0; i < responseMessages_.size(); i++) {
+      output.writeMessage(11, responseMessages_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -643,6 +734,10 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSendTime());
     }
+    for (int i = 0; i < responseMessages_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, responseMessages_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -660,6 +755,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
 
     if (!getName().equals(other.getName())) return false;
     if (!getContent().equals(other.getContent())) return false;
+    if (!getResponseMessagesList().equals(other.getResponseMessagesList())) return false;
     if (!getLanguageCode().equals(other.getLanguageCode())) return false;
     if (!getParticipant().equals(other.getParticipant())) return false;
     if (participantRole_ != other.participantRole_) return false;
@@ -694,6 +790,10 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getContent().hashCode();
+    if (getResponseMessagesCount() > 0) {
+      hash = (37 * hash) + RESPONSE_MESSAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseMessagesList().hashCode();
+    }
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (37 * hash) + PARTICIPANT_FIELD_NUMBER;
@@ -857,6 +957,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetResponseMessagesFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetSendTimeFieldBuilder();
         internalGetMessageAnnotationFieldBuilder();
@@ -870,6 +971,13 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       name_ = "";
       content_ = "";
+      if (responseMessagesBuilder_ == null) {
+        responseMessages_ = java.util.Collections.emptyList();
+      } else {
+        responseMessages_ = null;
+        responseMessagesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       languageCode_ = "";
       participant_ = "";
       participantRole_ = 0;
@@ -920,11 +1028,24 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.dialogflow.v2.Message buildPartial() {
       com.google.cloud.dialogflow.v2.Message result =
           new com.google.cloud.dialogflow.v2.Message(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.dialogflow.v2.Message result) {
+      if (responseMessagesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          responseMessages_ = java.util.Collections.unmodifiableList(responseMessages_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.responseMessages_ = responseMessages_;
+      } else {
+        result.responseMessages_ = responseMessagesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.v2.Message result) {
@@ -935,32 +1056,32 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.content_ = content_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.languageCode_ = languageCode_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.participant_ = participant_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.participantRole_ = participantRole_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.sendTime_ = sendTimeBuilder_ == null ? sendTime_ : sendTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.messageAnnotation_ =
             messageAnnotationBuilder_ == null
                 ? messageAnnotation_
                 : messageAnnotationBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.sentimentAnalysis_ =
             sentimentAnalysisBuilder_ == null
                 ? sentimentAnalysis_
@@ -992,14 +1113,41 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (responseMessagesBuilder_ == null) {
+        if (!other.responseMessages_.isEmpty()) {
+          if (responseMessages_.isEmpty()) {
+            responseMessages_ = other.responseMessages_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureResponseMessagesIsMutable();
+            responseMessages_.addAll(other.responseMessages_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.responseMessages_.isEmpty()) {
+          if (responseMessagesBuilder_.isEmpty()) {
+            responseMessagesBuilder_.dispose();
+            responseMessagesBuilder_ = null;
+            responseMessages_ = other.responseMessages_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            responseMessagesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetResponseMessagesFieldBuilder()
+                    : null;
+          } else {
+            responseMessagesBuilder_.addAllMessages(other.responseMessages_);
+          }
+        }
+      }
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getParticipant().isEmpty()) {
         participant_ = other.participant_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.participantRole_ != 0) {
@@ -1058,49 +1206,62 @@ public final class Message extends com.google.protobuf.GeneratedMessage
             case 26:
               {
                 languageCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 participant_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 participantRole_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 50:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     internalGetMessageAnnotationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     internalGetSentimentAnalysisFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(
                     internalGetSendTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
+            case 90:
+              {
+                com.google.cloud.dialogflow.v2.ResponseMessage m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2.ResponseMessage.parser(), extensionRegistry);
+                if (responseMessagesBuilder_ == null) {
+                  ensureResponseMessagesIsMutable();
+                  responseMessages_.add(m);
+                } else {
+                  responseMessagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1357,6 +1518,420 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage> responseMessages_ =
+        java.util.Collections.emptyList();
+
+    private void ensureResponseMessagesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        responseMessages_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2.ResponseMessage>(
+                responseMessages_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2.ResponseMessage,
+            com.google.cloud.dialogflow.v2.ResponseMessage.Builder,
+            com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>
+        responseMessagesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage>
+        getResponseMessagesList() {
+      if (responseMessagesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(responseMessages_);
+      } else {
+        return responseMessagesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getResponseMessagesCount() {
+      if (responseMessagesBuilder_ == null) {
+        return responseMessages_.size();
+      } else {
+        return responseMessagesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.ResponseMessage getResponseMessages(int index) {
+      if (responseMessagesBuilder_ == null) {
+        return responseMessages_.get(index);
+      } else {
+        return responseMessagesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResponseMessages(
+        int index, com.google.cloud.dialogflow.v2.ResponseMessage value) {
+      if (responseMessagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResponseMessagesIsMutable();
+        responseMessages_.set(index, value);
+        onChanged();
+      } else {
+        responseMessagesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setResponseMessages(
+        int index, com.google.cloud.dialogflow.v2.ResponseMessage.Builder builderForValue) {
+      if (responseMessagesBuilder_ == null) {
+        ensureResponseMessagesIsMutable();
+        responseMessages_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        responseMessagesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addResponseMessages(com.google.cloud.dialogflow.v2.ResponseMessage value) {
+      if (responseMessagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResponseMessagesIsMutable();
+        responseMessages_.add(value);
+        onChanged();
+      } else {
+        responseMessagesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addResponseMessages(
+        int index, com.google.cloud.dialogflow.v2.ResponseMessage value) {
+      if (responseMessagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResponseMessagesIsMutable();
+        responseMessages_.add(index, value);
+        onChanged();
+      } else {
+        responseMessagesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addResponseMessages(
+        com.google.cloud.dialogflow.v2.ResponseMessage.Builder builderForValue) {
+      if (responseMessagesBuilder_ == null) {
+        ensureResponseMessagesIsMutable();
+        responseMessages_.add(builderForValue.build());
+        onChanged();
+      } else {
+        responseMessagesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addResponseMessages(
+        int index, com.google.cloud.dialogflow.v2.ResponseMessage.Builder builderForValue) {
+      if (responseMessagesBuilder_ == null) {
+        ensureResponseMessagesIsMutable();
+        responseMessages_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        responseMessagesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllResponseMessages(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.ResponseMessage> values) {
+      if (responseMessagesBuilder_ == null) {
+        ensureResponseMessagesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, responseMessages_);
+        onChanged();
+      } else {
+        responseMessagesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearResponseMessages() {
+      if (responseMessagesBuilder_ == null) {
+        responseMessages_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        responseMessagesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeResponseMessages(int index) {
+      if (responseMessagesBuilder_ == null) {
+        ensureResponseMessagesIsMutable();
+        responseMessages_.remove(index);
+        onChanged();
+      } else {
+        responseMessagesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.ResponseMessage.Builder getResponseMessagesBuilder(
+        int index) {
+      return internalGetResponseMessagesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder getResponseMessagesOrBuilder(
+        int index) {
+      if (responseMessagesBuilder_ == null) {
+        return responseMessages_.get(index);
+      } else {
+        return responseMessagesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>
+        getResponseMessagesOrBuilderList() {
+      if (responseMessagesBuilder_ != null) {
+        return responseMessagesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(responseMessages_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.ResponseMessage.Builder addResponseMessagesBuilder() {
+      return internalGetResponseMessagesFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2.ResponseMessage.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2.ResponseMessage.Builder addResponseMessagesBuilder(
+        int index) {
+      return internalGetResponseMessagesFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.v2.ResponseMessage.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automated agent responses.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage.Builder>
+        getResponseMessagesBuilderList() {
+      return internalGetResponseMessagesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2.ResponseMessage,
+            com.google.cloud.dialogflow.v2.ResponseMessage.Builder,
+            com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>
+        internalGetResponseMessagesFieldBuilder() {
+      if (responseMessagesBuilder_ == null) {
+        responseMessagesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.dialogflow.v2.ResponseMessage,
+                com.google.cloud.dialogflow.v2.ResponseMessage.Builder,
+                com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>(
+                responseMessages_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        responseMessages_ = null;
+      }
+      return responseMessagesBuilder_;
+    }
+
     private java.lang.Object languageCode_ = "";
 
     /**
@@ -1428,7 +2003,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       languageCode_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1448,7 +2023,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearLanguageCode() {
       languageCode_ = getDefaultInstance().getLanguageCode();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1473,7 +2048,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       languageCode_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1543,7 +2118,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       participant_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1561,7 +2136,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearParticipant() {
       participant_ = getDefaultInstance().getParticipant();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1584,7 +2159,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       participant_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1625,7 +2200,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      */
     public Builder setParticipantRoleValue(int value) {
       participantRole_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1668,7 +2243,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       participantRole_ = value.getNumber();
       onChanged();
       return this;
@@ -1688,7 +2263,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearParticipantRole() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       participantRole_ = 0;
       onChanged();
       return this;
@@ -1715,7 +2290,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1761,7 +2336,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1783,7 +2358,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1801,7 +2376,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -1812,7 +2387,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1830,7 +2405,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1852,7 +2427,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -1927,7 +2502,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * @return Whether the sendTime field is set.
      */
     public boolean hasSendTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -1971,7 +2546,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         sendTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1993,7 +2568,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         sendTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2011,7 +2586,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSendTime(com.google.protobuf.Timestamp value) {
       if (sendTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && sendTime_ != null
             && sendTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getSendTimeBuilder().mergeFrom(value);
@@ -2022,7 +2597,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         sendTimeBuilder_.mergeFrom(value);
       }
       if (sendTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2040,7 +2615,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSendTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       sendTime_ = null;
       if (sendTimeBuilder_ != null) {
         sendTimeBuilder_.dispose();
@@ -2062,7 +2637,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getSendTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetSendTimeFieldBuilder().getBuilder();
     }
@@ -2135,7 +2710,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * @return Whether the messageAnnotation field is set.
      */
     public boolean hasMessageAnnotation() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2181,7 +2756,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         messageAnnotationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2204,7 +2779,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         messageAnnotationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2222,7 +2797,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeMessageAnnotation(com.google.cloud.dialogflow.v2.MessageAnnotation value) {
       if (messageAnnotationBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && messageAnnotation_ != null
             && messageAnnotation_
                 != com.google.cloud.dialogflow.v2.MessageAnnotation.getDefaultInstance()) {
@@ -2234,7 +2809,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         messageAnnotationBuilder_.mergeFrom(value);
       }
       if (messageAnnotation_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2252,7 +2827,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearMessageAnnotation() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       messageAnnotation_ = null;
       if (messageAnnotationBuilder_ != null) {
         messageAnnotationBuilder_.dispose();
@@ -2274,7 +2849,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.dialogflow.v2.MessageAnnotation.Builder getMessageAnnotationBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetMessageAnnotationFieldBuilder().getBuilder();
     }
@@ -2350,7 +2925,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * @return Whether the sentimentAnalysis field is set.
      */
     public boolean hasSentimentAnalysis() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2397,7 +2972,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         sentimentAnalysisBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2420,7 +2995,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
       } else {
         sentimentAnalysisBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2439,7 +3014,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
     public Builder mergeSentimentAnalysis(
         com.google.cloud.dialogflow.v2.SentimentAnalysisResult value) {
       if (sentimentAnalysisBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && sentimentAnalysis_ != null
             && sentimentAnalysis_
                 != com.google.cloud.dialogflow.v2.SentimentAnalysisResult.getDefaultInstance()) {
@@ -2451,7 +3026,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
         sentimentAnalysisBuilder_.mergeFrom(value);
       }
       if (sentimentAnalysis_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2469,7 +3044,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSentimentAnalysis() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       sentimentAnalysis_ = null;
       if (sentimentAnalysisBuilder_ != null) {
         sentimentAnalysisBuilder_.dispose();
@@ -2492,7 +3067,7 @@ public final class Message extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dialogflow.v2.SentimentAnalysisResult.Builder
         getSentimentAnalysisBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetSentimentAnalysisFieldBuilder().getBuilder();
     }
