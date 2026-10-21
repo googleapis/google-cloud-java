@@ -1318,4 +1318,33 @@ public class BigQueryStatementTest {
 
     verify(bigquery, Mockito.never()).getJob(any(JobId.class));
   }
+
+  @Test
+  public void testProcessArrowResultSetUsesBoundedQueueCapacity() throws SQLException {
+    BigQueryStatement defaultStmtSpy = Mockito.spy(bigQueryStatement);
+    BigQueryReadClient bigQueryReadClient = mock(BigQueryReadClient.class);
+    Schema schema = Schema.of(fieldList);
+    ReadSession readSession = ReadSession.getDefaultInstance();
+    doReturn(bigQueryReadClient).when(defaultStmtSpy).getBigQueryReadClient();
+    doReturn(readSession).when(defaultStmtSpy).getReadSession(any(CreateReadSessionRequest.class));
+    Future<?> mockWorker = mock(Future.class);
+    @SuppressWarnings("unchecked")
+    ArgumentCaptor<BlockingQueue<BigQueryArrowBatchWrapper>> defaultQueueCaptor =
+        ArgumentCaptor.forClass(BlockingQueue.class);
+    doReturn(mockWorker)
+        .when(defaultStmtSpy)
+        .populateArrowBufferedQueue(
+            any(ReadSession.class), defaultQueueCaptor.capture(), any(BigQueryReadClient.class));
+    doReturn(arrowSchema).when(defaultStmtSpy).getArrowSchema(any(ReadSession.class));
+
+    TableResult result = mock(TableResult.class);
+    doReturn(schema).when(result).getSchema();
+    doReturn(10L).when(result).getTotalRows();
+    doReturn(TABLE_ID).when(defaultStmtSpy).getDestinationTable(any());
+
+    defaultStmtSpy.processArrowResultSet(result, null);
+    assertEquals(
+        BigQueryStatement.DEFAULT_ARROW_BUFFER_SIZE,
+        defaultQueueCaptor.getValue().remainingCapacity());
+  }
 }

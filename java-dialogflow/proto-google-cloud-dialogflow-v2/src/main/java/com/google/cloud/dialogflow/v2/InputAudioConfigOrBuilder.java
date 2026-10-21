@@ -578,4 +578,36 @@ public interface InputAudioConfigOrBuilder
    * @return The useGeminiAsr.
    */
   boolean getUseGeminiAsr();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables emission of interim input transcriptions when set to
+   * `true`.
+   * </pre>
+   *
+   * <code>
+   * optional bool disable_interim_input_transcripts = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the disableInterimInputTranscripts field is set.
+   */
+  boolean hasDisableInterimInputTranscripts();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables emission of interim input transcriptions when set to
+   * `true`.
+   * </pre>
+   *
+   * <code>
+   * optional bool disable_interim_input_transcripts = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The disableInterimInputTranscripts.
+   */
+  boolean getDisableInterimInputTranscripts();
 }

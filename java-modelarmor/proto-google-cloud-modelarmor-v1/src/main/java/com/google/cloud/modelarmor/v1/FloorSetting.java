@@ -101,6 +101,16 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
      * <code>AI_PLATFORM = 1;</code>
      */
     AI_PLATFORM(1),
+    /**
+     *
+     *
+     * <pre>
+     * Google MCP Server (via Shim Service Extension)
+     * </pre>
+     *
+     * <code>GOOGLE_MCP_SERVER = 2;</code>
+     */
+    GOOGLE_MCP_SERVER(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -136,6 +146,17 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
      */
     public static final int AI_PLATFORM_VALUE = 1;
 
+    /**
+     *
+     *
+     * <pre>
+     * Google MCP Server (via Shim Service Extension)
+     * </pre>
+     *
+     * <code>GOOGLE_MCP_SERVER = 2;</code>
+     */
+    public static final int GOOGLE_MCP_SERVER_VALUE = 2;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -164,6 +185,8 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
           return INTEGRATED_SERVICE_UNSPECIFIED;
         case 1:
           return AI_PLATFORM;
+        case 2:
+          return GOOGLE_MCP_SERVER;
         default:
           return null;
       }
@@ -2099,6 +2122,66 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
         : floorSettingMetadata_;
   }
 
+  public static final int GOOGLE_MCP_SERVER_FLOOR_SETTING_FIELD_NUMBER = 9;
+  private com.google.cloud.modelarmor.v1.McpServerFloorSetting googleMcpServerFloorSetting_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google MCP Server floor setting.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the googleMcpServerFloorSetting field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleMcpServerFloorSetting() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google MCP Server floor setting.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The googleMcpServerFloorSetting.
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1.McpServerFloorSetting getGoogleMcpServerFloorSetting() {
+    return googleMcpServerFloorSetting_ == null
+        ? com.google.cloud.modelarmor.v1.McpServerFloorSetting.getDefaultInstance()
+        : googleMcpServerFloorSetting_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google MCP Server floor setting.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1.McpServerFloorSettingOrBuilder
+      getGoogleMcpServerFloorSettingOrBuilder() {
+    return googleMcpServerFloorSetting_ == null
+        ? com.google.cloud.modelarmor.v1.McpServerFloorSetting.getDefaultInstance()
+        : googleMcpServerFloorSetting_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2141,6 +2224,9 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(8, getFloorSettingMetadata());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(9, getGoogleMcpServerFloorSetting());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2189,6 +2275,11 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(8, getFloorSettingMetadata());
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, getGoogleMcpServerFloorSetting());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2233,6 +2324,11 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
     if (hasFloorSettingMetadata()) {
       if (!getFloorSettingMetadata().equals(other.getFloorSettingMetadata())) return false;
     }
+    if (hasGoogleMcpServerFloorSetting() != other.hasGoogleMcpServerFloorSetting()) return false;
+    if (hasGoogleMcpServerFloorSetting()) {
+      if (!getGoogleMcpServerFloorSetting().equals(other.getGoogleMcpServerFloorSetting()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2275,6 +2371,10 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
     if (hasFloorSettingMetadata()) {
       hash = (37 * hash) + FLOOR_SETTING_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getFloorSettingMetadata().hashCode();
+    }
+    if (hasGoogleMcpServerFloorSetting()) {
+      hash = (37 * hash) + GOOGLE_MCP_SERVER_FLOOR_SETTING_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleMcpServerFloorSetting().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2422,6 +2522,7 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
         internalGetFilterConfigFieldBuilder();
         internalGetAiPlatformFloorSettingFieldBuilder();
         internalGetFloorSettingMetadataFieldBuilder();
+        internalGetGoogleMcpServerFloorSettingFieldBuilder();
       }
     }
 
@@ -2456,6 +2557,11 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
       if (floorSettingMetadataBuilder_ != null) {
         floorSettingMetadataBuilder_.dispose();
         floorSettingMetadataBuilder_ = null;
+      }
+      googleMcpServerFloorSetting_ = null;
+      if (googleMcpServerFloorSettingBuilder_ != null) {
+        googleMcpServerFloorSettingBuilder_.dispose();
+        googleMcpServerFloorSettingBuilder_ = null;
       }
       return this;
     }
@@ -2532,6 +2638,13 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
                 : floorSettingMetadataBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.googleMcpServerFloorSetting_ =
+            googleMcpServerFloorSettingBuilder_ == null
+                ? googleMcpServerFloorSetting_
+                : googleMcpServerFloorSettingBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2580,6 +2693,9 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasFloorSettingMetadata()) {
         mergeFloorSettingMetadata(other.getFloorSettingMetadata());
+      }
+      if (other.hasGoogleMcpServerFloorSetting()) {
+        mergeGoogleMcpServerFloorSetting(other.getGoogleMcpServerFloorSetting());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2673,6 +2789,14 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    internalGetGoogleMcpServerFloorSettingFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4231,6 +4355,224 @@ public final class FloorSetting extends com.google.protobuf.GeneratedMessage
         floorSettingMetadata_ = null;
       }
       return floorSettingMetadataBuilder_;
+    }
+
+    private com.google.cloud.modelarmor.v1.McpServerFloorSetting googleMcpServerFloorSetting_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.modelarmor.v1.McpServerFloorSetting,
+            com.google.cloud.modelarmor.v1.McpServerFloorSetting.Builder,
+            com.google.cloud.modelarmor.v1.McpServerFloorSettingOrBuilder>
+        googleMcpServerFloorSettingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google MCP Server floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the googleMcpServerFloorSetting field is set.
+     */
+    public boolean hasGoogleMcpServerFloorSetting() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google MCP Server floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The googleMcpServerFloorSetting.
+     */
+    public com.google.cloud.modelarmor.v1.McpServerFloorSetting getGoogleMcpServerFloorSetting() {
+      if (googleMcpServerFloorSettingBuilder_ == null) {
+        return googleMcpServerFloorSetting_ == null
+            ? com.google.cloud.modelarmor.v1.McpServerFloorSetting.getDefaultInstance()
+            : googleMcpServerFloorSetting_;
+      } else {
+        return googleMcpServerFloorSettingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google MCP Server floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoogleMcpServerFloorSetting(
+        com.google.cloud.modelarmor.v1.McpServerFloorSetting value) {
+      if (googleMcpServerFloorSettingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        googleMcpServerFloorSetting_ = value;
+      } else {
+        googleMcpServerFloorSettingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google MCP Server floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoogleMcpServerFloorSetting(
+        com.google.cloud.modelarmor.v1.McpServerFloorSetting.Builder builderForValue) {
+      if (googleMcpServerFloorSettingBuilder_ == null) {
+        googleMcpServerFloorSetting_ = builderForValue.build();
+      } else {
+        googleMcpServerFloorSettingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google MCP Server floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGoogleMcpServerFloorSetting(
+        com.google.cloud.modelarmor.v1.McpServerFloorSetting value) {
+      if (googleMcpServerFloorSettingBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && googleMcpServerFloorSetting_ != null
+            && googleMcpServerFloorSetting_
+                != com.google.cloud.modelarmor.v1.McpServerFloorSetting.getDefaultInstance()) {
+          getGoogleMcpServerFloorSettingBuilder().mergeFrom(value);
+        } else {
+          googleMcpServerFloorSetting_ = value;
+        }
+      } else {
+        googleMcpServerFloorSettingBuilder_.mergeFrom(value);
+      }
+      if (googleMcpServerFloorSetting_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google MCP Server floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGoogleMcpServerFloorSetting() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      googleMcpServerFloorSetting_ = null;
+      if (googleMcpServerFloorSettingBuilder_ != null) {
+        googleMcpServerFloorSettingBuilder_.dispose();
+        googleMcpServerFloorSettingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google MCP Server floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1.McpServerFloorSetting.Builder
+        getGoogleMcpServerFloorSettingBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetGoogleMcpServerFloorSettingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google MCP Server floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1.McpServerFloorSettingOrBuilder
+        getGoogleMcpServerFloorSettingOrBuilder() {
+      if (googleMcpServerFloorSettingBuilder_ != null) {
+        return googleMcpServerFloorSettingBuilder_.getMessageOrBuilder();
+      } else {
+        return googleMcpServerFloorSetting_ == null
+            ? com.google.cloud.modelarmor.v1.McpServerFloorSetting.getDefaultInstance()
+            : googleMcpServerFloorSetting_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Google MCP Server floor setting.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.modelarmor.v1.McpServerFloorSetting,
+            com.google.cloud.modelarmor.v1.McpServerFloorSetting.Builder,
+            com.google.cloud.modelarmor.v1.McpServerFloorSettingOrBuilder>
+        internalGetGoogleMcpServerFloorSettingFieldBuilder() {
+      if (googleMcpServerFloorSettingBuilder_ == null) {
+        googleMcpServerFloorSettingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.modelarmor.v1.McpServerFloorSetting,
+                com.google.cloud.modelarmor.v1.McpServerFloorSetting.Builder,
+                com.google.cloud.modelarmor.v1.McpServerFloorSettingOrBuilder>(
+                getGoogleMcpServerFloorSetting(), getParentForChildren(), isClean());
+        googleMcpServerFloorSetting_ = null;
+      }
+      return googleMcpServerFloorSettingBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.modelarmor.v1.FloorSetting)
