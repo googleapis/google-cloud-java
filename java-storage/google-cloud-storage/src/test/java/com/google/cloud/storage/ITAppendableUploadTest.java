@@ -57,7 +57,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-@Ignore("Temporarily disabled: PROD runs exceed the Kokoro timeout. Re-enable once fixed.")
 @RunWith(StorageITRunner.class)
 @CrossRun(
     backends = {Backend.TEST_BENCH, Backend.PROD},
@@ -400,6 +399,7 @@ public final class ITAppendableUploadTest {
     assertThat(done2.getCrc32c()).isEqualTo(Utils.crc32cCodec.encode(fullContent.getCrc32c()));
   }
 
+  @Ignore("Temporarily disabled: hits the Rapid storage quota in CI.")
   @Test
   @CrossRun.Ignore(backends = {Backend.TEST_BENCH})
   public void takeoverAndAppendWithIncorrectChecksumFails() throws Exception {
