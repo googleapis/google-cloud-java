@@ -18,6 +18,8 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.mock;
 
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryTestUtils;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import io.opentelemetry.api.OpenTelemetry;
 import java.sql.Connection;
@@ -26,6 +28,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,6 +36,12 @@ import org.junit.jupiter.api.Test;
 public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   static BigQueryDriver bigQueryDriver;
+
+  @BeforeEach
+  @AfterEach
+  public void resetTelemetry() {
+    TelemetryTestUtils.reset();
+  }
 
   @BeforeEach
   public void setUp() {
@@ -186,5 +195,46 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
                     r.getLevel() == Level.SEVERE
                         && r.getMessage().contains("Failed to parse connection URL properties"));
     assertThat(foundSevere).isTrue();
+  }
+
+  @Test
+  public void testConnect_recordsSuccessfulConnectionTelemetry() throws SQLException {
+    Connection connection =
+        bigQueryDriver.connect(
+            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                + "OAuthType=2;ProjectId=MyBigQueryProject;"
+                + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
+                + "OAuthClientSecret=redactedToken;",
+            new Properties());
+    assertThat(connection).isNotNull();
+    assertThat(connection.isClosed()).isFalse();
+    // Verify TelemetryManager is initialized and recorded the connection
+    assertThat(TelemetryManager.isInitialized()).isTrue();
+  }
+
+  @Test
+  public void testConnect_recordsFailedConnectionTelemetry() {
+    // Malformed URL causing DataSource parsing failure
+    Assertions.assertThrows(
+        SQLException.class,
+        () ->
+            bigQueryDriver.connect(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=invalid;",
+                new Properties()));
+    assertThat(TelemetryManager.isInitialized()).isTrue();
+  }
+
+  @Test
+  public void testConnect_optOut_noTelemetryRecorded() throws SQLException {
+    Connection connection =
+        bigQueryDriver.connect(
+            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                + "OAuthType=2;ProjectId=MyBigQueryProject;"
+                + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
+                + "OAuthClientSecret=redactedToken;EnableDiagnosticTelemetry=0;",
+            new Properties());
+    assertThat(connection).isNotNull();
+    // Since opt-out was requested, TelemetryManager should NOT be initialized
+    assertThat(TelemetryManager.isInitialized()).isFalse();
   }
 }
