@@ -83,7 +83,6 @@ final class StorageClientMetrics {
   static final String METRIC_GCP_CLIENT_REQUEST_DURATION = "gcp.client.request.duration";
   static final String METRIC_GCP_STORAGE_CLIENT_OPERATIONS = "gcp.storage.client.operations";
   static final String METRIC_GCP_STORAGE_CLIENT_ATTEMPTS = "gcp.storage.client.attempts";
-  static final String METRIC_GCP_STORAGE_CLIENT_RETRIES = "gcp.storage.client.retries";
   static final String METRIC_GCP_STORAGE_CLIENT_ERRORS = "gcp.storage.client.errors";
   static final String METRIC_GCP_STORAGE_CLIENT_TTFB = "gcp.storage.client.ttfb";
   static final String METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE =
@@ -109,7 +108,6 @@ final class StorageClientMetrics {
   @Nullable private final DoubleHistogram gcpClientRequestDuration;
   @Nullable private final LongCounter operations;
   @Nullable private final LongCounter attempts;
-  @Nullable private final LongCounter retries;
   @Nullable private final LongCounter errors;
   @Nullable private final DoubleHistogram ttfb;
   @Nullable private final LongHistogram requestBodySize;
@@ -210,12 +208,6 @@ final class StorageClientMetrics {
                       + " retries, resumable upload chunks and list pages.")
               .setUnit("{attempt}")
               .build();
-      this.retries =
-          meter
-              .counterBuilder(METRIC_GCP_STORAGE_CLIENT_RETRIES)
-              .setDescription("Number of GCS client retry attempts.")
-              .setUnit("{retry}")
-              .build();
       this.errors =
           meter
               .counterBuilder(METRIC_GCP_STORAGE_CLIENT_ERRORS)
@@ -260,7 +252,6 @@ final class StorageClientMetrics {
       this.gcpClientRequestDuration = null;
       this.operations = null;
       this.attempts = null;
-      this.retries = null;
       this.errors = null;
       this.ttfb = null;
       this.requestBodySize = null;
@@ -364,10 +355,6 @@ final class StorageClientMetrics {
 
   @Nullable LongCounter getAttempts() {
     return attempts;
-  }
-
-  @Nullable LongCounter getRetries() {
-    return retries;
   }
 
   @Nullable LongCounter getErrors() {

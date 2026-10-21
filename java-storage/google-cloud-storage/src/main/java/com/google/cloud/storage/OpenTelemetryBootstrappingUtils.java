@@ -228,7 +228,6 @@ final class OpenTelemetryBootstrappingUtils {
       ImmutableList.of(
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS,
-          StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RETRIES,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_ACTIVE,
           StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_SERVER_UNREACHED,
