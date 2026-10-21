@@ -181,6 +181,20 @@ public class BigQueryArrowStructTest {
         .isEqualTo(new String[] {"POINT(-122 47)", "POINT(-122 48)"});
     assertThat(((Array) attributes[11]).getArray())
         .isEqualTo(new byte[][] {"one".getBytes(), "two".getBytes()});
+    assertThat(struct.toString())
+        .isEqualTo(
+            "{\"INT64_arr_column\":[10,20],"
+                + "\"BOOL_arr_column\":[true,false],"
+                + "\"FLOAT64_arr_column\":[11.2,33.4],"
+                + "\"NUMERIC_arr_column\":[11.2657,33.4657],"
+                + "\"BIGNUMERIC_arr_column\":[11.2657,33.4657],"
+                + "\"STRING_arr_column\":[\"one\",\"two\"],"
+                + "\"TIMESTAMP_arr_column\":[\"2023-03-30 11:14:19.820227\",\"2023-03-31 11:14:19.820227\"],"
+                + "\"DATE_arr_column\":[\"2023-03-30\",\"2023-03-31\"],"
+                + "\"TIME_arr_column\":[\"11:14:19.820227\",\"11:14:20.820227\"],"
+                + "\"DATETIME_arr_column\":[\"2023-03-30 11:14:19.820227\",\"2023-03-30 11:15:19.820227\"],"
+                + "\"GEOGRAPHY_arr_column\":[\"POINT(-122 47)\",\"POINT(-122 48)\"],"
+                + "\"BYTES_arr_column\":[\"b25l\",\"dHdv\"]}");
   }
 
   @Test

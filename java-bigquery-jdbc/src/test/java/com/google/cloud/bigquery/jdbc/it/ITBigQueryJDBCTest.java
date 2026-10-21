@@ -3132,4 +3132,39 @@ public class ITBigQueryJDBCTest extends ITBase {
       }
     }
   }
+
+  @Test
+  public void testStructWithNestedArraysValidJson() throws SQLException {
+    String sql =
+        "SELECT STRUCT("
+            + "1 AS id, "
+            + "['hello', 'world'] AS str_arr, "
+            + "[DATE '2026-01-01', DATE '2026-01-02'] AS date_arr, "
+            + "[TIME '12:34:56.789012'] AS time_arr, "
+            + "[TIMESTAMP '2026-01-01 00:00:00 UTC'] AS ts_arr, "
+            + "[b'abc', b'def'] AS bytes_arr"
+            + ") AS s_nested_arrays";
+
+    String expectedJson =
+        "{\"id\":1,"
+            + "\"str_arr\":[\"hello\",\"world\"],"
+            + "\"date_arr\":[\"2026-01-01\",\"2026-01-02\"],"
+            + "\"time_arr\":[\"12:34:56.789012\"],"
+            + "\"ts_arr\":[\"2026-01-01 00:00:00.0\"],"
+            + "\"bytes_arr\":[\"YWJj\",\"ZGVm\"]}";
+
+    try (Connection connRegular = DriverManager.getConnection(connection_uri);
+        Connection connHtapi =
+            DriverManager.getConnection(connection_uri + FORCE_READ_API_PROPERTIES);
+        Statement stmtRegular = connRegular.createStatement();
+        Statement stmtHtapi = connHtapi.createStatement();
+        ResultSet rsRegular = stmtRegular.executeQuery(sql);
+        ResultSet rsHtapi = stmtHtapi.executeQuery(sql)) {
+
+      for (ResultSet rs : new ResultSet[] {rsRegular, rsHtapi}) {
+        assertTrue(rs.next());
+        assertEquals(expectedJson, rs.getString("s_nested_arrays"));
+      }
+    }
+  }
 }
