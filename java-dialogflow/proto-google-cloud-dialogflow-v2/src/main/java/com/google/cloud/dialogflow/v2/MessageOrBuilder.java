@@ -88,6 +88,72 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage> getResponseMessagesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.ResponseMessage getResponseMessages(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getResponseMessagesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>
+      getResponseMessagesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder getResponseMessagesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The message language.
    * This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
    * language tag. Example: "en-US".

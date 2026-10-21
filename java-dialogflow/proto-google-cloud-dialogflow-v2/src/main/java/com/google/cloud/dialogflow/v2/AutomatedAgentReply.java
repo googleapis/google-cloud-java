@@ -52,8 +52,12 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
   }
 
   private AutomatedAgentReply() {
+    responseMessages_ = java.util.Collections.emptyList();
+    intent_ = "";
+    event_ = "";
     automatedAgentReplyType_ = 0;
     cxCurrentPage_ = "";
+    callCompanionAuthCode_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -310,6 +314,270 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         : detectIntentResponse_;
   }
 
+  public static final int RESPONSE_MESSAGES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage> responseMessages_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Response messages from the automated agent.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage> getResponseMessagesList() {
+    return responseMessages_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Response messages from the automated agent.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>
+      getResponseMessagesOrBuilderList() {
+    return responseMessages_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Response messages from the automated agent.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+   */
+  @java.lang.Override
+  public int getResponseMessagesCount() {
+    return responseMessages_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Response messages from the automated agent.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.ResponseMessage getResponseMessages(int index) {
+    return responseMessages_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Response messages from the automated agent.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder getResponseMessagesOrBuilder(
+      int index) {
+    return responseMessages_.get(index);
+  }
+
+  public static final int INTENT_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object intent_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the intent if an intent is matched for the query.
+   * For a V2 query, the value format is `projects/&lt;Project ID&gt;/locations/
+   * &lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * For a V3 query, the value format is `projects/&lt;Project ID&gt;/locations/
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string intent = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The intent.
+   */
+  @java.lang.Override
+  public java.lang.String getIntent() {
+    java.lang.Object ref = intent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      intent_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the intent if an intent is matched for the query.
+   * For a V2 query, the value format is `projects/&lt;Project ID&gt;/locations/
+   * &lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * For a V3 query, the value format is `projects/&lt;Project ID&gt;/locations/
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string intent = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for intent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIntentBytes() {
+    java.lang.Object ref = intent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      intent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EVENT_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object event_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Event name if an event is triggered for the query.
+   * </pre>
+   *
+   * <code>string event = 5;</code>
+   *
+   * @return The event.
+   */
+  @java.lang.Override
+  public java.lang.String getEvent() {
+    java.lang.Object ref = event_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      event_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Event name if an event is triggered for the query.
+   * </pre>
+   *
+   * <code>string event = 5;</code>
+   *
+   * @return The bytes for event.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEventBytes() {
+    java.lang.Object ref = event_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      event_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MATCH_CONFIDENCE_FIELD_NUMBER = 9;
+  private float matchConfidence_ = 0F;
+
+  /**
+   *
+   *
+   * <pre>
+   * The confidence of the match. Values range from 0.0 (completely uncertain)
+   * to 1.0 (completely certain).
+   * This value is for informational purpose only and is only used to help match
+   * the best intent within the classification threshold. This value may change
+   * for the same end-user expression at any time due to a model retraining or
+   * change in implementation.
+   * </pre>
+   *
+   * <code>float match_confidence = 9;</code>
+   *
+   * @return The matchConfidence.
+   */
+  @java.lang.Override
+  public float getMatchConfidence() {
+    return matchConfidence_;
+  }
+
+  public static final int PARAMETERS_FIELD_NUMBER = 10;
+  private com.google.protobuf.Struct parameters_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The collection of current parameters at the time of this response.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 10;</code>
+   *
+   * @return Whether the parameters field is set.
+   */
+  @java.lang.Override
+  public boolean hasParameters() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The collection of current parameters at the time of this response.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 10;</code>
+   *
+   * @return The parameters.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getParameters() {
+    return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The collection of current parameters at the time of this response.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 10;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
+    return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
+  }
+
   public static final int AUTOMATED_AGENT_REPLY_TYPE_FIELD_NUMBER = 7;
   private int automatedAgentReplyType_ = 0;
 
@@ -433,6 +701,26 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int CALL_COMPANION_AUTH_CODE_FIELD_NUMBER = 12;
+  private com.google.protobuf.ByteString callCompanionAuthCode_ =
+      com.google.protobuf.ByteString.EMPTY;
+
+  /**
+   *
+   *
+   * <pre>
+   * The auth code for accessing Call Companion UI.
+   * </pre>
+   *
+   * <code>bytes call_companion_auth_code = 12;</code>
+   *
+   * @return The callCompanionAuthCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCallCompanionAuthCode() {
+    return callCompanionAuthCode_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -450,6 +738,15 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getDetectIntentResponse());
     }
+    for (int i = 0; i < responseMessages_.size(); i++) {
+      output.writeMessage(3, responseMessages_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(intent_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, intent_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(event_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, event_);
+    }
     if (automatedAgentReplyType_
         != com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType
             .AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED
@@ -459,8 +756,17 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (allowCancellation_ != false) {
       output.writeBool(8, allowCancellation_);
     }
+    if (java.lang.Float.floatToRawIntBits(matchConfidence_) != 0) {
+      output.writeFloat(9, matchConfidence_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(10, getParameters());
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(cxCurrentPage_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 11, cxCurrentPage_);
+    }
+    if (!callCompanionAuthCode_.isEmpty()) {
+      output.writeBytes(12, callCompanionAuthCode_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -475,6 +781,15 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDetectIntentResponse());
     }
+    for (int i = 0; i < responseMessages_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, responseMessages_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(intent_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, intent_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(event_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, event_);
+    }
     if (automatedAgentReplyType_
         != com.google.cloud.dialogflow.v2.AutomatedAgentReply.AutomatedAgentReplyType
             .AUTOMATED_AGENT_REPLY_TYPE_UNSPECIFIED
@@ -484,8 +799,17 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (allowCancellation_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, allowCancellation_);
     }
+    if (java.lang.Float.floatToRawIntBits(matchConfidence_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(9, matchConfidence_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getParameters());
+    }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(cxCurrentPage_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(11, cxCurrentPage_);
+    }
+    if (!callCompanionAuthCode_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(12, callCompanionAuthCode_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -507,9 +831,19 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     if (hasDetectIntentResponse()) {
       if (!getDetectIntentResponse().equals(other.getDetectIntentResponse())) return false;
     }
+    if (!getResponseMessagesList().equals(other.getResponseMessagesList())) return false;
+    if (!getIntent().equals(other.getIntent())) return false;
+    if (!getEvent().equals(other.getEvent())) return false;
+    if (java.lang.Float.floatToIntBits(getMatchConfidence())
+        != java.lang.Float.floatToIntBits(other.getMatchConfidence())) return false;
+    if (hasParameters() != other.hasParameters()) return false;
+    if (hasParameters()) {
+      if (!getParameters().equals(other.getParameters())) return false;
+    }
     if (automatedAgentReplyType_ != other.automatedAgentReplyType_) return false;
     if (getAllowCancellation() != other.getAllowCancellation()) return false;
     if (!getCxCurrentPage().equals(other.getCxCurrentPage())) return false;
+    if (!getCallCompanionAuthCode().equals(other.getCallCompanionAuthCode())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -525,12 +859,28 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + DETECT_INTENT_RESPONSE_FIELD_NUMBER;
       hash = (53 * hash) + getDetectIntentResponse().hashCode();
     }
+    if (getResponseMessagesCount() > 0) {
+      hash = (37 * hash) + RESPONSE_MESSAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseMessagesList().hashCode();
+    }
+    hash = (37 * hash) + INTENT_FIELD_NUMBER;
+    hash = (53 * hash) + getIntent().hashCode();
+    hash = (37 * hash) + EVENT_FIELD_NUMBER;
+    hash = (53 * hash) + getEvent().hashCode();
+    hash = (37 * hash) + MATCH_CONFIDENCE_FIELD_NUMBER;
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getMatchConfidence());
+    if (hasParameters()) {
+      hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getParameters().hashCode();
+    }
     hash = (37 * hash) + AUTOMATED_AGENT_REPLY_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + automatedAgentReplyType_;
     hash = (37 * hash) + ALLOW_CANCELLATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowCancellation());
     hash = (37 * hash) + CX_CURRENT_PAGE_FIELD_NUMBER;
     hash = (53 * hash) + getCxCurrentPage().hashCode();
+    hash = (37 * hash) + CALL_COMPANION_AUTH_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getCallCompanionAuthCode().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -673,6 +1023,8 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetDetectIntentResponseFieldBuilder();
+        internalGetResponseMessagesFieldBuilder();
+        internalGetParametersFieldBuilder();
       }
     }
 
@@ -685,9 +1037,25 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         detectIntentResponseBuilder_.dispose();
         detectIntentResponseBuilder_ = null;
       }
+      if (responseMessagesBuilder_ == null) {
+        responseMessages_ = java.util.Collections.emptyList();
+      } else {
+        responseMessages_ = null;
+        responseMessagesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
+      intent_ = "";
+      event_ = "";
+      matchConfidence_ = 0F;
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
+        parametersBuilder_ = null;
+      }
       automatedAgentReplyType_ = 0;
       allowCancellation_ = false;
       cxCurrentPage_ = "";
+      callCompanionAuthCode_ = com.google.protobuf.ByteString.EMPTY;
       return this;
     }
 
@@ -715,11 +1083,25 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public com.google.cloud.dialogflow.v2.AutomatedAgentReply buildPartial() {
       com.google.cloud.dialogflow.v2.AutomatedAgentReply result =
           new com.google.cloud.dialogflow.v2.AutomatedAgentReply(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dialogflow.v2.AutomatedAgentReply result) {
+      if (responseMessagesBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          responseMessages_ = java.util.Collections.unmodifiableList(responseMessages_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.responseMessages_ = responseMessages_;
+      } else {
+        result.responseMessages_ = responseMessagesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.dialogflow.v2.AutomatedAgentReply result) {
@@ -732,14 +1114,30 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
                 : detectIntentResponseBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.automatedAgentReplyType_ = automatedAgentReplyType_;
-      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.allowCancellation_ = allowCancellation_;
+        result.intent_ = intent_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.event_ = event_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.matchConfidence_ = matchConfidence_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.parameters_ = parametersBuilder_ == null ? parameters_ : parametersBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.automatedAgentReplyType_ = automatedAgentReplyType_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.allowCancellation_ = allowCancellation_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.cxCurrentPage_ = cxCurrentPage_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.callCompanionAuthCode_ = callCompanionAuthCode_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -760,6 +1158,49 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       if (other.hasDetectIntentResponse()) {
         mergeDetectIntentResponse(other.getDetectIntentResponse());
       }
+      if (responseMessagesBuilder_ == null) {
+        if (!other.responseMessages_.isEmpty()) {
+          if (responseMessages_.isEmpty()) {
+            responseMessages_ = other.responseMessages_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureResponseMessagesIsMutable();
+            responseMessages_.addAll(other.responseMessages_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.responseMessages_.isEmpty()) {
+          if (responseMessagesBuilder_.isEmpty()) {
+            responseMessagesBuilder_.dispose();
+            responseMessagesBuilder_ = null;
+            responseMessages_ = other.responseMessages_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            responseMessagesBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetResponseMessagesFieldBuilder()
+                    : null;
+          } else {
+            responseMessagesBuilder_.addAllMessages(other.responseMessages_);
+          }
+        }
+      }
+      if (!other.getIntent().isEmpty()) {
+        intent_ = other.intent_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getEvent().isEmpty()) {
+        event_ = other.event_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (java.lang.Float.floatToRawIntBits(other.getMatchConfidence()) != 0) {
+        setMatchConfidence(other.getMatchConfidence());
+      }
+      if (other.hasParameters()) {
+        mergeParameters(other.getParameters());
+      }
       if (other.automatedAgentReplyType_ != 0) {
         setAutomatedAgentReplyTypeValue(other.getAutomatedAgentReplyTypeValue());
       }
@@ -768,8 +1209,11 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       }
       if (!other.getCxCurrentPage().isEmpty()) {
         cxCurrentPage_ = other.cxCurrentPage_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000100;
         onChanged();
+      }
+      if (!other.getCallCompanionAuthCode().isEmpty()) {
+        setCallCompanionAuthCode(other.getCallCompanionAuthCode());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -804,24 +1248,68 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 26:
+              {
+                com.google.cloud.dialogflow.v2.ResponseMessage m =
+                    input.readMessage(
+                        com.google.cloud.dialogflow.v2.ResponseMessage.parser(), extensionRegistry);
+                if (responseMessagesBuilder_ == null) {
+                  ensureResponseMessagesIsMutable();
+                  responseMessages_.add(m);
+                } else {
+                  responseMessagesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                intent_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
+            case 42:
+              {
+                event_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             case 56:
               {
                 automatedAgentReplyType_ = input.readEnum();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 56
             case 64:
               {
                 allowCancellation_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
+            case 77:
+              {
+                matchConfidence_ = input.readFloat();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 77
+            case 82:
+              {
+                input.readMessage(
+                    internalGetParametersFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 82
             case 90:
               {
                 cxCurrentPage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 98:
+              {
+                callCompanionAuthCode_ = input.readBytes();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1059,6 +1547,887 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       return detectIntentResponseBuilder_;
     }
 
+    private java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage> responseMessages_ =
+        java.util.Collections.emptyList();
+
+    private void ensureResponseMessagesIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        responseMessages_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2.ResponseMessage>(
+                responseMessages_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2.ResponseMessage,
+            com.google.cloud.dialogflow.v2.ResponseMessage.Builder,
+            com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>
+        responseMessagesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage>
+        getResponseMessagesList() {
+      if (responseMessagesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(responseMessages_);
+      } else {
+        return responseMessagesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public int getResponseMessagesCount() {
+      if (responseMessagesBuilder_ == null) {
+        return responseMessages_.size();
+      } else {
+        return responseMessagesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public com.google.cloud.dialogflow.v2.ResponseMessage getResponseMessages(int index) {
+      if (responseMessagesBuilder_ == null) {
+        return responseMessages_.get(index);
+      } else {
+        return responseMessagesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public Builder setResponseMessages(
+        int index, com.google.cloud.dialogflow.v2.ResponseMessage value) {
+      if (responseMessagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResponseMessagesIsMutable();
+        responseMessages_.set(index, value);
+        onChanged();
+      } else {
+        responseMessagesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public Builder setResponseMessages(
+        int index, com.google.cloud.dialogflow.v2.ResponseMessage.Builder builderForValue) {
+      if (responseMessagesBuilder_ == null) {
+        ensureResponseMessagesIsMutable();
+        responseMessages_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        responseMessagesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public Builder addResponseMessages(com.google.cloud.dialogflow.v2.ResponseMessage value) {
+      if (responseMessagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResponseMessagesIsMutable();
+        responseMessages_.add(value);
+        onChanged();
+      } else {
+        responseMessagesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public Builder addResponseMessages(
+        int index, com.google.cloud.dialogflow.v2.ResponseMessage value) {
+      if (responseMessagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureResponseMessagesIsMutable();
+        responseMessages_.add(index, value);
+        onChanged();
+      } else {
+        responseMessagesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public Builder addResponseMessages(
+        com.google.cloud.dialogflow.v2.ResponseMessage.Builder builderForValue) {
+      if (responseMessagesBuilder_ == null) {
+        ensureResponseMessagesIsMutable();
+        responseMessages_.add(builderForValue.build());
+        onChanged();
+      } else {
+        responseMessagesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public Builder addResponseMessages(
+        int index, com.google.cloud.dialogflow.v2.ResponseMessage.Builder builderForValue) {
+      if (responseMessagesBuilder_ == null) {
+        ensureResponseMessagesIsMutable();
+        responseMessages_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        responseMessagesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public Builder addAllResponseMessages(
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.ResponseMessage> values) {
+      if (responseMessagesBuilder_ == null) {
+        ensureResponseMessagesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, responseMessages_);
+        onChanged();
+      } else {
+        responseMessagesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public Builder clearResponseMessages() {
+      if (responseMessagesBuilder_ == null) {
+        responseMessages_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        responseMessagesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public Builder removeResponseMessages(int index) {
+      if (responseMessagesBuilder_ == null) {
+        ensureResponseMessagesIsMutable();
+        responseMessages_.remove(index);
+        onChanged();
+      } else {
+        responseMessagesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public com.google.cloud.dialogflow.v2.ResponseMessage.Builder getResponseMessagesBuilder(
+        int index) {
+      return internalGetResponseMessagesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder getResponseMessagesOrBuilder(
+        int index) {
+      if (responseMessagesBuilder_ == null) {
+        return responseMessages_.get(index);
+      } else {
+        return responseMessagesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public java.util.List<? extends com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>
+        getResponseMessagesOrBuilderList() {
+      if (responseMessagesBuilder_ != null) {
+        return responseMessagesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(responseMessages_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public com.google.cloud.dialogflow.v2.ResponseMessage.Builder addResponseMessagesBuilder() {
+      return internalGetResponseMessagesFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2.ResponseMessage.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public com.google.cloud.dialogflow.v2.ResponseMessage.Builder addResponseMessagesBuilder(
+        int index) {
+      return internalGetResponseMessagesFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.v2.ResponseMessage.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Response messages from the automated agent.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+     */
+    public java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage.Builder>
+        getResponseMessagesBuilderList() {
+      return internalGetResponseMessagesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.dialogflow.v2.ResponseMessage,
+            com.google.cloud.dialogflow.v2.ResponseMessage.Builder,
+            com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>
+        internalGetResponseMessagesFieldBuilder() {
+      if (responseMessagesBuilder_ == null) {
+        responseMessagesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.dialogflow.v2.ResponseMessage,
+                com.google.cloud.dialogflow.v2.ResponseMessage.Builder,
+                com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>(
+                responseMessages_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        responseMessages_ = null;
+      }
+      return responseMessagesBuilder_;
+    }
+
+    private java.lang.Object intent_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the intent if an intent is matched for the query.
+     * For a V2 query, the value format is `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * For a V3 query, the value format is `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string intent = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The intent.
+     */
+    public java.lang.String getIntent() {
+      java.lang.Object ref = intent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        intent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the intent if an intent is matched for the query.
+     * For a V2 query, the value format is `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * For a V3 query, the value format is `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string intent = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for intent.
+     */
+    public com.google.protobuf.ByteString getIntentBytes() {
+      java.lang.Object ref = intent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        intent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the intent if an intent is matched for the query.
+     * For a V2 query, the value format is `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * For a V3 query, the value format is `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string intent = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The intent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      intent_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the intent if an intent is matched for the query.
+     * For a V2 query, the value format is `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * For a V3 query, the value format is `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string intent = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIntent() {
+      intent_ = getDefaultInstance().getIntent();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the intent if an intent is matched for the query.
+     * For a V2 query, the value format is `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+     * For a V3 query, the value format is `projects/&lt;Project ID&gt;/locations/
+     * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+     * </pre>
+     *
+     * <code>string intent = 4 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for intent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      intent_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object event_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Event name if an event is triggered for the query.
+     * </pre>
+     *
+     * <code>string event = 5;</code>
+     *
+     * @return The event.
+     */
+    public java.lang.String getEvent() {
+      java.lang.Object ref = event_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        event_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Event name if an event is triggered for the query.
+     * </pre>
+     *
+     * <code>string event = 5;</code>
+     *
+     * @return The bytes for event.
+     */
+    public com.google.protobuf.ByteString getEventBytes() {
+      java.lang.Object ref = event_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        event_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Event name if an event is triggered for the query.
+     * </pre>
+     *
+     * <code>string event = 5;</code>
+     *
+     * @param value The event to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEvent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      event_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Event name if an event is triggered for the query.
+     * </pre>
+     *
+     * <code>string event = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEvent() {
+      event_ = getDefaultInstance().getEvent();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Event name if an event is triggered for the query.
+     * </pre>
+     *
+     * <code>string event = 5;</code>
+     *
+     * @param value The bytes for event to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      event_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private float matchConfidence_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The confidence of the match. Values range from 0.0 (completely uncertain)
+     * to 1.0 (completely certain).
+     * This value is for informational purpose only and is only used to help match
+     * the best intent within the classification threshold. This value may change
+     * for the same end-user expression at any time due to a model retraining or
+     * change in implementation.
+     * </pre>
+     *
+     * <code>float match_confidence = 9;</code>
+     *
+     * @return The matchConfidence.
+     */
+    @java.lang.Override
+    public float getMatchConfidence() {
+      return matchConfidence_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The confidence of the match. Values range from 0.0 (completely uncertain)
+     * to 1.0 (completely certain).
+     * This value is for informational purpose only and is only used to help match
+     * the best intent within the classification threshold. This value may change
+     * for the same end-user expression at any time due to a model retraining or
+     * change in implementation.
+     * </pre>
+     *
+     * <code>float match_confidence = 9;</code>
+     *
+     * @param value The matchConfidence to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMatchConfidence(float value) {
+
+      matchConfidence_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The confidence of the match. Values range from 0.0 (completely uncertain)
+     * to 1.0 (completely certain).
+     * This value is for informational purpose only and is only used to help match
+     * the best intent within the classification threshold. This value may change
+     * for the same end-user expression at any time due to a model retraining or
+     * change in implementation.
+     * </pre>
+     *
+     * <code>float match_confidence = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMatchConfidence() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      matchConfidence_ = 0F;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Struct parameters_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        parametersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     *
+     * @return Whether the parameters field is set.
+     */
+    public boolean hasParameters() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     *
+     * @return The parameters.
+     */
+    public com.google.protobuf.Struct getParameters() {
+      if (parametersBuilder_ == null) {
+        return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
+      } else {
+        return parametersBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    public Builder setParameters(com.google.protobuf.Struct value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        parameters_ = value;
+      } else {
+        parametersBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    public Builder setParameters(com.google.protobuf.Struct.Builder builderForValue) {
+      if (parametersBuilder_ == null) {
+        parameters_ = builderForValue.build();
+      } else {
+        parametersBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    public Builder mergeParameters(com.google.protobuf.Struct value) {
+      if (parametersBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && parameters_ != null
+            && parameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getParametersBuilder().mergeFrom(value);
+        } else {
+          parameters_ = value;
+        }
+      } else {
+        parametersBuilder_.mergeFrom(value);
+      }
+      if (parameters_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    public Builder clearParameters() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      parameters_ = null;
+      if (parametersBuilder_ != null) {
+        parametersBuilder_.dispose();
+        parametersBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    public com.google.protobuf.Struct.Builder getParametersBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetParametersFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
+      if (parametersBuilder_ != null) {
+        return parametersBuilder_.getMessageOrBuilder();
+      } else {
+        return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The collection of current parameters at the time of this response.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        internalGetParametersFieldBuilder() {
+      if (parametersBuilder_ == null) {
+        parametersBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getParameters(), getParentForChildren(), isClean());
+        parameters_ = null;
+      }
+      return parametersBuilder_;
+    }
+
     private int automatedAgentReplyType_ = 0;
 
     /**
@@ -1095,7 +2464,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      */
     public Builder setAutomatedAgentReplyTypeValue(int value) {
       automatedAgentReplyType_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1143,7 +2512,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000040;
       automatedAgentReplyType_ = value.getNumber();
       onChanged();
       return this;
@@ -1163,7 +2532,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAutomatedAgentReplyType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000040);
       automatedAgentReplyType_ = 0;
       onChanged();
       return this;
@@ -1206,7 +2575,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
     public Builder setAllowCancellation(boolean value) {
 
       allowCancellation_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1225,7 +2594,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearAllowCancellation() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000080);
       allowCancellation_ = false;
       onChanged();
       return this;
@@ -1302,7 +2671,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       cxCurrentPage_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1322,7 +2691,7 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
      */
     public Builder clearCxCurrentPage() {
       cxCurrentPage_ = getDefaultInstance().getCxCurrentPage();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -1347,7 +2716,66 @@ public final class AutomatedAgentReply extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       cxCurrentPage_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString callCompanionAuthCode_ =
+        com.google.protobuf.ByteString.EMPTY;
+
+    /**
+     *
+     *
+     * <pre>
+     * The auth code for accessing Call Companion UI.
+     * </pre>
+     *
+     * <code>bytes call_companion_auth_code = 12;</code>
+     *
+     * @return The callCompanionAuthCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCallCompanionAuthCode() {
+      return callCompanionAuthCode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The auth code for accessing Call Companion UI.
+     * </pre>
+     *
+     * <code>bytes call_companion_auth_code = 12;</code>
+     *
+     * @param value The callCompanionAuthCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCallCompanionAuthCode(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      callCompanionAuthCode_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The auth code for accessing Call Companion UI.
+     * </pre>
+     *
+     * <code>bytes call_companion_auth_code = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCallCompanionAuthCode() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      callCompanionAuthCode_ = getDefaultInstance().getCallCompanionAuthCode();
       onChanged();
       return this;
     }
