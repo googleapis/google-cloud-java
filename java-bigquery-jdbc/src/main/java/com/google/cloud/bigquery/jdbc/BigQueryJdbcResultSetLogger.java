@@ -229,7 +229,8 @@ public final class BigQueryJdbcResultSetLogger {
     if (!delegate.isLoggable(Level.WARNING)) {
       return;
     }
-    logWithCaller(Level.WARNING, null, String.format(format, args));
+    String message = (args == null || args.length == 0) ? format : String.format(format, args);
+    logWithCaller(Level.WARNING, null, message);
   }
 
   public void severe(String msg, Throwable thrown) {
