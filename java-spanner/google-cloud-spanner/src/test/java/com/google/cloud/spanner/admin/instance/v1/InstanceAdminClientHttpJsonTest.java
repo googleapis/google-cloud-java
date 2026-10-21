@@ -224,6 +224,7 @@ public class InstanceAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllLeaderOptions(new ArrayList<String>())
             .setReconciling(true)
+            .addAllAllowedProcessingUnits(new ArrayList<InstanceConfig.AllowedProcessingUnits>())
             .setStorageLimitPerProcessingUnit(-1769187130)
             .build();
     mockService.addResponse(expectedResponse);
@@ -277,6 +278,7 @@ public class InstanceAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllLeaderOptions(new ArrayList<String>())
             .setReconciling(true)
+            .addAllAllowedProcessingUnits(new ArrayList<InstanceConfig.AllowedProcessingUnits>())
             .setStorageLimitPerProcessingUnit(-1769187130)
             .build();
     mockService.addResponse(expectedResponse);
@@ -330,6 +332,7 @@ public class InstanceAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllLeaderOptions(new ArrayList<String>())
             .setReconciling(true)
+            .addAllAllowedProcessingUnits(new ArrayList<InstanceConfig.AllowedProcessingUnits>())
             .setStorageLimitPerProcessingUnit(-1769187130)
             .build();
     Operation resultOperation =
@@ -393,6 +396,7 @@ public class InstanceAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllLeaderOptions(new ArrayList<String>())
             .setReconciling(true)
+            .addAllAllowedProcessingUnits(new ArrayList<InstanceConfig.AllowedProcessingUnits>())
             .setStorageLimitPerProcessingUnit(-1769187130)
             .build();
     Operation resultOperation =
@@ -456,6 +460,7 @@ public class InstanceAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllLeaderOptions(new ArrayList<String>())
             .setReconciling(true)
+            .addAllAllowedProcessingUnits(new ArrayList<InstanceConfig.AllowedProcessingUnits>())
             .setStorageLimitPerProcessingUnit(-1769187130)
             .build();
     Operation resultOperation =
@@ -477,6 +482,7 @@ public class InstanceAdminClientHttpJsonTest {
             .setEtag("etag3123477")
             .addAllLeaderOptions(new ArrayList<String>())
             .setReconciling(true)
+            .addAllAllowedProcessingUnits(new ArrayList<InstanceConfig.AllowedProcessingUnits>())
             .setStorageLimitPerProcessingUnit(-1769187130)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -519,6 +525,7 @@ public class InstanceAdminClientHttpJsonTest {
               .setEtag("etag3123477")
               .addAllLeaderOptions(new ArrayList<String>())
               .setReconciling(true)
+              .addAllAllowedProcessingUnits(new ArrayList<InstanceConfig.AllowedProcessingUnits>())
               .setStorageLimitPerProcessingUnit(-1769187130)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();

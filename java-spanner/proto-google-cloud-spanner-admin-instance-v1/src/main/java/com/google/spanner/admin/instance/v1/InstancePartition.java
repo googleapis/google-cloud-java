@@ -909,7 +909,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
    * </code>
    *
    * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
    * @return A list containing the referencingBackups.
    */
   @java.lang.Deprecated
@@ -933,7 +933,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
    * </code>
    *
    * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
    * @return The count of referencingBackups.
    */
   @java.lang.Deprecated
@@ -957,7 +957,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
    * </code>
    *
    * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
    * @param index The index of the element to return.
    * @return The referencingBackups at the given index.
    */
@@ -982,7 +982,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
    * </code>
    *
    * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
    * @param index The index of the value to return.
    * @return The bytes of the referencingBackups at the given index.
    */
@@ -3373,7 +3373,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
      * @return A list containing the referencingBackups.
      */
     @java.lang.Deprecated
@@ -3398,7 +3398,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
      * @return The count of referencingBackups.
      */
     @java.lang.Deprecated
@@ -3422,7 +3422,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
      * @param index The index of the element to return.
      * @return The referencingBackups at the given index.
      */
@@ -3447,7 +3447,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
      * @param index The index of the value to return.
      * @return The bytes of the referencingBackups at the given index.
      */
@@ -3472,7 +3472,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
      * @param index The index to set the value at.
      * @param value The referencingBackups to set.
      * @return This builder for chaining.
@@ -3505,7 +3505,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
      * @param value The referencingBackups to add.
      * @return This builder for chaining.
      */
@@ -3537,7 +3537,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
      * @param values The referencingBackups to add.
      * @return This builder for chaining.
      */
@@ -3566,7 +3566,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3594,7 +3594,7 @@ public final class InstancePartition extends com.google.protobuf.GeneratedMessag
      * </code>
      *
      * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+     *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
      * @param value The bytes of the referencingBackups to add.
      * @return This builder for chaining.
      */

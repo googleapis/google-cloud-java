@@ -822,6 +822,47 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     return useGeminiAsr_;
   }
 
+  public static final int DISABLE_INTERIM_INPUT_TRANSCRIPTS_FIELD_NUMBER = 32;
+  private boolean disableInterimInputTranscripts_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables emission of interim input transcriptions when set to
+   * `true`.
+   * </pre>
+   *
+   * <code>
+   * optional bool disable_interim_input_transcripts = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the disableInterimInputTranscripts field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisableInterimInputTranscripts() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables emission of interim input transcriptions when set to
+   * `true`.
+   * </pre>
+   *
+   * <code>
+   * optional bool disable_interim_input_transcripts = 32 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The disableInterimInputTranscripts.
+   */
+  @java.lang.Override
+  public boolean getDisableInterimInputTranscripts() {
+    return disableInterimInputTranscripts_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -886,6 +927,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(31, useGeminiAsr_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(32, disableInterimInputTranscripts_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -961,6 +1005,11 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(31, useGeminiAsr_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              32, disableInterimInputTranscripts_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1000,6 +1049,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (hasUseGeminiAsr() != other.hasUseGeminiAsr()) return false;
     if (hasUseGeminiAsr()) {
       if (getUseGeminiAsr() != other.getUseGeminiAsr()) return false;
+    }
+    if (hasDisableInterimInputTranscripts() != other.hasDisableInterimInputTranscripts())
+      return false;
+    if (hasDisableInterimInputTranscripts()) {
+      if (getDisableInterimInputTranscripts() != other.getDisableInterimInputTranscripts())
+        return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1055,6 +1110,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     if (hasUseGeminiAsr()) {
       hash = (37 * hash) + USE_GEMINI_ASR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseGeminiAsr());
+    }
+    if (hasDisableInterimInputTranscripts()) {
+      hash = (37 * hash) + DISABLE_INTERIM_INPUT_TRANSCRIPTS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getDisableInterimInputTranscripts());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1232,6 +1293,7 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
         geminiAsrConfigBuilder_ = null;
       }
       useGeminiAsr_ = false;
+      disableInterimInputTranscripts_ = false;
       return this;
     }
 
@@ -1332,6 +1394,10 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.useGeminiAsr_ = useGeminiAsr_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.disableInterimInputTranscripts_ = disableInterimInputTranscripts_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1438,6 +1504,9 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasUseGeminiAsr()) {
         setUseGeminiAsr(other.getUseGeminiAsr());
+      }
+      if (other.hasDisableInterimInputTranscripts()) {
+        setDisableInterimInputTranscripts(other.getDisableInterimInputTranscripts());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1571,6 +1640,12 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00008000;
                 break;
               } // case 248
+            case 256:
+              {
+                disableInterimInputTranscripts_ = input.readBool();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 256
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3761,6 +3836,90 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearUseGeminiAsr() {
       bitField0_ = (bitField0_ & ~0x00008000);
       useGeminiAsr_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableInterimInputTranscripts_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables emission of interim input transcriptions when set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * optional bool disable_interim_input_transcripts = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the disableInterimInputTranscripts field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisableInterimInputTranscripts() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables emission of interim input transcriptions when set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * optional bool disable_interim_input_transcripts = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The disableInterimInputTranscripts.
+     */
+    @java.lang.Override
+    public boolean getDisableInterimInputTranscripts() {
+      return disableInterimInputTranscripts_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables emission of interim input transcriptions when set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * optional bool disable_interim_input_transcripts = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The disableInterimInputTranscripts to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableInterimInputTranscripts(boolean value) {
+
+      disableInterimInputTranscripts_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables emission of interim input transcriptions when set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * optional bool disable_interim_input_transcripts = 32 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableInterimInputTranscripts() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      disableInterimInputTranscripts_ = false;
       onChanged();
       return this;
     }
