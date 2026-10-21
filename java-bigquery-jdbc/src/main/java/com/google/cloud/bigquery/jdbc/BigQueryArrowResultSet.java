@@ -283,6 +283,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           // Advance the cursor. Potentially blocking operation.
           try (Scope scope = makeOriginalContextCurrent()) {
             BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
+            checkClosed();
             if (batchWrapper.getException() != null) {
               throw backgroundFetchError(batchWrapper.getException());
             }
@@ -551,19 +552,24 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     }
     LOG.fineTrace("close", () -> String.format("Closing BigqueryArrowResultSet %s.", this));
     this.isClosed = true;
-    if (ownedTask != null) {
-      // cancel the producer task when result set is closed
-      ownedTask.cancel(true);
+    try {
+      if (ownedTask != null) {
+        // cancel the producer task when result set is closed
+        ownedTask.cancel(true);
+      }
+      if (this.buffer != null) {
+        this.buffer.clear();
+        // Unblock any consumer thread currently waiting on buffer.take() in next()
+        this.buffer.offer(BigQueryArrowBatchWrapper.of(null, true));
+      }
+      if (this.arrowDeserializer != null) {
+        this.arrowDeserializer.close();
+      } else if (this.allocator != null) {
+        this.allocator.close();
+      }
+    } finally {
+      super.close();
     }
-    if (this.buffer != null) {
-      this.buffer.clear();
-    }
-    if (this.arrowDeserializer != null) {
-      this.arrowDeserializer.close();
-    } else if (this.allocator != null) {
-      this.allocator.close();
-    }
-    super.close();
   }
 
   @Override

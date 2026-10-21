@@ -361,7 +361,9 @@ public class BigQueryArrowResultSetTest {
 
     rs.close();
     assertThat(rs.isClosed()).isTrue();
-    assertThat(queue).isEmpty();
+    assertThat(queue).hasSize(1);
+    assertThat(queue.peek().getCurrentArrowBatch()).isNull();
+    assertThat(queue.peek().isLast()).isTrue();
     verify(workerTask, times(1)).cancel(true);
 
     // Second close() call should be a no-op

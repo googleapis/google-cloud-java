@@ -227,6 +227,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       try {
         // Advance the cursor,Potentially blocking operation
         this.cursor = this.buffer.take();
+        checkClosed();
         if (this.cursor.getException() != null) {
           throw backgroundFetchError(this.cursor.getException());
         }
@@ -387,18 +388,23 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     }
     LOG.fineTrace("close", () -> String.format("Closing BigqueryJsonResultSet %s.", this));
     this.isClosed = true;
-    if (ownedTasks != null) {
-      for (Future<?> ownedTask : ownedTasks) {
-        if (ownedTask != null) {
-          ownedTask.cancel(true);
+    try {
+      if (ownedTasks != null) {
+        for (Future<?> ownedTask : ownedTasks) {
+          if (ownedTask != null) {
+            ownedTask.cancel(true);
+          }
         }
       }
+      if (this.buffer != null) {
+        this.buffer.clear();
+        // Unblock any consumer thread currently waiting on buffer.take() in next()
+        this.buffer.offer(BigQueryFieldValueListWrapper.ofEndOfStream(null));
+      }
+      this.cursor = null;
+    } finally {
+      super.close();
     }
-    if (this.buffer != null) {
-      this.buffer.clear();
-    }
-    this.cursor = null;
-    super.close();
   }
 
   @Override
