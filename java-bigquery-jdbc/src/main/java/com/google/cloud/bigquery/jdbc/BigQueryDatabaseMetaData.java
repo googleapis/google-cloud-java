@@ -91,7 +91,8 @@ import javax.annotation.Nullable;
  * @see BigQueryStatement
  */
 class BigQueryDatabaseMetaData implements DatabaseMetaData {
-  final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryDatabaseMetaData.class.getName());
   private static final String DATABASE_PRODUCT_NAME = "Google BigQuery";
   private static final String DATABASE_PRODUCT_VERSION = "2.0";
   private static final String DRIVER_NAME = "GoogleJDBCDriverForGoogleBigQuery";

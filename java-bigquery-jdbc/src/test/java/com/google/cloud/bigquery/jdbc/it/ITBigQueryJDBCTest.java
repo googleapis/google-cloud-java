@@ -230,6 +230,8 @@ public class ITBigQueryJDBCTest extends ITBase {
     withReadApi.setProperty("HighThroughputActivationRatio", "2");
     withReadApi.setProperty("HighThroughputMinTableSize", "1000");
     withReadApi.setProperty("MaxResults", "300");
+    withReadApi.setProperty("LogLevel", "6");
+    withReadApi.setProperty("LogPath", "./logs");
 
     Connection connection =
         DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG), withReadApi);

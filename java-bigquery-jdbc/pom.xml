@@ -506,7 +506,12 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
-              <argLine>--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
+              <!--
+              java.nio is opened for Arrow's off-heap memory access. java.util.logging is opened
+              so BigQueryJdbcLoggerLeakTest can read the JDK-internal child-logger list and assert
+              that driver objects do not leak logger registrations.
+              -->
+              <argLine>--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED --add-opens=java.logging/java.util.logging=ALL-UNNAMED</argLine>
             </configuration>
           </plugin>
           <plugin>
