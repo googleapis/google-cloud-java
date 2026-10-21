@@ -30,7 +30,6 @@ public class BigQueryJdbcCustomLogger extends Logger {
 
   public BigQueryJdbcCustomLogger(String name) {
     this(name, null);
-    this.setParent(BigQueryJdbcRootLogger.getRootLogger());
   }
 
   private void logWithCaller(Level level, Supplier<String> msgSupplier) {

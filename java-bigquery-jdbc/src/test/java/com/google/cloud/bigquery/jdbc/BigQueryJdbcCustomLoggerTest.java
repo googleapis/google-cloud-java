@@ -579,4 +579,11 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
         "Log from Nested JSON Array",
         () -> nestedArray.LOG.fine("Log from Nested JSON Array"));
   }
+
+  @Test
+  public void testLoggerIsParentedToDriverRootLogger() {
+    assertSame(
+        BigQueryJdbcRootLogger.getRootLogger(),
+        new BigQueryJdbcCustomLogger("ParentCheck").getParent());
+  }
 }
