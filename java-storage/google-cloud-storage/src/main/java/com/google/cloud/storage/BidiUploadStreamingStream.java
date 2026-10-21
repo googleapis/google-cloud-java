@@ -415,10 +415,14 @@ final class BidiUploadStreamingStream {
     public void onResponse(BidiWriteObjectResponse response) {
       try {
         controller.request(1);
+        long confirmedBytesBefore = state.getConfirmedBytes();
         @Nullable StorageException se = state.onResponse(response);
         if (se != null) {
           retryContext.recordError(se, onSuccess, onFailure);
-        } else {
+        } else if (state.getConfirmedBytes() > confirmedBytesBefore) {
+          // Only refresh the retry budget when the server confirms new bytes. After a reconnect,
+          // the state lookup reply repeats the previously confirmed offset; treating it as
+          // progress would let a persistent retryable error (e.g. 429, 408) retry forever.
           retryContext.reset();
         }
       } catch (Throwable t) {

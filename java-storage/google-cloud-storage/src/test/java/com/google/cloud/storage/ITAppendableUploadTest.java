@@ -53,8 +53,9 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 import org.junit.runner.RunWith;
 
 @RunWith(StorageITRunner.class)
@@ -75,6 +76,9 @@ public final class ITAppendableUploadTest {
   @Inject public Backend backend;
 
   @Parameter public Param p;
+
+  // A stuck appendable upload must fail its own test rather than hang the whole job.
+  @Rule public final Timeout timeout = Timeout.seconds(120);
 
   @Test
   public void appendableUpload_emptyObject()
@@ -103,7 +107,6 @@ public final class ITAppendableUploadTest {
     assertThat(xxd(actualBytes)).isEqualTo(xxd(new byte[0]));
   }
 
-  @Ignore("Flaky test: b/574588650")
   @Test
   public void appendableUpload_bytes()
       throws IOException, ExecutionException, InterruptedException, TimeoutException {
@@ -136,7 +139,6 @@ public final class ITAppendableUploadTest {
     assertThat(xxd(actualBytes)).isEqualTo(xxd(a1_a2.getBytes()));
   }
 
-  @Ignore("Flaky test: b/574588650")
   @Test
   public void explicitFlush()
       throws IOException, ExecutionException, InterruptedException, TimeoutException {
