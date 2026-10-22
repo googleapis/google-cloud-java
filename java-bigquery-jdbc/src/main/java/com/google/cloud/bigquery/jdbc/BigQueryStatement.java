@@ -102,7 +102,8 @@ import java.util.logging.Level;
  */
 public class BigQueryStatement extends BigQueryNoOpsStatement {
 
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryStatement.class.getName());
   public static final int DEFAULT_BUFFER_SIZE = BigQuerySettings.DEFAULT_NUM_BUFFERED_ROWS * 2;
   // Bounds in-memory ArrowRecordBatch buffering per ResultSet (~15-20 MB of in-flight batches),
   // keeping the gRPC ReadRows stream saturated while preventing unbounded heap accumulation.
