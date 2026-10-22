@@ -2707,12 +2707,13 @@ public class ITBigQueryJDBCTest extends ITBase {
             .put("booleanField", "true")
             .put("timestampFiled", expectedTimestampString)
             .put("dateField", "2023-07-28")
-            .put("timeField", "12:30:00.000")
+            .put("timeField", "12:30:00")
+            .put("timeMicrosField", "12:30:00.123456")
             .put("dateTimeField", "2023-07-28 12:30:00.000000")
             .put("geographyField", "POINT(-74.006 40.7128)")
             .put(
                 "recordField",
-                "{\"name\":\"NameValue\",\"recordNested\":{\"lastName\":\"LastNameValue\"}}")
+                "{\"name\":\"NameValue\",\"timeVal\":\"12:30:00.123456\",\"recordNested\":{\"lastName\":\"LastNameValue\"}}")
             .put("rangeField", "[2023-01-01, 2023-12-01)")
             .put("jsonField", "{\"key\":\"value\"}")
             .put("arrayString", "[abc, def, ghi]")
@@ -2724,7 +2725,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             .put("arrayBoolean", "[true, false]")
             .put("arrayTimestamp", "[2023-01-01 01:00:00.0, 2023-01-01 02:00:00.0]")
             .put("arrayDate", "[2023-01-01, 2023-01-02]")
-            .put("arrayTime", "[01:00:00, 02:00:00]")
+            .put("arrayTime", "[01:00:00, 02:00:00.123456]")
             .put("arrayDatetime", "[2023-01-01 01:00:00.0, 2023-01-01 02:00:00.0]")
             .put("arrayGeography", "[POINT(1 1), POINT(2 2)]")
             .put("arrayRange", "[[2023-01-01, 2023-01-03), [2023-01-04, 2023-01-06)]")
@@ -2880,6 +2881,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     final ImmutableMap<String, Object> result =
         new ImmutableMap.Builder<String, Object>()
             .put("timeField", Time.valueOf("12:30:00"))
+            .put("timeMicrosField", new Time(Time.valueOf("12:30:00").getTime() + 123))
             .put("dateTimeField", Time.valueOf("12:30:00"))
             .put("timestampFiled", Time.valueOf(expectedTimestampLocalTime))
             .build();
@@ -2922,6 +2924,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     final ImmutableMap<String, Object> result =
         new ImmutableMap.Builder<String, Object>()
             .put("timeField", Timestamp.valueOf("1970-01-01 12:30:00"))
+            .put("timeMicrosField", Timestamp.valueOf("1970-01-01 12:30:00.123"))
             .put("dateField", Timestamp.valueOf("2023-07-28 00:00:00"))
             .put("dateTimeField", Timestamp.valueOf("2023-07-28 12:30:00"))
             .put("timestampFiled", Timestamp.from(Instant.parse("2023-07-28T12:30:00Z")))

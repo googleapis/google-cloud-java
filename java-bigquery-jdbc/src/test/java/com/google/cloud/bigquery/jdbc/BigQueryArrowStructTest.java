@@ -278,4 +278,17 @@ public class BigQueryArrowStructTest {
     Timestamp expectedTs = Timestamp.valueOf("2026-04-08 10:00:00.123456789");
     assertThat(attributes).isEqualTo(new Object[] {expectedTs});
   }
+
+  @Test
+  public void testArrowStructTimePreservesMicroseconds() {
+    Field timeField = Field.of("t", TIME);
+    FieldList schema = FieldList.of(timeField);
+    long timeMicros = (14L * 3600 + 30L * 60) * 1_000_000L + 123_456L;
+    JsonStringHashMap<String, Object> values = new JsonStringHashMap<>();
+    values.put("t", timeMicros);
+
+    BigQueryArrowStruct struct = new BigQueryArrowStruct(schema, values);
+
+    assertThat(struct.toString()).isEqualTo("{\"t\":\"14:30:00.123456\"}");
+  }
 }

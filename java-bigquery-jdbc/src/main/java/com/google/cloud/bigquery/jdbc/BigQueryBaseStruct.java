@@ -50,6 +50,8 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
 
   abstract FieldList getSchema();
 
+  abstract Object getRawAttribute(int index);
+
   @Override
   public final String getSQLTypeName() throws SQLException {
     return StandardSQLTypeName.STRUCT.name();
@@ -94,6 +96,13 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
             && field.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP) {
           sb.append("\"")
               .append(BigQueryTemporalUtility.formatTimestampToUtcString((Timestamp) value))
+              .append("\"");
+        } else if (value instanceof Time
+            && field.getType().getStandardType() == StandardSQLTypeName.TIME) {
+          sb.append("\"")
+              .append(
+                  BigQueryTypeRegistry.convert(
+                      getRawAttribute(i), StandardSQLTypeName.TIME, String.class, null))
               .append("\"");
         } else if (value instanceof Timestamp || value instanceof Date || value instanceof Time) {
           sb.append("\"").append(value.toString()).append("\"");
