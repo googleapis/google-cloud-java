@@ -658,6 +658,127 @@ public interface InstanceConfigOrBuilder
    *
    *
    * <pre>
+   * Output only. Defines the ranges of allowed processing units supported by
+   * this instance configuration. If multiple ranges are specified, an instance
+   * using this configuration may use a valid increment in any of the given
+   * ranges. For example, an allowed_processing_units specification of
+   * `[{min_processing_units:100, max_processing_units:900,
+   * processing_unit_increment:100}, {min_processing_units:1000,
+   * processing_unit_increment:1000}]` specifies that the instance configuration
+   * supports instances with quantities of processing units in multiples of 100
+   * processing units (100, 200, 300 and so on) up to and including 900
+   * processing units and quantities that are at least 1000 processing units and
+   * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits>
+      getAllowedProcessingUnitsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the ranges of allowed processing units supported by
+   * this instance configuration. If multiple ranges are specified, an instance
+   * using this configuration may use a valid increment in any of the given
+   * ranges. For example, an allowed_processing_units specification of
+   * `[{min_processing_units:100, max_processing_units:900,
+   * processing_unit_increment:100}, {min_processing_units:1000,
+   * processing_unit_increment:1000}]` specifies that the instance configuration
+   * supports instances with quantities of processing units in multiples of 100
+   * processing units (100, 200, 300 and so on) up to and including 900
+   * processing units and quantities that are at least 1000 processing units and
+   * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+      getAllowedProcessingUnits(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the ranges of allowed processing units supported by
+   * this instance configuration. If multiple ranges are specified, an instance
+   * using this configuration may use a valid increment in any of the given
+   * ranges. For example, an allowed_processing_units specification of
+   * `[{min_processing_units:100, max_processing_units:900,
+   * processing_unit_increment:100}, {min_processing_units:1000,
+   * processing_unit_increment:1000}]` specifies that the instance configuration
+   * supports instances with quantities of processing units in multiples of 100
+   * processing units (100, 200, 300 and so on) up to and including 900
+   * processing units and quantities that are at least 1000 processing units and
+   * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getAllowedProcessingUnitsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the ranges of allowed processing units supported by
+   * this instance configuration. If multiple ranges are specified, an instance
+   * using this configuration may use a valid increment in any of the given
+   * ranges. For example, an allowed_processing_units specification of
+   * `[{min_processing_units:100, max_processing_units:900,
+   * processing_unit_increment:100}, {min_processing_units:1000,
+   * processing_unit_increment:1000}]` specifies that the instance configuration
+   * supports instances with quantities of processing units in multiples of 100
+   * processing units (100, 200, 300 and so on) up to and including 900
+   * processing units and quantities that are at least 1000 processing units and
+   * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnitsOrBuilder>
+      getAllowedProcessingUnitsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the ranges of allowed processing units supported by
+   * this instance configuration. If multiple ranges are specified, an instance
+   * using this configuration may use a valid increment in any of the given
+   * ranges. For example, an allowed_processing_units specification of
+   * `[{min_processing_units:100, max_processing_units:900,
+   * processing_unit_increment:100}, {min_processing_units:1000,
+   * processing_unit_increment:1000}]` specifies that the instance configuration
+   * supports instances with quantities of processing units in multiples of 100
+   * processing units (100, 200, 300 and so on) up to and including 900
+   * processing units and quantities that are at least 1000 processing units and
+   * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnitsOrBuilder
+      getAllowedProcessingUnitsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The `QuorumType` of the instance configuration.
    * </pre>
    *

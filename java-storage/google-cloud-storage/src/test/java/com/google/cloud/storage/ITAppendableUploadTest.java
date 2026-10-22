@@ -399,6 +399,7 @@ public final class ITAppendableUploadTest {
     assertThat(done2.getCrc32c()).isEqualTo(Utils.crc32cCodec.encode(fullContent.getCrc32c()));
   }
 
+  @Ignore("Temporarily disabled: hits the Rapid storage quota in CI.")
   @Test
   @CrossRun.Ignore(backends = {Backend.TEST_BENCH})
   public void takeoverAndAppendWithIncorrectChecksumFails() throws Exception {
