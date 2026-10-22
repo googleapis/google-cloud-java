@@ -246,8 +246,12 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     @Override
     public void close() {
       LOG.fineTrace("close", () -> String.format("Closing BigQueryArrowResultSet %s.", this));
-      vectorSchemaRoot.close();
-      allocator.close();
+      if (vectorSchemaRoot != null) {
+        vectorSchemaRoot.close();
+      }
+      if (allocator != null) {
+        allocator.close();
+      }
     }
   }
 
@@ -279,6 +283,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           // Advance the cursor. Potentially blocking operation.
           try (Scope scope = makeOriginalContextCurrent()) {
             BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
+            checkClosed();
             if (batchWrapper.getException() != null) {
               throw backgroundFetchError(batchWrapper.getException());
             }
@@ -543,13 +548,29 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public void close() {
+    if (this.isClosed) {
+      return;
+    }
     LOG.fineTrace("close", () -> String.format("Closing BigqueryArrowResultSet %s.", this));
     this.isClosed = true;
-    if (ownedTask != null) {
-      // cancel the producer task when result set is closed
-      ownedTask.cancel(true);
+    try {
+      if (ownedTask != null) {
+        // cancel the producer task when result set is closed
+        ownedTask.cancel(true);
+      }
+      if (this.buffer != null) {
+        this.buffer.clear();
+        // Unblock any consumer thread currently waiting on buffer.take() in next()
+        this.buffer.offer(BigQueryArrowBatchWrapper.of(null, true));
+      }
+      if (this.arrowDeserializer != null) {
+        this.arrowDeserializer.close();
+      } else if (this.allocator != null) {
+        this.allocator.close();
+      }
+    } finally {
+      super.close();
     }
-    super.close();
   }
 
   @Override
