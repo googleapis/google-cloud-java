@@ -54,13 +54,13 @@ public final class StorageMetricsContextTest {
   }
 
   @Test
-  public void constructor_validatesNonNullArguments() {
+  public void create_validatesNonNullArguments() {
     assertThrows(
-        NullPointerException.class, () -> new StorageMetricsContext(null, Attributes.empty()));
-    assertThrows(NullPointerException.class, () -> new StorageMetricsContext("op", null));
+        NullPointerException.class, () -> StorageMetricsContext.create(null, Attributes.empty()));
+    assertThrows(NullPointerException.class, () -> StorageMetricsContext.create("op", null));
     assertThrows(
         NullPointerException.class,
-        () -> new StorageMetricsContext("op", Attributes.empty(), 0L, null));
+        () -> StorageMetricsContext.create("op", Attributes.empty(), null));
   }
 
   @Test
@@ -99,7 +99,7 @@ public final class StorageMetricsContextTest {
   public void elapsedSeconds_computesCorrectly() {
     long startTime = 1_000_000_000L;
     StorageMetricsContext context =
-        new StorageMetricsContext("storage.objects.get", Attributes.empty(), startTime);
+        StorageMetricsContext.create("storage.objects.get", Attributes.empty(), startTime);
 
     long endTime = 2_500_000_000L;
     double elapsed = context.getElapsedSeconds(endTime);

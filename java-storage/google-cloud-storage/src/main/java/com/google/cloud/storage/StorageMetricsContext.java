@@ -54,29 +54,7 @@ final class StorageMetricsContext {
   private final boolean recordOperationOnRetrierExit;
   private final AtomicBoolean operationRecorded;
 
-  StorageMetricsContext(String operationName, Attributes baseAttributes) {
-    this(operationName, baseAttributes, System.nanoTime(), Context.current());
-  }
-
-  StorageMetricsContext(String operationName, Attributes baseAttributes, long startTimeNanos) {
-    this(operationName, baseAttributes, startTimeNanos, Context.current());
-  }
-
-  StorageMetricsContext(
-      String operationName, Attributes baseAttributes, long startTimeNanos, Context otelContext) {
-    this(
-        operationName,
-        baseAttributes,
-        startTimeNanos,
-        otelContext,
-        true,
-        new AtomicBoolean(false),
-        new AtomicInteger(0),
-        new AtomicLong(0L),
-        new AtomicLong(0L));
-  }
-
-  StorageMetricsContext(
+  private StorageMetricsContext(
       String operationName,
       Attributes baseAttributes,
       long startTimeNanos,
@@ -95,6 +73,20 @@ final class StorageMetricsContext {
     this.attemptCount = requireNonNull(attemptCount, "attemptCount cannot be null");
     this.requestBytes = requireNonNull(requestBytes, "requestBytes cannot be null");
     this.responseBytes = requireNonNull(responseBytes, "responseBytes cannot be null");
+  }
+
+  static StorageMetricsContext create(
+      String operationName, Attributes baseAttributes, long startTimeNanos) {
+    return new StorageMetricsContext(
+        operationName,
+        baseAttributes,
+        startTimeNanos,
+        Context.current(),
+        true,
+        new AtomicBoolean(false),
+        new AtomicInteger(0),
+        new AtomicLong(0L),
+        new AtomicLong(0L));
   }
 
   static StorageMetricsContext create(String operationName) {
@@ -225,14 +217,10 @@ final class StorageMetricsContext {
     if (context == null) {
       return null;
     }
-    StorageMetricsContext result = context.getOption(API_CALL_CONTEXT_KEY);
-    if (result != null) {
-      return result;
-    }
     if (context instanceof GrpcCallContext) {
-      return from(((GrpcCallContext) context).getCallOptions());
+      return from((GrpcCallContext) context);
     }
-    return null;
+    return context.getOption(API_CALL_CONTEXT_KEY);
   }
 
   static @Nullable StorageMetricsContext from(@Nullable Map<String, Object> properties) {
