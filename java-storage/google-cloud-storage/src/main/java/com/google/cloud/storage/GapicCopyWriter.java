@@ -34,7 +34,6 @@ final class GapicCopyWriter extends CopyWriter {
   private final RewriteObjectRequest originalRequest;
   private final RewriteResponse initialResponse;
   @Nullable private final StorageMetricsContext metricsContext;
-  private boolean operationRecorded;
 
   private RewriteResponse mostRecentResponse;
 
@@ -61,13 +60,11 @@ final class GapicCopyWriter extends CopyWriter {
     this.mostRecentResponse = initialResponse;
     this.originalRequest = originalRequest;
     this.metricsContext = metricsContext;
-    this.operationRecorded = initialResponse.getDone();
   }
 
   private void recordOperation(@Nullable Throwable error) {
-    if (metricsContext != null && !operationRecorded) {
+    if (metricsContext != null) {
       metricsContext.recordOperation(storage.getOptions().getStorageClientMetrics(), error);
-      operationRecorded = true;
     }
   }
 
@@ -111,7 +108,7 @@ final class GapicCopyWriter extends CopyWriter {
                 .build();
         StorageMetricsContext chunkContext =
             metricsContext != null
-                ? metricsContext.asSubAttemptContext()
+                ? metricsContext
                 : storage.getOptions().createMetricsContext("RewriteObject");
         GrpcCallContext retryContext = Retrying.newCallContext(chunkContext);
         RewriteResponse resp =

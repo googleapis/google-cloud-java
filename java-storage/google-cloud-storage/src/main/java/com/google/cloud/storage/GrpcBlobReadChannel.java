@@ -73,7 +73,8 @@ final class GrpcBlobReadChannel extends BaseStorageReadChannel<Object> {
           ReadableByteChannelSessionBuilder b =
               ResumableMedia.gapic()
                   .read()
-                  .byteChannel(read, retrier, resultRetryAlgorithm)
+                  .byteChannel(
+                      read, retrier.withMetricsContext(getMetricsContext()), resultRetryAlgorithm)
                   .setHasher(Hasher.readHasher())
                   .setAutoGzipDecompression(autoGzipDecompression);
           BufferHandle bufferHandle = getBufferHandle();
