@@ -23,7 +23,6 @@ import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
 import com.google.bigtable.v2.SessionClientConfiguration;
 import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration.DirectAccessOnly;
-import com.google.bigtable.v2.SessionDiversionConfiguration;
 import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.Util;
@@ -458,24 +457,12 @@ public class ClientConfigurationManager implements AutoCloseable {
   }
 
   /**
-   * Returns true if the configuration routes a nonzero share of traffic to sessions, either via the
-   * flat {@code session_load} or via a diversion configuration that carries a nonzero load.
+   * Returns true if the configuration routes a nonzero share of traffic to sessions for any scope
+   * this client serves. Shares the resolution rule with the per-RPC diversion decision so the two
+   * cannot disagree; see {@link SessionScope}.
    */
   private static boolean divertsAnyTrafficToSessions(SessionClientConfiguration session) {
-    if (session.getSessionLoad() > 0) {
-      return true;
-    }
-
-    SessionDiversionConfiguration diversion = session.getSessionDiversionConfiguration();
-    switch (diversion.getDiversionStrategyCase()) {
-      case GLOBAL_DIVERSION:
-        return diversion.getGlobalDiversion().getSessionLoad() > 0;
-      case PER_SCOPE_DIVERSION:
-        return diversion.getPerScopeDiversion().getScopeDiversionsMap().values().stream()
-            .anyMatch(scope -> scope.getSessionLoad() > 0);
-      default:
-        return false;
-    }
+    return SessionScope.divertsAnyTraffic(session);
   }
 
   public boolean areSessionsRequired() {
