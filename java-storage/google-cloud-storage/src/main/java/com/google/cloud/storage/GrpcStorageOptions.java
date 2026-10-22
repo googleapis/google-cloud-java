@@ -1460,6 +1460,12 @@ public final class GrpcStorageOptions extends StorageOptions
     }
   }
 
+  @InternalApi
+  @Override
+  public StorageClientMetrics getStorageClientMetrics() {
+    return super.getStorageClientMetrics();
+  }
+
   private static class ReadObjectRangeResultRetryAlgorithmDecorator
       extends BasicResultRetryAlgorithm<Object> {
 

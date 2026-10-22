@@ -282,8 +282,7 @@ public final class StorageClientMetricsTest {
   @Test
   public void attachClientAttributes_mergesAdditionalAttributes() {
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics =
-        StorageClientMetrics.create(provider, "test-instance", true, false);
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
 
     Attributes extra =
         Attributes.of(
@@ -313,8 +312,7 @@ public final class StorageClientMetricsTest {
   @Test
   public void clientAttributesBuilder_containsBaseClientAttributes() {
     SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics =
-        StorageClientMetrics.create(provider, "test-instance", true, false);
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
 
     Attributes built = metrics.clientAttributesBuilder().build();
     assertThat(built).isEqualTo(metrics.getClientAttributes());

@@ -29,10 +29,6 @@ import com.google.cloud.storage.spi.v1.HttpRpcContext;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import io.opentelemetry.api.common.AttributeKey;
-import io.opentelemetry.api.common.Attributes;
-import io.opentelemetry.api.common.AttributesBuilder;
-import io.opentelemetry.api.metrics.LongCounter;
 import io.opentelemetry.context.Scope;
 import java.util.UUID;
 import java.util.concurrent.Callable;
@@ -77,7 +73,16 @@ final class Retrying {
     }
 
     default RetrierWithAlg withAlg(ResultRetryAlgorithm<?> alg) {
-      return new DefaultRetrierWithAlg(this, alg);
+      return withAlg(alg, null);
+    }
+
+    default RetrierWithAlg withAlg(
+        ResultRetryAlgorithm<?> alg, @Nullable StorageMetricsContext metricsContext) {
+      return new DefaultRetrierWithAlg(this, alg, metricsContext);
+    }
+
+    default Retrier withMetricsContext(@Nullable StorageMetricsContext metricsContext) {
+      return metricsContext == null ? this : new ContextBoundRetrier(this, metricsContext);
     }
 
     static Retrier attemptOnce() {
@@ -125,13 +130,82 @@ final class Retrying {
     }
   }
 
+  static final class ContextBoundRetrier implements Retrier {
+    private final Retrier delegate;
+    private final StorageMetricsContext metricsContext;
+
+    ContextBoundRetrier(Retrier delegate, StorageMetricsContext metricsContext) {
+      this.delegate = delegate;
+      this.metricsContext = metricsContext;
+    }
+
+    @Override
+    public <Response, Model> Model run(
+        ResultRetryAlgorithm<?> alg,
+        Callable<Response> c,
+        Decoder<Response, Model> d,
+        @Nullable StorageMetricsContext explicitCtx) {
+      return delegate.run(alg, c, d, explicitCtx != null ? explicitCtx : metricsContext);
+    }
+
+    @Override
+    public <Response, Model> Model run(
+        ResultRetryAlgorithm<?> alg, Callable<Response> c, Decoder<Response, Model> d) {
+      return delegate.run(alg, c, d, metricsContext);
+    }
+
+    @Override
+    public RetrierWithAlg withAlg(ResultRetryAlgorithm<?> alg) {
+      return delegate.withAlg(alg, metricsContext);
+    }
+
+    @Override
+    public RetrierWithAlg withAlg(
+        ResultRetryAlgorithm<?> alg, @Nullable StorageMetricsContext explicitCtx) {
+      return delegate.withAlg(alg, explicitCtx != null ? explicitCtx : metricsContext);
+    }
+
+    @Override
+    public Retrier withMetricsContext(@Nullable StorageMetricsContext explicitCtx) {
+      return explicitCtx != null ? new ContextBoundRetrier(delegate, explicitCtx) : this;
+    }
+  }
+
   static final class DefaultRetrierWithAlg implements RetrierWithAlg {
     private final Retrier retrier;
     private final ResultRetryAlgorithm<?> alg;
+    @Nullable private final StorageMetricsContext boundMetricsContext;
 
-    private DefaultRetrierWithAlg(Retrier retrier, ResultRetryAlgorithm<?> alg) {
+    private DefaultRetrierWithAlg(
+        Retrier retrier,
+        ResultRetryAlgorithm<?> alg,
+        @Nullable StorageMetricsContext boundMetricsContext) {
       this.retrier = retrier;
       this.alg = alg;
+      this.boundMetricsContext = boundMetricsContext;
+    }
+
+    private DefaultRetrierWithAlg(Retrier retrier, ResultRetryAlgorithm<?> alg) {
+      this(retrier, alg, null);
+    }
+
+    @Override
+    public <Response, Model> Model run(Callable<Response> c, Decoder<Response, Model> d) {
+      return retrier.run(alg, c, d, boundMetricsContext);
+    }
+
+    @Override
+    public <Response, Model> Model run(
+        ResultRetryAlgorithm<?> alg, Callable<Response> c, Decoder<Response, Model> d) {
+      return retrier.run(alg, c, d, boundMetricsContext);
+    }
+
+    @Override
+    public <Response, Model> Model run(
+        Callable<Response> c,
+        Decoder<Response, Model> d,
+        @Nullable StorageMetricsContext metricsContext) {
+      return retrier.run(alg, c, d, metricsContext != null ? metricsContext : boundMetricsContext);
     }
 
     @Override
@@ -140,20 +214,7 @@ final class Retrying {
         Callable<Response> c,
         Decoder<Response, Model> d,
         @Nullable StorageMetricsContext metricsContext) {
-      return retrier.run(alg, c, d, metricsContext);
-    }
-
-    @Override
-    public <Response, Model> Model run(Callable<Response> c, Decoder<Response, Model> d) {
-      return retrier.run(alg, c, d, null);
-    }
-
-    @Override
-    public <Response, Model> Model run(
-        Callable<Response> c,
-        Decoder<Response, Model> d,
-        @Nullable StorageMetricsContext metricsContext) {
-      return retrier.run(alg, c, d, metricsContext);
+      return retrier.run(alg, c, d, metricsContext != null ? metricsContext : boundMetricsContext);
     }
   }
 
@@ -182,36 +243,8 @@ final class Retrying {
         Callable<Response> c,
         Decoder<Response, Model> d,
         @Nullable StorageMetricsContext metricsContext) {
-      if (metrics == null || metricsContext == null) {
-        return runWithoutMetrics(alg, c, d);
-      }
-
-      StorageMetricsContext activeContext = metricsContext;
-      Attributes clientAttributes = metrics.getClientAttributes();
-
-      AttributesBuilder baseBuilder = Attributes.builder();
-      baseBuilder.putAll(clientAttributes);
-      activeContext
-          .getBaseAttributes()
-          .forEach(
-              (key, val) -> {
-                if (!key.equals(StorageClientMetrics.KEY_RPC_METHOD)
-                    && !key.equals(StorageClientMetrics.KEY_NETWORK_PATH)
-                    && !key.equals(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)
-                    && !key.equals(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)) {
-                  @SuppressWarnings("unchecked")
-                  AttributeKey<Object> objKey = (AttributeKey<Object>) key;
-                  baseBuilder.put(objKey, val);
-                }
-              });
-      baseBuilder.put(
-          StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, activeContext.getOperationName());
-      Attributes baseAttributes = baseBuilder.build();
-
-      LongCounter attemptsCounter = metrics.getAttempts();
-      LongCounter errorsCounter = metrics.getErrors();
-
-      try (Scope ignore = activeContext.getOtelContext().makeCurrent()) {
+      Scope scope = metricsContext != null ? metricsContext.getOtelContext().makeCurrent() : null;
+      try {
         RetryContext ctx =
             decorator.apply(
                 RetryContext.of(
@@ -226,25 +259,29 @@ final class Retrying {
         try {
           do {
             attemptAgain.set(false);
-            activeContext.incrementAttempts();
+            if (metricsContext != null) {
+              metricsContext.incrementAttempts();
+            }
             try {
               Response result = c.call();
-              recordAttemptSuccess(attemptsCounter, baseAttributes, activeContext);
+              if (metricsContext != null) {
+                metricsContext.recordAttemptSuccess(metrics);
+              }
               return result == null ? null : d.decode(result);
             } catch (StorageException se) {
-              String errorType = StorageErrorTypeMapper.mapThrowable(se);
-              recordAttemptFailure(
-                  attemptsCounter, errorsCounter, baseAttributes, activeContext, se, errorType);
+              if (metricsContext != null) {
+                metricsContext.recordAttemptFailure(metrics, se);
+              }
               ctx.recordError(se, () -> attemptAgain.set(true), failure::set);
             } catch (IllegalArgumentException iae) {
-              String errorType = StorageErrorTypeMapper.mapThrowable(iae);
-              recordAttemptFailure(
-                  attemptsCounter, errorsCounter, baseAttributes, activeContext, iae, errorType);
+              if (metricsContext != null) {
+                metricsContext.recordAttemptFailure(metrics, iae);
+              }
               ctx.recordError(iae, () -> attemptAgain.set(true), failure::set);
             } catch (Exception e) {
-              String errorType = StorageErrorTypeMapper.mapThrowable(e);
-              recordAttemptFailure(
-                  attemptsCounter, errorsCounter, baseAttributes, activeContext, e, errorType);
+              if (metricsContext != null) {
+                metricsContext.recordAttemptFailure(metrics, e);
+              }
               BaseServiceException coalesced = StorageException.coalesce(e);
               ctx.recordError(coalesced, () -> attemptAgain.set(true), failure::set);
             }
@@ -263,166 +300,14 @@ final class Retrying {
           terminalThrowable = t;
           throw t;
         } finally {
-          if (activeContext.shouldRecordOperationOnRetrierExit()) {
-            activeContext.recordOperation(metrics, terminalThrowable);
+          if (metricsContext != null && metricsContext.shouldRecordOperationOnRetrierExit()) {
+            metricsContext.recordOperation(metrics, terminalThrowable);
           }
         }
-      }
-    }
-
-    private static void recordAttemptSuccess(
-        @Nullable LongCounter attemptsCounter,
-        Attributes baseAttributes,
-        StorageMetricsContext activeContext) {
-      if (attemptsCounter == null) {
-        return;
-      }
-      AttributesBuilder builder =
-          baseAttributes.toBuilder()
-              .put(StorageClientMetrics.KEY_ERROR_TYPE, StorageErrorTypeMapper.STATUS_OK)
-              .put(StorageClientMetrics.KEY_NETWORK_PATH, resolveNetworkPath(activeContext));
-      String rpcSystemName =
-          activeContext.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME);
-      if ("grpc".equals(rpcSystemName)) {
-        builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OK");
-      } else if ("http".equals(rpcSystemName)) {
-        builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 200L);
-      }
-      String rpcCode =
-          activeContext.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
-      if (rpcCode != null) {
-        builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcCode);
-      }
-      Long httpCode =
-          activeContext.getBaseAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
-      if (httpCode != null) {
-        builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, httpCode);
-      }
-      attemptsCounter.add(1, builder.build());
-    }
-
-    private static void recordAttemptFailure(
-        @Nullable LongCounter attemptsCounter,
-        @Nullable LongCounter errorsCounter,
-        Attributes baseAttributes,
-        StorageMetricsContext activeContext,
-        Throwable e,
-        String errorType) {
-      String networkPath = resolveNetworkPath(activeContext);
-      if (errorsCounter != null) {
-        Attributes errorAttributes =
-            baseAttributes.toBuilder()
-                .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
-                .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
-                .build();
-        errorsCounter.add(1, errorAttributes);
-      }
-      if (attemptsCounter != null) {
-        AttributesBuilder builder =
-            baseAttributes.toBuilder()
-                .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
-                .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath);
-        String rpcStatus = extractRpcStatusCode(e, activeContext);
-        if (rpcStatus != null) {
-          builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcStatus);
+      } finally {
+        if (scope != null) {
+          scope.close();
         }
-        Long httpStatus = extractHttpStatusCode(e, activeContext);
-        if (httpStatus != null) {
-          builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, httpStatus);
-        }
-        attemptsCounter.add(1, builder.build());
-      }
-    }
-
-    private static String resolveNetworkPath(StorageMetricsContext ctx) {
-      String path = ctx.getBaseAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH);
-      if (path != null && !path.isEmpty()) {
-        return path;
-      }
-      return StorageClientMetrics.NETWORK_PATH_CLOUDPATH;
-    }
-
-    @Nullable
-    private static String extractRpcStatusCode(Throwable e, StorageMetricsContext activeContext) {
-      String fromContext =
-          activeContext.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
-      if (fromContext != null) {
-        return fromContext;
-      }
-      Throwable curr = e;
-      while (curr != null) {
-        if (curr instanceof io.grpc.StatusRuntimeException) {
-          return ((io.grpc.StatusRuntimeException) curr).getStatus().getCode().name();
-        }
-        if (curr instanceof io.grpc.StatusException) {
-          return ((io.grpc.StatusException) curr).getStatus().getCode().name();
-        }
-        if (curr instanceof com.google.api.gax.rpc.ApiException) {
-          return ((com.google.api.gax.rpc.ApiException) curr).getStatusCode().getCode().name();
-        }
-        curr = curr.getCause();
-      }
-      return null;
-    }
-
-    @Nullable
-    private static Long extractHttpStatusCode(Throwable e, StorageMetricsContext activeContext) {
-      Long fromContext =
-          activeContext.getBaseAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
-      if (fromContext != null) {
-        return fromContext;
-      }
-      Throwable curr = e;
-      while (curr != null) {
-        if (curr instanceof StorageException) {
-          int code = ((StorageException) curr).getCode();
-          if (code > 0) {
-            return (long) code;
-          }
-        }
-        if (curr instanceof com.google.api.client.http.HttpResponseException) {
-          int code = ((com.google.api.client.http.HttpResponseException) curr).getStatusCode();
-          if (code > 0) {
-            return (long) code;
-          }
-        }
-        curr = curr.getCause();
-      }
-      return null;
-    }
-
-    private <Response, Model> Model runWithoutMetrics(
-        ResultRetryAlgorithm<?> alg, Callable<Response> c, Decoder<Response, Model> d) {
-      RetryContext ctx =
-          decorator.apply(
-              RetryContext.of(
-                  RetryContext.directScheduledExecutorService(),
-                  deps,
-                  alg,
-                  Jitterer.threadLocalRandom()));
-      AtomicReference<Exception> failure = new AtomicReference<>();
-      AtomicBoolean attemptAgain = new AtomicBoolean(false);
-
-      do {
-        attemptAgain.set(false);
-        try {
-          Response result = c.call();
-          return result == null ? null : d.decode(result);
-        } catch (StorageException se) {
-          ctx.recordError(se, () -> attemptAgain.set(true), failure::set);
-        } catch (IllegalArgumentException iae) {
-          ctx.recordError(iae, () -> attemptAgain.set(true), failure::set);
-        } catch (Exception e) {
-          BaseServiceException coalesced = StorageException.coalesce(e);
-          ctx.recordError(coalesced, () -> attemptAgain.set(true), failure::set);
-        }
-      } while (attemptAgain.get());
-
-      Exception throwable = failure.get();
-      if (throwable instanceof StorageException) {
-        throw (StorageException) throwable;
-      } else {
-        throw StorageException.coalesce(throwable);
       }
     }
   }
