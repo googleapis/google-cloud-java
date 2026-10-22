@@ -197,13 +197,9 @@ final class StorageMetricsContext {
               .put(StorageClientMetrics.KEY_NETWORK_PATH, resolveNetworkPath());
       String rpcSystemName = baseAttributes.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME);
       if ("grpc".equals(rpcSystemName)) {
-        String rpcCode = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
-        builder.put(
-            StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcCode != null ? rpcCode : "OK");
+        builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OK");
       } else if ("http".equals(rpcSystemName)) {
-        Long httpCode = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
-        builder.put(
-            StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, httpCode != null ? httpCode : 200L);
+        builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 200L);
       }
       metrics.getAttempts().add(1, builder.build());
     }
@@ -275,10 +271,6 @@ final class StorageMetricsContext {
 
   @Nullable
   private String extractRpcStatusCode(Throwable e) {
-    String fromContext = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
-    if (fromContext != null) {
-      return fromContext;
-    }
     Throwable curr = e;
     while (curr != null) {
       if (curr instanceof io.grpc.StatusRuntimeException) {
@@ -297,10 +289,6 @@ final class StorageMetricsContext {
 
   @Nullable
   private Long extractHttpStatusCode(Throwable e) {
-    Long fromContext = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
-    if (fromContext != null) {
-      return fromContext;
-    }
     Throwable curr = e;
     while (curr != null) {
       if (curr instanceof StorageException) {

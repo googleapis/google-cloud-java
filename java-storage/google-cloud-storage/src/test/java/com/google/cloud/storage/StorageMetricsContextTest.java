@@ -27,7 +27,6 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import io.grpc.CallOptions;
 import io.grpc.Status;
-import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
@@ -40,9 +39,25 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import org.checkerframework.checker.nullness.qual.Nullable;
+import org.junit.Before;
 import org.junit.Test;
 
 public final class StorageMetricsContextTest {
+
+  private InMemoryMetricReader reader;
+  private SdkMeterProvider provider;
+  private StorageClientMetrics metrics;
+
+  @Before
+  public void setUp() {
+    resetMetrics();
+  }
+
+  private void resetMetrics() {
+    reader = InMemoryMetricReader.create();
+    provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    metrics = StorageClientMetrics.create(provider, true, false);
+  }
 
   @Test
   public void create_initializesDefaultState() {
@@ -157,20 +172,6 @@ public final class StorageMetricsContextTest {
 
     ApiCallContext attachedContext = context.attach(callContext);
     assertThat(attachedContext).isNotNull();
-
-    StorageMetricsContext extracted = StorageMetricsContext.from(attachedContext);
-    assertThat(extracted).isSameInstanceAs(context);
-
-    assertThat(StorageMetricsContext.from((ApiCallContext) null)).isNull();
-  }
-
-  @Test
-  public void transportAttachment_apiCallContext_whenGrpcCallContext_attachesCallOptions() {
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get");
-    ApiCallContext callContext = GrpcCallContext.createDefault();
-
-    ApiCallContext attachedContext = context.attach(callContext);
-    assertThat(attachedContext).isNotNull();
     assertThat(attachedContext).isInstanceOf(GrpcCallContext.class);
 
     GrpcCallContext grpcCallContext = (GrpcCallContext) attachedContext;
@@ -187,6 +188,8 @@ public final class StorageMetricsContextTest {
         GrpcCallContext.createDefault().withCallOptions(context.attach(CallOptions.DEFAULT));
     assertThat(StorageMetricsContext.from((ApiCallContext) callOptionsOnlyContext))
         .isSameInstanceAs(context);
+
+    assertThat(StorageMetricsContext.from((ApiCallContext) null)).isNull();
   }
 
   @Test
@@ -227,17 +230,10 @@ public final class StorageMetricsContextTest {
     assertThat(context3.getOperationName()).isEqualTo("DeleteObject");
     assertThat(context3.getBaseAttributes()).isEqualTo(customAttrs);
     assertThat(context3.getOtelContext()).isSameInstanceAs(customContext);
-
-    context1.incrementAttempts();
-    assertThat(context1.getAttemptCount()).isEqualTo(1);
   }
 
   @Test
   public void recordOperation_isIdempotent() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
     StorageMetricsContext context = StorageMetricsContext.createForMultiStep("WriteObject");
     context.recordOperation(metrics, null);
     context.recordOperation(metrics, null);
@@ -254,25 +250,21 @@ public final class StorageMetricsContextTest {
   }
 
   @Test
-  public void recordAttemptSuccess_nullMetrics_noOp() {
+  public void recordAttempt_nullOrDisabledMetrics_noOp() {
     StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get");
-    context.recordAttemptSuccess(null);
-  }
 
-  @Test
-  public void recordAttemptSuccess_whenAttemptsNull_noOp() {
-    SdkMeterProvider provider = SdkMeterProvider.builder().build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, false, false);
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get");
-    context.recordAttemptSuccess(metrics);
+    context.recordAttemptSuccess(null);
+    context.recordAttemptFailure(null, new RuntimeException("boom"));
+
+    StorageClientMetrics disabledMetrics = StorageClientMetrics.create(provider, false, false);
+    context.recordAttemptSuccess(disabledMetrics);
+    context.recordAttemptFailure(disabledMetrics, new RuntimeException("err"));
+
+    assertThat(reader.collectAllMetrics()).isEmpty();
   }
 
   @Test
   public void recordAttemptSuccess_defaultAttributes() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
     StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get");
     context.recordAttemptSuccess(metrics);
 
@@ -297,11 +289,12 @@ public final class StorageMetricsContextTest {
 
   @Test
   public void recordAttemptSuccess_grpcSystemName_setsRpcStatusCodeOk() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    Attributes base = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc");
+    Attributes base =
+        Attributes.of(
+            StorageClientMetrics.KEY_RPC_SYSTEM_NAME,
+            "grpc",
+            StorageClientMetrics.KEY_NETWORK_PATH,
+            StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
     StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
     context.recordAttemptSuccess(metrics);
 
@@ -312,14 +305,12 @@ public final class StorageMetricsContextTest {
         .isEqualTo("OK");
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
         .isNull();
+    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
   }
 
   @Test
   public void recordAttemptSuccess_httpSystemName_setsHttpStatusCode200() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
     Attributes base = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http");
     StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
     context.recordAttemptSuccess(metrics);
@@ -334,89 +325,121 @@ public final class StorageMetricsContextTest {
   }
 
   @Test
-  public void recordAttemptSuccess_overridesFromBaseAttributes_grpc() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
+  public void recordAttemptFailure_grpc_extractsRpcStatusAndNeverSetsHttpCode() {
     Attributes base =
-        Attributes.builder()
-            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-            .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "ALREADY_EXISTS")
-            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 204L)
-            .put(
-                StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
-            .build();
+        Attributes.of(
+            StorageClientMetrics.KEY_RPC_SYSTEM_NAME,
+            "grpc",
+            StorageClientMetrics.KEY_NETWORK_PATH,
+            StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
     StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
-    context.recordAttemptSuccess(metrics);
 
+    // StatusRuntimeException (NOT_FOUND)
+    context.recordAttemptFailure(metrics, Status.NOT_FOUND.asRuntimeException());
     Collection<MetricData> collected = reader.collectAllMetrics();
-    LongPointData point =
+    LongPointData attemptPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
-    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("NOT_FOUND");
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+        .isEqualTo("NOT_FOUND");
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
+        .isNull();
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+
+    LongPointData errorPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("NOT_FOUND");
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+
+    // StatusException (PERMISSION_DENIED)
+    resetMetrics();
+    context.recordAttemptFailure(metrics, Status.PERMISSION_DENIED.asException());
+    collected = reader.collectAllMetrics();
+    attemptPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("PERMISSION_DENIED");
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+        .isEqualTo("PERMISSION_DENIED");
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
+        .isNull();
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+
+    errorPoint = getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("PERMISSION_DENIED");
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+
+    // ApiException (ALREADY_EXISTS)
+    resetMetrics();
+    ApiException apiException =
+        new ApiException(
+            new StatusRuntimeException(Status.ALREADY_EXISTS),
+            GrpcStatusCode.of(Status.Code.ALREADY_EXISTS),
+            false);
+    context.recordAttemptFailure(metrics, apiException);
+    collected = reader.collectAllMetrics();
+    attemptPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
         .isEqualTo("ALREADY_EXISTS");
-    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+        .isEqualTo("ALREADY_EXISTS");
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
         .isNull();
-    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
-  }
 
-  @Test
-  public void recordAttemptSuccess_overridesFromBaseAttributes_http() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
+    errorPoint = getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("ALREADY_EXISTS");
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
 
-    Attributes base =
-        Attributes.builder()
-            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
-            .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "ALREADY_EXISTS")
-            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 204L)
-            .put(
-                StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
-            .build();
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
-    context.recordAttemptSuccess(metrics);
-
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    LongPointData point =
+    // StorageException (412 wrapping ApiException FAILED_PRECONDITION)
+    resetMetrics();
+    ApiException innerApiException =
+        new ApiException(
+            new StatusRuntimeException(Status.FAILED_PRECONDITION),
+            GrpcStatusCode.of(Status.Code.FAILED_PRECONDITION),
+            false);
+    StorageException se = new StorageException(412, "Precondition Failed", innerApiException);
+    context.recordAttemptFailure(metrics, se);
+    collected = reader.collectAllMetrics();
+    attemptPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
-    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo(204L);
-    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("FAILED_PRECONDITION");
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+        .isEqualTo("FAILED_PRECONDITION");
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
         .isNull();
-    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+
+    errorPoint = getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("FAILED_PRECONDITION");
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
   }
 
   @Test
-  public void recordAttemptFailure_nullMetrics_noOp() {
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get");
-    context.recordAttemptFailure(null, new RuntimeException("boom"));
-  }
-
-  @Test
-  public void recordAttemptFailure_whenInstrumentsNull_noOp() {
-    SdkMeterProvider provider = SdkMeterProvider.builder().build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, false, false);
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get");
-    context.recordAttemptFailure(metrics, new RuntimeException("err"));
-  }
-
-  @Test
-  public void recordAttemptFailure_storageException() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
+  public void recordAttemptFailure_http_extractsHttpStatusAndNeverSetsRpcCode() {
     Attributes base = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http");
     StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
+
+    // StorageException with HTTP code 404 (NOT_FOUND)
     StorageException se = new StorageException(404, "Not Found");
     context.recordAttemptFailure(metrics, se);
 
     Collection<MetricData> collected = reader.collectAllMetrics();
-
-    // Verify attempts counter
     LongPointData attemptPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
     assertThat(attemptPoint.getValue()).isEqualTo(1L);
@@ -429,7 +452,6 @@ public final class StorageMetricsContextTest {
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
 
-    // Verify errors counter
     LongPointData errorPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
     assertThat(errorPoint.getValue()).isEqualTo(1L);
@@ -439,117 +461,38 @@ public final class StorageMetricsContextTest {
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
     assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
         .isEqualTo("storage.objects.get");
-  }
 
-  @Test
-  public void recordAttemptFailure_statusRuntimeException() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    Attributes base = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc");
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
-    StatusRuntimeException sre = Status.NOT_FOUND.asRuntimeException();
-    context.recordAttemptFailure(metrics, sre);
-
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    LongPointData attemptPoint =
-        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
-        .isEqualTo("NOT_FOUND");
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
-        .isEqualTo("NOT_FOUND");
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isNull();
-
-    LongPointData errorPoint =
-        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
-    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
-        .isEqualTo("NOT_FOUND");
-  }
-
-  @Test
-  public void recordAttemptFailure_statusException() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    Attributes base = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc");
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
-    StatusException se = Status.PERMISSION_DENIED.asException();
-    context.recordAttemptFailure(metrics, se);
-
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    LongPointData attemptPoint =
-        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
-        .isEqualTo("PERMISSION_DENIED");
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
-        .isEqualTo("PERMISSION_DENIED");
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isNull();
-  }
-
-  @Test
-  public void recordAttemptFailure_apiException() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    Attributes base = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc");
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
-    ApiException apiException =
-        new ApiException(
-            new StatusRuntimeException(Status.ALREADY_EXISTS),
-            GrpcStatusCode.of(Status.Code.ALREADY_EXISTS),
-            false);
-    context.recordAttemptFailure(metrics, apiException);
-
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    LongPointData attemptPoint =
-        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
-        .isEqualTo("ALREADY_EXISTS");
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
-        .isEqualTo("ALREADY_EXISTS");
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isNull();
-  }
-
-  @Test
-  public void recordAttemptFailure_httpResponseException() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    Attributes base = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http");
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
+    // HttpResponseException with HTTP code 429 (RESOURCE_EXHAUSTED)
+    resetMetrics();
     HttpResponseException hre =
         new HttpResponseException.Builder(429, "Too Many Requests", new HttpHeaders()).build();
     context.recordAttemptFailure(metrics, hre);
 
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    LongPointData attemptPoint =
+    collected = reader.collectAllMetrics();
+    attemptPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(attemptPoint.getValue()).isEqualTo(1L);
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
         .isEqualTo("RESOURCE_EXHAUSTED");
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
         .isEqualTo(429L);
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isNull();
+
+    errorPoint = getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getValue()).isEqualTo(1L);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo("RESOURCE_EXHAUSTED");
   }
 
   @Test
-  public void recordAttemptFailure_nestedCause() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
+  public void recordAttemptFailure_nestedCause_extractsStatusFromCauseChain() {
     Attributes grpcBase = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc");
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", grpcBase);
+    StorageMetricsContext grpcContext =
+        StorageMetricsContext.create("storage.objects.get", grpcBase);
     Exception wrappedGrpc =
         new RuntimeException(new IllegalStateException(Status.UNAVAILABLE.asRuntimeException()));
-    context.recordAttemptFailure(metrics, wrappedGrpc);
+    grpcContext.recordAttemptFailure(metrics, wrappedGrpc);
 
     Collection<MetricData> collected = reader.collectAllMetrics();
     LongPointData attemptPoint =
@@ -559,14 +502,13 @@ public final class StorageMetricsContextTest {
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
         .isNull();
 
-    reader = InMemoryMetricReader.create();
-    provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    metrics = StorageClientMetrics.create(provider, true, false);
+    resetMetrics();
     Attributes httpBase = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http");
     StorageMetricsContext httpContext =
         StorageMetricsContext.create("storage.objects.get", httpBase);
     Exception wrappedHttp = new RuntimeException(new StorageException(503, "Service Unavailable"));
     httpContext.recordAttemptFailure(metrics, wrappedHttp);
+
     collected = reader.collectAllMetrics();
     attemptPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
@@ -577,108 +519,13 @@ public final class StorageMetricsContextTest {
   }
 
   @Test
-  public void recordAttemptFailure_overridesFromBaseAttributes_grpc() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    Attributes base =
-        Attributes.builder()
-            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-            .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OVERRIDDEN_RPC")
-            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 999L)
-            .put(
-                StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
-            .build();
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
-    context.recordAttemptFailure(metrics, new StorageException(404, "Not Found"));
-
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    LongPointData attemptPoint =
-        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
-        .isEqualTo("OVERRIDDEN_RPC");
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isNull();
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
-        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
-
-    LongPointData errorPoint =
-        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
-    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
-        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
-  }
-
-  @Test
-  public void recordAttemptFailure_overridesFromBaseAttributes_http() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    Attributes base =
-        Attributes.builder()
-            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
-            .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OVERRIDDEN_RPC")
-            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 999L)
-            .put(
-                StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_DIRECTPATH)
-            .build();
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
-    context.recordAttemptFailure(metrics, new StorageException(404, "Not Found"));
-
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    LongPointData attemptPoint =
-        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo(999L);
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
-        .isNull();
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
-        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
-
-    LongPointData errorPoint =
-        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
-    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
-        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
-  }
-
-  @Test
-  public void recordAttemptFailure_grpc_neverSetsHttpCode_evenForStorageException() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    Attributes base = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc");
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
-
-    ApiException apiException =
-        new ApiException(
-            new StatusRuntimeException(Status.FAILED_PRECONDITION),
-            GrpcStatusCode.of(Status.Code.FAILED_PRECONDITION),
-            false);
-    StorageException se = new StorageException(412, "Precondition Failed", apiException);
-    context.recordAttemptFailure(metrics, se);
-
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    LongPointData attemptPoint =
-        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
-        .isEqualTo("FAILED_PRECONDITION");
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isNull();
-  }
-
-  @Test
-  public void recordAttemptFailure_grpc_defaultsToUnknown_whenRpcStatusNull() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    Attributes base = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc");
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
+  public void recordAttemptFailure_missingStatusCode_defaultsToUnknownOrZero() {
+    Attributes grpcBase = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc");
+    StorageMetricsContext grpcContext =
+        StorageMetricsContext.create("storage.objects.get", grpcBase);
 
     // RuntimeException without any gRPC or ApiException cause
-    context.recordAttemptFailure(metrics, new RuntimeException("generic failure"));
+    grpcContext.recordAttemptFailure(metrics, new RuntimeException("generic failure"));
 
     Collection<MetricData> collected = reader.collectAllMetrics();
     LongPointData attemptPoint =
@@ -687,24 +534,19 @@ public final class StorageMetricsContextTest {
         .isEqualTo("UNKNOWN");
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
         .isNull();
-  }
 
-  @Test
-  public void recordAttemptFailure_http_neverSetsRpcCode_andDefaultsToZero_whenHttpStatusNull() {
-    InMemoryMetricReader reader = InMemoryMetricReader.create();
-    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
-
-    Attributes base = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http");
-    StorageMetricsContext context = StorageMetricsContext.create("storage.objects.get", base);
+    resetMetrics();
+    Attributes httpBase = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http");
+    StorageMetricsContext httpContext =
+        StorageMetricsContext.create("storage.objects.get", httpBase);
 
     // StatusRuntimeException has a gRPC status code, but rpcSystemName is "http",
     // and it has no HTTP status code (extractHttpStatusCode returns null).
     StatusRuntimeException sre = Status.NOT_FOUND.asRuntimeException();
-    context.recordAttemptFailure(metrics, sre);
+    httpContext.recordAttemptFailure(metrics, sre);
 
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    LongPointData attemptPoint =
+    collected = reader.collectAllMetrics();
+    attemptPoint =
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
         .isEqualTo(0L);
