@@ -780,18 +780,25 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
             : getOptions().createMetricsContext("RewriteObject");
     GrpcCallContext retryContext = Retrying.newCallContext(initialContext);
     RetrierWithAlg retrierWithAlg = retrier.withAlg(retryAlgorithmManager.idempotent());
-    return retrier.run(
-        retryAlgorithmManager.getFor(req),
-        () -> callable.call(req, retryContext),
-        (resp) -> {
-          GapicCopyWriter writer =
-              new GapicCopyWriter(this, callable, retrierWithAlg, req, resp, multiContext);
-          if (resp.getDone() && multiContext != null) {
-            multiContext.recordOperation(getOptions().getStorageClientMetrics(), null);
-          }
-          return writer;
-        },
-        initialContext);
+    try {
+      return retrier.run(
+          retryAlgorithmManager.getFor(req),
+          () -> callable.call(req, retryContext),
+          (resp) -> {
+            GapicCopyWriter writer =
+                new GapicCopyWriter(this, callable, retrierWithAlg, req, resp, multiContext);
+            if (resp.getDone() && multiContext != null) {
+              multiContext.recordOperation(getOptions().getStorageClientMetrics(), null);
+            }
+            return writer;
+          },
+          initialContext);
+    } catch (Throwable t) {
+      if (multiContext != null) {
+        multiContext.recordOperation(getOptions().getStorageClientMetrics(), t);
+      }
+      throw t;
+    }
   }
 
   @Override
@@ -909,17 +916,25 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     WriteObjectRequest req = getWriteObjectRequest(blobInfo, opts);
     Hasher hasher = opts.getHasher();
     StorageMetricsContext multiContext = getOptions().createMultiStepMetricsContext("WriteObject");
-    GrpcCallContext startContext =
-        multiContext != null
-            ? Retrying.newCallContext(multiContext.asSubAttemptContext())
-            : Retrying.newCallContext();
-    GrpcCallContext mergedStart = Utils.merge(grpcCallContext, startContext);
-    // in JSON, the starting of the resumable session happens before the invocation of write can
-    // happen. Emulate the same thing here.
-    //  1. create the future
-    ApiFuture<ResumableWrite> startResumableWrite = startResumableWrite(mergedStart, req, opts);
-    //  2. await the result of the future
-    ResumableWrite resumableWrite = ApiFutureUtils.await(startResumableWrite);
+    ResumableWrite resumableWrite;
+    try {
+      GrpcCallContext startContext =
+          multiContext != null
+              ? Retrying.newCallContext(multiContext.asSubAttemptContext())
+              : Retrying.newCallContext();
+      GrpcCallContext mergedStart = Utils.merge(grpcCallContext, startContext);
+      // in JSON, the starting of the resumable session happens before the invocation of write can
+      // happen. Emulate the same thing here.
+      //  1. create the future
+      ApiFuture<ResumableWrite> startResumableWrite = startResumableWrite(mergedStart, req, opts);
+      //  2. await the result of the future
+      resumableWrite = ApiFutureUtils.await(startResumableWrite);
+    } catch (Throwable t) {
+      if (multiContext != null) {
+        multiContext.recordOperation(getOptions().getStorageClientMetrics(), t);
+      }
+      throw t;
+    }
     //  3. wrap the result in another future container before constructing the BlobWriteChannel
     ApiFuture<ResumableWrite> wrapped = ApiFutures.immediateFuture(resumableWrite);
     return new GrpcBlobWriteChannel(

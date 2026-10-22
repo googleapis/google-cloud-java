@@ -34,6 +34,7 @@ final class GapicCopyWriter extends CopyWriter {
   private final RewriteObjectRequest originalRequest;
   private final RewriteResponse initialResponse;
   @Nullable private final StorageMetricsContext metricsContext;
+  private boolean operationRecorded;
 
   private RewriteResponse mostRecentResponse;
 
@@ -60,15 +61,26 @@ final class GapicCopyWriter extends CopyWriter {
     this.mostRecentResponse = initialResponse;
     this.originalRequest = originalRequest;
     this.metricsContext = metricsContext;
+    this.operationRecorded = initialResponse.getDone();
+  }
+
+  private void recordOperation(@Nullable Throwable error) {
+    if (metricsContext != null && !operationRecorded) {
+      metricsContext.recordOperation(storage.getOptions().getStorageClientMetrics(), error);
+      operationRecorded = true;
+    }
   }
 
   @Override
   public Blob getResult() {
-    while (!isDone()) {
-      copyChunk();
-    }
-    if (metricsContext != null) {
-      metricsContext.recordOperation(storage.getOptions().getStorageClientMetrics(), null);
+    try {
+      while (!isDone()) {
+        copyChunk();
+      }
+      recordOperation(null);
+    } catch (Throwable t) {
+      recordOperation(t);
+      throw t;
     }
     BlobInfo info = Conversions.grpc().blobInfo().decode(mostRecentResponse.getResource());
     return info.asBlob(storage);
@@ -92,20 +104,27 @@ final class GapicCopyWriter extends CopyWriter {
   @Override
   public void copyChunk() {
     if (!isDone()) {
-      RewriteObjectRequest req =
-          originalRequest.toBuilder().setRewriteToken(mostRecentResponse.getRewriteToken()).build();
-      StorageMetricsContext chunkContext =
-          metricsContext != null
-              ? metricsContext.asSubAttemptContext()
-              : storage.getOptions().createMetricsContext("RewriteObject");
-      GrpcCallContext retryContext = Retrying.newCallContext(chunkContext);
-      RewriteResponse resp =
-          retrier.run(() -> callable.call(req, retryContext), Decoder.identity(), chunkContext);
-      if (resp != null) {
-        mostRecentResponse = resp;
-      }
-      if (isDone() && metricsContext != null) {
-        metricsContext.recordOperation(storage.getOptions().getStorageClientMetrics(), null);
+      try {
+        RewriteObjectRequest req =
+            originalRequest.toBuilder()
+                .setRewriteToken(mostRecentResponse.getRewriteToken())
+                .build();
+        StorageMetricsContext chunkContext =
+            metricsContext != null
+                ? metricsContext.asSubAttemptContext()
+                : storage.getOptions().createMetricsContext("RewriteObject");
+        GrpcCallContext retryContext = Retrying.newCallContext(chunkContext);
+        RewriteResponse resp =
+            retrier.run(() -> callable.call(req, retryContext), Decoder.identity(), chunkContext);
+        if (resp != null) {
+          mostRecentResponse = resp;
+        }
+        if (isDone()) {
+          recordOperation(null);
+        }
+      } catch (Throwable t) {
+        recordOperation(t);
+        throw t;
       }
     }
   }
