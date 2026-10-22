@@ -636,6 +636,56 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
+  public void testCreatingPreparedAndCallableStatementsDoesNotRegisterChildLoggers()
+      throws Exception {
+    BigQueryConnection connection = mock(BigQueryConnection.class);
+    doReturn("leak-test-connection").when(connection).getConnectionId();
+    doReturn(BigQueryConnection.SessionState.empty()).when(connection).getSessionStateSnapshot();
+
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    // Warm up so that any one-time, class-level logger is registered before we measure.
+    new BigQueryPreparedStatement(connection, "SELECT 1");
+    new BigQueryCallableStatement(connection, "CALL my_proc()");
+    int childrenBefore = childLoggerCount(rootLogger);
+
+    for (int i = 0; i < OBJECT_COUNT; i++) {
+      new BigQueryPreparedStatement(connection, "SELECT 1");
+      new BigQueryCallableStatement(connection, "CALL my_proc()");
+    }
+
+    assertEquals(
+        childrenBefore,
+        childLoggerCount(rootLogger),
+        "Creating "
+            + OBJECT_COUNT
+            + " PreparedStatements and CallableStatements must not register additional child"
+            + " loggers on the driver root logger");
+  }
+
+  @Test
+  public void testCreatingParameterHandlersAndBulkInsertWritersDoesNotRegisterChildLoggers()
+      throws ReflectiveOperationException {
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    // Warm up so that any one-time, class-level logger is registered before we measure.
+    new BigQueryParameterHandler(1);
+    new BigQueryJdbcBulkInsertWriter();
+    int childrenBefore = childLoggerCount(rootLogger);
+
+    for (int i = 0; i < OBJECT_COUNT; i++) {
+      new BigQueryParameterHandler(1);
+      new BigQueryJdbcBulkInsertWriter();
+    }
+
+    assertEquals(
+        childrenBefore,
+        childLoggerCount(rootLogger),
+        "Creating "
+            + OBJECT_COUNT
+            + " ParameterHandlers and BulkInsertWriters must not register additional child loggers"
+            + " on the driver root logger");
+  }
+
+  @Test
   public void testCreatingDatabaseMetaDataDoesNotRegisterChildLoggers()
       throws ReflectiveOperationException {
     BigQueryConnection connection = mock(BigQueryConnection.class);

@@ -75,7 +75,8 @@ import java.util.List;
 import java.util.Queue;
 
 class BigQueryPreparedStatement extends BigQueryStatement implements PreparedStatement {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryPreparedStatement.class.getName());
   private static final char POSITIONAL_PARAMETER_CHAR = '?';
   // parameterHandler is inherited from BigQueryStatement
   protected final int parameterCount;
