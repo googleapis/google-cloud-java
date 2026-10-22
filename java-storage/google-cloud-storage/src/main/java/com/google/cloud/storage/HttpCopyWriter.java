@@ -58,14 +58,21 @@ public class HttpCopyWriter extends CopyWriter {
 
   @Override
   public Blob getResult() {
-    while (!isDone()) {
-      copyChunk();
+    try {
+      while (!isDone()) {
+        copyChunk();
+      }
+      if (metricsContext != null) {
+        metricsContext.recordOperation(serviceOptions.getStorageClientMetrics(), null);
+      }
+      BlobInfo info = Conversions.json().blobInfo().decode(rewriteResponse.result);
+      return info.asBlob(serviceOptions.getService());
+    } catch (Throwable t) {
+      if (metricsContext != null) {
+        metricsContext.recordOperation(serviceOptions.getStorageClientMetrics(), t);
+      }
+      throw t;
     }
-    if (metricsContext != null) {
-      metricsContext.recordOperation(serviceOptions.getStorageClientMetrics(), null);
-    }
-    BlobInfo info = Conversions.json().blobInfo().decode(rewriteResponse.result);
-    return info.asBlob(serviceOptions.getService());
   }
 
   @Override
@@ -85,24 +92,31 @@ public class HttpCopyWriter extends CopyWriter {
 
   @Override
   public void copyChunk() {
-    if (!isDone()) {
-      RewriteRequest rewriteRequest = rewriteResponse.rewriteRequest;
-      StorageMetricsContext chunkContext =
-          metricsContext != null
-              ? metricsContext.asSubAttemptContext()
-              : serviceOptions.createMetricsContext("RewriteObject");
-      RewriteResponse resp =
-          retrier.run(
-              serviceOptions.getRetryAlgorithmManager().getForObjectsRewrite(rewriteRequest),
-              () -> storageRpc.continueRewrite(rewriteResponse),
-              Decoder.identity(),
-              chunkContext);
-      if (resp != null) {
-        this.rewriteResponse = resp;
+    try {
+      if (!isDone()) {
+        RewriteRequest rewriteRequest = rewriteResponse.rewriteRequest;
+        StorageMetricsContext chunkContext =
+            metricsContext != null
+                ? metricsContext
+                : serviceOptions.createMetricsContext("RewriteObject");
+        RewriteResponse resp =
+            retrier.run(
+                serviceOptions.getRetryAlgorithmManager().getForObjectsRewrite(rewriteRequest),
+                () -> storageRpc.continueRewrite(rewriteResponse),
+                Decoder.identity(),
+                chunkContext);
+        if (resp != null) {
+          this.rewriteResponse = resp;
+        }
+        if (isDone() && metricsContext != null) {
+          metricsContext.recordOperation(serviceOptions.getStorageClientMetrics(), null);
+        }
       }
-      if (isDone() && metricsContext != null) {
-        metricsContext.recordOperation(serviceOptions.getStorageClientMetrics(), null);
+    } catch (Throwable t) {
+      if (metricsContext != null) {
+        metricsContext.recordOperation(serviceOptions.getStorageClientMetrics(), t);
       }
+      throw t;
     }
   }
 

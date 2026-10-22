@@ -91,7 +91,9 @@ final class BlobWriteChannelV2 extends BaseStorageWriteChannel<StorageObject> {
                 .withRetryConfig(
                     blobChannelContext
                         .getRetrier()
-                        .withAlg(blobChannelContext.getRetryAlgorithmManager().idempotent()))
+                        .withAlg(
+                            blobChannelContext.getRetryAlgorithmManager().idempotent(),
+                            getMetricsContext()))
                 .setHasher(start.getHasher())
                 .buffered(getBufferHandle())
                 .setStartAsync(ApiFutures.immediateFuture(start))
