@@ -200,6 +200,10 @@ abstract class BaseStorageReadChannel<T> implements StorageReadChannel {
     }
   }
 
+  protected final @Nullable StorageMetricsContext getMetricsContext() {
+    return metricsContext;
+  }
+
   protected abstract LazyReadChannel<?, T> newLazyReadChannel();
 
   private void maybeResetChannel(boolean freeBuffer) throws IOException {

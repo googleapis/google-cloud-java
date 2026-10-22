@@ -188,6 +188,10 @@ abstract class BaseStorageWriteChannel<T> implements StorageWriteChannel {
     this.open = isOpen;
   }
 
+  protected final @Nullable StorageMetricsContext getMetricsContext() {
+    return metricsContext;
+  }
+
   protected abstract LazyWriteChannel<T> newLazyWriteChannel();
 
   private LazyWriteChannel<T> internalGetLazyChannel() {

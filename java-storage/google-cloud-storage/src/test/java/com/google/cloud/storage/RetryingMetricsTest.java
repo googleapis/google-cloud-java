@@ -389,6 +389,109 @@ public final class RetryingMetricsTest {
     assertThat(observedContext[0]).isEqualTo(customContext.getOtelContext());
   }
 
+  @Test
+  public void withAlg_withMultiStepMetricsContext_runTwoArgs_recordsAttemptsAndErrors() {
+    StorageMetricsContext multiContext = StorageMetricsContext.createForMultiStep("MultiStepOp");
+    RetrierWithAlg retrier = baseRetrier.withAlg(Retrying.alwaysRetry(), multiContext);
+    AtomicInteger attempts = new AtomicInteger(0);
+
+    String result =
+        retrier.run(
+            () -> {
+              if (attempts.incrementAndGet() < 2) {
+                throw new StorageException(503, "Unavailable");
+              }
+              return "recovered";
+            },
+            Decoder.identity());
+
+    assertThat(result).isEqualTo("recovered");
+    assertThat(attempts.get()).isEqualTo(2);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_OPERATIONS)).isEqualTo(0L);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_ATTEMPTS)).isEqualTo(2L);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_ERRORS)).isEqualTo(1L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 2L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 1L);
+  }
+
+  @Test
+  public void withAlg_withMultiStepMetricsContext_runThreeArgs_recordsAttemptsAndErrors() {
+    StorageMetricsContext multiContext = StorageMetricsContext.createForMultiStep("MultiStepOp");
+    RetrierWithAlg retrier = baseRetrier.withAlg(Retrying.neverRetry(), multiContext);
+    AtomicInteger attempts = new AtomicInteger(0);
+
+    String result =
+        retrier.run(
+            Retrying.alwaysRetry(),
+            () -> {
+              if (attempts.incrementAndGet() < 2) {
+                throw new StorageException(503, "Unavailable");
+              }
+              return "recovered";
+            },
+            Decoder.identity());
+
+    assertThat(result).isEqualTo("recovered");
+    assertThat(attempts.get()).isEqualTo(2);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_OPERATIONS)).isEqualTo(0L);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_ATTEMPTS)).isEqualTo(2L);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_ERRORS)).isEqualTo(1L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 2L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 1L);
+  }
+
+  @Test
+  public void withMetricsContext_runThreeArgs_recordsAttemptsAndErrors() {
+    StorageMetricsContext multiContext = StorageMetricsContext.createForMultiStep("MultiStepOp");
+    Retrier contextBoundRetrier = baseRetrier.withMetricsContext(multiContext);
+    AtomicInteger attempts = new AtomicInteger(0);
+
+    String result =
+        contextBoundRetrier.run(
+            Retrying.alwaysRetry(),
+            () -> {
+              if (attempts.incrementAndGet() < 2) {
+                throw new StorageException(503, "Unavailable");
+              }
+              return "recovered";
+            },
+            Decoder.identity());
+
+    assertThat(result).isEqualTo("recovered");
+    assertThat(attempts.get()).isEqualTo(2);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_OPERATIONS)).isEqualTo(0L);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_ATTEMPTS)).isEqualTo(2L);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_ERRORS)).isEqualTo(1L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 2L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 1L);
+  }
+
+  @Test
+  public void withMetricsContext_withAlg_runTwoArgs_recordsAttemptsAndErrors() {
+    StorageMetricsContext multiContext = StorageMetricsContext.createForMultiStep("MultiStepOp");
+    Retrier contextBoundRetrier = baseRetrier.withMetricsContext(multiContext);
+    RetrierWithAlg retrierWithAlg = contextBoundRetrier.withAlg(Retrying.alwaysRetry());
+    AtomicInteger attempts = new AtomicInteger(0);
+
+    String result =
+        retrierWithAlg.run(
+            () -> {
+              if (attempts.incrementAndGet() < 2) {
+                throw new StorageException(503, "Unavailable");
+              }
+              return "recovered";
+            },
+            Decoder.identity());
+
+    assertThat(result).isEqualTo("recovered");
+    assertThat(attempts.get()).isEqualTo(2);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_OPERATIONS)).isEqualTo(0L);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_ATTEMPTS)).isEqualTo(2L);
+    assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_ERRORS)).isEqualTo(1L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 2L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 1L);
+  }
+
   private Collection<MetricData> collect() {
     if (collected == null) {
       collected = reader.collectAllMetrics();

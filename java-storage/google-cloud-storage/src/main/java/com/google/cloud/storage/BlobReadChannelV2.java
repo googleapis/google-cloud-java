@@ -83,7 +83,11 @@ final class BlobReadChannelV2 extends BaseStorageReadChannel<StorageObject> {
           ReadableByteChannelSessionBuilder b =
               ResumableMedia.http()
                   .read()
-                  .byteChannel(blobReadChannelContext)
+                  .byteChannel(
+                      blobReadChannelContext.withRetrier(
+                          blobReadChannelContext
+                              .getRetrier()
+                              .withMetricsContext(getMetricsContext())))
                   .setAutoGzipDecompression(autoGzipDecompression);
           BufferHandle bufferHandle = getBufferHandle();
           // because we're erasing the specific type of channel, we need to declare it here.
@@ -198,6 +202,11 @@ final class BlobReadChannelV2 extends BaseStorageReadChannel<StorageObject> {
 
     public Retrier getRetrier() {
       return retrier;
+    }
+
+    BlobReadChannelContext withRetrier(Retrier retrier) {
+      return new BlobReadChannelContext(
+          storageOptions, retryAlgorithmManager, httpClientContext, apiaryClient, retrier);
     }
 
     /**
