@@ -36,7 +36,7 @@ do
     --filter="state=enabled" \
     --sort-by="~createTime" \
     --limit=1 \
-    --format="value(name)")
+    --format="value(name.basename())")
   
   if [ -z "${VERSION}" ]; then
     msg "Error retrieving enabled version for secret ${key}"
