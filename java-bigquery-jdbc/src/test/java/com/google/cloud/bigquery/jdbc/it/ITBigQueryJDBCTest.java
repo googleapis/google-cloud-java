@@ -73,6 +73,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class ITBigQueryJDBCTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
@@ -3095,41 +3097,35 @@ public class ITBigQueryJDBCTest extends ITBase {
     }
   }
 
-  @Test
-  public void testTimeMicrosecondPrecisionInArrayAndStruct() throws SQLException {
+  @ParameterizedTest
+  @ValueSource(strings = {"", FORCE_READ_API_PROPERTIES})
+  public void testTimeMicrosecondPrecisionInArrayAndStruct(String extraProps) throws SQLException {
     String sql =
         "SELECT "
             + "TIME '14:30:00.123456' AS top_level_time, "
             + "[TIME '14:30:00.123456', TIME '23:59:59.999999'] AS arr_time, "
             + "STRUCT(TIME '14:30:00.123456' AS t) AS struct_time";
 
-    try (Connection connRegular = DriverManager.getConnection(connection_uri);
-        Connection connHtapi =
-            DriverManager.getConnection(connection_uri + FORCE_READ_API_PROPERTIES);
-        Statement stmtRegular = connRegular.createStatement();
-        Statement stmtHtapi = connHtapi.createStatement();
-        ResultSet rsRegular = stmtRegular.executeQuery(sql);
-        ResultSet rsHtapi = stmtHtapi.executeQuery(sql)) {
+    try (Connection conn = DriverManager.getConnection(connection_uri + extraProps);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql)) {
+      assertTrue(rs.next());
 
-      for (ResultSet rs : new ResultSet[] {rsRegular, rsHtapi}) {
-        assertTrue(rs.next());
+      // Top-level TIME
+      assertEquals("14:30:00.123456", rs.getString("top_level_time"));
+      assertEquals(
+          LocalTime.of(14, 30, 0, 123_456_000), rs.getObject("top_level_time", LocalTime.class));
+      assertEquals(Time.class, rs.getTime("top_level_time").getClass());
 
-        // Top-level TIME
-        assertEquals("14:30:00.123456", rs.getString("top_level_time"));
-        assertEquals(
-            LocalTime.of(14, 30, 0, 123_456_000), rs.getObject("top_level_time", LocalTime.class));
-        assertEquals(Time.class, rs.getTime("top_level_time").getClass());
+      // ARRAY<TIME>
+      assertEquals("[14:30:00.123456, 23:59:59.999999]", rs.getString("arr_time"));
+      Array arr = rs.getArray("arr_time");
+      assertEquals("[14:30:00.123456, 23:59:59.999999]", arr.toString());
 
-        // ARRAY<TIME>
-        assertEquals("[14:30:00.123456, 23:59:59.999999]", rs.getString("arr_time"));
-        Array arr = rs.getArray("arr_time");
-        assertEquals("[14:30:00.123456, 23:59:59.999999]", arr.toString());
-
-        // STRUCT<t TIME>
-        assertEquals("{\"t\":\"14:30:00.123456\"}", rs.getString("struct_time"));
-        Struct struct = (Struct) rs.getObject("struct_time");
-        assertEquals("{\"t\":\"14:30:00.123456\"}", struct.toString());
-      }
+      // STRUCT<t TIME>
+      assertEquals("{\"t\":\"14:30:00.123456\"}", rs.getString("struct_time"));
+      Struct struct = (Struct) rs.getObject("struct_time");
+      assertEquals("{\"t\":\"14:30:00.123456\"}", struct.toString());
     }
   }
 }
