@@ -48,7 +48,6 @@ final class StorageErrorTypeMapper {
   static final String STATUS_CANCELLED = "CANCELLED";
   static final String STATUS_UNKNOWN = "UNKNOWN";
   static final String STATUS_INVALID_ARGUMENT = "INVALID_ARGUMENT";
-  static final String STATUS_DEADLINE_EXCEEDED = "TIMEOUT";
   static final String STATUS_NOT_FOUND = "NOT_FOUND";
   static final String STATUS_ALREADY_EXISTS = "ALREADY_EXISTS";
   static final String STATUS_PERMISSION_DENIED = "PERMISSION_DENIED";
@@ -284,10 +283,6 @@ final class StorageErrorTypeMapper {
     }
 
     return STATUS_UNKNOWN;
-  }
-
-  private static boolean hasSpecificClientCause(@Nullable Throwable t) {
-    return hasSpecificClientCause(t, true);
   }
 
   private static boolean hasSpecificClientCause(@Nullable Throwable t, boolean includeAuth) {
