@@ -17,6 +17,7 @@
 package com.google.cloud.storage;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.times;
@@ -34,6 +35,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
 public class CopyWriterTest {
@@ -209,5 +211,23 @@ public class CopyWriterTest {
     assertEquals(42L, restoredRewriter.getTotalBytesCopied());
     assertEquals(42L, restoredRewriter.getBlobSize());
     verify(storageRpcMock).continueRewrite(RESPONSE_WITH_OBJECT);
+  }
+
+  @Test
+  public void testCopyChunkPassesMetricsContext() {
+    HttpStorageOptions metricsOptions =
+        options.toBuilder()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(io.opentelemetry.sdk.metrics.SdkMeterProvider.builder().build())
+            .build();
+    Retrier retrierMock = Mockito.mock(Retrier.class);
+    copyWriter = new HttpCopyWriter(metricsOptions, RESPONSE_WITH_OBJECT, retrierMock);
+    copyWriter.copyChunk();
+    ArgumentCaptor<StorageMetricsContext> captor =
+        ArgumentCaptor.forClass(StorageMetricsContext.class);
+    verify(retrierMock).run(any(), any(), any(), captor.capture());
+    StorageMetricsContext context = captor.getValue();
+    assertNotNull(context);
+    assertEquals("RewriteObject", context.getOperationName());
   }
 }
