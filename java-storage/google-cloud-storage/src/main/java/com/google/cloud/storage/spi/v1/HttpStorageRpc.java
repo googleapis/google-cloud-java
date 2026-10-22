@@ -157,7 +157,9 @@ public class HttpStorageRpc implements StorageRpc {
     CensusHttpModule censusHttpModule = new CensusHttpModule(tracer, IS_RECORD_EVENTS);
     initializer = censusHttpModule.getHttpRequestInitializer(initializer);
     initializer = new InvocationIdInitializer(initializer, applicationName, tm);
-    batchRequestInitializer = censusHttpModule.getHttpRequestInitializer(null);
+    initializer = options.decorateWithMetrics(initializer);
+    batchRequestInitializer =
+        options.decorateWithMetrics(censusHttpModule.getHttpRequestInitializer(null));
     storage =
         new Storage.Builder(transport, jsonFactory, initializer)
             .setRootUrl(options.getHost())
