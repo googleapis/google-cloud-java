@@ -44,6 +44,8 @@ abstract class BaseStorageWriteChannel<T> implements StorageWriteChannel {
   private int chunkSize;
   private LazyWriteChannel<T> lazyWriteChannel;
   private BufferHandle bufferHandle;
+  @Nullable private final StorageMetricsContext metricsContext;
+  @Nullable private final StorageClientMetrics storageClientMetrics;
 
   /**
    * This is tracked for compatibility with BlobWriteChannel, such that simply creating a writer
@@ -55,12 +57,21 @@ abstract class BaseStorageWriteChannel<T> implements StorageWriteChannel {
   protected boolean writeCalledAtLeastOnce;
 
   protected BaseStorageWriteChannel(Decoder<T, BlobInfo> objectDecoder) {
+    this(objectDecoder, null, null);
+  }
+
+  protected BaseStorageWriteChannel(
+      Decoder<T, BlobInfo> objectDecoder,
+      @Nullable StorageMetricsContext metricsContext,
+      @Nullable StorageClientMetrics storageClientMetrics) {
     this.objectDecoder = objectDecoder;
     this.result = SettableApiFuture.create();
     this.lock = new ReentrantLock();
     this.open = true;
     this.chunkSize = _16MiB;
     this.writeCalledAtLeastOnce = false;
+    this.metricsContext = metricsContext;
+    this.storageClientMetrics = storageClientMetrics;
   }
 
   @Override
@@ -90,6 +101,7 @@ abstract class BaseStorageWriteChannel<T> implements StorageWriteChannel {
   @Override
   public final void close() throws IOException {
     lock.lock();
+    Throwable error = null;
     try {
       if (open && !writeCalledAtLeastOnce) {
         this.write(ByteBuffer.allocate(0));
@@ -97,9 +109,18 @@ abstract class BaseStorageWriteChannel<T> implements StorageWriteChannel {
       if (internalGetLazyChannel().isOpen()) {
         StorageException.wrapIOException(internalGetLazyChannel().getChannel()::close);
       }
+    } catch (Throwable t) {
+      error = t;
+      throw t;
     } finally {
       open = false;
-      lock.unlock();
+      try {
+        if (metricsContext != null && storageClientMetrics != null) {
+          metricsContext.recordOperation(storageClientMetrics, error);
+        }
+      } finally {
+        lock.unlock();
+      }
     }
   }
 

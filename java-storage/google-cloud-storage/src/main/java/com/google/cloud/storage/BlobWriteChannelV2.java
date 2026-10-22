@@ -25,6 +25,7 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Objects;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 final class BlobWriteChannelV2 extends BaseStorageWriteChannel<StorageObject> {
 
@@ -32,7 +33,19 @@ final class BlobWriteChannelV2 extends BaseStorageWriteChannel<StorageObject> {
   private final JsonResumableWrite start;
 
   BlobWriteChannelV2(BlobReadChannelContext blobChannelContext, JsonResumableWrite start) {
-    super(Conversions.json().blobInfo());
+    this(blobChannelContext, start, null);
+  }
+
+  BlobWriteChannelV2(
+      BlobReadChannelContext blobChannelContext,
+      JsonResumableWrite start,
+      @Nullable StorageMetricsContext metricsContext) {
+    super(
+        Conversions.json().blobInfo(),
+        metricsContext,
+        blobChannelContext.getStorageOptions() != null
+            ? blobChannelContext.getStorageOptions().getStorageClientMetrics()
+            : null);
     this.start = start;
     this.blobChannelContext = blobChannelContext;
   }

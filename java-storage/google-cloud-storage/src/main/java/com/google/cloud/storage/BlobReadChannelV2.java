@@ -28,6 +28,7 @@ import com.google.common.base.MoreObjects;
 import java.io.Serializable;
 import java.util.Map;
 import java.util.Objects;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 final class BlobReadChannelV2 extends BaseStorageReadChannel<StorageObject> {
 
@@ -40,7 +41,20 @@ final class BlobReadChannelV2 extends BaseStorageReadChannel<StorageObject> {
       StorageObject storageObject,
       Map<StorageRpc.Option, ?> opts,
       BlobReadChannelContext blobReadChannelContext) {
-    super(Conversions.json().blobInfo());
+    this(storageObject, opts, blobReadChannelContext, null);
+  }
+
+  BlobReadChannelV2(
+      StorageObject storageObject,
+      Map<StorageRpc.Option, ?> opts,
+      BlobReadChannelContext blobReadChannelContext,
+      @Nullable StorageMetricsContext metricsContext) {
+    super(
+        Conversions.json().blobInfo(),
+        metricsContext,
+        blobReadChannelContext.getStorageOptions() != null
+            ? blobReadChannelContext.getStorageOptions().getStorageClientMetrics()
+            : null);
     this.storageObject = storageObject;
     this.opts = opts;
     this.blobReadChannelContext = blobReadChannelContext;

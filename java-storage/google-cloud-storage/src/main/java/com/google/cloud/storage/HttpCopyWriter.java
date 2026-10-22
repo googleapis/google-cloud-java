@@ -21,7 +21,6 @@ import com.google.cloud.storage.Conversions.Decoder;
 import com.google.cloud.storage.Retrying.DefaultRetrier;
 import com.google.cloud.storage.Retrying.HttpRetrier;
 import com.google.cloud.storage.Retrying.Retrier;
-import com.google.cloud.storage.Retrying.RetryingDependencies;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteRequest;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
@@ -30,6 +29,7 @@ import java.io.Serializable;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.UnaryOperator;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 public class HttpCopyWriter extends CopyWriter {
 
@@ -37,19 +37,32 @@ public class HttpCopyWriter extends CopyWriter {
   private final StorageRpc storageRpc;
   private RewriteResponse rewriteResponse;
   private final Retrier retrier;
+  @Nullable private final StorageMetricsContext metricsContext;
 
   HttpCopyWriter(
       HttpStorageOptions serviceOptions, RewriteResponse rewriteResponse, Retrier retrier) {
+    this(serviceOptions, rewriteResponse, retrier, null);
+  }
+
+  HttpCopyWriter(
+      HttpStorageOptions serviceOptions,
+      RewriteResponse rewriteResponse,
+      Retrier retrier,
+      @Nullable StorageMetricsContext metricsContext) {
     this.serviceOptions = serviceOptions;
     this.rewriteResponse = rewriteResponse;
     this.storageRpc = serviceOptions.getStorageRpcV1();
     this.retrier = retrier;
+    this.metricsContext = metricsContext;
   }
 
   @Override
   public Blob getResult() {
     while (!isDone()) {
       copyChunk();
+    }
+    if (metricsContext != null) {
+      metricsContext.recordOperation(serviceOptions.getStorageClientMetrics(), null);
     }
     BlobInfo info = Conversions.json().blobInfo().decode(rewriteResponse.result);
     return info.asBlob(serviceOptions.getService());
@@ -74,11 +87,22 @@ public class HttpCopyWriter extends CopyWriter {
   public void copyChunk() {
     if (!isDone()) {
       RewriteRequest rewriteRequest = rewriteResponse.rewriteRequest;
-      this.rewriteResponse =
+      StorageMetricsContext chunkContext =
+          metricsContext != null
+              ? metricsContext.asSubAttemptContext()
+              : serviceOptions.createMetricsContext("RewriteObject");
+      RewriteResponse resp =
           retrier.run(
               serviceOptions.getRetryAlgorithmManager().getForObjectsRewrite(rewriteRequest),
               () -> storageRpc.continueRewrite(rewriteResponse),
-              Decoder.identity());
+              Decoder.identity(),
+              chunkContext);
+      if (resp != null) {
+        this.rewriteResponse = resp;
+      }
+      if (isDone() && metricsContext != null) {
+        metricsContext.recordOperation(serviceOptions.getStorageClientMetrics(), null);
+      }
     }
   }
 
@@ -230,10 +254,7 @@ public class HttpCopyWriter extends CopyWriter {
               totalBytesCopied);
       HttpRetrier httpRetrier =
           new HttpRetrier(
-              new DefaultRetrier(
-                  UnaryOperator.identity(),
-                  RetryingDependencies.simple(
-                      serviceOptions.getClock(), serviceOptions.getRetrySettings())));
+              new DefaultRetrier(UnaryOperator.identity(), serviceOptions.asRetryDependencies()));
       return new HttpCopyWriter(serviceOptions, rewriteResponse, httpRetrier);
     }
 
