@@ -22,36 +22,73 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 
 /**
- * Specialized high-performance logger for ResultSet and its related classes. Avoids expensive stack
- * trace walking (caller inference) on hot-path logging calls.
+ * High-performance logging facade for ResultSet and its related classes.
+ *
+ * <p>This is deliberately <em>not</em> a {@link java.util.logging.Logger}. Every {@code Logger}
+ * instance registers itself as a child of its parent under a JVM-wide lock and that registration is
+ * never released, so a logger-per-ResultSet leaks. Instead, one real {@link
+ * BigQueryJdbcCustomLogger} is created per class and shared; this facade holds a reference to it
+ * plus the connection ID of the ResultSet it serves.
+ *
+ * <p>Hot-path methods ({@code finestTrace} etc.) set the source class and method explicitly, so no
+ * stack-trace walking (caller inference) happens for them. The connection ID is stamped into {@code
+ * LogRecord.getParameters()[0]} on every record so {@code PerConnectionFileHandler} can route the
+ * record even when the thread-local MDC (mapped diagnostic context — the per-thread connection ID
+ * set by the JDBC proxy) is empty, which is the normal case for un-proxied ResultSet calls.
  */
-public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
-  private static final ConcurrentHashMap<String, BigQueryJdbcResultSetLogger> cache =
+public final class BigQueryJdbcResultSetLogger {
+
+  /** One registered logger per class. Bounded by the number of result-set classes. */
+  private static final ConcurrentHashMap<String, BigQueryJdbcCustomLogger> DELEGATES =
       new ConcurrentHashMap<>();
 
+  /** Facades with no connection ID are immutable and shared, matching the old caching behaviour. */
+  private static final ConcurrentHashMap<String, BigQueryJdbcResultSetLogger> GLOBAL_FACADES =
+      new ConcurrentHashMap<>();
+
+  private final BigQueryJdbcCustomLogger delegate;
   private final String targetClassName;
   private final String connectionId;
+
+  private volatile BigQueryJdbcResultSetLogger arrowStructLogger;
+  private volatile BigQueryJdbcResultSetLogger jsonStructLogger;
+  private volatile BigQueryJdbcResultSetLogger arrowArrayLogger;
+  private volatile BigQueryJdbcResultSetLogger jsonArrayLogger;
+
+  private BigQueryJdbcResultSetLogger(
+      BigQueryJdbcCustomLogger delegate, String targetClassName, String connectionId) {
+    this.delegate = delegate;
+    this.targetClassName = targetClassName;
+    this.connectionId = connectionId;
+  }
 
   public static BigQueryJdbcResultSetLogger getLogger(Class<?> clazz) {
     return getLogger(clazz, null);
   }
 
   public static BigQueryJdbcResultSetLogger getLogger(Class<?> clazz, String connectionId) {
+    String className = clazz.getName();
+    BigQueryJdbcCustomLogger delegate =
+        DELEGATES.computeIfAbsent(className, BigQueryJdbcCustomLogger::new);
     if (connectionId == null) {
-      return cache.computeIfAbsent(
-          clazz.getName(), k -> new BigQueryJdbcResultSetLogger(clazz, null));
+      return GLOBAL_FACADES.computeIfAbsent(
+          className, k -> new BigQueryJdbcResultSetLogger(delegate, k, null));
     }
-    return new BigQueryJdbcResultSetLogger(clazz, connectionId);
+    return new BigQueryJdbcResultSetLogger(delegate, className, connectionId);
   }
 
   public String getConnectionId() {
     return connectionId;
   }
 
-  private BigQueryJdbcResultSetLogger arrowStructLogger;
-  private BigQueryJdbcResultSetLogger jsonStructLogger;
-  private BigQueryJdbcResultSetLogger arrowArrayLogger;
-  private BigQueryJdbcResultSetLogger jsonArrayLogger;
+  /** The shared, registered logger this facade forwards to. Exposed for tests only. */
+  BigQueryJdbcCustomLogger delegate() {
+    return delegate;
+  }
+
+  public boolean isLoggable(Level level) {
+    return delegate.isLoggable(level);
+  }
 
   public BigQueryJdbcResultSetLogger getArrowStructLogger() {
     if (arrowStructLogger == null) {
@@ -81,20 +118,13 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
     return jsonArrayLogger;
   }
 
-  public BigQueryJdbcResultSetLogger(Class<?> clazz) {
-    this(clazz, null);
-  }
-
-  public BigQueryJdbcResultSetLogger(Class<?> clazz, String connectionId) {
-    super(clazz.getName());
-    this.targetClassName = clazz.getName();
-    this.connectionId = connectionId;
-  }
-
-  @Override
+  /**
+   * Stamps the connection ID into {@code params[0]} and forwards to the shared logger. Does not
+   * touch the record's source class/method: hot-path callers set them explicitly, and cold-path
+   * callers ({@code severe}, {@code warning}) rely on {@link
+   * BigQueryJdbcCustomLogger.BigQueryJdbcLogRecord} to infer them lazily.
+   */
   public void log(LogRecord record) {
-    record.setSourceClassName(targetClassName);
-    record.setThreadID((int) Thread.currentThread().getId());
     if (connectionId != null) {
       Object[] existingParams = record.getParameters();
       if (existingParams == null || existingParams.length == 0) {
@@ -106,93 +136,104 @@ public class BigQueryJdbcResultSetLogger extends BigQueryJdbcCustomLogger {
         record.setParameters(newParams);
       }
     }
-    super.log(record);
+    delegate.log(record);
   }
 
   private void logTrace(Level level, String methodName, String msg) {
-    if (isLoggable(level)) {
-      LogRecord record = new LogRecord(level, msg);
-      record.setSourceMethodName(methodName);
-      this.log(record);
+    if (!delegate.isLoggable(level)) {
+      return;
     }
+    LogRecord record = new LogRecord(level, msg);
+    record.setSourceClassName(targetClassName);
+    record.setSourceMethodName(methodName);
+    log(record);
   }
 
   private void logTrace(Level level, String methodName, Supplier<String> msgSupplier) {
-    if (isLoggable(level)) {
-      LogRecord record = new LogRecord(level, msgSupplier.get());
-      record.setSourceMethodName(methodName);
-      this.log(record);
+    if (!delegate.isLoggable(level)) {
+      return;
     }
+    logTrace(level, methodName, msgSupplier.get());
   }
 
-  /**
-   * Log a message at Level.FINEST with predefined class name, method name and messageto avoid stack
-   * trace parsing on the hot-path.
-   */
+  /** Cold path: builds a record whose caller is inferred lazily by the formatter. */
+  private void logWithCaller(Level level, Throwable thrown, String msg) {
+    if (!delegate.isLoggable(level)) {
+      return;
+    }
+    LogRecord record = new BigQueryJdbcCustomLogger.BigQueryJdbcLogRecord(level, msg);
+    record.setThrown(thrown);
+    log(record);
+  }
+
+  /** Log at FINEST with the class name, method name and "++enter++" preset (no stack walk). */
   public void finestTrace(String methodName) {
     logTrace(Level.FINEST, methodName, "++enter++");
   }
 
-  /**
-   * Log a message at Level.FINEST with predefined class name and method name to avoid stack trace
-   * parsing on the hot-path.
-   */
+  /** Log at FINEST with the class name and method name preset (no stack walk). */
   public void finestTrace(String methodName, String msg) {
     logTrace(Level.FINEST, methodName, msg);
   }
 
-  /** Log a lazy message at Level.FINEST with predefined class name and method name. */
+  /** Log a lazy message at FINEST with the class name and method name preset. */
   public void finestTrace(String methodName, Supplier<String> msgSupplier) {
     logTrace(Level.FINEST, methodName, msgSupplier);
   }
 
-  /** Log a message at Level.FINER with predefined class name and method name. */
+  /** Log at FINER with the class name and method name preset. */
   public void finerTrace(String methodName, String msg) {
     logTrace(Level.FINER, methodName, msg);
   }
 
-  /** Log a lazy message at Level.FINER with predefined class name and method name. */
+  /** Log a lazy message at FINER with the class name and method name preset. */
   public void finerTrace(String methodName, Supplier<String> msgSupplier) {
     logTrace(Level.FINER, methodName, msgSupplier);
   }
 
-  /** Log a message at Level.FINE with predefined class name and method name. */
+  /** Log at FINE with the class name and method name preset. */
   public void fineTrace(String methodName, String msg) {
     logTrace(Level.FINE, methodName, msg);
   }
 
-  /** Log a lazy message at Level.FINE with predefined class name and method name. */
+  /** Log a lazy message at FINE with the class name and method name preset. */
   public void fineTrace(String methodName, Supplier<String> msgSupplier) {
     logTrace(Level.FINE, methodName, msgSupplier);
   }
 
-  @Override
   public void finest(String msg) {
     logTrace(Level.FINEST, "unknown", msg);
   }
 
-  @Override
   public void finest(Supplier<String> msgSupplier) {
     logTrace(Level.FINEST, "unknown", msgSupplier);
   }
 
-  @Override
   public void finer(String msg) {
     logTrace(Level.FINER, "unknown", msg);
   }
 
-  @Override
   public void finer(Supplier<String> msgSupplier) {
     logTrace(Level.FINER, "unknown", msgSupplier);
   }
 
-  @Override
   public void fine(String msg) {
     logTrace(Level.FINE, "unknown", msg);
   }
 
-  @Override
   public void fine(Supplier<String> msgSupplier) {
     logTrace(Level.FINE, "unknown", msgSupplier);
+  }
+
+  public void warning(String format, Object... args) {
+    if (!delegate.isLoggable(Level.WARNING)) {
+      return;
+    }
+    String message = (args == null || args.length == 0) ? format : String.format(format, args);
+    logWithCaller(Level.WARNING, null, message);
+  }
+
+  public void severe(String msg, Throwable thrown) {
+    logWithCaller(Level.SEVERE, thrown, msg);
   }
 }
