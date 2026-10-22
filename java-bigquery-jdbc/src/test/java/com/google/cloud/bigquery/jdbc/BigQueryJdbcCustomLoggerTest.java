@@ -20,6 +20,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.mock;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
@@ -37,6 +39,7 @@ import java.util.Map.Entry;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
 import org.junit.jupiter.api.AfterEach;
@@ -48,6 +51,8 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
 
   private BigQueryJdbcCustomLogger logger;
   private TestHandler testHandler;
+
+  private static final int OBJECT_COUNT = 1_000;
 
   private static class TestHandler extends Handler {
     private final List<LogRecord> records = new ArrayList<>();
@@ -578,5 +583,70 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
         connectionId,
         "Log from Nested JSON Array",
         () -> nestedArray.LOG.fine("Log from Nested JSON Array"));
+  }
+
+  @Test
+  public void testLoggerIsParentedToDriverRootLogger() {
+    assertSame(
+        BigQueryJdbcRootLogger.getRootLogger(),
+        new BigQueryJdbcCustomLogger("ParentCheck").getParent());
+  }
+
+  @Test
+  public void testCreatingStatementsDoesNotRegisterChildLoggers() throws Exception {
+    BigQueryConnection connection = mock(BigQueryConnection.class);
+    doReturn("leak-test-connection").when(connection).getConnectionId();
+    doReturn(BigQueryConnection.SessionState.empty()).when(connection).getSessionStateSnapshot();
+
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    // Warm up so that any one-time, class-level logger is registered before we measure.
+    new BigQueryStatement(connection);
+    int childrenBefore = childLoggerCount(rootLogger);
+
+    for (int i = 0; i < OBJECT_COUNT; i++) {
+      new BigQueryStatement(connection);
+    }
+
+    assertEquals(
+        childrenBefore,
+        childLoggerCount(rootLogger),
+        "Creating "
+            + OBJECT_COUNT
+            + " statements must not register additional child loggers on the driver root logger");
+  }
+
+  @Test
+  public void testCreatingDatabaseMetaDataDoesNotRegisterChildLoggers()
+      throws ReflectiveOperationException {
+    BigQueryConnection connection = mock(BigQueryConnection.class);
+    doReturn("leak-test-connection").when(connection).getConnectionId();
+
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    new BigQueryDatabaseMetaData(connection);
+    int childrenBefore = childLoggerCount(rootLogger);
+
+    for (int i = 0; i < OBJECT_COUNT; i++) {
+      new BigQueryDatabaseMetaData(connection);
+    }
+
+    assertEquals(
+        childrenBefore,
+        childLoggerCount(rootLogger),
+        "Creating "
+            + OBJECT_COUNT
+            + " DatabaseMetaData objects must not register additional child loggers on the driver"
+            + " root logger");
+  }
+
+  /**
+   * Reads the JDK-internal {@code Logger.kids} list. This field is private to {@code java.logging},
+   * so the surefire {@code argLine} opens {@code java.util.logging} to the test classpath.
+   */
+  private static int childLoggerCount(Logger logger) throws ReflectiveOperationException {
+    // Qualified because this file already imports com.google.cloud.bigquery.Field.
+    java.lang.reflect.Field kids = Logger.class.getDeclaredField("kids");
+    kids.setAccessible(true);
+    List<?> children = (List<?>) kids.get(logger);
+    return children == null ? 0 : children.size();
   }
 }
