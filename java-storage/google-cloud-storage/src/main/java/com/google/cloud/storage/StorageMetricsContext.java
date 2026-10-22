@@ -133,19 +133,6 @@ final class StorageMetricsContext {
         new AtomicLong(0L));
   }
 
-  StorageMetricsContext asSubAttemptContext() {
-    return new StorageMetricsContext(
-        operationName,
-        baseAttributes,
-        startTimeNanos,
-        otelContext,
-        false,
-        operationRecorded,
-        attemptCount,
-        requestBytes,
-        responseBytes);
-  }
-
   boolean shouldRecordOperationOnRetrierExit() {
     return recordOperationOnRetrierExit;
   }
@@ -196,6 +183,141 @@ final class StorageMetricsContext {
         metrics.getGcpClientRequestDuration().record(getElapsedSeconds(), durationAttributes);
       }
     }
+  }
+
+  void recordAttemptSuccess(@Nullable StorageClientMetrics metrics) {
+    if (metrics == null || metrics.getAttempts() == null) {
+      return;
+    }
+    try (Scope ignore = otelContext.makeCurrent()) {
+      Attributes attemptBase = buildAttemptBaseAttributes(metrics);
+      AttributesBuilder builder =
+          attemptBase.toBuilder()
+              .put(StorageClientMetrics.KEY_ERROR_TYPE, StorageErrorTypeMapper.STATUS_OK)
+              .put(StorageClientMetrics.KEY_NETWORK_PATH, resolveNetworkPath());
+      String rpcSystemName = baseAttributes.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME);
+      if ("grpc".equals(rpcSystemName)) {
+        builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OK");
+      } else if ("http".equals(rpcSystemName)) {
+        builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 200L);
+      }
+      String rpcCode = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
+      if (rpcCode != null) {
+        builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcCode);
+      }
+      Long httpCode = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
+      if (httpCode != null) {
+        builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, httpCode);
+      }
+      metrics.getAttempts().add(1, builder.build());
+    }
+  }
+
+  void recordAttemptFailure(@Nullable StorageClientMetrics metrics, Throwable e) {
+    if (metrics == null) {
+      return;
+    }
+    try (Scope ignore = otelContext.makeCurrent()) {
+      String errorType = StorageErrorTypeMapper.mapThrowable(e);
+      String networkPath = resolveNetworkPath();
+      Attributes attemptBase = buildAttemptBaseAttributes(metrics);
+      if (metrics.getErrors() != null) {
+        Attributes errorAttributes =
+            attemptBase.toBuilder()
+                .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
+                .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
+                .build();
+        metrics.getErrors().add(1, errorAttributes);
+      }
+      if (metrics.getAttempts() != null) {
+        AttributesBuilder builder =
+            attemptBase.toBuilder()
+                .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
+                .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath);
+        String rpcStatus = extractRpcStatusCode(e);
+        if (rpcStatus != null) {
+          builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcStatus);
+        }
+        Long httpStatus = extractHttpStatusCode(e);
+        if (httpStatus != null) {
+          builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, httpStatus);
+        }
+        metrics.getAttempts().add(1, builder.build());
+      }
+    }
+  }
+
+  private Attributes buildAttemptBaseAttributes(StorageClientMetrics metrics) {
+    AttributesBuilder baseBuilder = Attributes.builder();
+    baseBuilder.putAll(metrics.getClientAttributes());
+    baseAttributes.forEach(
+        (key, val) -> {
+          if (!key.equals(StorageClientMetrics.KEY_RPC_METHOD)
+              && !key.equals(StorageClientMetrics.KEY_NETWORK_PATH)
+              && !key.equals(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)
+              && !key.equals(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)) {
+            @SuppressWarnings("unchecked")
+            AttributeKey<Object> objKey = (AttributeKey<Object>) key;
+            baseBuilder.put(objKey, val);
+          }
+        });
+    baseBuilder.put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, operationName);
+    return baseBuilder.build();
+  }
+
+  private String resolveNetworkPath() {
+    String path = baseAttributes.get(StorageClientMetrics.KEY_NETWORK_PATH);
+    if (path != null && !path.isEmpty()) {
+      return path;
+    }
+    return StorageClientMetrics.NETWORK_PATH_CLOUDPATH;
+  }
+
+  @Nullable
+  private String extractRpcStatusCode(Throwable e) {
+    String fromContext = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
+    if (fromContext != null) {
+      return fromContext;
+    }
+    Throwable curr = e;
+    while (curr != null) {
+      if (curr instanceof io.grpc.StatusRuntimeException) {
+        return ((io.grpc.StatusRuntimeException) curr).getStatus().getCode().name();
+      }
+      if (curr instanceof io.grpc.StatusException) {
+        return ((io.grpc.StatusException) curr).getStatus().getCode().name();
+      }
+      if (curr instanceof com.google.api.gax.rpc.ApiException) {
+        return ((com.google.api.gax.rpc.ApiException) curr).getStatusCode().getCode().name();
+      }
+      curr = curr.getCause();
+    }
+    return null;
+  }
+
+  @Nullable
+  private Long extractHttpStatusCode(Throwable e) {
+    Long fromContext = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
+    if (fromContext != null) {
+      return fromContext;
+    }
+    Throwable curr = e;
+    while (curr != null) {
+      if (curr instanceof StorageException) {
+        int code = ((StorageException) curr).getCode();
+        if (code > 0) {
+          return (long) code;
+        }
+      }
+      if (curr instanceof com.google.api.client.http.HttpResponseException) {
+        int code = ((com.google.api.client.http.HttpResponseException) curr).getStatusCode();
+        if (code > 0) {
+          return (long) code;
+        }
+      }
+      curr = curr.getCause();
+    }
+    return null;
   }
 
   static @Nullable StorageMetricsContext from(@Nullable CallOptions callOptions) {
