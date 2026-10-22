@@ -28,10 +28,25 @@ mkdir -p ${SECRET_LOCATION}
 for key in $(echo ${SECRET_MANAGER_KEYS} | sed "s/,/ /g")
 do
   msg "Retrieving secret ${key}"
+  VERSION=$(docker run --entrypoint=gcloud \
+    --volume=${KOKORO_GFILE_DIR}:${KOKORO_GFILE_DIR} \
+    gcr.io/google.com/cloudsdktool/cloud-sdk \
+    secrets versions list ${key} \
+    --project cloud-devrel-kokoro-resources \
+    --filter="state=enabled" \
+    --sort-by="~createTime" \
+    --limit=1 \
+    --format="value(name)")
+  
+  if [ -z "${VERSION}" ]; then
+    msg "Error retrieving enabled version for secret ${key}"
+    exit 1
+  fi
+
   docker run --entrypoint=gcloud \
     --volume=${KOKORO_GFILE_DIR}:${KOKORO_GFILE_DIR} \
     gcr.io/google.com/cloudsdktool/cloud-sdk \
-    secrets versions access latest \
+    secrets versions access ${VERSION} \
     --project cloud-devrel-kokoro-resources \
     --secret ${key} > \
     "${SECRET_LOCATION}/${key}"
