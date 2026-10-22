@@ -225,7 +225,7 @@ public final class BigQueryJdbcResultSetLogger {
     logTrace(Level.FINE, "unknown", msgSupplier);
   }
 
-  void warning(String format, Object... args) {
+  public void warning(String format, Object... args) {
     if (!delegate.isLoggable(Level.WARNING)) {
       return;
     }
