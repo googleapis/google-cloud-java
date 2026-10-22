@@ -460,6 +460,7 @@ class ITBigQueryStorageTest {
     assertEquals(1_333, rowCount);
   }
 
+  @Disabled("Flaky test: b/576747708")
   @Test
   void testColumnSelection() throws IOException {
     String table =
