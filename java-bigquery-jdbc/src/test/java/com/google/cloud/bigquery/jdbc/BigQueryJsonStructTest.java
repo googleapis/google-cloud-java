@@ -295,4 +295,16 @@ public class BigQueryJsonStructTest {
     Timestamp expectedTs = Timestamp.valueOf("2023-03-30 11:14:19.123456789");
     assertThat(attributes).isEqualTo(new Object[] {expectedTs});
   }
+
+  @Test
+  public void testJsonStructTimePreservesMicroseconds() {
+    Field timeField = Field.of("t", TIME);
+    FieldList schema = FieldList.of(timeField);
+    FieldValue val = FieldValue.of(PRIMITIVE, "14:30:00.123456");
+    FieldValue structValue = FieldValue.of(RECORD, FieldValueList.of(asList(val)));
+
+    BigQueryJsonStruct struct = new BigQueryJsonStruct(schema, structValue);
+
+    assertThat(struct.toString()).isEqualTo("{\"t\":\"14:30:00.123456\"}");
+  }
 }

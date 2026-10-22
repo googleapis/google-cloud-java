@@ -111,10 +111,7 @@ class BigQueryArrowArray extends BigQueryBaseArray {
   @Override
   Object getCoercedValue(int index) throws SQLException {
     LOG.finestTrace("getCoercedValue");
-    Object value = this.values.get(index);
-    if (value instanceof Text) {
-      value = value.toString();
-    }
+    Object value = getRawElement(index);
     if (this.arrayOfStruct) {
       return new BigQueryArrowStruct(
           schema.getSubFields(),
@@ -126,5 +123,11 @@ class BigQueryArrowArray extends BigQueryBaseArray {
       return BigQueryTemporalUtility.formatTimestampValue(value, true);
     }
     return BigQueryTypeRegistry.convert(value, this.schema.getType().getStandardType(), null);
+  }
+
+  @Override
+  Object getRawElement(int index) {
+    Object value = this.values.get(index);
+    return (value instanceof Text) ? value.toString() : value;
   }
 }
