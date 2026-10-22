@@ -49,13 +49,19 @@ import java.nio.ByteBuffer;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RunWith(StorageITRunner.class)
 @CrossRun(
@@ -75,6 +81,150 @@ public final class ITAppendableUploadTest {
   @Inject public Backend backend;
 
   @Parameter public Param p;
+
+  // --- DIAGNOSTIC ONLY (do not submit) ---------------------------------------
+  // 1. Every 5 minutes, dump ALL threads (incl. gRPC/netty) with the running test's name.
+  // 2. Log every test's start, end, duration and outcome; failures include the full exception
+  //    (the retry context's exception lists every attempt and previous failure).
+  // 3. Enable gRPC HTTP/2 frame logging (inbound frames, outbound headers/control frames) for this
+  //    test class's JVM only, so we can see when GCS replies arrive on the wire.
+  // 4. Log the client config once per backend.
+  // Storage-level send/recv/retry logs come from the "com.google.cloud.storage.DIAG" logger.
+  private static final Logger WATCHDOG_LOG =
+      LoggerFactory.getLogger(ITAppendableUploadTest.class);
+  private static volatile String currentTest = "<none>";
+  private static volatile long currentTestStartNanos = System.nanoTime();
+  private static final java.util.Set<Backend> CONFIG_LOGGED =
+      java.util.concurrent.ConcurrentHashMap.newKeySet();
+
+  static {
+    enableGrpcFrameLogging();
+    // One daemon thread per JVM (each IT class runs in its own JVM in CI).
+    Executors.newSingleThreadScheduledExecutor(
+            r -> {
+              Thread t = new Thread(r, "it-watchdog");
+              t.setDaemon(true);
+              return t;
+            })
+        .scheduleAtFixedRate(ITAppendableUploadTest::dumpAllThreads, 5, 5, TimeUnit.MINUTES);
+  }
+
+  // Not a Timeout rule, so the test body stays on the runner thread.
+  @Rule
+  public final TestWatcher watcher =
+      new TestWatcher() {
+        @Override
+        protected void starting(Description d) {
+          currentTest = d.getDisplayName();
+          currentTestStartNanos = System.nanoTime();
+          WATCHDOG_LOG.info("TEST START {}", currentTest);
+          logConfigOnce();
+        }
+
+        @Override
+        protected void succeeded(Description d) {
+          WATCHDOG_LOG.info("TEST PASSED in {}ms {}", elapsedMs(), d.getDisplayName());
+        }
+
+        @Override
+        protected void failed(Throwable e, Description d) {
+          WATCHDOG_LOG.warn("TEST FAILED in {}ms {}", elapsedMs(), d.getDisplayName(), e);
+        }
+
+        @Override
+        protected void skipped(
+            org.junit.AssumptionViolatedException e, Description d) {
+          WATCHDOG_LOG.info(
+              "TEST SKIPPED in {}ms {} ({})", elapsedMs(), d.getDisplayName(), e.getMessage());
+        }
+      };
+
+  private static long elapsedMs() {
+    return TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - currentTestStartNanos);
+  }
+
+  private void logConfigOnce() {
+    try {
+      if (storage != null && backend != null && CONFIG_LOGGED.add(backend)) {
+        StorageOptions o = storage.getOptions();
+        WATCHDOG_LOG.info(
+            "CONFIG backend={} optionsClass={} host={} projectId={} credentials={} retry={}"
+                + " bucket={} location={} placement={}",
+            backend,
+            o.getClass().getSimpleName(),
+            o.getHost(),
+            o.getProjectId(),
+            o.getCredentials() == null ? "null" : o.getCredentials().getClass().getName(),
+            o.getRetrySettings(),
+            bucket == null ? "null" : bucket.getName(),
+            bucket == null ? "null" : bucket.getLocation(),
+            bucket == null ? "null" : bucket.getCustomPlacementConfig());
+      }
+    } catch (Throwable t) {
+      WATCHDOG_LOG.warn("CONFIG logging failed", t);
+    }
+  }
+
+  private static void enableGrpcFrameLogging() {
+    try {
+      ch.qos.logback.classic.LoggerContext ctx =
+          (ch.qos.logback.classic.LoggerContext) LoggerFactory.getILoggerFactory();
+      ctx.getLogger("io.grpc.netty.shaded.io.grpc.netty.NettyClientHandler")
+          .setLevel(ch.qos.logback.classic.Level.DEBUG);
+      // Drop the high-volume frames: outbound DATA (upload bytes; already summarized by the DIAG
+      // SEND logs) and WINDOW_UPDATE. Keep inbound DATA (GCS replies), HEADERS (stream start /
+      // grpc-status trailers), RST_STREAM, GOAWAY, PING, SETTINGS.
+      ch.qos.logback.classic.turbo.TurboFilter frameFilter =
+          new ch.qos.logback.classic.turbo.TurboFilter() {
+            @Override
+            public ch.qos.logback.core.spi.FilterReply decide(
+                org.slf4j.Marker marker,
+                ch.qos.logback.classic.Logger logger,
+                ch.qos.logback.classic.Level level,
+                String format,
+                Object[] params,
+                Throwable t) {
+              if (logger != null
+                  && format != null
+                  && logger.getName().endsWith("NettyClientHandler")) {
+                boolean outbound = false;
+                if (params != null) {
+                  for (Object p : params) {
+                    if ("OUTBOUND".equals(String.valueOf(p))) {
+                      outbound = true;
+                      break;
+                    }
+                  }
+                }
+                if (format.contains("WINDOW_UPDATE") || (outbound && format.contains("DATA:"))) {
+                  return ch.qos.logback.core.spi.FilterReply.DENY;
+                }
+              }
+              return ch.qos.logback.core.spi.FilterReply.NEUTRAL;
+            }
+          };
+      frameFilter.setContext(ctx);
+      frameFilter.start();
+      ctx.addTurboFilter(frameFilter);
+      WATCHDOG_LOG.info("gRPC HTTP/2 frame logging enabled for this JVM");
+    } catch (Throwable t) {
+      WATCHDOG_LOG.warn("Unable to enable gRPC frame logging", t);
+    }
+  }
+
+  private static void dumpAllThreads() {
+    WATCHDOG_LOG.warn(
+        "WATCHDOG current test={} running for {}s", currentTest, elapsedMs() / 1000);
+    for (Map.Entry<Thread, StackTraceElement[]> e : Thread.getAllStackTraces().entrySet()) {
+      StringBuilder sb = new StringBuilder();
+      for (StackTraceElement el : e.getValue()) {
+        sb.append("\n    at ").append(el);
+      }
+      WATCHDOG_LOG.warn(
+          "WATCHDOG thread {} ({}):{}", e.getKey().getName(), e.getKey().getState(), sb);
+    }
+  }
+  // ---------------------------------------------------------------------------
 
   @Test
   public void appendableUpload_emptyObject()
@@ -103,7 +253,6 @@ public final class ITAppendableUploadTest {
     assertThat(xxd(actualBytes)).isEqualTo(xxd(new byte[0]));
   }
 
-  @Ignore("Flaky test: b/574588650")
   @Test
   public void appendableUpload_bytes()
       throws IOException, ExecutionException, InterruptedException, TimeoutException {
@@ -136,7 +285,6 @@ public final class ITAppendableUploadTest {
     assertThat(xxd(actualBytes)).isEqualTo(xxd(a1_a2.getBytes()));
   }
 
-  @Ignore("Flaky test: b/574588650")
   @Test
   public void explicitFlush()
       throws IOException, ExecutionException, InterruptedException, TimeoutException {

@@ -2127,6 +2127,11 @@ public final class BidiUploadTest {
           new StreamingResponseObserver(
               new BidiUploadState(name.getMethodName()) {
                 @Override
+                long getConfirmedBytes() {
+                  return 0;
+                }
+
+                @Override
                 StorageException onResponse(BidiWriteObjectResponse response) {
                   return new StorageException(0, "test-error", null);
                 }
@@ -2164,6 +2169,11 @@ public final class BidiUploadTest {
           new StreamingResponseObserver(
               new BidiUploadState(name.getMethodName()) {
                 @Override
+                long getConfirmedBytes() {
+                  return 0;
+                }
+
+                @Override
                 StorageException onResponse(BidiWriteObjectResponse response) {
                   //noinspection DataFlowIssue
                   checkState(false, "kblamo");
@@ -2200,9 +2210,66 @@ public final class BidiUploadTest {
     public void onResponse_resetsRetryContextToEnsureRetriesArePossibleForLongWrites() {
       AtomicBoolean resetCalled = new AtomicBoolean(false);
       AtomicBoolean recordErrorCalled = new AtomicBoolean(false);
+      AtomicLong confirmedBytes = new AtomicLong(0);
       StreamingResponseObserver obs =
           new StreamingResponseObserver(
               new BidiUploadState(name.getMethodName()) {
+                @Override
+                long getConfirmedBytes() {
+                  return confirmedBytes.get();
+                }
+
+                @Override
+                StorageException onResponse(BidiWriteObjectResponse response) {
+                  // the server confirmed new bytes
+                  confirmedBytes.set(10);
+                  return null;
+                }
+              },
+              new RetryContext() {
+                @Override
+                public boolean inBackoff() {
+                  return false;
+                }
+
+                @Override
+                public void reset() {
+                  resetCalled.set(true);
+                }
+
+                @Override
+                public <T extends Throwable> void recordError(
+                    T t, OnSuccess onSuccess, OnFailure<T> onFailure) {
+                  recordErrorCalled.set(true);
+                }
+              },
+              RetryContextTest.failOnSuccess(),
+              RetryContextTest.failOnFailure());
+
+      obs.onStart(TestUtils.nullStreamController());
+      obs.onResponse(resourceWithSize(10));
+
+      assertThat(resetCalled.get()).isTrue();
+      assertThat(recordErrorCalled.get()).isFalse();
+    }
+
+    /**
+     * After a reconnect the state lookup reply repeats the previously confirmed offset. That is not
+     * progress, and must not refresh the retry budget; otherwise a persistent retryable error
+     * (e.g. 429, 408) is retried forever and callers hang.
+     */
+    @Test
+    public void onResponse_doesNotResetRetryContextWhenNoNewBytesAreConfirmed() {
+      AtomicBoolean resetCalled = new AtomicBoolean(false);
+      AtomicBoolean recordErrorCalled = new AtomicBoolean(false);
+      StreamingResponseObserver obs =
+          new StreamingResponseObserver(
+              new BidiUploadState(name.getMethodName()) {
+                @Override
+                long getConfirmedBytes() {
+                  return 10;
+                }
+
                 @Override
                 StorageException onResponse(BidiWriteObjectResponse response) {
                   return null;
@@ -2229,9 +2296,9 @@ public final class BidiUploadTest {
               RetryContextTest.failOnFailure());
 
       obs.onStart(TestUtils.nullStreamController());
-      obs.onResponse(resourceWithSize(0));
+      obs.onResponse(resourceWithSize(10));
 
-      assertThat(resetCalled.get()).isTrue();
+      assertThat(resetCalled.get()).isFalse();
       assertThat(recordErrorCalled.get()).isFalse();
     }
   }
