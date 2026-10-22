@@ -26,7 +26,7 @@ public class UnmanagedDependencyCheckTest {
         UnmanagedDependencyCheck.getUnmanagedDependencies(
             "src/test/resources/shared-dependency-pom.xml",
             "src/test/resources/google-internal-artifact-test-case-pom.xml");
-    assertTrue(unManagedDependencies.isEmpty());
+    assertThat(unManagedDependencies).isEmpty();
   }
 
   @Test

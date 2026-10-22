@@ -6,6 +6,7 @@ import com.google.cloud.tools.opensource.classpath.ClassPathBuilder;
 import com.google.cloud.tools.opensource.classpath.DependencyMediation;
 import com.google.cloud.tools.opensource.dependencies.Bom;
 import com.google.cloud.tools.opensource.dependencies.MavenRepositoryException;
+import com.google.common.collect.ImmutableSet;
 import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.List;
@@ -18,6 +19,11 @@ import org.eclipse.aether.version.InvalidVersionSpecificationException;
  * A utility class to check unmanaged dependencies in BOM.
  */
 public class UnmanagedDependencyCheck {
+  // Artifacts listed in gapic-libraries-bom whose third-party dependencies (e.g. logback)
+  // are intentionally not managed by google-cloud-shared-dependencies.
+  private static final ImmutableSet<String> BOM_SKIP_ARTIFACT_IDS =
+      ImmutableSet.of("google-cloud-logging-logback", "google-cloud-contrib");
+
   // Regex of handwritten artifacts.
   // There are customized artifacts defined in gapic-bom and handwritten libraries,
   // e.g., firestore and datastore, add entries in regex to exclude these artifacts.
@@ -73,8 +79,12 @@ public class UnmanagedDependencyCheck {
   private static Set<String> getManagedDependenciesFromBom(Bom bom)
       throws InvalidVersionSpecificationException {
     Set<String> res = new HashSet<>();
+    List<Artifact> managedDependencies =
+        bom.getManagedDependencies().stream()
+            .filter(artifact -> !BOM_SKIP_ARTIFACT_IDS.contains(artifact.getArtifactId()))
+            .collect(Collectors.toList());
     new ClassPathBuilder()
-        .resolve(bom.getManagedDependencies(), false, DependencyMediation.MAVEN)
+        .resolve(managedDependencies, false, DependencyMediation.MAVEN)
         .getClassPath()
         .forEach(
             classPath -> {
