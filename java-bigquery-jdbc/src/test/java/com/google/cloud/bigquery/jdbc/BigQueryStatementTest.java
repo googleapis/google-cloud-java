@@ -33,6 +33,8 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.withSettings;
 
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.ServerStream;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.Tuple;
@@ -62,11 +64,15 @@ import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryStatement.JobIdWrapper;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
+import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
+import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
+import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
+import com.google.cloud.bigquery.storage.v1.ReadStream;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import io.opentelemetry.api.baggage.Baggage;
@@ -83,14 +89,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Stream;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
@@ -1346,5 +1357,207 @@ public class BigQueryStatementTest {
     assertEquals(
         BigQueryStatement.DEFAULT_ARROW_BUFFER_SIZE,
         defaultQueueCaptor.getValue().remainingCapacity());
+  }
+
+  @Test
+  public void testPopulateArrowBufferedQueueStopsAndCancelsStreamWhenResultSetClosedWhileQueueFull()
+      throws Exception {
+    BlockingQueue<BigQueryArrowBatchWrapper> boundedQueue = new LinkedBlockingDeque<>(1);
+    ReadSession readSession =
+        ReadSession.newBuilder()
+            .addStreams(
+                ReadStream.newBuilder().setName("projects/p/locations/l/sessions/s/streams/0"))
+            .build();
+
+    ReadRowsResponse batchResponse =
+        ReadRowsResponse.newBuilder()
+            .setArrowRecordBatch(ArrowRecordBatch.getDefaultInstance())
+            .build();
+
+    CountDownLatch secondBatchReturnedLatch = new CountDownLatch(1);
+    AtomicBoolean streamCancelled = new AtomicBoolean(false);
+
+    @SuppressWarnings("unchecked")
+    ServerStream<ReadRowsResponse> serverStream = mock(ServerStream.class);
+    Mockito.doAnswer(
+            invocation -> {
+              streamCancelled.set(true);
+              return null;
+            })
+        .when(serverStream)
+        .cancel();
+
+    Iterator<ReadRowsResponse> responseIterator =
+        new Iterator<ReadRowsResponse>() {
+          private int count = 0;
+
+          @Override
+          public boolean hasNext() {
+            return true;
+          }
+
+          @Override
+          public ReadRowsResponse next() {
+            count++;
+            if (count == 2) {
+              secondBatchReturnedLatch.countDown();
+            }
+            return batchResponse;
+          }
+        };
+    doReturn(responseIterator).when(serverStream).iterator();
+
+    @SuppressWarnings("unchecked")
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable =
+        mock(ServerStreamingCallable.class);
+    doReturn(serverStream).when(callable).call(any(ReadRowsRequest.class));
+
+    BigQueryReadClient readClient = mock(BigQueryReadClient.class);
+    doReturn(callable).when(readClient).readRowsCallable();
+
+    Future<?> producerFuture =
+        bigQueryStatement.populateArrowBufferedQueue(readSession, boundedQueue, readClient);
+
+    // Wait until the first batch is in the queue and the second batch has been yielded by the
+    // stream iterator (so the producer thread is blocked or about to block on boundedQueue.put()).
+    assertTrue(secondBatchReturnedLatch.await(5, TimeUnit.SECONDS));
+    assertEquals(1, boundedQueue.size());
+
+    BigQueryArrowResultSet rs =
+        BigQueryArrowResultSet.of(
+            Schema.of(fieldList),
+            arrowSchema,
+            100L,
+            bigQueryStatement,
+            boundedQueue,
+            producerFuture,
+            bigquery);
+
+    // Closing the ResultSet while the queue is full must cancel the producer task,
+    // unblock the producer thread, cancel the underlying ServerStream, and clear the buffer.
+    rs.close();
+
+    assertTrue(producerFuture.isCancelled());
+    testExecutorService.shutdown();
+    assertTrue(
+        testExecutorService.awaitTermination(5, TimeUnit.SECONDS),
+        "Producer thread should terminate promptly after ResultSet.close()");
+    assertTrue(streamCancelled.get(), "ServerStream.cancel() should be called on early close");
+    assertTrue(
+        boundedQueue.stream().allMatch(w -> w.getCurrentArrowBatch() == null),
+        "No ArrowRecordBatch should remain buffered after ResultSet.close()");
+  }
+
+  @Test
+  public void testCancelStatementUnblocksConcurrentArrowResultSetNext() throws Exception {
+    BlockingQueue<BigQueryArrowBatchWrapper> emptyQueue = new LinkedBlockingDeque<>(4);
+    Future<?> producerFuture = mock(Future.class);
+    BigQueryArrowResultSet rs =
+        BigQueryArrowResultSet.of(
+            Schema.of(fieldList),
+            arrowSchema,
+            100L,
+            bigQueryStatement,
+            emptyQueue,
+            producerFuture,
+            bigquery);
+    bigQueryStatement.currentResultSet = rs;
+
+    CountDownLatch readerEnteredNext = new CountDownLatch(1);
+    Future<Void> readerFuture =
+        testExecutorService.submit(
+            () -> {
+              readerEnteredNext.countDown();
+              rs.next();
+              return null;
+            });
+
+    assertTrue(readerEnteredNext.await(5, TimeUnit.SECONDS));
+    // Give the reader thread a brief moment to block inside emptyQueue.take()
+    Thread.sleep(50);
+
+    bigQueryStatement.cancel();
+
+    ExecutionException ex =
+        assertThrows(ExecutionException.class, () -> readerFuture.get(5, TimeUnit.SECONDS));
+    assertTrue(ex.getCause() instanceof SQLException);
+  }
+
+  @Test
+  public void testCancelStatementUnblocksConcurrentJsonResultSetNext() throws Exception {
+    BlockingQueue<BigQueryFieldValueListWrapper> emptyQueue = new LinkedBlockingDeque<>(4);
+    BigQueryJsonResultSet rs =
+        BigQueryJsonResultSet.of(
+            Schema.of(fieldList), 100L, emptyQueue, bigQueryStatement, null, bigquery);
+    bigQueryStatement.currentResultSet = rs;
+
+    CountDownLatch readerEnteredNext = new CountDownLatch(1);
+    Future<Void> readerFuture =
+        testExecutorService.submit(
+            () -> {
+              readerEnteredNext.countDown();
+              rs.next();
+              return null;
+            });
+
+    assertTrue(readerEnteredNext.await(5, TimeUnit.SECONDS));
+    Thread.sleep(50);
+
+    bigQueryStatement.cancel();
+
+    ExecutionException ex =
+        assertThrows(ExecutionException.class, () -> readerFuture.get(5, TimeUnit.SECONDS));
+    assertTrue(ex.getCause() instanceof SQLException);
+  }
+
+  @Test
+  public void testPopulateArrowBufferedQueueEnqueuesErrorWhenWorkerShuttingDown() throws Exception {
+    BlockingQueue<BigQueryArrowBatchWrapper> boundedQueue = new LinkedBlockingDeque<>(4);
+    ReadSession readSession =
+        ReadSession.newBuilder()
+            .addStreams(
+                ReadStream.newBuilder().setName("projects/p/locations/l/sessions/s/streams/0"))
+            .build();
+
+    ReadRowsResponse batchResponse =
+        ReadRowsResponse.newBuilder()
+            .setArrowRecordBatch(ArrowRecordBatch.getDefaultInstance())
+            .build();
+
+    @SuppressWarnings("unchecked")
+    ServerStream<ReadRowsResponse> serverStream = mock(ServerStream.class);
+    Iterator<ReadRowsResponse> responseIterator =
+        new Iterator<ReadRowsResponse>() {
+          @Override
+          public boolean hasNext() {
+            // Simulate executor shutdown mid-stream before the next batch is processed
+            testExecutorService.shutdownNow();
+            return true;
+          }
+
+          @Override
+          public ReadRowsResponse next() {
+            return batchResponse;
+          }
+        };
+    doReturn(responseIterator).when(serverStream).iterator();
+
+    @SuppressWarnings("unchecked")
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable =
+        mock(ServerStreamingCallable.class);
+    doReturn(serverStream).when(callable).call(any(ReadRowsRequest.class));
+
+    BigQueryReadClient readClient = mock(BigQueryReadClient.class);
+    doReturn(callable).when(readClient).readRowsCallable();
+
+    Future<?> producerFuture =
+        bigQueryStatement.populateArrowBufferedQueue(readSession, boundedQueue, readClient);
+    producerFuture.get(5, TimeUnit.SECONDS);
+
+    BigQueryArrowBatchWrapper marker = boundedQueue.poll(5, TimeUnit.SECONDS);
+    assertNotNull(marker);
+    assertNotNull(
+        marker.getException(),
+        "Stopping early due to worker shutdown must enqueue an error marker rather than normal end-of-stream");
   }
 }
