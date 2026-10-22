@@ -29,9 +29,9 @@ for key in $(echo ${SECRET_MANAGER_KEYS} | sed "s/,/ /g")
 do
   msg "Retrieving secret ${key}"
   VERSION=$(docker run --rm --entrypoint=gcloud \
-    --volume=${KOKORO_GFILE_DIR}:${KOKORO_GFILE_DIR} \
+    --volume="${KOKORO_GFILE_DIR}:${KOKORO_GFILE_DIR}" \
     gcr.io/google.com/cloudsdktool/cloud-sdk \
-    secrets versions list ${key} \
+    secrets versions list "${key}" \
     --project cloud-devrel-kokoro-resources \
     --filter="state=enabled" \
     --sort-by="~createTime" \
@@ -44,11 +44,11 @@ do
   fi
 
   docker run --rm --entrypoint=gcloud \
-    --volume=${KOKORO_GFILE_DIR}:${KOKORO_GFILE_DIR} \
+    --volume="${KOKORO_GFILE_DIR}:${KOKORO_GFILE_DIR}" \
     gcr.io/google.com/cloudsdktool/cloud-sdk \
-    secrets versions access ${VERSION} \
+    secrets versions access "${VERSION}" \
     --project cloud-devrel-kokoro-resources \
-    --secret ${key} > \
+    --secret "${key}" > \
     "${SECRET_LOCATION}/${key}"
   if [[ $? == 0 ]]; then
     msg "Secret written to ${SECRET_LOCATION}/${key}"
