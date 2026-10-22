@@ -21,14 +21,21 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.common.collect.ImmutableList;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.common.CompletableResultCode;
+import io.opentelemetry.sdk.metrics.Aggregation;
+import io.opentelemetry.sdk.metrics.InstrumentType;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.data.AggregationTemporality;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.metrics.export.CollectionRegistration;
+import io.opentelemetry.sdk.metrics.export.MetricReader;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import org.junit.Before;
@@ -80,7 +87,7 @@ public final class StorageClientMetricsTest {
     assertThat(metrics.getClientAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT))
         .isEqualTo("com.google.cloud:google-cloud-storage");
     assertThat(metrics.getClientAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID))
-        .isNotEmpty();
+        .isNull();
 
     assertInstruments(metrics, DEBUG_INSTRUMENTS, /* isNull= */ true);
   }
@@ -287,8 +294,7 @@ public final class StorageClientMetricsTest {
 
     Attributes merged = metrics.attachClientAttributes(extra);
 
-    assertThat(merged.get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID))
-        .isEqualTo("test-instance");
+    assertThat(merged.get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID)).isNull();
     assertThat(merged.get(StorageClientMetrics.KEY_GCP_CLIENT_VERSION))
         .isEqualTo(StorageOptions.version());
     assertThat(merged.get(StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT))
@@ -339,6 +345,56 @@ public final class StorageClientMetricsTest {
     MetricData metricData = metricsMap.get(viewName);
     HistogramPointData pointData = metricData.getHistogramData().getPoints().iterator().next();
     assertThat(pointData.getBoundaries()).isEqualTo(expectedBoundaries);
+  }
+
+  @Test
+  public void close_closesOwnedMeterProvider() {
+    TestMetricReader reader = new TestMetricReader();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, provider, true, false);
+    metrics.close();
+    assertThat(reader.shutdownCalled.get()).isTrue();
+  }
+
+  @Test
+  public void close_doesNotThrowWhenOwnedMeterProviderIsNull() {
+    TestMetricReader reader = new TestMetricReader();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics metrics =
+        StorageClientMetrics.create(provider, (SdkMeterProvider) null, true, false);
+    metrics.close();
+    assertThat(reader.shutdownCalled.get()).isFalse();
+  }
+
+  static final class TestMetricReader implements MetricReader {
+    private final MetricReader delegate = InMemoryMetricReader.create();
+    final AtomicBoolean shutdownCalled = new AtomicBoolean(false);
+
+    @Override
+    public void register(CollectionRegistration registration) {
+      delegate.register(registration);
+    }
+
+    @Override
+    public AggregationTemporality getAggregationTemporality(InstrumentType instrumentType) {
+      return delegate.getAggregationTemporality(instrumentType);
+    }
+
+    @Override
+    public Aggregation getDefaultAggregation(InstrumentType instrumentType) {
+      return delegate.getDefaultAggregation(instrumentType);
+    }
+
+    @Override
+    public CompletableResultCode forceFlush() {
+      return delegate.forceFlush();
+    }
+
+    @Override
+    public CompletableResultCode shutdown() {
+      shutdownCalled.set(true);
+      return delegate.shutdown();
+    }
   }
 
   private static void assertInstruments(

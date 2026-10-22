@@ -25,11 +25,11 @@ import io.opentelemetry.api.metrics.LongHistogram;
 import io.opentelemetry.api.metrics.LongUpDownCounter;
 import io.opentelemetry.api.metrics.Meter;
 import io.opentelemetry.api.metrics.MeterProvider;
-import java.util.UUID;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Package-private instrument registry for OpenTelemetry client metrics. */
-final class StorageClientMetrics {
+final class StorageClientMetrics implements AutoCloseable {
   static final String METER_NAME = "com.google.cloud.storage";
 
   // Standard client attribute keys and values
@@ -121,16 +121,26 @@ final class StorageClientMetrics {
   @Nullable private final DoubleHistogram credentialRefreshDuration;
 
   private final Attributes clientAttributes;
+  @Nullable private final SdkMeterProvider ownedMeterProvider;
 
   static StorageClientMetrics create(
       MeterProvider meterProvider, boolean enableOtelMetrics, boolean enableOtelDebugMetrics) {
     return create(
-        meterProvider, UUID.randomUUID().toString(), enableOtelMetrics, enableOtelDebugMetrics);
+        meterProvider, (SdkMeterProvider) null, enableOtelMetrics, enableOtelDebugMetrics);
   }
 
   static StorageClientMetrics create(
       MeterProvider meterProvider,
       String instanceId,
+      boolean enableOtelMetrics,
+      boolean enableOtelDebugMetrics) {
+    return create(
+        meterProvider, (SdkMeterProvider) null, enableOtelMetrics, enableOtelDebugMetrics);
+  }
+
+  static StorageClientMetrics create(
+      MeterProvider meterProvider,
+      @Nullable SdkMeterProvider ownedMeterProvider,
       boolean enableOtelMetrics,
       boolean enableOtelDebugMetrics) {
     Meter meter =
@@ -143,10 +153,9 @@ final class StorageClientMetrics {
             .put(KEY_GCP_CLIENT_SERVICE, SERVICE_STORAGE)
             .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
             .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
-            .put(KEY_GCP_CLIENT_INSTANCE_ID, instanceId)
             .build();
     return new StorageClientMetrics(
-        meter, clientAttributes, enableOtelMetrics, enableOtelDebugMetrics);
+        meter, clientAttributes, ownedMeterProvider, enableOtelMetrics, enableOtelDebugMetrics);
   }
 
   StorageClientMetrics(Meter meter, boolean enableOtelMetrics, boolean enableOtelDebugMetrics) {
@@ -156,8 +165,8 @@ final class StorageClientMetrics {
             .put(KEY_GCP_CLIENT_SERVICE, SERVICE_STORAGE)
             .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
             .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
-            .put(KEY_GCP_CLIENT_INSTANCE_ID, UUID.randomUUID().toString())
             .build(),
+        null,
         enableOtelMetrics,
         enableOtelDebugMetrics);
   }
@@ -167,7 +176,17 @@ final class StorageClientMetrics {
       Attributes clientAttributes,
       boolean enableOtelMetrics,
       boolean enableOtelDebugMetrics) {
+    this(meter, clientAttributes, null, enableOtelMetrics, enableOtelDebugMetrics);
+  }
+
+  StorageClientMetrics(
+      Meter meter,
+      Attributes clientAttributes,
+      @Nullable SdkMeterProvider ownedMeterProvider,
+      boolean enableOtelMetrics,
+      boolean enableOtelDebugMetrics) {
     this.clientAttributes = clientAttributes;
+    this.ownedMeterProvider = ownedMeterProvider;
 
     if (enableOtelMetrics) {
       this.rpcClientCallDuration =
@@ -395,5 +414,12 @@ final class StorageClientMetrics {
 
   @Nullable DoubleHistogram getCredentialRefreshDuration() {
     return credentialRefreshDuration;
+  }
+
+  @Override
+  public void close() {
+    if (ownedMeterProvider != null) {
+      ownedMeterProvider.close();
+    }
   }
 }
