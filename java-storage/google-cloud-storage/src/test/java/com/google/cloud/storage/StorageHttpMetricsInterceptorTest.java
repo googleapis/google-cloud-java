@@ -335,6 +335,121 @@ public final class StorageHttpMetricsInterceptorTest {
   }
 
   @Test
+  public void isMediaDownloadRequest_cases() throws IOException {
+    HttpTransport transport = new MockHttpTransport();
+    HttpRequest getDownload =
+        transport
+            .createRequestFactory()
+            .buildGetRequest(
+                new GenericUrl(
+                    "https://storage.googleapis.com/download/storage/v1/b/my-b/o/my-obj"));
+    assertThat(StorageHttpMetricsInterceptor.isMediaDownloadRequest(getDownload)).isTrue();
+
+    HttpRequest getAltMedia =
+        transport
+            .createRequestFactory()
+            .buildGetRequest(
+                new GenericUrl(
+                    "https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj?alt=media"));
+    assertThat(StorageHttpMetricsInterceptor.isMediaDownloadRequest(getAltMedia)).isTrue();
+
+    HttpRequest getMetadata =
+        transport
+            .createRequestFactory()
+            .buildGetRequest(
+                new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj"));
+    assertThat(StorageHttpMetricsInterceptor.isMediaDownloadRequest(getMetadata)).isFalse();
+
+    HttpRequest postReq =
+        transport
+            .createRequestFactory()
+            .buildPostRequest(
+                new GenericUrl(
+                    "https://storage.googleapis.com/download/storage/v1/b/my-b/o/my-obj"),
+                null);
+    assertThat(StorageHttpMetricsInterceptor.isMediaDownloadRequest(postReq)).isFalse();
+
+    assertThat(StorageHttpMetricsInterceptor.isMediaDownloadRequest(null)).isFalse();
+  }
+
+  @Test
+  public void initialize_mediaDownload_recordsTtfb() throws IOException {
+    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
+    StorageHttpMetricsInterceptor interceptor =
+        new StorageHttpMetricsInterceptor(null, metrics, clock, "https://storage.googleapis.com");
+
+    MockLowLevelHttpResponse lowLevelResponse = new MockLowLevelHttpResponse();
+    lowLevelResponse.setStatusCode(200);
+    HttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() throws IOException {
+                clock.advanceNanos(250_000_000L); // 0.25s network duration
+                return lowLevelResponse;
+              }
+            };
+          }
+        };
+
+    HttpRequest request =
+        transport
+            .createRequestFactory(interceptor)
+            .buildGetRequest(
+                new GenericUrl(
+                    "https://storage.googleapis.com/download/storage/v1/b/my-b/o/my-obj"));
+    request.execute();
+
+    Collection<MetricData> metricData = reader.collectAllMetrics();
+    MetricData ttfbData =
+        metricData.stream()
+            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(ttfbData).isNotNull();
+    assertThat(ttfbData.getHistogramData().getPoints()).hasSize(1);
+    HistogramPointData ttfbPoint = ttfbData.getHistogramData().getPoints().iterator().next();
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.25);
+    Attributes attrs = ttfbPoint.getAttributes();
+    assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
+    assertThat(attrs.get(StorageClientMetrics.KEY_RPC_METHOD)).isEqualTo("ReadObject");
+    assertThat(attrs.get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
+    assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
+  }
+
+  @Test
+  public void initialize_nonDownloadGet_doesNotRecordTtfb() throws IOException {
+    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
+    StorageHttpMetricsInterceptor interceptor =
+        new StorageHttpMetricsInterceptor(null, metrics, clock, "https://storage.googleapis.com");
+
+    MockLowLevelHttpResponse lowLevelResponse = new MockLowLevelHttpResponse();
+    lowLevelResponse.setStatusCode(200);
+    HttpTransport transport =
+        new MockHttpTransport.Builder().setLowLevelHttpResponse(lowLevelResponse).build();
+
+    HttpRequest request =
+        transport
+            .createRequestFactory(interceptor)
+            .buildGetRequest(
+                new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj"));
+    request.execute();
+
+    Collection<MetricData> metricData = reader.collectAllMetrics();
+    MetricData ttfbData =
+        metricData.stream()
+            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB))
+            .findFirst()
+            .orElse(null);
+    assertThat(ttfbData).isNull();
+  }
+
+  @Test
   public void initialize_metricsDisabled_doesNotRecord() throws IOException {
     StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, false, false);
     StorageHttpMetricsInterceptor interceptor =

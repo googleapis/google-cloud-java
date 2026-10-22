@@ -55,7 +55,8 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     if (delegate != null) {
       delegate.initialize(request);
     }
-    if (metrics == null || metrics.getHttpClientRequestDuration() == null) {
+    if (metrics == null
+        || (metrics.getHttpClientRequestDuration() == null && metrics.getTtfb() == null)) {
       return;
     }
 
@@ -80,37 +81,54 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
           if (existingResp != null) {
             existingResp.interceptResponse(response);
           }
-          if (recorded.compareAndSet(false, true)
-              && metrics.getHttpClientRequestDuration() != null) {
+          if (recorded.compareAndSet(false, true)) {
             double durationSeconds =
                 Math.max(0.0, (clock.nanoTime() - startTimeNanos.get()) / 1_000_000_000.0);
             int statusCode = response.getStatusCode();
-            String method =
-                request.getRequestMethod() != null ? request.getRequestMethod() : "UNKNOWN";
-            String urlTemplate = extractUrlTemplate(request.getUrl());
             String serverAddress = resolveServerAddress(request.getUrl(), defaultServerAddress);
 
-            AttributesBuilder attrBuilder =
-                metrics
-                    .clientAttributesBuilder()
-                    .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, method)
-                    .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, (long) statusCode)
-                    .put(
-                        StorageClientMetrics.KEY_NETWORK_PATH,
-                        StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
-                    .put(StorageClientMetrics.KEY_URL_TEMPLATE, urlTemplate)
-                    .put(
-                        StorageClientMetrics.KEY_SERVER_ADDRESS,
-                        serverAddress != null ? serverAddress : "")
-                    .put(
-                        StorageClientMetrics.KEY_ERROR_TYPE,
-                        statusCode >= 400
-                            ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
-                            : StorageErrorTypeMapper.STATUS_OK);
+            if (metrics.getHttpClientRequestDuration() != null) {
+              String method =
+                  request.getRequestMethod() != null ? request.getRequestMethod() : "UNKNOWN";
+              String urlTemplate = extractUrlTemplate(request.getUrl());
 
-            metrics
-                .getHttpClientRequestDuration()
-                .record(durationSeconds, attrBuilder.build(), Context.current());
+              AttributesBuilder attrBuilder =
+                  metrics
+                      .clientAttributesBuilder()
+                      .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, method)
+                      .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, (long) statusCode)
+                      .put(
+                          StorageClientMetrics.KEY_NETWORK_PATH,
+                          StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+                      .put(StorageClientMetrics.KEY_URL_TEMPLATE, urlTemplate)
+                      .put(
+                          StorageClientMetrics.KEY_SERVER_ADDRESS,
+                          serverAddress != null ? serverAddress : "")
+                      .put(
+                          StorageClientMetrics.KEY_ERROR_TYPE,
+                          statusCode >= 400
+                              ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
+                              : StorageErrorTypeMapper.STATUS_OK);
+
+              metrics
+                  .getHttpClientRequestDuration()
+                  .record(durationSeconds, attrBuilder.build(), Context.current());
+            }
+
+            if (metrics.getTtfb() != null && statusCode < 400 && isMediaDownloadRequest(request)) {
+              AttributesBuilder ttfbAttrs =
+                  metrics
+                      .clientAttributesBuilder()
+                      .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
+                      .put(StorageClientMetrics.KEY_RPC_METHOD, "ReadObject")
+                      .put(
+                          StorageClientMetrics.KEY_NETWORK_PATH,
+                          StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+                      .put(
+                          StorageClientMetrics.KEY_SERVER_ADDRESS,
+                          serverAddress != null ? serverAddress : "");
+              metrics.getTtfb().record(durationSeconds, ttfbAttrs.build(), Context.current());
+            }
           }
         });
 
@@ -222,5 +240,18 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     }
     String[] parts = trimmed.split("/", 2);
     return parts.length == 1 ? "/{bucket}" : "/{bucket}/{object}";
+  }
+
+  static boolean isMediaDownloadRequest(@Nullable HttpRequest request) {
+    if (request == null) {
+      return false;
+    }
+    if (!"GET".equalsIgnoreCase(request.getRequestMethod()) || request.getUrl() == null) {
+      return false;
+    }
+    GenericUrl url = request.getUrl();
+    String path = url.getRawPath();
+    return (path != null && path.startsWith("/download/storage/v1/"))
+        || "media".equals(url.getFirst("alt"));
   }
 }
