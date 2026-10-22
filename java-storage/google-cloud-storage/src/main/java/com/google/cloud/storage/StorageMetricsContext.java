@@ -197,17 +197,13 @@ final class StorageMetricsContext {
               .put(StorageClientMetrics.KEY_NETWORK_PATH, resolveNetworkPath());
       String rpcSystemName = baseAttributes.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME);
       if ("grpc".equals(rpcSystemName)) {
-        builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OK");
+        String rpcCode = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
+        builder.put(
+            StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcCode != null ? rpcCode : "OK");
       } else if ("http".equals(rpcSystemName)) {
-        builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 200L);
-      }
-      String rpcCode = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
-      if (rpcCode != null) {
-        builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcCode);
-      }
-      Long httpCode = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
-      if (httpCode != null) {
-        builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, httpCode);
+        Long httpCode = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
+        builder.put(
+            StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, httpCode != null ? httpCode : 200L);
       }
       metrics.getAttempts().add(1, builder.build());
     }
@@ -234,13 +230,17 @@ final class StorageMetricsContext {
             attemptBase.toBuilder()
                 .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
                 .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath);
-        String rpcStatus = extractRpcStatusCode(e);
-        if (rpcStatus != null) {
-          builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcStatus);
-        }
-        Long httpStatus = extractHttpStatusCode(e);
-        if (httpStatus != null) {
-          builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, httpStatus);
+        String rpcSystemName = baseAttributes.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME);
+        if ("grpc".equals(rpcSystemName)) {
+          String rpcStatus = extractRpcStatusCode(e);
+          builder.put(
+              StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE,
+              rpcStatus != null ? rpcStatus : "UNKNOWN");
+        } else if ("http".equals(rpcSystemName)) {
+          Long httpStatus = extractHttpStatusCode(e);
+          builder.put(
+              StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
+              httpStatus != null ? httpStatus : 0L);
         }
         metrics.getAttempts().add(1, builder.build());
       }
