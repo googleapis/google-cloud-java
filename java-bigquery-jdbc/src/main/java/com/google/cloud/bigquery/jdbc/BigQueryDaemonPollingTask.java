@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.api.core.InternalApi;
+import com.google.cloud.bigquery.jdbc.BigQueryResultSetFinalizers.ResultSetFinalizer;
 import com.google.common.annotations.VisibleForTesting;
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
