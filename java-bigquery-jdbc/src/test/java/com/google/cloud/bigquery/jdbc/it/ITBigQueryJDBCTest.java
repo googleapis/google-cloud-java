@@ -71,6 +71,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class ITBigQueryJDBCTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
@@ -3093,6 +3095,35 @@ public class ITBigQueryJDBCTest extends ITBase {
             assertThrows(
                 SQLException.class, () -> statement.execute("SELECT * FROM session_temp_table;"));
       }
+    }
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"", FORCE_READ_API_PROPERTIES})
+  public void testStructWithNestedArraysValidJson(String extraProps) throws SQLException {
+    String sql =
+        "SELECT STRUCT("
+            + "1 AS id, "
+            + "['hello', 'world'] AS str_arr, "
+            + "[DATE '2026-01-01', DATE '2026-01-02'] AS date_arr, "
+            + "[TIME '12:34:56.789012'] AS time_arr, "
+            + "[TIMESTAMP '2026-01-01 00:00:00 UTC'] AS ts_arr, "
+            + "[b'abc', b'def'] AS bytes_arr"
+            + ") AS s_nested_arrays";
+
+    String expectedJson =
+        "{\"id\":1,"
+            + "\"str_arr\":[\"hello\",\"world\"],"
+            + "\"date_arr\":[\"2026-01-01\",\"2026-01-02\"],"
+            + "\"time_arr\":[\"12:34:56.789012\"],"
+            + "\"ts_arr\":[\"2026-01-01 00:00:00.0\"],"
+            + "\"bytes_arr\":[\"YWJj\",\"ZGVm\"]}";
+
+    try (Connection conn = DriverManager.getConnection(connection_uri + extraProps);
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql)) {
+      assertTrue(rs.next());
+      assertEquals(expectedJson, rs.getString("s_nested_arrays"));
     }
   }
 }

@@ -29,6 +29,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Base64;
 import java.util.Map;
+import org.apache.arrow.vector.util.Text;
 
 /**
  * An abstract implementation of {@link java.sql.Struct} used as a base class for {@link
@@ -86,30 +87,24 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
         Object value = attributes[i];
 
         sb.append("\"").append(fieldName.replace("\"", "\\\"")).append("\":");
-
-        if (value == null) {
-          sb.append("null");
-        } else if (value instanceof String || value instanceof org.apache.arrow.vector.util.Text) {
-          String stringValue = value.toString().replace("\"", "\\\"");
-          sb.append("\"").append(stringValue).append("\"");
-        } else if (value instanceof Timestamp
-            && field.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP) {
-          sb.append("\"")
-              .append(BigQueryTemporalUtility.formatTimestampToUtcString((Timestamp) value))
-              .append("\"");
-        } else if (value instanceof Time
-            && field.getType().getStandardType() == StandardSQLTypeName.TIME) {
-          sb.append("\"")
-              .append(
-                  BigQueryTypeRegistry.convert(
-                      getRawAttribute(i), StandardSQLTypeName.TIME, String.class, null))
-              .append("\"");
-        } else if (value instanceof Timestamp || value instanceof Date || value instanceof Time) {
-          sb.append("\"").append(value.toString()).append("\"");
-        } else if (value instanceof byte[]) {
-          sb.append("\"").append(Base64.getEncoder().encodeToString((byte[]) value)).append("\"");
+        if (value instanceof BigQueryBaseArray) {
+          BigQueryBaseArray arrayVal = (BigQueryBaseArray) value;
+          Object[] elements = (Object[]) arrayVal.getArray();
+          if (elements == null) {
+            sb.append("null");
+          } else {
+            sb.append("[");
+            for (int j = 0; j < elements.length; j++) {
+              if (j > 0) {
+                sb.append(",");
+              }
+              appendJsonValue(
+                  sb, field, elements[j], elements[j] == null ? null : arrayVal.getRawElement(j));
+            }
+            sb.append("]");
+          }
         } else {
-          sb.append(value.toString());
+          appendJsonValue(sb, field, value, value == null ? null : getRawAttribute(i));
         }
       }
       sb.append("}");
@@ -117,6 +112,35 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
     } catch (SQLException e) {
       LOG.severe("Error converting struct to string", e);
       return "{ \"error\": \"Error converting struct to string: " + e.getMessage() + "\" }";
+    }
+  }
+
+  private static void appendJsonValue(StringBuilder sb, Field field, Object value, Object rawValue)
+      throws SQLException {
+    if (value == null) {
+      sb.append("null");
+    } else if (field.getType().getStandardType() == StandardSQLTypeName.JSON) {
+      sb.append(value);
+    } else if (value instanceof String || value instanceof Text) {
+      String stringValue = value.toString().replace("\"", "\\\"");
+      sb.append("\"").append(stringValue).append("\"");
+    } else if (value instanceof Timestamp
+        && field.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP) {
+      sb.append("\"")
+          .append(BigQueryTemporalUtility.formatTimestampToUtcString((Timestamp) value))
+          .append("\"");
+    } else if (value instanceof Time
+        && field.getType().getStandardType() == StandardSQLTypeName.TIME) {
+      sb.append("\"")
+          .append(
+              BigQueryTypeRegistry.convert(rawValue, StandardSQLTypeName.TIME, String.class, null))
+          .append("\"");
+    } else if (value instanceof Timestamp || value instanceof Date || value instanceof Time) {
+      sb.append("\"").append(value).append("\"");
+    } else if (value instanceof byte[]) {
+      sb.append("\"").append(Base64.getEncoder().encodeToString((byte[]) value)).append("\"");
+    } else {
+      sb.append(value);
     }
   }
 }
