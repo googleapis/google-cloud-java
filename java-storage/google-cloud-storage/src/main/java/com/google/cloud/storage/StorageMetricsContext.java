@@ -197,9 +197,23 @@ final class StorageMetricsContext {
               .put(StorageClientMetrics.KEY_NETWORK_PATH, resolveNetworkPath());
       String rpcSystemName = baseAttributes.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME);
       if ("grpc".equals(rpcSystemName)) {
-        builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OK");
+        String rpcCode = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
+        builder.put(
+            StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcCode != null ? rpcCode : "OK");
+        builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, "");
       } else if ("http".equals(rpcSystemName)) {
-        builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 200L);
+        String httpCode = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
+        builder.put(
+            StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
+            httpCode != null ? httpCode : "200");
+        builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "");
+      } else {
+        String rpcCode = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
+        String httpCode = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
+        builder.put(
+            StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, rpcCode != null ? rpcCode : "");
+        builder.put(
+            StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, httpCode != null ? httpCode : "");
       }
       metrics.getAttempts().add(1, builder.build());
     }
@@ -231,12 +245,23 @@ final class StorageMetricsContext {
           String rpcStatus = extractRpcStatusCode(e);
           builder.put(
               StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE,
-              rpcStatus != null ? rpcStatus : "UNKNOWN");
+              rpcStatus != null ? rpcStatus : "");
+          builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, "");
         } else if ("http".equals(rpcSystemName)) {
-          Long httpStatus = extractHttpStatusCode(e);
+          String httpStatus = extractHttpStatusCode(e);
           builder.put(
               StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
-              httpStatus != null ? httpStatus : 0L);
+              httpStatus != null ? httpStatus : "");
+          builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "");
+        } else {
+          String rpcStatus = extractRpcStatusCode(e);
+          String httpStatus = extractHttpStatusCode(e);
+          builder.put(
+              StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE,
+              rpcStatus != null ? rpcStatus : "");
+          builder.put(
+              StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
+              httpStatus != null ? httpStatus : "");
         }
         metrics.getAttempts().add(1, builder.build());
       }
@@ -271,6 +296,10 @@ final class StorageMetricsContext {
 
   @Nullable
   private String extractRpcStatusCode(Throwable e) {
+    String fromContext = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
+    if (fromContext != null) {
+      return fromContext;
+    }
     Throwable curr = e;
     while (curr != null) {
       if (curr instanceof io.grpc.StatusRuntimeException) {
@@ -288,19 +317,23 @@ final class StorageMetricsContext {
   }
 
   @Nullable
-  private Long extractHttpStatusCode(Throwable e) {
+  private String extractHttpStatusCode(Throwable e) {
+    String fromContext = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
+    if (fromContext != null) {
+      return fromContext;
+    }
     Throwable curr = e;
     while (curr != null) {
       if (curr instanceof StorageException) {
         int code = ((StorageException) curr).getCode();
         if (code > 0) {
-          return (long) code;
+          return Integer.toString(code);
         }
       }
       if (curr instanceof com.google.api.client.http.HttpResponseException) {
         int code = ((com.google.api.client.http.HttpResponseException) curr).getStatusCode();
         if (code > 0) {
-          return (long) code;
+          return Integer.toString(code);
         }
       }
       curr = curr.getCause();
