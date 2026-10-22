@@ -1120,3 +1120,5 @@ proto-google-cloud-backupdr-v1beta:0.58.0:0.59.0-SNAPSHOT
 proto-google-cloud-networkservices-v1beta1:0.55.0:0.56.0-SNAPSHOT
 grpc-google-cloud-health-v4beta:0.8.0:0.9.0-SNAPSHOT
 proto-google-cloud-health-v4beta:0.8.0:0.9.0-SNAPSHOT
+proto-google-shopping-merchant-reviews-v1:0.45.0:0.46.0-SNAPSHOT
+grpc-google-shopping-merchant-reviews-v1:0.45.0:0.46.0-SNAPSHOT
