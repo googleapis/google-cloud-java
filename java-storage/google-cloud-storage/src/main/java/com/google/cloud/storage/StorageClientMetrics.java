@@ -131,15 +131,6 @@ final class StorageClientMetrics implements AutoCloseable {
 
   static StorageClientMetrics create(
       MeterProvider meterProvider,
-      String instanceId,
-      boolean enableOtelMetrics,
-      boolean enableOtelDebugMetrics) {
-    return create(
-        meterProvider, (SdkMeterProvider) null, enableOtelMetrics, enableOtelDebugMetrics);
-  }
-
-  static StorageClientMetrics create(
-      MeterProvider meterProvider,
       @Nullable SdkMeterProvider ownedMeterProvider,
       boolean enableOtelMetrics,
       boolean enableOtelDebugMetrics) {

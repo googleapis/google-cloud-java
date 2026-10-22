@@ -380,9 +380,8 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     return meterProvider;
   }
 
-  @InternalApi
   @Nullable
-  public synchronized StorageClientMetrics getStorageClientMetrics() {
+  synchronized StorageClientMetrics getStorageClientMetrics() {
     if (!isEnableOtelMetrics()) {
       return null;
     }
@@ -493,17 +492,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     if (metrics == null) {
       return null;
     }
-    io.opentelemetry.api.common.AttributesBuilder builder =
-        metrics
-            .clientAttributesBuilder()
-            .put(
-                StorageClientMetrics.KEY_RPC_SYSTEM_NAME,
-                this instanceof GrpcStorageOptions ? "grpc" : "http");
-    String serverAddress = extractServerAddress(getHost());
-    if (serverAddress != null && !serverAddress.isEmpty()) {
-      builder.put(StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress);
-    }
-    return StorageMetricsContext.create(operationName, builder.build());
+    return StorageMetricsContext.create(operationName, buildBaseMetricsAttributes(metrics));
   }
 
   @Nullable StorageMetricsContext createMultiStepMetricsContext(String operationName) {
@@ -511,6 +500,11 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     if (metrics == null) {
       return null;
     }
+    return StorageMetricsContext.createForMultiStep(
+        operationName, buildBaseMetricsAttributes(metrics));
+  }
+
+  private Attributes buildBaseMetricsAttributes(StorageClientMetrics metrics) {
     io.opentelemetry.api.common.AttributesBuilder builder =
         metrics
             .clientAttributesBuilder()
@@ -521,7 +515,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     if (serverAddress != null && !serverAddress.isEmpty()) {
       builder.put(StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress);
     }
-    return StorageMetricsContext.createForMultiStep(operationName, builder.build());
+    return builder.build();
   }
 
   @Nullable
