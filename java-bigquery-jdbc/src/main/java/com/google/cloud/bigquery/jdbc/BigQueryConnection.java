@@ -92,7 +92,8 @@ import java.util.logging.Level;
  */
 public class BigQueryConnection extends BigQueryNoOpsConnection {
 
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryConnection.class.getName());
   String connectionClassName = this.toString();
   private final String connectionId;
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";

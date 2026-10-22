@@ -43,7 +43,8 @@ import java.util.regex.Pattern;
  * registered with a naming service based on the Java™ Naming and Directory (JNDI) API.
  */
 public class DataSource implements javax.sql.DataSource {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(DataSource.class.getName());
   private String URL;
   static final ImmutableSet<Integer> VALID_JOB_CREATION_MODES = ImmutableSet.of(1, 2);
 
