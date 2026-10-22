@@ -819,6 +819,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       throw e;
     } finally {
       if (metricsContext != null) {
+        metricsContext.setResponseBytes(baos.size());
         metricsContext.recordOperation(getOptions().getStorageClientMetrics(), error);
       }
     }
@@ -864,7 +865,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
 
     Throwable error = null;
     try (UnbufferedReadableByteChannel r = session.open();
-        WritableByteChannel w = Files.newByteChannel(path, WRITE_OPS)) {
+        WritableByteChannel w = countBytes(Files.newByteChannel(path, WRITE_OPS), metricsContext)) {
       ByteStreams.copy(r, w);
     } catch (ApiException | IOException e) {
       error = e;
@@ -887,7 +888,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
 
     Throwable error = null;
     try (UnbufferedReadableByteChannel r = session.open();
-        WritableByteChannel w = Channels.newChannel(outputStream)) {
+        WritableByteChannel w = countBytes(Channels.newChannel(outputStream), metricsContext)) {
       ByteStreams.copy(r, w);
     } catch (ApiException | IOException e) {
       error = e;
@@ -900,6 +901,33 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
         metricsContext.recordOperation(getOptions().getStorageClientMetrics(), error);
       }
     }
+  }
+
+  private static WritableByteChannel countBytes(
+      WritableByteChannel delegate, @Nullable StorageMetricsContext metricsContext) {
+    if (metricsContext == null) {
+      return delegate;
+    }
+    return new WritableByteChannel() {
+      @Override
+      public int write(ByteBuffer src) throws IOException {
+        int written = delegate.write(src);
+        if (written > 0) {
+          metricsContext.addResponseBytes(written);
+        }
+        return written;
+      }
+
+      @Override
+      public boolean isOpen() {
+        return delegate.isOpen();
+      }
+
+      @Override
+      public void close() throws IOException {
+        delegate.close();
+      }
+    };
   }
 
   @Override
