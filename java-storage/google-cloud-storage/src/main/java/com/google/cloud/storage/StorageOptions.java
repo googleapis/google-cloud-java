@@ -35,7 +35,11 @@ import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.MeterProvider;
+import io.opentelemetry.contrib.gcp.resource.GCPResourceProvider;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -81,7 +85,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
   Retrier createRetrier() {
     return new DefaultRetrier(
         OtelStorageDecorator.retryContextDecorator(getOpenTelemetry()),
-        RetryingDependencies.simple(getClock(), getRetrySettings()));
+        RetryingDependencies.simple(getClock(), getRetrySettings(), getStorageClientMetrics()));
   }
 
   /**
@@ -262,6 +266,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
   private final Duration metricInterval;
   private final boolean customMeterProviderConfigured;
   private final boolean customOpenTelemetryConfigured;
+  @Nullable transient StorageClientMetrics storageClientMetrics;
 
   StorageOptions(Builder builder, StorageDefaults serviceDefaults) {
     super(StorageFactory.class, StorageRpcFactory.class, builder, serviceDefaults);
@@ -373,6 +378,179 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
   @BetaApi
   public @Nullable MeterProvider getMeterProvider() {
     return meterProvider;
+  }
+
+  @Nullable
+  synchronized StorageClientMetrics getStorageClientMetrics() {
+    if (!isEnableOtelMetrics()) {
+      return null;
+    }
+    if (storageClientMetrics == null) {
+      MeterProvider mp = getMeterProvider();
+      if (mp == null && isCustomOpenTelemetryConfigured()) {
+        OpenTelemetry otel = getOpenTelemetry();
+        if (otel != null) {
+          mp = otel.getMeterProvider();
+        }
+      }
+      if (mp != null) {
+        storageClientMetrics =
+            StorageClientMetrics.create(
+                mp, (SdkMeterProvider) null, isEnableOtelMetrics(), isEnableOtelDebugMetrics());
+      } else {
+        SdkMeterProvider defaultMeterProvider = createDefaultClientMeterProvider();
+        if (defaultMeterProvider != null) {
+          storageClientMetrics =
+              StorageClientMetrics.create(
+                  defaultMeterProvider,
+                  defaultMeterProvider,
+                  isEnableOtelMetrics(),
+                  isEnableOtelDebugMetrics());
+        }
+      }
+    }
+    return storageClientMetrics;
+  }
+
+  @Nullable
+  private SdkMeterProvider createDefaultClientMeterProvider() {
+    try {
+      GCPResourceProvider resourceProvider = new GCPResourceProvider();
+      Attributes detectedAttributes = resourceProvider.getAttributes();
+      String detectedProjectId = detectedAttributes.get(AttributeKey.stringKey("cloud.account.id"));
+      String configuredProjectId = getProjectId();
+      if (configuredProjectId != null && configuredProjectId.trim().isEmpty()) {
+        configuredProjectId = null;
+      }
+      String projectIdToUse =
+          (configuredProjectId != null && !configuredProjectId.isEmpty())
+              ? configuredProjectId
+              : detectedProjectId;
+      if (projectIdToUse == null || projectIdToUse.isEmpty()) {
+        LOGGER.warning(
+            "Unable to determine the Project ID in order to report metrics. No storage client metrics"
+                + " will be reported.");
+        return null;
+      }
+      Attributes attributesToUse =
+          Attributes.builder()
+              .putAll(detectedAttributes)
+              .put(AttributeKey.stringKey("cloud.account.id"), projectIdToUse)
+              .build();
+      String formattedEndpoint = formatStorageEndpoint(getHost());
+      String metricServiceEndpoint =
+          OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+              formattedEndpoint, getUniverseDomain());
+      return OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+          metricServiceEndpoint,
+          projectIdToUse,
+          attributesToUse,
+          getMetricInterval(),
+          /* shouldSuppressExceptions= */ true,
+          this instanceof GrpcStorageOptions ? "grpc" : "json");
+    } catch (Exception e) {
+      LOGGER.warning("Failed to create default client MeterProvider: " + e.getMessage());
+      return null;
+    }
+  }
+
+  private static String formatStorageEndpoint(@Nullable String host) {
+    if (host == null || host.trim().isEmpty()) {
+      return "storage.googleapis.com:443";
+    }
+    String endpoint = host.trim();
+    if (endpoint.startsWith("google-c2p:///")) {
+      endpoint = endpoint.substring("google-c2p:///".length());
+    } else if (endpoint.startsWith("https://")) {
+      endpoint = endpoint.substring("https://".length());
+    } else if (endpoint.startsWith("http://")) {
+      endpoint = endpoint.substring("http://".length());
+    }
+    if (endpoint.endsWith("/")) {
+      endpoint = endpoint.substring(0, endpoint.length() - 1);
+    }
+    if (!endpoint.contains(":")) {
+      endpoint = endpoint + ":443";
+    }
+    return endpoint;
+  }
+
+  synchronized void closeStorageClientMetrics() {
+    if (storageClientMetrics != null) {
+      try {
+        storageClientMetrics.close();
+      } catch (Exception e) {
+        LOGGER.warning("Failed to close storageClientMetrics: " + e.getMessage());
+      } finally {
+        storageClientMetrics = null;
+      }
+    }
+  }
+
+  @Nullable StorageMetricsContext createMetricsContext(String operationName) {
+    StorageClientMetrics metrics = getStorageClientMetrics();
+    if (metrics == null) {
+      return null;
+    }
+    return StorageMetricsContext.create(operationName, buildBaseMetricsAttributes(metrics));
+  }
+
+  @Nullable StorageMetricsContext createMultiStepMetricsContext(String operationName) {
+    StorageClientMetrics metrics = getStorageClientMetrics();
+    if (metrics == null) {
+      return null;
+    }
+    return StorageMetricsContext.createForMultiStep(
+        operationName, buildBaseMetricsAttributes(metrics));
+  }
+
+  private Attributes buildBaseMetricsAttributes(StorageClientMetrics metrics) {
+    io.opentelemetry.api.common.AttributesBuilder builder =
+        metrics
+            .clientAttributesBuilder()
+            .put(
+                StorageClientMetrics.KEY_RPC_SYSTEM_NAME,
+                this instanceof GrpcStorageOptions ? "grpc" : "http");
+    String serverAddress = extractServerAddress(getHost());
+    if (serverAddress != null && !serverAddress.isEmpty()) {
+      builder.put(StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress);
+    }
+    return builder.build();
+  }
+
+  @Nullable
+  static String extractServerAddress(@Nullable String host) {
+    if (host == null || host.trim().isEmpty()) {
+      return null;
+    }
+    String s = host.trim();
+    if (s.startsWith("google-c2p:///")) {
+      s = s.substring("google-c2p:///".length());
+    } else if (s.startsWith("https://")) {
+      s = s.substring("https://".length());
+    } else if (s.startsWith("http://")) {
+      s = s.substring("http://".length());
+    }
+    int slashIdx = s.indexOf('/');
+    if (slashIdx >= 0) {
+      s = s.substring(0, slashIdx);
+    }
+    if (s.startsWith("[") && s.contains("]")) {
+      int closeBracket = s.indexOf(']');
+      int colonIdx = s.indexOf(':', closeBracket);
+      if (colonIdx >= 0) {
+        s = s.substring(0, colonIdx);
+      }
+      if (s.startsWith("[") && s.endsWith("]")) {
+        s = s.substring(1, s.length() - 1);
+      }
+    } else {
+      int colonIdx = s.indexOf(':');
+      if (colonIdx >= 0) {
+        s = s.substring(0, colonIdx);
+      }
+    }
+    return s.isEmpty() ? null : s;
   }
 
   /**

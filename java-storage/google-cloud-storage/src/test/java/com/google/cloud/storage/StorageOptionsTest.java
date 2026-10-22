@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assert.assertThrows;
 
+import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.metrics.MeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import java.io.ByteArrayInputStream;
@@ -457,5 +458,105 @@ public final class StorageOptionsTest {
           assertThat(defaultOptions).isEqualTo(deserialized);
           assertThat(deserialized.hashCode()).isEqualTo(defaultOptions.hashCode());
         });
+  }
+
+  @Test
+  public void extractServerAddress_parsesVariousHostFormats() {
+    assertThat(StorageOptions.extractServerAddress("https://storage.googleapis.com"))
+        .isEqualTo("storage.googleapis.com");
+    assertThat(StorageOptions.extractServerAddress("http://localhost:8080")).isEqualTo("localhost");
+    assertThat(StorageOptions.extractServerAddress("google-c2p:///storage.googleapis.com"))
+        .isEqualTo("storage.googleapis.com");
+    assertThat(StorageOptions.extractServerAddress("https://storage.googleapis.com/path"))
+        .isEqualTo("storage.googleapis.com");
+    assertThat(StorageOptions.extractServerAddress("http://[::1]:8080")).isEqualTo("::1");
+    assertThat(StorageOptions.extractServerAddress("[::1]")).isEqualTo("::1");
+    assertThat(StorageOptions.extractServerAddress(null)).isNull();
+    assertThat(StorageOptions.extractServerAddress("   ")).isNull();
+  }
+
+  @Test
+  public void createMetricsContext_populatesRpcSystemNameAndServerAddress() {
+    MeterProvider meterProvider = SdkMeterProvider.builder().build();
+
+    HttpStorageOptions httpOptions =
+        StorageOptions.http()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(meterProvider)
+            .setHost("https://storage.googleapis.com")
+            .build();
+    StorageMetricsContext httpContext = httpOptions.createMetricsContext("GetObject");
+    assertThat(httpContext).isNotNull();
+    assertThat(httpContext.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
+        .isEqualTo("http");
+    assertThat(httpContext.getBaseAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
+
+    GrpcStorageOptions grpcOptions =
+        StorageOptions.grpc()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(meterProvider)
+            .setHost("google-c2p:///storage.googleapis.com")
+            .build();
+    StorageMetricsContext grpcContext = grpcOptions.createMetricsContext("GetObject");
+    assertThat(grpcContext).isNotNull();
+    assertThat(grpcContext.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
+        .isEqualTo("grpc");
+    assertThat(grpcContext.getBaseAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
+  }
+
+  @Test
+  public void meterProvider_usedWhenExplicitlySet() {
+    MeterProvider customMeterProvider = SdkMeterProvider.builder().build();
+    HttpStorageOptions options =
+        StorageOptions.http()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(customMeterProvider)
+            .build();
+    StorageClientMetrics metrics = options.getStorageClientMetrics();
+    assertThat(metrics).isNotNull();
+  }
+
+  @Test
+  public void customOpenTelemetry_meterProviderUsedWhenConfigured() {
+    SdkMeterProvider sdkMeterProvider = SdkMeterProvider.builder().build();
+    OpenTelemetry customOtel =
+        io.opentelemetry.sdk.OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
+    HttpStorageOptions options =
+        StorageOptions.http().setEnableOtelMetrics(true).setOpenTelemetry(customOtel).build();
+    assertThat(options.isCustomOpenTelemetryConfigured()).isTrue();
+    StorageClientMetrics metrics = options.getStorageClientMetrics();
+    assertThat(metrics).isNotNull();
+  }
+
+  @Test
+  public void closeStorageClientMetrics_cleansUpMetricsAndClosesSdkOwnedProvider() {
+    StorageClientMetricsTest.TestMetricReader reader =
+        new StorageClientMetricsTest.TestMetricReader();
+    SdkMeterProvider mockOwnedProvider =
+        SdkMeterProvider.builder().registerMetricReader(reader).build();
+    HttpStorageOptions options =
+        StorageOptions.http()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(mockOwnedProvider)
+            .build();
+    StorageClientMetrics metrics =
+        StorageClientMetrics.create(mockOwnedProvider, mockOwnedProvider, true, false);
+    options.storageClientMetrics = metrics;
+
+    options.closeStorageClientMetrics();
+    assertThat(options.storageClientMetrics).isNull();
+    assertThat(reader.shutdownCalled.get()).isTrue();
+  }
+
+  @Test
+  public void closeStorageClientMetrics_doesNotFailOnUserSuppliedMeterProvider() {
+    MeterProvider userProvider = SdkMeterProvider.builder().build();
+    HttpStorageOptions options =
+        StorageOptions.http().setEnableOtelMetrics(true).setMeterProvider(userProvider).build();
+    assertThat(options.getStorageClientMetrics()).isNotNull();
+    options.closeStorageClientMetrics();
+    assertThat(options.storageClientMetrics).isNull();
   }
 }
