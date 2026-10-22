@@ -284,7 +284,10 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
                   .build();
 
           try (UnbufferedWritableByteChannel c = session.open()) {
-            ByteStreams.copy(Channels.newChannel(inputStreamParam), c);
+            long copied = ByteStreams.copy(Channels.newChannel(inputStreamParam), c);
+            if (metricsContext != null) {
+              metricsContext.setRequestBytes(copied);
+            }
           }
           ApiFuture<WriteObjectResponse> responseApiFuture = session.getResult();
           return this.getBlob(responseApiFuture);
@@ -315,6 +318,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     }
 
     StorageMetricsContext multiContext = getOptions().createMultiStepMetricsContext("WriteObject");
+    if (multiContext != null) {
+      multiContext.setRequestBytes(Files.size(path));
+    }
     Throwable error = null;
     try {
       GrpcCallContext grpcCallContext =
@@ -400,7 +406,10 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       ReadableByteChannel src =
           Channels.newChannel(firstNonNull(in, new ByteArrayInputStream(ZERO_BYTES)));
       try (BufferedWritableByteChannel dst = session.open()) {
-        ByteStreams.copy(src, dst);
+        long copied = ByteStreams.copy(src, dst);
+        if (multiContext != null) {
+          multiContext.setRequestBytes(copied);
+        }
       } catch (Exception e) {
         throw StorageException.coalesce(e);
       }
@@ -938,6 +947,10 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     WriteObjectRequest req = getWriteObjectRequest(blobInfo, optsWithDefaults);
     Hasher hasher = opts.getHasher();
     StorageMetricsContext metricsContext = getOptions().createMetricsContext("WriteObject");
+    int totalBytes = buf.remaining();
+    if (metricsContext != null) {
+      metricsContext.setRequestBytes(totalBytes);
+    }
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     RewindableContent content = RewindableContent.of(buf);
     return retrier.run(
