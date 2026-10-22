@@ -3421,6 +3421,13 @@ libraries:
       api_description_override: is a managed service that offers an integrated and secure JupyterLab environment for data scientists and machine learning developers to experiment, develop, and deploy models into production. Users can create instances running JupyterLab that come pre-installed with the latest data science and machine learning frameworks in a single click.
       name_pretty_override: AI Platform Notebooks
       product_documentation_override: https://cloud.google.com/ai-platform-notebooks
+  - name: observability
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/observability/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: optimization
     version: 1.98.0-SNAPSHOT
     apis:
