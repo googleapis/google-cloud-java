@@ -49,11 +49,12 @@ import javax.annotation.Nullable;
  * <p>Example:
  *
  * <pre>{@code
- * // Set "status" on each matching document and write it back to its own path.
+ * // Set "status" on each matching document and write it to the path given by its __name__ field.
  * firestore.pipeline()
  *     .collection("books")
  *     .where(field("rating").greaterThan(4))
- *     .upsert(new Upsert().withAdditionalFields(constant("Featured").as("status")))
+ *     .addFields(constant("Featured").as("status"))
+ *     .upsert()
  *     .execute()
  *     .get();
  * }</pre>
@@ -79,7 +80,7 @@ public final class Upsert extends Stage {
 
   /**
    * Creates an upsert stage with no additional fields, no target collection and no document ID
-   * expression, so each document is written back to its own path.
+   * expression, so each document is written to the path given by its {@code __name__} field.
    */
   public Upsert() {
     this((ImmutableList<Selectable>) null, null, null, InternalOptions.EMPTY);
@@ -87,7 +88,7 @@ public final class Upsert extends Stage {
 
   /**
    * Creates an upsert stage that adds the given fields to each input document before it is written
-   * back to its own path.
+   * to the path given by its {@code __name__} field.
    *
    * @param additionalFields Fields to add to each input document. A field with the same name as an
    *     existing input field overwrites that field.

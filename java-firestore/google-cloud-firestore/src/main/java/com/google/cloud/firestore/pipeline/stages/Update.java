@@ -27,7 +27,9 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * A pipeline stage that updates, in place, the documents produced by the previous stages.
+ * A pipeline stage that updates existing documents in the database using the documents produced by
+ * the previous stages. Each input document's {@code __name__} field identifies the target document
+ * to update.
  *
  * <p>Use with {@link com.google.cloud.firestore.Pipeline#update(Update)}, or call {@link
  * com.google.cloud.firestore.Pipeline#update()} / {@link

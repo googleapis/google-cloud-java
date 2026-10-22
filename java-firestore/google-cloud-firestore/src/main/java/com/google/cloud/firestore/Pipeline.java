@@ -1225,13 +1225,13 @@ public final class Pipeline {
   /**
    * Performs an update operation using documents from previous stages.
    *
-   * <p>This method updates the documents in place based on the data flowing through the pipeline.
-   * To specify transformations, use {@link #update(Selectable...)}.
+   * <p>This method updates existing documents based on the data flowing through the pipeline. To
+   * specify transformations, use {@link #update(Selectable...)}.
    *
-   * <p>Each document is written back to its existing path. The stored document is replaced by the
-   * pipeline document, so fields removed by earlier stages (for example, with {@link
-   * #removeFields(String, String...)}) are also removed from the stored document. This stage does
-   * not create documents: documents that don't exist are skipped.
+   * <p>Each document is written to the path given by its {@code __name__} field. The stored
+   * document is replaced by the pipeline document, so fields removed by earlier stages (for
+   * example, with {@link #removeFields(String, String...)}) are also removed from the stored
+   * document. This stage does not create documents: target documents that don't exist are skipped.
    *
    * <p>Example 1: Update a collection's schema by adding a new field and removing an old one.
    *
@@ -1245,7 +1245,7 @@ public final class Pipeline {
    *     .get();
    * }</pre>
    *
-   * <p>Example 2: Update documents in place with data from literals.
+   * <p>Example 2: Update documents with data from literals.
    *
    * <pre>{@code
    * Map<String, Object> updateData = new HashMap<>();
@@ -1381,10 +1381,10 @@ public final class Pipeline {
   }
 
   /**
-   * Writes each document produced by the previous stages back to its own path, after adding the
-   * given fields. The document is created if it doesn't exist and replaced if it does; stored
-   * fields are not merged. A document without a {@code __name__} field fails with {@code
-   * INVALID_ARGUMENT}.
+   * Writes each document produced by the previous stages to the path given by its {@code __name__}
+   * field, after adding the given fields. The document is created if it doesn't exist and replaced
+   * if it does; stored fields are not merged. A document without a {@code __name__} field fails
+   * with {@code INVALID_ARGUMENT}.
    *
    * <p>Example:
    *
