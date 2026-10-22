@@ -17,18 +17,24 @@
 package com.google.cloud.firestore.pipeline.stages;
 
 public final class PipelineExecuteOptions extends AbstractOptions<PipelineExecuteOptions> {
+  private final boolean atomic;
 
   public PipelineExecuteOptions() {
-    super(InternalOptions.EMPTY);
+    this(InternalOptions.EMPTY, false);
   }
 
   PipelineExecuteOptions(InternalOptions options) {
+    this(options, false);
+  }
+
+  PipelineExecuteOptions(InternalOptions options, boolean atomic) {
     super(options);
+    this.atomic = atomic;
   }
 
   @Override
   PipelineExecuteOptions self(InternalOptions options) {
-    return new PipelineExecuteOptions(options);
+    return new PipelineExecuteOptions(options, this.atomic);
   }
 
   public PipelineExecuteOptions withExplainOptions(ExplainOptions options) {
@@ -37,5 +43,13 @@ public final class PipelineExecuteOptions extends AbstractOptions<PipelineExecut
 
   public PipelineExecuteOptions withIndexMode(String indexMode) {
     return with("index_mode", indexMode);
+  }
+
+  public PipelineExecuteOptions withAtomic(boolean atomic) {
+    return new PipelineExecuteOptions(this.options, atomic);
+  }
+
+  public boolean isAtomic() {
+    return this.atomic;
   }
 }

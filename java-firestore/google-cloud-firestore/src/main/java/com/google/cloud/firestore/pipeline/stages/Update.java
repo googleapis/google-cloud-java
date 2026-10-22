@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore.pipeline.stages;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.PipelineUtils;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
@@ -38,12 +37,10 @@ public final class Update extends Stage {
     this.transformedFields = transformedFields;
   }
 
-  @BetaApi
   public Update() {
     this(null, InternalOptions.EMPTY);
   }
 
-  @BetaApi
   public Update withTransformedFields(Selectable... transformedFields) {
     return new Update(transformedFields, this.options);
   }
