@@ -327,31 +327,55 @@ public class GrpcFirestoreRpc implements FirestoreRpc {
 
   private static <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> withRoutingHeaders(
       UnaryCallable<RequestT, ResponseT> callable, Predicate<RequestT> isTransaction) {
-    return new UnaryCallable<RequestT, ResponseT>() {
-      @Override
-      public ApiFuture<ResponseT> futureCall(RequestT request, ApiCallContext thisCallContext) {
-        ApiCallContext defaultContext =
-            isTransaction.test(request) ? TRANSACTION_CALL_CONTEXT : NON_TRANSACTION_CALL_CONTEXT;
-        return callable.futureCall(request, defaultContext.merge(thisCallContext));
-      }
-    };
+    return new RoutingMetadataUnaryCallable<>(callable, isTransaction);
   }
 
   private static <RequestT, ResponseT>
       ServerStreamingCallable<RequestT, ResponseT> withRoutingHeaders(
           ServerStreamingCallable<RequestT, ResponseT> callable,
           Predicate<RequestT> isTransaction) {
-    return new ServerStreamingCallable<RequestT, ResponseT>() {
-      @Override
-      public void call(
-          RequestT request,
-          ResponseObserver<ResponseT> responseObserver,
-          ApiCallContext thisCallContext) {
-        ApiCallContext defaultContext =
-            isTransaction.test(request) ? TRANSACTION_CALL_CONTEXT : NON_TRANSACTION_CALL_CONTEXT;
-        callable.call(request, responseObserver, defaultContext.merge(thisCallContext));
-      }
-    };
+    return new RoutingMetadataServerStreamingCallable<>(callable, isTransaction);
+  }
+
+  private static class RoutingMetadataUnaryCallable<RequestT, ResponseT>
+      extends UnaryCallable<RequestT, ResponseT> {
+    private final UnaryCallable<RequestT, ResponseT> callable;
+    private final Predicate<RequestT> isTransaction;
+
+    RoutingMetadataUnaryCallable(
+        UnaryCallable<RequestT, ResponseT> callable, Predicate<RequestT> isTransaction) {
+      this.callable = callable;
+      this.isTransaction = isTransaction;
+    }
+
+    @Override
+    public ApiFuture<ResponseT> futureCall(RequestT request, ApiCallContext thisCallContext) {
+      ApiCallContext defaultContext =
+          isTransaction.test(request) ? TRANSACTION_CALL_CONTEXT : NON_TRANSACTION_CALL_CONTEXT;
+      return callable.futureCall(request, defaultContext.merge(thisCallContext));
+    }
+  }
+
+  private static class RoutingMetadataServerStreamingCallable<RequestT, ResponseT>
+      extends ServerStreamingCallable<RequestT, ResponseT> {
+    private final ServerStreamingCallable<RequestT, ResponseT> callable;
+    private final Predicate<RequestT> isTransaction;
+
+    RoutingMetadataServerStreamingCallable(
+        ServerStreamingCallable<RequestT, ResponseT> callable, Predicate<RequestT> isTransaction) {
+      this.callable = callable;
+      this.isTransaction = isTransaction;
+    }
+
+    @Override
+    public void call(
+        RequestT request,
+        ResponseObserver<ResponseT> responseObserver,
+        ApiCallContext thisCallContext) {
+      ApiCallContext defaultContext =
+          isTransaction.test(request) ? TRANSACTION_CALL_CONTEXT : NON_TRANSACTION_CALL_CONTEXT;
+      callable.call(request, responseObserver, defaultContext.merge(thisCallContext));
+    }
   }
 
   // This class is needed solely to get access to protected method setInternalHeaderProvider()
