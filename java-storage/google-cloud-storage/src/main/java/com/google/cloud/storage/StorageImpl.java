@@ -761,11 +761,18 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     ImmutableMap<StorageRpc.Option, ?> optionsMap = resolve.getRpcOptions();
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsGet(storageObject, optionsMap);
-    return run(
-        "ReadObject",
+    StorageMetricsContext metricsContext = getOptions().createMetricsContext("ReadObject");
+    return retrier.run(
         algorithm,
-        () -> storageRpc.load(storageObject, optionsMap),
-        Decoder.identity());
+        () -> {
+          byte[] bytes = storageRpc.load(storageObject, optionsMap);
+          if (metricsContext != null && bytes != null) {
+            metricsContext.setResponseBytes(bytes.length);
+          }
+          return bytes;
+        },
+        Decoder.identity(),
+        metricsContext);
   }
 
   @Override
@@ -804,15 +811,22 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     ImmutableMap<StorageRpc.Option, ?> optionsMap =
         Opts.unwrap(options).resolveFrom(blob).getRpcOptions();
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForObjectsGet(pb, optionsMap);
-    run(
-        "ReadObject",
+    StorageMetricsContext metricsContext = getOptions().createMetricsContext("ReadObject");
+    retrier.run(
         algorithm,
         callable(
             () -> {
-              storageRpc.read(
-                  pb, optionsMap, countingOutputStream.getCount(), countingOutputStream);
+              try {
+                storageRpc.read(
+                    pb, optionsMap, countingOutputStream.getCount(), countingOutputStream);
+              } finally {
+                if (metricsContext != null) {
+                  metricsContext.setResponseBytes(countingOutputStream.getCount());
+                }
+              }
             }),
-        Decoder.identity());
+        Decoder.identity(),
+        metricsContext);
   }
 
   @Override

@@ -153,6 +153,9 @@ abstract class BaseStorageReadChannel<T> implements StorageReadChannel {
         int read = tmp.read(dst);
         if (read != -1) {
           byteRangeSpec = byteRangeSpec.withShiftBeginOffset(read);
+          if (read > 0 && metricsContext != null) {
+            metricsContext.addResponseBytes(read);
+          }
         }
         return read;
       } catch (StorageException e) {

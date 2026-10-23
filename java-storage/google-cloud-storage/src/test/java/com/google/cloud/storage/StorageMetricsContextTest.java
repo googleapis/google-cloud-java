@@ -659,4 +659,95 @@ public final class StorageMetricsContextTest {
 
     assertThat(bodySizeData).isNull();
   }
+
+  @Test
+  public void recordOperation_recordsResponseBodySize_whenReadObjectAndBytesGreaterThanZero() {
+    io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader reader =
+        io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader.create();
+    io.opentelemetry.sdk.metrics.SdkMeterProvider provider =
+        io.opentelemetry.sdk.metrics.SdkMeterProvider.builder()
+            .registerMetricReader(reader)
+            .build();
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
+
+    StorageMetricsContext context = StorageMetricsContext.create("ReadObject");
+    context.setResponseBytes(4096L);
+    context.recordOperation(metrics, null);
+
+    java.util.Collection<io.opentelemetry.sdk.metrics.data.MetricData> collected =
+        reader.collectAllMetrics();
+    io.opentelemetry.sdk.metrics.data.MetricData bodySizeData =
+        collected.stream()
+            .filter(
+                m ->
+                    m.getName()
+                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(bodySizeData).isNotNull();
+    assertThat(bodySizeData.getHistogramData().getPoints()).hasSize(1);
+    io.opentelemetry.sdk.metrics.data.HistogramPointData point =
+        bodySizeData.getHistogramData().getPoints().iterator().next();
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(4096.0);
+    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_RPC_METHOD))
+        .isEqualTo("ReadObject");
+  }
+
+  @Test
+  public void recordOperation_doesNotRecordResponseBodySize_whenBytesIsZero() {
+    io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader reader =
+        io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader.create();
+    io.opentelemetry.sdk.metrics.SdkMeterProvider provider =
+        io.opentelemetry.sdk.metrics.SdkMeterProvider.builder()
+            .registerMetricReader(reader)
+            .build();
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
+
+    StorageMetricsContext context = StorageMetricsContext.create("ReadObject");
+    context.setResponseBytes(0L);
+    context.recordOperation(metrics, null);
+
+    java.util.Collection<io.opentelemetry.sdk.metrics.data.MetricData> collected =
+        reader.collectAllMetrics();
+    io.opentelemetry.sdk.metrics.data.MetricData bodySizeData =
+        collected.stream()
+            .filter(
+                m ->
+                    m.getName()
+                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(bodySizeData).isNull();
+  }
+
+  @Test
+  public void recordOperation_doesNotRecordResponseBodySize_whenNotReadObject() {
+    io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader reader =
+        io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader.create();
+    io.opentelemetry.sdk.metrics.SdkMeterProvider provider =
+        io.opentelemetry.sdk.metrics.SdkMeterProvider.builder()
+            .registerMetricReader(reader)
+            .build();
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
+
+    StorageMetricsContext context = StorageMetricsContext.create("WriteObject");
+    context.setResponseBytes(4096L);
+    context.recordOperation(metrics, null);
+
+    java.util.Collection<io.opentelemetry.sdk.metrics.data.MetricData> collected =
+        reader.collectAllMetrics();
+    io.opentelemetry.sdk.metrics.data.MetricData bodySizeData =
+        collected.stream()
+            .filter(
+                m ->
+                    m.getName()
+                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_RESPONSE_BODY_SIZE))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(bodySizeData).isNull();
+  }
 }
