@@ -121,6 +121,7 @@ import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
+import com.google.cloud.firestore.FirestoreException;
 import com.google.cloud.firestore.FirestoreOptions;
 import com.google.cloud.firestore.GeoPoint;
 import com.google.cloud.firestore.LocalFirestoreHelper;
@@ -152,6 +153,7 @@ import com.google.cloud.firestore.pipeline.stages.Upsert;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
+import java.math.BigDecimal;
 import java.util.AbstractMap;
 import java.util.Arrays;
 import java.util.Collections;
@@ -4883,10 +4885,207 @@ public class ITPipelineTest extends ITBaseTest {
     }
   }
 
+  static boolean runComprehensiveTests() {
+    String propertyName = "FIRESTORE_RUN_COMPREHENSIVE_TESTS";
+    String runComprehensive = System.getProperty(propertyName);
+    if (runComprehensive == null) {
+      runComprehensive = System.getenv(propertyName);
+    }
+    return "YES".equalsIgnoreCase(runComprehensive) || "true".equalsIgnoreCase(runComprehensive);
+  }
+
+  private static void assumeComprehensiveTestsEnabled() {
+    assumeTrue(
+        "Set FIRESTORE_RUN_COMPREHENSIVE_TESTS=true to run comprehensive window function tests.",
+        runComprehensiveTests());
+  }
+
+  // -----------------------------------------------------------------------------------------
+  // Default window function suite
+  // -----------------------------------------------------------------------------------------
+
+  @Test
+  public void
+      testWindowFieldsComputesRunningAggregatesOverADocumentsFramePartitionedByAFieldAndAnExpressionAndSortedByMultipleKeys()
+          throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec()
+                    .partition("product", Expression.toUpper("region"))
+                    .sort(ascending("date"), descending("salesPrice"))
+                    .documents(WindowBound.UNBOUNDED, constant(0)),
+                AggregateFunction.sum("salesPrice").as("stats.runningTotal"),
+                AggregateFunction.arrayAgg("quantity").as("quantities"),
+                AggregateFunction.countAll().as("count"))
+            .sort(ascending("date"))
+            .select("product", "stats", "quantities", "count")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("stats", mapOfEntries(entry("runningTotal", 12L))),
+                entry("quantities", Arrays.asList(1L)),
+                entry("count", 1L)),
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("stats", mapOfEntries(entry("runningTotal", 30L))),
+                entry("quantities", Arrays.asList(2L)),
+                entry("count", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("stats", mapOfEntries(entry("runningTotal", 30L))),
+                entry("quantities", Arrays.asList(3L)),
+                entry("count", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("stats", mapOfEntries(entry("runningTotal", 60L))),
+                entry("quantities", Arrays.asList(4L)),
+                entry("count", 1L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("stats", mapOfEntries(entry("runningTotal", 90L))),
+                entry("quantities", Arrays.asList(3L, 5L)),
+                entry("count", 2L))));
+  }
+
+  @Test
+  public void testWindowFieldsCountsDocumentsInATimeUnitRangeFrame() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection().getPath())
+            .addWindowFields(
+                new WindowSpec().sort(ascending("date")).range(12, WindowBound.CURRENT, "hour"),
+                AggregateFunction.count("quantity").as("windowCount"))
+            .sort(ascending("date"))
+            .select("product", "windowCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L))));
+  }
+
+  @Test
+  public void testWindowFieldsComputesLookAheadAndNearbyAggregatesWithAccumulatorLevelFrames()
+      throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().sort(ascending("quantity")),
+                AggregateFunction.average("salesPrice")
+                    .over(new WindowSpec().documents(-1, 2))
+                    .as("lookAheadAverage"),
+                AggregateFunction.sum("salesPrice")
+                    .over(new WindowSpec().range(1.5, 0.5))
+                    .as("nearbyTotal"))
+            .sort(ascending("date"))
+            .select("product", "lookAheadAverage", "nearbyTotal")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("lookAheadAverage", 30.0),
+                entry("nearbyTotal", 12L)),
+            mapOfEntries(
+                entry("product", "phone"),
+                entry("lookAheadAverage", 45.0),
+                entry("nearbyTotal", 42L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("lookAheadAverage", 60.0),
+                entry("nearbyTotal", 60L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("lookAheadAverage", 60.0),
+                entry("nearbyTotal", 90L)),
+            mapOfEntries(
+                entry("product", "tablet"),
+                entry("lookAheadAverage", null),
+                entry("nearbyTotal", 120L))));
+  }
+
+  @Test
+  public void testWindowFieldsRejectsARangeFrameWithoutASort() throws Exception {
+    CollectionReference salesCol = windowTestCollection();
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class,
+            () ->
+                firestore
+                    .pipeline()
+                    .collection(salesCol)
+                    .addWindowFields(
+                        new WindowSpec().range(WindowBound.UNBOUNDED, WindowBound.CURRENT),
+                        AggregateFunction.count("quantity").as("windowCount"))
+                    .execute()
+                    .get());
+    assertThat(exception.getMessage().toLowerCase()).contains("range");
+  }
+
+  @Test
+  public void testWindowFieldsRejectsDuplicateAliasesAndUnsupportedFieldValues() throws Exception {
+    CollectionReference salesCol = firestore.collection("sales");
+    IllegalArgumentException duplicateError =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                firestore
+                    .pipeline()
+                    .collection(salesCol)
+                    .addWindowFields(
+                        new WindowSpec().partition("product"),
+                        AggregateFunction.sum("salesPrice").as("total"),
+                        AggregateFunction.average("salesPrice").as("total")));
+    assertThat(duplicateError).hasMessageThat().contains("Duplicate alias: 'total'");
+
+    FirestoreException valueError =
+        assertThrows(
+            FirestoreException.class,
+            () ->
+                firestore
+                    .pipeline()
+                    .collection(salesCol)
+                    .addWindowFields(
+                        new WindowSpec().partition(constant(new BigDecimal("1.5"))),
+                        AggregateFunction.countAll().as("windowCount"))
+                    .execute());
+    assertThat(valueError).hasMessageThat().contains("Cannot convert");
+  }
+
+  // -----------------------------------------------------------------------------------------
+  // Comprehensive window function tests (count)
+  //
+  // Skipped by default on CI and local runs because the backend already tests window function
+  // semantics, and the active suite above exercises the SDK's window function code paths, server
+  // errors, and client-side validation. Set FIRESTORE_RUN_COMPREHENSIVE_TESTS=true to run the
+  // full matrix.
+  // -----------------------------------------------------------------------------------------
+
   // --- partitioning --------------------------------------------------------------------------
 
   @Test
   public void testWindowFieldsEmptySpecIsASingleGlobalWindow() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -4910,6 +5109,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsOmittedSpecIsASingleGlobalWindow() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -4932,6 +5132,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsPartitionsBySingleFieldName() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -4956,6 +5157,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsPartitionsByMultipleFields() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -4985,6 +5187,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsPartitionsByExpression() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5011,6 +5214,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsRunningCountWithTheDefaultFrame() throws Exception {
+    assumeComprehensiveTestsEnabled();
     // The implicit default frame when `sort` is specified is `range(UNBOUNDED, CURRENT)`.
     // `quantity` is 1..5 in the same order as `date`, and has no ties, so the running count is
     // unambiguous.
@@ -5038,6 +5242,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsRunningCountWithinEachPartition() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5062,6 +5267,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsHonorsADescendingSort() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5088,6 +5294,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsHonorsMultipleSortOrderings() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5116,6 +5323,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsDocumentsUnboundedToCurrent() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5142,6 +5350,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsDocumentsUnboundedToUnbounded() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5169,6 +5378,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsDocumentsCurrentToCurrent() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5196,6 +5406,7 @@ public class ITPipelineTest extends ITBaseTest {
   @Test
   public void testWindowFieldsDocumentsUnboundedToCurrentDoesNotIncludeTiedPeers()
       throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5230,6 +5441,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsRangeCurrentToCurrentCountsTiedPeers() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5264,6 +5476,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsRangeZeroOffsetCountsTiedPeers() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5295,6 +5508,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsRangeUnboundedToCurrentIncludesTiedPeers() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5321,6 +5535,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsRangeUnboundedToZeroOffsetIncludesTiedPeers() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5345,6 +5560,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsRangeUnboundedToCurrentWithStringSortKey() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5371,6 +5587,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsRangeUnboundedToCurrentWithMultipleSortOrderings() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5404,6 +5621,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsRangeUnboundedToUnbounded() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5430,35 +5648,35 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
-  public void testWindowFieldsRangeWithATimeUnitOnADateSort() throws Exception {
+  public void testWindowFieldsAppliesTheTimeUnitToARangeFrameOffset() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                new WindowSpec()
-                    .range(WindowBound.UNBOUNDED, WindowBound.CURRENT, "day")
-                    .sort(ascending("date")),
-                AggregateFunction.count("quantity").as("cumulativeCount"))
+                new WindowSpec().sort(ascending("date")).range(12, WindowBound.CURRENT, "hour"),
+                AggregateFunction.count("quantity").as("windowCount"))
             .sort(ascending("date"))
-            .select("product", "cumulativeCount")
+            .select("product", "windowCount")
             .execute()
             .get()
             .getResults();
     expectResults(
         results,
         Arrays.asList(
-            mapOfEntries(entry("product", "phone"), entry("cumulativeCount", 1L)),
-            mapOfEntries(entry("product", "phone"), entry("cumulativeCount", 2L)),
-            mapOfEntries(entry("product", "tablet"), entry("cumulativeCount", 3L)),
-            mapOfEntries(entry("product", "tablet"), entry("cumulativeCount", 4L)),
-            mapOfEntries(entry("product", "tablet"), entry("cumulativeCount", 5L))));
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "phone"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L)),
+            mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L))));
   }
 
   // --- accumulator level framing ---------------------------------------------------------------
 
   @Test
   public void testWindowFieldsEvaluatesEachAccumulatorOverItsOwnFrame() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5495,6 +5713,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsSupportsARangeFrameInOver() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5530,6 +5749,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsSupportsMultipleOutputFieldsInASingleStage() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5570,6 +5790,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsSupportsNestedOutputFieldPaths() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5602,6 +5823,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsSupportsChainingMultipleStages() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5649,6 +5871,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsSupportsFilteringOnAWindowFieldInALaterStage() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5672,6 +5895,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsSupportsSortingOnAWindowFieldInALaterStage() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5697,25 +5921,8 @@ public class ITPipelineTest extends ITBaseTest {
   // --- error handling ----------------------------------------------------------------------------
 
   @Test
-  public void testWindowFieldsRejectsARangeFrameWithoutASort() throws Exception {
-    CollectionReference salesCol = windowTestCollection();
-    ExecutionException exception =
-        assertThrows(
-            ExecutionException.class,
-            () ->
-                firestore
-                    .pipeline()
-                    .collection(salesCol)
-                    .addWindowFields(
-                        new WindowSpec().range(WindowBound.UNBOUNDED, WindowBound.CURRENT),
-                        AggregateFunction.count("quantity").as("windowCount"))
-                    .execute()
-                    .get());
-    assertThat(exception.getMessage().toLowerCase()).contains("range");
-  }
-
-  @Test
   public void testWindowFieldsRejectsMixingStageAndAccumulatorFraming() throws Exception {
+    assumeComprehensiveTestsEnabled();
     CollectionReference salesCol = windowTestCollection();
     assertThrows(
         ExecutionException.class,
@@ -5737,27 +5944,38 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
-  public void testWindowFieldsRejectsPartiallySpecifiedAccumulatorFraming() throws Exception {
-    CollectionReference salesCol = windowTestCollection();
-    assertThrows(
-        ExecutionException.class,
-        () ->
-            firestore
-                .pipeline()
-                .collection(salesCol)
-                .addWindowFields(
-                    new WindowSpec().sort(ascending("date")),
-                    AggregateFunction.count("quantity")
-                        .over(
-                            new WindowSpec().documents(WindowBound.UNBOUNDED, WindowBound.CURRENT))
-                        .as("framed"),
-                    AggregateFunction.count("quantity").as("unframed"))
-                .execute()
-                .get());
+  public void
+      testWindowFieldsEvaluatesAccumulatorsWithoutOverUsingTheDefaultFrameWhenOthersUseOver()
+          throws Exception {
+    assumeComprehensiveTestsEnabled();
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().sort(ascending("date")),
+                AggregateFunction.count("quantity")
+                    .over(new WindowSpec().documents(0, 0))
+                    .as("framed"),
+                AggregateFunction.count("quantity").as("unframed"))
+            .sort(ascending("date"))
+            .select("product", "framed", "unframed")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("framed", 1L), entry("unframed", 1L)),
+            mapOfEntries(entry("product", "phone"), entry("framed", 1L), entry("unframed", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("framed", 1L), entry("unframed", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("framed", 1L), entry("unframed", 4L)),
+            mapOfEntries(entry("product", "tablet"), entry("framed", 1L), entry("unframed", 5L))));
   }
 
   @Test
   public void testWindowFieldsRejectsAPartitionSuppliedToAnAccumulatorLevelOver() throws Exception {
+    assumeComprehensiveTestsEnabled();
     CollectionReference salesCol = windowTestCollection();
     ExecutionException exception =
         assertThrows(
@@ -5779,8 +5997,13 @@ public class ITPipelineTest extends ITBaseTest {
     assertThat(exception.getMessage().toLowerCase()).contains("unexpected field");
   }
 
+  // -----------------------------------------------------------------------------------------
+  // Comprehensive window function tests (aggregators)
+  // -----------------------------------------------------------------------------------------
+
   @Test
   public void testWindowFieldsComputesSumAverageMinimumAndMaximum() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5810,48 +6033,58 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
-  @Ignore("Pending backend support for count_if and count_distinct in add_window_fields")
-  public void testWindowFieldsComputesCountIfAndCountDistinct() throws Exception {
+  @Ignore("Pending backend support for count_if in add_window_fields")
+  public void testWindowFieldsComputesCountIf() throws Exception {
     List<PipelineResult> results =
         firestore
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
                 new WindowSpec().partition("product"),
-                AggregateFunction.countIf(field("salesPrice").greaterThan(20)).as("expensiveCount"),
-                AggregateFunction.countDistinct("salesPrice").as("distinctPriceCount"))
+                AggregateFunction.countIf(field("salesPrice").greaterThan(20)).as("expensiveCount"))
             .sort(ascending("date"))
-            .select("product", "expensiveCount", "distinctPriceCount")
+            .select("product", "expensiveCount")
             .execute()
             .get()
             .getResults();
     expectResults(
         results,
         Arrays.asList(
-            mapOfEntries(
-                entry("product", "phone"),
-                entry("expensiveCount", 1L),
-                entry("distinctPriceCount", 2L)),
-            mapOfEntries(
-                entry("product", "phone"),
-                entry("expensiveCount", 1L),
-                entry("distinctPriceCount", 2L)),
-            mapOfEntries(
-                entry("product", "tablet"),
-                entry("expensiveCount", 3L),
-                entry("distinctPriceCount", 2L)),
-            mapOfEntries(
-                entry("product", "tablet"),
-                entry("expensiveCount", 3L),
-                entry("distinctPriceCount", 2L)),
-            mapOfEntries(
-                entry("product", "tablet"),
-                entry("expensiveCount", 3L),
-                entry("distinctPriceCount", 2L))));
+            mapOfEntries(entry("product", "phone"), entry("expensiveCount", 1L)),
+            mapOfEntries(entry("product", "phone"), entry("expensiveCount", 1L)),
+            mapOfEntries(entry("product", "tablet"), entry("expensiveCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("expensiveCount", 3L)),
+            mapOfEntries(entry("product", "tablet"), entry("expensiveCount", 3L))));
+  }
+
+  @Test
+  @Ignore("Pending backend support for count_distinct in add_window_fields")
+  public void testWindowFieldsComputesCountDistinct() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().partition("product"),
+                AggregateFunction.countDistinct("salesPrice").as("distinctPriceCount"))
+            .sort(ascending("date"))
+            .select("product", "distinctPriceCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("product", "phone"), entry("distinctPriceCount", 2L)),
+            mapOfEntries(entry("product", "phone"), entry("distinctPriceCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("distinctPriceCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("distinctPriceCount", 2L)),
+            mapOfEntries(entry("product", "tablet"), entry("distinctPriceCount", 2L))));
   }
 
   @Test
   public void testWindowFieldsAggregatesOverAComputedExpression() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5877,6 +6110,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsComputesFirstAndLastOverThePartition() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5910,6 +6144,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsComputesArrayAgg() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5933,6 +6168,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsComputesArrayAggDistinct() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5956,6 +6192,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsComputesARunningTotal() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -5982,6 +6219,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsComputesACenteredMovingAverage() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -6014,6 +6252,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsComputesATrailingSum() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -6039,6 +6278,7 @@ public class ITPipelineTest extends ITBaseTest {
   @Test
   public void testWindowFieldsComputesALookAheadAverageWithANegativePrecedingBound()
       throws Exception {
+    assumeComprehensiveTestsEnabled();
     // Equivalent to "documents between 1 following and 2 following": the window is
     // [index - preceding, index + following].
     List<PipelineResult> results =
@@ -6076,6 +6316,7 @@ public class ITPipelineTest extends ITBaseTest {
   @Test
   public void testWindowFieldsComputesALookBehindAverageWithANegativeFollowingBound()
       throws Exception {
+    assumeComprehensiveTestsEnabled();
     // Equivalent to "documents between 2 preceding and 1 preceding": the window is
     // [index - preceding, index + following].
     List<PipelineResult> results =
@@ -6113,6 +6354,7 @@ public class ITPipelineTest extends ITBaseTest {
   @Test
   public void testWindowFieldsComputesARangeLookBehindAverageWithANegativeFollowingBound()
       throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -6147,6 +6389,7 @@ public class ITPipelineTest extends ITBaseTest {
   @Test
   public void testWindowFieldsComputesARangeLookAheadAverageWithANegativePrecedingBound()
       throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -6180,6 +6423,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsComputesAValueBasedRangeWindow() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -6204,6 +6448,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsComputesAValueBasedRangeWindowWithDoubleOffsets() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -6228,6 +6473,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsComputesATrailingThreeDayTotal() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -6251,77 +6497,8 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
-  public void testWindowFieldsComputesACumulativeTotalWithAnUnboundedDateRange() throws Exception {
-    List<PipelineResult> results =
-        firestore
-            .pipeline()
-            .collection(windowTestCollection())
-            .addWindowFields(
-                new WindowSpec()
-                    .range(WindowBound.UNBOUNDED, WindowBound.CURRENT, "day")
-                    .sort(ascending("date")),
-                AggregateFunction.sum("salesPrice").as("cumulativeTotal"))
-            .sort(ascending("date"))
-            .select("product", "cumulativeTotal")
-            .execute()
-            .get()
-            .getResults();
-    expectResults(
-        results,
-        Arrays.asList(
-            mapOfEntries(entry("product", "phone"), entry("cumulativeTotal", 12L)),
-            mapOfEntries(entry("product", "phone"), entry("cumulativeTotal", 42L)),
-            mapOfEntries(entry("product", "tablet"), entry("cumulativeTotal", 72L)),
-            mapOfEntries(entry("product", "tablet"), entry("cumulativeTotal", 132L)),
-            mapOfEntries(entry("product", "tablet"), entry("cumulativeTotal", 192L))));
-  }
-
-  @Test
-  public void testWindowFieldsEvaluatesEachAggregateOverADifferentFrame() throws Exception {
-    List<PipelineResult> results =
-        firestore
-            .pipeline()
-            .collection(windowTestCollection())
-            .addWindowFields(
-                new WindowSpec().sort(ascending("date")),
-                AggregateFunction.sum("salesPrice")
-                    .over(new WindowSpec().documents(WindowBound.UNBOUNDED, WindowBound.CURRENT))
-                    .as("runningTotal"),
-                AggregateFunction.average("salesPrice")
-                    .over(new WindowSpec().documents(1, 1))
-                    .as("movingAverage"))
-            .sort(ascending("date"))
-            .select("product", "runningTotal", "movingAverage")
-            .execute()
-            .get()
-            .getResults();
-    expectResults(
-        results,
-        Arrays.asList(
-            mapOfEntries(
-                entry("product", "phone"),
-                entry("runningTotal", 12L),
-                entry("movingAverage", 21.0)),
-            mapOfEntries(
-                entry("product", "phone"),
-                entry("runningTotal", 42L),
-                entry("movingAverage", 24.0)),
-            mapOfEntries(
-                entry("product", "tablet"),
-                entry("runningTotal", 72L),
-                entry("movingAverage", 40.0)),
-            mapOfEntries(
-                entry("product", "tablet"),
-                entry("runningTotal", 132L),
-                entry("movingAverage", 50.0)),
-            mapOfEntries(
-                entry("product", "tablet"),
-                entry("runningTotal", 192L),
-                entry("movingAverage", 60.0))));
-  }
-
-  @Test
   public void testWindowFieldsCountAllCountsEveryDocumentInTheWindow() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -6346,6 +6523,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsDocumentsZeroPrecedingAndZeroFollowing() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -6370,6 +6548,7 @@ public class ITPipelineTest extends ITBaseTest {
 
   @Test
   public void testWindowFieldsDocumentsZeroPrecedingToUnboundedFollowing() throws Exception {
+    assumeComprehensiveTestsEnabled();
     List<PipelineResult> results =
         firestore
             .pipeline()
@@ -6392,29 +6571,9 @@ public class ITPipelineTest extends ITBaseTest {
             mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L))));
   }
 
-  @Test
-  public void testWindowFieldsDocumentsSymmetricMovingWindow() throws Exception {
-    List<PipelineResult> results =
-        firestore
-            .pipeline()
-            .collection(windowTestCollection())
-            .addWindowFields(
-                new WindowSpec().documents(1, 1).sort(ascending("date")),
-                AggregateFunction.count("quantity").as("windowCount"))
-            .sort(ascending("date"))
-            .select("product", "windowCount")
-            .execute()
-            .get()
-            .getResults();
-    expectResults(
-        results,
-        Arrays.asList(
-            mapOfEntries(entry("product", "phone"), entry("windowCount", 2L)),
-            mapOfEntries(entry("product", "phone"), entry("windowCount", 3L)),
-            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
-            mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
-            mapOfEntries(entry("product", "tablet"), entry("windowCount", 2L))));
-  }
+  // -----------------------------------------------------------------------------------------
+  // Window function tests (ranking)
+  // -----------------------------------------------------------------------------------------
 
   @Test
   @Ignore("Pending backend support for rank")

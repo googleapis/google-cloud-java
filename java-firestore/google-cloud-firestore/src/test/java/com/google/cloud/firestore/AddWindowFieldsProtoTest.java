@@ -31,7 +31,9 @@ import static com.google.cloud.firestore.pipeline.expressions.AggregateFunction.
 import static com.google.cloud.firestore.pipeline.expressions.Expression.constant;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.field;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
+import com.google.cloud.firestore.pipeline.expressions.Expression;
 import com.google.cloud.firestore.pipeline.expressions.WindowBound;
 import com.google.cloud.firestore.pipeline.expressions.WindowFunction;
 import com.google.cloud.firestore.pipeline.expressions.WindowSpec;
@@ -40,6 +42,7 @@ import com.google.firestore.v1.Function;
 import com.google.firestore.v1.MapValue;
 import com.google.firestore.v1.Pipeline.Stage;
 import com.google.firestore.v1.Value;
+import java.math.BigDecimal;
 import java.util.AbstractMap;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -950,5 +953,94 @@ public class AddWindowFieldsProtoTest {
                 pair("sort", array(ordering(fieldRef("date"), "ascending"))),
                 pair(
                     "documents", map(pair("preceding", intVal(3)), pair("following", intVal(4))))));
+  }
+
+  // --------------------------------------------------------------------------------------------
+  // User data validation
+  // --------------------------------------------------------------------------------------------
+
+  @Test
+  public void validatesExpressionsInPartition() {
+    Expression invalidExpr = constant(new BigDecimal("1.5"));
+    FirestoreException error =
+        assertThrows(
+            FirestoreException.class,
+            () ->
+                windowStage(
+                    basePipeline()
+                        .addWindowFields(
+                            new WindowSpec().partition(invalidExpr), countAll().as("c"))));
+    assertThat(error).hasMessageThat().contains("Cannot convert");
+  }
+
+  @Test
+  public void validatesExpressionsInSort() {
+    Expression invalidExpr = constant(new BigDecimal("1.5"));
+    FirestoreException error =
+        assertThrows(
+            FirestoreException.class,
+            () ->
+                windowStage(
+                    basePipeline()
+                        .addWindowFields(
+                            new WindowSpec().sort(invalidExpr.ascending()), countAll().as("c"))));
+    assertThat(error).hasMessageThat().contains("Cannot convert");
+  }
+
+  @Test
+  public void validatesExpressionsInDocumentsAndRangeFrameBoundsAndUnit() {
+    Expression invalidExpr = constant(new BigDecimal("1.5"));
+    FirestoreException docError =
+        assertThrows(
+            FirestoreException.class,
+            () ->
+                windowStage(
+                    basePipeline()
+                        .addWindowFields(
+                            new WindowSpec()
+                                .sort(field("date").ascending())
+                                .documents(invalidExpr, WindowBound.CURRENT),
+                            countAll().as("c"))));
+    assertThat(docError).hasMessageThat().contains("Cannot convert");
+
+    FirestoreException rangeError =
+        assertThrows(
+            FirestoreException.class,
+            () ->
+                windowStage(
+                    basePipeline()
+                        .addWindowFields(
+                            new WindowSpec()
+                                .sort(field("date").ascending())
+                                .range(1, WindowBound.CURRENT, invalidExpr),
+                            countAll().as("c"))));
+    assertThat(rangeError).hasMessageThat().contains("Cannot convert");
+  }
+
+  @Test
+  public void validatesExpressionsInFieldsAndOverFrames() {
+    Expression invalidExpr = constant(new BigDecimal("1.5"));
+    FirestoreException fieldError =
+        assertThrows(
+            FirestoreException.class,
+            () ->
+                windowStage(
+                    basePipeline()
+                        .addWindowFields(new WindowSpec(), sum(invalidExpr).as("total"))));
+    assertThat(fieldError).hasMessageThat().contains("Cannot convert");
+
+    FirestoreException overError =
+        assertThrows(
+            FirestoreException.class,
+            () ->
+                windowStage(
+                    basePipeline()
+                        .addWindowFields(
+                            new WindowSpec().sort(field("date").ascending()),
+                            countAll()
+                                .over(
+                                    new WindowSpec().documents(WindowBound.UNBOUNDED, invalidExpr))
+                                .as("c"))));
+    assertThat(overError).hasMessageThat().contains("Cannot convert");
   }
 }
