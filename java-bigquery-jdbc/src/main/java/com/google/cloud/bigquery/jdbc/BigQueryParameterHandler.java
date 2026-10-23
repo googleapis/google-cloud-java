@@ -21,6 +21,8 @@ import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -36,7 +38,8 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 class BigQueryParameterHandler {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryParameterHandler.class.getName());
   private final int parametersArraySize;
   private final boolean enableTimestampPicos;
   final ArrayList<BigQueryJdbcParameter> parametersList;
@@ -221,6 +224,8 @@ class BigQueryParameterHandler {
     parameter.setParamType(BigQueryStatementParameterType.UNSPECIFIED);
     parameter.setScale(-1);
 
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
+
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
 
@@ -330,6 +335,9 @@ class BigQueryParameterHandler {
     if (parameter.getIndex() == -1) {
       parametersList.add(parameter);
     }
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
+
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
 
@@ -353,6 +361,8 @@ class BigQueryParameterHandler {
     parameter.setParamName("");
     parameter.setParamType(paramType);
     parameter.setScale(scale);
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
 
     LOG.finest("Parameter set { %s }", parameter.toString());
   }

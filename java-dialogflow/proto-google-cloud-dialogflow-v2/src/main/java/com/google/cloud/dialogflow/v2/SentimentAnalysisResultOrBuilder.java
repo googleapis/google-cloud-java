@@ -62,4 +62,47 @@ public interface SentimentAnalysisResultOrBuilder
    * <code>.google.cloud.dialogflow.v2.Sentiment query_text_sentiment = 1;</code>
    */
   com.google.cloud.dialogflow.v2.SentimentOrBuilder getQueryTextSentimentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the sentiment analysis operation.
+   * If the operation failed, this field will contain the error details.
+   * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+   * </pre>
+   *
+   * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the status field is set.
+   */
+  boolean hasStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the sentiment analysis operation.
+   * If the operation failed, this field will contain the error details.
+   * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+   * </pre>
+   *
+   * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The status.
+   */
+  com.google.rpc.Status getStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the sentiment analysis operation.
+   * If the operation failed, this field will contain the error details.
+   * For example, it might indicate a quota issue (RESOURCE_EXHAUSTED).
+   * </pre>
+   *
+   * <code>.google.rpc.Status status = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.rpc.StatusOrBuilder getStatusOrBuilder();
 }

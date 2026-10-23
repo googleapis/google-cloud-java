@@ -73,6 +73,177 @@ public interface AutomatedAgentReplyOrBuilder
    *
    *
    * <pre>
+   * Response messages from the automated agent.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage> getResponseMessagesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Response messages from the automated agent.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+   */
+  com.google.cloud.dialogflow.v2.ResponseMessage getResponseMessages(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Response messages from the automated agent.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+   */
+  int getResponseMessagesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Response messages from the automated agent.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>
+      getResponseMessagesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Response messages from the automated agent.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 3;</code>
+   */
+  com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder getResponseMessagesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the intent if an intent is matched for the query.
+   * For a V2 query, the value format is `projects/&lt;Project ID&gt;/locations/
+   * &lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * For a V3 query, the value format is `projects/&lt;Project ID&gt;/locations/
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string intent = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The intent.
+   */
+  java.lang.String getIntent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the intent if an intent is matched for the query.
+   * For a V2 query, the value format is `projects/&lt;Project ID&gt;/locations/
+   * &lt;Location ID&gt;/agent/intents/&lt;Intent ID&gt;`.
+   * For a V3 query, the value format is `projects/&lt;Project ID&gt;/locations/
+   * &lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
+   * </pre>
+   *
+   * <code>string intent = 4 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for intent.
+   */
+  com.google.protobuf.ByteString getIntentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Event name if an event is triggered for the query.
+   * </pre>
+   *
+   * <code>string event = 5;</code>
+   *
+   * @return The event.
+   */
+  java.lang.String getEvent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Event name if an event is triggered for the query.
+   * </pre>
+   *
+   * <code>string event = 5;</code>
+   *
+   * @return The bytes for event.
+   */
+  com.google.protobuf.ByteString getEventBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The confidence of the match. Values range from 0.0 (completely uncertain)
+   * to 1.0 (completely certain).
+   * This value is for informational purpose only and is only used to help match
+   * the best intent within the classification threshold. This value may change
+   * for the same end-user expression at any time due to a model retraining or
+   * change in implementation.
+   * </pre>
+   *
+   * <code>float match_confidence = 9;</code>
+   *
+   * @return The matchConfidence.
+   */
+  float getMatchConfidence();
+
+  /**
+   *
+   *
+   * <pre>
+   * The collection of current parameters at the time of this response.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 10;</code>
+   *
+   * @return Whether the parameters field is set.
+   */
+  boolean hasParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * The collection of current parameters at the time of this response.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 10;</code>
+   *
+   * @return The parameters.
+   */
+  com.google.protobuf.Struct getParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * The collection of current parameters at the time of this response.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct parameters = 10;</code>
+   */
+  com.google.protobuf.StructOrBuilder getParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * AutomatedAgentReply type.
    * </pre>
    *
@@ -144,4 +315,17 @@ public interface AutomatedAgentReplyOrBuilder
    * @return The bytes for cxCurrentPage.
    */
   com.google.protobuf.ByteString getCxCurrentPageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The auth code for accessing Call Companion UI.
+   * </pre>
+   *
+   * <code>bytes call_companion_auth_code = 12;</code>
+   *
+   * @return The callCompanionAuthCode.
+   */
+  com.google.protobuf.ByteString getCallCompanionAuthCode();
 }

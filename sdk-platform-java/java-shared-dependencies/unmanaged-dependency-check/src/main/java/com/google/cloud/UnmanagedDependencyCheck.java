@@ -1,3 +1,19 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.google.cloud;
 
 import static com.google.common.base.Preconditions.checkArgument;
@@ -6,6 +22,7 @@ import com.google.cloud.tools.opensource.classpath.ClassPathBuilder;
 import com.google.cloud.tools.opensource.classpath.DependencyMediation;
 import com.google.cloud.tools.opensource.dependencies.Bom;
 import com.google.cloud.tools.opensource.dependencies.MavenRepositoryException;
+import com.google.common.collect.ImmutableSet;
 import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.List;
@@ -18,6 +35,11 @@ import org.eclipse.aether.version.InvalidVersionSpecificationException;
  * A utility class to check unmanaged dependencies in BOM.
  */
 public class UnmanagedDependencyCheck {
+  // Artifacts listed in gapic-libraries-bom whose third-party dependencies (e.g. logback)
+  // are intentionally not managed by google-cloud-shared-dependencies.
+  private static final ImmutableSet<String> BOM_SKIP_ARTIFACT_IDS =
+      ImmutableSet.of("google-cloud-logging-logback", "google-cloud-contrib");
+
   // Regex of handwritten artifacts.
   // There are customized artifacts defined in gapic-bom and handwritten libraries,
   // e.g., firestore and datastore, add entries in regex to exclude these artifacts.
@@ -73,8 +95,12 @@ public class UnmanagedDependencyCheck {
   private static Set<String> getManagedDependenciesFromBom(Bom bom)
       throws InvalidVersionSpecificationException {
     Set<String> res = new HashSet<>();
+    List<Artifact> managedDependencies =
+        bom.getManagedDependencies().stream()
+            .filter(artifact -> !BOM_SKIP_ARTIFACT_IDS.contains(artifact.getArtifactId()))
+            .collect(Collectors.toList());
     new ClassPathBuilder()
-        .resolve(bom.getManagedDependencies(), false, DependencyMediation.MAVEN)
+        .resolve(managedDependencies, false, DependencyMediation.MAVEN)
         .getClassPath()
         .forEach(
             classPath -> {
