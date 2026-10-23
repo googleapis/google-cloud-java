@@ -1993,8 +1993,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     enqueueMarker(queue, BigQueryArrowBatchWrapper.of(null, true));
   }
 
-  private void enqueueBufferError(
-      BlockingQueue<BigQueryFieldValueListWrapper> queue, Throwable e) {
+  private void enqueueBufferError(BlockingQueue<BigQueryFieldValueListWrapper> queue, Throwable e) {
     enqueueMarker(queue, BigQueryFieldValueListWrapper.ofError(e));
   }
 
