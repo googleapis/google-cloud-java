@@ -568,4 +568,95 @@ public final class StorageMetricsContextTest {
     assertThat(metric.getLongSumData().getPoints()).hasSize(1);
     return metric.getLongSumData().getPoints().iterator().next();
   }
+
+  @Test
+  public void recordOperation_recordsRequestBodySize_whenWriteObjectAndBytesGreaterThanZero() {
+    io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader reader =
+        io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader.create();
+    io.opentelemetry.sdk.metrics.SdkMeterProvider provider =
+        io.opentelemetry.sdk.metrics.SdkMeterProvider.builder()
+            .registerMetricReader(reader)
+            .build();
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
+
+    StorageMetricsContext context = StorageMetricsContext.create("WriteObject");
+    context.setRequestBytes(2048L);
+    context.recordOperation(metrics, null);
+
+    java.util.Collection<io.opentelemetry.sdk.metrics.data.MetricData> collected =
+        reader.collectAllMetrics();
+    io.opentelemetry.sdk.metrics.data.MetricData bodySizeData =
+        collected.stream()
+            .filter(
+                m ->
+                    m.getName()
+                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(bodySizeData).isNotNull();
+    assertThat(bodySizeData.getHistogramData().getPoints()).hasSize(1);
+    io.opentelemetry.sdk.metrics.data.HistogramPointData point =
+        bodySizeData.getHistogramData().getPoints().iterator().next();
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(2048.0);
+    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_RPC_METHOD))
+        .isEqualTo("WriteObject");
+  }
+
+  @Test
+  public void recordOperation_doesNotRecordRequestBodySize_whenBytesIsZero() {
+    io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader reader =
+        io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader.create();
+    io.opentelemetry.sdk.metrics.SdkMeterProvider provider =
+        io.opentelemetry.sdk.metrics.SdkMeterProvider.builder()
+            .registerMetricReader(reader)
+            .build();
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
+
+    StorageMetricsContext context = StorageMetricsContext.create("WriteObject");
+    context.setRequestBytes(0L);
+    context.recordOperation(metrics, null);
+
+    java.util.Collection<io.opentelemetry.sdk.metrics.data.MetricData> collected =
+        reader.collectAllMetrics();
+    io.opentelemetry.sdk.metrics.data.MetricData bodySizeData =
+        collected.stream()
+            .filter(
+                m ->
+                    m.getName()
+                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(bodySizeData).isNull();
+  }
+
+  @Test
+  public void recordOperation_doesNotRecordRequestBodySize_whenNotWriteObject() {
+    io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader reader =
+        io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader.create();
+    io.opentelemetry.sdk.metrics.SdkMeterProvider provider =
+        io.opentelemetry.sdk.metrics.SdkMeterProvider.builder()
+            .registerMetricReader(reader)
+            .build();
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
+
+    StorageMetricsContext context = StorageMetricsContext.create("ReadObject");
+    context.setRequestBytes(2048L);
+    context.recordOperation(metrics, null);
+
+    java.util.Collection<io.opentelemetry.sdk.metrics.data.MetricData> collected =
+        reader.collectAllMetrics();
+    io.opentelemetry.sdk.metrics.data.MetricData bodySizeData =
+        collected.stream()
+            .filter(
+                m ->
+                    m.getName()
+                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(bodySizeData).isNull();
+  }
 }

@@ -182,6 +182,29 @@ final class StorageMetricsContext {
                 .build();
         metrics.getGcpClientRequestDuration().record(getElapsedSeconds(), durationAttributes);
       }
+
+      long reqBytes = requestBytes.get();
+      if ("WriteObject".equals(operationName)
+          && reqBytes > 0
+          && metrics.getRequestBodySize() != null) {
+        AttributesBuilder bodyAttrBuilder = Attributes.builder();
+        bodyAttrBuilder.putAll(metrics.getClientAttributes());
+        baseAttributes.forEach(
+            (key, val) -> {
+              if (!key.equals(StorageClientMetrics.KEY_NETWORK_PATH)
+                  && !key.equals(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)
+                  && !key.equals(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)
+                  && !key.equals(StorageClientMetrics.KEY_ERROR_TYPE)
+                  && !key.equals(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION)
+                  && !key.equals(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)) {
+                @SuppressWarnings("unchecked")
+                AttributeKey<Object> objKey = (AttributeKey<Object>) key;
+                bodyAttrBuilder.put(objKey, val);
+              }
+            });
+        bodyAttrBuilder.put(StorageClientMetrics.KEY_RPC_METHOD, operationName);
+        metrics.getRequestBodySize().record(reqBytes, bodyAttrBuilder.build(), otelContext);
+      }
     }
   }
 
@@ -392,6 +415,10 @@ final class StorageMetricsContext {
 
   long addRequestBytes(long bytes) {
     return requestBytes.addAndGet(bytes);
+  }
+
+  void setRequestBytes(long bytes) {
+    requestBytes.set(bytes);
   }
 
   long getRequestBytes() {

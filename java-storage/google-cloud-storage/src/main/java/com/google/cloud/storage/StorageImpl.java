@@ -210,6 +210,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
       return create(blobInfo, null, options);
     }
     StorageMetricsContext multiContext = getOptions().createMultiStepMetricsContext("WriteObject");
+    if (multiContext != null) {
+      multiContext.setRequestBytes(size);
+    }
     Throwable error = null;
     try {
       Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
@@ -1921,6 +1924,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
 
   @Override
   public BlobInfo internalDirectUpload(BlobInfo info, Opts<ObjectTargetOpt> opts, ByteBuffer buf) {
+    int totalBytes = buf.remaining();
     BlobInfo.Builder builder =
         opts.blobInfoMapper().apply(info.toBuilder().clearMd5().clearCrc32c());
     @Nullable Crc32cLengthKnown hash = opts.getHasher().hash(buf.duplicate());
@@ -1934,14 +1938,18 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsCreate(encoded, optionsMap);
     RewindableContent content = RewindableContent.of(buf);
-    return run(
-        "WriteObject",
+    StorageMetricsContext metricsContext = getOptions().createMetricsContext("WriteObject");
+    if (metricsContext != null) {
+      metricsContext.setRequestBytes(totalBytes);
+    }
+    return retrier.run(
         algorithm,
         () -> {
           content.rewindTo(0);
           return storageRpc.create(encoded, new RewindableContentInputStream(content), optionsMap);
         },
-        Conversions.json().blobInfo());
+        Conversions.json().blobInfo(),
+        metricsContext);
   }
 
   /**
