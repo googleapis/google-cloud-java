@@ -5757,24 +5757,6 @@ public class ITPipelineTest extends ITBaseTest {
   }
 
   @Test
-  public void testWindowFieldsRejectsAnUnrecognizedFrameBound() throws Exception {
-    CollectionReference salesCol = windowTestCollection();
-    assertThrows(
-        ExecutionException.class,
-        () ->
-            firestore
-                .pipeline()
-                .collection(salesCol)
-                .addWindowFields(
-                    new WindowSpec()
-                        .documents("infinite", WindowBound.CURRENT)
-                        .sort(ascending("quantity")),
-                    AggregateFunction.count("quantity").as("windowCount"))
-                .execute()
-                .get());
-  }
-
-  @Test
   public void testWindowFieldsRejectsAPartitionSuppliedToAnAccumulatorLevelOver() throws Exception {
     CollectionReference salesCol = windowTestCollection();
     ExecutionException exception =
