@@ -854,7 +854,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     this.warningsLoaded = true;
   }
 
-  static BigQueryJdbcException backgroundFetchError(Exception cause) {
+  static BigQueryJdbcException backgroundFetchError(Throwable cause) {
     String msg = "Error occurred while fetching query results";
     return cause instanceof BigQueryException
         ? new BigQueryJdbcException(msg, (BigQueryException) cause)

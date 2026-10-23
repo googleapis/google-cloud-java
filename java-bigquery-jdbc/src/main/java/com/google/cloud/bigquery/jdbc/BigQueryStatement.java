@@ -1077,7 +1077,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                             + " Interrupted @ arrowStreamProcessor",
                         e);
                     enqueueError(arrowBatchWrapperBlockingQueue, e);
-                  } catch (Exception e) {
+                  } catch (Throwable e) {
                     if (e.getCause() instanceof InterruptedException
                         || Thread.currentThread().isInterrupted()) {
                       Thread.currentThread().interrupt();
@@ -1090,11 +1090,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                           e);
                       enqueueError(arrowBatchWrapperBlockingQueue, e);
                     } else {
+                      enqueueError(arrowBatchWrapperBlockingQueue, e);
                       LOG.log(
                           Level.WARNING,
                           "\n" + Thread.currentThread().getName() + " Error @ arrowStreamProcessor",
                           e);
-                      enqueueError(arrowBatchWrapperBlockingQueue, e);
                     }
                   } finally { // logic needed for graceful shutdown
                     enqueueEndOfStream(arrowBatchWrapperBlockingQueue);
@@ -1322,11 +1322,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                   String currentPageToken = firstPageToken;
                   TableResult currentResults = result;
                   TableId destinationTable = null;
-                  if (firstPageToken != null) {
-                    destinationTable = getDestinationTable(jobId);
-                  }
 
                   try {
+                    if (firstPageToken != null) {
+                      destinationTable = getDestinationTable(jobId);
+                    }
                     while (currentPageToken != null) {
                       // do not process further pages and shutdown
                       if (isWorkerShuttingDown()) {
@@ -1368,7 +1368,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                         "%s Interrupted @ runNextPageTaskAsync: %s",
                         Thread.currentThread().getName(), ex.getMessage());
                     enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
-                  } catch (Exception ex) {
+                  } catch (Throwable ex) {
                     if (ex.getCause() instanceof InterruptedException
                         || Thread.currentThread().isInterrupted()) {
                       Thread.currentThread().interrupt();
@@ -1457,7 +1457,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                             + " Interrupted @ populateBufferAsync",
                         ex);
                     enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
-                  } catch (Exception ex) {
+                  } catch (Throwable ex) {
                     if (ex.getCause() instanceof InterruptedException
                         || Thread.currentThread().isInterrupted()) {
                       Thread.currentThread().interrupt();
@@ -1470,11 +1470,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                           ex);
                       enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
                     } else {
+                      enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
                       LOG.log(
                           Level.WARNING,
                           "\n" + Thread.currentThread().getName() + " Error @ populateBufferAsync",
                           ex);
-                      enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
                     }
                   } finally {
                     enqueueBufferEndOfStream(bigQueryFieldValueListWrapperBlockingQueue);
@@ -1979,7 +1979,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
   }
 
-  private void enqueueError(BlockingQueue<BigQueryArrowBatchWrapper> queue, Exception e) {
+  private void enqueueError(BlockingQueue<BigQueryArrowBatchWrapper> queue, Throwable e) {
     enqueueMarker(queue, BigQueryArrowBatchWrapper.ofError(e));
   }
 
@@ -1987,7 +1987,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     enqueueMarker(queue, BigQueryArrowBatchWrapper.of(null, true));
   }
 
-  private void enqueueBufferError(BlockingQueue<BigQueryFieldValueListWrapper> queue, Exception e) {
+  private void enqueueBufferError(
+      BlockingQueue<BigQueryFieldValueListWrapper> queue, Throwable e) {
     enqueueMarker(queue, BigQueryFieldValueListWrapper.ofError(e));
   }
 
