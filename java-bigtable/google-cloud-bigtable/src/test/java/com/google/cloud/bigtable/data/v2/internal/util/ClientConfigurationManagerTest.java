@@ -35,6 +35,9 @@ import com.google.bigtable.v2.LoadBalancingOptions.PeakEwma;
 import com.google.bigtable.v2.SessionClientConfiguration;
 import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration.DirectAccessWithFallback;
 import com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration;
+import com.google.bigtable.v2.SessionDiversionConfiguration;
+import com.google.bigtable.v2.SessionDiversionConfiguration.PerScopeDiversion;
+import com.google.bigtable.v2.SessionScopeDiversionConfiguration;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ForwardingChannelProvider;
@@ -385,6 +388,118 @@ class ClientConfigurationManagerTest {
     expectedConfig.getSessionConfigurationBuilder().setSessionLoad(0);
 
     assertThat(initialConfig).isEqualTo(service.config.get());
+  }
+
+  @Test
+  void testPerScopeDiversionWithNonZeroLoadEnablesSessions() throws Exception {
+    ClientConfiguration resolvedConfig =
+        startWithSessionOverride(
+            SessionClientConfiguration.newBuilder()
+                .setSessionLoad(0)
+                .setSessionDiversionConfiguration(
+                    SessionDiversionConfiguration.newBuilder()
+                        .setPerScopeDiversion(
+                            PerScopeDiversion.newBuilder()
+                                .putScopeDiversions(
+                                    "method:Bigtable.ReadRow",
+                                    SessionScopeDiversionConfiguration.newBuilder()
+                                        .setSessionLoad(0.5f)
+                                        .build()))));
+
+    // The flat session_load is 0, but a scope diverts traffic, so the config must survive
+    // normalization and the client must advertise session support.
+    assertThat(resolvedConfig.hasSessionConfiguration()).isTrue();
+    assertThat(
+            resolvedConfig
+                .getSessionConfiguration()
+                .getSessionDiversionConfiguration()
+                .getPerScopeDiversion()
+                .getScopeDiversionsMap())
+        .containsKey("method:Bigtable.ReadRow");
+    assertThat(manager.areSessionsRequired()).isTrue();
+  }
+
+  @Test
+  void testPerScopeDiversionWithAllZeroLoadsDisablesSessions() throws Exception {
+    ClientConfiguration resolvedConfig =
+        startWithSessionOverride(
+            SessionClientConfiguration.newBuilder()
+                .setSessionLoad(0)
+                .setSessionDiversionConfiguration(
+                    SessionDiversionConfiguration.newBuilder()
+                        .setPerScopeDiversion(
+                            PerScopeDiversion.newBuilder()
+                                .putScopeDiversions(
+                                    "method:Bigtable.ReadRow",
+                                    SessionScopeDiversionConfiguration.newBuilder()
+                                        .setSessionLoad(0)
+                                        .build()))));
+
+    // A diversion config that routes nothing must not keep sessions alive.
+    assertThat(resolvedConfig.hasSessionConfiguration()).isFalse();
+    assertThat(manager.areSessionsRequired()).isFalse();
+  }
+
+  @Test
+  void testGlobalDiversionWithZeroLoadDisablesSessions() throws Exception {
+    ClientConfiguration resolvedConfig =
+        startWithSessionOverride(
+            SessionClientConfiguration.newBuilder()
+                .setSessionLoad(0)
+                .setSessionDiversionConfiguration(
+                    SessionDiversionConfiguration.newBuilder()
+                        .setGlobalDiversion(
+                            SessionScopeDiversionConfiguration.newBuilder().setSessionLoad(0))));
+
+    assertThat(resolvedConfig.hasSessionConfiguration()).isFalse();
+    assertThat(manager.areSessionsRequired()).isFalse();
+  }
+
+  @Test
+  void testGlobalDiversionWithNonZeroLoadEnablesSessions() throws Exception {
+    ClientConfiguration resolvedConfig =
+        startWithSessionOverride(
+            SessionClientConfiguration.newBuilder()
+                .setSessionLoad(0)
+                .setSessionDiversionConfiguration(
+                    SessionDiversionConfiguration.newBuilder()
+                        .setGlobalDiversion(
+                            SessionScopeDiversionConfiguration.newBuilder()
+                                .setSessionLoad(0.25f))));
+
+    assertThat(resolvedConfig.hasSessionConfiguration()).isTrue();
+    assertThat(
+            resolvedConfig
+                .getSessionConfiguration()
+                .getSessionDiversionConfiguration()
+                .getGlobalDiversion()
+                .getSessionLoad())
+        .isEqualTo(0.25f);
+    assertThat(manager.areSessionsRequired()).isTrue();
+  }
+
+  /**
+   * Restarts the manager against a server that reports session_load=0, with the supplied session
+   * configuration supplied as a sys-prop override, and returns the resolved config.
+   */
+  private ClientConfiguration startWithSessionOverride(
+      SessionClientConfiguration.Builder sessionOverride) throws Exception {
+    ClientConfiguration.Builder serverConfig = manager.getDefaultConfig().toBuilder();
+    serverConfig.getSessionConfigurationBuilder().setSessionLoad(0);
+    service.config.set(serverConfig.build());
+
+    manager.close();
+    Properties sysProps = new Properties();
+    sysProps.setProperty(
+        ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY,
+        TextFormat.printer()
+            .printToString(
+                ClientConfiguration.newBuilder().setSessionConfiguration(sessionOverride).build()));
+    manager =
+        new ClientConfigurationManager(
+            sysProps, FEATURE_FLAGS, CLIENT_INFO, channelProvider, noopDebugTracer, mockExecutor);
+
+    return manager.start().get();
   }
 
   /**

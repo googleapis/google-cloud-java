@@ -72,6 +72,55 @@ public interface GceClusterConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. Controls how instances within this Cluster are allowed to exist
+   * in multiple Zones within the Region. Only one of `zone_uri` or
+   * `multi_zone_config` must be set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.MultiZoneConfig multi_zone_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the multiZoneConfig field is set.
+   */
+  boolean hasMultiZoneConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls how instances within this Cluster are allowed to exist
+   * in multiple Zones within the Region. Only one of `zone_uri` or
+   * `multi_zone_config` must be set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.MultiZoneConfig multi_zone_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The multiZoneConfig.
+   */
+  com.google.cloud.dataproc.v1.MultiZoneConfig getMultiZoneConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls how instances within this Cluster are allowed to exist
+   * in multiple Zones within the Region. Only one of `zone_uri` or
+   * `multi_zone_config` must be set.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.MultiZoneConfig multi_zone_config = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.MultiZoneConfigOrBuilder getMultiZoneConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The Compute Engine network to be used for machine
    * communications. Cannot be specified with subnetwork_uri. If neither
    * `network_uri` nor `subnetwork_uri` is specified, the "default" network of

@@ -60,12 +60,12 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Maximum number of connection profiles to return.
+   * Optional. Maximum number of connection profiles to return.
    * If unspecified, at most 50 connection profiles will be returned.
    * The maximum value is 1000; values above 1000 will be coerced to 1000.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -75,14 +75,14 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Page token received from a previous `ListConnectionProfiles` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `ListConnectionProfiles`
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to `ListConnectionProfiles`
    * must match the call that provided the page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -92,14 +92,14 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Page token received from a previous `ListConnectionProfiles` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `ListConnectionProfiles`
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to `ListConnectionProfiles`
    * must match the call that provided the page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -109,10 +109,10 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Filter request.
+   * Optional. Filter request.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -122,10 +122,10 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Filter request.
+   * Optional. Filter request.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -135,10 +135,10 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Order by fields for the result.
+   * Optional. Order by fields for the result.
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -148,10 +148,10 @@ public interface ListConnectionProfilesRequestOrBuilder
    *
    *
    * <pre>
-   * Order by fields for the result.
+   * Optional. Order by fields for the result.
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */

@@ -71,6 +71,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     availableMaintenanceVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     serverCaMode_ = 0;
     serverCaPool_ = "";
+    aclPolicy_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -9096,7 +9097,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1beta.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1beta/memorystore.proto;l=744
+   *     google/cloud/memorystore/v1beta/memorystore.proto;l=836
    * @return Whether the ondemandMaintenance field is set.
    */
   @java.lang.Override
@@ -9117,7 +9118,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1beta.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1beta/memorystore.proto;l=744
+   *     google/cloud/memorystore/v1beta/memorystore.proto;l=836
    * @return The ondemandMaintenance.
    */
   @java.lang.Override
@@ -9960,7 +9961,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1beta.Instance.allow_fewer_zones_deployment is
-   *     deprecated. See google/cloud/memorystore/v1beta/memorystore.proto;l=825
+   *     deprecated. See google/cloud/memorystore/v1beta/memorystore.proto;l=917
    * @return The allowFewerZonesDeployment.
    */
   @java.lang.Override
@@ -10210,6 +10211,143 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         : migrationConfig_;
   }
 
+  public static final int ACL_POLICY_FIELD_NUMBER = 60;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object aclPolicy_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ACL policy for the instance.
+   * Format: projects/{project}/locations/{location}/aclPolicies/{acl_policy}
+   * </pre>
+   *
+   * <code>
+   * optional string acl_policy = 60 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the aclPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasAclPolicy() {
+    return ((bitField0_ & 0x04000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ACL policy for the instance.
+   * Format: projects/{project}/locations/{location}/aclPolicies/{acl_policy}
+   * </pre>
+   *
+   * <code>
+   * optional string acl_policy = 60 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The aclPolicy.
+   */
+  @java.lang.Override
+  public java.lang.String getAclPolicy() {
+    java.lang.Object ref = aclPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      aclPolicy_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ACL policy for the instance.
+   * Format: projects/{project}/locations/{location}/aclPolicies/{acl_policy}
+   * </pre>
+   *
+   * <code>
+   * optional string acl_policy = 60 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for aclPolicy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAclPolicyBytes() {
+    java.lang.Object ref = aclPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      aclPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ACL_POLICY_INFO_FIELD_NUMBER = 62;
+  private com.google.cloud.memorystore.v1beta.AclPolicyInfo aclPolicyInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the applied ACL policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the aclPolicyInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasAclPolicyInfo() {
+    return ((bitField0_ & 0x08000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the applied ACL policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The aclPolicyInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1beta.AclPolicyInfo getAclPolicyInfo() {
+    return aclPolicyInfo_ == null
+        ? com.google.cloud.memorystore.v1beta.AclPolicyInfo.getDefaultInstance()
+        : aclPolicyInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the applied ACL policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1beta.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1beta.AclPolicyInfoOrBuilder getAclPolicyInfoOrBuilder() {
+    return aclPolicyInfo_ == null
+        ? com.google.cloud.memorystore.v1beta.AclPolicyInfo.getDefaultInstance()
+        : aclPolicyInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -10368,6 +10506,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       output.writeMessage(59, getMigrationConfig());
+    }
+    if (((bitField0_ & 0x04000000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 60, aclPolicy_);
+    }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      output.writeMessage(62, getAclPolicyInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -10558,6 +10702,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(59, getMigrationConfig());
     }
+    if (((bitField0_ & 0x04000000) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(60, aclPolicy_);
+    }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(62, getAclPolicyInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10700,6 +10850,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (hasMigrationConfig() != other.hasMigrationConfig()) return false;
     if (hasMigrationConfig()) {
       if (!getMigrationConfig().equals(other.getMigrationConfig())) return false;
+    }
+    if (hasAclPolicy() != other.hasAclPolicy()) return false;
+    if (hasAclPolicy()) {
+      if (!getAclPolicy().equals(other.getAclPolicy())) return false;
+    }
+    if (hasAclPolicyInfo() != other.hasAclPolicyInfo()) return false;
+    if (hasAclPolicyInfo()) {
+      if (!getAclPolicyInfo().equals(other.getAclPolicyInfo())) return false;
     }
     if (!getImportSourcesCase().equals(other.getImportSourcesCase())) return false;
     switch (importSourcesCase_) {
@@ -10877,6 +11035,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (hasMigrationConfig()) {
       hash = (37 * hash) + MIGRATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getMigrationConfig().hashCode();
+    }
+    if (hasAclPolicy()) {
+      hash = (37 * hash) + ACL_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getAclPolicy().hashCode();
+    }
+    if (hasAclPolicyInfo()) {
+      hash = (37 * hash) + ACL_POLICY_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getAclPolicyInfo().hashCode();
     }
     switch (importSourcesCase_) {
       case 23:
@@ -11073,6 +11239,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         internalGetEncryptionInfoFieldBuilder();
         internalGetAutomatedBackupConfigFieldBuilder();
         internalGetMigrationConfigFieldBuilder();
+        internalGetAclPolicyInfoFieldBuilder();
       }
     }
 
@@ -11201,6 +11368,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (migrationConfigBuilder_ != null) {
         migrationConfigBuilder_.dispose();
         migrationConfigBuilder_ = null;
+      }
+      aclPolicy_ = "";
+      aclPolicyInfo_ = null;
+      if (aclPolicyInfoBuilder_ != null) {
+        aclPolicyInfoBuilder_.dispose();
+        aclPolicyInfoBuilder_ = null;
       }
       importSourcesCase_ = 0;
       importSources_ = null;
@@ -11456,6 +11629,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         result.migrationConfig_ =
             migrationConfigBuilder_ == null ? migrationConfig_ : migrationConfigBuilder_.build();
         to_bitField0_ |= 0x02000000;
+      }
+      if (((from_bitField1_ & 0x00002000) != 0)) {
+        result.aclPolicy_ = aclPolicy_;
+        to_bitField0_ |= 0x04000000;
+      }
+      if (((from_bitField1_ & 0x00004000) != 0)) {
+        result.aclPolicyInfo_ =
+            aclPolicyInfoBuilder_ == null ? aclPolicyInfo_ : aclPolicyInfoBuilder_.build();
+        to_bitField0_ |= 0x08000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -11728,6 +11910,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasMigrationConfig()) {
         mergeMigrationConfig(other.getMigrationConfig());
+      }
+      if (other.hasAclPolicy()) {
+        aclPolicy_ = other.aclPolicy_;
+        bitField1_ |= 0x00002000;
+        onChanged();
+      }
+      if (other.hasAclPolicyInfo()) {
+        mergeAclPolicyInfo(other.getAclPolicyInfo());
       }
       switch (other.getImportSourcesCase()) {
         case GCS_SOURCE:
@@ -12102,6 +12292,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 bitField1_ |= 0x00001000;
                 break;
               } // case 474
+            case 482:
+              {
+                aclPolicy_ = input.readStringRequireUtf8();
+                bitField1_ |= 0x00002000;
+                break;
+              } // case 482
+            case 498:
+              {
+                input.readMessage(
+                    internalGetAclPolicyInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00004000;
+                break;
+              } // case 498
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -17337,7 +17540,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1beta.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1beta/memorystore.proto;l=744
+     *     google/cloud/memorystore/v1beta/memorystore.proto;l=836
      * @return Whether the ondemandMaintenance field is set.
      */
     @java.lang.Override
@@ -17358,7 +17561,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1beta.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1beta/memorystore.proto;l=744
+     *     google/cloud/memorystore/v1beta/memorystore.proto;l=836
      * @return The ondemandMaintenance.
      */
     @java.lang.Override
@@ -17379,7 +17582,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1beta.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1beta/memorystore.proto;l=744
+     *     google/cloud/memorystore/v1beta/memorystore.proto;l=836
      * @param value The ondemandMaintenance to set.
      * @return This builder for chaining.
      */
@@ -17404,7 +17607,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1beta.Instance.ondemand_maintenance is deprecated. See
-     *     google/cloud/memorystore/v1beta/memorystore.proto;l=744
+     *     google/cloud/memorystore/v1beta/memorystore.proto;l=836
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -19573,7 +19776,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1beta.Instance.allow_fewer_zones_deployment is
-     *     deprecated. See google/cloud/memorystore/v1beta/memorystore.proto;l=825
+     *     deprecated. See google/cloud/memorystore/v1beta/memorystore.proto;l=917
      * @return The allowFewerZonesDeployment.
      */
     @java.lang.Override
@@ -19594,7 +19797,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1beta.Instance.allow_fewer_zones_deployment is
-     *     deprecated. See google/cloud/memorystore/v1beta/memorystore.proto;l=825
+     *     deprecated. See google/cloud/memorystore/v1beta/memorystore.proto;l=917
      * @param value The allowFewerZonesDeployment to set.
      * @return This builder for chaining.
      */
@@ -19619,7 +19822,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.memorystore.v1beta.Instance.allow_fewer_zones_deployment is
-     *     deprecated. See google/cloud/memorystore/v1beta/memorystore.proto;l=825
+     *     deprecated. See google/cloud/memorystore/v1beta/memorystore.proto;l=917
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -20199,6 +20402,364 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         migrationConfig_ = null;
       }
       return migrationConfigBuilder_;
+    }
+
+    private java.lang.Object aclPolicy_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ACL policy for the instance.
+     * Format: projects/{project}/locations/{location}/aclPolicies/{acl_policy}
+     * </pre>
+     *
+     * <code>
+     * optional string acl_policy = 60 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the aclPolicy field is set.
+     */
+    public boolean hasAclPolicy() {
+      return ((bitField1_ & 0x00002000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ACL policy for the instance.
+     * Format: projects/{project}/locations/{location}/aclPolicies/{acl_policy}
+     * </pre>
+     *
+     * <code>
+     * optional string acl_policy = 60 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The aclPolicy.
+     */
+    public java.lang.String getAclPolicy() {
+      java.lang.Object ref = aclPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        aclPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ACL policy for the instance.
+     * Format: projects/{project}/locations/{location}/aclPolicies/{acl_policy}
+     * </pre>
+     *
+     * <code>
+     * optional string acl_policy = 60 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for aclPolicy.
+     */
+    public com.google.protobuf.ByteString getAclPolicyBytes() {
+      java.lang.Object ref = aclPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        aclPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ACL policy for the instance.
+     * Format: projects/{project}/locations/{location}/aclPolicies/{acl_policy}
+     * </pre>
+     *
+     * <code>
+     * optional string acl_policy = 60 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The aclPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAclPolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      aclPolicy_ = value;
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ACL policy for the instance.
+     * Format: projects/{project}/locations/{location}/aclPolicies/{acl_policy}
+     * </pre>
+     *
+     * <code>
+     * optional string acl_policy = 60 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAclPolicy() {
+      aclPolicy_ = getDefaultInstance().getAclPolicy();
+      bitField1_ = (bitField1_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ACL policy for the instance.
+     * Format: projects/{project}/locations/{location}/aclPolicies/{acl_policy}
+     * </pre>
+     *
+     * <code>
+     * optional string acl_policy = 60 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for aclPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAclPolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      aclPolicy_ = value;
+      bitField1_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.memorystore.v1beta.AclPolicyInfo aclPolicyInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.memorystore.v1beta.AclPolicyInfo,
+            com.google.cloud.memorystore.v1beta.AclPolicyInfo.Builder,
+            com.google.cloud.memorystore.v1beta.AclPolicyInfoOrBuilder>
+        aclPolicyInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the aclPolicyInfo field is set.
+     */
+    public boolean hasAclPolicyInfo() {
+      return ((bitField1_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The aclPolicyInfo.
+     */
+    public com.google.cloud.memorystore.v1beta.AclPolicyInfo getAclPolicyInfo() {
+      if (aclPolicyInfoBuilder_ == null) {
+        return aclPolicyInfo_ == null
+            ? com.google.cloud.memorystore.v1beta.AclPolicyInfo.getDefaultInstance()
+            : aclPolicyInfo_;
+      } else {
+        return aclPolicyInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAclPolicyInfo(com.google.cloud.memorystore.v1beta.AclPolicyInfo value) {
+      if (aclPolicyInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        aclPolicyInfo_ = value;
+      } else {
+        aclPolicyInfoBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAclPolicyInfo(
+        com.google.cloud.memorystore.v1beta.AclPolicyInfo.Builder builderForValue) {
+      if (aclPolicyInfoBuilder_ == null) {
+        aclPolicyInfo_ = builderForValue.build();
+      } else {
+        aclPolicyInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAclPolicyInfo(com.google.cloud.memorystore.v1beta.AclPolicyInfo value) {
+      if (aclPolicyInfoBuilder_ == null) {
+        if (((bitField1_ & 0x00004000) != 0)
+            && aclPolicyInfo_ != null
+            && aclPolicyInfo_
+                != com.google.cloud.memorystore.v1beta.AclPolicyInfo.getDefaultInstance()) {
+          getAclPolicyInfoBuilder().mergeFrom(value);
+        } else {
+          aclPolicyInfo_ = value;
+        }
+      } else {
+        aclPolicyInfoBuilder_.mergeFrom(value);
+      }
+      if (aclPolicyInfo_ != null) {
+        bitField1_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAclPolicyInfo() {
+      bitField1_ = (bitField1_ & ~0x00004000);
+      aclPolicyInfo_ = null;
+      if (aclPolicyInfoBuilder_ != null) {
+        aclPolicyInfoBuilder_.dispose();
+        aclPolicyInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1beta.AclPolicyInfo.Builder getAclPolicyInfoBuilder() {
+      bitField1_ |= 0x00004000;
+      onChanged();
+      return internalGetAclPolicyInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.memorystore.v1beta.AclPolicyInfoOrBuilder getAclPolicyInfoOrBuilder() {
+      if (aclPolicyInfoBuilder_ != null) {
+        return aclPolicyInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return aclPolicyInfo_ == null
+            ? com.google.cloud.memorystore.v1beta.AclPolicyInfo.getDefaultInstance()
+            : aclPolicyInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the applied ACL policy.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.memorystore.v1beta.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.memorystore.v1beta.AclPolicyInfo,
+            com.google.cloud.memorystore.v1beta.AclPolicyInfo.Builder,
+            com.google.cloud.memorystore.v1beta.AclPolicyInfoOrBuilder>
+        internalGetAclPolicyInfoFieldBuilder() {
+      if (aclPolicyInfoBuilder_ == null) {
+        aclPolicyInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.memorystore.v1beta.AclPolicyInfo,
+                com.google.cloud.memorystore.v1beta.AclPolicyInfo.Builder,
+                com.google.cloud.memorystore.v1beta.AclPolicyInfoOrBuilder>(
+                getAclPolicyInfo(), getParentForChildren(), isClean());
+        aclPolicyInfo_ = null;
+      }
+      return aclPolicyInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.memorystore.v1beta.Instance)

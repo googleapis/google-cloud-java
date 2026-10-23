@@ -21,17 +21,44 @@ import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import java.math.BigInteger;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Locale;
 
 class BigQueryParameterHandler {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryParameterHandler.class.getName());
   private final int parametersArraySize;
   private final boolean enableTimestampPicos;
   final ArrayList<BigQueryJdbcParameter> parametersList;
+  // TIMESTAMP is rendered in UTC with a trailing 'Z': the instant is preserved, the output does not
+  // depend on the JVM zone, and QueryParameterValue's validator accepts 'Z' but rejects "-05:00".
+  // Locale.ROOT marks these as wire formats; the patterns are numeric-only, so it is a guard, not
+  // a fix.
+  private static final DateTimeFormatter TIMESTAMP_MICROS_UTC =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSXXX", Locale.ROOT);
+  private static final DateTimeFormatter TIMESTAMP_NANOS_UTC =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSSSSXXX", Locale.ROOT);
+  // DATETIME is a zone-less wall clock; the validator requires six fraction digits and no offset.
+  private static final DateTimeFormatter DATETIME_MICROS =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS", Locale.ROOT);
+
+  /** Wall-clock digits for DATETIME (read as UTC if sent to TIMESTAMP). Nanos are truncated. */
+  static String formatDateTimeDigits(LocalDateTime value) {
+    return DATETIME_MICROS.format(value);
+  }
 
   BigQueryParameterHandler(int parameterCount) {
     this(parameterCount, false);
@@ -103,16 +130,37 @@ class BigQueryParameterHandler {
     if (sqlType == StandardSQLTypeName.FLOAT64 && parameterValue instanceof Float) {
       return ((Number) parameterValue).doubleValue();
     }
-    if (parameterValue instanceof Timestamp) {
-      return formatTimestampParameter((Timestamp) parameterValue, enableTimestampPicos);
-    }
-    if (sqlType == StandardSQLTypeName.TIMESTAMP && parameterValue instanceof String) {
-      String str = ((String) parameterValue).trim();
-      if (str.length() > 10 && str.charAt(10) == 'T') {
-        str = str.substring(0, 10) + ' ' + str.substring(11);
+    if (sqlType == StandardSQLTypeName.TIMESTAMP) {
+      // Reduce to an Instant and render in UTC so digits and 'Z' can never disagree.
+      if (parameterValue instanceof Timestamp) {
+        return formatInstantUtc(((Timestamp) parameterValue).toInstant(), enableTimestampPicos);
       }
-      return BigQueryTemporalUtility.truncateFractionalSeconds(str, enableTimestampPicos ? 12 : 6);
+      if (parameterValue instanceof OffsetDateTime) {
+        return formatInstantUtc(
+            ((OffsetDateTime) parameterValue).toInstant(), enableTimestampPicos);
+      }
+      if (parameterValue instanceof ZonedDateTime) {
+        return formatInstantUtc(((ZonedDateTime) parameterValue).toInstant(), enableTimestampPicos);
+      }
+      if (parameterValue instanceof Instant) {
+        return formatInstantUtc((Instant) parameterValue, enableTimestampPicos);
+      }
+      if (parameterValue instanceof String) {
+        String str = ((String) parameterValue).trim();
+        if (str.length() > 10 && str.charAt(10) == 'T') {
+          str = str.substring(0, 10) + ' ' + str.substring(11);
+        }
+        return BigQueryTemporalUtility.truncateFractionalSeconds(
+            str, enableTimestampPicos ? 12 : 6);
+      }
     }
+
+    if (parameterValue instanceof Timestamp) {
+      // DATETIME slot: JVM-local wall-clock digits, six-digit fraction, no offset (prior
+      // behaviour).
+      return DATETIME_MICROS.format(((Timestamp) parameterValue).toLocalDateTime());
+    }
+
     if (parameterValue instanceof Time) {
       String timeStr = parameterValue.toString();
       if (timeStr.length() == 8) {
@@ -120,19 +168,17 @@ class BigQueryParameterHandler {
       }
       return timeStr;
     }
-    if (parameterValue instanceof java.sql.Date || parameterValue instanceof java.util.Date) {
+    if (parameterValue instanceof Date || parameterValue instanceof java.util.Date) {
       return parameterValue.toString();
     }
     return parameterValue;
   }
 
-  private static String formatTimestampParameter(Timestamp ts, boolean enableTimestampPicos) {
-    if (enableTimestampPicos) {
-      return ts.toString();
-    }
-    Timestamp copy = new Timestamp(ts.getTime());
-    copy.setNanos((ts.getNanos() / 1000) * 1000);
-    return copy.toString();
+  /** Renders an absolute instant as UTC wall-clock digits with a trailing 'Z'. */
+  private static String formatInstantUtc(Instant instant, boolean enableTimestampPicos) {
+    // Fixed-width 'S' truncates (does not round), matching the legacy nanos/1000*1000 behaviour.
+    return (enableTimestampPicos ? TIMESTAMP_NANOS_UTC : TIMESTAMP_MICROS_UTC)
+        .format(instant.atOffset(ZoneOffset.UTC));
   }
 
   private BigQueryJdbcParameter getOrCreateParameter(int parameterIndex) {
@@ -177,6 +223,8 @@ class BigQueryParameterHandler {
     parameter.setParamName("");
     parameter.setParamType(BigQueryStatementParameterType.UNSPECIFIED);
     parameter.setScale(-1);
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
 
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
@@ -287,6 +335,9 @@ class BigQueryParameterHandler {
     if (parameter.getIndex() == -1) {
       parametersList.add(parameter);
     }
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
+
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
 
@@ -310,6 +361,8 @@ class BigQueryParameterHandler {
     parameter.setParamName("");
     parameter.setParamType(paramType);
     parameter.setScale(scale);
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
 
     LOG.finest("Parameter set { %s }", parameter.toString());
   }

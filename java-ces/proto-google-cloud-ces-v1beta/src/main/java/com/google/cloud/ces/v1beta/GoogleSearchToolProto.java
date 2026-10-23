@@ -57,20 +57,22 @@ public final class GoogleSearchToolProto extends com.google.protobuf.GeneratedFi
 
   static {
     java.lang.String[] descriptorData = {
-      "\n0google/cloud/ces/v1beta/google_search_"
-          + "tool.proto\022\027google.cloud.ces.v1beta\032\037goo"
-          + "gle/api/field_behavior.proto\"\261\002\n\020GoogleS"
-          + "earchTool\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\030\n\013descript"
-          + "ion\030\002 \001(\tB\003\340A\001\022\031\n\014context_urls\030\003 \003(\tB\003\340A"
-          + "\001\022\036\n\021preferred_domains\030\006 \003(\tB\003\340A\001\022\034\n\017exc"
-          + "lude_domains\030\004 \003(\tB\003\340A\001\022R\n\rprompt_config"
-          + "\030\005 \001(\01326.google.cloud.ces.v1beta.GoogleS"
-          + "earchTool.PromptConfigB\003\340A\001\032C\n\014PromptCon"
-          + "fig\022\030\n\013text_prompt\030\001 \001(\tB\003\340A\001\022\031\n\014voice_p"
-          + "rompt\030\002 \001(\tB\003\340A\001Be\n\033com.google.cloud.ces"
-          + ".v1betaB\025GoogleSearchToolProtoP\001Z-cloud."
-          + "google.com/go/ces/apiv1beta/cespb;cespbb"
-          + "\006proto3"
+      "\n"
+          + "0google/cloud/ces/v1beta/google_search_"
+          + "tool.proto\022\027google.cloud.ces.v1beta\032\037google/api/field_behavior.proto\"\271\002\n"
+          + "\020GoogleSearchTool\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\002\022\031\n"
+          + "\013description\030\002 \001(\tB\004\342A\001\001\022\032\n"
+          + "\014context_urls\030\003 \003(\tB\004\342A\001\001\022\037\n"
+          + "\021preferred_domains\030\006 \003(\tB\004\342A\001\001\022\035\n"
+          + "\017exclude_domains\030\004 \003(\tB\004\342A\001\001\022S\n\r"
+          + "prompt_config\030\005"
+          + " \001(\01326.google.cloud.ces.v1beta.GoogleSearchTool.PromptConfigB\004\342A\001\001\032E\n"
+          + "\014PromptConfig\022\031\n"
+          + "\013text_prompt\030\001 \001(\tB\004\342A\001\001\022\032\n"
+          + "\014voice_prompt\030\002 \001(\tB\004\342A\001\001Be\n"
+          + "\033com.google.cloud.ces.v1betaB\025GoogleSearchToolProtoP\001"
+          + "Z-cloud.google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

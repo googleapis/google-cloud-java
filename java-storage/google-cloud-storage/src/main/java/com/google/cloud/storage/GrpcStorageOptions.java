@@ -134,8 +134,6 @@ public final class GrpcStorageOptions extends StorageOptions
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
   private static final String DEFAULT_HOST = "https://storage.googleapis.com";
-  private static final String DEFAULT_HOST_NO_SCHEME = "storage.googleapis.com";
-  private static final String DEFAULT_HOST_DIRECT_PATH_NO_SCHEME = "storage-direct.googleapis.com";
   // If true, disable the bound-token-by-default feature for DirectPath.
   private static final boolean DIRECT_PATH_BOUND_TOKEN_DISABLED =
       Boolean.parseBoolean(
@@ -201,27 +199,6 @@ public final class GrpcStorageOptions extends StorageOptions
     this.openTelemetry = HttpStorageOptions.getDefaultInstance().getOpenTelemetry();
   }
 
-  static String rewriteHost(String endpoint, String oldHost, String newHost) {
-    String prefix = "";
-    String rest = endpoint;
-    int schemeIndex = endpoint.indexOf("://");
-    if (schemeIndex >= 0) {
-      prefix = endpoint.substring(0, schemeIndex + 3);
-      rest = endpoint.substring(schemeIndex + 3);
-    }
-    if (rest.startsWith(oldHost)) {
-      int len = oldHost.length();
-      if (rest.length() == len
-          || rest.charAt(len) == ':'
-          || rest.charAt(len) == '/'
-          || rest.charAt(len) == '?'
-          || rest.charAt(len) == '#') {
-        return prefix + newHost + rest.substring(len);
-      }
-    }
-    return endpoint;
-  }
-
   /**
    * We have to perform several introspections and detections to cross-wire/support several features
    * that are either gapic primitives, ServiceOption primitives or GCS semantic requirements.
@@ -255,9 +232,6 @@ public final class GrpcStorageOptions extends StorageOptions
    */
   private Tuple<StorageSettings, Opts<UserProject>> resolveSettingsAndOpts() throws IOException {
     String endpoint = getHost();
-    if (attemptDirectPathXdsOverInterconnect) {
-      endpoint = rewriteHost(endpoint, DEFAULT_HOST_NO_SCHEME, DEFAULT_HOST_DIRECT_PATH_NO_SCHEME);
-    }
     URI uri = URI.create(endpoint);
     String scheme = uri.getScheme();
     int port = uri.getPort();
@@ -593,7 +567,7 @@ public final class GrpcStorageOptions extends StorageOptions
      * Option for whether this client should attempt to use DirectPath over Interconnect (on-premise
      * xDS name resolution).
      *
-     * @since 2.72.0
+     * @since 2.76.0
      */
     @BetaApi
     public GrpcStorageOptions.Builder setAttemptDirectPathXdsOverInterconnect(

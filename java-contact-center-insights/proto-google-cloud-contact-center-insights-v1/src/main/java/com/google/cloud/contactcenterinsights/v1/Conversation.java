@@ -1149,27 +1149,91 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A user-specified string representing the agent's team.
+       * A user-specified string representing the agent's team. Deprecated in
+       * favor of the `teams` field.
        * </pre>
        *
-       * <code>string team = 3;</code>
+       * <code>string team = 3 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.contactcenterinsights.v1.Conversation.QualityMetadata.AgentInfo.team is
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=97
        * @return The team.
        */
+      @java.lang.Deprecated
       java.lang.String getTeam();
 
       /**
        *
        *
        * <pre>
-       * A user-specified string representing the agent's team.
+       * A user-specified string representing the agent's team. Deprecated in
+       * favor of the `teams` field.
        * </pre>
        *
-       * <code>string team = 3;</code>
+       * <code>string team = 3 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.contactcenterinsights.v1.Conversation.QualityMetadata.AgentInfo.team is
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=97
        * @return The bytes for team.
        */
+      @java.lang.Deprecated
       com.google.protobuf.ByteString getTeamBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * User-specified strings representing the agent's teams.
+       * </pre>
+       *
+       * <code>repeated string teams = 6;</code>
+       *
+       * @return A list containing the teams.
+       */
+      java.util.List<java.lang.String> getTeamsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * User-specified strings representing the agent's teams.
+       * </pre>
+       *
+       * <code>repeated string teams = 6;</code>
+       *
+       * @return The count of teams.
+       */
+      int getTeamsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * User-specified strings representing the agent's teams.
+       * </pre>
+       *
+       * <code>repeated string teams = 6;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The teams at the given index.
+       */
+      java.lang.String getTeams(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * User-specified strings representing the agent's teams.
+       * </pre>
+       *
+       * <code>repeated string teams = 6;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the teams at the given index.
+       */
+      com.google.protobuf.ByteString getTeamsBytes(int index);
 
       /**
        *
@@ -1226,6 +1290,190 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
        * @return The agentType.
        */
       com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getAgentType();
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's location.
+       * </pre>
+       *
+       * <code>string location = 7;</code>
+       *
+       * @return The location.
+       */
+      java.lang.String getLocation();
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's location.
+       * </pre>
+       *
+       * <code>string location = 7;</code>
+       *
+       * @return The bytes for location.
+       */
+      com.google.protobuf.ByteString getLocationBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's deployment ID. Only applicable to automated agents.
+       * </pre>
+       *
+       * <code>string deployment_id = 8;</code>
+       *
+       * @return The deploymentId.
+       */
+      java.lang.String getDeploymentId();
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's deployment ID. Only applicable to automated agents.
+       * </pre>
+       *
+       * <code>string deployment_id = 8;</code>
+       *
+       * @return The bytes for deploymentId.
+       */
+      com.google.protobuf.ByteString getDeploymentIdBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's deployment display name. Only applicable to automated
+       * agents.
+       * </pre>
+       *
+       * <code>string deployment_display_name = 9;</code>
+       *
+       * @return The deploymentDisplayName.
+       */
+      java.lang.String getDeploymentDisplayName();
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's deployment display name. Only applicable to automated
+       * agents.
+       * </pre>
+       *
+       * <code>string deployment_display_name = 9;</code>
+       *
+       * @return The bytes for deploymentDisplayName.
+       */
+      com.google.protobuf.ByteString getDeploymentDisplayNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's version ID. Only applicable to automated agents.
+       * </pre>
+       *
+       * <code>string version_id = 10;</code>
+       *
+       * @return The versionId.
+       */
+      java.lang.String getVersionId();
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's version ID. Only applicable to automated agents.
+       * </pre>
+       *
+       * <code>string version_id = 10;</code>
+       *
+       * @return The bytes for versionId.
+       */
+      com.google.protobuf.ByteString getVersionIdBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's version display name. Only applicable to automated agents.
+       * </pre>
+       *
+       * <code>string version_display_name = 11;</code>
+       *
+       * @return The versionDisplayName.
+       */
+      java.lang.String getVersionDisplayName();
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's version display name. Only applicable to automated agents.
+       * </pre>
+       *
+       * <code>string version_display_name = 11;</code>
+       *
+       * @return The bytes for versionDisplayName.
+       */
+      com.google.protobuf.ByteString getVersionDisplayNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The entry subagent's display name.
+       * </pre>
+       *
+       * <code>string entry_subagent_display_name = 12;</code>
+       *
+       * @return The entrySubagentDisplayName.
+       */
+      java.lang.String getEntrySubagentDisplayName();
+
+      /**
+       *
+       *
+       * <pre>
+       * The entry subagent's display name.
+       * </pre>
+       *
+       * <code>string entry_subagent_display_name = 12;</code>
+       *
+       * @return The bytes for entrySubagentDisplayName.
+       */
+      com.google.protobuf.ByteString getEntrySubagentDisplayNameBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The entry subagent's ID.
+       * </pre>
+       *
+       * <code>string entry_subagent_id = 13;</code>
+       *
+       * @return The entrySubagentId.
+       */
+      java.lang.String getEntrySubagentId();
+
+      /**
+       *
+       *
+       * <pre>
+       * The entry subagent's ID.
+       * </pre>
+       *
+       * <code>string entry_subagent_id = 13;</code>
+       *
+       * @return The bytes for entrySubagentId.
+       */
+      com.google.protobuf.ByteString getEntrySubagentIdBytes();
     }
 
     /**
@@ -1263,8 +1511,16 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         agentId_ = "";
         displayName_ = "";
         team_ = "";
+        teams_ = com.google.protobuf.LazyStringArrayList.emptyList();
         dispositionCode_ = "";
         agentType_ = 0;
+        location_ = "";
+        deploymentId_ = "";
+        deploymentDisplayName_ = "";
+        versionId_ = "";
+        versionDisplayName_ = "";
+        entrySubagentDisplayName_ = "";
+        entrySubagentId_ = "";
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1399,14 +1655,19 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A user-specified string representing the agent's team.
+       * A user-specified string representing the agent's team. Deprecated in
+       * favor of the `teams` field.
        * </pre>
        *
-       * <code>string team = 3;</code>
+       * <code>string team = 3 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.contactcenterinsights.v1.Conversation.QualityMetadata.AgentInfo.team is
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=97
        * @return The team.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public java.lang.String getTeam() {
         java.lang.Object ref = team_;
         if (ref instanceof java.lang.String) {
@@ -1423,14 +1684,19 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A user-specified string representing the agent's team.
+       * A user-specified string representing the agent's team. Deprecated in
+       * favor of the `teams` field.
        * </pre>
        *
-       * <code>string team = 3;</code>
+       * <code>string team = 3 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.contactcenterinsights.v1.Conversation.QualityMetadata.AgentInfo.team is
+       *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=97
        * @return The bytes for team.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public com.google.protobuf.ByteString getTeamBytes() {
         java.lang.Object ref = team_;
         if (ref instanceof java.lang.String) {
@@ -1441,6 +1707,74 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
+      }
+
+      public static final int TEAMS_FIELD_NUMBER = 6;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList teams_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * User-specified strings representing the agent's teams.
+       * </pre>
+       *
+       * <code>repeated string teams = 6;</code>
+       *
+       * @return A list containing the teams.
+       */
+      public com.google.protobuf.ProtocolStringList getTeamsList() {
+        return teams_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * User-specified strings representing the agent's teams.
+       * </pre>
+       *
+       * <code>repeated string teams = 6;</code>
+       *
+       * @return The count of teams.
+       */
+      public int getTeamsCount() {
+        return teams_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * User-specified strings representing the agent's teams.
+       * </pre>
+       *
+       * <code>repeated string teams = 6;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The teams at the given index.
+       */
+      public java.lang.String getTeams(int index) {
+        return teams_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * User-specified strings representing the agent's teams.
+       * </pre>
+       *
+       * <code>repeated string teams = 6;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the teams at the given index.
+       */
+      public com.google.protobuf.ByteString getTeamsBytes(int index) {
+        return teams_.getByteString(index);
       }
 
       public static final int DISPOSITION_CODE_FIELD_NUMBER = 4;
@@ -1540,6 +1874,379 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
             : result;
       }
 
+      public static final int LOCATION_FIELD_NUMBER = 7;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object location_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's location.
+       * </pre>
+       *
+       * <code>string location = 7;</code>
+       *
+       * @return The location.
+       */
+      @java.lang.Override
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's location.
+       * </pre>
+       *
+       * <code>string location = 7;</code>
+       *
+       * @return The bytes for location.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int DEPLOYMENT_ID_FIELD_NUMBER = 8;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object deploymentId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's deployment ID. Only applicable to automated agents.
+       * </pre>
+       *
+       * <code>string deployment_id = 8;</code>
+       *
+       * @return The deploymentId.
+       */
+      @java.lang.Override
+      public java.lang.String getDeploymentId() {
+        java.lang.Object ref = deploymentId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deploymentId_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's deployment ID. Only applicable to automated agents.
+       * </pre>
+       *
+       * <code>string deployment_id = 8;</code>
+       *
+       * @return The bytes for deploymentId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDeploymentIdBytes() {
+        java.lang.Object ref = deploymentId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          deploymentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int DEPLOYMENT_DISPLAY_NAME_FIELD_NUMBER = 9;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object deploymentDisplayName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's deployment display name. Only applicable to automated
+       * agents.
+       * </pre>
+       *
+       * <code>string deployment_display_name = 9;</code>
+       *
+       * @return The deploymentDisplayName.
+       */
+      @java.lang.Override
+      public java.lang.String getDeploymentDisplayName() {
+        java.lang.Object ref = deploymentDisplayName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deploymentDisplayName_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's deployment display name. Only applicable to automated
+       * agents.
+       * </pre>
+       *
+       * <code>string deployment_display_name = 9;</code>
+       *
+       * @return The bytes for deploymentDisplayName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDeploymentDisplayNameBytes() {
+        java.lang.Object ref = deploymentDisplayName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          deploymentDisplayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int VERSION_ID_FIELD_NUMBER = 10;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object versionId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's version ID. Only applicable to automated agents.
+       * </pre>
+       *
+       * <code>string version_id = 10;</code>
+       *
+       * @return The versionId.
+       */
+      @java.lang.Override
+      public java.lang.String getVersionId() {
+        java.lang.Object ref = versionId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          versionId_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's version ID. Only applicable to automated agents.
+       * </pre>
+       *
+       * <code>string version_id = 10;</code>
+       *
+       * @return The bytes for versionId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getVersionIdBytes() {
+        java.lang.Object ref = versionId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          versionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int VERSION_DISPLAY_NAME_FIELD_NUMBER = 11;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object versionDisplayName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's version display name. Only applicable to automated agents.
+       * </pre>
+       *
+       * <code>string version_display_name = 11;</code>
+       *
+       * @return The versionDisplayName.
+       */
+      @java.lang.Override
+      public java.lang.String getVersionDisplayName() {
+        java.lang.Object ref = versionDisplayName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          versionDisplayName_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The agent's version display name. Only applicable to automated agents.
+       * </pre>
+       *
+       * <code>string version_display_name = 11;</code>
+       *
+       * @return The bytes for versionDisplayName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getVersionDisplayNameBytes() {
+        java.lang.Object ref = versionDisplayName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          versionDisplayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ENTRY_SUBAGENT_DISPLAY_NAME_FIELD_NUMBER = 12;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object entrySubagentDisplayName_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The entry subagent's display name.
+       * </pre>
+       *
+       * <code>string entry_subagent_display_name = 12;</code>
+       *
+       * @return The entrySubagentDisplayName.
+       */
+      @java.lang.Override
+      public java.lang.String getEntrySubagentDisplayName() {
+        java.lang.Object ref = entrySubagentDisplayName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          entrySubagentDisplayName_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entry subagent's display name.
+       * </pre>
+       *
+       * <code>string entry_subagent_display_name = 12;</code>
+       *
+       * @return The bytes for entrySubagentDisplayName.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getEntrySubagentDisplayNameBytes() {
+        java.lang.Object ref = entrySubagentDisplayName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          entrySubagentDisplayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ENTRY_SUBAGENT_ID_FIELD_NUMBER = 13;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object entrySubagentId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The entry subagent's ID.
+       * </pre>
+       *
+       * <code>string entry_subagent_id = 13;</code>
+       *
+       * @return The entrySubagentId.
+       */
+      @java.lang.Override
+      public java.lang.String getEntrySubagentId() {
+        java.lang.Object ref = entrySubagentId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          entrySubagentId_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The entry subagent's ID.
+       * </pre>
+       *
+       * <code>string entry_subagent_id = 13;</code>
+       *
+       * @return The bytes for entrySubagentId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getEntrySubagentIdBytes() {
+        java.lang.Object ref = entrySubagentId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          entrySubagentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -1572,6 +2279,30 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
                 .getNumber()) {
           output.writeEnum(5, agentType_);
         }
+        for (int i = 0; i < teams_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 6, teams_.getRaw(i));
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(location_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 7, location_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deploymentId_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 8, deploymentId_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deploymentDisplayName_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 9, deploymentDisplayName_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(versionId_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 10, versionId_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(versionDisplayName_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 11, versionDisplayName_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entrySubagentDisplayName_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 12, entrySubagentDisplayName_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entrySubagentId_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 13, entrySubagentId_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -1599,6 +2330,36 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
                 .getNumber()) {
           size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, agentType_);
         }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < teams_.size(); i++) {
+            dataSize += computeStringSizeNoTag(teams_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getTeamsList().size();
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(location_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(7, location_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deploymentId_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(8, deploymentId_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deploymentDisplayName_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(9, deploymentDisplayName_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(versionId_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(10, versionId_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(versionDisplayName_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(11, versionDisplayName_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entrySubagentDisplayName_)) {
+          size +=
+              com.google.protobuf.GeneratedMessage.computeStringSize(12, entrySubagentDisplayName_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entrySubagentId_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(13, entrySubagentId_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -1620,8 +2381,17 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         if (!getAgentId().equals(other.getAgentId())) return false;
         if (!getDisplayName().equals(other.getDisplayName())) return false;
         if (!getTeam().equals(other.getTeam())) return false;
+        if (!getTeamsList().equals(other.getTeamsList())) return false;
         if (!getDispositionCode().equals(other.getDispositionCode())) return false;
         if (agentType_ != other.agentType_) return false;
+        if (!getLocation().equals(other.getLocation())) return false;
+        if (!getDeploymentId().equals(other.getDeploymentId())) return false;
+        if (!getDeploymentDisplayName().equals(other.getDeploymentDisplayName())) return false;
+        if (!getVersionId().equals(other.getVersionId())) return false;
+        if (!getVersionDisplayName().equals(other.getVersionDisplayName())) return false;
+        if (!getEntrySubagentDisplayName().equals(other.getEntrySubagentDisplayName()))
+          return false;
+        if (!getEntrySubagentId().equals(other.getEntrySubagentId())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -1639,10 +2409,28 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         hash = (53 * hash) + getDisplayName().hashCode();
         hash = (37 * hash) + TEAM_FIELD_NUMBER;
         hash = (53 * hash) + getTeam().hashCode();
+        if (getTeamsCount() > 0) {
+          hash = (37 * hash) + TEAMS_FIELD_NUMBER;
+          hash = (53 * hash) + getTeamsList().hashCode();
+        }
         hash = (37 * hash) + DISPOSITION_CODE_FIELD_NUMBER;
         hash = (53 * hash) + getDispositionCode().hashCode();
         hash = (37 * hash) + AGENT_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + agentType_;
+        hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+        hash = (53 * hash) + getLocation().hashCode();
+        hash = (37 * hash) + DEPLOYMENT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getDeploymentId().hashCode();
+        hash = (37 * hash) + DEPLOYMENT_DISPLAY_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getDeploymentDisplayName().hashCode();
+        hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getVersionId().hashCode();
+        hash = (37 * hash) + VERSION_DISPLAY_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getVersionDisplayName().hashCode();
+        hash = (37 * hash) + ENTRY_SUBAGENT_DISPLAY_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getEntrySubagentDisplayName().hashCode();
+        hash = (37 * hash) + ENTRY_SUBAGENT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getEntrySubagentId().hashCode();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -1803,8 +2591,16 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
           agentId_ = "";
           displayName_ = "";
           team_ = "";
+          teams_ = com.google.protobuf.LazyStringArrayList.emptyList();
           dispositionCode_ = "";
           agentType_ = 0;
+          location_ = "";
+          deploymentId_ = "";
+          deploymentDisplayName_ = "";
+          versionId_ = "";
+          versionDisplayName_ = "";
+          entrySubagentDisplayName_ = "";
+          entrySubagentId_ = "";
           return this;
         }
 
@@ -1859,10 +2655,35 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
             result.team_ = team_;
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
-            result.dispositionCode_ = dispositionCode_;
+            teams_.makeImmutable();
+            result.teams_ = teams_;
           }
           if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.dispositionCode_ = dispositionCode_;
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
             result.agentType_ = agentType_;
+          }
+          if (((from_bitField0_ & 0x00000040) != 0)) {
+            result.location_ = location_;
+          }
+          if (((from_bitField0_ & 0x00000080) != 0)) {
+            result.deploymentId_ = deploymentId_;
+          }
+          if (((from_bitField0_ & 0x00000100) != 0)) {
+            result.deploymentDisplayName_ = deploymentDisplayName_;
+          }
+          if (((from_bitField0_ & 0x00000200) != 0)) {
+            result.versionId_ = versionId_;
+          }
+          if (((from_bitField0_ & 0x00000400) != 0)) {
+            result.versionDisplayName_ = versionDisplayName_;
+          }
+          if (((from_bitField0_ & 0x00000800) != 0)) {
+            result.entrySubagentDisplayName_ = entrySubagentDisplayName_;
+          }
+          if (((from_bitField0_ & 0x00001000) != 0)) {
+            result.entrySubagentId_ = entrySubagentId_;
           }
         }
 
@@ -1901,13 +2722,58 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
             bitField0_ |= 0x00000004;
             onChanged();
           }
+          if (!other.teams_.isEmpty()) {
+            if (teams_.isEmpty()) {
+              teams_ = other.teams_;
+              bitField0_ |= 0x00000008;
+            } else {
+              ensureTeamsIsMutable();
+              teams_.addAll(other.teams_);
+            }
+            onChanged();
+          }
           if (!other.getDispositionCode().isEmpty()) {
             dispositionCode_ = other.dispositionCode_;
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             onChanged();
           }
           if (other.agentType_ != 0) {
             setAgentTypeValue(other.getAgentTypeValue());
+          }
+          if (!other.getLocation().isEmpty()) {
+            location_ = other.location_;
+            bitField0_ |= 0x00000040;
+            onChanged();
+          }
+          if (!other.getDeploymentId().isEmpty()) {
+            deploymentId_ = other.deploymentId_;
+            bitField0_ |= 0x00000080;
+            onChanged();
+          }
+          if (!other.getDeploymentDisplayName().isEmpty()) {
+            deploymentDisplayName_ = other.deploymentDisplayName_;
+            bitField0_ |= 0x00000100;
+            onChanged();
+          }
+          if (!other.getVersionId().isEmpty()) {
+            versionId_ = other.versionId_;
+            bitField0_ |= 0x00000200;
+            onChanged();
+          }
+          if (!other.getVersionDisplayName().isEmpty()) {
+            versionDisplayName_ = other.versionDisplayName_;
+            bitField0_ |= 0x00000400;
+            onChanged();
+          }
+          if (!other.getEntrySubagentDisplayName().isEmpty()) {
+            entrySubagentDisplayName_ = other.entrySubagentDisplayName_;
+            bitField0_ |= 0x00000800;
+            onChanged();
+          }
+          if (!other.getEntrySubagentId().isEmpty()) {
+            entrySubagentId_ = other.entrySubagentId_;
+            bitField0_ |= 0x00001000;
+            onChanged();
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -1956,15 +2822,64 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
                 case 34:
                   {
                     dispositionCode_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000008;
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 34
                 case 40:
                   {
                     agentType_ = input.readEnum();
-                    bitField0_ |= 0x00000010;
+                    bitField0_ |= 0x00000020;
                     break;
                   } // case 40
+                case 50:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureTeamsIsMutable();
+                    teams_.add(s);
+                    break;
+                  } // case 50
+                case 58:
+                  {
+                    location_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000040;
+                    break;
+                  } // case 58
+                case 66:
+                  {
+                    deploymentId_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000080;
+                    break;
+                  } // case 66
+                case 74:
+                  {
+                    deploymentDisplayName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000100;
+                    break;
+                  } // case 74
+                case 82:
+                  {
+                    versionId_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000200;
+                    break;
+                  } // case 82
+                case 90:
+                  {
+                    versionDisplayName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000400;
+                    break;
+                  } // case 90
+                case 98:
+                  {
+                    entrySubagentDisplayName_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000800;
+                    break;
+                  } // case 98
+                case 106:
+                  {
+                    entrySubagentId_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00001000;
+                    break;
+                  } // case 106
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2212,13 +3127,18 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A user-specified string representing the agent's team.
+         * A user-specified string representing the agent's team. Deprecated in
+         * favor of the `teams` field.
          * </pre>
          *
-         * <code>string team = 3;</code>
+         * <code>string team = 3 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.contactcenterinsights.v1.Conversation.QualityMetadata.AgentInfo.team is
+         *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=97
          * @return The team.
          */
+        @java.lang.Deprecated
         public java.lang.String getTeam() {
           java.lang.Object ref = team_;
           if (!(ref instanceof java.lang.String)) {
@@ -2235,13 +3155,18 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A user-specified string representing the agent's team.
+         * A user-specified string representing the agent's team. Deprecated in
+         * favor of the `teams` field.
          * </pre>
          *
-         * <code>string team = 3;</code>
+         * <code>string team = 3 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.contactcenterinsights.v1.Conversation.QualityMetadata.AgentInfo.team is
+         *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=97
          * @return The bytes for team.
          */
+        @java.lang.Deprecated
         public com.google.protobuf.ByteString getTeamBytes() {
           java.lang.Object ref = team_;
           if (ref instanceof String) {
@@ -2258,14 +3183,19 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A user-specified string representing the agent's team.
+         * A user-specified string representing the agent's team. Deprecated in
+         * favor of the `teams` field.
          * </pre>
          *
-         * <code>string team = 3;</code>
+         * <code>string team = 3 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.contactcenterinsights.v1.Conversation.QualityMetadata.AgentInfo.team is
+         *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=97
          * @param value The team to set.
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder setTeam(java.lang.String value) {
           if (value == null) {
             throw new NullPointerException();
@@ -2280,13 +3210,18 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A user-specified string representing the agent's team.
+         * A user-specified string representing the agent's team. Deprecated in
+         * favor of the `teams` field.
          * </pre>
          *
-         * <code>string team = 3;</code>
+         * <code>string team = 3 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.contactcenterinsights.v1.Conversation.QualityMetadata.AgentInfo.team is
+         *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=97
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder clearTeam() {
           team_ = getDefaultInstance().getTeam();
           bitField0_ = (bitField0_ & ~0x00000004);
@@ -2298,14 +3233,19 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * A user-specified string representing the agent's team.
+         * A user-specified string representing the agent's team. Deprecated in
+         * favor of the `teams` field.
          * </pre>
          *
-         * <code>string team = 3;</code>
+         * <code>string team = 3 [deprecated = true];</code>
          *
+         * @deprecated
+         *     google.cloud.contactcenterinsights.v1.Conversation.QualityMetadata.AgentInfo.team is
+         *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=97
          * @param value The bytes for team to set.
          * @return This builder for chaining.
          */
+        @java.lang.Deprecated
         public Builder setTeamBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
             throw new NullPointerException();
@@ -2313,6 +3253,189 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
           checkByteStringIsUtf8(value);
           team_ = value;
           bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList teams_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureTeamsIsMutable() {
+          if (!teams_.isModifiable()) {
+            teams_ = new com.google.protobuf.LazyStringArrayList(teams_);
+          }
+          bitField0_ |= 0x00000008;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User-specified strings representing the agent's teams.
+         * </pre>
+         *
+         * <code>repeated string teams = 6;</code>
+         *
+         * @return A list containing the teams.
+         */
+        public com.google.protobuf.ProtocolStringList getTeamsList() {
+          teams_.makeImmutable();
+          return teams_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User-specified strings representing the agent's teams.
+         * </pre>
+         *
+         * <code>repeated string teams = 6;</code>
+         *
+         * @return The count of teams.
+         */
+        public int getTeamsCount() {
+          return teams_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User-specified strings representing the agent's teams.
+         * </pre>
+         *
+         * <code>repeated string teams = 6;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The teams at the given index.
+         */
+        public java.lang.String getTeams(int index) {
+          return teams_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User-specified strings representing the agent's teams.
+         * </pre>
+         *
+         * <code>repeated string teams = 6;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the teams at the given index.
+         */
+        public com.google.protobuf.ByteString getTeamsBytes(int index) {
+          return teams_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User-specified strings representing the agent's teams.
+         * </pre>
+         *
+         * <code>repeated string teams = 6;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The teams to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTeams(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTeamsIsMutable();
+          teams_.set(index, value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User-specified strings representing the agent's teams.
+         * </pre>
+         *
+         * <code>repeated string teams = 6;</code>
+         *
+         * @param value The teams to add.
+         * @return This builder for chaining.
+         */
+        public Builder addTeams(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTeamsIsMutable();
+          teams_.add(value);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User-specified strings representing the agent's teams.
+         * </pre>
+         *
+         * <code>repeated string teams = 6;</code>
+         *
+         * @param values The teams to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllTeams(java.lang.Iterable<java.lang.String> values) {
+          ensureTeamsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, teams_);
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User-specified strings representing the agent's teams.
+         * </pre>
+         *
+         * <code>repeated string teams = 6;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTeams() {
+          teams_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * User-specified strings representing the agent's teams.
+         * </pre>
+         *
+         * <code>repeated string teams = 6;</code>
+         *
+         * @param value The bytes of the teams to add.
+         * @return This builder for chaining.
+         */
+        public Builder addTeamsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureTeamsIsMutable();
+          teams_.add(value);
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -2385,7 +3508,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           dispositionCode_ = value;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -2404,7 +3527,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          */
         public Builder clearDispositionCode() {
           dispositionCode_ = getDefaultInstance().getDispositionCode();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
           return this;
         }
@@ -2428,7 +3551,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
           }
           checkByteStringIsUtf8(value);
           dispositionCode_ = value;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -2467,7 +3590,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          */
         public Builder setAgentTypeValue(int value) {
           agentType_ = value;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -2513,7 +3636,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
           if (value == null) {
             throw new NullPointerException();
           }
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           agentType_ = value.getNumber();
           onChanged();
           return this;
@@ -2532,8 +3655,790 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
          * @return This builder for chaining.
          */
         public Builder clearAgentType() {
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           agentType_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object location_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's location.
+         * </pre>
+         *
+         * <code>string location = 7;</code>
+         *
+         * @return The location.
+         */
+        public java.lang.String getLocation() {
+          java.lang.Object ref = location_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            location_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's location.
+         * </pre>
+         *
+         * <code>string location = 7;</code>
+         *
+         * @return The bytes for location.
+         */
+        public com.google.protobuf.ByteString getLocationBytes() {
+          java.lang.Object ref = location_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            location_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's location.
+         * </pre>
+         *
+         * <code>string location = 7;</code>
+         *
+         * @param value The location to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLocation(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          location_ = value;
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's location.
+         * </pre>
+         *
+         * <code>string location = 7;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLocation() {
+          location_ = getDefaultInstance().getLocation();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's location.
+         * </pre>
+         *
+         * <code>string location = 7;</code>
+         *
+         * @param value The bytes for location to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          location_ = value;
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object deploymentId_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's deployment ID. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string deployment_id = 8;</code>
+         *
+         * @return The deploymentId.
+         */
+        public java.lang.String getDeploymentId() {
+          java.lang.Object ref = deploymentId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            deploymentId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's deployment ID. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string deployment_id = 8;</code>
+         *
+         * @return The bytes for deploymentId.
+         */
+        public com.google.protobuf.ByteString getDeploymentIdBytes() {
+          java.lang.Object ref = deploymentId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            deploymentId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's deployment ID. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string deployment_id = 8;</code>
+         *
+         * @param value The deploymentId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeploymentId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          deploymentId_ = value;
+          bitField0_ |= 0x00000080;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's deployment ID. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string deployment_id = 8;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDeploymentId() {
+          deploymentId_ = getDefaultInstance().getDeploymentId();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's deployment ID. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string deployment_id = 8;</code>
+         *
+         * @param value The bytes for deploymentId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeploymentIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          deploymentId_ = value;
+          bitField0_ |= 0x00000080;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object deploymentDisplayName_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's deployment display name. Only applicable to automated
+         * agents.
+         * </pre>
+         *
+         * <code>string deployment_display_name = 9;</code>
+         *
+         * @return The deploymentDisplayName.
+         */
+        public java.lang.String getDeploymentDisplayName() {
+          java.lang.Object ref = deploymentDisplayName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            deploymentDisplayName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's deployment display name. Only applicable to automated
+         * agents.
+         * </pre>
+         *
+         * <code>string deployment_display_name = 9;</code>
+         *
+         * @return The bytes for deploymentDisplayName.
+         */
+        public com.google.protobuf.ByteString getDeploymentDisplayNameBytes() {
+          java.lang.Object ref = deploymentDisplayName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            deploymentDisplayName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's deployment display name. Only applicable to automated
+         * agents.
+         * </pre>
+         *
+         * <code>string deployment_display_name = 9;</code>
+         *
+         * @param value The deploymentDisplayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeploymentDisplayName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          deploymentDisplayName_ = value;
+          bitField0_ |= 0x00000100;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's deployment display name. Only applicable to automated
+         * agents.
+         * </pre>
+         *
+         * <code>string deployment_display_name = 9;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDeploymentDisplayName() {
+          deploymentDisplayName_ = getDefaultInstance().getDeploymentDisplayName();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's deployment display name. Only applicable to automated
+         * agents.
+         * </pre>
+         *
+         * <code>string deployment_display_name = 9;</code>
+         *
+         * @param value The bytes for deploymentDisplayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDeploymentDisplayNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          deploymentDisplayName_ = value;
+          bitField0_ |= 0x00000100;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object versionId_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's version ID. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string version_id = 10;</code>
+         *
+         * @return The versionId.
+         */
+        public java.lang.String getVersionId() {
+          java.lang.Object ref = versionId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            versionId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's version ID. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string version_id = 10;</code>
+         *
+         * @return The bytes for versionId.
+         */
+        public com.google.protobuf.ByteString getVersionIdBytes() {
+          java.lang.Object ref = versionId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            versionId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's version ID. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string version_id = 10;</code>
+         *
+         * @param value The versionId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setVersionId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          versionId_ = value;
+          bitField0_ |= 0x00000200;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's version ID. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string version_id = 10;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearVersionId() {
+          versionId_ = getDefaultInstance().getVersionId();
+          bitField0_ = (bitField0_ & ~0x00000200);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's version ID. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string version_id = 10;</code>
+         *
+         * @param value The bytes for versionId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setVersionIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          versionId_ = value;
+          bitField0_ |= 0x00000200;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object versionDisplayName_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's version display name. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string version_display_name = 11;</code>
+         *
+         * @return The versionDisplayName.
+         */
+        public java.lang.String getVersionDisplayName() {
+          java.lang.Object ref = versionDisplayName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            versionDisplayName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's version display name. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string version_display_name = 11;</code>
+         *
+         * @return The bytes for versionDisplayName.
+         */
+        public com.google.protobuf.ByteString getVersionDisplayNameBytes() {
+          java.lang.Object ref = versionDisplayName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            versionDisplayName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's version display name. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string version_display_name = 11;</code>
+         *
+         * @param value The versionDisplayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setVersionDisplayName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          versionDisplayName_ = value;
+          bitField0_ |= 0x00000400;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's version display name. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string version_display_name = 11;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearVersionDisplayName() {
+          versionDisplayName_ = getDefaultInstance().getVersionDisplayName();
+          bitField0_ = (bitField0_ & ~0x00000400);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The agent's version display name. Only applicable to automated agents.
+         * </pre>
+         *
+         * <code>string version_display_name = 11;</code>
+         *
+         * @param value The bytes for versionDisplayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setVersionDisplayNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          versionDisplayName_ = value;
+          bitField0_ |= 0x00000400;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object entrySubagentDisplayName_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The entry subagent's display name.
+         * </pre>
+         *
+         * <code>string entry_subagent_display_name = 12;</code>
+         *
+         * @return The entrySubagentDisplayName.
+         */
+        public java.lang.String getEntrySubagentDisplayName() {
+          java.lang.Object ref = entrySubagentDisplayName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            entrySubagentDisplayName_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The entry subagent's display name.
+         * </pre>
+         *
+         * <code>string entry_subagent_display_name = 12;</code>
+         *
+         * @return The bytes for entrySubagentDisplayName.
+         */
+        public com.google.protobuf.ByteString getEntrySubagentDisplayNameBytes() {
+          java.lang.Object ref = entrySubagentDisplayName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            entrySubagentDisplayName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The entry subagent's display name.
+         * </pre>
+         *
+         * <code>string entry_subagent_display_name = 12;</code>
+         *
+         * @param value The entrySubagentDisplayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEntrySubagentDisplayName(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          entrySubagentDisplayName_ = value;
+          bitField0_ |= 0x00000800;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The entry subagent's display name.
+         * </pre>
+         *
+         * <code>string entry_subagent_display_name = 12;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEntrySubagentDisplayName() {
+          entrySubagentDisplayName_ = getDefaultInstance().getEntrySubagentDisplayName();
+          bitField0_ = (bitField0_ & ~0x00000800);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The entry subagent's display name.
+         * </pre>
+         *
+         * <code>string entry_subagent_display_name = 12;</code>
+         *
+         * @param value The bytes for entrySubagentDisplayName to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEntrySubagentDisplayNameBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          entrySubagentDisplayName_ = value;
+          bitField0_ |= 0x00000800;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object entrySubagentId_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The entry subagent's ID.
+         * </pre>
+         *
+         * <code>string entry_subagent_id = 13;</code>
+         *
+         * @return The entrySubagentId.
+         */
+        public java.lang.String getEntrySubagentId() {
+          java.lang.Object ref = entrySubagentId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            entrySubagentId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The entry subagent's ID.
+         * </pre>
+         *
+         * <code>string entry_subagent_id = 13;</code>
+         *
+         * @return The bytes for entrySubagentId.
+         */
+        public com.google.protobuf.ByteString getEntrySubagentIdBytes() {
+          java.lang.Object ref = entrySubagentId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            entrySubagentId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The entry subagent's ID.
+         * </pre>
+         *
+         * <code>string entry_subagent_id = 13;</code>
+         *
+         * @param value The entrySubagentId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEntrySubagentId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          entrySubagentId_ = value;
+          bitField0_ |= 0x00001000;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The entry subagent's ID.
+         * </pre>
+         *
+         * <code>string entry_subagent_id = 13;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEntrySubagentId() {
+          entrySubagentId_ = getDefaultInstance().getEntrySubagentId();
+          bitField0_ = (bitField0_ & ~0x00001000);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The entry subagent's ID.
+         * </pre>
+         *
+         * <code>string entry_subagent_id = 13;</code>
+         *
+         * @param value The bytes for entrySubagentId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEntrySubagentIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          entrySubagentId_ = value;
+          bitField0_ |= 0x00001000;
           onChanged();
           return this;
         }

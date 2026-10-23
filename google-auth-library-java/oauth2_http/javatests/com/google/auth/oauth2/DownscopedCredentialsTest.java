@@ -43,10 +43,11 @@ import com.google.auth.http.HttpTransportFactory;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 
 /** Tests for {@link DownscopedCredentials}. */
-class DownscopedCredentialsTest {
+class DownscopedCredentialsTest extends BaseSerializationTest {
 
   private static final String SA_PRIVATE_KEY_PKCS8 =
       "-----BEGIN PRIVATE KEY-----\n"
@@ -79,6 +80,54 @@ class DownscopedCredentialsTest {
     public HttpTransport create() {
       return transport;
     }
+  }
+
+  public static class StatefulMockStsTransportFactory implements HttpTransportFactory {
+
+    private static MockStsTransport transport = new MockStsTransport();
+
+    public StatefulMockStsTransportFactory() {}
+
+    @Override
+    public HttpTransport create() {
+      return transport;
+    }
+  }
+
+  @Test
+  void refreshAccessToken_reserialized_success() throws Exception {
+    StatefulMockStsTransportFactory.transport = new MockStsTransport();
+    StatefulMockStsTransportFactory transportFactory = new StatefulMockStsTransportFactory();
+
+    // Set token expiration to 1 hour (3_600_000 ms) in the future so that
+    // sourceCredential.refreshIfExpired() considers the source token valid and
+    // does not attempt an external network call to refresh the source credential.
+    long oneHourInMillis = TimeUnit.HOURS.toMillis(1);
+    AccessToken sourceAccessToken =
+        new AccessToken(
+            "sourceAccessToken", new Date(System.currentTimeMillis() + oneHourInMillis));
+    GoogleCredentials sourceCredentials =
+        ((ServiceAccountCredentials) getServiceAccountSourceCredentials(/* canRefresh= */ true))
+            .toBuilder().setAccessToken(sourceAccessToken).build();
+
+    DownscopedCredentials downscopedCredentials =
+        DownscopedCredentials.newBuilder()
+            .setSourceCredential(sourceCredentials)
+            .setCredentialAccessBoundary(CREDENTIAL_ACCESS_BOUNDARY)
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    // Verify deserialization succeeds and reconstructs the transient HTTP transport factory
+    // so that subsequent token refreshes do not throw a NullPointerException.
+    DownscopedCredentials deserialized = serializeAndDeserialize(downscopedCredentials);
+    assertNotNull(deserialized.getTransportFactory());
+    assertEquals(downscopedCredentials, deserialized);
+    assertEquals(downscopedCredentials.hashCode(), deserialized.hashCode());
+
+    // In-memory mock transport responds with a valid token exchange without network calls.
+    AccessToken accessToken = deserialized.refreshAccessToken();
+    assertEquals(
+        StatefulMockStsTransportFactory.transport.getAccessToken(), accessToken.getTokenValue());
   }
 
   @Test

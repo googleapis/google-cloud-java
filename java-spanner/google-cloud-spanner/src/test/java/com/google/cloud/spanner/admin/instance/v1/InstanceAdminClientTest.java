@@ -236,6 +236,7 @@ public class InstanceAdminClientTest {
             .setEtag("etag3123477")
             .addAllLeaderOptions(new ArrayList<String>())
             .setReconciling(true)
+            .addAllAllowedProcessingUnits(new ArrayList<InstanceConfig.AllowedProcessingUnits>())
             .setStorageLimitPerProcessingUnit(-1769187130)
             .build();
     mockInstanceAdmin.addResponse(expectedResponse);
@@ -283,6 +284,7 @@ public class InstanceAdminClientTest {
             .setEtag("etag3123477")
             .addAllLeaderOptions(new ArrayList<String>())
             .setReconciling(true)
+            .addAllAllowedProcessingUnits(new ArrayList<InstanceConfig.AllowedProcessingUnits>())
             .setStorageLimitPerProcessingUnit(-1769187130)
             .build();
     mockInstanceAdmin.addResponse(expectedResponse);
@@ -330,6 +332,7 @@ public class InstanceAdminClientTest {
             .setEtag("etag3123477")
             .addAllLeaderOptions(new ArrayList<String>())
             .setReconciling(true)
+            .addAllAllowedProcessingUnits(new ArrayList<InstanceConfig.AllowedProcessingUnits>())
             .setStorageLimitPerProcessingUnit(-1769187130)
             .build();
     Operation resultOperation =
@@ -393,6 +396,7 @@ public class InstanceAdminClientTest {
             .setEtag("etag3123477")
             .addAllLeaderOptions(new ArrayList<String>())
             .setReconciling(true)
+            .addAllAllowedProcessingUnits(new ArrayList<InstanceConfig.AllowedProcessingUnits>())
             .setStorageLimitPerProcessingUnit(-1769187130)
             .build();
     Operation resultOperation =
@@ -456,6 +460,7 @@ public class InstanceAdminClientTest {
             .setEtag("etag3123477")
             .addAllLeaderOptions(new ArrayList<String>())
             .setReconciling(true)
+            .addAllAllowedProcessingUnits(new ArrayList<InstanceConfig.AllowedProcessingUnits>())
             .setStorageLimitPerProcessingUnit(-1769187130)
             .build();
     Operation resultOperation =

@@ -16,6 +16,7 @@
 
 package com.google.devicesandservices.health.v4beta.stub;
 
+import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.DailyRollUpDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.ListDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.ReconcileDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.RollUpDataPointsPagedResponse;
@@ -468,6 +469,8 @@ public class HttpJsonDataPointsServiceStub extends DataPointsServiceStub {
       rollUpDataPointsPagedCallable;
   private final UnaryCallable<DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse>
       dailyRollUpDataPointsCallable;
+  private final UnaryCallable<DailyRollUpDataPointsRequest, DailyRollUpDataPointsPagedResponse>
+      dailyRollUpDataPointsPagedCallable;
   private final UnaryCallable<ExportExerciseTcxRequest, ExportExerciseTcxResponse>
       exportExerciseTcxCallable;
 
@@ -690,6 +693,11 @@ public class HttpJsonDataPointsServiceStub extends DataPointsServiceStub {
             dailyRollUpDataPointsTransportSettings,
             settings.dailyRollUpDataPointsSettings(),
             clientContext);
+    this.dailyRollUpDataPointsPagedCallable =
+        callableFactory.createPagedCallable(
+            dailyRollUpDataPointsTransportSettings,
+            settings.dailyRollUpDataPointsSettings(),
+            clientContext);
     this.exportExerciseTcxCallable =
         callableFactory.createUnaryCallable(
             exportExerciseTcxTransportSettings,
@@ -799,6 +807,12 @@ public class HttpJsonDataPointsServiceStub extends DataPointsServiceStub {
   public UnaryCallable<DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse>
       dailyRollUpDataPointsCallable() {
     return dailyRollUpDataPointsCallable;
+  }
+
+  @Override
+  public UnaryCallable<DailyRollUpDataPointsRequest, DailyRollUpDataPointsPagedResponse>
+      dailyRollUpDataPointsPagedCallable() {
+    return dailyRollUpDataPointsPagedCallable;
   }
 
   @Override

@@ -16,13 +16,12 @@
 
 package com.google.cloud.spanner;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.spanner.AbstractReadContext.MultiUseReadOnlyTransaction;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Struct;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryMode;
@@ -184,7 +183,7 @@ public class BatchClientImpl implements BatchClient {
         ReadOption... option)
         throws SpannerException {
       Options readOptions = Options.fromReadOptions(option);
-      Preconditions.checkArgument(
+      checkArgument(
           !readOptions.hasLimit(),
           "Limit option not supported by partitionRead|partitionReadUsingIndex");
       final PartitionReadRequest.Builder builder =

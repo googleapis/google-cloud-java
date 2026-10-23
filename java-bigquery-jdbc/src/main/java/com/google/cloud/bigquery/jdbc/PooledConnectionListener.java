@@ -23,7 +23,8 @@ import javax.sql.ConnectionEventListener;
 import javax.sql.PooledConnection;
 
 public class PooledConnectionListener implements ConnectionEventListener {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(PooledConnectionListener.class.getName());
   private String id; // Mainly for internal use
   private LinkedBlockingDeque<PooledConnection> connectionPool;
   private Long connectionPoolSize = 0L;

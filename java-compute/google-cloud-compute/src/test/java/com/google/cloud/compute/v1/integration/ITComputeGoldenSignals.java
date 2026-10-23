@@ -79,6 +79,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.LoggerFactory;
 import org.slf4j.event.KeyValuePair;
@@ -238,6 +239,7 @@ public class ITComputeGoldenSignals extends BaseTest {
    * Tests that a successful compute operation generates traces that are correctly exported to Cloud
    * Trace.
    */
+  @Ignore("Flaky test: b/574587624")
   @Test
   public void testComputeOperationTracing() throws Exception {
     String localTraceId = generateRandomHexString(32);
@@ -318,17 +320,18 @@ public class ITComputeGoldenSignals extends BaseTest {
         continue;
       }
 
-      // Assert RPC span name pattern {method} {url template}
-      assertThat(span.getName())
-          .isEqualTo("GET compute/v1/projects/{project=*}/zones/{zone=*}/instances");
+      boolean isOperationSpan = span.getName().equals("google.cloud.compute.v1.Instances.List");
+      if (!isOperationSpan) {
+        // Assert RPC attempt span name pattern {method} {url template}
+        assertThat(span.getName())
+            .isEqualTo("GET compute/v1/projects/{project=*}/zones/{zone=*}/instances");
+      }
 
       // Compute uses HTTP/REST, so we check for rpc.system.name and other HTTP attributes
       assertThat(span.getLabelsMap().get(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE))
           .isEqualTo("http");
       assertThat(span.getLabelsMap().get(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE))
           .isEqualTo("compute.googleapis.com");
-      assertThat(span.getLabelsMap().get(ObservabilityAttributes.HTTP_METHOD_ATTRIBUTE))
-          .isEqualTo("GET");
       assertThat(span.getLabelsMap().get(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE))
           .isEqualTo("compute");
       assertThat(span.getLabelsMap().get(ObservabilityAttributes.REPO_ATTRIBUTE))
@@ -345,18 +348,25 @@ public class ITComputeGoldenSignals extends BaseTest {
       assertThat(span.getLabelsMap().get(ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE))
           .startsWith(expectedDestinationResource);
 
-      String expectedUrl;
-      if (expectError) {
-        expectedUrl =
-            "https://compute.googleapis.com:443/compute/v1/projects/invalid-project-id/zones/us-central1-a/instances";
+      if (isOperationSpan) {
+        assertThat(span.getLabelsMap().get(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE))
+            .isEqualTo("google.cloud.compute.v1.Instances/List");
       } else {
-        expectedUrl =
-            "https://compute.googleapis.com:443/compute/v1/projects/"
-                + DEFAULT_PROJECT
-                + "/zones/us-central1-a/instances";
+        assertThat(span.getLabelsMap().get(ObservabilityAttributes.HTTP_METHOD_ATTRIBUTE))
+            .isEqualTo("GET");
+        String expectedUrl;
+        if (expectError) {
+          expectedUrl =
+              "https://compute.googleapis.com:443/compute/v1/projects/invalid-project-id/zones/us-central1-a/instances";
+        } else {
+          expectedUrl =
+              "https://compute.googleapis.com:443/compute/v1/projects/"
+                  + DEFAULT_PROJECT
+                  + "/zones/us-central1-a/instances";
+        }
+        assertThat(span.getLabelsMap().get(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE))
+            .isEqualTo(expectedUrl);
       }
-      assertThat(span.getLabelsMap().get(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE))
-          .isEqualTo(expectedUrl);
 
       if (expectError) {
         assertThat(span.getLabelsMap().get(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE))

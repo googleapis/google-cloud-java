@@ -118,7 +118,7 @@ public interface EstablishVolumePeeringRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. List of IPv4 ip addresses to be used for peering.
+   * Optional. List of IPv4 IP addresses to be used for peering.
    * </pre>
    *
    * <code>repeated string peer_ip_addresses = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -131,7 +131,7 @@ public interface EstablishVolumePeeringRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. List of IPv4 ip addresses to be used for peering.
+   * Optional. List of IPv4 IP addresses to be used for peering.
    * </pre>
    *
    * <code>repeated string peer_ip_addresses = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -144,7 +144,7 @@ public interface EstablishVolumePeeringRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. List of IPv4 ip addresses to be used for peering.
+   * Optional. List of IPv4 IP addresses to be used for peering.
    * </pre>
    *
    * <code>repeated string peer_ip_addresses = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -158,7 +158,7 @@ public interface EstablishVolumePeeringRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. List of IPv4 ip addresses to be used for peering.
+   * Optional. List of IPv4 IP addresses to be used for peering.
    * </pre>
    *
    * <code>repeated string peer_ip_addresses = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

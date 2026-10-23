@@ -24,6 +24,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
@@ -518,6 +519,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -578,6 +580,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -650,6 +653,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -686,6 +690,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -750,7 +755,8 @@ class ConnectionWorkerTest {
         maxBytes,
         maxRetryDuration,
         FlowController.LimitExceededBehavior.Block,
-        TEST_TRACE_ID,
+        "java-streamwriter",
+        traceId,
         null,
         client.getSettings(),
         retrySettings,
@@ -927,6 +933,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -996,6 +1003,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1074,6 +1082,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1121,6 +1130,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             null,
             null,
             client.getSettings(),
@@ -1163,6 +1173,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             traceId,
             null,
             client.getSettings(),
@@ -1234,6 +1245,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofMillis(1), // very small maxRetryDuration
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1267,6 +1279,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1296,7 +1309,7 @@ class ConnectionWorkerTest {
         healthCheckFields.msecLongestResponseWaitTime > 1
             && healthCheckFields.msecLongestResponseWaitTime < msecResponseDelay);
     assertEquals(appendCount, healthCheckFields.queuedRequestCountMax);
-    assertEquals(appendCount * sizePerRequest, healthCheckFields.inflightBytes);
+    assertEquals(appendCount * sizePerRequest, healthCheckFields.inflightBytesMax);
     assertEquals("MULTIPLEXING", healthCheckFields.streamName);
     assertEquals(connectionWorker.getWriterId(), healthCheckFields.writerId);
 
@@ -1342,6 +1355,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1363,7 +1377,7 @@ class ConnectionWorkerTest {
     fields.responseCount = 0;
     fields.queuedRequestCountMax = 0;
     fields.queuedRetryCountMax = 0;
-    fields.inflightBytes = 0;
+    fields.inflightBytesMax = 0;
     fields.connectionAttemptCount = 0;
     fields.connectionClosedCount = 0;
     fields.isConnected = false;
@@ -1415,9 +1429,9 @@ class ConnectionWorkerTest {
     fields.queuedRetryCountMax = 0;
 
     // inflightBytes >= queuedBytesThreshold (52428800)
-    fields.inflightBytes = 50 * 1024 * 1024;
+    fields.inflightBytesMax = 50 * 1024 * 1024;
     assertEquals(true, connectionWorker.checkTestOnlyHealthCheckThresholds(fields));
-    fields.inflightBytes = 0;
+    fields.inflightBytesMax = 0;
 
     // connectionAttemptCount >= connectionAttemptThreshold (1)
     fields.connectionAttemptCount = 1;
@@ -1446,6 +1460,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1533,6 +1548,7 @@ class ConnectionWorkerTest {
         100000,
         Duration.ofSeconds(100),
         FlowController.LimitExceededBehavior.Block,
+        "java-streamwriter",
         TEST_TRACE_ID,
         null,
         client.getSettings(),
@@ -1559,6 +1575,7 @@ class ConnectionWorkerTest {
             100000,
             Duration.ofSeconds(100),
             FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
             TEST_TRACE_ID,
             null,
             client.getSettings(),
@@ -1612,6 +1629,17 @@ class ConnectionWorkerTest {
     assertTrue(healthCheckFields.responseCodes.containsKey(Status.Code.OK.value()));
     assertEquals(3, healthCheckFields.responseCodes.get(Status.Code.OK.value()));
     assertEquals("projects/p1/datasets/d1/tables/t1/streams/s1", healthCheckFields.streamName);
+
+    AppendRowsRequest secondRequest = testBigQueryWrite.getAppendRequests().get(1);
+    assertThat(secondRequest.getClientStats().getRequestStats().hasQueuedRequestsCount()).isTrue();
+    assertThat(secondRequest.getClientStats().getRequestStats().getQueuedRequestsCount())
+        .isEqualTo(2);
+    // When both requests are retried together in localQueue, only the first request in localQueue
+    // should have window_stats populated.
+    AppendRowsRequest retryFirstInLocalQueue = testBigQueryWrite.getAppendRequests().get(2);
+    AppendRowsRequest retrySecondInLocalQueue = testBigQueryWrite.getAppendRequests().get(3);
+    assertThat(retryFirstInLocalQueue.getClientStats().hasWindowStats()).isTrue();
+    assertThat(retrySecondInLocalQueue.getClientStats().hasWindowStats()).isFalse();
   }
 
   @Test
@@ -1722,6 +1750,176 @@ class ConnectionWorkerTest {
 
       // Once exhausted, state should be null
       assertThat(connectionWorker.getEarliestSendTime()).isNull();
+
+      AppendRowsRequest initialRequest = testBigQueryWrite.getAppendRequests().get(0);
+      AppendRowsRequest retryRequest = testBigQueryWrite.getAppendRequests().get(1);
+      assertThat(initialRequest.getClientStats().getRequestStats().hasSendTimeMillis()).isTrue();
+      assertThat(retryRequest.getClientStats().getRequestStats().hasSendTimeMillis()).isTrue();
+      assertThat(retryRequest.getClientStats().getRequestStats().getSendTimeMillis())
+          .isAtLeast(initialRequest.getClientStats().getRequestStats().getSendTimeMillis());
+      assertThat(initialRequest.getClientStats().getRequestStats().hasQueuedRequestsCount())
+          .isTrue();
+      assertThat(initialRequest.getClientStats().getRequestStats().getQueuedRequestsCount())
+          .isEqualTo(1);
+      assertThat(retryRequest.getClientStats().getRequestStats().hasQueuedRequestsCount()).isTrue();
+      assertThat(retryRequest.getClientStats().getRequestStats().getQueuedRequestsCount())
+          .isEqualTo(1);
     }
+  }
+
+  @Test
+  void testWindowStats() throws Exception {
+    long beforeCreationMillis = Instant.now().toEpochMilli();
+    ProtoSchema schema1 = createProtoSchema("foo");
+    try (StreamWriter sw1 =
+            StreamWriter.newBuilder(TEST_STREAM_1, client)
+                .setLocation("us")
+                .setWriterSchema(schema1)
+                .build();
+        ConnectionWorker connectionWorker = createConnectionWorker()) {
+      long afterCreationMillis = Instant.now().toEpochMilli();
+      int msecResponseDelay = 300;
+      testBigQueryWrite.setResponseSleep(Duration.ofMillis(msecResponseDelay));
+      testBigQueryWrite.addResponse(createAppendResponse(0));
+      testBigQueryWrite.addResponse(createAppendResponse(1));
+      testBigQueryWrite.addResponse(createAppendResponse(2));
+
+      // First request: no prior responses or wait times have been recorded yet.
+      ApiFuture<AppendRowsResponse> future1 =
+          sendTestMessage(connectionWorker, sw1, createFooProtoRows(new String[] {"0"}), 0);
+      future1.get();
+
+      AppendRowsRequest firstRequest = testBigQueryWrite.getAppendRequests().get(0);
+      long sizePerRequest = firstRequest.getProtoRows().getSerializedSize();
+      assertThat(firstRequest.getClientStats().hasWindowStats()).isTrue();
+      ClientStats.WindowStats firstWindowStats = firstRequest.getClientStats().getWindowStats();
+      assertThat(firstWindowStats.hasMaxResponseLatencyMillis()).isFalse();
+      assertThat(firstWindowStats.hasAvgResponseLatencyMillis()).isFalse();
+      assertThat(firstWindowStats.hasLongestWaitNoResponseMillis()).isFalse();
+      assertThat(firstWindowStats.hasRequestsSentCount()).isTrue();
+      assertThat(firstWindowStats.getRequestsSentCount()).isEqualTo(1);
+      assertThat(firstWindowStats.hasResponsesReceivedCount()).isFalse();
+      assertThat(firstWindowStats.hasBytesSentCount()).isTrue();
+      assertThat(firstWindowStats.getBytesSentCount()).isEqualTo(sizePerRequest);
+      assertThat(firstWindowStats.hasWindowStartTimeEpochMillis()).isTrue();
+      assertThat(firstWindowStats.getWindowStartTimeEpochMillis()).isAtLeast(beforeCreationMillis);
+      assertThat(firstWindowStats.getWindowStartTimeEpochMillis()).isAtMost(afterCreationMillis);
+      assertThat(firstWindowStats.hasWindowMillis()).isTrue();
+      assertThat(firstWindowStats.getWindowMillis()).isAtLeast(0L);
+
+      // Second request: sent after firstRequest waited in-flight (>100ms) and received a response
+      // (>=300ms latency), so all expected WindowStats fields are now non-zero and populated.
+      ApiFuture<AppendRowsResponse> future2 =
+          sendTestMessage(connectionWorker, sw1, createFooProtoRows(new String[] {"1"}), 1);
+      future2.get();
+
+      AppendRowsRequest secondRequest = testBigQueryWrite.getAppendRequests().get(1);
+      assertThat(secondRequest.getClientStats().hasWindowStats()).isTrue();
+      ClientStats.WindowStats secondWindowStats = secondRequest.getClientStats().getWindowStats();
+      assertThat(secondWindowStats.hasMaxResponseLatencyMillis()).isTrue();
+      assertThat(secondWindowStats.getMaxResponseLatencyMillis()).isAtLeast(msecResponseDelay);
+      assertThat(secondWindowStats.hasAvgResponseLatencyMillis()).isTrue();
+      assertThat(secondWindowStats.getAvgResponseLatencyMillis()).isAtLeast(msecResponseDelay);
+      assertThat(secondWindowStats.hasLongestWaitNoResponseMillis()).isTrue();
+      assertThat(secondWindowStats.getLongestWaitNoResponseMillis()).isGreaterThan(0L);
+      assertThat(secondWindowStats.hasRequestsSentCount()).isTrue();
+      assertThat(secondWindowStats.getRequestsSentCount()).isEqualTo(2);
+      assertThat(secondWindowStats.hasResponsesReceivedCount()).isTrue();
+      assertThat(secondWindowStats.getResponsesReceivedCount()).isEqualTo(1);
+      assertThat(secondWindowStats.hasBytesSentCount()).isTrue();
+      assertThat(secondWindowStats.getBytesSentCount()).isEqualTo(2 * sizePerRequest);
+      assertThat(secondWindowStats.hasWindowStartTimeEpochMillis()).isTrue();
+      assertThat(secondWindowStats.getWindowStartTimeEpochMillis())
+          .isEqualTo(firstWindowStats.getWindowStartTimeEpochMillis());
+      assertThat(secondWindowStats.hasWindowMillis()).isTrue();
+      assertThat(secondWindowStats.getWindowMillis()).isAtLeast(msecResponseDelay);
+
+      // Trigger a health check window rollover and verify WindowStats resets for the new window.
+      connectionWorker.setTestOnlyHealthCheckInterval(Duration.ofMillis(100));
+      Thread.sleep(250);
+
+      ApiFuture<AppendRowsResponse> future3 =
+          sendTestMessage(connectionWorker, sw1, createFooProtoRows(new String[] {"2"}), 2);
+      future3.get();
+
+      AppendRowsRequest thirdRequest = testBigQueryWrite.getAppendRequests().get(2);
+      assertThat(thirdRequest.getClientStats().hasWindowStats()).isTrue();
+      ClientStats.WindowStats thirdWindowStats = thirdRequest.getClientStats().getWindowStats();
+      assertThat(thirdWindowStats.hasMaxResponseLatencyMillis()).isFalse();
+      assertThat(thirdWindowStats.hasAvgResponseLatencyMillis()).isFalse();
+      assertThat(thirdWindowStats.hasLongestWaitNoResponseMillis()).isFalse();
+      assertThat(thirdWindowStats.hasRequestsSentCount()).isTrue();
+      assertThat(thirdWindowStats.getRequestsSentCount()).isEqualTo(1);
+      assertThat(thirdWindowStats.hasResponsesReceivedCount()).isFalse();
+      assertThat(thirdWindowStats.hasBytesSentCount()).isTrue();
+      assertThat(thirdWindowStats.getBytesSentCount()).isEqualTo(sizePerRequest);
+      assertThat(thirdWindowStats.hasWindowStartTimeEpochMillis()).isTrue();
+      assertThat(thirdWindowStats.getWindowStartTimeEpochMillis())
+          .isGreaterThan(secondWindowStats.getWindowStartTimeEpochMillis());
+      assertThat(thirdWindowStats.hasWindowMillis()).isTrue();
+      assertThat(thirdWindowStats.getWindowMillis()).isAtLeast(0L);
+    }
+  }
+
+  @Test
+  void testTraceIdContainsWriterId() throws Exception {
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .setTraceId(TEST_TRACE_ID)
+            .build();
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+
+    try (ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            createProtoSchema("foo"),
+            6,
+            100000,
+            Duration.ofSeconds(100),
+            FlowController.LimitExceededBehavior.Block,
+            "java-streamwriter",
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /* enableRequestProfiler= */ false,
+            /* enableOpenTelemetry= */ false,
+            /* isMultiplexing= */ false)) {
+
+      ApiFuture<AppendRowsResponse> future =
+          sendTestMessage(
+              connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(0)}), 0);
+      future.get();
+
+      String writerId = connectionWorker.getWriterId();
+      assertThat(testBigQueryWrite.getAppendRequests()).hasSize(1);
+      AppendRowsRequest serverRequest = testBigQueryWrite.getAppendRequests().get(0);
+
+      String expectedTraceId =
+          "java-streamwriter:"
+              + GaxProperties.getLibraryVersion(StreamWriter.class)
+              + ":"
+              + writerId
+              + " "
+              + TEST_TRACE_ID;
+      assertThat(serverRequest.getTraceId()).isEqualTo(expectedTraceId);
+    }
+  }
+
+  @Test
+  void testGetFullTraceId() {
+    String version = GaxProperties.getLibraryVersion(StreamWriter.class);
+    assertThat(ConnectionWorker.getFullTraceId("java-streamwriter", "writer-123", TEST_TRACE_ID))
+        .isEqualTo("java-streamwriter:" + version + ":writer-123 " + TEST_TRACE_ID);
+    assertThat(ConnectionWorker.getFullTraceId("java-streamwriter", "writer-123", ""))
+        .isEqualTo("java-streamwriter:" + version + ":writer-123");
+    assertThat(ConnectionWorker.getFullTraceId("java-streamwriter", "writer-123", null))
+        .isEqualTo("java-streamwriter:" + version + ":writer-123");
+    assertThat(ConnectionWorker.getFullTraceId("java-streamwriter", "", null))
+        .isEqualTo("java-streamwriter:" + version + ":");
   }
 }

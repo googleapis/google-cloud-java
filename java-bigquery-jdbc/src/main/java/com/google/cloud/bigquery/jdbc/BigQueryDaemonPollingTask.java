@@ -17,14 +17,15 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.api.core.InternalApi;
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.jdbc.BigQueryResultSetFinalizers.ResultSetFinalizer;
+import com.google.common.annotations.VisibleForTesting;
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.util.List;
 
 /**
- * This class is used to add polling threads required for polling the reference queues associated
- * with the two ResultSets
+ * Polls a {@link ReferenceQueue} of result-set phantom references and releases the resources they
+ * own. One instance (thread) is started per result-set type.
  */
 @InternalApi
 class BigQueryDaemonPollingTask extends Thread {
@@ -32,43 +33,32 @@ class BigQueryDaemonPollingTask extends Thread {
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryDaemonPollingTask.class.getName());
 
-  static ReferenceQueue<BigQueryArrowResultSet> referenceQueueArrowRs;
-  static ReferenceQueue<BigQueryJsonResultSet> referenceQueueJsonRs;
-  static List<BigQueryResultSetFinalizers.ArrowResultSetFinalizer> arrowRsFinalizers;
-  static List<BigQueryResultSetFinalizers.JsonResultSetFinalizer> jsonRsFinalizers;
+  // Per-thread state. Each daemon owns exactly one queue and the list that keeps its
+  // references strongly reachable until they have been processed.
+  private final ReferenceQueue<?> referenceQueue;
+  private final List<? extends Reference<?>> finalizers;
 
+  // Singleton guard: the two daemons are started at most once per JVM.
   private static BigQueryDaemonPollingTask arrowDaemon;
   private static BigQueryDaemonPollingTask jsonDaemon;
-
   private static final Object LOCK = new Object();
 
-  private BigQueryDaemonPollingTask(
-      List<BigQueryResultSetFinalizers.ArrowResultSetFinalizer> arrowRsFinalizers,
-      ReferenceQueue<BigQueryArrowResultSet> referenceQueueArrowRs) {
-    super("BigQuery-GC-Daemon-Arrow");
-    BigQueryDaemonPollingTask.referenceQueueArrowRs = referenceQueueArrowRs;
-    BigQueryDaemonPollingTask.arrowRsFinalizers = arrowRsFinalizers;
-    setDaemon(true);
-  }
-
-  private BigQueryDaemonPollingTask(
-      ReferenceQueue<BigQueryJsonResultSet> referenceQueueJsonRs,
-      List<BigQueryResultSetFinalizers.JsonResultSetFinalizer> jsonRsFinalizers) {
-    super("BigQuery-GC-Daemon-Json");
-    BigQueryDaemonPollingTask.referenceQueueJsonRs = referenceQueueJsonRs;
-    BigQueryDaemonPollingTask.jsonRsFinalizers = jsonRsFinalizers;
+  @VisibleForTesting
+  BigQueryDaemonPollingTask(
+      String threadName,
+      ReferenceQueue<?> referenceQueue,
+      List<? extends Reference<?>> finalizers) {
+    super(threadName);
+    this.referenceQueue = referenceQueue;
+    this.finalizers = finalizers;
     setDaemon(true);
   }
 
   /**
-   * ThreadSafe method which creates two instances of polling task, one each for each type of
-   * ResultSet
+   * Thread-safe. Starts one polling thread per result-set type. Subsequent calls are no-ops, even
+   * if different queues are passed.
    *
-   * @param referenceQueueArrowRs ReferenceQueue for ArrowResultSet
-   * @param referenceQueueJsonRs ReferenceQueue for JsonResultSet
-   * @param arrowRsFinalizers Finalizer for ArrowResultSet
-   * @param jsonRsFinalizers Finalizer for JsonResultSet
-   * @return true if the tasks were created
+   * @return true if the daemons were started by this call
    */
   public static boolean startGcDaemonTask(
       ReferenceQueue<BigQueryArrowResultSet> referenceQueueArrowRs,
@@ -77,48 +67,45 @@ class BigQueryDaemonPollingTask extends Thread {
       List<BigQueryResultSetFinalizers.JsonResultSetFinalizer> jsonRsFinalizers) {
     LOG.finest("++enter++");
     synchronized (LOCK) {
-      // 2 Background threads will be required to monitor the respective queues
       if (arrowDaemon == null && jsonDaemon == null) {
-        arrowDaemon = new BigQueryDaemonPollingTask(arrowRsFinalizers, referenceQueueArrowRs);
+        arrowDaemon =
+            new BigQueryDaemonPollingTask(
+                "BigQuery-GC-Daemon-Arrow", referenceQueueArrowRs, arrowRsFinalizers);
         arrowDaemon.start();
 
-        jsonDaemon = new BigQueryDaemonPollingTask(referenceQueueJsonRs, jsonRsFinalizers);
+        jsonDaemon =
+            new BigQueryDaemonPollingTask(
+                "BigQuery-GC-Daemon-Json", referenceQueueJsonRs, jsonRsFinalizers);
         jsonDaemon.start();
-
         return true;
       }
     }
-    // Task(s) are already initialised
     return false;
   }
 
   @Override
   public void run() {
-
-    Reference<?> reference;
+    LOG.finest("++enter++");
     try {
-      LOG.finest("++enter++");
-      // poll for Arrow ResultSets
-      if (referenceQueueArrowRs != null) {
-
-        while ((reference = referenceQueueArrowRs.remove()) != null) {
-          LOG.fine("Clearing Arrow ResultSet reference " + referenceQueueArrowRs);
-          ((BigQueryResultSetFinalizers.ArrowResultSetFinalizer) reference).finalizeResources();
+      while (true) {
+        Reference<?> reference =
+            referenceQueue.remove(); // InterruptedException escapes to outer catch
+        try {
+          LOG.fine("Clearing ResultSet reference " + reference);
+          if (reference instanceof ResultSetFinalizer) {
+            ((ResultSetFinalizer) reference).finalizeResources();
+          } else {
+            LOG.warning("Unexpected reference type in GC queue: " + reference.getClass());
+          }
+        } catch (RuntimeException ex) {
+          LOG.warning(ex, "Failed to finalize ResultSet resources; continuing");
+        } finally {
           reference.clear();
+          finalizers.remove(reference);
         }
-      }
-      // poll for JSON ResultSets
-      else if (referenceQueueJsonRs != null) {
-        while ((reference = referenceQueueJsonRs.remove()) != null) {
-          LOG.fine("Clearing Json ResultSet reference " + referenceQueueJsonRs);
-          ((BigQueryResultSetFinalizers.JsonResultSetFinalizer) reference).finalizeResources();
-          reference.clear();
-        }
-      } else {
-        throw new BigQueryJdbcRuntimeException("Null Reference Queue");
       }
     } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException("Interrupted in GC daemon task", ex);
+      LOG.warning(ex, "Interrupted in GC daemon task");
     }
   }
 }

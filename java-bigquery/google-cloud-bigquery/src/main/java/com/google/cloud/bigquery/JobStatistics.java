@@ -1650,7 +1650,7 @@ public abstract class JobStatistics implements Serializable {
       if (statisticsPb.getScriptStatistics() != null) {
         this.scriptStatistics = ScriptStatistics.fromPb(statisticsPb.getScriptStatistics());
       }
-      if (reservationUsage != null) {
+      if (statisticsPb.getReservationUsage() != null) {
         this.reservationUsage =
             Lists.transform(statisticsPb.getReservationUsage(), ReservationUsage.FROM_PB_FUNCTION);
       }
@@ -1689,6 +1689,11 @@ public abstract class JobStatistics implements Serializable {
 
     B setSessionInfo(SessionInfo sessionInfo) {
       this.sessionInfo = sessionInfo;
+      return self();
+    }
+
+    B setReservationUsage(List<ReservationUsage> reservationUsage) {
+      this.reservationUsage = reservationUsage;
       return self();
     }
 
