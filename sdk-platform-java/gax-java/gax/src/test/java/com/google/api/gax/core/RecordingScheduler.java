@@ -79,6 +79,12 @@ public class RecordingScheduler extends ScheduledThreadPoolExecutor {
    * sleeping in real time. Submitting with zero delay to the worker thread preserves asynchronous
    * execution so that attempt registration in {@code CallbackChainRetryingFuture} completes
    * cleanly before the scheduled attempt runs.
+   *
+   * <p>Only the {@link Runnable} overload of {@code schedule} needs to be overridden because {@code
+   * ScheduledRetryingExecutor} wraps its scheduler with {@code
+   * MoreExecutors.listeningDecorator(scheduler)}, which wraps {@link java.util.concurrent.Callable}
+   * tasks in a {@code TrustedListenableFutureTask} (a {@link Runnable}) before delegating to this
+   * method.
    */
   @Override
   public ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit) {
