@@ -375,4 +375,48 @@ public interface FloorSettingOrBuilder
    */
   com.google.cloud.modelarmor.v1.FloorSetting.FloorSettingMetadataOrBuilder
       getFloorSettingMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google MCP Server floor setting.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the googleMcpServerFloorSetting field is set.
+   */
+  boolean hasGoogleMcpServerFloorSetting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google MCP Server floor setting.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The googleMcpServerFloorSetting.
+   */
+  com.google.cloud.modelarmor.v1.McpServerFloorSetting getGoogleMcpServerFloorSetting();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Google MCP Server floor setting.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.modelarmor.v1.McpServerFloorSetting google_mcp_server_floor_setting = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.modelarmor.v1.McpServerFloorSettingOrBuilder
+      getGoogleMcpServerFloorSettingOrBuilder();
 }

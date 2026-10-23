@@ -16,6 +16,7 @@
 
 package com.google.devicesandservices.health.v4beta.stub;
 
+import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.DailyRollUpDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.ListDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.ReconcileDataPointsPagedResponse;
 import static com.google.devicesandservices.health.v4beta.DataPointsServiceClient.RollUpDataPointsPagedResponse;
@@ -62,6 +63,7 @@ import com.google.devicesandservices.health.v4beta.CreateDataPointOperationMetad
 import com.google.devicesandservices.health.v4beta.CreateDataPointRequest;
 import com.google.devicesandservices.health.v4beta.DailyRollUpDataPointsRequest;
 import com.google.devicesandservices.health.v4beta.DailyRollUpDataPointsResponse;
+import com.google.devicesandservices.health.v4beta.DailyRollupDataPoint;
 import com.google.devicesandservices.health.v4beta.DataPoint;
 import com.google.devicesandservices.health.v4beta.ExportExerciseTcxRequest;
 import com.google.devicesandservices.health.v4beta.ExportExerciseTcxResponse;
@@ -214,7 +216,10 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
   private final PagedCallSettings<
           RollUpDataPointsRequest, RollUpDataPointsResponse, RollUpDataPointsPagedResponse>
       rollUpDataPointsSettings;
-  private final UnaryCallSettings<DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse>
+  private final PagedCallSettings<
+          DailyRollUpDataPointsRequest,
+          DailyRollUpDataPointsResponse,
+          DailyRollUpDataPointsPagedResponse>
       dailyRollUpDataPointsSettings;
   private final UnaryCallSettings<ExportExerciseTcxRequest, ExportExerciseTcxResponse>
       exportExerciseTcxSettings;
@@ -331,6 +336,45 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
             }
           };
 
+  private static final PagedListDescriptor<
+          DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse, DailyRollupDataPoint>
+      DAILY_ROLL_UP_DATA_POINTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse, DailyRollupDataPoint>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public DailyRollUpDataPointsRequest injectToken(
+                DailyRollUpDataPointsRequest payload, String token) {
+              return DailyRollUpDataPointsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public DailyRollUpDataPointsRequest injectPageSize(
+                DailyRollUpDataPointsRequest payload, int pageSize) {
+              return DailyRollUpDataPointsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(DailyRollUpDataPointsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(DailyRollUpDataPointsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DailyRollupDataPoint> extractResources(
+                DailyRollUpDataPointsResponse payload) {
+              return payload.getRollupDataPointsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListDataPointsRequest, ListDataPointsResponse, ListDataPointsPagedResponse>
       LIST_DATA_POINTS_PAGE_STR_FACT =
@@ -386,6 +430,32 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
                       PageContext.create(
                           callable, ROLL_UP_DATA_POINTS_PAGE_STR_DESC, request, context);
               return RollUpDataPointsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          DailyRollUpDataPointsRequest,
+          DailyRollUpDataPointsResponse,
+          DailyRollUpDataPointsPagedResponse>
+      DAILY_ROLL_UP_DATA_POINTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              DailyRollUpDataPointsRequest,
+              DailyRollUpDataPointsResponse,
+              DailyRollUpDataPointsPagedResponse>() {
+            @Override
+            public ApiFuture<DailyRollUpDataPointsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse> callable,
+                DailyRollUpDataPointsRequest request,
+                ApiCallContext context,
+                ApiFuture<DailyRollUpDataPointsResponse> futureResponse) {
+              PageContext<
+                      DailyRollUpDataPointsRequest,
+                      DailyRollUpDataPointsResponse,
+                      DailyRollupDataPoint>
+                  pageContext =
+                      PageContext.create(
+                          callable, DAILY_ROLL_UP_DATA_POINTS_PAGE_STR_DESC, request, context);
+              return DailyRollUpDataPointsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -453,7 +523,10 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
   }
 
   /** Returns the object with the settings used for calls to dailyRollUpDataPoints. */
-  public UnaryCallSettings<DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse>
+  public PagedCallSettings<
+          DailyRollUpDataPointsRequest,
+          DailyRollUpDataPointsResponse,
+          DailyRollUpDataPointsPagedResponse>
       dailyRollUpDataPointsSettings() {
     return dailyRollUpDataPointsSettings;
   }
@@ -631,8 +704,10 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
     private final PagedCallSettings.Builder<
             RollUpDataPointsRequest, RollUpDataPointsResponse, RollUpDataPointsPagedResponse>
         rollUpDataPointsSettings;
-    private final UnaryCallSettings.Builder<
-            DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse>
+    private final PagedCallSettings.Builder<
+            DailyRollUpDataPointsRequest,
+            DailyRollUpDataPointsResponse,
+            DailyRollUpDataPointsPagedResponse>
         dailyRollUpDataPointsSettings;
     private final UnaryCallSettings.Builder<ExportExerciseTcxRequest, ExportExerciseTcxResponse>
         exportExerciseTcxSettings;
@@ -695,7 +770,8 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
       reconcileDataPointsSettings =
           PagedCallSettings.newBuilder(RECONCILE_DATA_POINTS_PAGE_STR_FACT);
       rollUpDataPointsSettings = PagedCallSettings.newBuilder(ROLL_UP_DATA_POINTS_PAGE_STR_FACT);
-      dailyRollUpDataPointsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      dailyRollUpDataPointsSettings =
+          PagedCallSettings.newBuilder(DAILY_ROLL_UP_DATA_POINTS_PAGE_STR_FACT);
       exportExerciseTcxSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -974,7 +1050,10 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
     }
 
     /** Returns the builder for the settings used for calls to dailyRollUpDataPoints. */
-    public UnaryCallSettings.Builder<DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse>
+    public PagedCallSettings.Builder<
+            DailyRollUpDataPointsRequest,
+            DailyRollUpDataPointsResponse,
+            DailyRollUpDataPointsPagedResponse>
         dailyRollUpDataPointsSettings() {
       return dailyRollUpDataPointsSettings;
     }

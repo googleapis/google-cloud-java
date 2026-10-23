@@ -1106,6 +1106,382 @@ public final class CloudRedisClusterGrpc {
     return getBackupClusterMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest,
+          com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse>
+      getListTokenAuthUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListTokenAuthUsers",
+      requestType = com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest,
+          com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse>
+      getListTokenAuthUsersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest,
+            com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse>
+        getListTokenAuthUsersMethod;
+    if ((getListTokenAuthUsersMethod = CloudRedisClusterGrpc.getListTokenAuthUsersMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getListTokenAuthUsersMethod = CloudRedisClusterGrpc.getListTokenAuthUsersMethod)
+            == null) {
+          CloudRedisClusterGrpc.getListTokenAuthUsersMethod =
+              getListTokenAuthUsersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest,
+                          com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListTokenAuthUsers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("ListTokenAuthUsers"))
+                      .build();
+        }
+      }
+    }
+    return getListTokenAuthUsersMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest,
+          com.google.cloud.redis.cluster.v1beta1.TokenAuthUser>
+      getGetTokenAuthUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetTokenAuthUser",
+      requestType = com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1beta1.TokenAuthUser.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest,
+          com.google.cloud.redis.cluster.v1beta1.TokenAuthUser>
+      getGetTokenAuthUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest,
+            com.google.cloud.redis.cluster.v1beta1.TokenAuthUser>
+        getGetTokenAuthUserMethod;
+    if ((getGetTokenAuthUserMethod = CloudRedisClusterGrpc.getGetTokenAuthUserMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getGetTokenAuthUserMethod = CloudRedisClusterGrpc.getGetTokenAuthUserMethod) == null) {
+          CloudRedisClusterGrpc.getGetTokenAuthUserMethod =
+              getGetTokenAuthUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest,
+                          com.google.cloud.redis.cluster.v1beta1.TokenAuthUser>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetTokenAuthUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.TokenAuthUser
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("GetTokenAuthUser"))
+                      .build();
+        }
+      }
+    }
+    return getGetTokenAuthUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest,
+          com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse>
+      getListAuthTokensMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAuthTokens",
+      requestType = com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest,
+          com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse>
+      getListAuthTokensMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest,
+            com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse>
+        getListAuthTokensMethod;
+    if ((getListAuthTokensMethod = CloudRedisClusterGrpc.getListAuthTokensMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getListAuthTokensMethod = CloudRedisClusterGrpc.getListAuthTokensMethod) == null) {
+          CloudRedisClusterGrpc.getListAuthTokensMethod =
+              getListAuthTokensMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest,
+                          com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAuthTokens"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("ListAuthTokens"))
+                      .build();
+        }
+      }
+    }
+    return getListAuthTokensMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest,
+          com.google.cloud.redis.cluster.v1beta1.AuthToken>
+      getGetAuthTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAuthToken",
+      requestType = com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest.class,
+      responseType = com.google.cloud.redis.cluster.v1beta1.AuthToken.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest,
+          com.google.cloud.redis.cluster.v1beta1.AuthToken>
+      getGetAuthTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest,
+            com.google.cloud.redis.cluster.v1beta1.AuthToken>
+        getGetAuthTokenMethod;
+    if ((getGetAuthTokenMethod = CloudRedisClusterGrpc.getGetAuthTokenMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getGetAuthTokenMethod = CloudRedisClusterGrpc.getGetAuthTokenMethod) == null) {
+          CloudRedisClusterGrpc.getGetAuthTokenMethod =
+              getGetAuthTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest,
+                          com.google.cloud.redis.cluster.v1beta1.AuthToken>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAuthToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.AuthToken
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("GetAuthToken"))
+                      .build();
+        }
+      }
+    }
+    return getGetAuthTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getAddTokenAuthUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddTokenAuthUser",
+      requestType = com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getAddTokenAuthUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest,
+            com.google.longrunning.Operation>
+        getAddTokenAuthUserMethod;
+    if ((getAddTokenAuthUserMethod = CloudRedisClusterGrpc.getAddTokenAuthUserMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getAddTokenAuthUserMethod = CloudRedisClusterGrpc.getAddTokenAuthUserMethod) == null) {
+          CloudRedisClusterGrpc.getAddTokenAuthUserMethod =
+              getAddTokenAuthUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddTokenAuthUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("AddTokenAuthUser"))
+                      .build();
+        }
+      }
+    }
+    return getAddTokenAuthUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getDeleteTokenAuthUserMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteTokenAuthUser",
+      requestType = com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest,
+          com.google.longrunning.Operation>
+      getDeleteTokenAuthUserMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest,
+            com.google.longrunning.Operation>
+        getDeleteTokenAuthUserMethod;
+    if ((getDeleteTokenAuthUserMethod = CloudRedisClusterGrpc.getDeleteTokenAuthUserMethod)
+        == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getDeleteTokenAuthUserMethod = CloudRedisClusterGrpc.getDeleteTokenAuthUserMethod)
+            == null) {
+          CloudRedisClusterGrpc.getDeleteTokenAuthUserMethod =
+              getDeleteTokenAuthUserMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteTokenAuthUser"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("DeleteTokenAuthUser"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteTokenAuthUserMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest,
+          com.google.longrunning.Operation>
+      getAddAuthTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddAuthToken",
+      requestType = com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest,
+          com.google.longrunning.Operation>
+      getAddAuthTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest,
+            com.google.longrunning.Operation>
+        getAddAuthTokenMethod;
+    if ((getAddAuthTokenMethod = CloudRedisClusterGrpc.getAddAuthTokenMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getAddAuthTokenMethod = CloudRedisClusterGrpc.getAddAuthTokenMethod) == null) {
+          CloudRedisClusterGrpc.getAddAuthTokenMethod =
+              getAddAuthTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddAuthToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("AddAuthToken"))
+                      .build();
+        }
+      }
+    }
+    return getAddAuthTokenMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest,
+          com.google.longrunning.Operation>
+      getDeleteAuthTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAuthToken",
+      requestType = com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest,
+          com.google.longrunning.Operation>
+      getDeleteAuthTokenMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest,
+            com.google.longrunning.Operation>
+        getDeleteAuthTokenMethod;
+    if ((getDeleteAuthTokenMethod = CloudRedisClusterGrpc.getDeleteAuthTokenMethod) == null) {
+      synchronized (CloudRedisClusterGrpc.class) {
+        if ((getDeleteAuthTokenMethod = CloudRedisClusterGrpc.getDeleteAuthTokenMethod) == null) {
+          CloudRedisClusterGrpc.getDeleteAuthTokenMethod =
+              getDeleteAuthTokenMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAuthToken"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudRedisClusterMethodDescriptorSupplier("DeleteAuthToken"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAuthTokenMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudRedisClusterStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudRedisClusterStub> factory =
@@ -1546,6 +1922,123 @@ public final class CloudRedisClusterGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getBackupClusterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled cluster.
+     * </pre>
+     */
+    default void listTokenAuthUsers(
+        com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListTokenAuthUsersMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a basic auth enabled cluster.
+     * </pre>
+     */
+    default void getTokenAuthUser(
+        com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.TokenAuthUser>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetTokenAuthUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    default void listAuthTokens(
+        com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAuthTokensMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific auth token for a specific token auth user.
+     * </pre>
+     */
+    default void getAuthToken(
+        com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.AuthToken>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAuthTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    default void addTokenAuthUser(
+        com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAddTokenAuthUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    default void deleteTokenAuthUser(
+        com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteTokenAuthUserMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a auth token for a user of a token based auth enabled cluster.
+     * </pre>
+     */
+    default void addAuthToken(
+        com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAddAuthTokenMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a auth token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    default void deleteAuthToken(
+        com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAuthTokenMethod(), responseObserver);
     }
   }
 
@@ -2015,6 +2508,139 @@ public final class CloudRedisClusterGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled cluster.
+     * </pre>
+     */
+    public void listTokenAuthUsers(
+        com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListTokenAuthUsersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a basic auth enabled cluster.
+     * </pre>
+     */
+    public void getTokenAuthUser(
+        com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.TokenAuthUser>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetTokenAuthUserMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public void listAuthTokens(
+        com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAuthTokensMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific auth token for a specific token auth user.
+     * </pre>
+     */
+    public void getAuthToken(
+        com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.AuthToken>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAuthTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public void addTokenAuthUser(
+        com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddTokenAuthUserMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public void deleteTokenAuthUser(
+        com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteTokenAuthUserMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a auth token for a user of a token based auth enabled cluster.
+     * </pre>
+     */
+    public void addAuthToken(
+        com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddAuthTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a auth token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public void deleteAuthToken(
+        com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAuthTokenMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2409,6 +3035,118 @@ public final class CloudRedisClusterGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getBackupClusterMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse listTokenAuthUsers(
+        com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListTokenAuthUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a basic auth enabled cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.TokenAuthUser getTokenAuthUser(
+        com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse listAuthTokens(
+        com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAuthTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific auth token for a specific token auth user.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.AuthToken getAuthToken(
+        com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addTokenAuthUser(
+        com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAddTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTokenAuthUser(
+        com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a auth token for a user of a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addAuthToken(
+        com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAddAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a auth token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAuthToken(
+        com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAuthTokenMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2780,6 +3518,110 @@ public final class CloudRedisClusterGrpc {
         com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBackupClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse listTokenAuthUsers(
+        com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTokenAuthUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a basic auth enabled cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.TokenAuthUser getTokenAuthUser(
+        com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse listAuthTokens(
+        com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAuthTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific auth token for a specific token auth user.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.AuthToken getAuthToken(
+        com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addTokenAuthUser(
+        com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTokenAuthUser(
+        com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTokenAuthUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a auth token for a user of a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addAuthToken(
+        com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddAuthTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a auth token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAuthToken(
+        com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAuthTokenMethod(), getCallOptions(), request);
     }
   }
 
@@ -3167,6 +4009,116 @@ public final class CloudRedisClusterGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBackupClusterMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the token auth users for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse>
+        listTokenAuthUsers(
+            com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListTokenAuthUsersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific token auth user for a basic auth enabled cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1beta1.TokenAuthUser>
+        getTokenAuthUser(com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetTokenAuthUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the auth tokens for a specific token auth user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse>
+        listAuthTokens(com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAuthTokensMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a specific auth token for a specific token auth user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.redis.cluster.v1beta1.AuthToken>
+        getAuthToken(com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAuthTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        addTokenAuthUser(com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddTokenAuthUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a token auth user for a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteTokenAuthUser(
+            com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteTokenAuthUserMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds a auth token for a user of a token based auth enabled cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        addAuthToken(com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddAuthTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes a auth token for a user of a token based auth enabled instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAuthToken(com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAuthTokenMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
@@ -3191,6 +4143,14 @@ public final class CloudRedisClusterGrpc {
   private static final int METHODID_DELETE_BACKUP = 19;
   private static final int METHODID_EXPORT_BACKUP = 20;
   private static final int METHODID_BACKUP_CLUSTER = 21;
+  private static final int METHODID_LIST_TOKEN_AUTH_USERS = 22;
+  private static final int METHODID_GET_TOKEN_AUTH_USER = 23;
+  private static final int METHODID_LIST_AUTH_TOKENS = 24;
+  private static final int METHODID_GET_AUTH_TOKEN = 25;
+  private static final int METHODID_ADD_TOKEN_AUTH_USER = 26;
+  private static final int METHODID_DELETE_TOKEN_AUTH_USER = 27;
+  private static final int METHODID_ADD_AUTH_TOKEN = 28;
+  private static final int METHODID_DELETE_AUTH_TOKEN = 29;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3340,6 +4300,52 @@ public final class CloudRedisClusterGrpc {
         case METHODID_BACKUP_CLUSTER:
           serviceImpl.backupCluster(
               (com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_TOKEN_AUTH_USERS:
+          serviceImpl.listTokenAuthUsers(
+              (com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_TOKEN_AUTH_USER:
+          serviceImpl.getTokenAuthUser(
+              (com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.TokenAuthUser>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_AUTH_TOKENS:
+          serviceImpl.listAuthTokens(
+              (com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AUTH_TOKEN:
+          serviceImpl.getAuthToken(
+              (com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.redis.cluster.v1beta1.AuthToken>)
+                  responseObserver);
+          break;
+        case METHODID_ADD_TOKEN_AUTH_USER:
+          serviceImpl.addTokenAuthUser(
+              (com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_TOKEN_AUTH_USER:
+          serviceImpl.deleteTokenAuthUser(
+              (com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_ADD_AUTH_TOKEN:
+          serviceImpl.addAuthToken(
+              (com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_AUTH_TOKEN:
+          serviceImpl.deleteAuthToken(
+              (com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -3505,6 +4511,58 @@ public final class CloudRedisClusterGrpc {
                 new MethodHandlers<
                     com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest,
                     com.google.longrunning.Operation>(service, METHODID_BACKUP_CLUSTER)))
+        .addMethod(
+            getListTokenAuthUsersMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest,
+                    com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse>(
+                    service, METHODID_LIST_TOKEN_AUTH_USERS)))
+        .addMethod(
+            getGetTokenAuthUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest,
+                    com.google.cloud.redis.cluster.v1beta1.TokenAuthUser>(
+                    service, METHODID_GET_TOKEN_AUTH_USER)))
+        .addMethod(
+            getListAuthTokensMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest,
+                    com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse>(
+                    service, METHODID_LIST_AUTH_TOKENS)))
+        .addMethod(
+            getGetAuthTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest,
+                    com.google.cloud.redis.cluster.v1beta1.AuthToken>(
+                    service, METHODID_GET_AUTH_TOKEN)))
+        .addMethod(
+            getAddTokenAuthUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ADD_TOKEN_AUTH_USER)))
+        .addMethod(
+            getDeleteTokenAuthUserMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_TOKEN_AUTH_USER)))
+        .addMethod(
+            getAddAuthTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ADD_AUTH_TOKEN)))
+        .addMethod(
+            getDeleteAuthTokenMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_AUTH_TOKEN)))
         .build();
   }
 
@@ -3578,6 +4636,14 @@ public final class CloudRedisClusterGrpc {
                       .addMethod(getDeleteBackupMethod())
                       .addMethod(getExportBackupMethod())
                       .addMethod(getBackupClusterMethod())
+                      .addMethod(getListTokenAuthUsersMethod())
+                      .addMethod(getGetTokenAuthUserMethod())
+                      .addMethod(getListAuthTokensMethod())
+                      .addMethod(getGetAuthTokenMethod())
+                      .addMethod(getAddTokenAuthUserMethod())
+                      .addMethod(getDeleteTokenAuthUserMethod())
+                      .addMethod(getAddAuthTokenMethod())
+                      .addMethod(getDeleteAuthTokenMethod())
                       .build();
         }
       }

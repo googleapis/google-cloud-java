@@ -26,8 +26,14 @@ class BigQueryResultSetFinalizers {
   private static final BigQueryJdbcResultSetLogger LOG =
       BigQueryJdbcResultSetLogger.getLogger(BigQueryResultSetFinalizers.class);
 
+  /** Implemented by every PhantomReference the GC daemon knows how to clean up. */
+  interface ResultSetFinalizer {
+    void finalizeResources();
+  }
+
   @InternalApi
-  static class ArrowResultSetFinalizer extends PhantomReference<BigQueryArrowResultSet> {
+  static class ArrowResultSetFinalizer extends PhantomReference<BigQueryArrowResultSet>
+      implements ResultSetFinalizer {
     Future<?> ownedTask;
 
     public ArrowResultSetFinalizer(
@@ -48,7 +54,8 @@ class BigQueryResultSetFinalizers {
   }
 
   @InternalApi
-  static class JsonResultSetFinalizer extends PhantomReference<BigQueryJsonResultSet> {
+  static class JsonResultSetFinalizer extends PhantomReference<BigQueryJsonResultSet>
+      implements ResultSetFinalizer {
     Future<?>[] ownedTasks;
 
     public JsonResultSetFinalizer(

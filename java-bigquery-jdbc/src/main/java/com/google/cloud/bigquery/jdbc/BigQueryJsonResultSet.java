@@ -227,6 +227,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       try {
         // Advance the cursor,Potentially blocking operation
         this.cursor = this.buffer.take();
+        checkClosed();
         if (this.cursor.getException() != null) {
           throw backgroundFetchError(this.cursor.getException());
         }
@@ -338,7 +339,8 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
    * @param columnIndex the first column is 1, the second is 2, ...
    * @return an instance of {@link FieldValue} represents value at <code>columnIndex</code> column.
    */
-  private FieldValue getObjectInternal(int columnIndex) throws SQLException {
+  @Override
+  FieldValue getObjectInternal(int columnIndex) throws SQLException {
     checkClosed();
     LOG.finestTrace("getObjectInternal");
     FieldValue value;
@@ -382,16 +384,28 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   @Override
   public void close() {
+    if (this.isClosed) {
+      return;
+    }
     LOG.fineTrace("close", () -> String.format("Closing BigqueryJsonResultSet %s.", this));
     this.isClosed = true;
-    if (ownedTasks != null) {
-      for (Future<?> ownedTask : ownedTasks) {
-        if (ownedTask != null) {
-          ownedTask.cancel(true);
+    try {
+      if (ownedTasks != null) {
+        for (Future<?> ownedTask : ownedTasks) {
+          if (ownedTask != null) {
+            ownedTask.cancel(true);
+          }
         }
       }
+      if (this.buffer != null) {
+        this.buffer.clear();
+        // Unblock any consumer thread currently waiting on buffer.take() in next()
+        this.buffer.offer(BigQueryFieldValueListWrapper.ofEndOfStream(null));
+      }
+      this.cursor = null;
+    } finally {
+      super.close();
     }
-    super.close();
   }
 
   @Override

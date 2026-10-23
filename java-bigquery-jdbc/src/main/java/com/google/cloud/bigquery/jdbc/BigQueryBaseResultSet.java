@@ -28,6 +28,8 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryConversionException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.context.Context;
@@ -50,6 +52,7 @@ import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.List;
@@ -265,6 +268,11 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
         metaData = BigQueryResultSetMetadata.of(this.schema.getFields(), this.statement);
       }
     }
+
+    TelemetryManager.recordFeatureUsage(
+        DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
+        "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL");
+
     return BigQueryJdbcContextProxy.wrap(metaData, ResultSetMetaData.class, connectionId);
   }
 
@@ -303,10 +311,18 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     return getObject(columnIndex);
   }
 
+  abstract Object getObjectInternal(int columnIndex) throws SQLException;
+
   @Override
   public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
     LOG.finestTrace("getObject");
     try {
+      if (type == LocalTime.class || type == String.class) {
+        StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+        if (bqType == StandardSQLTypeName.TIME) {
+          return BigQueryTypeRegistry.convert(getObjectInternal(columnIndex), bqType, type, null);
+        }
+      }
       Object value = getObject(columnIndex);
       if (value == null) {
         return null;

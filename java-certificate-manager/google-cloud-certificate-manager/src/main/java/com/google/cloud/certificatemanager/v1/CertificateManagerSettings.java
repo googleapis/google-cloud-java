@@ -370,6 +370,21 @@ public class CertificateManagerSettings extends ClientSettings<CertificateManage
         .createCertificateIssuanceConfigOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateCertificateIssuanceConfig. */
+  public UnaryCallSettings<UpdateCertificateIssuanceConfigRequest, Operation>
+      updateCertificateIssuanceConfigSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings())
+        .updateCertificateIssuanceConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCertificateIssuanceConfig. */
+  public OperationCallSettings<
+          UpdateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      updateCertificateIssuanceConfigOperationSettings() {
+    return ((CertificateManagerStubSettings) getStubSettings())
+        .updateCertificateIssuanceConfigOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteCertificateIssuanceConfig. */
   public UnaryCallSettings<DeleteCertificateIssuanceConfigRequest, Operation>
       deleteCertificateIssuanceConfigSettings() {
@@ -788,6 +803,19 @@ public class CertificateManagerSettings extends ClientSettings<CertificateManage
             CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
         createCertificateIssuanceConfigOperationSettings() {
       return getStubSettingsBuilder().createCertificateIssuanceConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCertificateIssuanceConfig. */
+    public UnaryCallSettings.Builder<UpdateCertificateIssuanceConfigRequest, Operation>
+        updateCertificateIssuanceConfigSettings() {
+      return getStubSettingsBuilder().updateCertificateIssuanceConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCertificateIssuanceConfig. */
+    public OperationCallSettings.Builder<
+            UpdateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+        updateCertificateIssuanceConfigOperationSettings() {
+      return getStubSettingsBuilder().updateCertificateIssuanceConfigOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteCertificateIssuanceConfig. */

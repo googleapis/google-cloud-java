@@ -53,20 +53,22 @@ public final class CreativeTargetingProto extends com.google.protobuf.GeneratedF
 
   static {
     java.lang.String[] descriptorData = {
-      "\n0google/ads/admanager/v1/creative_targe"
+      "\n"
+          + "0google/ads/admanager/v1/creative_targe"
           + "ting.proto\022\027google.ads.admanager.v1\032\'goo"
-          + "gle/ads/admanager/v1/targeting.proto\032\037go"
-          + "ogle/api/field_behavior.proto\"\271\001\n\021Creati"
-          + "veTargeting\0221\n\037creative_targeting_displa"
-          + "y_name\030\001 \001(\tB\003\340A\002H\000\210\001\001\022?\n\ttargeting\030\002 \001("
-          + "\0132\".google.ads.admanager.v1.TargetingB\003\340"
-          + "A\002H\001\210\001\001B\"\n _creative_targeting_display_n"
-          + "ameB\014\n\n_targetingB\312\001\n\033com.google.ads.adm"
-          + "anager.v1B\026CreativeTargetingProtoP\001Z@goo"
-          + "gle.golang.org/genproto/googleapis/ads/a"
-          + "dmanager/v1;admanager\252\002\027Google.Ads.AdMan"
-          + "ager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Goog"
-          + "le::Ads::AdManager::V1b\006proto3"
+          + "gle/ads/admanager/v1/targeting.proto\032\037google/api/field_behavior.proto\"\273\001\n"
+          + "\021CreativeTargeting\0222\n"
+          + "\037creative_targeting_display_name\030\001 \001("
+          + "\tB\004\342A\001\002H\000\210\001\001\022@\n"
+          + "\ttargeting\030\002 \001"
+          + "(\0132\".google.ads.admanager.v1.TargetingB\004\342A\001\002H\001\210\001\001B\"\n"
+          + " _creative_targeting_display_nameB\014\n\n"
+          + "_targetingB\312\001\n"
+          + "\033com.google.ads.admanager.v1B\026CreativeTargetingProtoP\001Z@g"
+          + "oogle.golang.org/genproto/googleapis/ads"
+          + "/admanager/v1;admanager\252\002\027Google.Ads.AdM"
+          + "anager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Go"
+          + "ogle::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

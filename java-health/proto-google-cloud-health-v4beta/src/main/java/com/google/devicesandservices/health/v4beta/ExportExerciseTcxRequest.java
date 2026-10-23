@@ -82,10 +82,14 @@ public final class ExportExerciseTcxRequest extends com.google.protobuf.Generate
    * Required. The resource name of the exercise data point to export.
    *
    * Format: `users/{user}/dataTypes/exercise/dataPoints/{data_point}`
-   * Example: `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
    *
-   * The `{user}` is the alias `"me"` currently. Future versions may support
-   * user IDs.
+   * Examples:
+   * - `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
+   * - `users/1234567890/dataTypes/exercise/dataPoints/2026443605080188808`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    * The `{data_point}` ID maps to the exercise ID, which is a long integer.
    * </pre>
    *
@@ -115,10 +119,14 @@ public final class ExportExerciseTcxRequest extends com.google.protobuf.Generate
    * Required. The resource name of the exercise data point to export.
    *
    * Format: `users/{user}/dataTypes/exercise/dataPoints/{data_point}`
-   * Example: `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
    *
-   * The `{user}` is the alias `"me"` currently. Future versions may support
-   * user IDs.
+   * Examples:
+   * - `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
+   * - `users/1234567890/dataTypes/exercise/dataPoints/2026443605080188808`
+   *
+   * The `{user}` can be either the alias `me` or the authenticated user's
+   * numeric Health User ID (retrieved via
+   * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    * The `{data_point}` ID maps to the exercise ID, which is a long integer.
    * </pre>
    *
@@ -512,10 +520,14 @@ public final class ExportExerciseTcxRequest extends com.google.protobuf.Generate
      * Required. The resource name of the exercise data point to export.
      *
      * Format: `users/{user}/dataTypes/exercise/dataPoints/{data_point}`
-     * Example: `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
      *
-     * The `{user}` is the alias `"me"` currently. Future versions may support
-     * user IDs.
+     * Examples:
+     * - `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
+     * - `users/1234567890/dataTypes/exercise/dataPoints/2026443605080188808`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      * The `{data_point}` ID maps to the exercise ID, which is a long integer.
      * </pre>
      *
@@ -544,10 +556,14 @@ public final class ExportExerciseTcxRequest extends com.google.protobuf.Generate
      * Required. The resource name of the exercise data point to export.
      *
      * Format: `users/{user}/dataTypes/exercise/dataPoints/{data_point}`
-     * Example: `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
      *
-     * The `{user}` is the alias `"me"` currently. Future versions may support
-     * user IDs.
+     * Examples:
+     * - `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
+     * - `users/1234567890/dataTypes/exercise/dataPoints/2026443605080188808`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      * The `{data_point}` ID maps to the exercise ID, which is a long integer.
      * </pre>
      *
@@ -576,10 +592,14 @@ public final class ExportExerciseTcxRequest extends com.google.protobuf.Generate
      * Required. The resource name of the exercise data point to export.
      *
      * Format: `users/{user}/dataTypes/exercise/dataPoints/{data_point}`
-     * Example: `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
      *
-     * The `{user}` is the alias `"me"` currently. Future versions may support
-     * user IDs.
+     * Examples:
+     * - `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
+     * - `users/1234567890/dataTypes/exercise/dataPoints/2026443605080188808`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      * The `{data_point}` ID maps to the exercise ID, which is a long integer.
      * </pre>
      *
@@ -607,10 +627,14 @@ public final class ExportExerciseTcxRequest extends com.google.protobuf.Generate
      * Required. The resource name of the exercise data point to export.
      *
      * Format: `users/{user}/dataTypes/exercise/dataPoints/{data_point}`
-     * Example: `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
      *
-     * The `{user}` is the alias `"me"` currently. Future versions may support
-     * user IDs.
+     * Examples:
+     * - `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
+     * - `users/1234567890/dataTypes/exercise/dataPoints/2026443605080188808`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      * The `{data_point}` ID maps to the exercise ID, which is a long integer.
      * </pre>
      *
@@ -634,10 +658,14 @@ public final class ExportExerciseTcxRequest extends com.google.protobuf.Generate
      * Required. The resource name of the exercise data point to export.
      *
      * Format: `users/{user}/dataTypes/exercise/dataPoints/{data_point}`
-     * Example: `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
      *
-     * The `{user}` is the alias `"me"` currently. Future versions may support
-     * user IDs.
+     * Examples:
+     * - `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
+     * - `users/1234567890/dataTypes/exercise/dataPoints/2026443605080188808`
+     *
+     * The `{user}` can be either the alias `me` or the authenticated user's
+     * numeric Health User ID (retrieved via
+     * [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
      * The `{data_point}` ID maps to the exercise ID, which is a long integer.
      * </pre>
      *

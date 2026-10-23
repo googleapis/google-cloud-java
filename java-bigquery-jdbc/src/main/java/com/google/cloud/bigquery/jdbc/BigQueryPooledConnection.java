@@ -16,8 +16,11 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.common.annotations.VisibleForTesting;
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.SQLException;
 import java.util.UUID;
 import java.util.concurrent.Executor;
@@ -28,7 +31,8 @@ import javax.sql.PooledConnection;
 import javax.sql.StatementEventListener;
 
 class BigQueryPooledConnection implements PooledConnection {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryPooledConnection.class.getName());
 
   private String id; // Mainly for internal use
   private Connection bqConnection;
@@ -162,7 +166,8 @@ class BigQueryPooledConnection implements PooledConnection {
   // This class notifies the listeners or calls the listner notification methods
   // provided by the pooled connection.
   static class BigQueryPooledConnectionWrapper implements Connection {
-    private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+    private static final BigQueryJdbcCustomLogger LOG =
+        new BigQueryJdbcCustomLogger(BigQueryPooledConnectionWrapper.class.getName());
     private Connection bqConnectionDelegate;
     private BigQueryPooledConnection pooledConnection;
     private boolean closed = false;
@@ -231,7 +236,8 @@ class BigQueryPooledConnection implements PooledConnection {
     }
 
     @Override
-    public java.sql.DatabaseMetaData getMetaData() throws SQLException {
+    public DatabaseMetaData getMetaData() throws SQLException {
+      TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL);
       return bqConnectionDelegate.getMetaData();
     }
 

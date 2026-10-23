@@ -41,6 +41,8 @@ import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
@@ -90,7 +92,8 @@ import java.util.logging.Level;
  */
 public class BigQueryConnection extends BigQueryNoOpsConnection {
 
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryConnection.class.getName());
   String connectionClassName = this.toString();
   private final String connectionId;
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
@@ -496,6 +499,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     BigQueryStatement currentStatement = new BigQueryStatement(this);
     LOG.fine("Statement %s created.", currentStatement);
     addOpenStatements(currentStatement);
+
+    TelemetryManager.recordFeatureUsage(
+        DriverFeature.DRIVER_FEATURE_CUSTOM, "DRIVER_FEATURE_REGULAR_STATEMENT");
     return currentStatement;
   }
 
@@ -554,6 +560,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     PreparedStatement currentStatement = new BigQueryPreparedStatement(this, sql);
     LOG.fine("Prepared Statement %s created.", currentStatement);
     addOpenStatements(currentStatement);
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PREPARED_STATEMENT);
+
     return currentStatement;
   }
 
@@ -695,6 +704,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       TableResult transactionResult = this.bigQuery.query(transactionBeginJobConfig.build());
       initSessionInfo(transactionResult.getSessionInfo().getSessionId());
       this.transactionStarted = true;
+
+      TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_TRANSACTIONS);
     } catch (InterruptedException ex) {
       Thread.currentThread().interrupt();
       throw new BigQueryJdbcException("Failed to begin transaction", ex);
@@ -952,6 +963,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (!this.autoCommit) {
       beginTransaction();
     }
+
+    if (autoCommit) {
+      TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_AUTOCOMMIT_ENABLED);
+    } else {
+      TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_AUTOCOMMIT_DISABLED);
+    }
   }
 
   @Override
@@ -1007,6 +1024,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (databaseMetaData == null) {
       databaseMetaData = new BigQueryDatabaseMetaData(this);
     }
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL);
+
     return databaseMetaData;
   }
 
@@ -1572,6 +1592,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     CallableStatement currentStatement = new BigQueryCallableStatement(this, sql);
     LOG.fine("Callable Statement %s created.", currentStatement);
     addOpenStatements(currentStatement);
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_CALLABLE_STATEMENT);
+
     return currentStatement;
   }
 

@@ -67,13 +67,13 @@ public final class ParameterDefinitionProto extends com.google.protobuf.Generate
     java.lang.String[] descriptorData = {
       "\n"
           + "8google/cloud/dialogflow/cx/v3/parameter_definition.proto\022\035google.cloud.dialogf"
-          + "low.cx.v3\032\037google/api/field_behavior.proto\"\314\002\n"
-          + "\023ParameterDefinition\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022R\n"
-          + "\004type\030\002 \001(\0162@.google.cloud.dialo"
-          + "gflow.cx.v3.ParameterDefinition.ParameterTypeB\002\030\001\022C\n"
-          + "\013type_schema\030\004 \001(\0132).google."
-          + "cloud.dialogflow.cx.v3.TypeSchemaB\003\340A\001\022\023\n"
+          + "low.cx.v3\032\037google/api/field_behavior.proto\"\316\002\n"
+          + "\023ParameterDefinition\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\002\022R\n"
+          + "\004type\030\002 \001(\0162@.google.cloud.dial"
+          + "ogflow.cx.v3.ParameterDefinition.ParameterTypeB\002\030\001\022D\n"
+          + "\013type_schema\030\004 \001(\0132).google"
+          + ".cloud.dialogflow.cx.v3.TypeSchemaB\004\342A\001\001\022\023\n"
           + "\013description\030\003 \001(\t\"t\n\r"
           + "ParameterType\022\036\n"
           + "\032PARAMETER_TYPE_UNSPECIFIED\020\000\022\n\n"
@@ -101,9 +101,9 @@ public final class ParameterDefinitionProto extends com.google.protobuf.Generate
           + "\006NUMBER\020\002\022\013\n"
           + "\007BOOLEAN\020\003\022\t\n"
           + "\005ARRAY\020\006B\226\001\n"
-          + "!com.google.cloud.dialogflow.cx.v3B\030ParameterDefinit"
-          + "ionProtoP\001Z1cloud.google.com/go/dialogfl"
-          + "ow/cx/apiv3/cxpb;cxpb\352\002!Google::Cloud::Dialogflow::CX::V3b\006proto3"
+          + "!com.google.cloud.dialogflow.cx.v3B\030ParameterDefin"
+          + "itionProtoP\001Z1cloud.google.com/go/dialog"
+          + "flow/cx/apiv3/cxpb;cxpb\352\002!Google::Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

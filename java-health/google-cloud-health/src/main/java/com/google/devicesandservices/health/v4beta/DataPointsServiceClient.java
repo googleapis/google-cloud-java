@@ -203,6 +203,7 @@ import org.jspecify.annotations.Nullable;
  *      </ul>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
+ *           <li><p> dailyRollUpDataPointsPagedCallable()
  *           <li><p> dailyRollUpDataPointsCallable()
  *      </ul>
  *       </td>
@@ -211,7 +212,9 @@ import org.jspecify.annotations.Nullable;
  *      <td><p> ExportExerciseTcx</td>
  *      <td><p> Exports exercise data in TCX format.
  * <p>  &#42;&#42;IMPORTANT:&#42;&#42; HTTP clients must append `?alt=media` to the request URL to download the raw TCX file.
- * <p>  Example: `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+ * <p>  ## Examples:
+ * <p>  ## `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+ * <p>  `https://health.googleapis.com/v4/users/1234567890/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
  * <p>  Without `alt=media`, the server returns a JSON response (`ExportExerciseTcxResponse`) which is intended primarily for gRPC clients.
  * <p>  &#42;&#42;Note:&#42;&#42; While the Authorization section below states that any one of the listed scopes is accepted, this specific method requires the user to provide both one of the `activity_and_fitness` scopes (`normal` or `readonly`) AND one of the `location` scopes (`normal` or `readonly`) in their access token to succeed.</td>
  *      <td>
@@ -385,6 +388,12 @@ public class DataPointsServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the data point to retrieve.
    *     <p>Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
+   *     <p>## Examples:
+   *     <p>## `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *     <p>`users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *     <p>The `{user}` can be either the alias `me` or the authenticated user's numeric Health
+   *     User ID (retrieved via
+   *     [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    *     <p>See [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name] for
    *     examples and possible values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -415,6 +424,12 @@ public class DataPointsServiceClient implements BackgroundResource {
    *
    * @param name Required. The name of the data point to retrieve.
    *     <p>Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
+   *     <p>## Examples:
+   *     <p>## `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *     <p>`users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *     <p>The `{user}` can be either the alias `me` or the authenticated user's numeric Health
+   *     User ID (retrieved via
+   *     [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    *     <p>See [DataPoint.name][google.devicesandservices.health.v4beta.DataPoint.name] for
    *     examples and possible values.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -501,8 +516,12 @@ public class DataPointsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent data type of the Data Point collection.
-   *     <p>Format: `users/me/dataTypes/{data_type}`, e.g.:
-   *     <p>- `users/me/dataTypes/steps` - `users/me/dataTypes/weight`
+   *     <p>Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+   *     <p>- `users/me/dataTypes/steps` - `users/1234567890/dataTypes/steps` -
+   *     `users/me/dataTypes/weight` - `users/1234567890/dataTypes/weight`
+   *     <p>The `{user}` can be either the alias `me` or the authenticated user's numeric Health
+   *     User ID (retrieved via
+   *     [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    *     <p>For a list of the supported data types see the [DataPoint
    *     data][google.devicesandservices.health.v4beta.DataPoint] union field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -536,8 +555,12 @@ public class DataPointsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. Parent data type of the Data Point collection.
-   *     <p>Format: `users/me/dataTypes/{data_type}`, e.g.:
-   *     <p>- `users/me/dataTypes/steps` - `users/me/dataTypes/weight`
+   *     <p>Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+   *     <p>- `users/me/dataTypes/steps` - `users/1234567890/dataTypes/steps` -
+   *     `users/me/dataTypes/weight` - `users/1234567890/dataTypes/weight`
+   *     <p>The `{user}` can be either the alias `me` or the authenticated user's numeric Health
+   *     User ID (retrieved via
+   *     [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    *     <p>For a list of the supported data types see the [DataPoint
    *     data][google.devicesandservices.health.v4beta.DataPoint] union field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -677,8 +700,12 @@ public class DataPointsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name where the data point will be created. Format:
-   *     `users/{user}/dataTypes/{data_type}`
+   * @param parent Required. The parent resource name where the data point will be created.
+   *     <p>Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+   *     <p>- `users/me/dataTypes/steps` - `users/1234567890/dataTypes/steps`
+   *     <p>The `{user}` can be either the alias `me` or the authenticated user's numeric Health
+   *     User ID (retrieved via
+   *     [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    * @param dataPoint Required. The data point to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -711,8 +738,12 @@ public class DataPointsServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name where the data point will be created. Format:
-   *     `users/{user}/dataTypes/{data_type}`
+   * @param parent Required. The parent resource name where the data point will be created.
+   *     <p>Format: `users/{user}/dataTypes/{data_type}`, e.g.:
+   *     <p>- `users/me/dataTypes/steps` - `users/1234567890/dataTypes/steps`
+   *     <p>The `{user}` can be either the alias `me` or the authenticated user's numeric Health
+   *     User ID (retrieved via
+   *     [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    * @param dataPoint Required. The data point to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -835,6 +866,12 @@ public class DataPointsServiceClient implements BackgroundResource {
    * @param dataPoint Required. The data point to update
    *     <p>The data point's `name` field is used to identify the data point to update.
    *     <p>Format: `users/{user}/dataTypes/{data_type}/dataPoints/{data_point}`
+   *     <p>## Examples:
+   *     <p>## `users/me/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *     <p>`users/1234567890/dataTypes/sleep/dataPoints/a1b2c3d4-e5f6-7890-1234-567890abcdef`
+   *     <p>The `{user}` can be either the alias `me` or the authenticated user's numeric Health
+   *     User ID (retrieved via
+   *     [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataPoint, UpdateDataPointOperationMetadata> updateDataPointAsync(
@@ -1274,17 +1311,19 @@ public class DataPointsServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setDataSourceFamily("dataSourceFamily586548265")
    *           .build();
-   *   DailyRollUpDataPointsResponse response =
-   *       dataPointsServiceClient.dailyRollUpDataPoints(request);
+   *   for (DailyRollupDataPoint element :
+   *       dataPointsServiceClient.dailyRollUpDataPoints(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
    * }
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DailyRollUpDataPointsResponse dailyRollUpDataPoints(
+  public final DailyRollUpDataPointsPagedResponse dailyRollUpDataPoints(
       DailyRollUpDataPointsRequest request) {
-    return dailyRollUpDataPointsCallable().call(request);
+    return dailyRollUpDataPointsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1309,10 +1348,55 @@ public class DataPointsServiceClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setDataSourceFamily("dataSourceFamily586548265")
    *           .build();
-   *   ApiFuture<DailyRollUpDataPointsResponse> future =
-   *       dataPointsServiceClient.dailyRollUpDataPointsCallable().futureCall(request);
+   *   ApiFuture<DailyRollupDataPoint> future =
+   *       dataPointsServiceClient.dailyRollUpDataPointsPagedCallable().futureCall(request);
    *   // Do something.
-   *   DailyRollUpDataPointsResponse response = future.get();
+   *   for (DailyRollupDataPoint element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DailyRollUpDataPointsRequest, DailyRollUpDataPointsPagedResponse>
+      dailyRollUpDataPointsPagedCallable() {
+    return stub.dailyRollUpDataPointsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Roll up data points over civil time intervals for supported data types.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataPointsServiceClient dataPointsServiceClient = DataPointsServiceClient.create()) {
+   *   DailyRollUpDataPointsRequest request =
+   *       DailyRollUpDataPointsRequest.newBuilder()
+   *           .setParent(DataTypeName.of("[USER]", "[DATA_TYPE]").toString())
+   *           .setRange(CivilTimeInterval.newBuilder().build())
+   *           .setWindowSizeDays(1064520774)
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setDataSourceFamily("dataSourceFamily586548265")
+   *           .build();
+   *   while (true) {
+   *     DailyRollUpDataPointsResponse response =
+   *         dataPointsServiceClient.dailyRollUpDataPointsCallable().call(request);
+   *     for (DailyRollupDataPoint element : response.getRollupDataPointsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
    * }
    * }</pre>
    */
@@ -1328,8 +1412,12 @@ public class DataPointsServiceClient implements BackgroundResource {
    * <p>&#42;&#42;IMPORTANT:&#42;&#42; HTTP clients must append `?alt=media` to the request URL to
    * download the raw TCX file.
    *
-   * <p>Example:
+   * <p>## Examples:
+   *
+   * <p>##
    * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+   *
+   * <p>`https://health.googleapis.com/v4/users/1234567890/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
    *
    * <p>Without `alt=media`, the server returns a JSON response (`ExportExerciseTcxResponse`) which
    * is intended primarily for gRPC clients.
@@ -1354,10 +1442,13 @@ public class DataPointsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the exercise data point to export.
-   *     <p>Format: `users/{user}/dataTypes/exercise/dataPoints/{data_point}` Example:
-   *     `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
-   *     <p>The `{user}` is the alias `"me"` currently. Future versions may support user IDs. The
-   *     `{data_point}` ID maps to the exercise ID, which is a long integer.
+   *     <p>Format: `users/{user}/dataTypes/exercise/dataPoints/{data_point}`
+   *     <p>Examples: - `users/me/dataTypes/exercise/dataPoints/2026443605080188808` -
+   *     `users/1234567890/dataTypes/exercise/dataPoints/2026443605080188808`
+   *     <p>The `{user}` can be either the alias `me` or the authenticated user's numeric Health
+   *     User ID (retrieved via
+   *     [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
+   *     The `{data_point}` ID maps to the exercise ID, which is a long integer.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ExportExerciseTcxResponse exportExerciseTcx(@Nullable DataPointName name) {
@@ -1375,8 +1466,12 @@ public class DataPointsServiceClient implements BackgroundResource {
    * <p>&#42;&#42;IMPORTANT:&#42;&#42; HTTP clients must append `?alt=media` to the request URL to
    * download the raw TCX file.
    *
-   * <p>Example:
+   * <p>## Examples:
+   *
+   * <p>##
    * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+   *
+   * <p>`https://health.googleapis.com/v4/users/1234567890/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
    *
    * <p>Without `alt=media`, the server returns a JSON response (`ExportExerciseTcxResponse`) which
    * is intended primarily for gRPC clients.
@@ -1401,10 +1496,13 @@ public class DataPointsServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The resource name of the exercise data point to export.
-   *     <p>Format: `users/{user}/dataTypes/exercise/dataPoints/{data_point}` Example:
-   *     `users/me/dataTypes/exercise/dataPoints/2026443605080188808`
-   *     <p>The `{user}` is the alias `"me"` currently. Future versions may support user IDs. The
-   *     `{data_point}` ID maps to the exercise ID, which is a long integer.
+   *     <p>Format: `users/{user}/dataTypes/exercise/dataPoints/{data_point}`
+   *     <p>Examples: - `users/me/dataTypes/exercise/dataPoints/2026443605080188808` -
+   *     `users/1234567890/dataTypes/exercise/dataPoints/2026443605080188808`
+   *     <p>The `{user}` can be either the alias `me` or the authenticated user's numeric Health
+   *     User ID (retrieved via
+   *     [GetIdentity][google.devicesandservices.health.v4beta.HealthProfileService.GetIdentity]).
+   *     The `{data_point}` ID maps to the exercise ID, which is a long integer.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ExportExerciseTcxResponse exportExerciseTcx(String name) {
@@ -1419,8 +1517,12 @@ public class DataPointsServiceClient implements BackgroundResource {
    * <p>&#42;&#42;IMPORTANT:&#42;&#42; HTTP clients must append `?alt=media` to the request URL to
    * download the raw TCX file.
    *
-   * <p>Example:
+   * <p>## Examples:
+   *
+   * <p>##
    * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+   *
+   * <p>`https://health.googleapis.com/v4/users/1234567890/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
    *
    * <p>Without `alt=media`, the server returns a JSON response (`ExportExerciseTcxResponse`) which
    * is intended primarily for gRPC clients.
@@ -1462,8 +1564,12 @@ public class DataPointsServiceClient implements BackgroundResource {
    * <p>&#42;&#42;IMPORTANT:&#42;&#42; HTTP clients must append `?alt=media` to the request URL to
    * download the raw TCX file.
    *
-   * <p>Example:
+   * <p>## Examples:
+   *
+   * <p>##
    * `https://health.googleapis.com/v4/users/me/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
+   *
+   * <p>`https://health.googleapis.com/v4/users/1234567890/dataTypes/exercise/dataPoints/EXERCISE_ID:exportExerciseTcx?alt=media`
    *
    * <p>Without `alt=media`, the server returns a JSON response (`ExportExerciseTcxResponse`) which
    * is intended primarily for gRPC clients.
@@ -1776,6 +1882,97 @@ public class DataPointsServiceClient implements BackgroundResource {
     protected RollUpDataPointsFixedSizeCollection createCollection(
         @Nullable List<RollUpDataPointsPage> pages, int collectionSize) {
       return new RollUpDataPointsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class DailyRollUpDataPointsPagedResponse
+      extends AbstractPagedListResponse<
+          DailyRollUpDataPointsRequest,
+          DailyRollUpDataPointsResponse,
+          DailyRollupDataPoint,
+          DailyRollUpDataPointsPage,
+          DailyRollUpDataPointsFixedSizeCollection> {
+
+    public static ApiFuture<DailyRollUpDataPointsPagedResponse> createAsync(
+        PageContext<
+                DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse, DailyRollupDataPoint>
+            context,
+        ApiFuture<DailyRollUpDataPointsResponse> futureResponse) {
+      ApiFuture<DailyRollUpDataPointsPage> futurePage =
+          DailyRollUpDataPointsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new DailyRollUpDataPointsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private DailyRollUpDataPointsPagedResponse(DailyRollUpDataPointsPage page) {
+      super(page, DailyRollUpDataPointsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class DailyRollUpDataPointsPage
+      extends AbstractPage<
+          DailyRollUpDataPointsRequest,
+          DailyRollUpDataPointsResponse,
+          DailyRollupDataPoint,
+          DailyRollUpDataPointsPage> {
+
+    private DailyRollUpDataPointsPage(
+        @Nullable
+            PageContext<
+                DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse, DailyRollupDataPoint>
+            context,
+        @Nullable DailyRollUpDataPointsResponse response) {
+      super(context, response);
+    }
+
+    private static DailyRollUpDataPointsPage createEmptyPage() {
+      return new DailyRollUpDataPointsPage(null, null);
+    }
+
+    @Override
+    protected DailyRollUpDataPointsPage createPage(
+        @Nullable
+            PageContext<
+                DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse, DailyRollupDataPoint>
+            context,
+        @Nullable DailyRollUpDataPointsResponse response) {
+      return new DailyRollUpDataPointsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<DailyRollUpDataPointsPage> createPageAsync(
+        @Nullable
+            PageContext<
+                DailyRollUpDataPointsRequest, DailyRollUpDataPointsResponse, DailyRollupDataPoint>
+            context,
+        ApiFuture<DailyRollUpDataPointsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class DailyRollUpDataPointsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          DailyRollUpDataPointsRequest,
+          DailyRollUpDataPointsResponse,
+          DailyRollupDataPoint,
+          DailyRollUpDataPointsPage,
+          DailyRollUpDataPointsFixedSizeCollection> {
+
+    private DailyRollUpDataPointsFixedSizeCollection(
+        @Nullable List<DailyRollUpDataPointsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static DailyRollUpDataPointsFixedSizeCollection createEmptyCollection() {
+      return new DailyRollUpDataPointsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected DailyRollUpDataPointsFixedSizeCollection createCollection(
+        @Nullable List<DailyRollUpDataPointsPage> pages, int collectionSize) {
+      return new DailyRollUpDataPointsFixedSizeCollection(pages, collectionSize);
     }
   }
 }
