@@ -2685,6 +2685,7 @@ public class GapicSpannerRpcTest {
       GrpcGcpObjectCounts counts = countGrpcGcpObjectsFromChannelz().minus(before);
       assertEquals(counts.debugString(), 6, counts.gcpManagedChannels);
       assertEquals(counts.debugString(), 48, counts.channelRefs);
+      assertNull(rpc.getFallbackProber());
     } finally {
       if (rpc != null) {
         rpc.shutdown();
@@ -2715,6 +2716,7 @@ public class GapicSpannerRpcTest {
       assertEquals(counts.debugString(), 24, counts.channelRefs);
       // One fallback state per pool.
       assertEquals(3, new HashSet<>(rpc.getFallbackStates()).size());
+      assertNotNull(rpc.getFallbackProber());
     } finally {
       if (rpc != null) {
         rpc.shutdown();
