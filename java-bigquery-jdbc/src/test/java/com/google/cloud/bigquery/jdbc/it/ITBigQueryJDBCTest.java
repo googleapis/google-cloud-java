@@ -3098,9 +3098,11 @@ public class ITBigQueryJDBCTest extends ITBase {
       while (!sessionUnusable && System.nanoTime() < deadline) {
         try (Statement statement = newConnection.createStatement()) {
           statement.execute("SELECT * FROM session_temp_table;");
-          Thread.sleep(2000);
         } catch (SQLException expected) {
           sessionUnusable = true;
+        }
+        if (!sessionUnusable) {
+          Thread.sleep(2000);
         }
       }
     }
