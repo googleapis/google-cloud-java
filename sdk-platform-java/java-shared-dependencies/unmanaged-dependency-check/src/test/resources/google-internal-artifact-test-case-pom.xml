@@ -62,6 +62,11 @@
           <scope>import</scope>
           <type>pom</type>
         </dependency>
+        <dependency>
+          <groupId>com.google.cloud</groupId>
+          <artifactId>google-cloud-logging-logback</artifactId>
+          <version>0.132.0-alpha</version>
+        </dependency>
       </dependencies>
     </dependencyManagement>
 
