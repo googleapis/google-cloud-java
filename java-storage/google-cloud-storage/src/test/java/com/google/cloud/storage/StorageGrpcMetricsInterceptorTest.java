@@ -50,6 +50,14 @@ public final class StorageGrpcMetricsInterceptorTest {
           .setResponseMarshaller(new NoopMarshaller())
           .build();
 
+  private static final MethodDescriptor<Void, Void> WRITE_OBJECT_METHOD =
+      MethodDescriptor.<Void, Void>newBuilder()
+          .setType(MethodDescriptor.MethodType.CLIENT_STREAMING)
+          .setFullMethodName("google.storage.v2.Storage/WriteObject")
+          .setRequestMarshaller(new NoopMarshaller())
+          .setResponseMarshaller(new NoopMarshaller())
+          .build();
+
   private InMemoryMetricReader reader;
   private SdkMeterProvider meterProvider;
   private FakeClock clock;
@@ -216,6 +224,79 @@ public final class StorageGrpcMetricsInterceptorTest {
   }
 
   @Test
+  public void interceptCall_readObject_recordsTtfbOnFirstMessage() throws Exception {
+    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
+    StorageGrpcMetricsInterceptor interceptor =
+        new StorageGrpcMetricsInterceptor(metrics, clock, "storage.googleapis.com");
+
+    TestClientCall<Void, Void> testCall = new TestClientCall<>(io.grpc.Attributes.EMPTY);
+    TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
+
+    ClientCall<Void, Void> call =
+        interceptor.interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, testChannel);
+    call.start(new TestListener<>(), new Metadata());
+
+    clock.advanceNanos(200_000_000L); // 0.2s
+    testCall.deliverMessage(null); // First response message: triggers TTFB
+
+    clock.advanceNanos(300_000_000L); // 0.3s more (total 0.5s)
+    testCall.deliverMessage(null); // Second message: should NOT record TTFB again
+    testCall.close(Status.OK, new Metadata());
+
+    Collection<MetricData> metricData = reader.collectAllMetrics();
+    MetricData ttfbData =
+        metricData.stream()
+            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(ttfbData).isNotNull();
+    assertThat(ttfbData.getHistogramData().getPoints()).hasSize(1);
+    HistogramPointData ttfbPoint = ttfbData.getHistogramData().getPoints().iterator().next();
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.2);
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
+        .isEqualTo("grpc");
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_METHOD))
+        .isEqualTo("ReadObject");
+
+    MetricData durationData =
+        metricData.stream()
+            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION))
+            .findFirst()
+            .orElse(null);
+    assertThat(durationData).isNotNull();
+    HistogramPointData durationPoint =
+        durationData.getHistogramData().getPoints().iterator().next();
+    assertThat(durationPoint.getSum()).isWithin(1e-6).of(0.5);
+  }
+
+  @Test
+  public void interceptCall_nonReadMethod_doesNotRecordTtfb() throws Exception {
+    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
+    StorageGrpcMetricsInterceptor interceptor =
+        new StorageGrpcMetricsInterceptor(metrics, clock, "storage.googleapis.com");
+
+    TestClientCall<Void, Void> testCall = new TestClientCall<>(io.grpc.Attributes.EMPTY);
+    TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
+
+    ClientCall<Void, Void> call =
+        interceptor.interceptCall(WRITE_OBJECT_METHOD, CallOptions.DEFAULT, testChannel);
+    call.start(new TestListener<>(), new Metadata());
+
+    clock.advanceNanos(200_000_000L);
+    testCall.deliverMessage(null);
+    testCall.close(Status.OK, new Metadata());
+
+    Collection<MetricData> metricData = reader.collectAllMetrics();
+    MetricData ttfbData =
+        metricData.stream()
+            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB))
+            .findFirst()
+            .orElse(null);
+    assertThat(ttfbData).isNull();
+  }
+
+  @Test
   public void interceptCall_disabledMetrics_doesNotRecord() {
     StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, false, false);
     StorageGrpcMetricsInterceptor interceptor =
@@ -260,6 +341,12 @@ public final class StorageGrpcMetricsInterceptorTest {
     @Override
     public io.grpc.Attributes getAttributes() {
       return attributes;
+    }
+
+    void deliverMessage(RespT message) {
+      if (listener != null) {
+        listener.onMessage(message);
+      }
     }
 
     void close(Status status, Metadata trailers) {
