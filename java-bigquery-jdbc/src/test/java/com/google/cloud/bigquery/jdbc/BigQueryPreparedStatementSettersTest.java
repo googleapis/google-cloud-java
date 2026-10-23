@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -31,6 +32,7 @@ import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.gson.Gson;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
@@ -46,11 +48,15 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.TimeZone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class BigQueryPreparedStatementSettersTest {
 
@@ -61,6 +67,9 @@ public class BigQueryPreparedStatementSettersTest {
   public void setUp() throws Exception {
     connection = mock(BigQueryConnection.class);
     when(connection.getQueryDialect()).thenReturn("SQL");
+    when(connection.getConnectionId()).thenReturn("test-connection-id");
+    doReturn(BigQueryConnection.SessionState.empty()).when(connection).getSessionStateSnapshot();
+
     preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?");
   }
 
@@ -217,37 +226,43 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(originalMillis, cal.getTimeInMillis());
   }
 
-  @Test
-  public void testSetTimeWithCalendar() throws Exception {
-    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testSetTimeWithCalendar(String zoneId) throws Exception {
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
     cal.setTimeInMillis(1000000L);
     long originalMillis = cal.getTimeInMillis();
-    Time time = new Time(43200000L); // 12:00:00
+    Calendar sourceCal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
+    sourceCal.clear();
+    sourceCal.set(1970, Calendar.JANUARY, 1, 12, 34, 56);
+    Time time = new Time(sourceCal.getTimeInMillis());
 
     preparedStatement.setTime(1, time, cal);
     assertEquals(Time.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals("12:34:56", preparedStatement.parameterHandler.getParameter(1).toString());
     assertEquals(originalMillis, cal.getTimeInMillis());
   }
 
-  @Test
-  public void testSetTimestampWithCalendar() throws Exception {
-    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+  @ParameterizedTest
+  @ValueSource(strings = {"America/New_York", "Asia/Tokyo"})
+  public void testSetTimestampWithCalendar(String zoneId) throws Exception {
+    Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
     cal.setTimeInMillis(1000000L);
     long originalMillis = cal.getTimeInMillis();
     Timestamp ts = new Timestamp(1700000000000L);
 
     preparedStatement.setTimestamp(1, ts, cal);
     assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals(ts, preparedStatement.parameterHandler.getParameter(1));
     assertEquals(originalMillis, cal.getTimeInMillis());
   }
 
   @Test
   public void testGetMetaData() throws Exception {
-    // Before execution/insertSchema initialization, getMetaData() returns null
+    // Until a dry run describes the query, there are no result columns to report.
     assertNull(preparedStatement.getMetaData());
 
-    // When insertSchema is present, getMetaData() returns ResultSetMetaData
-    preparedStatement.insertSchema =
+    preparedStatement.resultSchema =
         Schema.of(
             Field.of("col1", StandardSQLTypeName.STRING),
             Field.of("col2", StandardSQLTypeName.INT64));
@@ -262,22 +277,53 @@ public class BigQueryPreparedStatementSettersTest {
   }
 
   @Test
+  public void testGetMetaDataReturnsNullForInsert() throws Exception {
+    // An INSERT returns no ResultSet, so the columns it writes must not be reported as result
+    // metadata even though the Storage Write API path has captured them.
+    preparedStatement.insertSchema = Schema.of(Field.of("col1", StandardSQLTypeName.STRING));
+
+    assertNull(preparedStatement.getMetaData());
+  }
+
+  @Test
   public void testSetObjectWithJavaTime() throws Exception {
+    preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?, ?");
     LocalDate localDate = LocalDate.of(2025, 12, 3);
     preparedStatement.setObject(1, localDate);
     assertEquals(Date.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals(Date.valueOf(localDate), preparedStatement.parameterHandler.getParameter(1));
 
     LocalTime localTime = LocalTime.of(12, 30, 0);
     preparedStatement.setObject(2, localTime);
     assertEquals(Time.class, preparedStatement.parameterHandler.getType(2));
+    assertEquals(Time.valueOf(localTime), preparedStatement.parameterHandler.getParameter(2));
 
+    // LocalDateTime is bound as STRING so it is accepted by both DATETIME and TIMESTAMP columns.
     LocalDateTime localDateTime = LocalDateTime.of(2025, 12, 3, 12, 30, 0);
     preparedStatement.setObject(3, localDateTime);
-    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(3));
+    assertEquals(String.class, preparedStatement.parameterHandler.getType(3));
+    assertEquals(
+        BigQueryParameterHandler.formatDateTimeDigits(localDateTime),
+        preparedStatement.parameterHandler.getParameter(3));
 
     Instant instant = Instant.now();
     preparedStatement.setObject(4, instant);
     assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(4));
+    assertEquals(Timestamp.from(instant), preparedStatement.parameterHandler.getParameter(4));
+
+    OffsetDateTime offsetDateTime = OffsetDateTime.now();
+    preparedStatement.setObject(5, offsetDateTime);
+    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(5));
+    assertEquals(
+        Timestamp.from(offsetDateTime.toInstant()),
+        preparedStatement.parameterHandler.getParameter(5));
+
+    ZonedDateTime zonedDateTime = ZonedDateTime.now();
+    preparedStatement.setObject(6, zonedDateTime);
+    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(6));
+    assertEquals(
+        Timestamp.from(zonedDateTime.toInstant()),
+        preparedStatement.parameterHandler.getParameter(6));
   }
 
   // Verifies standard DML QueryJobConfiguration creates positional parameters with null values when
@@ -328,8 +374,40 @@ public class BigQueryPreparedStatementSettersTest {
   }
 
   @Test
+  public void testInferredParameterTypeKnownBeforeSetters() throws Exception {
+    preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?");
+
+    // 1. Inferred type is known immediately without calling setInt/setString
+    preparedStatement.parameterHandler.setInferredParameterType(1, StandardSQLTypeName.INT64);
+
+    ParameterMetaData pmd = preparedStatement.getParameterMetaData();
+    assertEquals(Types.BIGINT, pmd.getParameterType(1));
+    assertEquals("INT64", pmd.getParameterTypeName(1));
+
+    // 2. configureParameters fails before value is supplied
+    QueryJobConfiguration.Builder configBuilder = QueryJobConfiguration.newBuilder("SELECT ?");
+    BigQueryJdbcException ex =
+        assertThrows(
+            BigQueryJdbcException.class,
+            () -> preparedStatement.parameterHandler.configureParameters(configBuilder));
+    assertTrue(ex.getMessage().contains("One or more parameters missing"));
+    // 3. Once setter is called, configureParameters succeeds and populates QueryJobConfiguration
+
+    preparedStatement.setLong(1, 42L);
+    assertDoesNotThrow(() -> preparedStatement.parameterHandler.configureParameters(configBuilder));
+
+    QueryJobConfiguration config = configBuilder.build();
+    assertEquals(1, config.getPositionalParameters().size());
+    assertEquals("42", config.getPositionalParameters().get(0).getValue());
+    assertEquals(StandardSQLTypeName.INT64, config.getPositionalParameters().get(0).getType());
+  }
+
+  @Test
   public void testSetObjectWithTimestampStringAndTypesTimestamp_picosEnabled() throws Exception {
     BigQueryConnection picosConnection = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(picosConnection)
+        .getSessionStateSnapshot();
     doReturn(true).when(picosConnection).isEnableTimestampPicos();
     doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
         .when(picosConnection)
@@ -354,6 +432,9 @@ public class BigQueryPreparedStatementSettersTest {
   @Test
   public void testSetTimestamp_picosEnabledPreservesNanoseconds() throws Exception {
     BigQueryConnection picosConnection = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(picosConnection)
+        .getSessionStateSnapshot();
     doReturn(true).when(picosConnection).isEnableTimestampPicos();
     doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
         .when(picosConnection)
@@ -361,7 +442,8 @@ public class BigQueryPreparedStatementSettersTest {
     BigQueryPreparedStatement ps =
         new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)");
 
-    Timestamp ts = Timestamp.valueOf("2024-01-01 12:34:56.123456789");
+    // Built from an Instant so the expected UTC rendering does not depend on the JVM zone.
+    Timestamp ts = Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z"));
     ps.setTimestamp(1, ts);
 
     QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder("SELECT ?");
@@ -370,12 +452,15 @@ public class BigQueryPreparedStatementSettersTest {
 
     assertEquals(1, config.getPositionalParameters().size());
     assertEquals(
-        "2024-01-01 12:34:56.123456789", config.getPositionalParameters().get(0).getValue());
+        "2024-01-01 12:34:56.123456789Z", config.getPositionalParameters().get(0).getValue());
   }
 
   @Test
   public void testSetTimestamp_picosDisabledTruncatesToMicroseconds() throws Exception {
     BigQueryConnection nonPicosConnection = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(nonPicosConnection)
+        .getSessionStateSnapshot();
     doReturn(false).when(nonPicosConnection).isEnableTimestampPicos();
     doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
         .when(nonPicosConnection)
@@ -383,7 +468,7 @@ public class BigQueryPreparedStatementSettersTest {
     BigQueryPreparedStatement ps =
         new BigQueryPreparedStatement(nonPicosConnection, "INSERT INTO t (col) VALUES (?)");
 
-    Timestamp ts = Timestamp.valueOf("2024-01-01 12:34:56.123456789");
+    Timestamp ts = Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z"));
     ps.setTimestamp(1, ts);
 
     QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder("SELECT ?");
@@ -391,12 +476,15 @@ public class BigQueryPreparedStatementSettersTest {
     QueryJobConfiguration config = builder.build();
 
     assertEquals(1, config.getPositionalParameters().size());
-    assertEquals("2024-01-01 12:34:56.123456", config.getPositionalParameters().get(0).getValue());
+    assertEquals("2024-01-01 12:34:56.123456Z", config.getPositionalParameters().get(0).getValue());
   }
 
   @Test
   public void testBatchConfiguration_withEnableTimestampPicos() throws Exception {
     BigQueryConnection picosConnection = mock(BigQueryConnection.class);
+    doReturn(BigQueryConnection.SessionState.empty())
+        .when(picosConnection)
+        .getSessionStateSnapshot();
     doReturn(true).when(picosConnection).isEnableTimestampPicos();
     doReturn(BigQueryJdbcUrlUtility.DEFAULT_QUERY_DIALECT_VALUE)
         .when(picosConnection)
@@ -404,13 +492,36 @@ public class BigQueryPreparedStatementSettersTest {
     BigQueryPreparedStatement ps =
         new BigQueryPreparedStatement(picosConnection, "INSERT INTO t (col) VALUES (?)");
 
-    ps.setTimestamp(1, Timestamp.valueOf("2024-01-01 12:34:56.123456789"));
+    ps.setTimestamp(1, Timestamp.from(Instant.parse("2024-01-01T12:34:56.123456789Z")));
     ps.addBatch();
 
     QueryJobConfiguration batchConfig =
         ps.getStandardBatchJobConfiguration("INSERT INTO t (col) VALUES (?)");
     assertEquals(1, batchConfig.getPositionalParameters().size());
     assertEquals(
-        "2024-01-01 12:34:56.123456789", batchConfig.getPositionalParameters().get(0).getValue());
+        "2024-01-01 12:34:56.123456789Z", batchConfig.getPositionalParameters().get(0).getValue());
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Kolkata"})
+  public void testSetObjectLocalDateTime_bindsDigitsAsString_inAnyJvmZone(String zone)
+      throws SQLException {
+    TimeZone previous = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(zone));
+      preparedStatement.setObject(1, LocalDateTime.of(2025, 1, 1, 12, 34, 56, 123_000_000));
+      assertEquals(
+          "2025-01-01 12:34:56.123000", preparedStatement.parameterHandler.getParameter(1));
+      assertEquals(StandardSQLTypeName.STRING, preparedStatement.parameterHandler.getSqlType(1));
+    } finally {
+      TimeZone.setDefault(previous);
+    }
+  }
+
+  @Test
+  public void testSetObjectLocalDateTime_zeroSecondsStillHasFullDigits() throws SQLException {
+    // LocalDateTime.toString() would print "2025-01-01T12:00"; BigQuery needs full HH:mm:ss.SSSSSS.
+    preparedStatement.setObject(1, LocalDateTime.of(2025, 1, 1, 12, 0));
+    assertEquals("2025-01-01 12:00:00.000000", preparedStatement.parameterHandler.getParameter(1));
   }
 }

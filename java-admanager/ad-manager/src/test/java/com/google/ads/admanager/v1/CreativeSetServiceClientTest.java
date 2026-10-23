@@ -84,7 +84,7 @@ public class CreativeSetServiceClientTest {
         CreativeSet.newBuilder()
             .setName(CreativeSetName.of("[NETWORK_CODE]", "[CREATIVE_SET]").toString())
             .setDisplayName("displayName1714148973")
-            .setMasterCreative("masterCreative1330740273")
+            .setMasterCreative(CreativeName.of("[NETWORK_CODE]", "[CREATIVE]").toString())
             .addAllCompanionCreatives(new ArrayList<String>())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -132,7 +132,7 @@ public class CreativeSetServiceClientTest {
         CreativeSet.newBuilder()
             .setName(CreativeSetName.of("[NETWORK_CODE]", "[CREATIVE_SET]").toString())
             .setDisplayName("displayName1714148973")
-            .setMasterCreative("masterCreative1330740273")
+            .setMasterCreative(CreativeName.of("[NETWORK_CODE]", "[CREATIVE]").toString())
             .addAllCompanionCreatives(new ArrayList<String>())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -280,7 +280,7 @@ public class CreativeSetServiceClientTest {
         CreativeSet.newBuilder()
             .setName(CreativeSetName.of("[NETWORK_CODE]", "[CREATIVE_SET]").toString())
             .setDisplayName("displayName1714148973")
-            .setMasterCreative("masterCreative1330740273")
+            .setMasterCreative(CreativeName.of("[NETWORK_CODE]", "[CREATIVE]").toString())
             .addAllCompanionCreatives(new ArrayList<String>())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -330,7 +330,7 @@ public class CreativeSetServiceClientTest {
         CreativeSet.newBuilder()
             .setName(CreativeSetName.of("[NETWORK_CODE]", "[CREATIVE_SET]").toString())
             .setDisplayName("displayName1714148973")
-            .setMasterCreative("masterCreative1330740273")
+            .setMasterCreative(CreativeName.of("[NETWORK_CODE]", "[CREATIVE]").toString())
             .addAllCompanionCreatives(new ArrayList<String>())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -380,7 +380,7 @@ public class CreativeSetServiceClientTest {
         CreativeSet.newBuilder()
             .setName(CreativeSetName.of("[NETWORK_CODE]", "[CREATIVE_SET]").toString())
             .setDisplayName("displayName1714148973")
-            .setMasterCreative("masterCreative1330740273")
+            .setMasterCreative(CreativeName.of("[NETWORK_CODE]", "[CREATIVE]").toString())
             .addAllCompanionCreatives(new ArrayList<String>())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -390,7 +390,7 @@ public class CreativeSetServiceClientTest {
         CreativeSet.newBuilder()
             .setName(CreativeSetName.of("[NETWORK_CODE]", "[CREATIVE_SET]").toString())
             .setDisplayName("displayName1714148973")
-            .setMasterCreative("masterCreative1330740273")
+            .setMasterCreative(CreativeName.of("[NETWORK_CODE]", "[CREATIVE]").toString())
             .addAllCompanionCreatives(new ArrayList<String>())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -426,7 +426,7 @@ public class CreativeSetServiceClientTest {
           CreativeSet.newBuilder()
               .setName(CreativeSetName.of("[NETWORK_CODE]", "[CREATIVE_SET]").toString())
               .setDisplayName("displayName1714148973")
-              .setMasterCreative("masterCreative1330740273")
+              .setMasterCreative(CreativeName.of("[NETWORK_CODE]", "[CREATIVE]").toString())
               .addAllCompanionCreatives(new ArrayList<String>())
               .setUpdateTime(Timestamp.newBuilder().build())
               .build();

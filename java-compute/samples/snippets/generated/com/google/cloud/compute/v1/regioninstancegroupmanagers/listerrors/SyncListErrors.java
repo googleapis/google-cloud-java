@@ -44,7 +44,6 @@ public class SyncListErrors {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setRegion("region-934795532")
-              .setReturnPartialSuccess(true)
               .build();
       for (InstanceManagedByIgmError element :
           regionInstanceGroupManagersClient.listErrors(request).iterateAll()) {

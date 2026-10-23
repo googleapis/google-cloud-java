@@ -12,6 +12,5 @@
   "distribution_name": "com.google.cloud:google-cloud-build",
   "api_id": "cloudbuild.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "codeowner_team": "@googleapis/aap-dpes",
-  "issue_tracker": "https://issuetracker.google.com/savedsearches/5226584"
+  "codeowner_team": "@googleapis/aap-dpes"
 }

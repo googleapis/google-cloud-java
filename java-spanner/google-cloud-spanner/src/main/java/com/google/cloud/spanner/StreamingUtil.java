@@ -16,6 +16,8 @@
 
 package com.google.cloud.spanner;
 
+import com.google.common.base.Preconditions;
+
 final class StreamingUtil {
 
   private StreamingUtil() {}
@@ -26,5 +28,13 @@ final class StreamingUtil {
       return ((StreamingResultSet) resultSet).initiateStreaming(streamMessageListener);
     }
     return false;
+  }
+
+  static boolean isDataAvailable(ResultSet resultSet) {
+    Preconditions.checkNotNull(resultSet);
+    if (resultSet instanceof StreamingResultSet) {
+      return ((StreamingResultSet) resultSet).isDataAvailable();
+    }
+    return true;
   }
 }

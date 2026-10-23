@@ -60,6 +60,11 @@ import com.google.cloud.geminidataanalytics.v1beta.ListAccessibleDataAgentsRespo
 import com.google.cloud.geminidataanalytics.v1beta.ListDataAgentsRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListDataAgentsResponse;
 import com.google.cloud.geminidataanalytics.v1beta.OperationMetadata;
+import com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest;
+import com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityResponse;
+import com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityMetadata;
+import com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest;
+import com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityResponse;
 import com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -190,6 +195,16 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
   private final UnaryCallSettings<DeleteDataAgentRequest, Empty> deleteDataAgentSyncSettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<SetAgentOpsObservabilityRequest, Operation>
+      setAgentOpsObservabilitySettings;
+  private final OperationCallSettings<
+          SetAgentOpsObservabilityRequest,
+          SetAgentOpsObservabilityResponse,
+          SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityOperationSettings;
+  private final UnaryCallSettings<
+          RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+      retrieveAgentOpsObservabilitySettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -444,6 +459,28 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
     return setIamPolicySettings;
   }
 
+  /** Returns the object with the settings used for calls to setAgentOpsObservability. */
+  public UnaryCallSettings<SetAgentOpsObservabilityRequest, Operation>
+      setAgentOpsObservabilitySettings() {
+    return setAgentOpsObservabilitySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setAgentOpsObservability. */
+  public OperationCallSettings<
+          SetAgentOpsObservabilityRequest,
+          SetAgentOpsObservabilityResponse,
+          SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityOperationSettings() {
+    return setAgentOpsObservabilityOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to retrieveAgentOpsObservability. */
+  public UnaryCallSettings<
+          RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+      retrieveAgentOpsObservabilitySettings() {
+    return retrieveAgentOpsObservabilitySettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -580,6 +617,11 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
     deleteDataAgentSyncSettings = settingsBuilder.deleteDataAgentSyncSettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    setAgentOpsObservabilitySettings = settingsBuilder.setAgentOpsObservabilitySettings().build();
+    setAgentOpsObservabilityOperationSettings =
+        settingsBuilder.setAgentOpsObservabilityOperationSettings().build();
+    retrieveAgentOpsObservabilitySettings =
+        settingsBuilder.retrieveAgentOpsObservabilitySettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -627,6 +669,16 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
         deleteDataAgentSyncSettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<SetAgentOpsObservabilityRequest, Operation>
+        setAgentOpsObservabilitySettings;
+    private final OperationCallSettings.Builder<
+            SetAgentOpsObservabilityRequest,
+            SetAgentOpsObservabilityResponse,
+            SetAgentOpsObservabilityMetadata>
+        setAgentOpsObservabilityOperationSettings;
+    private final UnaryCallSettings.Builder<
+            RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+        retrieveAgentOpsObservabilitySettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -684,6 +736,9 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
       deleteDataAgentSyncSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setAgentOpsObservabilitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setAgentOpsObservabilityOperationSettings = OperationCallSettings.newBuilder();
+      retrieveAgentOpsObservabilitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -700,6 +755,8 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
               deleteDataAgentSyncSettings,
               getIamPolicySettings,
               setIamPolicySettings,
+              setAgentOpsObservabilitySettings,
+              retrieveAgentOpsObservabilitySettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -722,6 +779,11 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
       deleteDataAgentSyncSettings = settings.deleteDataAgentSyncSettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      setAgentOpsObservabilitySettings = settings.setAgentOpsObservabilitySettings.toBuilder();
+      setAgentOpsObservabilityOperationSettings =
+          settings.setAgentOpsObservabilityOperationSettings.toBuilder();
+      retrieveAgentOpsObservabilitySettings =
+          settings.retrieveAgentOpsObservabilitySettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -738,6 +800,8 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
               deleteDataAgentSyncSettings,
               getIamPolicySettings,
               setIamPolicySettings,
+              setAgentOpsObservabilitySettings,
+              retrieveAgentOpsObservabilitySettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -823,6 +887,16 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .setAgentOpsObservabilitySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .retrieveAgentOpsObservabilitySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -892,6 +966,32 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .setAgentOpsObservabilityOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetAgentOpsObservabilityRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  SetAgentOpsObservabilityResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  SetAgentOpsObservabilityMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -1001,6 +1101,28 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
     /** Returns the builder for the settings used for calls to setIamPolicy. */
     public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
       return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setAgentOpsObservability. */
+    public UnaryCallSettings.Builder<SetAgentOpsObservabilityRequest, Operation>
+        setAgentOpsObservabilitySettings() {
+      return setAgentOpsObservabilitySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setAgentOpsObservability. */
+    public OperationCallSettings.Builder<
+            SetAgentOpsObservabilityRequest,
+            SetAgentOpsObservabilityResponse,
+            SetAgentOpsObservabilityMetadata>
+        setAgentOpsObservabilityOperationSettings() {
+      return setAgentOpsObservabilityOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to retrieveAgentOpsObservability. */
+    public UnaryCallSettings.Builder<
+            RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+        retrieveAgentOpsObservabilitySettings() {
+      return retrieveAgentOpsObservabilitySettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

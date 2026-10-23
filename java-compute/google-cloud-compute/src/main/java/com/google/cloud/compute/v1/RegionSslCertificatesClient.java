@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionSslCertificates API.
  *
+ * <p>This client uses RegionSslCertificates version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -672,7 +674,6 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (SslCertificate element : regionSslCertificatesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -710,7 +711,6 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<SslCertificate> future =
    *       regionSslCertificatesClient.listPagedCallable().futureCall(request);
@@ -749,7 +749,6 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     SslCertificateList response = regionSslCertificatesClient.listCallable().call(request);

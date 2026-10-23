@@ -24,6 +24,8 @@ import static org.apache.arrow.vector.types.Types.MinorType.VARCHAR;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Mode;
@@ -43,10 +45,15 @@ import java.sql.SQLException;
 import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.BlockingQueue;
@@ -55,10 +62,12 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.stream.Stream;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
+import org.apache.arrow.vector.DateDayVector;
 import org.apache.arrow.vector.DateMilliVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.Float8Vector;
 import org.apache.arrow.vector.IntVector;
+import org.apache.arrow.vector.TimeMicroVector;
 import org.apache.arrow.vector.TimeMilliVector;
 import org.apache.arrow.vector.TimeStampMicroVector;
 import org.apache.arrow.vector.VarBinaryVector;
@@ -69,6 +78,7 @@ import org.apache.arrow.vector.complex.StructVector;
 import org.apache.arrow.vector.complex.impl.UnionListWriter;
 import org.apache.arrow.vector.types.pojo.FieldType;
 import org.apache.arrow.vector.util.JsonStringArrayList;
+import org.apache.arrow.vector.util.JsonStringHashMap;
 import org.apache.arrow.vector.util.Text;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -76,6 +86,7 @@ import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class BigQueryArrowResultSetTest {
 
@@ -331,6 +342,36 @@ public class BigQueryArrowResultSetTest {
   }
 
   @Test
+  public void testCloseCancelsProducerClearsBufferAndIsIdempotent()
+      throws SQLException, IOException {
+    ArrowSchema arrowSchema =
+        ArrowSchema.newBuilder()
+            .setSerializedSchema(serializeSchema(vectorSchemaRoot.getSchema()))
+            .build();
+    Future<?> workerTask = mock(Future.class);
+    BlockingQueue<BigQueryArrowBatchWrapper> queue = new LinkedBlockingDeque<>(4);
+    queue.add(arrowBatchWrapper);
+    queue.add(arrowBatchWrapperLast);
+
+    BigQueryArrowResultSet rs =
+        BigQueryArrowResultSet.of(QUERY_SCHEMA, arrowSchema, 1, statement, queue, workerTask, null);
+
+    assertThat(rs.isClosed()).isFalse();
+    assertThat(queue).hasSize(2);
+
+    rs.close();
+    assertThat(rs.isClosed()).isTrue();
+    assertThat(queue).hasSize(1);
+    assertThat(queue.peek().getCurrentArrowBatch()).isNull();
+    assertThat(queue.peek().isLast()).isTrue();
+    verify(workerTask, times(1)).cancel(true);
+
+    // Second close() call should be a no-op
+    rs.close();
+    verify(workerTask, times(1)).cancel(true);
+  }
+
+  @Test
   public void testResultSetHoldability() throws SQLException {
     assertThat(bigQueryArrowResultSet.getHoldability())
         .isEqualTo(bigQueryArrowResultSet.HOLD_CURSORS_OVER_COMMIT);
@@ -545,5 +586,221 @@ public class BigQueryArrowResultSetTest {
     assertThat(rs.next()).isTrue();
     assertThat(rs.getString("timeStampField")).isEqualTo("1970-01-01 00:00:00.010000");
     assertThat(rs.getObject("timeStampField")).isEqualTo(new Timestamp(10L));
+  }
+
+  private BigQueryArrowResultSet createTemporalArrowResultSet(Instant ref)
+      throws SQLException, IOException {
+    RootAllocator allocator = new RootAllocator();
+    DateDayVector dateVec = new DateDayVector("d", allocator);
+    dateVec.allocateNew(1);
+    dateVec.set(0, (int) LocalDate.of(2000, 2, 16).toEpochDay());
+    dateVec.setValueCount(1);
+
+    TimeMicroVector timeVec = new TimeMicroVector("t", allocator);
+    timeVec.allocateNew(1);
+    timeVec.set(0, LocalTime.of(10, 30, 46).toNanoOfDay() / 1_000L);
+    timeVec.setValueCount(1);
+
+    long refMicros = ref.getEpochSecond() * 1_000_000L + ref.getNano() / 1_000L;
+    TimeStampMicroVector dtVec = new TimeStampMicroVector("dt", allocator);
+    dtVec.allocateNew(1);
+    dtVec.set(0, refMicros);
+    dtVec.setValueCount(1);
+
+    TimeStampMicroVector tsVec = new TimeStampMicroVector("ts", allocator);
+    tsVec.allocateNew(1);
+    tsVec.set(0, refMicros);
+    tsVec.setValueCount(1);
+
+    VectorSchemaRoot root = new VectorSchemaRoot(ImmutableList.of(dateVec, timeVec, dtVec, tsVec));
+    ArrowRecordBatch batch =
+        ArrowRecordBatch.newBuilder()
+            .setSerializedRecordBatch(serializeVectorSchemaRoot(root))
+            .build();
+    BlockingQueue<BigQueryArrowBatchWrapper> arrowBuffer = new LinkedBlockingDeque<>();
+    arrowBuffer.add(BigQueryArrowBatchWrapper.of(batch));
+    arrowBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+
+    Schema schema =
+        Schema.of(
+            Field.of("d", StandardSQLTypeName.DATE),
+            Field.of("t", StandardSQLTypeName.TIME),
+            Field.of("dt", StandardSQLTypeName.DATETIME),
+            Field.of("ts", StandardSQLTypeName.TIMESTAMP));
+    ArrowSchema arrowSchema =
+        ArrowSchema.newBuilder().setSerializedSchema(serializeSchema(root.getSchema())).build();
+
+    return BigQueryArrowResultSet.of(
+        schema, arrowSchema, 1, statement, arrowBuffer, mock(Future.class), null);
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testCalendarGettersOnWallClockTypesUseCalendarZone(String jvmZone)
+      throws SQLException, IOException {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of(jvmZone)));
+      BigQueryArrowResultSet rs =
+          createTemporalArrowResultSet(Instant.parse("2025-01-01T12:34:56.123Z"));
+      assertThat(rs.next()).isTrue();
+
+      Calendar utcCal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+      Calendar laCal = Calendar.getInstance(TimeZone.getTimeZone("America/Los_Angeles"));
+      ZoneId laZone = ZoneId.of("America/Los_Angeles");
+
+      assertThat(rs.getDate("d", utcCal).getTime()).isEqualTo(950659200000L);
+      assertThat(rs.getDate("d", laCal).getTime()).isEqualTo(950688000000L);
+      assertThat(rs.getTime("t", utcCal).getTime()).isEqualTo(37846000L);
+      assertThat(rs.getTime("t", laCal).getTime()).isEqualTo(66646000L);
+
+      LocalDateTime dtDigits = LocalDateTime.of(2025, 1, 1, 12, 34, 56, 123_000_000);
+      assertThat(rs.getTimestamp("dt", laCal).toInstant())
+          .isEqualTo(dtDigits.atZone(laZone).toInstant());
+      assertThat(
+              Instant.ofEpochMilli(rs.getDate("dt", laCal).getTime()).atZone(laZone).toLocalDate())
+          .isEqualTo(LocalDate.of(2025, 1, 1));
+      assertThat(
+              Instant.ofEpochMilli(rs.getTime("dt", laCal).getTime())
+                  .atZone(laZone)
+                  .toLocalTime()
+                  .withNano(0))
+          .isEqualTo(LocalTime.of(12, 34, 56));
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testCalendarGettersOnTimestampIgnoreCalendar(String jvmZone)
+      throws SQLException, IOException {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of(jvmZone)));
+      Instant ref = Instant.parse("2025-01-01T12:34:56.123Z");
+      BigQueryArrowResultSet rs = createTemporalArrowResultSet(ref);
+      assertThat(rs.next()).isTrue();
+
+      Calendar laCal = Calendar.getInstance(TimeZone.getTimeZone("America/Los_Angeles"));
+      ZonedDateTime local = ref.atZone(ZoneId.of(jvmZone));
+
+      assertThat(rs.getTimestamp("ts", laCal).toInstant()).isEqualTo(ref);
+      assertThat(rs.getDate("ts", laCal).toLocalDate()).isEqualTo(local.toLocalDate());
+      assertThat(rs.getTime("ts", laCal).toLocalTime()).isEqualTo(local.toLocalTime().withNano(0));
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testGetStringOnTimestampAndDatetimeAcrossJvmZones(String jvmZone)
+      throws SQLException, IOException {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of(jvmZone)));
+      Instant ref = Instant.parse("2025-01-01T12:34:56.123Z");
+      BigQueryArrowResultSet rs = createTemporalArrowResultSet(ref);
+      assertThat(rs.next()).isTrue();
+
+      assertThat(rs.getString("ts")).isEqualTo("2025-01-01 12:34:56.123000");
+      assertThat(rs.getObject("ts", String.class)).isEqualTo("2025-01-01 12:34:56.123000");
+      assertThat(rs.getString("dt")).isEqualTo("2025-01-01 12:34:56.123000");
+
+      long tsMicros = ref.getEpochSecond() * 1_000_000L + ref.getNano() / 1_000L;
+      LocalDateTime dtLocal = LocalDateTime.of(2025, 1, 1, 12, 34, 56, 123_000_000);
+
+      Field tsArraySchema =
+          Field.newBuilder("ts_array", StandardSQLTypeName.TIMESTAMP)
+              .setMode(Field.Mode.REPEATED)
+              .build();
+      JsonStringArrayList<Long> tsList = new JsonStringArrayList<>();
+      tsList.add(tsMicros);
+      BigQueryArrowArray tsArrowArray = new BigQueryArrowArray(tsArraySchema, tsList);
+      assertThat(tsArrowArray.toString()).isEqualTo("[2025-01-01 12:34:56.123]");
+      try (ResultSet nestedTsRs = tsArrowArray.getResultSet()) {
+        assertThat(nestedTsRs.next()).isTrue();
+        assertThat(nestedTsRs.getString(2)).isEqualTo("2025-01-01 12:34:56.123000");
+      }
+
+      Field dtArraySchema =
+          Field.newBuilder("dt_array", StandardSQLTypeName.DATETIME)
+              .setMode(Field.Mode.REPEATED)
+              .build();
+      JsonStringArrayList<LocalDateTime> dtList = new JsonStringArrayList<>();
+      dtList.add(dtLocal);
+      BigQueryArrowArray dtArrowArray = new BigQueryArrowArray(dtArraySchema, dtList);
+      assertThat(dtArrowArray.toString()).isEqualTo("[2025-01-01 12:34:56.123]");
+
+      FieldList structSchema =
+          FieldList.of(
+              Field.of("ts", StandardSQLTypeName.TIMESTAMP),
+              Field.of("dt", StandardSQLTypeName.DATETIME));
+      JsonStringHashMap<String, Object> structValues = new JsonStringHashMap<>();
+      structValues.put("ts", tsMicros);
+      structValues.put("dt", dtLocal);
+      BigQueryArrowStruct arrowStruct = new BigQueryArrowStruct(structSchema, structValues);
+      assertThat(arrowStruct.toString())
+          .isEqualTo("{\"ts\":\"2025-01-01 12:34:56.123\",\"dt\":\"2025-01-01 12:34:56.123\"}");
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
+  }
+
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/New_York", "Asia/Tokyo"})
+  public void testTimestampPicosAccessorsAcrossJvmZones(String jvmZone)
+      throws SQLException, IOException {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of(jvmZone)));
+      VectorSchemaRoot root = getPicosVectorSchemaRoot();
+      ArrowRecordBatch batch =
+          ArrowRecordBatch.newBuilder()
+              .setSerializedRecordBatch(serializeVectorSchemaRoot(root))
+              .build();
+      BlockingQueue<BigQueryArrowBatchWrapper> picosBuffer = new LinkedBlockingDeque<>();
+      picosBuffer.add(BigQueryArrowBatchWrapper.of(batch));
+      picosBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+
+      BigQueryStatement picosStmt = mock(BigQueryStatement.class);
+      doReturn(true).when(picosStmt).isEnableTimestampPicos();
+
+      Schema schema =
+          Schema.of(
+              Field.newBuilder("picosTimestamp", StandardSQLTypeName.TIMESTAMP)
+                  .setTimestampPrecision(12L)
+                  .build());
+      ArrowSchema arrowSchema =
+          ArrowSchema.newBuilder().setSerializedSchema(serializeSchema(root.getSchema())).build();
+
+      BigQueryArrowResultSet rs =
+          BigQueryArrowResultSet.of(
+              schema, arrowSchema, 1, picosStmt, picosBuffer, mock(Future.class), null);
+      assertThat(rs.next()).isTrue();
+
+      Instant expectedInstant = Instant.parse("2026-04-08T10:00:00.123456789Z");
+      ZonedDateTime expectedLocal = expectedInstant.atZone(ZoneId.of(jvmZone));
+      Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/London"));
+
+      assertThat(rs.getString("picosTimestamp")).isEqualTo("2026-04-08 10:00:00.123456789123");
+      assertThat(rs.getTimestamp("picosTimestamp").toInstant()).isEqualTo(expectedInstant);
+      assertThat(rs.getTimestamp("picosTimestamp", cal).toInstant()).isEqualTo(expectedInstant);
+      assertThat(rs.getObject("picosTimestamp", Instant.class)).isEqualTo(expectedInstant);
+      assertThat(rs.getObject("picosTimestamp", OffsetDateTime.class).toInstant())
+          .isEqualTo(expectedInstant);
+      assertThat(rs.getObject("picosTimestamp", LocalDateTime.class))
+          .isEqualTo(expectedLocal.toLocalDateTime());
+      assertThat(rs.getDate("picosTimestamp").toLocalDate()).isEqualTo(expectedLocal.toLocalDate());
+      assertThat(rs.getDate("picosTimestamp", cal).toLocalDate())
+          .isEqualTo(expectedLocal.toLocalDate());
+      assertThat(rs.getTime("picosTimestamp").toLocalTime())
+          .isEqualTo(expectedLocal.toLocalTime().withNano(0));
+      assertThat(rs.getTime("picosTimestamp", cal).toLocalTime())
+          .isEqualTo(expectedLocal.toLocalTime().withNano(0));
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
   }
 }

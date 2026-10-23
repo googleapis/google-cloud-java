@@ -216,4 +216,34 @@ public interface CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelection
    * @return The bytes of the machineTypes at the given index.
    */
   com.google.protobuf.ByteString getMachineTypesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rank when prioritizing the shape flexibilities.
+   * The instance selections are considered in the ascending order of the
+   * rank. If not set, defaults to 0.
+   * </pre>
+   *
+   * <code>optional int64 rank = 3492908;</code>
+   *
+   * @return Whether the rank field is set.
+   */
+  boolean hasRank();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rank when prioritizing the shape flexibilities.
+   * The instance selections are considered in the ascending order of the
+   * rank. If not set, defaults to 0.
+   * </pre>
+   *
+   * <code>optional int64 rank = 3492908;</code>
+   *
+   * @return The rank.
+   */
+  long getRank();
 }

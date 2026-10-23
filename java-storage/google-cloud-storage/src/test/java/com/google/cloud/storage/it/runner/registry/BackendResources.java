@@ -262,7 +262,7 @@ final class BackendResources implements ManagedLifecycle {
                       .setLocation("us-central1")
                       .setCustomPlacementConfig(
                           CustomPlacementConfig.newBuilder()
-                              .setDataLocations(ImmutableList.of("us-central1-c"))
+                              .setDataLocations(ImmutableList.of("us-central1-a"))
                               .build())
                       .setStorageClass(StorageClass.valueOf("RAPID"))
                       .setHierarchicalNamespace(

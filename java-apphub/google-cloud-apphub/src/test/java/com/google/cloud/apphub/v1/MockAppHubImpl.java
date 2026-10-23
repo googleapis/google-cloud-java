@@ -643,4 +643,91 @@ public class MockAppHubImpl extends AppHubImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getBoundary(GetBoundaryRequest request, StreamObserver<Boundary> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Boundary) {
+      requests.add(request);
+      responseObserver.onNext(((Boundary) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBoundary, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Boundary.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateBoundary(
+      UpdateBoundaryRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateBoundary, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getExtendedMetadataSchema(
+      GetExtendedMetadataSchemaRequest request,
+      StreamObserver<ExtendedMetadataSchema> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ExtendedMetadataSchema) {
+      requests.add(request);
+      responseObserver.onNext(((ExtendedMetadataSchema) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetExtendedMetadataSchema, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ExtendedMetadataSchema.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listExtendedMetadataSchemas(
+      ListExtendedMetadataSchemasRequest request,
+      StreamObserver<ListExtendedMetadataSchemasResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListExtendedMetadataSchemasResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListExtendedMetadataSchemasResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListExtendedMetadataSchemas, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListExtendedMetadataSchemasResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

@@ -17,8 +17,12 @@ package com.google.cloud.bigtable.data.v2.internal.api;
 
 import com.google.bigtable.v2.CloseSessionRequest;
 import com.google.bigtable.v2.FeatureFlags;
+import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
+import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
+import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
+import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
@@ -51,12 +55,21 @@ class TableBase implements AutoCloseable {
   private final VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor;
   private final VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse>
       mutateRowDescriptor;
+  private final VRpcDescriptor<?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
+      checkAndMutateRowDescriptor;
+  private final VRpcDescriptor<
+          ?, SessionReadModifyWriteRowRequest, SessionReadModifyWriteRowResponse>
+      readModifyWriteRowDescriptor;
 
   static <ReqT extends Message> TableBase createAndStart(
       ReqT openReq,
       VRpcDescriptor.SessionDescriptor<ReqT> sessionDescriptor,
       VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor,
       VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse> mutateRowDescriptor,
+      VRpcDescriptor<?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
+          checkAndMutateRowDescriptor,
+      VRpcDescriptor<?, SessionReadModifyWriteRowRequest, SessionReadModifyWriteRowResponse>
+          readModifyWriteRowDescriptor,
       FeatureFlags featureFlags,
       ClientInfo clientInfo,
       ClientConfigurationManager configManager,
@@ -90,7 +103,14 @@ class TableBase implements AutoCloseable {
     sessionPool.start(openReq, new Metadata());
 
     return new TableBase(
-        sessionPool, readRowDescriptor, mutateRowDescriptor, metrics, timer, userCallbackExecutor);
+        sessionPool,
+        readRowDescriptor,
+        mutateRowDescriptor,
+        checkAndMutateRowDescriptor,
+        readModifyWriteRowDescriptor,
+        metrics,
+        timer,
+        userCallbackExecutor);
   }
 
   @VisibleForTesting
@@ -98,12 +118,18 @@ class TableBase implements AutoCloseable {
       SessionPool<?> sessionPool,
       VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor,
       VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse> mutateRowDescriptor,
+      VRpcDescriptor<?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
+          checkAndMutateRowDescriptor,
+      VRpcDescriptor<?, SessionReadModifyWriteRowRequest, SessionReadModifyWriteRowResponse>
+          readModifyWriteRowDescriptor,
       Metrics metrics,
       BigtableTimer timer,
       Executor userCallbackExecutor) {
     this.sessionPool = sessionPool;
     this.readRowDescriptor = readRowDescriptor;
     this.mutateRowDescriptor = mutateRowDescriptor;
+    this.checkAndMutateRowDescriptor = checkAndMutateRowDescriptor;
+    this.readModifyWriteRowDescriptor = readModifyWriteRowDescriptor;
     this.metrics = metrics;
     this.timer = timer;
     this.userCallbackExecutor = userCallbackExecutor;
@@ -144,6 +170,36 @@ class TableBase implements AutoCloseable {
 
     new VOperationImpl<>(
             retry, Context.current(), userCallbackExecutor, tracer, deadline, idempotent)
+        .start(req, listener);
+  }
+
+  public void checkAndMutateRow(
+      SessionCheckAndMutateRowRequest req,
+      VRpcListener<SessionCheckAndMutateRowResponse> listener,
+      Deadline deadline) {
+    // RetryingVRpc is still needed even for non-idempotent ops: the idempotent=false flag prevents
+    // client-initiated retries on application-level errors, but the server may still direct a retry
+    // via response status.
+    RetryingVRpc<SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse> retry =
+        new RetryingVRpc<>(() -> sessionPool.newCall(checkAndMutateRowDescriptor), timer);
+    VRpcTracer tracer =
+        metrics.newTableTracer(sessionPool.getInfo(), checkAndMutateRowDescriptor, deadline);
+    new VOperationImpl<>(retry, Context.current(), userCallbackExecutor, tracer, deadline, false)
+        .start(req, listener);
+  }
+
+  public void readModifyWriteRow(
+      SessionReadModifyWriteRowRequest req,
+      VRpcListener<SessionReadModifyWriteRowResponse> listener,
+      Deadline deadline) {
+    // RetryingVRpc is still needed even for non-idempotent ops: the idempotent=false flag prevents
+    // client-initiated retries on application-level errors, but the server may still direct a retry
+    // via response status.
+    RetryingVRpc<SessionReadModifyWriteRowRequest, SessionReadModifyWriteRowResponse> retry =
+        new RetryingVRpc<>(() -> sessionPool.newCall(readModifyWriteRowDescriptor), timer);
+    VRpcTracer tracer =
+        metrics.newTableTracer(sessionPool.getInfo(), readModifyWriteRowDescriptor, deadline);
+    new VOperationImpl<>(retry, Context.current(), userCallbackExecutor, tracer, deadline, false)
         .start(req, listener);
   }
 }

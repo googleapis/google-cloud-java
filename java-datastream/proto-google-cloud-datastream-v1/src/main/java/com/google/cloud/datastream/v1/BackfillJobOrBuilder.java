@@ -232,4 +232,47 @@ public interface BackfillJobOrBuilder
    * </code>
    */
   com.google.cloud.datastream.v1.ErrorOrBuilder getErrorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The filter for performing a partial backfill.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.EventFilter event_filter = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the eventFilter field is set.
+   */
+  boolean hasEventFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The filter for performing a partial backfill.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.EventFilter event_filter = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The eventFilter.
+   */
+  com.google.cloud.datastream.v1.EventFilter getEventFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The filter for performing a partial backfill.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.EventFilter event_filter = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.EventFilterOrBuilder getEventFilterOrBuilder();
 }

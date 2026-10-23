@@ -53,20 +53,21 @@ public final class OmnichannelServiceProto extends com.google.protobuf.Generated
 
   static {
     java.lang.String[] descriptorData = {
-      "\n1google/cloud/ces/v1beta/omnichannel_se"
+      "\n"
+          + "1google/cloud/ces/v1beta/omnichannel_se"
           + "rvice.proto\022\027google.cloud.ces.v1beta\032\034go"
           + "ogle/api/annotations.proto\032\027google/api/c"
           + "lient.proto\032\037google/api/field_behavior.p"
-          + "roto\032\031google/api/resource.proto\032\037google/"
-          + "protobuf/timestamp.proto\"\311\001\n\034Omnichannel"
-          + "OperationMetadata\0224\n\013create_time\030\001 \001(\0132\032"
-          + ".google.protobuf.TimestampB\003\340A\003\0221\n\010end_t"
-          + "ime\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340"
-          + "A\003\022\033\n\016status_message\030\003 \001(\tB\003\340A\003\022#\n\026reque"
-          + "sted_cancellation\030\004 \001(\010B\003\340A\003Bg\n\033com.goog"
-          + "le.cloud.ces.v1betaB\027OmnichannelServiceP"
-          + "rotoP\001Z-cloud.google.com/go/ces/apiv1bet"
-          + "a/cespb;cespbb\006proto3"
+          + "roto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\315\001\n"
+          + "\034OmnichannelOperationMetadata\0225\n"
+          + "\013create_time\030\001"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0222\n"
+          + "\010end_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\034\n"
+          + "\016status_message\030\003 \001(\tB\004\342A\001\003\022$\n"
+          + "\026requested_cancellation\030\004 \001(\010B\004\342A\001\003Bg\n"
+          + "\033com.google.cloud.ces.v1betaB\027OmnichannelServ"
+          + "iceProtoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

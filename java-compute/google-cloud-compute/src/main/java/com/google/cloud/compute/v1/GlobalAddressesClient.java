@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The GlobalAddresses API.
  *
+ * <p>This client uses GlobalAddresses version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -671,7 +673,6 @@ public class GlobalAddressesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Address element : globalAddressesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -706,7 +707,6 @@ public class GlobalAddressesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Address> future = globalAddressesClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -740,7 +740,6 @@ public class GlobalAddressesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     AddressList response = globalAddressesClient.listCallable().call(request);

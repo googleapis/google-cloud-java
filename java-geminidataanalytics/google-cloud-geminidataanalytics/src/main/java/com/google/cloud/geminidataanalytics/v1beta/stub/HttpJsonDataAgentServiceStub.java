@@ -46,6 +46,11 @@ import com.google.cloud.geminidataanalytics.v1beta.ListAccessibleDataAgentsRespo
 import com.google.cloud.geminidataanalytics.v1beta.ListDataAgentsRequest;
 import com.google.cloud.geminidataanalytics.v1beta.ListDataAgentsResponse;
 import com.google.cloud.geminidataanalytics.v1beta.OperationMetadata;
+import com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityRequest;
+import com.google.cloud.geminidataanalytics.v1beta.RetrieveAgentOpsObservabilityResponse;
+import com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityMetadata;
+import com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityRequest;
+import com.google.cloud.geminidataanalytics.v1beta.SetAgentOpsObservabilityResponse;
 import com.google.cloud.geminidataanalytics.v1beta.UpdateDataAgentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -81,7 +86,9 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
           .add(OperationMetadata.getDescriptor())
+          .add(SetAgentOpsObservabilityMetadata.getDescriptor())
           .add(DataAgent.getDescriptor())
+          .add(SetAgentOpsObservabilityResponse.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<ListDataAgentsRequest, ListDataAgentsResponse>
@@ -107,6 +114,8 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<ListDataAgentsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "creatorFilter", request.getCreatorFilterValue());
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
@@ -526,6 +535,88 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<SetAgentOpsObservabilityRequest, Operation>
+      setAgentOpsObservabilityMethodDescriptor =
+          ApiMethodDescriptor.<SetAgentOpsObservabilityRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataAgentService/SetAgentOpsObservability")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetAgentOpsObservabilityRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*}/observabilitySettings:setAgentOpsObservability",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetAgentOpsObservabilityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetAgentOpsObservabilityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetAgentOpsObservabilityRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+      retrieveAgentOpsObservabilityMethodDescriptor =
+          ApiMethodDescriptor
+              .<RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataAgentService/RetrieveAgentOpsObservability")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RetrieveAgentOpsObservabilityRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*}:retrieveAgentOpsObservability",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RetrieveAgentOpsObservabilityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RetrieveAgentOpsObservabilityRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "dataSourceType", request.getDataSourceType());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RetrieveAgentOpsObservabilityResponse>newBuilder()
+                      .setDefaultInstance(
+                          RetrieveAgentOpsObservabilityResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -617,6 +708,16 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
   private final UnaryCallable<DeleteDataAgentRequest, Empty> deleteDataAgentSyncCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<SetAgentOpsObservabilityRequest, Operation>
+      setAgentOpsObservabilityCallable;
+  private final OperationCallable<
+          SetAgentOpsObservabilityRequest,
+          SetAgentOpsObservabilityResponse,
+          SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityOperationCallable;
+  private final UnaryCallable<
+          RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+      retrieveAgentOpsObservabilityCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -825,6 +926,35 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getResource())
             .build();
+    HttpJsonCallSettings<SetAgentOpsObservabilityRequest, Operation>
+        setAgentOpsObservabilityTransportSettings =
+            HttpJsonCallSettings.<SetAgentOpsObservabilityRequest, Operation>newBuilder()
+                .setMethodDescriptor(setAgentOpsObservabilityMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+        retrieveAgentOpsObservabilityTransportSettings =
+            HttpJsonCallSettings
+                .<RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+                    newBuilder()
+                .setMethodDescriptor(retrieveAgentOpsObservabilityMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -916,6 +1046,22 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
     this.setIamPolicyCallable =
         callableFactory.createUnaryCallable(
             setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
+    this.setAgentOpsObservabilityCallable =
+        callableFactory.createUnaryCallable(
+            setAgentOpsObservabilityTransportSettings,
+            settings.setAgentOpsObservabilitySettings(),
+            clientContext);
+    this.setAgentOpsObservabilityOperationCallable =
+        callableFactory.createOperationCallable(
+            setAgentOpsObservabilityTransportSettings,
+            settings.setAgentOpsObservabilityOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.retrieveAgentOpsObservabilityCallable =
+        callableFactory.createUnaryCallable(
+            retrieveAgentOpsObservabilityTransportSettings,
+            settings.retrieveAgentOpsObservabilitySettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -944,6 +1090,8 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
     methodDescriptors.add(deleteDataAgentSyncMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
+    methodDescriptors.add(setAgentOpsObservabilityMethodDescriptor);
+    methodDescriptors.add(retrieveAgentOpsObservabilityMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1037,6 +1185,27 @@ public class HttpJsonDataAgentServiceStub extends DataAgentServiceStub {
   @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetAgentOpsObservabilityRequest, Operation>
+      setAgentOpsObservabilityCallable() {
+    return setAgentOpsObservabilityCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          SetAgentOpsObservabilityRequest,
+          SetAgentOpsObservabilityResponse,
+          SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityOperationCallable() {
+    return setAgentOpsObservabilityOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+      retrieveAgentOpsObservabilityCallable() {
+    return retrieveAgentOpsObservabilityCallable;
   }
 
   @Override

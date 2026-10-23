@@ -74,6 +74,7 @@ public interface DistanceOrBuilder
    *
    * <pre>
    * Required. Distance in millimeters over the observed interval.
+   * Must be in the range `[0, 1000000000]`.
    * </pre>
    *
    * <code>optional int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -87,6 +88,7 @@ public interface DistanceOrBuilder
    *
    * <pre>
    * Required. Distance in millimeters over the observed interval.
+   * Must be in the range `[0, 1000000000]`.
    * </pre>
    *
    * <code>optional int64 millimeters = 3 [(.google.api.field_behavior) = REQUIRED];</code>

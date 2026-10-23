@@ -44,7 +44,6 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
-import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamingCallSettings;
@@ -93,7 +92,6 @@ import com.google.api.generator.gapic.model.Field;
 import com.google.api.generator.gapic.model.GapicBatchingSettings;
 import com.google.api.generator.gapic.model.GapicClass;
 import com.google.api.generator.gapic.model.GapicContext;
-import com.google.api.generator.gapic.model.GapicRetrySettings;
 import com.google.api.generator.gapic.model.GapicServiceConfig;
 import com.google.api.generator.gapic.model.Message;
 import com.google.api.generator.gapic.model.Method;
@@ -109,7 +107,6 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
-import com.google.protobuf.util.Durations;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -193,7 +190,6 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
     List<Sample> samples = new ArrayList<>();
     Set<String> deprecatedSettingVarNames = new HashSet<>();
     Set<String> internalSettingVarNames = new HashSet<>();
-    Set<String> resumableUploadSettingVarNames = new HashSet<>();
     Map<String, VariableExpr> methodSettingsMemberVarExprs =
         createMethodSettingsClassMemberVarExprs(
             service,
@@ -201,8 +197,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
             typeStore,
             /* isNestedClass= */ false,
             deprecatedSettingVarNames,
-            internalSettingVarNames,
-            resumableUploadSettingVarNames);
+            internalSettingVarNames);
     String className = ClassNames.getServiceStubSettingsClassName(service);
     List<CommentStatement> classHeaderComments =
         createClassHeaderComments(service, typeStore.get(className), samples);
@@ -224,7 +219,6 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
                     methodSettingsMemberVarExprs,
                     deprecatedSettingVarNames,
                     internalSettingVarNames,
-                    resumableUploadSettingVarNames,
                     typeStore))
             .setNestedClasses(
                 Arrays.asList(createNestedBuilderClass(service, serviceConfig, typeStore)))
@@ -518,8 +512,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
       TypeStore typeStore,
       boolean isNestedClass,
       Set<String> deprecatedSettingVarNames,
-      Set<String> internalSettingVarNames,
-      Set<String> resumableUploadSettingVarNames) {
+      Set<String> internalSettingVarNames) {
     Map<String, VariableExpr> varExprs = new LinkedHashMap<>();
 
     // Creates class variables <method>Settings, e.g. echoSettings.
@@ -535,9 +528,6 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
       }
       if (method.isInternalApi()) {
         internalSettingVarNames.add(varName);
-      }
-      if (method.isResumableUpload()) {
-        resumableUploadSettingVarNames.add(varName);
       }
       varExprs.put(
           varName,
@@ -1063,15 +1053,11 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
       Map<String, VariableExpr> methodSettingsMemberVarExprs,
       Set<String> deprecatedSettingVarNames,
       Set<String> internalSettingVarNames,
-      Set<String> resumableUploadSettingVarNames,
       TypeStore typeStore) {
     List<MethodDefinition> javaMethods = new ArrayList<>();
     javaMethods.addAll(
         createMethodSettingsGetterMethods(
-            methodSettingsMemberVarExprs,
-            deprecatedSettingVarNames,
-            internalSettingVarNames,
-            resumableUploadSettingVarNames));
+            methodSettingsMemberVarExprs, deprecatedSettingVarNames, internalSettingVarNames));
     javaMethods.add(createCreateStubMethod(service, typeStore));
     javaMethods.addAll(createDefaultHelperAndGetterMethods(service, typeStore));
     javaMethods.addAll(
@@ -1104,21 +1090,15 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
   private static List<MethodDefinition> createMethodSettingsGetterMethods(
       Map<String, VariableExpr> methodSettingsMemberVarExprs,
       final Set<String> deprecatedSettingVarNames,
-      final Set<String> internalSettingVarNames,
-      final Set<String> resumableUploadSettingVarNames) {
+      final Set<String> internalSettingVarNames) {
     Function<Map.Entry<String, VariableExpr>, MethodDefinition> varToMethodFn =
         e -> {
           boolean isDeprecated = deprecatedSettingVarNames.contains(e.getKey());
           boolean isInternal = internalSettingVarNames.contains(e.getKey());
-          boolean isResumableUpload = resumableUploadSettingVarNames.contains(e.getKey());
-          CommentStatement commentStatement =
-              isResumableUpload
-                  ? SettingsCommentComposer.createResumableUploadCallSettingsGetterComment(
-                      getMethodNameFromSettingsVarName(e.getKey()), isDeprecated, isInternal)
-                  : SettingsCommentComposer.createCallSettingsGetterComment(
-                      getMethodNameFromSettingsVarName(e.getKey()), isDeprecated, isInternal);
           return MethodDefinition.builder()
-              .setHeaderCommentStatements(commentStatement)
+              .setHeaderCommentStatements(
+                  SettingsCommentComposer.createCallSettingsGetterComment(
+                      getMethodNameFromSettingsVarName(e.getKey()), isDeprecated, isInternal))
               .setAnnotations(createMethodAnnotation(isDeprecated, isInternal))
               .setScope(ScopeNode.PUBLIC)
               .setReturnType(e.getValue().type())
@@ -1464,7 +1444,6 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
 
     Set<String> nestedDeprecatedSettingVarNames = new HashSet<>();
     Set<String> nestedInternalSettingVarNames = new HashSet<>();
-    Set<String> nestedResumableUploadSettingVarNames = new HashSet<>();
     Map<String, VariableExpr> nestedMethodSettingsMemberVarExprs =
         createMethodSettingsClassMemberVarExprs(
             service,
@@ -1472,8 +1451,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
             typeStore,
             /* isNestedClass= */ true,
             nestedDeprecatedSettingVarNames,
-            nestedInternalSettingVarNames,
-            nestedResumableUploadSettingVarNames);
+            nestedInternalSettingVarNames);
 
     // TODO(miraleung): Fill this out.
     return ClassDefinition.builder()
@@ -1495,7 +1473,6 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
                 nestedMethodSettingsMemberVarExprs,
                 nestedDeprecatedSettingVarNames,
                 nestedInternalSettingVarNames,
-                nestedResumableUploadSettingVarNames,
                 typeStore))
         .build();
   }
@@ -1557,7 +1534,6 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
       Map<String, VariableExpr> nestedMethodSettingsMemberVarExprs,
       Set<String> nestedDeprecatedSettingVarNames,
       Set<String> nestedInternalSettingVarNames,
-      Set<String> nestedResumableUploadSettingVarNames,
       TypeStore typeStore) {
     List<MethodDefinition> nestedClassMethods = new ArrayList<>();
     nestedClassMethods.addAll(
@@ -1574,8 +1550,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
         createNestedClassSettingsBuilderGetterMethods(
             nestedMethodSettingsMemberVarExprs,
             nestedDeprecatedSettingVarNames,
-            nestedInternalSettingVarNames,
-            nestedResumableUploadSettingVarNames));
+            nestedInternalSettingVarNames));
     nestedClassMethods.add(createNestedClassBuildMethod(service, typeStore));
     return nestedClassMethods;
   }
@@ -1610,12 +1585,6 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
                 RetrySettingsComposer.createBatchingBuilderSettingsExpr(
                     settingsGetterMethodName, batchingSettingOpt.get(), builderVarExpr)));
         bodyStatements.add(EMPTY_LINE_STATEMENT);
-      }
-
-      if (method.isResumableUpload()) {
-        addResumableUploadGlobalTimeoutStatements(
-            service, serviceConfig, method, builderVarExpr, bodyStatements);
-        continue;
       }
 
       bodyStatements.add(
@@ -1656,52 +1625,6 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
         .setBody(bodyStatements)
         .setReturnExpr(builderVarExpr)
         .build();
-  }
-
-  private static void addResumableUploadGlobalTimeoutStatements(
-      Service service,
-      @Nullable GapicServiceConfig serviceConfig,
-      Method method,
-      VariableExpr builderVarExpr,
-      List<Statement> bodyStatements) {
-    if (serviceConfig == null) {
-      return;
-    }
-    String retryParamsName = serviceConfig.getRetryParamsName(service, method);
-    GapicRetrySettings retrySettings =
-        serviceConfig.getAllGapicRetrySettings(service).get(retryParamsName);
-    if (retrySettings != null
-        && retrySettings.timeout() != null
-        && Durations.toMillis(retrySettings.timeout()) > 0) {
-      String settingsGetterMethodName =
-          String.format(SETTINGS_METHOD_NAME_PATTERN, JavaStyle.toLowerCamelCase(method.name()));
-      Expr settingsExpr =
-          MethodInvocationExpr.builder()
-              .setExprReferenceExpr(builderVarExpr)
-              .setMethodName(settingsGetterMethodName)
-              .build();
-      long timeoutMillis = Durations.toMillis(retrySettings.timeout());
-      ValueExpr timeoutMillisExpr =
-          ValueExpr.withValue(
-              PrimitiveValue.builder()
-                  .setType(TypeNode.LONG)
-                  .setValue(String.format("%dL", timeoutMillis))
-                  .build());
-      Expr durationOfMillisExpr =
-          MethodInvocationExpr.builder()
-              .setStaticReferenceType(FIXED_TYPESTORE.get("Duration"))
-              .setMethodName("ofMillis")
-              .setArguments(timeoutMillisExpr)
-              .build();
-      settingsExpr =
-          MethodInvocationExpr.builder()
-              .setExprReferenceExpr(settingsExpr)
-              .setMethodName("setGlobalTimeout")
-              .setArguments(durationOfMillisExpr)
-              .build();
-      bodyStatements.add(ExprStatement.withExpr(settingsExpr));
-      bodyStatements.add(EMPTY_LINE_STATEMENT);
-    }
   }
 
   private static List<MethodDefinition> createNestedClassConstructorMethods(
@@ -2182,8 +2105,7 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
   private static List<MethodDefinition> createNestedClassSettingsBuilderGetterMethods(
       Map<String, VariableExpr> nestedMethodSettingsMemberVarExprs,
       Set<String> nestedDeprecatedSettingVarNames,
-      Set<String> nestedInternalSettingVarNames,
-      Set<String> nestedResumableUploadSettingVarNames) {
+      Set<String> nestedInternalSettingVarNames) {
     Reference operationCallSettingsBuilderRef =
         ConcreteReference.withClazz(OperationCallSettings.Builder.class);
     Function<TypeNode, Boolean> isOperationCallSettingsBuilderFn =
@@ -2200,18 +2122,12 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
 
       boolean isDeprecated = nestedDeprecatedSettingVarNames.contains(varName);
       boolean isInternal = nestedInternalSettingVarNames.contains(varName);
-      boolean isResumableUpload = nestedResumableUploadSettingVarNames.contains(varName);
-
-      CommentStatement commentStatement =
-          isResumableUpload
-              ? SettingsCommentComposer.createResumableUploadCallSettingsBuilderGetterComment(
-                  getMethodNameFromSettingsVarName(varName), isDeprecated, isInternal)
-              : SettingsCommentComposer.createCallSettingsBuilderGetterComment(
-                  getMethodNameFromSettingsVarName(varName), isDeprecated, isInternal);
 
       javaMethods.add(
           MethodDefinition.builder()
-              .setHeaderCommentStatements(commentStatement)
+              .setHeaderCommentStatements(
+                  SettingsCommentComposer.createCallSettingsBuilderGetterComment(
+                      getMethodNameFromSettingsVarName(varName), isDeprecated, isInternal))
               .setAnnotations(createMethodAnnotation(isDeprecated, isInternal))
               .setScope(ScopeNode.PUBLIC)
               .setReturnType(settingsVarExpr.type())
@@ -2344,7 +2260,6 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
             PagedListResponseFactory.class,
             PartitionKey.class,
             RequestBuilder.class,
-            ResumableUploadCallSettings.class,
             RetrySettings.class,
             ServerStreamingCallSettings.class,
             StatusCode.class,
@@ -2464,13 +2379,6 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
         CommonStrings.PAGED_RESPONSE_TYPE_NAME_PATTERN, JavaStyle.toUpperCamelCase(methodName));
   }
 
-  private static TypeNode getResumableUploadCallSettingsType(
-      Function<Class<?>, TypeNode> typeMakerFn, boolean isSettingsBuilder) {
-    return isSettingsBuilder
-        ? typeMakerFn.apply(ResumableUploadCallSettings.Builder.class)
-        : typeMakerFn.apply(ResumableUploadCallSettings.class);
-  }
-
   private static TypeNode getCallSettingsType(
       Method method,
       TypeStore typeStore,
@@ -2478,9 +2386,6 @@ public abstract class AbstractServiceStubSettingsClassComposer implements ClassC
       final boolean isSettingsBuilder) {
     Function<Class<?>, TypeNode> typeMakerFn =
         clz -> TypeNode.withReference(ConcreteReference.withClazz(clz));
-    if (method.isResumableUpload()) {
-      return getResumableUploadCallSettingsType(typeMakerFn, isSettingsBuilder);
-    }
     // Default: No streaming.
     TypeNode callSettingsType =
         method.isPaged()

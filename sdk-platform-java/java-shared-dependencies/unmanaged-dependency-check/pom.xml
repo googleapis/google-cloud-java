@@ -47,6 +47,12 @@
         </executions>
         <configuration>
           <mainClass>com.google.cloud.UnmanagedDependencyCheck</mainClass>
+          <systemProperties>
+            <systemProperty>
+              <key>guice_custom_class_loading</key>
+              <value>OFF</value>
+            </systemProperty>
+          </systemProperties>
         </configuration>
       </plugin>
     </plugins>
@@ -66,7 +72,7 @@
     <dependency>
       <groupId>com.google.cloud.tools</groupId>
       <artifactId>dependencies</artifactId>
-      <version>1.5.13</version>
+      <version>1.5.16</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>

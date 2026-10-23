@@ -175,7 +175,8 @@ public class ProjectViewsStubSettings extends StubSettings<ProjectViewsStubSetti
             "gapic", GaxProperties.getLibraryVersion(ProjectViewsStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

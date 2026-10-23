@@ -46,6 +46,7 @@ import com.google.cloud.geminidataanalytics.v1beta.ListMessagesResponse;
 import com.google.cloud.geminidataanalytics.v1beta.Message;
 import com.google.cloud.geminidataanalytics.v1beta.QueryDataRequest;
 import com.google.cloud.geminidataanalytics.v1beta.QueryDataResponse;
+import com.google.cloud.geminidataanalytics.v1beta.UpdateConversationRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -179,6 +180,47 @@ public class HttpJsonDataChatServiceStub extends DataChatServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
                       .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateConversationRequest, Conversation>
+      updateConversationMethodDescriptor =
+          ApiMethodDescriptor.<UpdateConversationRequest, Conversation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.geminidataanalytics.v1beta.DataChatService/UpdateConversation")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateConversationRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{conversation.name=projects/*/locations/*/conversations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateConversationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "conversation.name", request.getConversation().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateConversationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("conversation", request.getConversation(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Conversation>newBuilder()
+                      .setDefaultInstance(Conversation.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -403,6 +445,7 @@ public class HttpJsonDataChatServiceStub extends DataChatServiceStub {
   private final ServerStreamingCallable<ChatRequest, Message> chatCallable;
   private final UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable;
   private final UnaryCallable<DeleteConversationRequest, Empty> deleteConversationCallable;
+  private final UnaryCallable<UpdateConversationRequest, Conversation> updateConversationCallable;
   private final UnaryCallable<GetConversationRequest, Conversation> getConversationCallable;
   private final UnaryCallable<ListConversationsRequest, ListConversationsResponse>
       listConversationsCallable;
@@ -496,6 +539,19 @@ public class HttpJsonDataChatServiceStub extends DataChatServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<UpdateConversationRequest, Conversation>
+        updateConversationTransportSettings =
+            HttpJsonCallSettings.<UpdateConversationRequest, Conversation>newBuilder()
+                .setMethodDescriptor(updateConversationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "conversation.name", String.valueOf(request.getConversation().getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetConversationRequest, Conversation> getConversationTransportSettings =
         HttpJsonCallSettings.<GetConversationRequest, Conversation>newBuilder()
             .setMethodDescriptor(getConversationMethodDescriptor)
@@ -582,6 +638,11 @@ public class HttpJsonDataChatServiceStub extends DataChatServiceStub {
             deleteConversationTransportSettings,
             settings.deleteConversationSettings(),
             clientContext);
+    this.updateConversationCallable =
+        callableFactory.createUnaryCallable(
+            updateConversationTransportSettings,
+            settings.updateConversationSettings(),
+            clientContext);
     this.getConversationCallable =
         callableFactory.createUnaryCallable(
             getConversationTransportSettings, settings.getConversationSettings(), clientContext);
@@ -624,6 +685,7 @@ public class HttpJsonDataChatServiceStub extends DataChatServiceStub {
     methodDescriptors.add(chatMethodDescriptor);
     methodDescriptors.add(createConversationMethodDescriptor);
     methodDescriptors.add(deleteConversationMethodDescriptor);
+    methodDescriptors.add(updateConversationMethodDescriptor);
     methodDescriptors.add(getConversationMethodDescriptor);
     methodDescriptors.add(listConversationsMethodDescriptor);
     methodDescriptors.add(listMessagesMethodDescriptor);
@@ -646,6 +708,11 @@ public class HttpJsonDataChatServiceStub extends DataChatServiceStub {
   @Override
   public UnaryCallable<DeleteConversationRequest, Empty> deleteConversationCallable() {
     return deleteConversationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateConversationRequest, Conversation> updateConversationCallable() {
+    return updateConversationCallable;
   }
 
   @Override

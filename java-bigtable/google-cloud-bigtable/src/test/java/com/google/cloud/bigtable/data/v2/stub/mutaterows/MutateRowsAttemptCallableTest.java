@@ -161,39 +161,6 @@ public class MutateRowsAttemptCallableTest {
   }
 
   @Test
-  public void partialOmissionMultiEntryTest() throws Exception {
-    MutateRowsRequest request =
-        MutateRowsRequest.newBuilder()
-            .addEntries(Entry.newBuilder().setRowKey(ByteString.copyFromUtf8("0-ok")))
-            .addEntries(Entry.newBuilder().setRowKey(ByteString.copyFromUtf8("1-omitted")))
-            .addEntries(Entry.newBuilder().setRowKey(ByteString.copyFromUtf8("2-ok")))
-            .build();
-    innerCallable.response.add(
-        MutateRowsResponse.newBuilder()
-            .addEntries(
-                MutateRowsResponse.Entry.newBuilder().setIndex(0).setStatus(OK_STATUS_PROTO))
-            .addEntries(
-                MutateRowsResponse.Entry.newBuilder().setIndex(2).setStatus(OK_STATUS_PROTO))
-            .build());
-
-    MutateRowsAttemptCallable attemptCallable =
-        new MutateRowsAttemptCallable(
-            innerCallable, request, callContext, retryCodes, mockRetryAlgorithm);
-    attemptCallable.setExternalFuture(parentFuture);
-    attemptCallable.call();
-
-    MutateRowsAttemptResult result = parentFuture.attemptFuture.get();
-    assertThat(result.getFailedMutations()).hasSize(1);
-    FailedMutation failedMutation = result.getFailedMutations().get(0);
-    assertThat(failedMutation.getIndex()).isEqualTo(1);
-    assertThat(failedMutation.getError().getStatusCode().getCode()).isEqualTo(Code.INTERNAL);
-    assertThat(failedMutation.getError().isRetryable()).isFalse();
-    assertThat(failedMutation.getError())
-        .hasMessageThat()
-        .contains("Missing entry response for entry 1");
-  }
-
-  @Test
   public void mixedTest() throws Exception {
     // Setup the request & response
     MutateRowsRequest request =
@@ -241,6 +208,39 @@ public class MutateRowsAttemptCallableTest {
     assertThat(failedMutations.get(1).getError().getStatusCode().getCode())
         .isEqualTo(Code.INVALID_ARGUMENT);
     assertThat(failedMutations.get(1).getError().isRetryable()).isFalse();
+  }
+
+  @Test
+  public void partialOmissionMultiEntryTest() throws Exception {
+    MutateRowsRequest request =
+        MutateRowsRequest.newBuilder()
+            .addEntries(Entry.newBuilder().setRowKey(ByteString.copyFromUtf8("0-ok")))
+            .addEntries(Entry.newBuilder().setRowKey(ByteString.copyFromUtf8("1-omitted")))
+            .addEntries(Entry.newBuilder().setRowKey(ByteString.copyFromUtf8("2-ok")))
+            .build();
+    innerCallable.response.add(
+        MutateRowsResponse.newBuilder()
+            .addEntries(
+                MutateRowsResponse.Entry.newBuilder().setIndex(0).setStatus(OK_STATUS_PROTO))
+            .addEntries(
+                MutateRowsResponse.Entry.newBuilder().setIndex(2).setStatus(OK_STATUS_PROTO))
+            .build());
+
+    MutateRowsAttemptCallable attemptCallable =
+        new MutateRowsAttemptCallable(
+            innerCallable, request, callContext, retryCodes, mockRetryAlgorithm);
+    attemptCallable.setExternalFuture(parentFuture);
+    attemptCallable.call();
+
+    MutateRowsAttemptResult result = parentFuture.attemptFuture.get();
+    assertThat(result.getFailedMutations()).hasSize(1);
+    FailedMutation failedMutation = result.getFailedMutations().get(0);
+    assertThat(failedMutation.getIndex()).isEqualTo(1);
+    assertThat(failedMutation.getError().getStatusCode().getCode()).isEqualTo(Code.INTERNAL);
+    assertThat(failedMutation.getError().isRetryable()).isFalse();
+    assertThat(failedMutation.getError())
+        .hasMessageThat()
+        .contains("Missing entry response for entry 1");
   }
 
   @Test

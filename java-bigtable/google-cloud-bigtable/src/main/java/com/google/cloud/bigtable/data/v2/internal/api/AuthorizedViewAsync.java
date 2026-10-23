@@ -18,8 +18,12 @@ package com.google.cloud.bigtable.data.v2.internal.api;
 import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.OpenAuthorizedViewRequest;
 import com.google.bigtable.v2.OpenAuthorizedViewRequest.Permission;
+import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
+import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
+import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
+import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
@@ -74,6 +78,8 @@ public class AuthorizedViewAsync implements AutoCloseable, Closeable {
             VRpcDescriptor.AUTHORIZED_VIEW_SESSION,
             VRpcDescriptor.READ_ROW_AUTH_VIEW,
             VRpcDescriptor.MUTATE_ROW_AUTH_VIEW,
+            VRpcDescriptor.CHECK_AND_MUTATE_ROW_AUTH_VIEW,
+            VRpcDescriptor.READ_MODIFY_WRITE_ROW_AUTH_VIEW,
             featureFlags,
             clientInfo,
             configManager,
@@ -107,6 +113,20 @@ public class AuthorizedViewAsync implements AutoCloseable, Closeable {
       SessionMutateRowRequest req, Deadline deadline) {
     UnaryResponseFuture<SessionMutateRowResponse> f = new UnaryResponseFuture<>();
     base.mutateRow(req, f, deadline);
+    return f;
+  }
+
+  public CompletableFuture<SessionCheckAndMutateRowResponse> checkAndMutateRow(
+      SessionCheckAndMutateRowRequest req, Deadline deadline) {
+    UnaryResponseFuture<SessionCheckAndMutateRowResponse> f = new UnaryResponseFuture<>();
+    base.checkAndMutateRow(req, f, deadline);
+    return f;
+  }
+
+  public CompletableFuture<SessionReadModifyWriteRowResponse> readModifyWriteRow(
+      SessionReadModifyWriteRowRequest req, Deadline deadline) {
+    UnaryResponseFuture<SessionReadModifyWriteRowResponse> f = new UnaryResponseFuture<>();
+    base.readModifyWriteRow(req, f, deadline);
     return f;
   }
 

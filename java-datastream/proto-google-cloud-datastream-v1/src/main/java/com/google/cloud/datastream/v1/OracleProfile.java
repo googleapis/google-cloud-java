@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * Oracle database profile.
+ * Profile for connecting to an Oracle source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.OracleProfile}
@@ -866,7 +866,7 @@ public final class OracleProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Oracle database profile.
+   * Profile for connecting to an Oracle source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.OracleProfile}

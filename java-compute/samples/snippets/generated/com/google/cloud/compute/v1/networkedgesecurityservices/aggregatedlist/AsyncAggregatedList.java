@@ -45,7 +45,6 @@ public class AsyncAggregatedList {
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
-              .setReturnPartialSuccess(true)
               .setServiceProjectNumber(-1293855239)
               .build();
       ApiFuture<Map.Entry<String, NetworkEdgeSecurityServicesScopedList>> future =

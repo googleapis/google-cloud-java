@@ -73,6 +73,22 @@ public final class IngestionServiceProto extends com.google.protobuf.GeneratedFi
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_datamanager_v1_IngestEventsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_IngestUsersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_IngestUsersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_IngestUsersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_IngestUsersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_RemoveUsersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_RemoveUsersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_datamanager_v1_RemoveUsersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_datamanager_v1_RemoveUsersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_datamanager_v1_IngestAdEventsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_datamanager_v1_IngestAdEventsRequest_fieldAccessorTable;
@@ -109,97 +125,125 @@ public final class IngestionServiceProto extends com.google.protobuf.GeneratedFi
           + "/v1/processing_errors.proto\032>google/ads/"
           + "datamanager/v1/request_status_per_destin"
           + "ation.proto\0320google/ads/datamanager/v1/t"
-          + "erms_of_service.proto\032\034google/api/annota"
-          + "tions.proto\032\027google/api/client.proto\032\037go"
-          + "ogle/api/field_behavior.proto\032\037google/pr"
-          + "otobuf/timestamp.proto\"\320\003\n\034IngestAudienc"
-          + "eMembersRequest\022A\n\014destinations\030\001 \003(\0132&."
-          + "google.ads.datamanager.v1.DestinationB\003\340"
-          + "A\002\022H\n\020audience_members\030\002 \003(\0132).google.ad"
-          + "s.datamanager.v1.AudienceMemberB\003\340A\002\0228\n\007"
-          + "consent\030\003 \001(\0132\".google.ads.datamanager.v"
-          + "1.ConsentB\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340"
-          + "A\001\022:\n\010encoding\030\005 \001(\0162#.google.ads.datama"
-          + "nager.v1.EncodingB\003\340A\001\022G\n\017encryption_inf"
-          + "o\030\006 \001(\0132).google.ads.datamanager.v1.Encr"
-          + "yptionInfoB\003\340A\001\022H\n\020terms_of_service\030\007 \001("
-          + "\0132).google.ads.datamanager.v1.TermsOfSer"
-          + "viceB\003\340A\001\"t\n\035IngestAudienceMembersRespon"
-          + "se\022\022\n\nrequest_id\030\001 \001(\t\022?\n\016field_warnings"
-          + "\030\002 \003(\0132\'.google.ads.datamanager.v1.Field"
-          + "Warning\"\314\002\n\034RemoveAudienceMembersRequest"
-          + "\022A\n\014destinations\030\001 \003(\0132&.google.ads.data"
-          + "manager.v1.DestinationB\003\340A\002\022H\n\020audience_"
-          + "members\030\002 \003(\0132).google.ads.datamanager.v"
-          + "1.AudienceMemberB\003\340A\002\022\032\n\rvalidate_only\030\003"
-          + " \001(\010B\003\340A\001\022:\n\010encoding\030\004 \001(\0162#.google.ads"
-          + ".datamanager.v1.EncodingB\003\340A\001\022G\n\017encrypt"
-          + "ion_info\030\005 \001(\0132).google.ads.datamanager."
-          + "v1.EncryptionInfoB\003\340A\001\"3\n\035RemoveAudience"
-          + "MembersResponse\022\022\n\nrequest_id\030\001 \001(\t\"\274\001\n\037"
-          + "RemoveAllAudienceMembersRequest\022A\n\014desti"
-          + "nations\030\001 \003(\0132&.google.ads.datamanager.v"
-          + "1.DestinationB\003\340A\002\022:\n\021remove_as_of_time\030"
-          + "\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\001\022\032"
-          + "\n\rvalidate_only\030\003 \001(\010B\003\340A\001\"6\n RemoveAllA"
-          + "udienceMembersResponse\022\022\n\nrequest_id\030\001 \001"
-          + "(\t\"\352\002\n\023IngestEventsRequest\022A\n\014destinatio"
-          + "ns\030\001 \003(\0132&.google.ads.datamanager.v1.Des"
-          + "tinationB\003\340A\002\0225\n\006events\030\002 \003(\0132 .google.a"
-          + "ds.datamanager.v1.EventB\003\340A\002\0228\n\007consent\030"
-          + "\003 \001(\0132\".google.ads.datamanager.v1.Consen"
-          + "tB\003\340A\001\022\032\n\rvalidate_only\030\004 \001(\010B\003\340A\001\022:\n\010en"
-          + "coding\030\005 \001(\0162#.google.ads.datamanager.v1"
-          + ".EncodingB\003\340A\001\022G\n\017encryption_info\030\006 \001(\0132"
-          + ").google.ads.datamanager.v1.EncryptionIn"
-          + "foB\003\340A\001\"k\n\024IngestEventsResponse\022\022\n\nreque"
-          + "st_id\030\001 \001(\t\022?\n\016field_warnings\030\002 \003(\0132\'.go"
-          + "ogle.ads.datamanager.v1.FieldWarning\"\272\001\n"
-          + "\025IngestAdEventsRequest\022:\n\tad_events\030\001 \003("
-          + "\0132\".google.ads.datamanager.v1.AdEventB\003\340"
-          + "A\002\022G\n\017encryption_info\030\002 \001(\0132).google.ads"
-          + ".datamanager.v1.EncryptionInfoB\003\340A\001\022\034\n\rv"
-          + "alidate_only\030\003 \001(\010B\005\030\001\340A\001\"\030\n\026IngestAdEve"
-          + "ntsResponse\"7\n\034RetrieveRequestStatusRequ"
-          + "est\022\027\n\nrequest_id\030\001 \001(\tB\003\340A\002\"\177\n\035Retrieve"
-          + "RequestStatusResponse\022^\n\036request_status_"
-          + "per_destination\030\001 \003(\01326.google.ads.datam"
-          + "anager.v1.RequestStatusPerDestination*9\n"
-          + "\010Encoding\022\030\n\024ENCODING_UNSPECIFIED\020\000\022\007\n\003H"
-          + "EX\020\001\022\n\n\006BASE64\020\0022\340\010\n\020IngestionService\022\261\001"
-          + "\n\025IngestAudienceMembers\0227.google.ads.dat"
-          + "amanager.v1.IngestAudienceMembersRequest"
-          + "\0328.google.ads.datamanager.v1.IngestAudie"
-          + "nceMembersResponse\"%\202\323\344\223\002\037\"\032/v1/audience"
-          + "Members:ingest:\001*\022\261\001\n\025RemoveAudienceMemb"
-          + "ers\0227.google.ads.datamanager.v1.RemoveAu"
-          + "dienceMembersRequest\0328.google.ads.datama"
-          + "nager.v1.RemoveAudienceMembersResponse\"%"
-          + "\202\323\344\223\002\037\"\032/v1/audienceMembers:remove:\001*\022\275\001"
-          + "\n\030RemoveAllAudienceMembers\022:.google.ads."
-          + "datamanager.v1.RemoveAllAudienceMembersR"
-          + "equest\032;.google.ads.datamanager.v1.Remov"
-          + "eAllAudienceMembersResponse\"(\202\323\344\223\002\"\"\035/v1"
-          + "/audienceMembers:removeAll:\001*\022\215\001\n\014Ingest"
-          + "Events\022..google.ads.datamanager.v1.Inges"
-          + "tEventsRequest\032/.google.ads.datamanager."
-          + "v1.IngestEventsResponse\"\034\202\323\344\223\002\026\"\021/v1/eve"
-          + "nts:ingest:\001*\022\225\001\n\016IngestAdEvents\0220.googl"
-          + "e.ads.datamanager.v1.IngestAdEventsReque"
-          + "st\0321.google.ads.datamanager.v1.IngestAdE"
-          + "ventsResponse\"\036\202\323\344\223\002\030\"\023/v1/adEvents:inge"
-          + "st:\001*\022\256\001\n\025RetrieveRequestStatus\0227.google"
-          + ".ads.datamanager.v1.RetrieveRequestStatu"
-          + "sRequest\0328.google.ads.datamanager.v1.Ret"
-          + "rieveRequestStatusResponse\"\"\202\323\344\223\002\034\022\032/v1/"
-          + "requestStatus:retrieve\032K\312A\032datamanager.g"
-          + "oogleapis.com\322A+https://www.googleapis.c"
-          + "om/auth/datamanagerB\322\001\n\035com.google.ads.d"
-          + "atamanager.v1B\025IngestionServiceProtoP\001ZA"
-          + "cloud.google.com/go/datamanager/apiv1/da"
-          + "tamanagerpb;datamanagerpb\252\002\031Google.Ads.D"
-          + "ataManager.V1\312\002\031Google\\Ads\\DataManager\\V"
-          + "1\352\002\034Google::Ads::DataManager::V1b\006proto3"
+          + "erms_of_service.proto\032$google/ads/datama"
+          + "nager/v1/user.proto\032)google/ads/datamana"
+          + "ger/v1/user_data.proto\032\034google/api/annot"
+          + "ations.proto\032\027google/api/client.proto\032\037g"
+          + "oogle/api/field_behavior.proto\032\037google/p"
+          + "rotobuf/timestamp.proto\"\327\003\n\034IngestAudien"
+          + "ceMembersRequest\022B\n\014destinations\030\001 \003(\0132&"
+          + ".google.ads.datamanager.v1.DestinationB\004"
+          + "\342A\001\002\022I\n\020audience_members\030\002 \003(\0132).google."
+          + "ads.datamanager.v1.AudienceMemberB\004\342A\001\002\022"
+          + "9\n\007consent\030\003 \001(\0132\".google.ads.datamanage"
+          + "r.v1.ConsentB\004\342A\001\001\022\033\n\rvalidate_only\030\004 \001("
+          + "\010B\004\342A\001\001\022;\n\010encoding\030\005 \001(\0162#.google.ads.d"
+          + "atamanager.v1.EncodingB\004\342A\001\001\022H\n\017encrypti"
+          + "on_info\030\006 \001(\0132).google.ads.datamanager.v"
+          + "1.EncryptionInfoB\004\342A\001\001\022I\n\020terms_of_servi"
+          + "ce\030\007 \001(\0132).google.ads.datamanager.v1.Ter"
+          + "msOfServiceB\004\342A\001\001\"t\n\035IngestAudienceMembe"
+          + "rsResponse\022\022\n\nrequest_id\030\001 \001(\t\022?\n\016field_"
+          + "warnings\030\002 \003(\0132\'.google.ads.datamanager."
+          + "v1.FieldWarning\"\321\002\n\034RemoveAudienceMember"
+          + "sRequest\022B\n\014destinations\030\001 \003(\0132&.google."
+          + "ads.datamanager.v1.DestinationB\004\342A\001\002\022I\n\020"
+          + "audience_members\030\002 \003(\0132).google.ads.data"
+          + "manager.v1.AudienceMemberB\004\342A\001\002\022\033\n\rvalid"
+          + "ate_only\030\003 \001(\010B\004\342A\001\001\022;\n\010encoding\030\004 \001(\0162#"
+          + ".google.ads.datamanager.v1.EncodingB\004\342A\001"
+          + "\001\022H\n\017encryption_info\030\005 \001(\0132).google.ads."
+          + "datamanager.v1.EncryptionInfoB\004\342A\001\001\"3\n\035R"
+          + "emoveAudienceMembersResponse\022\022\n\nrequest_"
+          + "id\030\001 \001(\t\"\277\001\n\037RemoveAllAudienceMembersReq"
+          + "uest\022B\n\014destinations\030\001 \003(\0132&.google.ads."
+          + "datamanager.v1.DestinationB\004\342A\001\002\022;\n\021remo"
+          + "ve_as_of_time\030\002 \001(\0132\032.google.protobuf.Ti"
+          + "mestampB\004\342A\001\001\022\033\n\rvalidate_only\030\003 \001(\010B\004\342A"
+          + "\001\001\"6\n RemoveAllAudienceMembersResponse\022\022"
+          + "\n\nrequest_id\030\001 \001(\t\"\360\002\n\023IngestEventsReque"
+          + "st\022B\n\014destinations\030\001 \003(\0132&.google.ads.da"
+          + "tamanager.v1.DestinationB\004\342A\001\002\0226\n\006events"
+          + "\030\002 \003(\0132 .google.ads.datamanager.v1.Event"
+          + "B\004\342A\001\002\0229\n\007consent\030\003 \001(\0132\".google.ads.dat"
+          + "amanager.v1.ConsentB\004\342A\001\001\022\033\n\rvalidate_on"
+          + "ly\030\004 \001(\010B\004\342A\001\001\022;\n\010encoding\030\005 \001(\0162#.googl"
+          + "e.ads.datamanager.v1.EncodingB\004\342A\001\001\022H\n\017e"
+          + "ncryption_info\030\006 \001(\0132).google.ads.datama"
+          + "nager.v1.EncryptionInfoB\004\342A\001\001\"k\n\024IngestE"
+          + "ventsResponse\022\022\n\nrequest_id\030\001 \001(\t\022?\n\016fie"
+          + "ld_warnings\030\002 \003(\0132\'.google.ads.datamanag"
+          + "er.v1.FieldWarning\"\262\002\n\022IngestUsersReques"
+          + "t\022B\n\014destinations\030\001 \003(\0132&.google.ads.dat"
+          + "amanager.v1.DestinationB\004\342A\001\002\0224\n\005users\030\002"
+          + " \003(\0132\037.google.ads.datamanager.v1.UserB\004\342"
+          + "A\001\002\022H\n\017encryption_info\030\003 \001(\0132).google.ad"
+          + "s.datamanager.v1.EncryptionInfoB\004\342A\001\001\022\033\n"
+          + "\rvalidate_only\030\004 \001(\010B\004\342A\001\001\022;\n\010encoding\030\005"
+          + " \001(\0162#.google.ads.datamanager.v1.Encodin"
+          + "gB\004\342A\001\002\")\n\023IngestUsersResponse\022\022\n\nreques"
+          + "t_id\030\001 \001(\t\"\272\002\n\022RemoveUsersRequest\022B\n\014des"
+          + "tinations\030\001 \003(\0132&.google.ads.datamanager"
+          + ".v1.DestinationB\004\342A\001\002\022<\n\tuser_data\030\002 \003(\013"
+          + "2#.google.ads.datamanager.v1.UserDataB\004\342"
+          + "A\001\002\022H\n\017encryption_info\030\003 \001(\0132).google.ad"
+          + "s.datamanager.v1.EncryptionInfoB\004\342A\001\001\022\033\n"
+          + "\rvalidate_only\030\004 \001(\010B\004\342A\001\001\022;\n\010encoding\030\005"
+          + " \001(\0162#.google.ads.datamanager.v1.Encodin"
+          + "gB\004\342A\001\002\")\n\023RemoveUsersResponse\022\022\n\nreques"
+          + "t_id\030\001 \001(\t\"\275\001\n\025IngestAdEventsRequest\022;\n\t"
+          + "ad_events\030\001 \003(\0132\".google.ads.datamanager"
+          + ".v1.AdEventB\004\342A\001\002\022H\n\017encryption_info\030\002 \001"
+          + "(\0132).google.ads.datamanager.v1.Encryptio"
+          + "nInfoB\004\342A\001\001\022\035\n\rvalidate_only\030\003 \001(\010B\006\030\001\342A"
+          + "\001\001\"\030\n\026IngestAdEventsResponse\"8\n\034Retrieve"
+          + "RequestStatusRequest\022\030\n\nrequest_id\030\001 \001(\t"
+          + "B\004\342A\001\002\"\177\n\035RetrieveRequestStatusResponse\022"
+          + "^\n\036request_status_per_destination\030\001 \003(\0132"
+          + "6.google.ads.datamanager.v1.RequestStatu"
+          + "sPerDestination*9\n\010Encoding\022\030\n\024ENCODING_"
+          + "UNSPECIFIED\020\000\022\007\n\003HEX\020\001\022\n\n\006BASE64\020\0022\370\n\n\020I"
+          + "ngestionService\022\261\001\n\025IngestAudienceMember"
+          + "s\0227.google.ads.datamanager.v1.IngestAudi"
+          + "enceMembersRequest\0328.google.ads.datamana"
+          + "ger.v1.IngestAudienceMembersResponse\"%\202\323"
+          + "\344\223\002\037\"\032/v1/audienceMembers:ingest:\001*\022\261\001\n\025"
+          + "RemoveAudienceMembers\0227.google.ads.datam"
+          + "anager.v1.RemoveAudienceMembersRequest\0328"
+          + ".google.ads.datamanager.v1.RemoveAudienc"
+          + "eMembersResponse\"%\202\323\344\223\002\037\"\032/v1/audienceMe"
+          + "mbers:remove:\001*\022\275\001\n\030RemoveAllAudienceMem"
+          + "bers\022:.google.ads.datamanager.v1.RemoveA"
+          + "llAudienceMembersRequest\032;.google.ads.da"
+          + "tamanager.v1.RemoveAllAudienceMembersRes"
+          + "ponse\"(\202\323\344\223\002\"\"\035/v1/audienceMembers:remov"
+          + "eAll:\001*\022\215\001\n\014IngestEvents\022..google.ads.da"
+          + "tamanager.v1.IngestEventsRequest\032/.googl"
+          + "e.ads.datamanager.v1.IngestEventsRespons"
+          + "e\"\034\202\323\344\223\002\026\"\021/v1/events:ingest:\001*\022\211\001\n\013Inge"
+          + "stUsers\022-.google.ads.datamanager.v1.Inge"
+          + "stUsersRequest\032..google.ads.datamanager."
+          + "v1.IngestUsersResponse\"\033\202\323\344\223\002\025\"\020/v1/user"
+          + "s:ingest:\001*\022\211\001\n\013RemoveUsers\022-.google.ads"
+          + ".datamanager.v1.RemoveUsersRequest\032..goo"
+          + "gle.ads.datamanager.v1.RemoveUsersRespon"
+          + "se\"\033\202\323\344\223\002\025\"\020/v1/users:remove:\001*\022\225\001\n\016Inge"
+          + "stAdEvents\0220.google.ads.datamanager.v1.I"
+          + "ngestAdEventsRequest\0321.google.ads.datama"
+          + "nager.v1.IngestAdEventsResponse\"\036\202\323\344\223\002\030\""
+          + "\023/v1/adEvents:ingest:\001*\022\256\001\n\025RetrieveRequ"
+          + "estStatus\0227.google.ads.datamanager.v1.Re"
+          + "trieveRequestStatusRequest\0328.google.ads."
+          + "datamanager.v1.RetrieveRequestStatusResp"
+          + "onse\"\"\202\323\344\223\002\034\022\032/v1/requestStatus:retrieve"
+          + "\032K\312A\032datamanager.googleapis.com\322A+https:"
+          + "//www.googleapis.com/auth/datamanagerB\322\001"
+          + "\n\035com.google.ads.datamanager.v1B\025Ingesti"
+          + "onServiceProtoP\001ZAcloud.google.com/go/da"
+          + "tamanager/apiv1/datamanagerpb;datamanage"
+          + "rpb\252\002\031Google.Ads.DataManager.V1\312\002\031Google"
+          + "\\Ads\\DataManager\\V1\352\002\034Google::Ads::DataM"
+          + "anager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -214,6 +258,8 @@ public final class IngestionServiceProto extends com.google.protobuf.GeneratedFi
               com.google.ads.datamanager.v1.ProcessingErrorsProto.getDescriptor(),
               com.google.ads.datamanager.v1.RequestStatusPerDestinationProto.getDescriptor(),
               com.google.ads.datamanager.v1.TermsOfServiceProto.getDescriptor(),
+              com.google.ads.datamanager.v1.UserProto.getDescriptor(),
+              com.google.ads.datamanager.v1.UserDataProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
@@ -289,8 +335,40 @@ public final class IngestionServiceProto extends com.google.protobuf.GeneratedFi
             new java.lang.String[] {
               "RequestId", "FieldWarnings",
             });
-    internal_static_google_ads_datamanager_v1_IngestAdEventsRequest_descriptor =
+    internal_static_google_ads_datamanager_v1_IngestUsersRequest_descriptor =
         getDescriptor().getMessageType(8);
+    internal_static_google_ads_datamanager_v1_IngestUsersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_IngestUsersRequest_descriptor,
+            new java.lang.String[] {
+              "Destinations", "Users", "EncryptionInfo", "ValidateOnly", "Encoding",
+            });
+    internal_static_google_ads_datamanager_v1_IngestUsersResponse_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_ads_datamanager_v1_IngestUsersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_IngestUsersResponse_descriptor,
+            new java.lang.String[] {
+              "RequestId",
+            });
+    internal_static_google_ads_datamanager_v1_RemoveUsersRequest_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_ads_datamanager_v1_RemoveUsersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_RemoveUsersRequest_descriptor,
+            new java.lang.String[] {
+              "Destinations", "UserData", "EncryptionInfo", "ValidateOnly", "Encoding",
+            });
+    internal_static_google_ads_datamanager_v1_RemoveUsersResponse_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_ads_datamanager_v1_RemoveUsersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_datamanager_v1_RemoveUsersResponse_descriptor,
+            new java.lang.String[] {
+              "RequestId",
+            });
+    internal_static_google_ads_datamanager_v1_IngestAdEventsRequest_descriptor =
+        getDescriptor().getMessageType(12);
     internal_static_google_ads_datamanager_v1_IngestAdEventsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_IngestAdEventsRequest_descriptor,
@@ -298,13 +376,13 @@ public final class IngestionServiceProto extends com.google.protobuf.GeneratedFi
               "AdEvents", "EncryptionInfo", "ValidateOnly",
             });
     internal_static_google_ads_datamanager_v1_IngestAdEventsResponse_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(13);
     internal_static_google_ads_datamanager_v1_IngestAdEventsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_IngestAdEventsResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_ads_datamanager_v1_RetrieveRequestStatusRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(14);
     internal_static_google_ads_datamanager_v1_RetrieveRequestStatusRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RetrieveRequestStatusRequest_descriptor,
@@ -312,7 +390,7 @@ public final class IngestionServiceProto extends com.google.protobuf.GeneratedFi
               "RequestId",
             });
     internal_static_google_ads_datamanager_v1_RetrieveRequestStatusResponse_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(15);
     internal_static_google_ads_datamanager_v1_RetrieveRequestStatusResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_datamanager_v1_RetrieveRequestStatusResponse_descriptor,
@@ -329,6 +407,8 @@ public final class IngestionServiceProto extends com.google.protobuf.GeneratedFi
     com.google.ads.datamanager.v1.ProcessingErrorsProto.getDescriptor();
     com.google.ads.datamanager.v1.RequestStatusPerDestinationProto.getDescriptor();
     com.google.ads.datamanager.v1.TermsOfServiceProto.getDescriptor();
+    com.google.ads.datamanager.v1.UserProto.getDescriptor();
+    com.google.ads.datamanager.v1.UserDataProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();

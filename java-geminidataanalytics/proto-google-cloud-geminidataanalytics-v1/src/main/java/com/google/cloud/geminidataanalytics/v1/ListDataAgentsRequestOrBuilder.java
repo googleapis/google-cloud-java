@@ -173,4 +173,35 @@ public interface ListDataAgentsRequestOrBuilder
    * @return The showDeleted.
    */
   boolean getShowDeleted();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter for the creator of the agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter creator_filter = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for creatorFilter.
+   */
+  int getCreatorFilterValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filter for the creator of the agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter creator_filter = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The creatorFilter.
+   */
+  com.google.cloud.geminidataanalytics.v1.ListAccessibleDataAgentsRequest.CreatorFilter
+      getCreatorFilter();
 }

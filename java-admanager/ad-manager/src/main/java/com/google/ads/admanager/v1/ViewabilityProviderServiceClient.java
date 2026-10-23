@@ -421,7 +421,7 @@ public class ViewabilityProviderServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of
-   *     [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s. Format:
+   *     [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider]. Format:
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -457,7 +457,7 @@ public class ViewabilityProviderServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of
-   *     [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s. Format:
+   *     [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider]. Format:
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -749,7 +749,7 @@ public class ViewabilityProviderServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where
-   *     [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s will be created.
+   *     [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider] will be created.
    *     Format: `networks/{network_code}` The parent field in the CreateViewabilityProviderRequest
    *     must match this field.
    * @param requests Required. The
@@ -789,7 +789,7 @@ public class ViewabilityProviderServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where
-   *     [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s will be created.
+   *     [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider] will be created.
    *     Format: `networks/{network_code}` The parent field in the CreateViewabilityProviderRequest
    *     must match this field.
    * @param requests Required. The
@@ -998,7 +998,7 @@ public class ViewabilityProviderServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where
-   *     [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s will be updated.
+   *     [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider] will be updated.
    *     Format: `networks/{network_code}` The parent field in the UpdateViewabilityProviderRequest
    *     must match this field.
    * @param requests Required. The
@@ -1038,7 +1038,7 @@ public class ViewabilityProviderServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource where
-   *     [ViewabilityProvider][google.ads.admanager.v1.ViewabilityProvider]s will be updated.
+   *     [ViewabilityProviders][google.ads.admanager.v1.ViewabilityProvider] will be updated.
    *     Format: `networks/{network_code}` The parent field in the UpdateViewabilityProviderRequest
    *     must match this field.
    * @param requests Required. The

@@ -16,8 +16,10 @@
 
 package com.google.cloud.lustre.v1;
 
+import static com.google.cloud.lustre.v1.LustreClient.ListDirectoryPoliciesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListInstancesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListLocationsPagedResponse;
+import static com.google.cloud.lustre.v1.LustreClient.ListMirrorsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -201,6 +203,17 @@ public class LustreClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setPerUnitStorageThroughput(-946502681)
             .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -255,6 +268,17 @@ public class LustreClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setPerUnitStorageThroughput(-946502681)
             .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -309,6 +333,17 @@ public class LustreClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setPerUnitStorageThroughput(-946502681)
             .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -372,6 +407,17 @@ public class LustreClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setPerUnitStorageThroughput(-946502681)
             .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -435,6 +481,17 @@ public class LustreClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setPerUnitStorageThroughput(-946502681)
             .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -457,6 +514,17 @@ public class LustreClientHttpJsonTest {
             .putAllLabels(new HashMap<String, String>())
             .setPerUnitStorageThroughput(-946502681)
             .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -499,6 +567,17 @@ public class LustreClientHttpJsonTest {
               .putAllLabels(new HashMap<String, String>())
               .setPerUnitStorageThroughput(-946502681)
               .setGkeSupportEnabled(true)
+              .setKmsKey("kmsKey-1127483058")
+              .setStateReason("stateReason1148834357")
+              .setPlacementPolicy("placementPolicy1565402231")
+              .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+              .setUid("uid115792")
+              .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+              .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+              .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+              .setAvailableVersion("availableVersion2060002767")
+              .setTargetVersion("targetVersion-1639412217")
+              .setEffectiveVersion("effectiveVersion1393275185")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -592,6 +671,154 @@ public class LustreClientHttpJsonTest {
     try {
       String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
       client.deleteInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void rescheduleMaintenanceTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setFilesystem("filesystem-1572513109")
+            .setCapacityGib(498394811)
+            .setNetwork("network1843485230")
+            .setMountPoint("mountPoint1280692471")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setPerUnitStorageThroughput(-946502681)
+            .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rescheduleMaintenanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    RescheduleMaintenanceRequest.Reschedule reschedule =
+        RescheduleMaintenanceRequest.Reschedule.newBuilder().build();
+
+    Instance actualResponse = client.rescheduleMaintenanceAsync(name, reschedule).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void rescheduleMaintenanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      RescheduleMaintenanceRequest.Reschedule reschedule =
+          RescheduleMaintenanceRequest.Reschedule.newBuilder().build();
+      client.rescheduleMaintenanceAsync(name, reschedule).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void rescheduleMaintenanceTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setFilesystem("filesystem-1572513109")
+            .setCapacityGib(498394811)
+            .setNetwork("network1843485230")
+            .setMountPoint("mountPoint1280692471")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setPerUnitStorageThroughput(-946502681)
+            .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rescheduleMaintenanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
+    RescheduleMaintenanceRequest.Reschedule reschedule =
+        RescheduleMaintenanceRequest.Reschedule.newBuilder().build();
+
+    Instance actualResponse = client.rescheduleMaintenanceAsync(name, reschedule).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void rescheduleMaintenanceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
+      RescheduleMaintenanceRequest.Reschedule reschedule =
+          RescheduleMaintenanceRequest.Reschedule.newBuilder().build();
+      client.rescheduleMaintenanceAsync(name, reschedule).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -742,6 +969,926 @@ public class LustreClientHttpJsonTest {
       client.exportDataAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createMirrorTest() throws Exception {
+    Mirror expectedResponse =
+        Mirror.newBuilder()
+            .setName(MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]").toString())
+            .setGcsPath(GcsPath.newBuilder().build())
+            .setLustrePath(LustrePath.newBuilder().build())
+            .setDeletedFilesRetained(true)
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMirrorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    Mirror mirror = Mirror.newBuilder().build();
+    String mirrorId = "mirrorId-1236172486";
+
+    Mirror actualResponse = client.createMirrorAsync(parent, mirror, mirrorId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createMirrorExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      Mirror mirror = Mirror.newBuilder().build();
+      String mirrorId = "mirrorId-1236172486";
+      client.createMirrorAsync(parent, mirror, mirrorId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createMirrorTest2() throws Exception {
+    Mirror expectedResponse =
+        Mirror.newBuilder()
+            .setName(MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]").toString())
+            .setGcsPath(GcsPath.newBuilder().build())
+            .setLustrePath(LustrePath.newBuilder().build())
+            .setDeletedFilesRetained(true)
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMirrorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5197/locations/location-5197/instances/instance-5197";
+    Mirror mirror = Mirror.newBuilder().build();
+    String mirrorId = "mirrorId-1236172486";
+
+    Mirror actualResponse = client.createMirrorAsync(parent, mirror, mirrorId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createMirrorExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5197/locations/location-5197/instances/instance-5197";
+      Mirror mirror = Mirror.newBuilder().build();
+      String mirrorId = "mirrorId-1236172486";
+      client.createMirrorAsync(parent, mirror, mirrorId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateMirrorTest() throws Exception {
+    Mirror expectedResponse =
+        Mirror.newBuilder()
+            .setName(MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]").toString())
+            .setGcsPath(GcsPath.newBuilder().build())
+            .setLustrePath(LustrePath.newBuilder().build())
+            .setDeletedFilesRetained(true)
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateMirrorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    Mirror mirror =
+        Mirror.newBuilder()
+            .setName(MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]").toString())
+            .setGcsPath(GcsPath.newBuilder().build())
+            .setLustrePath(LustrePath.newBuilder().build())
+            .setDeletedFilesRetained(true)
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Mirror actualResponse = client.updateMirrorAsync(mirror, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateMirrorExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Mirror mirror =
+          Mirror.newBuilder()
+              .setName(
+                  MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]").toString())
+              .setGcsPath(GcsPath.newBuilder().build())
+              .setLustrePath(LustrePath.newBuilder().build())
+              .setDeletedFilesRetained(true)
+              .setDescription("description-1724546052")
+              .putAllLabels(new HashMap<String, String>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setUid("uid115792")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMirrorAsync(mirror, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteMirrorTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteMirrorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    MirrorName name = MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]");
+
+    client.deleteMirrorAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteMirrorExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MirrorName name = MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]");
+      client.deleteMirrorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteMirrorTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteMirrorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-5876/locations/location-5876/instances/instance-5876/mirrors/mirror-5876";
+
+    client.deleteMirrorAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteMirrorExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5876/locations/location-5876/instances/instance-5876/mirrors/mirror-5876";
+      client.deleteMirrorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getMirrorTest() throws Exception {
+    Mirror expectedResponse =
+        Mirror.newBuilder()
+            .setName(MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]").toString())
+            .setGcsPath(GcsPath.newBuilder().build())
+            .setLustrePath(LustrePath.newBuilder().build())
+            .setDeletedFilesRetained(true)
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    MirrorName name = MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]");
+
+    Mirror actualResponse = client.getMirror(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getMirrorExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      MirrorName name = MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]");
+      client.getMirror(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMirrorTest2() throws Exception {
+    Mirror expectedResponse =
+        Mirror.newBuilder()
+            .setName(MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]").toString())
+            .setGcsPath(GcsPath.newBuilder().build())
+            .setLustrePath(LustrePath.newBuilder().build())
+            .setDeletedFilesRetained(true)
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-5876/locations/location-5876/instances/instance-5876/mirrors/mirror-5876";
+
+    Mirror actualResponse = client.getMirror(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getMirrorExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-5876/locations/location-5876/instances/instance-5876/mirrors/mirror-5876";
+      client.getMirror(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMirrorsTest() throws Exception {
+    Mirror responsesElement = Mirror.newBuilder().build();
+    ListMirrorsResponse expectedResponse =
+        ListMirrorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMirrors(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    ListMirrorsPagedResponse pagedListResponse = client.listMirrors(parent);
+
+    List<Mirror> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMirrorsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMirrorsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.listMirrors(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMirrorsTest2() throws Exception {
+    Mirror responsesElement = Mirror.newBuilder().build();
+    ListMirrorsResponse expectedResponse =
+        ListMirrorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMirrors(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5197/locations/location-5197/instances/instance-5197";
+
+    ListMirrorsPagedResponse pagedListResponse = client.listMirrors(parent);
+
+    List<Mirror> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMirrorsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listMirrorsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5197/locations/location-5197/instances/instance-5197";
+      client.listMirrors(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDirectoryPolicyTest() throws Exception {
+    DirectoryPolicy expectedResponse =
+        DirectoryPolicy.newBuilder()
+            .setName(
+                DirectoryPolicyName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]")
+                    .toString())
+            .setDirectoryPath("directoryPath596047922")
+            .setLustreProjectId(-532265949)
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDirectoryPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    DirectoryPolicy directoryPolicy = DirectoryPolicy.newBuilder().build();
+    String directoryPolicyId = "directoryPolicyId1899556730";
+
+    DirectoryPolicy actualResponse =
+        client.createDirectoryPolicyAsync(parent, directoryPolicy, directoryPolicyId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDirectoryPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      DirectoryPolicy directoryPolicy = DirectoryPolicy.newBuilder().build();
+      String directoryPolicyId = "directoryPolicyId1899556730";
+      client.createDirectoryPolicyAsync(parent, directoryPolicy, directoryPolicyId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createDirectoryPolicyTest2() throws Exception {
+    DirectoryPolicy expectedResponse =
+        DirectoryPolicy.newBuilder()
+            .setName(
+                DirectoryPolicyName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]")
+                    .toString())
+            .setDirectoryPath("directoryPath596047922")
+            .setLustreProjectId(-532265949)
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDirectoryPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5197/locations/location-5197/instances/instance-5197";
+    DirectoryPolicy directoryPolicy = DirectoryPolicy.newBuilder().build();
+    String directoryPolicyId = "directoryPolicyId1899556730";
+
+    DirectoryPolicy actualResponse =
+        client.createDirectoryPolicyAsync(parent, directoryPolicy, directoryPolicyId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createDirectoryPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5197/locations/location-5197/instances/instance-5197";
+      DirectoryPolicy directoryPolicy = DirectoryPolicy.newBuilder().build();
+      String directoryPolicyId = "directoryPolicyId1899556730";
+      client.createDirectoryPolicyAsync(parent, directoryPolicy, directoryPolicyId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteDirectoryPolicyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDirectoryPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DirectoryPolicyName name =
+        DirectoryPolicyName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]");
+
+    client.deleteDirectoryPolicyAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDirectoryPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DirectoryPolicyName name =
+          DirectoryPolicyName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]");
+      client.deleteDirectoryPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteDirectoryPolicyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDirectoryPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-8605/locations/location-8605/instances/instance-8605/directoryPolicies/directoryPolicie-8605";
+
+    client.deleteDirectoryPolicyAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteDirectoryPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8605/locations/location-8605/instances/instance-8605/directoryPolicies/directoryPolicie-8605";
+      client.deleteDirectoryPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getDirectoryPolicyTest() throws Exception {
+    DirectoryPolicy expectedResponse =
+        DirectoryPolicy.newBuilder()
+            .setName(
+                DirectoryPolicyName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]")
+                    .toString())
+            .setDirectoryPath("directoryPath596047922")
+            .setLustreProjectId(-532265949)
+            .setUid("uid115792")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DirectoryPolicyName name =
+        DirectoryPolicyName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]");
+
+    DirectoryPolicy actualResponse = client.getDirectoryPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDirectoryPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DirectoryPolicyName name =
+          DirectoryPolicyName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]");
+      client.getDirectoryPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDirectoryPolicyTest2() throws Exception {
+    DirectoryPolicy expectedResponse =
+        DirectoryPolicy.newBuilder()
+            .setName(
+                DirectoryPolicyName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]")
+                    .toString())
+            .setDirectoryPath("directoryPath596047922")
+            .setLustreProjectId(-532265949)
+            .setUid("uid115792")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-8605/locations/location-8605/instances/instance-8605/directoryPolicies/directoryPolicie-8605";
+
+    DirectoryPolicy actualResponse = client.getDirectoryPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getDirectoryPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-8605/locations/location-8605/instances/instance-8605/directoryPolicies/directoryPolicie-8605";
+      client.getDirectoryPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDirectoryPoliciesTest() throws Exception {
+    DirectoryPolicy responsesElement = DirectoryPolicy.newBuilder().build();
+    ListDirectoryPoliciesResponse expectedResponse =
+        ListDirectoryPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDirectoryPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    ListDirectoryPoliciesPagedResponse pagedListResponse = client.listDirectoryPolicies(parent);
+
+    List<DirectoryPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDirectoryPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDirectoryPoliciesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.listDirectoryPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDirectoryPoliciesTest2() throws Exception {
+    DirectoryPolicy responsesElement = DirectoryPolicy.newBuilder().build();
+    ListDirectoryPoliciesResponse expectedResponse =
+        ListDirectoryPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDirectoryPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5197/locations/location-5197/instances/instance-5197";
+
+    ListDirectoryPoliciesPagedResponse pagedListResponse = client.listDirectoryPolicies(parent);
+
+    List<DirectoryPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDirectoryPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDirectoryPoliciesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5197/locations/location-5197/instances/instance-5197";
+      client.listDirectoryPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

@@ -101,7 +101,7 @@ public interface CreativeSetOrBuilder
    *
    * <pre>
    * Required. Immutable. The master
-   * [Creative](google.ads.admanager.v1.Creative) to which the `CreativeSet` is
+   * [Creative][google.ads.admanager.v1.Creative] to which the `CreativeSet` is
    * associated.
    * </pre>
    *
@@ -118,7 +118,7 @@ public interface CreativeSetOrBuilder
    *
    * <pre>
    * Required. Immutable. The master
-   * [Creative](google.ads.admanager.v1.Creative) to which the `CreativeSet` is
+   * [Creative][google.ads.admanager.v1.Creative] to which the `CreativeSet` is
    * associated.
    * </pre>
    *
@@ -135,7 +135,7 @@ public interface CreativeSetOrBuilder
    *
    * <pre>
    * Required. Immutable. The master
-   * [Creative](google.ads.admanager.v1.Creative) to which the `CreativeSet` is
+   * [Creative][google.ads.admanager.v1.Creative] to which the `CreativeSet` is
    * associated.
    * </pre>
    *

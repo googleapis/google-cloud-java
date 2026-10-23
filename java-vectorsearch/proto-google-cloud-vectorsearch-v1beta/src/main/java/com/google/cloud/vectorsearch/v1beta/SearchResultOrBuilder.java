@@ -96,4 +96,54 @@ public interface SearchResultOrBuilder
    * @return The distance.
    */
   double getDistance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Quality signals for this result. Only populated when
+   * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+   * is `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the searchResultMetadata field is set.
+   */
+  boolean hasSearchResultMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Quality signals for this result. Only populated when
+   * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+   * is `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The searchResultMetadata.
+   */
+  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata getSearchResultMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Quality signals for this result. Only populated when
+   * [BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled][google.cloud.vectorsearch.v1beta.BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.search_signals_enabled]
+   * is `true`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadata search_result_metadata = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vectorsearch.v1beta.SearchResult.SearchResultMetadataOrBuilder
+      getSearchResultMetadataOrBuilder();
 }

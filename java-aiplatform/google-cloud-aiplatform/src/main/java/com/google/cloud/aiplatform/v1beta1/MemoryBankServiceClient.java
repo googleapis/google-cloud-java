@@ -64,7 +64,9 @@ import org.jspecify.annotations.Nullable;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
- *   MemoryName name = MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
+ *   MemoryName name =
+ *       MemoryName.ofProjectLocationReasoningEngineMemoryName(
+ *           "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
  *   Memory response = memoryBankServiceClient.getMemory(name);
  * }
  * }</pre>
@@ -591,7 +593,9 @@ public class MemoryBankServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
-   *   MemoryName name = MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
+   *   MemoryName name =
+   *       MemoryName.ofProjectLocationReasoningEngineMemoryName(
+   *           "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
    *   Memory response = memoryBankServiceClient.getMemory(name);
    * }
    * }</pre>
@@ -620,7 +624,9 @@ public class MemoryBankServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
    *   String name =
-   *       MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]").toString();
+   *       MemoryName.ofProjectLocationReasoningEngineMemoryName(
+   *               "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+   *           .toString();
    *   Memory response = memoryBankServiceClient.getMemory(name);
    * }
    * }</pre>
@@ -650,7 +656,8 @@ public class MemoryBankServiceClient implements BackgroundResource {
    *   GetMemoryRequest request =
    *       GetMemoryRequest.newBuilder()
    *           .setName(
-   *               MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+   *               MemoryName.ofProjectLocationReasoningEngineMemoryName(
+   *                       "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
    *                   .toString())
    *           .build();
    *   Memory response = memoryBankServiceClient.getMemory(request);
@@ -680,7 +687,8 @@ public class MemoryBankServiceClient implements BackgroundResource {
    *   GetMemoryRequest request =
    *       GetMemoryRequest.newBuilder()
    *           .setName(
-   *               MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+   *               MemoryName.ofProjectLocationReasoningEngineMemoryName(
+   *                       "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Memory> future = memoryBankServiceClient.getMemoryCallable().futureCall(request);
@@ -1002,7 +1010,9 @@ public class MemoryBankServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
-   *   MemoryName name = MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
+   *   MemoryName name =
+   *       MemoryName.ofProjectLocationReasoningEngineMemoryName(
+   *           "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
    *   memoryBankServiceClient.deleteMemoryAsync(name).get();
    * }
    * }</pre>
@@ -1032,7 +1042,9 @@ public class MemoryBankServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (MemoryBankServiceClient memoryBankServiceClient = MemoryBankServiceClient.create()) {
    *   String name =
-   *       MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]").toString();
+   *       MemoryName.ofProjectLocationReasoningEngineMemoryName(
+   *               "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+   *           .toString();
    *   memoryBankServiceClient.deleteMemoryAsync(name).get();
    * }
    * }</pre>
@@ -1063,7 +1075,8 @@ public class MemoryBankServiceClient implements BackgroundResource {
    *   DeleteMemoryRequest request =
    *       DeleteMemoryRequest.newBuilder()
    *           .setName(
-   *               MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+   *               MemoryName.ofProjectLocationReasoningEngineMemoryName(
+   *                       "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
    *                   .toString())
    *           .build();
    *   memoryBankServiceClient.deleteMemoryAsync(request).get();
@@ -1094,7 +1107,8 @@ public class MemoryBankServiceClient implements BackgroundResource {
    *   DeleteMemoryRequest request =
    *       DeleteMemoryRequest.newBuilder()
    *           .setName(
-   *               MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+   *               MemoryName.ofProjectLocationReasoningEngineMemoryName(
+   *                       "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
    *                   .toString())
    *           .build();
    *   OperationFuture<Empty, DeleteMemoryOperationMetadata> future =
@@ -1125,7 +1139,8 @@ public class MemoryBankServiceClient implements BackgroundResource {
    *   DeleteMemoryRequest request =
    *       DeleteMemoryRequest.newBuilder()
    *           .setName(
-   *               MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+   *               MemoryName.ofProjectLocationReasoningEngineMemoryName(
+   *                       "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
    *                   .toString())
    *           .build();
    *   ApiFuture<Operation> future =

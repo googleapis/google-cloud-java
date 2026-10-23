@@ -40,7 +40,7 @@ import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Provides methods for handling AdReviewCenterAd objects.
+ * Service Description: Provides methods for handling `AdReviewCenterAd` objects.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -54,10 +54,8 @@ import org.jspecify.annotations.Nullable;
  * try (AdReviewCenterAdServiceClient adReviewCenterAdServiceClient =
  *     AdReviewCenterAdServiceClient.create()) {
  *   WebPropertyName parent = WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]");
- *   for (AdReviewCenterAd element :
- *       adReviewCenterAdServiceClient.searchAdReviewCenterAds(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
+ *   FetchAdReviewCenterCustomLabelsResponse response =
+ *       adReviewCenterAdServiceClient.fetchAdReviewCenterCustomLabels(parent);
  * }
  * }</pre>
  *
@@ -129,6 +127,44 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> batchBlockAdReviewCenterAdsOperationCallable()
  *           <li><p> batchBlockAdReviewCenterAdsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchAdReviewCenterCustomLabels</td>
+ *      <td><p> Fetches all custom labels for a publisher. Custom labels can help you filter and find creatives with the associated label. For more information, see https://support.google.com/admanager/answer/13812863.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchAdReviewCenterCustomLabels(FetchAdReviewCenterCustomLabelsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchAdReviewCenterCustomLabels(WebPropertyName parent)
+ *           <li><p> fetchAdReviewCenterCustomLabels(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchAdReviewCenterCustomLabelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchApplyAdReviewCenterCustomLabels</td>
+ *      <td><p> Performs batch apply on custom labels associated with Ad review center ads. Custom labels can help you filter and find creatives with the associated label. For more information, see https://support.google.com/admanager/answer/13812863.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchApplyAdReviewCenterCustomLabels(BatchApplyAdReviewCenterCustomLabelsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchApplyAdReviewCenterCustomLabels(WebPropertyName parent)
+ *           <li><p> batchApplyAdReviewCenterCustomLabels(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchApplyAdReviewCenterCustomLabelsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -342,6 +378,15 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
    *           .setDateTimeRange(Interval.newBuilder().build())
    *           .addAllSearchText(new ArrayList<String>())
    *           .addAllBuyerAccountId(new ArrayList<Long>())
+   *           .addAllAdResponseId(new ArrayList<String>())
+   *           .addAllAdvertiserDisplayNames(new ArrayList<String>())
+   *           .addAllLanguageCodes(new ArrayList<String>())
+   *           .addAllRegionCodes(new ArrayList<String>())
+   *           .addAllAdTypes(new ArrayList<ArcCreativeFormatEnum.ArcCreativeFormat>())
+   *           .addAllAdvertiserApps(new ArrayList<String>())
+   *           .addAllPublisherDomains(new ArrayList<String>())
+   *           .setNewInLastDays(575817221)
+   *           .addAllLabelIds(new ArrayList<String>())
    *           .build();
    *   for (AdReviewCenterAd element :
    *       adReviewCenterAdServiceClient.searchAdReviewCenterAds(request).iterateAll()) {
@@ -381,6 +426,15 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
    *           .setDateTimeRange(Interval.newBuilder().build())
    *           .addAllSearchText(new ArrayList<String>())
    *           .addAllBuyerAccountId(new ArrayList<Long>())
+   *           .addAllAdResponseId(new ArrayList<String>())
+   *           .addAllAdvertiserDisplayNames(new ArrayList<String>())
+   *           .addAllLanguageCodes(new ArrayList<String>())
+   *           .addAllRegionCodes(new ArrayList<String>())
+   *           .addAllAdTypes(new ArrayList<ArcCreativeFormatEnum.ArcCreativeFormat>())
+   *           .addAllAdvertiserApps(new ArrayList<String>())
+   *           .addAllPublisherDomains(new ArrayList<String>())
+   *           .setNewInLastDays(575817221)
+   *           .addAllLabelIds(new ArrayList<String>())
    *           .build();
    *   ApiFuture<AdReviewCenterAd> future =
    *       adReviewCenterAdServiceClient.searchAdReviewCenterAdsPagedCallable().futureCall(request);
@@ -419,6 +473,15 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
    *           .setDateTimeRange(Interval.newBuilder().build())
    *           .addAllSearchText(new ArrayList<String>())
    *           .addAllBuyerAccountId(new ArrayList<Long>())
+   *           .addAllAdResponseId(new ArrayList<String>())
+   *           .addAllAdvertiserDisplayNames(new ArrayList<String>())
+   *           .addAllLanguageCodes(new ArrayList<String>())
+   *           .addAllRegionCodes(new ArrayList<String>())
+   *           .addAllAdTypes(new ArrayList<ArcCreativeFormatEnum.ArcCreativeFormat>())
+   *           .addAllAdvertiserApps(new ArrayList<String>())
+   *           .addAllPublisherDomains(new ArrayList<String>())
+   *           .setNewInLastDays(575817221)
+   *           .addAllLabelIds(new ArrayList<String>())
    *           .build();
    *   while (true) {
    *     SearchAdReviewCenterAdsResponse response =
@@ -821,6 +884,314 @@ public class AdReviewCenterAdServiceClient implements BackgroundResource {
   public final UnaryCallable<BatchBlockAdReviewCenterAdsRequest, Operation>
       batchBlockAdReviewCenterAdsCallable() {
     return stub.batchBlockAdReviewCenterAdsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches all custom labels for a publisher. Custom labels can help you filter and find creatives
+   * with the associated label. For more information, see
+   * https://support.google.com/admanager/answer/13812863.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdReviewCenterAdServiceClient adReviewCenterAdServiceClient =
+   *     AdReviewCenterAdServiceClient.create()) {
+   *   WebPropertyName parent = WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]");
+   *   FetchAdReviewCenterCustomLabelsResponse response =
+   *       adReviewCenterAdServiceClient.fetchAdReviewCenterCustomLabels(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of AdReviewCenterAds custom
+   *     labels. Format: networks/{network_code}/webProperties/{web_property_code}
+   *     <p>Since a network can only have a single web property of each
+   *     `ExchangeSyndicationProduct`, you can use the `ExchangeSyndicationProduct` as an alias for
+   *     the web property code:
+   *     <p>`networks/{network_code}/webProperties/display`
+   *     <p>`networks/{network_code}/webProperties/videoAndAudio`
+   *     <p>`networks/{network_code}/webProperties/mobileApp`
+   *     <p>`networks/{network_code}/webProperties/games`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchAdReviewCenterCustomLabelsResponse fetchAdReviewCenterCustomLabels(
+      @Nullable WebPropertyName parent) {
+    FetchAdReviewCenterCustomLabelsRequest request =
+        FetchAdReviewCenterCustomLabelsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return fetchAdReviewCenterCustomLabels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches all custom labels for a publisher. Custom labels can help you filter and find creatives
+   * with the associated label. For more information, see
+   * https://support.google.com/admanager/answer/13812863.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdReviewCenterAdServiceClient adReviewCenterAdServiceClient =
+   *     AdReviewCenterAdServiceClient.create()) {
+   *   String parent = WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]").toString();
+   *   FetchAdReviewCenterCustomLabelsResponse response =
+   *       adReviewCenterAdServiceClient.fetchAdReviewCenterCustomLabels(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of AdReviewCenterAds custom
+   *     labels. Format: networks/{network_code}/webProperties/{web_property_code}
+   *     <p>Since a network can only have a single web property of each
+   *     `ExchangeSyndicationProduct`, you can use the `ExchangeSyndicationProduct` as an alias for
+   *     the web property code:
+   *     <p>`networks/{network_code}/webProperties/display`
+   *     <p>`networks/{network_code}/webProperties/videoAndAudio`
+   *     <p>`networks/{network_code}/webProperties/mobileApp`
+   *     <p>`networks/{network_code}/webProperties/games`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchAdReviewCenterCustomLabelsResponse fetchAdReviewCenterCustomLabels(
+      String parent) {
+    FetchAdReviewCenterCustomLabelsRequest request =
+        FetchAdReviewCenterCustomLabelsRequest.newBuilder().setParent(parent).build();
+    return fetchAdReviewCenterCustomLabels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches all custom labels for a publisher. Custom labels can help you filter and find creatives
+   * with the associated label. For more information, see
+   * https://support.google.com/admanager/answer/13812863.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdReviewCenterAdServiceClient adReviewCenterAdServiceClient =
+   *     AdReviewCenterAdServiceClient.create()) {
+   *   FetchAdReviewCenterCustomLabelsRequest request =
+   *       FetchAdReviewCenterCustomLabelsRequest.newBuilder()
+   *           .setParent(WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]").toString())
+   *           .build();
+   *   FetchAdReviewCenterCustomLabelsResponse response =
+   *       adReviewCenterAdServiceClient.fetchAdReviewCenterCustomLabels(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchAdReviewCenterCustomLabelsResponse fetchAdReviewCenterCustomLabels(
+      FetchAdReviewCenterCustomLabelsRequest request) {
+    return fetchAdReviewCenterCustomLabelsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches all custom labels for a publisher. Custom labels can help you filter and find creatives
+   * with the associated label. For more information, see
+   * https://support.google.com/admanager/answer/13812863.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdReviewCenterAdServiceClient adReviewCenterAdServiceClient =
+   *     AdReviewCenterAdServiceClient.create()) {
+   *   FetchAdReviewCenterCustomLabelsRequest request =
+   *       FetchAdReviewCenterCustomLabelsRequest.newBuilder()
+   *           .setParent(WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<FetchAdReviewCenterCustomLabelsResponse> future =
+   *       adReviewCenterAdServiceClient
+   *           .fetchAdReviewCenterCustomLabelsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   FetchAdReviewCenterCustomLabelsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchAdReviewCenterCustomLabelsRequest, FetchAdReviewCenterCustomLabelsResponse>
+      fetchAdReviewCenterCustomLabelsCallable() {
+    return stub.fetchAdReviewCenterCustomLabelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Performs batch apply on custom labels associated with Ad review center ads. Custom labels can
+   * help you filter and find creatives with the associated label. For more information, see
+   * https://support.google.com/admanager/answer/13812863.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdReviewCenterAdServiceClient adReviewCenterAdServiceClient =
+   *     AdReviewCenterAdServiceClient.create()) {
+   *   WebPropertyName parent = WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]");
+   *   BatchApplyAdReviewCenterCustomLabelsResponse response =
+   *       adReviewCenterAdServiceClient.batchApplyAdReviewCenterCustomLabels(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of AdReviewCenterAds. Format:
+   *     networks/{network_code}/webProperties/{web_property_code}
+   *     <p>Since a network can only have a single web property of each
+   *     `ExchangeSyndicationProduct`, you can use the `ExchangeSyndicationProduct` as an alias for
+   *     the web property code:
+   *     <p>`networks/{network_code}/webProperties/display`
+   *     <p>`networks/{network_code}/webProperties/videoAndAudio`
+   *     <p>`networks/{network_code}/webProperties/mobileApp`
+   *     <p>`networks/{network_code}/webProperties/games`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchApplyAdReviewCenterCustomLabelsResponse batchApplyAdReviewCenterCustomLabels(
+      @Nullable WebPropertyName parent) {
+    BatchApplyAdReviewCenterCustomLabelsRequest request =
+        BatchApplyAdReviewCenterCustomLabelsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return batchApplyAdReviewCenterCustomLabels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Performs batch apply on custom labels associated with Ad review center ads. Custom labels can
+   * help you filter and find creatives with the associated label. For more information, see
+   * https://support.google.com/admanager/answer/13812863.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdReviewCenterAdServiceClient adReviewCenterAdServiceClient =
+   *     AdReviewCenterAdServiceClient.create()) {
+   *   String parent = WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]").toString();
+   *   BatchApplyAdReviewCenterCustomLabelsResponse response =
+   *       adReviewCenterAdServiceClient.batchApplyAdReviewCenterCustomLabels(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of AdReviewCenterAds. Format:
+   *     networks/{network_code}/webProperties/{web_property_code}
+   *     <p>Since a network can only have a single web property of each
+   *     `ExchangeSyndicationProduct`, you can use the `ExchangeSyndicationProduct` as an alias for
+   *     the web property code:
+   *     <p>`networks/{network_code}/webProperties/display`
+   *     <p>`networks/{network_code}/webProperties/videoAndAudio`
+   *     <p>`networks/{network_code}/webProperties/mobileApp`
+   *     <p>`networks/{network_code}/webProperties/games`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchApplyAdReviewCenterCustomLabelsResponse batchApplyAdReviewCenterCustomLabels(
+      String parent) {
+    BatchApplyAdReviewCenterCustomLabelsRequest request =
+        BatchApplyAdReviewCenterCustomLabelsRequest.newBuilder().setParent(parent).build();
+    return batchApplyAdReviewCenterCustomLabels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Performs batch apply on custom labels associated with Ad review center ads. Custom labels can
+   * help you filter and find creatives with the associated label. For more information, see
+   * https://support.google.com/admanager/answer/13812863.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdReviewCenterAdServiceClient adReviewCenterAdServiceClient =
+   *     AdReviewCenterAdServiceClient.create()) {
+   *   BatchApplyAdReviewCenterCustomLabelsRequest request =
+   *       BatchApplyAdReviewCenterCustomLabelsRequest.newBuilder()
+   *           .setParent(WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]").toString())
+   *           .setAddLabels(
+   *               BatchApplyAdReviewCenterCustomLabelsRequest.BatchLabelAction.newBuilder().build())
+   *           .setRemoveLabels(
+   *               BatchApplyAdReviewCenterCustomLabelsRequest.BatchLabelAction.newBuilder().build())
+   *           .build();
+   *   BatchApplyAdReviewCenterCustomLabelsResponse response =
+   *       adReviewCenterAdServiceClient.batchApplyAdReviewCenterCustomLabels(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchApplyAdReviewCenterCustomLabelsResponse batchApplyAdReviewCenterCustomLabels(
+      BatchApplyAdReviewCenterCustomLabelsRequest request) {
+    return batchApplyAdReviewCenterCustomLabelsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Performs batch apply on custom labels associated with Ad review center ads. Custom labels can
+   * help you filter and find creatives with the associated label. For more information, see
+   * https://support.google.com/admanager/answer/13812863.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AdReviewCenterAdServiceClient adReviewCenterAdServiceClient =
+   *     AdReviewCenterAdServiceClient.create()) {
+   *   BatchApplyAdReviewCenterCustomLabelsRequest request =
+   *       BatchApplyAdReviewCenterCustomLabelsRequest.newBuilder()
+   *           .setParent(WebPropertyName.of("[NETWORK_CODE]", "[WEB_PROPERTY]").toString())
+   *           .setAddLabels(
+   *               BatchApplyAdReviewCenterCustomLabelsRequest.BatchLabelAction.newBuilder().build())
+   *           .setRemoveLabels(
+   *               BatchApplyAdReviewCenterCustomLabelsRequest.BatchLabelAction.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BatchApplyAdReviewCenterCustomLabelsResponse> future =
+   *       adReviewCenterAdServiceClient
+   *           .batchApplyAdReviewCenterCustomLabelsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchApplyAdReviewCenterCustomLabelsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchApplyAdReviewCenterCustomLabelsRequest, BatchApplyAdReviewCenterCustomLabelsResponse>
+      batchApplyAdReviewCenterCustomLabelsCallable() {
+    return stub.batchApplyAdReviewCenterCustomLabelsCallable();
   }
 
   @Override

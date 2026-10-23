@@ -149,6 +149,48 @@ public class MockIngestionServiceImpl extends IngestionServiceImplBase {
   }
 
   @Override
+  public void ingestUsers(
+      IngestUsersRequest request, StreamObserver<IngestUsersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof IngestUsersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((IngestUsersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method IngestUsers, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  IngestUsersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void removeUsers(
+      RemoveUsersRequest request, StreamObserver<RemoveUsersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RemoveUsersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RemoveUsersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveUsers, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RemoveUsersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void ingestAdEvents(
       IngestAdEventsRequest request, StreamObserver<IngestAdEventsResponse> responseObserver) {
     Object response = responses.poll();

@@ -30,12 +30,12 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the dns authorization. DnsAuthorization names must
-   * be unique globally and match pattern
+   * Identifier. A user-defined name of the dns authorization. DnsAuthorization
+   * names must be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,12 +45,12 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * A user-defined name of the dns authorization. DnsAuthorization names must
-   * be unique globally and match pattern
+   * Identifier. A user-defined name of the dns authorization. DnsAuthorization
+   * names must be unique globally and match pattern
    * `projects/&#42;&#47;locations/&#42;&#47;dnsAuthorizations/&#42;`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -140,10 +140,10 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a DnsAuthorization.
+   * Optional. Set of labels associated with a DnsAuthorization.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
 
@@ -151,10 +151,10 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a DnsAuthorization.
+   * Optional. Set of labels associated with a DnsAuthorization.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
 
@@ -166,10 +166,10 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a DnsAuthorization.
+   * Optional. Set of labels associated with a DnsAuthorization.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
 
@@ -177,10 +177,10 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a DnsAuthorization.
+   * Optional. Set of labels associated with a DnsAuthorization.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -192,10 +192,10 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Set of labels associated with a DnsAuthorization.
+   * Optional. Set of labels associated with a DnsAuthorization.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -203,10 +203,10 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a DnsAuthorization.
+   * Optional. One or more paragraphs of text description of a DnsAuthorization.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -216,10 +216,10 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * One or more paragraphs of text description of a DnsAuthorization.
+   * Optional. One or more paragraphs of text description of a DnsAuthorization.
    * </pre>
    *
-   * <code>string description = 5;</code>
+   * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -312,13 +312,14 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Immutable. Type of DnsAuthorization. If unset during resource creation the
-   * following default will be used:
-   * - in location global: FIXED_RECORD.
+   * Optional. Immutable. Type of DnsAuthorization. If unset during resource
+   * creation the following default will be used:
+   * - in location `global`: FIXED_RECORD,
+   * - in other locations: PER_PROJECT_RECORD.
    * </pre>
    *
    * <code>
-   * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for type.
@@ -329,16 +330,105 @@ public interface DnsAuthorizationOrBuilder
    *
    *
    * <pre>
-   * Immutable. Type of DnsAuthorization. If unset during resource creation the
-   * following default will be used:
-   * - in location global: FIXED_RECORD.
+   * Optional. Immutable. Type of DnsAuthorization. If unset during resource
+   * creation the following default will be used:
+   * - in location `global`: FIXED_RECORD,
+   * - in other locations: PER_PROJECT_RECORD.
    * </pre>
    *
    * <code>
-   * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.certificatemanager.v1.DnsAuthorization.Type type = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The type.
    */
   com.google.cloud.certificatemanager.v1.DnsAuthorization.Type getType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys/values directly bound to this
+   * resource. For example:
+   * "123/environment": "production",
+   * "123/costCenter": "marketing"
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 12 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 }

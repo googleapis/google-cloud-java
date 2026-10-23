@@ -37,7 +37,7 @@ public interface MerchantCenterFeedFilterOrBuilder
    * <code>int64 primary_feed_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.MerchantCenterFeedFilter.primary_feed_id is deprecated.
-   *     See google/cloud/retail/v2alpha/catalog.proto;l=556
+   *     See google/cloud/retail/v2alpha/catalog.proto;l=560
    * @return The primaryFeedId.
    */
   @java.lang.Deprecated

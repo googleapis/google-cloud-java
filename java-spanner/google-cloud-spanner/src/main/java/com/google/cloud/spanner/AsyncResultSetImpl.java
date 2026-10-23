@@ -373,7 +373,7 @@ class AsyncResultSetImpl extends ForwardingStructReader
         while (!stop && hasNext) {
           try {
             synchronized (monitor) {
-              stop = state.shouldStop;
+              stop = shouldStopProducing();
             }
             if (!stop) {
               while (buffer.remainingCapacity() == 0 && !stop) {
@@ -390,7 +390,7 @@ class AsyncResultSetImpl extends ForwardingStructReader
                         MAX_WAIT_FOR_BUFFER_CONSUMPTION));
                 bufferConsumptionLatch.await();
                 synchronized (monitor) {
-                  stop = state.shouldStop;
+                  stop = shouldStopProducing();
                 }
               }
             }
@@ -448,6 +448,15 @@ class AsyncResultSetImpl extends ForwardingStructReader
           }
         }
       }
+    }
+
+    /**
+     * Returns true if no more rows should be produced. This is the case if the result set has been
+     * cancelled or is done, or if the callback will not be invoked anymore (e.g. because it threw
+     * an exception). Must be called while holding the monitor.
+     */
+    private boolean shouldStopProducing() {
+      return state.shouldStop || cursorReturnedDoneOrException;
     }
 
     private void waitIfPaused() throws InterruptedException {

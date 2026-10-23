@@ -1285,6 +1285,64 @@ public class AlphaAnalyticsDataClientHttpJsonTest {
   }
 
   @Test
+  public void chatTest() throws Exception {
+    ChatResponse expectedResponse =
+        ChatResponse.newBuilder()
+            .setSessionId("sessionId607796817")
+            .addAllBlocks(new ArrayList<ResponseBlock>())
+            .setPropertyQuota(PropertyChatQuota.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ChatRequest request =
+        ChatRequest.newBuilder()
+            .setProperty(PropertyName.of("[PROPERTY]").toString())
+            .setUserQuery("userQuery326624189")
+            .setSessionId("sessionId607796817")
+            .setReturnPropertyQuota(true)
+            .build();
+
+    ChatResponse actualResponse = client.chat(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void chatExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ChatRequest request =
+          ChatRequest.newBuilder()
+              .setProperty(PropertyName.of("[PROPERTY]").toString())
+              .setUserQuery("userQuery326624189")
+              .setSessionId("sessionId607796817")
+              .setReturnPropertyQuota(true)
+              .build();
+      client.chat(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void runReportTest() throws Exception {
     RunReportResponse expectedResponse =
         RunReportResponse.newBuilder()

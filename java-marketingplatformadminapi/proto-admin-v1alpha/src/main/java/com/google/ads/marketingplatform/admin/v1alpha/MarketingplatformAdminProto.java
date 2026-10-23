@@ -104,6 +104,74 @@ public final class MarketingplatformAdminProto extends com.google.protobuf.Gener
       internal_static_google_marketingplatform_admin_v1alpha_ReportPropertyUsageResponse_BillInfo_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_marketingplatform_admin_v1alpha_ReportPropertyUsageResponse_BillInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_GetUserGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_GetUserGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_CreateUserGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_CreateUserGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_UpdateUserGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_UpdateUserGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_DeleteUserGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_DeleteUserGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_GetUserGroupMemberRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_GetUserGroupMemberRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupMembersRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupMembersRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupMembersResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupMembersResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_CreateUserGroupMemberRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_CreateUserGroupMemberRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_UpdateUserGroupMemberRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_UpdateUserGroupMemberRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_DeleteUserGroupMemberRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_DeleteUserGroupMemberRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_GetAdminAccessBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_GetAdminAccessBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_ListAdminAccessBindingsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_ListAdminAccessBindingsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_ListAdminAccessBindingsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_ListAdminAccessBindingsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_CreateAdminAccessBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_CreateAdminAccessBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_marketingplatform_admin_v1alpha_UpdateAdminAccessBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_marketingplatform_admin_v1alpha_UpdateAdminAccessBindingRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -118,122 +186,258 @@ public final class MarketingplatformAdminProto extends com.google.protobuf.Gener
           + "arketingplatform.admin.v1alpha\032\034google/a"
           + "pi/annotations.proto\032\027google/api/client."
           + "proto\032\037google/api/field_behavior.proto\032\031"
-          + "google/api/resource.proto\0326google/marketingplatform/admin/v1alpha/resources.prot"
-          + "o\032\033google/protobuf/empty.proto\032\026google/t"
-          + "ype/date.proto\032\027google/type/money.proto\"b\n"
-          + "\026GetOrganizationRequest\022H\n"
-          + "\004name\030\001 \001(\tB:\340A\002\372A4\n"
-          + "2marketingplatformadmin.googleapis.com/Organization\"K\n"
-          + "\030ListOrganizationsRequest\022\026\n"
-          + "\tpage_size\030\001 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\002 \001(\tB\003\340A\001\"\201\001\n"
+          + "google/api/resource.proto\0326google/market"
+          + "ingplatform/admin/v1alpha/resources.proto\032\033google/protobuf/empty.proto\032"
+          + " google/p"
+          + "rotobuf/field_mask.proto\032\026google/type/date.proto\032\027google/type/money.proto\"c\n"
+          + "\026GetOrganizationRequest\022I\n"
+          + "\004name\030\001 \001(\tB;\342A\001\002\372A4\n"
+          + "2marketingplatformadmin.googleapis.com/Organization\"M\n"
+          + "\030ListOrganizationsRequest\022\027\n"
+          + "\tpage_size\030\001 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\002 \001(\tB\004\342A\001\001\"\201\001\n"
           + "\031ListOrganizationsResponse\022K\n\r"
-          + "organizations\030\001 \003(\01324.google.m"
-          + "arketingplatform.admin.v1alpha.Organization\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\221\001\n"
-          + "%FindSalesPartnerManagedClientsRequest\022P\n"
-          + "\014organization\030\001 \001(\tB:\340A\002\372A4\n"
-          + "2marketingplatformadmin.googleapis.com/Organization\022\026\n"
-          + "\tis_active\030\002 \001(\010B\003\340A\001\"\277\002\n"
+          + "organizations\030\001 \003(\01324.google.mark"
+          + "etingplatform.admin.v1alpha.Organization\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\223\001\n"
+          + "%FindSalesPartnerManagedClientsRequest\022Q\n"
+          + "\014organization\030\001 \001(\tB;\342A\001\002\372A4\n"
+          + "2marketingplatformadmin.googleapis.com/Organization\022\027\n"
+          + "\tis_active\030\002 \001(\010B\004\342A\001\001\"\277\002\n"
           + "&FindSalesPartnerManagedClientsResponse\022n\n"
-          + "\013client_data\030\001 \003(\0132Y.google.marketingplatform.admin.v1alph"
-          + "a.FindSalesPartnerManagedClientsResponse.ClientData\032\244\001\n\n"
+          + "\013client_data\030\001 \003(\0132Y.google.marketingplatform.admin.v1alpha"
+          + ".FindSalesPartnerManagedClientsResponse.ClientData\032\244\001\n\n"
           + "ClientData\022J\n"
           + "\014organization\030\001"
           + " \001(\01324.google.marketingplatform.admin.v1alpha.Organization\022%\n\n"
           + "start_date\030\002 \001(\0132\021.google.type.Date\022#\n"
-          + "\010end_date\030\003 \001(\0132\021.google.type.Date\"\247\001\n"
-          + " ListAnalyticsAccountLinksRequest\022R\n"
-          + "\006parent\030\001 \001(\tBB\340A\002\372A<\022"
-          + ":marketingplatformadmin.googleapis.com/AnalyticsAccountLink\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\"\233\001\n"
+          + "\010end_date\030\003 \001(\0132\021.google.type.Date\"\252\001\n"
+          + " ListAnalyticsAccountLinksRequest\022S\n"
+          + "\006parent\030\001 \001(\tBC\342A\001\002\372A<\022"
+          + ":marketingplatformadmin.googleapis.com/AnalyticsAccountLink\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"\233\001\n"
           + "!ListAnalyticsAccountLinksResponse\022]\n"
-          + "\027analytics_account_links\030\001 \003(\0132<.google.marketingpl"
-          + "atform.admin.v1alpha.AnalyticsAccountLink\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"\332\001\n"
-          + "!CreateAnalyticsAccountLinkRequest\022R\n"
-          + "\006parent\030\001 \001(\t"
-          + "BB\340A\002\372A<\022:marketingplatformadmin.googleapis.com/AnalyticsAccountLink\022a\n"
-          + "\026analytics_account_link\030\002 \001(\0132<.google.marketingp"
-          + "latform.admin.v1alpha.AnalyticsAccountLinkB\003\340A\002\"u\n"
-          + "!DeleteAnalyticsAccountLinkRequest\022P\n"
-          + "\004name\030\001 \001(\tBB\340A\002\372A<\n"
-          + ":marketingplatformadmin.googleapis.com/AnalyticsAccountLink\"\354\001\n"
-          + "\036SetPropertyServiceLevelRequest\022#\n"
-          + "\026analytics_account_link\030\001 \001(\tB\003\340A\002\022J\n"
-          + "\022analytics_property\030\002 \001(\tB.\340A\002\372A(\n"
-          + "&analyticsadmin.googleapis.com/Property\022Y\n\r"
-          + "service_level\030\003 \001(\0162=.google.marketingplat"
-          + "form.admin.v1alpha.AnalyticsServiceLevelB\003\340A\002\"!\n"
-          + "\037SetPropertyServiceLevelResponse\"K\n"
-          + "\032ReportPropertyUsageRequest\022\031\n"
-          + "\014organization\030\001 \001(\tB\003\340A\002\022\022\n"
-          + "\005month\030\002 \001(\tB\003\340A\002\"\317\005\n"
+          + "\027analytics_account_links\030\001 \003(\0132<.google.marketing"
+          + "platform.admin.v1alpha.AnalyticsAccountLink\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\334\001\n"
+          + "!CreateAnalyticsAccountLinkRequest\022S\n"
+          + "\006parent\030\001 \001("
+          + "\tBC\342A\001\002\372A<\022:marketingplatformadmin.googleapis.com/AnalyticsAccountLink\022b\n"
+          + "\026analytics_account_link\030\002 \001(\0132<.google.marketi"
+          + "ngplatform.admin.v1alpha.AnalyticsAccountLinkB\004\342A\001\002\"v\n"
+          + "!DeleteAnalyticsAccountLinkRequest\022Q\n"
+          + "\004name\030\001 \001(\tBC\342A\001\002\372A<\n"
+          + ":marketingplatformadmin.googleapis.com/AnalyticsAccountLink\"\357\001\n"
+          + "\036SetPropertyServiceLevelRequest\022$\n"
+          + "\026analytics_account_link\030\001 \001(\tB\004\342A\001\002\022K\n"
+          + "\022analytics_property\030\002 \001(\tB/\342A\001\002\372A(\n"
+          + "&analyticsadmin.googleapis.com/Property\022Z\n\r"
+          + "service_level\030\003 \001(\0162=.google.market"
+          + "ingplatform.admin.v1alpha.AnalyticsServiceLevelB\004\342A\001\002\"!\n"
+          + "\037SetPropertyServiceLevelResponse\"M\n"
+          + "\032ReportPropertyUsageRequest\022\032\n"
+          + "\014organization\030\001 \001(\tB\004\342A\001\002\022\023\n"
+          + "\005month\030\002 \001(\tB\004\342A\001\002\"\317\005\n"
           + "\033ReportPropertyUsageResponse\022j\n"
-          + "\017property_usages\030\001 \003(\0132Q.google.marketingplatfor"
-          + "m.admin.v1alpha.ReportPropertyUsageResponse.PropertyUsage\022_\n"
-          + "\tbill_info\030\002 \001(\0132L.g"
-          + "oogle.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse.BillInfo\032\260\002\n\r"
+          + "\017property_usages\030\001 \003(\0132Q.google.market"
+          + "ingplatform.admin.v1alpha.ReportPropertyUsageResponse.PropertyUsage\022_\n"
+          + "\tbill_info\030\002 \001(\0132L.google.marketingplatform.admin."
+          + "v1alpha.ReportPropertyUsageResponse.BillInfo\032\260\002\n\r"
           + "PropertyUsage\022\020\n"
           + "\010property\030\001 \001(\t\022\024\n"
           + "\014display_name\030\002 \001(\t\022\022\n\n"
           + "account_id\030\003 \001(\003\022T\n\r"
-          + "service_level\030\004 \001(\0162=.google.marketingplatfo"
-          + "rm.admin.v1alpha.AnalyticsServiceLevel\022T\n\r"
-          + "property_type\030\005 \001(\0162=.google.marketing"
-          + "platform.admin.v1alpha.AnalyticsPropertyType\022\031\n"
+          + "service_level\030\004 \001(\0162=.google.marke"
+          + "tingplatform.admin.v1alpha.AnalyticsServiceLevel\022T\n\r"
+          + "property_type\030\005 \001(\0162=.google"
+          + ".marketingplatform.admin.v1alpha.AnalyticsPropertyType\022\031\n"
           + "\021total_event_count\030\006 \001(\003\022\034\n"
           + "\024billable_event_count\030\007 \001(\003\032\257\001\n"
           + "\010BillInfo\022$\n"
           + "\010base_fee\030\001 \001(\0132\022.google.type.Money\022%\n"
           + "\tevent_fee\030\002 \001(\0132\022.google.type.Money\0223\n"
           + "\027price_protection_credit\030\003 \001(\0132\022.google.type.Money\022!\n"
-          + "\005total\030\004 \001(\0132\022.google.type.Money2\372\020\n"
+          + "\005total\030\004 \001(\0132\022.google.type.Money\"]\n"
+          + "\023GetUserGroupRequest\022F\n"
+          + "\004name\030\001 \001(\tB8\342A\001\002\372A1\n"
+          + "/marketingplatformadmin.googleapis.com/UserGroup\"\224\001\n"
+          + "\025ListUserGroupsRequest\022H\n"
+          + "\006parent\030\001 \001(\tB8\342A\001\002\372A1\022/mar"
+          + "ketingplatformadmin.googleapis.com/UserGroup\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"y\n"
+          + "\026ListUserGroupsResponse\022F\n"
+          + "\013user_groups\030\001"
+          + " \003(\01321.google.marketingplatform.admin.v1alpha.UserGroup\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\257\001\n"
+          + "\026CreateUserGroupRequest\022H\n"
+          + "\006parent\030\001 \001(\tB8\342A\001\002\372A1\022/marketin"
+          + "gplatformadmin.googleapis.com/UserGroup\022K\n\n"
+          + "user_group\030\002"
+          + " \001(\01321.google.marketingplatform.admin.v1alpha.UserGroupB\004\342A\001\002\"\234\001\n"
+          + "\026UpdateUserGroupRequest\022K\n\n"
+          + "user_group\030\001 "
+          + "\001(\01321.google.marketingplatform.admin.v1alpha.UserGroupB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\002\"`\n"
+          + "\026DeleteUserGroupRequest\022F\n"
+          + "\004name\030\001 \001(\tB8\342A\001\002\372A1\n"
+          + "/marketingplatformadmin.googleapis.com/UserGroup\"i\n"
+          + "\031GetUserGroupMemberRequest\022L\n"
+          + "\004name\030\001 \001(\tB>\342A\001\002\372A7\n"
+          + "5marketingplatformadmin.googleapis.com/UserGroupMember\"\240\001\n"
+          + "\033ListUserGroupMembersRequest\022N\n"
+          + "\006parent\030\001 \001("
+          + "\tB>\342A\001\002\372A7\0225marketingplatformadmin.googleapis.com/UserGroupMember\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"\214\001\n"
+          + "\034ListUserGroupMembersResponse\022S\n"
+          + "\022user_group_members\030\001 \003(\01327.google.market"
+          + "ingplatform.admin.v1alpha.UserGroupMember\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\310\001\n"
+          + "\034CreateUserGroupMemberRequest\022N\n"
+          + "\006parent\030\001 \001(\tB>\342A\001"
+          + "\002\372A7\0225marketingplatformadmin.googleapis.com/UserGroupMember\022X\n"
+          + "\021user_group_member\030\002"
+          + " \001(\01327.google.marketingplatform.admin.v1alpha.UserGroupMemberB\004\342A\001\002\"\257\001\n"
+          + "\034UpdateUserGroupMemberRequest\022X\n"
+          + "\021user_group_member\030\001"
+          + " \001(\01327.google.marketingplatform.admin.v1alpha.UserGroupMemberB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\002\"l\n"
+          + "\034DeleteUserGroupMemberRequest\022L\n"
+          + "\004name\030\001 \001(\tB>\342A\001\002\372A7\n"
+          + "5marketingplatformadmin.googleapis.com/UserGroupMember\"o\n"
+          + "\034GetAdminAccessBindingRequest\022O\n"
+          + "\004name\030\001 \001(\tBA\342A\001\002\372A:\n"
+          + "8marketingplatformadmin.googleapis.com/AdminAccessBinding\"\246\001\n"
+          + "\036ListAdminAccessBindingsRequest\022Q\n"
+          + "\006parent\030\001 \001("
+          + "\tBA\342A\001\002\372A:\0228marketingplatformadmin.googleapis.com/AdminAccessBinding\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\"\225\001\n"
+          + "\037ListAdminAccessBindingsResponse\022Y\n"
+          + "\025admin_access_bindings\030\001 \003(\0132:.google.mark"
+          + "etingplatform.admin.v1alpha.AdminAccessBinding\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\324\001\n"
+          + "\037CreateAdminAccessBindingRequest\022Q\n"
+          + "\006parent\030\001 \001("
+          + "\tBA\342A\001\002\372A:\0228marketingplatformadmin.googleapis.com/AdminAccessBinding\022^\n"
+          + "\024admin_access_binding\030\002 \001(\0132:.google.marketingp"
+          + "latform.admin.v1alpha.AdminAccessBindingB\004\342A\001\002\"\270\001\n"
+          + "\037UpdateAdminAccessBindingRequest\022^\n"
+          + "\024admin_access_binding\030\001 \001(\0132:.googl"
+          + "e.marketingplatform.admin.v1alpha.AdminAccessBindingB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\0022\304*\n"
           + "\035MarketingplatformAdminService\022\267\001\n"
-          + "\017GetOrganization\022>.google.marketingplatform"
-          + ".admin.v1alpha.GetOrganizationRequest\0324.google.marketingplatform.admin.v1alpha.O"
-          + "rganization\".\332A\004name\202\323\344\223\002!\022\037/v1alpha/{name=organizations/*}\022\270\001\n"
-          + "\021ListOrganizations\022@.google.marketingplatform.admin.v1alp"
-          + "ha.ListOrganizationsRequest\032A.google.marketingplatform.admin.v1alpha.ListOrganiz"
-          + "ationsResponse\"\036\202\323\344\223\002\030\022\026/v1alpha/organizations\022\222\002\n"
-          + "\036FindSalesPartnerManagedClients\022M.google.marketingplatform.admin.v1alp"
-          + "ha.FindSalesPartnerManagedClientsRequest\032N.google.marketingplatform.admin.v1alph"
-          + "a.FindSalesPartnerManagedClientsResponse"
-          + "\"Q\202\323\344\223\002K\"F/v1alpha/{organization=organiz"
-          + "ations/*}:findSalesPartnerManagedClients:\001*\022\372\001\n"
-          + "\031ListAnalyticsAccountLinks\022H.google.marketingplatform.admin.v1alpha.ListA"
-          + "nalyticsAccountLinksRequest\032I.google.marketingplatform.admin.v1alpha.ListAnalyti"
-          + "csAccountLinksResponse\"H\332A\006parent\202\323\344\223\0029\022"
-          + "7/v1alpha/{parent=organizations/*}/analyticsAccountLinks\022\236\002\n"
-          + "\032CreateAnalyticsAccountLink\022I.google.marketingplatform.admin"
-          + ".v1alpha.CreateAnalyticsAccountLinkRequest\032<.google.marketingplatform.admin.v1al"
-          + "pha.AnalyticsAccountLink\"w\332A\035parent,anal"
-          + "ytics_account_link\202\323\344\223\002Q\"7/v1alpha/{pare"
-          + "nt=organizations/*}/analyticsAccountLinks:\026analytics_account_link\022\307\001\n"
-          + "\032DeleteAnalyticsAccountLink\022I.google.marketingplatf"
-          + "orm.admin.v1alpha.DeleteAnalyticsAccount"
-          + "LinkRequest\032\026.google.protobuf.Empty\"F\332A\004"
-          + "name\202\323\344\223\0029*7/v1alpha/{name=organizations/*/analyticsAccountLinks/*}\022\262\002\n"
-          + "\027SetPropertyServiceLevel\022F.google.marketingplatfo"
-          + "rm.admin.v1alpha.SetPropertyServiceLevelRequest\032G.google.marketingplatform.admin"
-          + ".v1alpha.SetPropertyServiceLevelResponse"
-          + "\"\205\001\332A\026analytics_account_link\202\323\344\223\002f\"a/v1a"
-          + "lpha/{analytics_account_link=organizatio"
-          + "ns/*/analyticsAccountLinks/*}:setPropertyServiceLevel:\001*\022\365\001\n"
-          + "\023ReportPropertyUsage\022B.google.marketingplatform.admin.v1alph"
-          + "a.ReportPropertyUsageRequest\032C.google.marketingplatform.admin.v1alpha.ReportProp"
-          + "ertyUsageResponse\"U\332A\014organization\202\323\344\223\002@"
-          + "\";/v1alpha/{organization=organizations/*"
-          + "}:reportPropertyUsage:\001*\032\271\001\312A%marketingp"
-          + "latformadmin.googleapis.com\322A\215\001https://w"
-          + "ww.googleapis.com/auth/marketingplatformadmin.analytics.read,https://www.googlea"
-          + "pis.com/auth/marketingplatformadmin.analytics.updateB\351\002\n"
-          + ".com.google.ads.marketingplatform.admin.v1alphaB\033Marketingplatfo"
-          + "rmAdminProtoP\001ZKgoogle.golang.org/genproto/googleapis/marketingplatform/admin/v1"
-          + "alpha;admin\252\002*Google.Ads.MarketingPlatfo"
-          + "rm.Admin.V1Alpha\312\002*Google\\Ads\\MarketingP"
-          + "latform\\Admin\\V1alpha\352\002.Google::Ads::MarketingPlatform::Admin::V1alpha\352A?\n"
+          + "\017GetOrganization\022>.google.marketingplatform.admin"
+          + ".v1alpha.GetOrganizationRequest\0324.google.marketingplatform.admin.v1alpha.Organiz"
+          + "ation\".\332A\004name\202\323\344\223\002!\022\037/v1alpha/{name=organizations/*}\022\270\001\n"
+          + "\021ListOrganizations\022@.google.marketingplatform.admin.v1alpha.Lis"
+          + "tOrganizationsRequest\032A.google.marketingplatform.admin.v1alpha.ListOrganizations"
+          + "Response\"\036\202\323\344\223\002\030\022\026/v1alpha/organizations\022\222\002\n"
+          + "\036FindSalesPartnerManagedClients\022M.google.marketingplatform.admin.v1alpha.Fin"
+          + "dSalesPartnerManagedClientsRequest\032N.google.marketingplatform.admin.v1alpha.Find"
+          + "SalesPartnerManagedClientsResponse\"Q\202\323\344\223"
+          + "\002K\"F/v1alpha/{organization=organizations"
+          + "/*}:findSalesPartnerManagedClients:\001*\022\372\001\n"
+          + "\031ListAnalyticsAccountLinks\022H.google.marketingplatform.admin.v1alpha.ListAnalyti"
+          + "csAccountLinksRequest\032I.google.marketingplatform.admin.v1alpha.ListAnalyticsAcco"
+          + "untLinksResponse\"H\332A\006parent\202\323\344\223\0029\0227/v1al"
+          + "pha/{parent=organizations/*}/analyticsAccountLinks\022\236\002\n"
+          + "\032CreateAnalyticsAccountLink\022I.google.marketingplatform.admin.v1alp"
+          + "ha.CreateAnalyticsAccountLinkRequest\032<.google.marketingplatform.admin.v1alpha.An"
+          + "alyticsAccountLink\"w\332A\035parent,analytics_"
+          + "account_link\202\323\344\223\002Q\"7/v1alpha/{parent=org"
+          + "anizations/*}/analyticsAccountLinks:\026analytics_account_link\022\307\001\n"
+          + "\032DeleteAnalyticsAccountLink\022I.google.marketingplatform.ad"
+          + "min.v1alpha.DeleteAnalyticsAccountLinkRe"
+          + "quest\032\026.google.protobuf.Empty\"F\332A\004name\202\323"
+          + "\344\223\0029*7/v1alpha/{name=organizations/*/analyticsAccountLinks/*}\022\262\002\n"
+          + "\027SetPropertyServiceLevel\022F.google.marketingplatform.adm"
+          + "in.v1alpha.SetPropertyServiceLevelRequest\032G.google.marketingplatform.admin.v1alp"
+          + "ha.SetPropertyServiceLevelResponse\"\205\001\332A\026"
+          + "analytics_account_link\202\323\344\223\002f\"a/v1alpha/{"
+          + "analytics_account_link=organizations/*/a"
+          + "nalyticsAccountLinks/*}:setPropertyServiceLevel:\001*\022\365\001\n"
+          + "\023ReportPropertyUsage\022B.google.marketingplatform.admin.v1alpha.Repo"
+          + "rtPropertyUsageRequest\032C.google.marketingplatform.admin.v1alpha.ReportPropertyUs"
+          + "ageResponse\"U\332A\014organization\202\323\344\223\002@\";/v1a"
+          + "lpha/{organization=organizations/*}:reportPropertyUsage:\001*\022\273\001\n"
+          + "\014GetUserGroup\022;.google.marketingplatform.admin.v1alpha.Get"
+          + "UserGroupRequest\0321.google.marketingplatf"
+          + "orm.admin.v1alpha.UserGroup\";\332A\004name\202\323\344\223"
+          + "\002.\022,/v1alpha/{name=organizations/*/userGroups/*}\022\316\001\n"
+          + "\016ListUserGroups\022=.google.marketingplatform.admin.v1alpha.ListUserGro"
+          + "upsRequest\032>.google.marketingplatform.ad"
+          + "min.v1alpha.ListUserGroupsResponse\"=\332A\006p"
+          + "arent\202\323\344\223\002.\022,/v1alpha/{parent=organizations/*}/userGroups\022\332\001\n"
+          + "\017CreateUserGroup\022>.google.marketingplatform.admin.v1alpha.C"
+          + "reateUserGroupRequest\0321.google.marketing"
+          + "platform.admin.v1alpha.UserGroup\"T\332A\021par"
+          + "ent,user_group\202\323\344\223\002:\",/v1alpha/{parent=organizations/*}/userGroups:\n"
+          + "user_group\022\352\001\n"
+          + "\017UpdateUserGroup\022>.google.marketingplatform.admin.v1alpha.UpdateUserGroupReque"
+          + "st\0321.google.marketingplatform.admin.v1al"
+          + "pha.UserGroup\"d\332A\026user_group,update_mask"
+          + "\202\323\344\223\002E27/v1alpha/{user_group.name=organizations/*/userGroups/*}:\n"
+          + "user_group\022\246\001\n"
+          + "\017DeleteUserGroup\022>.google.marketingplatfo"
+          + "rm.admin.v1alpha.DeleteUserGroupRequest\032"
+          + "\026.google.protobuf.Empty\";\332A\004name\202\323\344\223\002.*,"
+          + "/v1alpha/{name=organizations/*/userGroups/*}\022\327\001\n"
+          + "\022GetUserGroupMember\022A.google.marketingplatform.admin.v1alpha.GetUserGrou"
+          + "pMemberRequest\0327.google.marketingplatfor"
+          + "m.admin.v1alpha.UserGroupMember\"E\332A\004name"
+          + "\202\323\344\223\0028\0226/v1alpha/{name=organizations/*/userGroups/*/members/*}\022\352\001\n"
+          + "\024ListUserGroupMembers\022C.google.marketingplatform.admin"
+          + ".v1alpha.ListUserGroupMembersRequest\032D.google.marketingplatform.admin.v1alpha.Li"
+          + "stUserGroupMembersResponse\"G\332A\006parent\202\323\344"
+          + "\223\0028\0226/v1alpha/{parent=organizations/*/userGroups/*}/members\022\204\002\n"
+          + "\025CreateUserGroupMember\022D.google.marketingplatform.admin.v"
+          + "1alpha.CreateUserGroupMemberRequest\0327.google.marketingplatform.admin.v1alpha.Use"
+          + "rGroupMember\"l\332A\030parent,user_group_membe"
+          + "r\202\323\344\223\002K\"6/v1alpha/{parent=organizations/"
+          + "*/userGroups/*}/members:\021user_group_member\022\234\002\n"
+          + "\025UpdateUserGroupMember\022D.google.marketingplatform.admin.v1alpha.UpdateUser"
+          + "GroupMemberRequest\0327.google.marketingpla"
+          + "tform.admin.v1alpha.UserGroupMember\"\203\001\332A"
+          + "\035user_group_member,update_mask\202\323\344\223\002]2H/v"
+          + "1alpha/{user_group_member.name=organizat"
+          + "ions/*/userGroups/*/members/*}:\021user_group_member\022\274\001\n"
+          + "\025DeleteUserGroupMember\022D.google.marketingplatform.admin.v1alpha.Del"
+          + "eteUserGroupMemberRequest\032\026.google.proto"
+          + "buf.Empty\"E\332A\004name\202\323\344\223\0028*6/v1alpha/{name"
+          + "=organizations/*/userGroups/*/members/*}\022\337\001\n"
+          + "\025GetAdminAccessBinding\022D.google.marketingplatform.admin.v1alpha.GetAdminAcce"
+          + "ssBindingRequest\032:.google.marketingplatf"
+          + "orm.admin.v1alpha.AdminAccessBinding\"D\332A"
+          + "\004name\202\323\344\223\0027\0225/v1alpha/{name=organizations/*/adminAccessBindings/*}\022\362\001\n"
+          + "\027ListAdminAccessBindings\022F.google.marketingplatfor"
+          + "m.admin.v1alpha.ListAdminAccessBindingsRequest\032G.google.marketingplatform.admin."
+          + "v1alpha.ListAdminAccessBindingsResponse\""
+          + "F\332A\006parent\202\323\344\223\0027\0225/v1alpha/{parent=organizations/*}/adminAccessBindings\022\222\002\n"
+          + "\030CreateAdminAccessBinding\022G.google.marketingp"
+          + "latform.admin.v1alpha.CreateAdminAccessBindingRequest\032:.google.marketingplatform"
+          + ".admin.v1alpha.AdminAccessBinding\"q\332A\033pa"
+          + "rent,admin_access_binding\202\323\344\223\002M\"5/v1alph"
+          + "a/{parent=organizations/*}/adminAccessBindings:\024admin_access_binding\022\255\002\n"
+          + "\030UpdateAdminAccessBinding\022G.google.marketingplat"
+          + "form.admin.v1alpha.UpdateAdminAccessBind"
+          + "ingRequest\032:.google.marketingplatform.admin.v1alpha.AdminAccessBinding\"\213\001\332A"
+          + " admin_access_binding,update_mask\202\323\344\223\002b2J/v1a"
+          + "lpha/{admin_access_binding.name=organizations/*/adminAccessBindings/*}:\024admin_ac"
+          + "cess_binding\032\271\001\312A%marketingplatformadmin"
+          + ".googleapis.com\322A\215\001https://www.googleapi"
+          + "s.com/auth/marketingplatformadmin.analytics.read,https://www.googleapis.com/auth"
+          + "/marketingplatformadmin.analytics.updateB\351\002\n"
+          + ".com.google.ads.marketingplatform.admin.v1alphaB\033MarketingplatformAdminProto"
+          + "P\001ZKgoogle.golang.org/genproto/googleapis/marketingplatform/admin/v1alpha;admin\252"
+          + "\002*Google.Ads.MarketingPlatform.Admin.V1A"
+          + "lpha\312\002*Google\\Ads\\MarketingPlatform\\Admi"
+          + "n\\V1alpha\352\002.Google::Ads::MarketingPlatform::Admin::V1alpha\352A?\n"
           + "&analyticsadmin.googleapis.com/Property\022\025properties/{property}b\006proto3"
     };
     descriptor =
@@ -246,6 +450,7 @@ public final class MarketingplatformAdminProto extends com.google.protobuf.Gener
               com.google.api.ResourceProto.getDescriptor(),
               com.google.ads.marketingplatform.admin.v1alpha.ResourcesProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.type.DateProto.getDescriptor(),
               com.google.type.MoneyProto.getDescriptor(),
             });
@@ -384,6 +589,142 @@ public final class MarketingplatformAdminProto extends com.google.protobuf.Gener
             new java.lang.String[] {
               "BaseFee", "EventFee", "PriceProtectionCredit", "Total",
             });
+    internal_static_google_marketingplatform_admin_v1alpha_GetUserGroupRequest_descriptor =
+        getDescriptor().getMessageType(13);
+    internal_static_google_marketingplatform_admin_v1alpha_GetUserGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_GetUserGroupRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupsRequest_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupsResponse_descriptor =
+        getDescriptor().getMessageType(15);
+    internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupsResponse_descriptor,
+            new java.lang.String[] {
+              "UserGroups", "NextPageToken",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_CreateUserGroupRequest_descriptor =
+        getDescriptor().getMessageType(16);
+    internal_static_google_marketingplatform_admin_v1alpha_CreateUserGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_CreateUserGroupRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "UserGroup",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_UpdateUserGroupRequest_descriptor =
+        getDescriptor().getMessageType(17);
+    internal_static_google_marketingplatform_admin_v1alpha_UpdateUserGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_UpdateUserGroupRequest_descriptor,
+            new java.lang.String[] {
+              "UserGroup", "UpdateMask",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_DeleteUserGroupRequest_descriptor =
+        getDescriptor().getMessageType(18);
+    internal_static_google_marketingplatform_admin_v1alpha_DeleteUserGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_DeleteUserGroupRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_GetUserGroupMemberRequest_descriptor =
+        getDescriptor().getMessageType(19);
+    internal_static_google_marketingplatform_admin_v1alpha_GetUserGroupMemberRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_GetUserGroupMemberRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupMembersRequest_descriptor =
+        getDescriptor().getMessageType(20);
+    internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupMembersRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupMembersRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupMembersResponse_descriptor =
+        getDescriptor().getMessageType(21);
+    internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupMembersResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_ListUserGroupMembersResponse_descriptor,
+            new java.lang.String[] {
+              "UserGroupMembers", "NextPageToken",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_CreateUserGroupMemberRequest_descriptor =
+        getDescriptor().getMessageType(22);
+    internal_static_google_marketingplatform_admin_v1alpha_CreateUserGroupMemberRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_CreateUserGroupMemberRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "UserGroupMember",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_UpdateUserGroupMemberRequest_descriptor =
+        getDescriptor().getMessageType(23);
+    internal_static_google_marketingplatform_admin_v1alpha_UpdateUserGroupMemberRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_UpdateUserGroupMemberRequest_descriptor,
+            new java.lang.String[] {
+              "UserGroupMember", "UpdateMask",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_DeleteUserGroupMemberRequest_descriptor =
+        getDescriptor().getMessageType(24);
+    internal_static_google_marketingplatform_admin_v1alpha_DeleteUserGroupMemberRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_DeleteUserGroupMemberRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_GetAdminAccessBindingRequest_descriptor =
+        getDescriptor().getMessageType(25);
+    internal_static_google_marketingplatform_admin_v1alpha_GetAdminAccessBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_GetAdminAccessBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_ListAdminAccessBindingsRequest_descriptor =
+        getDescriptor().getMessageType(26);
+    internal_static_google_marketingplatform_admin_v1alpha_ListAdminAccessBindingsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_ListAdminAccessBindingsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_ListAdminAccessBindingsResponse_descriptor =
+        getDescriptor().getMessageType(27);
+    internal_static_google_marketingplatform_admin_v1alpha_ListAdminAccessBindingsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_ListAdminAccessBindingsResponse_descriptor,
+            new java.lang.String[] {
+              "AdminAccessBindings", "NextPageToken",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_CreateAdminAccessBindingRequest_descriptor =
+        getDescriptor().getMessageType(28);
+    internal_static_google_marketingplatform_admin_v1alpha_CreateAdminAccessBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_CreateAdminAccessBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "AdminAccessBinding",
+            });
+    internal_static_google_marketingplatform_admin_v1alpha_UpdateAdminAccessBindingRequest_descriptor =
+        getDescriptor().getMessageType(29);
+    internal_static_google_marketingplatform_admin_v1alpha_UpdateAdminAccessBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_marketingplatform_admin_v1alpha_UpdateAdminAccessBindingRequest_descriptor,
+            new java.lang.String[] {
+              "AdminAccessBinding", "UpdateMask",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
@@ -391,6 +732,7 @@ public final class MarketingplatformAdminProto extends com.google.protobuf.Gener
     com.google.api.ResourceProto.getDescriptor();
     com.google.ads.marketingplatform.admin.v1alpha.ResourcesProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.type.DateProto.getDescriptor();
     com.google.type.MoneyProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

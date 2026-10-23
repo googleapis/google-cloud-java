@@ -342,6 +342,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final boolean leaderAwareRoutingEnabled;
   private final boolean enableDirectAccess;
   private final boolean enableGcpFallback;
+  private final boolean enableGcpFallbackRecovery;
   private final DirectedReadOptions directedReadOptions;
   private final boolean useVirtualThreads;
   private final OpenTelemetry openTelemetry;
@@ -1050,6 +1051,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     leaderAwareRoutingEnabled = builder.leaderAwareRoutingEnabled;
     enableDirectAccess = builder.enableDirectAccess;
     enableGcpFallback = builder.enableGcpFallback;
+    enableGcpFallbackRecovery = builder.enableGcpFallbackRecovery;
     directedReadOptions = builder.directedReadOptions;
     useVirtualThreads = builder.useVirtualThreads;
     openTelemetry = builder.openTelemetry;
@@ -1145,6 +1147,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return true;
     }
 
+    default boolean isEnableGcpFallbackRecovery() {
+      return false;
+    }
+
     default boolean isEnableBuiltInMetrics() {
       return true;
     }
@@ -1203,6 +1209,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         "GOOGLE_SPANNER_ENABLE_DIRECT_ACCESS";
     private static final String GOOGLE_SPANNER_ENABLE_GCP_FALLBACK =
         "GOOGLE_SPANNER_ENABLE_GCP_FALLBACK";
+    private static final String GOOGLE_SPANNER_EXPERIMENTAL_GCP_FALLBACK_RECOVERY =
+        "GOOGLE_SPANNER_EXPERIMENTAL_GCP_FALLBACK_RECOVERY";
     private static final String SPANNER_ENABLE_END_TO_END_TRACING =
         "SPANNER_ENABLE_END_TO_END_TRACING";
     private static final String SPANNER_DISABLE_BUILTIN_METRICS = "SPANNER_DISABLE_BUILTIN_METRICS";
@@ -1246,6 +1254,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     public boolean isEnableGcpFallback() {
       String enableGcpFallback = System.getenv(GOOGLE_SPANNER_ENABLE_GCP_FALLBACK);
       return enableGcpFallback == null ? true : Boolean.parseBoolean(enableGcpFallback);
+    }
+
+    @Override
+    public boolean isEnableGcpFallbackRecovery() {
+      return Boolean.parseBoolean(System.getenv(GOOGLE_SPANNER_EXPERIMENTAL_GCP_FALLBACK_RECOVERY));
     }
 
     @Override
@@ -1425,6 +1438,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private boolean leaderAwareRoutingEnabled = true;
     private boolean enableDirectAccess = SpannerOptions.environment.isEnableDirectAccess();
     private boolean enableGcpFallback = SpannerOptions.environment.isEnableGcpFallback();
+    private boolean enableGcpFallbackRecovery =
+        SpannerOptions.environment.isEnableGcpFallbackRecovery();
     private DirectedReadOptions directedReadOptions;
     private boolean useVirtualThreads = false;
     private OpenTelemetry openTelemetry;
@@ -1543,6 +1558,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.interceptorProvider = options.interceptorProvider;
       this.enableDirectAccess = options.enableDirectAccess;
       this.enableGcpFallback = options.enableGcpFallback;
+      this.enableGcpFallbackRecovery = options.enableGcpFallbackRecovery;
       this.directedReadOptions = options.directedReadOptions;
       this.useVirtualThreads = options.useVirtualThreads;
       this.enableApiTracing = options.enableApiTracing;
@@ -2896,6 +2912,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public Boolean isEnableGcpFallback() {
     return enableGcpFallback;
+  }
+
+  /**
+   * Returns whether experimental GCP fallback behavior is enabled through the {@code
+   * GOOGLE_SPANNER_EXPERIMENTAL_GCP_FALLBACK_RECOVERY} environment variable. When enabled, the
+   * fallback channels are wrapped in the grpc-gcp pool, instead of wrapping one pool per path.
+   */
+  @InternalApi
+  public boolean isEnableGcpFallbackRecovery() {
+    return enableGcpFallbackRecovery;
   }
 
   @ObsoleteApi("Use isEnableDirectAccess() instead")

@@ -38,6 +38,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The InterconnectLocations API.
  *
+ * <p>This client uses InterconnectLocations version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -346,7 +348,6 @@ public class InterconnectLocationsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (InterconnectLocation element : interconnectLocationsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -382,7 +383,6 @@ public class InterconnectLocationsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<InterconnectLocation> future =
    *       interconnectLocationsClient.listPagedCallable().futureCall(request);
@@ -419,7 +419,6 @@ public class InterconnectLocationsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     InterconnectLocationList response =

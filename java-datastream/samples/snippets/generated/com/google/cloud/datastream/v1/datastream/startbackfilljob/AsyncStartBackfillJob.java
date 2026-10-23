@@ -19,6 +19,7 @@ package com.google.cloud.datastream.v1.samples;
 // [START datastream_v1_generated_Datastream_StartBackfillJob_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.datastream.v1.DatastreamClient;
+import com.google.cloud.datastream.v1.EventFilter;
 import com.google.cloud.datastream.v1.StartBackfillJobRequest;
 import com.google.cloud.datastream.v1.StartBackfillJobResponse;
 import com.google.cloud.datastream.v1.StreamObjectName;
@@ -40,6 +41,7 @@ public class AsyncStartBackfillJob {
           StartBackfillJobRequest.newBuilder()
               .setObject(
                   StreamObjectName.of("[PROJECT]", "[LOCATION]", "[STREAM]", "[OBJECT]").toString())
+              .setEventFilter(EventFilter.newBuilder().build())
               .build();
       ApiFuture<StartBackfillJobResponse> future =
           datastreamClient.startBackfillJobCallable().futureCall(request);

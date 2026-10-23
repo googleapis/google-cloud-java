@@ -25,7 +25,7 @@ package com.google.cloud.netapp.v1;
  *
  * <pre>
  * Configuration for a Large Capacity Volume. A Large Capacity Volume
- * supports sizes ranging from 4.8 TiB to 20 PiB, it is composed of multiple
+ * supports sizes ranging from 4.8 TiB to 20 PiB; it is composed of multiple
  * internal constituents, and must be created in a large capacity pool.
  * </pre>
  *
@@ -255,7 +255,7 @@ public final class LargeCapacityConfig extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Configuration for a Large Capacity Volume. A Large Capacity Volume
-   * supports sizes ranging from 4.8 TiB to 20 PiB, it is composed of multiple
+   * supports sizes ranging from 4.8 TiB to 20 PiB; it is composed of multiple
    * internal constituents, and must be created in a large capacity pool.
    * </pre>
    *

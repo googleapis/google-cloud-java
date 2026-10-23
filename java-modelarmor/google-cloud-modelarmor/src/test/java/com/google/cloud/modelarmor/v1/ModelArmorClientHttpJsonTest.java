@@ -548,6 +548,7 @@ public class ModelArmorClientHttpJsonTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -599,6 +600,7 @@ public class ModelArmorClientHttpJsonTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -650,6 +652,7 @@ public class ModelArmorClientHttpJsonTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -663,6 +666,7 @@ public class ModelArmorClientHttpJsonTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -702,6 +706,7 @@ public class ModelArmorClientHttpJsonTest {
               .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
               .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
               .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+              .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateFloorSetting(floorSetting, updateMask);

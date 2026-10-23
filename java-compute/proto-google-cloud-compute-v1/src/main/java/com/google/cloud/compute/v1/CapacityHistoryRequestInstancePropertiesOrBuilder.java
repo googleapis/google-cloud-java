@@ -30,6 +30,139 @@ public interface CapacityHistoryRequestInstancePropertiesOrBuilder
    *
    *
    * <pre>
+   * Local SSDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk>
+      getDisksList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Local SSDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+   * </code>
+   */
+  com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk getDisks(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Local SSDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+   * </code>
+   */
+  int getDisksCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Local SSDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.compute.v1
+                  .CapacityHistoryRequestInstancePropertiesAttachedDiskOrBuilder>
+      getDisksOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Local SSDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+   * </code>
+   */
+  com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDiskOrBuilder
+      getDisksOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * </code>
+   */
+  java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * </code>
+   */
+  com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * </code>
+   */
+  int getGuestAcceleratorsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
+      getGuestAcceleratorsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * </code>
+   */
+  com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getGuestAcceleratorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The machine type for the VM, such as `n2-standard-4`.
    * </pre>
    *

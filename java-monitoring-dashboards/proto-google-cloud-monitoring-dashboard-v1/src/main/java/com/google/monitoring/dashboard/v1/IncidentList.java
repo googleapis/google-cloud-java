@@ -24,7 +24,7 @@ package com.google.monitoring.dashboard.v1;
  *
  *
  * <pre>
- * A widget that displays a list of incidents
+ * A widget that displays a list of alerts
  * </pre>
  *
  * Protobuf type {@code google.monitoring.dashboard.v1.IncidentList}
@@ -80,7 +80,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The monitored resource for which incidents are listed.
+   * Optional. The monitored resource for which alerts are listed.
    * The resource doesn't need to be fully specified. That is, you can specify
    * the resource type but not the values of the resource labels.
    * The resource type and labels are used for filtering.
@@ -99,7 +99,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The monitored resource for which incidents are listed.
+   * Optional. The monitored resource for which alerts are listed.
    * The resource doesn't need to be fully specified. That is, you can specify
    * the resource type but not the values of the resource labels.
    * The resource type and labels are used for filtering.
@@ -119,7 +119,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The monitored resource for which incidents are listed.
+   * Optional. The monitored resource for which alerts are listed.
    * The resource doesn't need to be fully specified. That is, you can specify
    * the resource type but not the values of the resource labels.
    * The resource type and labels are used for filtering.
@@ -138,7 +138,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The monitored resource for which incidents are listed.
+   * Optional. The monitored resource for which alerts are listed.
    * The resource doesn't need to be fully specified. That is, you can specify
    * the resource type but not the values of the resource labels.
    * The resource type and labels are used for filtering.
@@ -157,7 +157,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The monitored resource for which incidents are listed.
+   * Optional. The monitored resource for which alerts are listed.
    * The resource doesn't need to be fully specified. That is, you can specify
    * the resource type but not the values of the resource labels.
    * The resource type and labels are used for filtering.
@@ -182,7 +182,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A list of alert policy names to filter the incident list by.
+   * Optional. A list of alert policy names to filter the alert list by.
    * Don't include the project ID prefix in the policy name. For
    * example, use `alertPolicies/utilization`.
    * </pre>
@@ -199,7 +199,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A list of alert policy names to filter the incident list by.
+   * Optional. A list of alert policy names to filter the alert list by.
    * Don't include the project ID prefix in the policy name. For
    * example, use `alertPolicies/utilization`.
    * </pre>
@@ -216,7 +216,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A list of alert policy names to filter the incident list by.
+   * Optional. A list of alert policy names to filter the alert list by.
    * Don't include the project ID prefix in the policy name. For
    * example, use `alertPolicies/utilization`.
    * </pre>
@@ -234,7 +234,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. A list of alert policy names to filter the incident list by.
+   * Optional. A list of alert policy names to filter the alert list by.
    * Don't include the project ID prefix in the policy name. For
    * example, use `alertPolicies/utilization`.
    * </pre>
@@ -431,7 +431,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * A widget that displays a list of incidents
+   * A widget that displays a list of alerts
    * </pre>
    *
    * Protobuf type {@code google.monitoring.dashboard.v1.IncidentList}
@@ -665,7 +665,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -687,7 +687,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -709,7 +709,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -731,7 +731,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -759,7 +759,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -785,7 +785,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -813,7 +813,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -841,7 +841,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -866,7 +866,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -892,7 +892,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -918,7 +918,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -943,7 +943,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -968,7 +968,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -986,7 +986,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -1008,7 +1008,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -1031,7 +1031,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -1050,7 +1050,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -1069,7 +1069,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The monitored resource for which incidents are listed.
+     * Optional. The monitored resource for which alerts are listed.
      * The resource doesn't need to be fully specified. That is, you can specify
      * the resource type but not the values of the resource labels.
      * The resource type and labels are used for filtering.
@@ -1118,7 +1118,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of alert policy names to filter the incident list by.
+     * Optional. A list of alert policy names to filter the alert list by.
      * Don't include the project ID prefix in the policy name. For
      * example, use `alertPolicies/utilization`.
      * </pre>
@@ -1136,7 +1136,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of alert policy names to filter the incident list by.
+     * Optional. A list of alert policy names to filter the alert list by.
      * Don't include the project ID prefix in the policy name. For
      * example, use `alertPolicies/utilization`.
      * </pre>
@@ -1153,7 +1153,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of alert policy names to filter the incident list by.
+     * Optional. A list of alert policy names to filter the alert list by.
      * Don't include the project ID prefix in the policy name. For
      * example, use `alertPolicies/utilization`.
      * </pre>
@@ -1171,7 +1171,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of alert policy names to filter the incident list by.
+     * Optional. A list of alert policy names to filter the alert list by.
      * Don't include the project ID prefix in the policy name. For
      * example, use `alertPolicies/utilization`.
      * </pre>
@@ -1189,7 +1189,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of alert policy names to filter the incident list by.
+     * Optional. A list of alert policy names to filter the alert list by.
      * Don't include the project ID prefix in the policy name. For
      * example, use `alertPolicies/utilization`.
      * </pre>
@@ -1215,7 +1215,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of alert policy names to filter the incident list by.
+     * Optional. A list of alert policy names to filter the alert list by.
      * Don't include the project ID prefix in the policy name. For
      * example, use `alertPolicies/utilization`.
      * </pre>
@@ -1240,7 +1240,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of alert policy names to filter the incident list by.
+     * Optional. A list of alert policy names to filter the alert list by.
      * Don't include the project ID prefix in the policy name. For
      * example, use `alertPolicies/utilization`.
      * </pre>
@@ -1262,7 +1262,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of alert policy names to filter the incident list by.
+     * Optional. A list of alert policy names to filter the alert list by.
      * Don't include the project ID prefix in the policy name. For
      * example, use `alertPolicies/utilization`.
      * </pre>
@@ -1283,7 +1283,7 @@ public final class IncidentList extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. A list of alert policy names to filter the incident list by.
+     * Optional. A list of alert policy names to filter the alert list by.
      * Don't include the project ID prefix in the policy name. For
      * example, use `alertPolicies/utilization`.
      * </pre>

@@ -90,6 +90,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.util.Timestamps;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
+import com.google.spanner.admin.instance.v1.Instance.Edition;
 import com.google.spanner.admin.instance.v1.Instance.State;
 import com.google.spanner.executor.v1.AdminAction;
 import com.google.spanner.executor.v1.AdminResult;
@@ -1285,6 +1286,13 @@ public class CloudClientExecutor extends CloudExecutor {
       if (action.hasProcessingUnits()) {
         builder.setProcessingUnits(action.getProcessingUnits());
       }
+      if (action.hasAutoscalingConfig()) {
+        builder.setAutoscalingConfig(action.getAutoscalingConfig());
+      }
+      if (action.getEdition() != Edition.EDITION_UNSPECIFIED
+          && action.getEdition() != Edition.UNRECOGNIZED) {
+        builder.setEdition(action.getEdition());
+      }
       final InstanceInfo request = builder.build();
       instanceAdminClient.createInstance(request).get();
     } catch (ExecutionException | InterruptedException ex) {
@@ -1329,6 +1337,15 @@ public class CloudClientExecutor extends CloudExecutor {
       if (action.hasProcessingUnits()) {
         fieldsToUpdate.add(InstanceInfo.InstanceField.PROCESSING_UNITS);
         builder.setProcessingUnits(action.getProcessingUnits());
+      }
+      if (action.hasAutoscalingConfig()) {
+        fieldsToUpdate.add(InstanceInfo.InstanceField.AUTOSCALING_CONFIG);
+        builder.setAutoscalingConfig(action.getAutoscalingConfig());
+      }
+      if (action.getEdition() != Edition.EDITION_UNSPECIFIED
+          && action.getEdition() != Edition.UNRECOGNIZED) {
+        fieldsToUpdate.add(InstanceInfo.InstanceField.EDITION);
+        builder.setEdition(action.getEdition());
       }
       Map<String, String> labels = action.getLabelsMap();
       if (!labels.isEmpty()) {

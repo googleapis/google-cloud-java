@@ -29,6 +29,8 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.AnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2.AnalyzeContentResponse;
+import com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentRequest;
+import com.google.cloud.dialogflow.v2.BidiStreamingAnalyzeContentResponse;
 import com.google.cloud.dialogflow.v2.CreateParticipantRequest;
 import com.google.cloud.dialogflow.v2.GetParticipantRequest;
 import com.google.cloud.dialogflow.v2.ListParticipantsRequest;
@@ -36,6 +38,8 @@ import com.google.cloud.dialogflow.v2.ListParticipantsResponse;
 import com.google.cloud.dialogflow.v2.Participant;
 import com.google.cloud.dialogflow.v2.StreamingAnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2.StreamingAnalyzeContentResponse;
+import com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsRequest;
+import com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse;
 import com.google.cloud.dialogflow.v2.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2.SuggestFaqAnswersRequest;
@@ -137,6 +141,41 @@ public class GrpcParticipantsStub extends ParticipantsStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentMethodDescriptor =
+          MethodDescriptor
+              .<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2.Participants/BidiStreamingAnalyzeContent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BidiStreamingAnalyzeContentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BidiStreamingAnalyzeContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          StreamingReactiveCompanionSuggestionsRequest,
+          StreamingReactiveCompanionSuggestionsResponse>
+      streamingReactiveCompanionSuggestionsMethodDescriptor =
+          MethodDescriptor
+              .<StreamingReactiveCompanionSuggestionsRequest,
+                  StreamingReactiveCompanionSuggestionsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.v2.Participants/StreamingReactiveCompanionSuggestions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      StreamingReactiveCompanionSuggestionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      StreamingReactiveCompanionSuggestionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesMethodDescriptor =
           MethodDescriptor.<SuggestArticlesRequest, SuggestArticlesResponse>newBuilder()
@@ -219,6 +258,13 @@ public class GrpcParticipantsStub extends ParticipantsStub {
   private final BidiStreamingCallable<
           StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable;
+  private final BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable;
+  private final BidiStreamingCallable<
+          StreamingReactiveCompanionSuggestionsRequest,
+          StreamingReactiveCompanionSuggestionsResponse>
+      streamingReactiveCompanionSuggestionsCallable;
   private final UnaryCallable<SuggestArticlesRequest, SuggestArticlesResponse>
       suggestArticlesCallable;
   private final UnaryCallable<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
@@ -338,6 +384,24 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                 .setMethodDescriptor(streamingAnalyzeContentMethodDescriptor)
                 .setResourceNameExtractor(request -> request.getParticipant())
                 .build();
+    GrpcCallSettings<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        bidiStreamingAnalyzeContentTransportSettings =
+            GrpcCallSettings
+                .<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+                    newBuilder()
+                .setMethodDescriptor(bidiStreamingAnalyzeContentMethodDescriptor)
+                .build();
+    GrpcCallSettings<
+            StreamingReactiveCompanionSuggestionsRequest,
+            StreamingReactiveCompanionSuggestionsResponse>
+        streamingReactiveCompanionSuggestionsTransportSettings =
+            GrpcCallSettings
+                .<StreamingReactiveCompanionSuggestionsRequest,
+                    StreamingReactiveCompanionSuggestionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(streamingReactiveCompanionSuggestionsMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getParticipant())
+                .build();
     GrpcCallSettings<SuggestArticlesRequest, SuggestArticlesResponse>
         suggestArticlesTransportSettings =
             GrpcCallSettings.<SuggestArticlesRequest, SuggestArticlesResponse>newBuilder()
@@ -435,6 +499,16 @@ public class GrpcParticipantsStub extends ParticipantsStub {
             streamingAnalyzeContentTransportSettings,
             settings.streamingAnalyzeContentSettings(),
             clientContext);
+    this.bidiStreamingAnalyzeContentCallable =
+        callableFactory.createBidiStreamingCallable(
+            bidiStreamingAnalyzeContentTransportSettings,
+            settings.bidiStreamingAnalyzeContentSettings(),
+            clientContext);
+    this.streamingReactiveCompanionSuggestionsCallable =
+        callableFactory.createBidiStreamingCallable(
+            streamingReactiveCompanionSuggestionsTransportSettings,
+            settings.streamingReactiveCompanionSuggestionsSettings(),
+            clientContext);
     this.suggestArticlesCallable =
         callableFactory.createUnaryCallable(
             suggestArticlesTransportSettings, settings.suggestArticlesSettings(), clientContext);
@@ -507,6 +581,21 @@ public class GrpcParticipantsStub extends ParticipantsStub {
   public BidiStreamingCallable<StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
       streamingAnalyzeContentCallable() {
     return streamingAnalyzeContentCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<
+          BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+      bidiStreamingAnalyzeContentCallable() {
+    return bidiStreamingAnalyzeContentCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<
+          StreamingReactiveCompanionSuggestionsRequest,
+          StreamingReactiveCompanionSuggestionsResponse>
+      streamingReactiveCompanionSuggestionsCallable() {
+    return streamingReactiveCompanionSuggestionsCallable;
   }
 
   @Override

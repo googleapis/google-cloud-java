@@ -44,6 +44,8 @@ public class AsyncBatchSearchDataObjects {
               .setParent(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
               .addAllSearches(new ArrayList<Search>())
               .setCombine(BatchSearchDataObjectsRequest.CombineResultsOptions.newBuilder().build())
+              .setMetadataOptions(
+                  BatchSearchDataObjectsRequest.BatchSearchMetadataOptions.newBuilder().build())
               .build();
       ApiFuture<BatchSearchDataObjectsResponse> future =
           dataObjectSearchServiceClient.batchSearchDataObjectsCallable().futureCall(request);

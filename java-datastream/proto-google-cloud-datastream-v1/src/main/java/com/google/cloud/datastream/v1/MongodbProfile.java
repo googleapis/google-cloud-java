@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * MongoDB profile.
+ * Profile for connecting to a MongoDB source.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.MongodbProfile}
@@ -62,6 +62,18 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.datastream.v1.DatastreamResourcesProto
         .internal_static_google_cloud_datastream_v1_MongodbProfile_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 7:
+        return internalGetAdditionalOptions();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -622,6 +634,163 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.datastream.v1.StandardConnectionFormat.getDefaultInstance();
   }
 
+  public static final int ADDITIONAL_OPTIONS_FIELD_NUMBER = 7;
+
+  private static final class AdditionalOptionsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.datastream.v1.DatastreamResourcesProto
+                .internal_static_google_cloud_datastream_v1_MongodbProfile_AdditionalOptionsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> additionalOptions_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetAdditionalOptions() {
+    if (additionalOptions_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          AdditionalOptionsDefaultEntryHolder.defaultEntry);
+    }
+    return additionalOptions_;
+  }
+
+  public int getAdditionalOptionsCount() {
+    return internalGetAdditionalOptions().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies additional options for the MongoDB connection.
+   *
+   * The options should be sent as key-value pairs, for example:
+   * `additional_options =
+   * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+   *
+   * Keys are case-sensitive and should match the official MongoDB connection
+   * string options:
+   * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+   *
+   * The server will not modify the values provided by the user.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsAdditionalOptions(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetAdditionalOptions().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getAdditionalOptionsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getAdditionalOptions() {
+    return getAdditionalOptionsMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies additional options for the MongoDB connection.
+   *
+   * The options should be sent as key-value pairs, for example:
+   * `additional_options =
+   * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+   *
+   * Keys are case-sensitive and should match the official MongoDB connection
+   * string options:
+   * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+   *
+   * The server will not modify the values provided by the user.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getAdditionalOptionsMap() {
+    return internalGetAdditionalOptions().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies additional options for the MongoDB connection.
+   *
+   * The options should be sent as key-value pairs, for example:
+   * `additional_options =
+   * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+   *
+   * Keys are case-sensitive and should match the official MongoDB connection
+   * string options:
+   * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+   *
+   * The server will not modify the values provided by the user.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getAdditionalOptionsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAdditionalOptions().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies additional options for the MongoDB connection.
+   *
+   * The options should be sent as key-value pairs, for example:
+   * `additional_options =
+   * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+   *
+   * Keys are case-sensitive and should match the official MongoDB connection
+   * string options:
+   * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+   *
+   * The server will not modify the values provided by the user.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getAdditionalOptionsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetAdditionalOptions().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -654,6 +823,11 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(6, getSslConfig());
     }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output,
+        internalGetAdditionalOptions(),
+        AdditionalOptionsDefaultEntryHolder.defaultEntry,
+        7);
     if (mongodbConnectionFormatCase_ == 101) {
       output.writeMessage(
           101, (com.google.cloud.datastream.v1.SrvConnectionFormat) mongodbConnectionFormat_);
@@ -689,6 +863,16 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getSslConfig());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetAdditionalOptions().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> additionalOptions__ =
+          AdditionalOptionsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, additionalOptions__);
     }
     if (mongodbConnectionFormatCase_ == 101) {
       size +=
@@ -727,6 +911,7 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
     if (hasSslConfig()) {
       if (!getSslConfig().equals(other.getSslConfig())) return false;
     }
+    if (!internalGetAdditionalOptions().equals(other.internalGetAdditionalOptions())) return false;
     if (!getMongodbConnectionFormatCase().equals(other.getMongodbConnectionFormatCase()))
       return false;
     switch (mongodbConnectionFormatCase_) {
@@ -766,6 +951,10 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
     if (hasSslConfig()) {
       hash = (37 * hash) + SSL_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSslConfig().hashCode();
+    }
+    if (!internalGetAdditionalOptions().getMap().isEmpty()) {
+      hash = (37 * hash) + ADDITIONAL_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetAdditionalOptions().hashCode();
     }
     switch (mongodbConnectionFormatCase_) {
       case 101:
@@ -884,7 +1073,7 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * MongoDB profile.
+   * Profile for connecting to a MongoDB source.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.MongodbProfile}
@@ -896,6 +1085,28 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.datastream.v1.DatastreamResourcesProto
           .internal_static_google_cloud_datastream_v1_MongodbProfile_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetAdditionalOptions();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetMutableAdditionalOptions();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
     }
 
     @java.lang.Override
@@ -951,6 +1162,7 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
       if (standardConnectionFormatBuilder_ != null) {
         standardConnectionFormatBuilder_.clear();
       }
+      internalGetMutableAdditionalOptions().clear();
       mongodbConnectionFormatCase_ = 0;
       mongodbConnectionFormat_ = null;
       return this;
@@ -1019,6 +1231,10 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.sslConfig_ = sslConfigBuilder_ == null ? sslConfig_ : sslConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.additionalOptions_ = internalGetAdditionalOptions();
+        result.additionalOptions_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1096,6 +1312,8 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
       if (other.hasSslConfig()) {
         mergeSslConfig(other.getSslConfig());
       }
+      internalGetMutableAdditionalOptions().mergeFrom(other.internalGetAdditionalOptions());
+      bitField0_ |= 0x00000100;
       switch (other.getMongodbConnectionFormatCase()) {
         case SRV_CONNECTION_FORMAT:
           {
@@ -1182,6 +1400,19 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    additionalOptions__ =
+                        input.readMessage(
+                            AdditionalOptionsDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableAdditionalOptions()
+                    .getMutableMap()
+                    .put(additionalOptions__.getKey(), additionalOptions__.getValue());
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 58
             case 810:
               {
                 input.readMessage(
@@ -2835,6 +3066,269 @@ public final class MongodbProfile extends com.google.protobuf.GeneratedMessage
       mongodbConnectionFormatCase_ = 102;
       onChanged();
       return standardConnectionFormatBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> additionalOptions_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetAdditionalOptions() {
+      if (additionalOptions_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AdditionalOptionsDefaultEntryHolder.defaultEntry);
+      }
+      return additionalOptions_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableAdditionalOptions() {
+      if (additionalOptions_ == null) {
+        additionalOptions_ =
+            com.google.protobuf.MapField.newMapField(
+                AdditionalOptionsDefaultEntryHolder.defaultEntry);
+      }
+      if (!additionalOptions_.isMutable()) {
+        additionalOptions_ = additionalOptions_.copy();
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return additionalOptions_;
+    }
+
+    public int getAdditionalOptionsCount() {
+      return internalGetAdditionalOptions().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies additional options for the MongoDB connection.
+     *
+     * The options should be sent as key-value pairs, for example:
+     * `additional_options =
+     * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+     *
+     * Keys are case-sensitive and should match the official MongoDB connection
+     * string options:
+     * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+     *
+     * The server will not modify the values provided by the user.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsAdditionalOptions(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetAdditionalOptions().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getAdditionalOptionsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getAdditionalOptions() {
+      return getAdditionalOptionsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies additional options for the MongoDB connection.
+     *
+     * The options should be sent as key-value pairs, for example:
+     * `additional_options =
+     * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+     *
+     * Keys are case-sensitive and should match the official MongoDB connection
+     * string options:
+     * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+     *
+     * The server will not modify the values provided by the user.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getAdditionalOptionsMap() {
+      return internalGetAdditionalOptions().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies additional options for the MongoDB connection.
+     *
+     * The options should be sent as key-value pairs, for example:
+     * `additional_options =
+     * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+     *
+     * Keys are case-sensitive and should match the official MongoDB connection
+     * string options:
+     * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+     *
+     * The server will not modify the values provided by the user.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getAdditionalOptionsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetAdditionalOptions().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies additional options for the MongoDB connection.
+     *
+     * The options should be sent as key-value pairs, for example:
+     * `additional_options =
+     * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+     *
+     * Keys are case-sensitive and should match the official MongoDB connection
+     * string options:
+     * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+     *
+     * The server will not modify the values provided by the user.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getAdditionalOptionsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetAdditionalOptions().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearAdditionalOptions() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      internalGetMutableAdditionalOptions().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies additional options for the MongoDB connection.
+     *
+     * The options should be sent as key-value pairs, for example:
+     * `additional_options =
+     * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+     *
+     * Keys are case-sensitive and should match the official MongoDB connection
+     * string options:
+     * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+     *
+     * The server will not modify the values provided by the user.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAdditionalOptions(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableAdditionalOptions().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableAdditionalOptions() {
+      bitField0_ |= 0x00000100;
+      return internalGetMutableAdditionalOptions().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies additional options for the MongoDB connection.
+     *
+     * The options should be sent as key-value pairs, for example:
+     * `additional_options =
+     * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+     *
+     * Keys are case-sensitive and should match the official MongoDB connection
+     * string options:
+     * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+     *
+     * The server will not modify the values provided by the user.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAdditionalOptions(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableAdditionalOptions().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000100;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies additional options for the MongoDB connection.
+     *
+     * The options should be sent as key-value pairs, for example:
+     * `additional_options =
+     * {"serverSelectionTimeoutMS": "10000", "directConnection": "true"}`.
+     *
+     * Keys are case-sensitive and should match the official MongoDB connection
+     * string options:
+     * https://www.mongodb.com/docs/manual/reference/connection-string-options/
+     *
+     * The server will not modify the values provided by the user.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; additional_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllAdditionalOptions(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableAdditionalOptions().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000100;
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.MongodbProfile)

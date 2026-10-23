@@ -69,6 +69,7 @@ import com.google.cloud.certificatemanager.v1.ListTrustConfigsRequest;
 import com.google.cloud.certificatemanager.v1.ListTrustConfigsResponse;
 import com.google.cloud.certificatemanager.v1.OperationMetadata;
 import com.google.cloud.certificatemanager.v1.TrustConfig;
+import com.google.cloud.certificatemanager.v1.UpdateCertificateIssuanceConfigRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapEntryRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateMapRequest;
 import com.google.cloud.certificatemanager.v1.UpdateCertificateRequest;
@@ -389,6 +390,19 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateCertificateIssuanceConfigRequest, Operation>
+      updateCertificateIssuanceConfigMethodDescriptor =
+          MethodDescriptor.<UpdateCertificateIssuanceConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.certificatemanager.v1.CertificateManager/UpdateCertificateIssuanceConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateCertificateIssuanceConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteCertificateIssuanceConfigRequest, Operation>
       deleteCertificateIssuanceConfigMethodDescriptor =
           MethodDescriptor.<DeleteCertificateIssuanceConfigRequest, Operation>newBuilder()
@@ -566,6 +580,11 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
   private final OperationCallable<
           CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
       createCertificateIssuanceConfigOperationCallable;
+  private final UnaryCallable<UpdateCertificateIssuanceConfigRequest, Operation>
+      updateCertificateIssuanceConfigCallable;
+  private final OperationCallable<
+          UpdateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      updateCertificateIssuanceConfigOperationCallable;
   private final UnaryCallable<DeleteCertificateIssuanceConfigRequest, Operation>
       deleteCertificateIssuanceConfigCallable;
   private final OperationCallable<DeleteCertificateIssuanceConfigRequest, Empty, OperationMetadata>
@@ -909,6 +928,19 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<UpdateCertificateIssuanceConfigRequest, Operation>
+        updateCertificateIssuanceConfigTransportSettings =
+            GrpcCallSettings.<UpdateCertificateIssuanceConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateCertificateIssuanceConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "certificate_issuance_config.name",
+                          String.valueOf(request.getCertificateIssuanceConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteCertificateIssuanceConfigRequest, Operation>
         deleteCertificateIssuanceConfigTransportSettings =
             GrpcCallSettings.<DeleteCertificateIssuanceConfigRequest, Operation>newBuilder()
@@ -1208,6 +1240,17 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
         callableFactory.createOperationCallable(
             createCertificateIssuanceConfigTransportSettings,
             settings.createCertificateIssuanceConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateCertificateIssuanceConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateCertificateIssuanceConfigTransportSettings,
+            settings.updateCertificateIssuanceConfigSettings(),
+            clientContext);
+    this.updateCertificateIssuanceConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateCertificateIssuanceConfigTransportSettings,
+            settings.updateCertificateIssuanceConfigOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteCertificateIssuanceConfigCallable =
@@ -1516,6 +1559,19 @@ public class GrpcCertificateManagerStub extends CertificateManagerStub {
           CreateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
       createCertificateIssuanceConfigOperationCallable() {
     return createCertificateIssuanceConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCertificateIssuanceConfigRequest, Operation>
+      updateCertificateIssuanceConfigCallable() {
+    return updateCertificateIssuanceConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateCertificateIssuanceConfigRequest, CertificateIssuanceConfig, OperationMetadata>
+      updateCertificateIssuanceConfigOperationCallable() {
+    return updateCertificateIssuanceConfigOperationCallable;
   }
 
   @Override

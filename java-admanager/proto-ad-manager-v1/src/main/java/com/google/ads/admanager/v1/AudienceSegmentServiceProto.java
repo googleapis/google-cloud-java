@@ -65,6 +65,18 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_BatchCreateAudienceSegmentsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateAudienceSegmentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateAudienceSegmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateAudienceSegmentsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateAudienceSegmentsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BatchUpdateAudienceSegmentsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BatchUpdateAudienceSegmentsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_admanager_v1_BatchActivateAudienceSegmentsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_BatchActivateAudienceSegmentsRequest_fieldAccessorTable;
@@ -118,115 +130,138 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
           + "1\0327google/ads/admanager/v1/audience_segm"
           + "ent_messages.proto\032\034google/api/annotatio"
           + "ns.proto\032\027google/api/client.proto\032\037googl"
-          + "e/api/field_behavior.proto\032\031google/api/resource.proto\"[\n"
-          + "\031GetAudienceSegmentRequest\022>\n"
-          + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
-          + "(admanager.googleapis.com/AudienceSegment\"\307\001\n"
-          + "\033ListAudienceSegmentsRequest\0228\n"
-          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " admanager.googleapis.com/Network\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
-          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
-          + "\010order_by\030\005 \001(\tB\003\340A\001\022\021\n"
-          + "\004skip\030\006 \001(\005B\003\340A\001\"\220\001\n"
+          + "e/api/field_behavior.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\"\\\n"
+          + "\031GetAudienceSegmentRequest\022?\n"
+          + "\004name\030\001 \001(\tB1\342A\001\002\372A*\n"
+          + "(admanager.googleapis.com/AudienceSegment\"\315\001\n"
+          + "\033ListAudienceSegmentsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010order_by\030\005 \001(\tB\004\342A\001\001\022\022\n"
+          + "\004skip\030\006 \001(\005B\004\342A\001\001\"\220\001\n"
           + "\034ListAudienceSegmentsResponse\022C\n"
           + "\021audience_segments\030\001"
           + " \003(\0132(.google.ads.admanager.v1.AudienceSegment\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\005\"\241\001\n"
-          + "\034CreateAudienceSegmentRequest\0228\n"
-          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " admanager.googleapis.com/Network\022G\n"
+          + "total_size\030\003 \001(\005\"\243\001\n"
+          + "\034CreateAudienceSegmentRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022H\n"
           + "\020audience_segment\030\002"
-          + " \001(\0132(.google.ads.admanager.v1.AudienceSegmentB\003\340A\002\"\254\001\n"
-          + "\"BatchCreateAudienceSegmentsRequest\0228\n"
-          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " admanager.googleapis.com/Network\022L\n"
-          + "\010requests\030\002"
-          + " \003(\01325.google.ads.admanager.v1.CreateAudienceSegmentRequestB\003\340A\002\"j\n"
+          + " \001(\0132(.google.ads.admanager.v1.AudienceSegmentB\004\342A\001\002\"\256\001\n"
+          + "\"BatchCreateAudienceSegmentsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022M\n"
+          + "\010requests\030\002 \003(\01325.google.ads.admanage"
+          + "r.v1.CreateAudienceSegmentRequestB\004\342A\001\002\"j\n"
           + "#BatchCreateAudienceSegmentsResponse\022C\n"
           + "\021audience_segments\030\001"
-          + " \003(\0132(.google.ads.admanager.v1.AudienceSegment\"\241\001\n"
-          + "$BatchActivateAudienceSegmentsRequest\0228\n"
-          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " admanager.googleapis.com/Network\022?\n"
-          + "\005names\030\002 \003(\tB0\340A\002\372A*\n"
+          + " \003(\0132(.google.ads.admanager.v1.AudienceSegment\"\237\001\n"
+          + "\034UpdateAudienceSegmentRequest\022H\n"
+          + "\020audience_segment\030\001"
+          + " \001(\0132(.google.ads.admanager.v1.AudienceSegmentB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\"\256\001\n"
+          + "\"BatchUpdateAudienceSegmentsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022M\n"
+          + "\010requests\030\002 \003(\01325.google.ads.a"
+          + "dmanager.v1.UpdateAudienceSegmentRequestB\004\342A\001\002\"j\n"
+          + "#BatchUpdateAudienceSegmentsResponse\022C\n"
+          + "\021audience_segments\030\001"
+          + " \003(\0132(.google.ads.admanager.v1.AudienceSegment\"\243\001\n"
+          + "$BatchActivateAudienceSegmentsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022@\n"
+          + "\005names\030\002 \003(\tB1\342A\001\002\372A*\n"
           + "(admanager.googleapis.com/AudienceSegment\"=\n"
           + "%BatchActivateAudienceSegmentsResponse\022\024\n"
-          + "\014change_count\030\001 \001(\003\"\243\001\n"
-          + "&BatchDeactivateAudienceSegmentsRequest\0228\n"
-          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " admanager.googleapis.com/Network\022?\n"
-          + "\005names\030\002 \003(\tB0\340A\002\372A*\n"
+          + "\014change_count\030\001 \001(\003\"\245\001\n"
+          + "&BatchDeactivateAudienceSegmentsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022@\n"
+          + "\005names\030\002 \003(\tB1\342A\001\002\372A*\n"
           + "(admanager.googleapis.com/AudienceSegment\"?\n"
           + "\'BatchDeactivateAudienceSegmentsResponse\022\024\n"
-          + "\014change_count\030\001 \001(\003\"\240\001\n"
-          + "#BatchApproveAudienceSegmentsRequest\0228\n"
-          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " admanager.googleapis.com/Network\022?\n"
-          + "\005names\030\002 \003(\tB0\340A\002\372A*\n"
+          + "\014change_count\030\001 \001(\003\"\242\001\n"
+          + "#BatchApproveAudienceSegmentsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022@\n"
+          + "\005names\030\002 \003(\tB1\342A\001\002\372A*\n"
           + "(admanager.googleapis.com/AudienceSegment\"<\n"
           + "$BatchApproveAudienceSegmentsResponse\022\024\n"
-          + "\014change_count\030\001 \001(\003\"\237\001\n"
-          + "\"BatchRejectAudienceSegmentsRequest\0228\n"
-          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " admanager.googleapis.com/Network\022?\n"
-          + "\005names\030\002 \003(\tB0\340A\002\372A*\n"
+          + "\014change_count\030\001 \001(\003\"\241\001\n"
+          + "\"BatchRejectAudienceSegmentsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022@\n"
+          + "\005names\030\002 \003(\tB1\342A\001\002\372A*\n"
           + "(admanager.googleapis.com/AudienceSegment\";\n"
           + "#BatchRejectAudienceSegmentsResponse\022\024\n"
-          + "\014change_count\030\001 \001(\003\"\241\001\n"
-          + "$BatchPopulateAudienceSegmentsRequest\0228\n"
-          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
-          + " admanager.googleapis.com/Network\022?\n"
-          + "\005names\030\002 \003(\tB0\340A\002\372A*\n"
+          + "\014change_count\030\001 \001(\003\"\243\001\n"
+          + "$BatchPopulateAudienceSegmentsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n"
+          + " admanager.googleapis.com/Network\022@\n"
+          + "\005names\030\002 \003(\tB1\342A\001\002\372A*\n"
           + "(admanager.googleapis.com/AudienceSegment\"=\n"
           + "%BatchPopulateAudienceSegmentsResponse\022\024\n"
-          + "\014change_count\030\001 \001(\0032\205\021\n"
+          + "\014change_count\030\001 \001(\0032\342\024\n"
           + "\026AudienceSegmentService\022\253\001\n"
-          + "\022GetAudienceSegment\0222.google.ads.admanager.v1.GetAudie"
-          + "nceSegmentRequest\032(.google.ads.admanager"
-          + ".v1.AudienceSegment\"7\332A\004name\202\323\344\223\002*\022(/v1/{name=networks/*/audienceSegments/*}\022\276\001\n"
-          + "\024ListAudienceSegments\0224.google.ads.adman"
-          + "ager.v1.ListAudienceSegmentsRequest\0325.google.ads.admanager.v1.ListAudienceSegmen"
-          + "tsResponse\"9\332A\006parent\202\323\344\223\002*\022(/v1/{parent=networks/*}/audienceSegments\022\326\001\n"
-          + "\025CreateAudienceSegment\0225.google.ads.admanager.v"
-          + "1.CreateAudienceSegmentRequest\032(.google."
-          + "ads.admanager.v1.AudienceSegment\"\\\332A\027par"
-          + "ent,audience_segment\202\323\344\223\002<\"(/v1/{parent="
-          + "networks/*}/audienceSegments:\020audience_segment\022\353\001\n"
-          + "\033BatchCreateAudienceSegments\022;.google.ads.admanager.v1.BatchCreateAudi"
-          + "enceSegmentsRequest\032<.google.ads.admanager.v1.BatchCreateAudienceSegmentsRespons"
-          + "e\"Q\332A\017parent,requests\202\323\344\223\0029\"4/v1/{parent"
-          + "=networks/*}/audienceSegments:batchCreate:\001*\022\360\001\n"
-          + "\035BatchActivateAudienceSegments\022=.google.ads.admanager.v1.BatchActivateAu"
-          + "dienceSegmentsRequest\032>.google.ads.admanager.v1.BatchActivateAudienceSegmentsRes"
-          + "ponse\"P\332A\014parent,names\202\323\344\223\002;\"6/v1/{paren"
-          + "t=networks/*}/audienceSegments:batchActivate:\001*\022\370\001\n"
-          + "\037BatchDeactivateAudienceSegments\022?.google.ads.admanager.v1.BatchDeact"
-          + "ivateAudienceSegmentsRequest\032@.google.ads.admanager.v1.BatchDeactivateAudienceSe"
-          + "gmentsResponse\"R\332A\014parent,names\202\323\344\223\002=\"8/"
-          + "v1/{parent=networks/*}/audienceSegments:batchDeactivate:\001*\022\354\001\n"
-          + "\034BatchApproveAudienceSegments\022<.google.ads.admanager.v1.Ba"
-          + "tchApproveAudienceSegmentsRequest\032=.google.ads.admanager.v1.BatchApproveAudience"
-          + "SegmentsResponse\"O\332A\014parent,names\202\323\344\223\002:\""
-          + "5/v1/{parent=networks/*}/audienceSegments:batchApprove:\001*\022\350\001\n"
-          + "\033BatchRejectAudienceSegments\022;.google.ads.admanager.v1.Batc"
-          + "hRejectAudienceSegmentsRequest\032<.google.ads.admanager.v1.BatchRejectAudienceSegm"
-          + "entsResponse\"N\332A\014parent,names\202\323\344\223\0029\"4/v1"
-          + "/{parent=networks/*}/audienceSegments:batchReject:\001*\022\360\001\n"
-          + "\035BatchPopulateAudienceSegments\022=.google.ads.admanager.v1.BatchPo"
-          + "pulateAudienceSegmentsRequest\032>.google.ads.admanager.v1.BatchPopulateAudienceSeg"
-          + "mentsResponse\"P\332A\014parent,names\202\323\344\223\002;\"6/v"
-          + "1/{parent=networks/*}/audienceSegments:b"
-          + "atchPopulate:\001*\032z\312A\030admanager.googleapis"
-          + ".com\322A\\https://www.googleapis.com/auth/a"
-          + "dmanager,https://www.googleapis.com/auth/admanager.readonlyB\317\001\n"
-          + "\033com.google.ads.admanager.v1B\033AudienceSegmentServiceProto"
-          + "P\001Z@google.golang.org/genproto/googleapi"
-          + "s/ads/admanager/v1;admanager\252\002\027Google.Ad"
-          + "s.AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1"
-          + "\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "\022GetAudienceSegment\0222.google.ads.admanager.v1.GetAudienceSegmentRequest\032"
+          + "(.google.ads.admanager.v1.AudienceSegmen"
+          + "t\"7\332A\004name\202\323\344\223\002*\022(/v1/{name=networks/*/audienceSegments/*}\022\276\001\n"
+          + "\024ListAudienceSegments\0224.google.ads.admanager.v1.ListAudien"
+          + "ceSegmentsRequest\0325.google.ads.admanager"
+          + ".v1.ListAudienceSegmentsResponse\"9\332A\006par"
+          + "ent\202\323\344\223\002*\022(/v1/{parent=networks/*}/audienceSegments\022\326\001\n"
+          + "\025CreateAudienceSegment\0225.google.ads.admanager.v1.CreateAudienceSe"
+          + "gmentRequest\032(.google.ads.admanager.v1.A"
+          + "udienceSegment\"\\\332A\027parent,audience_segme"
+          + "nt\202\323\344\223\002<\"(/v1/{parent=networks/*}/audienceSegments:\020audience_segment\022\353\001\n"
+          + "\033BatchCreateAudienceSegments\022;.google.ads.admana"
+          + "ger.v1.BatchCreateAudienceSegmentsRequest\032<.google.ads.admanager.v1.BatchCreateA"
+          + "udienceSegmentsResponse\"Q\332A\017parent,reque"
+          + "sts\202\323\344\223\0029\"4/v1/{parent=networks/*}/audienceSegments:batchCreate:\001*\022\354\001\n"
+          + "\025UpdateAudienceSegment\0225.google.ads.admanager.v1.U"
+          + "pdateAudienceSegmentRequest\032(.google.ads"
+          + ".admanager.v1.AudienceSegment\"r\332A\034audien"
+          + "ce_segment,update_mask\202\323\344\223\002M29/v1/{audie"
+          + "nce_segment.name=networks/*/audienceSegments/*}:\020audience_segment\022\353\001\n"
+          + "\033BatchUpdateAudienceSegments\022;.google.ads.admanager"
+          + ".v1.BatchUpdateAudienceSegmentsRequest\032<.google.ads.admanager.v1.BatchUpdateAudi"
+          + "enceSegmentsResponse\"Q\332A\017parent,requests"
+          + "\202\323\344\223\0029\"4/v1/{parent=networks/*}/audienceSegments:batchUpdate:\001*\022\360\001\n"
+          + "\035BatchActivateAudienceSegments\022=.google.ads.admanager"
+          + ".v1.BatchActivateAudienceSegmentsRequest\032>.google.ads.admanager.v1.BatchActivate"
+          + "AudienceSegmentsResponse\"P\332A\014parent,name"
+          + "s\202\323\344\223\002;\"6/v1/{parent=networks/*}/audienceSegments:batchActivate:\001*\022\370\001\n"
+          + "\037BatchDeactivateAudienceSegments\022?.google.ads.adma"
+          + "nager.v1.BatchDeactivateAudienceSegmentsRequest\032@.google.ads.admanager.v1.BatchD"
+          + "eactivateAudienceSegmentsResponse\"R\332A\014pa"
+          + "rent,names\202\323\344\223\002=\"8/v1/{parent=networks/*"
+          + "}/audienceSegments:batchDeactivate:\001*\022\354\001\n"
+          + "\034BatchApproveAudienceSegments\022<.google.ads.admanager.v1.BatchApproveAudienceSeg"
+          + "mentsRequest\032=.google.ads.admanager.v1.B"
+          + "atchApproveAudienceSegmentsResponse\"O\332A\014"
+          + "parent,names\202\323\344\223\002:\"5/v1/{parent=networks/*}/audienceSegments:batchApprove:\001*\022\350\001\n"
+          + "\033BatchRejectAudienceSegments\022;.google.ads.admanager.v1.BatchRejectAudienceSegmen"
+          + "tsRequest\032<.google.ads.admanager.v1.Batc"
+          + "hRejectAudienceSegmentsResponse\"N\332A\014pare"
+          + "nt,names\202\323\344\223\0029\"4/v1/{parent=networks/*}/audienceSegments:batchReject:\001*\022\360\001\n"
+          + "\035BatchPopulateAudienceSegments\022=.google.ads.a"
+          + "dmanager.v1.BatchPopulateAudienceSegmentsRequest\032>.google.ads.admanager.v1.Batch"
+          + "PopulateAudienceSegmentsResponse\"P\332A\014par"
+          + "ent,names\202\323\344\223\002;\"6/v1/{parent=networks/*}"
+          + "/audienceSegments:batchPopulate:\001*\032z\312A\030a"
+          + "dmanager.googleapis.com\322A\\https://www.googleapis.com/auth/admanager,https://www."
+          + "googleapis.com/auth/admanager.readonlyB\317\001\n"
+          + "\033com.google.ads.admanager.v1B\033Audience"
+          + "SegmentServiceProtoP\001Z@google.golang.org/genproto/googleapis/ads/admanager/v1;ad"
+          + "manager\252\002\027Google.Ads.AdManager.V1\312\002\027Goog"
+          + "le\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -237,6 +272,7 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_GetAudienceSegmentRequest_descriptor =
         getDescriptor().getMessageType(0);
@@ -286,8 +322,32 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
             new java.lang.String[] {
               "AudienceSegments",
             });
-    internal_static_google_ads_admanager_v1_BatchActivateAudienceSegmentsRequest_descriptor =
+    internal_static_google_ads_admanager_v1_UpdateAudienceSegmentRequest_descriptor =
         getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_UpdateAudienceSegmentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateAudienceSegmentRequest_descriptor,
+            new java.lang.String[] {
+              "AudienceSegment", "UpdateMask",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateAudienceSegmentsRequest_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_ads_admanager_v1_BatchUpdateAudienceSegmentsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateAudienceSegmentsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_ads_admanager_v1_BatchUpdateAudienceSegmentsResponse_descriptor =
+        getDescriptor().getMessageType(8);
+    internal_static_google_ads_admanager_v1_BatchUpdateAudienceSegmentsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BatchUpdateAudienceSegmentsResponse_descriptor,
+            new java.lang.String[] {
+              "AudienceSegments",
+            });
+    internal_static_google_ads_admanager_v1_BatchActivateAudienceSegmentsRequest_descriptor =
+        getDescriptor().getMessageType(9);
     internal_static_google_ads_admanager_v1_BatchActivateAudienceSegmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchActivateAudienceSegmentsRequest_descriptor,
@@ -295,7 +355,7 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
               "Parent", "Names",
             });
     internal_static_google_ads_admanager_v1_BatchActivateAudienceSegmentsResponse_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(10);
     internal_static_google_ads_admanager_v1_BatchActivateAudienceSegmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchActivateAudienceSegmentsResponse_descriptor,
@@ -303,7 +363,7 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
               "ChangeCount",
             });
     internal_static_google_ads_admanager_v1_BatchDeactivateAudienceSegmentsRequest_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(11);
     internal_static_google_ads_admanager_v1_BatchDeactivateAudienceSegmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchDeactivateAudienceSegmentsRequest_descriptor,
@@ -311,7 +371,7 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
               "Parent", "Names",
             });
     internal_static_google_ads_admanager_v1_BatchDeactivateAudienceSegmentsResponse_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(12);
     internal_static_google_ads_admanager_v1_BatchDeactivateAudienceSegmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchDeactivateAudienceSegmentsResponse_descriptor,
@@ -319,7 +379,7 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
               "ChangeCount",
             });
     internal_static_google_ads_admanager_v1_BatchApproveAudienceSegmentsRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(13);
     internal_static_google_ads_admanager_v1_BatchApproveAudienceSegmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchApproveAudienceSegmentsRequest_descriptor,
@@ -327,7 +387,7 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
               "Parent", "Names",
             });
     internal_static_google_ads_admanager_v1_BatchApproveAudienceSegmentsResponse_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(14);
     internal_static_google_ads_admanager_v1_BatchApproveAudienceSegmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchApproveAudienceSegmentsResponse_descriptor,
@@ -335,7 +395,7 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
               "ChangeCount",
             });
     internal_static_google_ads_admanager_v1_BatchRejectAudienceSegmentsRequest_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(15);
     internal_static_google_ads_admanager_v1_BatchRejectAudienceSegmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchRejectAudienceSegmentsRequest_descriptor,
@@ -343,7 +403,7 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
               "Parent", "Names",
             });
     internal_static_google_ads_admanager_v1_BatchRejectAudienceSegmentsResponse_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(16);
     internal_static_google_ads_admanager_v1_BatchRejectAudienceSegmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchRejectAudienceSegmentsResponse_descriptor,
@@ -351,7 +411,7 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
               "ChangeCount",
             });
     internal_static_google_ads_admanager_v1_BatchPopulateAudienceSegmentsRequest_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(17);
     internal_static_google_ads_admanager_v1_BatchPopulateAudienceSegmentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchPopulateAudienceSegmentsRequest_descriptor,
@@ -359,7 +419,7 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
               "Parent", "Names",
             });
     internal_static_google_ads_admanager_v1_BatchPopulateAudienceSegmentsResponse_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(18);
     internal_static_google_ads_admanager_v1_BatchPopulateAudienceSegmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BatchPopulateAudienceSegmentsResponse_descriptor,
@@ -372,6 +432,7 @@ public final class AudienceSegmentServiceProto extends com.google.protobuf.Gener
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

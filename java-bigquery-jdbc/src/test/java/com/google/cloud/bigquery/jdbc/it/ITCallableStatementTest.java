@@ -444,17 +444,6 @@ public class ITCallableStatementTest extends ITBase {
     assertEquals(expected, actual);
   }
 
-  @Test
-  public void testSetterGetterTimestampCal() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Timestamp expected = new Timestamp(1L);
-    Calendar cal = Calendar.getInstance();
-    callableStatement.setTimestamp(CALLABLE_STMT_PARAM_KEY, expected, cal);
-    Timestamp actual = callableStatement.getTimestamp(CALLABLE_STMT_PARAM_KEY, cal);
-    assertEquals(expected, actual);
-  }
-
   // Block B Tests
   @Test
   public void testCallableStatementScriptExecuteUpdate() throws SQLException {

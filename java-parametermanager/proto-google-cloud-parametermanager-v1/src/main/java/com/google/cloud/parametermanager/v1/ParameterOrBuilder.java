@@ -329,4 +329,132 @@ public interface ParameterOrBuilder
    * @return The bytes for kmsKey.
    */
   com.google.protobuf.ByteString getKmsKeyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+   * this Parameter. You must represent each item in the map as:
+   * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+   *
+   * For example, a single resource can have the following tags:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing",
+   * ```
+   * Tags are used to organize and group resources.
+   *
+   * Tags can be used to control policy evaluation for the resource.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+   * this Parameter. You must represent each item in the map as:
+   * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+   *
+   * For example, a single resource can have the following tags:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing",
+   * ```
+   * Tags are used to organize and group resources.
+   *
+   * Tags can be used to control policy evaluation for the resource.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsTags(java.lang.String key);
+
+  /** Use {@link #getTagsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getTags();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+   * this Parameter. You must represent each item in the map as:
+   * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+   *
+   * For example, a single resource can have the following tags:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing",
+   * ```
+   * Tags are used to organize and group resources.
+   *
+   * Tags can be used to control policy evaluation for the resource.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getTagsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+   * this Parameter. You must represent each item in the map as:
+   * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+   *
+   * For example, a single resource can have the following tags:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing",
+   * ```
+   * Tags are used to organize and group resources.
+   *
+   * Tags can be used to control policy evaluation for the resource.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getTagsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Immutable. Tag keys and tag values that are bound to
+   * this Parameter. You must represent each item in the map as:
+   * `"&lt;tag-key-namespaced-name&gt;" : "&lt;tag-value-short-name&gt;"`.
+   *
+   * For example, a single resource can have the following tags:
+   * ```
+   * "123/environment": "production",
+   * "123/costCenter": "marketing",
+   * ```
+   * Tags are used to organize and group resources.
+   *
+   * Tags can be used to control policy evaluation for the resource.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; tags = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getTagsOrThrow(java.lang.String key);
 }

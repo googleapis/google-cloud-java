@@ -40,6 +40,8 @@ import static com.google.api.gax.rpc.ResumableUploadErrorClassifier.Category.TRA
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import java.io.IOException;
 import java.net.SocketException;
@@ -73,6 +75,43 @@ class ResumableUploadErrorClassifierTest {
       @Nullable Integer httpStatus, Code code, @Nullable Throwable cause) {
     return ApiExceptionFactory.createException(
         "HTTP " + httpStatus, cause, statusCode(httpStatus, code), false);
+  }
+
+  @Test
+  void testServerRejection_isFatalEvenWithRetryableOrRecoverableHttpCode() {
+    HttpHeaders finalStatus = new HttpHeaders().set("X-Goog-Upload-Status", "final");
+    ApiException final503 =
+        createApiException(
+            503,
+            Code.UNAVAILABLE,
+            new HttpResponseException.Builder(503, null, finalStatus).build());
+    ApiException final400 =
+        createApiException(
+            400,
+            Code.INVALID_ARGUMENT,
+            new HttpResponseException.Builder(400, null, finalStatus).build());
+
+    assertThat(ResumableUploadErrorClassifier.classify(final503, UPLOAD)).isEqualTo(FATAL);
+    assertThat(ResumableUploadErrorClassifier.classify(final400, UPLOAD)).isEqualTo(FATAL);
+  }
+
+  @Test
+  void testNonFinalUploadStatus_fallsThroughToHttpStatusClassification() {
+    ApiException active400 =
+        createApiException(
+            400,
+            Code.INVALID_ARGUMENT,
+            new HttpResponseException.Builder(
+                    400, null, new HttpHeaders().set("X-Goog-Upload-Status", "active"))
+                .build());
+    ApiException noStatus503 =
+        createApiException(
+            503,
+            Code.UNAVAILABLE,
+            new HttpResponseException.Builder(503, null, new HttpHeaders()).build());
+
+    assertThat(ResumableUploadErrorClassifier.classify(active400, UPLOAD)).isEqualTo(RECOVERABLE);
+    assertThat(ResumableUploadErrorClassifier.classify(noStatus503, UPLOAD)).isEqualTo(TRANSIENT);
   }
 
   @Test

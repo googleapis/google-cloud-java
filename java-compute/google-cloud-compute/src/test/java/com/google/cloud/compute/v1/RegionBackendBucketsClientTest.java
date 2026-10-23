@@ -225,7 +225,6 @@ public class RegionBackendBucketsClientTest {
             .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
-            .setIamOwned(true)
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);
@@ -536,7 +535,6 @@ public class RegionBackendBucketsClientTest {
             .addAllAuditConfigs(new ArrayList<AuditConfig>())
             .addAllBindings(new ArrayList<Binding>())
             .setEtag("etag3123477")
-            .setIamOwned(true)
             .setVersion(351608024)
             .build();
     mockService.addResponse(expectedResponse);

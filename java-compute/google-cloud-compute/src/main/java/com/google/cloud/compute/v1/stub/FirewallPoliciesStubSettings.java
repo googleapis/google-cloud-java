@@ -491,7 +491,8 @@ public class FirewallPoliciesStubSettings extends StubSettings<FirewallPoliciesS
             "gapic", GaxProperties.getLibraryVersion(FirewallPoliciesStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

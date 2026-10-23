@@ -306,6 +306,114 @@ public class IngestionServiceClientTest {
   }
 
   @Test
+  public void ingestUsersTest() throws Exception {
+    IngestUsersResponse expectedResponse =
+        IngestUsersResponse.newBuilder().setRequestId("requestId693933066").build();
+    mockIngestionService.addResponse(expectedResponse);
+
+    IngestUsersRequest request =
+        IngestUsersRequest.newBuilder()
+            .addAllDestinations(new ArrayList<Destination>())
+            .addAllUsers(new ArrayList<User>())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setValidateOnly(true)
+            .setEncoding(Encoding.forNumber(0))
+            .build();
+
+    IngestUsersResponse actualResponse = client.ingestUsers(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIngestionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    IngestUsersRequest actualRequest = ((IngestUsersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getDestinationsList(), actualRequest.getDestinationsList());
+    Assert.assertEquals(request.getUsersList(), actualRequest.getUsersList());
+    Assert.assertEquals(request.getEncryptionInfo(), actualRequest.getEncryptionInfo());
+    Assert.assertEquals(request.getValidateOnly(), actualRequest.getValidateOnly());
+    Assert.assertEquals(request.getEncoding(), actualRequest.getEncoding());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void ingestUsersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIngestionService.addException(exception);
+
+    try {
+      IngestUsersRequest request =
+          IngestUsersRequest.newBuilder()
+              .addAllDestinations(new ArrayList<Destination>())
+              .addAllUsers(new ArrayList<User>())
+              .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+              .setValidateOnly(true)
+              .setEncoding(Encoding.forNumber(0))
+              .build();
+      client.ingestUsers(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void removeUsersTest() throws Exception {
+    RemoveUsersResponse expectedResponse =
+        RemoveUsersResponse.newBuilder().setRequestId("requestId693933066").build();
+    mockIngestionService.addResponse(expectedResponse);
+
+    RemoveUsersRequest request =
+        RemoveUsersRequest.newBuilder()
+            .addAllDestinations(new ArrayList<Destination>())
+            .addAllUserData(new ArrayList<UserData>())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setValidateOnly(true)
+            .setEncoding(Encoding.forNumber(0))
+            .build();
+
+    RemoveUsersResponse actualResponse = client.removeUsers(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIngestionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RemoveUsersRequest actualRequest = ((RemoveUsersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getDestinationsList(), actualRequest.getDestinationsList());
+    Assert.assertEquals(request.getUserDataList(), actualRequest.getUserDataList());
+    Assert.assertEquals(request.getEncryptionInfo(), actualRequest.getEncryptionInfo());
+    Assert.assertEquals(request.getValidateOnly(), actualRequest.getValidateOnly());
+    Assert.assertEquals(request.getEncoding(), actualRequest.getEncoding());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void removeUsersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIngestionService.addException(exception);
+
+    try {
+      RemoveUsersRequest request =
+          RemoveUsersRequest.newBuilder()
+              .addAllDestinations(new ArrayList<Destination>())
+              .addAllUserData(new ArrayList<UserData>())
+              .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+              .setValidateOnly(true)
+              .setEncoding(Encoding.forNumber(0))
+              .build();
+      client.removeUsers(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void ingestAdEventsTest() throws Exception {
     IngestAdEventsResponse expectedResponse = IngestAdEventsResponse.newBuilder().build();
     mockIngestionService.addResponse(expectedResponse);

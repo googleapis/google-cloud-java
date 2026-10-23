@@ -592,4 +592,48 @@ public interface RepositoryOrBuilder
    * @return The bytes for internalMetadata.
    */
   com.google.protobuf.ByteString getInternalMetadataBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Includes configuration options for end user authentication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.Repository.EndUserAuthConfig end_user_auth_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the endUserAuthConfig field is set.
+   */
+  boolean hasEndUserAuthConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Includes configuration options for end user authentication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.Repository.EndUserAuthConfig end_user_auth_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endUserAuthConfig.
+   */
+  com.google.cloud.dataform.v1beta1.Repository.EndUserAuthConfig getEndUserAuthConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Includes configuration options for end user authentication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.Repository.EndUserAuthConfig end_user_auth_config = 28 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.Repository.EndUserAuthConfigOrBuilder
+      getEndUserAuthConfigOrBuilder();
 }

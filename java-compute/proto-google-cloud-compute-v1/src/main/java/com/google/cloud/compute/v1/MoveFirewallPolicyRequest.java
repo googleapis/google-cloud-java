@@ -141,7 +141,27 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
+   * optional string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+   * </code>
+   *
+   * @return Whether the parentId field is set.
+   */
+  @java.lang.Override
+  public boolean hasParentId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The new parent of the firewall policy. The ID can be either be
+   * "folders/[FOLDER_ID]" if the parent is a folder or
+   * "organizations/[ORGANIZATION_ID]" if the parent is an organization.
+   * </pre>
+   *
+   * <code>
+   * optional string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
    * </code>
    *
    * @return The parentId.
@@ -169,7 +189,7 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
+   * optional string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
    * </code>
    *
    * @return The bytes for parentId.
@@ -217,7 +237,7 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
    */
   @java.lang.Override
   public boolean hasRequestId() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -306,10 +326,10 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 37109963, requestId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parentId_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 459714768, parentId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(firewallPolicy_)) {
@@ -324,10 +344,10 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(37109963, requestId_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parentId_)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(459714768, parentId_);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(firewallPolicy_)) {
@@ -350,7 +370,10 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
         (com.google.cloud.compute.v1.MoveFirewallPolicyRequest) obj;
 
     if (!getFirewallPolicy().equals(other.getFirewallPolicy())) return false;
-    if (!getParentId().equals(other.getParentId())) return false;
+    if (hasParentId() != other.hasParentId()) return false;
+    if (hasParentId()) {
+      if (!getParentId().equals(other.getParentId())) return false;
+    }
     if (hasRequestId() != other.hasRequestId()) return false;
     if (hasRequestId()) {
       if (!getRequestId().equals(other.getRequestId())) return false;
@@ -368,8 +391,10 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + FIREWALL_POLICY_FIELD_NUMBER;
     hash = (53 * hash) + getFirewallPolicy().hashCode();
-    hash = (37 * hash) + PARENT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getParentId().hashCode();
+    if (hasParentId()) {
+      hash = (37 * hash) + PARENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getParentId().hashCode();
+    }
     if (hasRequestId()) {
       hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRequestId().hashCode();
@@ -557,13 +582,14 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.firewallPolicy_ = firewallPolicy_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.parentId_ = parentId_;
+        to_bitField0_ |= 0x00000001;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.requestId_ = requestId_;
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -586,7 +612,7 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getParentId().isEmpty()) {
+      if (other.hasParentId()) {
         parentId_ = other.parentId_;
         bitField0_ |= 0x00000002;
         onChanged();
@@ -782,7 +808,26 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
+     * optional string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
+     * </code>
+     *
+     * @return Whether the parentId field is set.
+     */
+    public boolean hasParentId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The new parent of the firewall policy. The ID can be either be
+     * "folders/[FOLDER_ID]" if the parent is a folder or
+     * "organizations/[ORGANIZATION_ID]" if the parent is an organization.
+     * </pre>
+     *
+     * <code>
+     * optional string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
      * </code>
      *
      * @return The parentId.
@@ -809,7 +854,7 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
+     * optional string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
      * </code>
      *
      * @return The bytes for parentId.
@@ -836,7 +881,7 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
+     * optional string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
      * </code>
      *
      * @param value The parentId to set.
@@ -862,7 +907,7 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
+     * optional string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
      * </code>
      *
      * @return This builder for chaining.
@@ -884,7 +929,7 @@ public final class MoveFirewallPolicyRequest extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];
+     * optional string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];
      * </code>
      *
      * @param value The bytes for parentId to set.

@@ -22,6 +22,8 @@ import static org.mockito.Mockito.verify;
 
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
+import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.api.Client.Resource;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
@@ -34,6 +36,26 @@ public class ShimImplTest {
 
   private static final InstantiatingGrpcChannelProvider EMPTY_TRANSPORT =
       InstantiatingGrpcChannelProvider.newBuilder().build();
+
+  /**
+   * ReadRow and ReadModifyWriteRow disagree on what "no row in the response" means, and the session
+   * path must match the classic path for each. A ReadRow miss is a null Row; a ReadModifyWriteRow
+   * always produces one, so a response without a row must still build a Row rather than handing
+   * user code a null the classic path never produces.
+   */
+  @Test
+  public void readRowExtractor_noRow_returnsNull() {
+    assertThat(ShimImpl.READ_ROW_EXTRACTOR.apply(SessionReadRowResponse.getDefaultInstance()))
+        .isNull();
+  }
+
+  @Test
+  public void readModifyWriteRowExtractor_noRow_returnsEmptyRowNotNull() {
+    assertThat(
+            ShimImpl.READ_MODIFY_WRITE_ROW_EXTRACTOR.apply(
+                SessionReadModifyWriteRowResponse.getDefaultInstance()))
+        .isNotNull();
+  }
 
   @Test
   public void selectUserCallbackExecutor_transportSet_returnsSharedTransportExecutor() {

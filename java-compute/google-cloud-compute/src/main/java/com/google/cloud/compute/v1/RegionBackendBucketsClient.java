@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionBackendBuckets API.
  *
+ * <p>This client uses RegionBackendBuckets version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -862,7 +864,6 @@ public class RegionBackendBucketsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (BackendBucket element : regionBackendBucketsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -900,7 +901,6 @@ public class RegionBackendBucketsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<BackendBucket> future =
    *       regionBackendBucketsClient.listPagedCallable().futureCall(request);
@@ -939,7 +939,6 @@ public class RegionBackendBucketsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     BackendBucketList response = regionBackendBucketsClient.listCallable().call(request);
@@ -1019,7 +1018,6 @@ public class RegionBackendBucketsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (BackendBucket element : regionBackendBucketsClient.listUsable(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1056,7 +1054,6 @@ public class RegionBackendBucketsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<BackendBucket> future =
    *       regionBackendBucketsClient.listUsablePagedCallable().futureCall(request);
@@ -1094,7 +1091,6 @@ public class RegionBackendBucketsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     BackendBucketListUsable response =

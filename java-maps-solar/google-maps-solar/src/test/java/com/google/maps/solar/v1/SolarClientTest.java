@@ -96,6 +96,7 @@ public class SolarClientTest {
             .setRegionCode("regionCode-1991004415")
             .setSolarPotential(SolarPotential.newBuilder().build())
             .setImageryQuality(ImageryQuality.forNumber(0))
+            .setDetectedArrays(BuildingInsights.DetectedArrays.newBuilder().build())
             .build();
     mockSolar.addResponse(expectedResponse);
 
@@ -105,6 +106,7 @@ public class SolarClientTest {
             .setRequiredQuality(ImageryQuality.forNumber(0))
             .setExactQualityRequired(true)
             .addAllExperiments(new ArrayList<Experiment>())
+            .addAllAdditionalInsights(new ArrayList<AdditionalInsights>())
             .build();
 
     BuildingInsights actualResponse = client.findClosestBuildingInsights(request);
@@ -119,6 +121,8 @@ public class SolarClientTest {
     Assert.assertEquals(request.getRequiredQuality(), actualRequest.getRequiredQuality());
     Assert.assertEquals(request.getExactQualityRequired(), actualRequest.getExactQualityRequired());
     Assert.assertEquals(request.getExperimentsList(), actualRequest.getExperimentsList());
+    Assert.assertEquals(
+        request.getAdditionalInsightsList(), actualRequest.getAdditionalInsightsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -137,6 +141,7 @@ public class SolarClientTest {
               .setRequiredQuality(ImageryQuality.forNumber(0))
               .setExactQualityRequired(true)
               .addAllExperiments(new ArrayList<Experiment>())
+              .addAllAdditionalInsights(new ArrayList<AdditionalInsights>())
               .build();
       client.findClosestBuildingInsights(request);
       Assert.fail("No exception raised");

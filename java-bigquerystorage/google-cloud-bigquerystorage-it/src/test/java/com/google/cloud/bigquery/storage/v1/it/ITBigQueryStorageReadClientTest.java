@@ -118,6 +118,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /** Integration tests for BigQuery Storage API. */
@@ -1628,6 +1629,7 @@ class ITBigQueryStorageReadClientTest {
     assertEquals(new Utf8("abc"), structRecord.get("str_field"), rowAssertMessage);
   }
 
+  @Disabled("Flaky test: b/575539309")
   @Test
   void testSimpleReadWithBackgroundExecutorProvider() throws IOException {
     BigQueryReadSettings.Builder settingsBuilder =

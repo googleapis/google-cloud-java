@@ -50,7 +50,7 @@ function retry_with_backoff {
   attempts_left=$1
   sleep_seconds=$2
   shift 2
-  command=$@
+  command=("$@")
 
   # store current flag state
   flags=$-
@@ -58,7 +58,7 @@ function retry_with_backoff {
   # allow a failures to continue
   set +e
   unset IFS
-  ${command}
+  "${command[@]}"
   exit_code=$?
 
   # restore "e" flag
@@ -78,7 +78,7 @@ function retry_with_backoff {
     sleep ${sleep_seconds}
     new_attempts=$((${attempts_left} - 1))
     new_sleep=$((${sleep_seconds} * 2))
-    retry_with_backoff ${new_attempts} ${new_sleep} ${command}
+    retry_with_backoff ${new_attempts} ${new_sleep} "${command[@]}"
   fi
 
   return $exit_code
@@ -255,8 +255,8 @@ function get_modified_files() {
 #
 # Monorepo-wide testing is triggered under four conditions:
 # 1. TEST_ALL_MODULES is set to "true" (used by nightly and scheduled CI builds).
-# 2. Root parent POMs (google-cloud-jar-parent or google-cloud-pom-parent) are modified,
-#    as changes to parent POMs affect shared dependency versions and compiler/build plugins.
+# 2. Root parent POMs (google-cloud-jar-parent, google-cloud-pom-parent, or java-shared-config)
+#    are modified, as changes to parent POMs affect shared dependency versions and compiler/build plugins.
 # 3. Core SDK platform libraries (sdk-platform-java) are modified, as gax, generators,
 #    and core transport changes can break downstream client library integration tests.
 # 4. Core authentication libraries (google-auth-library-java) are modified, as auth/credential
@@ -269,6 +269,7 @@ function should_test_all_modules() {
   # stdin of grep, avoiding an external subshell pipeline (like 'echo "$var" | grep').
   if [[ "${TEST_ALL_MODULES}" == "true" ]] || \
      grep -q -E '^google-cloud-(pom|jar)-parent/pom.xml$' <<< "${files}" || \
+     grep -q -E '^java-shared-config/' <<< "${files}" || \
      grep -q -E '^sdk-platform-java/' <<< "${files}" || \
      grep -q -E '^google-auth-library-java/' <<< "${files}"; then
     return 0
@@ -534,16 +535,18 @@ function generate_graalvm_modules_list() {
 
 function install_modules() {
   if [ -z "$1" ]; then
-    mvn install \
-      -B -ntp \
-      -Pquick-build \
-      -DtrimStackTrace=false \
-      -Dorg.slf4j.simpleLogger.showDateTime=true \
-      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-      -DskipTests=true \
-      -Dmaven.javadoc.skip=true \
-      -Dgcloud.download.skip=true \
-      -T 1C
+    retry_with_backoff 3 10 \
+      mvn install \
+        -B -ntp \
+        -U \
+        -Pquick-build \
+        -DtrimStackTrace=false \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -DskipTests=true \
+        -Dmaven.javadoc.skip=true \
+        -Dgcloud.download.skip=true \
+        -T 1C
   else
     printf "Installing modules:\n%s\n" "$1"
     parse_all_submodules "$1"
@@ -593,6 +596,7 @@ function install_modules() {
     # Join dependencies into comma-delimited string without subshell:
     local IFS=,
     always_install_deps="${always_install_deps_list[*]}"
+    unset IFS
     printf "with always_install_deps:\n%s\n" "$all_submodules,$always_install_deps"
 
     # When working with a maven multi-module project containing other multi-module projects,
@@ -610,16 +614,18 @@ function install_modules() {
     #
     #   mvn install --projects java-kms/google-cloud-kms --also-make
     #      Correctly builds dependencies without building dependents.
-    mvn install --projects "$all_submodules,$always_install_deps" --also-make \
-      -B -ntp \
-      -Pquick-build \
-      -DtrimStackTrace=false \
-      -Dorg.slf4j.simpleLogger.showDateTime=true \
-      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-      -DskipTests=true \
-      -Dmaven.javadoc.skip=true \
-      -Dgcloud.download.skip=true \
-      -T 1C
+    retry_with_backoff 3 10 \
+      mvn install --projects "$all_submodules,$always_install_deps" --also-make \
+        -B -ntp \
+        -U \
+        -Pquick-build \
+        -DtrimStackTrace=false \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -DskipTests=true \
+        -Dmaven.javadoc.skip=true \
+        -Dgcloud.download.skip=true \
+        -T 1C
   fi
 }
 

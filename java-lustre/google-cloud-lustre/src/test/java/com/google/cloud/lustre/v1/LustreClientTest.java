@@ -16,8 +16,10 @@
 
 package com.google.cloud.lustre.v1;
 
+import static com.google.cloud.lustre.v1.LustreClient.ListDirectoryPoliciesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListInstancesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListLocationsPagedResponse;
+import static com.google.cloud.lustre.v1.LustreClient.ListMirrorsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -197,6 +199,17 @@ public class LustreClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setPerUnitStorageThroughput(-946502681)
             .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
             .build();
     mockLustre.addResponse(expectedResponse);
 
@@ -245,6 +258,17 @@ public class LustreClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setPerUnitStorageThroughput(-946502681)
             .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
             .build();
     mockLustre.addResponse(expectedResponse);
 
@@ -293,6 +317,17 @@ public class LustreClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setPerUnitStorageThroughput(-946502681)
             .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -355,6 +390,17 @@ public class LustreClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setPerUnitStorageThroughput(-946502681)
             .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -417,6 +463,17 @@ public class LustreClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setPerUnitStorageThroughput(-946502681)
             .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -537,6 +594,152 @@ public class LustreClientTest {
     try {
       String name = "name3373707";
       client.deleteInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rescheduleMaintenanceTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setFilesystem("filesystem-1572513109")
+            .setCapacityGib(498394811)
+            .setNetwork("network1843485230")
+            .setMountPoint("mountPoint1280692471")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setPerUnitStorageThroughput(-946502681)
+            .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rescheduleMaintenanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLustre.addResponse(resultOperation);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    RescheduleMaintenanceRequest.Reschedule reschedule =
+        RescheduleMaintenanceRequest.Reschedule.newBuilder().build();
+
+    Instance actualResponse = client.rescheduleMaintenanceAsync(name, reschedule).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RescheduleMaintenanceRequest actualRequest =
+        ((RescheduleMaintenanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(reschedule, actualRequest.getReschedule());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rescheduleMaintenanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      RescheduleMaintenanceRequest.Reschedule reschedule =
+          RescheduleMaintenanceRequest.Reschedule.newBuilder().build();
+      client.rescheduleMaintenanceAsync(name, reschedule).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void rescheduleMaintenanceTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setFilesystem("filesystem-1572513109")
+            .setCapacityGib(498394811)
+            .setNetwork("network1843485230")
+            .setMountPoint("mountPoint1280692471")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setPerUnitStorageThroughput(-946502681)
+            .setGkeSupportEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setStateReason("stateReason1148834357")
+            .setPlacementPolicy("placementPolicy1565402231")
+            .setAccessRulesOptions(AccessRulesOptions.newBuilder().build())
+            .setUid("uid115792")
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setUpcomingMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setDynamicTierOptions(DynamicTierOptions.newBuilder().build())
+            .setAvailableVersion("availableVersion2060002767")
+            .setTargetVersion("targetVersion-1639412217")
+            .setEffectiveVersion("effectiveVersion1393275185")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rescheduleMaintenanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLustre.addResponse(resultOperation);
+
+    String name = "name3373707";
+    RescheduleMaintenanceRequest.Reschedule reschedule =
+        RescheduleMaintenanceRequest.Reschedule.newBuilder().build();
+
+    Instance actualResponse = client.rescheduleMaintenanceAsync(name, reschedule).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RescheduleMaintenanceRequest actualRequest =
+        ((RescheduleMaintenanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(reschedule, actualRequest.getReschedule());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void rescheduleMaintenanceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      String name = "name3373707";
+      RescheduleMaintenanceRequest.Reschedule reschedule =
+          RescheduleMaintenanceRequest.Reschedule.newBuilder().build();
+      client.rescheduleMaintenanceAsync(name, reschedule).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -685,6 +888,835 @@ public class LustreClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createMirrorTest() throws Exception {
+    Mirror expectedResponse =
+        Mirror.newBuilder()
+            .setName(MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]").toString())
+            .setGcsPath(GcsPath.newBuilder().build())
+            .setLustrePath(LustrePath.newBuilder().build())
+            .setDeletedFilesRetained(true)
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMirrorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLustre.addResponse(resultOperation);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    Mirror mirror = Mirror.newBuilder().build();
+    String mirrorId = "mirrorId-1236172486";
+
+    Mirror actualResponse = client.createMirrorAsync(parent, mirror, mirrorId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMirrorRequest actualRequest = ((CreateMirrorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(mirror, actualRequest.getMirror());
+    Assert.assertEquals(mirrorId, actualRequest.getMirrorId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMirrorExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      Mirror mirror = Mirror.newBuilder().build();
+      String mirrorId = "mirrorId-1236172486";
+      client.createMirrorAsync(parent, mirror, mirrorId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createMirrorTest2() throws Exception {
+    Mirror expectedResponse =
+        Mirror.newBuilder()
+            .setName(MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]").toString())
+            .setGcsPath(GcsPath.newBuilder().build())
+            .setLustrePath(LustrePath.newBuilder().build())
+            .setDeletedFilesRetained(true)
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createMirrorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLustre.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    Mirror mirror = Mirror.newBuilder().build();
+    String mirrorId = "mirrorId-1236172486";
+
+    Mirror actualResponse = client.createMirrorAsync(parent, mirror, mirrorId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMirrorRequest actualRequest = ((CreateMirrorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(mirror, actualRequest.getMirror());
+    Assert.assertEquals(mirrorId, actualRequest.getMirrorId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMirrorExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Mirror mirror = Mirror.newBuilder().build();
+      String mirrorId = "mirrorId-1236172486";
+      client.createMirrorAsync(parent, mirror, mirrorId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateMirrorTest() throws Exception {
+    Mirror expectedResponse =
+        Mirror.newBuilder()
+            .setName(MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]").toString())
+            .setGcsPath(GcsPath.newBuilder().build())
+            .setLustrePath(LustrePath.newBuilder().build())
+            .setDeletedFilesRetained(true)
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateMirrorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLustre.addResponse(resultOperation);
+
+    Mirror mirror = Mirror.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Mirror actualResponse = client.updateMirrorAsync(mirror, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateMirrorRequest actualRequest = ((UpdateMirrorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(mirror, actualRequest.getMirror());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateMirrorExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      Mirror mirror = Mirror.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateMirrorAsync(mirror, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteMirrorTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteMirrorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLustre.addResponse(resultOperation);
+
+    MirrorName name = MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]");
+
+    client.deleteMirrorAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMirrorRequest actualRequest = ((DeleteMirrorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMirrorExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      MirrorName name = MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]");
+      client.deleteMirrorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteMirrorTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteMirrorTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLustre.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteMirrorAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMirrorRequest actualRequest = ((DeleteMirrorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMirrorExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteMirrorAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getMirrorTest() throws Exception {
+    Mirror expectedResponse =
+        Mirror.newBuilder()
+            .setName(MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]").toString())
+            .setGcsPath(GcsPath.newBuilder().build())
+            .setLustrePath(LustrePath.newBuilder().build())
+            .setDeletedFilesRetained(true)
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    mockLustre.addResponse(expectedResponse);
+
+    MirrorName name = MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]");
+
+    Mirror actualResponse = client.getMirror(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMirrorRequest actualRequest = ((GetMirrorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMirrorExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      MirrorName name = MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]");
+      client.getMirror(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getMirrorTest2() throws Exception {
+    Mirror expectedResponse =
+        Mirror.newBuilder()
+            .setName(MirrorName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[MIRROR]").toString())
+            .setGcsPath(GcsPath.newBuilder().build())
+            .setLustrePath(LustrePath.newBuilder().build())
+            .setDeletedFilesRetained(true)
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    mockLustre.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Mirror actualResponse = client.getMirror(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetMirrorRequest actualRequest = ((GetMirrorRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getMirrorExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getMirror(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMirrorsTest() throws Exception {
+    Mirror responsesElement = Mirror.newBuilder().build();
+    ListMirrorsResponse expectedResponse =
+        ListMirrorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMirrors(Arrays.asList(responsesElement))
+            .build();
+    mockLustre.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    ListMirrorsPagedResponse pagedListResponse = client.listMirrors(parent);
+
+    List<Mirror> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMirrorsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMirrorsRequest actualRequest = ((ListMirrorsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMirrorsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.listMirrors(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMirrorsTest2() throws Exception {
+    Mirror responsesElement = Mirror.newBuilder().build();
+    ListMirrorsResponse expectedResponse =
+        ListMirrorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMirrors(Arrays.asList(responsesElement))
+            .build();
+    mockLustre.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListMirrorsPagedResponse pagedListResponse = client.listMirrors(parent);
+
+    List<Mirror> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMirrorsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMirrorsRequest actualRequest = ((ListMirrorsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMirrorsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listMirrors(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createDirectoryPolicyTest() throws Exception {
+    DirectoryPolicy expectedResponse =
+        DirectoryPolicy.newBuilder()
+            .setName(
+                DirectoryPolicyName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]")
+                    .toString())
+            .setDirectoryPath("directoryPath596047922")
+            .setLustreProjectId(-532265949)
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDirectoryPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLustre.addResponse(resultOperation);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    DirectoryPolicy directoryPolicy = DirectoryPolicy.newBuilder().build();
+    String directoryPolicyId = "directoryPolicyId1899556730";
+
+    DirectoryPolicy actualResponse =
+        client.createDirectoryPolicyAsync(parent, directoryPolicy, directoryPolicyId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDirectoryPolicyRequest actualRequest =
+        ((CreateDirectoryPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(directoryPolicy, actualRequest.getDirectoryPolicy());
+    Assert.assertEquals(directoryPolicyId, actualRequest.getDirectoryPolicyId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDirectoryPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      DirectoryPolicy directoryPolicy = DirectoryPolicy.newBuilder().build();
+      String directoryPolicyId = "directoryPolicyId1899556730";
+      client.createDirectoryPolicyAsync(parent, directoryPolicy, directoryPolicyId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createDirectoryPolicyTest2() throws Exception {
+    DirectoryPolicy expectedResponse =
+        DirectoryPolicy.newBuilder()
+            .setName(
+                DirectoryPolicyName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]")
+                    .toString())
+            .setDirectoryPath("directoryPath596047922")
+            .setLustreProjectId(-532265949)
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDirectoryPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLustre.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    DirectoryPolicy directoryPolicy = DirectoryPolicy.newBuilder().build();
+    String directoryPolicyId = "directoryPolicyId1899556730";
+
+    DirectoryPolicy actualResponse =
+        client.createDirectoryPolicyAsync(parent, directoryPolicy, directoryPolicyId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDirectoryPolicyRequest actualRequest =
+        ((CreateDirectoryPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(directoryPolicy, actualRequest.getDirectoryPolicy());
+    Assert.assertEquals(directoryPolicyId, actualRequest.getDirectoryPolicyId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDirectoryPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      DirectoryPolicy directoryPolicy = DirectoryPolicy.newBuilder().build();
+      String directoryPolicyId = "directoryPolicyId1899556730";
+      client.createDirectoryPolicyAsync(parent, directoryPolicy, directoryPolicyId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDirectoryPolicyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDirectoryPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLustre.addResponse(resultOperation);
+
+    DirectoryPolicyName name =
+        DirectoryPolicyName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]");
+
+    client.deleteDirectoryPolicyAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDirectoryPolicyRequest actualRequest =
+        ((DeleteDirectoryPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDirectoryPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      DirectoryPolicyName name =
+          DirectoryPolicyName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]");
+      client.deleteDirectoryPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDirectoryPolicyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDirectoryPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLustre.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteDirectoryPolicyAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDirectoryPolicyRequest actualRequest =
+        ((DeleteDirectoryPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDirectoryPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDirectoryPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getDirectoryPolicyTest() throws Exception {
+    DirectoryPolicy expectedResponse =
+        DirectoryPolicy.newBuilder()
+            .setName(
+                DirectoryPolicyName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]")
+                    .toString())
+            .setDirectoryPath("directoryPath596047922")
+            .setLustreProjectId(-532265949)
+            .setUid("uid115792")
+            .build();
+    mockLustre.addResponse(expectedResponse);
+
+    DirectoryPolicyName name =
+        DirectoryPolicyName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]");
+
+    DirectoryPolicy actualResponse = client.getDirectoryPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDirectoryPolicyRequest actualRequest = ((GetDirectoryPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDirectoryPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      DirectoryPolicyName name =
+          DirectoryPolicyName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]");
+      client.getDirectoryPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDirectoryPolicyTest2() throws Exception {
+    DirectoryPolicy expectedResponse =
+        DirectoryPolicy.newBuilder()
+            .setName(
+                DirectoryPolicyName.of(
+                        "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[DIRECTORY_POLICY]")
+                    .toString())
+            .setDirectoryPath("directoryPath596047922")
+            .setLustreProjectId(-532265949)
+            .setUid("uid115792")
+            .build();
+    mockLustre.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DirectoryPolicy actualResponse = client.getDirectoryPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDirectoryPolicyRequest actualRequest = ((GetDirectoryPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDirectoryPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDirectoryPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDirectoryPoliciesTest() throws Exception {
+    DirectoryPolicy responsesElement = DirectoryPolicy.newBuilder().build();
+    ListDirectoryPoliciesResponse expectedResponse =
+        ListDirectoryPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDirectoryPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockLustre.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    ListDirectoryPoliciesPagedResponse pagedListResponse = client.listDirectoryPolicies(parent);
+
+    List<DirectoryPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDirectoryPoliciesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDirectoryPoliciesRequest actualRequest =
+        ((ListDirectoryPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDirectoryPoliciesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.listDirectoryPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDirectoryPoliciesTest2() throws Exception {
+    DirectoryPolicy responsesElement = DirectoryPolicy.newBuilder().build();
+    ListDirectoryPoliciesResponse expectedResponse =
+        ListDirectoryPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDirectoryPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockLustre.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDirectoryPoliciesPagedResponse pagedListResponse = client.listDirectoryPolicies(parent);
+
+    List<DirectoryPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDirectoryPoliciesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockLustre.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDirectoryPoliciesRequest actualRequest =
+        ((ListDirectoryPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDirectoryPoliciesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLustre.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDirectoryPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionNetworkFirewallPolicies API.
  *
+ * <p>This client uses RegionNetworkFirewallPolicies version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -290,6 +292,25 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> patchOperationCallable()
  *           <li><p> patchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PatchAssociation</td>
+ *      <td><p> Updates an association for the specified network firewall policy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> patchAssociationAsync(PatchAssociationRegionNetworkFirewallPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> patchAssociationAsync(String project, String region, String firewallPolicy, FirewallPolicyAssociation firewallPolicyAssociationResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> patchAssociationOperationCallable()
+ *           <li><p> patchAssociationCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -548,6 +569,7 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    *     RegionNetworkFirewallPoliciesClient.create()) {
    *   AddAssociationRegionNetworkFirewallPolicyRequest request =
    *       AddAssociationRegionNetworkFirewallPolicyRequest.newBuilder()
+   *           .setAssociatedPolicyToBeReplaced("associatedPolicyToBeReplaced1754581094")
    *           .setFirewallPolicy("firewallPolicy1819692626")
    *           .setFirewallPolicyAssociationResource(FirewallPolicyAssociation.newBuilder().build())
    *           .setProject("project-309310695")
@@ -583,6 +605,7 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    *     RegionNetworkFirewallPoliciesClient.create()) {
    *   AddAssociationRegionNetworkFirewallPolicyRequest request =
    *       AddAssociationRegionNetworkFirewallPolicyRequest.newBuilder()
+   *           .setAssociatedPolicyToBeReplaced("associatedPolicyToBeReplaced1754581094")
    *           .setFirewallPolicy("firewallPolicy1819692626")
    *           .setFirewallPolicyAssociationResource(FirewallPolicyAssociation.newBuilder().build())
    *           .setProject("project-309310695")
@@ -619,6 +642,7 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    *     RegionNetworkFirewallPoliciesClient.create()) {
    *   AddAssociationRegionNetworkFirewallPolicyRequest request =
    *       AddAssociationRegionNetworkFirewallPolicyRequest.newBuilder()
+   *           .setAssociatedPolicyToBeReplaced("associatedPolicyToBeReplaced1754581094")
    *           .setFirewallPolicy("firewallPolicy1819692626")
    *           .setFirewallPolicyAssociationResource(FirewallPolicyAssociation.newBuilder().build())
    *           .setProject("project-309310695")
@@ -1784,7 +1808,6 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (FirewallPolicy element :
    *       regionNetworkFirewallPoliciesClient.list(request).iterateAll()) {
@@ -1823,7 +1846,6 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<FirewallPolicy> future =
    *       regionNetworkFirewallPoliciesClient.listPagedCallable().futureCall(request);
@@ -1862,7 +1884,6 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     FirewallPolicyList response =
@@ -2027,6 +2048,159 @@ public class RegionNetworkFirewallPoliciesClient implements BackgroundResource {
    */
   public final UnaryCallable<PatchRegionNetworkFirewallPolicyRequest, Operation> patchCallable() {
     return stub.patchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an association for the specified network firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkFirewallPoliciesClient regionNetworkFirewallPoliciesClient =
+   *     RegionNetworkFirewallPoliciesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String firewallPolicy = "firewallPolicy1819692626";
+   *   FirewallPolicyAssociation firewallPolicyAssociationResource =
+   *       FirewallPolicyAssociation.newBuilder().build();
+   *   Operation response =
+   *       regionNetworkFirewallPoliciesClient
+   *           .patchAssociationAsync(
+   *               project, region, firewallPolicy, firewallPolicyAssociationResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region Name of the region scoping this request.
+   * @param firewallPolicy Name of the firewall policy to update.
+   * @param firewallPolicyAssociationResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> patchAssociationAsync(
+      String project,
+      String region,
+      String firewallPolicy,
+      FirewallPolicyAssociation firewallPolicyAssociationResource) {
+    PatchAssociationRegionNetworkFirewallPolicyRequest request =
+        PatchAssociationRegionNetworkFirewallPolicyRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setFirewallPolicy(firewallPolicy)
+            .setFirewallPolicyAssociationResource(firewallPolicyAssociationResource)
+            .build();
+    return patchAssociationAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an association for the specified network firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkFirewallPoliciesClient regionNetworkFirewallPoliciesClient =
+   *     RegionNetworkFirewallPoliciesClient.create()) {
+   *   PatchAssociationRegionNetworkFirewallPolicyRequest request =
+   *       PatchAssociationRegionNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setFirewallPolicyAssociationResource(FirewallPolicyAssociation.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = regionNetworkFirewallPoliciesClient.patchAssociationAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> patchAssociationAsync(
+      PatchAssociationRegionNetworkFirewallPolicyRequest request) {
+    return patchAssociationOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an association for the specified network firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkFirewallPoliciesClient regionNetworkFirewallPoliciesClient =
+   *     RegionNetworkFirewallPoliciesClient.create()) {
+   *   PatchAssociationRegionNetworkFirewallPolicyRequest request =
+   *       PatchAssociationRegionNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setFirewallPolicyAssociationResource(FirewallPolicyAssociation.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       regionNetworkFirewallPoliciesClient
+   *           .patchAssociationOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          PatchAssociationRegionNetworkFirewallPolicyRequest, Operation, Operation>
+      patchAssociationOperationCallable() {
+    return stub.patchAssociationOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an association for the specified network firewall policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionNetworkFirewallPoliciesClient regionNetworkFirewallPoliciesClient =
+   *     RegionNetworkFirewallPoliciesClient.create()) {
+   *   PatchAssociationRegionNetworkFirewallPolicyRequest request =
+   *       PatchAssociationRegionNetworkFirewallPolicyRequest.newBuilder()
+   *           .setFirewallPolicy("firewallPolicy1819692626")
+   *           .setFirewallPolicyAssociationResource(FirewallPolicyAssociation.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       regionNetworkFirewallPoliciesClient.patchAssociationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>
+      patchAssociationCallable() {
+    return stub.patchAssociationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

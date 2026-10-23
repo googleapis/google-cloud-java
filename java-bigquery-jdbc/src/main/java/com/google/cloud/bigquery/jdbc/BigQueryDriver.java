@@ -18,6 +18,9 @@ package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.AuthenticationType;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import io.grpc.LoadBalancerRegistry;
 import io.grpc.internal.PickFirstLoadBalancerProvider;
@@ -124,6 +127,7 @@ public class BigQueryDriver implements Driver {
   @Override
   public Connection connect(String url, Properties info) throws SQLException {
     LOG.finest("++enter++");
+    AuthenticationType authType = AuthenticationType.AUTHENTICATION_TYPE_UNSPECIFIED;
     try {
       if (acceptsURL(url)) {
         Properties connectInfo = info == null ? new Properties() : (Properties) info.clone();
@@ -132,6 +136,17 @@ public class BigQueryDriver implements Driver {
         String connectionUri =
             BigQueryJdbcUrlUtility.appendPropertiesToURL(
                 url.substring(5), this.toString(), connectInfo);
+
+        String telemetryOptOut =
+            BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
+                connectionUri, BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME);
+
+        if (telemetryOptOut != null) {
+          connectInfo.setProperty(
+              BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME, telemetryOptOut);
+        }
+        TelemetryManager.getInstance(connectInfo);
+
         Level logLevel;
         String logPath;
         try {
@@ -200,14 +215,25 @@ public class BigQueryDriver implements Driver {
             logLevel,
             logPath,
             this.toString());
-        return BigQueryJdbcContextProxy.wrap(connection, Connection.class);
+
+        Connection wrapped = BigQueryJdbcContextProxy.wrap(connection, Connection.class);
+
+        authType = TelemetryManager.toAuthenticationType(ds.getOAuthType());
+        TelemetryManager.recordConnectionAttempt(Status.STATUS_SUCCESS, 0, authType);
+        return wrapped;
       } else {
         return null;
       }
     } catch (IOException e) {
-      LOG.warning("Getting a warning: " + e.getMessage());
+      TelemetryManager.recordConnectionAttempt(
+          Status.STATUS_ERROR, TelemetryManager.extractErrorCode(e), authType);
+      LOG.warning("Getting a warning: %s", e.getMessage());
+      return null;
+    } catch (Throwable t) {
+      TelemetryManager.recordConnectionAttempt(
+          Status.STATUS_ERROR, TelemetryManager.extractErrorCode(t), authType);
+      throw t;
     }
-    return null;
   }
 
   /**

@@ -131,6 +131,17 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
     return ((ParticipantsStubSettings) getStubSettings()).streamingAnalyzeContentSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to streamingReactiveCompanionSuggestions.
+   */
+  public StreamingCallSettings<
+          StreamingReactiveCompanionSuggestionsRequest,
+          StreamingReactiveCompanionSuggestionsResponse>
+      streamingReactiveCompanionSuggestionsSettings() {
+    return ((ParticipantsStubSettings) getStubSettings())
+        .streamingReactiveCompanionSuggestionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to bidiStreamingAnalyzeContent. */
   public StreamingCallSettings<
           BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
@@ -343,6 +354,16 @@ public class ParticipantsSettings extends ClientSettings<ParticipantsSettings> {
             StreamingAnalyzeContentRequest, StreamingAnalyzeContentResponse>
         streamingAnalyzeContentSettings() {
       return getStubSettingsBuilder().streamingAnalyzeContentSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to streamingReactiveCompanionSuggestions.
+     */
+    public StreamingCallSettings.Builder<
+            StreamingReactiveCompanionSuggestionsRequest,
+            StreamingReactiveCompanionSuggestionsResponse>
+        streamingReactiveCompanionSuggestionsSettings() {
+      return getStubSettingsBuilder().streamingReactiveCompanionSuggestionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to bidiStreamingAnalyzeContent. */

@@ -53,6 +53,10 @@ java_library(
     srcs = glob(["src/test/java/**/*.java"]),
     javacopts = _JAVA_COPTS,
     plugins = ["//:auto_value_plugin"],
+    resources = glob([
+        "src/test/resources/com/google/api/gax/httpjson/tls13TestCa.pem",
+        "src/test/resources/com/google/api/gax/httpjson/tls13TestServerCertAndKey.pem",
+    ]),
     visibility = ["//visibility:public"],
     deps = [":gax_httpjson"] + _COMPILE_DEPS + _TEST_COMPILE_DEPS,
 )

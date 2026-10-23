@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionUrlMaps API.
  *
+ * <p>This client uses RegionUrlMaps version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -698,7 +700,6 @@ public class RegionUrlMapsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (UrlMap element : regionUrlMapsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -735,7 +736,6 @@ public class RegionUrlMapsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<UrlMap> future = regionUrlMapsClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -771,7 +771,6 @@ public class RegionUrlMapsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     UrlMapList response = regionUrlMapsClient.listCallable().call(request);

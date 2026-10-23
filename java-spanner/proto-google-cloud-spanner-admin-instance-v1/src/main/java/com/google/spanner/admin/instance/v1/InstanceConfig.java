@@ -63,6 +63,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
     leaderOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     state_ = 0;
     freeInstanceAvailability_ = 0;
+    allowedProcessingUnits_ = java.util.Collections.emptyList();
     quorumType_ = 0;
   }
 
@@ -876,6 +877,766 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
     }
 
     // @@protoc_insertion_point(enum_scope:google.spanner.admin.instance.v1.InstanceConfig.QuorumType)
+  }
+
+  public interface AllowedProcessingUnitsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The minimum value of processing units applicable to this interval,
+     * inclusive.
+     * </pre>
+     *
+     * <code>int32 min_processing_units = 1;</code>
+     *
+     * @return The minProcessingUnits.
+     */
+    int getMinProcessingUnits();
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum value of processing units applicable to this interval,
+     * inclusive. If unset, there is no predefined limit to the supported
+     * number of processing units, although project quota limits still apply.
+     * </pre>
+     *
+     * <code>int32 max_processing_units = 2;</code>
+     *
+     * @return The maxProcessingUnits.
+     */
+    int getMaxProcessingUnits();
+
+    /**
+     *
+     *
+     * <pre>
+     * Allowed increments of processing units between “min” and “max”.
+     * </pre>
+     *
+     * <code>int32 processing_unit_increment = 3;</code>
+     *
+     * @return The processingUnitIncrement.
+     */
+    int getProcessingUnitIncrement();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a range of processing units supported by an instance configuration.
+   * </pre>
+   *
+   * Protobuf type {@code google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits}
+   */
+  public static final class AllowedProcessingUnits extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits)
+      AllowedProcessingUnitsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "AllowedProcessingUnits");
+    }
+
+    // Use AllowedProcessingUnits.newBuilder() to construct.
+    private AllowedProcessingUnits(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AllowedProcessingUnits() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto
+          .internal_static_google_spanner_admin_instance_v1_InstanceConfig_AllowedProcessingUnits_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto
+          .internal_static_google_spanner_admin_instance_v1_InstanceConfig_AllowedProcessingUnits_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.class,
+              com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.Builder
+                  .class);
+    }
+
+    public static final int MIN_PROCESSING_UNITS_FIELD_NUMBER = 1;
+    private int minProcessingUnits_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The minimum value of processing units applicable to this interval,
+     * inclusive.
+     * </pre>
+     *
+     * <code>int32 min_processing_units = 1;</code>
+     *
+     * @return The minProcessingUnits.
+     */
+    @java.lang.Override
+    public int getMinProcessingUnits() {
+      return minProcessingUnits_;
+    }
+
+    public static final int MAX_PROCESSING_UNITS_FIELD_NUMBER = 2;
+    private int maxProcessingUnits_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The maximum value of processing units applicable to this interval,
+     * inclusive. If unset, there is no predefined limit to the supported
+     * number of processing units, although project quota limits still apply.
+     * </pre>
+     *
+     * <code>int32 max_processing_units = 2;</code>
+     *
+     * @return The maxProcessingUnits.
+     */
+    @java.lang.Override
+    public int getMaxProcessingUnits() {
+      return maxProcessingUnits_;
+    }
+
+    public static final int PROCESSING_UNIT_INCREMENT_FIELD_NUMBER = 3;
+    private int processingUnitIncrement_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Allowed increments of processing units between “min” and “max”.
+     * </pre>
+     *
+     * <code>int32 processing_unit_increment = 3;</code>
+     *
+     * @return The processingUnitIncrement.
+     */
+    @java.lang.Override
+    public int getProcessingUnitIncrement() {
+      return processingUnitIncrement_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (minProcessingUnits_ != 0) {
+        output.writeInt32(1, minProcessingUnits_);
+      }
+      if (maxProcessingUnits_ != 0) {
+        output.writeInt32(2, maxProcessingUnits_);
+      }
+      if (processingUnitIncrement_ != 0) {
+        output.writeInt32(3, processingUnitIncrement_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (minProcessingUnits_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, minProcessingUnits_);
+      }
+      if (maxProcessingUnits_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxProcessingUnits_);
+      }
+      if (processingUnitIncrement_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, processingUnitIncrement_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits)) {
+        return super.equals(obj);
+      }
+      com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits other =
+          (com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits) obj;
+
+      if (getMinProcessingUnits() != other.getMinProcessingUnits()) return false;
+      if (getMaxProcessingUnits() != other.getMaxProcessingUnits()) return false;
+      if (getProcessingUnitIncrement() != other.getProcessingUnitIncrement()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MIN_PROCESSING_UNITS_FIELD_NUMBER;
+      hash = (53 * hash) + getMinProcessingUnits();
+      hash = (37 * hash) + MAX_PROCESSING_UNITS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxProcessingUnits();
+      hash = (37 * hash) + PROCESSING_UNIT_INCREMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessingUnitIncrement();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Defines a range of processing units supported by an instance configuration.
+     * </pre>
+     *
+     * Protobuf type {@code google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits)
+        com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnitsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto
+            .internal_static_google_spanner_admin_instance_v1_InstanceConfig_AllowedProcessingUnits_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto
+            .internal_static_google_spanner_admin_instance_v1_InstanceConfig_AllowedProcessingUnits_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.class,
+                com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        minProcessingUnits_ = 0;
+        maxProcessingUnits_ = 0;
+        processingUnitIncrement_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto
+            .internal_static_google_spanner_admin_instance_v1_InstanceConfig_AllowedProcessingUnits_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+          getDefaultInstanceForType() {
+        return com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits build() {
+        com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+          buildPartial() {
+        com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits result =
+            new com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.minProcessingUnits_ = minProcessingUnits_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxProcessingUnits_ = maxProcessingUnits_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.processingUnitIncrement_ = processingUnitIncrement_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits) {
+          return mergeFrom(
+              (com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits other) {
+        if (other
+            == com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+                .getDefaultInstance()) return this;
+        if (other.getMinProcessingUnits() != 0) {
+          setMinProcessingUnits(other.getMinProcessingUnits());
+        }
+        if (other.getMaxProcessingUnits() != 0) {
+          setMaxProcessingUnits(other.getMaxProcessingUnits());
+        }
+        if (other.getProcessingUnitIncrement() != 0) {
+          setProcessingUnitIncrement(other.getProcessingUnitIncrement());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  minProcessingUnits_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  maxProcessingUnits_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  processingUnitIncrement_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int minProcessingUnits_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The minimum value of processing units applicable to this interval,
+       * inclusive.
+       * </pre>
+       *
+       * <code>int32 min_processing_units = 1;</code>
+       *
+       * @return The minProcessingUnits.
+       */
+      @java.lang.Override
+      public int getMinProcessingUnits() {
+        return minProcessingUnits_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The minimum value of processing units applicable to this interval,
+       * inclusive.
+       * </pre>
+       *
+       * <code>int32 min_processing_units = 1;</code>
+       *
+       * @param value The minProcessingUnits to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinProcessingUnits(int value) {
+
+        minProcessingUnits_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The minimum value of processing units applicable to this interval,
+       * inclusive.
+       * </pre>
+       *
+       * <code>int32 min_processing_units = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMinProcessingUnits() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        minProcessingUnits_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxProcessingUnits_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The maximum value of processing units applicable to this interval,
+       * inclusive. If unset, there is no predefined limit to the supported
+       * number of processing units, although project quota limits still apply.
+       * </pre>
+       *
+       * <code>int32 max_processing_units = 2;</code>
+       *
+       * @return The maxProcessingUnits.
+       */
+      @java.lang.Override
+      public int getMaxProcessingUnits() {
+        return maxProcessingUnits_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The maximum value of processing units applicable to this interval,
+       * inclusive. If unset, there is no predefined limit to the supported
+       * number of processing units, although project quota limits still apply.
+       * </pre>
+       *
+       * <code>int32 max_processing_units = 2;</code>
+       *
+       * @param value The maxProcessingUnits to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxProcessingUnits(int value) {
+
+        maxProcessingUnits_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The maximum value of processing units applicable to this interval,
+       * inclusive. If unset, there is no predefined limit to the supported
+       * number of processing units, although project quota limits still apply.
+       * </pre>
+       *
+       * <code>int32 max_processing_units = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxProcessingUnits() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxProcessingUnits_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int processingUnitIncrement_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Allowed increments of processing units between “min” and “max”.
+       * </pre>
+       *
+       * <code>int32 processing_unit_increment = 3;</code>
+       *
+       * @return The processingUnitIncrement.
+       */
+      @java.lang.Override
+      public int getProcessingUnitIncrement() {
+        return processingUnitIncrement_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Allowed increments of processing units between “min” and “max”.
+       * </pre>
+       *
+       * <code>int32 processing_unit_increment = 3;</code>
+       *
+       * @param value The processingUnitIncrement to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProcessingUnitIncrement(int value) {
+
+        processingUnitIncrement_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Allowed increments of processing units between “min” and “max”.
+       * </pre>
+       *
+       * <code>int32 processing_unit_increment = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearProcessingUnitIncrement() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        processingUnitIncrement_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits)
+    private static final com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits();
+    }
+
+    public static com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AllowedProcessingUnits> PARSER =
+        new com.google.protobuf.AbstractParser<AllowedProcessingUnits>() {
+          @java.lang.Override
+          public AllowedProcessingUnits parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AllowedProcessingUnits> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AllowedProcessingUnits> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1740,6 +2501,148 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int ALLOWED_PROCESSING_UNITS_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits>
+      allowedProcessingUnits_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the ranges of allowed processing units supported by
+   * this instance configuration. If multiple ranges are specified, an instance
+   * using this configuration may use a valid increment in any of the given
+   * ranges. For example, an allowed_processing_units specification of
+   * `[{min_processing_units:100, max_processing_units:900,
+   * processing_unit_increment:100}, {min_processing_units:1000,
+   * processing_unit_increment:1000}]` specifies that the instance configuration
+   * supports instances with quantities of processing units in multiples of 100
+   * processing units (100, 200, 300 and so on) up to and including 900
+   * processing units and quantities that are at least 1000 processing units and
+   * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits>
+      getAllowedProcessingUnitsList() {
+    return allowedProcessingUnits_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the ranges of allowed processing units supported by
+   * this instance configuration. If multiple ranges are specified, an instance
+   * using this configuration may use a valid increment in any of the given
+   * ranges. For example, an allowed_processing_units specification of
+   * `[{min_processing_units:100, max_processing_units:900,
+   * processing_unit_increment:100}, {min_processing_units:1000,
+   * processing_unit_increment:1000}]` specifies that the instance configuration
+   * supports instances with quantities of processing units in multiples of 100
+   * processing units (100, 200, 300 and so on) up to and including 900
+   * processing units and quantities that are at least 1000 processing units and
+   * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnitsOrBuilder>
+      getAllowedProcessingUnitsOrBuilderList() {
+    return allowedProcessingUnits_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the ranges of allowed processing units supported by
+   * this instance configuration. If multiple ranges are specified, an instance
+   * using this configuration may use a valid increment in any of the given
+   * ranges. For example, an allowed_processing_units specification of
+   * `[{min_processing_units:100, max_processing_units:900,
+   * processing_unit_increment:100}, {min_processing_units:1000,
+   * processing_unit_increment:1000}]` specifies that the instance configuration
+   * supports instances with quantities of processing units in multiples of 100
+   * processing units (100, 200, 300 and so on) up to and including 900
+   * processing units and quantities that are at least 1000 processing units and
+   * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAllowedProcessingUnitsCount() {
+    return allowedProcessingUnits_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the ranges of allowed processing units supported by
+   * this instance configuration. If multiple ranges are specified, an instance
+   * using this configuration may use a valid increment in any of the given
+   * ranges. For example, an allowed_processing_units specification of
+   * `[{min_processing_units:100, max_processing_units:900,
+   * processing_unit_increment:100}, {min_processing_units:1000,
+   * processing_unit_increment:1000}]` specifies that the instance configuration
+   * supports instances with quantities of processing units in multiples of 100
+   * processing units (100, 200, 300 and so on) up to and including 900
+   * processing units and quantities that are at least 1000 processing units and
+   * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+      getAllowedProcessingUnits(int index) {
+    return allowedProcessingUnits_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Defines the ranges of allowed processing units supported by
+   * this instance configuration. If multiple ranges are specified, an instance
+   * using this configuration may use a valid increment in any of the given
+   * ranges. For example, an allowed_processing_units specification of
+   * `[{min_processing_units:100, max_processing_units:900,
+   * processing_unit_increment:100}, {min_processing_units:1000,
+   * processing_unit_increment:1000}]` specifies that the instance configuration
+   * supports instances with quantities of processing units in multiples of 100
+   * processing units (100, 200, 300 and so on) up to and including 900
+   * processing units and quantities that are at least 1000 processing units and
+   * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnitsOrBuilder
+      getAllowedProcessingUnitsOrBuilder(int index) {
+    return allowedProcessingUnits_.get(index);
+  }
+
   public static final int QUORUM_TYPE_FIELD_NUMBER = 18;
   private int quorumType_ = 0;
 
@@ -1859,6 +2762,9 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(12, freeInstanceAvailability_);
     }
+    for (int i = 0; i < allowedProcessingUnits_.size(); i++) {
+      output.writeMessage(13, allowedProcessingUnits_.get(i));
+    }
     if (quorumType_
         != com.google.spanner.admin.instance.v1.InstanceConfig.QuorumType.QUORUM_TYPE_UNSPECIFIED
             .getNumber()) {
@@ -1930,6 +2836,11 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, freeInstanceAvailability_);
     }
+    for (int i = 0; i < allowedProcessingUnits_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, allowedProcessingUnits_.get(i));
+    }
     if (quorumType_
         != com.google.spanner.admin.instance.v1.InstanceConfig.QuorumType.QUORUM_TYPE_UNSPECIFIED
             .getNumber()) {
@@ -1968,6 +2879,8 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
     if (getReconciling() != other.getReconciling()) return false;
     if (state_ != other.state_) return false;
     if (freeInstanceAvailability_ != other.freeInstanceAvailability_) return false;
+    if (!getAllowedProcessingUnitsList().equals(other.getAllowedProcessingUnitsList()))
+      return false;
     if (quorumType_ != other.quorumType_) return false;
     if (getStorageLimitPerProcessingUnit() != other.getStorageLimitPerProcessingUnit())
       return false;
@@ -2014,6 +2927,10 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + state_;
     hash = (37 * hash) + FREE_INSTANCE_AVAILABILITY_FIELD_NUMBER;
     hash = (53 * hash) + freeInstanceAvailability_;
+    if (getAllowedProcessingUnitsCount() > 0) {
+      hash = (37 * hash) + ALLOWED_PROCESSING_UNITS_FIELD_NUMBER;
+      hash = (53 * hash) + getAllowedProcessingUnitsList().hashCode();
+    }
     hash = (37 * hash) + QUORUM_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + quorumType_;
     hash = (37 * hash) + STORAGE_LIMIT_PER_PROCESSING_UNIT_FIELD_NUMBER;
@@ -2205,6 +3122,13 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
       reconciling_ = false;
       state_ = 0;
       freeInstanceAvailability_ = 0;
+      if (allowedProcessingUnitsBuilder_ == null) {
+        allowedProcessingUnits_ = java.util.Collections.emptyList();
+      } else {
+        allowedProcessingUnits_ = null;
+        allowedProcessingUnitsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00001000);
       quorumType_ = 0;
       storageLimitPerProcessingUnit_ = 0L;
       return this;
@@ -2262,6 +3186,15 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
       } else {
         result.optionalReplicas_ = optionalReplicasBuilder_.build();
       }
+      if (allowedProcessingUnitsBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)) {
+          allowedProcessingUnits_ = java.util.Collections.unmodifiableList(allowedProcessingUnits_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.allowedProcessingUnits_ = allowedProcessingUnits_;
+      } else {
+        result.allowedProcessingUnits_ = allowedProcessingUnitsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.spanner.admin.instance.v1.InstanceConfig result) {
@@ -2298,10 +3231,10 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.freeInstanceAvailability_ = freeInstanceAvailability_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.quorumType_ = quorumType_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.storageLimitPerProcessingUnit_ = storageLimitPerProcessingUnit_;
       }
     }
@@ -2416,6 +3349,33 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.freeInstanceAvailability_ != 0) {
         setFreeInstanceAvailabilityValue(other.getFreeInstanceAvailabilityValue());
+      }
+      if (allowedProcessingUnitsBuilder_ == null) {
+        if (!other.allowedProcessingUnits_.isEmpty()) {
+          if (allowedProcessingUnits_.isEmpty()) {
+            allowedProcessingUnits_ = other.allowedProcessingUnits_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureAllowedProcessingUnitsIsMutable();
+            allowedProcessingUnits_.addAll(other.allowedProcessingUnits_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.allowedProcessingUnits_.isEmpty()) {
+          if (allowedProcessingUnitsBuilder_.isEmpty()) {
+            allowedProcessingUnitsBuilder_.dispose();
+            allowedProcessingUnitsBuilder_ = null;
+            allowedProcessingUnits_ = other.allowedProcessingUnits_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+            allowedProcessingUnitsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetAllowedProcessingUnitsFieldBuilder()
+                    : null;
+          } else {
+            allowedProcessingUnitsBuilder_.addAllMessages(other.allowedProcessingUnits_);
+          }
+        }
       }
       if (other.quorumType_ != 0) {
         setQuorumTypeValue(other.getQuorumTypeValue());
@@ -2544,16 +3504,31 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 96
+            case 106:
+              {
+                com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits m =
+                    input.readMessage(
+                        com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+                            .parser(),
+                        extensionRegistry);
+                if (allowedProcessingUnitsBuilder_ == null) {
+                  ensureAllowedProcessingUnitsIsMutable();
+                  allowedProcessingUnits_.add(m);
+                } else {
+                  allowedProcessingUnitsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
             case 144:
               {
                 quorumType_ = input.readEnum();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 144
             case 152:
               {
                 storageLimitPerProcessingUnit_ = input.readInt64();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 152
             default:
@@ -4919,6 +5894,625 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.util.List<
+            com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits>
+        allowedProcessingUnits_ = java.util.Collections.emptyList();
+
+    private void ensureAllowedProcessingUnitsIsMutable() {
+      if (!((bitField0_ & 0x00001000) != 0)) {
+        allowedProcessingUnits_ =
+            new java.util.ArrayList<
+                com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits>(
+                allowedProcessingUnits_);
+        bitField0_ |= 0x00001000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits,
+            com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.Builder,
+            com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnitsOrBuilder>
+        allowedProcessingUnitsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits>
+        getAllowedProcessingUnitsList() {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(allowedProcessingUnits_);
+      } else {
+        return allowedProcessingUnitsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getAllowedProcessingUnitsCount() {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        return allowedProcessingUnits_.size();
+      } else {
+        return allowedProcessingUnitsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+        getAllowedProcessingUnits(int index) {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        return allowedProcessingUnits_.get(index);
+      } else {
+        return allowedProcessingUnitsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAllowedProcessingUnits(
+        int index,
+        com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits value) {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllowedProcessingUnitsIsMutable();
+        allowedProcessingUnits_.set(index, value);
+        onChanged();
+      } else {
+        allowedProcessingUnitsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAllowedProcessingUnits(
+        int index,
+        com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.Builder
+            builderForValue) {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        ensureAllowedProcessingUnitsIsMutable();
+        allowedProcessingUnits_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        allowedProcessingUnitsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllowedProcessingUnits(
+        com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits value) {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllowedProcessingUnitsIsMutable();
+        allowedProcessingUnits_.add(value);
+        onChanged();
+      } else {
+        allowedProcessingUnitsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllowedProcessingUnits(
+        int index,
+        com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits value) {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllowedProcessingUnitsIsMutable();
+        allowedProcessingUnits_.add(index, value);
+        onChanged();
+      } else {
+        allowedProcessingUnitsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllowedProcessingUnits(
+        com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.Builder
+            builderForValue) {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        ensureAllowedProcessingUnitsIsMutable();
+        allowedProcessingUnits_.add(builderForValue.build());
+        onChanged();
+      } else {
+        allowedProcessingUnitsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllowedProcessingUnits(
+        int index,
+        com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.Builder
+            builderForValue) {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        ensureAllowedProcessingUnitsIsMutable();
+        allowedProcessingUnits_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        allowedProcessingUnitsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllAllowedProcessingUnits(
+        java.lang.Iterable<
+                ? extends
+                    com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits>
+            values) {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        ensureAllowedProcessingUnitsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allowedProcessingUnits_);
+        onChanged();
+      } else {
+        allowedProcessingUnitsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAllowedProcessingUnits() {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        allowedProcessingUnits_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+      } else {
+        allowedProcessingUnitsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeAllowedProcessingUnits(int index) {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        ensureAllowedProcessingUnitsIsMutable();
+        allowedProcessingUnits_.remove(index);
+        onChanged();
+      } else {
+        allowedProcessingUnitsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.Builder
+        getAllowedProcessingUnitsBuilder(int index) {
+      return internalGetAllowedProcessingUnitsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnitsOrBuilder
+        getAllowedProcessingUnitsOrBuilder(int index) {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        return allowedProcessingUnits_.get(index);
+      } else {
+        return allowedProcessingUnitsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnitsOrBuilder>
+        getAllowedProcessingUnitsOrBuilderList() {
+      if (allowedProcessingUnitsBuilder_ != null) {
+        return allowedProcessingUnitsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(allowedProcessingUnits_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.Builder
+        addAllowedProcessingUnitsBuilder() {
+      return internalGetAllowedProcessingUnitsFieldBuilder()
+          .addBuilder(
+              com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.Builder
+        addAllowedProcessingUnitsBuilder(int index) {
+      return internalGetAllowedProcessingUnitsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Defines the ranges of allowed processing units supported by
+     * this instance configuration. If multiple ranges are specified, an instance
+     * using this configuration may use a valid increment in any of the given
+     * ranges. For example, an allowed_processing_units specification of
+     * `[{min_processing_units:100, max_processing_units:900,
+     * processing_unit_increment:100}, {min_processing_units:1000,
+     * processing_unit_increment:1000}]` specifies that the instance configuration
+     * supports instances with quantities of processing units in multiples of 100
+     * processing units (100, 200, 300 and so on) up to and including 900
+     * processing units and quantities that are at least 1000 processing units and
+     * multiples of 1000 processing units (1000, 2000, 3000 and so on).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits allowed_processing_units = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.Builder>
+        getAllowedProcessingUnitsBuilderList() {
+      return internalGetAllowedProcessingUnitsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits,
+            com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.Builder,
+            com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnitsOrBuilder>
+        internalGetAllowedProcessingUnitsFieldBuilder() {
+      if (allowedProcessingUnitsBuilder_ == null) {
+        allowedProcessingUnitsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits,
+                com.google.spanner.admin.instance.v1.InstanceConfig.AllowedProcessingUnits.Builder,
+                com.google.spanner.admin.instance.v1.InstanceConfig
+                    .AllowedProcessingUnitsOrBuilder>(
+                allowedProcessingUnits_,
+                ((bitField0_ & 0x00001000) != 0),
+                getParentForChildren(),
+                isClean());
+        allowedProcessingUnits_ = null;
+      }
+      return allowedProcessingUnitsBuilder_;
+    }
+
     private int quorumType_ = 0;
 
     /**
@@ -4955,7 +6549,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder setQuorumTypeValue(int value) {
       quorumType_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5001,7 +6595,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       quorumType_ = value.getNumber();
       onChanged();
       return this;
@@ -5021,7 +6615,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearQuorumType() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       quorumType_ = 0;
       onChanged();
       return this;
@@ -5064,7 +6658,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
     public Builder setStorageLimitPerProcessingUnit(long value) {
 
       storageLimitPerProcessingUnit_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5083,7 +6677,7 @@ public final class InstanceConfig extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearStorageLimitPerProcessingUnit() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       storageLimitPerProcessingUnit_ = 0L;
       onChanged();
       return this;

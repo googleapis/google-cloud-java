@@ -311,6 +311,49 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Input for confirming, revising, or canceling a suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the suggestionInput field is set.
+   */
+  boolean hasSuggestionInput();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input for confirming, revising, or canceling a suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The suggestionInput.
+   */
+  com.google.cloud.dialogflow.v2.SuggestionInput getSuggestionInput();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input for confirming, revising, or canceling a suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.SuggestionInputOrBuilder getSuggestionInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Parameters for a Dialogflow virtual-agent query.
    * </pre>
    *

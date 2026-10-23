@@ -56,40 +56,53 @@ public interface SalesforceProfileOrBuilder
    *
    *
    * <pre>
-   * User-password authentication.
+   * Deprecated: Salesforce is retiring Username-Password authentication.
+   * Use `oauth2_client_credentials` instead.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.datastream.v1.SalesforceProfile.user_credentials is deprecated. See
+   *     google/cloud/datastream/v1/datastream_resources.proto;l=251
    * @return Whether the userCredentials field is set.
    */
+  @java.lang.Deprecated
   boolean hasUserCredentials();
 
   /**
    *
    *
    * <pre>
-   * User-password authentication.
+   * Deprecated: Salesforce is retiring Username-Password authentication.
+   * Use `oauth2_client_credentials` instead.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.datastream.v1.SalesforceProfile.user_credentials is deprecated. See
+   *     google/cloud/datastream/v1/datastream_resources.proto;l=251
    * @return The userCredentials.
    */
+  @java.lang.Deprecated
   com.google.cloud.datastream.v1.SalesforceProfile.UserCredentials getUserCredentials();
 
   /**
    *
    *
    * <pre>
-   * User-password authentication.
+   * Deprecated: Salesforce is retiring Username-Password authentication.
+   * Use `oauth2_client_credentials` instead.
    * </pre>
    *
-   * <code>.google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2;
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceProfile.UserCredentials user_credentials = 2 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.datastream.v1.SalesforceProfile.UserCredentialsOrBuilder
       getUserCredentialsOrBuilder();
 

@@ -53,22 +53,21 @@ public final class OpenApiToolsetProto extends com.google.protobuf.GeneratedFile
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "*google/cloud/ces/v1/open_api_toolset.p"
+      "\n*google/cloud/ces/v1/open_api_toolset.p"
           + "roto\022\023google.cloud.ces.v1\032\037google/api/fi"
-          + "eld_behavior.proto\032\036google/cloud/ces/v1/auth.proto\032"
-          + " google/cloud/ces/v1/common.proto\"\272\002\n"
-          + "\016OpenApiToolset\022\034\n"
-          + "\017open_api_schema\030\001 \001(\tB\003\340A\002\022G\n"
-          + "\022api_authentication\030\002 \001("
-          + "\0132&.google.cloud.ces.v1.ApiAuthenticationB\003\340A\001\0227\n\n"
-          + "tls_config\030\003 \001(\0132\036.google.cloud.ces.v1.TlsConfigB\003\340A\001\022R\n"
-          + "\030service_directory_config\030\004"
-          + " \001(\0132+.google.cloud.ces.v1.ServiceDirectoryConfigB\003\340A\001\022\"\n"
-          + "\025ignore_unknown_fields\030\005 \001(\010B\003\340A\001\022\020\n"
-          + "\003url\030\006 \001(\tB\003\340A\001B[\n"
-          + "\027com.google.cloud.ces.v1B\023OpenApiToolsetProtoP\001Z)cloud.google.com/go/ces/api"
-          + "v1/cespb;cespbb\006proto3"
+          + "eld_behavior.proto\032\036google/cloud/ces/v1/"
+          + "auth.proto\032 google/cloud/ces/v1/common.p"
+          + "roto\"\300\002\n\016OpenApiToolset\022\035\n\017open_api_sche"
+          + "ma\030\001 \001(\tB\004\342A\001\002\022H\n\022api_authentication\030\002 \001"
+          + "(\0132&.google.cloud.ces.v1.ApiAuthenticati"
+          + "onB\004\342A\001\001\0228\n\ntls_config\030\003 \001(\0132\036.google.cl"
+          + "oud.ces.v1.TlsConfigB\004\342A\001\001\022S\n\030service_di"
+          + "rectory_config\030\004 \001(\0132+.google.cloud.ces."
+          + "v1.ServiceDirectoryConfigB\004\342A\001\001\022#\n\025ignor"
+          + "e_unknown_fields\030\005 \001(\010B\004\342A\001\001\022\021\n\003url\030\006 \001("
+          + "\tB\004\342A\001\001B[\n\027com.google.cloud.ces.v1B\023Open"
+          + "ApiToolsetProtoP\001Z)cloud.google.com/go/c"
+          + "es/apiv1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -42,7 +42,6 @@ public class SyncList {
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
-              .setReturnPartialSuccess(true)
               .setZone("zone3744684")
               .build();
       for (InstanceGroupManager element : instanceGroupManagersClient.list(request).iterateAll()) {

@@ -57,6 +57,10 @@ public final class CertificateIssuanceConfigProto extends com.google.protobuf.Ge
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_certificatemanager_v1_CreateCertificateIssuanceConfigRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_certificatemanager_v1_UpdateCertificateIssuanceConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_certificatemanager_v1_UpdateCertificateIssuanceConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_certificatemanager_v1_DeleteCertificateIssuanceConfigRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_certificatemanager_v1_DeleteCertificateIssuanceConfigRequest_fieldAccessorTable;
@@ -76,6 +80,10 @@ public final class CertificateIssuanceConfigProto extends com.google.protobuf.Ge
       internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_LabelsEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_TagsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_TagsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -85,73 +93,86 @@ public final class CertificateIssuanceConfigProto extends com.google.protobuf.Ge
 
   static {
     java.lang.String[] descriptorData = {
-      "\nDgoogle/cloud/certificatemanager/v1/cer"
-          + "tificate_issuance_config.proto\022\"google.c"
+      "\n"
+          + "Dgoogle/cloud/certificatemanager/v1/certificate_issuance_config.proto\022\"google.c"
           + "loud.certificatemanager.v1\032\037google/api/f"
-          + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\032\036google/protobuf/duration.proto\032\037"
-          + "google/protobuf/timestamp.proto\"\253\001\n%List"
-          + "CertificateIssuanceConfigsRequest\0229\n\006par"
-          + "ent\030\001 \001(\tB)\340A\002\372A#\n!locations.googleapis."
-          + "com/Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_"
-          + "token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030"
-          + "\005 \001(\t\"\273\001\n&ListCertificateIssuanceConfigs"
-          + "Response\022c\n\034certificate_issuance_configs"
-          + "\030\001 \003(\0132=.google.cloud.certificatemanager"
-          + ".v1.CertificateIssuanceConfig\022\027\n\017next_pa"
-          + "ge_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"x\n#G"
-          + "etCertificateIssuanceConfigRequest\022Q\n\004na"
-          + "me\030\001 \001(\tBC\340A\002\372A=\n;certificatemanager.goo"
-          + "gleapis.com/CertificateIssuanceConfig\"\371\001"
-          + "\n&CreateCertificateIssuanceConfigRequest"
-          + "\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.goog"
-          + "leapis.com/Location\022+\n\036certificate_issua"
-          + "nce_config_id\030\002 \001(\tB\003\340A\002\022g\n\033certificate_"
-          + "issuance_config\030\003 \001(\0132=.google.cloud.cer"
-          + "tificatemanager.v1.CertificateIssuanceCo"
-          + "nfigB\003\340A\002\"{\n&DeleteCertificateIssuanceCo"
-          + "nfigRequest\022Q\n\004name\030\001 \001(\tBC\340A\002\372A=\n;certi"
-          + "ficatemanager.googleapis.com/Certificate"
-          + "IssuanceConfig\"\243\t\n\031CertificateIssuanceCo"
-          + "nfig\022\014\n\004name\030\001 \001(\t\0224\n\013create_time\030\002 \001(\0132"
-          + "\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upda"
-          + "te_time\030\003 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\003\022Y\n\006labels\030\004 \003(\0132I.google.cloud.ce"
-          + "rtificatemanager.v1.CertificateIssuanceC"
-          + "onfig.LabelsEntry\022\023\n\013description\030\005 \001(\t\022\203"
-          + "\001\n\034certificate_authority_config\030\006 \001(\0132X."
-          + "google.cloud.certificatemanager.v1.Certi"
-          + "ficateIssuanceConfig.CertificateAuthorit"
-          + "yConfigB\003\340A\002\0220\n\010lifetime\030\007 \001(\0132\031.google."
-          + "protobuf.DurationB\003\340A\002\022\'\n\032rotation_windo"
-          + "w_percentage\030\010 \001(\005B\003\340A\002\022f\n\rkey_algorithm"
-          + "\030\t \001(\0162J.google.cloud.certificatemanager"
-          + ".v1.CertificateIssuanceConfig.KeyAlgorit"
-          + "hmB\003\340A\002\032\260\002\n\032CertificateAuthorityConfig\022\252"
-          + "\001\n$certificate_authority_service_config\030"
-          + "\001 \001(\0132z.google.cloud.certificatemanager."
-          + "v1.CertificateIssuanceConfig.Certificate"
-          + "AuthorityConfig.CertificateAuthorityServ"
-          + "iceConfigH\000\032]\n!CertificateAuthorityServi"
-          + "ceConfig\0228\n\007ca_pool\030\001 \001(\tB\'\340A\002\372A!\n\037priva"
-          + "teca.googleapis.com/CaPoolB\006\n\004kind\032-\n\013La"
-          + "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028"
-          + "\001\"K\n\014KeyAlgorithm\022\035\n\031KEY_ALGORITHM_UNSPE"
-          + "CIFIED\020\000\022\014\n\010RSA_2048\020\001\022\016\n\nECDSA_P256\020\004:\243"
-          + "\001\352A\237\001\n;certificatemanager.googleapis.com"
-          + "/CertificateIssuanceConfig\022`projects/{pr"
-          + "oject}/locations/{location}/certificateI"
-          + "ssuanceConfigs/{certificate_issuance_con"
-          + "fig}B\363\002\n&com.google.cloud.certificateman"
-          + "ager.v1B\036CertificateIssuanceConfigProtoP"
-          + "\001ZVcloud.google.com/go/certificatemanage"
-          + "r/apiv1/certificatemanagerpb;certificate"
-          + "managerpb\252\002\"Google.Cloud.CertificateMana"
-          + "ger.V1\312\002\"Google\\Cloud\\CertificateManager"
-          + "\\V1\352\002%Google::Cloud::CertificateManager:"
-          + ":V1\352A\\\n\037privateca.googleapis.com/CaPool\022"
-          + "9projects/{project}/locations/{location}"
-          + "/caPools/{ca_pool}b\006proto3"
+          + "ield_behavior.proto\032\031google/api/resource.proto\032\036google/protobuf/duration.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\304\001\n"
+          + "%ListCertificateIssuanceConfigsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010order_by\030\005 \001(\tB\004\342A\001\001\"\273\001\n"
+          + "&ListCertificateIssuanceConfigsResponse\022c\n"
+          + "\034certificate_issuance_configs\030\001 \003(\0132=.google.cloud"
+          + ".certificatemanager.v1.CertificateIssuanceConfig\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"y\n"
+          + "#GetCertificateIssuanceConfigRequest\022R\n"
+          + "\004name\030\001 \001(\tBD\342A\001\002\372A=\n"
+          + ";certificatemanager.googleapis.com/CertificateIssuanceConfig\"\374\001\n"
+          + "&CreateCertificateIssuanceConfigRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!locations.googleapis.com/Location\022,\n"
+          + "\036certificate_issuance_config_id\030\002 \001(\tB\004\342A\001\002\022h\n"
+          + "\033certificate_issuance_config\030\003 "
+          + "\001(\0132=.google.cloud.certificatemanager.v1.CertificateIssuanceConfigB\004\342A\001\002\"\311\001\n"
+          + "&UpdateCertificateIssuanceConfigRequest\022h\n"
+          + "\033certificate_issuance_config\030\001 \001(\0132=.googl"
+          + "e.cloud.certificatemanager.v1.CertificateIssuanceConfigB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\002\"|\n"
+          + "&DeleteCertificateIssuanceConfigRequest\022R\n"
+          + "\004name\030\001 \001(\tBD\342A\001\002\372A=\n"
+          + ";certificatemanager.googleapis.com/CertificateIssuanceConfig\"\377\n\n"
+          + "\031CertificateIssuanceConfig\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\0225\n"
+          + "\013create_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
+          + "\013update_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022_\n"
+          + "\006labels\030\004 \003(\0132I.google.cloud.certif"
+          + "icatemanager.v1.CertificateIssuanceConfig.LabelsEntryB\004\342A\001\001\022\031\n"
+          + "\013description\030\005 \001(\tB\004\342A\001\001\022\204\001\n"
+          + "\034certificate_authority_config\030\006 \001(\0132X.google.cloud.certificatemanager."
+          + "v1.CertificateIssuanceConfig.CertificateAuthorityConfigB\004\342A\001\002\0221\n"
+          + "\010lifetime\030\007 \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\022(\n"
+          + "\032rotation_window_percentage\030\010 \001(\005B\004\342A\001\002\022g\n\r"
+          + "key_algorithm\030\t \001(\0162J.google.cloud.certifi"
+          + "catemanager.v1.CertificateIssuanceConfig.KeyAlgorithmB\004\342A\001\002\022]\n"
+          + "\004tags\030\n"
+          + " \003(\0132G.goog"
+          + "le.cloud.certificatemanager.v1.CertificateIssuanceConfig.TagsEntryB\006\342A\003\004\005\001\032\261\002\n"
+          + "\032CertificateAuthorityConfig\022\252\001\n"
+          + "$certificate_authority_service_config\030\001 \001(\0132z.googl"
+          + "e.cloud.certificatemanager.v1.CertificateIssuanceConfig.CertificateAuthorityConf"
+          + "ig.CertificateAuthorityServiceConfigH\000\032^\n"
+          + "!CertificateAuthorityServiceConfig\0229\n"
+          + "\007ca_pool\030\001 \001(\tB(\342A\001\002\372A!\n"
+          + "\037privateca.googleapis.com/CaPoolB\006\n"
+          + "\004kind\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\032+\n"
+          + "\tTagsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"K\n"
+          + "\014KeyAlgorithm\022\035\n"
+          + "\031KEY_ALGORITHM_UNSPECIFIED\020\000\022\014\n"
+          + "\010RSA_2048\020\001\022\016\n\n"
+          + "ECDSA_P256\020\004:\332\001\352A\326\001\n"
+          + ";certificatemanager.googleapis.com/CertificateIssuanceConfig\022`projects/{project}/"
+          + "locations/{location}/certificateIssuanceConfigs/{certificate_issuance_config}*\032c"
+          + "ertificateIssuanceConfigs2\031certificateIssuanceConfigB\363\002\n"
+          + "&com.google.cloud.certificatemanager.v1B\036CertificateIssuanceConf"
+          + "igProtoP\001ZVcloud.google.com/go/certificatemanager/apiv1/certificatemanagerpb;cer"
+          + "tificatemanagerpb\252\002\"Google.Cloud.Certifi"
+          + "cateManager.V1\312\002\"Google\\Cloud\\Certificat"
+          + "eManager\\V1\352\002%Google::Cloud::CertificateManager::V1\352A\\\n"
+          + "\037privateca.googleapis.com/CaPool\0229projects/{project}/locations/{l"
+          + "ocation}/caPools/{ca_pool}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -160,6 +181,7 @@ public final class CertificateIssuanceConfigProto extends com.google.protobuf.Ge
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_certificatemanager_v1_ListCertificateIssuanceConfigsRequest_descriptor =
@@ -194,8 +216,16 @@ public final class CertificateIssuanceConfigProto extends com.google.protobuf.Ge
             new java.lang.String[] {
               "Parent", "CertificateIssuanceConfigId", "CertificateIssuanceConfig",
             });
-    internal_static_google_cloud_certificatemanager_v1_DeleteCertificateIssuanceConfigRequest_descriptor =
+    internal_static_google_cloud_certificatemanager_v1_UpdateCertificateIssuanceConfigRequest_descriptor =
         getDescriptor().getMessageType(4);
+    internal_static_google_cloud_certificatemanager_v1_UpdateCertificateIssuanceConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_certificatemanager_v1_UpdateCertificateIssuanceConfigRequest_descriptor,
+            new java.lang.String[] {
+              "CertificateIssuanceConfig", "UpdateMask",
+            });
+    internal_static_google_cloud_certificatemanager_v1_DeleteCertificateIssuanceConfigRequest_descriptor =
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_certificatemanager_v1_DeleteCertificateIssuanceConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_certificatemanager_v1_DeleteCertificateIssuanceConfigRequest_descriptor,
@@ -203,7 +233,7 @@ public final class CertificateIssuanceConfigProto extends com.google.protobuf.Ge
               "Name",
             });
     internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_descriptor,
@@ -217,6 +247,7 @@ public final class CertificateIssuanceConfigProto extends com.google.protobuf.Ge
               "Lifetime",
               "RotationWindowPercentage",
               "KeyAlgorithm",
+              "Tags",
             });
     internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_CertificateAuthorityConfig_descriptor =
         internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_descriptor
@@ -245,10 +276,20 @@ public final class CertificateIssuanceConfigProto extends com.google.protobuf.Ge
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_TagsEntry_descriptor =
+        internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_descriptor
+            .getNestedType(2);
+    internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_TagsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_certificatemanager_v1_CertificateIssuanceConfig_TagsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The Firewalls API.
  *
+ * <p>This client uses Firewalls version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -663,7 +665,6 @@ public class FirewallsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Firewall element : firewallsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -698,7 +699,6 @@ public class FirewallsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Firewall> future = firewallsClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -732,7 +732,6 @@ public class FirewallsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     FirewallList response = firewallsClient.listCallable().call(request);

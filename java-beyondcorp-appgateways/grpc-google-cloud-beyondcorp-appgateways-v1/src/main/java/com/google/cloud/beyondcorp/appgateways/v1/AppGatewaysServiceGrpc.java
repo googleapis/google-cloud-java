@@ -30,9 +30,12 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
  * The AppGatewaysService service provides methods to manage
  * (create/read/update/delete) BeyondCorp AppGateways.
+ * Deprecated: App Connector is deprecated and creation of new App Connector
+ * resources is no longer permitted. Use Security Gateway instead.
  * </pre>
  */
 @io.grpc.stub.annotations.GrpcGenerated
+@java.lang.Deprecated
 public final class AppGatewaysServiceGrpc {
 
   private AppGatewaysServiceGrpc() {}
@@ -296,8 +299,11 @@ public final class AppGatewaysServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
    * The AppGatewaysService service provides methods to manage
    * (create/read/update/delete) BeyondCorp AppGateways.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public interface AsyncService {
 
     /**
@@ -307,6 +313,7 @@ public final class AppGatewaysServiceGrpc {
      * Lists AppGateways in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     default void listAppGateways(
         com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysRequest request,
         io.grpc.stub.StreamObserver<
@@ -323,6 +330,7 @@ public final class AppGatewaysServiceGrpc {
      * Gets details of a single AppGateway.
      * </pre>
      */
+    @java.lang.Deprecated
     default void getAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.GetAppGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.beyondcorp.appgateways.v1.AppGateway>
@@ -338,6 +346,7 @@ public final class AppGatewaysServiceGrpc {
      * Creates a new AppGateway in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     default void createAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -352,6 +361,7 @@ public final class AppGatewaysServiceGrpc {
      * Deletes a single AppGateway.
      * </pre>
      */
+    @java.lang.Deprecated
     default void deleteAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.DeleteAppGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -373,8 +383,11 @@ public final class AppGatewaysServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
    * The AppGatewaysService service provides methods to manage
    * (create/read/update/delete) BeyondCorp AppGateways.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public abstract static class AppGatewaysServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -397,8 +410,11 @@ public final class AppGatewaysServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
    * The AppGatewaysService service provides methods to manage
    * (create/read/update/delete) BeyondCorp AppGateways.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AppGatewaysServiceStub
       extends io.grpc.stub.AbstractAsyncStub<AppGatewaysServiceStub> {
     private AppGatewaysServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -418,6 +434,7 @@ public final class AppGatewaysServiceGrpc {
      * Lists AppGateways in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public void listAppGateways(
         com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysRequest request,
         io.grpc.stub.StreamObserver<
@@ -436,6 +453,7 @@ public final class AppGatewaysServiceGrpc {
      * Gets details of a single AppGateway.
      * </pre>
      */
+    @java.lang.Deprecated
     public void getAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.GetAppGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.beyondcorp.appgateways.v1.AppGateway>
@@ -453,6 +471,7 @@ public final class AppGatewaysServiceGrpc {
      * Creates a new AppGateway in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public void createAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -469,6 +488,7 @@ public final class AppGatewaysServiceGrpc {
      * Deletes a single AppGateway.
      * </pre>
      */
+    @java.lang.Deprecated
     public void deleteAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.DeleteAppGatewayRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -492,8 +512,11 @@ public final class AppGatewaysServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
    * The AppGatewaysService service provides methods to manage
    * (create/read/update/delete) BeyondCorp AppGateways.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AppGatewaysServiceBlockingV2Stub
       extends io.grpc.stub.AbstractBlockingStub<AppGatewaysServiceBlockingV2Stub> {
     private AppGatewaysServiceBlockingV2Stub(
@@ -514,6 +537,7 @@ public final class AppGatewaysServiceGrpc {
      * Lists AppGateways in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysResponse listAppGateways(
         com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysRequest request)
         throws io.grpc.StatusException {
@@ -528,6 +552,7 @@ public final class AppGatewaysServiceGrpc {
      * Gets details of a single AppGateway.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appgateways.v1.AppGateway getAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.GetAppGatewayRequest request)
         throws io.grpc.StatusException {
@@ -542,6 +567,7 @@ public final class AppGatewaysServiceGrpc {
      * Creates a new AppGateway in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest request)
         throws io.grpc.StatusException {
@@ -556,6 +582,7 @@ public final class AppGatewaysServiceGrpc {
      * Deletes a single AppGateway.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.DeleteAppGatewayRequest request)
         throws io.grpc.StatusException {
@@ -577,8 +604,11 @@ public final class AppGatewaysServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
    * The AppGatewaysService service provides methods to manage
    * (create/read/update/delete) BeyondCorp AppGateways.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AppGatewaysServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<AppGatewaysServiceBlockingStub> {
     private AppGatewaysServiceBlockingStub(
@@ -599,6 +629,7 @@ public final class AppGatewaysServiceGrpc {
      * Lists AppGateways in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysResponse listAppGateways(
         com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -612,6 +643,7 @@ public final class AppGatewaysServiceGrpc {
      * Gets details of a single AppGateway.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.cloud.beyondcorp.appgateways.v1.AppGateway getAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.GetAppGatewayRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -625,6 +657,7 @@ public final class AppGatewaysServiceGrpc {
      * Creates a new AppGateway in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation createAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -638,6 +671,7 @@ public final class AppGatewaysServiceGrpc {
      * Deletes a single AppGateway.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.longrunning.Operation deleteAppGateway(
         com.google.cloud.beyondcorp.appgateways.v1.DeleteAppGatewayRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
@@ -658,8 +692,11 @@ public final class AppGatewaysServiceGrpc {
    *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
    * The AppGatewaysService service provides methods to manage
    * (create/read/update/delete) BeyondCorp AppGateways.
+   * Deprecated: App Connector is deprecated and creation of new App Connector
+   * resources is no longer permitted. Use Security Gateway instead.
    * </pre>
    */
+  @java.lang.Deprecated
   public static final class AppGatewaysServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<AppGatewaysServiceFutureStub> {
     private AppGatewaysServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -679,6 +716,7 @@ public final class AppGatewaysServiceGrpc {
      * Lists AppGateways in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysResponse>
         listAppGateways(com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysRequest request) {
@@ -693,6 +731,7 @@ public final class AppGatewaysServiceGrpc {
      * Gets details of a single AppGateway.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.beyondcorp.appgateways.v1.AppGateway>
         getAppGateway(com.google.cloud.beyondcorp.appgateways.v1.GetAppGatewayRequest request) {
@@ -707,6 +746,7 @@ public final class AppGatewaysServiceGrpc {
      * Creates a new AppGateway in a given project and location.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createAppGateway(
             com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest request) {
@@ -721,6 +761,7 @@ public final class AppGatewaysServiceGrpc {
      * Deletes a single AppGateway.
      * </pre>
      */
+    @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         deleteAppGateway(
             com.google.cloud.beyondcorp.appgateways.v1.DeleteAppGatewayRequest request) {

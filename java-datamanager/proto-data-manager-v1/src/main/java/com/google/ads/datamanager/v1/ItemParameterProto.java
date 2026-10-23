@@ -55,14 +55,14 @@ public final class ItemParameterProto extends com.google.protobuf.GeneratedFile 
     java.lang.String[] descriptorData = {
       "\n.google/ads/datamanager/v1/item_paramet"
           + "er.proto\022\031google.ads.datamanager.v1\032\037goo"
-          + "gle/api/field_behavior.proto\"@\n\rItemPara"
-          + "meter\022\033\n\016parameter_name\030\001 \001(\tB\003\340A\002\022\022\n\005va"
-          + "lue\030\002 \001(\tB\003\340A\002B\317\001\n\035com.google.ads.datama"
-          + "nager.v1B\022ItemParameterProtoP\001ZAcloud.go"
-          + "ogle.com/go/datamanager/apiv1/datamanage"
-          + "rpb;datamanagerpb\252\002\031Google.Ads.DataManag"
-          + "er.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Goog"
-          + "le::Ads::DataManager::V1b\006proto3"
+          + "gle/api/field_behavior.proto\"B\n\rItemPara"
+          + "meter\022\034\n\016parameter_name\030\001 \001(\tB\004\342A\001\002\022\023\n\005v"
+          + "alue\030\002 \001(\tB\004\342A\001\002B\317\001\n\035com.google.ads.data"
+          + "manager.v1B\022ItemParameterProtoP\001ZAcloud."
+          + "google.com/go/datamanager/apiv1/datamana"
+          + "gerpb;datamanagerpb\252\002\031Google.Ads.DataMan"
+          + "ager.V1\312\002\031Google\\Ads\\DataManager\\V1\352\002\034Go"
+          + "ogle::Ads::DataManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -255,20 +255,6 @@ public interface PolicyOrBuilder
   com.google.protobuf.ByteString getEtagBytes();
 
   /**
-   * <code>optional bool iam_owned = 450566203;</code>
-   *
-   * @return Whether the iamOwned field is set.
-   */
-  boolean hasIamOwned();
-
-  /**
-   * <code>optional bool iam_owned = 450566203;</code>
-   *
-   * @return The iamOwned.
-   */
-  boolean getIamOwned();
-
-  /**
    *
    *
    * <pre>

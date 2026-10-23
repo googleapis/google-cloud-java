@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The NetworkAttachments API.
  *
+ * <p>This client uses NetworkAttachments version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -390,7 +392,6 @@ public class NetworkAttachmentsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, NetworkAttachmentsScopedList> element :
@@ -433,7 +434,6 @@ public class NetworkAttachmentsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, NetworkAttachmentsScopedList>> future =
@@ -475,7 +475,6 @@ public class NetworkAttachmentsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -1014,7 +1013,6 @@ public class NetworkAttachmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (NetworkAttachment element : networkAttachmentsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1050,7 +1048,6 @@ public class NetworkAttachmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<NetworkAttachment> future =
    *       networkAttachmentsClient.listPagedCallable().futureCall(request);
@@ -1086,7 +1083,6 @@ public class NetworkAttachmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     NetworkAttachmentList response = networkAttachmentsClient.listCallable().call(request);
