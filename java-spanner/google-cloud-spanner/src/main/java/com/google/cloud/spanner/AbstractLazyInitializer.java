@@ -36,10 +36,16 @@ public abstract class AbstractLazyInitializer<T> {
         if (!initialized) {
           try {
             object = initialize();
+            error = null;
+            initialized = true;
           } catch (Exception e) {
-            error = e;
+            if (shouldCacheError(e)) {
+              error = e;
+              initialized = true;
+            } else {
+              throw e;
+            }
           }
-          initialized = true;
         }
       }
     }
@@ -47,6 +53,19 @@ public abstract class AbstractLazyInitializer<T> {
       throw error;
     }
     return object;
+  }
+
+  private static boolean shouldCacheError(Exception e) {
+    if (e instanceof DatabaseNotFoundException
+        || e instanceof InstanceNotFoundException
+        || e instanceof SessionNotFoundException) {
+      return true;
+    }
+    if (e instanceof SpannerException) {
+      return !MultiplexedSessionDatabaseClient.RETRYABLE_ERROR_CODES.contains(
+          ((SpannerException) e).getErrorCode());
+    }
+    return true;
   }
 
   /**

@@ -179,7 +179,7 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
 
   private static final Map<SpannerImpl, SharedChannelUsage> CHANNEL_USAGE = new HashMap<>();
 
-  private static final EnumSet<ErrorCode> RETRYABLE_ERROR_CODES =
+  static final EnumSet<ErrorCode> RETRYABLE_ERROR_CODES =
       EnumSet.of(ErrorCode.DEADLINE_EXCEEDED, ErrorCode.RESOURCE_EXHAUSTED, ErrorCode.UNAVAILABLE);
 
   private final BitSet channelUsage;
