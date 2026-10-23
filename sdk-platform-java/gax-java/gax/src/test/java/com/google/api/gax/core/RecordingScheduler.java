@@ -29,9 +29,6 @@
  */
 package com.google.api.gax.core;
 
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -39,15 +36,15 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * A test {@link ScheduledExecutorService} that records scheduled delays and advances a {@link
- * FakeApiClock} instead of sleeping in real time.
+ * A test {@link ScheduledExecutorService} that records scheduled task iterations and advances a
+ * {@link FakeApiClock} instead of sleeping in real time.
  *
- * <p>When {@link #schedule(Runnable, long, TimeUnit)} is called, this scheduler records the
- * requested delay, increments the {@link FakeApiClock} by that delay, and immediately submits the
- * task with zero delay to the underlying single-threaded executor. This allows multi-attempt retry
- * and polling tests to execute without real-time backoff sleeps while still exercising simulated
- * elapsed time calculations and preserving asynchronous callback ordering on {@code
- * CallbackChainRetryingFuture}.
+ * <p>When {@link #schedule(Runnable, long, TimeUnit)} is called, this scheduler increments the
+ * iteration count, advances the {@link FakeApiClock} by the requested delay, and immediately
+ * submits the task with zero delay to the underlying single-threaded executor. This allows
+ * multi-attempt retry and polling tests to execute without real-time backoff sleeps while still
+ * exercising simulated elapsed time calculations and preserving asynchronous callback ordering on
+ * {@code CallbackChainRetryingFuture}.
  */
 public class RecordingScheduler extends ScheduledThreadPoolExecutor {
   /**
@@ -58,7 +55,6 @@ public class RecordingScheduler extends ScheduledThreadPoolExecutor {
   private static final int CORE_POOL_SIZE = 1;
 
   private final FakeApiClock clock;
-  private final List<Duration> sleepDurations = new ArrayList<>();
   private final AtomicInteger iterationsCount = new AtomicInteger(0);
 
   private RecordingScheduler(FakeApiClock clock) {
@@ -76,8 +72,8 @@ public class RecordingScheduler extends ScheduledThreadPoolExecutor {
   }
 
   /**
-   * Schedules a task by recording the requested delay, advancing the {@link FakeApiClock} by that
-   * duration, and immediately submitting the task with zero delay to the worker thread.
+   * Schedules a task by incrementing the iteration count, advancing the {@link FakeApiClock} by the
+   * requested delay, and immediately submitting the task with zero delay to the worker thread.
    *
    * <p>Advancing the fake clock simulates the passage of backoff time deterministically without
    * sleeping in real time. Submitting with zero delay to the worker thread preserves asynchronous
@@ -87,14 +83,8 @@ public class RecordingScheduler extends ScheduledThreadPoolExecutor {
   @Override
   public ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit) {
     iterationsCount.incrementAndGet();
-    sleepDurations.add(Duration.ofMillis(TimeUnit.MILLISECONDS.convert(delay, unit)));
     clock.incrementNanoTime(TimeUnit.NANOSECONDS.convert(delay, unit));
     return super.schedule(command, 0, TimeUnit.NANOSECONDS);
-  }
-
-  /** Returns the retry or poll delays passed to {@link #schedule(Runnable, long, TimeUnit)}. */
-  public List<Duration> getSleepDurations() {
-    return sleepDurations;
   }
 
   /** Returns the total number of tasks scheduled via {@link #schedule(Runnable, long, TimeUnit)}. */
