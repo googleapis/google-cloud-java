@@ -77,8 +77,8 @@ public class RecordingScheduler extends ScheduledThreadPoolExecutor {
    *
    * <p>Advancing the fake clock simulates the passage of backoff time deterministically without
    * sleeping in real time. Submitting with zero delay to the worker thread preserves asynchronous
-   * execution so that attempt registration in {@code CallbackChainRetryingFuture} completes
-   * cleanly before the scheduled attempt runs.
+   * execution so that attempt registration in {@code CallbackChainRetryingFuture} completes cleanly
+   * before the scheduled attempt runs.
    *
    * <p>Only the {@link Runnable} overload of {@code schedule} needs to be overridden because {@code
    * ScheduledRetryingExecutor} wraps its scheduler with {@code
@@ -93,7 +93,9 @@ public class RecordingScheduler extends ScheduledThreadPoolExecutor {
     return super.schedule(command, 0, TimeUnit.NANOSECONDS);
   }
 
-  /** Returns the total number of tasks scheduled via {@link #schedule(Runnable, long, TimeUnit)}. */
+  /**
+   * Returns the total number of tasks scheduled via {@link #schedule(Runnable, long, TimeUnit)}.
+   */
   public int getIterationsCount() {
     return iterationsCount.get();
   }
