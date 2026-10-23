@@ -1096,6 +1096,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                           "\n" + Thread.currentThread().getName() + " Error @ arrowStreamProcessor",
                           e);
                     }
+                    if (e instanceof Error) {
+                      throw (Error) e;
+                    }
                   } finally { // logic needed for graceful shutdown
                     enqueueEndOfStream(arrowBatchWrapperBlockingQueue);
                   }
@@ -1374,6 +1377,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                       Thread.currentThread().interrupt();
                     }
                     enqueueBufferError(bigQueryFieldValueListWrapperBlockingQueue, ex);
+                    if (ex instanceof Error) {
+                      throw (Error) ex;
+                    }
                   } finally {
                     // this will stop the parseDataTask as well when the pagination
                     // completes
