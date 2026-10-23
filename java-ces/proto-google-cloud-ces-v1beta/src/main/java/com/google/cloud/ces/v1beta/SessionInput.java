@@ -51,7 +51,9 @@ public final class SessionInput extends com.google.protobuf.GeneratedMessage
     super(builder);
   }
 
-  private SessionInput() {}
+  private SessionInput() {
+    recordingControl_ = 0;
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.ces.v1beta.SessionServiceProto
@@ -66,6 +68,181 @@ public final class SessionInput extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.ces.v1beta.SessionInput.class,
             com.google.cloud.ces.v1beta.SessionInput.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * What the app has decided may be recorded and logged.
+   *
+   * This enum is extensible; new values may be added in the future.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.ces.v1beta.SessionInput.RecordingControl}
+   */
+  public enum RecordingControl implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The app is not controlling recording. The app's logging settings decide,
+     * as they do for every session that never sets this field.
+     * </pre>
+     *
+     * <code>RECORDING_CONTROL_UNSPECIFIED = 0;</code>
+     */
+    RECORDING_CONTROL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The conversation may be recorded and logged from here on.
+     * </pre>
+     *
+     * <code>RECORDING_ENABLED = 1;</code>
+     */
+    RECORDING_ENABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * The conversation may not be recorded or logged from here on.
+     * </pre>
+     *
+     * <code>RECORDING_DISABLED = 2;</code>
+     */
+    RECORDING_DISABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "RecordingControl");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The app is not controlling recording. The app's logging settings decide,
+     * as they do for every session that never sets this field.
+     * </pre>
+     *
+     * <code>RECORDING_CONTROL_UNSPECIFIED = 0;</code>
+     */
+    public static final int RECORDING_CONTROL_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversation may be recorded and logged from here on.
+     * </pre>
+     *
+     * <code>RECORDING_ENABLED = 1;</code>
+     */
+    public static final int RECORDING_ENABLED_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The conversation may not be recorded or logged from here on.
+     * </pre>
+     *
+     * <code>RECORDING_DISABLED = 2;</code>
+     */
+    public static final int RECORDING_DISABLED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RecordingControl valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RecordingControl forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RECORDING_CONTROL_UNSPECIFIED;
+        case 1:
+          return RECORDING_ENABLED;
+        case 2:
+          return RECORDING_DISABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RecordingControl> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RecordingControl>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<RecordingControl>() {
+              public RecordingControl findValueByNumber(int number) {
+                return RecordingControl.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.SessionInput.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final RecordingControl[] VALUES = values();
+
+    public static RecordingControl valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RecordingControl(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.SessionInput.RecordingControl)
   }
 
   private int inputTypeCase_ = 0;
@@ -640,6 +817,83 @@ public final class SessionInput extends com.google.protobuf.GeneratedMessage
     return willContinue_;
   }
 
+  public static final int RECORDING_CONTROL_FIELD_NUMBER = 10;
+  private int recordingControl_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the conversation may be recorded and logged from here on.
+   *
+   * Use this when the app, rather than the agent, decides what may be kept:
+   * for example when the end user has to consent to being recorded before
+   * anything about the call can be stored.
+   *
+   * The value stays in effect until the client sends a different one, so it
+   * only needs to be sent when the answer changes. Whatever is in effect when
+   * a turn completes decides that turn, both whether its audio reaches the
+   * recording bucket and whether its transcript reaches conversation history,
+   * BigQuery and Cloud Logging. It covers the agent's side of the turn as well
+   * as the end user's.
+   *
+   * Turns that complete before the client first sends this are recorded
+   * according to the app's logging settings, as though the field did not
+   * exist.
+   *
+   * If more than one input in the same request sets it, the last one wins.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.SessionInput.RecordingControl recording_control = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for recordingControl.
+   */
+  @java.lang.Override
+  public int getRecordingControlValue() {
+    return recordingControl_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the conversation may be recorded and logged from here on.
+   *
+   * Use this when the app, rather than the agent, decides what may be kept:
+   * for example when the end user has to consent to being recorded before
+   * anything about the call can be stored.
+   *
+   * The value stays in effect until the client sends a different one, so it
+   * only needs to be sent when the answer changes. Whatever is in effect when
+   * a turn completes decides that turn, both whether its audio reaches the
+   * recording bucket and whether its transcript reaches conversation history,
+   * BigQuery and Cloud Logging. It covers the agent's side of the turn as well
+   * as the end user's.
+   *
+   * Turns that complete before the client first sends this are recorded
+   * according to the app's logging settings, as though the field did not
+   * exist.
+   *
+   * If more than one input in the same request sets it, the last one wins.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.SessionInput.RecordingControl recording_control = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The recordingControl.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.SessionInput.RecordingControl getRecordingControl() {
+    com.google.cloud.ces.v1beta.SessionInput.RecordingControl result =
+        com.google.cloud.ces.v1beta.SessionInput.RecordingControl.forNumber(recordingControl_);
+    return result == null
+        ? com.google.cloud.ces.v1beta.SessionInput.RecordingControl.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -680,6 +934,11 @@ public final class SessionInput extends com.google.protobuf.GeneratedMessage
     }
     if (inputTypeCase_ == 9) {
       output.writeMessage(9, (com.google.cloud.ces.v1beta.Event) inputType_);
+    }
+    if (recordingControl_
+        != com.google.cloud.ces.v1beta.SessionInput.RecordingControl.RECORDING_CONTROL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(10, recordingControl_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -729,6 +988,11 @@ public final class SessionInput extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.cloud.ces.v1beta.Event) inputType_);
     }
+    if (recordingControl_
+        != com.google.cloud.ces.v1beta.SessionInput.RecordingControl.RECORDING_CONTROL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, recordingControl_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -745,6 +1009,7 @@ public final class SessionInput extends com.google.protobuf.GeneratedMessage
     com.google.cloud.ces.v1beta.SessionInput other = (com.google.cloud.ces.v1beta.SessionInput) obj;
 
     if (getWillContinue() != other.getWillContinue()) return false;
+    if (recordingControl_ != other.recordingControl_) return false;
     if (!getInputTypeCase().equals(other.getInputTypeCase())) return false;
     switch (inputTypeCase_) {
       case 1:
@@ -787,6 +1052,8 @@ public final class SessionInput extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + WILL_CONTINUE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getWillContinue());
+    hash = (37 * hash) + RECORDING_CONTROL_FIELD_NUMBER;
+    hash = (53 * hash) + recordingControl_;
     switch (inputTypeCase_) {
       case 1:
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
@@ -979,6 +1246,7 @@ public final class SessionInput extends com.google.protobuf.GeneratedMessage
         eventBuilder_.clear();
       }
       willContinue_ = false;
+      recordingControl_ = 0;
       inputTypeCase_ = 0;
       inputType_ = null;
       return this;
@@ -1021,6 +1289,9 @@ public final class SessionInput extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.willContinue_ = willContinue_;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.recordingControl_ = recordingControl_;
+      }
     }
 
     private void buildPartialOneofs(com.google.cloud.ces.v1beta.SessionInput result) {
@@ -1057,6 +1328,9 @@ public final class SessionInput extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.ces.v1beta.SessionInput.getDefaultInstance()) return this;
       if (other.getWillContinue() != false) {
         setWillContinue(other.getWillContinue());
+      }
+      if (other.recordingControl_ != 0) {
+        setRecordingControlValue(other.getRecordingControlValue());
       }
       switch (other.getInputTypeCase()) {
         case TEXT:
@@ -1192,6 +1466,12 @@ public final class SessionInput extends com.google.protobuf.GeneratedMessage
                 inputTypeCase_ = 9;
                 break;
               } // case 74
+            case 80:
+              {
+                recordingControl_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2811,6 +3091,199 @@ public final class SessionInput extends com.google.protobuf.GeneratedMessage
     public Builder clearWillContinue() {
       bitField0_ = (bitField0_ & ~0x00000100);
       willContinue_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int recordingControl_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the conversation may be recorded and logged from here on.
+     *
+     * Use this when the app, rather than the agent, decides what may be kept:
+     * for example when the end user has to consent to being recorded before
+     * anything about the call can be stored.
+     *
+     * The value stays in effect until the client sends a different one, so it
+     * only needs to be sent when the answer changes. Whatever is in effect when
+     * a turn completes decides that turn, both whether its audio reaches the
+     * recording bucket and whether its transcript reaches conversation history,
+     * BigQuery and Cloud Logging. It covers the agent's side of the turn as well
+     * as the end user's.
+     *
+     * Turns that complete before the client first sends this are recorded
+     * according to the app's logging settings, as though the field did not
+     * exist.
+     *
+     * If more than one input in the same request sets it, the last one wins.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.SessionInput.RecordingControl recording_control = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for recordingControl.
+     */
+    @java.lang.Override
+    public int getRecordingControlValue() {
+      return recordingControl_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the conversation may be recorded and logged from here on.
+     *
+     * Use this when the app, rather than the agent, decides what may be kept:
+     * for example when the end user has to consent to being recorded before
+     * anything about the call can be stored.
+     *
+     * The value stays in effect until the client sends a different one, so it
+     * only needs to be sent when the answer changes. Whatever is in effect when
+     * a turn completes decides that turn, both whether its audio reaches the
+     * recording bucket and whether its transcript reaches conversation history,
+     * BigQuery and Cloud Logging. It covers the agent's side of the turn as well
+     * as the end user's.
+     *
+     * Turns that complete before the client first sends this are recorded
+     * according to the app's logging settings, as though the field did not
+     * exist.
+     *
+     * If more than one input in the same request sets it, the last one wins.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.SessionInput.RecordingControl recording_control = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for recordingControl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRecordingControlValue(int value) {
+      recordingControl_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the conversation may be recorded and logged from here on.
+     *
+     * Use this when the app, rather than the agent, decides what may be kept:
+     * for example when the end user has to consent to being recorded before
+     * anything about the call can be stored.
+     *
+     * The value stays in effect until the client sends a different one, so it
+     * only needs to be sent when the answer changes. Whatever is in effect when
+     * a turn completes decides that turn, both whether its audio reaches the
+     * recording bucket and whether its transcript reaches conversation history,
+     * BigQuery and Cloud Logging. It covers the agent's side of the turn as well
+     * as the end user's.
+     *
+     * Turns that complete before the client first sends this are recorded
+     * according to the app's logging settings, as though the field did not
+     * exist.
+     *
+     * If more than one input in the same request sets it, the last one wins.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.SessionInput.RecordingControl recording_control = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The recordingControl.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.SessionInput.RecordingControl getRecordingControl() {
+      com.google.cloud.ces.v1beta.SessionInput.RecordingControl result =
+          com.google.cloud.ces.v1beta.SessionInput.RecordingControl.forNumber(recordingControl_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.SessionInput.RecordingControl.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the conversation may be recorded and logged from here on.
+     *
+     * Use this when the app, rather than the agent, decides what may be kept:
+     * for example when the end user has to consent to being recorded before
+     * anything about the call can be stored.
+     *
+     * The value stays in effect until the client sends a different one, so it
+     * only needs to be sent when the answer changes. Whatever is in effect when
+     * a turn completes decides that turn, both whether its audio reaches the
+     * recording bucket and whether its transcript reaches conversation history,
+     * BigQuery and Cloud Logging. It covers the agent's side of the turn as well
+     * as the end user's.
+     *
+     * Turns that complete before the client first sends this are recorded
+     * according to the app's logging settings, as though the field did not
+     * exist.
+     *
+     * If more than one input in the same request sets it, the last one wins.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.SessionInput.RecordingControl recording_control = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The recordingControl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRecordingControl(
+        com.google.cloud.ces.v1beta.SessionInput.RecordingControl value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      recordingControl_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the conversation may be recorded and logged from here on.
+     *
+     * Use this when the app, rather than the agent, decides what may be kept:
+     * for example when the end user has to consent to being recorded before
+     * anything about the call can be stored.
+     *
+     * The value stays in effect until the client sends a different one, so it
+     * only needs to be sent when the answer changes. Whatever is in effect when
+     * a turn completes decides that turn, both whether its audio reaches the
+     * recording bucket and whether its transcript reaches conversation history,
+     * BigQuery and Cloud Logging. It covers the agent's side of the turn as well
+     * as the end user's.
+     *
+     * Turns that complete before the client first sends this are recorded
+     * according to the app's logging settings, as though the field did not
+     * exist.
+     *
+     * If more than one input in the same request sets it, the last one wins.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.SessionInput.RecordingControl recording_control = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRecordingControl() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      recordingControl_ = 0;
       onChanged();
       return this;
     }

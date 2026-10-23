@@ -51,4 +51,41 @@ public interface EventOrBuilder
    * @return The bytes for event.
    */
   com.google.protobuf.ByteString getEventBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional variables associated with the event.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the variables field is set.
+   */
+  boolean hasVariables();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional variables associated with the event.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The variables.
+   */
+  com.google.protobuf.Struct getVariables();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional variables associated with the event.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.protobuf.StructOrBuilder getVariablesOrBuilder();
 }

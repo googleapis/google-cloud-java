@@ -76,22 +76,24 @@ public final class AppVersionProto extends com.google.protobuf.GeneratedFile {
           + "guardrails\030\005 \003(\0132\"."
           + "google.cloud.ces.v1beta.GuardrailB\004\342A\001\001\0228\n"
           + "\010toolsets\030\006 \003(\0132"
-          + " .google.cloud.ces.v1beta.ToolsetB\004\342A\001\001\"\374\002\n\n"
+          + " .google.cloud.ces.v1beta.ToolsetB\004\342A\001\001\"\263\003\n\n"
           + "AppVersion\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\001\022\031\n"
           + "\013description\030\003 \001(\tB\004\342A\001\001\022\025\n"
           + "\007creator\030\004 \001(\tB\004\342A\001\003\0225\n"
           + "\013create_time\030\005"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
+          + "\013update_time\030\t"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022<\n"
-          + "\010snapshot\030\010 "
-          + "\001(\0132$.google.cloud.ces.v1beta.AppSnapshotB\004\342A\001\003\022\022\n"
+          + "\010snapshot\030\010"
+          + " \001(\0132$.google.cloud.ces.v1beta.AppSnapshotB\004\342A\001\003\022\022\n"
           + "\004etag\030\007 \001(\tB\004\342A\001\003:\202\001\352A\177\n"
-          + "\035ces.googleapis.com/AppVersion\022Eprojects/{proj"
-          + "ect}/locations/{location}/apps/{app}/versions/{version}*\013appVersions2\n"
+          + "\035ces.googleapis.com/AppVersion\022Eprojects/{project}/locations/{location}"
+          + "/apps/{app}/versions/{version}*\013appVersions2\n"
           + "appVersionB_\n"
-          + "\033com.google.cloud.ces.v1betaB\017AppVersionProtoP\001Z-cloud.google.com/go/ces/apiv"
-          + "1beta/cespb;cespbb\006proto3"
+          + "\033com.google.cloud.ces.v1betaB\017AppVersionProtoP\001Z-cloud.google."
+          + "com/go/ces/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -121,7 +123,14 @@ public final class AppVersionProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_AppVersion_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "Description", "Creator", "CreateTime", "Snapshot", "Etag",
+              "Name",
+              "DisplayName",
+              "Description",
+              "Creator",
+              "CreateTime",
+              "UpdateTime",
+              "Snapshot",
+              "Etag",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
