@@ -56,11 +56,6 @@ public abstract class AbstractLazyInitializer<T> {
   }
 
   private static boolean shouldCacheError(Exception e) {
-    if (e instanceof DatabaseNotFoundException
-        || e instanceof InstanceNotFoundException
-        || e instanceof SessionNotFoundException) {
-      return true;
-    }
     if (e instanceof SpannerException) {
       return !MultiplexedSessionDatabaseClient.RETRYABLE_ERROR_CODES.contains(
           ((SpannerException) e).getErrorCode());
