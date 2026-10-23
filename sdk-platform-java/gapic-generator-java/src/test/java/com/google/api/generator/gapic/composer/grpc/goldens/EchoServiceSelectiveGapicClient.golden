@@ -24,11 +24,14 @@ import org.jspecify.annotations.Nullable;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
- *     EchoServiceShouldGeneratePartialUsualClient.create()) {
- *   EchoResponse response =
- *       echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsUsual();
- * }
+ * // - The samples create a client that can be re-used for multiple requests
+ * // and are expected to be long-lived.
+ * // The clients should be resource managed properly and eventually closed.
+ * // For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
+ * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+ *     EchoServiceShouldGeneratePartialUsualClient.create();
+ * EchoResponse response = echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsUsual();
  * }</pre>
  *
  * <p>Note: close() needs to be called on the EchoServiceShouldGeneratePartialUsualClient object to
@@ -131,6 +134,11 @@ import org.jspecify.annotations.Nullable;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - The samples create a client that can be re-used for multiple requests
+ * // and are expected to be long-lived.
+ * // The clients should be resource managed properly and eventually closed.
+ * // For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * EchoServiceShouldGeneratePartialUsualSettings echoServiceShouldGeneratePartialUsualSettings =
  *     EchoServiceShouldGeneratePartialUsualSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -148,6 +156,11 @@ import org.jspecify.annotations.Nullable;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - The samples create a client that can be re-used for multiple requests
+ * // and are expected to be long-lived.
+ * // The clients should be resource managed properly and eventually closed.
+ * // For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * EchoServiceShouldGeneratePartialUsualSettings echoServiceShouldGeneratePartialUsualSettings =
  *     EchoServiceShouldGeneratePartialUsualSettings.newBuilder().setEndpoint(myEndpoint).build();
  * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
@@ -228,11 +241,14 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   EchoResponse response =
-   *       echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsUsual();
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * EchoResponse response = echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsUsual();
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -253,12 +269,16 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   FoobarName name = FoobarName.of("[PROJECT]", "[FOOBAR]");
-   *   EchoResponse response =
-   *       echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsUsual(name);
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * FoobarName name = FoobarName.of("[PROJECT]", "[FOOBAR]");
+   * EchoResponse response =
+   *     echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsUsual(name);
    * }</pre>
    *
    * @param name
@@ -280,12 +300,16 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   String name = FoobarName.of("[PROJECT]", "[FOOBAR]").toString();
-   *   EchoResponse response =
-   *       echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsUsual(name);
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * String name = FoobarName.of("[PROJECT]", "[FOOBAR]").toString();
+   * EchoResponse response =
+   *     echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsUsual(name);
    * }</pre>
    *
    * @param name
@@ -306,17 +330,21 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   EchoResponse response =
-   *       echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsUsual(request);
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * EchoResponse response =
+   *     echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsUsual(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -336,21 +364,25 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   ApiFuture<EchoResponse> future =
-   *       echoServiceShouldGeneratePartialUsualClient
-   *           .echoShouldGenerateAsUsualCallable()
-   *           .futureCall(request);
-   *   // Do something.
-   *   EchoResponse response = future.get();
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * ApiFuture<EchoResponse> future =
+   *     echoServiceShouldGeneratePartialUsualClient
+   *         .echoShouldGenerateAsUsualCallable()
+   *         .futureCall(request);
+   * // Do something.
+   * EchoResponse response = future.get();
    * }</pre>
    */
   public final UnaryCallable<EchoRequest, EchoResponse> echoShouldGenerateAsUsualCallable() {
@@ -367,20 +399,24 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   BidiStream<EchoRequest, EchoResponse> bidiStream =
-   *       echoServiceShouldGeneratePartialUsualClient.chatShouldGenerateAsUsualCallable().call();
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   bidiStream.send(request);
-   *   for (EchoResponse response : bidiStream) {
-   *     // Do something when a response is received.
-   *   }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * BidiStream<EchoRequest, EchoResponse> bidiStream =
+   *     echoServiceShouldGeneratePartialUsualClient.chatShouldGenerateAsUsualCallable().call();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * bidiStream.send(request);
+   * for (EchoResponse response : bidiStream) {
+   *   // Do something when a response is received.
    * }
    * }</pre>
    */
@@ -399,22 +435,24 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   BidiStream<EchoRequest, EchoResponse> bidiStream =
-   *       echoServiceShouldGeneratePartialUsualClient
-   *           .chatAgainShouldGenerateAsUsualCallable()
-   *           .call();
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   bidiStream.send(request);
-   *   for (EchoResponse response : bidiStream) {
-   *     // Do something when a response is received.
-   *   }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * BidiStream<EchoRequest, EchoResponse> bidiStream =
+   *     echoServiceShouldGeneratePartialUsualClient.chatAgainShouldGenerateAsUsualCallable().call();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * bidiStream.send(request);
+   * for (EchoResponse response : bidiStream) {
+   *   // Do something when a response is received.
    * }
    * }</pre>
    */
@@ -433,11 +471,15 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   EchoResponse response =
-   *       echoServiceShouldGeneratePartialUsualClient.chatShouldGenerateAsInternal();
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * EchoResponse response =
+   *     echoServiceShouldGeneratePartialUsualClient.chatShouldGenerateAsInternal();
    * }</pre>
    *
    * <p><b>Warning: </b>This method is for internal use only. Please do not use it directly.
@@ -461,12 +503,16 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   FoobarName name = FoobarName.of("[PROJECT]", "[FOOBAR]");
-   *   EchoResponse response =
-   *       echoServiceShouldGeneratePartialUsualClient.chatShouldGenerateAsInternal(name);
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * FoobarName name = FoobarName.of("[PROJECT]", "[FOOBAR]");
+   * EchoResponse response =
+   *     echoServiceShouldGeneratePartialUsualClient.chatShouldGenerateAsInternal(name);
    * }</pre>
    *
    * <p><b>Warning: </b>This method is for internal use only. Please do not use it directly.
@@ -491,12 +537,16 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   String name = FoobarName.of("[PROJECT]", "[FOOBAR]").toString();
-   *   EchoResponse response =
-   *       echoServiceShouldGeneratePartialUsualClient.chatShouldGenerateAsInternal(name);
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * String name = FoobarName.of("[PROJECT]", "[FOOBAR]").toString();
+   * EchoResponse response =
+   *     echoServiceShouldGeneratePartialUsualClient.chatShouldGenerateAsInternal(name);
    * }</pre>
    *
    * <p><b>Warning: </b>This method is for internal use only. Please do not use it directly.
@@ -520,17 +570,21 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   EchoResponse response =
-   *       echoServiceShouldGeneratePartialUsualClient.chatShouldGenerateAsInternal(request);
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * EchoResponse response =
+   *     echoServiceShouldGeneratePartialUsualClient.chatShouldGenerateAsInternal(request);
    * }</pre>
    *
    * <p><b>Warning: </b>This method is for internal use only. Please do not use it directly.
@@ -553,21 +607,25 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   ApiFuture<EchoResponse> future =
-   *       echoServiceShouldGeneratePartialUsualClient
-   *           .chatShouldGenerateAsInternalCallable()
-   *           .futureCall(request);
-   *   // Do something.
-   *   EchoResponse response = future.get();
-   * }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * ApiFuture<EchoResponse> future =
+   *     echoServiceShouldGeneratePartialUsualClient
+   *         .chatShouldGenerateAsInternalCallable()
+   *         .futureCall(request);
+   * // Do something.
+   * EchoResponse response = future.get();
    * }</pre>
    *
    * <p><b>Warning: </b>This method is for internal use only. Please do not use it directly.
@@ -587,20 +645,24 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
-   *     EchoServiceShouldGeneratePartialUsualClient.create()) {
-   *   BidiStream<EchoRequest, EchoResponse> bidiStream =
-   *       echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsInternalCallable().call();
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   bidiStream.send(request);
-   *   for (EchoResponse response : bidiStream) {
-   *     // Do something when a response is received.
-   *   }
+   * // - The samples create a client that can be re-used for multiple requests
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
+   * // For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoServiceShouldGeneratePartialUsualClient echoServiceShouldGeneratePartialUsualClient =
+   *     EchoServiceShouldGeneratePartialUsualClient.create();
+   * BidiStream<EchoRequest, EchoResponse> bidiStream =
+   *     echoServiceShouldGeneratePartialUsualClient.echoShouldGenerateAsInternalCallable().call();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.of("[PROJECT]", "[FOOBAR]").toString())
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * bidiStream.send(request);
+   * for (EchoResponse response : bidiStream) {
+   *   // Do something when a response is received.
    * }
    * }</pre>
    *

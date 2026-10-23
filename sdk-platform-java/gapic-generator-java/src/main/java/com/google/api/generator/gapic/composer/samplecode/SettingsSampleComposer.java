@@ -254,7 +254,12 @@ public final class SettingsSampleComposer {
             .setServiceName(classType.reference().name())
             .setRpcName(methodNameOpt.get())
             .build();
-    return Optional.of(Sample.builder().setBody(statements).setRegionTag(regionTag).build());
+    return Optional.of(
+        Sample.builder()
+            .setBody(statements)
+            .setRegionTag(regionTag)
+
+            .build());
   }
 
   public static Optional<Sample> composeLroSettingsSample(
@@ -445,6 +450,11 @@ public final class SettingsSampleComposer {
             .setServiceName(classType.reference().name())
             .setRpcName(methodNameOpt.get())
             .build();
-    return Optional.of(Sample.builder().setBody(statements).setRegionTag(regionTag).build());
+    return Optional.of(
+        Sample.builder()
+            .setBody(statements)
+            .setRegionTag(regionTag)
+
+            .build());
   }
 }
