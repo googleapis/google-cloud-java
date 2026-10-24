@@ -101,6 +101,16 @@ class ResumableUploadProgressTracker {
     return new ResumableUploadProgressTracker(ResumableUploadProgress.newBuilder().build());
   }
 
+  static ResumableUploadProgressTracker createForResume(String uploadUrl, int effectiveChunkSize) {
+    checkNotNull(uploadUrl, "uploadUrl must not be null");
+    return new ResumableUploadProgressTracker(
+        ResumableUploadProgress.newBuilder()
+            .setState(ResumableUploadProgress.STATE_RECOVERING)
+            .setUploadUrl(uploadUrl)
+            .setEffectiveChunkSize(effectiveChunkSize)
+            .build());
+  }
+
   void addListener(ResumableUploadProgressListener listener, Executor executor) {
     checkNotNull(listener, "listener must not be null");
     checkNotNull(executor, "executor must not be null");

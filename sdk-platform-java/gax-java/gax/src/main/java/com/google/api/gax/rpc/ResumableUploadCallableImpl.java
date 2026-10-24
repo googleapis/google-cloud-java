@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.rpc;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.ApiFuture;
@@ -45,6 +46,7 @@ import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
+import com.google.common.base.Strings;
 import java.time.Duration;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -131,7 +133,18 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
   @Override
   public ResumableUploadFuture<ResponseT> resumeCall(
       String sessionUrl, InputStreamSupplier payload, @Nullable ResumableUploadOptions options) {
-    throw new UnsupportedOperationException("Session resumption is not yet implemented.");
+    checkArgument(!Strings.isNullOrEmpty(sessionUrl), "sessionUrl must not be null or empty");
+    checkNotNull(payload, "payload must not be null");
+    ResumableUploadOptions effectiveOptions = defaultOptions.merge(options);
+
+    return ResumableUploadFutureImpl.createForResume(
+        sessionUrl,
+        retryingUploadChunkCallable,
+        retryingQueryCallable,
+        payload,
+        effectiveOptions,
+        clientContext,
+        recoveryAlgorithm);
   }
 
   private static <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createRetryingCallable(
