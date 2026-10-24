@@ -19,8 +19,14 @@
             "BackupInstance": {
               "methods": ["backupInstanceAsync", "backupInstanceAsync", "backupInstanceAsync", "backupInstanceOperationCallable", "backupInstanceCallable"]
             },
+            "CreateAclPolicy": {
+              "methods": ["createAclPolicy", "createAclPolicy", "createAclPolicy", "createAclPolicyCallable"]
+            },
             "CreateInstance": {
               "methods": ["createInstanceAsync", "createInstanceAsync", "createInstanceAsync", "createInstanceOperationCallable", "createInstanceCallable"]
+            },
+            "DeleteAclPolicy": {
+              "methods": ["deleteAclPolicyAsync", "deleteAclPolicyAsync", "deleteAclPolicyAsync", "deleteAclPolicyOperationCallable", "deleteAclPolicyCallable"]
             },
             "DeleteAuthToken": {
               "methods": ["deleteAuthTokenAsync", "deleteAuthTokenAsync", "deleteAuthTokenAsync", "deleteAuthTokenOperationCallable", "deleteAuthTokenCallable"]
@@ -39,6 +45,12 @@
             },
             "FinishMigration": {
               "methods": ["finishMigrationAsync", "finishMigrationAsync", "finishMigrationAsync", "finishMigrationOperationCallable", "finishMigrationCallable"]
+            },
+            "GetAclPolicy": {
+              "methods": ["getAclPolicy", "getAclPolicy", "getAclPolicy", "getAclPolicyCallable"]
+            },
+            "GetAclPolicyRevision": {
+              "methods": ["getAclPolicyRevision", "getAclPolicyRevision", "getAclPolicyRevision", "getAclPolicyRevisionCallable"]
             },
             "GetAuthToken": {
               "methods": ["getAuthToken", "getAuthToken", "getAuthToken", "getAuthTokenCallable"]
@@ -64,6 +76,12 @@
             "GetTokenAuthUser": {
               "methods": ["getTokenAuthUser", "getTokenAuthUser", "getTokenAuthUser", "getTokenAuthUserCallable"]
             },
+            "ListAclPolicies": {
+              "methods": ["listAclPolicies", "listAclPolicies", "listAclPolicies", "listAclPoliciesPagedCallable", "listAclPoliciesCallable"]
+            },
+            "ListAclPolicyRevisions": {
+              "methods": ["listAclPolicyRevisions", "listAclPolicyRevisions", "listAclPolicyRevisions", "listAclPolicyRevisionsPagedCallable", "listAclPolicyRevisionsCallable"]
+            },
             "ListAuthTokens": {
               "methods": ["listAuthTokens", "listAuthTokens", "listAuthTokens", "listAuthTokensPagedCallable", "listAuthTokensCallable"]
             },
@@ -87,6 +105,9 @@
             },
             "StartMigration": {
               "methods": ["startMigrationAsync", "startMigrationOperationCallable", "startMigrationCallable"]
+            },
+            "UpdateAclPolicy": {
+              "methods": ["updateAclPolicyAsync", "updateAclPolicyAsync", "updateAclPolicyOperationCallable", "updateAclPolicyCallable"]
             },
             "UpdateInstance": {
               "methods": ["updateInstanceAsync", "updateInstanceAsync", "updateInstanceOperationCallable", "updateInstanceCallable"]

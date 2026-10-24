@@ -345,6 +345,58 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  public static final int UPDATE_TIME_FIELD_NUMBER = 9;
+  private com.google.protobuf.Timestamp updateTime_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the app version was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdateTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the app version was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdateTime() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the app version was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+    return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
   public static final int SNAPSHOT_FIELD_NUMBER = 8;
   private com.google.cloud.ces.v1beta.AppSnapshot snapshot_;
 
@@ -363,7 +415,7 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasSnapshot() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -493,8 +545,11 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 7, etag_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(8, getSnapshot());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(9, getUpdateTime());
     }
     getUnknownFields().writeTo(output);
   }
@@ -523,8 +578,11 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(7, etag_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSnapshot());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getUpdateTime());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -548,6 +606,10 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
+    if (hasUpdateTime() != other.hasUpdateTime()) return false;
+    if (hasUpdateTime()) {
+      if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (hasSnapshot() != other.hasSnapshot()) return false;
     if (hasSnapshot()) {
@@ -576,6 +638,10 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
+    }
+    if (hasUpdateTime()) {
+      hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdateTime().hashCode();
     }
     if (hasSnapshot()) {
       hash = (37 * hash) + SNAPSHOT_FIELD_NUMBER;
@@ -727,6 +793,7 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCreateTimeFieldBuilder();
+        internalGetUpdateTimeFieldBuilder();
         internalGetSnapshotFieldBuilder();
       }
     }
@@ -743,6 +810,11 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
         createTimeBuilder_ = null;
+      }
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
       }
       snapshot_ = null;
       if (snapshotBuilder_ != null) {
@@ -804,10 +876,14 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.snapshot_ = snapshotBuilder_ == null ? snapshot_ : snapshotBuilder_.build();
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.snapshot_ = snapshotBuilder_ == null ? snapshot_ : snapshotBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.etag_ = etag_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -848,12 +924,15 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
+      if (other.hasUpdateTime()) {
+        mergeUpdateTime(other.getUpdateTime());
+      }
       if (other.hasSnapshot()) {
         mergeSnapshot(other.getSnapshot());
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -916,16 +995,23 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
             case 58:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     internalGetSnapshotFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
+            case 74:
+              {
+                input.readMessage(
+                    internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1611,6 +1697,218 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
       return createTimeBuilder_;
     }
 
+    private com.google.protobuf.Timestamp updateTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the app version was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the updateTime field is set.
+     */
+    public boolean hasUpdateTime() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the app version was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The updateTime.
+     */
+    public com.google.protobuf.Timestamp getUpdateTime() {
+      if (updateTimeBuilder_ == null) {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      } else {
+        return updateTimeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the app version was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updateTime_ = value;
+      } else {
+        updateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the app version was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updateTimeBuilder_ == null) {
+        updateTime_ = builderForValue.build();
+      } else {
+        updateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the app version was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
+      if (updateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && updateTime_ != null
+            && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdateTimeBuilder().mergeFrom(value);
+        } else {
+          updateTime_ = value;
+        }
+      } else {
+        updateTimeBuilder_.mergeFrom(value);
+      }
+      if (updateTime_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the app version was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpdateTime() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      updateTime_ = null;
+      if (updateTimeBuilder_ != null) {
+        updateTimeBuilder_.dispose();
+        updateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the app version was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetUpdateTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the app version was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
+      if (updateTimeBuilder_ != null) {
+        return updateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp when the app version was last updated.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetUpdateTimeFieldBuilder() {
+      if (updateTimeBuilder_ == null) {
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
+        updateTime_ = null;
+      }
+      return updateTimeBuilder_;
+    }
+
     private com.google.cloud.ces.v1beta.AppSnapshot snapshot_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.ces.v1beta.AppSnapshot,
@@ -1632,7 +1930,7 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
      * @return Whether the snapshot field is set.
      */
     public boolean hasSnapshot() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1678,7 +1976,7 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
       } else {
         snapshotBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1700,7 +1998,7 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
       } else {
         snapshotBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1718,7 +2016,7 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeSnapshot(com.google.cloud.ces.v1beta.AppSnapshot value) {
       if (snapshotBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && snapshot_ != null
             && snapshot_ != com.google.cloud.ces.v1beta.AppSnapshot.getDefaultInstance()) {
           getSnapshotBuilder().mergeFrom(value);
@@ -1729,7 +2027,7 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
         snapshotBuilder_.mergeFrom(value);
       }
       if (snapshot_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1747,7 +2045,7 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearSnapshot() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       snapshot_ = null;
       if (snapshotBuilder_ != null) {
         snapshotBuilder_.dispose();
@@ -1769,7 +2067,7 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.ces.v1beta.AppSnapshot.Builder getSnapshotBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetSnapshotFieldBuilder().getBuilder();
     }
@@ -1894,7 +2192,7 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1914,7 +2212,7 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1939,7 +2237,7 @@ public final class AppVersion extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

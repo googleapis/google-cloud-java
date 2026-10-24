@@ -130,19 +130,22 @@ public final class ExampleProto extends com.google.protobuf.GeneratedFile {
           + "\004data\"3\n"
           + "\004Blob\022\027\n"
           + "\tmime_type\030\001 \001(\tB\004\342A\001\002\022\022\n"
-          + "\004data\030\002 \001(\014B\004\342A\001\002\"4\n"
+          + "\004data\030\002 \001(\014B\004\342A\001\002\"L\n"
           + "\005Image\022\027\n"
           + "\tmime_type\030\001 \001(\tB\004\342A\001\002\022\022\n"
-          + "\004data\030\002 \001(\014B\004\342A\001\002\"\356\001\n"
+          + "\004data\030\002 \001(\014B\004\342A\001\002\022\026\n"
+          + "\010alt_text\030\004 \001(\tB\004\342A\001\001\"\253\002\n"
           + "\010ToolCall\0220\n"
           + "\004tool\030\002 \001(\tB \342A\001\001\372A\031\n"
           + "\027ces.googleapis.com/ToolH\000\022B\n"
-          + "\014toolset_tool\030\005"
-          + " \001(\0132$.google.cloud.ces.v1beta.ToolsetToolB\004\342A\001\001H\000\022\020\n"
+          + "\014toolset_tool\030\005 \001(\0132$.g"
+          + "oogle.cloud.ces.v1beta.ToolsetToolB\004\342A\001\001H\000\022\020\n"
           + "\002id\030\001 \001(\tB\004\342A\001\001\022\032\n"
           + "\014display_name\030\004 \001(\tB\004\342A\001\003\022+\n"
-          + "\004args\030\003 \001(\0132\027.google.protobuf.StructB\004\342A\001\001B\021\n"
-          + "\017tool_identifier\"\366\001\n"
+          + "\004args\030\003 \001(\0132\027.google.protobuf.StructB\004\342A\001\001\022!\n"
+          + "\023parent_tool_call_id\030\006 \001(\tB\004\342A\001\003\022\030\n\n"
+          + "agent_name\030\007 \001(\tB\004\342A\001\003B\021\n"
+          + "\017tool_identifier\"\263\002\n"
           + "\014ToolResponse\0220\n"
           + "\004tool\030\002 \001(\tB \342A\001\001\372A\031\n"
           + "\027ces.googleapis.com/ToolH\000\022B\n"
@@ -150,14 +153,16 @@ public final class ExampleProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132$.google.cloud.ces.v1beta.ToolsetToolB\004\342A\001\001H\000\022\020\n"
           + "\002id\030\001 \001(\tB\004\342A\001\001\022\032\n"
           + "\014display_name\030\004 \001(\tB\004\342A\001\003\022/\n"
-          + "\010response\030\003 \001(\0132\027.google.protobuf.StructB\004\342A\001\002B\021\n"
+          + "\010response\030\003 \001(\0132\027.google.protobuf.StructB\004\342A\001\002\022!\n"
+          + "\023parent_tool_call_id\030\006 \001(\tB\004\342A\001\003\022\030\n\n"
+          + "agent_name\030\007 \001(\tB\004\342A\001\003B\021\n"
           + "\017tool_identifier\"d\n\r"
           + "AgentTransfer\0227\n"
           + "\014target_agent\030\001 \001(\tB!\342A\001\002\372A\032\n"
           + "\030ces.googleapis.com/Agent\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\003B\\\n"
-          + "\033com.google.cloud.ces.v1betaB\014ExampleP"
-          + "rotoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
+          + "\033com.google.cloud.ces.v1betaB\014ExampleProtoP\001Z-cloud."
+          + "google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -220,14 +225,21 @@ public final class ExampleProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_Image_descriptor,
             new java.lang.String[] {
-              "MimeType", "Data",
+              "MimeType", "Data", "AltText",
             });
     internal_static_google_cloud_ces_v1beta_ToolCall_descriptor = getDescriptor().getMessageType(5);
     internal_static_google_cloud_ces_v1beta_ToolCall_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_ToolCall_descriptor,
             new java.lang.String[] {
-              "Tool", "ToolsetTool", "Id", "DisplayName", "Args", "ToolIdentifier",
+              "Tool",
+              "ToolsetTool",
+              "Id",
+              "DisplayName",
+              "Args",
+              "ParentToolCallId",
+              "AgentName",
+              "ToolIdentifier",
             });
     internal_static_google_cloud_ces_v1beta_ToolResponse_descriptor =
         getDescriptor().getMessageType(6);
@@ -235,7 +247,14 @@ public final class ExampleProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_ToolResponse_descriptor,
             new java.lang.String[] {
-              "Tool", "ToolsetTool", "Id", "DisplayName", "Response", "ToolIdentifier",
+              "Tool",
+              "ToolsetTool",
+              "Id",
+              "DisplayName",
+              "Response",
+              "ParentToolCallId",
+              "AgentName",
+              "ToolIdentifier",
             });
     internal_static_google_cloud_ces_v1beta_AgentTransfer_descriptor =
         getDescriptor().getMessageType(7);

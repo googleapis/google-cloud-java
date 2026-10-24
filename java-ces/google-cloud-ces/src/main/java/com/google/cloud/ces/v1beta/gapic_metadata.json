@@ -151,6 +151,9 @@
             "UpdateApp": {
               "methods": ["updateApp", "updateApp", "updateAppCallable"]
             },
+            "UpdateAppVersion": {
+              "methods": ["updateAppVersion", "updateAppVersion", "updateAppVersionCallable"]
+            },
             "UpdateDeployment": {
               "methods": ["updateDeployment", "updateDeployment", "updateDeploymentCallable"]
             },
@@ -168,6 +171,39 @@
             },
             "UpdateToolset": {
               "methods": ["updateToolset", "updateToolset", "updateToolsetCallable"]
+            }
+          }
+        }
+      }
+    },
+    "AssistantService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AssistantServiceClient",
+          "rpcs": {
+            "ChatAiAssistant": {
+              "methods": ["chatAiAssistant", "chatAiAssistantCallable"]
+            },
+            "CreateAssistantSession": {
+              "methods": ["createAssistantSession", "createAssistantSession", "createAssistantSession", "createAssistantSessionCallable"]
+            },
+            "DeleteAssistantSession": {
+              "methods": ["deleteAssistantSession", "deleteAssistantSession", "deleteAssistantSession", "deleteAssistantSessionCallable"]
+            },
+            "GetAssistantSession": {
+              "methods": ["getAssistantSession", "getAssistantSession", "getAssistantSession", "getAssistantSessionCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListAssistantSessions": {
+              "methods": ["listAssistantSessions", "listAssistantSessions", "listAssistantSessions", "listAssistantSessionsPagedCallable", "listAssistantSessionsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "RunAssistant": {
+              "methods": ["runAssistant", "runAssistantCallable"]
             }
           }
         }
@@ -301,6 +337,12 @@
             "BidiRunSession": {
               "methods": ["bidiRunSessionCallable"]
             },
+            "CancelAssistantTurn": {
+              "methods": ["cancelAssistantTurn", "cancelAssistantTurnCallable"]
+            },
+            "GenerateOnboardingSuggestions": {
+              "methods": ["generateOnboardingSuggestions", "generateOnboardingSuggestionsCallable"]
+            },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
@@ -309,6 +351,9 @@
             },
             "RunSession": {
               "methods": ["runSession", "runSessionCallable"]
+            },
+            "StreamChatAiAssistant": {
+              "methods": ["streamChatAiAssistantCallable"]
             },
             "StreamRunSession": {
               "methods": ["streamRunSessionCallable"]
