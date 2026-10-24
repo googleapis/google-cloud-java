@@ -127,6 +127,7 @@
       <plugin>
         <groupId>org.graalvm.buildtools</groupId>
         <artifactId>native-maven-plugin</artifactId>
+        <version>${native-maven-plugin.version}</version>
         <configuration>
           <buildArgs combine.children="append">
             <buildArg>-Dspanner.testenv.config.class=${spanner.testenv.config.class}</buildArg>
