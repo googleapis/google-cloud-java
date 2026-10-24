@@ -100,4 +100,84 @@ public class LazySpannerInitializerTest {
     assertThat(count.get()).isEqualTo(1);
     executor.shutdown();
   }
+
+  @Test
+  public void testGet_shouldRetryOnRetryableSpannerException() throws Exception {
+    final AtomicInteger attempts = new AtomicInteger();
+    final Spanner expectedSpanner = mock(Spanner.class);
+    final LazySpannerInitializer initializer =
+        new LazySpannerInitializer() {
+          @Override
+          public Spanner initialize() {
+            int attempt = attempts.incrementAndGet();
+            if (attempt == 1) {
+              throw SpannerExceptionFactory.newSpannerException(
+                  ErrorCode.UNAVAILABLE, "Transient unavailable");
+            }
+            if (attempt == 2) {
+              throw SpannerExceptionFactory.newSpannerException(
+                  ErrorCode.DEADLINE_EXCEEDED, "Transient deadline exceeded");
+            }
+            return expectedSpanner;
+          }
+        };
+    SpannerException e1 = assertThrows(SpannerException.class, initializer::get);
+    assertThat(e1.getErrorCode()).isEqualTo(ErrorCode.UNAVAILABLE);
+    SpannerException e2 = assertThrows(SpannerException.class, initializer::get);
+    assertThat(e2.getErrorCode()).isEqualTo(ErrorCode.DEADLINE_EXCEEDED);
+
+    Spanner s1 = initializer.get();
+    Spanner s2 = initializer.get();
+    assertThat(s1).isSameInstanceAs(expectedSpanner);
+    assertThat(s2).isSameInstanceAs(expectedSpanner);
+    assertThat(attempts.get()).isEqualTo(3);
+  }
+
+  @Test
+  public void testGet_concurrentRetryAfterRetryableFailure() throws InterruptedException {
+    final AtomicInteger count = new AtomicInteger();
+    final Spanner expectedSpanner = mock(Spanner.class);
+    final LazySpannerInitializer initializer =
+        new LazySpannerInitializer() {
+          @Override
+          public Spanner initialize() {
+            if (count.incrementAndGet() == 1) {
+              throw SpannerExceptionFactory.newSpannerException(
+                  ErrorCode.UNAVAILABLE, "Transient error");
+            }
+            return expectedSpanner;
+          }
+        };
+    final int threads = 16;
+    final CountDownLatch latch = new CountDownLatch(threads);
+    ListeningExecutorService executor =
+        MoreExecutors.listeningDecorator(Executors.newFixedThreadPool(threads));
+    List<ListenableFuture<Spanner>> futures = new ArrayList<>(threads);
+    for (int i = 0; i < threads; i++) {
+      futures.add(
+          executor.submit(
+              () -> {
+                latch.countDown();
+                latch.await(10L, TimeUnit.SECONDS);
+                return initializer.get();
+              }));
+    }
+    int failureCount = 0;
+    int successCount = 0;
+    for (ListenableFuture<Spanner> future : futures) {
+      try {
+        assertThat(future.get()).isSameInstanceAs(expectedSpanner);
+        successCount++;
+      } catch (ExecutionException e) {
+        assertThat(e.getCause()).isInstanceOf(SpannerException.class);
+        assertThat(((SpannerException) e.getCause()).getErrorCode())
+            .isEqualTo(ErrorCode.UNAVAILABLE);
+        failureCount++;
+      }
+    }
+    assertThat(failureCount).isEqualTo(1);
+    assertThat(successCount).isEqualTo(threads - 1);
+    assertThat(count.get()).isEqualTo(2);
+    executor.shutdown();
+  }
 }

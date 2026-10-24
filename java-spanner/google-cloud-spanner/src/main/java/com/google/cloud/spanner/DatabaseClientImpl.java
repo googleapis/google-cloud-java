@@ -91,8 +91,10 @@ class DatabaseClientImpl implements DatabaseClient {
           try {
             Dialect dialect = getDialectAsync().get(30, TimeUnit.SECONDS);
             return new StatementFactory(dialect);
-          } catch (ExecutionException | TimeoutException e) {
-            throw SpannerExceptionFactory.asSpannerException(e);
+          } catch (ExecutionException e) {
+            throw SpannerExceptionFactory.asSpannerException(e.getCause());
+          } catch (TimeoutException e) {
+            throw SpannerExceptionFactory.propagateTimeout(e);
           } catch (InterruptedException e) {
             throw SpannerExceptionFactory.propagateInterrupt(e);
           }
