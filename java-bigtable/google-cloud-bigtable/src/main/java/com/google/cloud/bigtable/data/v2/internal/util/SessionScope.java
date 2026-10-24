@@ -35,7 +35,8 @@ public enum SessionScope {
   CHECK_AND_MUTATE_ROW(
       "method:Bigtable.CheckAndMutateRow", /* fallbackToGlobalSessionLoad= */ false),
   READ_MODIFY_WRITE_ROW(
-      "method:Bigtable.ReadModifyWriteRow", /* fallbackToGlobalSessionLoad= */ false);
+      "method:Bigtable.ReadModifyWriteRow", /* fallbackToGlobalSessionLoad= */ false),
+  MUTATE_ROWS("method:Bigtable.MutateRows", /* fallbackToGlobalSessionLoad= */ false);
 
   private final String key;
   private final boolean fallbackToGlobalSessionLoad;

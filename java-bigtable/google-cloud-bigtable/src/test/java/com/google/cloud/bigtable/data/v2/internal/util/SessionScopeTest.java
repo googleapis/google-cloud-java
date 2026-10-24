@@ -40,6 +40,7 @@ class SessionScopeTest {
 
     assertThat(SessionScope.CHECK_AND_MUTATE_ROW.resolveSessionLoad(config)).isEqualTo(0f);
     assertThat(SessionScope.READ_MODIFY_WRITE_ROW.resolveSessionLoad(config)).isEqualTo(0f);
+    assertThat(SessionScope.MUTATE_ROWS.resolveSessionLoad(config)).isEqualTo(0f);
   }
 
   @Test
@@ -94,7 +95,7 @@ class SessionScopeTest {
   void unservedScope_doesNotCountAsDivertingTraffic() {
     SessionClientConfiguration config =
         SessionClientConfiguration.newBuilder()
-            .setSessionDiversionConfiguration(perScope("method:Bigtable.MutateRows", 1.0f))
+            .setSessionDiversionConfiguration(perScope("method:Bigtable.ExecuteQuery", 1.0f))
             .build();
 
     for (SessionScope scope : SessionScope.values()) {

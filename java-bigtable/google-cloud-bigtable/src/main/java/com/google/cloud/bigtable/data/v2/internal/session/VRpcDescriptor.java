@@ -23,6 +23,7 @@ import com.google.bigtable.v2.CheckAndMutateRowRequest;
 import com.google.bigtable.v2.MaterializedViewRequest;
 import com.google.bigtable.v2.MaterializedViewResponse;
 import com.google.bigtable.v2.MutateRowRequest;
+import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.OpenAuthorizedViewRequest;
 import com.google.bigtable.v2.OpenMaterializedViewRequest;
 import com.google.bigtable.v2.OpenTableRequest;
@@ -33,6 +34,8 @@ import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
+import com.google.bigtable.v2.SessionMutateRowsRequest;
+import com.google.bigtable.v2.SessionMutateRowsResponse;
 import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
 import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
@@ -190,6 +193,30 @@ public final class VRpcDescriptor<OpenReqT extends Message, ReqT, RespT> {
                       .build());
 
   public static final VRpcDescriptor<
+          OpenTableRequest, SessionMutateRowsRequest, SessionMutateRowsResponse>
+      MUTATE_ROWS =
+          new VRpcDescriptor<>(
+              TABLE_SESSION,
+              MethodInfo.of("Bigtable.MutateRows", false),
+              createTableEncoder(TableRequest.Builder::setMutateRows),
+              createTableDecoder(TableResponse::getMutateRows),
+              (name, appProfileId, req) -> {
+                MutateRowsRequest.Builder builder =
+                    MutateRowsRequest.newBuilder().setTableName(name).setAppProfileId(appProfileId);
+                for (SessionMutateRowsRequest.Entry entry : req.getEntriesList()) {
+                  MutateRowsRequest.Entry.Builder entryBuilder =
+                      MutateRowsRequest.Entry.newBuilder()
+                          .setRowKey(entry.getKey())
+                          .addAllMutations(entry.getMutationsList());
+                  if (entry.hasIdempotency()) {
+                    entryBuilder.setIdempotency(entry.getIdempotency());
+                  }
+                  builder.addEntries(entryBuilder);
+                }
+                return builder.build();
+              });
+
+  public static final VRpcDescriptor<
           OpenAuthorizedViewRequest, SessionReadRowRequest, SessionReadRowResponse>
       READ_ROW_AUTH_VIEW =
           new VRpcDescriptor<>(
@@ -263,6 +290,32 @@ public final class VRpcDescriptor<OpenReqT extends Message, ReqT, RespT> {
                       .setRowKey(req.getKey())
                       .addAllRules(req.getRulesList())
                       .build());
+
+  public static final VRpcDescriptor<
+          OpenAuthorizedViewRequest, SessionMutateRowsRequest, SessionMutateRowsResponse>
+      MUTATE_ROWS_AUTH_VIEW =
+          new VRpcDescriptor<>(
+              AUTHORIZED_VIEW_SESSION,
+              MethodInfo.of("Bigtable.MutateRows", false),
+              createAuthViewEncoder(AuthorizedViewRequest.Builder::setMutateRows),
+              createAuthViewDecoder(AuthorizedViewResponse::getMutateRows),
+              (name, appProfileId, req) -> {
+                MutateRowsRequest.Builder builder =
+                    MutateRowsRequest.newBuilder()
+                        .setAuthorizedViewName(name)
+                        .setAppProfileId(appProfileId);
+                for (SessionMutateRowsRequest.Entry entry : req.getEntriesList()) {
+                  MutateRowsRequest.Entry.Builder entryBuilder =
+                      MutateRowsRequest.Entry.newBuilder()
+                          .setRowKey(entry.getKey())
+                          .addAllMutations(entry.getMutationsList());
+                  if (entry.hasIdempotency()) {
+                    entryBuilder.setIdempotency(entry.getIdempotency());
+                  }
+                  builder.addEntries(entryBuilder);
+                }
+                return builder.build();
+              });
 
   public static final VRpcDescriptor<
           OpenMaterializedViewRequest, SessionReadRowRequest, SessionReadRowResponse>
