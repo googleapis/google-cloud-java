@@ -41,6 +41,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.util.Locale;
@@ -60,18 +61,234 @@ public class MtlsUtils {
   static final String CLOUDSDK_CONFIG_DIRECTORY = "gcloud";
 
   /**
+   * Well-known directory where workload SPIFFE credentials and certificate configurations are
+   * delivered at container startup.
+   */
+  static final String WELL_KNOWN_SPIFFE_DIR = "/var/run/secrets/workload-spiffe-credentials/";
+
+  /**
    * Well-known path of the combined certificate chain and private key bundle that GKE delivers to
    * pods with Agent Identity (Pod Certificates). Used as a fallback client certificate source when
    * no certificate configuration file is configured or present.
    */
   static final String GKE_CREDENTIAL_BUNDLE_PATH =
-      "/var/run/secrets/workload-spiffe-credentials/x509.credential-bundle.private-key.pem";
+      WELL_KNOWN_SPIFFE_DIR + "x509.credential-bundle.private-key.pem";
+
+  // Polling configuration for initial container startup credential file readiness when
+  // GOOGLE_API_CERTIFICATE_CONFIG (or its referenced cert/key files) resides in the well-known
+  // SPIFFE directory (50 * 100ms + 50 * 500ms = 30 seconds total).
+  private static final int FAST_POLL_CYCLES = 50;
+  private static final long FAST_POLL_INTERVAL_MS = 100; // 0.1 seconds
+  private static final long SLOW_POLL_INTERVAL_MS = 500; // 0.5 seconds
+  private static final long TOTAL_TIMEOUT_MS = 30000; // 30 seconds
+  private static final int TOTAL_POLL_CYCLES =
+      FAST_POLL_CYCLES
+          + (int)
+              ((TOTAL_TIMEOUT_MS - (FAST_POLL_CYCLES * FAST_POLL_INTERVAL_MS))
+                  / SLOW_POLL_INTERVAL_MS);
 
   // Overridable via setGkeCredentialBundlePathForTesting so unit tests can point to a temp file.
   private static volatile String gkeCredentialBundlePath = GKE_CREDENTIAL_BUNDLE_PATH;
 
+  // Overridable via setWellKnownSpiffeDirForTesting so unit tests can point to a temp directory.
+  private static volatile String wellKnownSpiffeDir = WELL_KNOWN_SPIFFE_DIR;
+
+  private static volatile TimeService timeService = Thread::sleep;
+
+  // Tracks whether initial container startup discovery has completed across both mTLS transport
+  // initialization and Agent Identity token binding so the 30-second startup poll runs at most once
+  // per process.
+  private static volatile boolean initialStartupCompleted = false;
+
+  /**
+   * Functional interface for sleeping during startup credential polling. Overridable for testing.
+   */
+  @InternalApi
+  @VisibleForTesting
+  @FunctionalInterface
+  public interface TimeService {
+    void sleep(long millis) throws InterruptedException;
+  }
+
   private MtlsUtils() {
     // Prevent instantiation for Utility class
+  }
+
+  private static long getSleepIntervalMs(int cycle) {
+    return (cycle < FAST_POLL_CYCLES) ? FAST_POLL_INTERVAL_MS : SLOW_POLL_INTERVAL_MS;
+  }
+
+  /**
+   * Returns {@code true} if initial container startup certificate discovery has already completed.
+   */
+  @InternalApi
+  public static boolean isInitialStartupCompleted() {
+    return initialStartupCompleted;
+  }
+
+  /** Marks initial container startup certificate discovery as completed. */
+  @InternalApi
+  public static void markInitialStartupCompleted() {
+    initialStartupCompleted = true;
+  }
+
+  /** Resets the initial startup completion flag for testing. */
+  @InternalApi
+  @VisibleForTesting
+  public static void resetStartupStateForTesting() {
+    initialStartupCompleted = false;
+  }
+
+  /**
+   * Overrides the well-known SPIFFE directory path for testing; {@code null} restores the default.
+   */
+  @VisibleForTesting
+  static void setWellKnownSpiffeDirForTesting(@Nullable String dir) {
+    wellKnownSpiffeDir = dir != null ? dir : WELL_KNOWN_SPIFFE_DIR;
+    initialStartupCompleted = false;
+  }
+
+  /** Overrides the sleep service for testing; {@code null} restores {@code Thread::sleep}. */
+  @VisibleForTesting
+  static void setTimeServiceForTesting(@Nullable TimeService service) {
+    timeService = service != null ? service : Thread::sleep;
+    initialStartupCompleted = false;
+  }
+
+  /**
+   * Resolves symlinks on existing ancestor directories of {@code path} (for example, {@code
+   * /var/run} to {@code /run} before startup files are created), preserving any trailing
+   * non-existent path elements.
+   */
+  @InternalApi
+  public static Path resolveRealPathAllowingMissing(Path path) {
+    Path normalized = path.toAbsolutePath().normalize();
+    Path current = normalized;
+    while (current != null) {
+      try {
+        Path realCurrent = current.toRealPath();
+        Path relative = current.relativize(normalized);
+        return relative.toString().isEmpty()
+            ? realCurrent
+            : realCurrent.resolve(relative).normalize();
+      } catch (IOException e) {
+        current = current.getParent();
+      }
+    }
+    return normalized;
+  }
+
+  /** Checks whether {@code pathStr} resides within {@code targetWellKnownDir}. */
+  @InternalApi
+  public static boolean isPathInWellKnownDir(@Nullable String pathStr, String targetWellKnownDir) {
+    if (Strings.isNullOrEmpty(pathStr) || Strings.isNullOrEmpty(targetWellKnownDir)) {
+      return false;
+    }
+    try {
+      Path path = resolveRealPathAllowingMissing(Paths.get(pathStr));
+      Path wellKnown = resolveRealPathAllowingMissing(Paths.get(targetWellKnownDir));
+      return path.startsWith(wellKnown);
+    } catch (Exception e) {
+      return false;
+    }
+  }
+
+  private static boolean isPathInWellKnownSpiffeDir(@Nullable String pathStr) {
+    return isPathInWellKnownDir(pathStr, wellKnownSpiffeDir);
+  }
+
+  private static boolean isNonEmptyReadableFile(File file) {
+    return file.isFile() && file.canRead() && file.length() > 0;
+  }
+
+  private static boolean isExistingNonFileOrUnreadable(File file) {
+    return file.exists() && (!file.isFile() || (!file.canRead() && file.exists()));
+  }
+
+  /**
+   * On initial container startup ({@code !initialStartupCompleted}), polls up to 30 seconds when
+   * {@code configFile} or its referenced {@code cert_path}/{@code key_path} resides within the
+   * well-known SPIFFE directory until the configuration and referenced certificate/key files are
+   * non-empty readable files.
+   */
+  private static @Nullable WorkloadCertificateConfiguration waitForExplicitConfigStartupIfNeeded(
+      File configFile) throws IOException {
+    if (initialStartupCompleted) {
+      return null;
+    }
+    boolean shouldPoll = isPathInWellKnownSpiffeDir(configFile.getPath());
+    int maxCycles = shouldPoll ? TOTAL_POLL_CYCLES : 1;
+
+    for (int cycle = 0; cycle < maxCycles; cycle++) {
+      if (isExistingNonFileOrUnreadable(configFile)) {
+        // Directory or permission denied on an existing file will not resolve via startup polling.
+        break;
+      }
+      if (isNonEmptyReadableFile(configFile)) {
+        try (InputStream certConfigStream = new FileInputStream(configFile)) {
+          WorkloadCertificateConfiguration config =
+              WorkloadCertificateConfiguration.fromCertificateConfigurationStream(certConfigStream);
+          if (!shouldPoll
+              && (isPathInWellKnownSpiffeDir(config.getCertPath())
+                  || isPathInWellKnownSpiffeDir(config.getPrivateKeyPath()))) {
+            shouldPoll = true;
+            maxCycles = TOTAL_POLL_CYCLES;
+          }
+          if (!shouldPoll) {
+            initialStartupCompleted = true;
+            return config;
+          }
+          File certFile = new File(config.getCertPath());
+          File keyFile = new File(config.getPrivateKeyPath());
+          if (isExistingNonFileOrUnreadable(certFile) || isExistingNonFileOrUnreadable(keyFile)) {
+            // Referenced certificate or key is a directory or unreadable; fail without polling.
+            break;
+          }
+          if (isNonEmptyReadableFile(certFile) && isNonEmptyReadableFile(keyFile)) {
+            initialStartupCompleted = true;
+            return config;
+          }
+        } catch (CertificateSourceUnavailableException e) {
+          // Valid JSON without a workload section (e.g. ECP configuration); do not poll.
+          initialStartupCompleted = true;
+          throw e;
+        } catch (IllegalArgumentException e) {
+          if (configFile.length() > 0) {
+            // Valid JSON missing required cert_configs, cert_path, or key_path; do not poll.
+            initialStartupCompleted = true;
+            throw e;
+          }
+        } catch (Exception e) {
+          if (!shouldPoll) {
+            initialStartupCompleted = true;
+            if (e instanceof IOException) {
+              throw (IOException) e;
+            }
+            if (e instanceof RuntimeException) {
+              throw (RuntimeException) e;
+            }
+            throw new IOException(e);
+          }
+          // When polling in the well-known SPIFFE directory, retry on transient partial JSON
+          // writes (which may throw IOException or NullPointerException at EOF in JsonParser).
+        }
+      }
+      if (cycle + 1 < maxCycles) {
+        try {
+          timeService.sleep(getSleepIntervalMs(cycle));
+        } catch (InterruptedException e) {
+          Thread.currentThread().interrupt();
+          throw new IOException(
+              "Interrupted while waiting for workload certificate configuration at "
+                  + configFile.getPath(),
+              e);
+        }
+      }
+    }
+    if (shouldPoll) {
+      initialStartupCompleted = true;
+    }
+    return null;
   }
 
   /**
@@ -194,6 +411,20 @@ public class MtlsUtils {
     // 1. Explicit Configuration Path (Fail Closed)
     if (!Strings.isNullOrEmpty(explicitConfigPath)) {
       File configFile = new File(explicitConfigPath);
+      WorkloadCertificateConfiguration config = null;
+      try {
+        config = waitForExplicitConfigStartupIfNeeded(configFile);
+      } catch (CertificateSourceUnavailableException e) {
+        // ECP / PKCS11 configuration without workload section; safe fallback
+        return null;
+      } catch (Exception e) {
+        throw new IllegalStateException(
+            "Certificate configuration file specified via GOOGLE_API_CERTIFICATE_CONFIG at '"
+                + explicitConfigPath
+                + "' is malformed: "
+                + e.getMessage(),
+            e);
+      }
       if (!configFile.exists()) {
         throw new IllegalStateException(
             "Certificate configuration file specified via GOOGLE_API_CERTIFICATE_CONFIG at '"
@@ -207,19 +438,21 @@ public class MtlsUtils {
                 + explicitConfigPath
                 + "'.");
       }
-      WorkloadCertificateConfiguration config;
-      try {
-        config = getWorkloadCertificateConfiguration(envProvider, propProvider, explicitConfigPath);
-      } catch (CertificateSourceUnavailableException e) {
-        // ECP / PKCS11 configuration without workload section; safe fallback
-        return null;
-      } catch (Exception e) {
-        throw new IllegalStateException(
-            "Certificate configuration file specified via GOOGLE_API_CERTIFICATE_CONFIG at '"
-                + explicitConfigPath
-                + "' is malformed: "
-                + e.getMessage(),
-            e);
+      if (config == null) {
+        try {
+          config =
+              getWorkloadCertificateConfiguration(envProvider, propProvider, explicitConfigPath);
+        } catch (CertificateSourceUnavailableException e) {
+          // ECP / PKCS11 configuration without workload section; safe fallback
+          return null;
+        } catch (Exception e) {
+          throw new IllegalStateException(
+              "Certificate configuration file specified via GOOGLE_API_CERTIFICATE_CONFIG at '"
+                  + explicitConfigPath
+                  + "' is malformed: "
+                  + e.getMessage(),
+              e);
+        }
       }
       checkCertAndKeyFilesReadable(config, explicitConfigPath, false);
       return config.getCertPath();
@@ -270,7 +503,7 @@ public class MtlsUtils {
       WorkloadCertificateConfiguration config, String configPath, boolean isDefaultConfig) {
     File certFile = new File(config.getCertPath());
     File keyFile = new File(config.getPrivateKeyPath());
-    if (!certFile.isFile() || !certFile.canRead() || !keyFile.isFile() || !keyFile.canRead()) {
+    if (!isNonEmptyReadableFile(certFile) || !isNonEmptyReadableFile(keyFile)) {
       String sourcePrefix =
           isDefaultConfig
               ? "referenced by default configuration '"
@@ -353,14 +586,27 @@ public class MtlsUtils {
       @Nullable String certConfigPathOverride)
       throws IOException {
     File certConfig;
+    boolean isExplicitConfig = false;
     if (certConfigPathOverride != null) {
       certConfig = new File(certConfigPathOverride);
+      isExplicitConfig = true;
     } else {
       String envCredentialsPath = envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE);
       if (!Strings.isNullOrEmpty(envCredentialsPath)) {
         certConfig = new File(envCredentialsPath);
+        isExplicitConfig = true;
       } else {
         certConfig = getWellKnownCertificateConfigFile(envProvider, propProvider);
+      }
+    }
+
+    String rawUseClientCert = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    String useClientCert = rawUseClientCert != null ? rawUseClientCert.trim() : null;
+    if (isExplicitConfig && !isUseClientCertificateExplicitlyDisabled(useClientCert)) {
+      WorkloadCertificateConfiguration polledConfig =
+          waitForExplicitConfigStartupIfNeeded(certConfig);
+      if (polledConfig != null) {
+        return polledConfig;
       }
     }
 

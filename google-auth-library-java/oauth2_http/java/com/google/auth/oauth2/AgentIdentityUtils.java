@@ -44,7 +44,6 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.AccessDeniedException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
@@ -137,11 +136,6 @@ final class AgentIdentityUtils {
   private static volatile PropertyProvider propertyProvider = SystemPropertyProvider.getInstance();
 
   private static volatile TimeService timeService = Thread::sleep;
-
-  // Tracks whether initial container startup discovery has completed. The 30-second
-  // polling loop (TOTAL_POLL_CYCLES) is strictly limited to initial startup so subsequent
-  // token refreshes never block for 30 seconds.
-  private static volatile boolean initialStartupCompleted = false;
 
   // Tracks whether the FINE-level message for explicitly disabled mTLS when certificates are
   // present has already been logged in this process to prevent log spam on repeated token
@@ -270,14 +264,6 @@ final class AgentIdentityUtils {
   }
 
   /**
-   * Returns {@code true} if {@link #GOOGLE_API_USE_CLIENT_CERTIFICATE} is set to {@code "true"}
-   * (case-insensitive).
-   */
-  private static boolean isMtlsExplicitlyEnabled() {
-    return "true".equalsIgnoreCase(getUseClientCertificateEnv());
-  }
-
-  /**
    * Returns {@code true} if {@link #GOOGLE_API_USE_CLIENT_CERTIFICATE} is set to a non-empty value
    * other than {@code "true"} (case-insensitive).
    */
@@ -286,40 +272,9 @@ final class AgentIdentityUtils {
     return !Strings.isNullOrEmpty(useClientCert) && !"true".equalsIgnoreCase(useClientCert);
   }
 
-  /**
-   * Resolves symlinks on existing ancestor directories of {@code path} (for example, {@code
-   * /var/run} to {@code /run} before startup files are created), preserving any trailing
-   * non-existent path elements.
-   */
-  private static Path resolveRealPathAllowingMissing(final Path path) {
-    Path normalized = path.toAbsolutePath().normalize();
-    Path current = normalized;
-    while (current != null) {
-      try {
-        Path realCurrent = current.toRealPath();
-        Path relative = current.relativize(normalized);
-        return relative.toString().isEmpty()
-            ? realCurrent
-            : realCurrent.resolve(relative).normalize();
-      } catch (IOException e) {
-        current = current.getParent();
-      }
-    }
-    return normalized;
-  }
-
   /** Checks whether the given path resides within the well-known certificate directory. */
   private static boolean isPathInWellKnownDir(final @Nullable String pathStr) {
-    if (Strings.isNullOrEmpty(pathStr)) {
-      return false;
-    }
-    try {
-      Path path = resolveRealPathAllowingMissing(Paths.get(pathStr));
-      Path wellKnown = resolveRealPathAllowingMissing(Paths.get(wellKnownDir));
-      return path.startsWith(wellKnown);
-    } catch (Exception e) {
-      return false;
-    }
+    return MtlsUtils.isPathInWellKnownDir(pathStr, wellKnownDir);
   }
 
   /** Returns {@code true} if {@code path} is the GKE credential bundle in the well-known dir. */
@@ -601,7 +556,7 @@ final class AgentIdentityUtils {
     }
 
     boolean inWellKnownDir = isPathInWellKnownDir(certConfigPath);
-    boolean shouldPoll = !initialStartupCompleted && inWellKnownDir;
+    boolean shouldPoll = !MtlsUtils.isInitialStartupCompleted() && inWellKnownDir;
     int maxCycles = shouldPoll ? TOTAL_POLL_CYCLES : 1;
     boolean warned = false;
     IOException lastParseException = null;
@@ -612,12 +567,12 @@ final class AgentIdentityUtils {
           ResolvedCertAndKeyPaths paths = extractPathsFromConfig(certConfigPath);
           if (!paths.hasWorkloadConfig()) {
             // Valid non-workload config (e.g. enterprise certs) - exit early without polling!
-            initialStartupCompleted = true;
+            MtlsUtils.markInitialStartupCompleted();
             return paths;
           }
           // The config file itself may reside outside wellKnownDir while referencing cert_path or
           // key_path inside wellKnownDir that are still being delivered at startup.
-          if (!initialStartupCompleted
+          if (!MtlsUtils.isInitialStartupCompleted()
               && !shouldPoll
               && (isPathInWellKnownDir(paths.getCertPath())
                   || isPathInWellKnownDir(paths.getKeyPath()))) {
@@ -629,7 +584,7 @@ final class AgentIdentityUtils {
           boolean keyReady =
               AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(paths.getKeyPath()));
           if (certReady && keyReady) {
-            initialStartupCompleted = true;
+            MtlsUtils.markInitialStartupCompleted();
             return paths;
           }
         }
@@ -647,7 +602,7 @@ final class AgentIdentityUtils {
         CachedAgentIdentityInfo latestCached =
             AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
         if (!shouldPoll && cycle + 1 >= maxCycles && latestCached == null) {
-          initialStartupCompleted = true;
+          MtlsUtils.markInitialStartupCompleted();
           throw e; // Fail fast on malformed JSON syntax errors when not polling
         }
         lastParseException = e;
@@ -676,7 +631,7 @@ final class AgentIdentityUtils {
         }
       }
     }
-    initialStartupCompleted = true;
+    MtlsUtils.markInitialStartupCompleted();
 
     CachedAgentIdentityInfo fallbackCached =
         AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
@@ -712,87 +667,40 @@ final class AgentIdentityUtils {
   private static ResolvedCertAndKeyPaths getWellKnownCertificatePathWithRetry(
       final @Nullable CachedAgentIdentityInfo initialCached) throws IOException {
     if (isMtlsExplicitlyDisabled()) {
-      initialStartupCompleted = true;
+      MtlsUtils.markInitialStartupCompleted();
       return new ResolvedCertAndKeyPaths(null, null, false);
     }
 
     // Startup polling is only performed when GOOGLE_API_CERTIFICATE_CONFIG is set and points to the
     // well-known directory (see getPathsFromConfigWithRetry). When GOOGLE_API_CERTIFICATE_CONFIG is
-    // unset, GKE mounts the Pod Certificate volume before the container starts (and on GCE an empty
-    // well-known directory may exist without any certificates ever being delivered), so we perform
-    // a single immediate check without startup polling.
+    // unset, only the GKE Pod Certificate bundle is checked in the well-known directory (matching
+    // MtlsUtils.getWorkloadCertPath and X509Provider so we never mint a bound token for a
+    // certificate that the mTLS transport ignores). GKE mounts the Pod Certificate volume before
+    // the container starts, so we perform a single immediate check without startup polling.
     // The GKE credential bundle is only used when no well-known gcloud certificate configuration
     // file exists (it would otherwise be the transport's mTLS certificate source).
     boolean gkeBundleAllowed =
         !MtlsUtils.hasCertificateConfiguration(environmentProvider, propertyProvider);
     String gkeBundlePath = gkeCredentialBundlePath;
     if (gkeBundleAllowed && MtlsUtils.isGkeCredentialBundleReady(gkeBundlePath)) {
-      initialStartupCompleted = true;
+      MtlsUtils.markInitialStartupCompleted();
       // GKE combined bundle file contains both certificate chain and private key
       return new ResolvedCertAndKeyPaths(gkeBundlePath, gkeBundlePath, false);
     }
 
-    if (!isMtlsExplicitlyEnabled()) {
-      // Without a config file or GOOGLE_API_USE_CLIENT_CERTIFICATE="true", only the GKE credential
-      // bundle can auto-enable mTLS. If a GKE credential was previously cached and the bundle is
-      // transiently unavailable (e.g. mid-rotation), return the cached paths so
-      // loadAndVerifyCredentials can fall back to the cached credential.
-      initialStartupCompleted = true;
-      CachedAgentIdentityInfo fallbackCached =
-          AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
-      if (gkeBundleAllowed
-          && fallbackCached != null
-          && fallbackCached.canUseWellKnownFallback()
-          && fallbackCached.isGkeCredentialBundle) {
-        return new ResolvedCertAndKeyPaths(
-            fallbackCached.certMetadata.getPath(), fallbackCached.keyMetadata.getPath(), false);
-      }
-      return new ResolvedCertAndKeyPaths(null, null, false);
-    }
-
-    String bundlePath = Paths.get(wellKnownDir, "credentialbundle.pem").toString();
-    String certOnlyPath = Paths.get(wellKnownDir, "certificates.pem").toString();
-    String keyOnlyPath = Paths.get(wellKnownDir, "private_key.pem").toString();
-
-    try {
-      if (AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(bundlePath))) {
-        initialStartupCompleted = true;
-        // Combined bundle file contains both certificate chain and private key
-        return new ResolvedCertAndKeyPaths(bundlePath, bundlePath, false);
-      }
-      if (AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(certOnlyPath))
-          && AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(keyOnlyPath))) {
-        initialStartupCompleted = true;
-        return new ResolvedCertAndKeyPaths(certOnlyPath, keyOnlyPath, false);
-      }
-    } catch (AccessDeniedException e) {
-      initialStartupCompleted = true;
-      LoggingUtils.log(
-          LOGGER_PROVIDER,
-          Level.FINE,
-          Collections.emptyMap(),
-          "Permission denied reading well-known certificates. Falling back to unbound token.");
-      return new ResolvedCertAndKeyPaths(null, null, false);
-    } catch (Exception e) {
-      LoggingUtils.log(
-          LOGGER_PROVIDER,
-          Level.FINE,
-          Collections.emptyMap(),
-          "Unexpected error checking well-known certificates: " + e.getMessage());
-    }
-    initialStartupCompleted = true;
-
+    // If a GKE credential was previously cached and the bundle is transiently unavailable (e.g.
+    // mid-rotation), return the cached paths so loadAndVerifyCredentials can fall back to the
+    // cached credential.
+    MtlsUtils.markInitialStartupCompleted();
     CachedAgentIdentityInfo fallbackCached =
         AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
-    if (fallbackCached != null
+    if (gkeBundleAllowed
+        && fallbackCached != null
         && fallbackCached.canUseWellKnownFallback()
-        // A cached GKE credential is only reused while the GKE bundle is still allowed (no
-        // certificate configuration exists), matching the certificate the transport presents.
-        && (!fallbackCached.isGkeCredentialBundle || gkeBundleAllowed)) {
+        && fallbackCached.isGkeCredentialBundle) {
       return new ResolvedCertAndKeyPaths(
           fallbackCached.certMetadata.getPath(), fallbackCached.keyMetadata.getPath(), false);
     }
-
     return new ResolvedCertAndKeyPaths(null, null, false);
   }
 
@@ -914,7 +822,7 @@ final class AgentIdentityUtils {
 
   private static void resetCachedState() {
     AgentIdentityCacheUtils.clearCachedAgentIdentityInfo();
-    initialStartupCompleted = false;
+    MtlsUtils.resetStartupStateForTesting();
     mtlsDisabledLogged = false;
     mtlsDisabledEvaluated = false;
   }
