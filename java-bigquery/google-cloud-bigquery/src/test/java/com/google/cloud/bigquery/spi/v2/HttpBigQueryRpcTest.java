@@ -47,6 +47,7 @@ import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.DataFormatOptions;
 import com.google.cloud.bigquery.telemetry.BigQueryTelemetryTracer;
 import com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer;
 import io.opentelemetry.api.common.AttributeKey;
@@ -1695,6 +1696,40 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("GET", "/projects/" + PROJECT_ID + "/queries/" + JOB_ID);
       verifyNoSpans();
+    }
+
+    @Test
+    public void testDataFormatOptionsPropagatedToListTableDataAndGetQueryResults()
+        throws Exception {
+      BigQueryOptions int64Options =
+          BigQueryOptions.newBuilder()
+              .setProjectId(PROJECT_ID)
+              .setCredentials(NoCredentials.getInstance())
+              .setEnableOpenTelemetryTracing(false)
+              .setDataFormatOptions(
+                  DataFormatOptions.newBuilder()
+                      .useInt64Timestamp(true)
+                      .timestampFormatOptions(
+                          DataFormatOptions.TimestampFormatOptions.ISO8601_STRING)
+                      .build())
+              .setTransportOptions(
+                  BigQueryOptions.getDefaultHttpTransportOptions().toBuilder()
+                      .setHttpTransportFactory(() -> mockTransport)
+                      .build())
+              .build();
+      HttpBigQueryRpc int64Rpc = new HttpBigQueryRpc(int64Options);
+
+      setMockResponse("{\"kind\":\"bigquery#tableDataList\",\"rows\":[]}");
+      int64Rpc.listTableDataSkipExceptionTranslation(
+          PROJECT_ID, DATASET_ID, TABLE_ID, new HashMap<>());
+      verifyRequest("GET", "formatOptions.useInt64Timestamp=true");
+      verifyRequest("GET", "formatOptions.timestampOutputFormat=ISO8601_STRING");
+
+      setMockResponse("{\"kind\":\"bigquery#getQueryResultsResponse\"}");
+      int64Rpc.getQueryResultsSkipExceptionTranslation(
+          PROJECT_ID, JOB_ID, LOCATION, new HashMap<>());
+      verifyRequest("GET", "formatOptions.useInt64Timestamp=true");
+      verifyRequest("GET", "formatOptions.timestampOutputFormat=ISO8601_STRING");
     }
 
     @Test

@@ -24,6 +24,9 @@ import java.io.Serializable;
  */
 @AutoValue
 public abstract class DataFormatOptions implements Serializable {
+
+  static DataFormatOptions DEFAULT_INSTANCE = DataFormatOptions.newBuilder().build();
+
   public enum TimestampFormatOptions {
     TIMESTAMP_OUTPUT_FORMAT_UNSPECIFIED("TIMESTAMP_OUTPUT_FORMAT_UNSPECIFIED"),
     FLOAT64("FLOAT64"),
