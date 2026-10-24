@@ -27,7 +27,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 
 /** This class returns ResultSetMetadata for the JSON and the Arrow ResultSets */
-class BigQueryResultSetMetadata implements ResultSetMetaData {
+public class BigQueryResultSetMetadata implements ResultSetMetaData {
   private static final BigQueryJdbcResultSetLogger LOG =
       BigQueryJdbcResultSetLogger.getLogger(BigQueryResultSetMetadata.class);
   private final FieldList schemaFieldList;
@@ -53,7 +53,13 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
     return this.statement;
   }
 
-  private Field getField(int sqlColumn) {
+  /**
+   * Returns the BigQuery {@link Field} schema definition for the given 1-based SQL column index.
+   *
+   * @param sqlColumn the first column is 1, the second is 2, ...
+   * @return the {@link Field} for the specified column
+   */
+  public Field getField(int sqlColumn) {
     return this.schemaFieldList.get(sqlColumn - 1);
   }
 

@@ -271,6 +271,11 @@ public class BigQueryResultSetMetadataTest {
     assertThat(unwrappedImpl).isNotSameInstanceAs(resultSetMetaData);
     assertThat(unwrappedImpl).isInstanceOf(BigQueryResultSetMetadata.class);
 
+    BigQueryResultSetMetadata bqMetaData =
+        resultSetMetaData.unwrap(BigQueryResultSetMetadata.class);
+    assertThat(bqMetaData.getField(1)).isEqualTo(fieldList.get(0));
+    assertThat(bqMetaData.getField(8).getMode()).isEqualTo(Field.Mode.REPEATED);
+
     BigQueryJdbcException e =
         assertThrows(
             BigQueryJdbcException.class, () -> resultSetMetaData.unwrap(java.sql.Connection.class));
