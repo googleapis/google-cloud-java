@@ -104,14 +104,17 @@ public class GrpcWickedStub extends WickedStub {
     GrpcCallSettings<EvilRequest, EvilResponse> craftEvilPlanTransportSettings =
         GrpcCallSettings.<EvilRequest, EvilResponse>newBuilder()
             .setMethodDescriptor(craftEvilPlanMethodDescriptor)
+            .setJavaMethodName("craftEvilPlan")
             .build();
     GrpcCallSettings<EvilRequest, EvilResponse> brainstormEvilPlansTransportSettings =
         GrpcCallSettings.<EvilRequest, EvilResponse>newBuilder()
             .setMethodDescriptor(brainstormEvilPlansMethodDescriptor)
+            .setJavaMethodName("brainstormEvilPlans")
             .build();
     GrpcCallSettings<EvilRequest, EvilResponse> persuadeEvilPlanTransportSettings =
         GrpcCallSettings.<EvilRequest, EvilResponse>newBuilder()
             .setMethodDescriptor(persuadeEvilPlanMethodDescriptor)
+            .setJavaMethodName("persuadeEvilPlan")
             .build();
 
     this.craftEvilPlanCallable =

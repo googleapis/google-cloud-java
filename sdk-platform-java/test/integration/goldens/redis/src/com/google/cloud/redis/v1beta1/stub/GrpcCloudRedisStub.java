@@ -267,6 +267,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("listInstances")
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -278,6 +279,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getInstance")
             .build();
     GrpcCallSettings<GetInstanceAuthStringRequest, InstanceAuthString>
         getInstanceAuthStringTransportSettings =
@@ -290,6 +292,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("getInstanceAuthString")
                 .build();
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -301,6 +304,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("createInstance")
             .build();
     GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         GrpcCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -311,6 +315,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   builder.add("instance.name", String.valueOf(request.getInstance().getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateInstance")
             .build();
     GrpcCallSettings<UpgradeInstanceRequest, Operation> upgradeInstanceTransportSettings =
         GrpcCallSettings.<UpgradeInstanceRequest, Operation>newBuilder()
@@ -322,6 +327,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("upgradeInstance")
             .build();
     GrpcCallSettings<ImportInstanceRequest, Operation> importInstanceTransportSettings =
         GrpcCallSettings.<ImportInstanceRequest, Operation>newBuilder()
@@ -332,6 +338,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("importInstance")
             .build();
     GrpcCallSettings<ExportInstanceRequest, Operation> exportInstanceTransportSettings =
         GrpcCallSettings.<ExportInstanceRequest, Operation>newBuilder()
@@ -342,6 +349,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("exportInstance")
             .build();
     GrpcCallSettings<FailoverInstanceRequest, Operation> failoverInstanceTransportSettings =
         GrpcCallSettings.<FailoverInstanceRequest, Operation>newBuilder()
@@ -353,6 +361,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("failoverInstance")
             .build();
     GrpcCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         GrpcCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
@@ -364,6 +373,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteInstance")
             .build();
     GrpcCallSettings<RescheduleMaintenanceRequest, Operation>
         rescheduleMaintenanceTransportSettings =
@@ -376,6 +386,7 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .setJavaMethodName("rescheduleMaintenance")
                 .build();
 
     this.listInstancesCallable =

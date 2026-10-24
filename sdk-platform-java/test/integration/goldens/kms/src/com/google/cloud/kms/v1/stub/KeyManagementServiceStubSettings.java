@@ -752,6 +752,11 @@ public class KeyManagementServiceStubSettings
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.kms.v1.KeyManagementServiceClient";
+  }
+
   /** Builder for KeyManagementServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<KeyManagementServiceStubSettings, Builder> {

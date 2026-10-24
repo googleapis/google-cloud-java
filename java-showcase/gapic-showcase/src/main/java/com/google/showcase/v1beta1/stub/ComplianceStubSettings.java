@@ -406,6 +406,11 @@ public class ComplianceStubSettings extends StubSettings<ComplianceStubSettings>
         .build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.showcase.v1beta1.ComplianceClient";
+  }
+
   /** Builder for ComplianceStubSettings. */
   public static class Builder extends StubSettings.Builder<ComplianceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

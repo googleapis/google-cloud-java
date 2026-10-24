@@ -487,6 +487,11 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.redis.v1beta1.CloudRedisClient";
+  }
+
   /** Builder for CloudRedisStubSettings. */
   public static class Builder extends StubSettings.Builder<CloudRedisStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

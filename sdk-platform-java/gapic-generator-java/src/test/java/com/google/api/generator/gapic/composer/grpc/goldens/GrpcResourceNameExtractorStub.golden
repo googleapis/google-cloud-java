@@ -225,6 +225,7 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getFoo")
             .build();
     GrpcCallSettings<GetBarRequest, Bar> getBarTransportSettings =
         GrpcCallSettings.<GetBarRequest, Bar>newBuilder()
@@ -241,6 +242,7 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
                   resourceNameSegments.put("bar", String.valueOf(request.getBar()));
                   return GET_BAR_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("getBar")
             .build();
     GrpcCallSettings<GetHeuristicRequest, Heuristic> getHeuristicTransportSettings =
         GrpcCallSettings.<GetHeuristicRequest, Heuristic>newBuilder()
@@ -261,6 +263,7 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
                   resourceNameSegments.put("project", String.valueOf(request.getProject()));
                   return GET_HEURISTIC_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("getHeuristic")
             .build();
     GrpcCallSettings<ListFoosRequest, ListFoosResponse> listFoosTransportSettings =
         GrpcCallSettings.<ListFoosRequest, ListFoosResponse>newBuilder()
@@ -272,6 +275,7 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getParent())
+            .setJavaMethodName("listFoos")
             .build();
     GrpcCallSettings<GetHeuristicWithNamedBindingRequest, Heuristic> getTransportSettings =
         GrpcCallSettings.<GetHeuristicWithNamedBindingRequest, Heuristic>newBuilder()
@@ -294,6 +298,7 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
                   resourceNameSegments.put("project", String.valueOf(request.getProject()));
                   return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("get")
             .build();
     GrpcCallSettings<ListHeuristicsRequest, ListHeuristicsResponse> listTransportSettings =
         GrpcCallSettings.<ListHeuristicsRequest, ListHeuristicsResponse>newBuilder()
@@ -312,6 +317,7 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
                   resourceNameSegments.put("project", String.valueOf(request.getProject()));
                   return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
+            .setJavaMethodName("list")
             .build();
     GrpcCallSettings<GetHeuristicWithResourceReferenceRequest, Heuristic>
         getHeuristicWithResourceReferenceTransportSettings =
@@ -326,6 +332,7 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getFoo())
+                .setJavaMethodName("getHeuristicWithResourceReference")
                 .build();
     GrpcCallSettings<GetHeuristicWithNestedFieldsRequest, Heuristic>
         getHeuristicWithNestedFieldsTransportSettings =
@@ -350,6 +357,7 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
                       return GET_HEURISTIC_WITH_NESTED_FIELDS_RESOURCE_NAME_TEMPLATE.instantiate(
                           resourceNameSegments);
                     })
+                .setJavaMethodName("getHeuristicWithNestedFields")
                 .build();
     GrpcCallSettings<GetHeuristicWithNamedBindingRequest, Heuristic>
         getHeuristicWithNamedBindingTransportSettings =
@@ -375,6 +383,7 @@ public class GrpcResourceNameExtractorTestingStub extends ResourceNameExtractorT
                       return GET_HEURISTIC_WITH_NAMED_BINDING_RESOURCE_NAME_TEMPLATE.instantiate(
                           resourceNameSegments);
                     })
+                .setJavaMethodName("getHeuristicWithNamedBinding")
                 .build();
 
     this.getFooCallable =

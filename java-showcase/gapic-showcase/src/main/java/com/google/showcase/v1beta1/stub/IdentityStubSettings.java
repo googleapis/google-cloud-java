@@ -426,6 +426,11 @@ public class IdentityStubSettings extends StubSettings<IdentityStubSettings> {
         .build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.showcase.v1beta1.IdentityClient";
+  }
+
   /** Builder for IdentityStubSettings. */
   public static class Builder extends StubSettings.Builder<IdentityStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

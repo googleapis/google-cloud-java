@@ -148,6 +148,7 @@ public class HttpJsonConnectionServiceStub extends ConnectionServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .setJavaMethodName("listConnections")
                 .build();
 
     this.listConnectionsCallable =

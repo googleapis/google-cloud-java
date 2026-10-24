@@ -481,6 +481,7 @@ public class HttpJsonIdentityStub extends IdentityStub {
         HttpJsonCallSettings.<CreateUserRequest, User>newBuilder()
             .setMethodDescriptor(createUserMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("createUser")
             .build();
     HttpJsonCallSettings<GetUserRequest, User> getUserTransportSettings =
         HttpJsonCallSettings.<GetUserRequest, User>newBuilder()
@@ -493,6 +494,7 @@ public class HttpJsonIdentityStub extends IdentityStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getUser")
             .build();
     HttpJsonCallSettings<UpdateUserRequest, User> updateUserTransportSettings =
         HttpJsonCallSettings.<UpdateUserRequest, User>newBuilder()
@@ -504,6 +506,7 @@ public class HttpJsonIdentityStub extends IdentityStub {
                   builder.add("user.name", String.valueOf(request.getUser().getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateUser")
             .build();
     HttpJsonCallSettings<DeleteUserRequest, Empty> deleteUserTransportSettings =
         HttpJsonCallSettings.<DeleteUserRequest, Empty>newBuilder()
@@ -516,11 +519,13 @@ public class HttpJsonIdentityStub extends IdentityStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteUser")
             .build();
     HttpJsonCallSettings<ListUsersRequest, ListUsersResponse> listUsersTransportSettings =
         HttpJsonCallSettings.<ListUsersRequest, ListUsersResponse>newBuilder()
             .setMethodDescriptor(listUsersMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setJavaMethodName("listUsers")
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -533,6 +538,7 @@ public class HttpJsonIdentityStub extends IdentityStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setJavaMethodName("listLocations")
                 .build();
     HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
@@ -544,6 +550,7 @@ public class HttpJsonIdentityStub extends IdentityStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("getLocation")
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -556,6 +563,7 @@ public class HttpJsonIdentityStub extends IdentityStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("setIamPolicy")
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -568,6 +576,7 @@ public class HttpJsonIdentityStub extends IdentityStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("getIamPolicy")
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -581,6 +590,7 @@ public class HttpJsonIdentityStub extends IdentityStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getResource())
+                .setJavaMethodName("testIamPermissions")
                 .build();
 
     this.createUserCallable =
