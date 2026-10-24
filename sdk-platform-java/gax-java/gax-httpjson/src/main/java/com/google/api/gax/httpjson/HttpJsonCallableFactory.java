@@ -48,6 +48,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.ApiTracerContext;
 import com.google.api.gax.tracing.TracedUnaryCallable;
+import com.google.common.annotations.VisibleForTesting;
 import org.jspecify.annotations.NullMarked;
 
 /** Class with utility methods to create http/json-based direct callables. */
@@ -85,7 +86,7 @@ public class HttpJsonCallableFactory {
         new TracedUnaryCallable<>(
             callable,
             clientContext.getTracerFactory(),
-            getApiTracerContext(httpJsonCallSettings.getMethodDescriptor()),
+            getApiTracerContext(httpJsonCallSettings),
             httpJsonCallSettings.getResourceNameExtractor());
     return callable.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
@@ -245,13 +246,34 @@ public class HttpJsonCallableFactory {
     return Callables.resumableUpload(uploadClient, callSettings, clientContext);
   }
 
+  /**
+   * Builds an {@link ApiTracerContext} from the given {@link HttpJsonCallSettings}, including the
+   * method descriptor and Java method name.
+   */
+  @VisibleForTesting
+  static ApiTracerContext getApiTracerContext(HttpJsonCallSettings<?, ?> httpJsonCallSettings) {
+    return getApiTracerContextBuilder(httpJsonCallSettings.getMethodDescriptor())
+        .setJavaMethodName(httpJsonCallSettings.getJavaMethodName())
+        .build();
+  }
+
+  /** Builds an {@link ApiTracerContext} from the given HTTP/JSON {@link ApiMethodDescriptor}. */
+  @VisibleForTesting
   static ApiTracerContext getApiTracerContext(ApiMethodDescriptor<?, ?> methodDescriptor) {
+    return getApiTracerContextBuilder(methodDescriptor).build();
+  }
+
+  /**
+   * Creates an {@link ApiTracerContext.Builder} populated with common HTTP/JSON transport and
+   * method descriptor fields.
+   */
+  private static ApiTracerContext.Builder getApiTracerContextBuilder(
+      ApiMethodDescriptor<?, ?> methodDescriptor) {
     return ApiTracerContext.newBuilder()
         .setFullMethodName(methodDescriptor.getFullMethodName())
         .setHttpMethod(methodDescriptor.getHttpMethod())
         .setHttpPathTemplate(methodDescriptor.getRequestFormatter().getPathTemplate().toRawString())
         .setTransport(ApiTracerContext.Transport.HTTP)
-        .setLibraryMetadata(LibraryMetadata.empty())
-        .build();
+        .setLibraryMetadata(LibraryMetadata.empty());
   }
 }
