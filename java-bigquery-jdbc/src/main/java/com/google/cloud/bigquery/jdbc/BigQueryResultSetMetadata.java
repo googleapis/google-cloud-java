@@ -58,12 +58,16 @@ public class BigQueryResultSetMetadata implements ResultSetMetaData {
    *
    * @param sqlColumn the first column is 1, the second is 2, ...
    * @return the {@link Field} for the specified column
+   * @throws SQLException if the column index is out of bounds
    */
-  public Field getField(int sqlColumn) {
+  public Field getField(int sqlColumn) throws SQLException {
+    if (sqlColumn < 1 || sqlColumn > this.columnCount) {
+      throw new BigQueryJdbcException("Column index out of bounds: " + sqlColumn);
+    }
     return this.schemaFieldList.get(sqlColumn - 1);
   }
 
-  private boolean isPicosecondTimestampColumn(int sqlColumn) {
+  private boolean isPicosecondTimestampColumn(int sqlColumn) throws SQLException {
     if (!this.enableTimestampPicos) {
       return false;
     }
@@ -83,7 +87,7 @@ public class BigQueryResultSetMetadata implements ResultSetMetaData {
   }
 
   @Override
-  public boolean isCaseSensitive(int column) {
+  public boolean isCaseSensitive(int column) throws SQLException {
     int colType = getColumnType(column);
     return colType == Types.NVARCHAR;
   }
@@ -99,7 +103,7 @@ public class BigQueryResultSetMetadata implements ResultSetMetaData {
   }
 
   @Override
-  public int isNullable(int column) {
+  public int isNullable(int column) throws SQLException {
     Mode colMode = getField(column).getMode();
     if (colMode == null) {
       return ResultSetMetaData.columnNullableUnknown;
@@ -110,7 +114,7 @@ public class BigQueryResultSetMetadata implements ResultSetMetaData {
   }
 
   @Override
-  public boolean isSigned(int column) {
+  public boolean isSigned(int column) throws SQLException {
     int colType = getColumnType(column);
     return colType == Types.FLOAT
         || colType == Types.DOUBLE
@@ -119,7 +123,7 @@ public class BigQueryResultSetMetadata implements ResultSetMetaData {
   }
 
   @Override
-  public int getColumnDisplaySize(int column) {
+  public int getColumnDisplaySize(int column) throws SQLException {
     if (isPicosecondTimestampColumn(column)) {
       return 32;
     }
@@ -142,17 +146,17 @@ public class BigQueryResultSetMetadata implements ResultSetMetaData {
   }
 
   @Override
-  public String getColumnLabel(int column) {
+  public String getColumnLabel(int column) throws SQLException {
     return getField(column).getName();
   }
 
   @Override
-  public String getColumnName(int column) {
+  public String getColumnName(int column) throws SQLException {
     return getField(column).getName();
   }
 
   @Override
-  public int getPrecision(int column) {
+  public int getPrecision(int column) throws SQLException {
     Long precision = getField(column).getPrecision();
     if (precision != null) {
       return precision.intValue();
@@ -169,7 +173,7 @@ public class BigQueryResultSetMetadata implements ResultSetMetaData {
   }
 
   @Override
-  public int getScale(int column) {
+  public int getScale(int column) throws SQLException {
     Long scale = getField(column).getScale();
     if (scale != null) {
       return scale.intValue();
@@ -202,7 +206,7 @@ public class BigQueryResultSetMetadata implements ResultSetMetaData {
     return ""; // not applicable
   }
 
-  private StandardSQLTypeName getStandardSQLTypeName(int column) {
+  private StandardSQLTypeName getStandardSQLTypeName(int column) throws SQLException {
     Field field = getField(column);
     if (field.getMode() == Mode.REPEATED) {
       return StandardSQLTypeName.ARRAY;
@@ -211,7 +215,7 @@ public class BigQueryResultSetMetadata implements ResultSetMetaData {
   }
 
   @Override
-  public int getColumnType(int column) {
+  public int getColumnType(int column) throws SQLException {
     if (isPicosecondTimestampColumn(column)) {
       return Types.VARCHAR;
     }
@@ -219,7 +223,7 @@ public class BigQueryResultSetMetadata implements ResultSetMetaData {
   }
 
   @Override
-  public String getColumnTypeName(int column) {
+  public String getColumnTypeName(int column) throws SQLException {
     if (isPicosecondTimestampColumn(column)) {
       return BigQueryTemporalUtility.TIMESTAMP_PICOSECONDS_TYPE_NAME;
     }

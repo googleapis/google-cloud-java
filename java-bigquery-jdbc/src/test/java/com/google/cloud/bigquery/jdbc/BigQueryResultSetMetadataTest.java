@@ -275,6 +275,8 @@ public class BigQueryResultSetMetadataTest {
         resultSetMetaData.unwrap(BigQueryResultSetMetadata.class);
     assertThat(bqMetaData.getField(1)).isEqualTo(fieldList.get(0));
     assertThat(bqMetaData.getField(8).getMode()).isEqualTo(Field.Mode.REPEATED);
+    assertThrows(SQLException.class, () -> bqMetaData.getField(0));
+    assertThrows(SQLException.class, () -> bqMetaData.getField(fieldList.size() + 1));
 
     BigQueryJdbcException e =
         assertThrows(
