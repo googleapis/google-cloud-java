@@ -16,6 +16,8 @@
 
 package com.google.cloud.memorystore.v1.stub;
 
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAclPolicyRevisionsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupsPagedResponse;
@@ -43,6 +45,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.memorystore.v1.AclPolicy;
+import com.google.cloud.memorystore.v1.AclPolicyRevision;
 import com.google.cloud.memorystore.v1.AddAuthTokenRequest;
 import com.google.cloud.memorystore.v1.AddTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.AuthToken;
@@ -50,13 +54,17 @@ import com.google.cloud.memorystore.v1.Backup;
 import com.google.cloud.memorystore.v1.BackupCollection;
 import com.google.cloud.memorystore.v1.BackupInstanceRequest;
 import com.google.cloud.memorystore.v1.CertificateAuthority;
+import com.google.cloud.memorystore.v1.CreateAclPolicyRequest;
 import com.google.cloud.memorystore.v1.CreateInstanceRequest;
+import com.google.cloud.memorystore.v1.DeleteAclPolicyRequest;
 import com.google.cloud.memorystore.v1.DeleteAuthTokenRequest;
 import com.google.cloud.memorystore.v1.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1.DeleteInstanceRequest;
 import com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.ExportBackupRequest;
 import com.google.cloud.memorystore.v1.FinishMigrationRequest;
+import com.google.cloud.memorystore.v1.GetAclPolicyRequest;
+import com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest;
 import com.google.cloud.memorystore.v1.GetAuthTokenRequest;
 import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1.GetBackupRequest;
@@ -65,6 +73,10 @@ import com.google.cloud.memorystore.v1.GetInstanceRequest;
 import com.google.cloud.memorystore.v1.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.GetTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.Instance;
+import com.google.cloud.memorystore.v1.ListAclPoliciesRequest;
+import com.google.cloud.memorystore.v1.ListAclPoliciesResponse;
+import com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest;
+import com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse;
 import com.google.cloud.memorystore.v1.ListAuthTokensRequest;
 import com.google.cloud.memorystore.v1.ListAuthTokensResponse;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsRequest;
@@ -80,6 +92,7 @@ import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.memorystore.v1.StartMigrationRequest;
 import com.google.cloud.memorystore.v1.TokenAuthUser;
+import com.google.cloud.memorystore.v1.UpdateAclPolicyRequest;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -105,12 +118,49 @@ import org.jspecify.annotations.NullMarked;
 public class HttpJsonMemorystoreStub extends MemorystoreStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(AclPolicy.getDescriptor())
           .add(Empty.getDescriptor())
           .add(Instance.getDescriptor())
           .add(TokenAuthUser.getDescriptor())
           .add(Backup.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .build();
+
+  private static final ApiMethodDescriptor<ListAclPoliciesRequest, ListAclPoliciesResponse>
+      listAclPoliciesMethodDescriptor =
+          ApiMethodDescriptor.<ListAclPoliciesRequest, ListAclPoliciesResponse>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/ListAclPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAclPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/aclPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAclPoliciesResponse>newBuilder()
+                      .setDefaultInstance(ListAclPoliciesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<ListInstancesRequest, ListInstancesResponse>
       listInstancesMethodDescriptor =
@@ -150,6 +200,40 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetAclPolicyRequest, AclPolicy>
+      getAclPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetAclPolicyRequest, AclPolicy>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/GetAclPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAclPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/aclPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AclPolicy>newBuilder()
+                      .setDefaultInstance(AclPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetInstanceRequest, Instance>
       getInstanceMethodDescriptor =
           ApiMethodDescriptor.<GetInstanceRequest, Instance>newBuilder()
@@ -180,6 +264,46 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Instance>newBuilder()
                       .setDefaultInstance(Instance.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAclPolicyRequest, AclPolicy>
+      createAclPolicyMethodDescriptor =
+          ApiMethodDescriptor.<CreateAclPolicyRequest, AclPolicy>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/CreateAclPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAclPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/aclPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "aclPolicyId", request.getAclPolicyId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("aclPolicy", request.getAclPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AclPolicy>newBuilder()
+                      .setDefaultInstance(AclPolicy.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -226,6 +350,49 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpdateAclPolicyRequest, Operation>
+      updateAclPolicyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAclPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/UpdateAclPolicy")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAclPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{aclPolicy.name=projects/*/locations/*/aclPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "aclPolicy.name", request.getAclPolicy().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("aclPolicy", request.getAclPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAclPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<UpdateInstanceRequest, Operation>
       updateInstanceMethodDescriptor =
           ApiMethodDescriptor.<UpdateInstanceRequest, Operation>newBuilder()
@@ -267,6 +434,117 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
               .setOperationSnapshotFactory(
                   (UpdateInstanceRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAclPolicyRequest, Operation>
+      deleteAclPolicyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAclPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/DeleteAclPolicy")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAclPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/aclPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAclPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionMethodDescriptor =
+          ApiMethodDescriptor.<GetAclPolicyRevisionRequest, AclPolicyRevision>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/GetAclPolicyRevision")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAclPolicyRevisionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/aclPolicies/*/revisions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAclPolicyRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAclPolicyRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AclPolicyRevision>newBuilder()
+                      .setDefaultInstance(AclPolicyRevision.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.memorystore.v1.Memorystore/ListAclPolicyRevisions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAclPolicyRevisionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/aclPolicies/*}/revisions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclPolicyRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclPolicyRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAclPolicyRevisionsResponse>newBuilder()
+                      .setDefaultInstance(ListAclPolicyRevisionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<DeleteInstanceRequest, Operation>
@@ -1129,16 +1407,34 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                       .build())
               .build();
 
+  private final UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse>
+      listAclPoliciesCallable;
+  private final UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable;
+  private final UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable;
   private final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable;
+  private final UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable;
   private final UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable;
   private final OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
       createInstanceOperationCallable;
+  private final UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable;
+  private final OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable;
   private final UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable;
   private final OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
       updateInstanceOperationCallable;
+  private final UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable;
+  private final OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable;
+  private final UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable;
+  private final UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable;
+  private final UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable;
   private final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable;
   private final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable;
@@ -1272,6 +1568,19 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                         .build())
                 .build());
 
+    HttpJsonCallSettings<ListAclPoliciesRequest, ListAclPoliciesResponse>
+        listAclPoliciesTransportSettings =
+            HttpJsonCallSettings.<ListAclPoliciesRequest, ListAclPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listAclPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<ListInstancesRequest, ListInstancesResponse>
         listInstancesTransportSettings =
             HttpJsonCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
@@ -1285,6 +1594,18 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<GetAclPolicyRequest, AclPolicy> getAclPolicyTransportSettings =
+        HttpJsonCallSettings.<GetAclPolicyRequest, AclPolicy>newBuilder()
+            .setMethodDescriptor(getAclPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     HttpJsonCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         HttpJsonCallSettings.<GetInstanceRequest, Instance>newBuilder()
             .setMethodDescriptor(getInstanceMethodDescriptor)
@@ -1296,6 +1617,18 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<CreateAclPolicyRequest, AclPolicy> createAclPolicyTransportSettings =
+        HttpJsonCallSettings.<CreateAclPolicyRequest, AclPolicy>newBuilder()
+            .setMethodDescriptor(createAclPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         HttpJsonCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -1309,6 +1642,17 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<UpdateAclPolicyRequest, Operation> updateAclPolicyTransportSettings =
+        HttpJsonCallSettings.<UpdateAclPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAclPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("acl_policy.name", String.valueOf(request.getAclPolicy().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         HttpJsonCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(updateInstanceMethodDescriptor)
@@ -1320,6 +1664,45 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<DeleteAclPolicyRequest, Operation> deleteAclPolicyTransportSettings =
+        HttpJsonCallSettings.<DeleteAclPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAclPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetAclPolicyRevisionRequest, AclPolicyRevision>
+        getAclPolicyRevisionTransportSettings =
+            HttpJsonCallSettings.<GetAclPolicyRevisionRequest, AclPolicyRevision>newBuilder()
+                .setMethodDescriptor(getAclPolicyRevisionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+        listAclPolicyRevisionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>newBuilder()
+                .setMethodDescriptor(listAclPolicyRevisionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<DeleteInstanceRequest, Operation> deleteInstanceTransportSettings =
         HttpJsonCallSettings.<DeleteInstanceRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteInstanceMethodDescriptor)
@@ -1608,15 +1991,27 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
                 })
             .build();
 
+    this.listAclPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listAclPoliciesTransportSettings, settings.listAclPoliciesSettings(), clientContext);
+    this.listAclPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAclPoliciesTransportSettings, settings.listAclPoliciesSettings(), clientContext);
     this.listInstancesCallable =
         callableFactory.createUnaryCallable(
             listInstancesTransportSettings, settings.listInstancesSettings(), clientContext);
     this.listInstancesPagedCallable =
         callableFactory.createPagedCallable(
             listInstancesTransportSettings, settings.listInstancesSettings(), clientContext);
+    this.getAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getAclPolicyTransportSettings, settings.getAclPolicySettings(), clientContext);
     this.getInstanceCallable =
         callableFactory.createUnaryCallable(
             getInstanceTransportSettings, settings.getInstanceSettings(), clientContext);
+    this.createAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createAclPolicyTransportSettings, settings.createAclPolicySettings(), clientContext);
     this.createInstanceCallable =
         callableFactory.createUnaryCallable(
             createInstanceTransportSettings, settings.createInstanceSettings(), clientContext);
@@ -1624,6 +2019,15 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
         callableFactory.createOperationCallable(
             createInstanceTransportSettings,
             settings.createInstanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateAclPolicyTransportSettings, settings.updateAclPolicySettings(), clientContext);
+    this.updateAclPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAclPolicyTransportSettings,
+            settings.updateAclPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.updateInstanceCallable =
@@ -1635,6 +2039,30 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
             settings.updateInstanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.deleteAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteAclPolicyTransportSettings, settings.deleteAclPolicySettings(), clientContext);
+    this.deleteAclPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAclPolicyTransportSettings,
+            settings.deleteAclPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getAclPolicyRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getAclPolicyRevisionTransportSettings,
+            settings.getAclPolicyRevisionSettings(),
+            clientContext);
+    this.listAclPolicyRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listAclPolicyRevisionsTransportSettings,
+            settings.listAclPolicyRevisionsSettings(),
+            clientContext);
+    this.listAclPolicyRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAclPolicyRevisionsTransportSettings,
+            settings.listAclPolicyRevisionsSettings(),
+            clientContext);
     this.deleteInstanceCallable =
         callableFactory.createUnaryCallable(
             deleteInstanceTransportSettings, settings.deleteInstanceSettings(), clientContext);
@@ -1811,10 +2239,17 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(listAclPoliciesMethodDescriptor);
     methodDescriptors.add(listInstancesMethodDescriptor);
+    methodDescriptors.add(getAclPolicyMethodDescriptor);
     methodDescriptors.add(getInstanceMethodDescriptor);
+    methodDescriptors.add(createAclPolicyMethodDescriptor);
     methodDescriptors.add(createInstanceMethodDescriptor);
+    methodDescriptors.add(updateAclPolicyMethodDescriptor);
     methodDescriptors.add(updateInstanceMethodDescriptor);
+    methodDescriptors.add(deleteAclPolicyMethodDescriptor);
+    methodDescriptors.add(getAclPolicyRevisionMethodDescriptor);
+    methodDescriptors.add(listAclPolicyRevisionsMethodDescriptor);
     methodDescriptors.add(deleteInstanceMethodDescriptor);
     methodDescriptors.add(getCertificateAuthorityMethodDescriptor);
     methodDescriptors.add(getSharedRegionalCertificateAuthorityMethodDescriptor);
@@ -1846,6 +2281,17 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
   }
 
   @Override
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse> listAclPoliciesCallable() {
+    return listAclPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable() {
+    return listAclPoliciesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
     return listInstancesCallable;
   }
@@ -1857,8 +2303,18 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
   }
 
   @Override
+  public UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable() {
+    return getAclPolicyCallable;
+  }
+
+  @Override
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return getInstanceCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable() {
+    return createAclPolicyCallable;
   }
 
   @Override
@@ -1873,6 +2329,17 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
   }
 
   @Override
+  public UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable() {
+    return updateAclPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable() {
+    return updateAclPolicyOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
     return updateInstanceCallable;
   }
@@ -1881,6 +2348,35 @@ public class HttpJsonMemorystoreStub extends MemorystoreStub {
   public OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
       updateInstanceOperationCallable() {
     return updateInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable() {
+    return deleteAclPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable() {
+    return deleteAclPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable() {
+    return getAclPolicyRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable() {
+    return listAclPolicyRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable() {
+    return listAclPolicyRevisionsPagedCallable;
   }
 
   @Override

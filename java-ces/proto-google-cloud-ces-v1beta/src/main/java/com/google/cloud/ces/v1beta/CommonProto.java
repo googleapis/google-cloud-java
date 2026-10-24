@@ -112,6 +112,14 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_ces_v1beta_EvaluationRunCachingSettings_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_EvaluationRunCachingSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_UiEvent_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_UiEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_SessionCheckpoint_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_SessionCheckpoint_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -132,24 +140,32 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\013description\030\003 \001(\tB\004\342A\001\001\022\026\n"
           + "\010disabled\030\002 \001(\010B\004\342A\001\001\022)\n"
           + "\033proactive_execution_enabled\030\004 \001(\010B\004\342A\001\001B\n\n"
-          + "\010callback\"T\n\r"
+          + "\010callback\"\205\002\n\r"
           + "ModelSettings\022\023\n"
           + "\005model\030\001 \001(\tB\004\342A\001\001\022\036\n"
-          + "\013temperature\030\002 \001(\001B\004\342A\001\001H\000\210\001\001B\016\n"
+          + "\013temperature\030\002 \001(\001B\004\342A\001\001H\000\210\001\001\022R\n"
+          + "\016thinking_level\030\005 \001(\01624.google.cloud.ces"
+          + ".v1beta.ModelSettings.ThinkingLevelB\004\342A\001\001\"[\n\r"
+          + "ThinkingLevel\022\036\n"
+          + "\032THINKING_LEVEL_UNSPECIFIED\020\000\022\013\n"
+          + "\007DEFAULT\020\001\022\007\n"
+          + "\003LOW\020\002\022\n\n"
+          + "\006MEDIUM\020\003\022\010\n"
+          + "\004HIGH\020\004B\016\n"
           + "\014_temperature\"\260\004\n\r"
           + "TriggerAction\022^\n"
-          + "\023respond_immediately\030\001 \001(\01329.google.cloud.ces.v"
-          + "1beta.TriggerAction.RespondImmediatelyB\004\342A\001\001H\000\022T\n"
-          + "\016transfer_agent\030\002 \001(\01324.google."
-          + "cloud.ces.v1beta.TriggerAction.TransferAgentB\004\342A\001\001H\000\022Z\n"
-          + "\021generative_answer\030\003 \001(\0132"
-          + "7.google.cloud.ces.v1beta.TriggerAction.GenerativeAnswerB\004\342A\001\001H\000\0326\n"
+          + "\023respond_immediately\030\001 \001(\01329."
+          + "google.cloud.ces.v1beta.TriggerAction.RespondImmediatelyB\004\342A\001\001H\000\022T\n"
+          + "\016transfer_agent\030\002"
+          + " \001(\01324.google.cloud.ces.v1beta.TriggerAction.TransferAgentB\004\342A\001\001H\000\022Z\n"
+          + "\021generative_answer\030\003 \001(\01327.google.cloud.ces.v1b"
+          + "eta.TriggerAction.GenerativeAnswerB\004\342A\001\001H\000\0326\n"
           + "\010Response\022\022\n"
           + "\004text\030\001 \001(\tB\004\342A\001\002\022\026\n"
           + "\010disabled\030\002 \001(\010B\004\342A\001\001\032^\n"
           + "\022RespondImmediately\022H\n"
-          + "\tresponses\030\001 \003("
-          + "\0132/.google.cloud.ces.v1beta.TriggerAction.ResponseB\004\342A\001\002\032(\n"
+          + "\tresponses\030\001"
+          + " \003(\0132/.google.cloud.ces.v1beta.TriggerAction.ResponseB\004\342A\001\002\032(\n"
           + "\020GenerativeAnswer\022\024\n"
           + "\006prompt\030\001 \001(\tB\004\342A\001\002\032A\n\r"
           + "TransferAgent\0220\n"
@@ -167,34 +183,36 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\'servicedirectory.googleapis.com/Service\"\247\017\n"
           + "\016ChannelProfile\022\030\n\n"
           + "profile_id\030\001 \001(\tB\004\342A\001\001\022O\n"
-          + "\014channel_type\030\003 \001(\01623.goo"
-          + "gle.cloud.ces.v1beta.ChannelProfile.ChannelTypeB\004\342A\001\001\022W\n"
-          + "\020persona_property\030\002 \001(\0132"
-          + "7.google.cloud.ces.v1beta.ChannelProfile.PersonaPropertyB\004\342A\001\001\022\032\n"
+          + "\014channel_type\030\003"
+          + " \001(\01623.google.cloud.ces.v1beta.ChannelProfile.ChannelTypeB\004\342A\001\001\022W\n"
+          + "\020persona_property\030\002 \001(\01327.google.cloud.ces.v1b"
+          + "eta.ChannelProfile.PersonaPropertyB\004\342A\001\001\022\032\n"
           + "\014disable_dtmf\030\004 \001(\010B\004\342A\001\001\022&\n"
           + "\030disable_barge_in_control\030\005 \001(\010B\004\342A\001\001\022X\n"
-          + "\021web_widget_config\030\007 \001(\01327."
-          + "google.cloud.ces.v1beta.ChannelProfile.WebWidgetConfigB\004\342A\001\001\022%\n"
+          + "\021web_widget_config\030\007 \001(\01327.google.cloud.ces.v1bet"
+          + "a.ChannelProfile.WebWidgetConfigB\004\342A\001\001\022%\n"
           + "\027noise_suppression_level\030\010 \001(\tB\004\342A\001\001\022U\n"
-          + "\017whatsapp_config\030\t"
-          + " \001(\01326.google.cloud.ces.v1beta.ChannelProfile.WhatsAppConfigB\004\342A\001\001\022W\n"
+          + "\017whatsapp_config\030\t \001(\01326.google.cloud.ce"
+          + "s.v1beta.ChannelProfile.WhatsAppConfigB\004\342A\001\001\022W\n"
           + "\020instagram_config\030\n"
-          + " \001(\01327.google.cloud.ces.v1beta.ChannelProfile.InstagramConfigB\004\342A\001\001\032\232\001\n"
+          + " \001(\01327.google."
+          + "cloud.ces.v1beta.ChannelProfile.InstagramConfigB\004\342A\001\001\032\232\001\n"
           + "\017PersonaProperty\022V\n"
-          + "\007persona\030\001 \001(\0162?.googl"
-          + "e.cloud.ces.v1beta.ChannelProfile.PersonaProperty.PersonaB\004\342A\001\001\"/\n"
+          + "\007persona\030\001 \001(\0162?.google.cloud.ces.v1beta.Cha"
+          + "nnelProfile.PersonaProperty.PersonaB\004\342A\001\001\"/\n"
           + "\007Persona\022\013\n"
           + "\007UNKNOWN\020\000\022\013\n"
-          + "\007CONCISE\020\001\022\n\n"
+          + "\007CONCISE\020\001\022\n"
+          + "\n"
           + "\006CHATTY\020\002\032\215\005\n"
           + "\017WebWidgetConfig\022X\n"
-          + "\010modality\030\001 \001(\0162@.google."
-          + "cloud.ces.v1beta.ChannelProfile.WebWidgetConfig.ModalityB\004\342A\001\001\022R\n"
-          + "\005theme\030\002 \001(\0162=."
-          + "google.cloud.ces.v1beta.ChannelProfile.WebWidgetConfig.ThemeB\004\342A\001\001\022\036\n"
+          + "\010modality\030\001 \001(\0162@.google.cloud.ces.v1beta.Chann"
+          + "elProfile.WebWidgetConfig.ModalityB\004\342A\001\001\022R\n"
+          + "\005theme\030\002 \001(\0162=.google.cloud.ces.v1bet"
+          + "a.ChannelProfile.WebWidgetConfig.ThemeB\004\342A\001\001\022\036\n"
           + "\020web_widget_title\030\003 \001(\tB\004\342A\001\001\022i\n"
-          + "\021security_settings\030\004 \001(\0132H.google.cloud.ces.v1beta.ChannelP"
-          + "rofile.WebWidgetConfig.SecuritySettingsB\004\342A\001\001\032\230\001\n"
+          + "\021security_settings\030\004 \001(\0132H.google.cloud.c"
+          + "es.v1beta.ChannelProfile.WebWidgetConfig.SecuritySettingsB\004\342A\001\001\032\230\001\n"
           + "\020SecuritySettings\022\"\n"
           + "\024enable_public_access\030\001 \001(\010B\004\342A\001\001\022!\n"
           + "\023enable_origin_check\030\004 \001(\010B\004\342A\001\001\022\035\n"
@@ -219,8 +237,7 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\013description\030\006 \001(\tB\004\342A\001\003\032\211\001\n"
           + "\017InstagramConfig\022\"\n"
           + "\024instagram_account_id\030\001 \001(\tB\004\342A\001\002\022\032\n"
-          + "\014display_name\030\002 \001(\tB\004\342A\001\003\022\033\n"
-          + "\r"
+          + "\014display_name\030\002 \001(\tB\004\342A\001\003\022\033\n\r"
           + "thumbnail_url\030\003 \001(\tB\004\342A\001\003\022\031\n"
           + "\013description\030\004 \001(\tB\004\342A\001\003\"\351\001\n"
           + "\013ChannelType\022\013\n"
@@ -246,20 +263,25 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\013child_spans\030\005"
           + " \003(\0132\035.google.cloud.ces.v1beta.SpanB\004\342A\001\003\"\375\001\n"
           + "\034EvaluationRunCachingSettings\022n\n"
-          + "\020run_caching_mode\030\001 \001(\0162N.google.cloud.ces.v1beta.Evaluation"
-          + "RunCachingSettings.EvaluationRunCachingModeB\004\342A\001\001\"m\n"
+          + "\020run_caching_mode\030\001 \001(\0162N.google.cloud.ces"
+          + ".v1beta.EvaluationRunCachingSettings.EvaluationRunCachingModeB\004\342A\001\001\"m\n"
           + "\030EvaluationRunCachingMode\022+\n"
           + "\'EVALUATION_RUN_CACHING_MODE_UNSPECIFIED\020\000\022\r\n"
           + "\tFORCE_RUN\020\001\022\025\n"
-          + "\021SKIP_IF_UNCHANGED\020\002*R\n\r"
+          + "\021SKIP_IF_UNCHANGED\020\002\"2\n"
+          + "\007UiEvent\022\021\n"
+          + "\tmime_type\030\001 \001(\t\022\024\n"
+          + "\014json_payload\030\002 \001(\t\"(\n"
+          + "\021SessionCheckpoint\022\023\n"
+          + "\013user_intent\030\001 \001(\t*R\n\r"
           + "ExecutionType\022\036\n"
           + "\032EXECUTION_TYPE_UNSPECIFIED\020\000\022\017\n"
           + "\013SYNCHRONOUS\020\001\022\020\n"
           + "\014ASYNCHRONOUS\020\002B\332\001\n"
-          + "\033com.google.cloud.ces.v1betaB\013Co"
-          + "mmonProtoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespb\352A|\n"
-          + "\'servicedirectory.googleapis.com/Service\022Qprojects/{projec"
-          + "t}/locations/{location}/namespaces/{namespace}/services/{service}b\006proto3"
+          + "\033com.google.cloud.ces.v1betaB\013CommonProt"
+          + "oP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespb\352A|\n"
+          + "\'servicedirectory.googleapis.com/Service\022Qprojects/{project}/locat"
+          + "ions/{location}/namespaces/{namespace}/services/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -284,7 +306,7 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_ModelSettings_descriptor,
             new java.lang.String[] {
-              "Model", "Temperature",
+              "Model", "Temperature", "ThinkingLevel",
             });
     internal_static_google_cloud_ces_v1beta_TriggerAction_descriptor =
         getDescriptor().getMessageType(2);
@@ -426,6 +448,21 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_ces_v1beta_EvaluationRunCachingSettings_descriptor,
             new java.lang.String[] {
               "RunCachingMode",
+            });
+    internal_static_google_cloud_ces_v1beta_UiEvent_descriptor = getDescriptor().getMessageType(8);
+    internal_static_google_cloud_ces_v1beta_UiEvent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_UiEvent_descriptor,
+            new java.lang.String[] {
+              "MimeType", "JsonPayload",
+            });
+    internal_static_google_cloud_ces_v1beta_SessionCheckpoint_descriptor =
+        getDescriptor().getMessageType(9);
+    internal_static_google_cloud_ces_v1beta_SessionCheckpoint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_SessionCheckpoint_descriptor,
+            new java.lang.String[] {
+              "UserIntent",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

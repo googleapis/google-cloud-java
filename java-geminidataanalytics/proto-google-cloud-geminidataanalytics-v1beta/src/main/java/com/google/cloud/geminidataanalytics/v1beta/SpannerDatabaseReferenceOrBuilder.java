@@ -329,4 +329,58 @@ public interface SpannerDatabaseReferenceOrBuilder
    * @return The bytes for requestTag.
    */
   com.google.protobuf.ByteString getRequestTagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The graph IDs to query.
+   * </pre>
+   *
+   * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the graphIds.
+   */
+  java.util.List<java.lang.String> getGraphIdsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The graph IDs to query.
+   * </pre>
+   *
+   * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of graphIds.
+   */
+  int getGraphIdsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The graph IDs to query.
+   * </pre>
+   *
+   * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The graphIds at the given index.
+   */
+  java.lang.String getGraphIds(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The graph IDs to query.
+   * </pre>
+   *
+   * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the graphIds at the given index.
+   */
+  com.google.protobuf.ByteString getGraphIdsBytes(int index);
 }

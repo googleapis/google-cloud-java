@@ -105,6 +105,7 @@ import com.google.cloud.ces.v1beta.Tool;
 import com.google.cloud.ces.v1beta.Toolset;
 import com.google.cloud.ces.v1beta.UpdateAgentRequest;
 import com.google.cloud.ces.v1beta.UpdateAppRequest;
+import com.google.cloud.ces.v1beta.UpdateAppVersionRequest;
 import com.google.cloud.ces.v1beta.UpdateDeploymentRequest;
 import com.google.cloud.ces.v1beta.UpdateExampleRequest;
 import com.google.cloud.ces.v1beta.UpdateGuardrailRequest;
@@ -393,6 +394,10 @@ public abstract class AgentServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateAppVersionRequest, AppVersion> createAppVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: createAppVersionCallable()");
+  }
+
+  public UnaryCallable<UpdateAppVersionRequest, AppVersion> updateAppVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAppVersionCallable()");
   }
 
   public UnaryCallable<DeleteAppVersionRequest, Empty> deleteAppVersionCallable() {
