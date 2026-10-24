@@ -93,8 +93,12 @@ class ResumableUploadProgressTracker {
   @GuardedBy("lock")
   private ResumableUploadProgress currentStatus;
 
-  ResumableUploadProgressTracker() {
-    this.currentStatus = ResumableUploadProgress.newBuilder().build();
+  private ResumableUploadProgressTracker(ResumableUploadProgress initialStatus) {
+    this.currentStatus = checkNotNull(initialStatus, "initialStatus must not be null");
+  }
+
+  static ResumableUploadProgressTracker create() {
+    return new ResumableUploadProgressTracker(ResumableUploadProgress.newBuilder().build());
   }
 
   void addListener(ResumableUploadProgressListener listener, Executor executor) {

@@ -46,7 +46,7 @@ class ResumableUploadProgressTrackerTest {
 
   @Test
   void testInitialSnapshotOnSubscribe() {
-    ResumableUploadProgressTracker tracker = new ResumableUploadProgressTracker();
+    ResumableUploadProgressTracker tracker = ResumableUploadProgressTracker.create();
     List<ResumableUploadProgress> statuses = new ArrayList<>();
     tracker.addListener(statuses::add, MoreExecutors.directExecutor());
 
@@ -60,7 +60,7 @@ class ResumableUploadProgressTrackerTest {
 
   @Test
   void testProgressUpdates() {
-    ResumableUploadProgressTracker tracker = new ResumableUploadProgressTracker();
+    ResumableUploadProgressTracker tracker = ResumableUploadProgressTracker.create();
     tracker.onStarted("https://upload.url/test", 256);
 
     List<Long> byteUpdates = new ArrayList<>();
@@ -79,7 +79,7 @@ class ResumableUploadProgressTrackerTest {
 
   @Test
   void testListenerExceptionSafety_doesNotDisruptSubsequentUpdates() {
-    ResumableUploadProgressTracker tracker = new ResumableUploadProgressTracker();
+    ResumableUploadProgressTracker tracker = ResumableUploadProgressTracker.create();
     tracker.onStarted("https://upload.url/test", 256);
 
     AtomicInteger errorCount = new AtomicInteger(0);
@@ -111,7 +111,7 @@ class ResumableUploadProgressTrackerTest {
 
   @Test
   void testTerminalState_noNotificationsAfterFinalized() {
-    ResumableUploadProgressTracker tracker = new ResumableUploadProgressTracker();
+    ResumableUploadProgressTracker tracker = ResumableUploadProgressTracker.create();
     tracker.onStarted("https://upload.url/test", 512);
 
     List<String> received = new ArrayList<>();
@@ -135,7 +135,7 @@ class ResumableUploadProgressTrackerTest {
 
   @Test
   void testListenerReentrancy_canQueryStatusInsideCallback() {
-    ResumableUploadProgressTracker tracker = new ResumableUploadProgressTracker();
+    ResumableUploadProgressTracker tracker = ResumableUploadProgressTracker.create();
     AtomicReference<ResumableUploadProgress> observed = new AtomicReference<>();
 
     tracker.addListener(
@@ -149,7 +149,7 @@ class ResumableUploadProgressTrackerTest {
 
   @Test
   void testCustomExecutorDispatch() throws Exception {
-    ResumableUploadProgressTracker tracker = new ResumableUploadProgressTracker();
+    ResumableUploadProgressTracker tracker = ResumableUploadProgressTracker.create();
     ExecutorService executor = Executors.newSingleThreadExecutor();
     try {
       CountDownLatch latch = new CountDownLatch(2);
