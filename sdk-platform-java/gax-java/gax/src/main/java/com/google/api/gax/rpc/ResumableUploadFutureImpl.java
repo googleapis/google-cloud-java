@@ -85,7 +85,12 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   private final SettableApiFuture<ResponseT> resultFuture = SettableApiFuture.create();
 
   private volatile @Nullable InputStream payload;
-  private volatile @Nullable String uploadSessionUrl;
+
+  @GuardedBy("lock")
+  private @Nullable String uploadSessionUrl;
+
+  @GuardedBy("lock")
+  private @Nullable Integer effectiveChunkSize;
 
   // Tracks the current operation's Future (start, chunk upload) to propagate cancellation, or
   // null once a terminal transition (succeed, fail, cancel) has claimed completion.
@@ -161,13 +166,20 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
           @Override
           public void onSuccess(ResumableUploadSession session) {
             String sessionUrl = session.getUploadUrl();
+            int chunkSize;
+            try {
+              chunkSize = alignChunkSize(options.getChunkSize(), session.getChunkGranularity());
+            } catch (Throwable t) {
+              fail(t);
+              return;
+            }
             ResumableUploadChunkCoordinator<ResponseT> coordinator =
                 new ResumableUploadChunkCoordinator<>(
                     uploadChunkCallable,
                     queryStatusCallable,
                     sessionUrl,
                     payload,
-                    options.getChunkSize(),
+                    chunkSize,
                     callContext,
                     recoveryAlgorithm,
                     executor,
@@ -177,6 +189,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
               if (inFlightFuture == null) {
                 return;
               }
+              effectiveChunkSize = chunkSize;
               uploadSessionUrl = sessionUrl;
               inFlightFuture = uploadFuture;
             }
@@ -213,7 +226,7 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
 
   private void onTimeout() {
     String message;
-    if (uploadSessionUrl != null) {
+    if (getUploadSessionUrl() != null) {
       message = "Resumable upload timed out";
     } else {
       message = "Resumable upload timed out before session initiation completed";
@@ -251,14 +264,22 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
   }
 
   private ApiException toTerminalException(Throwable t) {
-    if (t instanceof ApiException && uploadSessionUrl == null) {
+    String sessionUrl;
+    Integer chunkSize;
+    synchronized (lock) {
+      sessionUrl = uploadSessionUrl;
+      chunkSize = effectiveChunkSize;
+    }
+    if (t instanceof ApiException && sessionUrl == null) {
       return (ApiException) t;
     }
     String message = firstNonNull(t.getMessage(), t.getClass().getSimpleName());
-    if (uploadSessionUrl != null) {
-      message = message + " (upload URL: " + uploadSessionUrl + ")";
+    if (sessionUrl != null) {
+      message =
+          String.format(
+              "%s (upload URL: %s, effective chunk size: %d)", message, sessionUrl, chunkSize);
     }
-    // Rethrow with URL included in message.
+    // Rethrow with URL and effective chunk size included in message.
     if (t instanceof ApiException) {
       ApiException apiException = (ApiException) t;
       return ApiExceptionFactory.createException(
@@ -270,6 +291,16 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
     }
     return ApiExceptionFactory.createException(
         message, t, statusCodeOf(StatusCode.Code.UNKNOWN), false);
+  }
+
+  static int alignChunkSize(int configuredChunkSize, int chunkGranularity) {
+    checkArgument(configuredChunkSize > 0, "configuredChunkSize must be > 0");
+    checkArgument(chunkGranularity > 0, "chunkGranularity must be > 0");
+    if (configuredChunkSize <= chunkGranularity) {
+      return chunkGranularity;
+    }
+    int unalignedRemainder = configuredChunkSize % chunkGranularity;
+    return configuredChunkSize - unalignedRemainder;
   }
 
   private void closePayload(@Nullable Throwable primaryException) {
@@ -287,7 +318,16 @@ final class ResumableUploadFutureImpl<ResponseT> implements ResumableUploadFutur
 
   @Override
   public @Nullable String getUploadSessionUrl() {
-    return uploadSessionUrl;
+    synchronized (lock) {
+      return uploadSessionUrl;
+    }
+  }
+
+  @Override
+  public @Nullable Integer getEffectiveChunkSize() {
+    synchronized (lock) {
+      return effectiveChunkSize;
+    }
   }
 
   @Override
