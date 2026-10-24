@@ -2110,6 +2110,7 @@ final class UnifiedOpts {
                   "X-Goog-Encryption-Key-Sha256",
                   "X-Goog-Gcs-Idempotency-Token",
                   "X-Goog-Request-Params",
+                  FeatureTracking.HEADER,
                   "X-Goog-User-Project",
                   "X-HTTP-Method-Override",
                   "X-Upload-Content-Length",

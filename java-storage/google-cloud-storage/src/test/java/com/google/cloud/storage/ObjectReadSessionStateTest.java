@@ -234,4 +234,36 @@ public final class ObjectReadSessionStateTest {
           () -> assertThat(state2.canHandleNewRead(streaming2)).isFalse());
     }
   }
+
+  @Test
+  public void featureTrackingHeader_absentUntilFork_presentOnParentAndChildAfterFork()
+      throws Exception {
+    BidiReadObjectRequest base =
+        BidiReadObjectRequest.newBuilder()
+            .setReadObjectSpec(
+                BidiReadObjectSpec.newBuilder()
+                    .setBucket("projects/_/buckets/my-bucket")
+                    .setObject("my-object"))
+            .build();
+
+    ObjectReadSessionState parent =
+        new ObjectReadSessionState(GrpcCallContext.createDefault(), base);
+
+    Map<String, List<String>> before = parent.getOpenArguments().getCtx().getExtraHeaders();
+    assertThat(before).doesNotContainKey(FeatureTracking.HEADER);
+
+    ObjectReadSessionState child = parent.forkChild();
+
+    List<String> expected =
+        ImmutableList.of(
+            FeatureTracking.encode(FeatureTracking.bit(TrackedFeatures.MULTISTREAM_IN_MRD)));
+    Map<String, List<String>> childHeaders = child.getOpenArguments().getCtx().getExtraHeaders();
+    // any subsequent (re)open of the parent stream must also report the feature
+    Map<String, List<String>> parentHeaders = parent.getOpenArguments().getCtx().getExtraHeaders();
+    assertAll(
+        () -> assertThat(childHeaders).containsEntry(FeatureTracking.HEADER, expected),
+        () -> assertThat(parentHeaders).containsEntry(FeatureTracking.HEADER, expected),
+        () -> assertThat(childHeaders).containsKey("x-goog-request-params"),
+        () -> assertThat(expected).containsExactly("AAAAAQ=="));
+  }
 }
