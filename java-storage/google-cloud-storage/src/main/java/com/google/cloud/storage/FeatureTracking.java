@@ -16,12 +16,14 @@
 
 package com.google.cloud.storage;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import java.nio.ByteBuffer;
+import com.google.common.primitives.Ints;
 import java.util.Base64;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import javax.annotation.concurrent.ThreadSafe;
 
 /**
  * Utilities for reporting {@link TrackedFeatures client feature usage} to the service.
@@ -45,49 +47,40 @@ final class FeatureTracking {
 
   private FeatureTracking() {}
 
-  static int bit(TrackedFeatures feature) {
-    return 1 << feature.getBitPosition();
-  }
-
-  /** Encode {@code mask} as a 4 byte big-endian uint32, URL-safe base64 with padding. */
+  /** Encodes {@code mask} as a 4 byte big-endian uint32, URL-safe base64 with padding. */
+  @VisibleForTesting
   static String encode(int mask) {
-    ByteBuffer buf = ByteBuffer.allocate(4);
-    buf.putInt(mask); // ByteBuffer default byte order is BIG_ENDIAN
-    return ENCODER.encodeToString(buf.array());
+    return ENCODER.encodeToString(Ints.toByteArray(mask));
   }
 
   /**
-   * Produce the header map to merge into a request's extra headers.
-   *
-   * @return an empty map when {@code mask == 0}, otherwise a single entry map for {@link #HEADER}
+   * Returns the header map to merge into a request's extra headers: an empty map when {@code mask
+   * == 0}, otherwise a single entry map for {@link #HEADER}.
    */
-  static ImmutableMap<String, List<String>> headers(int mask) {
+  private static ImmutableMap<String, List<String>> headers(int mask) {
     if (mask == 0) {
       return ImmutableMap.of();
     }
     return ImmutableMap.of(HEADER, ImmutableList.of(encode(mask)));
   }
 
-  /** Thread-safe, monotonically growing feature bitmask. */
+  /** Monotonically growing feature bitmask. Bits can be set but never cleared. */
+  @ThreadSafe
   static final class Mask {
     private final AtomicInteger bits = new AtomicInteger();
 
-    Mask() {}
-
     void set(TrackedFeatures feature) {
-      bits.updateAndGet(current -> current | bit(feature));
+      bits.updateAndGet(current -> current | feature.bitMask());
     }
 
-    boolean isSet(TrackedFeatures feature) {
-      return (bits.get() & bit(feature)) != 0;
-    }
-
+    @VisibleForTesting
     int get() {
       return bits.get();
     }
 
+    /** Returns the headers to attach to a request, see {@link FeatureTracking#headers(int)}. */
     ImmutableMap<String, List<String>> headers() {
-      return FeatureTracking.headers(get());
+      return FeatureTracking.headers(bits.get());
     }
   }
 }

@@ -17,7 +17,7 @@
 package com.google.cloud.storage;
 
 /**
- * Client features whose usage is reported to the service via the {@link FeatureTracking#HEADER
+ * A client feature whose usage is reported to the service via the {@link FeatureTracking#HEADER
  * x-goog-storage-java-features} request header.
  *
  * <p>Each feature is assigned a stable bit position in a 32-bit mask. Bit positions are specific to
@@ -39,5 +39,10 @@ enum TrackedFeatures {
 
   int getBitPosition() {
     return bitPosition;
+  }
+
+  /** Returns the 32-bit mask with only this feature's bit set. */
+  int bitMask() {
+    return 1 << bitPosition;
   }
 }

@@ -55,7 +55,8 @@ final class ObjectReadSessionState {
   private final AtomicReference<@Nullable String> routingToken;
   private final AtomicReference<@MonotonicNonNull Object> metadata;
   private final AtomicLong readIdSeq;
-  // shared between a parent state and all of its children, see #forkChild
+
+  /** Shared between a parent state and all of its children, see {@link #forkChild()}. */
   private final FeatureTracking.Mask featureMask;
 
   @GuardedBy("this.lock") // https://errorprone.info/bugpattern/GuardedBy
@@ -95,11 +96,11 @@ final class ObjectReadSessionState {
   }
 
   /**
-   * Fork a new state for an additional stream of the same read session.
+   * Forks a new state for an additional stream of the same read session.
    *
    * <p>A fork means the session is now backed by more than one BidiReadObject stream, so this marks
    * {@link TrackedFeatures#MULTISTREAM_IN_MRD} in the feature mask shared by the parent and all
-   * children. Any stream opened (or re-opened) by this session afterwards will carry the {@link
+   * children. Any stream opened (or re-opened) by this session afterwards carries the {@link
    * FeatureTracking#HEADER} header.
    */
   ObjectReadSessionState forkChild() {
