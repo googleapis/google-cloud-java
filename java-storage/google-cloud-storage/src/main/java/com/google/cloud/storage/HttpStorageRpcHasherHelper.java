@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage;
 
+import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.core.InternalApi;
 import com.google.common.hash.Hashing;
@@ -106,12 +107,15 @@ public final class HttpStorageRpcHasherHelper {
   }
 
   private boolean isTranscoded(HttpResponse response) {
-    com.google.api.client.http.HttpHeaders headers = response.getHeaders();
+    HttpHeaders headers = response.getHeaders();
     String storedEncoding =
         HttpClientContext.firstHeaderValue(headers, "x-goog-stored-content-encoding");
-    String storedLength =
-        HttpClientContext.firstHeaderValue(headers, "x-goog-stored-content-length");
-    return storedEncoding != null || storedLength != null || isDecompressedByClient(response);
+    String encoding = headers.getContentEncoding();
+    // Stored-content headers are also present on untranscoded responses. Only a change in
+    // encoding indicates server-side transcoding; an absent Content-Encoding means identity.
+    return (storedEncoding != null
+            && !storedEncoding.equalsIgnoreCase(encoding == null ? "identity" : encoding))
+        || isDecompressedByClient(response);
   }
 
   private boolean isDecompressedByClient(HttpResponse response) {

@@ -129,6 +129,8 @@ public class HttpStorageRpcHasherHelperTest {
   public void testShouldValidate_successStatus206_fullContentRange() throws IOException {
     Map<String, String> headers = new HashMap<>();
     headers.put("Content-Range", "bytes 0-499/500");
+    headers.put("x-goog-stored-content-encoding", "identity");
+    headers.put("x-goog-stored-content-length", "500");
     HttpResponse response = createHttpResponse(206, headers, true);
 
     assertTrue(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
@@ -138,6 +140,8 @@ public class HttpStorageRpcHasherHelperTest {
   public void testShouldValidate_successStatus206_partialContentRange() throws IOException {
     Map<String, String> headers = new HashMap<>();
     headers.put("Content-Range", "bytes 100-499/500");
+    headers.put("x-goog-stored-content-encoding", "identity");
+    headers.put("x-goog-stored-content-length", "500");
     HttpResponse response = createHttpResponse(206, headers, true);
 
     assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
@@ -153,10 +157,59 @@ public class HttpStorageRpcHasherHelperTest {
   }
 
   @Test
-  public void testShouldValidate_transcoded_storedLength() throws IOException {
+  public void testShouldValidate_storedLength() throws IOException {
     Map<String, String> headers = new HashMap<>();
     headers.put("x-goog-stored-content-length", "123");
     HttpResponse response = createHttpResponse(200, headers, true);
+
+    assertTrue(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_matchingStoredLength() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-length", "123");
+    headers.put("Content-Length", "123");
+    HttpResponse response = createHttpResponse(200, headers, true);
+
+    assertTrue(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_storedIdentityEncoding() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", "identity");
+    HttpResponse response = createHttpResponse(200, headers, false);
+
+    assertTrue(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_matchingStoredEncoding_rawInputStream() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", "gzip");
+    headers.put("Content-Encoding", "gzip");
+    HttpResponse response = createHttpResponse(200, headers, true);
+
+    assertTrue(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_transcoded_identityEncoding() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", "gzip");
+    headers.put("Content-Encoding", "identity");
+    HttpResponse response = createHttpResponse(200, headers, true);
+
+    assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_matchingStoredEncoding_decompressedByClient() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", "gzip");
+    headers.put("Content-Encoding", "gzip");
+    HttpResponse response = createHttpResponse(200, headers, false);
 
     assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
   }
