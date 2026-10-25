@@ -29,8 +29,6 @@
  */
 package com.google.api.gax.rpc;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -44,7 +42,6 @@ import org.jspecify.annotations.Nullable;
  */
 @NullMarked
 public abstract class BidiStreamingCallable<RequestT, ResponseT> {
-  private static final Logger LOG = Logger.getLogger(BidiStreamingCallable.class.getName());
 
   protected BidiStreamingCallable() {}
 
@@ -244,47 +241,11 @@ public abstract class BidiStreamingCallable<RequestT, ResponseT> {
     return new BidiStreamingCallable<RequestT, ResponseT>() {
       @Override
       public ClientStream<RequestT> internalCall(
-          final ResponseObserver<ResponseT> responseObserver,
+          ResponseObserver<ResponseT> responseObserver,
           ClientStreamReadyObserver<RequestT> onReady,
           ApiCallContext thisCallContext) {
-        final ApiCallContext mergedContext = defaultCallContext.merge(thisCallContext);
-        ResponseObserver<ResponseT> refreshingObserver =
-            new ResponseObserver<ResponseT>() {
-              @Override
-              public void onStart(StreamController controller) {
-                responseObserver.onStart(controller);
-              }
-
-              @Override
-              public void onResponse(ResponseT response) {
-                responseObserver.onResponse(response);
-              }
-
-              @Override
-              public void onError(Throwable t) {
-                if (t instanceof UnauthenticatedException) {
-                  TransportChannel transportChannel = mergedContext.getTransportChannel();
-                  if (transportChannel != null && transportChannel.shouldRefresh()) {
-                    try {
-                      transportChannel.refresh();
-                    } catch (Exception e) {
-                      LOG.log(
-                          Level.WARNING,
-                          "Failed to refresh transport channel after authentication error",
-                          e);
-                    }
-                  }
-                }
-                responseObserver.onError(t);
-              }
-
-              @Override
-              public void onComplete() {
-                responseObserver.onComplete();
-              }
-            };
-
-        return BidiStreamingCallable.this.internalCall(refreshingObserver, onReady, mergedContext);
+        return BidiStreamingCallable.this.internalCall(
+            responseObserver, onReady, defaultCallContext.merge(thisCallContext));
       }
     };
   }

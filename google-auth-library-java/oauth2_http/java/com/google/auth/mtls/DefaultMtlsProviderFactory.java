@@ -40,10 +40,9 @@ public class DefaultMtlsProviderFactory {
 
   /**
    * Creates an instance of {@link MtlsProvider}. It first attempts to create an {@link
-   * com.google.auth.mtls.X509Provider}, which also falls back to the GKE credential bundle when no
-   * certificate configuration is present. If the certificate source is unavailable, it falls back
-   * to creating a {@link SecureConnectProvider}. If the secure connect provider also fails, it
-   * throws a {@link com.google.auth.mtls.CertificateSourceUnavailableException}.
+   * com.google.auth.mtls.X509Provider}. If the certificate source is unavailable, it falls back to
+   * creating a {@link SecureConnectProvider}. If the secure connect provider also fails, it throws
+   * a {@link com.google.auth.mtls.CertificateSourceUnavailableException}.
    *
    * @return an instance of {@link MtlsProvider}.
    * @throws com.google.auth.mtls.CertificateSourceUnavailableException if neither provider can be
@@ -54,7 +53,7 @@ public class DefaultMtlsProviderFactory {
     // Note: The caller should handle CertificateSourceUnavailableException gracefully, since
     // it is an expected error case. All other IOExceptions are unexpected and should be surfaced
     // up the call stack.
-    MtlsProvider mtlsProvider = X509Provider.createWithGkeCredentialBundleFallback();
+    MtlsProvider mtlsProvider = new X509Provider();
     if (mtlsProvider.isAvailable()) {
       return mtlsProvider;
     }

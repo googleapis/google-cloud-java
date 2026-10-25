@@ -51,6 +51,7 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -64,6 +65,9 @@ public class CertificateIdentityPoolSubjectTokenSupplier
     implements IdentityPoolSubjectTokenSupplier {
 
   private final IdentityPoolCredentialSource credentialSource;
+
+  private static final Pattern PEM_CERT_PATTERN =
+      Pattern.compile("-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----", Pattern.DOTALL);
 
   CertificateIdentityPoolSubjectTokenSupplier(IdentityPoolCredentialSource credentialSource) {
     this.credentialSource = checkNotNull(credentialSource, "credentialSource cannot be null");
@@ -218,8 +222,7 @@ public class CertificateIdentityPoolSubjectTokenSupplier
       // elsewhere in the chain.
       if (encodedCurrentCert.equals(encodedLeafCert)) {
         throw new IllegalArgumentException(
-            "The leaf certificate should only appear at the beginning of the trust chain file, or"
-                + " be omitted entirely.");
+            "The leaf certificate should only appear at the beginning of the trust chain file, or be omitted entirely.");
       }
 
       // Add the current certificate to the chain.
@@ -257,7 +260,7 @@ public class CertificateIdentityPoolSubjectTokenSupplier
     // Split the file content into PEM certificate blocks.
     String content = new String(trustChainData, StandardCharsets.UTF_8);
 
-    Matcher matcher = OAuth2Utils.PEM_CERT_PATTERN.matcher(content);
+    Matcher matcher = PEM_CERT_PATTERN.matcher(content);
 
     while (matcher.find()) {
       String pemCertBlock = matcher.group(0);
