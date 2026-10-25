@@ -71,6 +71,9 @@ final class BidiUploadStreamingStream {
   private volatile @Nullable StreamTuple stream;
   private volatile @Nullable ApiFuture<Void> pendingReconciliation;
 
+  // DIAGNOSTIC ONLY (do not submit)
+  private final long diagId = AppendableDiag.nextId();
+
   BidiUploadStreamingStream(
       BidiUploadState state,
       ScheduledExecutorService executor,
@@ -81,11 +84,16 @@ final class BidiUploadStreamingStream {
     this.executor = executor;
     this.write = write;
     this.lock = new ReentrantLock();
-    this.retryContext = new StreamRetryContextDecorator(retryContext, lock, this::reset);
+    this.retryContext = new StreamRetryContextDecorator(retryContext, lock, this::reset, diagId);
     this.onSuccess = this::restart;
     this.onFailure =
         t -> {
           SettableApiFuture<BidiWriteObjectResponse> resultFuture = state.getResultFuture();
+          AppendableDiag.LOG.info(
+              "DIAG upload#{} TERMINAL FAILURE resultFutureAlreadyDone={} cause={}",
+              diagId,
+              resultFuture.isDone(),
+              AppendableDiag.err(t));
           if (!resultFuture.isDone()) {
             this.state.terminalError();
             BaseServiceException coalesced = StorageException.coalesce(t);
@@ -248,6 +256,12 @@ final class BidiUploadStreamingStream {
   void restart() {
     lock.lock();
     try {
+      AppendableDiag.LOG.info(
+          "DIAG upload#{} RESTART (reconnect) state={} confirmedBytes={} totalSentBytes={}",
+          diagId,
+          AppendableDiag.safe(state::getState),
+          AppendableDiag.safe(state::getConfirmedBytes),
+          AppendableDiag.safe(state::getTotalSentBytes));
       checkState(stream == null, "attempting to restart stream when stream is already active");
       state.retrying();
       ApiFuture<Void> reconciliation = state.beginReconciliation();
@@ -267,6 +281,8 @@ final class BidiUploadStreamingStream {
             new ApiFutureCallback<Void>() {
               @Override
               public void onFailure(Throwable t) {
+                AppendableDiag.LOG.info(
+                    "DIAG upload#{} RECONCILIATION FAILED {}", diagId, AppendableDiag.err(t));
                 lock.lock();
                 try {
                   BidiUploadStreamingStream.this.pendingReconciliation = null;
@@ -278,6 +294,10 @@ final class BidiUploadStreamingStream {
 
               @Override
               public void onSuccess(Void result) {
+                AppendableDiag.LOG.info(
+                    "DIAG upload#{} RECONCILIATION OK confirmedBytes={}",
+                    diagId,
+                    AppendableDiag.safe(state::getConfirmedBytes));
                 lock.lock();
                 try {
                   BidiUploadStreamingStream.this.pendingReconciliation = null;
@@ -299,6 +319,8 @@ final class BidiUploadStreamingStream {
       }
       stream = tmp;
     } catch (Throwable t) {
+      AppendableDiag.LOG.info(
+          "DIAG upload#{} RESTART threw {}", diagId, AppendableDiag.err(t));
       retryContext.recordError(t, onSuccess, onFailure);
     } finally {
       lock.unlock();
@@ -310,6 +332,11 @@ final class BidiUploadStreamingStream {
     lock.lock();
     try {
       StreamTuple tmp = stream;
+      AppendableDiag.LOG.info(
+          "DIAG upload#{} RESET (drop current stream before retry) hadStream={} stream#{}",
+          diagId,
+          tmp != null,
+          tmp != null ? tmp.streamDiagId : -1);
       if (tmp != null) {
         tmp.in.flagTombstoned();
         tmp.closeSend();
@@ -337,8 +364,16 @@ final class BidiUploadStreamingStream {
 
   private StreamTuple initStreamTuple() {
     GrpcCallContext grpcCallContext = state.enqueueFirstMessageAndGetGrpcCallContext();
+    long streamDiagId = AppendableDiag.nextId();
+    AppendableDiag.LOG.info(
+        "DIAG upload#{} OPEN stream#{} state={} confirmedBytes={} totalSentBytes={}",
+        diagId,
+        streamDiagId,
+        AppendableDiag.safe(state::getState),
+        AppendableDiag.safe(state::getConfirmedBytes),
+        AppendableDiag.safe(state::getTotalSentBytes));
     StreamingResponseObserver streamResponseObserver =
-        new StreamingResponseObserver(state, retryContext, onSuccess, onFailure);
+        new StreamingResponseObserver(state, retryContext, onSuccess, onFailure, streamDiagId);
     RedirectHandlingResponseObserver responseObserver =
         new RedirectHandlingResponseObserver(
             state,
@@ -347,11 +382,12 @@ final class BidiUploadStreamingStream {
             maxRedirectsAllowed,
             this::reset,
             () -> executor.execute(this::restart));
+    responseObserver.streamDiagId = streamDiagId;
     ClientStream<BidiWriteObjectRequest> clientStream =
         write.splitCall(responseObserver, grpcCallContext);
     GracefulOutboundStream out = new GracefulOutboundStream(clientStream);
 
-    return new StreamTuple(out, responseObserver);
+    return new StreamTuple(out, responseObserver, streamDiagId);
   }
 
   private void internalSend() {
@@ -364,18 +400,59 @@ final class BidiUploadStreamingStream {
   private static final class StreamTuple implements Consumer<BidiWriteObjectRequest> {
     private final ClientStream<BidiWriteObjectRequest> out;
     private final RedirectHandlingResponseObserver in;
+    private final long streamDiagId;
+    // DIAGNOSTIC ONLY: aggregate plain data messages so 5MB uploads don't flood the log.
+    private long pendingPlainDataMsgs;
+    private long pendingPlainDataBytes;
 
-    StreamTuple(ClientStream<BidiWriteObjectRequest> out, RedirectHandlingResponseObserver in) {
+    StreamTuple(
+        ClientStream<BidiWriteObjectRequest> out,
+        RedirectHandlingResponseObserver in,
+        long streamDiagId) {
       this.out = out;
       this.in = in;
+      this.streamDiagId = streamDiagId;
     }
 
     @Override
     public void accept(BidiWriteObjectRequest bidiWriteObjectRequest) {
+      // DIAGNOSTIC ONLY
+      boolean plainData =
+          bidiWriteObjectRequest.hasChecksummedData()
+              && !bidiWriteObjectRequest.getFlush()
+              && !bidiWriteObjectRequest.getStateLookup()
+              && !bidiWriteObjectRequest.getFinishWrite()
+              && !bidiWriteObjectRequest.hasWriteObjectSpec()
+              && !bidiWriteObjectRequest.hasAppendObjectSpec();
+      if (plainData) {
+        pendingPlainDataMsgs++;
+        pendingPlainDataBytes += bidiWriteObjectRequest.getChecksummedData().getContent().size();
+        if (pendingPlainDataMsgs >= 500) {
+          logPlainData();
+        }
+      } else {
+        logPlainData();
+        AppendableDiag.LOG.info(
+            "DIAG stream#{} SEND {}", streamDiagId, AppendableDiag.req(bidiWriteObjectRequest));
+      }
       out.send(bidiWriteObjectRequest);
     }
 
+    private void logPlainData() {
+      if (pendingPlainDataMsgs > 0) {
+        AppendableDiag.LOG.info(
+            "DIAG stream#{} SEND {} plain data message(s), {} bytes",
+            streamDiagId,
+            pendingPlainDataMsgs,
+            pendingPlainDataBytes);
+        pendingPlainDataMsgs = 0;
+        pendingPlainDataBytes = 0;
+      }
+    }
+
     public void closeSend() {
+      logPlainData();
+      AppendableDiag.LOG.info("DIAG stream#{} CLOSE_SEND (half-close)", streamDiagId);
       in.flagTombstoned();
       out.closeSend();
     }
@@ -388,6 +465,7 @@ final class BidiUploadStreamingStream {
     private final RetryContext retryContext;
     private final OnSuccess onSuccess;
     private final OnFailure<Throwable> onFailure;
+    private final long streamDiagId;
 
     @MonotonicNonNull private StreamController controller;
 
@@ -396,15 +474,26 @@ final class BidiUploadStreamingStream {
         RetryContext retryContext,
         OnSuccess onSuccess,
         OnFailure<Throwable> onFailure) {
+      this(state, retryContext, onSuccess, onFailure, -1);
+    }
+
+    StreamingResponseObserver(
+        BidiUploadState state,
+        RetryContext retryContext,
+        OnSuccess onSuccess,
+        OnFailure<Throwable> onFailure,
+        long streamDiagId) {
       this.state = state;
       this.retryContext = retryContext;
       this.onSuccess = onSuccess;
       this.onFailure = onFailure;
+      this.streamDiagId = streamDiagId;
     }
 
     @EnsuresNonNull("controller")
     @Override
     public void onStart(StreamController controller) {
+      AppendableDiag.LOG.info("DIAG stream#{} ON_START request(1)", streamDiagId);
       this.controller = controller;
       controller.disableAutoInboundFlowControl();
       controller.request(1);
@@ -415,13 +504,22 @@ final class BidiUploadStreamingStream {
     public void onResponse(BidiWriteObjectResponse response) {
       try {
         controller.request(1);
+        long confirmedBytesBefore = state.getConfirmedBytes();
         @Nullable StorageException se = state.onResponse(response);
+        long confirmedBytesAfter = state.getConfirmedBytes();
+        boolean progress = confirmedBytesAfter > confirmedBytesBefore;
+        logRecv(response, confirmedBytesBefore, confirmedBytesAfter, se);
         if (se != null) {
           retryContext.recordError(se, onSuccess, onFailure);
-        } else {
+        } else if (progress) {
+          // Only refresh the retry budget when the server confirms new bytes. After a reconnect,
+          // the state lookup reply repeats the previously confirmed offset; treating it as
+          // progress would let a persistent retryable error (e.g. 429, 408) retry forever.
           retryContext.reset();
         }
       } catch (Throwable t) {
+        AppendableDiag.LOG.info(
+            "DIAG stream#{} RECV processing threw {}", streamDiagId, AppendableDiag.err(t));
         // catch an error that might happen while processing and forward it to our retry context
         retryContext.recordError(t, onSuccess, onFailure);
       }
@@ -429,12 +527,53 @@ final class BidiUploadStreamingStream {
 
     @Override
     public void onError(Throwable t) {
+      try {
+        AppendableDiag.LOG.info(
+            "DIAG stream#{} ON_ERROR {} confirmedBytes={} totalSentBytes={}",
+            streamDiagId,
+            AppendableDiag.err(t),
+            safe(state::getConfirmedBytes),
+            safe(state::getTotalSentBytes));
+      } catch (Throwable ignore) {
+        // diagnostics must never affect behavior
+      }
       retryContext.recordError(t, onSuccess, onFailure);
     }
 
     @Override
     public void onComplete() {
+      AppendableDiag.LOG.info("DIAG stream#{} ON_COMPLETE (server closed stream OK)", streamDiagId);
       // ignore
+    }
+
+    // DIAGNOSTIC ONLY: never let logging change behavior (test stubs may not implement getters).
+    private void logRecv(
+        BidiWriteObjectResponse response,
+        long confirmedBytesBefore,
+        long confirmedBytesAfter,
+        @Nullable StorageException se) {
+      try {
+        AppendableDiag.LOG.info(
+            "DIAG stream#{} RECV {} confirmedBytes {}->{} totalSentBytes={} resultDone={}"
+                + " stateError={}",
+            streamDiagId,
+            AppendableDiag.resp(response),
+            confirmedBytesBefore,
+            confirmedBytesAfter,
+            safe(state::getTotalSentBytes),
+            safe(() -> state.getResultFuture().isDone()),
+            se == null ? "none" : AppendableDiag.err(se));
+      } catch (Throwable ignore) {
+        // diagnostics must never affect behavior
+      }
+    }
+
+    private static Object safe(java.util.function.Supplier<?> s) {
+      try {
+        return s.get();
+      } catch (Throwable t) {
+        return "n/a";
+      }
     }
   }
 
@@ -446,6 +585,8 @@ final class BidiUploadStreamingStream {
     private final int maxRedirectsAllowed;
     private final Runnable beforeRedirect;
     private final Runnable onRedirect;
+    // DIAGNOSTIC ONLY
+    volatile long streamDiagId = -1;
 
     private volatile boolean tombstoned;
 
@@ -480,6 +621,7 @@ final class BidiUploadStreamingStream {
     @Override
     public void onStart(StreamController controller) {
       if (tombstoned) {
+        AppendableDiag.LOG.info("DIAG stream#{} DROPPED onStart (tombstoned)", streamDiagId);
         return;
       }
       delegate.onStart(controller);
@@ -488,6 +630,10 @@ final class BidiUploadStreamingStream {
     @Override
     public void onResponse(BidiWriteObjectResponse response) {
       if (tombstoned) {
+        AppendableDiag.LOG.info(
+            "DIAG stream#{} DROPPED RECV (tombstoned) {}",
+            streamDiagId,
+            AppendableDiag.resp(response));
         return;
       }
       redirectCounter.set(0);
@@ -497,6 +643,8 @@ final class BidiUploadStreamingStream {
     @Override
     public void onError(Throwable t) {
       if (tombstoned) {
+        AppendableDiag.LOG.info(
+            "DIAG stream#{} DROPPED ON_ERROR (tombstoned) {}", streamDiagId, AppendableDiag.err(t));
         return;
       }
       BidiWriteObjectRedirectedError error = GrpcUtils.getBidiWriteObjectRedirectedError(t);
@@ -505,6 +653,14 @@ final class BidiUploadStreamingStream {
         return;
       }
       int redirectCount = redirectCounter.incrementAndGet();
+      AppendableDiag.LOG.info(
+          "DIAG stream#{} REDIRECT #{} (max {}) routingToken={} writeHandle={} generation={}",
+          streamDiagId,
+          redirectCount,
+          maxRedirectsAllowed,
+          error.hasRoutingToken(),
+          error.hasWriteHandle(),
+          error.hasGeneration() ? error.getGeneration() : -1);
       if (redirectCount > maxRedirectsAllowed) {
         // attach the fact we're ignoring the redirect to the original exception as a suppressed
         // Exception. The lower level handler can then perform its usual handling, but if things
@@ -521,6 +677,7 @@ final class BidiUploadStreamingStream {
     @Override
     public void onComplete() {
       if (tombstoned) {
+        AppendableDiag.LOG.info("DIAG stream#{} DROPPED ON_COMPLETE (tombstoned)", streamDiagId);
         return;
       }
       delegate.onComplete();
@@ -580,13 +737,20 @@ final class BidiUploadStreamingStream {
     private final RetryContext retryContext;
     private final ReentrantLock lock;
     private final Runnable onRecordError;
+    private final long diagId;
 
     @VisibleForTesting
     StreamRetryContextDecorator(
         RetryContext retryContext, ReentrantLock lock, Runnable onRecordError) {
+      this(retryContext, lock, onRecordError, -1);
+    }
+
+    StreamRetryContextDecorator(
+        RetryContext retryContext, ReentrantLock lock, Runnable onRecordError, long diagId) {
       this.retryContext = retryContext;
       this.lock = lock;
       this.onRecordError = onRecordError;
+      this.diagId = diagId;
     }
 
     @Override
@@ -596,22 +760,39 @@ final class BidiUploadStreamingStream {
 
     @Override
     public void reset() {
+      AppendableDiag.LOG.info("DIAG upload#{} RETRY BUDGET RESET (progress confirmed)", diagId);
       retryContext.reset();
     }
 
     @Override
     public <T extends Throwable> void recordError(
         T t, OnSuccess onSuccess, OnFailure<T> onFailure) {
+      AppendableDiag.LOG.info("DIAG upload#{} RECORD_ERROR {}", diagId, AppendableDiag.err(t));
+      // DIAGNOSTIC ONLY: log the retry decision made by the underlying retry context.
+      OnSuccess loggingOnSuccess =
+          () -> {
+            AppendableDiag.LOG.info("DIAG upload#{} BACKOFF DONE -> retrying", diagId);
+            onSuccess.onSuccess();
+          };
+      OnFailure<T> loggingOnFailure =
+          e -> {
+            AppendableDiag.LOG.info(
+                "DIAG upload#{} RETRY GAVE UP -> failing upload: {}",
+                diagId,
+                AppendableDiag.err(e),
+                e);
+            onFailure.onFailure(e);
+          };
       lock.lock();
       try {
         try {
           onRecordError.run();
         } catch (Throwable tt) {
           t.addSuppressed(tt);
-          onFailure.onFailure(t);
+          loggingOnFailure.onFailure(t);
           return;
         }
-        retryContext.recordError(t, onSuccess, onFailure);
+        retryContext.recordError(t, loggingOnSuccess, loggingOnFailure);
       } finally {
         lock.unlock();
       }
