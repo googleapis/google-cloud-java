@@ -41,6 +41,18 @@ import org.junit.Test;
 
 public final class ObjectReadSessionStateTest {
 
+  private static final BidiReadObjectRequest BASE_REQUEST =
+      BidiReadObjectRequest.newBuilder()
+          .setReadObjectSpec(
+              BidiReadObjectSpec.newBuilder()
+                  .setBucket("projects/_/buckets/my-bucket")
+                  .setObject("my-object"))
+          .build();
+  private static final ImmutableList<String> MULTISTREAM_HEADER_VALUE =
+      ImmutableList.of("AAAAAQ==");
+  private static final ImmutableList<String> REQUEST_PARAMS_HEADER_VALUE =
+      ImmutableList.of("bucket=projects/_/buckets/my-bucket");
+
   @Test
   public void getOpenArguments_includesAllRelevantModifications() throws Exception {
     BidiReadObjectRequest base =
@@ -236,34 +248,89 @@ public final class ObjectReadSessionStateTest {
   }
 
   @Test
-  public void featureTrackingHeader_absentUntilFork_presentOnParentAndChildAfterFork()
-      throws Exception {
-    BidiReadObjectRequest base =
-        BidiReadObjectRequest.newBuilder()
-            .setReadObjectSpec(
-                BidiReadObjectSpec.newBuilder()
-                    .setBucket("projects/_/buckets/my-bucket")
-                    .setObject("my-object"))
-            .build();
+  public void featureTrackingHeader_absentBeforeFork() {
+    ObjectReadSessionState state =
+        new ObjectReadSessionState(GrpcCallContext.createDefault(), BASE_REQUEST);
 
+    Map<String, List<String>> headers = state.getOpenArguments().getCtx().getExtraHeaders();
+
+    assertThat(headers).containsExactly("x-goog-request-params", REQUEST_PARAMS_HEADER_VALUE);
+  }
+
+  @Test
+  public void featureTrackingHeader_presentOnChildAfterFork() {
     ObjectReadSessionState parent =
-        new ObjectReadSessionState(GrpcCallContext.createDefault(), base);
-
-    Map<String, List<String>> before = parent.getOpenArguments().getCtx().getExtraHeaders();
-    assertThat(before).doesNotContainKey(FeatureTracking.HEADER);
+        new ObjectReadSessionState(GrpcCallContext.createDefault(), BASE_REQUEST);
 
     ObjectReadSessionState child = parent.forkChild();
 
-    List<String> expected =
-        ImmutableList.of(
-            FeatureTracking.encode(FeatureTracking.bit(TrackedFeatures.MULTISTREAM_IN_MRD)));
-    Map<String, List<String>> childHeaders = child.getOpenArguments().getCtx().getExtraHeaders();
-    // any subsequent (re)open of the parent stream must also report the feature
-    Map<String, List<String>> parentHeaders = parent.getOpenArguments().getCtx().getExtraHeaders();
+    Map<String, List<String>> headers = child.getOpenArguments().getCtx().getExtraHeaders();
+    assertThat(headers)
+        .containsExactly(
+            "x-goog-request-params", REQUEST_PARAMS_HEADER_VALUE,
+            "x-goog-storage-java-features", MULTISTREAM_HEADER_VALUE);
+  }
+
+  /** Any subsequent (re)open of the parent stream must also report the feature. */
+  @Test
+  public void featureTrackingHeader_presentOnParentAfterFork() {
+    ObjectReadSessionState parent =
+        new ObjectReadSessionState(GrpcCallContext.createDefault(), BASE_REQUEST);
+
+    ObjectReadSessionState unused = parent.forkChild();
+
+    Map<String, List<String>> headers = parent.getOpenArguments().getCtx().getExtraHeaders();
+    assertThat(headers)
+        .containsExactly(
+            "x-goog-request-params", REQUEST_PARAMS_HEADER_VALUE,
+            "x-goog-storage-java-features", MULTISTREAM_HEADER_VALUE);
+  }
+
+  @Test
+  public void featureTrackingHeader_secondForkDoesNotDuplicateOrAlterValue() throws Exception {
+    ObjectReadSessionState parent =
+        new ObjectReadSessionState(GrpcCallContext.createDefault(), BASE_REQUEST);
+
+    ObjectReadSessionState child1 = parent.forkChild();
+    ObjectReadSessionState child2 = parent.forkChild();
+    ObjectReadSessionState grandChild = child1.forkChild();
+
     assertAll(
-        () -> assertThat(childHeaders).containsEntry(FeatureTracking.HEADER, expected),
-        () -> assertThat(parentHeaders).containsEntry(FeatureTracking.HEADER, expected),
-        () -> assertThat(childHeaders).containsKey("x-goog-request-params"),
-        () -> assertThat(expected).containsExactly("AAAAAQ=="));
+        () ->
+            assertThat(parent.getOpenArguments().getCtx().getExtraHeaders())
+                .containsEntry("x-goog-storage-java-features", MULTISTREAM_HEADER_VALUE),
+        () ->
+            assertThat(child1.getOpenArguments().getCtx().getExtraHeaders())
+                .containsEntry("x-goog-storage-java-features", MULTISTREAM_HEADER_VALUE),
+        () ->
+            assertThat(child2.getOpenArguments().getCtx().getExtraHeaders())
+                .containsEntry("x-goog-storage-java-features", MULTISTREAM_HEADER_VALUE),
+        () ->
+            assertThat(grandChild.getOpenArguments().getCtx().getExtraHeaders())
+                .containsEntry("x-goog-storage-java-features", MULTISTREAM_HEADER_VALUE));
+  }
+
+  /**
+   * User supplied extra headers live on the base context; the per-open headers must be merged with
+   * them rather than replace them, and the routing token must still be reflected in {@code
+   * x-goog-request-params}.
+   */
+  @Test
+  public void featureTrackingHeader_coexistsWithUserExtraHeadersAndRequestParams() {
+    GrpcCallContext baseContext =
+        GrpcCallContext.createDefault()
+            .withExtraHeaders(ImmutableMap.of("x-user-header", ImmutableList.of("user-value")));
+    ObjectReadSessionState parent = new ObjectReadSessionState(baseContext, BASE_REQUEST);
+    parent.setRoutingToken("token-1");
+
+    ObjectReadSessionState child = parent.forkChild();
+
+    Map<String, List<String>> headers = child.getOpenArguments().getCtx().getExtraHeaders();
+    assertThat(headers)
+        .containsExactly(
+            "x-user-header", ImmutableList.of("user-value"),
+            "x-goog-request-params",
+                ImmutableList.of("bucket=projects/_/buckets/my-bucket&routing_token=token-1"),
+            "x-goog-storage-java-features", MULTISTREAM_HEADER_VALUE);
   }
 }
