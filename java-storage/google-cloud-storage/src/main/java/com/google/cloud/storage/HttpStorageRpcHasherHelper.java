@@ -115,7 +115,9 @@ public final class HttpStorageRpcHasherHelper {
     // Stored-content headers are also present on untranscoded responses. Only a change in
     // encoding indicates server-side transcoding; an absent Content-Encoding means identity.
     return (storedEncoding != null
-            && !storedEncoding.equalsIgnoreCase(encoding == null ? "identity" : encoding))
+            && !storedEncoding
+                .trim()
+                .equalsIgnoreCase(encoding == null ? "identity" : encoding.trim()))
         || isDecompressedByClient(response);
   }
 

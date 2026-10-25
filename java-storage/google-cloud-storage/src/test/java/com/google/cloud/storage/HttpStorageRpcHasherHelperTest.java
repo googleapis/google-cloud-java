@@ -195,6 +195,37 @@ public class HttpStorageRpcHasherHelperTest {
   }
 
   @Test
+  public void testShouldValidate_storedEncodingWithWhitespace_rawInputStream() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", " \tgzip \t");
+    headers.put("Content-Encoding", "GZIP");
+    HttpResponse response = createHttpResponse(200, headers, true);
+
+    assertTrue(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_responseEncodingWithWhitespace_rawInputStream()
+      throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", "gzip");
+    headers.put("Content-Encoding", " \tGZIP \t");
+    HttpResponse response = createHttpResponse(200, headers, true);
+
+    assertTrue(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_encodingWithWhitespace_decompressedByClient() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", " \tgzip \t");
+    headers.put("Content-Encoding", " \tGZIP \t");
+    HttpResponse response = createHttpResponse(200, headers, false);
+
+    assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
   public void testShouldValidate_transcoded_identityEncoding() throws IOException {
     Map<String, String> headers = new HashMap<>();
     headers.put("x-goog-stored-content-encoding", "gzip");
