@@ -258,6 +258,10 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
       if (shouldValidate && expectedCrc32cBase64 != null) {
         this.hashingInputStream = new HashingInputStream(Hashing.crc32c(), content);
         content = this.hashingInputStream;
+      } else {
+        // A resumed read returns only the remaining bytes, which can't be checked against the
+        // full-object crc32c. Drop the hash from the previous response so it isn't compared.
+        this.hashingInputStream = null;
       }
 
       ReadableByteChannel rbc = Channels.newChannel(content);

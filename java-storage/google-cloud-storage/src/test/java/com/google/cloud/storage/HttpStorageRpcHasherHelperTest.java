@@ -215,6 +215,26 @@ public class HttpStorageRpcHasherHelperTest {
   }
 
   @Test
+  public void testShouldValidate_upperCaseStoredEncoding_decompressedByClient() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", "GZIP");
+    headers.put("Content-Encoding", "GZIP");
+    HttpResponse response = createHttpResponse(200, headers, false);
+
+    assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_xGzipEncoding_decompressedByClient() throws IOException {
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", "x-gzip");
+    headers.put("Content-Encoding", "x-gzip");
+    HttpResponse response = createHttpResponse(200, headers, false);
+
+    assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
   public void testShouldValidate_decompressedByClient() throws IOException {
     Map<String, String> headers = new HashMap<>();
     headers.put("Content-Encoding", "gzip");

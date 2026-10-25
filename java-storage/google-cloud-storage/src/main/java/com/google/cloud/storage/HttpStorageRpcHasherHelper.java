@@ -26,6 +26,7 @@ import com.google.common.primitives.Ints;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
+import java.util.Locale;
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -122,7 +123,12 @@ public final class HttpStorageRpcHasherHelper {
     boolean returnRaw = response.getRequest().getResponseReturnRawInputStream();
     if (!returnRaw) {
       String encoding = response.getHeaders().getContentEncoding();
-      return encoding != null && encoding.contains("gzip");
+      if (encoding == null) {
+        return false;
+      }
+      // Match the normalization HttpResponse#getContent uses to decide whether to gunzip.
+      String normalized = encoding.trim().toLowerCase(Locale.ENGLISH);
+      return normalized.equals("gzip") || normalized.equals("x-gzip");
     }
     return false;
   }

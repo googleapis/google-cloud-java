@@ -36,6 +36,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.util.zip.GZIPOutputStream;
 import org.junit.Test;
 
 public final class HttpStorageRpcChecksumTest {
@@ -180,6 +181,37 @@ public final class HttpStorageRpcChecksumTest {
                 }
               });
       assertThat(ex.getMessage()).contains("Mismatch checksum value");
+    }
+  }
+
+  @Test
+  public void testReadAllBytes_upperCaseGzipDecompressedByClient_skipsCrc32cValidation()
+      throws Exception {
+    ByteArrayOutputStream gzipped = new ByteArrayOutputStream();
+    try (GZIPOutputStream gz = new GZIPOutputStream(gzipped)) {
+      gz.write(CONTENT);
+    }
+    byte[] stored = gzipped.toByteArray();
+    String storedCrc32cBase64 =
+        BaseEncoding.base64()
+            .encode(
+                Ints.toByteArray(
+                    com.google.common.hash.Hashing.crc32c().hashBytes(stored).asInt()));
+    // The crc32c describes the stored gzip bytes, but the client returns them decompressed.
+    MockLowLevelHttpResponse response =
+        new MockLowLevelHttpResponse()
+            .setContentType("text/plain")
+            .addHeader("x-goog-hash", "crc32c=" + storedCrc32cBase64)
+            .addHeader("x-goog-stored-content-encoding", "GZIP")
+            .addHeader("x-goog-stored-content-length", String.valueOf(stored.length))
+            .addHeader("Content-Encoding", "GZIP")
+            .setContentEncoding("GZIP")
+            .setContent(stored)
+            .setStatusCode(200);
+
+    try (Storage storage = createMockStorage(response)) {
+      byte[] bytes = storage.readAllBytes(BlobId.of(BUCKET, BLOB));
+      assertThat(bytes).isEqualTo(CONTENT);
     }
   }
 

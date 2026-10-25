@@ -22,9 +22,13 @@ import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.storage.ApiaryUnbufferedReadableByteChannel.ApiaryReadRequest;
@@ -33,12 +37,17 @@ import com.google.cloud.storage.Retrying.RetrierWithAlg;
 import com.google.cloud.storage.UnbufferedReadableByteChannelSession.UnbufferedReadableByteChannel;
 import com.google.cloud.storage.spi.v1.AuditingHttpTransport;
 import com.google.common.collect.ImmutableMap;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.SequenceInputStream;
+import java.net.SocketException;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.WritableByteChannel;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Handler;
@@ -225,6 +234,104 @@ public final class ApiaryUnbufferedReadableByteChannelTest {
 
       // We read the entire response content successfully (no exception thrown)
       assertArrayEquals(CONTENT_BYTES, out.toByteArray());
+    }
+  }
+
+  @Test
+  public void testRead_resumedAfterFailure_skipsCrc32cValidation() throws IOException {
+    // GCS sometimes returns the full-object crc32c on the resumed response.
+    assertResumedReadReturnsFullContent(true);
+  }
+
+  @Test
+  public void testRead_resumedAfterFailure_noChecksumOnResume() throws IOException {
+    // GCS sometimes omits x-goog-hash on the resumed response.
+    assertResumedReadReturnsFullContent(false);
+  }
+
+  private void assertResumedReadReturnsFullContent(boolean checksumOnResume) throws IOException {
+    int splitAt = 5;
+    List<String> rangeHeaders = new ArrayList<>();
+    HttpTransport transport =
+        new HttpTransport() {
+          @Override
+          protected LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                rangeHeaders.add(getFirstHeaderValue("range"));
+                MockLowLevelHttpResponse response =
+                    new MockLowLevelHttpResponse()
+                        .addHeader("x-goog-generation", "12345")
+                        .addHeader("x-goog-stored-content-encoding", "identity")
+                        .addHeader(
+                            "x-goog-stored-content-length", String.valueOf(CONTENT_BYTES.length));
+                boolean isResume = rangeHeaders.size() > 1;
+                if (!isResume || checksumOnResume) {
+                  response.addHeader("x-goog-hash", "crc32c=" + CORRECT_CRC32C_BASE64);
+                }
+                if (!isResume) {
+                  // The connection drops after the first few bytes.
+                  return response
+                      .setStatusCode(200)
+                      .setContent(
+                          new SequenceInputStream(
+                              new ByteArrayInputStream(CONTENT_BYTES, 0, splitAt),
+                              new InputStream() {
+                                @Override
+                                public int read() throws IOException {
+                                  throw new SocketException("Connection reset");
+                                }
+                              }));
+                }
+                return response
+                    .setStatusCode(206)
+                    .addHeader(
+                        "Content-Range",
+                        String.format(
+                            "bytes %d-%d/%d",
+                            splitAt, CONTENT_BYTES.length - 1, CONTENT_BYTES.length))
+                    .setContent(Arrays.copyOfRange(CONTENT_BYTES, splitAt, CONTENT_BYTES.length));
+              }
+            };
+          }
+        };
+    Storage storageClient =
+        new Storage.Builder(transport, GsonFactory.getDefaultInstance(), null)
+            .setApplicationName("test")
+            .build();
+
+    StorageObject from = new StorageObject().setBucket("bucket").setName("blob");
+    ApiaryReadRequest apiaryReadRequest =
+        new ApiaryReadRequest(from, ImmutableMap.of(), ByteRangeSpec.nullRange());
+
+    try (ApiaryUnbufferedReadableByteChannel channel =
+        new ApiaryUnbufferedReadableByteChannel(
+            apiaryReadRequest,
+            storageClient,
+            SettableApiFuture.create(),
+            RetrierWithAlg.attemptOnce(),
+            // Retry the dropped connection only, so a checksum mismatch surfaces.
+            new BasicResultRetryAlgorithm<Object>() {
+              @Override
+              public boolean shouldRetry(Throwable previousThrowable, Object previousResponse) {
+                return previousThrowable instanceof SocketException;
+              }
+            },
+            Hasher.defaultHasher())) {
+
+      ByteArrayOutputStream out = new ByteArrayOutputStream();
+      try (WritableByteChannel w = Channels.newChannel(out)) {
+        ByteBuffer buf = ByteBuffer.allocate(4096);
+        while (channel.read(new ByteBuffer[] {buf}, 0, 1) != -1) {
+          buf.flip();
+          w.write(buf);
+          buf.clear();
+        }
+      }
+
+      assertArrayEquals(CONTENT_BYTES, out.toByteArray());
+      assertThat(rangeHeaders).containsExactly(null, "bytes=" + splitAt + "-").inOrder();
     }
   }
 
