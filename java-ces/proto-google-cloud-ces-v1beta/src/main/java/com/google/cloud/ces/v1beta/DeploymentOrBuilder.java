@@ -407,4 +407,137 @@ public interface DeploymentOrBuilder
    * </code>
    */
   com.google.cloud.ces.v1beta.InstagramCredentialsOrBuilder getInstagramCredentialsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Model settings for the deployment.
+   * Overrides model settings configured at the app/agent levels.
+   * Note: Deployment-level model settings override is gated behind an
+   * allowlist. Contact the CXAS team to enable this field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the modelSettings field is set.
+   */
+  boolean hasModelSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Model settings for the deployment.
+   * Overrides model settings configured at the app/agent levels.
+   * Note: Deployment-level model settings override is gated behind an
+   * allowlist. Contact the CXAS team to enable this field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The modelSettings.
+   */
+  com.google.cloud.ces.v1beta.ModelSettings getModelSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Model settings for the deployment.
+   * Overrides model settings configured at the app/agent levels.
+   * Note: Deployment-level model settings override is gated behind an
+   * allowlist. Contact the CXAS team to enable this field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.ModelSettingsOrBuilder getModelSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modality of the deployment.
+   * Note: Deployment-level modality override is gated behind an allowlist.
+   * Contact the CXAS team to enable this field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Deployment.Modality modality = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for modality.
+   */
+  int getModalityValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modality of the deployment.
+   * Note: Deployment-level modality override is gated behind an allowlist.
+   * Contact the CXAS team to enable this field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Deployment.Modality modality = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The modality.
+   */
+  com.google.cloud.ces.v1beta.Deployment.Modality getModality();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for deploying this deployment to Agent Registry.
+   * If present, this deployment will be published to Agent Registry.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentRegistryDeployment field is set.
+   */
+  boolean hasAgentRegistryDeployment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for deploying this deployment to Agent Registry.
+   * If present, this deployment will be published to Agent Registry.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentRegistryDeployment.
+   */
+  com.google.cloud.ces.v1beta.AgentRegistryDeployment getAgentRegistryDeployment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for deploying this deployment to Agent Registry.
+   * If present, this deployment will be published to Agent Registry.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.AgentRegistryDeploymentOrBuilder
+      getAgentRegistryDeploymentOrBuilder();
 }

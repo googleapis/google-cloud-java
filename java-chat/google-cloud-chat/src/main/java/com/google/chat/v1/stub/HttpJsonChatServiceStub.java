@@ -102,6 +102,8 @@ import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
 import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.ReplaceMessageCardsRequest;
+import com.google.chat.v1.ReplaceMessageCardsResponse;
 import com.google.chat.v1.SearchMessagesRequest;
 import com.google.chat.v1.SearchMessagesResponse;
 import com.google.chat.v1.SearchSpacesRequest;
@@ -2066,6 +2068,43 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+      replaceMessageCardsMethodDescriptor =
+          ApiMethodDescriptor.<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/ReplaceMessageCards")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ReplaceMessageCardsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=spaces/*/messages/*}:replaceCards",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ReplaceMessageCardsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ReplaceMessageCardsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ReplaceMessageCardsResponse>newBuilder()
+                      .setDefaultInstance(ReplaceMessageCardsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateMessageRequest, Message> createMessageCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
@@ -2154,6 +2193,8 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
       listSectionItemsPagedCallable;
   private final UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse>
       moveSectionItemCallable;
+  private final UnaryCallable<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+      replaceMessageCardsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -2785,6 +2826,20 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    HttpJsonCallSettings<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+        replaceMessageCardsTransportSettings =
+            HttpJsonCallSettings
+                .<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>newBuilder()
+                .setMethodDescriptor(replaceMessageCardsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
 
     this.createMessageCallable =
         callableFactory.createUnaryCallable(
@@ -3000,6 +3055,11 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     this.moveSectionItemCallable =
         callableFactory.createUnaryCallable(
             moveSectionItemTransportSettings, settings.moveSectionItemSettings(), clientContext);
+    this.replaceMessageCardsCallable =
+        callableFactory.createUnaryCallable(
+            replaceMessageCardsTransportSettings,
+            settings.replaceMessageCardsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -3060,6 +3120,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(positionSectionMethodDescriptor);
     methodDescriptors.add(listSectionItemsMethodDescriptor);
     methodDescriptors.add(moveSectionItemMethodDescriptor);
+    methodDescriptors.add(replaceMessageCardsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -3395,6 +3456,12 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse> moveSectionItemCallable() {
     return moveSectionItemCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+      replaceMessageCardsCallable() {
+    return replaceMessageCardsCallable;
   }
 
   @Override

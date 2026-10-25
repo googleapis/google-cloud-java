@@ -24,8 +24,8 @@ package com.google.cloud.modelarmor.v1;
  *
  *
  * <pre>
- * This enum is used in the TemplateMetadata message to indicate the modality
- * supported for sanitize API calls.
+ * This enum is used in the TemplateMetadata and FloorSettingMetadata messages
+ * to indicate the modality supported for sanitize API calls.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.modelarmor.v1.Modality}

@@ -1520,6 +1520,7 @@ public class EvaluationServiceClientTest {
             .setEvaluationMetricsThresholds(EvaluationMetricsThresholds.newBuilder().build())
             .setConfig(EvaluationConfig.newBuilder().build())
             .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
+            .setRootSpan(Span.newBuilder().build())
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 
@@ -1583,6 +1584,7 @@ public class EvaluationServiceClientTest {
             .setEvaluationMetricsThresholds(EvaluationMetricsThresholds.newBuilder().build())
             .setConfig(EvaluationConfig.newBuilder().build())
             .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
+            .setRootSpan(Span.newBuilder().build())
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 

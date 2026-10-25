@@ -38,6 +38,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= AssistantServiceClient =======================
+ *
+ * <p>Service Description: The service that manages assistant-related resources in Customer
+ * Engagement Suite (CES). The assistant, Arc, is a conversational agent embedded in CES
+ * applications to help users with building their agents.
+ *
+ * <p>Sample for AssistantServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AssistantServiceClient assistantServiceClient = AssistantServiceClient.create()) {
+ *   AssistantSessionName name =
+ *       AssistantSessionName.of("[PROJECT]", "[LOCATION]", "[APP]", "[ASSISTANT_SESSION]");
+ *   AssistantSession response = assistantServiceClient.getAssistantSession(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= EvaluationServiceClient =======================
  *
  * <p>Service Description: EvaluationService exposes methods to perform evaluation for the CES app.

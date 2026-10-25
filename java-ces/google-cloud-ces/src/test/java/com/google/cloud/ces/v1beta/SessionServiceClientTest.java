@@ -37,6 +37,7 @@ import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -230,6 +231,176 @@ public class SessionServiceClientTest {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void streamChatAiAssistantTest() throws Exception {
+    StreamChatAiAssistantResponse expectedResponse =
+        StreamChatAiAssistantResponse.newBuilder()
+            .setEventId("eventId-1376502443")
+            .setEventTime(Timestamp.newBuilder().build())
+            .setUiEvent(UiEvent.newBuilder().build())
+            .setTurnMetadata(TurnMetadata.newBuilder().build())
+            .setSequenceNumber(-1309190777)
+            .setTurnInProgress(true)
+            .build();
+    mockSessionService.addResponse(expectedResponse);
+    StreamChatAiAssistantRequest request =
+        StreamChatAiAssistantRequest.newBuilder()
+            .setName(
+                AssistantSessionName.of("[PROJECT]", "[LOCATION]", "[APP]", "[ASSISTANT_SESSION]")
+                    .toString())
+            .setMessage("message954925063")
+            .addAllAttachedGcsUris(new ArrayList<String>())
+            .setContextToken("contextToken1106626954")
+            .setConfirmationResponse(AssistantConfirmationResponse.newBuilder().build())
+            .addAllClientCapabilities(
+                new ArrayList<StreamChatAiAssistantRequest.ClientCapability>())
+            .setOperationCompletedEvent(OperationCompletedEvent.newBuilder().build())
+            .setResumeFromSequenceNumber(15486916)
+            .setAttachOnly(true)
+            .build();
+
+    MockStreamObserver<StreamChatAiAssistantResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse> callable =
+        client.streamChatAiAssistantCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    List<StreamChatAiAssistantResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamChatAiAssistantExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSessionService.addException(exception);
+    StreamChatAiAssistantRequest request =
+        StreamChatAiAssistantRequest.newBuilder()
+            .setName(
+                AssistantSessionName.of("[PROJECT]", "[LOCATION]", "[APP]", "[ASSISTANT_SESSION]")
+                    .toString())
+            .setMessage("message954925063")
+            .addAllAttachedGcsUris(new ArrayList<String>())
+            .setContextToken("contextToken1106626954")
+            .setConfirmationResponse(AssistantConfirmationResponse.newBuilder().build())
+            .addAllClientCapabilities(
+                new ArrayList<StreamChatAiAssistantRequest.ClientCapability>())
+            .setOperationCompletedEvent(OperationCompletedEvent.newBuilder().build())
+            .setResumeFromSequenceNumber(15486916)
+            .setAttachOnly(true)
+            .build();
+
+    MockStreamObserver<StreamChatAiAssistantResponse> responseObserver = new MockStreamObserver<>();
+
+    ServerStreamingCallable<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse> callable =
+        client.streamChatAiAssistantCallable();
+    callable.serverStreamingCall(request, responseObserver);
+
+    try {
+      List<StreamChatAiAssistantResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void cancelAssistantTurnTest() throws Exception {
+    CancelAssistantTurnResponse expectedResponse =
+        CancelAssistantTurnResponse.newBuilder().setCancelled(true).build();
+    mockSessionService.addResponse(expectedResponse);
+
+    CancelAssistantTurnRequest request =
+        CancelAssistantTurnRequest.newBuilder()
+            .setName("name3373707")
+            .setTurnId("turnId-862429576")
+            .build();
+
+    CancelAssistantTurnResponse actualResponse = client.cancelAssistantTurn(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSessionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelAssistantTurnRequest actualRequest = ((CancelAssistantTurnRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getTurnId(), actualRequest.getTurnId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelAssistantTurnExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSessionService.addException(exception);
+
+    try {
+      CancelAssistantTurnRequest request =
+          CancelAssistantTurnRequest.newBuilder()
+              .setName("name3373707")
+              .setTurnId("turnId-862429576")
+              .build();
+      client.cancelAssistantTurn(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateOnboardingSuggestionsTest() throws Exception {
+    GenerateOnboardingSuggestionsResponse expectedResponse =
+        GenerateOnboardingSuggestionsResponse.newBuilder()
+            .addAllSuggestions(new ArrayList<AssistantSuggestion>())
+            .setContextToken("contextToken1106626954")
+            .build();
+    mockSessionService.addResponse(expectedResponse);
+
+    GenerateOnboardingSuggestionsRequest request =
+        GenerateOnboardingSuggestionsRequest.newBuilder()
+            .setName(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+            .setMaxSuggestions(618824852)
+            .build();
+
+    GenerateOnboardingSuggestionsResponse actualResponse =
+        client.generateOnboardingSuggestions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSessionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateOnboardingSuggestionsRequest actualRequest =
+        ((GenerateOnboardingSuggestionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getMaxSuggestions(), actualRequest.getMaxSuggestions());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateOnboardingSuggestionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSessionService.addException(exception);
+
+    try {
+      GenerateOnboardingSuggestionsRequest request =
+          GenerateOnboardingSuggestionsRequest.newBuilder()
+              .setName(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+              .setMaxSuggestions(618824852)
+              .build();
+      client.generateOnboardingSuggestions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

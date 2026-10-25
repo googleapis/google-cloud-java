@@ -972,6 +972,24 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateAppVersion</td>
+ *      <td><p> Updates the specified app version.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAppVersion(UpdateAppVersionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateAppVersion(AppVersion appVersion, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAppVersionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteAppVersion</td>
  *      <td><p> Deletes the specified app version.</td>
  *      <td>
@@ -7572,6 +7590,97 @@ public class AgentServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateAppVersionRequest, AppVersion> createAppVersionCallable() {
     return stub.createAppVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified app version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   AppVersion appVersion = AppVersion.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AppVersion response = agentServiceClient.updateAppVersion(appVersion, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param appVersion Required. The app version to update.
+   * @param updateMask Optional. The list of fields to update. If empty, fields `display_name` and
+   *     `description` will be updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AppVersion updateAppVersion(AppVersion appVersion, FieldMask updateMask) {
+    UpdateAppVersionRequest request =
+        UpdateAppVersionRequest.newBuilder()
+            .setAppVersion(appVersion)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAppVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified app version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   UpdateAppVersionRequest request =
+   *       UpdateAppVersionRequest.newBuilder()
+   *           .setAppVersion(AppVersion.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   AppVersion response = agentServiceClient.updateAppVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AppVersion updateAppVersion(UpdateAppVersionRequest request) {
+    return updateAppVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the specified app version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   UpdateAppVersionRequest request =
+   *       UpdateAppVersionRequest.newBuilder()
+   *           .setAppVersion(AppVersion.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AppVersion> future =
+   *       agentServiceClient.updateAppVersionCallable().futureCall(request);
+   *   // Do something.
+   *   AppVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAppVersionRequest, AppVersion> updateAppVersionCallable() {
+    return stub.updateAppVersionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
