@@ -1515,6 +1515,49 @@ final class OtelStorageDecorator implements Storage {
   }
 
   @Override
+  public <Projection> ApiFuture<BlobReadSession> blobReadSession(
+      BlobId id, ReadProjectionConfig<Projection> config, BlobSourceOption... options) {
+    Span blobReadSessionSpan =
+        tracer
+            .spanBuilder(BLOB_READ_SESSION)
+            .setAttribute("gsutil.uri", id.toGsUtilUriWithGeneration())
+            .startSpan();
+    try (Scope ignore1 = blobReadSessionSpan.makeCurrent()) {
+      Context blobReadSessionContext = Context.current();
+      Span ready = tracer.spanBuilder(BLOB_READ_SESSION + "/ready").startSpan();
+      ApiFuture<BlobReadSession> blobReadSessionApiFuture =
+          delegate.blobReadSession(id, config, options);
+      ApiFuture<BlobReadSession> futureDecorated =
+          ApiFutures.transform(
+              blobReadSessionApiFuture,
+              delegate -> {
+                ready.end();
+                return new OtelDecoratingBlobReadSession(
+                    delegate, id, blobReadSessionContext, blobReadSessionSpan);
+              },
+              MoreExecutors.directExecutor());
+      ApiFutures.addCallback(
+          futureDecorated,
+          (OnFailureApiFutureCallback<BlobReadSession>)
+              t -> {
+                blobReadSessionSpan.recordException(t);
+                blobReadSessionSpan.setStatus(StatusCode.ERROR, t.getClass().getSimpleName());
+                blobReadSessionSpan.end();
+                ready.recordException(t);
+                ready.setStatus(StatusCode.ERROR, t.getClass().getSimpleName());
+                ready.end();
+              },
+          MoreExecutors.directExecutor());
+      return futureDecorated;
+    } catch (Throwable t) {
+      blobReadSessionSpan.recordException(t);
+      blobReadSessionSpan.setStatus(StatusCode.ERROR, t.getClass().getSimpleName());
+      blobReadSessionSpan.end();
+      throw t;
+    }
+  }
+
+  @Override
   public BlobAppendableUpload blobAppendableUpload(
       BlobInfo blobInfo, BlobAppendableUploadConfig uploadConfig, BlobWriteOption... options) {
 
