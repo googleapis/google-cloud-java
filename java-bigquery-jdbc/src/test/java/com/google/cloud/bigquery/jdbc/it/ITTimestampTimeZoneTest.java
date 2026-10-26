@@ -73,7 +73,10 @@ public class ITTimestampTimeZoneTest extends ITBase {
           + " DATE '2025-01-01' AS d,"
           + " TIME '12:34:56' AS t,"
           + " [TIMESTAMP '2025-01-01 12:34:56.123 UTC'] AS ts_array,"
-          + " STRUCT(TIMESTAMP '2025-01-01 12:34:56.123 UTC' AS ts) AS ts_struct";
+          + " STRUCT(TIMESTAMP '2025-01-01 12:34:56.123 UTC' AS ts) AS ts_struct,"
+          // REST API sends these as scientific notation ("1.0E-6", "-1.0E-6").
+          + " TIMESTAMP '1970-01-01 00:00:00.000001 UTC' AS ts_post_epoch,"
+          + " TIMESTAMP '1969-12-31 23:59:59.999999 UTC' AS ts_pre_epoch";
 
   // Same coercion as an INSERT into a TIMESTAMP column, for TIMESTAMP and STRING parameters.
   private static final String PROBE_TIMESTAMP = "SELECT UNIX_MILLIS(CAST(? AS TIMESTAMP))";
@@ -321,7 +324,17 @@ public class ITTimestampTimeZoneTest extends ITBase {
               assertEquals(
                   Timestamp.from(REF),
                   rs.getObject("ts"),
-                  label(zone, "getObject must return a Timestamp of the stored moment")));
+                  label(zone, "getObject must return a Timestamp of the stored moment")),
+          () ->
+              assertEquals(
+                  Instant.parse("1970-01-01T00:00:00.000001Z"),
+                  rs.getTimestamp("ts_post_epoch").toInstant(),
+                  label(zone, "getTimestamp just after the epoch")),
+          () ->
+              assertEquals(
+                  Instant.parse("1969-12-31T23:59:59.999999Z"),
+                  rs.getTimestamp("ts_pre_epoch").toInstant(),
+                  label(zone, "getTimestamp just before the epoch")));
     }
   }
 
@@ -500,7 +513,17 @@ public class ITTimestampTimeZoneTest extends ITBase {
               assertEquals(
                   "{\"ts\":\"2025-01-01 12:34:56.123\"}",
                   rs.getString("ts_struct"),
-                  label(zone, "getString on STRUCT<TIMESTAMP> must return UTC digits")));
+                  label(zone, "getString on STRUCT<TIMESTAMP> must return UTC digits")),
+          () ->
+              assertEquals(
+                  "1970-01-01 00:00:00.000001",
+                  rs.getString("ts_post_epoch"),
+                  label(zone, "getString just after the epoch")),
+          () ->
+              assertEquals(
+                  "1969-12-31 23:59:59.999999",
+                  rs.getString("ts_pre_epoch"),
+                  label(zone, "getString just before the epoch")));
     }
   }
 

@@ -272,6 +272,16 @@ public class BigQueryTemporalUtilityTest {
     Timestamp picosIsoTs =
         BigQueryTemporalUtility.boxTimestamp("2026-08-24T15:30:45.123456789012Z");
     assertThat(picosIsoTs.getNanos()).isEqualTo(123456789);
+
+    // JSON API uses scientific notation for |t| < 1 ms
+    assertThat(BigQueryTemporalUtility.boxTimestamp("1.0E-6").toInstant())
+        .isEqualTo(Instant.parse("1970-01-01T00:00:00.000001Z"));
+    assertThat(BigQueryTemporalUtility.boxTimestamp("9.99E-4").toInstant())
+        .isEqualTo(Instant.parse("1970-01-01T00:00:00.000999Z"));
+    assertThat(BigQueryTemporalUtility.boxTimestamp("-1.0E-6").toInstant())
+        .isEqualTo(Instant.parse("1969-12-31T23:59:59.999999Z"));
+    assertThat(BigQueryTemporalUtility.boxTimestamp("-1.0E-4").toInstant())
+        .isEqualTo(Instant.parse("1969-12-31T23:59:59.999900Z"));
   }
 
   @Test
