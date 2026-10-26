@@ -27,6 +27,7 @@ import com.google.cloud.bigtable.data.v2.internal.compat.FutureAdapter;
 import com.google.cloud.bigtable.data.v2.internal.compat.Util;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
+import com.google.cloud.bigtable.data.v2.internal.util.SessionScope;
 import com.google.common.base.Throwables;
 import io.grpc.Context;
 import io.grpc.Context.CancellableContext;
@@ -49,18 +50,22 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
 
   private final Duration defaultTimeout;
   private final DebugTagTracer debugTagTracer;
+  // The diversion scope this callable's method belongs to.
+  private final SessionScope scope;
 
   public DivertingUnaryCallable(
       ClientConfigurationManager configurationManager,
       UnaryCallable<ReqT, RespT> classic,
       UnaryShim<ReqT, RespT> experimental,
       Duration defaultTimeout,
-      DebugTagTracer debugTagTracer) {
+      DebugTagTracer debugTagTracer,
+      SessionScope scope) {
     this.configurationManager = configurationManager;
     this.classic = classic;
     this.experimental = experimental;
     this.defaultTimeout = defaultTimeout;
     this.debugTagTracer = debugTagTracer;
+    this.scope = scope;
   }
 
   @Override
@@ -109,8 +114,7 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   }
 
   private boolean useExperimental(ReqT req) {
-    float ratio =
-        configurationManager.getClientConfiguration().getSessionConfiguration().getSessionLoad();
+    float ratio = resolveSessionLoad();
     if (ratio == 0) {
       return false;
     }
@@ -123,6 +127,11 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
       return false;
     }
     return true;
+  }
+
+  private float resolveSessionLoad() {
+    return scope.resolveSessionLoad(
+        configurationManager.getClientConfiguration().getSessionConfiguration());
   }
 
   ApiException translateException(Throwable e) {

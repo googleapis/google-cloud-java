@@ -37,7 +37,6 @@
     <module>java-apphub</module>
     <module>java-appoptimize</module>
     <module>java-apptopology</module>
-    <module>java-area120-tables</module>
     <module>java-artifact-registry</module>
     <module>java-asset</module>
     <module>java-assured-workloads</module>
@@ -185,6 +184,7 @@
     <module>java-networkservices</module>
     <module>java-notebooks</module>
     <module>java-notification</module>
+    <module>java-observability</module>
     <module>java-optimization</module>
     <module>java-oracledatabase</module>
     <module>java-orchestration-airflow</module>
