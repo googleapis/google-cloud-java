@@ -1682,7 +1682,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
   @Test
   void
-      createChannelBuilder_directPathOverInterconnect_storageEndpoint_rewritesTargetAndSetsAuthority()
+      createChannelBuilder_directPathOverInterconnect_storageEndpoint_rewritesTargetWithoutAuthorityOverride()
           throws Exception {
     EnvironmentProvider envProvider =
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
@@ -1714,7 +1714,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
   @Test
   void
-      createChannelBuilder_directPathOverInterconnect_storagePreprodSandboxEndpoint_rewritesTargetAndSetsAuthority()
+      createChannelBuilder_directPathOverInterconnect_storagePreprodSandboxEndpoint_rewritesTargetWithoutAuthorityOverride()
           throws Exception {
     EnvironmentProvider envProvider =
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
@@ -1747,7 +1747,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
   @Test
   void
-      createChannelBuilder_directPathOverInterconnect_bigtableEndpoint_rewritesTargetAndSetsAuthority()
+      createChannelBuilder_directPathOverInterconnect_bigtableEndpoint_rewritesTargetWithoutAuthorityOverride()
           throws Exception {
     EnvironmentProvider envProvider =
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
