@@ -106,6 +106,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     if (queryStatistics != null && queryStatistics.getQueryParameters() != null) {
       return queryStatistics.getQueryParameters().size();
     }
+    if (queryStatistics != null && queryStatistics.getQueryParameters() == null) {
+      return 0;
+    }
     return (int) query.chars().filter(ch -> ch == POSITIONAL_PARAMETER_CHAR).count();
   }
 

@@ -1089,6 +1089,19 @@ public class ITBigQueryJDBCTest extends ITBase {
     ResultSet selectResult2 = selectStmt.executeQuery();
     assertNotNull(selectResult2);
 
+    // string literal with ? should pass even if there are no parameters.
+    String noParameterQuery =
+        String.format("SELECT 'Hello, ?World!' FROM %s.%s", DATASET, TABLE_NAME);
+
+    PreparedStatement noParameterStmt = bigQueryConnection.prepareStatement(noParameterQuery);
+
+    // Tests that parameter Metadata is populated before query execution and setter.
+    ParameterMetaData noParameterMetaData = noParameterStmt.getParameterMetaData();
+    assertNotNull(noParameterMetaData);
+    assertEquals(0, noParameterMetaData.getParameterCount());
+
+    ResultSet selectResult3 = noParameterStmt.executeQuery();
+
     boolean dropStatus = bigQueryStatement.execute(dropQuery);
     assertFalse(dropStatus);
   }
