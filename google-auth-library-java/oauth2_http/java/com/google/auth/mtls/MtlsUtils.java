@@ -202,7 +202,7 @@ public class MtlsUtils {
   }
 
   private static boolean isExistingNonFileOrUnreadable(File file) {
-    return file.exists() && (!file.isFile() || (!file.canRead() && file.exists()));
+    return file.exists() && (!file.isFile() || !file.canRead());
   }
 
   /**
@@ -220,6 +220,9 @@ public class MtlsUtils {
     int maxCycles = shouldPoll ? TOTAL_POLL_CYCLES : 1;
 
     for (int cycle = 0; cycle < maxCycles; cycle++) {
+      if (initialStartupCompleted) {
+        return null;
+      }
       if (isExistingNonFileOrUnreadable(configFile)) {
         // Directory or permission denied on an existing file will not resolve via startup polling.
         break;
@@ -253,11 +256,9 @@ public class MtlsUtils {
           initialStartupCompleted = true;
           throw e;
         } catch (IllegalArgumentException e) {
-          if (configFile.length() > 0) {
-            // Valid JSON missing required cert_configs, cert_path, or key_path; do not poll.
-            initialStartupCompleted = true;
-            throw e;
-          }
+          // Valid JSON missing required cert_configs, cert_path, or key_path; do not poll.
+          initialStartupCompleted = true;
+          throw e;
         } catch (Exception e) {
           if (!shouldPoll) {
             initialStartupCompleted = true;

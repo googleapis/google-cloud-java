@@ -846,7 +846,7 @@ class AgentIdentityUtilsTest {
       throws Exception {
     Path restrictedDir = tempDir.resolve("restricted_well_known");
     Files.createDirectory(restrictedDir);
-    Path bundleFile = restrictedDir.resolve("credentialbundle.pem");
+    Path bundleFile = restrictedDir.resolve(AgentIdentityUtils.GKE_CREDENTIAL_BUNDLE_FILE);
     Files.write(bundleFile, "test".getBytes(StandardCharsets.UTF_8));
 
     restrictedDir.toFile().setReadable(false, false);

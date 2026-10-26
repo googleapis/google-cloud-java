@@ -100,8 +100,7 @@ final class AgentIdentityUtils {
    * configuration file exists, the presence of this bundle auto-enables mTLS on its own (no {@link
    * #GOOGLE_API_USE_CLIENT_CERTIFICATE} required). It is never polled for, because GKE delivers it
    * before the container starts and polling on its absence would delay every workload without Agent
-   * Identity. It must be a readable, non-empty file. When present and allowed, it takes precedence
-   * over the other well-known files, matching the certificate the transport presents.
+   * Identity. It must be a readable, non-empty file.
    */
   static final String GKE_CREDENTIAL_BUNDLE_FILE = "x509.credential-bundle.private-key.pem";
 
@@ -366,9 +365,7 @@ final class AgentIdentityUtils {
       // startup delivery (when in well-known directory) and transient rotation race conditions.
       return getPathsFromConfigWithRetry(certConfigPath, cached);
     }
-    // Fallback to well-known locations. We use retry with backoff here as well to handle
-    // startup delivery (when explicit mTLS is enabled) and race conditions during file
-    // replacement by a rotation process.
+    // Fallback to the well-known GKE Pod Certificate bundle when no certificate config is set.
     return getWellKnownCertificatePathWithRetry(cached);
   }
 
