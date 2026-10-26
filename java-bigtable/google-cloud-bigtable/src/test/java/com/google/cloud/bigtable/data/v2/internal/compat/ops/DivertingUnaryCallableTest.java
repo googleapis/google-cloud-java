@@ -27,9 +27,13 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.auth.Credentials;
 import com.google.bigtable.v2.ClientConfiguration;
 import com.google.bigtable.v2.SessionClientConfiguration;
+import com.google.bigtable.v2.SessionDiversionConfiguration;
+import com.google.bigtable.v2.SessionDiversionConfiguration.PerScopeDiversion;
+import com.google.bigtable.v2.SessionScopeDiversionConfiguration;
 import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
+import com.google.cloud.bigtable.data.v2.internal.util.SessionScope;
 import io.grpc.Deadline;
 import java.io.IOException;
 import java.net.URI;
@@ -111,17 +115,122 @@ class DivertingUnaryCallableTest {
     assertThat(tracer.tags).isEmpty();
   }
 
+  @Test
+  void globalDiversion_usesGlobalSessionLoad() {
+    stubGlobalDiversion(1.0f);
+    DivertingUnaryCallable<String, String> callable = callable();
+
+    @SuppressWarnings("unused")
+    ApiFuture<?> ignored = callable.futureCall("req", GrpcCallContext.createDefault());
+
+    assertThat(experimental.callCount).isEqualTo(1);
+  }
+
+  @Test
+  void globalDiversionZero_routesToClassic() throws Exception {
+    stubGlobalDiversion(0.0f);
+    DivertingUnaryCallable<String, String> callable = callable();
+
+    ApiFuture<String> result = callable.futureCall("req", GrpcCallContext.createDefault());
+
+    assertThat(result.get()).isEqualTo("classic");
+    assertThat(experimental.callCount).isEqualTo(0);
+  }
+
+  @Test
+  void perScopeDiversion_matchingScope_routesToExperimental() {
+    stubPerScopeDiversion(SessionScope.READ_ROW.getKey(), 1.0f);
+    DivertingUnaryCallable<String, String> callable = callable();
+
+    @SuppressWarnings("unused")
+    ApiFuture<?> ignored = callable.futureCall("req", GrpcCallContext.createDefault());
+
+    assertThat(experimental.callCount).isEqualTo(1);
+  }
+
+  @Test
+  void fallbackEnabled_noDiversionConfig_usesGlobalSessionLoad() {
+    stubSessionLoad(1.0f);
+    // READ_ROW still honours the deprecated flat session_load while the server rolls out
+    // SessionDiversionConfiguration.
+    DivertingUnaryCallable<String, String> callable = callable(SessionScope.READ_ROW);
+
+    @SuppressWarnings("unused")
+    ApiFuture<?> ignored = callable.futureCall("req", GrpcCallContext.createDefault());
+
+    assertThat(experimental.callCount).isEqualTo(1);
+  }
+
+  @Test
+  void fallbackDisabled_noDiversionConfig_routesToClassic() throws Exception {
+    stubSessionLoad(1.0f);
+    // CheckAndMutateRow is only ever enabled through a diversion configuration.
+    DivertingUnaryCallable<String, String> callable = callable(SessionScope.CHECK_AND_MUTATE_ROW);
+
+    ApiFuture<String> result = callable.futureCall("req", GrpcCallContext.createDefault());
+
+    assertThat(result.get()).isEqualTo("classic");
+    assertThat(experimental.callCount).isEqualTo(0);
+  }
+
+  @Test
+  void perScopeDiversion_nonMatchingScope_routesToClassic() throws Exception {
+    stubPerScopeDiversion(SessionScope.MUTATE_ROW.getKey(), 1.0f);
+    DivertingUnaryCallable<String, String> callable = callable();
+
+    ApiFuture<String> result = callable.futureCall("req", GrpcCallContext.createDefault());
+
+    assertThat(result.get()).isEqualTo("classic");
+    assertThat(experimental.callCount).isEqualTo(0);
+  }
+
   // --- helpers ---
 
   private DivertingUnaryCallable<String, String> callable() {
+    return callable(SessionScope.READ_ROW);
+  }
+
+  private DivertingUnaryCallable<String, String> callable(SessionScope scope) {
     return new DivertingUnaryCallable<>(
-        configManager, classic, experimental, Duration.ofSeconds(10), tracer);
+        configManager, classic, experimental, Duration.ofSeconds(10), tracer, scope);
   }
 
   private void stubSessionLoad(float load) {
     ClientConfiguration config =
         ClientConfiguration.newBuilder()
             .setSessionConfiguration(SessionClientConfiguration.newBuilder().setSessionLoad(load))
+            .build();
+    when(configManager.getClientConfiguration()).thenReturn(config);
+  }
+
+  private void stubGlobalDiversion(float load) {
+    ClientConfiguration config =
+        ClientConfiguration.newBuilder()
+            .setSessionConfiguration(
+                SessionClientConfiguration.newBuilder()
+                    .setSessionDiversionConfiguration(
+                        SessionDiversionConfiguration.newBuilder()
+                            .setGlobalDiversion(
+                                SessionScopeDiversionConfiguration.newBuilder()
+                                    .setSessionLoad(load))))
+            .build();
+    when(configManager.getClientConfiguration()).thenReturn(config);
+  }
+
+  private void stubPerScopeDiversion(String scopeKey, float load) {
+    ClientConfiguration config =
+        ClientConfiguration.newBuilder()
+            .setSessionConfiguration(
+                SessionClientConfiguration.newBuilder()
+                    .setSessionDiversionConfiguration(
+                        SessionDiversionConfiguration.newBuilder()
+                            .setPerScopeDiversion(
+                                PerScopeDiversion.newBuilder()
+                                    .putScopeDiversions(
+                                        scopeKey,
+                                        SessionScopeDiversionConfiguration.newBuilder()
+                                            .setSessionLoad(load)
+                                            .build()))))
             .build();
     when(configManager.getClientConfiguration()).thenReturn(config);
   }
