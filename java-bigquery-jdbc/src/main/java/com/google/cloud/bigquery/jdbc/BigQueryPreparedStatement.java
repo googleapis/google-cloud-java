@@ -103,11 +103,8 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   private int resolveParameterCount(String query, QueryStatistics queryStatistics) {
-    if (queryStatistics != null && queryStatistics.getQueryParameters() != null) {
-      return queryStatistics.getQueryParameters().size();
-    }
-    if (queryStatistics != null && queryStatistics.getQueryParameters() == null) {
-      return 0;
+    if (queryStatistics != null) {
+      return queryStatistics.getQueryParameters() == null ? 0 : queryStatistics.getQueryParameters().size();
     }
     return (int) query.chars().filter(ch -> ch == POSITIONAL_PARAMETER_CHAR).count();
   }
