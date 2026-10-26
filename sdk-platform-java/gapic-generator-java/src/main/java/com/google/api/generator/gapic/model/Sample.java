@@ -41,6 +41,8 @@ public abstract class Sample {
 
   public abstract boolean isCanonical();
 
+
+
   public static Builder builder() {
     return new AutoValue_Sample.Builder()
         .setBody(ImmutableList.of())
@@ -89,6 +91,8 @@ public abstract class Sample {
     public abstract Builder setRegionTag(RegionTag regionTag);
 
     public abstract Builder setIsCanonical(boolean isCanonical);
+
+
 
     abstract Builder setName(String name);
 
