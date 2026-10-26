@@ -178,6 +178,46 @@ public interface AppVersionOrBuilder
    *
    *
    * <pre>
+   * Output only. Timestamp when the app version was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the app version was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp when the app version was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The snapshot of the app when the version is created.
    * </pre>
    *

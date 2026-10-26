@@ -78,8 +78,9 @@ public final class RedactionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. If true, redaction will be applied in various logging scenarios,
-   * including conversation history, Cloud Logging and audio recording.
+   * Optional. If `true`, redaction will be applied in various logging
+   * scenarios, including conversation history, Cloud Logging and audio
+   * recording.
    * </pre>
    *
    * <code>bool enable_redaction = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -582,8 +583,9 @@ public final class RedactionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If true, redaction will be applied in various logging scenarios,
-     * including conversation history, Cloud Logging and audio recording.
+     * Optional. If `true`, redaction will be applied in various logging
+     * scenarios, including conversation history, Cloud Logging and audio
+     * recording.
      * </pre>
      *
      * <code>bool enable_redaction = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -599,8 +601,9 @@ public final class RedactionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If true, redaction will be applied in various logging scenarios,
-     * including conversation history, Cloud Logging and audio recording.
+     * Optional. If `true`, redaction will be applied in various logging
+     * scenarios, including conversation history, Cloud Logging and audio
+     * recording.
      * </pre>
      *
      * <code>bool enable_redaction = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -620,8 +623,9 @@ public final class RedactionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. If true, redaction will be applied in various logging scenarios,
-     * including conversation history, Cloud Logging and audio recording.
+     * Optional. If `true`, redaction will be applied in various logging
+     * scenarios, including conversation history, Cloud Logging and audio
+     * recording.
      * </pre>
      *
      * <code>bool enable_redaction = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

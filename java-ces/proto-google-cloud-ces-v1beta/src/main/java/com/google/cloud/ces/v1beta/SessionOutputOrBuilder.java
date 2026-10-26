@@ -287,6 +287,82 @@ public interface SessionOutputOrBuilder
    *
    *
    * <pre>
+   * Output image from the CES agent.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+   *
+   * @return Whether the image field is set.
+   */
+  boolean hasImage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output image from the CES agent.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+   *
+   * @return The image.
+   */
+  com.google.cloud.ces.v1beta.Image getImage();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output image from the CES agent.
+   * </pre>
+   *
+   * <code>.google.cloud.ces.v1beta.Image image = 13;</code>
+   */
+  com.google.cloud.ces.v1beta.ImageOrBuilder getImageOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Intermediate progress update from the CES agent.
+   * </pre>
+   *
+   * <code>string progress = 14;</code>
+   *
+   * @return Whether the progress field is set.
+   */
+  boolean hasProgress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Intermediate progress update from the CES agent.
+   * </pre>
+   *
+   * <code>string progress = 14;</code>
+   *
+   * @return The progress.
+   */
+  java.lang.String getProgress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Intermediate progress update from the CES agent.
+   * </pre>
+   *
+   * <code>string progress = 14;</code>
+   *
+   * @return The bytes for progress.
+   */
+  com.google.protobuf.ByteString getProgressBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Indicates the sequential order of conversation turn to which this output
    * belongs to, starting from 1.
    * </pre>

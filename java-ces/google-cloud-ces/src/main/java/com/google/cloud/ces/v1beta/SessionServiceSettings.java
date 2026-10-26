@@ -115,6 +115,25 @@ public class SessionServiceSettings extends ClientSettings<SessionServiceSetting
     return ((SessionServiceStubSettings) getStubSettings()).bidiRunSessionSettings();
   }
 
+  /** Returns the object with the settings used for calls to streamChatAiAssistant. */
+  public ServerStreamingCallSettings<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+      streamChatAiAssistantSettings() {
+    return ((SessionServiceStubSettings) getStubSettings()).streamChatAiAssistantSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelAssistantTurn. */
+  public UnaryCallSettings<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+      cancelAssistantTurnSettings() {
+    return ((SessionServiceStubSettings) getStubSettings()).cancelAssistantTurnSettings();
+  }
+
+  /** Returns the object with the settings used for calls to generateOnboardingSuggestions. */
+  public UnaryCallSettings<
+          GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+      generateOnboardingSuggestionsSettings() {
+    return ((SessionServiceStubSettings) getStubSettings()).generateOnboardingSuggestionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -253,6 +272,26 @@ public class SessionServiceSettings extends ClientSettings<SessionServiceSetting
     public StreamingCallSettings.Builder<BidiSessionClientMessage, BidiSessionServerMessage>
         bidiRunSessionSettings() {
       return getStubSettingsBuilder().bidiRunSessionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamChatAiAssistant. */
+    public ServerStreamingCallSettings.Builder<
+            StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+        streamChatAiAssistantSettings() {
+      return getStubSettingsBuilder().streamChatAiAssistantSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelAssistantTurn. */
+    public UnaryCallSettings.Builder<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+        cancelAssistantTurnSettings() {
+      return getStubSettingsBuilder().cancelAssistantTurnSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateOnboardingSuggestions. */
+    public UnaryCallSettings.Builder<
+            GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+        generateOnboardingSuggestionsSettings() {
+      return getStubSettingsBuilder().generateOnboardingSuggestionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
