@@ -586,6 +586,26 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void createScoped_existingAccessTokenInvalidatedAndRefreshed() throws IOException {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    PluggableAuthCredentials credentials =
+        PluggableAuthCredentials.newBuilder(CREDENTIAL)
+            .setExecutableHandler(options -> "pluggableAuthToken")
+            .setTokenUrl(transportFactory.transport.getStsUrl())
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    credentials.refreshIfExpired();
+    PluggableAuthCredentials scoped = credentials.createScoped(Arrays.asList("scope1", "scope2"));
+    assertNull(scoped.getAccessToken());
+    scoped.refreshIfExpired();
+    assertEquals(
+        "scope1 scope2",
+        TestUtils.parseQuery(transportFactory.transport.getStsContent()).get("scope"));
+  }
+
+  @Test
   void serialize() {
     PluggableAuthCredentials testCredentials =
         PluggableAuthCredentials.newBuilder(CREDENTIAL)
