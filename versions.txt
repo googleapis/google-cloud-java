@@ -1119,3 +1119,8 @@ grpc-google-cloud-health-v4beta:0.9.0:0.9.0
 proto-google-cloud-health-v4beta:0.9.0:0.9.0
 proto-google-shopping-merchant-reviews-v1:0.46.0:0.46.0
 grpc-google-shopping-merchant-reviews-v1:0.46.0:0.46.0
+google-cloud-observability-parent:0.0.0:0.1.0-SNAPSHOT
+google-cloud-observability-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-cloud-observability-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-observability-v1:0.0.0:0.1.0-SNAPSHOT
+google-cloud-observability:0.0.0:0.1.0-SNAPSHOT
