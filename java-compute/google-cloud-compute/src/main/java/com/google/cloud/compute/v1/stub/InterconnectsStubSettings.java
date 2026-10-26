@@ -58,6 +58,7 @@ import com.google.cloud.compute.v1.ListInterconnectsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectRequest;
 import com.google.cloud.compute.v1.SetLabelsInterconnectRequest;
+import com.google.cloud.compute.v1.SetNameInterconnectRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -177,6 +178,9 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
   private final UnaryCallSettings<SetLabelsInterconnectRequest, Operation> setLabelsSettings;
   private final OperationCallSettings<SetLabelsInterconnectRequest, Operation, Operation>
       setLabelsOperationSettings;
+  private final UnaryCallSettings<SetNameInterconnectRequest, Operation> setNameSettings;
+  private final OperationCallSettings<SetNameInterconnectRequest, Operation, Operation>
+      setNameOperationSettings;
 
   private static final PagedListDescriptor<ListInterconnectsRequest, InterconnectList, Interconnect>
       LIST_PAGE_STR_DESC =
@@ -298,6 +302,17 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     return setLabelsOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to setName. */
+  public UnaryCallSettings<SetNameInterconnectRequest, Operation> setNameSettings() {
+    return setNameSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setName. */
+  public OperationCallSettings<SetNameInterconnectRequest, Operation, Operation>
+      setNameOperationSettings() {
+    return setNameOperationSettings;
+  }
+
   public InterconnectsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -359,7 +374,8 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
             "gapic", GaxProperties.getLibraryVersion(InterconnectsStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */
@@ -392,6 +408,8 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
     setLabelsSettings = settingsBuilder.setLabelsSettings().build();
     setLabelsOperationSettings = settingsBuilder.setLabelsOperationSettings().build();
+    setNameSettings = settingsBuilder.setNameSettings().build();
+    setNameOperationSettings = settingsBuilder.setNameOperationSettings().build();
   }
 
   @Override
@@ -429,6 +447,9 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
         setLabelsSettings;
     private final OperationCallSettings.Builder<SetLabelsInterconnectRequest, Operation, Operation>
         setLabelsOperationSettings;
+    private final UnaryCallSettings.Builder<SetNameInterconnectRequest, Operation> setNameSettings;
+    private final OperationCallSettings.Builder<SetNameInterconnectRequest, Operation, Operation>
+        setNameOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -491,6 +512,8 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       patchOperationSettings = OperationCallSettings.newBuilder();
       setLabelsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setLabelsOperationSettings = OperationCallSettings.newBuilder();
+      setNameSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setNameOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -501,7 +524,8 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
               insertSettings,
               listSettings,
               patchSettings,
-              setLabelsSettings);
+              setLabelsSettings,
+              setNameSettings);
       initDefaults(this);
     }
 
@@ -520,6 +544,8 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
       setLabelsSettings = settings.setLabelsSettings.toBuilder();
       setLabelsOperationSettings = settings.setLabelsOperationSettings.toBuilder();
+      setNameSettings = settings.setNameSettings.toBuilder();
+      setNameOperationSettings = settings.setNameOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -530,7 +556,8 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
               insertSettings,
               listSettings,
               patchSettings,
-              setLabelsSettings);
+              setLabelsSettings,
+              setNameSettings);
     }
 
     private static Builder createDefault() {
@@ -583,6 +610,11 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
 
       builder
           .setLabelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .setNameSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -663,6 +695,30 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
           .setInitialCallSettings(
               UnaryCallSettings
                   .<SetLabelsInterconnectRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .setNameOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<SetNameInterconnectRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -767,6 +823,17 @@ public class InterconnectsStubSettings extends StubSettings<InterconnectsStubSet
     public OperationCallSettings.Builder<SetLabelsInterconnectRequest, Operation, Operation>
         setLabelsOperationSettings() {
       return setLabelsOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setName. */
+    public UnaryCallSettings.Builder<SetNameInterconnectRequest, Operation> setNameSettings() {
+      return setNameSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setName. */
+    public OperationCallSettings.Builder<SetNameInterconnectRequest, Operation, Operation>
+        setNameOperationSettings() {
+      return setNameOperationSettings;
     }
 
     @Override

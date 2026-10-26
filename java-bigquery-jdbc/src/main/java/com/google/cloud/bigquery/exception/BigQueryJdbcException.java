@@ -28,7 +28,7 @@ public class BigQueryJdbcException extends SQLException {
    * @param message The detail message.
    */
   public BigQueryJdbcException(String message) {
-    super(message);
+    super(message, BigQueryJdbcSqlStates.GENERAL_ERROR);
   }
 
   /**
@@ -37,7 +37,7 @@ public class BigQueryJdbcException extends SQLException {
    * @param ex The InterruptedException to be thrown.
    */
   public BigQueryJdbcException(InterruptedException ex) {
-    super(ex);
+    super(ex.getMessage(), BigQueryJdbcSqlStates.QUERY_CANCELED, ex);
   }
 
   /**
@@ -47,7 +47,10 @@ public class BigQueryJdbcException extends SQLException {
    * @param ex The BigQueryException to be thrown.
    */
   public BigQueryJdbcException(String message, BigQueryException ex) {
-    super(BigQueryJdbcExceptionUtils.formatMessage(message, ex), ex);
+    super(
+        BigQueryJdbcExceptionUtils.formatMessage(message, ex),
+        BigQueryJdbcExceptionUtils.sqlStateForCause(ex),
+        ex);
     this.bigQueryException = ex;
   }
 
@@ -58,17 +61,39 @@ public class BigQueryJdbcException extends SQLException {
    * @param cause Throwable that is being converted.
    */
   public BigQueryJdbcException(String message, Throwable cause) {
-    super(BigQueryJdbcExceptionUtils.formatMessage(message, cause), cause);
+    super(
+        BigQueryJdbcExceptionUtils.formatMessage(message, cause),
+        BigQueryJdbcExceptionUtils.sqlStateForCause(cause),
+        cause);
   }
 
   /**
-   * Constructs a new BigQueryJdbcException with the specified cause and a detail message of
-   * (cause==null ? null : cause.toString())
+   * Constructs a new BigQueryJdbcException with the specified cause and a detail message of {@code
+   * cause.toString()}. If {@code cause} is already a BigQueryJdbcException it is copied rather than
+   * wrapped, so re-throwing through this constructor does not nest the exception a second time.
    *
    * @param cause Throwable that is being converted.
    */
   public BigQueryJdbcException(Throwable cause) {
-    super(cause);
+    super(
+        cause == null
+            ? null
+            : (cause instanceof BigQueryJdbcException
+                ? cause.getMessage()
+                : (cause.getMessage() != null ? cause.getMessage() : cause.toString())),
+        cause instanceof SQLException && ((SQLException) cause).getSQLState() != null
+            ? ((SQLException) cause).getSQLState()
+            : BigQueryJdbcExceptionUtils.sqlStateForCause(cause),
+        cause instanceof SQLException
+            ? ((SQLException) cause).getErrorCode()
+            : (cause instanceof BigQueryException ? ((BigQueryException) cause).getCode() : 0),
+        cause instanceof BigQueryJdbcException ? cause.getCause() : cause);
+    if (cause instanceof BigQueryJdbcException) {
+      this.bigQueryException = ((BigQueryJdbcException) cause).bigQueryException;
+      setStackTrace(cause.getStackTrace());
+    } else if (cause instanceof BigQueryException) {
+      this.bigQueryException = (BigQueryException) cause;
+    }
   }
 
   public BigQueryException getBigQueryException() {

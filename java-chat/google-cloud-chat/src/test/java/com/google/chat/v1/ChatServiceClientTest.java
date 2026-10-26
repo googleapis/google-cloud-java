@@ -19,6 +19,7 @@ package com.google.chat.v1;
 import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListMessagePinsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
@@ -2022,6 +2023,246 @@ public class ChatServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteReaction(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMessagePinsTest() throws Exception {
+    MessagePin responsesElement = MessagePin.newBuilder().build();
+    ListMessagePinsResponse expectedResponse =
+        ListMessagePinsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMessagePins(Arrays.asList(responsesElement))
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    SpaceName parent = SpaceName.of("[SPACE]");
+
+    ListMessagePinsPagedResponse pagedListResponse = client.listMessagePins(parent);
+
+    List<MessagePin> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMessagePinsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMessagePinsRequest actualRequest = ((ListMessagePinsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMessagePinsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      SpaceName parent = SpaceName.of("[SPACE]");
+      client.listMessagePins(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listMessagePinsTest2() throws Exception {
+    MessagePin responsesElement = MessagePin.newBuilder().build();
+    ListMessagePinsResponse expectedResponse =
+        ListMessagePinsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMessagePins(Arrays.asList(responsesElement))
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListMessagePinsPagedResponse pagedListResponse = client.listMessagePins(parent);
+
+    List<MessagePin> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMessagePinsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListMessagePinsRequest actualRequest = ((ListMessagePinsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listMessagePinsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listMessagePins(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMessagePinTest() throws Exception {
+    MessagePin expectedResponse =
+        MessagePin.newBuilder()
+            .setName(MessagePinName.of("[SPACE]", "[MESSAGE_PIN]").toString())
+            .setMessage(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    SpaceName parent = SpaceName.of("[SPACE]");
+    MessagePin messagePin = MessagePin.newBuilder().build();
+
+    MessagePin actualResponse = client.createMessagePin(parent, messagePin);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMessagePinRequest actualRequest = ((CreateMessagePinRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(messagePin, actualRequest.getMessagePin());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMessagePinExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      SpaceName parent = SpaceName.of("[SPACE]");
+      MessagePin messagePin = MessagePin.newBuilder().build();
+      client.createMessagePin(parent, messagePin);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createMessagePinTest2() throws Exception {
+    MessagePin expectedResponse =
+        MessagePin.newBuilder()
+            .setName(MessagePinName.of("[SPACE]", "[MESSAGE_PIN]").toString())
+            .setMessage(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    MessagePin messagePin = MessagePin.newBuilder().build();
+
+    MessagePin actualResponse = client.createMessagePin(parent, messagePin);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateMessagePinRequest actualRequest = ((CreateMessagePinRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(messagePin, actualRequest.getMessagePin());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createMessagePinExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      MessagePin messagePin = MessagePin.newBuilder().build();
+      client.createMessagePin(parent, messagePin);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteMessagePinTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockChatService.addResponse(expectedResponse);
+
+    MessagePinName name = MessagePinName.of("[SPACE]", "[MESSAGE_PIN]");
+
+    client.deleteMessagePin(name);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMessagePinRequest actualRequest = ((DeleteMessagePinRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMessagePinExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      MessagePinName name = MessagePinName.of("[SPACE]", "[MESSAGE_PIN]");
+      client.deleteMessagePin(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteMessagePinTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockChatService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteMessagePin(name);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteMessagePinRequest actualRequest = ((DeleteMessagePinRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteMessagePinExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteMessagePin(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

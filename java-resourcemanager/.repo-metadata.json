@@ -11,6 +11,5 @@
   "repo_short": "java-resourcemanager",
   "distribution_name": "com.google.cloud:google-cloud-resourcemanager",
   "api_id": "cloudresourcemanager.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "issue_tracker": "https://issuetracker.google.com/savedsearches/559757"
+  "library_type": "GAPIC_AUTO"
 }

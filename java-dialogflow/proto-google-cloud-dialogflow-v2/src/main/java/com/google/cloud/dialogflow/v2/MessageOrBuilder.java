@@ -60,10 +60,11 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Required. The message content.
+   * Optional. The message content.
+   * Only one of `content` and `companion_query` should be set - not both.
    * </pre>
    *
-   * <code>string content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The content.
    */
@@ -73,14 +74,81 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Required. The message content.
+   * Optional. The message content.
+   * Only one of `content` and `companion_query` should be set - not both.
    * </pre>
    *
-   * <code>string content = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for content.
    */
   com.google.protobuf.ByteString getContentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dialogflow.v2.ResponseMessage> getResponseMessagesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.ResponseMessage getResponseMessages(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getResponseMessagesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder>
+      getResponseMessagesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automated agent responses.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dialogflow.v2.ResponseMessage response_messages = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.ResponseMessageOrBuilder getResponseMessagesOrBuilder(int index);
 
   /**
    *

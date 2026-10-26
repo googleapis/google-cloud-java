@@ -27,9 +27,10 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.ZoneId;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Future;
 
@@ -226,8 +227,9 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       try {
         // Advance the cursor,Potentially blocking operation
         this.cursor = this.buffer.take();
+        checkClosed();
         if (this.cursor.getException() != null) {
-          throw new BigQueryJdbcRuntimeException(this.cursor.getException());
+          throw backgroundFetchError(this.cursor.getException());
         }
         this.rowCnt++;
         // Check for end of stream
@@ -240,8 +242,8 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         return true;
 
       } catch (InterruptedException e) {
-
-        throw new BigQueryJdbcRuntimeException(
+        Thread.currentThread().interrupt();
+        throw new BigQueryJdbcException(
             "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method",
             e);
       }
@@ -250,6 +252,11 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   @Override
   public Object getObject(int columnIndex) throws SQLException {
+    return getObject(columnIndex, (ZoneId) null);
+  }
+
+  @Override
+  protected Object getObject(int columnIndex, ZoneId zone) throws SQLException {
     // columnIndex is SQL index starting at 1
     checkClosed();
     LOG.finestTrace("getObject");
@@ -277,7 +284,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       if (this.enableTimestampPicos && isRangeTimestamp(arrayField)) {
         return formatRangeTimestamp(value);
       }
-      return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), null);
+      return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), zone);
     }
 
     Field fieldSchema = this.schemaFieldList.get(columnIndex - 1);
@@ -298,7 +305,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(fieldSchema)) {
       return BigQueryTemporalUtility.formatTimestampValue(value.getStringValue(), true);
     }
-    return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), null);
+    return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), zone);
   }
 
   static String formatRangeTimestamp(FieldValue value) throws SQLException {
@@ -332,7 +339,8 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
    * @param columnIndex the first column is 1, the second is 2, ...
    * @return an instance of {@link FieldValue} represents value at <code>columnIndex</code> column.
    */
-  private FieldValue getObjectInternal(int columnIndex) throws SQLException {
+  @Override
+  FieldValue getObjectInternal(int columnIndex) throws SQLException {
     checkClosed();
     LOG.finestTrace("getObjectInternal");
     FieldValue value;
@@ -376,16 +384,28 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   @Override
   public void close() {
+    if (this.isClosed) {
+      return;
+    }
     LOG.fineTrace("close", () -> String.format("Closing BigqueryJsonResultSet %s.", this));
     this.isClosed = true;
-    if (ownedTasks != null) {
-      for (Future<?> ownedTask : ownedTasks) {
-        if (ownedTask != null) {
-          ownedTask.cancel(true);
+    try {
+      if (ownedTasks != null) {
+        for (Future<?> ownedTask : ownedTasks) {
+          if (ownedTask != null) {
+            ownedTask.cancel(true);
+          }
         }
       }
+      if (this.buffer != null) {
+        this.buffer.clear();
+        // Unblock any consumer thread currently waiting on buffer.take() in next()
+        this.buffer.offer(BigQueryFieldValueListWrapper.ofEndOfStream(null));
+      }
+      this.cursor = null;
+    } finally {
+      super.close();
     }
-    super.close();
   }
 
   @Override

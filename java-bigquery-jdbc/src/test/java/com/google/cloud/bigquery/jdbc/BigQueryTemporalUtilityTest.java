@@ -149,28 +149,62 @@ public class BigQueryTemporalUtilityTest {
   }
 
   @Test
-  public void testConvertTimestampWithCalendar() {
-    Timestamp ts = Timestamp.valueOf("2026-08-24 15:30:45.123456789");
+  public void testConvertTimeToCalendar() {
+    Time time = Time.valueOf("15:30:45");
     Calendar cal = Calendar.getInstance();
 
     // Null checks
-    assertThat(BigQueryTemporalUtility.convertTimestampWithCalendar(null, cal)).isNull();
-    assertThat(BigQueryTemporalUtility.convertTimestampWithCalendar(ts, null)).isSameInstanceAs(ts);
+    assertThat(BigQueryTemporalUtility.convertTimeToCalendar(null, cal)).isNull();
+    assertThat(BigQueryTemporalUtility.convertTimeToCalendar(time, null)).isSameInstanceAs(time);
 
     // Same timezone fast-path
     Calendar sameZoneCal = Calendar.getInstance(TimeZone.getDefault());
-    assertThat(BigQueryTemporalUtility.convertTimestampWithCalendar(ts, sameZoneCal))
-        .isSameInstanceAs(ts);
+    assertThat(BigQueryTemporalUtility.convertTimeToCalendar(time, sameZoneCal))
+        .isSameInstanceAs(time);
 
-    // Different timezone preserves wall-clock shift and nanoseconds
-    Calendar tokyoCal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Tokyo"));
-    Timestamp result = BigQueryTemporalUtility.convertTimestampWithCalendar(ts, tokyoCal);
-    Instant expectedInstant =
-        LocalDateTime.of(2026, 8, 24, 15, 30, 45, 123456789)
-            .atZone(ZoneId.of("Asia/Tokyo"))
-            .toInstant();
-    assertThat(result.getTime()).isEqualTo(expectedInstant.toEpochMilli());
-    assertThat(result.getNanos()).isEqualTo(123456789);
+    // Different timezone
+    ZoneId tokyoZone = ZoneId.of("Asia/Tokyo");
+    Calendar tokyoCal = Calendar.getInstance(TimeZone.getTimeZone(tokyoZone));
+    long tokyoTimeMillis =
+        LocalTime.of(15, 30, 45)
+            .atDate(LocalDate.of(1970, 1, 1))
+            .atZone(tokyoZone)
+            .toInstant()
+            .toEpochMilli();
+    Time result =
+        BigQueryTemporalUtility.convertTimeToCalendar(new Time(tokyoTimeMillis), tokyoCal);
+    long expectedSystemMillis =
+        LocalTime.of(15, 30, 45)
+            .atDate(LocalDate.of(1970, 1, 1))
+            .atZone(ZoneId.systemDefault())
+            .toInstant()
+            .toEpochMilli();
+    assertThat(result.getTime()).isEqualTo(expectedSystemMillis);
+    assertThat(result.toString()).isEqualTo("15:30:45");
+  }
+
+  @Test
+  public void testCrossTimezoneTimeRoundtrip() {
+    ZoneId writeZone = ZoneId.of("America/Los_Angeles");
+    ZoneId readZone = ZoneId.of("Asia/Tokyo");
+    Calendar writeCal = Calendar.getInstance(TimeZone.getTimeZone(writeZone));
+    Calendar readCal = Calendar.getInstance(TimeZone.getTimeZone(readZone));
+
+    Time inputTime =
+        new Time(
+            LocalTime.of(23, 15, 30)
+                .atDate(LocalDate.of(1970, 1, 1))
+                .atZone(writeZone)
+                .toInstant()
+                .toEpochMilli());
+    Time normalizedTime = BigQueryTemporalUtility.convertTimeToCalendar(inputTime, writeCal);
+    Time readTime = BigQueryTemporalUtility.convertTimeWithCalendar(normalizedTime, readCal);
+
+    Calendar verifyCal = Calendar.getInstance(TimeZone.getTimeZone(readZone));
+    verifyCal.setTime(readTime);
+    assertThat(verifyCal.get(Calendar.HOUR_OF_DAY)).isEqualTo(23);
+    assertThat(verifyCal.get(Calendar.MINUTE)).isEqualTo(15);
+    assertThat(verifyCal.get(Calendar.SECOND)).isEqualTo(30);
   }
 
   @Test
@@ -416,5 +450,38 @@ public class BigQueryTemporalUtilityTest {
     // Epoch decimal string
     assertThat(BigQueryTemporalUtility.formatTimestampValue("1680174859.123456789123", true))
         .isEqualTo("2023-03-30 11:14:19.123456789123");
+  }
+
+  @Test
+  public void testTruncateFractionalSeconds() {
+    assertThat(BigQueryTemporalUtility.truncateFractionalSeconds(null, 12)).isNull();
+    assertThat(BigQueryTemporalUtility.truncateFractionalSeconds("2026-04-08 10:00:00", 12))
+        .isEqualTo("2026-04-08 10:00:00");
+    assertThat(BigQueryTemporalUtility.truncateFractionalSeconds("2026-04-08 10:00:00.123456", 12))
+        .isEqualTo("2026-04-08 10:00:00.123456");
+    assertThat(
+            BigQueryTemporalUtility.truncateFractionalSeconds(
+                "2026-04-08 10:00:00.123456789012", 12))
+        .isEqualTo("2026-04-08 10:00:00.123456789012");
+    assertThat(
+            BigQueryTemporalUtility.truncateFractionalSeconds(
+                "2026-04-08 10:00:00.123456789012345", 12))
+        .isEqualTo("2026-04-08 10:00:00.123456789012");
+    assertThat(
+            BigQueryTemporalUtility.truncateFractionalSeconds(
+                "2026-04-08 10:00:00.123456789012345+00:00", 12))
+        .isEqualTo("2026-04-08 10:00:00.123456789012+00:00");
+    assertThat(
+            BigQueryTemporalUtility.truncateFractionalSeconds(
+                "2026-04-08 10:00:00.123456789012345Z", 12))
+        .isEqualTo("2026-04-08 10:00:00.123456789012Z");
+    assertThat(
+            BigQueryTemporalUtility.truncateFractionalSeconds(
+                "2026-04-08 10:00:00.123456789012", 6))
+        .isEqualTo("2026-04-08 10:00:00.123456");
+    assertThat(
+            BigQueryTemporalUtility.truncateFractionalSeconds(
+                "2026-04-08 10:00:00.123456789012", 9))
+        .isEqualTo("2026-04-08 10:00:00.123456789");
   }
 }

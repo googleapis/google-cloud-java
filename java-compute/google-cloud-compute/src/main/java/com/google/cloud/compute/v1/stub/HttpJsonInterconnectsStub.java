@@ -47,6 +47,7 @@ import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.PatchInterconnectRequest;
 import com.google.cloud.compute.v1.SetLabelsInterconnectRequest;
+import com.google.cloud.compute.v1.SetNameInterconnectRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -318,12 +319,6 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -443,6 +438,62 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<SetNameInterconnectRequest, Operation>
+      setNameMethodDescriptor =
+          ApiMethodDescriptor.<SetNameInterconnectRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Interconnects/SetName")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SetNameInterconnectRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/interconnects/{interconnect}/setName",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SetNameInterconnectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "interconnect", request.getInterconnect());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SetNameInterconnectRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "interconnectsSetNameRequestResource",
+                                      request.getInterconnectsSetNameRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (SetNameInterconnectRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<DeleteInterconnectRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteInterconnectRequest, Operation, Operation>
       deleteOperationCallable;
@@ -464,6 +515,9 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
   private final UnaryCallable<SetLabelsInterconnectRequest, Operation> setLabelsCallable;
   private final OperationCallable<SetLabelsInterconnectRequest, Operation, Operation>
       setLabelsOperationCallable;
+  private final UnaryCallable<SetNameInterconnectRequest, Operation> setNameCallable;
+  private final OperationCallable<SetNameInterconnectRequest, Operation, Operation>
+      setNameOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
@@ -485,6 +539,8 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
       PathTemplate.create("projects/{project}/global/interconnects/{interconnect}");
   private static final PathTemplate SET_LABELS_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/global/interconnects/{resource}");
+  private static final PathTemplate SET_NAME_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/interconnects/{interconnect}");
 
   public static final HttpJsonInterconnectsStub create(InterconnectsStubSettings settings)
       throws IOException {
@@ -688,6 +744,26 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
                   return SET_LABELS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
+    HttpJsonCallSettings<SetNameInterconnectRequest, Operation> setNameTransportSettings =
+        HttpJsonCallSettings.<SetNameInterconnectRequest, Operation>newBuilder()
+            .setMethodDescriptor(setNameMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("interconnect", String.valueOf(request.getInterconnect()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "interconnect", String.valueOf(request.getInterconnect()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return SET_NAME_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
@@ -740,6 +816,15 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
             settings.setLabelsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.setNameCallable =
+        callableFactory.createUnaryCallable(
+            setNameTransportSettings, settings.setNameSettings(), clientContext);
+    this.setNameOperationCallable =
+        callableFactory.createOperationCallable(
+            setNameTransportSettings,
+            settings.setNameOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -756,6 +841,7 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
     methodDescriptors.add(setLabelsMethodDescriptor);
+    methodDescriptors.add(setNameMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -828,6 +914,17 @@ public class HttpJsonInterconnectsStub extends InterconnectsStub {
   public OperationCallable<SetLabelsInterconnectRequest, Operation, Operation>
       setLabelsOperationCallable() {
     return setLabelsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetNameInterconnectRequest, Operation> setNameCallable() {
+    return setNameCallable;
+  }
+
+  @Override
+  public OperationCallable<SetNameInterconnectRequest, Operation, Operation>
+      setNameOperationCallable() {
+    return setNameOperationCallable;
   }
 
   @Override

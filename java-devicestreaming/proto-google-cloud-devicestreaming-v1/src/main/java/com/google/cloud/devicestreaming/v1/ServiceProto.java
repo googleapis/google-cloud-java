@@ -73,6 +73,10 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_devicestreaming_v1_DeviceSession_SessionStateEvent_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_devicestreaming_v1_ClientInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_devicestreaming_v1_ClientInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_devicestreaming_v1_AndroidDevice_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_devicestreaming_v1_AndroidDevice_fieldAccessorTable;
@@ -92,57 +96,61 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "or.proto\032\031google/api/resource.proto\0321goo"
           + "gle/cloud/devicestreaming/v1/adb_service"
           + ".proto\032\036google/protobuf/duration.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\316\001\n"
-          + "\032CreateDeviceSessionRequest\022C\n"
-          + "\006parent\030\001 \001(\tB3\340A\002\372A-\n"
-          + "+cloudresourcemanager.googleapis.com/Project\022K\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\321\001\n"
+          + "\032CreateDeviceSessionRequest\022D\n"
+          + "\006parent\030\001 \001(\tB4\342A\001\002\372A-\n"
+          + "+cloudresourcemanager.googleapis.com/Project\022L\n"
           + "\016device_session\030\002"
-          + " \001(\0132..google.cloud.devicestreaming.v1.DeviceSessionB\003\340A\002\022\036\n"
-          + "\021device_session_id\030\004 \001(\tB\003\340A\001\"\246\001\n"
-          + "\031ListDeviceSessionsRequest\022C\n"
-          + "\006parent\030\004 \001(\tB3\340A\002\372A-\n"
-          + "+cloudresourcemanager.googleapis.com/Project\022\026\n"
-          + "\tpage_size\030\001 \001(\005B\003\340A\001\022\027\n\n"
-          + "page_token\030\002 \001(\tB\003\340A\001\022\023\n"
-          + "\006filter\030\003 \001(\tB\003\340A\001\"~\n"
+          + " \001(\0132..google.cloud.devicestreaming.v1.DeviceSessionB\004\342A\001\002\022\037\n"
+          + "\021device_session_id\030\004 \001(\tB\004\342A\001\001\"\252\001\n"
+          + "\031ListDeviceSessionsRequest\022D\n"
+          + "\006parent\030\004 \001(\tB4\342A\001\002\372A-\n"
+          + "+cloudresourcemanager.googleapis.com/Project\022\027\n"
+          + "\tpage_size\030\001 \001(\005B\004\342A\001\001\022\030\n\n"
+          + "page_token\030\002 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006filter\030\003 \001(\tB\004\342A\001\001\"~\n"
           + "\032ListDeviceSessionsResponse\022G\n"
           + "\017device_sessions\030\001"
           + " \003(\0132..google.cloud.devicestreaming.v1.DeviceSession\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\"]\n"
-          + "\027GetDeviceSessionRequest\022B\n"
-          + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
-          + ",devicestreaming.googleapis.com/DeviceSession\"`\n"
-          + "\032CancelDeviceSessionRequest\022B\n"
-          + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
-          + ",devicestreaming.googleapis.com/DeviceSession\"\237\001\n"
-          + "\032UpdateDeviceSessionRequest\022K\n"
+          + "\017next_page_token\030\002 \001(\t\"^\n"
+          + "\027GetDeviceSessionRequest\022C\n"
+          + "\004name\030\001 \001(\tB5\342A\001\002\372A.\n"
+          + ",devicestreaming.googleapis.com/DeviceSession\"a\n"
+          + "\032CancelDeviceSessionRequest\022C\n"
+          + "\004name\030\001 \001(\tB5\342A\001\002\372A.\n"
+          + ",devicestreaming.googleapis.com/DeviceSession\"\241\001\n"
+          + "\032UpdateDeviceSessionRequest\022L\n"
           + "\016device_session\030\001"
-          + " \001(\0132..google.cloud.devicestreaming.v1.DeviceSessionB\003\340A\002\0224\n"
+          + " \001(\0132..google.cloud.devicestreaming.v1.DeviceSessionB\004\342A\001\002\0225\n"
           + "\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\265\010\n\r"
-          + "DeviceSession\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\001\022\031\n"
-          + "\014display_name\030\002 \001(\tB\003\340A\003\022O\n"
-          + "\005state\030\003 \001(\0162;.goo"
-          + "gle.cloud.devicestreaming.v1.DeviceSession.SessionStateB\003\340A\003\022^\n"
-          + "\017state_histories\030\016"
-          + " \003(\0132@.google.cloud.devicestreaming.v1.DeviceSession.SessionStateEventB\003\340A\003\022-\n"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\"\212\t\n\r"
+          + "DeviceSession\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\001\022\032\n"
+          + "\014display_name\030\002 \001(\tB\004\342A\001\003\022P\n"
+          + "\005state\030\003"
+          + " \001(\0162;.google.cloud.devicestreaming.v1.DeviceSession.SessionStateB\004\342A\001\003\022_\n"
+          + "\017state_histories\030\016 \003(\0132@.google.cloud.devic"
+          + "estreaming.v1.DeviceSession.SessionStateEventB\004\342A\001\003\022.\n"
           + "\003ttl\030\r"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001H\000\0226\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\001H\000\0227\n"
           + "\013expire_time\030\005"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001H\000\022:\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\001H\000\022;\n"
           + "\022inactivity_timeout\030\007"
-          + " \001(\0132\031.google.protobuf.DurationB\003\340A\003\0224\n"
-          + "\013create_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022:\n"
+          + " \001(\0132\031.google.protobuf.DurationB\004\342A\001\003\0225\n"
+          + "\013create_time\030\010"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022;\n"
           + "\021active_start_time\030\t"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022K\n"
-          + "\016android_device\030\017"
-          + " \001(\0132..google.cloud.devicestreaming.v1.AndroidDeviceB\003\340A\002\032\275\001\n"
-          + "\021SessionStateEvent\022W\n\r"
-          + "session_state\030\001 \001(\0162;.go"
-          + "ogle.cloud.devicestreaming.v1.DeviceSession.SessionStateB\003\340A\003\0223\n\n"
-          + "event_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\032\n\r"
-          + "state_message\030\003 \001(\tB\003\340A\003\"\214\001\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022L\n"
+          + "\016android_device\030\017 \001(\0132.."
+          + "google.cloud.devicestreaming.v1.AndroidDeviceB\004\342A\001\002\022F\n"
+          + "\013client_info\030\025 \001(\0132+.googl"
+          + "e.cloud.devicestreaming.v1.ClientInfoB\004\342A\001\001\032\300\001\n"
+          + "\021SessionStateEvent\022X\n\r"
+          + "session_state\030\001"
+          + " \001(\0162;.google.cloud.devicestreaming.v1.DeviceSession.SessionStateB\004\342A\001\003\0224\n\n"
+          + "event_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\033\n\r"
+          + "state_message\030\003 \001(\tB\004\342A\001\003\"\214\001\n"
           + "\014SessionState\022\035\n"
           + "\031SESSION_STATE_UNSPECIFIED\020\000\022\r\n"
           + "\tREQUESTED\020\001\022\013\n"
@@ -152,15 +160,19 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
           + "\010FINISHED\020\005\022\017\n"
           + "\013UNAVAILABLE\020\006\022\t\n"
           + "\005ERROR\020\007:\205\001\352A\201\001\n"
-          + ",devicestreaming.googleapis.com/DeviceSession\0222projects/{project}/d"
-          + "eviceSessions/{device_session}*\016deviceSessions2\r"
-          + "deviceSessionB\014\n\n"
-          + "expiration\"~\n\r"
-          + "AndroidDevice\022\035\n"
-          + "\020android_model_id\030\001 \001(\tB\003\340A\002\022\037\n"
-          + "\022android_version_id\030\002 \001(\tB\003\340A\002\022\023\n"
-          + "\006locale\030\003 \001(\tB\003\340A\001\022\030\n"
-          + "\013orientation\030\004 \001(\tB\003\340A\0012\340\t\n"
+          + ",devicestreaming.googleapis.com/DeviceSession\0222proj"
+          + "ects/{project}/deviceSessions/{device_session}*\016deviceSessions2\r"
+          + "deviceSessionB\014\n"
+          + "\n"
+          + "expiration\"9\n\n"
+          + "ClientInfo\022\024\n"
+          + "\006client\030\001 \001(\tB\004\342A\001\002\022\025\n"
+          + "\007version\030\002 \001(\tB\004\342A\001\001\"\202\001\n\r"
+          + "AndroidDevice\022\036\n"
+          + "\020android_model_id\030\001 \001(\tB\004\342A\001\002\022 \n"
+          + "\022android_version_id\030\002 \001(\tB\004\342A\001\002\022\024\n"
+          + "\006locale\030\003 \001(\tB\004\342A\001\001\022\031\n"
+          + "\013orientation\030\004 \001(\tB\004\342A\001\0012\340\t\n"
           + "\023DirectAccessService\022\354\001\n"
           + "\023CreateDeviceSession\022;.google.cloud.devicestreami"
           + "ng.v1.CreateDeviceSessionRequest\032..google.cloud.devicestreaming.v1.DeviceSession"
@@ -269,6 +281,7 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
               "CreateTime",
               "ActiveStartTime",
               "AndroidDevice",
+              "ClientInfo",
               "Expiration",
             });
     internal_static_google_cloud_devicestreaming_v1_DeviceSession_SessionStateEvent_descriptor =
@@ -279,8 +292,16 @@ public final class ServiceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "SessionState", "EventTime", "StateMessage",
             });
-    internal_static_google_cloud_devicestreaming_v1_AndroidDevice_descriptor =
+    internal_static_google_cloud_devicestreaming_v1_ClientInfo_descriptor =
         getDescriptor().getMessageType(7);
+    internal_static_google_cloud_devicestreaming_v1_ClientInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_devicestreaming_v1_ClientInfo_descriptor,
+            new java.lang.String[] {
+              "Client", "Version",
+            });
+    internal_static_google_cloud_devicestreaming_v1_AndroidDevice_descriptor =
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_devicestreaming_v1_AndroidDevice_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_devicestreaming_v1_AndroidDevice_descriptor,

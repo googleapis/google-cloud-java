@@ -670,6 +670,50 @@ public final class AlphaAnalyticsDataGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.ChatRequest,
+          com.google.analytics.data.v1alpha.ChatResponse>
+      getChatMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Chat",
+      requestType = com.google.analytics.data.v1alpha.ChatRequest.class,
+      responseType = com.google.analytics.data.v1alpha.ChatResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.data.v1alpha.ChatRequest,
+          com.google.analytics.data.v1alpha.ChatResponse>
+      getChatMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.data.v1alpha.ChatRequest,
+            com.google.analytics.data.v1alpha.ChatResponse>
+        getChatMethod;
+    if ((getChatMethod = AlphaAnalyticsDataGrpc.getChatMethod) == null) {
+      synchronized (AlphaAnalyticsDataGrpc.class) {
+        if ((getChatMethod = AlphaAnalyticsDataGrpc.getChatMethod) == null) {
+          AlphaAnalyticsDataGrpc.getChatMethod =
+              getChatMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.data.v1alpha.ChatRequest,
+                          com.google.analytics.data.v1alpha.ChatResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Chat"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.ChatRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.data.v1alpha.ChatResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new AlphaAnalyticsDataMethodDescriptorSupplier("Chat"))
+                      .build();
+        }
+      }
+    }
+    return getChatMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.data.v1alpha.RunReportRequest,
           com.google.analytics.data.v1alpha.RunReportResponse>
       getRunReportMethod;
@@ -1137,6 +1181,29 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
+     * Provides a chat interface for interacting with Google Analytics data
+     * through the API.
+     * This product uses AI and may display inaccurate info. Your chat activity
+     * may be used to improve the product and your use is subject to Google's
+     * [Terms](https://policies.google.com/terms),
+     * [AI Use
+     * Policy](https://policies.google.com/terms/generative-ai/use-policy), and
+     * [Privacy Policy](https://policies.google.com/privacy).
+     * [Learn more about Chat AI
+     * Privacy](https://support.google.com/helpguide/answer/14185196).
+     * </pre>
+     */
+    default void chat(
+        com.google.analytics.data.v1alpha.ChatRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ChatResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getChatMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns a customized report of your Google Analytics event data. Reports
      * contain statistics derived from data collected by the Google Analytics
      * tracking code. The data returned from the API is as a table with columns
@@ -1549,6 +1616,30 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
+     * Provides a chat interface for interacting with Google Analytics data
+     * through the API.
+     * This product uses AI and may display inaccurate info. Your chat activity
+     * may be used to improve the product and your use is subject to Google's
+     * [Terms](https://policies.google.com/terms),
+     * [AI Use
+     * Policy](https://policies.google.com/terms/generative-ai/use-policy), and
+     * [Privacy Policy](https://policies.google.com/privacy).
+     * [Learn more about Chat AI
+     * Privacy](https://support.google.com/helpguide/answer/14185196).
+     * </pre>
+     */
+    public void chat(
+        com.google.analytics.data.v1alpha.ChatRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ChatResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getChatMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns a customized report of your Google Analytics event data. Reports
      * contain statistics derived from data collected by the Google Analytics
      * tracking code. The data returned from the API is as a table with columns
@@ -1912,6 +2003,28 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
+     * Provides a chat interface for interacting with Google Analytics data
+     * through the API.
+     * This product uses AI and may display inaccurate info. Your chat activity
+     * may be used to improve the product and your use is subject to Google's
+     * [Terms](https://policies.google.com/terms),
+     * [AI Use
+     * Policy](https://policies.google.com/terms/generative-ai/use-policy), and
+     * [Privacy Policy](https://policies.google.com/privacy).
+     * [Learn more about Chat AI
+     * Privacy](https://support.google.com/helpguide/answer/14185196).
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.ChatResponse chat(
+        com.google.analytics.data.v1alpha.ChatRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getChatMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns a customized report of your Google Analytics event data. Reports
      * contain statistics derived from data collected by the Google Analytics
      * tracking code. The data returned from the API is as a table with columns
@@ -2252,6 +2365,28 @@ public final class AlphaAnalyticsDataGrpc {
         com.google.analytics.data.v1alpha.ListReportTasksRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListReportTasksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provides a chat interface for interacting with Google Analytics data
+     * through the API.
+     * This product uses AI and may display inaccurate info. Your chat activity
+     * may be used to improve the product and your use is subject to Google's
+     * [Terms](https://policies.google.com/terms),
+     * [AI Use
+     * Policy](https://policies.google.com/terms/generative-ai/use-policy), and
+     * [Privacy Policy](https://policies.google.com/privacy).
+     * [Learn more about Chat AI
+     * Privacy](https://support.google.com/helpguide/answer/14185196).
+     * </pre>
+     */
+    public com.google.analytics.data.v1alpha.ChatResponse chat(
+        com.google.analytics.data.v1alpha.ChatRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getChatMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2616,6 +2751,29 @@ public final class AlphaAnalyticsDataGrpc {
      *
      *
      * <pre>
+     * Provides a chat interface for interacting with Google Analytics data
+     * through the API.
+     * This product uses AI and may display inaccurate info. Your chat activity
+     * may be used to improve the product and your use is subject to Google's
+     * [Terms](https://policies.google.com/terms),
+     * [AI Use
+     * Policy](https://policies.google.com/terms/generative-ai/use-policy), and
+     * [Privacy Policy](https://policies.google.com/privacy).
+     * [Learn more about Chat AI
+     * Privacy](https://support.google.com/helpguide/answer/14185196).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.data.v1alpha.ChatResponse>
+        chat(com.google.analytics.data.v1alpha.ChatRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getChatMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Returns a customized report of your Google Analytics event data. Reports
      * contain statistics derived from data collected by the Google Analytics
      * tracking code. The data returned from the API is as a table with columns
@@ -2668,8 +2826,9 @@ public final class AlphaAnalyticsDataGrpc {
   private static final int METHODID_QUERY_REPORT_TASK = 10;
   private static final int METHODID_GET_REPORT_TASK = 11;
   private static final int METHODID_LIST_REPORT_TASKS = 12;
-  private static final int METHODID_RUN_REPORT = 13;
-  private static final int METHODID_GET_METADATA = 14;
+  private static final int METHODID_CHAT = 13;
+  private static final int METHODID_RUN_REPORT = 14;
+  private static final int METHODID_GET_METADATA = 15;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2769,6 +2928,12 @@ public final class AlphaAnalyticsDataGrpc {
               (com.google.analytics.data.v1alpha.ListReportTasksRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.data.v1alpha.ListReportTasksResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CHAT:
+          serviceImpl.chat(
+              (com.google.analytics.data.v1alpha.ChatRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.data.v1alpha.ChatResponse>)
                   responseObserver);
           break;
         case METHODID_RUN_REPORT:
@@ -2891,6 +3056,12 @@ public final class AlphaAnalyticsDataGrpc {
                     com.google.analytics.data.v1alpha.ListReportTasksResponse>(
                     service, METHODID_LIST_REPORT_TASKS)))
         .addMethod(
+            getChatMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.data.v1alpha.ChatRequest,
+                    com.google.analytics.data.v1alpha.ChatResponse>(service, METHODID_CHAT)))
+        .addMethod(
             getRunReportMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2967,6 +3138,7 @@ public final class AlphaAnalyticsDataGrpc {
                       .addMethod(getQueryReportTaskMethod())
                       .addMethod(getGetReportTaskMethod())
                       .addMethod(getListReportTasksMethod())
+                      .addMethod(getChatMethod())
                       .addMethod(getRunReportMethod())
                       .addMethod(getGetMetadataMethod())
                       .build();

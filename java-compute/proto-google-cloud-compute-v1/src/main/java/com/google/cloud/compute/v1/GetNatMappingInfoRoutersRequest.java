@@ -715,51 +715,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     }
   }
 
-  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
-  private boolean returnPartialSuccess_ = false;
-
-  /**
-   *
-   *
-   * <pre>
-   * Opt-in for partial success behavior which provides partial results in case
-   * of failure. The default value is false.
-   *
-   * For example, when partial success behavior is enabled, aggregatedList for a
-   * single zone scope either returns all resources in the zone or no resources,
-   * with an error code.
-   * </pre>
-   *
-   * <code>optional bool return_partial_success = 517198390;</code>
-   *
-   * @return Whether the returnPartialSuccess field is set.
-   */
-  @java.lang.Override
-  public boolean hasReturnPartialSuccess() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Opt-in for partial success behavior which provides partial results in case
-   * of failure. The default value is false.
-   *
-   * For example, when partial success behavior is enabled, aggregatedList for a
-   * single zone scope either returns all resources in the zone or no resources,
-   * with an error code.
-   * </pre>
-   *
-   * <code>optional bool return_partial_success = 517198390;</code>
-   *
-   * @return The returnPartialSuccess.
-   */
-  @java.lang.Override
-  public boolean getReturnPartialSuccess() {
-    return returnPartialSuccess_;
-  }
-
   public static final int ROUTER_FIELD_NUMBER = 148608841;
 
   @SuppressWarnings("serial")
@@ -853,9 +808,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 425596649, natName_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeBool(517198390, returnPartialSuccess_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -888,10 +840,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(425596649, natName_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(517198390, returnPartialSuccess_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -931,10 +879,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     }
     if (!getProject().equals(other.getProject())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
-    if (hasReturnPartialSuccess() != other.hasReturnPartialSuccess()) return false;
-    if (hasReturnPartialSuccess()) {
-      if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
-    }
     if (!getRouter().equals(other.getRouter())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -971,10 +915,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
     hash = (53 * hash) + getProject().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
-    if (hasReturnPartialSuccess()) {
-      hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
-    }
     hash = (37 * hash) + ROUTER_FIELD_NUMBER;
     hash = (53 * hash) + getRouter().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -1125,7 +1065,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       pageToken_ = "";
       project_ = "";
       region_ = "";
-      returnPartialSuccess_ = false;
       router_ = "";
       return this;
     }
@@ -1191,10 +1130,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         result.region_ = region_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.returnPartialSuccess_ = returnPartialSuccess_;
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.router_ = router_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1246,12 +1181,9 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         bitField0_ |= 0x00000040;
         onChanged();
       }
-      if (other.hasReturnPartialSuccess()) {
-        setReturnPartialSuccess(other.getReturnPartialSuccess());
-      }
       if (!other.getRouter().isEmpty()) {
         router_ = other.router_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1301,7 +1233,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
             case 1188870730:
               {
                 router_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 1188870730
             case 1284503362:
@@ -1328,12 +1260,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
                 bitField0_ |= 0x00000004;
                 break;
               } // case -890194102
-            case -157380176:
-              {
-                returnPartialSuccess_ = input.readBool();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case -157380176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2593,98 +2519,6 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       return this;
     }
 
-    private boolean returnPartialSuccess_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return Whether the returnPartialSuccess field is set.
-     */
-    @java.lang.Override
-    public boolean hasReturnPartialSuccess() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return The returnPartialSuccess.
-     */
-    @java.lang.Override
-    public boolean getReturnPartialSuccess() {
-      return returnPartialSuccess_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @param value The returnPartialSuccess to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReturnPartialSuccess(boolean value) {
-
-      returnPartialSuccess_ = value;
-      bitField0_ |= 0x00000080;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearReturnPartialSuccess() {
-      bitField0_ = (bitField0_ & ~0x00000080);
-      returnPartialSuccess_ = false;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object router_ = "";
 
     /**
@@ -2753,7 +2587,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
         throw new NullPointerException();
       }
       router_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2772,7 +2606,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
      */
     public Builder clearRouter() {
       router_ = getDefaultInstance().getRouter();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2796,7 +2630,7 @@ public final class GetNatMappingInfoRoutersRequest extends com.google.protobuf.G
       }
       checkByteStringIsUtf8(value);
       router_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

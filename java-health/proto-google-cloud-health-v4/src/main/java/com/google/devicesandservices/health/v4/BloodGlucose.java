@@ -1087,6 +1087,7 @@ public final class BloodGlucose extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Blood glucose level concentration in mg/dL.
+   * Must be in the range `[0, 900]`.
    * </pre>
    *
    * <code>
@@ -1105,6 +1106,7 @@ public final class BloodGlucose extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Blood glucose level concentration in mg/dL.
+   * Must be in the range `[0, 900]`.
    * </pre>
    *
    * <code>
@@ -2072,6 +2074,7 @@ public final class BloodGlucose extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Blood glucose level concentration in mg/dL.
+     * Must be in the range `[0, 900]`.
      * </pre>
      *
      * <code>
@@ -2090,6 +2093,7 @@ public final class BloodGlucose extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Blood glucose level concentration in mg/dL.
+     * Must be in the range `[0, 900]`.
      * </pre>
      *
      * <code>
@@ -2108,6 +2112,7 @@ public final class BloodGlucose extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Blood glucose level concentration in mg/dL.
+     * Must be in the range `[0, 900]`.
      * </pre>
      *
      * <code>
@@ -2130,6 +2135,7 @@ public final class BloodGlucose extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Blood glucose level concentration in mg/dL.
+     * Must be in the range `[0, 900]`.
      * </pre>
      *
      * <code>

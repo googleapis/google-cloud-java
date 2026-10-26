@@ -44,6 +44,18 @@ public final class ResourceInfoProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_beyondcorp_appconnectors_v1_ResourceInfo_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_beyondcorp_appconnectors_v1_ResourceInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_beyondcorp_appconnectors_v1_ContainerHealthDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_beyondcorp_appconnectors_v1_ContainerHealthDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_beyondcorp_appconnectors_v1_ContainerHealthDetails_ExtendedStatusEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_beyondcorp_appconnectors_v1_ContainerHealthDetails_ExtendedStatusEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_beyondcorp_appconnectors_v1_RemoteAgentDetails_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_beyondcorp_appconnectors_v1_RemoteAgentDetails_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -57,24 +69,31 @@ public final class ResourceInfoProto extends com.google.protobuf.GeneratedFile {
           + "v1/resource_info.proto\022(google.cloud.bey"
           + "ondcorp.appconnectors.v1\032\037google/api/fie"
           + "ld_behavior.proto\032\031google/protobuf/any.p"
-          + "roto\032\037google/protobuf/timestamp.proto\"\376\001"
-          + "\n\014ResourceInfo\022\017\n\002id\030\001 \001(\tB\003\340A\002\022F\n\006statu"
-          + "s\030\002 \001(\01626.google.cloud.beyondcorp.appcon"
-          + "nectors.v1.HealthStatus\022&\n\010resource\030\003 \001("
-          + "\0132\024.google.protobuf.Any\022(\n\004time\030\004 \001(\0132\032."
-          + "google.protobuf.Timestamp\022C\n\003sub\030\005 \003(\01326"
-          + ".google.cloud.beyondcorp.appconnectors.v"
-          + "1.ResourceInfo*i\n\014HealthStatus\022\035\n\031HEALTH"
-          + "_STATUS_UNSPECIFIED\020\000\022\013\n\007HEALTHY\020\001\022\r\n\tUN"
-          + "HEALTHY\020\002\022\020\n\014UNRESPONSIVE\020\003\022\014\n\010DEGRADED\020"
-          + "\004B\234\002\n,com.google.cloud.beyondcorp.appcon"
-          + "nectors.v1B\021ResourceInfoProtoP\001ZRcloud.g"
-          + "oogle.com/go/beyondcorp/appconnectors/ap"
-          + "iv1/appconnectorspb;appconnectorspb\252\002(Go"
-          + "ogle.Cloud.BeyondCorp.AppConnectors.V1\312\002"
-          + "(Google\\Cloud\\BeyondCorp\\AppConnectors\\V"
-          + "1\352\002,Google::Cloud::BeyondCorp::AppConnec"
-          + "tors::V1b\006proto3"
+          + "roto\032\037google/protobuf/timestamp.proto\"\377\001"
+          + "\n\014ResourceInfo\022\020\n\002id\030\001 \001(\tB\004\342A\001\002\022F\n\006stat"
+          + "us\030\002 \001(\01626.google.cloud.beyondcorp.appco"
+          + "nnectors.v1.HealthStatus\022&\n\010resource\030\003 \001"
+          + "(\0132\024.google.protobuf.Any\022(\n\004time\030\004 \001(\0132\032"
+          + ".google.protobuf.Timestamp\022C\n\003sub\030\005 \003(\0132"
+          + "6.google.cloud.beyondcorp.appconnectors."
+          + "v1.ResourceInfo\"\222\002\n\026ContainerHealthDetai"
+          + "ls\022\037\n\027expected_config_version\030\001 \001(\t\022\036\n\026c"
+          + "urrent_config_version\030\002 \001(\t\022m\n\017extended_"
+          + "status\030\003 \003(\0132T.google.cloud.beyondcorp.a"
+          + "ppconnectors.v1.ContainerHealthDetails.E"
+          + "xtendedStatusEntry\022\021\n\terror_msg\030\004 \001(\t\0325\n"
+          + "\023ExtendedStatusEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val"
+          + "ue\030\002 \001(\t:\0028\001\"\024\n\022RemoteAgentDetails*i\n\014He"
+          + "althStatus\022\035\n\031HEALTH_STATUS_UNSPECIFIED\020"
+          + "\000\022\013\n\007HEALTHY\020\001\022\r\n\tUNHEALTHY\020\002\022\020\n\014UNRESPO"
+          + "NSIVE\020\003\022\014\n\010DEGRADED\020\004B\234\002\n,com.google.clo"
+          + "ud.beyondcorp.appconnectors.v1B\021Resource"
+          + "InfoProtoP\001ZRcloud.google.com/go/beyondc"
+          + "orp/appconnectors/apiv1/appconnectorspb;"
+          + "appconnectorspb\252\002(Google.Cloud.BeyondCor"
+          + "p.AppConnectors.V1\312\002(Google\\Cloud\\Beyond"
+          + "Corp\\AppConnectors\\V1\352\002,Google::Cloud::B"
+          + "eyondCorp::AppConnectors::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -92,6 +111,29 @@ public final class ResourceInfoProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Id", "Status", "Resource", "Time", "Sub",
             });
+    internal_static_google_cloud_beyondcorp_appconnectors_v1_ContainerHealthDetails_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_cloud_beyondcorp_appconnectors_v1_ContainerHealthDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_beyondcorp_appconnectors_v1_ContainerHealthDetails_descriptor,
+            new java.lang.String[] {
+              "ExpectedConfigVersion", "CurrentConfigVersion", "ExtendedStatus", "ErrorMsg",
+            });
+    internal_static_google_cloud_beyondcorp_appconnectors_v1_ContainerHealthDetails_ExtendedStatusEntry_descriptor =
+        internal_static_google_cloud_beyondcorp_appconnectors_v1_ContainerHealthDetails_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_beyondcorp_appconnectors_v1_ContainerHealthDetails_ExtendedStatusEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_beyondcorp_appconnectors_v1_ContainerHealthDetails_ExtendedStatusEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_beyondcorp_appconnectors_v1_RemoteAgentDetails_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_beyondcorp_appconnectors_v1_RemoteAgentDetails_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_beyondcorp_appconnectors_v1_RemoteAgentDetails_descriptor,
+            new java.lang.String[] {});
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();

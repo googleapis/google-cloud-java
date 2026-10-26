@@ -39,6 +39,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -795,6 +796,131 @@ public class ParticipantsClientTest {
 
     try {
       List<StreamingAnalyzeContentResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void bidiStreamingAnalyzeContentTest() throws Exception {
+    BidiStreamingAnalyzeContentResponse expectedResponse =
+        BidiStreamingAnalyzeContentResponse.newBuilder().build();
+    mockParticipants.addResponse(expectedResponse);
+    BidiStreamingAnalyzeContentRequest request =
+        BidiStreamingAnalyzeContentRequest.newBuilder().build();
+
+    MockStreamObserver<BidiStreamingAnalyzeContentResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        callable = client.bidiStreamingAnalyzeContentCallable();
+    ApiStreamObserver<BidiStreamingAnalyzeContentRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<BidiStreamingAnalyzeContentResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void bidiStreamingAnalyzeContentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParticipants.addException(exception);
+    BidiStreamingAnalyzeContentRequest request =
+        BidiStreamingAnalyzeContentRequest.newBuilder().build();
+
+    MockStreamObserver<BidiStreamingAnalyzeContentResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<BidiStreamingAnalyzeContentRequest, BidiStreamingAnalyzeContentResponse>
+        callable = client.bidiStreamingAnalyzeContentCallable();
+    ApiStreamObserver<BidiStreamingAnalyzeContentRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<BidiStreamingAnalyzeContentResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void streamingReactiveCompanionSuggestionsTest() throws Exception {
+    StreamingReactiveCompanionSuggestionsResponse expectedResponse =
+        StreamingReactiveCompanionSuggestionsResponse.newBuilder()
+            .setIsFinal(true)
+            .setAnswerRecord(
+                AnswerRecordName.ofProjectAnswerRecordName("[PROJECT]", "[ANSWER_RECORD]")
+                    .toString())
+            .setTextMessageId("textMessageId-1165131563")
+            .setSendTime(Timestamp.newBuilder().build())
+            .build();
+    mockParticipants.addResponse(expectedResponse);
+    StreamingReactiveCompanionSuggestionsRequest request =
+        StreamingReactiveCompanionSuggestionsRequest.newBuilder()
+            .setParticipant(
+                ParticipantName.ofProjectConversationParticipantName(
+                        "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+                    .toString())
+            .build();
+
+    MockStreamObserver<StreamingReactiveCompanionSuggestionsResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<
+            StreamingReactiveCompanionSuggestionsRequest,
+            StreamingReactiveCompanionSuggestionsResponse>
+        callable = client.streamingReactiveCompanionSuggestionsCallable();
+    ApiStreamObserver<StreamingReactiveCompanionSuggestionsRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<StreamingReactiveCompanionSuggestionsResponse> actualResponses =
+        responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamingReactiveCompanionSuggestionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockParticipants.addException(exception);
+    StreamingReactiveCompanionSuggestionsRequest request =
+        StreamingReactiveCompanionSuggestionsRequest.newBuilder()
+            .setParticipant(
+                ParticipantName.ofProjectConversationParticipantName(
+                        "[PROJECT]", "[CONVERSATION]", "[PARTICIPANT]")
+                    .toString())
+            .build();
+
+    MockStreamObserver<StreamingReactiveCompanionSuggestionsResponse> responseObserver =
+        new MockStreamObserver<>();
+
+    BidiStreamingCallable<
+            StreamingReactiveCompanionSuggestionsRequest,
+            StreamingReactiveCompanionSuggestionsResponse>
+        callable = client.streamingReactiveCompanionSuggestionsCallable();
+    ApiStreamObserver<StreamingReactiveCompanionSuggestionsRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<StreamingReactiveCompanionSuggestionsResponse> actualResponses =
+          responseObserver.future().get();
       Assert.fail("No exception thrown");
     } catch (ExecutionException e) {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);

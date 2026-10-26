@@ -198,6 +198,7 @@ public class CommerceTransactionClientHttpJsonTest {
         Service.newBuilder()
             .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
             .setTitle("title110371416")
+            .setDocumentRequirement(Service.DocumentRequirement.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -243,6 +244,7 @@ public class CommerceTransactionClientHttpJsonTest {
         Service.newBuilder()
             .setName(ServiceName.of("[PROJECT]", "[LOCATION]", "[SERVICE]").toString())
             .setTitle("title110371416")
+            .setDocumentRequirement(Service.DocumentRequirement.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

@@ -16,6 +16,8 @@
 
 package com.google.ads.admanager.v1;
 
+import static com.google.ads.admanager.v1.UserServiceClient.ListUsersPagedResponse;
+
 import com.google.ads.admanager.v1.stub.HttpJsonUserServiceStub;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -26,7 +28,11 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.common.collect.Lists;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -169,6 +175,640 @@ public class UserServiceClientTest {
     try {
       String name = "networks/network-3631/users/user-3631";
       client.getUser(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUsersTest() throws Exception {
+    User responsesElement = User.newBuilder().build();
+    ListUsersResponse expectedResponse =
+        ListUsersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllUsers(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+
+    ListUsersPagedResponse pagedListResponse = client.listUsers(parent);
+
+    List<User> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getUsersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listUsersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      client.listUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUsersTest2() throws Exception {
+    User responsesElement = User.newBuilder().build();
+    ListUsersResponse expectedResponse =
+        ListUsersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllUsers(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+
+    ListUsersPagedResponse pagedListResponse = client.listUsers(parent);
+
+    List<User> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getUsersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listUsersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      client.listUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createUserTest() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(UserName.of("[NETWORK_CODE]", "[USER]").toString())
+            .setUserId(-147132913)
+            .setDisplayName("displayName1714148973")
+            .setEmail("email96619420")
+            .setRole(RoleName.of("[NETWORK_CODE]", "[ROLE]").toString())
+            .setActive(true)
+            .setExternalId("externalId-1699764666")
+            .setServiceAccount(true)
+            .setOrdersUiLocalTimeZone("ordersUiLocalTimeZone-1734777653")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    User user = User.newBuilder().build();
+
+    User actualResponse = client.createUser(parent, user);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      User user = User.newBuilder().build();
+      client.createUser(parent, user);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createUserTest2() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(UserName.of("[NETWORK_CODE]", "[USER]").toString())
+            .setUserId(-147132913)
+            .setDisplayName("displayName1714148973")
+            .setEmail("email96619420")
+            .setRole(RoleName.of("[NETWORK_CODE]", "[ROLE]").toString())
+            .setActive(true)
+            .setExternalId("externalId-1699764666")
+            .setServiceAccount(true)
+            .setOrdersUiLocalTimeZone("ordersUiLocalTimeZone-1734777653")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    User user = User.newBuilder().build();
+
+    User actualResponse = client.createUser(parent, user);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createUserExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      User user = User.newBuilder().build();
+      client.createUser(parent, user);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateUsersTest() throws Exception {
+    BatchCreateUsersResponse expectedResponse =
+        BatchCreateUsersResponse.newBuilder().addAllUsers(new ArrayList<User>()).build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<CreateUserRequest> requests = new ArrayList<>();
+
+    BatchCreateUsersResponse actualResponse = client.batchCreateUsers(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateUsersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<CreateUserRequest> requests = new ArrayList<>();
+      client.batchCreateUsers(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateUsersTest2() throws Exception {
+    BatchCreateUsersResponse expectedResponse =
+        BatchCreateUsersResponse.newBuilder().addAllUsers(new ArrayList<User>()).build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<CreateUserRequest> requests = new ArrayList<>();
+
+    BatchCreateUsersResponse actualResponse = client.batchCreateUsers(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchCreateUsersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<CreateUserRequest> requests = new ArrayList<>();
+      client.batchCreateUsers(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchActivateUsersTest() throws Exception {
+    BatchActivateUsersResponse expectedResponse = BatchActivateUsersResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<String> names = new ArrayList<>();
+
+    BatchActivateUsersResponse actualResponse = client.batchActivateUsers(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchActivateUsersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<String> names = new ArrayList<>();
+      client.batchActivateUsers(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchActivateUsersTest2() throws Exception {
+    BatchActivateUsersResponse expectedResponse = BatchActivateUsersResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<String> names = new ArrayList<>();
+
+    BatchActivateUsersResponse actualResponse = client.batchActivateUsers(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchActivateUsersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<String> names = new ArrayList<>();
+      client.batchActivateUsers(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeactivateUsersTest() throws Exception {
+    BatchDeactivateUsersResponse expectedResponse =
+        BatchDeactivateUsersResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<String> names = new ArrayList<>();
+
+    BatchDeactivateUsersResponse actualResponse = client.batchDeactivateUsers(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeactivateUsersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<String> names = new ArrayList<>();
+      client.batchDeactivateUsers(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeactivateUsersTest2() throws Exception {
+    BatchDeactivateUsersResponse expectedResponse =
+        BatchDeactivateUsersResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<String> names = new ArrayList<>();
+
+    BatchDeactivateUsersResponse actualResponse = client.batchDeactivateUsers(parent, names);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchDeactivateUsersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<String> names = new ArrayList<>();
+      client.batchDeactivateUsers(parent, names);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateUserTest() throws Exception {
+    User expectedResponse =
+        User.newBuilder()
+            .setName(UserName.of("[NETWORK_CODE]", "[USER]").toString())
+            .setUserId(-147132913)
+            .setDisplayName("displayName1714148973")
+            .setEmail("email96619420")
+            .setRole(RoleName.of("[NETWORK_CODE]", "[ROLE]").toString())
+            .setActive(true)
+            .setExternalId("externalId-1699764666")
+            .setServiceAccount(true)
+            .setOrdersUiLocalTimeZone("ordersUiLocalTimeZone-1734777653")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    User user =
+        User.newBuilder()
+            .setName(UserName.of("[NETWORK_CODE]", "[USER]").toString())
+            .setUserId(-147132913)
+            .setDisplayName("displayName1714148973")
+            .setEmail("email96619420")
+            .setRole(RoleName.of("[NETWORK_CODE]", "[ROLE]").toString())
+            .setActive(true)
+            .setExternalId("externalId-1699764666")
+            .setServiceAccount(true)
+            .setOrdersUiLocalTimeZone("ordersUiLocalTimeZone-1734777653")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    User actualResponse = client.updateUser(user, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      User user =
+          User.newBuilder()
+              .setName(UserName.of("[NETWORK_CODE]", "[USER]").toString())
+              .setUserId(-147132913)
+              .setDisplayName("displayName1714148973")
+              .setEmail("email96619420")
+              .setRole(RoleName.of("[NETWORK_CODE]", "[ROLE]").toString())
+              .setActive(true)
+              .setExternalId("externalId-1699764666")
+              .setServiceAccount(true)
+              .setOrdersUiLocalTimeZone("ordersUiLocalTimeZone-1734777653")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateUser(user, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateUsersTest() throws Exception {
+    BatchUpdateUsersResponse expectedResponse =
+        BatchUpdateUsersResponse.newBuilder().addAllUsers(new ArrayList<User>()).build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    List<UpdateUserRequest> requests = new ArrayList<>();
+
+    BatchUpdateUsersResponse actualResponse = client.batchUpdateUsers(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateUsersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      List<UpdateUserRequest> requests = new ArrayList<>();
+      client.batchUpdateUsers(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateUsersTest2() throws Exception {
+    BatchUpdateUsersResponse expectedResponse =
+        BatchUpdateUsersResponse.newBuilder().addAllUsers(new ArrayList<User>()).build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    List<UpdateUserRequest> requests = new ArrayList<>();
+
+    BatchUpdateUsersResponse actualResponse = client.batchUpdateUsers(parent, requests);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void batchUpdateUsersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      List<UpdateUserRequest> requests = new ArrayList<>();
+      client.batchUpdateUsers(parent, requests);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

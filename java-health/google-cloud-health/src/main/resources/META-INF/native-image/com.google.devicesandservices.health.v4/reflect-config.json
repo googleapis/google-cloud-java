@@ -2106,6 +2106,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.devicesandservices.health.v4.HeartRateVariability$HeartRateVariabilityMetadata",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.devicesandservices.health.v4.HeartRateVariability$HeartRateVariabilityMetadata$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.devicesandservices.health.v4.HeartRateVariabilityPersonalRangeRollupValue",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

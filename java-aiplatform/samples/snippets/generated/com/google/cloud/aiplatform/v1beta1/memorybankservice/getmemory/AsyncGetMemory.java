@@ -39,7 +39,8 @@ public class AsyncGetMemory {
       GetMemoryRequest request =
           GetMemoryRequest.newBuilder()
               .setName(
-                  MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+                  MemoryName.ofProjectLocationReasoningEngineMemoryName(
+                          "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
                       .toString())
               .build();
       ApiFuture<Memory> future = memoryBankServiceClient.getMemoryCallable().futureCall(request);

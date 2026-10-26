@@ -38,6 +38,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The ReliabilityRisks API.
  *
+ * <p>This client uses ReliabilityRisks version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -334,7 +336,6 @@ public class ReliabilityRisksClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (ReliabilityRisk element : reliabilityRisksClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -369,7 +370,6 @@ public class ReliabilityRisksClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<ReliabilityRisk> future =
    *       reliabilityRisksClient.listPagedCallable().futureCall(request);
@@ -404,7 +404,6 @@ public class ReliabilityRisksClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ReliabilityRisksListResponse response = reliabilityRisksClient.listCallable().call(request);

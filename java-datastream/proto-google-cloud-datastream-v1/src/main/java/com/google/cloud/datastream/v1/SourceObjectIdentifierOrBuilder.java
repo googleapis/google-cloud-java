@@ -295,6 +295,51 @@ public interface SourceObjectIdentifierOrBuilder
   com.google.cloud.datastream.v1.SourceObjectIdentifier.MongodbObjectIdentifierOrBuilder
       getMongodbIdentifierOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+   * </code>
+   *
+   * @return Whether the spannerIdentifier field is set.
+   */
+  boolean hasSpannerIdentifier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+   * </code>
+   *
+   * @return The spannerIdentifier.
+   */
+  com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier
+      getSpannerIdentifier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source object identifier.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifier spanner_identifier = 7;
+   * </code>
+   */
+  com.google.cloud.datastream.v1.SourceObjectIdentifier.SpannerObjectIdentifierOrBuilder
+      getSpannerIdentifierOrBuilder();
+
   com.google.cloud.datastream.v1.SourceObjectIdentifier.SourceIdentifierCase
       getSourceIdentifierCase();
 }

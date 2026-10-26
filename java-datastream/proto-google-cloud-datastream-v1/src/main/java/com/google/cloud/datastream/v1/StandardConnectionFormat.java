@@ -75,15 +75,22 @@ public final class StandardConnectionFormat extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Optional. Specifies whether the client connects directly to the host[:port]
-   * in the connection URI.
+   * Optional. Deprecated: Use the `additional_options` map to specify the
+   * `directConnection` parameter instead.
+   * For example: `additional_options = {"directConnection": "true"}`.
+   * Specifies whether the client connects directly to the host[:port] in the
+   * connection URI.
    * </pre>
    *
-   * <code>bool direct_connection = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool direct_connection = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.datastream.v1.StandardConnectionFormat.direct_connection is
+   *     deprecated. See google/cloud/datastream/v1/datastream_resources.proto;l=444
    * @return The directConnection.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getDirectConnection() {
     return directConnection_;
   }
@@ -403,15 +410,23 @@ public final class StandardConnectionFormat extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Specifies whether the client connects directly to the host[:port]
-     * in the connection URI.
+     * Optional. Deprecated: Use the `additional_options` map to specify the
+     * `directConnection` parameter instead.
+     * For example: `additional_options = {"directConnection": "true"}`.
+     * Specifies whether the client connects directly to the host[:port] in the
+     * connection URI.
      * </pre>
      *
-     * <code>bool direct_connection = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool direct_connection = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.datastream.v1.StandardConnectionFormat.direct_connection is
+     *     deprecated. See google/cloud/datastream/v1/datastream_resources.proto;l=444
      * @return The directConnection.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getDirectConnection() {
       return directConnection_;
     }
@@ -420,15 +435,23 @@ public final class StandardConnectionFormat extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Specifies whether the client connects directly to the host[:port]
-     * in the connection URI.
+     * Optional. Deprecated: Use the `additional_options` map to specify the
+     * `directConnection` parameter instead.
+     * For example: `additional_options = {"directConnection": "true"}`.
+     * Specifies whether the client connects directly to the host[:port] in the
+     * connection URI.
      * </pre>
      *
-     * <code>bool direct_connection = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool direct_connection = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.datastream.v1.StandardConnectionFormat.direct_connection is
+     *     deprecated. See google/cloud/datastream/v1/datastream_resources.proto;l=444
      * @param value The directConnection to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setDirectConnection(boolean value) {
 
       directConnection_ = value;
@@ -441,14 +464,22 @@ public final class StandardConnectionFormat extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Optional. Specifies whether the client connects directly to the host[:port]
-     * in the connection URI.
+     * Optional. Deprecated: Use the `additional_options` map to specify the
+     * `directConnection` parameter instead.
+     * For example: `additional_options = {"directConnection": "true"}`.
+     * Specifies whether the client connects directly to the host[:port] in the
+     * connection URI.
      * </pre>
      *
-     * <code>bool direct_connection = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool direct_connection = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.cloud.datastream.v1.StandardConnectionFormat.direct_connection is
+     *     deprecated. See google/cloud/datastream/v1/datastream_resources.proto;l=444
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearDirectConnection() {
       bitField0_ = (bitField0_ & ~0x00000001);
       directConnection_ = false;

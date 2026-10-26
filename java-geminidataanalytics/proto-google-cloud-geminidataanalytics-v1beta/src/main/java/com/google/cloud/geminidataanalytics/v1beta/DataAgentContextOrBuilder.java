@@ -74,7 +74,7 @@ public interface DataAgentContextOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.DataAgentContext.credentials is deprecated.
-   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=452
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=465
    * @return Whether the credentials field is set.
    */
   @java.lang.Deprecated
@@ -98,7 +98,7 @@ public interface DataAgentContextOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.DataAgentContext.credentials is deprecated.
-   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=452
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=465
    * @return The credentials.
    */
   @java.lang.Deprecated

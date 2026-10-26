@@ -13,7 +13,6 @@
   "api_id": "firestore.googleapis.com",
   "library_type": "GAPIC_COMBO",
   "codeowner_team": "@googleapis/firestore-team",
-  "issue_tracker": "https://issuetracker.google.com/savedsearches/5337669",
   "recommended_package": "com.google.cloud.firestore",
   "library_path_overrides": {
     "FirestoreAdminClient": "google-cloud-firestore-admin"

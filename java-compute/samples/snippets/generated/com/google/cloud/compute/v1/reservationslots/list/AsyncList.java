@@ -43,7 +43,6 @@ public class AsyncList {
               .setPageToken("pageToken873572522")
               .setParentName("parentName-244870571")
               .setProject("project-309310695")
-              .setReturnPartialSuccess(true)
               .setZone("zone3744684")
               .build();
       ApiFuture<ReservationSlot> future =

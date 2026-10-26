@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The ServiceAttachments API.
  *
+ * <p>This client uses ServiceAttachments version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -390,7 +392,6 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, ServiceAttachmentsScopedList> element :
@@ -433,7 +434,6 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, ServiceAttachmentsScopedList>> future =
@@ -475,7 +475,6 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -1016,7 +1015,6 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (ServiceAttachment element : serviceAttachmentsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1052,7 +1050,6 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<ServiceAttachment> future =
    *       serviceAttachmentsClient.listPagedCallable().futureCall(request);
@@ -1088,7 +1085,6 @@ public class ServiceAttachmentsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ServiceAttachmentList response = serviceAttachmentsClient.listCallable().call(request);

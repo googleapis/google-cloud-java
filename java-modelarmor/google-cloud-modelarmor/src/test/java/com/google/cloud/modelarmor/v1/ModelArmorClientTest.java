@@ -495,6 +495,7 @@ public class ModelArmorClientTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     mockModelArmor.addResponse(expectedResponse);
 
@@ -540,6 +541,7 @@ public class ModelArmorClientTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     mockModelArmor.addResponse(expectedResponse);
 
@@ -585,6 +587,7 @@ public class ModelArmorClientTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     mockModelArmor.addResponse(expectedResponse);
 

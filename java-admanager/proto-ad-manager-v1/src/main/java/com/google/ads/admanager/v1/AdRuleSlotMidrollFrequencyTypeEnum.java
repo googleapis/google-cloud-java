@@ -118,7 +118,9 @@ public final class AdRuleSlotMidrollFrequencyTypeEnum extends com.google.protobu
      *
      *
      * <pre>
-     * Same as `FIXED_TIME`, except the values represent the ordinal cue
+     * Same as
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.FIXED_TIME][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.FIXED_TIME],
+     * except the values represent the ordinal cue
      * points ("1,3,5", for example).
      * </pre>
      *
@@ -213,7 +215,9 @@ public final class AdRuleSlotMidrollFrequencyTypeEnum extends com.google.protobu
      *
      *
      * <pre>
-     * Same as `FIXED_TIME`, except the values represent the ordinal cue
+     * Same as
+     * [AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.FIXED_TIME][google.ads.admanager.v1.AdRuleSlotMidrollFrequencyTypeEnum.AdRuleSlotMidrollFrequencyType.FIXED_TIME],
+     * except the values represent the ordinal cue
      * points ("1,3,5", for example).
      * </pre>
      *

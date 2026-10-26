@@ -53,6 +53,10 @@ public final class WorkloadProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apphub_v1_WorkloadProperties_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apphub_v1_WorkloadProperties_ExtendedMetadataEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_apphub_v1_WorkloadProperties_ExtendedMetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_apphub_v1_DiscoveredWorkload_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_apphub_v1_DiscoveredWorkload_fieldAccessorTable;
@@ -70,50 +74,67 @@ public final class WorkloadProto extends com.google.protobuf.GeneratedFile {
           + "\026google.cloud.apphub.v1\032\037google/api/fiel"
           + "d_behavior.proto\032\033google/api/field_info."
           + "proto\032\031google/api/resource.proto\032\'google"
-          + "/cloud/apphub/v1/attributes.proto\032\037google/protobuf/timestamp.proto\"\250\006\n"
-          + "\010Workload\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
-          + "\014display_name\030\002 \001(\tB\003\340A\001\022\030\n"
-          + "\013description\030\003 \001(\tB\003\340A\001\022J\n"
+          + "/cloud/apphub/v1/attributes.proto\032\'googl"
+          + "e/cloud/apphub/v1/properties.proto\032\037google/protobuf/timestamp.proto\"\261\006\n"
+          + "\010Workload\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022\032\n"
+          + "\014display_name\030\002 \001(\tB\004\342A\001\001\022\031\n"
+          + "\013description\030\003 \001(\tB\004\342A\001\001\022K\n"
           + "\022workload_reference\030\004"
-          + " \001(\0132).google.cloud.apphub.v1.WorkloadReferenceB\003\340A\003\022L\n"
+          + " \001(\0132).google.cloud.apphub.v1.WorkloadReferenceB\004\342A\001\003\022M\n"
           + "\023workload_properties\030\005"
-          + " \001(\0132*.google.cloud.apphub.v1.WorkloadPropertiesB\003\340A\003\022P\n"
+          + " \001(\0132*.google.cloud.apphub.v1.WorkloadPropertiesB\004\342A\001\003\022O\n"
           + "\023discovered_workload\030\006 \001("
-          + "\tB3\340A\002\340A\005\372A*\022(apphub.googleapis.com/DiscoveredWorkload\022;\n\n"
-          + "attributes\030\007 \001(\0132\".google.cloud.apphub.v1.AttributesB\003\340A\001\0224\n"
-          + "\013create_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\030\n"
+          + "\tB2\342A\002\002\005\372A*\022(apphub.googleapis.com/DiscoveredWorkload\022<\n\n"
+          + "attributes\030\007"
+          + " \001(\0132\".google.cloud.apphub.v1.AttributesB\004\342A\001\001\0225\n"
+          + "\013create_time\030\010"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
+          + "\013update_time\030\t"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\031\n"
           + "\003uid\030\n"
-          + " \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022:\n"
-          + "\005state\030\013 \001(\0162&.google.cloud.apphub.v1.Workload.StateB\003\340A\003\"T\n"
+          + " \001(\tB\014\342A\001\003\342\214\317\327\010\002\010\001\022;\n"
+          + "\005state\030\013"
+          + " \001(\0162&.google.cloud.apphub.v1.Workload.StateB\004\342A\001\003\"T\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\014\n"
           + "\010CREATING\020\001\022\n\n"
           + "\006ACTIVE\020\002\022\014\n"
           + "\010DELETING\020\003\022\014\n"
           + "\010DETACHED\020\004:\222\001\352A\216\001\n"
-          + "\036apphub.googleapis.com/Workload\022Wprojects/{project}/locations/{l"
-          + "ocation}/applications/{application}/workloads/{workload}*\tworkloads2\010workload\"%\n"
-          + "\021WorkloadReference\022\020\n"
-          + "\003uri\030\001 \001(\tB\003\340A\003\"X\n"
-          + "\022WorkloadProperties\022\030\n"
-          + "\013gcp_project\030\001 \001(\tB\003\340A\003\022\025\n"
-          + "\010location\030\002 \001(\tB\003\340A\003\022\021\n"
-          + "\004zone\030\003 \001(\tB\003\340A\003\"\356\002\n"
-          + "\022DiscoveredWorkload\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\022J\n"
-          + "\022workload_reference\030\002 \001(\0132).g"
-          + "oogle.cloud.apphub.v1.WorkloadReferenceB\003\340A\003\022L\n"
-          + "\023workload_properties\030\003 \001(\0132*.goog"
-          + "le.cloud.apphub.v1.WorkloadPropertiesB\003\340A\003:\252\001\352A\246\001\n"
-          + "(apphub.googleapis.com/DiscoveredWorkload\022Qprojects/{project}/location"
-          + "s/{location}/discoveredWorkloads/{discov"
-          + "ered_workload}*\023discoveredWorkloads2\022discoveredWorkloadB\257\001\n"
+          + "\036apphub.googleapis.com/Workload\022Wprojects/{project}/lo"
+          + "cations/{location}/applications/{application}/workloads/{workload}*"
+          + "\tworkloads2\010workload\"&\n"
+          + "\021WorkloadReference\022\021\n"
+          + "\003uri\030\001 \001(\tB\004\342A\001\003\"\242\003\n"
+          + "\022WorkloadProperties\022\031\n"
+          + "\013gcp_project\030\001 \001(\tB\004\342A\001\003\022\026\n"
+          + "\010location\030\002 \001(\tB\004\342A\001\003\022\022\n"
+          + "\004zone\030\003 \001(\tB\004\342A\001\003\022E\n"
+          + "\017functional_type\030\004"
+          + " \001(\0132&.google.cloud.apphub.v1.FunctionalTypeB\004\342A\001\003\022a\n"
+          + "\021extended_metadata\030\005 \003(\0132"
+          + "@.google.cloud.apphub.v1.WorkloadProperties.ExtendedMetadataEntryB\004\342A\001\003\0228\n"
+          + "\010identity\030\006 \001(\0132"
+          + " .google.cloud.apphub.v1.IdentityB\004\342A\001\003\032a\n"
+          + "\025ExtendedMetadataEntry\022\013\n"
+          + "\003key\030\001 \001(\t\0227\n"
+          + "\005value\030\002"
+          + " \001(\0132(.google.cloud.apphub.v1.ExtendedMetadata:\0028\001\"\361\002\n"
+          + "\022DiscoveredWorkload\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\022K\n"
+          + "\022workload_reference\030\002"
+          + " \001(\0132).google.cloud.apphub.v1.WorkloadReferenceB\004\342A\001\003\022M\n"
+          + "\023workload_properties\030\003"
+          + " \001(\0132*.google.cloud.apphub.v1.WorkloadPropertiesB\004\342A\001\003:\252\001\352A\246\001\n"
+          + "(apphub.googleapis.com/DiscoveredWorkload\022Qpr"
+          + "ojects/{project}/locations/{location}/discoveredWorkloads/{discovered_workload}*"
+          + "\023discoveredWorkloads2\022discoveredWorkloadB\257\001\n"
           + "\032com.google.cloud.apphub.v1B\r"
-          + "WorkloadProtoP\001Z2cloud.google.com/go/apphub/apiv1/apphubpb;apphubpb\252\002\026Go"
-          + "ogle.Cloud.AppHub.V1\312\002\026Google\\Cloud\\AppH"
-          + "ub\\V1\352\002\031Google::Cloud::AppHub::V1b\006proto3"
+          + "WorkloadProtoP\001Z2cloud.google.com/go/apphub/api"
+          + "v1/apphubpb;apphubpb\252\002\026Google.Cloud.AppH"
+          + "ub.V1\312\002\026Google\\Cloud\\AppHub\\V1\352\002\031Google:"
+          + ":Cloud::AppHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -123,6 +144,7 @@ public final class WorkloadProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.apphub.v1.AttributesProto.getDescriptor(),
+              com.google.cloud.apphub.v1.PropertiesProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_apphub_v1_Workload_descriptor = getDescriptor().getMessageType(0);
@@ -156,7 +178,15 @@ public final class WorkloadProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_apphub_v1_WorkloadProperties_descriptor,
             new java.lang.String[] {
-              "GcpProject", "Location", "Zone",
+              "GcpProject", "Location", "Zone", "FunctionalType", "ExtendedMetadata", "Identity",
+            });
+    internal_static_google_cloud_apphub_v1_WorkloadProperties_ExtendedMetadataEntry_descriptor =
+        internal_static_google_cloud_apphub_v1_WorkloadProperties_descriptor.getNestedType(0);
+    internal_static_google_cloud_apphub_v1_WorkloadProperties_ExtendedMetadataEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_apphub_v1_WorkloadProperties_ExtendedMetadataEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_apphub_v1_DiscoveredWorkload_descriptor =
         getDescriptor().getMessageType(3);
@@ -171,6 +201,7 @@ public final class WorkloadProto extends com.google.protobuf.GeneratedFile {
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.apphub.v1.AttributesProto.getDescriptor();
+    com.google.cloud.apphub.v1.PropertiesProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

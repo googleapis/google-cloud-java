@@ -39,7 +39,7 @@ public interface ConfidentialInstanceConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.dataproc.v1.ConfidentialInstanceConfig.enable_confidential_compute is
-   *     deprecated. See google/cloud/dataproc/v1/clusters.proto;l=678
+   *     deprecated. See google/cloud/dataproc/v1/clusters.proto;l=756
    * @return The enableConfidentialCompute.
    */
   @java.lang.Deprecated

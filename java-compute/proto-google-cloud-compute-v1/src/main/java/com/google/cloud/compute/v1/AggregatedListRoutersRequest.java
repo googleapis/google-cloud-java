@@ -631,51 +631,6 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
     }
   }
 
-  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
-  private boolean returnPartialSuccess_ = false;
-
-  /**
-   *
-   *
-   * <pre>
-   * Opt-in for partial success behavior which provides partial results in case
-   * of failure. The default value is false.
-   *
-   * For example, when partial success behavior is enabled, aggregatedList for a
-   * single zone scope either returns all resources in the zone or no resources,
-   * with an error code.
-   * </pre>
-   *
-   * <code>optional bool return_partial_success = 517198390;</code>
-   *
-   * @return Whether the returnPartialSuccess field is set.
-   */
-  @java.lang.Override
-  public boolean hasReturnPartialSuccess() {
-    return ((bitField0_ & 0x00000020) != 0);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Opt-in for partial success behavior which provides partial results in case
-   * of failure. The default value is false.
-   *
-   * For example, when partial success behavior is enabled, aggregatedList for a
-   * single zone scope either returns all resources in the zone or no resources,
-   * with an error code.
-   * </pre>
-   *
-   * <code>optional bool return_partial_success = 517198390;</code>
-   *
-   * @return The returnPartialSuccess.
-   */
-  @java.lang.Override
-  public boolean getReturnPartialSuccess() {
-    return returnPartialSuccess_;
-  }
-
   public static final int SERVICE_PROJECT_NUMBER_FIELD_NUMBER = 316757497;
   private long serviceProjectNumber_ = 0L;
 
@@ -693,7 +648,7 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
    */
   @java.lang.Override
   public boolean hasServiceProjectNumber() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -739,7 +694,7 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(project_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 227560217, project_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeInt64(316757497, serviceProjectNumber_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -747,9 +702,6 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(391327988, includeAllScopes_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeBool(517198390, returnPartialSuccess_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -772,7 +724,7 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(project_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(227560217, project_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt64Size(316757497, serviceProjectNumber_);
     }
@@ -781,10 +733,6 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(391327988, includeAllScopes_);
-    }
-    if (((bitField0_ & 0x00000020) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(517198390, returnPartialSuccess_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -823,10 +771,6 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
       if (!getPageToken().equals(other.getPageToken())) return false;
     }
     if (!getProject().equals(other.getProject())) return false;
-    if (hasReturnPartialSuccess() != other.hasReturnPartialSuccess()) return false;
-    if (hasReturnPartialSuccess()) {
-      if (getReturnPartialSuccess() != other.getReturnPartialSuccess()) return false;
-    }
     if (hasServiceProjectNumber() != other.hasServiceProjectNumber()) return false;
     if (hasServiceProjectNumber()) {
       if (getServiceProjectNumber() != other.getServiceProjectNumber()) return false;
@@ -864,10 +808,6 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
     }
     hash = (37 * hash) + PROJECT_FIELD_NUMBER;
     hash = (53 * hash) + getProject().hashCode();
-    if (hasReturnPartialSuccess()) {
-      hash = (37 * hash) + RETURN_PARTIAL_SUCCESS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnPartialSuccess());
-    }
     if (hasServiceProjectNumber()) {
       hash = (37 * hash) + SERVICE_PROJECT_NUMBER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getServiceProjectNumber());
@@ -1019,7 +959,6 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
       orderBy_ = "";
       pageToken_ = "";
       project_ = "";
-      returnPartialSuccess_ = false;
       serviceProjectNumber_ = 0L;
       return this;
     }
@@ -1082,12 +1021,8 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
         result.project_ = project_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.returnPartialSuccess_ = returnPartialSuccess_;
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.serviceProjectNumber_ = serviceProjectNumber_;
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1130,9 +1065,6 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
         project_ = other.project_;
         bitField0_ |= 0x00000020;
         onChanged();
-      }
-      if (other.hasReturnPartialSuccess()) {
-        setReturnPartialSuccess(other.getReturnPartialSuccess());
       }
       if (other.hasServiceProjectNumber()) {
         setServiceProjectNumber(other.getServiceProjectNumber());
@@ -1190,7 +1122,7 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
             case -1760907320:
               {
                 serviceProjectNumber_ = input.readInt64();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -1760907320
             case -1606001726:
@@ -1205,12 +1137,6 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000002;
                 break;
               } // case -1164343392
-            case -157380176:
-              {
-                returnPartialSuccess_ = input.readBool();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case -157380176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2317,98 +2243,6 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
       return this;
     }
 
-    private boolean returnPartialSuccess_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return Whether the returnPartialSuccess field is set.
-     */
-    @java.lang.Override
-    public boolean hasReturnPartialSuccess() {
-      return ((bitField0_ & 0x00000040) != 0);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return The returnPartialSuccess.
-     */
-    @java.lang.Override
-    public boolean getReturnPartialSuccess() {
-      return returnPartialSuccess_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @param value The returnPartialSuccess to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReturnPartialSuccess(boolean value) {
-
-      returnPartialSuccess_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Opt-in for partial success behavior which provides partial results in case
-     * of failure. The default value is false.
-     *
-     * For example, when partial success behavior is enabled, aggregatedList for a
-     * single zone scope either returns all resources in the zone or no resources,
-     * with an error code.
-     * </pre>
-     *
-     * <code>optional bool return_partial_success = 517198390;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearReturnPartialSuccess() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      returnPartialSuccess_ = false;
-      onChanged();
-      return this;
-    }
-
     private long serviceProjectNumber_;
 
     /**
@@ -2425,7 +2259,7 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
      */
     @java.lang.Override
     public boolean hasServiceProjectNumber() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2461,7 +2295,7 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
     public Builder setServiceProjectNumber(long value) {
 
       serviceProjectNumber_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2479,7 +2313,7 @@ public final class AggregatedListRoutersRequest extends com.google.protobuf.Gene
      * @return This builder for chaining.
      */
     public Builder clearServiceProjectNumber() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       serviceProjectNumber_ = 0L;
       onChanged();
       return this;

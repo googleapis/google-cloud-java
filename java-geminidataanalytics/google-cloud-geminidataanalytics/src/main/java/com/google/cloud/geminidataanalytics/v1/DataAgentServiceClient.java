@@ -292,6 +292,45 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> SetAgentOpsObservability</td>
+ *      <td><p> Enables/Disables required GCP services and configures AgentOps observability settings calling the Admin Settings executable node to update the AgentOps Observability feature.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setAgentOpsObservabilityAsync(SetAgentOpsObservabilityRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> setAgentOpsObservabilityAsync(LocationName parent, boolean telemetryEnabled, String dataSourceType)
+ *           <li><p> setAgentOpsObservabilityAsync(String parent, boolean telemetryEnabled, String dataSourceType)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setAgentOpsObservabilityOperationCallable()
+ *           <li><p> setAgentOpsObservabilityCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RetrieveAgentOpsObservability</td>
+ *      <td><p> Gets AgentOps observability settings and status of required services.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> retrieveAgentOpsObservability(RetrieveAgentOpsObservabilityRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> retrieveAgentOpsObservability(LocationName parent, String dataSourceType)
+ *           <li><p> retrieveAgentOpsObservability(String parent, String dataSourceType)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> retrieveAgentOpsObservabilityCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
  * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
@@ -1939,6 +1978,334 @@ public class DataAgentServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables/Disables required GCP services and configures AgentOps observability settings calling
+   * the Admin Settings executable node to update the AgentOps Observability feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   boolean telemetryEnabled = true;
+   *   String dataSourceType = "dataSourceType-1241406145";
+   *   SetAgentOpsObservabilityResponse response =
+   *       dataAgentServiceClient
+   *           .setAgentOpsObservabilityAsync(parent, telemetryEnabled, dataSourceType)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for SetAgentOpsObservabilityRequest. Format:
+   *     projects/{project}/locations/{location}
+   * @param telemetryEnabled Optional. Whether to enable or disable AgentOps observability. When
+   *     update_mask is provided, this field is ignored unless specified in the mask.
+   * @param dataSourceType Required. The data source type for which to set observability settings.
+   *     Examples: "bigquery", "looker"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SetAgentOpsObservabilityResponse, SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityAsync(
+          @Nullable LocationName parent, boolean telemetryEnabled, String dataSourceType) {
+    SetAgentOpsObservabilityRequest request =
+        SetAgentOpsObservabilityRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTelemetryEnabled(telemetryEnabled)
+            .setDataSourceType(dataSourceType)
+            .build();
+    return setAgentOpsObservabilityAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables/Disables required GCP services and configures AgentOps observability settings calling
+   * the Admin Settings executable node to update the AgentOps Observability feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   boolean telemetryEnabled = true;
+   *   String dataSourceType = "dataSourceType-1241406145";
+   *   SetAgentOpsObservabilityResponse response =
+   *       dataAgentServiceClient
+   *           .setAgentOpsObservabilityAsync(parent, telemetryEnabled, dataSourceType)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for SetAgentOpsObservabilityRequest. Format:
+   *     projects/{project}/locations/{location}
+   * @param telemetryEnabled Optional. Whether to enable or disable AgentOps observability. When
+   *     update_mask is provided, this field is ignored unless specified in the mask.
+   * @param dataSourceType Required. The data source type for which to set observability settings.
+   *     Examples: "bigquery", "looker"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SetAgentOpsObservabilityResponse, SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityAsync(
+          String parent, boolean telemetryEnabled, String dataSourceType) {
+    SetAgentOpsObservabilityRequest request =
+        SetAgentOpsObservabilityRequest.newBuilder()
+            .setParent(parent)
+            .setTelemetryEnabled(telemetryEnabled)
+            .setDataSourceType(dataSourceType)
+            .build();
+    return setAgentOpsObservabilityAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables/Disables required GCP services and configures AgentOps observability settings calling
+   * the Admin Settings executable node to update the AgentOps Observability feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   SetAgentOpsObservabilityRequest request =
+   *       SetAgentOpsObservabilityRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTelemetryEnabled(true)
+   *           .setDataSourceType("dataSourceType-1241406145")
+   *           .setBqaaEnabled(true)
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SetAgentOpsObservabilityResponse response =
+   *       dataAgentServiceClient.setAgentOpsObservabilityAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<SetAgentOpsObservabilityResponse, SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityAsync(SetAgentOpsObservabilityRequest request) {
+    return setAgentOpsObservabilityOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables/Disables required GCP services and configures AgentOps observability settings calling
+   * the Admin Settings executable node to update the AgentOps Observability feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   SetAgentOpsObservabilityRequest request =
+   *       SetAgentOpsObservabilityRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTelemetryEnabled(true)
+   *           .setDataSourceType("dataSourceType-1241406145")
+   *           .setBqaaEnabled(true)
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<SetAgentOpsObservabilityResponse, SetAgentOpsObservabilityMetadata> future =
+   *       dataAgentServiceClient.setAgentOpsObservabilityOperationCallable().futureCall(request);
+   *   // Do something.
+   *   SetAgentOpsObservabilityResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          SetAgentOpsObservabilityRequest,
+          SetAgentOpsObservabilityResponse,
+          SetAgentOpsObservabilityMetadata>
+      setAgentOpsObservabilityOperationCallable() {
+    return stub.setAgentOpsObservabilityOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Enables/Disables required GCP services and configures AgentOps observability settings calling
+   * the Admin Settings executable node to update the AgentOps Observability feature.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   SetAgentOpsObservabilityRequest request =
+   *       SetAgentOpsObservabilityRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setTelemetryEnabled(true)
+   *           .setDataSourceType("dataSourceType-1241406145")
+   *           .setBqaaEnabled(true)
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       dataAgentServiceClient.setAgentOpsObservabilityCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetAgentOpsObservabilityRequest, Operation>
+      setAgentOpsObservabilityCallable() {
+    return stub.setAgentOpsObservabilityCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets AgentOps observability settings and status of required services.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String dataSourceType = "dataSourceType-1241406145";
+   *   RetrieveAgentOpsObservabilityResponse response =
+   *       dataAgentServiceClient.retrieveAgentOpsObservability(parent, dataSourceType);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for RetrieveAgentOpsObservabilityRequest. Format:
+   *     projects/{project}/locations/{location}
+   * @param dataSourceType Required. The data source type for which to retrieve observability
+   *     settings. Examples: "bigquery", "looker"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetrieveAgentOpsObservabilityResponse retrieveAgentOpsObservability(
+      @Nullable LocationName parent, String dataSourceType) {
+    RetrieveAgentOpsObservabilityRequest request =
+        RetrieveAgentOpsObservabilityRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDataSourceType(dataSourceType)
+            .build();
+    return retrieveAgentOpsObservability(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets AgentOps observability settings and status of required services.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String dataSourceType = "dataSourceType-1241406145";
+   *   RetrieveAgentOpsObservabilityResponse response =
+   *       dataAgentServiceClient.retrieveAgentOpsObservability(parent, dataSourceType);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent value for RetrieveAgentOpsObservabilityRequest. Format:
+   *     projects/{project}/locations/{location}
+   * @param dataSourceType Required. The data source type for which to retrieve observability
+   *     settings. Examples: "bigquery", "looker"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetrieveAgentOpsObservabilityResponse retrieveAgentOpsObservability(
+      String parent, String dataSourceType) {
+    RetrieveAgentOpsObservabilityRequest request =
+        RetrieveAgentOpsObservabilityRequest.newBuilder()
+            .setParent(parent)
+            .setDataSourceType(dataSourceType)
+            .build();
+    return retrieveAgentOpsObservability(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets AgentOps observability settings and status of required services.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   RetrieveAgentOpsObservabilityRequest request =
+   *       RetrieveAgentOpsObservabilityRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDataSourceType("dataSourceType-1241406145")
+   *           .build();
+   *   RetrieveAgentOpsObservabilityResponse response =
+   *       dataAgentServiceClient.retrieveAgentOpsObservability(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RetrieveAgentOpsObservabilityResponse retrieveAgentOpsObservability(
+      RetrieveAgentOpsObservabilityRequest request) {
+    return retrieveAgentOpsObservabilityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets AgentOps observability settings and status of required services.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataAgentServiceClient dataAgentServiceClient = DataAgentServiceClient.create()) {
+   *   RetrieveAgentOpsObservabilityRequest request =
+   *       RetrieveAgentOpsObservabilityRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDataSourceType("dataSourceType-1241406145")
+   *           .build();
+   *   ApiFuture<RetrieveAgentOpsObservabilityResponse> future =
+   *       dataAgentServiceClient.retrieveAgentOpsObservabilityCallable().futureCall(request);
+   *   // Do something.
+   *   RetrieveAgentOpsObservabilityResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          RetrieveAgentOpsObservabilityRequest, RetrieveAgentOpsObservabilityResponse>
+      retrieveAgentOpsObservabilityCallable() {
+    return stub.retrieveAgentOpsObservabilityCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

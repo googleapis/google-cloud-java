@@ -21,26 +21,15 @@ import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
 import com.google.cloud.spanner.Key;
 import com.google.cloud.spanner.KeySet;
-import com.google.cloud.spanner.MockSpannerServiceImpl;
-import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.ReadContext;
 import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.Statement;
-import com.google.protobuf.ListValue;
-import com.google.spanner.v1.ResultSetMetadata;
-import com.google.spanner.v1.StructType;
-import com.google.spanner.v1.StructType.Field;
-import com.google.spanner.v1.TypeCode;
 import io.grpc.ManagedChannelBuilder;
-import io.grpc.Server;
-import io.grpc.ServerBuilder;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
@@ -76,113 +65,53 @@ public class ReadBenchmark {
     Spanner spanner;
     DatabaseClient databaseClient;
 
-    // gRPC server
-    Server gRPCServer;
-    Server gRPCMonitoringServer;
-
-    // Executors for handling parallel requests by gRPC server
-    ExecutorService gRPCServerExecutor;
-
     // Table
     List<String> columns = Arrays.asList("id", "name");
     String selectQuery = "SELECT * FROM [TABLE] WHERE ID = 1";
 
     @Setup(Level.Trial)
     public void setup() throws IOException {
+      setup(System.getenv("SPANNER_PORT"), System.getenv("MONITORING_PORT"));
+    }
+
+    void setup(String spannerPort, String monitoringPort) throws IOException {
+      if (spannerPort == null || spannerPort.trim().isEmpty()) {
+        throw new IllegalStateException(
+            "SPANNER_PORT environment variable must be specified. Start StandaloneBenchmarkServer"
+                + " first.");
+      }
+
       // Enable JMH system property
       System.setProperty("jmh.enabled", "true");
 
-      // Initializing mock spanner service
-      MockSpannerServiceImpl mockSpannerService = new MockSpannerServiceImpl();
-      mockSpannerService.setAbortProbability(0.0D);
+      if (monitoringPort != null && !monitoringPort.trim().isEmpty()) {
+        // Set the monitoring host port for exporter to forward requests to local netty gRPC server
+        System.setProperty("jmh.monitoring-server-port", monitoringPort.trim());
+      }
 
-      // Initializing mock monitoring service
-      MonitoringServiceImpl mockMonitoringService = new MonitoringServiceImpl();
-
-      // Create a thread pool to handle concurrent requests
-      gRPCServerExecutor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-
-      // Creating Spanner Inprocess gRPC server
-      gRPCServer =
-          ServerBuilder.forPort(0)
-              .addService(mockSpannerService)
-              .executor(gRPCServerExecutor)
-              .build()
-              .start();
-
-      registerMocks(mockSpannerService);
-
-      // Creating Monitoring Inprocess gRPC server
-      gRPCMonitoringServer =
-          ServerBuilder.forPort(0).addService(mockMonitoringService).build().start();
-
-      // Set the monitoring host port for exporter to forward requests to local netty gRPC server
-      System.setProperty(
-          "jmh.monitoring-server-port", String.valueOf(gRPCMonitoringServer.getPort()));
+      final int targetSpannerPort = Integer.parseInt(spannerPort.trim());
 
       spanner =
           SpannerOptions.newBuilder()
               .setProjectId("[PROJECT]")
+              .setEmulatorHost(null)
               .setCredentials(NoCredentials.getInstance())
               .setChannelConfigurator(
                   managedChannelBuilder ->
-                      ManagedChannelBuilder.forAddress("0.0.0.0", gRPCServer.getPort())
-                          .usePlaintext())
+                      ManagedChannelBuilder.forAddress("0.0.0.0", targetSpannerPort).usePlaintext())
               .build()
               .getService();
       databaseClient =
           spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE_ID]", "[DATABASE_ID]"));
     }
 
-    private void registerMocks(MockSpannerServiceImpl mockSpannerService) {
-      ResultSetMetadata selectMetadata =
-          ResultSetMetadata.newBuilder()
-              .setRowType(
-                  StructType.newBuilder()
-                      .addFields(
-                          Field.newBuilder()
-                              .setName("id")
-                              .setType(
-                                  com.google.spanner.v1.Type.newBuilder()
-                                      .setCode(TypeCode.INT64)
-                                      .build())
-                              .build())
-                      .addFields(
-                          Field.newBuilder()
-                              .setName("name")
-                              .setType(
-                                  com.google.spanner.v1.Type.newBuilder()
-                                      .setCode(TypeCode.STRING)
-                                      .build())
-                              .build())
-                      .build())
-              .build();
-      com.google.spanner.v1.ResultSet selectResultSet =
-          com.google.spanner.v1.ResultSet.newBuilder()
-              .addRows(
-                  ListValue.newBuilder()
-                      .addValues(com.google.protobuf.Value.newBuilder().setStringValue("1").build())
-                      .addValues(
-                          com.google.protobuf.Value.newBuilder().setStringValue("[NAME]").build())
-                      .build())
-              .setMetadata(selectMetadata)
-              .build();
-      mockSpannerService.putStatementResult(
-          StatementResult.read(
-              "[TABLE]", KeySet.singleKey(Key.of()), this.columns, selectResultSet));
-      mockSpannerService.putStatementResult(
-          StatementResult.query(Statement.of(this.selectQuery), selectResultSet));
-    }
-
     @TearDown(Level.Trial)
     public void tearDown() throws InterruptedException {
-      spanner.close();
-      gRPCServer.shutdown();
-      gRPCServerExecutor.shutdown();
-
-      // awaiting termination for servers and executors
-      gRPCServer.awaitTermination(10, TimeUnit.SECONDS);
-      gRPCServerExecutor.awaitTermination(10, TimeUnit.SECONDS);
+      System.clearProperty("jmh.enabled");
+      System.clearProperty("jmh.monitoring-server-port");
+      if (spanner != null) {
+        spanner.close();
+      }
     }
   }
 
@@ -195,7 +124,10 @@ public class ReadBenchmark {
       try (ResultSet resultSet =
           readContext.read("[TABLE]", KeySet.singleKey(Key.of("2")), benchmarkState.columns)) {
         while (resultSet.next()) {
-          blackhole.consume(resultSet.getLong("id"));
+          long id = resultSet.getLong("id");
+          if (blackhole != null) {
+            blackhole.consume(id);
+          }
         }
       }
     }
@@ -210,7 +142,10 @@ public class ReadBenchmark {
       try (ResultSet resultSet =
           readContext.executeQuery(Statement.of(benchmarkState.selectQuery))) {
         while (resultSet.next()) {
-          blackhole.consume(resultSet.getLong("id"));
+          long id = resultSet.getLong("id");
+          if (blackhole != null) {
+            blackhole.consume(id);
+          }
         }
       }
     }

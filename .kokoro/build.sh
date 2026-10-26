@@ -64,6 +64,7 @@ case ${JOB_TYPE} in
     retry_with_backoff 3 10 \
       mvn ${MAVEN_GOAL} \
         -B -ntp \
+        -U \
         -Pquick-build \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
@@ -86,15 +87,17 @@ case ${JOB_TYPE} in
       install_modules "${BUILD_SUBDIR}"
     else
       install_modules "sdk-platform-java"
-      mvn install \
-        -B -ntp \
-        -Pquick-build \
-        -Dorg.slf4j.simpleLogger.showDateTime=true \
-        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-        -Dmaven.wagon.http.retryHandler.count=5 \
-        -DskipTests=true \
-        --also-make \
-        -T 1C
+      retry_with_backoff 3 10 \
+        mvn install \
+          -B -ntp \
+          -U \
+          -Pquick-build \
+          -Dorg.slf4j.simpleLogger.showDateTime=true \
+          -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+          -Dmaven.wagon.http.retryHandler.count=5 \
+          -DskipTests=true \
+          --also-make \
+          -T 1C
     fi
     ;;
   integration)

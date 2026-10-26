@@ -54,7 +54,6 @@ import java.util.Base64;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -72,9 +71,6 @@ public class CertificateIdentityPoolSubjectTokenSupplier
   private static final long serialVersionUID = -7726329500407809830L;
 
   private final IdentityPoolCredentialSource credentialSource;
-
-  private static final Pattern PEM_CERT_PATTERN =
-      Pattern.compile("-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----", Pattern.DOTALL);
 
   CertificateIdentityPoolSubjectTokenSupplier(IdentityPoolCredentialSource credentialSource) {
     this.credentialSource = checkNotNull(credentialSource, "credentialSource cannot be null");
@@ -309,7 +305,7 @@ public class CertificateIdentityPoolSubjectTokenSupplier
     // Split the file content into PEM certificate blocks.
     String content = new String(trustChainData, StandardCharsets.UTF_8);
 
-    Matcher matcher = PEM_CERT_PATTERN.matcher(content);
+    Matcher matcher = OAuth2Utils.PEM_CERT_PATTERN.matcher(content);
 
     while (matcher.find()) {
       String pemCertBlock = matcher.group(0);

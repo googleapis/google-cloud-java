@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [BatchCreateChildPublishers][] method.
+ * Request object for `BatchCreateChildPublishers` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchCreateChildPublishersRequest}
@@ -82,10 +82,9 @@ public final class BatchCreateChildPublishersRequest extends com.google.protobuf
    *
    * <pre>
    * Required. The parent resource where
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be created.
-   * Format: `networks/{network_code}`
-   * The parent field in the CreateChildPublisherRequest must match this
-   * field.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be created.
+   * Format: `networks/{network_code}` The parent field in the
+   * CreateChildPublisherRequest must match this field.
    * </pre>
    *
    * <code>
@@ -112,10 +111,9 @@ public final class BatchCreateChildPublishersRequest extends com.google.protobuf
    *
    * <pre>
    * Required. The parent resource where
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be created.
-   * Format: `networks/{network_code}`
-   * The parent field in the CreateChildPublisherRequest must match this
-   * field.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be created.
+   * Format: `networks/{network_code}` The parent field in the
+   * CreateChildPublisherRequest must match this field.
    * </pre>
    *
    * <code>
@@ -405,7 +403,7 @@ public final class BatchCreateChildPublishersRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Request object for [BatchCreateChildPublishers][] method.
+   * Request object for `BatchCreateChildPublishers` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchCreateChildPublishersRequest}
@@ -623,10 +621,9 @@ public final class BatchCreateChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource where
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be created.
-     * Format: `networks/{network_code}`
-     * The parent field in the CreateChildPublisherRequest must match this
-     * field.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be created.
+     * Format: `networks/{network_code}` The parent field in the
+     * CreateChildPublisherRequest must match this field.
      * </pre>
      *
      * <code>
@@ -652,10 +649,9 @@ public final class BatchCreateChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource where
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be created.
-     * Format: `networks/{network_code}`
-     * The parent field in the CreateChildPublisherRequest must match this
-     * field.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be created.
+     * Format: `networks/{network_code}` The parent field in the
+     * CreateChildPublisherRequest must match this field.
      * </pre>
      *
      * <code>
@@ -681,10 +677,9 @@ public final class BatchCreateChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource where
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be created.
-     * Format: `networks/{network_code}`
-     * The parent field in the CreateChildPublisherRequest must match this
-     * field.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be created.
+     * Format: `networks/{network_code}` The parent field in the
+     * CreateChildPublisherRequest must match this field.
      * </pre>
      *
      * <code>
@@ -709,10 +704,9 @@ public final class BatchCreateChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource where
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be created.
-     * Format: `networks/{network_code}`
-     * The parent field in the CreateChildPublisherRequest must match this
-     * field.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be created.
+     * Format: `networks/{network_code}` The parent field in the
+     * CreateChildPublisherRequest must match this field.
      * </pre>
      *
      * <code>
@@ -733,10 +727,9 @@ public final class BatchCreateChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource where
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be created.
-     * Format: `networks/{network_code}`
-     * The parent field in the CreateChildPublisherRequest must match this
-     * field.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be created.
+     * Format: `networks/{network_code}` The parent field in the
+     * CreateChildPublisherRequest must match this field.
      * </pre>
      *
      * <code>

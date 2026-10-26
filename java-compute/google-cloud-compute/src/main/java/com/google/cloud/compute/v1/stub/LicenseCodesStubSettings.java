@@ -199,7 +199,8 @@ public class LicenseCodesStubSettings extends StubSettings<LicenseCodesStubSetti
             "gapic", GaxProperties.getLibraryVersion(LicenseCodesStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

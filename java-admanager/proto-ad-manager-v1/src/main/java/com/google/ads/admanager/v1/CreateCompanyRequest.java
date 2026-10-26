@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [CreateCompany][] method.
+ * Request object for `CreateCompany` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.CreateCompanyRequest}
@@ -362,7 +362,7 @@ public final class CreateCompanyRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request object for [CreateCompany][] method.
+   * Request object for `CreateCompany` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.CreateCompanyRequest}

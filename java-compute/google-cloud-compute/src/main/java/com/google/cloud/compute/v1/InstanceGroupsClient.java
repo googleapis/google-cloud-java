@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The InstanceGroups API.
  *
+ * <p>This client uses InstanceGroups version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -560,7 +562,6 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, InstanceGroupsScopedList> element :
@@ -602,7 +603,6 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, InstanceGroupsScopedList>> future =
@@ -643,7 +643,6 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -1103,7 +1102,6 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   for (InstanceGroup element : instanceGroupsClient.list(request).iterateAll()) {
@@ -1142,7 +1140,6 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   ApiFuture<InstanceGroup> future =
@@ -1181,7 +1178,6 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   while (true) {
@@ -1281,7 +1277,6 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   for (InstanceWithNamedPorts element :
@@ -1324,7 +1319,6 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   ApiFuture<InstanceWithNamedPorts> future =
@@ -1366,7 +1360,6 @@ public class InstanceGroupsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setZone("zone3744684")
    *           .build();
    *   while (true) {

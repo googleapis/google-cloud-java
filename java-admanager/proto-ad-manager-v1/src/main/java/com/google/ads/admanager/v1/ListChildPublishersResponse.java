@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Response object for [ListChildPublishers][] containing matching
+ * Response object for `ListChildPublishers` containing matching
  * [ChildPublisher][google.ads.admanager.v1.ChildPublisher] objects.
  * </pre>
  *
@@ -423,7 +423,7 @@ public final class ListChildPublishersResponse extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Response object for [ListChildPublishers][] containing matching
+   * Response object for `ListChildPublishers` containing matching
    * [ChildPublisher][google.ads.admanager.v1.ChildPublisher] objects.
    * </pre>
    *

@@ -33,6 +33,7 @@ import com.google.cloud.geminidataanalytics.v1.ListConversationsResponse;
 import com.google.cloud.geminidataanalytics.v1.ListMessagesRequest;
 import com.google.cloud.geminidataanalytics.v1.ListMessagesResponse;
 import com.google.cloud.geminidataanalytics.v1.Message;
+import com.google.cloud.geminidataanalytics.v1.UpdateConversationRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -61,6 +62,10 @@ public abstract class DataChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteConversationRequest, Empty> deleteConversationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteConversationCallable()");
+  }
+
+  public UnaryCallable<UpdateConversationRequest, Conversation> updateConversationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateConversationCallable()");
   }
 
   public UnaryCallable<GetConversationRequest, Conversation> getConversationCallable() {

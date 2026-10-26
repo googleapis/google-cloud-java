@@ -57,4 +57,53 @@ public interface StartBackfillJobRequestOrBuilder
    * @return The bytes for object.
    */
   com.google.protobuf.ByteString getObjectBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional event filter. If not set, or empty, the backfill will be
+   * performed on the entire object. This is currently used for partial backfill
+   * and only supported for SQL sources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the eventFilter field is set.
+   */
+  boolean hasEventFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional event filter. If not set, or empty, the backfill will be
+   * performed on the entire object. This is currently used for partial backfill
+   * and only supported for SQL sources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The eventFilter.
+   */
+  com.google.cloud.datastream.v1.EventFilter getEventFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional event filter. If not set, or empty, the backfill will be
+   * performed on the entire object. This is currently used for partial backfill
+   * and only supported for SQL sources.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.EventFilter event_filter = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.EventFilterOrBuilder getEventFilterOrBuilder();
 }

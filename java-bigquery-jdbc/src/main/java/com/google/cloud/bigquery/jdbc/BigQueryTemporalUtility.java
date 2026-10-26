@@ -33,7 +33,9 @@ import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoField;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -49,6 +51,17 @@ final class BigQueryTemporalUtility {
   private static final BigDecimal MICROS_PER_SECOND = new BigDecimal("1000000");
   private static final DateTimeFormatter BASE_FORMATTER =
       DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.");
+  private static final DateTimeFormatter UTC_TIMESTAMP_TO_STRING_FORMATTER =
+      new DateTimeFormatterBuilder()
+          .appendPattern("uuuu-MM-dd HH:mm:ss.")
+          .appendFraction(ChronoField.NANO_OF_SECOND, 1, 9, false)
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
+  static final DateTimeFormatter TIME_FORMATTER =
+      new DateTimeFormatterBuilder()
+          .appendPattern("HH:mm:ss")
+          .appendFraction(ChronoField.NANO_OF_SECOND, 0, 9, true)
+          .toFormatter();
   static final String TIMESTAMP_PICOSECONDS_TYPE_NAME = "TIMESTAMP_PICOSECONDS";
 
   private BigQueryTemporalUtility() {}
@@ -58,9 +71,17 @@ final class BigQueryTemporalUtility {
    * provided timezone (or JVM default if null).
    */
   public static Timestamp boxDateTime(String val, ZoneId zoneId) {
+    String isoString = truncateFractionalSeconds(val.replace(' ', 'T'), 9);
+    return boxDateTime(LocalDateTime.parse(isoString), zoneId);
+  }
+
+  /**
+   * Converts a civil {@link LocalDateTime} into a {@link Timestamp} by anchoring it to the provided
+   * timezone (or JVM default if null).
+   */
+  static Timestamp boxDateTime(LocalDateTime localDateTime, ZoneId zoneId) {
     ZoneId targetZone = zoneId != null ? zoneId : ZoneId.systemDefault();
-    String isoString = truncateIsoFractionToNanos(val.replace(' ', 'T'));
-    return Timestamp.from(LocalDateTime.parse(isoString).atZone(targetZone).toInstant());
+    return Timestamp.from(localDateTime.atZone(targetZone).toInstant());
   }
 
   /**
@@ -68,8 +89,28 @@ final class BigQueryTemporalUtility {
    * provided timezone (or JVM default if null).
    */
   public static Date boxDate(String val, ZoneId zoneId) {
+    return boxDate(LocalDate.parse(val), zoneId);
+  }
+
+  /**
+   * Converts a civil {@link LocalDate} into a {@link Date} by anchoring it to midnight of the
+   * provided timezone (or JVM default if null).
+   */
+  static Date boxDate(LocalDate localDate, ZoneId zoneId) {
     ZoneId targetZone = zoneId != null ? zoneId : ZoneId.systemDefault();
-    return new Date(LocalDate.parse(val).atStartOfDay(targetZone).toInstant().toEpochMilli());
+    return new Date(localDate.atStartOfDay(targetZone).toInstant().toEpochMilli());
+  }
+
+  /**
+   * Converts a civil {@link LocalTime} into a {@link Time} anchored to 1970-01-01 in the provided
+   * timezone (or JVM default if null).
+   */
+  static Time boxTime(LocalTime localTime, ZoneId zoneId) {
+    if (zoneId == null) {
+      return Time.valueOf(localTime);
+    }
+    long millisOfDay = localTime.toNanoOfDay() / 1_000_000;
+    return new Time(getLocalMillis(millisOfDay, zoneId));
   }
 
   /**
@@ -80,7 +121,7 @@ final class BigQueryTemporalUtility {
    * perfectly accurate modern conversions.
    */
   public static Time boxTime(String val, ZoneId zoneId) {
-    LocalTime localTime = LocalTime.parse(truncateIsoFractionToNanos(val));
+    LocalTime localTime = LocalTime.parse(truncateFractionalSeconds(val, 9));
 
     if (zoneId == null) {
       // JDBC 4.2 Modern API (no Calendar provided):
@@ -96,16 +137,12 @@ final class BigQueryTemporalUtility {
     // Legacy JDBC 3.0 API (Calendar provided):
     // Use legacy Calendar manipulation to intentionally replicate old JVM historical DST quirks
     // for January 1, 1970, ensuring strict backwards compatibility for legacy ORMs.
-    Calendar targetCal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
-    targetCal.set(Calendar.YEAR, 1970);
-    targetCal.set(Calendar.MONTH, Calendar.JANUARY);
-    targetCal.set(Calendar.DAY_OF_MONTH, 1);
-    targetCal.set(Calendar.HOUR_OF_DAY, localTime.getHour());
-    targetCal.set(Calendar.MINUTE, localTime.getMinute());
-    targetCal.set(Calendar.SECOND, localTime.getSecond());
-    targetCal.set(Calendar.MILLISECOND, localTime.getNano() / 1_000_000);
-
-    return new Time(targetCal.getTimeInMillis());
+    return createTimeInCalendar(
+        Calendar.getInstance(TimeZone.getTimeZone(zoneId)),
+        localTime.getHour(),
+        localTime.getMinute(),
+        localTime.getSecond(),
+        localTime.getNano() / 1_000_000);
   }
 
   /**
@@ -139,7 +176,7 @@ final class BigQueryTemporalUtility {
     }
 
     // Truncate sub-nanosecond fraction (> 9 digits) to prevent Instant.parse failure
-    iso = truncateIsoFractionToNanos(iso);
+    iso = truncateFractionalSeconds(iso, 9);
 
     try {
       return Timestamp.from(Instant.parse(iso));
@@ -310,6 +347,17 @@ final class BigQueryTemporalUtility {
   }
 
   /**
+   * Formats a {@link Timestamp} in UTC using {@link Timestamp#toString()}'s fractional-second
+   * convention (1 to 9 digits with trailing zeros stripped after the first decimal place).
+   */
+  static String formatTimestampToUtcString(Timestamp ts) {
+    if (ts == null) {
+      return null;
+    }
+    return UTC_TIMESTAMP_TO_STRING_FORMATTER.format(ts.toInstant());
+  }
+
+  /**
    * Formats a timestamp value (which may be a {@link Long} epoch microsecond, an ISO-8601 string, a
    * {@link java.sql.Timestamp}, or an epoch decimal string) into a standard UTC JDBC timestamp
    * string with 6 or 12 fractional digits according to {@code enableTimestampPicos}.
@@ -321,6 +369,10 @@ final class BigQueryTemporalUtility {
     }
     if (value instanceof Long) {
       return formatTimestampStringFromMicroseconds((Long) value, enableTimestampPicos);
+    }
+    if (value instanceof Timestamp) {
+      return formatTimestampStringFromIso(
+          formatTimestampToUtcString((Timestamp) value), enableTimestampPicos);
     }
     String str = value.toString();
     if (str.indexOf(':') >= 0) {
@@ -344,30 +396,31 @@ final class BigQueryTemporalUtility {
   }
 
   /**
-   * Truncates sub-second fractional digits to at most 9 digits (nanoseconds) so that standard JDK
-   * temporal parsers (which cap at nanosecond precision) can parse the string without throwing
-   * {@link java.time.format.DateTimeParseException}. Any trailing timezone offset or suffix is
-   * preserved intact.
+   * Truncates sub-second fractional digits in a timestamp string to at most {@code maxDigits}. Any
+   * trailing timezone offset or suffix is preserved intact.
    */
-  private static String truncateIsoFractionToNanos(String iso) {
-    int dotIdx = iso.indexOf('.');
+  static String truncateFractionalSeconds(String str, int maxDigits) {
+    if (str == null) {
+      return null;
+    }
+    int dotIdx = str.indexOf('.');
     if (dotIdx < 0) {
-      return iso;
+      return str;
     }
 
     int fractionStart = dotIdx + 1;
     int fractionEnd = fractionStart;
-    while (fractionEnd < iso.length() && Character.isDigit(iso.charAt(fractionEnd))) {
+    int len = str.length();
+    while (fractionEnd < len && Character.isDigit(str.charAt(fractionEnd))) {
       fractionEnd++;
     }
 
     int fractionDigits = fractionEnd - fractionStart;
-    if (fractionDigits <= 9) {
-      return iso;
+    if (fractionDigits <= maxDigits) {
+      return str;
     }
 
-    // Retain the first 9 fractional digits and append any trailing suffix (e.g., 'Z' or offset)
-    return iso.substring(0, fractionStart + 9) + iso.substring(fractionEnd);
+    return str.substring(0, fractionStart + maxDigits) + str.substring(fractionEnd);
   }
 
   /**
@@ -459,42 +512,55 @@ final class BigQueryTemporalUtility {
     if (time == null || cal == null) {
       return time;
     }
-    ZoneId systemZone = ZoneId.systemDefault();
-    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    TimeZone systemZone = TimeZone.getDefault();
+    TimeZone targetZone = cal.getTimeZone();
     if (systemZone.equals(targetZone)) {
       return time;
     }
-    Calendar defaultCal = Calendar.getInstance();
-    defaultCal.setTime(time);
-
-    Calendar targetCal = getSafeCalendar(cal);
-    targetCal.set(Calendar.YEAR, 1970);
-    targetCal.set(Calendar.MONTH, Calendar.JANUARY);
-    targetCal.set(Calendar.DAY_OF_MONTH, 1);
-    targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
-    targetCal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
-    targetCal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
-    targetCal.set(Calendar.MILLISECOND, defaultCal.get(Calendar.MILLISECOND));
-    return new Time(targetCal.getTimeInMillis());
+    return shiftTimeBetweenCalendars(time, Calendar.getInstance(), getSafeCalendar(cal));
   }
 
   /**
-   * Converts a java.sql.Timestamp by shifting its wall-clock fields into the target Calendar's
-   * timezone per JDBC specification while preserving nanosecond precision.
+   * Converts a {@link Time} for writing/inbound parameter setting operations (e.g., {@code
+   * setTime(..., Calendar)}) by extracting its local time fields as interpreted in the target
+   * {@link Calendar}'s timezone and normalizing them back into 1970-01-01 in the system-default
+   * timezone.
+   *
+   * @param time the time instant specified relative to the target Calendar
+   * @param cal the Calendar containing the source timezone
+   * @return the normalized Time on 1970-01-01 in the system-default timezone
    */
-  static Timestamp convertTimestampWithCalendar(Timestamp timestamp, Calendar cal) {
-    if (timestamp == null || cal == null) {
-      return timestamp;
+  static Time convertTimeToCalendar(Time time, Calendar cal) {
+    if (time == null || cal == null) {
+      return time;
     }
-    ZoneId systemZone = ZoneId.systemDefault();
-    ZoneId targetZone = cal.getTimeZone().toZoneId();
+    TimeZone systemZone = TimeZone.getDefault();
+    TimeZone targetZone = cal.getTimeZone();
     if (systemZone.equals(targetZone)) {
-      return timestamp;
+      return time;
     }
-    LocalDateTime ldt = timestamp.toLocalDateTime();
-    ZonedDateTime zdt = ldt.atZone(targetZone);
-    Timestamp adjustedTimestamp = Timestamp.from(zdt.toInstant());
-    adjustedTimestamp.setNanos(timestamp.getNanos());
-    return adjustedTimestamp;
+    return shiftTimeBetweenCalendars(time, getSafeCalendar(cal), Calendar.getInstance());
+  }
+
+  private static Time shiftTimeBetweenCalendars(Time time, Calendar sourceCal, Calendar destCal) {
+    sourceCal.setTime(time);
+    return createTimeInCalendar(
+        destCal,
+        sourceCal.get(Calendar.HOUR_OF_DAY),
+        sourceCal.get(Calendar.MINUTE),
+        sourceCal.get(Calendar.SECOND),
+        sourceCal.get(Calendar.MILLISECOND));
+  }
+
+  private static Time createTimeInCalendar(
+      Calendar destCal, int hour, int minute, int second, int millisecond) {
+    destCal.set(Calendar.YEAR, 1970);
+    destCal.set(Calendar.MONTH, Calendar.JANUARY);
+    destCal.set(Calendar.DAY_OF_MONTH, 1);
+    destCal.set(Calendar.HOUR_OF_DAY, hour);
+    destCal.set(Calendar.MINUTE, minute);
+    destCal.set(Calendar.SECOND, second);
+    destCal.set(Calendar.MILLISECOND, millisecond);
+    return new Time(destCal.getTimeInMillis());
   }
 }

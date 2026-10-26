@@ -27,7 +27,7 @@ public class BigQueryJdbcSqlFeatureNotSupportedException extends SQLFeatureNotSu
    * @param message The detail message.
    */
   public BigQueryJdbcSqlFeatureNotSupportedException(String message) {
-    super(message);
+    super(message, BigQueryJdbcSqlStates.FEATURE_NOT_SUPPORTED);
   }
 
   /**
@@ -36,6 +36,6 @@ public class BigQueryJdbcSqlFeatureNotSupportedException extends SQLFeatureNotSu
    * @param ex The BigQueryException to be thrown.
    */
   public BigQueryJdbcSqlFeatureNotSupportedException(BigQueryException ex) {
-    super(ex);
+    super(ex.getMessage(), BigQueryJdbcSqlStates.FEATURE_NOT_SUPPORTED, ex);
   }
 }

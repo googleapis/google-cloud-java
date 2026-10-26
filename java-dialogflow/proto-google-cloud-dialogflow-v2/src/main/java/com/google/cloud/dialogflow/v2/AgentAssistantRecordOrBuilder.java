@@ -199,5 +199,94 @@ public interface AgentAssistantRecordOrBuilder
    */
   com.google.cloud.dialogflow.v2.GeneratorSuggestionOrBuilder getGeneratorSuggestionOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The companion suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the companionSuggestion field is set.
+   */
+  boolean hasCompanionSuggestion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The companion suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The companionSuggestion.
+   */
+  com.google.cloud.dialogflow.v2.CompanionSuggestion getCompanionSuggestion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The companion suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.CompanionSuggestion companion_suggestion = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.CompanionSuggestionOrBuilder getCompanionSuggestionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reactive companion suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the reactiveCompanionSuggestion field is set.
+   */
+  boolean hasReactiveCompanionSuggestion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reactive companion suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The reactiveCompanionSuggestion.
+   */
+  com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse
+      getReactiveCompanionSuggestion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reactive companion suggestion.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse.ReactiveModeResponse reactive_companion_suggestion = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.StreamingReactiveCompanionSuggestionsResponse
+          .ReactiveModeResponseOrBuilder
+      getReactiveCompanionSuggestionOrBuilder();
+
   com.google.cloud.dialogflow.v2.AgentAssistantRecord.AnswerCase getAnswerCase();
 }

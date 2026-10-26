@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The OrganizationSecurityPolicies API.
  *
+ * <p>This client uses OrganizationSecurityPolicies version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -1588,7 +1590,6 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setParentId("parentId1175162725")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (SecurityPolicy element : organizationSecurityPoliciesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1628,7 +1629,6 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setParentId("parentId1175162725")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<SecurityPolicy> future =
    *       organizationSecurityPoliciesClient.listPagedCallable().futureCall(request);
@@ -1669,7 +1669,6 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setParentId("parentId1175162725")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     SecurityPolicyList response =
@@ -1845,7 +1844,6 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setParentId("parentId1175162725")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   SecurityPoliciesListPreconfiguredExpressionSetsResponse response =
    *       organizationSecurityPoliciesClient.listPreconfiguredExpressionSets(request);
@@ -1882,7 +1880,6 @@ public class OrganizationSecurityPoliciesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setParentId("parentId1175162725")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<SecurityPoliciesListPreconfiguredExpressionSetsResponse> future =
    *       organizationSecurityPoliciesClient

@@ -397,4 +397,18 @@ public interface CompletionConfigOrBuilder
    * @return The bytes for lastAllowlistImportOperation.
    */
   com.google.protobuf.ByteString getLastAllowlistImportOperationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set to true, the conversational shopping agent prompts will be
+   * served. Default value is false.
+   * </pre>
+   *
+   * <code>bool enable_agent_prompts = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableAgentPrompts.
+   */
+  boolean getEnableAgentPrompts();
 }

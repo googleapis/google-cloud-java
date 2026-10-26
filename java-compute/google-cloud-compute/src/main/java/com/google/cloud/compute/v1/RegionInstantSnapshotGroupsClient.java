@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionInstantSnapshotGroups API.
  *
+ * <p>This client uses RegionInstantSnapshotGroups version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -838,7 +840,6 @@ public class RegionInstantSnapshotGroupsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (InstantSnapshotGroup element :
    *       regionInstantSnapshotGroupsClient.list(request).iterateAll()) {
@@ -876,7 +877,6 @@ public class RegionInstantSnapshotGroupsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<InstantSnapshotGroup> future =
    *       regionInstantSnapshotGroupsClient.listPagedCallable().futureCall(request);
@@ -914,7 +914,6 @@ public class RegionInstantSnapshotGroupsClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ListInstantSnapshotGroups response =

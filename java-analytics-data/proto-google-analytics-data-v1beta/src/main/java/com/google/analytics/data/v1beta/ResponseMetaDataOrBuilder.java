@@ -383,4 +383,74 @@ public interface ResponseMetaDataOrBuilder
    */
   com.google.analytics.data.v1beta.SamplingMetadataOrBuilder getSamplingMetadatasOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+   * </code>
+   */
+  java.util.List<com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason>
+      getDataTruncationReasonsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+   * </code>
+   */
+  com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason getDataTruncationReasons(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+   * </code>
+   */
+  int getDataTruncationReasonsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReasonOrBuilder>
+      getDataTruncationReasonsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+   * </code>
+   */
+  com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReasonOrBuilder
+      getDataTruncationReasonsOrBuilder(int index);
 }

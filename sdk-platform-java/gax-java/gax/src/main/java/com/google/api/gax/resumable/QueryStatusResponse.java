@@ -51,13 +51,10 @@ public abstract class QueryStatusResponse<ResponseT> {
    * null} if the server did not return a committed offset (e.g. if the upload is already
    * finalized).
    *
-   * <p>When {@link #isComplete()} is {@code false}, this value is guaranteed to be non-null and
-   * represents the starting offset for resuming the upload.
+   * <p>When {@link #getUploadStatus()} is {@link ResumableUploadStatus#ACTIVE}, this value is
+   * guaranteed to be non-null and represents the starting offset for resuming the upload.
    */
   public abstract @Nullable Long getCommittedOffset();
-
-  /** Whether the resumable upload session has finalized and completed on the server. */
-  public abstract boolean isComplete();
 
   /**
    * The response object returned by the server upon final completion (e.g. metadata of the uploaded
@@ -65,19 +62,23 @@ public abstract class QueryStatusResponse<ResponseT> {
    */
   public abstract @Nullable ResponseT getResponse();
 
+  /** Returns the status of the upload session returned by the server. */
+  public abstract ResumableUploadStatus getUploadStatus();
+
   public abstract Builder<ResponseT> toBuilder();
 
   public static <ResponseT> Builder<ResponseT> newBuilder() {
-    return new AutoValue_QueryStatusResponse.Builder<ResponseT>().setComplete(false);
+    return new AutoValue_QueryStatusResponse.Builder<ResponseT>()
+        .setUploadStatus(ResumableUploadStatus.ACTIVE);
   }
 
   @AutoValue.Builder
   public abstract static class Builder<ResponseT> {
     public abstract Builder<ResponseT> setCommittedOffset(@Nullable Long committedOffset);
 
-    public abstract Builder<ResponseT> setComplete(boolean isComplete);
-
     public abstract Builder<ResponseT> setResponse(@Nullable ResponseT response);
+
+    public abstract Builder<ResponseT> setUploadStatus(ResumableUploadStatus uploadStatus);
 
     public abstract QueryStatusResponse<ResponseT> build();
   }

@@ -674,6 +674,9 @@ public abstract class JobStatistics implements Serializable {
             this.exportDataStats =
                 ExportDataStats.fromPb(statisticsPb.getQuery().getExportDataStatistics());
           }
+          if (statisticsPb.getQuery().getUndeclaredQueryParameters() != null) {
+            this.queryParameters = statisticsPb.getQuery().getUndeclaredQueryParameters();
+          }
         }
       }
 
@@ -1647,7 +1650,7 @@ public abstract class JobStatistics implements Serializable {
       if (statisticsPb.getScriptStatistics() != null) {
         this.scriptStatistics = ScriptStatistics.fromPb(statisticsPb.getScriptStatistics());
       }
-      if (reservationUsage != null) {
+      if (statisticsPb.getReservationUsage() != null) {
         this.reservationUsage =
             Lists.transform(statisticsPb.getReservationUsage(), ReservationUsage.FROM_PB_FUNCTION);
       }
@@ -1681,6 +1684,16 @@ public abstract class JobStatistics implements Serializable {
 
     B setTotalSlotMs(Long totalSlotMs) {
       this.totalSlotMs = totalSlotMs;
+      return self();
+    }
+
+    B setSessionInfo(SessionInfo sessionInfo) {
+      this.sessionInfo = sessionInfo;
+      return self();
+    }
+
+    B setReservationUsage(List<ReservationUsage> reservationUsage) {
+      this.reservationUsage = reservationUsage;
       return self();
     }
 

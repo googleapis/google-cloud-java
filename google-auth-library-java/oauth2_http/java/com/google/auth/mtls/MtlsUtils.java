@@ -33,13 +33,19 @@ package com.google.auth.mtls;
 import com.google.api.core.InternalApi;
 import com.google.auth.oauth2.EnvironmentProvider;
 import com.google.auth.oauth2.PropertyProvider;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
+import com.google.common.io.BaseEncoding;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.MessageDigest;
 import java.util.Locale;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Utility class for mTLS related operations.
@@ -53,8 +59,255 @@ public class MtlsUtils {
   static final String WELL_KNOWN_CERTIFICATE_CONFIG_FILE = "certificate_config.json";
   static final String CLOUDSDK_CONFIG_DIRECTORY = "gcloud";
 
+  /**
+   * Well-known path of the combined certificate chain and private key bundle that GKE delivers to
+   * pods with Agent Identity (Pod Certificates). Used as a fallback client certificate source when
+   * no certificate configuration file is configured or present.
+   */
+  static final String GKE_CREDENTIAL_BUNDLE_PATH =
+      "/var/run/secrets/workload-spiffe-credentials/x509.credential-bundle.private-key.pem";
+
+  // Overridable via setGkeCredentialBundlePathForTesting so unit tests can point to a temp file.
+  private static volatile String gkeCredentialBundlePath = GKE_CREDENTIAL_BUNDLE_PATH;
+
   private MtlsUtils() {
     // Prevent instantiation for Utility class
+  }
+
+  /**
+   * Returns {@code true} if a certificate configuration is configured or present: either {@code
+   * GOOGLE_API_CERTIFICATE_CONFIG} is set, or the well-known gcloud {@code certificate_config.json}
+   * file exists. When this returns {@code true}, the GKE credential bundle fallback is not used, so
+   * the certificate used for mTLS and the certificate bound to tokens always come from the same
+   * source.
+   */
+  public static boolean hasCertificateConfiguration(
+      EnvironmentProvider envProvider, PropertyProvider propProvider) {
+    if (!Strings.isNullOrEmpty(envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE))) {
+      return true;
+    }
+    try {
+      return getWellKnownCertificateConfigFile(envProvider, propProvider).exists();
+    } catch (IOException e) {
+      // APPDATA missing on Windows, etc. No well-known configuration file.
+      return false;
+    }
+  }
+
+  /**
+   * Returns the GKE credential bundle path if no certificate configuration is configured or present
+   * (see {@link #hasCertificateConfiguration}) and the bundle exists and is readable; otherwise
+   * returns {@code null}.
+   */
+  static @Nullable String getGkeCredentialBundlePath(
+      EnvironmentProvider envProvider, PropertyProvider propProvider) {
+    if (hasCertificateConfiguration(envProvider, propProvider)) {
+      return null;
+    }
+    return findGkeCredentialBundle();
+  }
+
+  /**
+   * Returns {@code true} if the GKE credential bundle at {@code path} is a readable, non-empty
+   * regular file.
+   */
+  public static boolean isGkeCredentialBundleReady(String path) {
+    File bundle = new File(path);
+    return bundle.isFile() && bundle.canRead() && bundle.length() > 0;
+  }
+
+  /**
+   * Returns the GKE credential bundle path if it is a readable, non-empty regular file, otherwise
+   * null.
+   */
+  private static @Nullable String findGkeCredentialBundle() {
+    String path = gkeCredentialBundlePath;
+    return isGkeCredentialBundleReady(path) ? path : null;
+  }
+
+  /** Overrides the GKE credential bundle path for testing; {@code null} restores the default. */
+  @VisibleForTesting
+  static void setGkeCredentialBundlePathForTesting(@Nullable String path) {
+    gkeCredentialBundlePath = path != null ? path : GKE_CREDENTIAL_BUNDLE_PATH;
+  }
+
+  private static boolean isUseClientCertificateExplicitlyDisabled(
+      @Nullable String useClientCertificate) {
+    return !Strings.isNullOrEmpty(useClientCertificate)
+        && !"true".equalsIgnoreCase(useClientCertificate);
+  }
+
+  /**
+   * Returns if mutual TLS client certificate should be used. Returns true if valid workload
+   * certificates are configured or if GOOGLE_API_USE_CLIENT_CERTIFICATE is explicitly set to true
+   * (e.g. for Enterprise Certificate Proxy or custom MtlsProviders), unless explicitly disabled via
+   * GOOGLE_API_USE_CLIENT_CERTIFICATE (set to a non-empty value other than "true").
+   */
+  public static boolean useMtlsClientCertificate(
+      EnvironmentProvider envProvider, PropertyProvider propProvider) {
+    String rawVal = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    String useClientCertificate = rawVal != null ? rawVal.trim() : null;
+    if (isUseClientCertificateExplicitlyDisabled(useClientCertificate)) {
+      return false;
+    }
+    if (getWorkloadCertPath(envProvider, propProvider) != null) {
+      return true;
+    }
+    return "true".equalsIgnoreCase(useClientCertificate);
+  }
+
+  /**
+   * Resolves and returns the path to the mutual TLS client certificate, or null if none should be
+   * used.
+   *
+   * <p>Possible outcomes:
+   *
+   * <ol>
+   *   <li><b>Non-null {@link String} (Valid happy path):</b> A valid workload certificate
+   *       configuration was found and both the certificate and private key files exist and are
+   *       readable; or no certificate configuration is set or present and the GKE credential bundle
+   *       ({@code /var/run/secrets/workload-spiffe-credentials/
+   *       x509.credential-bundle.private-key.pem}) exists and is readable, in which case the bundle
+   *       path is returned.
+   *   <li><b>{@link IllegalStateException} (Invalid state - fail closed):</b> An explicit {@code
+   *       GOOGLE_API_CERTIFICATE_CONFIG} path or an existing default well-known certificate
+   *       configuration file is missing, unreadable, malformed, or references missing/unreadable
+   *       certificate or private key files. This is treated as an unrecoverable misconfiguration.
+   *   <li><b>{@code null} (Safe fallback / fail open):</b> Client certificates are explicitly
+   *       disabled via {@code GOOGLE_API_USE_CLIENT_CERTIFICATE} (any non-empty value other than
+   *       {@code "true"}), no explicit configuration is set and neither the default well-known
+   *       configuration file nor a readable GKE credential bundle exists on disk, or the
+   *       configuration specifies an non-workload source (e.g., ECP/PKCS11 without a {@code
+   *       workload} section). Callers can proceed without workload certificate file polling.
+   * </ol>
+   */
+  public static @Nullable String getWorkloadCertPath(
+      EnvironmentProvider envProvider, PropertyProvider propProvider) {
+    String rawVal = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    String useClientCertificate = rawVal != null ? rawVal.trim() : null;
+    if (isUseClientCertificateExplicitlyDisabled(useClientCertificate)) {
+      return null;
+    }
+
+    String explicitConfigPath = envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE);
+
+    // 1. Explicit Configuration Path (Fail Closed)
+    if (!Strings.isNullOrEmpty(explicitConfigPath)) {
+      File configFile = new File(explicitConfigPath);
+      if (!configFile.exists()) {
+        throw new IllegalStateException(
+            "Certificate configuration file specified via GOOGLE_API_CERTIFICATE_CONFIG at '"
+                + explicitConfigPath
+                + "' does not exist.");
+      }
+      if (!configFile.isFile() || !configFile.canRead()) {
+        throw new IllegalStateException(
+            "Failed to read certificate configuration file specified via"
+                + " GOOGLE_API_CERTIFICATE_CONFIG at '"
+                + explicitConfigPath
+                + "'.");
+      }
+      WorkloadCertificateConfiguration config;
+      try {
+        config = getWorkloadCertificateConfiguration(envProvider, propProvider, explicitConfigPath);
+      } catch (CertificateSourceUnavailableException e) {
+        // ECP / PKCS11 configuration without workload section; safe fallback
+        return null;
+      } catch (Exception e) {
+        throw new IllegalStateException(
+            "Certificate configuration file specified via GOOGLE_API_CERTIFICATE_CONFIG at '"
+                + explicitConfigPath
+                + "' is malformed: "
+                + e.getMessage(),
+            e);
+      }
+      checkCertAndKeyFilesReadable(config, explicitConfigPath, false);
+      return config.getCertPath();
+    }
+
+    // 2. Implicit / Default gcloud Configuration Path
+    File defaultConfigFile = null;
+    try {
+      defaultConfigFile = getWellKnownCertificateConfigFile(envProvider, propProvider);
+    } catch (IOException e) {
+      // APPDATA missing on Windows, etc. Safe fallback.
+    }
+    if (defaultConfigFile != null && defaultConfigFile.exists()) {
+      if (!defaultConfigFile.isFile() || !defaultConfigFile.canRead()) {
+        throw new IllegalStateException(
+            "Default certificate configuration file at '"
+                + defaultConfigFile.getAbsolutePath()
+                + "' exists but could not be read.");
+      }
+      WorkloadCertificateConfiguration config = null;
+      try {
+        config = getWorkloadCertificateConfiguration(envProvider, propProvider, null);
+      } catch (CertificateSourceUnavailableException e) {
+        // ECP-only configuration without workload section; safe fallback
+      } catch (Exception e) {
+        throw new IllegalStateException(
+            "Default certificate configuration file at '"
+                + defaultConfigFile.getAbsolutePath()
+                + "' is malformed: "
+                + e.getMessage(),
+            e);
+      }
+      if (config != null) {
+        checkCertAndKeyFilesReadable(config, defaultConfigFile.getAbsolutePath(), true);
+        return config.getCertPath();
+      }
+      // A default configuration file exists without a workload section (e.g. ECP); it takes
+      // precedence over the GKE credential bundle.
+      return null;
+    }
+
+    // 3. GKE credential bundle (Pod Certificates), used only when no certificate configuration
+    // file is configured or present. The combined bundle serves as both certificate and key.
+    return findGkeCredentialBundle();
+  }
+
+  private static void checkCertAndKeyFilesReadable(
+      WorkloadCertificateConfiguration config, String configPath, boolean isDefaultConfig) {
+    File certFile = new File(config.getCertPath());
+    File keyFile = new File(config.getPrivateKeyPath());
+    if (!certFile.isFile() || !certFile.canRead() || !keyFile.isFile() || !keyFile.canRead()) {
+      String sourcePrefix =
+          isDefaultConfig
+              ? "referenced by default configuration '"
+              : "referenced by configuration '";
+      throw new IllegalStateException(
+          "Failed to read certificate/key file at '"
+              + config.getCertPath()
+              + "' or '"
+              + config.getPrivateKeyPath()
+              + "' "
+              + sourcePrefix
+              + configPath
+              + "'.");
+    }
+  }
+
+  /**
+   * Computes the lower-case SHA-256 hex fingerprint of the certificate file at {@code certPath}.
+   *
+   * <p>Unlike {@link #getWorkloadCertPath}, which validates configuration at channel initialization
+   * and fails closed on errors, this method is called dynamically at runtime during active RPCs to
+   * detect certificate rotations on disk. External certificate rotators may temporarily delete,
+   * truncate, or rewrite the certificate file mid-RPC. Returning {@code null} on read/digest
+   * exceptions (which callers normalize to {@code ""}) allows runtime refresh checks to ignore
+   * transient mid-write states and keep the active healthy channel without failing in-flight RPCs.
+   */
+  public static @Nullable String getCertificateFingerprint(@Nullable String certPath) {
+    if (certPath == null) {
+      return null;
+    }
+    try {
+      byte[] certBytes = Files.readAllBytes(Paths.get(certPath));
+      byte[] digest = MessageDigest.getInstance("SHA-256").digest(certBytes);
+      return BaseEncoding.base16().lowerCase().encode(digest);
+    } catch (Exception e) {
+      return null;
+    }
   }
 
   /**
@@ -65,14 +318,17 @@ public class MtlsUtils {
    * @throws IOException if the certificate configuration cannot be found or loaded.
    */
   public static String getCertificatePath(
-      EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride)
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      @Nullable String certConfigPathOverride)
       throws IOException {
     String certPath =
         getWorkloadCertificateConfiguration(envProvider, propProvider, certConfigPathOverride)
             .getCertPath();
     if (Strings.isNullOrEmpty(certPath)) {
       throw new CertificateSourceUnavailableException(
-          "Certificate configuration loaded successfully, but does not contain a 'certificate_file' path.");
+          "Certificate configuration loaded successfully, but does not contain a"
+              + " 'cert_configs.workload.cert_path' path.");
     }
     return certPath;
   }
@@ -92,7 +348,9 @@ public class MtlsUtils {
    * @throws IOException if the configuration file cannot be found, read, or parsed
    */
   static WorkloadCertificateConfiguration getWorkloadCertificateConfiguration(
-      EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride)
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      @Nullable String certConfigPathOverride)
       throws IOException {
     File certConfig;
     if (certConfigPathOverride != null) {
@@ -106,7 +364,7 @@ public class MtlsUtils {
       }
     }
 
-    if (!certConfig.isFile()) {
+    if (!certConfig.isFile() || !certConfig.canRead()) {
       throw new CertificateSourceUnavailableException(
           "Certificate configuration file does not exist or is not a file: "
               + certConfig.getAbsolutePath());

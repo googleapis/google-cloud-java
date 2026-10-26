@@ -74,7 +74,7 @@ public final class AdRuleFillOrderDirectionEnum extends com.google.protobuf.Gene
    *
    * <pre>
    * Defines the fill order direction of ad breaks with
-   * AdBreakOptimizationType.POSITION.
+   * [AdBreakOptimizationTypeEnum.AdBreakOptimizationType.POSITION][google.ads.admanager.v1.AdBreakOptimizationTypeEnum.AdBreakOptimizationType.POSITION].
    * </pre>
    *
    * Protobuf enum {@code

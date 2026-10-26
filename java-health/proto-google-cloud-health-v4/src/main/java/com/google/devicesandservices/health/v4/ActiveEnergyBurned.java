@@ -137,6 +137,7 @@ public final class ActiveEnergyBurned extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. Energy burned during an activity, measured in kilocalories.
+   * Must be in the range `[0, 1000000]`.
    * </pre>
    *
    * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -153,6 +154,7 @@ public final class ActiveEnergyBurned extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Required. Energy burned during an activity, measured in kilocalories.
+   * Must be in the range `[0, 1000000]`.
    * </pre>
    *
    * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -752,6 +754,7 @@ public final class ActiveEnergyBurned extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Energy burned during an activity, measured in kilocalories.
+     * Must be in the range `[0, 1000000]`.
      * </pre>
      *
      * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -768,6 +771,7 @@ public final class ActiveEnergyBurned extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Energy burned during an activity, measured in kilocalories.
+     * Must be in the range `[0, 1000000]`.
      * </pre>
      *
      * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -784,6 +788,7 @@ public final class ActiveEnergyBurned extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Energy burned during an activity, measured in kilocalories.
+     * Must be in the range `[0, 1000000]`.
      * </pre>
      *
      * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -804,6 +809,7 @@ public final class ActiveEnergyBurned extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Required. Energy burned during an activity, measured in kilocalories.
+     * Must be in the range `[0, 1000000]`.
      * </pre>
      *
      * <code>optional double kcal = 2 [(.google.api.field_behavior) = REQUIRED];</code>

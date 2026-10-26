@@ -43,7 +43,6 @@ public class AsyncList {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setRegion("region-934795532")
-              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<Autoscaler> future =
           regionAutoscalersClient.listPagedCallable().futureCall(request);

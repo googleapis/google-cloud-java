@@ -24,4 +24,49 @@ package com.google.cloud.datastream.v1;
 public interface SqlServerChangeTablesOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.datastream.v1.SqlServerChangeTables)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DDL configuration for change tables.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ddlConfig field is set.
+   */
+  boolean hasDdlConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DDL configuration for change tables.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ddlConfig.
+   */
+  com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig getDdlConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DDL configuration for change tables.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfig ddl_config = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.SqlServerChangeTables.SqlServerDdlConfigOrBuilder
+      getDdlConfigOrBuilder();
+}

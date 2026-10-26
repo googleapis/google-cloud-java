@@ -16,24 +16,47 @@
 
 package com.google.ads.marketingplatform.admin.v1alpha.stub;
 
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAdminAccessBindingsPagedResponse;
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListAnalyticsAccountLinksPagedResponse;
 import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListOrganizationsPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListUserGroupMembersPagedResponse;
+import static com.google.ads.marketingplatform.admin.v1alpha.MarketingplatformAdminServiceClient.ListUserGroupsPagedResponse;
 
+import com.google.ads.marketingplatform.admin.v1alpha.AdminAccessBinding;
 import com.google.ads.marketingplatform.admin.v1alpha.AnalyticsAccountLink;
+import com.google.ads.marketingplatform.admin.v1alpha.CreateAdminAccessBindingRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.CreateAnalyticsAccountLinkRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupMemberRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.CreateUserGroupRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.DeleteAnalyticsAccountLinkRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupMemberRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.DeleteUserGroupRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.FindSalesPartnerManagedClientsResponse;
+import com.google.ads.marketingplatform.admin.v1alpha.GetAdminAccessBindingRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.GetOrganizationRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupMemberRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.GetUserGroupRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ListAdminAccessBindingsResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ListAnalyticsAccountLinksResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ListOrganizationsResponse;
+import com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupMembersResponse;
+import com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.ListUserGroupsResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.Organization;
 import com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.ReportPropertyUsageResponse;
 import com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelRequest;
 import com.google.ads.marketingplatform.admin.v1alpha.SetPropertyServiceLevelResponse;
+import com.google.ads.marketingplatform.admin.v1alpha.UpdateAdminAccessBindingRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupMemberRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.UpdateUserGroupRequest;
+import com.google.ads.marketingplatform.admin.v1alpha.UserGroup;
+import com.google.ads.marketingplatform.admin.v1alpha.UserGroupMember;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
@@ -158,6 +181,37 @@ public class MarketingplatformAdminServiceStubSettings
       setPropertyServiceLevelSettings;
   private final UnaryCallSettings<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
       reportPropertyUsageSettings;
+  private final UnaryCallSettings<GetUserGroupRequest, UserGroup> getUserGroupSettings;
+  private final PagedCallSettings<
+          ListUserGroupsRequest, ListUserGroupsResponse, ListUserGroupsPagedResponse>
+      listUserGroupsSettings;
+  private final UnaryCallSettings<CreateUserGroupRequest, UserGroup> createUserGroupSettings;
+  private final UnaryCallSettings<UpdateUserGroupRequest, UserGroup> updateUserGroupSettings;
+  private final UnaryCallSettings<DeleteUserGroupRequest, Empty> deleteUserGroupSettings;
+  private final UnaryCallSettings<GetUserGroupMemberRequest, UserGroupMember>
+      getUserGroupMemberSettings;
+  private final PagedCallSettings<
+          ListUserGroupMembersRequest,
+          ListUserGroupMembersResponse,
+          ListUserGroupMembersPagedResponse>
+      listUserGroupMembersSettings;
+  private final UnaryCallSettings<CreateUserGroupMemberRequest, UserGroupMember>
+      createUserGroupMemberSettings;
+  private final UnaryCallSettings<UpdateUserGroupMemberRequest, UserGroupMember>
+      updateUserGroupMemberSettings;
+  private final UnaryCallSettings<DeleteUserGroupMemberRequest, Empty>
+      deleteUserGroupMemberSettings;
+  private final UnaryCallSettings<GetAdminAccessBindingRequest, AdminAccessBinding>
+      getAdminAccessBindingSettings;
+  private final PagedCallSettings<
+          ListAdminAccessBindingsRequest,
+          ListAdminAccessBindingsResponse,
+          ListAdminAccessBindingsPagedResponse>
+      listAdminAccessBindingsSettings;
+  private final UnaryCallSettings<CreateAdminAccessBindingRequest, AdminAccessBinding>
+      createAdminAccessBindingSettings;
+  private final UnaryCallSettings<UpdateAdminAccessBindingRequest, AdminAccessBinding>
+      updateAdminAccessBindingSettings;
 
   private static final PagedListDescriptor<
           ListOrganizationsRequest, ListOrganizationsResponse, Organization>
@@ -242,6 +296,123 @@ public class MarketingplatformAdminServiceStubSettings
             }
           };
 
+  private static final PagedListDescriptor<ListUserGroupsRequest, ListUserGroupsResponse, UserGroup>
+      LIST_USER_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListUserGroupsRequest, ListUserGroupsResponse, UserGroup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUserGroupsRequest injectToken(ListUserGroupsRequest payload, String token) {
+              return ListUserGroupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUserGroupsRequest injectPageSize(
+                ListUserGroupsRequest payload, int pageSize) {
+              return ListUserGroupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUserGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUserGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UserGroup> extractResources(ListUserGroupsResponse payload) {
+              return payload.getUserGroupsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListUserGroupMembersRequest, ListUserGroupMembersResponse, UserGroupMember>
+      LIST_USER_GROUP_MEMBERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUserGroupMembersRequest, ListUserGroupMembersResponse, UserGroupMember>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUserGroupMembersRequest injectToken(
+                ListUserGroupMembersRequest payload, String token) {
+              return ListUserGroupMembersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUserGroupMembersRequest injectPageSize(
+                ListUserGroupMembersRequest payload, int pageSize) {
+              return ListUserGroupMembersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUserGroupMembersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUserGroupMembersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UserGroupMember> extractResources(
+                ListUserGroupMembersResponse payload) {
+              return payload.getUserGroupMembersList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAdminAccessBindingsRequest, ListAdminAccessBindingsResponse, AdminAccessBinding>
+      LIST_ADMIN_ACCESS_BINDINGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAdminAccessBindingsRequest,
+              ListAdminAccessBindingsResponse,
+              AdminAccessBinding>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAdminAccessBindingsRequest injectToken(
+                ListAdminAccessBindingsRequest payload, String token) {
+              return ListAdminAccessBindingsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAdminAccessBindingsRequest injectPageSize(
+                ListAdminAccessBindingsRequest payload, int pageSize) {
+              return ListAdminAccessBindingsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAdminAccessBindingsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAdminAccessBindingsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AdminAccessBinding> extractResources(
+                ListAdminAccessBindingsResponse payload) {
+              return payload.getAdminAccessBindingsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListOrganizationsRequest, ListOrganizationsResponse, ListOrganizationsPagedResponse>
       LIST_ORGANIZATIONS_PAGE_STR_FACT =
@@ -288,6 +459,74 @@ public class MarketingplatformAdminServiceStubSettings
                           callable, LIST_ANALYTICS_ACCOUNT_LINKS_PAGE_STR_DESC, request, context);
               return ListAnalyticsAccountLinksPagedResponse.createAsync(
                   pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUserGroupsRequest, ListUserGroupsResponse, ListUserGroupsPagedResponse>
+      LIST_USER_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUserGroupsRequest, ListUserGroupsResponse, ListUserGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListUserGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUserGroupsRequest, ListUserGroupsResponse> callable,
+                ListUserGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUserGroupsResponse> futureResponse) {
+              PageContext<ListUserGroupsRequest, ListUserGroupsResponse, UserGroup> pageContext =
+                  PageContext.create(callable, LIST_USER_GROUPS_PAGE_STR_DESC, request, context);
+              return ListUserGroupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUserGroupMembersRequest,
+          ListUserGroupMembersResponse,
+          ListUserGroupMembersPagedResponse>
+      LIST_USER_GROUP_MEMBERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUserGroupMembersRequest,
+              ListUserGroupMembersResponse,
+              ListUserGroupMembersPagedResponse>() {
+            @Override
+            public ApiFuture<ListUserGroupMembersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUserGroupMembersRequest, ListUserGroupMembersResponse> callable,
+                ListUserGroupMembersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUserGroupMembersResponse> futureResponse) {
+              PageContext<
+                      ListUserGroupMembersRequest, ListUserGroupMembersResponse, UserGroupMember>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_USER_GROUP_MEMBERS_PAGE_STR_DESC, request, context);
+              return ListUserGroupMembersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAdminAccessBindingsRequest,
+          ListAdminAccessBindingsResponse,
+          ListAdminAccessBindingsPagedResponse>
+      LIST_ADMIN_ACCESS_BINDINGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAdminAccessBindingsRequest,
+              ListAdminAccessBindingsResponse,
+              ListAdminAccessBindingsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAdminAccessBindingsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAdminAccessBindingsRequest, ListAdminAccessBindingsResponse>
+                    callable,
+                ListAdminAccessBindingsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAdminAccessBindingsResponse> futureResponse) {
+              PageContext<
+                      ListAdminAccessBindingsRequest,
+                      ListAdminAccessBindingsResponse,
+                      AdminAccessBinding>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ADMIN_ACCESS_BINDINGS_PAGE_STR_DESC, request, context);
+              return ListAdminAccessBindingsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -341,6 +580,92 @@ public class MarketingplatformAdminServiceStubSettings
   public UnaryCallSettings<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
       reportPropertyUsageSettings() {
     return reportPropertyUsageSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getUserGroup. */
+  public UnaryCallSettings<GetUserGroupRequest, UserGroup> getUserGroupSettings() {
+    return getUserGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUserGroups. */
+  public PagedCallSettings<
+          ListUserGroupsRequest, ListUserGroupsResponse, ListUserGroupsPagedResponse>
+      listUserGroupsSettings() {
+    return listUserGroupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createUserGroup. */
+  public UnaryCallSettings<CreateUserGroupRequest, UserGroup> createUserGroupSettings() {
+    return createUserGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateUserGroup. */
+  public UnaryCallSettings<UpdateUserGroupRequest, UserGroup> updateUserGroupSettings() {
+    return updateUserGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteUserGroup. */
+  public UnaryCallSettings<DeleteUserGroupRequest, Empty> deleteUserGroupSettings() {
+    return deleteUserGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getUserGroupMember. */
+  public UnaryCallSettings<GetUserGroupMemberRequest, UserGroupMember>
+      getUserGroupMemberSettings() {
+    return getUserGroupMemberSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUserGroupMembers. */
+  public PagedCallSettings<
+          ListUserGroupMembersRequest,
+          ListUserGroupMembersResponse,
+          ListUserGroupMembersPagedResponse>
+      listUserGroupMembersSettings() {
+    return listUserGroupMembersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createUserGroupMember. */
+  public UnaryCallSettings<CreateUserGroupMemberRequest, UserGroupMember>
+      createUserGroupMemberSettings() {
+    return createUserGroupMemberSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateUserGroupMember. */
+  public UnaryCallSettings<UpdateUserGroupMemberRequest, UserGroupMember>
+      updateUserGroupMemberSettings() {
+    return updateUserGroupMemberSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteUserGroupMember. */
+  public UnaryCallSettings<DeleteUserGroupMemberRequest, Empty> deleteUserGroupMemberSettings() {
+    return deleteUserGroupMemberSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAdminAccessBinding. */
+  public UnaryCallSettings<GetAdminAccessBindingRequest, AdminAccessBinding>
+      getAdminAccessBindingSettings() {
+    return getAdminAccessBindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAdminAccessBindings. */
+  public PagedCallSettings<
+          ListAdminAccessBindingsRequest,
+          ListAdminAccessBindingsResponse,
+          ListAdminAccessBindingsPagedResponse>
+      listAdminAccessBindingsSettings() {
+    return listAdminAccessBindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAdminAccessBinding. */
+  public UnaryCallSettings<CreateAdminAccessBindingRequest, AdminAccessBinding>
+      createAdminAccessBindingSettings() {
+    return createAdminAccessBindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAdminAccessBinding. */
+  public UnaryCallSettings<UpdateAdminAccessBindingRequest, AdminAccessBinding>
+      updateAdminAccessBindingSettings() {
+    return updateAdminAccessBindingSettings;
   }
 
   public MarketingplatformAdminServiceStub createStub() throws IOException {
@@ -467,6 +792,20 @@ public class MarketingplatformAdminServiceStubSettings
         settingsBuilder.deleteAnalyticsAccountLinkSettings().build();
     setPropertyServiceLevelSettings = settingsBuilder.setPropertyServiceLevelSettings().build();
     reportPropertyUsageSettings = settingsBuilder.reportPropertyUsageSettings().build();
+    getUserGroupSettings = settingsBuilder.getUserGroupSettings().build();
+    listUserGroupsSettings = settingsBuilder.listUserGroupsSettings().build();
+    createUserGroupSettings = settingsBuilder.createUserGroupSettings().build();
+    updateUserGroupSettings = settingsBuilder.updateUserGroupSettings().build();
+    deleteUserGroupSettings = settingsBuilder.deleteUserGroupSettings().build();
+    getUserGroupMemberSettings = settingsBuilder.getUserGroupMemberSettings().build();
+    listUserGroupMembersSettings = settingsBuilder.listUserGroupMembersSettings().build();
+    createUserGroupMemberSettings = settingsBuilder.createUserGroupMemberSettings().build();
+    updateUserGroupMemberSettings = settingsBuilder.updateUserGroupMemberSettings().build();
+    deleteUserGroupMemberSettings = settingsBuilder.deleteUserGroupMemberSettings().build();
+    getAdminAccessBindingSettings = settingsBuilder.getAdminAccessBindingSettings().build();
+    listAdminAccessBindingsSettings = settingsBuilder.listAdminAccessBindingsSettings().build();
+    createAdminAccessBindingSettings = settingsBuilder.createAdminAccessBindingSettings().build();
+    updateAdminAccessBindingSettings = settingsBuilder.updateAdminAccessBindingSettings().build();
   }
 
   @Override
@@ -504,6 +843,39 @@ public class MarketingplatformAdminServiceStubSettings
         setPropertyServiceLevelSettings;
     private final UnaryCallSettings.Builder<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
         reportPropertyUsageSettings;
+    private final UnaryCallSettings.Builder<GetUserGroupRequest, UserGroup> getUserGroupSettings;
+    private final PagedCallSettings.Builder<
+            ListUserGroupsRequest, ListUserGroupsResponse, ListUserGroupsPagedResponse>
+        listUserGroupsSettings;
+    private final UnaryCallSettings.Builder<CreateUserGroupRequest, UserGroup>
+        createUserGroupSettings;
+    private final UnaryCallSettings.Builder<UpdateUserGroupRequest, UserGroup>
+        updateUserGroupSettings;
+    private final UnaryCallSettings.Builder<DeleteUserGroupRequest, Empty> deleteUserGroupSettings;
+    private final UnaryCallSettings.Builder<GetUserGroupMemberRequest, UserGroupMember>
+        getUserGroupMemberSettings;
+    private final PagedCallSettings.Builder<
+            ListUserGroupMembersRequest,
+            ListUserGroupMembersResponse,
+            ListUserGroupMembersPagedResponse>
+        listUserGroupMembersSettings;
+    private final UnaryCallSettings.Builder<CreateUserGroupMemberRequest, UserGroupMember>
+        createUserGroupMemberSettings;
+    private final UnaryCallSettings.Builder<UpdateUserGroupMemberRequest, UserGroupMember>
+        updateUserGroupMemberSettings;
+    private final UnaryCallSettings.Builder<DeleteUserGroupMemberRequest, Empty>
+        deleteUserGroupMemberSettings;
+    private final UnaryCallSettings.Builder<GetAdminAccessBindingRequest, AdminAccessBinding>
+        getAdminAccessBindingSettings;
+    private final PagedCallSettings.Builder<
+            ListAdminAccessBindingsRequest,
+            ListAdminAccessBindingsResponse,
+            ListAdminAccessBindingsPagedResponse>
+        listAdminAccessBindingsSettings;
+    private final UnaryCallSettings.Builder<CreateAdminAccessBindingRequest, AdminAccessBinding>
+        createAdminAccessBindingSettings;
+    private final UnaryCallSettings.Builder<UpdateAdminAccessBindingRequest, AdminAccessBinding>
+        updateAdminAccessBindingSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -553,6 +925,22 @@ public class MarketingplatformAdminServiceStubSettings
       deleteAnalyticsAccountLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setPropertyServiceLevelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       reportPropertyUsageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getUserGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listUserGroupsSettings = PagedCallSettings.newBuilder(LIST_USER_GROUPS_PAGE_STR_FACT);
+      createUserGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateUserGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteUserGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getUserGroupMemberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listUserGroupMembersSettings =
+          PagedCallSettings.newBuilder(LIST_USER_GROUP_MEMBERS_PAGE_STR_FACT);
+      createUserGroupMemberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateUserGroupMemberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteUserGroupMemberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAdminAccessBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAdminAccessBindingsSettings =
+          PagedCallSettings.newBuilder(LIST_ADMIN_ACCESS_BINDINGS_PAGE_STR_FACT);
+      createAdminAccessBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAdminAccessBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -563,7 +951,21 @@ public class MarketingplatformAdminServiceStubSettings
               createAnalyticsAccountLinkSettings,
               deleteAnalyticsAccountLinkSettings,
               setPropertyServiceLevelSettings,
-              reportPropertyUsageSettings);
+              reportPropertyUsageSettings,
+              getUserGroupSettings,
+              listUserGroupsSettings,
+              createUserGroupSettings,
+              updateUserGroupSettings,
+              deleteUserGroupSettings,
+              getUserGroupMemberSettings,
+              listUserGroupMembersSettings,
+              createUserGroupMemberSettings,
+              updateUserGroupMemberSettings,
+              deleteUserGroupMemberSettings,
+              getAdminAccessBindingSettings,
+              listAdminAccessBindingsSettings,
+              createAdminAccessBindingSettings,
+              updateAdminAccessBindingSettings);
       initDefaults(this);
     }
 
@@ -579,6 +981,20 @@ public class MarketingplatformAdminServiceStubSettings
       deleteAnalyticsAccountLinkSettings = settings.deleteAnalyticsAccountLinkSettings.toBuilder();
       setPropertyServiceLevelSettings = settings.setPropertyServiceLevelSettings.toBuilder();
       reportPropertyUsageSettings = settings.reportPropertyUsageSettings.toBuilder();
+      getUserGroupSettings = settings.getUserGroupSettings.toBuilder();
+      listUserGroupsSettings = settings.listUserGroupsSettings.toBuilder();
+      createUserGroupSettings = settings.createUserGroupSettings.toBuilder();
+      updateUserGroupSettings = settings.updateUserGroupSettings.toBuilder();
+      deleteUserGroupSettings = settings.deleteUserGroupSettings.toBuilder();
+      getUserGroupMemberSettings = settings.getUserGroupMemberSettings.toBuilder();
+      listUserGroupMembersSettings = settings.listUserGroupMembersSettings.toBuilder();
+      createUserGroupMemberSettings = settings.createUserGroupMemberSettings.toBuilder();
+      updateUserGroupMemberSettings = settings.updateUserGroupMemberSettings.toBuilder();
+      deleteUserGroupMemberSettings = settings.deleteUserGroupMemberSettings.toBuilder();
+      getAdminAccessBindingSettings = settings.getAdminAccessBindingSettings.toBuilder();
+      listAdminAccessBindingsSettings = settings.listAdminAccessBindingsSettings.toBuilder();
+      createAdminAccessBindingSettings = settings.createAdminAccessBindingSettings.toBuilder();
+      updateAdminAccessBindingSettings = settings.updateAdminAccessBindingSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -589,7 +1005,21 @@ public class MarketingplatformAdminServiceStubSettings
               createAnalyticsAccountLinkSettings,
               deleteAnalyticsAccountLinkSettings,
               setPropertyServiceLevelSettings,
-              reportPropertyUsageSettings);
+              reportPropertyUsageSettings,
+              getUserGroupSettings,
+              listUserGroupsSettings,
+              createUserGroupSettings,
+              updateUserGroupSettings,
+              deleteUserGroupSettings,
+              getUserGroupMemberSettings,
+              listUserGroupMembersSettings,
+              createUserGroupMemberSettings,
+              updateUserGroupMemberSettings,
+              deleteUserGroupMemberSettings,
+              getAdminAccessBindingSettings,
+              listAdminAccessBindingsSettings,
+              createAdminAccessBindingSettings,
+              updateAdminAccessBindingSettings);
     }
 
     private static Builder createDefault() {
@@ -654,6 +1084,76 @@ public class MarketingplatformAdminServiceStubSettings
 
       builder
           .reportPropertyUsageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getUserGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listUserGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createUserGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateUserGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteUserGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getUserGroupMemberSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listUserGroupMembersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createUserGroupMemberSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateUserGroupMemberSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteUserGroupMemberSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAdminAccessBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAdminAccessBindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createAdminAccessBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAdminAccessBindingSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -727,6 +1227,93 @@ public class MarketingplatformAdminServiceStubSettings
     public UnaryCallSettings.Builder<ReportPropertyUsageRequest, ReportPropertyUsageResponse>
         reportPropertyUsageSettings() {
       return reportPropertyUsageSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getUserGroup. */
+    public UnaryCallSettings.Builder<GetUserGroupRequest, UserGroup> getUserGroupSettings() {
+      return getUserGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUserGroups. */
+    public PagedCallSettings.Builder<
+            ListUserGroupsRequest, ListUserGroupsResponse, ListUserGroupsPagedResponse>
+        listUserGroupsSettings() {
+      return listUserGroupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createUserGroup. */
+    public UnaryCallSettings.Builder<CreateUserGroupRequest, UserGroup> createUserGroupSettings() {
+      return createUserGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateUserGroup. */
+    public UnaryCallSettings.Builder<UpdateUserGroupRequest, UserGroup> updateUserGroupSettings() {
+      return updateUserGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUserGroup. */
+    public UnaryCallSettings.Builder<DeleteUserGroupRequest, Empty> deleteUserGroupSettings() {
+      return deleteUserGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getUserGroupMember. */
+    public UnaryCallSettings.Builder<GetUserGroupMemberRequest, UserGroupMember>
+        getUserGroupMemberSettings() {
+      return getUserGroupMemberSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUserGroupMembers. */
+    public PagedCallSettings.Builder<
+            ListUserGroupMembersRequest,
+            ListUserGroupMembersResponse,
+            ListUserGroupMembersPagedResponse>
+        listUserGroupMembersSettings() {
+      return listUserGroupMembersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createUserGroupMember. */
+    public UnaryCallSettings.Builder<CreateUserGroupMemberRequest, UserGroupMember>
+        createUserGroupMemberSettings() {
+      return createUserGroupMemberSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateUserGroupMember. */
+    public UnaryCallSettings.Builder<UpdateUserGroupMemberRequest, UserGroupMember>
+        updateUserGroupMemberSettings() {
+      return updateUserGroupMemberSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUserGroupMember. */
+    public UnaryCallSettings.Builder<DeleteUserGroupMemberRequest, Empty>
+        deleteUserGroupMemberSettings() {
+      return deleteUserGroupMemberSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAdminAccessBinding. */
+    public UnaryCallSettings.Builder<GetAdminAccessBindingRequest, AdminAccessBinding>
+        getAdminAccessBindingSettings() {
+      return getAdminAccessBindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAdminAccessBindings. */
+    public PagedCallSettings.Builder<
+            ListAdminAccessBindingsRequest,
+            ListAdminAccessBindingsResponse,
+            ListAdminAccessBindingsPagedResponse>
+        listAdminAccessBindingsSettings() {
+      return listAdminAccessBindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAdminAccessBinding. */
+    public UnaryCallSettings.Builder<CreateAdminAccessBindingRequest, AdminAccessBinding>
+        createAdminAccessBindingSettings() {
+      return createAdminAccessBindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAdminAccessBinding. */
+    public UnaryCallSettings.Builder<UpdateAdminAccessBindingRequest, AdminAccessBinding>
+        updateAdminAccessBindingSettings() {
+      return updateAdminAccessBindingSettings;
     }
 
     @Override

@@ -850,7 +850,8 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(RoutersStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

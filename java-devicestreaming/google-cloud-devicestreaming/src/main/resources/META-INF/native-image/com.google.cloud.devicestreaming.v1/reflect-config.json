@@ -531,6 +531,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.devicestreaming.v1.ClientInfo",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.devicestreaming.v1.ClientInfo$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.devicestreaming.v1.Close",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

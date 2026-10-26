@@ -80,7 +80,7 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Column name.
+   * The column name.
    * </pre>
    *
    * <code>string column = 1;</code>
@@ -104,7 +104,7 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Column name.
+   * The column name.
    * </pre>
    *
    * <code>string column = 1;</code>
@@ -762,7 +762,7 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Column name.
+     * The column name.
      * </pre>
      *
      * <code>string column = 1;</code>
@@ -785,7 +785,7 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Column name.
+     * The column name.
      * </pre>
      *
      * <code>string column = 1;</code>
@@ -808,7 +808,7 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Column name.
+     * The column name.
      * </pre>
      *
      * <code>string column = 1;</code>
@@ -830,7 +830,7 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Column name.
+     * The column name.
      * </pre>
      *
      * <code>string column = 1;</code>
@@ -848,7 +848,7 @@ public final class SqlServerColumn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Column name.
+     * The column name.
      * </pre>
      *
      * <code>string column = 1;</code>

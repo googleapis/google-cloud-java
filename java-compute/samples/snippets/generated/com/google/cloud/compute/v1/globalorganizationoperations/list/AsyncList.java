@@ -43,7 +43,6 @@ public class AsyncList {
               .setOrderBy("orderBy-1207110587")
               .setPageToken("pageToken873572522")
               .setParentId("parentId1175162725")
-              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<Operation> future =
           globalOrganizationOperationsClient.listPagedCallable().futureCall(request);

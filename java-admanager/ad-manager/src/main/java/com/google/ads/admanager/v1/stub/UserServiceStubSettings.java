@@ -16,9 +16,24 @@
 
 package com.google.ads.admanager.v1.stub;
 
+import static com.google.ads.admanager.v1.UserServiceClient.ListUsersPagedResponse;
+
+import com.google.ads.admanager.v1.BatchActivateUsersRequest;
+import com.google.ads.admanager.v1.BatchActivateUsersResponse;
+import com.google.ads.admanager.v1.BatchCreateUsersRequest;
+import com.google.ads.admanager.v1.BatchCreateUsersResponse;
+import com.google.ads.admanager.v1.BatchDeactivateUsersRequest;
+import com.google.ads.admanager.v1.BatchDeactivateUsersResponse;
+import com.google.ads.admanager.v1.BatchUpdateUsersRequest;
+import com.google.ads.admanager.v1.BatchUpdateUsersResponse;
+import com.google.ads.admanager.v1.CreateUserRequest;
 import com.google.ads.admanager.v1.GetUserRequest;
+import com.google.ads.admanager.v1.ListUsersRequest;
+import com.google.ads.admanager.v1.ListUsersResponse;
+import com.google.ads.admanager.v1.UpdateUserRequest;
 import com.google.ads.admanager.v1.User;
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -27,13 +42,19 @@ import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -106,10 +127,113 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
           .build();
 
   private final UnaryCallSettings<GetUserRequest, User> getUserSettings;
+  private final PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+      listUsersSettings;
+  private final UnaryCallSettings<CreateUserRequest, User> createUserSettings;
+  private final UnaryCallSettings<BatchCreateUsersRequest, BatchCreateUsersResponse>
+      batchCreateUsersSettings;
+  private final UnaryCallSettings<BatchActivateUsersRequest, BatchActivateUsersResponse>
+      batchActivateUsersSettings;
+  private final UnaryCallSettings<BatchDeactivateUsersRequest, BatchDeactivateUsersResponse>
+      batchDeactivateUsersSettings;
+  private final UnaryCallSettings<UpdateUserRequest, User> updateUserSettings;
+  private final UnaryCallSettings<BatchUpdateUsersRequest, BatchUpdateUsersResponse>
+      batchUpdateUsersSettings;
+
+  private static final PagedListDescriptor<ListUsersRequest, ListUsersResponse, User>
+      LIST_USERS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListUsersRequest, ListUsersResponse, User>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUsersRequest injectToken(ListUsersRequest payload, String token) {
+              return ListUsersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUsersRequest injectPageSize(ListUsersRequest payload, int pageSize) {
+              return ListUsersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUsersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUsersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<User> extractResources(ListUsersResponse payload) {
+              return payload.getUsersList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+      LIST_USERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>() {
+            @Override
+            public ApiFuture<ListUsersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUsersRequest, ListUsersResponse> callable,
+                ListUsersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUsersResponse> futureResponse) {
+              PageContext<ListUsersRequest, ListUsersResponse, User> pageContext =
+                  PageContext.create(callable, LIST_USERS_PAGE_STR_DESC, request, context);
+              return ListUsersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to getUser. */
   public UnaryCallSettings<GetUserRequest, User> getUserSettings() {
     return getUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUsers. */
+  public PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+      listUsersSettings() {
+    return listUsersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createUser. */
+  public UnaryCallSettings<CreateUserRequest, User> createUserSettings() {
+    return createUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateUsers. */
+  public UnaryCallSettings<BatchCreateUsersRequest, BatchCreateUsersResponse>
+      batchCreateUsersSettings() {
+    return batchCreateUsersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateUsers. */
+  public UnaryCallSettings<BatchActivateUsersRequest, BatchActivateUsersResponse>
+      batchActivateUsersSettings() {
+    return batchActivateUsersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateUsers. */
+  public UnaryCallSettings<BatchDeactivateUsersRequest, BatchDeactivateUsersResponse>
+      batchDeactivateUsersSettings() {
+    return batchDeactivateUsersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateUser. */
+  public UnaryCallSettings<UpdateUserRequest, User> updateUserSettings() {
+    return updateUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateUsers. */
+  public UnaryCallSettings<BatchUpdateUsersRequest, BatchUpdateUsersResponse>
+      batchUpdateUsersSettings() {
+    return batchUpdateUsersSettings;
   }
 
   public UserServiceStub createStub() throws IOException {
@@ -195,6 +319,13 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
     super(settingsBuilder);
 
     getUserSettings = settingsBuilder.getUserSettings().build();
+    listUsersSettings = settingsBuilder.listUsersSettings().build();
+    createUserSettings = settingsBuilder.createUserSettings().build();
+    batchCreateUsersSettings = settingsBuilder.batchCreateUsersSettings().build();
+    batchActivateUsersSettings = settingsBuilder.batchActivateUsersSettings().build();
+    batchDeactivateUsersSettings = settingsBuilder.batchDeactivateUsersSettings().build();
+    updateUserSettings = settingsBuilder.updateUserSettings().build();
+    batchUpdateUsersSettings = settingsBuilder.batchUpdateUsersSettings().build();
   }
 
   @Override
@@ -210,6 +341,20 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
   public static class Builder extends StubSettings.Builder<UserServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<GetUserRequest, User> getUserSettings;
+    private final PagedCallSettings.Builder<
+            ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+        listUsersSettings;
+    private final UnaryCallSettings.Builder<CreateUserRequest, User> createUserSettings;
+    private final UnaryCallSettings.Builder<BatchCreateUsersRequest, BatchCreateUsersResponse>
+        batchCreateUsersSettings;
+    private final UnaryCallSettings.Builder<BatchActivateUsersRequest, BatchActivateUsersResponse>
+        batchActivateUsersSettings;
+    private final UnaryCallSettings.Builder<
+            BatchDeactivateUsersRequest, BatchDeactivateUsersResponse>
+        batchDeactivateUsersSettings;
+    private final UnaryCallSettings.Builder<UpdateUserRequest, User> updateUserSettings;
+    private final UnaryCallSettings.Builder<BatchUpdateUsersRequest, BatchUpdateUsersResponse>
+        batchUpdateUsersSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -238,9 +383,24 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
       super(clientContext);
 
       getUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listUsersSettings = PagedCallSettings.newBuilder(LIST_USERS_PAGE_STR_FACT);
+      createUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateUsersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchActivateUsersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeactivateUsersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateUsersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getUserSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getUserSettings,
+              listUsersSettings,
+              createUserSettings,
+              batchCreateUsersSettings,
+              batchActivateUsersSettings,
+              batchDeactivateUsersSettings,
+              updateUserSettings,
+              batchUpdateUsersSettings);
       initDefaults(this);
     }
 
@@ -248,9 +408,24 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
       super(settings);
 
       getUserSettings = settings.getUserSettings.toBuilder();
+      listUsersSettings = settings.listUsersSettings.toBuilder();
+      createUserSettings = settings.createUserSettings.toBuilder();
+      batchCreateUsersSettings = settings.batchCreateUsersSettings.toBuilder();
+      batchActivateUsersSettings = settings.batchActivateUsersSettings.toBuilder();
+      batchDeactivateUsersSettings = settings.batchDeactivateUsersSettings.toBuilder();
+      updateUserSettings = settings.updateUserSettings.toBuilder();
+      batchUpdateUsersSettings = settings.batchUpdateUsersSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getUserSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getUserSettings,
+              listUsersSettings,
+              createUserSettings,
+              batchCreateUsersSettings,
+              batchActivateUsersSettings,
+              batchDeactivateUsersSettings,
+              updateUserSettings,
+              batchUpdateUsersSettings);
     }
 
     private static Builder createDefault() {
@@ -268,6 +443,41 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
     private static Builder initDefaults(Builder builder) {
       builder
           .getUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listUsersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateUsersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchActivateUsersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchDeactivateUsersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdateUsersSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -292,6 +502,46 @@ public class UserServiceStubSettings extends StubSettings<UserServiceStubSetting
     /** Returns the builder for the settings used for calls to getUser. */
     public UnaryCallSettings.Builder<GetUserRequest, User> getUserSettings() {
       return getUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUsers. */
+    public PagedCallSettings.Builder<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+        listUsersSettings() {
+      return listUsersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createUser. */
+    public UnaryCallSettings.Builder<CreateUserRequest, User> createUserSettings() {
+      return createUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateUsers. */
+    public UnaryCallSettings.Builder<BatchCreateUsersRequest, BatchCreateUsersResponse>
+        batchCreateUsersSettings() {
+      return batchCreateUsersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateUsers. */
+    public UnaryCallSettings.Builder<BatchActivateUsersRequest, BatchActivateUsersResponse>
+        batchActivateUsersSettings() {
+      return batchActivateUsersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateUsers. */
+    public UnaryCallSettings.Builder<BatchDeactivateUsersRequest, BatchDeactivateUsersResponse>
+        batchDeactivateUsersSettings() {
+      return batchDeactivateUsersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateUser. */
+    public UnaryCallSettings.Builder<UpdateUserRequest, User> updateUserSettings() {
+      return updateUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateUsers. */
+    public UnaryCallSettings.Builder<BatchUpdateUsersRequest, BatchUpdateUsersResponse>
+        batchUpdateUsersSettings() {
+      return batchUpdateUsersSettings;
     }
 
     @Override

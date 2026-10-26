@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -35,11 +36,17 @@ public class MemoryName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_REASONING_ENGINE_MEMORY =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}");
+  private static final PathTemplate PROJECT_LOCATION_MEMORY_BANK_MEMORY =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/memoryBanks/{memory_bank}/memories/{memory}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String reasoningEngine;
   private final String memory;
+  private final String memoryBank;
 
   @Deprecated
   protected MemoryName() {
@@ -47,6 +54,7 @@ public class MemoryName implements ResourceName {
     location = null;
     reasoningEngine = null;
     memory = null;
+    memoryBank = null;
   }
 
   private MemoryName(Builder builder) {
@@ -54,6 +62,17 @@ public class MemoryName implements ResourceName {
     location = Preconditions.checkNotNull(builder.getLocation());
     reasoningEngine = Preconditions.checkNotNull(builder.getReasoningEngine());
     memory = Preconditions.checkNotNull(builder.getMemory());
+    memoryBank = null;
+    pathTemplate = PROJECT_LOCATION_REASONING_ENGINE_MEMORY;
+  }
+
+  private MemoryName(ProjectLocationMemoryBankMemoryBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    memoryBank = Preconditions.checkNotNull(builder.getMemoryBank());
+    memory = Preconditions.checkNotNull(builder.getMemory());
+    reasoningEngine = null;
+    pathTemplate = PROJECT_LOCATION_MEMORY_BANK_MEMORY;
   }
 
   public String getProject() {
@@ -72,8 +91,20 @@ public class MemoryName implements ResourceName {
     return memory;
   }
 
+  public String getMemoryBank() {
+    return memoryBank;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newProjectLocationReasoningEngineMemoryBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationMemoryBankMemoryBuilder newProjectLocationMemoryBankMemoryBuilder() {
+    return new ProjectLocationMemoryBankMemoryBuilder();
   }
 
   public Builder toBuilder() {
@@ -90,6 +121,26 @@ public class MemoryName implements ResourceName {
         .build();
   }
 
+  public static MemoryName ofProjectLocationReasoningEngineMemoryName(
+      String project, String location, String reasoningEngine, String memory) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setReasoningEngine(reasoningEngine)
+        .setMemory(memory)
+        .build();
+  }
+
+  public static MemoryName ofProjectLocationMemoryBankMemoryName(
+      String project, String location, String memoryBank, String memory) {
+    return newProjectLocationMemoryBankMemoryBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setMemoryBank(memoryBank)
+        .setMemory(memory)
+        .build();
+  }
+
   public static String format(
       String project, String location, String reasoningEngine, String memory) {
     return newBuilder()
@@ -101,18 +152,49 @@ public class MemoryName implements ResourceName {
         .toString();
   }
 
+  public static String formatProjectLocationReasoningEngineMemoryName(
+      String project, String location, String reasoningEngine, String memory) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setReasoningEngine(reasoningEngine)
+        .setMemory(memory)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationMemoryBankMemoryName(
+      String project, String location, String memoryBank, String memory) {
+    return newProjectLocationMemoryBankMemoryBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setMemoryBank(memoryBank)
+        .setMemory(memory)
+        .build()
+        .toString();
+  }
+
   public static @Nullable MemoryName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_REASONING_ENGINE_MEMORY.validatedMatch(
-            formattedString, "MemoryName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("project"),
-        matchMap.get("location"),
-        matchMap.get("reasoning_engine"),
-        matchMap.get("memory"));
+    if (PROJECT_LOCATION_REASONING_ENGINE_MEMORY.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_REASONING_ENGINE_MEMORY.match(formattedString);
+      return ofProjectLocationReasoningEngineMemoryName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("reasoning_engine"),
+          matchMap.get("memory"));
+    } else if (PROJECT_LOCATION_MEMORY_BANK_MEMORY.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_MEMORY_BANK_MEMORY.match(formattedString);
+      return ofProjectLocationMemoryBankMemoryName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("memory_bank"),
+          matchMap.get("memory"));
+    }
+    throw new ValidationException("MemoryName.parse: formattedString not in valid format");
   }
 
   public static List<MemoryName> parseList(List<String> formattedStrings) {
@@ -136,7 +218,8 @@ public class MemoryName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_REASONING_ENGINE_MEMORY.matches(formattedString);
+    return PROJECT_LOCATION_REASONING_ENGINE_MEMORY.matches(formattedString)
+        || PROJECT_LOCATION_MEMORY_BANK_MEMORY.matches(formattedString);
   }
 
   @Override
@@ -157,6 +240,9 @@ public class MemoryName implements ResourceName {
           if (memory != null) {
             fieldMapBuilder.put("memory", memory);
           }
+          if (memoryBank != null) {
+            fieldMapBuilder.put("memory_bank", memoryBank);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -170,15 +256,7 @@ public class MemoryName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_REASONING_ENGINE_MEMORY.instantiate(
-        "project",
-        project,
-        "location",
-        location,
-        "reasoning_engine",
-        reasoningEngine,
-        "memory",
-        memory);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -191,7 +269,8 @@ public class MemoryName implements ResourceName {
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.reasoningEngine, that.reasoningEngine)
-          && Objects.equals(this.memory, that.memory);
+          && Objects.equals(this.memory, that.memory)
+          && Objects.equals(this.memoryBank, that.memoryBank);
     }
     return false;
   }
@@ -200,6 +279,8 @@ public class MemoryName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
     h ^= Objects.hashCode(location);
@@ -207,6 +288,8 @@ public class MemoryName implements ResourceName {
     h ^= Objects.hashCode(reasoningEngine);
     h *= 1000003;
     h ^= Objects.hashCode(memory);
+    h *= 1000003;
+    h ^= Objects.hashCode(memoryBank);
     return h;
   }
 
@@ -259,10 +342,67 @@ public class MemoryName implements ResourceName {
     }
 
     private Builder(MemoryName memoryName) {
+      Preconditions.checkArgument(
+          Objects.equals(memoryName.pathTemplate, PROJECT_LOCATION_REASONING_ENGINE_MEMORY),
+          "toBuilder is only supported when MemoryName has the pattern of"
+              + " projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/memories/{memory}");
       this.project = memoryName.project;
       this.location = memoryName.location;
       this.reasoningEngine = memoryName.reasoningEngine;
       this.memory = memoryName.memory;
+    }
+
+    public MemoryName build() {
+      return new MemoryName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/memoryBanks/{memory_bank}/memories/{memory}.
+   */
+  public static class ProjectLocationMemoryBankMemoryBuilder {
+    private String project;
+    private String location;
+    private String memoryBank;
+    private String memory;
+
+    protected ProjectLocationMemoryBankMemoryBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getMemoryBank() {
+      return memoryBank;
+    }
+
+    public String getMemory() {
+      return memory;
+    }
+
+    public ProjectLocationMemoryBankMemoryBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationMemoryBankMemoryBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationMemoryBankMemoryBuilder setMemoryBank(String memoryBank) {
+      this.memoryBank = memoryBank;
+      return this;
+    }
+
+    public ProjectLocationMemoryBankMemoryBuilder setMemory(String memory) {
+      this.memory = memory;
+      return this;
     }
 
     public MemoryName build() {

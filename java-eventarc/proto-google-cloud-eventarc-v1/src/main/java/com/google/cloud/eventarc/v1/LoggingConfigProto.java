@@ -55,10 +55,10 @@ public final class LoggingConfigProto extends com.google.protobuf.GeneratedFile 
     java.lang.String[] descriptorData = {
       "\n"
           + "-google/cloud/eventarc/v1/logging_confi"
-          + "g.proto\022\030google.cloud.eventarc.v1\032\037google/api/field_behavior.proto\"\370\001\n\r"
-          + "LoggingConfig\022N\n"
+          + "g.proto\022\030google.cloud.eventarc.v1\032\037google/api/field_behavior.proto\"\371\001\n\r"
+          + "LoggingConfig\022O\n"
           + "\014log_severity\030\001 \001(\01623.google.clou"
-          + "d.eventarc.v1.LoggingConfig.LogSeverityB\003\340A\001\"\226\001\n"
+          + "d.eventarc.v1.LoggingConfig.LogSeverityB\004\342A\001\001\"\226\001\n"
           + "\013LogSeverity\022\034\n"
           + "\030LOG_SEVERITY_UNSPECIFIED\020\000\022\010\n"
           + "\004NONE\020\001\022\t\n"
@@ -70,11 +70,11 @@ public final class LoggingConfigProto extends com.google.protobuf.GeneratedFile 
           + "\010CRITICAL\020\007\022\t\n"
           + "\005ALERT\020\010\022\r\n"
           + "\tEMERGENCY\020\tB\302\001\n"
-          + "\034com.google.cloud.eventarc.v1B\022LoggingC"
-          + "onfigProtoP\001Z8cloud.google.com/go/eventa"
-          + "rc/apiv1/eventarcpb;eventarcpb\252\002\030Google."
-          + "Cloud.Eventarc.V1\312\002\030Google\\Cloud\\Eventar"
-          + "c\\V1\352\002\033Google::Cloud::Eventarc::V1b\006proto3"
+          + "\034com.google.cloud.eventarc.v1B\022Logging"
+          + "ConfigProtoP\001Z8cloud.google.com/go/event"
+          + "arc/apiv1/eventarcpb;eventarcpb\252\002\030Google"
+          + ".Cloud.Eventarc.V1\312\002\030Google\\Cloud\\Eventa"
+          + "rc\\V1\352\002\033Google::Cloud::Eventarc::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -21,8 +21,12 @@ import static com.google.ads.admanager.v1.AdReviewCenterAdServiceClient.SearchAd
 import com.google.ads.admanager.v1.BatchAdReviewCenterAdsOperationMetadata;
 import com.google.ads.admanager.v1.BatchAllowAdReviewCenterAdsRequest;
 import com.google.ads.admanager.v1.BatchAllowAdReviewCenterAdsResponse;
+import com.google.ads.admanager.v1.BatchApplyAdReviewCenterCustomLabelsRequest;
+import com.google.ads.admanager.v1.BatchApplyAdReviewCenterCustomLabelsResponse;
 import com.google.ads.admanager.v1.BatchBlockAdReviewCenterAdsRequest;
 import com.google.ads.admanager.v1.BatchBlockAdReviewCenterAdsResponse;
+import com.google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsRequest;
+import com.google.ads.admanager.v1.FetchAdReviewCenterCustomLabelsResponse;
 import com.google.ads.admanager.v1.SearchAdReviewCenterAdsRequest;
 import com.google.ads.admanager.v1.SearchAdReviewCenterAdsResponse;
 import com.google.api.HttpRule;
@@ -95,15 +99,35 @@ public class HttpJsonAdReviewCenterAdServiceStub extends AdReviewCenterAdService
                             ProtoRestSerializer<SearchAdReviewCenterAdsRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
+                                fields, "adResponseId", request.getAdResponseIdList());
+                            serializer.putQueryParam(
                                 fields, "adReviewCenterAdId", request.getAdReviewCenterAdIdList());
+                            serializer.putQueryParam(fields, "adTypes", request.getAdTypesList());
+                            serializer.putQueryParam(
+                                fields, "advertiserApps", request.getAdvertiserAppsList());
+                            serializer.putQueryParam(
+                                fields,
+                                "advertiserDisplayNames",
+                                request.getAdvertiserDisplayNamesList());
                             serializer.putQueryParam(
                                 fields, "buyerAccountId", request.getBuyerAccountIdList());
                             serializer.putQueryParam(
                                 fields, "dateTimeRange", request.getDateTimeRange());
+                            serializer.putQueryParam(fields, "labelIds", request.getLabelIdsList());
+                            serializer.putQueryParam(
+                                fields, "languageCodes", request.getLanguageCodesList());
                             serializer.putQueryParam(
                                 fields, "manualReviewStatus", request.getManualReviewStatusValue());
+                            if (request.hasNewInLastDays()) {
+                              serializer.putQueryParam(
+                                  fields, "newInLastDays", request.getNewInLastDays());
+                            }
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "publisherDomains", request.getPublisherDomainsList());
+                            serializer.putQueryParam(
+                                fields, "regionCodes", request.getRegionCodesList());
                             serializer.putQueryParam(
                                 fields, "searchText", request.getSearchTextList());
                             serializer.putQueryParam(fields, "status", request.getStatusValue());
@@ -201,6 +225,90 @@ public class HttpJsonAdReviewCenterAdServiceStub extends AdReviewCenterAdService
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<
+          FetchAdReviewCenterCustomLabelsRequest, FetchAdReviewCenterCustomLabelsResponse>
+      fetchAdReviewCenterCustomLabelsMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchAdReviewCenterCustomLabelsRequest, FetchAdReviewCenterCustomLabelsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.AdReviewCenterAdService/FetchAdReviewCenterCustomLabels")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchAdReviewCenterCustomLabelsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*/webProperties/*}/adReviewCenterAds:fetchCustomLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchAdReviewCenterCustomLabelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchAdReviewCenterCustomLabelsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchAdReviewCenterCustomLabelsResponse>newBuilder()
+                      .setDefaultInstance(
+                          FetchAdReviewCenterCustomLabelsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchApplyAdReviewCenterCustomLabelsRequest, BatchApplyAdReviewCenterCustomLabelsResponse>
+      batchApplyAdReviewCenterCustomLabelsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchApplyAdReviewCenterCustomLabelsRequest,
+                  BatchApplyAdReviewCenterCustomLabelsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.AdReviewCenterAdService/BatchApplyAdReviewCenterCustomLabels")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<BatchApplyAdReviewCenterCustomLabelsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*/webProperties/*}/adReviewCenterAds:batchApplyCustomLabels",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchApplyAdReviewCenterCustomLabelsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchApplyAdReviewCenterCustomLabelsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<BatchApplyAdReviewCenterCustomLabelsResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchApplyAdReviewCenterCustomLabelsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<SearchAdReviewCenterAdsRequest, SearchAdReviewCenterAdsResponse>
       searchAdReviewCenterAdsCallable;
   private final UnaryCallable<SearchAdReviewCenterAdsRequest, SearchAdReviewCenterAdsPagedResponse>
@@ -219,6 +327,12 @@ public class HttpJsonAdReviewCenterAdServiceStub extends AdReviewCenterAdService
           BatchBlockAdReviewCenterAdsResponse,
           BatchAdReviewCenterAdsOperationMetadata>
       batchBlockAdReviewCenterAdsOperationCallable;
+  private final UnaryCallable<
+          FetchAdReviewCenterCustomLabelsRequest, FetchAdReviewCenterCustomLabelsResponse>
+      fetchAdReviewCenterCustomLabelsCallable;
+  private final UnaryCallable<
+          BatchApplyAdReviewCenterCustomLabelsRequest, BatchApplyAdReviewCenterCustomLabelsResponse>
+      batchApplyAdReviewCenterCustomLabelsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
@@ -321,6 +435,40 @@ public class HttpJsonAdReviewCenterAdServiceStub extends AdReviewCenterAdService
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<
+            FetchAdReviewCenterCustomLabelsRequest, FetchAdReviewCenterCustomLabelsResponse>
+        fetchAdReviewCenterCustomLabelsTransportSettings =
+            HttpJsonCallSettings
+                .<FetchAdReviewCenterCustomLabelsRequest, FetchAdReviewCenterCustomLabelsResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchAdReviewCenterCustomLabelsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            BatchApplyAdReviewCenterCustomLabelsRequest,
+            BatchApplyAdReviewCenterCustomLabelsResponse>
+        batchApplyAdReviewCenterCustomLabelsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchApplyAdReviewCenterCustomLabelsRequest,
+                    BatchApplyAdReviewCenterCustomLabelsResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchApplyAdReviewCenterCustomLabelsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.searchAdReviewCenterAdsCallable =
         callableFactory.createUnaryCallable(
@@ -354,6 +502,16 @@ public class HttpJsonAdReviewCenterAdServiceStub extends AdReviewCenterAdService
             settings.batchBlockAdReviewCenterAdsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.fetchAdReviewCenterCustomLabelsCallable =
+        callableFactory.createUnaryCallable(
+            fetchAdReviewCenterCustomLabelsTransportSettings,
+            settings.fetchAdReviewCenterCustomLabelsSettings(),
+            clientContext);
+    this.batchApplyAdReviewCenterCustomLabelsCallable =
+        callableFactory.createUnaryCallable(
+            batchApplyAdReviewCenterCustomLabelsTransportSettings,
+            settings.batchApplyAdReviewCenterCustomLabelsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -365,6 +523,8 @@ public class HttpJsonAdReviewCenterAdServiceStub extends AdReviewCenterAdService
     methodDescriptors.add(searchAdReviewCenterAdsMethodDescriptor);
     methodDescriptors.add(batchAllowAdReviewCenterAdsMethodDescriptor);
     methodDescriptors.add(batchBlockAdReviewCenterAdsMethodDescriptor);
+    methodDescriptors.add(fetchAdReviewCenterCustomLabelsMethodDescriptor);
+    methodDescriptors.add(batchApplyAdReviewCenterCustomLabelsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -412,6 +572,20 @@ public class HttpJsonAdReviewCenterAdServiceStub extends AdReviewCenterAdService
           BatchAdReviewCenterAdsOperationMetadata>
       batchBlockAdReviewCenterAdsOperationCallable() {
     return batchBlockAdReviewCenterAdsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchAdReviewCenterCustomLabelsRequest, FetchAdReviewCenterCustomLabelsResponse>
+      fetchAdReviewCenterCustomLabelsCallable() {
+    return fetchAdReviewCenterCustomLabelsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchApplyAdReviewCenterCustomLabelsRequest, BatchApplyAdReviewCenterCustomLabelsResponse>
+      batchApplyAdReviewCenterCustomLabelsCallable() {
+    return batchApplyAdReviewCenterCustomLabelsCallable;
   }
 
   @Override

@@ -239,7 +239,8 @@ public class RegionsStubSettings extends StubSettings<RegionsStubSettings> {
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(RegionsStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

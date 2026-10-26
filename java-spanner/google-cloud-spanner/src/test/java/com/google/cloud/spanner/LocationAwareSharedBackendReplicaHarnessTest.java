@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
@@ -49,6 +50,7 @@ import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.ProtoUtils;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -573,8 +575,13 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
     return sawRow;
   }
 
+  private static void waitForAllReplicasConnected(SharedBackendReplicaHarness harness) {
+    await().atMost(Duration.ofSeconds(10)).until(harness::allReplicasConnected);
+  }
+
   private static int waitForReplicaRoutedRead(
       DatabaseClient client, SharedBackendReplicaHarness harness) throws InterruptedException {
+    waitForAllReplicasConnected(harness);
     long deadlineNanos = System.nanoTime() + TimeUnit.SECONDS.toNanos(10);
     while (System.nanoTime() < deadlineNanos) {
       try (ResultSet resultSet =

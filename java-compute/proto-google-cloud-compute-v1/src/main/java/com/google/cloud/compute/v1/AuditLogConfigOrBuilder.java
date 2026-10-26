@@ -89,20 +89,6 @@ public interface AuditLogConfigOrBuilder
   com.google.protobuf.ByteString getExemptedMembersBytes(int index);
 
   /**
-   * <code>optional bool ignore_child_exemptions = 70141850;</code>
-   *
-   * @return Whether the ignoreChildExemptions field is set.
-   */
-  boolean hasIgnoreChildExemptions();
-
-  /**
-   * <code>optional bool ignore_child_exemptions = 70141850;</code>
-   *
-   * @return The ignoreChildExemptions.
-   */
-  boolean getIgnoreChildExemptions();
-
-  /**
    *
    *
    * <pre>

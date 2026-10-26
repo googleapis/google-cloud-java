@@ -99,6 +99,7 @@ public class DirectAccessServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setActiveStartTime(Timestamp.newBuilder().build())
             .setAndroidDevice(AndroidDevice.newBuilder().build())
+            .setClientInfo(ClientInfo.newBuilder().build())
             .build();
     mockDirectAccessService.addResponse(expectedResponse);
 
@@ -150,6 +151,7 @@ public class DirectAccessServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setActiveStartTime(Timestamp.newBuilder().build())
             .setAndroidDevice(AndroidDevice.newBuilder().build())
+            .setClientInfo(ClientInfo.newBuilder().build())
             .build();
     mockDirectAccessService.addResponse(expectedResponse);
 
@@ -289,6 +291,7 @@ public class DirectAccessServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setActiveStartTime(Timestamp.newBuilder().build())
             .setAndroidDevice(AndroidDevice.newBuilder().build())
+            .setClientInfo(ClientInfo.newBuilder().build())
             .build();
     mockDirectAccessService.addResponse(expectedResponse);
 
@@ -333,6 +336,7 @@ public class DirectAccessServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setActiveStartTime(Timestamp.newBuilder().build())
             .setAndroidDevice(AndroidDevice.newBuilder().build())
+            .setClientInfo(ClientInfo.newBuilder().build())
             .build();
     mockDirectAccessService.addResponse(expectedResponse);
 
@@ -417,6 +421,7 @@ public class DirectAccessServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setActiveStartTime(Timestamp.newBuilder().build())
             .setAndroidDevice(AndroidDevice.newBuilder().build())
+            .setClientInfo(ClientInfo.newBuilder().build())
             .build();
     mockDirectAccessService.addResponse(expectedResponse);
 

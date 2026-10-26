@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [GetPartner][] method.
+ * Request object for `GetPartner` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.GetPartnerRequest}
@@ -295,7 +295,7 @@ public final class GetPartnerRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request object for [GetPartner][] method.
+   * Request object for `GetPartner` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.GetPartnerRequest}

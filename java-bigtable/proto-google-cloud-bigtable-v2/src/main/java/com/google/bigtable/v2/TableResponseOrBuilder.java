@@ -60,5 +60,76 @@ public interface TableResponseOrBuilder
   /** <code>.google.bigtable.v2.SessionMutateRowResponse mutate_row = 2;</code> */
   com.google.bigtable.v2.SessionMutateRowResponseOrBuilder getMutateRowOrBuilder();
 
+  /**
+   * <code>.google.bigtable.v2.SessionReadRowsResponse read_rows = 3;</code>
+   *
+   * @return Whether the readRows field is set.
+   */
+  boolean hasReadRows();
+
+  /**
+   * <code>.google.bigtable.v2.SessionReadRowsResponse read_rows = 3;</code>
+   *
+   * @return The readRows.
+   */
+  com.google.bigtable.v2.SessionReadRowsResponse getReadRows();
+
+  /** <code>.google.bigtable.v2.SessionReadRowsResponse read_rows = 3;</code> */
+  com.google.bigtable.v2.SessionReadRowsResponseOrBuilder getReadRowsOrBuilder();
+
+  /**
+   * <code>.google.bigtable.v2.SessionCheckAndMutateRowResponse check_and_mutate_row = 4;</code>
+   *
+   * @return Whether the checkAndMutateRow field is set.
+   */
+  boolean hasCheckAndMutateRow();
+
+  /**
+   * <code>.google.bigtable.v2.SessionCheckAndMutateRowResponse check_and_mutate_row = 4;</code>
+   *
+   * @return The checkAndMutateRow.
+   */
+  com.google.bigtable.v2.SessionCheckAndMutateRowResponse getCheckAndMutateRow();
+
+  /** <code>.google.bigtable.v2.SessionCheckAndMutateRowResponse check_and_mutate_row = 4;</code> */
+  com.google.bigtable.v2.SessionCheckAndMutateRowResponseOrBuilder getCheckAndMutateRowOrBuilder();
+
+  /**
+   * <code>.google.bigtable.v2.SessionReadModifyWriteRowResponse read_modify_write_row = 5;</code>
+   *
+   * @return Whether the readModifyWriteRow field is set.
+   */
+  boolean hasReadModifyWriteRow();
+
+  /**
+   * <code>.google.bigtable.v2.SessionReadModifyWriteRowResponse read_modify_write_row = 5;</code>
+   *
+   * @return The readModifyWriteRow.
+   */
+  com.google.bigtable.v2.SessionReadModifyWriteRowResponse getReadModifyWriteRow();
+
+  /**
+   * <code>.google.bigtable.v2.SessionReadModifyWriteRowResponse read_modify_write_row = 5;</code>
+   */
+  com.google.bigtable.v2.SessionReadModifyWriteRowResponseOrBuilder
+      getReadModifyWriteRowOrBuilder();
+
+  /**
+   * <code>.google.bigtable.v2.SessionMutateRowsResponse mutate_rows = 6;</code>
+   *
+   * @return Whether the mutateRows field is set.
+   */
+  boolean hasMutateRows();
+
+  /**
+   * <code>.google.bigtable.v2.SessionMutateRowsResponse mutate_rows = 6;</code>
+   *
+   * @return The mutateRows.
+   */
+  com.google.bigtable.v2.SessionMutateRowsResponse getMutateRows();
+
+  /** <code>.google.bigtable.v2.SessionMutateRowsResponse mutate_rows = 6;</code> */
+  com.google.bigtable.v2.SessionMutateRowsResponseOrBuilder getMutateRowsOrBuilder();
+
   com.google.bigtable.v2.TableResponse.PayloadCase getPayloadCase();
 }

@@ -39,9 +39,9 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
@@ -1925,9 +1925,9 @@ public class KeyRangeCacheTest {
   // --- Test doubles ---
 
   static final class FakeEndpointCache implements ChannelEndpointCache {
-    private final Map<String, FakeEndpoint> endpoints = new HashMap<>();
+    private final Map<String, FakeEndpoint> endpoints = new ConcurrentHashMap<>();
     private final FakeEndpoint defaultEndpoint = new FakeEndpoint("default");
-    private boolean createOnGet = true;
+    private volatile boolean createOnGet = true;
 
     @Override
     public ChannelEndpoint defaultChannel() {
@@ -1977,7 +1977,7 @@ public class KeyRangeCacheTest {
     private final String address;
     private final FakeManagedChannel channel = new FakeManagedChannel();
     private final AtomicInteger activeRequests = new AtomicInteger();
-    private EndpointHealthState state = EndpointHealthState.READY;
+    private volatile EndpointHealthState state = EndpointHealthState.READY;
 
     FakeEndpoint(String address) {
       this.address = address;
@@ -2042,7 +2042,7 @@ public class KeyRangeCacheTest {
   }
 
   private static final class FakeManagedChannel extends ManagedChannel {
-    private boolean shutdown = false;
+    private volatile boolean shutdown = false;
     private volatile ConnectivityState connectivityState = ConnectivityState.READY;
 
     void setConnectivityState(ConnectivityState state) {

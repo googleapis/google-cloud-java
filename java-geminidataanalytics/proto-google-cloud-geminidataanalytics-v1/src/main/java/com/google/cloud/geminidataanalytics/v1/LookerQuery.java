@@ -60,6 +60,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
     filters_ = java.util.Collections.emptyList();
     sorts_ = com.google.protobuf.LazyStringArrayList.emptyList();
     limit_ = "";
+    dynamicFields_ = java.util.Collections.emptyList();
     queryId_ = "";
     clientId_ = "";
   }
@@ -1384,6 +1385,94 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int DYNAMIC_FIELDS_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.geminidataanalytics.v1.DynamicField> dynamicFields_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.geminidataanalytics.v1.DynamicField>
+      getDynamicFieldsList() {
+    return dynamicFields_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.geminidataanalytics.v1.DynamicFieldOrBuilder>
+      getDynamicFieldsOrBuilderList() {
+    return dynamicFields_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDynamicFieldsCount() {
+    return dynamicFields_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1.DynamicField getDynamicFields(int index) {
+    return dynamicFields_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dynamic fields used in the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1.DynamicFieldOrBuilder getDynamicFieldsOrBuilder(
+      int index) {
+    return dynamicFields_.get(index);
+  }
+
   public static final int QUERY_ID_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
@@ -1566,6 +1655,9 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, limit_);
     }
+    for (int i = 0; i < dynamicFields_.size(); i++) {
+      output.writeMessage(9, dynamicFields_.get(i));
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 10, queryId_);
     }
@@ -1609,6 +1701,9 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, limit_);
     }
+    for (int i = 0; i < dynamicFields_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, dynamicFields_.get(i));
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(10, queryId_);
     }
@@ -1640,6 +1735,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
     if (hasLimit()) {
       if (!getLimit().equals(other.getLimit())) return false;
     }
+    if (!getDynamicFieldsList().equals(other.getDynamicFieldsList())) return false;
     if (hasQueryId() != other.hasQueryId()) return false;
     if (hasQueryId()) {
       if (!getQueryId().equals(other.getQueryId())) return false;
@@ -1678,6 +1774,10 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
     if (hasLimit()) {
       hash = (37 * hash) + LIMIT_FIELD_NUMBER;
       hash = (53 * hash) + getLimit().hashCode();
+    }
+    if (getDynamicFieldsCount() > 0) {
+      hash = (37 * hash) + DYNAMIC_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getDynamicFieldsList().hashCode();
     }
     if (hasQueryId()) {
       hash = (37 * hash) + QUERY_ID_FIELD_NUMBER;
@@ -1841,6 +1941,13 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00000008);
       sorts_ = com.google.protobuf.LazyStringArrayList.emptyList();
       limit_ = "";
+      if (dynamicFieldsBuilder_ == null) {
+        dynamicFields_ = java.util.Collections.emptyList();
+      } else {
+        dynamicFields_ = null;
+        dynamicFieldsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       queryId_ = "";
       clientId_ = "";
       return this;
@@ -1889,6 +1996,15 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
       } else {
         result.filters_ = filtersBuilder_.build();
       }
+      if (dynamicFieldsBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          dynamicFields_ = java.util.Collections.unmodifiableList(dynamicFields_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.dynamicFields_ = dynamicFields_;
+      } else {
+        result.dynamicFields_ = dynamicFieldsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.geminidataanalytics.v1.LookerQuery result) {
@@ -1912,11 +2028,11 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
         result.limit_ = limit_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.queryId_ = queryId_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.clientId_ = clientId_;
         to_bitField0_ |= 0x00000004;
       }
@@ -1998,14 +2114,41 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (dynamicFieldsBuilder_ == null) {
+        if (!other.dynamicFields_.isEmpty()) {
+          if (dynamicFields_.isEmpty()) {
+            dynamicFields_ = other.dynamicFields_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureDynamicFieldsIsMutable();
+            dynamicFields_.addAll(other.dynamicFields_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.dynamicFields_.isEmpty()) {
+          if (dynamicFieldsBuilder_.isEmpty()) {
+            dynamicFieldsBuilder_.dispose();
+            dynamicFieldsBuilder_ = null;
+            dynamicFields_ = other.dynamicFields_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            dynamicFieldsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetDynamicFieldsFieldBuilder()
+                    : null;
+          } else {
+            dynamicFieldsBuilder_.addAllMessages(other.dynamicFields_);
+          }
+        }
+      }
       if (other.hasQueryId()) {
         queryId_ = other.queryId_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasClientId()) {
         clientId_ = other.clientId_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2080,16 +2223,30 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 74:
+              {
+                com.google.cloud.geminidataanalytics.v1.DynamicField m =
+                    input.readMessage(
+                        com.google.cloud.geminidataanalytics.v1.DynamicField.parser(),
+                        extensionRegistry);
+                if (dynamicFieldsBuilder_ == null) {
+                  ensureDynamicFieldsIsMutable();
+                  dynamicFields_.add(m);
+                } else {
+                  dynamicFieldsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
             case 82:
               {
                 queryId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 82
             case 90:
               {
                 clientId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             default:
@@ -3243,6 +3400,421 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.util.List<com.google.cloud.geminidataanalytics.v1.DynamicField> dynamicFields_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDynamicFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        dynamicFields_ =
+            new java.util.ArrayList<com.google.cloud.geminidataanalytics.v1.DynamicField>(
+                dynamicFields_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1.DynamicField,
+            com.google.cloud.geminidataanalytics.v1.DynamicField.Builder,
+            com.google.cloud.geminidataanalytics.v1.DynamicFieldOrBuilder>
+        dynamicFieldsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1.DynamicField>
+        getDynamicFieldsList() {
+      if (dynamicFieldsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(dynamicFields_);
+      } else {
+        return dynamicFieldsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getDynamicFieldsCount() {
+      if (dynamicFieldsBuilder_ == null) {
+        return dynamicFields_.size();
+      } else {
+        return dynamicFieldsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1.DynamicField getDynamicFields(int index) {
+      if (dynamicFieldsBuilder_ == null) {
+        return dynamicFields_.get(index);
+      } else {
+        return dynamicFieldsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDynamicFields(
+        int index, com.google.cloud.geminidataanalytics.v1.DynamicField value) {
+      if (dynamicFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDynamicFieldsIsMutable();
+        dynamicFields_.set(index, value);
+        onChanged();
+      } else {
+        dynamicFieldsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDynamicFields(
+        int index, com.google.cloud.geminidataanalytics.v1.DynamicField.Builder builderForValue) {
+      if (dynamicFieldsBuilder_ == null) {
+        ensureDynamicFieldsIsMutable();
+        dynamicFields_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        dynamicFieldsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDynamicFields(com.google.cloud.geminidataanalytics.v1.DynamicField value) {
+      if (dynamicFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDynamicFieldsIsMutable();
+        dynamicFields_.add(value);
+        onChanged();
+      } else {
+        dynamicFieldsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDynamicFields(
+        int index, com.google.cloud.geminidataanalytics.v1.DynamicField value) {
+      if (dynamicFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDynamicFieldsIsMutable();
+        dynamicFields_.add(index, value);
+        onChanged();
+      } else {
+        dynamicFieldsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDynamicFields(
+        com.google.cloud.geminidataanalytics.v1.DynamicField.Builder builderForValue) {
+      if (dynamicFieldsBuilder_ == null) {
+        ensureDynamicFieldsIsMutable();
+        dynamicFields_.add(builderForValue.build());
+        onChanged();
+      } else {
+        dynamicFieldsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addDynamicFields(
+        int index, com.google.cloud.geminidataanalytics.v1.DynamicField.Builder builderForValue) {
+      if (dynamicFieldsBuilder_ == null) {
+        ensureDynamicFieldsIsMutable();
+        dynamicFields_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        dynamicFieldsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllDynamicFields(
+        java.lang.Iterable<? extends com.google.cloud.geminidataanalytics.v1.DynamicField> values) {
+      if (dynamicFieldsBuilder_ == null) {
+        ensureDynamicFieldsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dynamicFields_);
+        onChanged();
+      } else {
+        dynamicFieldsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDynamicFields() {
+      if (dynamicFieldsBuilder_ == null) {
+        dynamicFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        dynamicFieldsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeDynamicFields(int index) {
+      if (dynamicFieldsBuilder_ == null) {
+        ensureDynamicFieldsIsMutable();
+        dynamicFields_.remove(index);
+        onChanged();
+      } else {
+        dynamicFieldsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1.DynamicField.Builder getDynamicFieldsBuilder(
+        int index) {
+      return internalGetDynamicFieldsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1.DynamicFieldOrBuilder getDynamicFieldsOrBuilder(
+        int index) {
+      if (dynamicFieldsBuilder_ == null) {
+        return dynamicFields_.get(index);
+      } else {
+        return dynamicFieldsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.geminidataanalytics.v1.DynamicFieldOrBuilder>
+        getDynamicFieldsOrBuilderList() {
+      if (dynamicFieldsBuilder_ != null) {
+        return dynamicFieldsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(dynamicFields_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1.DynamicField.Builder addDynamicFieldsBuilder() {
+      return internalGetDynamicFieldsFieldBuilder()
+          .addBuilder(com.google.cloud.geminidataanalytics.v1.DynamicField.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1.DynamicField.Builder addDynamicFieldsBuilder(
+        int index) {
+      return internalGetDynamicFieldsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.geminidataanalytics.v1.DynamicField.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dynamic fields used in the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1.DynamicField dynamic_fields = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1.DynamicField.Builder>
+        getDynamicFieldsBuilderList() {
+      return internalGetDynamicFieldsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1.DynamicField,
+            com.google.cloud.geminidataanalytics.v1.DynamicField.Builder,
+            com.google.cloud.geminidataanalytics.v1.DynamicFieldOrBuilder>
+        internalGetDynamicFieldsFieldBuilder() {
+      if (dynamicFieldsBuilder_ == null) {
+        dynamicFieldsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1.DynamicField,
+                com.google.cloud.geminidataanalytics.v1.DynamicField.Builder,
+                com.google.cloud.geminidataanalytics.v1.DynamicFieldOrBuilder>(
+                dynamicFields_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        dynamicFields_ = null;
+      }
+      return dynamicFieldsBuilder_;
+    }
+
     private java.lang.Object queryId_ = "";
 
     /**
@@ -3259,7 +3831,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
      * @return Whether the queryId field is set.
      */
     public boolean hasQueryId() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -3331,7 +3903,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       queryId_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3351,7 +3923,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearQueryId() {
       queryId_ = getDefaultInstance().getQueryId();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3376,7 +3948,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       queryId_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3397,7 +3969,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
      * @return Whether the clientId field is set.
      */
     public boolean hasClientId() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -3469,7 +4041,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       clientId_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3489,7 +4061,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearClientId() {
       clientId_ = getDefaultInstance().getClientId();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3514,7 +4086,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       clientId_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

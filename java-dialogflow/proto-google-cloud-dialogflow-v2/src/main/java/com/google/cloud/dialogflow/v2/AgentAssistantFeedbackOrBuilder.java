@@ -291,4 +291,48 @@ public interface AgentAssistantFeedbackOrBuilder
    */
   com.google.cloud.dialogflow.v2.AgentAssistantFeedback.KnowledgeAssistFeedbackOrBuilder
       getKnowledgeAssistFeedbackOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for companion agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the companionFeedback field is set.
+   */
+  boolean hasCompanionFeedback();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for companion agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The companionFeedback.
+   */
+  com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback getCompanionFeedback();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for companion agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedback companion_feedback = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.AgentAssistantFeedback.CompanionFeedbackOrBuilder
+      getCompanionFeedbackOrBuilder();
 }

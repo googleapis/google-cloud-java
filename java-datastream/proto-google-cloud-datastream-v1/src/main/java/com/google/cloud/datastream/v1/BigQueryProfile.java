@@ -24,7 +24,7 @@ package com.google.cloud.datastream.v1;
  *
  *
  * <pre>
- * BigQuery warehouse profile.
+ * Profile for connecting to a BigQuery destination.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datastream.v1.BigQueryProfile}
@@ -223,7 +223,7 @@ public final class BigQueryProfile extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * BigQuery warehouse profile.
+   * Profile for connecting to a BigQuery destination.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datastream.v1.BigQueryProfile}

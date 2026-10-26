@@ -76,6 +76,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Pattern;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -88,6 +89,9 @@ public class OAuth2Utils {
     RSA,
     EC
   }
+
+  static final Pattern PEM_CERT_PATTERN =
+      Pattern.compile("-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----", Pattern.DOTALL);
 
   static final String SIGNATURE_ALGORITHM = "SHA256withRSA";
 

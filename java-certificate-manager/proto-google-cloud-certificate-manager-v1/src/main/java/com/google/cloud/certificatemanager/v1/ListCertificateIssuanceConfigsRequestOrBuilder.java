@@ -62,10 +62,10 @@ public interface ListCertificateIssuanceConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Maximum number of certificate configs to return per call.
+   * Optional. Maximum number of certificate configs to return per call.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -75,13 +75,13 @@ public interface ListCertificateIssuanceConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * The value returned by the last `ListCertificateIssuanceConfigsResponse`.
-   * Indicates that this is a continuation of a prior
-   * `ListCertificateIssuanceConfigs` call, and that the system should return
-   * the next page of data.
+   * Optional. The value returned by the last
+   * `ListCertificateIssuanceConfigsResponse`. Indicates that this is a
+   * continuation of a prior `ListCertificateIssuanceConfigs` call, and that the
+   * system should return the next page of data.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -91,13 +91,13 @@ public interface ListCertificateIssuanceConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * The value returned by the last `ListCertificateIssuanceConfigsResponse`.
-   * Indicates that this is a continuation of a prior
-   * `ListCertificateIssuanceConfigs` call, and that the system should return
-   * the next page of data.
+   * Optional. The value returned by the last
+   * `ListCertificateIssuanceConfigsResponse`. Indicates that this is a
+   * continuation of a prior `ListCertificateIssuanceConfigs` call, and that the
+   * system should return the next page of data.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -107,10 +107,10 @@ public interface ListCertificateIssuanceConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Filter expression to restrict the Certificates Configs returned.
+   * Optional. Filter expression to restrict the Certificates Configs returned.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -120,10 +120,10 @@ public interface ListCertificateIssuanceConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * Filter expression to restrict the Certificates Configs returned.
+   * Optional. Filter expression to restrict the Certificates Configs returned.
    * </pre>
    *
-   * <code>string filter = 4;</code>
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -133,12 +133,12 @@ public interface ListCertificateIssuanceConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * A list of Certificate Config field names used to specify the order of the
-   * returned results. The default sorting order is ascending. To specify
-   * descending order for a field, add a suffix `" desc"`.
+   * Optional. A list of Certificate Config field names used to specify the
+   * order of the returned results. The default sorting order is ascending. To
+   * specify descending order for a field, add a suffix `" desc"`.
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -148,12 +148,12 @@ public interface ListCertificateIssuanceConfigsRequestOrBuilder
    *
    *
    * <pre>
-   * A list of Certificate Config field names used to specify the order of the
-   * returned results. The default sorting order is ascending. To specify
-   * descending order for a field, add a suffix `" desc"`.
+   * Optional. A list of Certificate Config field names used to specify the
+   * order of the returned results. The default sorting order is ascending. To
+   * specify descending order for a field, add a suffix `" desc"`.
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */

@@ -281,7 +281,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Oracle ConnectionProfile configuration.
+   * Profile for connecting to an Oracle source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -294,7 +294,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Oracle ConnectionProfile configuration.
+   * Profile for connecting to an Oracle source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -307,7 +307,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Oracle ConnectionProfile configuration.
+   * Profile for connecting to an Oracle source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.OracleProfile oracle_profile = 100;</code>
@@ -318,7 +318,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage ConnectionProfile configuration.
+   * Profile for connecting to a Cloud Storage destination.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -331,7 +331,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage ConnectionProfile configuration.
+   * Profile for connecting to a Cloud Storage destination.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -344,7 +344,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Cloud Storage ConnectionProfile configuration.
+   * Profile for connecting to a Cloud Storage destination.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.GcsProfile gcs_profile = 101;</code>
@@ -355,7 +355,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * MySQL ConnectionProfile configuration.
+   * Profile for connecting to a MySQL source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -368,7 +368,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * MySQL ConnectionProfile configuration.
+   * Profile for connecting to a MySQL source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -381,7 +381,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * MySQL ConnectionProfile configuration.
+   * Profile for connecting to a MySQL source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MysqlProfile mysql_profile = 102;</code>
@@ -392,7 +392,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * BigQuery Connection Profile configuration.
+   * Profile for connecting to a BigQuery destination.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -405,7 +405,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * BigQuery Connection Profile configuration.
+   * Profile for connecting to a BigQuery destination.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -418,7 +418,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * BigQuery Connection Profile configuration.
+   * Profile for connecting to a BigQuery destination.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.BigQueryProfile bigquery_profile = 103;</code>
@@ -429,7 +429,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * PostgreSQL Connection Profile configuration.
+   * Profile for connecting to a PostgreSQL source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -442,7 +442,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * PostgreSQL Connection Profile configuration.
+   * Profile for connecting to a PostgreSQL source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -455,7 +455,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * PostgreSQL Connection Profile configuration.
+   * Profile for connecting to a PostgreSQL source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlProfile postgresql_profile = 104;</code>
@@ -466,7 +466,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * SQLServer Connection Profile configuration.
+   * Profile for connecting to a SQLServer source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -479,7 +479,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * SQLServer Connection Profile configuration.
+   * Profile for connecting to a SQLServer source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -492,7 +492,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * SQLServer Connection Profile configuration.
+   * Profile for connecting to a SQLServer source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SqlServerProfile sql_server_profile = 105;</code>
@@ -503,7 +503,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Salesforce Connection Profile configuration.
+   * Profile for connecting to a Salesforce source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -516,7 +516,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Salesforce Connection Profile configuration.
+   * Profile for connecting to a Salesforce source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -529,7 +529,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * Salesforce Connection Profile configuration.
+   * Profile for connecting to a Salesforce source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.SalesforceProfile salesforce_profile = 107;</code>
@@ -540,7 +540,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * MongoDB Connection Profile configuration.
+   * Profile for connecting to a MongoDB source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -553,7 +553,7 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * MongoDB Connection Profile configuration.
+   * Profile for connecting to a MongoDB source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
@@ -566,12 +566,211 @@ public interface ConnectionProfileOrBuilder
    *
    *
    * <pre>
-   * MongoDB Connection Profile configuration.
+   * Profile for connecting to a MongoDB source.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.MongodbProfile mongodb_profile = 108;</code>
    */
   com.google.cloud.datastream.v1.MongodbProfileOrBuilder getMongodbProfileOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Spanner source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+   *
+   * @return Whether the spannerProfile field is set.
+   */
+  boolean hasSpannerProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Spanner source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+   *
+   * @return The spannerProfile.
+   */
+  com.google.cloud.datastream.v1.SpannerProfile getSpannerProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Spanner source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerProfile spanner_profile = 109;</code>
+   */
+  com.google.cloud.datastream.v1.SpannerProfileOrBuilder getSpannerProfileOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Dataverse source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+   *
+   * @return Whether the dataverseProfile field is set.
+   */
+  boolean hasDataverseProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Dataverse source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+   *
+   * @return The dataverseProfile.
+   */
+  com.google.cloud.datastream.v1.DataverseProfile getDataverseProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Dataverse source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.DataverseProfile dataverse_profile = 114;</code>
+   */
+  com.google.cloud.datastream.v1.DataverseProfileOrBuilder getDataverseProfileOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Salesforce Marketing Cloud source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+   * </code>
+   *
+   * @return Whether the salesforceMarketingCloudProfile field is set.
+   */
+  boolean hasSalesforceMarketingCloudProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Salesforce Marketing Cloud source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+   * </code>
+   *
+   * @return The salesforceMarketingCloudProfile.
+   */
+  com.google.cloud.datastream.v1.SalesforceMarketingCloudProfile
+      getSalesforceMarketingCloudProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a Salesforce Marketing Cloud source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceMarketingCloudProfile salesforce_marketing_cloud_profile = 119;
+   * </code>
+   */
+  com.google.cloud.datastream.v1.SalesforceMarketingCloudProfileOrBuilder
+      getSalesforceMarketingCloudProfileOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a ServiceNow source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+   *
+   * @return Whether the serviceNowProfile field is set.
+   */
+  boolean hasServiceNowProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a ServiceNow source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+   *
+   * @return The serviceNowProfile.
+   */
+  com.google.cloud.datastream.v1.ServiceNowProfile getServiceNowProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Profile for connecting to a ServiceNow source.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.ServiceNowProfile service_now_profile = 120;</code>
+   */
+  com.google.cloud.datastream.v1.ServiceNowProfileOrBuilder getServiceNowProfileOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Profile for connecting to a Workday source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workdayProfile field is set.
+   */
+  boolean hasWorkdayProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Profile for connecting to a Workday source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workdayProfile.
+   */
+  com.google.cloud.datastream.v1.WorkdayProfile getWorkdayProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Profile for connecting to a Workday source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.WorkdayProfile workday_profile = 121 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.datastream.v1.WorkdayProfileOrBuilder getWorkdayProfileOrBuilder();
 
   /**
    *

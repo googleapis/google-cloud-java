@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The BackendServices API.
  *
+ * <p>This client uses BackendServices version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -677,7 +679,6 @@ public class BackendServicesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   for (Map.Entry<String, BackendServicesScopedList> element :
@@ -720,7 +721,6 @@ public class BackendServicesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   ApiFuture<Map.Entry<String, BackendServicesScopedList>> future =
@@ -762,7 +762,6 @@ public class BackendServicesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .build();
    *   while (true) {
@@ -1615,7 +1614,6 @@ public class BackendServicesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (BackendService element : backendServicesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1650,7 +1648,6 @@ public class BackendServicesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<BackendService> future =
    *       backendServicesClient.listPagedCallable().futureCall(request);
@@ -1685,7 +1682,6 @@ public class BackendServicesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     BackendServiceList response = backendServicesClient.listCallable().call(request);
@@ -1759,7 +1755,6 @@ public class BackendServicesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (BackendService element : backendServicesClient.listUsable(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1796,7 +1791,6 @@ public class BackendServicesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<BackendService> future =
    *       backendServicesClient.listUsablePagedCallable().futureCall(request);
@@ -1834,7 +1828,6 @@ public class BackendServicesClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     BackendServiceListUsable response =

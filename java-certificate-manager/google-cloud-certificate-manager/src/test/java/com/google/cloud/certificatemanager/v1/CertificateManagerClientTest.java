@@ -201,6 +201,8 @@ public class CertificateManagerClientTest {
             .addAllSanDnsnames(new ArrayList<String>())
             .setPemCertificate("pemCertificate153491807")
             .setExpireTime(Timestamp.newBuilder().build())
+            .addAllUsedBy(new ArrayList<Certificate.UsedBy>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCertificateManager.addResponse(expectedResponse);
 
@@ -246,6 +248,8 @@ public class CertificateManagerClientTest {
             .addAllSanDnsnames(new ArrayList<String>())
             .setPemCertificate("pemCertificate153491807")
             .setExpireTime(Timestamp.newBuilder().build())
+            .addAllUsedBy(new ArrayList<Certificate.UsedBy>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCertificateManager.addResponse(expectedResponse);
 
@@ -291,6 +295,8 @@ public class CertificateManagerClientTest {
             .addAllSanDnsnames(new ArrayList<String>())
             .setPemCertificate("pemCertificate153491807")
             .setExpireTime(Timestamp.newBuilder().build())
+            .addAllUsedBy(new ArrayList<Certificate.UsedBy>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -351,6 +357,8 @@ public class CertificateManagerClientTest {
             .addAllSanDnsnames(new ArrayList<String>())
             .setPemCertificate("pemCertificate153491807")
             .setExpireTime(Timestamp.newBuilder().build())
+            .addAllUsedBy(new ArrayList<Certificate.UsedBy>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -411,6 +419,8 @@ public class CertificateManagerClientTest {
             .addAllSanDnsnames(new ArrayList<String>())
             .setPemCertificate("pemCertificate153491807")
             .setExpireTime(Timestamp.newBuilder().build())
+            .addAllUsedBy(new ArrayList<Certificate.UsedBy>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -638,6 +648,7 @@ public class CertificateManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllGclbTargets(new ArrayList<CertificateMap.GclbTarget>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCertificateManager.addResponse(expectedResponse);
 
@@ -683,6 +694,7 @@ public class CertificateManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllGclbTargets(new ArrayList<CertificateMap.GclbTarget>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCertificateManager.addResponse(expectedResponse);
 
@@ -727,6 +739,7 @@ public class CertificateManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllGclbTargets(new ArrayList<CertificateMap.GclbTarget>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -787,6 +800,7 @@ public class CertificateManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllGclbTargets(new ArrayList<CertificateMap.GclbTarget>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -847,6 +861,7 @@ public class CertificateManagerClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .addAllGclbTargets(new ArrayList<CertificateMap.GclbTarget>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1563,6 +1578,7 @@ public class CertificateManagerClientTest {
             .setDescription("description-1724546052")
             .setDomain("domain-1326197564")
             .setDnsResourceRecord(DnsAuthorization.DnsResourceRecord.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCertificateManager.addResponse(expectedResponse);
 
@@ -1611,6 +1627,7 @@ public class CertificateManagerClientTest {
             .setDescription("description-1724546052")
             .setDomain("domain-1326197564")
             .setDnsResourceRecord(DnsAuthorization.DnsResourceRecord.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCertificateManager.addResponse(expectedResponse);
 
@@ -1657,6 +1674,7 @@ public class CertificateManagerClientTest {
             .setDescription("description-1724546052")
             .setDomain("domain-1326197564")
             .setDnsResourceRecord(DnsAuthorization.DnsResourceRecord.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1719,6 +1737,7 @@ public class CertificateManagerClientTest {
             .setDescription("description-1724546052")
             .setDomain("domain-1326197564")
             .setDnsResourceRecord(DnsAuthorization.DnsResourceRecord.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1781,6 +1800,7 @@ public class CertificateManagerClientTest {
             .setDescription("description-1724546052")
             .setDomain("domain-1326197564")
             .setDnsResourceRecord(DnsAuthorization.DnsResourceRecord.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2025,6 +2045,7 @@ public class CertificateManagerClientTest {
                 CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
             .setLifetime(Duration.newBuilder().build())
             .setRotationWindowPercentage(873917384)
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCertificateManager.addResponse(expectedResponse);
 
@@ -2079,6 +2100,7 @@ public class CertificateManagerClientTest {
                 CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
             .setLifetime(Duration.newBuilder().build())
             .setRotationWindowPercentage(873917384)
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCertificateManager.addResponse(expectedResponse);
 
@@ -2129,6 +2151,7 @@ public class CertificateManagerClientTest {
                 CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
             .setLifetime(Duration.newBuilder().build())
             .setRotationWindowPercentage(873917384)
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2203,6 +2226,7 @@ public class CertificateManagerClientTest {
                 CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
             .setLifetime(Duration.newBuilder().build())
             .setRotationWindowPercentage(873917384)
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2253,6 +2277,71 @@ public class CertificateManagerClientTest {
           .createCertificateIssuanceConfigAsync(
               parent, certificateIssuanceConfig, certificateIssuanceConfigId)
           .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateCertificateIssuanceConfigTest() throws Exception {
+    CertificateIssuanceConfig expectedResponse =
+        CertificateIssuanceConfig.newBuilder()
+            .setName(
+                CertificateIssuanceConfigName.of(
+                        "[PROJECT]", "[LOCATION]", "[CERTIFICATE_ISSUANCE_CONFIG]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setCertificateAuthorityConfig(
+                CertificateIssuanceConfig.CertificateAuthorityConfig.newBuilder().build())
+            .setLifetime(Duration.newBuilder().build())
+            .setRotationWindowPercentage(873917384)
+            .putAllTags(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateCertificateIssuanceConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCertificateManager.addResponse(resultOperation);
+
+    CertificateIssuanceConfig certificateIssuanceConfig =
+        CertificateIssuanceConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CertificateIssuanceConfig actualResponse =
+        client.updateCertificateIssuanceConfigAsync(certificateIssuanceConfig, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCertificateManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateCertificateIssuanceConfigRequest actualRequest =
+        ((UpdateCertificateIssuanceConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(certificateIssuanceConfig, actualRequest.getCertificateIssuanceConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateCertificateIssuanceConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCertificateManager.addException(exception);
+
+    try {
+      CertificateIssuanceConfig certificateIssuanceConfig =
+          CertificateIssuanceConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCertificateIssuanceConfigAsync(certificateIssuanceConfig, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -2449,7 +2538,10 @@ public class CertificateManagerClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setEtag("etag3123477")
+            .putAllSpiffeTrustStores(new HashMap<String, TrustConfig.TrustStore>())
             .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .addAllAllowlistedCertificates(new ArrayList<TrustConfig.AllowlistedCertificate>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCertificateManager.addResponse(expectedResponse);
 
@@ -2493,7 +2585,10 @@ public class CertificateManagerClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setEtag("etag3123477")
+            .putAllSpiffeTrustStores(new HashMap<String, TrustConfig.TrustStore>())
             .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .addAllAllowlistedCertificates(new ArrayList<TrustConfig.AllowlistedCertificate>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     mockCertificateManager.addResponse(expectedResponse);
 
@@ -2537,7 +2632,10 @@ public class CertificateManagerClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setEtag("etag3123477")
+            .putAllSpiffeTrustStores(new HashMap<String, TrustConfig.TrustStore>())
             .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .addAllAllowlistedCertificates(new ArrayList<TrustConfig.AllowlistedCertificate>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2596,7 +2694,10 @@ public class CertificateManagerClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setEtag("etag3123477")
+            .putAllSpiffeTrustStores(new HashMap<String, TrustConfig.TrustStore>())
             .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .addAllAllowlistedCertificates(new ArrayList<TrustConfig.AllowlistedCertificate>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2655,7 +2756,10 @@ public class CertificateManagerClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
             .setEtag("etag3123477")
+            .putAllSpiffeTrustStores(new HashMap<String, TrustConfig.TrustStore>())
             .addAllTrustStores(new ArrayList<TrustConfig.TrustStore>())
+            .addAllAllowlistedCertificates(new ArrayList<TrustConfig.AllowlistedCertificate>())
+            .putAllTags(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

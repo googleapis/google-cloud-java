@@ -982,9 +982,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
    * Optional. The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the output populates the
+   * the output only populates the
    * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-   * `name` and `type`.
+   * `name` and `type` fields for both internal and external users, unless
+   * they are members of the space or have a prior affinity, like a direct
+   * message (DM) conversation, with the calling user.
    * </pre>
    *
    * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1003,9 +1005,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
    * Optional. The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the output populates the
+   * the output only populates the
    * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-   * `name` and `type`.
+   * `name` and `type` fields for both internal and external users, unless
+   * they are members of the space or have a prior affinity, like a direct
+   * message (DM) conversation, with the calling user.
    * </pre>
    *
    * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1027,9 +1031,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
    * Optional. The Google Chat user or app the membership corresponds to.
    * If your Chat app [authenticates as a
    * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-   * the output populates the
+   * the output only populates the
    * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-   * `name` and `type`.
+   * `name` and `type` fields for both internal and external users, unless
+   * they are members of the space or have a prior affinity, like a direct
+   * message (DM) conversation, with the calling user.
    * </pre>
    *
    * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2189,9 +2195,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
      * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-     * `name` and `type`.
+     * `name` and `type` fields for both internal and external users, unless
+     * they are members of the space or have a prior affinity, like a direct
+     * message (DM) conversation, with the calling user.
      * </pre>
      *
      * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2210,9 +2218,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
      * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-     * `name` and `type`.
+     * `name` and `type` fields for both internal and external users, unless
+     * they are members of the space or have a prior affinity, like a direct
+     * message (DM) conversation, with the calling user.
      * </pre>
      *
      * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2241,9 +2251,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
      * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-     * `name` and `type`.
+     * `name` and `type` fields for both internal and external users, unless
+     * they are members of the space or have a prior affinity, like a direct
+     * message (DM) conversation, with the calling user.
      * </pre>
      *
      * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2269,9 +2281,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
      * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-     * `name` and `type`.
+     * `name` and `type` fields for both internal and external users, unless
+     * they are members of the space or have a prior affinity, like a direct
+     * message (DM) conversation, with the calling user.
      * </pre>
      *
      * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2294,9 +2308,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
      * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-     * `name` and `type`.
+     * `name` and `type` fields for both internal and external users, unless
+     * they are members of the space or have a prior affinity, like a direct
+     * message (DM) conversation, with the calling user.
      * </pre>
      *
      * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2330,9 +2346,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
      * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-     * `name` and `type`.
+     * `name` and `type` fields for both internal and external users, unless
+     * they are members of the space or have a prior affinity, like a direct
+     * message (DM) conversation, with the calling user.
      * </pre>
      *
      * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2361,9 +2379,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
      * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-     * `name` and `type`.
+     * `name` and `type` fields for both internal and external users, unless
+     * they are members of the space or have a prior affinity, like a direct
+     * message (DM) conversation, with the calling user.
      * </pre>
      *
      * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2379,9 +2399,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
      * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-     * `name` and `type`.
+     * `name` and `type` fields for both internal and external users, unless
+     * they are members of the space or have a prior affinity, like a direct
+     * message (DM) conversation, with the calling user.
      * </pre>
      *
      * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2405,9 +2427,11 @@ public final class Membership extends com.google.protobuf.GeneratedMessage
      * Optional. The Google Chat user or app the membership corresponds to.
      * If your Chat app [authenticates as a
      * user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user),
-     * the output populates the
+     * the output only populates the
      * [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User)
-     * `name` and `type`.
+     * `name` and `type` fields for both internal and external users, unless
+     * they are members of the space or have a prior affinity, like a direct
+     * message (DM) conversation, with the calling user.
      * </pre>
      *
      * <code>.google.chat.v1.User member = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

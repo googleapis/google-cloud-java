@@ -19,6 +19,7 @@ package com.google.chat.v1.stub;
 import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListMessagePinsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
@@ -61,6 +62,7 @@ import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
 import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
+import com.google.chat.v1.CreateMessagePinRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
 import com.google.chat.v1.CreateSectionRequest;
@@ -68,6 +70,7 @@ import com.google.chat.v1.CreateSpaceRequest;
 import com.google.chat.v1.CustomEmoji;
 import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
+import com.google.chat.v1.DeleteMessagePinRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
 import com.google.chat.v1.DeleteSectionRequest;
@@ -89,6 +92,8 @@ import com.google.chat.v1.ListCustomEmojisRequest;
 import com.google.chat.v1.ListCustomEmojisResponse;
 import com.google.chat.v1.ListMembershipsRequest;
 import com.google.chat.v1.ListMembershipsResponse;
+import com.google.chat.v1.ListMessagePinsRequest;
+import com.google.chat.v1.ListMessagePinsResponse;
 import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
@@ -106,6 +111,7 @@ import com.google.chat.v1.MarkAsAwayRequest;
 import com.google.chat.v1.MarkAsDoNotDisturbRequest;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
+import com.google.chat.v1.MessagePin;
 import com.google.chat.v1.MoveSectionItemRequest;
 import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
@@ -233,6 +239,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .add("https://www.googleapis.com/auth/chat.messages.readonly")
           .add("https://www.googleapis.com/auth/chat.spaces")
           .add("https://www.googleapis.com/auth/chat.spaces.create")
+          .add("https://www.googleapis.com/auth/chat.spaces.pins")
+          .add("https://www.googleapis.com/auth/chat.spaces.pins.readonly")
           .add("https://www.googleapis.com/auth/chat.spaces.readonly")
           .add("https://www.googleapis.com/auth/chat.users.availability")
           .add("https://www.googleapis.com/auth/chat.users.availability.readonly")
@@ -284,6 +292,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           ListReactionsRequest, ListReactionsResponse, ListReactionsPagedResponse>
       listReactionsSettings;
   private final UnaryCallSettings<DeleteReactionRequest, Empty> deleteReactionSettings;
+  private final PagedCallSettings<
+          ListMessagePinsRequest, ListMessagePinsResponse, ListMessagePinsPagedResponse>
+      listMessagePinsSettings;
+  private final UnaryCallSettings<CreateMessagePinRequest, MessagePin> createMessagePinSettings;
+  private final UnaryCallSettings<DeleteMessagePinRequest, Empty> deleteMessagePinSettings;
   private final UnaryCallSettings<CreateCustomEmojiRequest, CustomEmoji> createCustomEmojiSettings;
   private final UnaryCallSettings<GetCustomEmojiRequest, CustomEmoji> getCustomEmojiSettings;
   private final PagedCallSettings<
@@ -571,6 +584,43 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           };
 
   private static final PagedListDescriptor<
+          ListMessagePinsRequest, ListMessagePinsResponse, MessagePin>
+      LIST_MESSAGE_PINS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListMessagePinsRequest, ListMessagePinsResponse, MessagePin>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMessagePinsRequest injectToken(
+                ListMessagePinsRequest payload, String token) {
+              return ListMessagePinsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListMessagePinsRequest injectPageSize(
+                ListMessagePinsRequest payload, int pageSize) {
+              return ListMessagePinsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMessagePinsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMessagePinsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MessagePin> extractResources(ListMessagePinsResponse payload) {
+              return payload.getMessagePinsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>
       LIST_CUSTOM_EMOJIS_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -838,6 +888,23 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           };
 
   private static final PagedListResponseFactory<
+          ListMessagePinsRequest, ListMessagePinsResponse, ListMessagePinsPagedResponse>
+      LIST_MESSAGE_PINS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMessagePinsRequest, ListMessagePinsResponse, ListMessagePinsPagedResponse>() {
+            @Override
+            public ApiFuture<ListMessagePinsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMessagePinsRequest, ListMessagePinsResponse> callable,
+                ListMessagePinsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMessagePinsResponse> futureResponse) {
+              PageContext<ListMessagePinsRequest, ListMessagePinsResponse, MessagePin> pageContext =
+                  PageContext.create(callable, LIST_MESSAGE_PINS_PAGE_STR_DESC, request, context);
+              return ListMessagePinsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListCustomEmojisRequest, ListCustomEmojisResponse, ListCustomEmojisPagedResponse>
       LIST_CUSTOM_EMOJIS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1049,6 +1116,23 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   /** Returns the object with the settings used for calls to deleteReaction. */
   public UnaryCallSettings<DeleteReactionRequest, Empty> deleteReactionSettings() {
     return deleteReactionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMessagePins. */
+  public PagedCallSettings<
+          ListMessagePinsRequest, ListMessagePinsResponse, ListMessagePinsPagedResponse>
+      listMessagePinsSettings() {
+    return listMessagePinsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createMessagePin. */
+  public UnaryCallSettings<CreateMessagePinRequest, MessagePin> createMessagePinSettings() {
+    return createMessagePinSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteMessagePin. */
+  public UnaryCallSettings<DeleteMessagePinRequest, Empty> deleteMessagePinSettings() {
+    return deleteMessagePinSettings;
   }
 
   /** Returns the object with the settings used for calls to createCustomEmoji. */
@@ -1316,6 +1400,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     createReactionSettings = settingsBuilder.createReactionSettings().build();
     listReactionsSettings = settingsBuilder.listReactionsSettings().build();
     deleteReactionSettings = settingsBuilder.deleteReactionSettings().build();
+    listMessagePinsSettings = settingsBuilder.listMessagePinsSettings().build();
+    createMessagePinSettings = settingsBuilder.createMessagePinSettings().build();
+    deleteMessagePinSettings = settingsBuilder.deleteMessagePinSettings().build();
     createCustomEmojiSettings = settingsBuilder.createCustomEmojiSettings().build();
     getCustomEmojiSettings = settingsBuilder.getCustomEmojiSettings().build();
     listCustomEmojisSettings = settingsBuilder.listCustomEmojisSettings().build();
@@ -1401,6 +1488,13 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
             ListReactionsRequest, ListReactionsResponse, ListReactionsPagedResponse>
         listReactionsSettings;
     private final UnaryCallSettings.Builder<DeleteReactionRequest, Empty> deleteReactionSettings;
+    private final PagedCallSettings.Builder<
+            ListMessagePinsRequest, ListMessagePinsResponse, ListMessagePinsPagedResponse>
+        listMessagePinsSettings;
+    private final UnaryCallSettings.Builder<CreateMessagePinRequest, MessagePin>
+        createMessagePinSettings;
+    private final UnaryCallSettings.Builder<DeleteMessagePinRequest, Empty>
+        deleteMessagePinSettings;
     private final UnaryCallSettings.Builder<CreateCustomEmojiRequest, CustomEmoji>
         createCustomEmojiSettings;
     private final UnaryCallSettings.Builder<GetCustomEmojiRequest, CustomEmoji>
@@ -1456,6 +1550,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -1475,6 +1570,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               .setTotalTimeoutDuration(Duration.ofMillis(30000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -1511,6 +1608,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       createReactionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listReactionsSettings = PagedCallSettings.newBuilder(LIST_REACTIONS_PAGE_STR_FACT);
       deleteReactionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listMessagePinsSettings = PagedCallSettings.newBuilder(LIST_MESSAGE_PINS_PAGE_STR_FACT);
+      createMessagePinSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteMessagePinSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCustomEmojiSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getCustomEmojiSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCustomEmojisSettings = PagedCallSettings.newBuilder(LIST_CUSTOM_EMOJIS_PAGE_STR_FACT);
@@ -1563,6 +1663,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               createReactionSettings,
               listReactionsSettings,
               deleteReactionSettings,
+              listMessagePinsSettings,
+              createMessagePinSettings,
+              deleteMessagePinSettings,
               createCustomEmojiSettings,
               getCustomEmojiSettings,
               listCustomEmojisSettings,
@@ -1618,6 +1721,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       createReactionSettings = settings.createReactionSettings.toBuilder();
       listReactionsSettings = settings.listReactionsSettings.toBuilder();
       deleteReactionSettings = settings.deleteReactionSettings.toBuilder();
+      listMessagePinsSettings = settings.listMessagePinsSettings.toBuilder();
+      createMessagePinSettings = settings.createMessagePinSettings.toBuilder();
+      deleteMessagePinSettings = settings.deleteMessagePinSettings.toBuilder();
       createCustomEmojiSettings = settings.createCustomEmojiSettings.toBuilder();
       getCustomEmojiSettings = settings.getCustomEmojiSettings.toBuilder();
       listCustomEmojisSettings = settings.listCustomEmojisSettings.toBuilder();
@@ -1672,6 +1778,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               createReactionSettings,
               listReactionsSettings,
               deleteReactionSettings,
+              listMessagePinsSettings,
+              createMessagePinSettings,
+              deleteMessagePinSettings,
               createCustomEmojiSettings,
               getCustomEmojiSettings,
               listCustomEmojisSettings,
@@ -1851,6 +1960,21 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .deleteReactionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listMessagePinsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createMessagePinSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteMessagePinSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createCustomEmojiSettings()
@@ -2131,6 +2255,24 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     /** Returns the builder for the settings used for calls to deleteReaction. */
     public UnaryCallSettings.Builder<DeleteReactionRequest, Empty> deleteReactionSettings() {
       return deleteReactionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listMessagePins. */
+    public PagedCallSettings.Builder<
+            ListMessagePinsRequest, ListMessagePinsResponse, ListMessagePinsPagedResponse>
+        listMessagePinsSettings() {
+      return listMessagePinsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createMessagePin. */
+    public UnaryCallSettings.Builder<CreateMessagePinRequest, MessagePin>
+        createMessagePinSettings() {
+      return createMessagePinSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMessagePin. */
+    public UnaryCallSettings.Builder<DeleteMessagePinRequest, Empty> deleteMessagePinSettings() {
+      return deleteMessagePinSettings;
     }
 
     /** Returns the builder for the settings used for calls to createCustomEmoji. */

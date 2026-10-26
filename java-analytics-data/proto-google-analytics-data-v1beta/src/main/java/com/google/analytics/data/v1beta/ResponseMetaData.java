@@ -56,6 +56,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     timeZone_ = "";
     emptyReason_ = "";
     samplingMetadatas_ = java.util.Collections.emptyList();
+    dataTruncationReasons_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -2554,6 +2555,3323 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface DataTruncationReasonOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of data truncation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType data_truncation_type = 1;
+     * </code>
+     *
+     * @return Whether the dataTruncationType field is set.
+     */
+    boolean hasDataTruncationType();
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of data truncation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType data_truncation_type = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dataTruncationType.
+     */
+    int getDataTruncationTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of data truncation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType data_truncation_type = 1;
+     * </code>
+     *
+     * @return The dataTruncationType.
+     */
+    com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType
+        getDataTruncationType();
+
+    /**
+     *
+     *
+     * <pre>
+     * A descriptive message explaining the data truncation.
+     * </pre>
+     *
+     * <code>optional string data_truncation_message = 2;</code>
+     *
+     * @return Whether the dataTruncationMessage field is set.
+     */
+    boolean hasDataTruncationMessage();
+
+    /**
+     *
+     *
+     * <pre>
+     * A descriptive message explaining the data truncation.
+     * </pre>
+     *
+     * <code>optional string data_truncation_message = 2;</code>
+     *
+     * @return The dataTruncationMessage.
+     */
+    java.lang.String getDataTruncationMessage();
+
+    /**
+     *
+     *
+     * <pre>
+     * A descriptive message explaining the data truncation.
+     * </pre>
+     *
+     * <code>optional string data_truncation_message = 2;</code>
+     *
+     * @return The bytes for dataTruncationMessage.
+     */
+    com.google.protobuf.ByteString getDataTruncationMessageBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The data truncation date in the format YYYY-MM-DD.
+     * Indicates data before this date is truncated.
+     * </pre>
+     *
+     * <code>optional string data_truncation_date = 3;</code>
+     *
+     * @return Whether the dataTruncationDate field is set.
+     */
+    boolean hasDataTruncationDate();
+
+    /**
+     *
+     *
+     * <pre>
+     * The data truncation date in the format YYYY-MM-DD.
+     * Indicates data before this date is truncated.
+     * </pre>
+     *
+     * <code>optional string data_truncation_date = 3;</code>
+     *
+     * @return The dataTruncationDate.
+     */
+    java.lang.String getDataTruncationDate();
+
+    /**
+     *
+     *
+     * <pre>
+     * The data truncation date in the format YYYY-MM-DD.
+     * Indicates data before this date is truncated.
+     * </pre>
+     *
+     * <code>optional string data_truncation_date = 3;</code>
+     *
+     * @return The bytes for dataTruncationDate.
+     */
+    com.google.protobuf.ByteString getDataTruncationDateBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The truncated date ranges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+     * </code>
+     */
+    java.util.List<
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                .DataTruncationDateRange>
+        getDataTruncationDateRangesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The truncated date ranges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+     * </code>
+     */
+    com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange
+        getDataTruncationDateRanges(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The truncated date ranges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+     * </code>
+     */
+    int getDataTruncationDateRangesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The truncated date ranges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                    .DataTruncationDateRangeOrBuilder>
+        getDataTruncationDateRangesOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The truncated date ranges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+     * </code>
+     */
+    com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+            .DataTruncationDateRangeOrBuilder
+        getDataTruncationDateRangesOrBuilder(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Describes a reason for data truncation in the report.
+   * </pre>
+   *
+   * Protobuf type {@code google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason}
+   */
+  public static final class DataTruncationReason extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason)
+      DataTruncationReasonOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "DataTruncationReason");
+    }
+
+    // Use DataTruncationReason.newBuilder() to construct.
+    private DataTruncationReason(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DataTruncationReason() {
+      dataTruncationType_ = 0;
+      dataTruncationMessage_ = "";
+      dataTruncationDate_ = "";
+      dataTruncationDateRanges_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.analytics.data.v1beta.ReportingApiProto
+          .internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.analytics.data.v1beta.ReportingApiProto
+          .internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.class,
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of data truncation.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType}
+     */
+    public enum DataTruncationType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified type.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_UNSPECIFIED = 0;</code>
+       */
+      DATA_TRUNCATION_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Data is truncated in attribution report for rules-based models golden
+       * date.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_RULES_BASED_MODELS = 1;</code>
+       */
+      DATA_TRUNCATION_TYPE_RULES_BASED_MODELS(1),
+      /**
+       *
+       *
+       * <pre>
+       * Data is truncated in attribution report for data driven attribution
+       * golden date.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_DATA_DRIVEN_ATTRIBUTION = 2;</code>
+       */
+      DATA_TRUNCATION_TYPE_DATA_DRIVEN_ATTRIBUTION(2),
+      /**
+       *
+       *
+       * <pre>
+       * Data is truncated because DV360 policy does not permit data older than
+       * 2 years from being returned.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_DV360 = 3;</code>
+       */
+      DATA_TRUNCATION_TYPE_DV360(3),
+      /**
+       *
+       *
+       * <pre>
+       * Data is truncated because CM360 policy does not permit data older than
+       * 2 years from being returned.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_CM360 = 4;</code>
+       */
+      DATA_TRUNCATION_TYPE_CM360(4),
+      /**
+       *
+       *
+       * <pre>
+       * New item-scoped ecommerce metrics only have data after a specific date.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_ITEM_SCOPED_ECOMMERCE_METRICS = 5;</code>
+       */
+      DATA_TRUNCATION_TYPE_ITEM_SCOPED_ECOMMERCE_METRICS(5),
+      /**
+       *
+       *
+       * <pre>
+       * New event-scoped ecommerce metrics only have data after a specific
+       * date.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_EVENT_SCOPED_ECOMMERCE_METRICS = 6;</code>
+       */
+      DATA_TRUNCATION_TYPE_EVENT_SCOPED_ECOMMERCE_METRICS(6),
+      /**
+       *
+       *
+       * <pre>
+       * Query date range may not be fully served.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_DATE_RANGE = 7;</code>
+       */
+      DATA_TRUNCATION_TYPE_DATE_RANGE(7),
+      /**
+       *
+       *
+       * <pre>
+       * Data truncated because the query attempts to read event data prior
+       * to its retention date.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_PROPERTY = 8;</code>
+       */
+      DATA_TRUNCATION_TYPE_PROPERTY(8),
+      /**
+       *
+       *
+       * <pre>
+       * Data is truncated in conversions report.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_CONVERSIONS = 9;</code>
+       */
+      DATA_TRUNCATION_TYPE_CONVERSIONS(9),
+      /**
+       *
+       *
+       * <pre>
+       * Data is truncated due to Google Ads 36 month retention policy.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_GOOGLE_ADS = 10;</code>
+       */
+      DATA_TRUNCATION_TYPE_GOOGLE_ADS(10),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "DataTruncationType");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified type.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int DATA_TRUNCATION_TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Data is truncated in attribution report for rules-based models golden
+       * date.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_RULES_BASED_MODELS = 1;</code>
+       */
+      public static final int DATA_TRUNCATION_TYPE_RULES_BASED_MODELS_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Data is truncated in attribution report for data driven attribution
+       * golden date.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_DATA_DRIVEN_ATTRIBUTION = 2;</code>
+       */
+      public static final int DATA_TRUNCATION_TYPE_DATA_DRIVEN_ATTRIBUTION_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Data is truncated because DV360 policy does not permit data older than
+       * 2 years from being returned.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_DV360 = 3;</code>
+       */
+      public static final int DATA_TRUNCATION_TYPE_DV360_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Data is truncated because CM360 policy does not permit data older than
+       * 2 years from being returned.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_CM360 = 4;</code>
+       */
+      public static final int DATA_TRUNCATION_TYPE_CM360_VALUE = 4;
+
+      /**
+       *
+       *
+       * <pre>
+       * New item-scoped ecommerce metrics only have data after a specific date.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_ITEM_SCOPED_ECOMMERCE_METRICS = 5;</code>
+       */
+      public static final int DATA_TRUNCATION_TYPE_ITEM_SCOPED_ECOMMERCE_METRICS_VALUE = 5;
+
+      /**
+       *
+       *
+       * <pre>
+       * New event-scoped ecommerce metrics only have data after a specific
+       * date.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_EVENT_SCOPED_ECOMMERCE_METRICS = 6;</code>
+       */
+      public static final int DATA_TRUNCATION_TYPE_EVENT_SCOPED_ECOMMERCE_METRICS_VALUE = 6;
+
+      /**
+       *
+       *
+       * <pre>
+       * Query date range may not be fully served.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_DATE_RANGE = 7;</code>
+       */
+      public static final int DATA_TRUNCATION_TYPE_DATE_RANGE_VALUE = 7;
+
+      /**
+       *
+       *
+       * <pre>
+       * Data truncated because the query attempts to read event data prior
+       * to its retention date.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_PROPERTY = 8;</code>
+       */
+      public static final int DATA_TRUNCATION_TYPE_PROPERTY_VALUE = 8;
+
+      /**
+       *
+       *
+       * <pre>
+       * Data is truncated in conversions report.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_CONVERSIONS = 9;</code>
+       */
+      public static final int DATA_TRUNCATION_TYPE_CONVERSIONS_VALUE = 9;
+
+      /**
+       *
+       *
+       * <pre>
+       * Data is truncated due to Google Ads 36 month retention policy.
+       * </pre>
+       *
+       * <code>DATA_TRUNCATION_TYPE_GOOGLE_ADS = 10;</code>
+       */
+      public static final int DATA_TRUNCATION_TYPE_GOOGLE_ADS_VALUE = 10;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DataTruncationType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static DataTruncationType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return DATA_TRUNCATION_TYPE_UNSPECIFIED;
+          case 1:
+            return DATA_TRUNCATION_TYPE_RULES_BASED_MODELS;
+          case 2:
+            return DATA_TRUNCATION_TYPE_DATA_DRIVEN_ATTRIBUTION;
+          case 3:
+            return DATA_TRUNCATION_TYPE_DV360;
+          case 4:
+            return DATA_TRUNCATION_TYPE_CM360;
+          case 5:
+            return DATA_TRUNCATION_TYPE_ITEM_SCOPED_ECOMMERCE_METRICS;
+          case 6:
+            return DATA_TRUNCATION_TYPE_EVENT_SCOPED_ECOMMERCE_METRICS;
+          case 7:
+            return DATA_TRUNCATION_TYPE_DATE_RANGE;
+          case 8:
+            return DATA_TRUNCATION_TYPE_PROPERTY;
+          case 9:
+            return DATA_TRUNCATION_TYPE_CONVERSIONS;
+          case 10:
+            return DATA_TRUNCATION_TYPE_GOOGLE_ADS;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DataTruncationType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<DataTruncationType>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<DataTruncationType>() {
+                public DataTruncationType findValueByNumber(int number) {
+                  return DataTruncationType.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final DataTruncationType[] VALUES = values();
+
+      public static DataTruncationType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private DataTruncationType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType)
+    }
+
+    public interface DataTruncationDateRangeOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The start date in the format YYYY-MM-DD (inclusive).
+       * </pre>
+       *
+       * <code>optional string start_date = 1;</code>
+       *
+       * @return Whether the startDate field is set.
+       */
+      boolean hasStartDate();
+
+      /**
+       *
+       *
+       * <pre>
+       * The start date in the format YYYY-MM-DD (inclusive).
+       * </pre>
+       *
+       * <code>optional string start_date = 1;</code>
+       *
+       * @return The startDate.
+       */
+      java.lang.String getStartDate();
+
+      /**
+       *
+       *
+       * <pre>
+       * The start date in the format YYYY-MM-DD (inclusive).
+       * </pre>
+       *
+       * <code>optional string start_date = 1;</code>
+       *
+       * @return The bytes for startDate.
+       */
+      com.google.protobuf.ByteString getStartDateBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The end date in the format YYYY-MM-DD (inclusive).
+       * </pre>
+       *
+       * <code>optional string end_date = 2;</code>
+       *
+       * @return Whether the endDate field is set.
+       */
+      boolean hasEndDate();
+
+      /**
+       *
+       *
+       * <pre>
+       * The end date in the format YYYY-MM-DD (inclusive).
+       * </pre>
+       *
+       * <code>optional string end_date = 2;</code>
+       *
+       * @return The endDate.
+       */
+      java.lang.String getEndDate();
+
+      /**
+       *
+       *
+       * <pre>
+       * The end date in the format YYYY-MM-DD (inclusive).
+       * </pre>
+       *
+       * <code>optional string end_date = 2;</code>
+       *
+       * @return The bytes for endDate.
+       */
+      com.google.protobuf.ByteString getEndDateBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Define the truncated date range from start_date to end_date.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange}
+     */
+    public static final class DataTruncationDateRange extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange)
+        DataTruncationDateRangeOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "DataTruncationDateRange");
+      }
+
+      // Use DataTruncationDateRange.newBuilder() to construct.
+      private DataTruncationDateRange(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private DataTruncationDateRange() {
+        startDate_ = "";
+        endDate_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.analytics.data.v1beta.ReportingApiProto
+            .internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_DataTruncationDateRange_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.analytics.data.v1beta.ReportingApiProto
+            .internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_DataTruncationDateRange_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                    .DataTruncationDateRange.class,
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                    .DataTruncationDateRange.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int START_DATE_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object startDate_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The start date in the format YYYY-MM-DD (inclusive).
+       * </pre>
+       *
+       * <code>optional string start_date = 1;</code>
+       *
+       * @return Whether the startDate field is set.
+       */
+      @java.lang.Override
+      public boolean hasStartDate() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The start date in the format YYYY-MM-DD (inclusive).
+       * </pre>
+       *
+       * <code>optional string start_date = 1;</code>
+       *
+       * @return The startDate.
+       */
+      @java.lang.Override
+      public java.lang.String getStartDate() {
+        java.lang.Object ref = startDate_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          startDate_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The start date in the format YYYY-MM-DD (inclusive).
+       * </pre>
+       *
+       * <code>optional string start_date = 1;</code>
+       *
+       * @return The bytes for startDate.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getStartDateBytes() {
+        java.lang.Object ref = startDate_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          startDate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int END_DATE_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object endDate_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The end date in the format YYYY-MM-DD (inclusive).
+       * </pre>
+       *
+       * <code>optional string end_date = 2;</code>
+       *
+       * @return Whether the endDate field is set.
+       */
+      @java.lang.Override
+      public boolean hasEndDate() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The end date in the format YYYY-MM-DD (inclusive).
+       * </pre>
+       *
+       * <code>optional string end_date = 2;</code>
+       *
+       * @return The endDate.
+       */
+      @java.lang.Override
+      public java.lang.String getEndDate() {
+        java.lang.Object ref = endDate_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          endDate_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The end date in the format YYYY-MM-DD (inclusive).
+       * </pre>
+       *
+       * <code>optional string end_date = 2;</code>
+       *
+       * @return The bytes for endDate.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getEndDateBytes() {
+        java.lang.Object ref = endDate_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          endDate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, startDate_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, endDate_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, startDate_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, endDate_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                .DataTruncationDateRange)) {
+          return super.equals(obj);
+        }
+        com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                .DataTruncationDateRange
+            other =
+                (com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                        .DataTruncationDateRange)
+                    obj;
+
+        if (hasStartDate() != other.hasStartDate()) return false;
+        if (hasStartDate()) {
+          if (!getStartDate().equals(other.getStartDate())) return false;
+        }
+        if (hasEndDate() != other.hasEndDate()) return false;
+        if (hasEndDate()) {
+          if (!getEndDate().equals(other.getEndDate())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasStartDate()) {
+          hash = (37 * hash) + START_DATE_FIELD_NUMBER;
+          hash = (53 * hash) + getStartDate().hashCode();
+        }
+        if (hasEndDate()) {
+          hash = (37 * hash) + END_DATE_FIELD_NUMBER;
+          hash = (53 * hash) + getEndDate().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Define the truncated date range from start_date to end_date.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange)
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRangeOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.analytics.data.v1beta.ReportingApiProto
+              .internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_DataTruncationDateRange_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.analytics.data.v1beta.ReportingApiProto
+              .internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_DataTruncationDateRange_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                      .DataTruncationDateRange.class,
+                  com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                      .DataTruncationDateRange.Builder.class);
+        }
+
+        // Construct using
+        // com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          startDate_ = "";
+          endDate_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.analytics.data.v1beta.ReportingApiProto
+              .internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_DataTruncationDateRange_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                .DataTruncationDateRange
+            getDefaultInstanceForType() {
+          return com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                .DataTruncationDateRange
+            build() {
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                .DataTruncationDateRange
+            buildPartial() {
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange
+              result =
+                  new com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                      .DataTruncationDateRange(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                    .DataTruncationDateRange
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.startDate_ = startDate_;
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.endDate_ = endDate_;
+            to_bitField0_ |= 0x00000002;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange) {
+            return mergeFrom(
+                (com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                        .DataTruncationDateRange)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                    .DataTruncationDateRange
+                other) {
+          if (other
+              == com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange.getDefaultInstance()) return this;
+          if (other.hasStartDate()) {
+            startDate_ = other.startDate_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.hasEndDate()) {
+            endDate_ = other.endDate_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    startDate_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    endDate_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object startDate_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The start date in the format YYYY-MM-DD (inclusive).
+         * </pre>
+         *
+         * <code>optional string start_date = 1;</code>
+         *
+         * @return Whether the startDate field is set.
+         */
+        public boolean hasStartDate() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The start date in the format YYYY-MM-DD (inclusive).
+         * </pre>
+         *
+         * <code>optional string start_date = 1;</code>
+         *
+         * @return The startDate.
+         */
+        public java.lang.String getStartDate() {
+          java.lang.Object ref = startDate_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            startDate_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The start date in the format YYYY-MM-DD (inclusive).
+         * </pre>
+         *
+         * <code>optional string start_date = 1;</code>
+         *
+         * @return The bytes for startDate.
+         */
+        public com.google.protobuf.ByteString getStartDateBytes() {
+          java.lang.Object ref = startDate_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            startDate_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The start date in the format YYYY-MM-DD (inclusive).
+         * </pre>
+         *
+         * <code>optional string start_date = 1;</code>
+         *
+         * @param value The startDate to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStartDate(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          startDate_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The start date in the format YYYY-MM-DD (inclusive).
+         * </pre>
+         *
+         * <code>optional string start_date = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearStartDate() {
+          startDate_ = getDefaultInstance().getStartDate();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The start date in the format YYYY-MM-DD (inclusive).
+         * </pre>
+         *
+         * <code>optional string start_date = 1;</code>
+         *
+         * @param value The bytes for startDate to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStartDateBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          startDate_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object endDate_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The end date in the format YYYY-MM-DD (inclusive).
+         * </pre>
+         *
+         * <code>optional string end_date = 2;</code>
+         *
+         * @return Whether the endDate field is set.
+         */
+        public boolean hasEndDate() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The end date in the format YYYY-MM-DD (inclusive).
+         * </pre>
+         *
+         * <code>optional string end_date = 2;</code>
+         *
+         * @return The endDate.
+         */
+        public java.lang.String getEndDate() {
+          java.lang.Object ref = endDate_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            endDate_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The end date in the format YYYY-MM-DD (inclusive).
+         * </pre>
+         *
+         * <code>optional string end_date = 2;</code>
+         *
+         * @return The bytes for endDate.
+         */
+        public com.google.protobuf.ByteString getEndDateBytes() {
+          java.lang.Object ref = endDate_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            endDate_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The end date in the format YYYY-MM-DD (inclusive).
+         * </pre>
+         *
+         * <code>optional string end_date = 2;</code>
+         *
+         * @param value The endDate to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEndDate(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          endDate_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The end date in the format YYYY-MM-DD (inclusive).
+         * </pre>
+         *
+         * <code>optional string end_date = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEndDate() {
+          endDate_ = getDefaultInstance().getEndDate();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The end date in the format YYYY-MM-DD (inclusive).
+         * </pre>
+         *
+         * <code>optional string end_date = 2;</code>
+         *
+         * @param value The bytes for endDate to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEndDateBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          endDate_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange)
+      private static final com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                .DataTruncationDateRange();
+      }
+
+      public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<DataTruncationDateRange> PARSER =
+          new com.google.protobuf.AbstractParser<DataTruncationDateRange>() {
+            @java.lang.Override
+            public DataTruncationDateRange parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<DataTruncationDateRange> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DataTruncationDateRange> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int DATA_TRUNCATION_TYPE_FIELD_NUMBER = 1;
+    private int dataTruncationType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of data truncation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType data_truncation_type = 1;
+     * </code>
+     *
+     * @return Whether the dataTruncationType field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataTruncationType() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of data truncation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType data_truncation_type = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dataTruncationType.
+     */
+    @java.lang.Override
+    public int getDataTruncationTypeValue() {
+      return dataTruncationType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of data truncation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType data_truncation_type = 1;
+     * </code>
+     *
+     * @return The dataTruncationType.
+     */
+    @java.lang.Override
+    public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType
+        getDataTruncationType() {
+      com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType
+          result =
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationType.forNumber(dataTruncationType_);
+      return result == null
+          ? com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationType.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int DATA_TRUNCATION_MESSAGE_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataTruncationMessage_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * A descriptive message explaining the data truncation.
+     * </pre>
+     *
+     * <code>optional string data_truncation_message = 2;</code>
+     *
+     * @return Whether the dataTruncationMessage field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataTruncationMessage() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A descriptive message explaining the data truncation.
+     * </pre>
+     *
+     * <code>optional string data_truncation_message = 2;</code>
+     *
+     * @return The dataTruncationMessage.
+     */
+    @java.lang.Override
+    public java.lang.String getDataTruncationMessage() {
+      java.lang.Object ref = dataTruncationMessage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dataTruncationMessage_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A descriptive message explaining the data truncation.
+     * </pre>
+     *
+     * <code>optional string data_truncation_message = 2;</code>
+     *
+     * @return The bytes for dataTruncationMessage.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDataTruncationMessageBytes() {
+      java.lang.Object ref = dataTruncationMessage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dataTruncationMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DATA_TRUNCATION_DATE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dataTruncationDate_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The data truncation date in the format YYYY-MM-DD.
+     * Indicates data before this date is truncated.
+     * </pre>
+     *
+     * <code>optional string data_truncation_date = 3;</code>
+     *
+     * @return Whether the dataTruncationDate field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataTruncationDate() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The data truncation date in the format YYYY-MM-DD.
+     * Indicates data before this date is truncated.
+     * </pre>
+     *
+     * <code>optional string data_truncation_date = 3;</code>
+     *
+     * @return The dataTruncationDate.
+     */
+    @java.lang.Override
+    public java.lang.String getDataTruncationDate() {
+      java.lang.Object ref = dataTruncationDate_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dataTruncationDate_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The data truncation date in the format YYYY-MM-DD.
+     * Indicates data before this date is truncated.
+     * </pre>
+     *
+     * <code>optional string data_truncation_date = 3;</code>
+     *
+     * @return The bytes for dataTruncationDate.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDataTruncationDateBytes() {
+      java.lang.Object ref = dataTruncationDate_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dataTruncationDate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DATA_TRUNCATION_DATE_RANGES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                .DataTruncationDateRange>
+        dataTruncationDateRanges_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The truncated date ranges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                .DataTruncationDateRange>
+        getDataTruncationDateRangesList() {
+      return dataTruncationDateRanges_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The truncated date ranges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                    .DataTruncationDateRangeOrBuilder>
+        getDataTruncationDateRangesOrBuilderList() {
+      return dataTruncationDateRanges_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The truncated date ranges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public int getDataTruncationDateRangesCount() {
+      return dataTruncationDateRanges_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The truncated date ranges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+            .DataTruncationDateRange
+        getDataTruncationDateRanges(int index) {
+      return dataTruncationDateRanges_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The truncated date ranges.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+            .DataTruncationDateRangeOrBuilder
+        getDataTruncationDateRangesOrBuilder(int index) {
+      return dataTruncationDateRanges_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeEnum(1, dataTruncationType_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, dataTruncationMessage_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, dataTruncationDate_);
+      }
+      for (int i = 0; i < dataTruncationDateRanges_.size(); i++) {
+        output.writeMessage(4, dataTruncationDateRanges_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, dataTruncationType_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, dataTruncationMessage_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, dataTruncationDate_);
+      }
+      for (int i = 0; i < dataTruncationDateRanges_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                4, dataTruncationDateRanges_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason)) {
+        return super.equals(obj);
+      }
+      com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason other =
+          (com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason) obj;
+
+      if (hasDataTruncationType() != other.hasDataTruncationType()) return false;
+      if (hasDataTruncationType()) {
+        if (dataTruncationType_ != other.dataTruncationType_) return false;
+      }
+      if (hasDataTruncationMessage() != other.hasDataTruncationMessage()) return false;
+      if (hasDataTruncationMessage()) {
+        if (!getDataTruncationMessage().equals(other.getDataTruncationMessage())) return false;
+      }
+      if (hasDataTruncationDate() != other.hasDataTruncationDate()) return false;
+      if (hasDataTruncationDate()) {
+        if (!getDataTruncationDate().equals(other.getDataTruncationDate())) return false;
+      }
+      if (!getDataTruncationDateRangesList().equals(other.getDataTruncationDateRangesList()))
+        return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDataTruncationType()) {
+        hash = (37 * hash) + DATA_TRUNCATION_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + dataTruncationType_;
+      }
+      if (hasDataTruncationMessage()) {
+        hash = (37 * hash) + DATA_TRUNCATION_MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getDataTruncationMessage().hashCode();
+      }
+      if (hasDataTruncationDate()) {
+        hash = (37 * hash) + DATA_TRUNCATION_DATE_FIELD_NUMBER;
+        hash = (53 * hash) + getDataTruncationDate().hashCode();
+      }
+      if (getDataTruncationDateRangesCount() > 0) {
+        hash = (37 * hash) + DATA_TRUNCATION_DATE_RANGES_FIELD_NUMBER;
+        hash = (53 * hash) + getDataTruncationDateRangesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes a reason for data truncation in the report.
+     * </pre>
+     *
+     * Protobuf type {@code google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason)
+        com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReasonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.analytics.data.v1beta.ReportingApiProto
+            .internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.analytics.data.v1beta.ReportingApiProto
+            .internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.class,
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        dataTruncationType_ = 0;
+        dataTruncationMessage_ = "";
+        dataTruncationDate_ = "";
+        if (dataTruncationDateRangesBuilder_ == null) {
+          dataTruncationDateRanges_ = java.util.Collections.emptyList();
+        } else {
+          dataTruncationDateRanges_ = null;
+          dataTruncationDateRangesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.analytics.data.v1beta.ReportingApiProto
+            .internal_static_google_analytics_data_v1beta_ResponseMetaData_DataTruncationReason_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+          getDefaultInstanceForType() {
+        return com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason build() {
+        com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason buildPartial() {
+        com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason result =
+            new com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason result) {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)) {
+            dataTruncationDateRanges_ =
+                java.util.Collections.unmodifiableList(dataTruncationDateRanges_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.dataTruncationDateRanges_ = dataTruncationDateRanges_;
+        } else {
+          result.dataTruncationDateRanges_ = dataTruncationDateRangesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dataTruncationType_ = dataTruncationType_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dataTruncationMessage_ = dataTruncationMessage_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.dataTruncationDate_ = dataTruncationDate_;
+          to_bitField0_ |= 0x00000004;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason) {
+          return mergeFrom(
+              (com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason other) {
+        if (other
+            == com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                .getDefaultInstance()) return this;
+        if (other.hasDataTruncationType()) {
+          setDataTruncationTypeValue(other.getDataTruncationTypeValue());
+        }
+        if (other.hasDataTruncationMessage()) {
+          dataTruncationMessage_ = other.dataTruncationMessage_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.hasDataTruncationDate()) {
+          dataTruncationDate_ = other.dataTruncationDate_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (dataTruncationDateRangesBuilder_ == null) {
+          if (!other.dataTruncationDateRanges_.isEmpty()) {
+            if (dataTruncationDateRanges_.isEmpty()) {
+              dataTruncationDateRanges_ = other.dataTruncationDateRanges_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureDataTruncationDateRangesIsMutable();
+              dataTruncationDateRanges_.addAll(other.dataTruncationDateRanges_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.dataTruncationDateRanges_.isEmpty()) {
+            if (dataTruncationDateRangesBuilder_.isEmpty()) {
+              dataTruncationDateRangesBuilder_.dispose();
+              dataTruncationDateRangesBuilder_ = null;
+              dataTruncationDateRanges_ = other.dataTruncationDateRanges_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              dataTruncationDateRangesBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetDataTruncationDateRangesFieldBuilder()
+                      : null;
+            } else {
+              dataTruncationDateRangesBuilder_.addAllMessages(other.dataTruncationDateRanges_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  dataTruncationType_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  dataTruncationMessage_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  dataTruncationDate_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 34:
+                {
+                  com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                          .DataTruncationDateRange
+                      m =
+                          input.readMessage(
+                              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                                  .DataTruncationDateRange.parser(),
+                              extensionRegistry);
+                  if (dataTruncationDateRangesBuilder_ == null) {
+                    ensureDataTruncationDateRangesIsMutable();
+                    dataTruncationDateRanges_.add(m);
+                  } else {
+                    dataTruncationDateRangesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int dataTruncationType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of data truncation.
+       * </pre>
+       *
+       * <code>
+       * optional .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType data_truncation_type = 1;
+       * </code>
+       *
+       * @return Whether the dataTruncationType field is set.
+       */
+      @java.lang.Override
+      public boolean hasDataTruncationType() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of data truncation.
+       * </pre>
+       *
+       * <code>
+       * optional .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType data_truncation_type = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for dataTruncationType.
+       */
+      @java.lang.Override
+      public int getDataTruncationTypeValue() {
+        return dataTruncationType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of data truncation.
+       * </pre>
+       *
+       * <code>
+       * optional .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType data_truncation_type = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for dataTruncationType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataTruncationTypeValue(int value) {
+        dataTruncationType_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of data truncation.
+       * </pre>
+       *
+       * <code>
+       * optional .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType data_truncation_type = 1;
+       * </code>
+       *
+       * @return The dataTruncationType.
+       */
+      @java.lang.Override
+      public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationType
+          getDataTruncationType() {
+        com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType
+            result =
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                    .DataTruncationType.forNumber(dataTruncationType_);
+        return result == null
+            ? com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                .DataTruncationType.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of data truncation.
+       * </pre>
+       *
+       * <code>
+       * optional .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType data_truncation_type = 1;
+       * </code>
+       *
+       * @param value The dataTruncationType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataTruncationType(
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        dataTruncationType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of data truncation.
+       * </pre>
+       *
+       * <code>
+       * optional .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationType data_truncation_type = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDataTruncationType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dataTruncationType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object dataTruncationMessage_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * A descriptive message explaining the data truncation.
+       * </pre>
+       *
+       * <code>optional string data_truncation_message = 2;</code>
+       *
+       * @return Whether the dataTruncationMessage field is set.
+       */
+      public boolean hasDataTruncationMessage() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A descriptive message explaining the data truncation.
+       * </pre>
+       *
+       * <code>optional string data_truncation_message = 2;</code>
+       *
+       * @return The dataTruncationMessage.
+       */
+      public java.lang.String getDataTruncationMessage() {
+        java.lang.Object ref = dataTruncationMessage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dataTruncationMessage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A descriptive message explaining the data truncation.
+       * </pre>
+       *
+       * <code>optional string data_truncation_message = 2;</code>
+       *
+       * @return The bytes for dataTruncationMessage.
+       */
+      public com.google.protobuf.ByteString getDataTruncationMessageBytes() {
+        java.lang.Object ref = dataTruncationMessage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          dataTruncationMessage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A descriptive message explaining the data truncation.
+       * </pre>
+       *
+       * <code>optional string data_truncation_message = 2;</code>
+       *
+       * @param value The dataTruncationMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataTruncationMessage(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataTruncationMessage_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A descriptive message explaining the data truncation.
+       * </pre>
+       *
+       * <code>optional string data_truncation_message = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDataTruncationMessage() {
+        dataTruncationMessage_ = getDefaultInstance().getDataTruncationMessage();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A descriptive message explaining the data truncation.
+       * </pre>
+       *
+       * <code>optional string data_truncation_message = 2;</code>
+       *
+       * @param value The bytes for dataTruncationMessage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataTruncationMessageBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        dataTruncationMessage_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object dataTruncationDate_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The data truncation date in the format YYYY-MM-DD.
+       * Indicates data before this date is truncated.
+       * </pre>
+       *
+       * <code>optional string data_truncation_date = 3;</code>
+       *
+       * @return Whether the dataTruncationDate field is set.
+       */
+      public boolean hasDataTruncationDate() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The data truncation date in the format YYYY-MM-DD.
+       * Indicates data before this date is truncated.
+       * </pre>
+       *
+       * <code>optional string data_truncation_date = 3;</code>
+       *
+       * @return The dataTruncationDate.
+       */
+      public java.lang.String getDataTruncationDate() {
+        java.lang.Object ref = dataTruncationDate_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dataTruncationDate_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The data truncation date in the format YYYY-MM-DD.
+       * Indicates data before this date is truncated.
+       * </pre>
+       *
+       * <code>optional string data_truncation_date = 3;</code>
+       *
+       * @return The bytes for dataTruncationDate.
+       */
+      public com.google.protobuf.ByteString getDataTruncationDateBytes() {
+        java.lang.Object ref = dataTruncationDate_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          dataTruncationDate_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The data truncation date in the format YYYY-MM-DD.
+       * Indicates data before this date is truncated.
+       * </pre>
+       *
+       * <code>optional string data_truncation_date = 3;</code>
+       *
+       * @param value The dataTruncationDate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataTruncationDate(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataTruncationDate_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The data truncation date in the format YYYY-MM-DD.
+       * Indicates data before this date is truncated.
+       * </pre>
+       *
+       * <code>optional string data_truncation_date = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDataTruncationDate() {
+        dataTruncationDate_ = getDefaultInstance().getDataTruncationDate();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The data truncation date in the format YYYY-MM-DD.
+       * Indicates data before this date is truncated.
+       * </pre>
+       *
+       * <code>optional string data_truncation_date = 3;</code>
+       *
+       * @param value The bytes for dataTruncationDate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDataTruncationDateBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        dataTruncationDate_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange>
+          dataTruncationDateRanges_ = java.util.Collections.emptyList();
+
+      private void ensureDataTruncationDateRangesIsMutable() {
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          dataTruncationDateRanges_ =
+              new java.util.ArrayList<
+                  com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                      .DataTruncationDateRange>(dataTruncationDateRanges_);
+          bitField0_ |= 0x00000008;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange,
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange.Builder,
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRangeOrBuilder>
+          dataTruncationDateRangesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public java.util.List<
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange>
+          getDataTruncationDateRangesList() {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(dataTruncationDateRanges_);
+        } else {
+          return dataTruncationDateRangesBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public int getDataTruncationDateRangesCount() {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          return dataTruncationDateRanges_.size();
+        } else {
+          return dataTruncationDateRangesBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange
+          getDataTruncationDateRanges(int index) {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          return dataTruncationDateRanges_.get(index);
+        } else {
+          return dataTruncationDateRangesBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public Builder setDataTruncationDateRanges(
+          int index,
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange
+              value) {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataTruncationDateRangesIsMutable();
+          dataTruncationDateRanges_.set(index, value);
+          onChanged();
+        } else {
+          dataTruncationDateRangesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public Builder setDataTruncationDateRanges(
+          int index,
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange.Builder
+              builderForValue) {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          ensureDataTruncationDateRangesIsMutable();
+          dataTruncationDateRanges_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataTruncationDateRangesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public Builder addDataTruncationDateRanges(
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange
+              value) {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataTruncationDateRangesIsMutable();
+          dataTruncationDateRanges_.add(value);
+          onChanged();
+        } else {
+          dataTruncationDateRangesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public Builder addDataTruncationDateRanges(
+          int index,
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange
+              value) {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDataTruncationDateRangesIsMutable();
+          dataTruncationDateRanges_.add(index, value);
+          onChanged();
+        } else {
+          dataTruncationDateRangesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public Builder addDataTruncationDateRanges(
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange.Builder
+              builderForValue) {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          ensureDataTruncationDateRangesIsMutable();
+          dataTruncationDateRanges_.add(builderForValue.build());
+          onChanged();
+        } else {
+          dataTruncationDateRangesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public Builder addDataTruncationDateRanges(
+          int index,
+          com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange.Builder
+              builderForValue) {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          ensureDataTruncationDateRangesIsMutable();
+          dataTruncationDateRanges_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          dataTruncationDateRangesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public Builder addAllDataTruncationDateRanges(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                          .DataTruncationDateRange>
+              values) {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          ensureDataTruncationDateRangesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataTruncationDateRanges_);
+          onChanged();
+        } else {
+          dataTruncationDateRangesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public Builder clearDataTruncationDateRanges() {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          dataTruncationDateRanges_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          dataTruncationDateRangesBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public Builder removeDataTruncationDateRanges(int index) {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          ensureDataTruncationDateRangesIsMutable();
+          dataTruncationDateRanges_.remove(index);
+          onChanged();
+        } else {
+          dataTruncationDateRangesBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange.Builder
+          getDataTruncationDateRangesBuilder(int index) {
+        return internalGetDataTruncationDateRangesFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRangeOrBuilder
+          getDataTruncationDateRangesOrBuilder(int index) {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          return dataTruncationDateRanges_.get(index);
+        } else {
+          return dataTruncationDateRangesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                      .DataTruncationDateRangeOrBuilder>
+          getDataTruncationDateRangesOrBuilderList() {
+        if (dataTruncationDateRangesBuilder_ != null) {
+          return dataTruncationDateRangesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(dataTruncationDateRanges_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange.Builder
+          addDataTruncationDateRangesBuilder() {
+        return internalGetDataTruncationDateRangesFieldBuilder()
+            .addBuilder(
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                    .DataTruncationDateRange.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+              .DataTruncationDateRange.Builder
+          addDataTruncationDateRangesBuilder(int index) {
+        return internalGetDataTruncationDateRangesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                    .DataTruncationDateRange.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The truncated date ranges.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.DataTruncationDateRange data_truncation_date_ranges = 4;
+       * </code>
+       */
+      public java.util.List<
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange.Builder>
+          getDataTruncationDateRangesBuilderList() {
+        return internalGetDataTruncationDateRangesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange,
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRange.Builder,
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .DataTruncationDateRangeOrBuilder>
+          internalGetDataTruncationDateRangesFieldBuilder() {
+        if (dataTruncationDateRangesBuilder_ == null) {
+          dataTruncationDateRangesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                      .DataTruncationDateRange,
+                  com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                      .DataTruncationDateRange.Builder,
+                  com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                      .DataTruncationDateRangeOrBuilder>(
+                  dataTruncationDateRanges_,
+                  ((bitField0_ & 0x00000008) != 0),
+                  getParentForChildren(),
+                  isClean());
+          dataTruncationDateRanges_ = null;
+        }
+        return dataTruncationDateRangesBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason)
+    private static final com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason();
+    }
+
+    public static com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DataTruncationReason> PARSER =
+        new com.google.protobuf.AbstractParser<DataTruncationReason>() {
+          @java.lang.Override
+          public DataTruncationReason parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DataTruncationReason> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataTruncationReason> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int DATA_LOSS_FROM_OTHER_ROW_FIELD_NUMBER = 3;
   private boolean dataLossFromOtherRow_ = false;
@@ -3058,6 +6376,97 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     return samplingMetadatas_.get(index);
   }
 
+  public static final int DATA_TRUNCATION_REASONS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason>
+      dataTruncationReasons_;
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason>
+      getDataTruncationReasonsList() {
+    return dataTruncationReasons_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReasonOrBuilder>
+      getDataTruncationReasonsOrBuilderList() {
+    return dataTruncationReasons_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public int getDataTruncationReasonsCount() {
+    return dataTruncationReasons_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+      getDataTruncationReasons(int index) {
+    return dataTruncationReasons_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If set, indicate there is data truncation in the report.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReasonOrBuilder
+      getDataTruncationReasonsOrBuilder(int index) {
+    return dataTruncationReasons_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3093,6 +6502,9 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < samplingMetadatas_.size(); i++) {
       output.writeMessage(9, samplingMetadatas_.get(i));
     }
+    for (int i = 0; i < dataTruncationReasons_.size(); i++) {
+      output.writeMessage(10, dataTruncationReasons_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3125,6 +6537,11 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < samplingMetadatas_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(9, samplingMetadatas_.get(i));
+    }
+    for (int i = 0; i < dataTruncationReasons_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, dataTruncationReasons_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3165,6 +6582,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       if (getSubjectToThresholding() != other.getSubjectToThresholding()) return false;
     }
     if (!getSamplingMetadatasList().equals(other.getSamplingMetadatasList())) return false;
+    if (!getDataTruncationReasonsList().equals(other.getDataTruncationReasonsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3201,6 +6619,10 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
     if (getSamplingMetadatasCount() > 0) {
       hash = (37 * hash) + SAMPLING_METADATAS_FIELD_NUMBER;
       hash = (53 * hash) + getSamplingMetadatasList().hashCode();
+    }
+    if (getDataTruncationReasonsCount() > 0) {
+      hash = (37 * hash) + DATA_TRUNCATION_REASONS_FIELD_NUMBER;
+      hash = (53 * hash) + getDataTruncationReasonsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3345,6 +6767,7 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetSchemaRestrictionResponseFieldBuilder();
         internalGetSamplingMetadatasFieldBuilder();
+        internalGetDataTruncationReasonsFieldBuilder();
       }
     }
 
@@ -3369,6 +6792,13 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
         samplingMetadatasBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
+      if (dataTruncationReasonsBuilder_ == null) {
+        dataTruncationReasons_ = java.util.Collections.emptyList();
+      } else {
+        dataTruncationReasons_ = null;
+        dataTruncationReasonsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000080);
       return this;
     }
 
@@ -3414,6 +6844,15 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
         result.samplingMetadatas_ = samplingMetadatas_;
       } else {
         result.samplingMetadatas_ = samplingMetadatasBuilder_.build();
+      }
+      if (dataTruncationReasonsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)) {
+          dataTruncationReasons_ = java.util.Collections.unmodifiableList(dataTruncationReasons_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.dataTruncationReasons_ = dataTruncationReasons_;
+      } else {
+        result.dataTruncationReasons_ = dataTruncationReasonsBuilder_.build();
       }
     }
 
@@ -3513,6 +6952,33 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (dataTruncationReasonsBuilder_ == null) {
+        if (!other.dataTruncationReasons_.isEmpty()) {
+          if (dataTruncationReasons_.isEmpty()) {
+            dataTruncationReasons_ = other.dataTruncationReasons_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureDataTruncationReasonsIsMutable();
+            dataTruncationReasons_.addAll(other.dataTruncationReasons_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.dataTruncationReasons_.isEmpty()) {
+          if (dataTruncationReasonsBuilder_.isEmpty()) {
+            dataTruncationReasonsBuilder_.dispose();
+            dataTruncationReasonsBuilder_ = null;
+            dataTruncationReasons_ = other.dataTruncationReasons_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            dataTruncationReasonsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetDataTruncationReasonsFieldBuilder()
+                    : null;
+          } else {
+            dataTruncationReasonsBuilder_.addAllMessages(other.dataTruncationReasons_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3591,6 +7057,21 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 74
+            case 82:
+              {
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason m =
+                    input.readMessage(
+                        com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                            .parser(),
+                        extensionRegistry);
+                if (dataTruncationReasonsBuilder_ == null) {
+                  ensureDataTruncationReasonsIsMutable();
+                  dataTruncationReasons_.add(m);
+                } else {
+                  dataTruncationReasonsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4993,6 +8474,439 @@ public final class ResponseMetaData extends com.google.protobuf.GeneratedMessage
         samplingMetadatas_ = null;
       }
       return samplingMetadatasBuilder_;
+    }
+
+    private java.util.List<com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason>
+        dataTruncationReasons_ = java.util.Collections.emptyList();
+
+    private void ensureDataTruncationReasonsIsMutable() {
+      if (!((bitField0_ & 0x00000080) != 0)) {
+        dataTruncationReasons_ =
+            new java.util.ArrayList<
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason>(
+                dataTruncationReasons_);
+        bitField0_ |= 0x00000080;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason,
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.Builder,
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReasonOrBuilder>
+        dataTruncationReasonsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public java.util.List<com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason>
+        getDataTruncationReasonsList() {
+      if (dataTruncationReasonsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(dataTruncationReasons_);
+      } else {
+        return dataTruncationReasonsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public int getDataTruncationReasonsCount() {
+      if (dataTruncationReasonsBuilder_ == null) {
+        return dataTruncationReasons_.size();
+      } else {
+        return dataTruncationReasonsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+        getDataTruncationReasons(int index) {
+      if (dataTruncationReasonsBuilder_ == null) {
+        return dataTruncationReasons_.get(index);
+      } else {
+        return dataTruncationReasonsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public Builder setDataTruncationReasons(
+        int index, com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason value) {
+      if (dataTruncationReasonsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataTruncationReasonsIsMutable();
+        dataTruncationReasons_.set(index, value);
+        onChanged();
+      } else {
+        dataTruncationReasonsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public Builder setDataTruncationReasons(
+        int index,
+        com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.Builder
+            builderForValue) {
+      if (dataTruncationReasonsBuilder_ == null) {
+        ensureDataTruncationReasonsIsMutable();
+        dataTruncationReasons_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        dataTruncationReasonsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public Builder addDataTruncationReasons(
+        com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason value) {
+      if (dataTruncationReasonsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataTruncationReasonsIsMutable();
+        dataTruncationReasons_.add(value);
+        onChanged();
+      } else {
+        dataTruncationReasonsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public Builder addDataTruncationReasons(
+        int index, com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason value) {
+      if (dataTruncationReasonsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDataTruncationReasonsIsMutable();
+        dataTruncationReasons_.add(index, value);
+        onChanged();
+      } else {
+        dataTruncationReasonsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public Builder addDataTruncationReasons(
+        com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.Builder
+            builderForValue) {
+      if (dataTruncationReasonsBuilder_ == null) {
+        ensureDataTruncationReasonsIsMutable();
+        dataTruncationReasons_.add(builderForValue.build());
+        onChanged();
+      } else {
+        dataTruncationReasonsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public Builder addDataTruncationReasons(
+        int index,
+        com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.Builder
+            builderForValue) {
+      if (dataTruncationReasonsBuilder_ == null) {
+        ensureDataTruncationReasonsIsMutable();
+        dataTruncationReasons_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        dataTruncationReasonsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public Builder addAllDataTruncationReasons(
+        java.lang.Iterable<
+                ? extends com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason>
+            values) {
+      if (dataTruncationReasonsBuilder_ == null) {
+        ensureDataTruncationReasonsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataTruncationReasons_);
+        onChanged();
+      } else {
+        dataTruncationReasonsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public Builder clearDataTruncationReasons() {
+      if (dataTruncationReasonsBuilder_ == null) {
+        dataTruncationReasons_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        dataTruncationReasonsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public Builder removeDataTruncationReasons(int index) {
+      if (dataTruncationReasonsBuilder_ == null) {
+        ensureDataTruncationReasonsIsMutable();
+        dataTruncationReasons_.remove(index);
+        onChanged();
+      } else {
+        dataTruncationReasonsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.Builder
+        getDataTruncationReasonsBuilder(int index) {
+      return internalGetDataTruncationReasonsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReasonOrBuilder
+        getDataTruncationReasonsOrBuilder(int index) {
+      if (dataTruncationReasonsBuilder_ == null) {
+        return dataTruncationReasons_.get(index);
+      } else {
+        return dataTruncationReasonsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReasonOrBuilder>
+        getDataTruncationReasonsOrBuilderList() {
+      if (dataTruncationReasonsBuilder_ != null) {
+        return dataTruncationReasonsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(dataTruncationReasons_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.Builder
+        addDataTruncationReasonsBuilder() {
+      return internalGetDataTruncationReasonsFieldBuilder()
+          .addBuilder(
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.Builder
+        addDataTruncationReasonsBuilder(int index) {
+      return internalGetDataTruncationReasonsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, indicate there is data truncation in the report.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason data_truncation_reasons = 10;
+     * </code>
+     */
+    public java.util.List<
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.Builder>
+        getDataTruncationReasonsBuilderList() {
+      return internalGetDataTruncationReasonsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason,
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.Builder,
+            com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReasonOrBuilder>
+        internalGetDataTruncationReasonsFieldBuilder() {
+      if (dataTruncationReasonsBuilder_ == null) {
+        dataTruncationReasonsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason,
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReason.Builder,
+                com.google.analytics.data.v1beta.ResponseMetaData.DataTruncationReasonOrBuilder>(
+                dataTruncationReasons_,
+                ((bitField0_ & 0x00000080) != 0),
+                getParentForChildren(),
+                isClean());
+        dataTruncationReasons_ = null;
+      }
+      return dataTruncationReasonsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.analytics.data.v1beta.ResponseMetaData)

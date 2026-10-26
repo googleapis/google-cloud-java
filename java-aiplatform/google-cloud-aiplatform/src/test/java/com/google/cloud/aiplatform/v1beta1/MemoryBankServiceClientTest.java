@@ -111,7 +111,8 @@ public class MemoryBankServiceClientTest {
     Memory expectedResponse =
         Memory.newBuilder()
             .setName(
-                MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+                MemoryName.ofProjectLocationReasoningEngineMemoryName(
+                        "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -119,6 +120,12 @@ public class MemoryBankServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFact("fact3135084")
             .putAllScope(new HashMap<String, String>())
+            .addAllTopics(new ArrayList<MemoryTopicId>())
+            .putAllRevisionLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, MemoryMetadataValue>())
+            .setMemoryType(MemoryType.forNumber(0))
+            .setStructuredContent(Memory.StructuredContent.newBuilder().build())
+            .setContext("context951530927")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -173,7 +180,8 @@ public class MemoryBankServiceClientTest {
     Memory expectedResponse =
         Memory.newBuilder()
             .setName(
-                MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+                MemoryName.ofProjectLocationReasoningEngineMemoryName(
+                        "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -181,6 +189,12 @@ public class MemoryBankServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFact("fact3135084")
             .putAllScope(new HashMap<String, String>())
+            .addAllTopics(new ArrayList<MemoryTopicId>())
+            .putAllRevisionLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, MemoryMetadataValue>())
+            .setMemoryType(MemoryType.forNumber(0))
+            .setStructuredContent(Memory.StructuredContent.newBuilder().build())
+            .setContext("context951530927")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -233,7 +247,8 @@ public class MemoryBankServiceClientTest {
     Memory expectedResponse =
         Memory.newBuilder()
             .setName(
-                MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+                MemoryName.ofProjectLocationReasoningEngineMemoryName(
+                        "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -241,10 +256,18 @@ public class MemoryBankServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFact("fact3135084")
             .putAllScope(new HashMap<String, String>())
+            .addAllTopics(new ArrayList<MemoryTopicId>())
+            .putAllRevisionLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, MemoryMetadataValue>())
+            .setMemoryType(MemoryType.forNumber(0))
+            .setStructuredContent(Memory.StructuredContent.newBuilder().build())
+            .setContext("context951530927")
             .build();
     mockMemoryBankService.addResponse(expectedResponse);
 
-    MemoryName name = MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
+    MemoryName name =
+        MemoryName.ofProjectLocationReasoningEngineMemoryName(
+            "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
 
     Memory actualResponse = client.getMemory(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -266,7 +289,9 @@ public class MemoryBankServiceClientTest {
     mockMemoryBankService.addException(exception);
 
     try {
-      MemoryName name = MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
+      MemoryName name =
+          MemoryName.ofProjectLocationReasoningEngineMemoryName(
+              "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
       client.getMemory(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -279,7 +304,8 @@ public class MemoryBankServiceClientTest {
     Memory expectedResponse =
         Memory.newBuilder()
             .setName(
-                MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+                MemoryName.ofProjectLocationReasoningEngineMemoryName(
+                        "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -287,6 +313,12 @@ public class MemoryBankServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFact("fact3135084")
             .putAllScope(new HashMap<String, String>())
+            .addAllTopics(new ArrayList<MemoryTopicId>())
+            .putAllRevisionLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, MemoryMetadataValue>())
+            .setMemoryType(MemoryType.forNumber(0))
+            .setStructuredContent(Memory.StructuredContent.newBuilder().build())
+            .setContext("context951530927")
             .build();
     mockMemoryBankService.addResponse(expectedResponse);
 
@@ -325,7 +357,8 @@ public class MemoryBankServiceClientTest {
     Memory expectedResponse =
         Memory.newBuilder()
             .setName(
-                MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
+                MemoryName.ofProjectLocationReasoningEngineMemoryName(
+                        "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]")
                     .toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -333,6 +366,12 @@ public class MemoryBankServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setFact("fact3135084")
             .putAllScope(new HashMap<String, String>())
+            .addAllTopics(new ArrayList<MemoryTopicId>())
+            .putAllRevisionLabels(new HashMap<String, String>())
+            .putAllMetadata(new HashMap<String, MemoryMetadataValue>())
+            .setMemoryType(MemoryType.forNumber(0))
+            .setStructuredContent(Memory.StructuredContent.newBuilder().build())
+            .setContext("context951530927")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -478,7 +517,9 @@ public class MemoryBankServiceClientTest {
             .build();
     mockMemoryBankService.addResponse(resultOperation);
 
-    MemoryName name = MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
+    MemoryName name =
+        MemoryName.ofProjectLocationReasoningEngineMemoryName(
+            "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
 
     client.deleteMemoryAsync(name).get();
 
@@ -499,7 +540,9 @@ public class MemoryBankServiceClientTest {
     mockMemoryBankService.addException(exception);
 
     try {
-      MemoryName name = MemoryName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
+      MemoryName name =
+          MemoryName.ofProjectLocationReasoningEngineMemoryName(
+              "[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[MEMORY]");
       client.deleteMemoryAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {

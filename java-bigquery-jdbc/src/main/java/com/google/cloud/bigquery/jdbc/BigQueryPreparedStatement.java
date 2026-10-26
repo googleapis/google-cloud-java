@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
@@ -26,8 +27,10 @@ import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.StatementExecution;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
@@ -72,33 +75,118 @@ import java.util.List;
 import java.util.Queue;
 
 class BigQueryPreparedStatement extends BigQueryStatement implements PreparedStatement {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryPreparedStatement.class.getName());
   private static final char POSITIONAL_PARAMETER_CHAR = '?';
   // parameterHandler is inherited from BigQueryStatement
-  protected int parameterCount = 0;
+  protected final int parameterCount;
   protected String currentQuery;
   private Queue<ArrayList<BigQueryJdbcParameter>> batchParameters = new LinkedList<>();
-  Schema insertSchema = null;
+  // Both hold statistics.getSchema(), which reports different things per statement type: the rows
+  // a SELECT returns, versus the columns an INSERT writes.
+  Schema resultSchema = null; // Feeds getMetaData().
+  Schema insertSchema = null; // Feeds the Storage Write API.
   private TableName insertTableName = null;
 
-  BigQueryPreparedStatement(BigQueryConnection connection, String query) {
+  BigQueryPreparedStatement(BigQueryConnection connection, String query) throws SQLException {
     super(connection);
-    setCurrentQuery(query);
-    this.parameterHandler = new BigQueryParameterHandler(this.parameterCount);
+    this.currentQuery = query;
+    QueryStatistics queryStatistics = describeQueryQuietly();
+    this.parameterCount = resolveParameterCount(query, queryStatistics);
+    this.parameterHandler =
+        new BigQueryParameterHandler(this.parameterCount, this.isEnableTimestampPicos());
+    if (queryStatistics != null) {
+      applyInferredParameterTypes(queryStatistics);
+      captureInsertMetadata(queryStatistics);
+      captureResultSchema(queryStatistics);
+    }
   }
 
-  void setCurrentQuery(String currentQuery) {
-    this.parameterCount = getParameterCount(currentQuery);
-    this.currentQuery = currentQuery;
-  }
-
-  private int getParameterCount(String query) {
-    LOG.finer("++enter++");
+  private int resolveParameterCount(String query, QueryStatistics queryStatistics) {
+    if (queryStatistics != null && queryStatistics.getQueryParameters() != null) {
+      return queryStatistics.getQueryParameters().size();
+    }
     return (int) query.chars().filter(ch -> ch == POSITIONAL_PARAMETER_CHAR).count();
+  }
+
+  /**
+   * Failures are logged and swallowed. Nothing a dry run supplies is required for correctness: the
+   * types are defaults the caller's {@code setXxx} calls refine, and the count falls back to a scan
+   * of the query text, so a statement stays usable against a service that refuses the dry run.
+   */
+  private QueryStatistics describeQueryQuietly() {
+    if (this.currentQuery.indexOf(POSITIONAL_PARAMETER_CHAR) == -1) {
+      return null;
+    }
+    try {
+      return describePositionalParameterQuery(this.currentQuery);
+    } catch (SQLException | RuntimeException ex) {
+      LOG.warning(
+          ex,
+          "Could not describe query via dry run; parameter types will be derived from the values"
+              + " supplied by the caller, and the parameter count from the query text.");
+      return null;
+    }
+  }
+
+  private void applyInferredParameterTypes(QueryStatistics statistics) {
+    List<QueryParameter> undeclaredParameters = statistics.getQueryParameters();
+    if (undeclaredParameters == null) {
+      return;
+    }
+    int index = 1;
+    for (QueryParameter parameter : undeclaredParameters) {
+      if (parameter.getParameterType() != null) {
+        StandardSQLTypeName sqlType = toStandardSqlType(parameter.getParameterType().getType());
+        if (sqlType != null) {
+          this.parameterHandler.setInferredParameterType(index, sqlType);
+        }
+      }
+      index++;
+    }
+  }
+
+  // Returning null costs one parameter its inferred type; letting the exception propagate would
+  // abandon inference for every parameter after it.
+  private static StandardSQLTypeName toStandardSqlType(String typeName) {
+    if (typeName == null) {
+      return null;
+    }
+    try {
+      return StandardSQLTypeName.valueOf(typeName);
+    } catch (IllegalArgumentException ex) {
+      return null;
+    }
+  }
+
+  // Remembers the table and schema of single-table INSERT targets, for the Storage Write API.
+  // Failure is delegated to executeBatch instead of the constructor.
+  private void captureInsertMetadata(QueryStatistics statistics) {
+    if (!StatementType.INSERT.equals(statistics.getStatementType())
+        || statistics.getSchema() == null
+        || statistics.getReferencedTables() == null
+        || statistics.getReferencedTables().stream().distinct().count() != 1) {
+      return;
+    }
+    this.insertSchema = statistics.getSchema();
+    TableId tableId = statistics.getReferencedTables().get(0);
+    this.insertTableName =
+        TableName.of(tableId.getProject(), tableId.getDataset(), tableId.getTable());
+    LOG.finer("insertTableName: %s, insertSchema: %s", this.insertTableName, this.insertSchema);
+  }
+
+  // This populates the schema of the ResultSet that is being returned by the query.
+  // The column names are as they are returned from the query dryRun and may not match the actual
+  // table column names.
+  private void captureResultSchema(QueryStatistics statistics) {
+    if (StatementType.SELECT.equals(statistics.getStatementType())) {
+      this.resultSchema = statistics.getSchema();
+    }
   }
 
   @Override
   public ResultSet executeQuery() throws SQLException {
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryPreparedStatement.executeQuery",
         this.connection,
@@ -108,6 +196,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public long executeLargeUpdate() throws SQLException {
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryPreparedStatement.executeLargeUpdate",
         this.connection,
@@ -122,6 +211,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public boolean execute() throws SQLException {
+    validateExecution();
     return BigQueryJdbcOpenTelemetry.withTracing(
         "BigQueryPreparedStatement.execute",
         this.connection,
@@ -132,14 +222,22 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public void clearParameters() {
     this.parameterHandler.clearParameters();
-    this.parameterCount = 0;
   }
 
   @Override
   public void setNull(int parameterIndex, int sqlType) throws SQLException {
     checkClosed();
-    Class<?> javaType = BigQueryTypeRegistry.toJavaClass(sqlType);
-    this.parameterHandler.setParameter(parameterIndex, null, javaType);
+    this.parameterHandler.setNullParameter(parameterIndex, declaredJavaType(sqlType));
+  }
+
+  // Types.NULL is what setObject(index, null) synthesizes when the caller named no type, and
+  // Types.OTHER names none either. Both defer to whatever the slot already knows.
+  private static Class<?> declaredJavaType(int jdbcType)
+      throws BigQueryJdbcSqlFeatureNotSupportedException {
+    if (jdbcType == Types.NULL || jdbcType == Types.OTHER) {
+      return null;
+    }
+    return BigQueryTypeRegistry.toJavaClass(jdbcType);
   }
 
   @Override
@@ -277,7 +375,11 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       return true;
     }
     if (value instanceof LocalDateTime) {
-      setTimestamp(parameterIndex, Timestamp.valueOf((LocalDateTime) value));
+      // Bound as STRING, not DATETIME, to avoid a breaking change: a STRING is accepted by both
+      // DATETIME and TIMESTAMP columns, whereas a typed DATETIME would reject the TIMESTAMP
+      // inserts that work today. The digits are sent unchanged; no JVM zone is involved.
+      setString(
+          parameterIndex, BigQueryParameterHandler.formatDateTimeDigits((LocalDateTime) value));
       return true;
     }
     if (value instanceof OffsetDateTime) {
@@ -314,27 +416,60 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public int[] executeBatch() throws SQLException {
+    validateExecution();
     int[] result = new int[this.batchParameters.size()];
     if (this.batchParameters.isEmpty()) {
       return result;
     }
+
+    // The constructor's dry run may have happened before the target table existed.
+    if (this.insertSchema == null
+        && this.querySettings.isUseWriteAPI()
+        && this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount()) {
+      try {
+        captureInsertMetadata(
+            getQueryStatistics(getWriteBatchJobConfiguration(this.batchParameters.peek())));
+      } catch (SQLException | RuntimeException ex) {
+        LOG.warning(ex, "Could not describe INSERT target; using the standard batch path.");
+      }
+    }
+
     if (useWriteAPI()) {
+      long startTime = System.currentTimeMillis();
+      StatementExecution.Builder writeApiExecutionBuilder =
+          StatementExecution.newBuilder()
+              .setStatementType(
+                  com.google.cloud.bigquery.jdbc.telemetry.v1.StatementType.STATEMENT_TYPE_INSERT)
+              .setQueryApiType(
+                  com.google.cloud.bigquery.jdbc.telemetry.v1.QueryApiType
+                      .QUERY_API_TYPE_WRITE_API);
       try (BigQueryWriteClient writeClient = this.connection.getBigQueryWriteClient()) {
         LOG.info("Using Write API for bulk INSERT operation.");
-        ArrayList<BigQueryJdbcParameter> currentParameterList = this.batchParameters.peek();
-        if (this.insertSchema == null && this.insertTableName == null) {
-          QueryStatistics insertJobQueryStatistics =
-              getQueryStatistics(getWriteBatchJobConfiguration(currentParameterList));
-          setInsertMetadata(insertJobQueryStatistics);
-        }
 
         long rowCount = bulkInsertWithWriteAPI(writeClient);
         int[] insertArray = new int[Math.toIntExact(rowCount)];
         Arrays.fill(insertArray, 1);
+
+        writeApiExecutionBuilder.setStatus(
+            com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_SUCCESS);
+
         return insertArray;
 
-      } catch (DescriptorValidationException | IOException | InterruptedException e) {
-        throw new BigQueryJdbcRuntimeException("Failed to execute batch with Write API", e);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+        writeApiExecutionBuilder
+            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+            .setErrorCode(TelemetryManager.extractErrorCode(e));
+        throw new BigQueryJdbcException("Interrupted during Write API batch", e);
+      } catch (DescriptorValidationException | IOException e) {
+        writeApiExecutionBuilder
+            .setStatus(com.google.cloud.bigquery.jdbc.telemetry.v1.Status.STATUS_ERROR)
+            .setErrorCode(TelemetryManager.extractErrorCode(e));
+        throw new BigQueryJdbcException("Failed to execute batch with Write API", e);
+      } finally {
+        long durationMs = System.currentTimeMillis() - startTime;
+        TelemetryManager.recordStatementExecution(writeApiExecutionBuilder, durationMs);
+        TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
       }
 
     } else {
@@ -361,10 +496,10 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
           i++;
         }
         return result;
-      } catch (InterruptedException ex) {
-        throw new BigQueryJdbcRuntimeException("Interrupted during individual INSERT batch", ex);
       } catch (SQLException e) {
         throw new BigQueryJdbcException("SQL error during individual INSERT batch", e);
+      } finally {
+        TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_BATCH_OPERATIONS);
       }
     }
   }
@@ -441,29 +576,12 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     return rowObject;
   }
 
-  private void setInsertMetadata(QueryStatistics statistics) throws SQLException {
-    LOG.finer("++enter++");
-    if (!statistics.getStatementType().equals(StatementType.INSERT)
-        || statistics.getSchema() == null
-        || statistics.getReferencedTables().stream().distinct().count() > 1) {
-      throw new BigQueryJdbcException(
-          "Use java.sql.Statement.executeBatch() for heterogeneous DML batches");
-    }
-
-    this.insertSchema = statistics.getSchema();
-    TableId tableID = statistics.getReferencedTables().get(0);
-    this.insertTableName =
-        TableName.of(tableID.getProject(), tableID.getDataset(), tableID.getTable());
-    LOG.finer(
-        "this.insertTableName : %s, this.insertSchema : %s",
-        this.insertTableName, this.insertSchema.toString());
-  }
-
   QueryJobConfiguration getWriteBatchJobConfiguration(
       ArrayList<BigQueryJdbcParameter> currentParameterList) throws SQLException {
     LOG.finer("++enter++");
     BigQueryParameterHandler batchHandler =
-        new BigQueryParameterHandler(this.parameterCount, currentParameterList);
+        new BigQueryParameterHandler(
+            this.parameterCount, currentParameterList, this.isEnableTimestampPicos());
     QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
     jobConfiguration.setParameterMode("POSITIONAL");
     jobConfiguration = batchHandler.configureParameters(jobConfiguration);
@@ -482,7 +600,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       for (BigQueryJdbcParameter parameter : parameterList) {
         Object parameterValue =
             BigQueryParameterHandler.formatValueForQueryParameter(
-                parameter.getValue(), parameter.getSqlType());
+                parameter.getValue(), parameter.getSqlType(), this.isEnableTimestampPicos());
         StandardSQLTypeName sqlType = parameter.getSqlType();
         LOG.finer(
             "Parameter %s of type %s at index %s added to QueryJobConfiguration",
@@ -495,12 +613,10 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   Boolean useWriteAPI() {
     LOG.finer("++enter++");
-    if (this.querySettings.isUseWriteAPI()) {
-      if (this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount()) {
-        return true;
-      }
-    }
-    return false;
+    return this.querySettings.isUseWriteAPI()
+        // the constructor dry run already confirmed a single-table INSERT
+        && this.insertSchema != null
+        && this.batchParameters.size() >= this.querySettings.getWriteAPIActivationRowCount();
   }
 
   @Override
@@ -533,10 +649,16 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public ResultSetMetaData getMetaData() throws SQLException {
     checkClosed();
-    if (this.insertSchema != null) {
-      return BigQueryResultSetMetadata.of(this.insertSchema.getFields(), this);
+    // Null is the spec's answer for a statement that returns no rows.
+    if (this.resultSchema == null) {
+      return null;
     }
-    return null;
+
+    TelemetryManager.recordFeatureUsage(
+        DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL,
+        "DRIVER_FEATURE_RESULTSET_METADATA_RETRIEVAL");
+
+    return BigQueryResultSetMetadata.of(this.resultSchema.getFields(), this);
   }
 
   @Override
@@ -548,15 +670,14 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public void setTime(int parameterIndex, Time value, Calendar calendar) throws SQLException {
     checkClosed();
-    setTime(parameterIndex, BigQueryTemporalUtility.convertTimeWithCalendar(value, calendar));
+    setTime(parameterIndex, BigQueryTemporalUtility.convertTimeToCalendar(value, calendar));
   }
 
   @Override
   public void setTimestamp(int parameterIndex, Timestamp value, Calendar calendar)
       throws SQLException {
     checkClosed();
-    setTimestamp(
-        parameterIndex, BigQueryTemporalUtility.convertTimestampWithCalendar(value, calendar));
+    setTimestamp(parameterIndex, value);
   }
 
   @Override

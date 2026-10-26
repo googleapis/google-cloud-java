@@ -137,9 +137,10 @@ public class ITBase extends BigQueryJdbcBaseTest {
           + "  timestampFiled TIMESTAMP,\n"
           + "  dateField DATE,\n"
           + "  timeField TIME,\n"
+          + "  timeMicrosField TIME,\n"
           + "  dateTimeField DATETIME,\n"
           + "  geographyField GEOGRAPHY,\n"
-          + "  recordField STRUCT<name STRING, recordNested STRUCT<lastName STRING>>,\n"
+          + "  recordField STRUCT<name STRING, timeVal TIME, recordNested STRUCT<lastName STRING>>,\n"
           + "  rangeField RANGE<DATE>,\n"
           + "  jsonField JSON,\n"
           + "  arrayString ARRAY<STRING>,\n"
@@ -163,15 +164,15 @@ public class ITBase extends BigQueryJdbcBaseTest {
       "INSERT INTO `%1$s.%2$s.all_bq_types`\n"
           + "(\n"
           + "  stringField, bytesField, intField, floatField, numericField, bigNumericField, booleanField,\n"
-          + "  timestampFiled, dateField, timeField, dateTimeField, geographyField, recordField, rangeField, jsonField,\n"
+          + "  timestampFiled, dateField, timeField, timeMicrosField, dateTimeField, geographyField, recordField, rangeField, jsonField,\n"
           + "  arrayString, arrayRecord, arrayBytes, arrayInteger, arrayNumeric, arrayBignumeric, arrayBoolean,\n"
           + "  arrayTimestamp, arrayDate, arrayTime, arrayDatetime, arrayGeography, arrayRange, arrayJson, arrayFloat\n"
           + ")\n"
           + "VALUES\n"
           + "(\n"
           + "  'StringValue', CAST('BytesValue' AS BYTES), 123, 10.5, CAST('12345.67' AS NUMERIC), CAST('98765432109876543210.123456789' AS BIGNUMERIC), true,\n"
-          + "  TIMESTAMP '2023-07-28 12:30:00', DATE '2023-07-28', TIME '12:30:00', DATETIME '2023-07-28 12:30:00', ST_GEOGFROMTEXT('POINT(-74.006 40.7128)'),\n"
-          + "  STRUCT('NameValue' AS name, STRUCT('LastNameValue' AS lastName) AS recordNested),\n"
+          + "  TIMESTAMP '2023-07-28 12:30:00', DATE '2023-07-28', TIME '12:30:00', TIME '12:30:00.123456', DATETIME '2023-07-28 12:30:00', ST_GEOGFROMTEXT('POINT(-74.006 40.7128)'),\n"
+          + "  STRUCT('NameValue' AS name, TIME '12:30:00.123456' AS timeVal, STRUCT('LastNameValue' AS lastName) AS recordNested),\n"
           + "  RANGE<DATE> '[2023-01-01, 2023-12-01)', JSON '{\"key\":\"value\"}',\n"
           + "  ['abc', 'def', 'ghi'],\n"
           + "  [STRUCT('rec_val1' AS value), STRUCT('rec_val2' AS value)],\n"
@@ -182,7 +183,7 @@ public class ITBase extends BigQueryJdbcBaseTest {
           + "  [true, false],\n"
           + "  [TIMESTAMP '2023-01-01 01:00:00', TIMESTAMP '2023-01-01 02:00:00'],\n"
           + "  [DATE '2023-01-01', DATE '2023-01-02'],\n"
-          + "  [TIME '01:00:00', TIME '02:00:00'],\n"
+          + "  [TIME '01:00:00', TIME '02:00:00.123456'],\n"
           + "  [DATETIME '2023-01-01 01:00:00', DATETIME '2023-01-01 02:00:00'],\n"
           + "  [ST_GEOGFROMTEXT('POINT(1 1)'), ST_GEOGFROMTEXT('POINT(2 2)')],\n"
           + "  [RANGE<DATE> '[2023-01-01, 2023-01-03)', RANGE<DATE> '[2023-01-04, 2023-01-06)'],\n"
@@ -191,7 +192,7 @@ public class ITBase extends BigQueryJdbcBaseTest {
           + "),\n"
           + "(\n"
           + "  NULL, NULL, NULL, NULL, NULL, NULL, NULL,\n"
-          + "  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,\n"
+          + "  NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,\n"
           + "  [], [], [], [], [], [], [],\n"
           + "  [], [], [], [], [], [], [], []\n"
           + ");\n";
@@ -282,6 +283,9 @@ public class ITBase extends BigQueryJdbcBaseTest {
   public static final String connectionUrl =
       getBaseConnectionUrl() + "ProjectId=" + DEFAULT_CATALOG + ";OAuthType=3;Timeout=3600;";
   public static final BigQuery bigQuery = BigQueryJdbcBaseTest.getBigQuery(connectionUrl);
+
+  public static final String FORCE_READ_API_PROPERTIES =
+      ";EnableHighThroughputAPI=1;HighThroughputActivationRatio=0;HighThroughputMinTableSize=0;";
 
   public static final String createDatasetQuery =
       "CREATE SCHEMA IF NOT EXISTS `%s.%s` OPTIONS(default_table_expiration_days = 5)";
@@ -457,10 +461,16 @@ public class ITBase extends BigQueryJdbcBaseTest {
   }
 
   public static void validateStatement(Statement stmt, int expectedRows) throws SQLException {
+    validateStatement(stmt, expectedRows, "ResultSet");
+  }
+
+  public static <T> void validateStatement(Statement stmt, int expectedRows, String clazz)
+      throws SQLException {
     String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, " + expectedRows + "))";
     assertTrue(stmt.execute(query));
     int count = 0;
     try (ResultSet rs = stmt.getResultSet()) {
+      assertTrue(rs.getClass().getName().contains(clazz));
       while (rs.next()) {
         count++;
       }

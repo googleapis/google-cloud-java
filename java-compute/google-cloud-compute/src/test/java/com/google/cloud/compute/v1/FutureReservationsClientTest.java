@@ -294,6 +294,7 @@ public class FutureReservationsClientTest {
             .setAutoCreatedReservationsDeleteTime("autoCreatedReservationsDeleteTime-1539449288")
             .setAutoCreatedReservationsDuration(Duration.newBuilder().build())
             .setAutoDeleteAutoCreatedReservations(true)
+            .setColocationResource("colocationResource-180684977")
             .setCommitmentInfo(FutureReservationCommitmentInfo.newBuilder().build())
             .setConfidentialComputeType("confidentialComputeType119980393")
             .setCreationTimestamp("creationTimestamp-370203401")

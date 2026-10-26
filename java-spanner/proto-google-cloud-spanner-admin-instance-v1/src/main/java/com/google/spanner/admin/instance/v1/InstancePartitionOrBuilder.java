@@ -453,7 +453,7 @@ public interface InstancePartitionOrBuilder
    * </code>
    *
    * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
    * @return A list containing the referencingBackups.
    */
   @java.lang.Deprecated
@@ -475,7 +475,7 @@ public interface InstancePartitionOrBuilder
    * </code>
    *
    * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
    * @return The count of referencingBackups.
    */
   @java.lang.Deprecated
@@ -497,7 +497,7 @@ public interface InstancePartitionOrBuilder
    * </code>
    *
    * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
    * @param index The index of the element to return.
    * @return The referencingBackups at the given index.
    */
@@ -520,7 +520,7 @@ public interface InstancePartitionOrBuilder
    * </code>
    *
    * @deprecated google.spanner.admin.instance.v1.InstancePartition.referencing_backups is
-   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1855
+   *     deprecated. See google/spanner/admin/instance/v1/spanner_instance_admin.proto;l=1884
    * @param index The index of the value to return.
    * @return The bytes of the referencingBackups at the given index.
    */

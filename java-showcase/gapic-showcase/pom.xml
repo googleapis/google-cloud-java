@@ -17,7 +17,7 @@
   </parent>
 
   <properties>
-    <gapic-showcase.version>0.41.0</gapic-showcase.version>
+    <gapic-showcase.version>0.44.0</gapic-showcase.version>
     <!-- This is the last version supporting slf4j 1.x, do not upgrade -->
     <slf4j1-logback.version>1.2.13</slf4j1-logback.version>
     <slf4j2-logback.version>1.5.25</slf4j2-logback.version>
@@ -56,6 +56,19 @@
         <groupId>com.googlecode.maven-download-plugin</groupId>
         <artifactId>download-maven-plugin</artifactId>
         <version>1.6.8</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-container-default</artifactId>
+            <version>1.0-alpha-9-stable-1</version>
+            <exclusions>
+              <exclusion>
+                <groupId>*</groupId>
+                <artifactId>*</artifactId>
+              </exclusion>
+            </exclusions>
+          </dependency>
+        </dependencies>
         <executions>
           <execution>
             <id>download-compliance-suite</id>
