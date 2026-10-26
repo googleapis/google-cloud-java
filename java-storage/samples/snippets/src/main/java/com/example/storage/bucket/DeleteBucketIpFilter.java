@@ -64,6 +64,9 @@ public class DeleteBucketIpFilter {
       builder.setVpcNetworkSources(vpcs.isEmpty() ? null : vpcs);
     }
 
+    // Note: This sample selectively removes specific rules (a public CIDR range or VPC network)
+    // from an existing IP filter configuration. To completely clear the IP filter configuration
+    // from the bucket, use: storage.update(bucket.toBuilder().setIpFilter(null).build());
     Bucket updatedBucket = storage.update(bucket.toBuilder().setIpFilter(builder.build()).build());
     System.out.println("Deleted specified IP filtering rules for bucket " + bucketName);
     return updatedBucket;
