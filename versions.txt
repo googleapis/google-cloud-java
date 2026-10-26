@@ -43,9 +43,6 @@ grpc-google-cloud-apikeys-v2:0.98.0:0.98.0
 google-cloud-appengine-admin:2.100.0:2.100.0
 grpc-google-cloud-appengine-admin-v1:2.100.0:2.100.0
 proto-google-cloud-appengine-admin-v1:2.100.0:2.100.0
-google-area120-tables:0.104.0:0.104.0
-grpc-google-area120-tables-v1alpha1:0.104.0:0.104.0
-proto-google-area120-tables-v1alpha1:0.104.0:0.104.0
 google-cloud-artifact-registry:1.99.0:1.99.0
 grpc-google-cloud-artifact-registry-v1beta2:1.99.0:1.99.0
 grpc-google-cloud-artifact-registry-v1:1.99.0:1.99.0
