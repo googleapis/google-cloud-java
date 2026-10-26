@@ -39,6 +39,7 @@ import com.google.auth.oauth2.AgentIdentityCertificateValidationUtils.InvalidCer
 import com.google.auth.oauth2.AgentIdentityCertificateValidationUtils.UnsupportedKeyAlgorithmException;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -90,7 +91,7 @@ final class AgentIdentityUtils {
    */
   static final String GOOGLE_API_USE_CLIENT_CERTIFICATE = "GOOGLE_API_USE_CLIENT_CERTIFICATE";
 
-  private static volatile String wellKnownDir = "/var/run/secrets/workload-spiffe-credentials/";
+  private static volatile String wellKnownDir = MtlsUtils.WELL_KNOWN_SPIFFE_DIR;
 
   /**
    * File name of the combined certificate chain and private key bundle that GKE delivers to the
@@ -111,23 +112,6 @@ final class AgentIdentityUtils {
   private static final int CERT_KEY_MATCH_RETRIES = 3;
 
   private static final long CERT_KEY_MATCH_RETRY_INTERVAL_MS = 100;
-
-  // Polling configuration for initial container startup credential file readiness.
-  // Matches Python google-auth implementation (_agent_identity_utils.py) for initial
-  // asynchronous credential delivery (50 * 100ms + 50 * 500ms = 30 seconds total).
-  private static final int FAST_POLL_CYCLES = 50;
-
-  private static final long FAST_POLL_INTERVAL_MS = 100; // 0.1 seconds
-
-  private static final long SLOW_POLL_INTERVAL_MS = 500; // 0.5 seconds
-
-  private static final long TOTAL_TIMEOUT_MS = 30000; // 30 seconds
-
-  private static final int TOTAL_POLL_CYCLES =
-      FAST_POLL_CYCLES
-          + (int)
-              ((TOTAL_TIMEOUT_MS - (FAST_POLL_CYCLES * FAST_POLL_INTERVAL_MS))
-                  / SLOW_POLL_INTERVAL_MS);
 
   private static volatile EnvironmentProvider environmentProvider =
       SystemEnvironmentProvider.getInstance();
@@ -244,10 +228,6 @@ final class AgentIdentityUtils {
     }
   }
 
-  private static long getSleepIntervalMs(final int cycle) {
-    return (cycle < FAST_POLL_CYCLES) ? FAST_POLL_INTERVAL_MS : SLOW_POLL_INTERVAL_MS;
-  }
-
   private static @Nullable String getTrimmedEnv(final String name) {
     String val = environmentProvider.getEnv(name);
     return val != null ? val.trim() : null;
@@ -269,11 +249,6 @@ final class AgentIdentityUtils {
   private static boolean isMtlsExplicitlyDisabled() {
     String useClientCert = getUseClientCertificateEnv();
     return !Strings.isNullOrEmpty(useClientCert) && !"true".equalsIgnoreCase(useClientCert);
-  }
-
-  /** Checks whether the given path resides within the well-known certificate directory. */
-  private static boolean isPathInWellKnownDir(final @Nullable String pathStr) {
-    return MtlsUtils.isPathInWellKnownDir(pathStr, wellKnownDir);
   }
 
   /** Returns {@code true} if {@code path} is the GKE credential bundle in the well-known dir. */
@@ -552,81 +527,55 @@ final class AgentIdentityUtils {
       return new ResolvedCertAndKeyPaths(null, null, false);
     }
 
-    boolean inWellKnownDir = isPathInWellKnownDir(certConfigPath);
-    boolean shouldPoll = !MtlsUtils.isInitialStartupCompleted() && inWellKnownDir;
-    int maxCycles = shouldPoll ? TOTAL_POLL_CYCLES : 1;
-    boolean warned = false;
+    boolean shouldPoll =
+        MtlsUtils.waitForWorkloadConfigStartupIfNeeded(
+            new File(certConfigPath),
+            wellKnownDir,
+            timeService::sleep,
+            () ->
+                LoggingUtils.log(
+                    LOGGER_PROVIDER,
+                    Level.FINE,
+                    Collections.emptyMap(),
+                    String.format(
+                        "Agent Identity certificate config or referenced credential files not yet"
+                            + " ready at %s (from %s environment variable). Retrying for up to %d"
+                            + " seconds.",
+                        certConfigPath,
+                        GOOGLE_API_CERTIFICATE_CONFIG,
+                        MtlsUtils.STARTUP_POLL_TIMEOUT_SECONDS)));
     IOException lastParseException = null;
 
-    for (int cycle = 0; cycle < maxCycles; cycle++) {
-      try {
-        if (AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(certConfigPath))) {
-          ResolvedCertAndKeyPaths paths = extractPathsFromConfig(certConfigPath);
-          if (!paths.hasWorkloadConfig()) {
-            // Valid non-workload config (e.g. enterprise certs) - exit early without polling!
-            MtlsUtils.markInitialStartupCompleted();
-            return paths;
-          }
-          // The config file itself may reside outside wellKnownDir while referencing cert_path or
-          // key_path inside wellKnownDir that are still being delivered at startup.
-          if (!MtlsUtils.isInitialStartupCompleted()
-              && !shouldPoll
-              && (isPathInWellKnownDir(paths.getCertPath())
-                  || isPathInWellKnownDir(paths.getKeyPath()))) {
-            shouldPoll = true;
-            maxCycles = TOTAL_POLL_CYCLES;
-          }
-          boolean certReady =
-              AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(paths.getCertPath()));
-          boolean keyReady =
-              AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(paths.getKeyPath()));
-          if (certReady && keyReady) {
-            MtlsUtils.markInitialStartupCompleted();
-            return paths;
-          }
-        }
-      } catch (AccessDeniedException e) {
-        String failedFile = e.getFile() != null ? e.getFile() : certConfigPath;
-        throw new IOException(
-            "Permission denied reading certificate config file: " + failedFile, e);
-      } catch (IncompleteWorkloadConfigException e) {
-        // Incomplete workload config (missing cert_path or key_path) will not become ready via
-        // startup polling; break out of the polling loop immediately so initial startup throws
-        // without waiting 30s (or falls back to a previously cached config in steady state).
-        lastParseException = e;
-        break;
-      } catch (IOException e) {
-        CachedAgentIdentityInfo latestCached =
-            AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
-        if (!shouldPoll && cycle + 1 >= maxCycles && latestCached == null) {
+    try {
+      if (AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(certConfigPath))) {
+        ResolvedCertAndKeyPaths paths = extractPathsFromConfig(certConfigPath);
+        if (!paths.hasWorkloadConfig()) {
+          // Valid non-workload config (e.g. enterprise certs) - exit early.
           MtlsUtils.markInitialStartupCompleted();
-          throw e; // Fail fast on malformed JSON syntax errors when not polling
+          return paths;
         }
-        lastParseException = e;
-        // When polling is active, fall through to retry (handles partial/empty JSON during startup)
-      }
-      if (cycle + 1 < maxCycles) {
-        if (shouldPoll && !warned) {
-          LoggingUtils.log(
-              LOGGER_PROVIDER,
-              Level.FINE,
-              Collections.emptyMap(),
-              String.format(
-                  "Agent Identity certificate config or referenced credential files not yet ready"
-                      + " at %s (from %s environment variable). Retrying for up to %d seconds.",
-                  certConfigPath, GOOGLE_API_CERTIFICATE_CONFIG, TOTAL_TIMEOUT_MS / 1000));
-          warned = true;
-        }
-        try {
-          timeService.sleep(getSleepIntervalMs(cycle));
-        } catch (InterruptedException e) {
-          Thread.currentThread().interrupt();
-          throw new IOException(
-              "Interrupted while waiting for Agent Identity certificate files for bound"
-                  + " token request.",
-              e);
+        boolean certReady =
+            AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(paths.getCertPath()));
+        boolean keyReady =
+            AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(paths.getKeyPath()));
+        if (certReady && keyReady) {
+          MtlsUtils.markInitialStartupCompleted();
+          return paths;
         }
       }
+    } catch (AccessDeniedException e) {
+      String failedFile = e.getFile() != null ? e.getFile() : certConfigPath;
+      throw new IOException("Permission denied reading certificate config file: " + failedFile, e);
+    } catch (IncompleteWorkloadConfigException e) {
+      lastParseException = e;
+    } catch (IOException e) {
+      CachedAgentIdentityInfo latestCached =
+          AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
+      if (!shouldPoll && latestCached == null) {
+        MtlsUtils.markInitialStartupCompleted();
+        throw e; // Fail fast on malformed JSON syntax errors when not polling
+      }
+      lastParseException = e;
     }
     MtlsUtils.markInitialStartupCompleted();
 
@@ -809,7 +758,7 @@ final class AgentIdentityUtils {
   /** Resets all static state and overrides for testing. */
   @VisibleForTesting
   static void resetForTest() {
-    wellKnownDir = "/var/run/secrets/workload-spiffe-credentials/";
+    wellKnownDir = MtlsUtils.WELL_KNOWN_SPIFFE_DIR;
     gkeCredentialBundlePath = Paths.get(wellKnownDir, GKE_CREDENTIAL_BUNDLE_FILE).toString();
     environmentProvider = SystemEnvironmentProvider.getInstance();
     propertyProvider = SystemPropertyProvider.getInstance();

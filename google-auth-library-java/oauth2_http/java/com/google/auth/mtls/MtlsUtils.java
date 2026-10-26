@@ -40,9 +40,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InterruptedIOException;
+import java.nio.file.AccessDeniedException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.security.MessageDigest;
 import java.util.Locale;
 import org.jspecify.annotations.NullMarked;
@@ -64,7 +67,9 @@ public class MtlsUtils {
    * Well-known directory where workload SPIFFE credentials and certificate configurations are
    * delivered at container startup.
    */
-  static final String WELL_KNOWN_SPIFFE_DIR = "/var/run/secrets/workload-spiffe-credentials/";
+  @InternalApi
+  public static final String WELL_KNOWN_SPIFFE_DIR =
+      "/var/run/secrets/workload-spiffe-credentials/";
 
   /**
    * Well-known path of the combined certificate chain and private key bundle that GKE delivers to
@@ -81,6 +86,10 @@ public class MtlsUtils {
   private static final long FAST_POLL_INTERVAL_MS = 100; // 0.1 seconds
   private static final long SLOW_POLL_INTERVAL_MS = 500; // 0.5 seconds
   private static final long TOTAL_TIMEOUT_MS = 30000; // 30 seconds
+
+  /** Total startup polling timeout in seconds (30s). */
+  @InternalApi public static final long STARTUP_POLL_TIMEOUT_SECONDS = TOTAL_TIMEOUT_MS / 1000;
+
   private static final int TOTAL_POLL_CYCLES =
       FAST_POLL_CYCLES
           + (int)
@@ -193,16 +202,64 @@ public class MtlsUtils {
     }
   }
 
-  private static boolean isPathInWellKnownSpiffeDir(@Nullable String pathStr) {
-    return isPathInWellKnownDir(pathStr, wellKnownSpiffeDir);
-  }
-
   private static boolean isNonEmptyReadableFile(File file) {
     return file.isFile() && file.canRead() && file.length() > 0;
   }
 
   private static boolean isExistingNonFileOrUnreadable(File file) {
-    return file.exists() && (!file.isFile() || !file.canRead());
+    Path path = file.toPath();
+    try {
+      BasicFileAttributes attrs = Files.readAttributes(path, BasicFileAttributes.class);
+      if (!attrs.isRegularFile()) {
+        return true;
+      }
+      return !Files.isReadable(path) && Files.exists(path);
+    } catch (AccessDeniedException e) {
+      return true;
+    } catch (IOException e) {
+      return false;
+    }
+  }
+
+  /**
+   * On initial container startup ({@code !isInitialStartupCompleted()}), polls up to 30 seconds
+   * when {@code configFile} or its referenced {@code cert_path}/{@code key_path} resides within
+   * {@code targetWellKnownDir} until the configuration and referenced certificate/key files are
+   * non-empty readable files, or a non-retryable state is encountered.
+   *
+   * @return {@code true} if startup polling was active for {@code configFile}, {@code false}
+   *     otherwise
+   * @throws IOException if the thread is interrupted while sleeping during startup polling
+   */
+  @InternalApi
+  public static boolean waitForWorkloadConfigStartupIfNeeded(
+      File configFile,
+      String targetWellKnownDir,
+      TimeService sleepService,
+      @Nullable Runnable onFirstPollSleep)
+      throws IOException {
+    if (initialStartupCompleted) {
+      return false;
+    }
+    boolean shouldPoll = isPathInWellKnownDir(configFile.getPath(), targetWellKnownDir);
+    try {
+      WorkloadCertificateConfiguration config =
+          waitForExplicitConfigStartupIfNeeded(
+              configFile, targetWellKnownDir, sleepService, onFirstPollSleep);
+      if (config != null && !shouldPoll) {
+        shouldPoll =
+            isPathInWellKnownDir(config.getCertPath(), targetWellKnownDir)
+                || isPathInWellKnownDir(config.getPrivateKeyPath(), targetWellKnownDir);
+      }
+    } catch (InterruptedIOException e) {
+      throw new IOException(
+          "Interrupted while waiting for Agent Identity certificate files for bound"
+              + " token request.",
+          e.getCause() != null ? e.getCause() : e);
+    } catch (Exception ignored) {
+      // Non-retryable parse or config errors are handled by the caller's single-pass evaluation.
+    }
+    return shouldPoll;
   }
 
   /**
@@ -213,11 +270,21 @@ public class MtlsUtils {
    */
   private static @Nullable WorkloadCertificateConfiguration waitForExplicitConfigStartupIfNeeded(
       File configFile) throws IOException {
+    return waitForExplicitConfigStartupIfNeeded(configFile, wellKnownSpiffeDir, timeService, null);
+  }
+
+  private static @Nullable WorkloadCertificateConfiguration waitForExplicitConfigStartupIfNeeded(
+      File configFile,
+      String targetWellKnownDir,
+      TimeService sleepService,
+      @Nullable Runnable onFirstPollSleep)
+      throws IOException {
     if (initialStartupCompleted) {
       return null;
     }
-    boolean shouldPoll = isPathInWellKnownSpiffeDir(configFile.getPath());
+    boolean shouldPoll = isPathInWellKnownDir(configFile.getPath(), targetWellKnownDir);
     int maxCycles = shouldPoll ? TOTAL_POLL_CYCLES : 1;
+    boolean warned = false;
 
     for (int cycle = 0; cycle < maxCycles; cycle++) {
       if (initialStartupCompleted) {
@@ -232,8 +299,8 @@ public class MtlsUtils {
           WorkloadCertificateConfiguration config =
               WorkloadCertificateConfiguration.fromCertificateConfigurationStream(certConfigStream);
           if (!shouldPoll
-              && (isPathInWellKnownSpiffeDir(config.getCertPath())
-                  || isPathInWellKnownSpiffeDir(config.getPrivateKeyPath()))) {
+              && (isPathInWellKnownDir(config.getCertPath(), targetWellKnownDir)
+                  || isPathInWellKnownDir(config.getPrivateKeyPath(), targetWellKnownDir))) {
             shouldPoll = true;
             maxCycles = TOTAL_POLL_CYCLES;
           }
@@ -255,10 +322,13 @@ public class MtlsUtils {
           // Valid JSON without a workload section (e.g. ECP configuration); do not poll.
           initialStartupCompleted = true;
           throw e;
-        } catch (IllegalArgumentException e) {
-          // Valid JSON missing required cert_configs, cert_path, or key_path; do not poll.
-          initialStartupCompleted = true;
-          throw e;
+        } catch (IllegalArgumentException | ClassCastException e) {
+          if (!shouldPoll || !"no JSON input found".equals(e.getMessage())) {
+            // Valid JSON missing or mistyped cert_configs, cert_path, or key_path; do not poll.
+            initialStartupCompleted = true;
+            throw e;
+          }
+          // Empty or whitespace-only file during startup write; retry polling.
         } catch (Exception e) {
           if (!shouldPoll) {
             initialStartupCompleted = true;
@@ -275,14 +345,20 @@ public class MtlsUtils {
         }
       }
       if (cycle + 1 < maxCycles) {
+        if (shouldPoll && !warned && onFirstPollSleep != null) {
+          onFirstPollSleep.run();
+          warned = true;
+        }
         try {
-          timeService.sleep(getSleepIntervalMs(cycle));
+          sleepService.sleep(getSleepIntervalMs(cycle));
         } catch (InterruptedException e) {
           Thread.currentThread().interrupt();
-          throw new IOException(
-              "Interrupted while waiting for workload certificate configuration at "
-                  + configFile.getPath(),
-              e);
+          InterruptedIOException interrupted =
+              new InterruptedIOException(
+                  "Interrupted while waiting for workload certificate configuration at "
+                      + configFile.getPath());
+          interrupted.initCause(e);
+          throw interrupted;
         }
       }
     }
