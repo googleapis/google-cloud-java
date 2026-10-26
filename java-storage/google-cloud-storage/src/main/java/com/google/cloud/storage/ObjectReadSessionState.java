@@ -99,12 +99,12 @@ final class ObjectReadSessionState {
    * Forks a new state for an additional stream of the same read session.
    *
    * <p>A fork means the session is now backed by more than one BidiReadObject stream, so this marks
-   * {@link TrackedFeatures#MULTISTREAM_IN_MRD} in the feature mask shared by the parent and all
+   * {@link TrackedFeature#MULTISTREAM_IN_MRD} in the feature mask shared by the parent and all
    * children. Any stream opened (or re-opened) by this session afterwards carries the {@link
    * FeatureTracking#HEADER} header.
    */
   ObjectReadSessionState forkChild() {
-    featureMask.set(TrackedFeatures.MULTISTREAM_IN_MRD);
+    featureMask.set(TrackedFeature.MULTISTREAM_IN_MRD);
     return new ObjectReadSessionState(
         baseContext,
         openRequest,

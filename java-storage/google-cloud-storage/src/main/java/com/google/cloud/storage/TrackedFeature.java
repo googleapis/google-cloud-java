@@ -22,9 +22,10 @@ package com.google.cloud.storage;
  *
  * <p>Each feature is assigned a stable bit position in a 32-bit mask. Bit positions are specific to
  * the Java SDK but MUST NOT be renumbered or reused once released. This enum is the single source
- * of truth and is parsed by external tooling; keep the {@code NAME(bit)} shape intact.
+ * of truth and its constants are parsed by external tooling; the {@code NAME(bit)} shape of each
+ * constant must stay intact.
  */
-enum TrackedFeatures {
+enum TrackedFeature {
   /**
    * A {@link BlobReadSession} opened more than one BidiReadObject stream to serve concurrent reads
    * which could not share a single stream.
@@ -33,12 +34,8 @@ enum TrackedFeatures {
 
   private final int bitPosition;
 
-  TrackedFeatures(int bitPosition) {
+  TrackedFeature(int bitPosition) {
     this.bitPosition = bitPosition;
-  }
-
-  int getBitPosition() {
-    return bitPosition;
   }
 
   /** Returns the 32-bit mask with only this feature's bit set. */

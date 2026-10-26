@@ -26,13 +26,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.concurrent.ThreadSafe;
 
 /**
- * Utilities for reporting {@link TrackedFeatures client feature usage} to the service.
+ * Utilities for reporting {@link TrackedFeature client feature usage} to the service.
  *
  * <p>Encoding contract (shared across GCS SDKs):
  *
  * <ul>
- *   <li>The set of used features is a 32-bit mask where bit {@code n} corresponds to the feature
- *       with {@link TrackedFeatures#getBitPosition()} {@code == n}.
+ *   <li>The set of used features is a 32-bit mask, the bitwise OR of {@link
+ *       TrackedFeature#bitMask()} for every feature used.
  *   <li>The mask is serialized as 4 bytes big-endian, then encoded with URL-safe base64 (RFC 4648
  *       §5) <em>with</em> padding. The service rejects {@code +} and {@code /}.
  *   <li>When the mask is {@code 0} the header is omitted entirely.
@@ -69,8 +69,8 @@ final class FeatureTracking {
   static final class Mask {
     private final AtomicInteger bits = new AtomicInteger();
 
-    void set(TrackedFeatures feature) {
-      bits.updateAndGet(current -> current | feature.bitMask());
+    void set(TrackedFeature feature) {
+      bits.accumulateAndGet(feature.bitMask(), (a, b) -> a | b);
     }
 
     @VisibleForTesting

@@ -137,7 +137,7 @@ public final class ITObjectReadSessionFakeTest {
   private static final Metadata.Key<String> X_GOOG_STORAGE_JAVA_FEATURES =
       Metadata.Key.of(FeatureTracking.HEADER, Metadata.ASCII_STRING_MARSHALLER);
 
-  /** URL-safe base64 of a mask with only {@link TrackedFeatures#MULTISTREAM_IN_MRD} set. */
+  /** URL-safe base64 of a mask with only {@link TrackedFeature#MULTISTREAM_IN_MRD} set. */
   private static final String MULTISTREAM_IN_MRD_HEADER_VALUE = "AAAAAQ==";
 
   private static final Correspondence<String, UUID> IS_UUID =

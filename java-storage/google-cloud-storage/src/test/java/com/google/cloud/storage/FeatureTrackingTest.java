@@ -36,7 +36,7 @@ import org.junit.Test;
 
 public final class FeatureTrackingTest {
 
-  private static final int MULTISTREAM_BIT = TrackedFeatures.MULTISTREAM_IN_MRD.bitMask();
+  private static final int MULTISTREAM_BIT = TrackedFeature.MULTISTREAM_IN_MRD.bitMask();
 
   @Test
   public void encode_knownVectors() throws Exception {
@@ -79,7 +79,7 @@ public final class FeatureTrackingTest {
   public void mask_headers_usesWireHeaderNameAndEncodedValue() {
     FeatureTracking.Mask mask = new FeatureTracking.Mask();
 
-    mask.set(TrackedFeatures.MULTISTREAM_IN_MRD);
+    mask.set(TrackedFeature.MULTISTREAM_IN_MRD);
 
     assertThat(mask.headers())
         .containsExactly("x-goog-storage-java-features", ImmutableList.of("AAAAAQ=="));
@@ -89,8 +89,8 @@ public final class FeatureTrackingTest {
   public void mask_set_isIdempotentAndMonotonic() {
     FeatureTracking.Mask mask = new FeatureTracking.Mask();
 
-    mask.set(TrackedFeatures.MULTISTREAM_IN_MRD);
-    mask.set(TrackedFeatures.MULTISTREAM_IN_MRD);
+    mask.set(TrackedFeature.MULTISTREAM_IN_MRD);
+    mask.set(TrackedFeature.MULTISTREAM_IN_MRD);
 
     assertThat(mask.get()).isEqualTo(MULTISTREAM_BIT);
     assertThat(mask.headers())
@@ -117,7 +117,7 @@ public final class FeatureTrackingTest {
                 () -> {
                   start.await();
                   for (int j = 0; j < iterationsPerThread; j++) {
-                    mask.set(TrackedFeatures.MULTISTREAM_IN_MRD);
+                    mask.set(TrackedFeature.MULTISTREAM_IN_MRD);
                   }
                   return null;
                 }));
@@ -131,28 +131,26 @@ public final class FeatureTrackingTest {
     }
 
     int expected = 0;
-    for (TrackedFeatures feature : TrackedFeatures.values()) {
+    for (TrackedFeature feature : TrackedFeature.values()) {
       expected |= feature.bitMask();
     }
     assertThat(mask.get()).isEqualTo(expected);
   }
 
   @Test
-  public void trackedFeatures_bitPositionsAreUniqueAndInRange() {
+  public void trackedFeature_bitMasksAreDistinctSingleBits() {
     Set<Integer> seen = new HashSet<>();
-    for (TrackedFeatures feature : TrackedFeatures.values()) {
-      assertThat(feature.getBitPosition()).isAtLeast(0);
-      assertThat(feature.getBitPosition()).isLessThan(32);
-      assertThat(feature.bitMask()).isEqualTo(1 << feature.getBitPosition());
-      seen.add(feature.getBitPosition());
+    for (TrackedFeature feature : TrackedFeature.values()) {
+      assertThat(Integer.bitCount(feature.bitMask())).isEqualTo(1);
+      seen.add(feature.bitMask());
     }
-    assertThat(seen).hasSize(TrackedFeatures.values().length);
+    assertThat(seen).hasSize(TrackedFeature.values().length);
   }
 
-  /** The wire value of each bit position is a cross-SDK contract; pin it. */
+  /** The wire value of each feature bit is a cross-SDK contract; pin it. */
   @Test
-  public void trackedFeatures_multistreamInMrd_isBitZero() {
-    assertThat(TrackedFeatures.MULTISTREAM_IN_MRD.getBitPosition()).isEqualTo(0);
+  public void trackedFeature_multistreamInMrd_isBitZero() {
+    assertThat(TrackedFeature.MULTISTREAM_IN_MRD.bitMask()).isEqualTo(1);
   }
 
   @Test
