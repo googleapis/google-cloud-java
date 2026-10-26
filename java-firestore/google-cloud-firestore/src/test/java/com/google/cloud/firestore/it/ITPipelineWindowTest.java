@@ -326,6 +326,30 @@ public class ITPipelineWindowTest extends ITBaseTest {
   }
 
   @Test
+  public void testWindowFieldsComputesRank() throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().sort(ascending("salesPrice")),
+                WindowFunction.rank().as("priceRank"))
+            .sort(ascending("date"))
+            .select("salesPrice", "priceRank")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("salesPrice", 12L), entry("priceRank", 1L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("priceRank", 2L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("priceRank", 2L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("priceRank", 4L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("priceRank", 4L))));
+  }
+
+  @Test
   public void testWindowFieldsRejectsARangeFrameWithoutASort() throws Exception {
     CollectionReference salesCol = windowTestCollection();
     ExecutionException exception =
@@ -1870,34 +1894,5 @@ public class ITPipelineWindowTest extends ITBaseTest {
             mapOfEntries(entry("product", "tablet"), entry("windowCount", 3L)),
             mapOfEntries(entry("product", "tablet"), entry("windowCount", 2L)),
             mapOfEntries(entry("product", "tablet"), entry("windowCount", 1L))));
-  }
-
-  // -----------------------------------------------------------------------------------------
-  // Window function tests (ranking)
-  // -----------------------------------------------------------------------------------------
-
-  @Test
-  @Ignore("Pending backend support for rank")
-  public void testWindowFieldsComputesRank() throws Exception {
-    List<PipelineResult> results =
-        firestore
-            .pipeline()
-            .collection(windowTestCollection())
-            .addWindowFields(
-                new WindowSpec().sort(ascending("salesPrice"), ascending("date")),
-                WindowFunction.rank().as("priceRank"))
-            .sort(ascending("date"))
-            .select("salesPrice", "priceRank")
-            .execute()
-            .get()
-            .getResults();
-    expectResults(
-        results,
-        Arrays.asList(
-            mapOfEntries(entry("salesPrice", 12L), entry("priceRank", 1L)),
-            mapOfEntries(entry("salesPrice", 30L), entry("priceRank", 2L)),
-            mapOfEntries(entry("salesPrice", 30L), entry("priceRank", 2L)),
-            mapOfEntries(entry("salesPrice", 60L), entry("priceRank", 4L)),
-            mapOfEntries(entry("salesPrice", 60L), entry("priceRank", 4L))));
   }
 }
