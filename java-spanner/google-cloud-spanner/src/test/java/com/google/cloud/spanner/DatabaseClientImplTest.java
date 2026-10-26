@@ -2376,7 +2376,8 @@ public class DatabaseClientImplTest {
                           .setOptimizerStatisticsPackage("custom-package")
                           .build())
                   .build(),
-              Options.directedRead(DIRECTED_READ_OPTIONS1));
+              Options.directedRead(DIRECTED_READ_OPTIONS1),
+              Options.dataBoostEnabled(true));
       try (ResultSet rs = transaction.execute(partitions.get(0))) {
         // Just iterate over the results to execute the query.
         consumeResults(rs);
@@ -2395,6 +2396,8 @@ public class DatabaseClientImplTest {
       assertThat(executeSqlRequest.getQueryOptions().getOptimizerStatisticsPackage())
           .isEqualTo("custom-package");
       assertThat(executeSqlRequest.getDirectedReadOptions()).isEqualTo(DIRECTED_READ_OPTIONS1);
+      assertTrue(executeSqlRequest.getDataBoostEnabled());
+      assertEquals(partitions.get(0).getPartitionToken(), executeSqlRequest.getPartitionToken());
     }
   }
 
@@ -2445,6 +2448,8 @@ public class DatabaseClientImplTest {
       assertThat(executeSqlRequest.getQueryOptions().getOptimizerStatisticsPackage())
           .isEqualTo("custom-package");
       assertThat(executeSqlRequest.getDirectedReadOptions()).isEqualTo(DIRECTED_READ_OPTIONS2);
+      assertFalse(executeSqlRequest.getDataBoostEnabled());
+      assertEquals(partitions.get(0).getPartitionToken(), executeSqlRequest.getPartitionToken());
     }
   }
 
@@ -2472,7 +2477,8 @@ public class DatabaseClientImplTest {
               "FOO",
               KeySet.all(),
               Lists.newArrayList("1"),
-              Options.directedRead(DIRECTED_READ_OPTIONS1));
+              Options.directedRead(DIRECTED_READ_OPTIONS1),
+              Options.dataBoostEnabled(true));
       try (ResultSet rs = transaction.execute(partitions.get(0))) {
         // Just iterate over the results to execute the query.
         consumeResults(rs);
@@ -2487,6 +2493,8 @@ public class DatabaseClientImplTest {
       assertThat(requests.get(requests.size() - 1)).isInstanceOf(ReadRequest.class);
       ReadRequest readRequest = (ReadRequest) requests.get(requests.size() - 1);
       assertThat(readRequest.getDirectedReadOptions()).isEqualTo(DIRECTED_READ_OPTIONS1);
+      assertTrue(readRequest.getDataBoostEnabled());
+      assertEquals(partitions.get(0).getPartitionToken(), readRequest.getPartitionToken());
     }
   }
 
@@ -2530,6 +2538,8 @@ public class DatabaseClientImplTest {
       assertThat(requests.get(requests.size() - 1)).isInstanceOf(ReadRequest.class);
       ReadRequest readRequest = (ReadRequest) requests.get(requests.size() - 1);
       assertThat(readRequest.getDirectedReadOptions()).isEqualTo(DIRECTED_READ_OPTIONS2);
+      assertFalse(readRequest.getDataBoostEnabled());
+      assertEquals(partitions.get(0).getPartitionToken(), readRequest.getPartitionToken());
     }
   }
 
