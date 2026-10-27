@@ -57,7 +57,14 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.Nullable;
 import org.junit.Before;
 import org.junit.Test;
@@ -1304,6 +1311,90 @@ public class GrpcResultSetTest {
     GrpcResultSet resultSet = new GrpcResultSet(iterator, listener);
     resultSet.close();
     assertTrue(listenerReceivedWithBeginTransaction.get());
+  }
+
+  @Test
+  public void testCloseNotifiesListenerBeforeCancelErrorFromConcurrentReader() throws Exception {
+    // The first transaction-id outcome that the listener receives wins, just like the
+    // transactionIdFuture of an inline-begin read/write transaction.
+    AtomicReference<String> firstOutcome = new AtomicReference<>();
+    CountDownLatch readerReportedError = new CountDownLatch(1);
+    AbstractResultSet.Listener listener =
+        new NoOpListener() {
+          @Override
+          public SpannerException onError(
+              SpannerException e, boolean withBeginTransaction, boolean lastStatement) {
+            if (withBeginTransaction) {
+              firstOutcome.compareAndSet(null, "onError:" + e.getErrorCode());
+            }
+            readerReportedError.countDown();
+            return e;
+          }
+
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            if (withBeginTransaction) {
+              firstOutcome.compareAndSet(null, "onDone");
+            }
+          }
+        };
+    GrpcStreamIterator iterator =
+        new GrpcStreamIterator(
+            /* lastStatement= */ false, 10, /* cancelQueryWhenClientIsClosed= */ false);
+    SpannerRpc.ResultStreamConsumer streamConsumer = iterator.consumer();
+    iterator.setCall(
+        new SpannerRpc.StreamingCall() {
+          @Override
+          public ApiCallContext getCallContext() {
+            return GrpcCallContext.createDefault();
+          }
+
+          @Override
+          public void cancel(@Nullable String message) {
+            // Emulate gRPC delivering the CANCELLED status to the stream consumer, and the
+            // concurrent reader thread processing that error before close() returns.
+            streamConsumer.onError(
+                SpannerExceptionFactory.newSpannerException(ErrorCode.CANCELLED, message));
+            try {
+              readerReportedError.await(10, TimeUnit.SECONDS);
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
+            }
+          }
+
+          @Override
+          public void request(int numMessages) {}
+        },
+        /* withBeginTransaction= */ true);
+    GrpcResultSet resultSet = new GrpcResultSet(iterator, listener);
+
+    AtomicReference<Thread> readerThread = new AtomicReference<>();
+    ExecutorService executor =
+        Executors.newSingleThreadExecutor(
+            runnable -> {
+              Thread thread = new Thread(runnable);
+              readerThread.set(thread);
+              return thread;
+            });
+    try {
+      Future<Boolean> nextFuture = executor.submit(resultSet::next);
+      // Wait until the reader is blocked waiting for the first chunk of the stream.
+      long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(10);
+      while (readerThread.get() == null || readerThread.get().getState() != Thread.State.WAITING) {
+        assertTrue("reader did not block on the stream", System.nanoTime() < deadline);
+        Thread.yield();
+      }
+      resultSet.close();
+
+      ExecutionException executionException =
+          assertThrows(ExecutionException.class, () -> nextFuture.get(10, TimeUnit.SECONDS));
+      assertTrue(executionException.getCause() instanceof SpannerException);
+      assertEquals(
+          ErrorCode.CANCELLED, ((SpannerException) executionException.getCause()).getErrorCode());
+      assertEquals("onDone", firstOutcome.get());
+    } finally {
+      executor.shutdownNow();
+    }
   }
 
   @Test

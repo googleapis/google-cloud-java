@@ -146,8 +146,12 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
       closed = true;
     }
     boolean withBeginTransaction = iterator.isWithBeginTransaction();
-    iterator.close("ResultSet closed");
+    // Notify the listener before cancelling the stream. Cancelling the stream causes any thread
+    // that is concurrently blocked in next() to fail with CANCELLED, which would otherwise race
+    // with this notification and could fail a pending inline-begin transaction with a different
+    // error than the one that is caused by closing this ResultSet.
     listener.onDone(withBeginTransaction);
+    iterator.close("ResultSet closed");
   }
 
   @Override
