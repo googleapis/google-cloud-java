@@ -35,7 +35,7 @@ jobs:
         git status
     - name: Fetching pull request body
       env:
-        GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
       run: |
         echo "Running the changelog generation script. Fetching PR body..."
         gh pr view --json body --jq '.body' > pr_body.txt
@@ -46,9 +46,9 @@ jobs:
         python3 .github/release-note-generation/split_release_note.py pr_body.txt .
     - name: Commit the change and push to the pull request branch
       run: |
-        git config user.email "yoshi-code-bot@users.noreply.github.com"
-        git config user.name "yoshi-code-bot"
-        git remote set-url origin https://x-access-token:${{ secrets.YOSHI_CODE_BOT_TOKEN }}@github.com/${{ github.repository }}
+        git config user.email "cloud-java-bot@google.com"
+        git config user.name "Cloud Java Bot"
+        git remote set-url origin https://x-access-token:${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}@github.com/${{ github.repository }}
         git add ./*/CHANGELOG.md
         git commit -m 'chore: update CHANGELOG.md in modules'
         git push

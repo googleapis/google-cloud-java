@@ -34,6 +34,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import java.io.InterruptedIOException;
+import java.net.SocketTimeoutException;
 import java.nio.channels.ClosedByInterruptException;
 import java.util.concurrent.Callable;
 import org.jspecify.annotations.NullMarked;
@@ -103,6 +104,11 @@ public class DirectRetryingExecutor<ResponseT> implements RetryingExecutorWithCo
         sleep(retryingFuture.getAttemptSettings().getRandomizedRetryDelayDuration());
         ResponseT response = retryingFuture.getCallable().call();
         retryingFuture.setAttemptFuture(ApiFutures.immediateFuture(response));
+      } catch (SocketTimeoutException e) {
+        // A connect or read timeout is an InterruptedIOException, but no thread was interrupted.
+        // Setting the interrupt flag here makes setAttemptFuture throw a new InterruptedException,
+        // which drops this exception and stops the retry. Let the retry algorithm judge it.
+        retryingFuture.setAttemptFuture(ApiFutures.<ResponseT>immediateFailedFuture(e));
       } catch (InterruptedException | InterruptedIOException | ClosedByInterruptException e) {
         Thread.currentThread().interrupt();
         retryingFuture.setAttemptFuture(ApiFutures.<ResponseT>immediateFailedFuture(e));
