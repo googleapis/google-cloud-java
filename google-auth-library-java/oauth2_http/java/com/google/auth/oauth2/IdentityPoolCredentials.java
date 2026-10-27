@@ -114,7 +114,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       if (credentialSource.getCertificateConfig() != null) {
         try {
           initializeMtlsTransport(builder, credentialSource);
-        } catch (Exception e) {
+        } catch (IOException e) {
           throw new RuntimeException(
               "Failed to initialize mTLS transport for file credential source due to certificate"
                   + " error.",
@@ -226,10 +226,16 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
    * factory is already initialized (an mTLS factory with a KeyStore, or a custom non-mTLS factory).
    */
   private boolean hasInitializedMtlsTransport() {
-    return this.x509Provider != null
-        && (!shouldUseMtlsTransportFactory()
-            || (this.transportFactory instanceof MtlsHttpTransportFactory
-                && ((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore()));
+    if (this.x509Provider == null) {
+      return false;
+    }
+    if (!shouldUseMtlsTransportFactory()) {
+      return true;
+    }
+    if (this.transportFactory instanceof MtlsHttpTransportFactory) {
+      return ((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore();
+    }
+    return !(this.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory);
   }
 
   AccessToken refreshImpersonatedAccessTokenWithRetry(ImpersonatedCredentials impersonated)
@@ -305,13 +311,15 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   private AccessToken refreshWithRetry(@Nullable ImpersonatedCredentials targetImpersonated)
       throws IOException {
-    ImpersonatedCredentials effectiveImpersonated =
-        targetImpersonated != null ? targetImpersonated : getImpersonatedCredentials();
+    ImpersonatedCredentials effectiveImpersonated = targetImpersonated;
     KeyStore pinnedKeyStore = null;
     try {
       pinnedKeyStore = this.x509Provider.getKeyStore();
       HttpTransportFactory cycleTransportFactory =
           resolveCycleTransportFactory(/* explicitTransportFactory= */ null, pinnedKeyStore);
+      if (effectiveImpersonated == null) {
+        effectiveImpersonated = getImpersonatedCredentials();
+      }
       return executeRefresh(cycleTransportFactory, pinnedKeyStore, effectiveImpersonated);
     } catch (IOException | RuntimeException e) {
       if (!isMtlsRetryableException(e)) {
@@ -349,6 +357,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         HttpTransportFactory retryTransportFactory = createMtlsTransportFactory(freshKeyStore);
         if (!hasInitializedMtlsTransport()) {
           this.transportFactory = retryTransportFactory;
+        }
+        if (effectiveImpersonated == null) {
+          effectiveImpersonated = getImpersonatedCredentials();
         }
         return executeRefresh(retryTransportFactory, freshKeyStore, effectiveImpersonated);
       } catch (IOException | RuntimeException retryException) {
@@ -670,7 +681,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    Builder setActorTokenSupplier(IdentityPoolActorTokenSupplier actorTokenSupplier) {
+    Builder setActorTokenSupplier(@Nullable IdentityPoolActorTokenSupplier actorTokenSupplier) {
       this.actorTokenSupplier = actorTokenSupplier;
       return this;
     }
@@ -687,7 +698,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    Builder setActorTokenType(String actorTokenType) {
+    Builder setActorTokenType(@Nullable String actorTokenType) {
       this.actorTokenType = actorTokenType;
       return this;
     }

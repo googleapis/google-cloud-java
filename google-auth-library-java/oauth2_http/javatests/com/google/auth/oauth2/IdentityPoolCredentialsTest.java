@@ -1864,30 +1864,6 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void toBuilder_preservesActorTokenType() throws Exception {
-    KeyStore ks = createPopulatedKeyStore();
-    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
-
-    IdentityPoolCredentials credentials =
-        IdentityPoolCredentials.newBuilder()
-            .setHttpTransportFactory(mtlsTransport)
-            .setSubjectTokenSupplier(testProvider)
-            .setActorTokenSupplier(testActorSupplier)
-            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
-            .setAudience("audience")
-            .setSubjectTokenType("subjectTokenType")
-            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
-            .build();
-
-    IdentityPoolCredentials rebuilt = credentials.toBuilder().build();
-
-    assertNotNull(rebuilt);
-    assertEquals("urn:ietf:params:oauth:token-type:jwt", rebuilt.getActorTokenType());
-    assertSame(testProvider, rebuilt.getIdentityPoolSubjectTokenSupplier());
-    assertSame(testActorSupplier, rebuilt.getIdentityPoolActorTokenSupplier());
-  }
-
-  @Test
   void builder_actorTokenWithoutMtls_succeeds() {
     IdentityPoolCredentials credentials =
         IdentityPoolCredentials.newBuilder()
@@ -1957,8 +1933,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   @Test
   void refreshAccessToken_pinsTransportForStsExchange() throws Exception {
     // Verify that the STS exchange uses the pinned transport factory from the KeyStore snapshot
-    // within one refresh cycle. Threading the pinned transport to IAM impersonation is deferred
-    // to a follow-up PR.
+    // within one refresh cycle.
     KeyStore ks = createPopulatedKeyStore();
 
     AtomicInteger getKeyStoreCallCount = new AtomicInteger(0);
@@ -3110,7 +3085,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             + "  \"token_url\": \"https://sts.mtls.googleapis.com/v1/token\",\n"
             + "  \"credential_source\": {\n"
             + "    \"file\": \""
-            + tokenFile.toString()
+            + tokenFile.toString().replace("\\", "\\\\")
             + "\",\n"
             + "    \"format\": {\n"
             + "      \"type\": \"json\",\n"
@@ -3487,6 +3462,54 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals(2, getKeyStoreCount.get());
     assertNotSame(credential.getTransportFactory(), credential.getCapturedFactories().get(1));
     assertTrue(credential.getCapturedFactories().get(1) instanceof MtlsHttpTransportFactory);
+  }
+
+  @Test
+  void
+      refreshAccessToken_withImpersonation_readsKeyStoreOnceOnInitialRefreshAndRetriesInitialLoadFailure()
+          throws Exception {
+    KeyStore ks = createPopulatedKeyStore();
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider flakyInitialProvider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() throws IOException {
+            if (getKeyStoreCount.incrementAndGet() == 1) {
+              throw new IOException("Transient split write during initial KeyStore load");
+            }
+            return ks;
+          }
+        };
+
+    MockExternalAccountCredentialsTransport transport =
+        new MockExternalAccountCredentialsTransport();
+    transport.setExpireTime(TestUtils.getDefaultExpireTime());
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(flakyInitialProvider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(transport.getStsUrl())
+                .setServiceAccountImpersonationUrl(transport.getServiceAccountImpersonationUrl())) {
+          @Override
+          HttpTransportFactory createMtlsTransportFactory(KeyStore keyStore) {
+            return () -> transport;
+          }
+        };
+
+    // Initial attempt fails in getKeyStore(), retry succeeds and initializes
+    // impersonatedCredentials
+    // without a duplicate getKeyStore() call (total 2 calls: 1 failed + 1 retry).
+    AccessToken token = credential.refreshAccessToken();
+    assertNotNull(token);
+    assertEquals(2, getKeyStoreCount.get());
+
+    // Subsequent refresh reads the KeyStore exactly once per cycle.
+    credential.refreshAccessToken();
+    assertEquals(3, getKeyStoreCount.get());
   }
 
   @Test

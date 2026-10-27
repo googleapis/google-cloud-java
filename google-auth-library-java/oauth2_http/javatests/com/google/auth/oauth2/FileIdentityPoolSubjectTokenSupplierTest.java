@@ -110,8 +110,7 @@ class FileIdentityPoolSubjectTokenSupplierTest {
   }
 
   @Test
-  void getToken_jsonFormat_concurrentReads(@TempDir Path tempDir)
-      throws IOException, InterruptedException {
+  void getToken_jsonFormat_concurrentReads(@TempDir Path tempDir) throws Exception {
     Path credentialFile = tempDir.resolve("credential.json");
     Files.write(
         credentialFile,
@@ -136,27 +135,26 @@ class FileIdentityPoolSubjectTokenSupplierTest {
     java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(numThreads);
     java.util.List<java.util.concurrent.Future<Void>> futures = new java.util.ArrayList<>();
 
-    for (int i = 0; i < numThreads; i++) {
-      futures.add(
-          executor.submit(
-              () -> {
-                latch.countDown();
-                latch.await();
-                assertEquals("my_sub_token", supplier.getSubjectToken(null));
-                assertEquals("my_act_token", supplier.getActorToken(null));
-                return null;
-              }));
-    }
-
-    // Wait for all threads to complete and verify no exceptions were thrown
-    for (java.util.concurrent.Future<Void> future : futures) {
-      try {
-        future.get();
-      } catch (Exception e) {
-        throw new RuntimeException("Thread execution failed", e);
+    try {
+      for (int i = 0; i < numThreads; i++) {
+        futures.add(
+            executor.submit(
+                () -> {
+                  latch.countDown();
+                  assertTrue(latch.await(5, java.util.concurrent.TimeUnit.SECONDS));
+                  assertEquals("my_sub_token", supplier.getSubjectToken(null));
+                  assertEquals("my_act_token", supplier.getActorToken(null));
+                  return null;
+                }));
       }
+
+      // Wait for all threads to complete and verify no exceptions were thrown
+      for (java.util.concurrent.Future<Void> future : futures) {
+        future.get(10, java.util.concurrent.TimeUnit.SECONDS);
+      }
+    } finally {
+      executor.shutdownNow();
     }
-    executor.shutdown();
   }
 
   @Test
