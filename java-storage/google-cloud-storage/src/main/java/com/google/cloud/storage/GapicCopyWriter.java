@@ -109,7 +109,8 @@ final class GapicCopyWriter extends CopyWriter {
         StorageMetricsContext chunkContext =
             metricsContext != null
                 ? metricsContext
-                : storage.getOptions().createMetricsContext("RewriteObject");
+                : StorageClientMetrics.createContext(
+                    storage.getOptions().getStorageClientMetrics(), "RewriteObject");
         GrpcCallContext retryContext = Retrying.newCallContext(chunkContext);
         RewriteResponse resp =
             retrier.run(() -> callable.call(req, retryContext), Decoder.identity(), chunkContext);
