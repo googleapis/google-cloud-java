@@ -285,20 +285,22 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     }
 
     boolean shouldRetry(VRpcResult result) {
+      // Short-circuit successful RPCs.
+      if (result.getStatus().isOk()) {
+        return false;
+      }
+      // Do not retry results that are explicitly rejected by the client (ie. client shutdown).
+      if (result.getRejected()) {
+        return false;
+      }
       // If the error has RetryInfo, it means it comes from the server and should
       // be retried.
-      if (!result.getStatus().isOk()
-          && result.getRetryInfo() != null
-          && result.getRetryInfo().hasRetryDelay()) {
+      if (result.getRetryInfo() != null && result.getRetryInfo().hasRetryDelay()) {
         long retryDelay = Durations.toMillis(result.getRetryInfo().getRetryDelay());
         // only schedule retry if there's still a chance for the request to succeed
         return context.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MILLISECONDS)
                 - retryDelay
             > 1;
-      }
-      // Do not retry result that is explicitly rejected
-      if (result.getRejected()) {
-        return false;
       }
       // If the error didn't leave the client or failed in transport and is idempotent, we
       // can retry up to 3 times.
