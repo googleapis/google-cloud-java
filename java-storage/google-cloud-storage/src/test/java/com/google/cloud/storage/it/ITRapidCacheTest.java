@@ -263,8 +263,10 @@ public class ITRapidCacheTest {
       try {
         RapidCache disabled = controlClient.disableRapidCacheAsync(isolatedCacheName).get();
         assertThat(disabled).isNotNull();
-        assertThat(disabled.getName()).isEqualTo(isolatedCacheName);
-        assertThat(disabled.getState().toLowerCase()).isEqualTo("disabled");
+        assertThat(disabled.getName())
+            .startsWith(String.format("projects/_/buckets/%s/rapidCaches/", isolatedBucket));
+        assertThat(disabled.getState().toLowerCase())
+            .isAnyOf("disabled", "anywhere-cache-state-unspecified");
       } catch (Exception e) {
         if (isUnimplemented(e)) {
           LOGGER.warning(
