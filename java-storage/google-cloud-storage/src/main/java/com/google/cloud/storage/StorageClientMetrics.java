@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage;
 
+import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
@@ -26,10 +27,12 @@ import io.opentelemetry.api.metrics.LongUpDownCounter;
 import io.opentelemetry.api.metrics.Meter;
 import io.opentelemetry.api.metrics.MeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Package-private instrument registry for OpenTelemetry client metrics. */
 final class StorageClientMetrics implements AutoCloseable {
+  private static final Logger LOGGER = Logger.getLogger(StorageClientMetrics.class.getName());
   static final String METER_NAME = "com.google.cloud.storage";
 
   // Standard client attribute keys and values
@@ -121,7 +124,58 @@ final class StorageClientMetrics implements AutoCloseable {
   @Nullable private final DoubleHistogram credentialRefreshDuration;
 
   private final Attributes clientAttributes;
+  private final Attributes baseAttributes;
   @Nullable private final SdkMeterProvider ownedMeterProvider;
+
+  @Nullable
+  static StorageClientMetrics fromOptions(StorageOptions options) {
+    if (!options.isEnableOtelMetrics()) {
+      return null;
+    }
+    MeterProvider mp = options.getMeterProvider();
+    if (mp == null && options.isCustomOpenTelemetryConfigured()) {
+      OpenTelemetry otel = options.getOpenTelemetry();
+      if (otel != null) {
+        mp = otel.getMeterProvider();
+      }
+    }
+    SdkMeterProvider ownedMeterProvider = null;
+    if (mp == null) {
+      ownedMeterProvider =
+          OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
+              options.getHost(),
+              options.getProjectId(),
+              options.getUniverseDomain(),
+              options.getMetricInterval(),
+              options instanceof GrpcStorageOptions ? "grpc" : "json");
+      mp = ownedMeterProvider;
+    }
+    if (mp == null) {
+      return null;
+    }
+    Meter meter =
+        mp.meterBuilder(METER_NAME).setInstrumentationVersion(StorageOptions.version()).build();
+    Attributes clientAttributes =
+        Attributes.builder()
+            .put(KEY_GCP_CLIENT_SERVICE, SERVICE_STORAGE)
+            .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+            .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
+            .build();
+    AttributesBuilder baseBuilder =
+        clientAttributes.toBuilder()
+            .put(KEY_RPC_SYSTEM_NAME, options instanceof GrpcStorageOptions ? "grpc" : "http");
+    String serverAddress = OpenTelemetryBootstrappingUtils.extractServerAddress(options.getHost());
+    if (serverAddress != null && !serverAddress.isEmpty()) {
+      baseBuilder.put(KEY_SERVER_ADDRESS, serverAddress);
+    }
+    return new StorageClientMetrics(
+        meter,
+        clientAttributes,
+        baseBuilder.build(),
+        ownedMeterProvider,
+        options.isEnableOtelMetrics(),
+        options.isEnableOtelDebugMetrics());
+  }
 
   static StorageClientMetrics create(
       MeterProvider meterProvider, boolean enableOtelMetrics, boolean enableOtelDebugMetrics) {
@@ -146,7 +200,12 @@ final class StorageClientMetrics implements AutoCloseable {
             .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
             .build();
     return new StorageClientMetrics(
-        meter, clientAttributes, ownedMeterProvider, enableOtelMetrics, enableOtelDebugMetrics);
+        meter,
+        clientAttributes,
+        clientAttributes,
+        ownedMeterProvider,
+        enableOtelMetrics,
+        enableOtelDebugMetrics);
   }
 
   StorageClientMetrics(Meter meter, boolean enableOtelMetrics, boolean enableOtelDebugMetrics) {
@@ -167,7 +226,8 @@ final class StorageClientMetrics implements AutoCloseable {
       Attributes clientAttributes,
       boolean enableOtelMetrics,
       boolean enableOtelDebugMetrics) {
-    this(meter, clientAttributes, null, enableOtelMetrics, enableOtelDebugMetrics);
+    this(
+        meter, clientAttributes, clientAttributes, null, enableOtelMetrics, enableOtelDebugMetrics);
   }
 
   StorageClientMetrics(
@@ -176,7 +236,24 @@ final class StorageClientMetrics implements AutoCloseable {
       @Nullable SdkMeterProvider ownedMeterProvider,
       boolean enableOtelMetrics,
       boolean enableOtelDebugMetrics) {
+    this(
+        meter,
+        clientAttributes,
+        clientAttributes,
+        ownedMeterProvider,
+        enableOtelMetrics,
+        enableOtelDebugMetrics);
+  }
+
+  StorageClientMetrics(
+      Meter meter,
+      Attributes clientAttributes,
+      Attributes baseAttributes,
+      @Nullable SdkMeterProvider ownedMeterProvider,
+      boolean enableOtelMetrics,
+      boolean enableOtelDebugMetrics) {
     this.clientAttributes = clientAttributes;
+    this.baseAttributes = baseAttributes;
     this.ownedMeterProvider = ownedMeterProvider;
 
     if (enableOtelMetrics) {
@@ -407,10 +484,34 @@ final class StorageClientMetrics implements AutoCloseable {
     return credentialRefreshDuration;
   }
 
+  StorageMetricsContext createContext(String operationName) {
+    return StorageMetricsContext.create(operationName, baseAttributes);
+  }
+
+  StorageMetricsContext createMultiStepContext(String operationName) {
+    return StorageMetricsContext.createForMultiStep(operationName, baseAttributes);
+  }
+
+  @Nullable
+  static StorageMetricsContext createContext(
+      @Nullable StorageClientMetrics metrics, String operationName) {
+    return metrics != null ? metrics.createContext(operationName) : null;
+  }
+
+  @Nullable
+  static StorageMetricsContext createMultiStepContext(
+      @Nullable StorageClientMetrics metrics, String operationName) {
+    return metrics != null ? metrics.createMultiStepContext(operationName) : null;
+  }
+
   @Override
   public void close() {
     if (ownedMeterProvider != null) {
-      ownedMeterProvider.close();
+      try {
+        ownedMeterProvider.close();
+      } catch (Exception e) {
+        LOGGER.warning("Failed to close storageClientMetrics: " + e.getMessage());
+      }
     }
   }
 }
