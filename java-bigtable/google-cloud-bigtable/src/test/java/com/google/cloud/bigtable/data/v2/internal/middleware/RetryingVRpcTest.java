@@ -48,6 +48,7 @@ import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeSessionListen
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeSessionService;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.PeerInfoInterceptor;
 import com.google.common.base.Suppliers;
+import com.google.common.collect.ImmutableList;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Durations;
@@ -65,6 +66,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -413,5 +415,60 @@ public class RetryingVRpcTest {
     assertThat(executionException.getCause()).isInstanceOf(VRpcException.class);
     VRpcException vRpcException = (VRpcException) executionException.getCause();
     assertThat(vRpcException.getStatus().getCode()).isEqualTo(Status.Code.CANCELLED);
+  }
+
+  @Test
+  void rejectedResultNotRetriedEvenWithRetryInfo() {
+    AtomicInteger attempts = new AtomicInteger();
+    VRpc.VRpcResult rejectedWithRetryInfo =
+        new AutoValue_VRpc_VRpcResult(
+            VRpc.VRpcResult.State.UNCOMMITED,
+            Status.UNAVAILABLE.withDescription("rejected by client"),
+            ImmutableList.of(),
+            null,
+            java.time.Duration.ZERO,
+            RetryInfo.newBuilder().setRetryDelay(Durations.fromMillis(1)).build(),
+            /* rejected= */ true);
+
+    RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
+        new RetryingVRpc<>(
+            () ->
+                new VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse>() {
+                  private boolean done;
+
+                  @Override
+                  public void start(
+                      SessionFakeScriptedRequest req,
+                      VRpcCallContext ctx,
+                      VRpcListener<SessionFakeScriptedResponse> listener) {
+                    attempts.incrementAndGet();
+                    done = true;
+                    ctx.getExecutor().execute(() -> listener.onClose(rejectedWithRetryInfo));
+                  }
+
+                  @Override
+                  public void cancel(String message, Throwable cause) {}
+
+                  @Override
+                  public boolean isDone() {
+                    return done;
+                  }
+
+                  @Override
+                  public void requestNext() {}
+                },
+            timer);
+
+    UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
+    retrying.start(
+        SessionFakeScriptedRequest.getDefaultInstance(),
+        VRpc.VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
+        f);
+
+    ExecutionException executionException = assertThrows(ExecutionException.class, f::get);
+    assertThat(executionException.getCause()).isInstanceOf(VRpcException.class);
+    VRpcException vRpcException = (VRpcException) executionException.getCause();
+    assertThat(vRpcException.getStatus().getCode()).isEqualTo(Status.Code.UNAVAILABLE);
+    assertThat(attempts.get()).isEqualTo(1);
   }
 }
