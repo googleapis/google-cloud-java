@@ -152,6 +152,13 @@ public final class PipelineSource {
   /**
    * Creates a new {@link Pipeline} that operates on a static set of documents represented as Maps.
    *
+   * <p>Each map becomes one input document. Field values can be constants or {@link
+   * com.google.cloud.firestore.pipeline.expressions.Expression}s, including expressions nested
+   * inside map or list values. {@link FieldValue} sentinels are not supported; use an expression
+   * such as {@code currentTimestamp()} instead. To give a document a path, set its {@code __name__}
+   * field to a {@link DocumentReference}. Executing a pipeline with no documents fails with {@code
+   * INVALID_ARGUMENT}.
+   *
    * <p>Example:
    *
    * <pre>{@code

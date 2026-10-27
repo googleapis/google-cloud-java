@@ -263,4 +263,33 @@ public class BigQueryTypeRegistryTest {
             "2025-01-01 12:34:56Z", StandardSQLTypeName.TIMESTAMP, Time.class, la);
     assertThat(tsTimeUtc).isEqualTo(tsTimeLa);
   }
+
+  @Test
+  public void testTimeMicrosecondPrecision() throws BigQueryJdbcException {
+    String timeStr = "14:30:00.123456";
+    long timeMicros = (14L * 3600 + 30L * 60) * 1_000_000L + 123_456L;
+    LocalTime expectedLocalTime = LocalTime.of(14, 30, 0, 123_456_000);
+
+    // Direct conversion to LocalTime and String preserves microseconds
+    assertThat(
+            BigQueryTypeRegistry.convert(timeStr, StandardSQLTypeName.TIME, LocalTime.class, null))
+        .isEqualTo(expectedLocalTime);
+    assertThat(
+            BigQueryTypeRegistry.convert(
+                timeMicros, StandardSQLTypeName.TIME, LocalTime.class, null))
+        .isEqualTo(expectedLocalTime);
+    assertThat(BigQueryTypeRegistry.convert(timeStr, StandardSQLTypeName.TIME, String.class, null))
+        .isEqualTo("14:30:00.123456");
+    assertThat(
+            BigQueryTypeRegistry.convert(timeMicros, StandardSQLTypeName.TIME, String.class, null))
+        .isEqualTo("14:30:00.123456");
+    assertThat(
+            BigQueryTypeRegistry.convert("12:30:00", StandardSQLTypeName.TIME, String.class, null))
+        .isEqualTo("12:30:00");
+
+    // Standard java.sql.Time conversion retains pure JDK Time contract
+    Time sqlTime = (Time) BigQueryTypeRegistry.convert(timeStr, StandardSQLTypeName.TIME, null);
+    assertThat(sqlTime.getClass()).isEqualTo(Time.class);
+    assertThat(sqlTime.toString()).isEqualTo("14:30:00");
+  }
 }
