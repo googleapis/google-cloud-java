@@ -1173,6 +1173,8 @@ final class KeyAwareChannel extends ManagedChannel {
         //  - the server can serve the request on the fastpath, or forward it through the fastpath
         //    when the key is not local to the transaction owner.
         // The endpoint selected by the finder is ignored to preserve transaction affinity.
+        // preferLeader is intentionally left unchanged (true for read-write transactions): the
+        // hint must describe the leader tablet, as read-write requests are served by the leader.
         finder.findServer(reqBuilder, preferLeader, excludedEndpoints);
       }
       return new RoutingDecision(
@@ -1205,6 +1207,8 @@ final class KeyAwareChannel extends ManagedChannel {
         //  - the server can serve the request on the fastpath, or forward it through the fastpath
         //    when the key is not local to the transaction owner.
         // The endpoint selected by the finder is ignored to preserve transaction affinity.
+        // preferLeader is intentionally left unchanged (true for read-write transactions): the
+        // hint must describe the leader tablet, as read-write requests are served by the leader.
         finder.findServer(reqBuilder, preferLeader, excludedEndpoints);
       }
       return new RoutingDecision(

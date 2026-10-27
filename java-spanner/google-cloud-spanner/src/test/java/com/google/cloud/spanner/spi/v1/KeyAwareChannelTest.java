@@ -1342,8 +1342,12 @@ public class KeyAwareChannelTest {
     RoutingHint routingHint = delegate.lastMessage.getRoutingHint();
     assertThat(routingHint.getOperationUid()).isNotEqualTo(0L);
     assertThat(routingHint.getDatabaseId()).isEqualTo(7L);
-    assertThat(routingHint.getKey()).isEqualTo(bytes("n"));
+    // The hint describes the split covering key "n" ([m, z), group 2) and its leader tablet.
+    assertThat(routingHint.getKey()).isEqualTo(bytes("m"));
+    assertThat(routingHint.getLimitKey()).isEqualTo(bytes("z"));
     assertThat(routingHint.getGroupUid()).isEqualTo(2L);
+    assertThat(routingHint.getSplitId()).isEqualTo(2L);
+    assertThat(routingHint.getTabletUid()).isEqualTo(2L);
   }
 
   @Test
@@ -1374,8 +1378,12 @@ public class KeyAwareChannelTest {
     RoutingHint routingHint = delegate.lastMessage.getRoutingHint();
     assertThat(routingHint.getOperationUid()).isNotEqualTo(0L);
     assertThat(routingHint.getDatabaseId()).isEqualTo(7L);
-    assertThat(routingHint.getKey()).isEqualTo(bytes("n"));
+    // The hint describes the split covering key "n" ([m, z), group 2) and its leader tablet.
+    assertThat(routingHint.getKey()).isEqualTo(bytes("m"));
+    assertThat(routingHint.getLimitKey()).isEqualTo(bytes("z"));
     assertThat(routingHint.getGroupUid()).isEqualTo(2L);
+    assertThat(routingHint.getSplitId()).isEqualTo(2L);
+    assertThat(routingHint.getTabletUid()).isEqualTo(2L);
   }
 
   @Test
