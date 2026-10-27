@@ -547,20 +547,14 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
       mockSpanner.abortNextStatement();
       ApiFuture<Long> insert = connection.executeUpdateAsync(INSERT_STATEMENT);
       // Wait until the failed retry has marked the transaction as aborted before calling commit.
-      try {
-        get(insert);
-        fail("Missing expected exception");
-      } catch (AbortedDueToConcurrentModificationException e) {
-        assertThat(counter.retryCount).isEqualTo(1);
-      }
+      assertThrows(
+          AbortedDueToConcurrentModificationException.class, () -> get(insert));
+      assertEquals(1, counter.retryCount);
 
       // Committing a transaction that has been aborted must fail and must not silently succeed.
-      try {
-        get(connection.commitAsync());
-        fail("Missing expected exception");
-      } catch (AbortedDueToConcurrentModificationException e) {
-        assertThat(counter.retryCount).isEqualTo(1);
-      }
+      assertThrows(
+          AbortedDueToConcurrentModificationException.class, () -> get(connection.commitAsync()));
+      assertEquals(1, counter.retryCount);
     }
   }
 
