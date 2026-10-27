@@ -18,7 +18,8 @@ package com.google.cloud.spanner;
 
 /**
  * Generic {@link AbstractLazyInitializer} for any heavy-weight object that might throw an exception
- * during initialization. The underlying object is initialized at most once.
+ * during initialization. The underlying object is initialized at most once unless an exception is
+ * thrown and {@link #shouldCacheError(Exception)} returns false.
  *
  * @param <T> Object which is to be initialized lazily
  */
@@ -36,10 +37,16 @@ public abstract class AbstractLazyInitializer<T> {
         if (!initialized) {
           try {
             object = initialize();
+            error = null;
+            initialized = true;
           } catch (Exception e) {
-            error = e;
+            if (shouldCacheError(e)) {
+              error = e;
+              initialized = true;
+            } else {
+              throw e;
+            }
           }
-          initialized = true;
         }
       }
     }
@@ -47,6 +54,22 @@ public abstract class AbstractLazyInitializer<T> {
       throw error;
     }
     return object;
+  }
+
+  /**
+   * Determines whether an exception thrown by {@link #initialize()} should be cached. If cached,
+   * subsequent calls to {@link #get()} will immediately rethrow the cached exception. If not
+   * cached, the exception is rethrown without marking this initializer as initialized, allowing
+   * subsequent calls to retry {@link #initialize()}.
+   *
+   * <p>Defaults to {@code true}. Subclasses can override this method to avoid caching transient or
+   * retryable errors.
+   *
+   * @param e the exception thrown during initialization
+   * @return {@code true} if the exception should be cached, {@code false} otherwise
+   */
+  protected boolean shouldCacheError(Exception e) {
+    return true;
   }
 
   /**
