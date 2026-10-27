@@ -534,6 +534,7 @@ function generate_graalvm_modules_list() {
 }
 
 function install_modules() {
+  setup_maven_mirror
   if [ -z "$1" ]; then
     retry_with_backoff 3 10 \
       mvn install \
