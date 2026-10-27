@@ -25,7 +25,9 @@ import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.DeadlineExceededException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.WatchdogTimeoutException;
+import com.google.auth.ServiceAccountSigner.SigningException;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
@@ -44,6 +46,9 @@ import javax.net.ssl.SSLHandshakeException;
 import org.junit.Test;
 
 public final class StorageErrorTypeMapperTest {
+
+  private static final Crc32cValue<?> EXPECTED_CRC32C = Crc32cValue.of(12345, 100);
+  private static final Crc32cValue.Crc32cLengthKnown ACTUAL_CRC32C = Crc32cValue.of(54321, 100);
 
   @Test
   public void mapGrpcStatus_allStatusesMappedCorrectly() {
@@ -121,8 +126,38 @@ public final class StorageErrorTypeMapperTest {
         new ApiException(
             new StatusRuntimeException(Status.NOT_FOUND),
             GrpcStatusCode.of(Status.Code.NOT_FOUND),
-            false);
+            /* retryable= */ false);
     assertThat(StorageErrorTypeMapper.mapThrowable(apiEx)).isEqualTo("NOT_FOUND");
+  }
+
+  @Test
+  public void mapThrowable_apiExceptionWithNullStatusCode() {
+    ApiException apiExNullStatusCode =
+        new ApiException(
+            "Null status code",
+            /* cause= */ null,
+            GrpcStatusCode.of(Status.Code.UNKNOWN),
+            /* retryable= */ false) {
+          @Override
+          public StatusCode getStatusCode() {
+            return null;
+          }
+        };
+    assertThat(StorageErrorTypeMapper.mapThrowable(apiExNullStatusCode)).isEqualTo("UNKNOWN");
+
+    ApiException apiExNullStatusCodeWithTimeoutCause =
+        new ApiException(
+            "Null status code with timeout",
+            new SocketTimeoutException("Read timed out"),
+            GrpcStatusCode.of(Status.Code.UNKNOWN),
+            /* retryable= */ false) {
+          @Override
+          public StatusCode getStatusCode() {
+            return null;
+          }
+        };
+    assertThat(StorageErrorTypeMapper.mapThrowable(apiExNullStatusCodeWithTimeoutCause))
+        .isEqualTo("TIMEOUT");
   }
 
   @Test
@@ -131,7 +166,7 @@ public final class StorageErrorTypeMapperTest {
         new DeadlineExceededException(
             new StatusRuntimeException(Status.DEADLINE_EXCEEDED),
             GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
-            false);
+            /* retryable= */ false);
     assertThat(StorageErrorTypeMapper.mapThrowable(dee)).isEqualTo("TIMEOUT");
 
     WatchdogTimeoutException wte = createWatchdogTimeoutException();
@@ -157,6 +192,22 @@ public final class StorageErrorTypeMapperTest {
 
     StorageException se401 = new StorageException(401, "Unauthorized");
     assertThat(StorageErrorTypeMapper.mapThrowable(se401)).isEqualTo("UNAUTHENTICATED");
+  }
+
+  @Test
+  public void mapThrowable_httpResponseExceptionWithSpecificClientCause() {
+    HttpResponseException hreWithTimeout =
+        new HttpResponseException.Builder(500, "Server Error", new HttpHeaders()).build();
+    hreWithTimeout.initCause(new SocketTimeoutException("Read timed out"));
+    assertThat(StorageErrorTypeMapper.mapThrowable(hreWithTimeout)).isEqualTo("TIMEOUT");
+
+    HttpResponseException hre400WithTimeout =
+        new HttpResponseException.Builder(400, "Bad Request", new HttpHeaders()).build();
+    hre400WithTimeout.initCause(new SocketTimeoutException("Read timed out"));
+    GoogleAuthException authWrappingHttpWrappingTimeout =
+        new GoogleAuthException("Token refresh failed", hre400WithTimeout);
+    assertThat(StorageErrorTypeMapper.mapThrowable(authWrappingHttpWrappingTimeout))
+        .isEqualTo("TIMEOUT");
   }
 
   @Test
@@ -186,53 +237,42 @@ public final class StorageErrorTypeMapperTest {
 
   @Test
   public void mapThrowable_authExceptions() {
-    Throwable signingEx =
-        new com.google.auth.ServiceAccountSigner.SigningException(
-            "Signing error", new RuntimeException());
+    Throwable signingEx = new SigningException("Signing error", new RuntimeException());
     assertThat(StorageErrorTypeMapper.mapThrowable(signingEx)).isEqualTo("AUTHENTICATION_ERROR");
 
-    class GoogleAuthException extends RuntimeException {
-      GoogleAuthException(String msg) {
-        super(msg);
-      }
-    }
     assertThat(StorageErrorTypeMapper.mapThrowable(new GoogleAuthException("Auth failed")))
         .isEqualTo("AUTHENTICATION_ERROR");
-
-    class OAuth2Exception extends RuntimeException {
-      OAuth2Exception(String msg) {
-        super(msg);
-      }
-    }
     assertThat(StorageErrorTypeMapper.mapThrowable(new OAuth2Exception("Token invalid")))
         .isEqualTo("AUTHENTICATION_ERROR");
-
-    class AuthenticationException extends RuntimeException {
-      AuthenticationException(String msg) {
-        super(msg);
-      }
-    }
     assertThat(StorageErrorTypeMapper.mapThrowable(new AuthenticationException("Auth failed")))
         .isEqualTo("AUTHENTICATION_ERROR");
-
-    class AuthorNotFoundException extends RuntimeException {
-      AuthorNotFoundException(String msg) {
-        super(msg);
-      }
-    }
     assertThat(StorageErrorTypeMapper.mapThrowable(new AuthorNotFoundException("Not found")))
         .isEqualTo("UNKNOWN");
   }
 
   @Test
+  public void mapThrowable_anonymousAndSubclassAuthExceptions() {
+    Throwable anonymousOAuth2 = new OAuth2Exception("Anonymous token invalid") {};
+    assertThat(StorageErrorTypeMapper.mapThrowable(anonymousOAuth2))
+        .isEqualTo("AUTHENTICATION_ERROR");
+
+    Throwable anonymousAuth = new AuthenticationException("Anonymous auth failed") {};
+    assertThat(StorageErrorTypeMapper.mapThrowable(anonymousAuth))
+        .isEqualTo("AUTHENTICATION_ERROR");
+
+    Throwable customSubclass = new CustomTokenException("Subclass of GoogleAuthException");
+    assertThat(StorageErrorTypeMapper.mapThrowable(customSubclass))
+        .isEqualTo("AUTHENTICATION_ERROR");
+  }
+
+  @Test
   public void mapThrowable_checksumMismatchExceptions() {
-    Crc32cValue<?> expected = Crc32cValue.of(12345, 100);
-    Crc32cValue.Crc32cLengthKnown actual = Crc32cValue.of(54321, 100);
-    Hasher.ChecksumMismatchException cme = new Hasher.ChecksumMismatchException(expected, actual);
+    Hasher.ChecksumMismatchException cme =
+        new Hasher.ChecksumMismatchException(EXPECTED_CRC32C, ACTUAL_CRC32C);
     assertThat(StorageErrorTypeMapper.mapThrowable(cme)).isEqualTo("CHECKSUM_MISMATCH");
 
     Hasher.UncheckedChecksumMismatchException ucme =
-        new Hasher.UncheckedChecksumMismatchException(expected, actual);
+        new Hasher.UncheckedChecksumMismatchException(EXPECTED_CRC32C, ACTUAL_CRC32C);
     assertThat(StorageErrorTypeMapper.mapThrowable(ucme)).isEqualTo("CHECKSUM_MISMATCH");
 
     IOException messageMismatch = new IOException("Checksum mismatch for downloaded object");
@@ -258,9 +298,8 @@ public final class StorageErrorTypeMapperTest {
     StorageException se500WithTimeout = new StorageException(500, "Internal error", wte);
     assertThat(StorageErrorTypeMapper.mapThrowable(se500WithTimeout)).isEqualTo("TIMEOUT");
 
-    Crc32cValue<?> expected = Crc32cValue.of(12345, 100);
-    Crc32cValue.Crc32cLengthKnown actual = Crc32cValue.of(54321, 100);
-    Hasher.ChecksumMismatchException cme = new Hasher.ChecksumMismatchException(expected, actual);
+    Hasher.ChecksumMismatchException cme =
+        new Hasher.ChecksumMismatchException(EXPECTED_CRC32C, ACTUAL_CRC32C);
     StorageException se400WithChecksum = new StorageException(400, "Bad Request", cme);
     assertThat(StorageErrorTypeMapper.mapThrowable(se400WithChecksum))
         .isEqualTo("CHECKSUM_MISMATCH");
@@ -275,12 +314,12 @@ public final class StorageErrorTypeMapperTest {
   }
 
   @Test
-  public void mapThrowable_storageExceptionWrappingGrpcExceptions() {
+  public void mapThrowable_storageExceptionWrappingApiExceptions() {
     ApiException apiExAborted =
         new ApiException(
             new StatusRuntimeException(Status.ABORTED),
             GrpcStatusCode.of(Status.Code.ABORTED),
-            false);
+            /* retryable= */ false);
     StorageException seAborted = new StorageException(409, "Aborted", apiExAborted);
     assertThat(StorageErrorTypeMapper.mapThrowable(seAborted)).isEqualTo("ABORTED");
 
@@ -288,7 +327,7 @@ public final class StorageErrorTypeMapperTest {
         new ApiException(
             new StatusRuntimeException(Status.FAILED_PRECONDITION),
             GrpcStatusCode.of(Status.Code.FAILED_PRECONDITION),
-            false);
+            /* retryable= */ false);
     StorageException sePrecondition =
         new StorageException(400, "Failed Precondition", apiExPrecondition);
     assertThat(StorageErrorTypeMapper.mapThrowable(sePrecondition))
@@ -298,7 +337,7 @@ public final class StorageErrorTypeMapperTest {
         new ApiException(
             new StatusRuntimeException(Status.OUT_OF_RANGE),
             GrpcStatusCode.of(Status.Code.OUT_OF_RANGE),
-            false);
+            /* retryable= */ false);
     StorageException seOutOfRange = new StorageException(400, "Out of Range", apiExOutOfRange);
     assertThat(StorageErrorTypeMapper.mapThrowable(seOutOfRange)).isEqualTo("OUT_OF_RANGE");
 
@@ -306,31 +345,52 @@ public final class StorageErrorTypeMapperTest {
         new ApiException(
             new StatusRuntimeException(Status.UNAUTHENTICATED),
             GrpcStatusCode.of(Status.Code.UNAUTHENTICATED),
-            false);
+            /* retryable= */ false);
     StorageException seUnauthenticated =
         new StorageException(401, "Unauthenticated", apiExUnauthenticated);
     assertThat(StorageErrorTypeMapper.mapThrowable(seUnauthenticated)).isEqualTo("UNAUTHENTICATED");
+  }
 
-    // Coalesced via StorageException.coalesce
+  @Test
+  public void mapThrowable_storageExceptionCoalescedFromApiExceptions() {
+    ApiException apiExAborted =
+        new ApiException(
+            new StatusRuntimeException(Status.ABORTED),
+            GrpcStatusCode.of(Status.Code.ABORTED),
+            /* retryable= */ false);
+    ApiException apiExPrecondition =
+        new ApiException(
+            new StatusRuntimeException(Status.FAILED_PRECONDITION),
+            GrpcStatusCode.of(Status.Code.FAILED_PRECONDITION),
+            /* retryable= */ false);
+    ApiException apiExOutOfRange =
+        new ApiException(
+            new StatusRuntimeException(Status.OUT_OF_RANGE),
+            GrpcStatusCode.of(Status.Code.OUT_OF_RANGE),
+            /* retryable= */ false);
+
     assertThat(StorageErrorTypeMapper.mapThrowable(StorageException.coalesce(apiExAborted)))
         .isEqualTo("ABORTED");
     assertThat(StorageErrorTypeMapper.mapThrowable(StorageException.coalesce(apiExPrecondition)))
         .isEqualTo("FAILED_PRECONDITION");
     assertThat(StorageErrorTypeMapper.mapThrowable(StorageException.coalesce(apiExOutOfRange)))
         .isEqualTo("OUT_OF_RANGE");
+  }
 
-    // StatusRuntimeException directly wrapped
+  @Test
+  public void mapThrowable_storageExceptionWrappingDirectGrpcStatusExceptions() {
     StorageException seFromStatusRuntime =
         new StorageException(
             500, "gRPC Status Runtime", new StatusRuntimeException(Status.ABORTED));
     assertThat(StorageErrorTypeMapper.mapThrowable(seFromStatusRuntime)).isEqualTo("ABORTED");
 
-    // StatusException directly wrapped
     StorageException seFromStatus =
         new StorageException(500, "gRPC Status", new StatusException(Status.FAILED_PRECONDITION));
     assertThat(StorageErrorTypeMapper.mapThrowable(seFromStatus)).isEqualTo("FAILED_PRECONDITION");
+  }
 
-    // SocketException wrapped in StorageException
+  @Test
+  public void mapThrowable_storageExceptionWrappingSocketResetException() {
     StorageException seFromSocketReset =
         new StorageException(0, "Socket Reset", new SocketException("Connection reset"));
     assertThat(StorageErrorTypeMapper.mapThrowable(seFromSocketReset))
@@ -338,54 +398,44 @@ public final class StorageErrorTypeMapperTest {
   }
 
   @Test
-  public void mapThrowable_authExceptionWrappingNetworkOrTimeoutCauses() {
-    class GoogleAuthException extends RuntimeException {
-      GoogleAuthException(String msg) {
-        super(msg);
-      }
-
-      GoogleAuthException(String msg, Throwable cause) {
-        super(msg, cause);
-      }
-    }
-
-    // GoogleAuthException wrapping SocketTimeoutException -> TIMEOUT
+  public void mapThrowable_authExceptionWrappingDirectNetworkAndTimeoutCauses() {
     GoogleAuthException authTimeout =
         new GoogleAuthException("Auth timeout", new SocketTimeoutException("Read timed out"));
     assertThat(StorageErrorTypeMapper.mapThrowable(authTimeout)).isEqualTo("TIMEOUT");
 
-    // GoogleAuthException wrapping UnknownHostException -> DNS_FAILURE
     GoogleAuthException authDns =
         new GoogleAuthException(
             "Auth DNS failure", new UnknownHostException("oauth2.googleapis.com"));
     assertThat(StorageErrorTypeMapper.mapThrowable(authDns)).isEqualTo("DNS_FAILURE");
 
-    // GoogleAuthException wrapping ConnectException -> CONNECTION_REFUSED
     GoogleAuthException authRefused =
         new GoogleAuthException("Auth connect refused", new ConnectException("Connection refused"));
     assertThat(StorageErrorTypeMapper.mapThrowable(authRefused)).isEqualTo("CONNECTION_REFUSED");
 
-    // GoogleAuthException wrapping SSLHandshakeException -> TLS_FAILURE
     GoogleAuthException authTls =
         new GoogleAuthException(
             "Auth TLS failed", new SSLHandshakeException("TLS handshake failed"));
     assertThat(StorageErrorTypeMapper.mapThrowable(authTls)).isEqualTo("TLS_FAILURE");
+  }
 
-    // Multi-level wrapping: GoogleAuthException -> IOException -> SocketTimeoutException -> TIMEOUT
+  @Test
+  public void mapThrowable_authExceptionWrappingNestedTimeoutCause() {
     GoogleAuthException nestedAuthTimeout =
         new GoogleAuthException(
             "Nested timeout", new IOException("IO failed", new SocketTimeoutException("timeout")));
     assertThat(StorageErrorTypeMapper.mapThrowable(nestedAuthTimeout)).isEqualTo("TIMEOUT");
 
-    // StorageException(401, "Unauthorized", googleAuthExWithTimeout) -> TIMEOUT
+    GoogleAuthException authTimeout =
+        new GoogleAuthException("Auth timeout", new SocketTimeoutException("Read timed out"));
     StorageException se401WithTimeout = new StorageException(401, "Unauthorized", authTimeout);
     assertThat(StorageErrorTypeMapper.mapThrowable(se401WithTimeout)).isEqualTo("TIMEOUT");
+  }
 
-    // GoogleAuthException with no network cause -> AUTHENTICATION_ERROR
+  @Test
+  public void mapThrowable_authExceptionWithoutSpecificNetworkCauseMapsToAuthError() {
     GoogleAuthException simpleAuth = new GoogleAuthException("Invalid credentials");
     assertThat(StorageErrorTypeMapper.mapThrowable(simpleAuth)).isEqualTo("AUTHENTICATION_ERROR");
 
-    // GoogleAuthException wrapping generic IOException("Invalid grant") -> AUTHENTICATION_ERROR
     GoogleAuthException authWithGenericIo =
         new GoogleAuthException("Grant error", new IOException("Invalid grant"));
     assertThat(StorageErrorTypeMapper.mapThrowable(authWithGenericIo))
@@ -393,7 +443,7 @@ public final class StorageErrorTypeMapperTest {
   }
 
   @Test
-  public void mapThrowable_grpcExceptionsWithNetworkCauses() {
+  public void mapThrowable_statusRuntimeExceptionWithNetworkCauses() {
     StatusRuntimeException sreDns =
         new StatusRuntimeException(
             Status.UNAVAILABLE.withCause(new UnknownHostException("storage.googleapis.com")));
@@ -418,7 +468,10 @@ public final class StorageErrorTypeMapperTest {
         new StatusRuntimeException(
             Status.UNAVAILABLE.withCause(new SocketException("Broken pipe")));
     assertThat(StorageErrorTypeMapper.mapThrowable(srePipe)).isEqualTo("CONNECTIVITY");
+  }
 
+  @Test
+  public void mapThrowable_statusExceptionWithNetworkCauses() {
     StatusException seDns =
         new StatusException(
             Status.UNAVAILABLE.withCause(new UnknownHostException("storage.googleapis.com")));
@@ -427,14 +480,23 @@ public final class StorageErrorTypeMapperTest {
     StatusException seTls =
         new StatusException(Status.UNAVAILABLE.withCause(new SSLHandshakeException("TLS failed")));
     assertThat(StorageErrorTypeMapper.mapThrowable(seTls)).isEqualTo("TLS_FAILURE");
+  }
 
+  @Test
+  public void mapThrowable_apiExceptionWithNetworkCauses() {
+    StatusRuntimeException sreDns =
+        new StatusRuntimeException(
+            Status.UNAVAILABLE.withCause(new UnknownHostException("storage.googleapis.com")));
     ApiException apiExDns =
-        new ApiException(sreDns, GrpcStatusCode.of(Status.Code.UNAVAILABLE), false);
+        new ApiException(
+            sreDns, GrpcStatusCode.of(Status.Code.UNAVAILABLE), /* retryable= */ false);
     assertThat(StorageErrorTypeMapper.mapThrowable(apiExDns)).isEqualTo("DNS_FAILURE");
 
     ApiException apiExRefused =
         new ApiException(
-            new ConnectException("Refused"), GrpcStatusCode.of(Status.Code.UNAVAILABLE), false);
+            new ConnectException("Refused"),
+            GrpcStatusCode.of(Status.Code.UNAVAILABLE),
+            /* retryable= */ false);
     assertThat(StorageErrorTypeMapper.mapThrowable(apiExRefused)).isEqualTo("CONNECTION_REFUSED");
   }
 
@@ -469,6 +531,40 @@ public final class StorageErrorTypeMapperTest {
     Constructor<WatchdogTimeoutException> ctor =
         WatchdogTimeoutException.class.getDeclaredConstructor(String.class, boolean.class);
     ctor.setAccessible(true);
-    return ctor.newInstance("Watchdog timeout", true);
+    return ctor.newInstance("Watchdog timeout", /* retryable= */ true);
+  }
+
+  private static class GoogleAuthException extends RuntimeException {
+    GoogleAuthException(String msg) {
+      super(msg);
+    }
+
+    GoogleAuthException(String msg, Throwable cause) {
+      super(msg, cause);
+    }
+  }
+
+  private static final class CustomTokenException extends GoogleAuthException {
+    CustomTokenException(String msg) {
+      super(msg);
+    }
+  }
+
+  private static class OAuth2Exception extends RuntimeException {
+    OAuth2Exception(String msg) {
+      super(msg);
+    }
+  }
+
+  private static class AuthenticationException extends RuntimeException {
+    AuthenticationException(String msg) {
+      super(msg);
+    }
+  }
+
+  private static final class AuthorNotFoundException extends RuntimeException {
+    AuthorNotFoundException(String msg) {
+      super(msg);
+    }
   }
 }

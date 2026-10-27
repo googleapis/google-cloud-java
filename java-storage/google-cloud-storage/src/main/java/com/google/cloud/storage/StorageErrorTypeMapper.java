@@ -21,6 +21,7 @@ import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.WatchdogTimeoutException;
+import com.google.common.base.Ascii;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
@@ -29,13 +30,11 @@ import java.net.ConnectException;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
-import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 import javax.net.ssl.SSLException;
-import javax.net.ssl.SSLHandshakeException;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -47,17 +46,18 @@ final class StorageErrorTypeMapper {
   static final String STATUS_OK = "OK";
   static final String STATUS_CANCELLED = "CANCELLED";
   static final String STATUS_UNKNOWN = "UNKNOWN";
-  static final String STATUS_INVALID_ARGUMENT = "INVALID_ARGUMENT";
   static final String STATUS_NOT_FOUND = "NOT_FOUND";
-  static final String STATUS_ALREADY_EXISTS = "ALREADY_EXISTS";
-  static final String STATUS_PERMISSION_DENIED = "PERMISSION_DENIED";
-  static final String STATUS_RESOURCE_EXHAUSTED = "RESOURCE_EXHAUSTED";
-  static final String STATUS_FAILED_PRECONDITION = "FAILED_PRECONDITION";
-  static final String STATUS_OUT_OF_RANGE = "OUT_OF_RANGE";
-  static final String STATUS_UNIMPLEMENTED = "UNIMPLEMENTED";
-  static final String STATUS_INTERNAL = "INTERNAL";
   static final String STATUS_UNAVAILABLE = "UNAVAILABLE";
-  static final String STATUS_UNAUTHENTICATED = "UNAUTHENTICATED";
+
+  private static final String STATUS_INVALID_ARGUMENT = "INVALID_ARGUMENT";
+  private static final String STATUS_ALREADY_EXISTS = "ALREADY_EXISTS";
+  private static final String STATUS_PERMISSION_DENIED = "PERMISSION_DENIED";
+  private static final String STATUS_RESOURCE_EXHAUSTED = "RESOURCE_EXHAUSTED";
+  private static final String STATUS_FAILED_PRECONDITION = "FAILED_PRECONDITION";
+  private static final String STATUS_OUT_OF_RANGE = "OUT_OF_RANGE";
+  private static final String STATUS_UNIMPLEMENTED = "UNIMPLEMENTED";
+  private static final String STATUS_INTERNAL = "INTERNAL";
+  private static final String STATUS_UNAUTHENTICATED = "UNAUTHENTICATED";
 
   static final String STATUS_TIMEOUT = "TIMEOUT";
   static final String STATUS_DNS_FAILURE = "DNS_FAILURE";
@@ -67,8 +67,6 @@ final class StorageErrorTypeMapper {
   static final String STATUS_CONNECTIVITY = "CONNECTIVITY";
   static final String STATUS_AUTHENTICATION_ERROR = "AUTHENTICATION_ERROR";
   static final String STATUS_CHECKSUM_MISMATCH = "CHECKSUM_MISMATCH";
-
-  private StorageErrorTypeMapper() {}
 
   static String mapGrpcStatus(@Nullable Status status) {
     if (status == null || status.getCode() == Status.Code.UNKNOWN) {
@@ -152,15 +150,17 @@ final class StorageErrorTypeMapper {
     }
 
     if (t instanceof StatusRuntimeException) {
-      if (t.getCause() != null && t.getCause() != t && hasSpecificClientCause(t.getCause(), true)) {
-        return mapThrowable(t.getCause());
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true);
+      if (mappedCause != null) {
+        return mappedCause;
       }
       return mapGrpcStatus(((StatusRuntimeException) t).getStatus());
     }
 
     if (t instanceof StatusException) {
-      if (t.getCause() != null && t.getCause() != t && hasSpecificClientCause(t.getCause(), true)) {
-        return mapThrowable(t.getCause());
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true);
+      if (mappedCause != null) {
+        return mappedCause;
       }
       return mapGrpcStatus(((StatusException) t).getStatus());
     }
@@ -173,18 +173,23 @@ final class StorageErrorTypeMapper {
     }
 
     if (t instanceof ApiException) {
-      if (t.getCause() != null && t.getCause() != t && hasSpecificClientCause(t.getCause(), true)) {
-        return mapThrowable(t.getCause());
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true);
+      if (mappedCause != null) {
+        return mappedCause;
       }
       ApiException apiException = (ApiException) t;
-      StatusCode.Code code = apiException.getStatusCode().getCode();
-      String mapped = mapGaxStatusCode(code);
+      StatusCode statusCode = apiException.getStatusCode();
+      String mapped = mapGaxStatusCode(statusCode != null ? statusCode.getCode() : null);
       if (!STATUS_UNKNOWN.equals(mapped)) {
         return mapped;
       }
     }
 
     if (t instanceof HttpResponseException) {
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true);
+      if (mappedCause != null) {
+        return mappedCause;
+      }
       return mapHttpResponseCode(((HttpResponseException) t).getStatusCode());
     }
 
@@ -196,9 +201,9 @@ final class StorageErrorTypeMapper {
           && (cause instanceof ApiException
               || cause instanceof StatusRuntimeException
               || cause instanceof StatusException
-              || hasSpecificClientCause(cause, true))) {
-        String mappedCause = mapThrowable(cause);
-        if (!STATUS_UNKNOWN.equals(mappedCause)) {
+              || hasSpecificClientCause(cause, /* includeAuth= */ true))) {
+        String mappedCause = mapKnownCause(se, cause);
+        if (mappedCause != null) {
           return mappedCause;
         }
       }
@@ -208,13 +213,9 @@ final class StorageErrorTypeMapper {
     }
 
     if (isAuthException(t)) {
-      if (t.getCause() != null
-          && t.getCause() != t
-          && hasSpecificClientCause(t.getCause(), false)) {
-        String mappedCause = mapThrowable(t.getCause());
-        if (!STATUS_UNKNOWN.equals(mappedCause)) {
-          return mappedCause;
-        }
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ false);
+      if (mappedCause != null) {
+        return mappedCause;
       }
       return STATUS_AUTHENTICATION_ERROR;
     }
@@ -229,34 +230,49 @@ final class StorageErrorTypeMapper {
 
     if (t instanceof SocketException) {
       String message = t.getMessage();
-      if (message != null && message.toLowerCase(Locale.US).contains("reset")) {
+      if (message != null && Ascii.toLowerCase(message).contains("reset")) {
         return STATUS_CONNECTION_RESET;
       }
       return STATUS_CONNECTIVITY;
     }
 
-    if (t instanceof SSLHandshakeException || t instanceof SSLException) {
+    if (t instanceof SSLException) {
       return STATUS_TLS_FAILURE;
     }
 
     if (t instanceof IOException) {
-      if (t.getCause() != null && t.getCause() != t && hasSpecificClientCause(t.getCause(), true)) {
-        String mappedCause = mapThrowable(t.getCause());
-        if (!STATUS_UNKNOWN.equals(mappedCause)) {
-          return mappedCause;
-        }
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true);
+      if (mappedCause != null) {
+        return mappedCause;
       }
       return STATUS_CONNECTIVITY;
     }
 
-    if (t.getCause() != null && t.getCause() != t) {
-      String causeMapping = mapThrowable(t.getCause());
-      if (!STATUS_UNKNOWN.equals(causeMapping)) {
-        return causeMapping;
-      }
+    String causeMapping = mapKnownCause(t, t.getCause());
+    if (causeMapping != null) {
+      return causeMapping;
     }
 
     return STATUS_UNKNOWN;
+  }
+
+  private static @Nullable String mapSpecificClientCause(Throwable t, boolean includeAuth) {
+    Throwable cause = t.getCause();
+    if (cause != null && cause != t && hasSpecificClientCause(cause, includeAuth)) {
+      return mapKnownCause(t, cause);
+    }
+    return null;
+  }
+
+  private static @Nullable String mapKnownCause(
+      @Nullable Throwable parent, @Nullable Throwable cause) {
+    if (cause != null && cause != parent) {
+      String mappedCause = mapThrowable(cause);
+      if (!STATUS_UNKNOWN.equals(mappedCause)) {
+        return mappedCause;
+      }
+    }
+    return null;
   }
 
   private static boolean hasSpecificClientCause(@Nullable Throwable t, boolean includeAuth) {
@@ -269,7 +285,6 @@ final class StorageErrorTypeMapper {
           || current instanceof UnknownHostException
           || current instanceof ConnectException
           || current instanceof SocketException
-          || current instanceof SSLHandshakeException
           || current instanceof SSLException
           || current instanceof CancellationException
           || isChecksumMismatch(current)
@@ -292,7 +307,7 @@ final class StorageErrorTypeMapper {
     }
     String message = t.getMessage();
     if (message != null) {
-      String lower = message.toLowerCase(Locale.US);
+      String lower = Ascii.toLowerCase(message);
       if (lower.contains("mismatch checksum") || lower.contains("checksum mismatch")) {
         return true;
       }
@@ -301,13 +316,21 @@ final class StorageErrorTypeMapper {
   }
 
   private static boolean isAuthException(Throwable t) {
-    String className = t.getClass().getName();
-    String simpleName = t.getClass().getSimpleName();
-    return className.startsWith("com.google.auth.")
-        || className.startsWith("com.google.api.client.auth.")
-        || simpleName.equals("GoogleAuthException")
-        || simpleName.equals("OAuth2Exception")
-        || simpleName.equals("AuthenticationException")
-        || className.contains("GoogleAuthException");
+    for (Class<?> cls = t.getClass();
+        cls != null && cls != Throwable.class;
+        cls = cls.getSuperclass()) {
+      String className = cls.getName();
+      String simpleName = cls.getSimpleName();
+      if (className.startsWith("com.google.auth.")
+          || className.startsWith("com.google.api.client.auth.")
+          || className.contains("GoogleAuthException")
+          || simpleName.equals("OAuth2Exception")
+          || simpleName.equals("AuthenticationException")) {
+        return true;
+      }
+    }
+    return false;
   }
+
+  private StorageErrorTypeMapper() {}
 }
