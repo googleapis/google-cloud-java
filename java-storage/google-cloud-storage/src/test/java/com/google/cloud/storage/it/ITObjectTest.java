@@ -1038,27 +1038,27 @@ public class ITObjectTest {
 
   @Test
   public void testCopyBlob_targetBlobInfo_doesNotInheritMetadata() {
-    String sourceBlobName = generator.randomObjectName() + "-source";
-    BlobId source = BlobId.of(bucket.getName(), sourceBlobName);
-    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
+    BlobId source = BlobId.of(bucket.getName(), generator.randomObjectName() + "-source");
     Blob remoteSourceBlob =
         storage.create(
-            BlobInfo.newBuilder(source).setMetadata(metadata).build(), BLOB_BYTE_CONTENT);
+            BlobInfo.newBuilder(source).setMetadata(ImmutableMap.of("k", "v")).build(),
+            BLOB_BYTE_CONTENT);
     assertNotNull(remoteSourceBlob);
-    String targetBlobName = generator.randomObjectName() + "-target";
+    BlobInfo target = BlobInfo.newBuilder(bucket, generator.randomObjectName() + "-target").build();
     CopyRequest req =
         CopyRequest.newBuilder()
             .setSource(source)
-            .setTarget(
-                BlobInfo.newBuilder(bucket, targetBlobName).build(),
-                BlobTargetOption.doesNotExist())
+            .setTarget(target, BlobTargetOption.doesNotExist())
             .build();
+
     CopyWriter copyWriter = storage.copy(req);
-    Blob gen1 = copyWriter.getResult();
-    assertThat(gen1.getMetadata()).isAnyOf(null, ImmutableMap.of());
+    Blob copied = copyWriter.getResult();
+
     assertTrue(copyWriter.isDone());
+    assertThat(copied.getMetadata()).isAnyOf(null, ImmutableMap.of());
+
     assertTrue(remoteSourceBlob.delete());
-    assertTrue(storage.delete(gen1.getBlobId()));
+    assertTrue(storage.delete(copied.getBlobId()));
   }
 
   @Test
