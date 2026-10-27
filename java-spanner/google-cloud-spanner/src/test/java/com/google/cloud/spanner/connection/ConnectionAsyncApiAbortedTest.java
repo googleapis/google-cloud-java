@@ -532,6 +532,36 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
   }
 
   @Test
+  public void testCommitAfterBlindUpdateAborted_WithConcurrentModification() {
+    Statement update1 = Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=100");
+    mockSpanner.putStatementResult(StatementResult.update(update1, 100));
+
+    RetryCounter counter = new RetryCounter();
+    try (Connection connection = createConnection(counter)) {
+      get(connection.executeUpdateAsync(update1));
+      mockSpanner.putStatementResult(StatementResult.update(update1, 200));
+
+      mockSpanner.abortNextStatement();
+      ApiFuture<Long> insert = connection.executeUpdateAsync(INSERT_STATEMENT);
+      // Wait until the failed retry has marked the transaction as aborted before calling commit.
+      try {
+        get(insert);
+        fail("Missing expected exception");
+      } catch (AbortedDueToConcurrentModificationException e) {
+        assertThat(counter.retryCount).isEqualTo(1);
+      }
+
+      // Committing a transaction that has been aborted must fail and must not silently succeed.
+      try {
+        get(connection.commitAsync());
+        fail("Missing expected exception");
+      } catch (AbortedDueToConcurrentModificationException e) {
+        assertThat(counter.retryCount).isEqualTo(1);
+      }
+    }
+  }
+
+  @Test
   public void testMultipleBlindUpdatesAborted_WithConcurrentModification() {
     Statement update1 = Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=100");
     mockSpanner.putStatementResult(StatementResult.update(update1, 100));

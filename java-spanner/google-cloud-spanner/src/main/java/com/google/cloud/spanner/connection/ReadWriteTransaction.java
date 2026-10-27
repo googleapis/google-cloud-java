@@ -601,7 +601,9 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
   }
 
   void checkAborted() {
-    if (this.state == UnitOfWorkState.ABORTED && this.abortedException != null) {
+    // Only check abortedException and not the state, as the ABORTED state can be overwritten by a
+    // commit that is called while (or after) an asynchronous statement aborted the transaction.
+    if (this.abortedException != null) {
       if (this.abortedException instanceof AbortedDueToConcurrentModificationException) {
         throw SpannerExceptionFactory.newAbortedDueToConcurrentModificationException(
             (AbortedDueToConcurrentModificationException) this.abortedException);

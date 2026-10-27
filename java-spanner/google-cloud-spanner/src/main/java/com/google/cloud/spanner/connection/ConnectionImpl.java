@@ -1142,6 +1142,17 @@ class ConnectionImpl implements Connection {
     return internalIsTransactionStarted() || this.connectionState.hasTransactionalChanges();
   }
 
+  /**
+   * Returns true if the current transaction has been aborted and could not be retried. Committing
+   * such a transaction must return the abort error instead of silently succeeding. This can happen
+   * when a statement that was executed asynchronously aborts before commit is called.
+   */
+  private boolean isCurrentTransactionAborted() {
+    return internalIsInTransaction()
+        && this.currentUnitOfWork != null
+        && this.currentUnitOfWork.getState() == UnitOfWorkState.ABORTED;
+  }
+
   @Override
   public Timestamp getReadTimestamp() {
     ConnectionPreconditions.checkState(!isClosed(), CLOSED_ERROR_MSG);
@@ -1387,7 +1398,8 @@ class ConnectionImpl implements Connection {
         statementTag == null, "Statement tags are not supported for COMMIT or ROLLBACK");
     ApiFuture<Void> res;
     try {
-      if (hasTransactionalChanges()) {
+      if (hasTransactionalChanges()
+          || (endTransactionMethod == commit && isCurrentTransactionAborted())) {
         res =
             endTransactionMethod.endAsync(
                 callType, getCurrentUnitOfWorkOrStartNewUnitOfWork(parsedStatement));
