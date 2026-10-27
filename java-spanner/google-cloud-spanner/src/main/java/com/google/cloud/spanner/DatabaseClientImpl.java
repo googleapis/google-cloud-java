@@ -30,10 +30,6 @@ import com.google.spanner.v1.BatchWriteResponse;
 import io.opentelemetry.api.common.Attributes;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 
@@ -88,21 +84,15 @@ class DatabaseClientImpl implements DatabaseClient {
       new AbstractLazyInitializer<StatementFactory>() {
         @Override
         protected StatementFactory initialize() {
-          try {
-            Dialect dialect = getDialectAsync().get(30, TimeUnit.SECONDS);
-            return new StatementFactory(dialect);
-          } catch (ExecutionException e) {
-            throw SpannerExceptionFactory.asSpannerException(e.getCause());
-          } catch (TimeoutException e) {
-            throw SpannerExceptionFactory.propagateTimeout(e);
-          } catch (InterruptedException e) {
-            throw SpannerExceptionFactory.propagateInterrupt(e);
-          }
+          return new StatementFactory(getDialect());
         }
 
         @Override
         protected boolean shouldCacheError(Exception e) {
-          return MultiplexedSessionDatabaseClient.shouldCacheDialectError(e);
+          // getDialect() already decides whether to cache or retry dialect errors.
+          // Never cache errors here so that statementFactorySupplier always delegates
+          // the retry/caching lifecycle entirely to getDialect().
+          return false;
         }
       };
 
@@ -303,10 +293,6 @@ class DatabaseClientImpl implements DatabaseClient {
   @Override
   public long executePartitionedUpdate(final Statement stmt, final UpdateOption... options) {
     return multiplexedSessionDatabaseClient.executePartitionedUpdate(stmt, options);
-  }
-
-  private Future<Dialect> getDialectAsync() {
-    return multiplexedSessionDatabaseClient.getDialectAsync();
   }
 
   boolean isValid() {

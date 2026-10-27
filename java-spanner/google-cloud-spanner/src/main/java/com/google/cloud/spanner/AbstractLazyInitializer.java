@@ -62,8 +62,8 @@ public abstract class AbstractLazyInitializer<T> {
    * cached, the exception is rethrown without marking this initializer as initialized, allowing
    * subsequent calls to retry {@link #initialize()}.
    *
-   * <p>Defaults to {@code true} for backward compatibility. Subclasses can override this method to
-   * avoid caching transient or retryable errors.
+   * <p>Defaults to {@code true}. Subclasses can override this method to avoid caching transient or
+   * retryable errors.
    *
    * @param e the exception thrown during initialization
    * @return {@code true} if the exception should be cached, {@code false} otherwise
