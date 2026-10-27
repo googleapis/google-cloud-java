@@ -3761,7 +3761,8 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testDetermineEffectiveCatalogAndSchema_withDefaultDatasetProject() {
+  public void testDetermineEffectiveCatalogAndSchema_withDefaultDatasetProject()
+      throws SQLException {
     when(bigQueryConnection.isFilterTablesOnDefaultDataset()).thenReturn(true);
     when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
     when(bigQueryConnection.getDefaultDataset())
@@ -3775,7 +3776,8 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testDetermineEffectiveCatalogAndSchema_withDefaultDatasetNoProject() {
+  public void testDetermineEffectiveCatalogAndSchema_withDefaultDatasetNoProject()
+      throws BigQueryJdbcException {
     when(bigQueryConnection.isFilterTablesOnDefaultDataset()).thenReturn(true);
     when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
     when(bigQueryConnection.getDefaultDataset()).thenReturn(DatasetId.of("my_dataset"));

@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The Interconnects API.
  *
+ * <p>This client uses Interconnects version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -214,6 +216,25 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> setLabelsOperationCallable()
  *           <li><p> setLabelsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetName</td>
+ *      <td><p> Sets name of an interconnect.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setNameAsync(SetNameInterconnectRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> setNameAsync(String project, String interconnect, InterconnectsSetNameRequest interconnectsSetNameRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setNameOperationCallable()
+ *           <li><p> setNameCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -905,7 +926,6 @@ public class InterconnectsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Interconnect element : interconnectsClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -940,7 +960,6 @@ public class InterconnectsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Interconnect> future = interconnectsClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -974,7 +993,6 @@ public class InterconnectsClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     InterconnectList response = interconnectsClient.listCallable().call(request);
@@ -1262,6 +1280,145 @@ public class InterconnectsClient implements BackgroundResource {
    */
   public final UnaryCallable<SetLabelsInterconnectRequest, Operation> setLabelsCallable() {
     return stub.setLabelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets name of an interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   String project = "project-309310695";
+   *   String interconnect = "interconnect-849140594";
+   *   InterconnectsSetNameRequest interconnectsSetNameRequestResource =
+   *       InterconnectsSetNameRequest.newBuilder().build();
+   *   Operation response =
+   *       interconnectsClient
+   *           .setNameAsync(project, interconnect, interconnectsSetNameRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param interconnect Name of the interconnect to update.
+   * @param interconnectsSetNameRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setNameAsync(
+      String project,
+      String interconnect,
+      InterconnectsSetNameRequest interconnectsSetNameRequestResource) {
+    SetNameInterconnectRequest request =
+        SetNameInterconnectRequest.newBuilder()
+            .setProject(project)
+            .setInterconnect(interconnect)
+            .setInterconnectsSetNameRequestResource(interconnectsSetNameRequestResource)
+            .build();
+    return setNameAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets name of an interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   SetNameInterconnectRequest request =
+   *       SetNameInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setInterconnectsSetNameRequestResource(
+   *               InterconnectsSetNameRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = interconnectsClient.setNameAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> setNameAsync(
+      SetNameInterconnectRequest request) {
+    return setNameOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets name of an interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   SetNameInterconnectRequest request =
+   *       SetNameInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setInterconnectsSetNameRequestResource(
+   *               InterconnectsSetNameRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       interconnectsClient.setNameOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<SetNameInterconnectRequest, Operation, Operation>
+      setNameOperationCallable() {
+    return stub.setNameOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets name of an interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   SetNameInterconnectRequest request =
+   *       SetNameInterconnectRequest.newBuilder()
+   *           .setInterconnect("interconnect-849140594")
+   *           .setInterconnectsSetNameRequestResource(
+   *               InterconnectsSetNameRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = interconnectsClient.setNameCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetNameInterconnectRequest, Operation> setNameCallable() {
+    return stub.setNameCallable();
   }
 
   @Override

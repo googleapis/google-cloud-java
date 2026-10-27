@@ -61,6 +61,7 @@ import com.google.cloud.compute.v1.GetRuleRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.InsertRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.ListRegionNetworkFirewallPoliciesRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchAssociationRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.PatchRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.PatchRuleRegionNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.Policy;
@@ -214,6 +215,11 @@ public class RegionNetworkFirewallPoliciesStubSettings
   private final UnaryCallSettings<PatchRegionNetworkFirewallPolicyRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchRegionNetworkFirewallPolicyRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>
+      patchAssociationSettings;
+  private final OperationCallSettings<
+          PatchAssociationRegionNetworkFirewallPolicyRequest, Operation, Operation>
+      patchAssociationOperationSettings;
   private final UnaryCallSettings<PatchRuleRegionNetworkFirewallPolicyRequest, Operation>
       patchRuleSettings;
   private final OperationCallSettings<
@@ -404,6 +410,19 @@ public class RegionNetworkFirewallPoliciesStubSettings
     return patchOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to patchAssociation. */
+  public UnaryCallSettings<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>
+      patchAssociationSettings() {
+    return patchAssociationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchAssociation. */
+  public OperationCallSettings<
+          PatchAssociationRegionNetworkFirewallPolicyRequest, Operation, Operation>
+      patchAssociationOperationSettings() {
+    return patchAssociationOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to patchRule. */
   public UnaryCallSettings<PatchRuleRegionNetworkFirewallPolicyRequest, Operation>
       patchRuleSettings() {
@@ -516,7 +535,8 @@ public class RegionNetworkFirewallPoliciesStubSettings
             GaxProperties.getLibraryVersion(RegionNetworkFirewallPoliciesStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */
@@ -555,6 +575,8 @@ public class RegionNetworkFirewallPoliciesStubSettings
     listSettings = settingsBuilder.listSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    patchAssociationSettings = settingsBuilder.patchAssociationSettings().build();
+    patchAssociationOperationSettings = settingsBuilder.patchAssociationOperationSettings().build();
     patchRuleSettings = settingsBuilder.patchRuleSettings().build();
     patchRuleOperationSettings = settingsBuilder.patchRuleOperationSettings().build();
     removeAssociationSettings = settingsBuilder.removeAssociationSettings().build();
@@ -627,6 +649,12 @@ public class RegionNetworkFirewallPoliciesStubSettings
     private final OperationCallSettings.Builder<
             PatchRegionNetworkFirewallPolicyRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<
+            PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>
+        patchAssociationSettings;
+    private final OperationCallSettings.Builder<
+            PatchAssociationRegionNetworkFirewallPolicyRequest, Operation, Operation>
+        patchAssociationOperationSettings;
     private final UnaryCallSettings.Builder<PatchRuleRegionNetworkFirewallPolicyRequest, Operation>
         patchRuleSettings;
     private final OperationCallSettings.Builder<
@@ -716,6 +744,8 @@ public class RegionNetworkFirewallPoliciesStubSettings
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      patchAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchAssociationOperationSettings = OperationCallSettings.newBuilder();
       patchRuleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchRuleOperationSettings = OperationCallSettings.newBuilder();
       removeAssociationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -739,6 +769,7 @@ public class RegionNetworkFirewallPoliciesStubSettings
               insertSettings,
               listSettings,
               patchSettings,
+              patchAssociationSettings,
               patchRuleSettings,
               removeAssociationSettings,
               removeRuleSettings,
@@ -768,6 +799,8 @@ public class RegionNetworkFirewallPoliciesStubSettings
       listSettings = settings.listSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      patchAssociationSettings = settings.patchAssociationSettings.toBuilder();
+      patchAssociationOperationSettings = settings.patchAssociationOperationSettings.toBuilder();
       patchRuleSettings = settings.patchRuleSettings.toBuilder();
       patchRuleOperationSettings = settings.patchRuleOperationSettings.toBuilder();
       removeAssociationSettings = settings.removeAssociationSettings.toBuilder();
@@ -791,6 +824,7 @@ public class RegionNetworkFirewallPoliciesStubSettings
               insertSettings,
               listSettings,
               patchSettings,
+              patchAssociationSettings,
               patchRuleSettings,
               removeAssociationSettings,
               removeRuleSettings,
@@ -868,6 +902,11 @@ public class RegionNetworkFirewallPoliciesStubSettings
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .patchAssociationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1026,6 +1065,31 @@ public class RegionNetworkFirewallPoliciesStubSettings
           .setInitialCallSettings(
               UnaryCallSettings
                   .<PatchRegionNetworkFirewallPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .patchAssociationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchAssociationRegionNetworkFirewallPolicyRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
@@ -1255,6 +1319,19 @@ public class RegionNetworkFirewallPoliciesStubSettings
             PatchRegionNetworkFirewallPolicyRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchAssociation. */
+    public UnaryCallSettings.Builder<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>
+        patchAssociationSettings() {
+      return patchAssociationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchAssociation. */
+    public OperationCallSettings.Builder<
+            PatchAssociationRegionNetworkFirewallPolicyRequest, Operation, Operation>
+        patchAssociationOperationSettings() {
+      return patchAssociationOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to patchRule. */

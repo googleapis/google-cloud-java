@@ -1527,6 +1527,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
    * 1-63 characters consisting of lowercase and uppercase letters, numbers, and
    * hyphens. The literal `me` can also be used to refer to the authenticated
    * user.
+   *
+   * This field is read-only.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1558,6 +1560,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
    * 1-63 characters consisting of lowercase and uppercase letters, numbers, and
    * hyphens. The literal `me` can also be used to refer to the authenticated
    * user.
+   *
+   * This field is read-only.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2943,6 +2947,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * 1-63 characters consisting of lowercase and uppercase letters, numbers, and
      * hyphens. The literal `me` can also be used to refer to the authenticated
      * user.
+     *
+     * This field is read-only.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2973,6 +2979,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * 1-63 characters consisting of lowercase and uppercase letters, numbers, and
      * hyphens. The literal `me` can also be used to refer to the authenticated
      * user.
+     *
+     * This field is read-only.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -3003,6 +3011,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * 1-63 characters consisting of lowercase and uppercase letters, numbers, and
      * hyphens. The literal `me` can also be used to refer to the authenticated
      * user.
+     *
+     * This field is read-only.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -3032,6 +3042,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * 1-63 characters consisting of lowercase and uppercase letters, numbers, and
      * hyphens. The literal `me` can also be used to refer to the authenticated
      * user.
+     *
+     * This field is read-only.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -3057,6 +3069,8 @@ public final class Settings extends com.google.protobuf.GeneratedMessage
      * 1-63 characters consisting of lowercase and uppercase letters, numbers, and
      * hyphens. The literal `me` can also be used to refer to the authenticated
      * user.
+     *
+     * This field is read-only.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

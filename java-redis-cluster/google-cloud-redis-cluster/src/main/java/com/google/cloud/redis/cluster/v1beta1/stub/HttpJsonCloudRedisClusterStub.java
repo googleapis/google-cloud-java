@@ -16,10 +16,14 @@
 
 package com.google.cloud.redis.cluster.v1beta1.stub;
 
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAclPolicyRevisionsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListBackupsPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListClustersPagedResponse;
 import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListLocationsPagedResponse;
+import static com.google.cloud.redis.cluster.v1beta1.CloudRedisClusterClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.HttpRule;
 import com.google.api.core.BetaApi;
@@ -42,28 +46,52 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.redis.cluster.v1beta1.AclPolicy;
+import com.google.cloud.redis.cluster.v1beta1.AclPolicyRevision;
+import com.google.cloud.redis.cluster.v1beta1.AddAuthTokenRequest;
+import com.google.cloud.redis.cluster.v1beta1.AddTokenAuthUserRequest;
+import com.google.cloud.redis.cluster.v1beta1.AuthToken;
 import com.google.cloud.redis.cluster.v1beta1.Backup;
 import com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest;
 import com.google.cloud.redis.cluster.v1beta1.BackupCollection;
 import com.google.cloud.redis.cluster.v1beta1.CertificateAuthority;
 import com.google.cloud.redis.cluster.v1beta1.Cluster;
+import com.google.cloud.redis.cluster.v1beta1.CreateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1beta1.CreateClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.DeleteAclPolicyRequest;
+import com.google.cloud.redis.cluster.v1beta1.DeleteAuthTokenRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.DeleteClusterRequest;
+import com.google.cloud.redis.cluster.v1beta1.DeleteTokenAuthUserRequest;
 import com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetAclPolicyRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetAclPolicyRevisionRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetAuthTokenRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetClusterRequest;
 import com.google.cloud.redis.cluster.v1beta1.GetSharedRegionalCertificateAuthorityRequest;
+import com.google.cloud.redis.cluster.v1beta1.GetTokenAuthUserRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListAclPoliciesRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListAclPoliciesResponse;
+import com.google.cloud.redis.cluster.v1beta1.ListAclPolicyRevisionsRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListAclPolicyRevisionsResponse;
+import com.google.cloud.redis.cluster.v1beta1.ListAuthTokensRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListAuthTokensResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1beta1.ListClustersResponse;
+import com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersRequest;
+import com.google.cloud.redis.cluster.v1beta1.ListTokenAuthUsersResponse;
+import com.google.cloud.redis.cluster.v1beta1.OperationMetadata;
 import com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest;
 import com.google.cloud.redis.cluster.v1beta1.SharedRegionalCertificateAuthority;
+import com.google.cloud.redis.cluster.v1beta1.TokenAuthUser;
+import com.google.cloud.redis.cluster.v1beta1.UpdateAclPolicyRequest;
 import com.google.cloud.redis.cluster.v1beta1.UpdateClusterRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -93,8 +121,11 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
       TypeRegistry.newBuilder()
           .add(Empty.getDescriptor())
           .add(Cluster.getDescriptor())
+          .add(TokenAuthUser.getDescriptor())
+          .add(OperationMetadata.getDescriptor())
           .add(Any.getDescriptor())
           .add(Backup.getDescriptor())
+          .add(AclPolicy.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<ListClustersRequest, ListClustersResponse>
@@ -134,6 +165,43 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListAclPoliciesRequest, ListAclPoliciesResponse>
+      listAclPoliciesMethodDescriptor =
+          ApiMethodDescriptor.<ListAclPoliciesRequest, ListAclPoliciesResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/ListAclPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAclPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*}/aclPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAclPoliciesResponse>newBuilder()
+                      .setDefaultInstance(ListAclPoliciesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetClusterRequest, Cluster> getClusterMethodDescriptor =
       ApiMethodDescriptor.<GetClusterRequest, Cluster>newBuilder()
           .setFullMethodName("google.cloud.redis.cluster.v1beta1.CloudRedisCluster/GetCluster")
@@ -166,6 +234,41 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<GetAclPolicyRequest, AclPolicy>
+      getAclPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetAclPolicyRequest, AclPolicy>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/GetAclPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAclPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/aclPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AclPolicy>newBuilder()
+                      .setDefaultInstance(AclPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<UpdateClusterRequest, Operation>
       updateClusterMethodDescriptor =
@@ -211,6 +314,50 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<UpdateAclPolicyRequest, Operation>
+      updateAclPolicyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAclPolicyRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/UpdateAclPolicy")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAclPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{aclPolicy.name=projects/*/locations/*/aclPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "aclPolicy.name", request.getAclPolicy().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("aclPolicy", request.getAclPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAclPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<DeleteClusterRequest, Operation>
       deleteClusterMethodDescriptor =
           ApiMethodDescriptor.<DeleteClusterRequest, Operation>newBuilder()
@@ -248,6 +395,120 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
               .setOperationSnapshotFactory(
                   (DeleteClusterRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAclPolicyRequest, Operation>
+      deleteAclPolicyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAclPolicyRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/DeleteAclPolicy")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAclPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/aclPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAclPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionMethodDescriptor =
+          ApiMethodDescriptor.<GetAclPolicyRevisionRequest, AclPolicyRevision>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/GetAclPolicyRevision")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAclPolicyRevisionRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/aclPolicies/*/revisions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAclPolicyRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAclPolicyRevisionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AclPolicyRevision>newBuilder()
+                      .setDefaultInstance(AclPolicyRevision.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/ListAclPolicyRevisions")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAclPolicyRevisionsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*/aclPolicies/*}/revisions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclPolicyRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAclPolicyRevisionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAclPolicyRevisionsResponse>newBuilder()
+                      .setDefaultInstance(ListAclPolicyRevisionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<CreateClusterRequest, Operation>
@@ -291,6 +552,47 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
               .setOperationSnapshotFactory(
                   (CreateClusterRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAclPolicyRequest, AclPolicy>
+      createAclPolicyMethodDescriptor =
+          ApiMethodDescriptor.<CreateAclPolicyRequest, AclPolicy>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/CreateAclPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAclPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*}/aclPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAclPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "aclPolicyId", request.getAclPolicyId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("aclPolicy", request.getAclPolicy(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AclPolicy>newBuilder()
+                      .setDefaultInstance(AclPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<
@@ -674,6 +976,316 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersMethodDescriptor =
+          ApiMethodDescriptor.<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/ListTokenAuthUsers")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListTokenAuthUsersRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*/clusters/*}/tokenAuthUsers",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTokenAuthUsersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListTokenAuthUsersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListTokenAuthUsersResponse>newBuilder()
+                      .setDefaultInstance(ListTokenAuthUsersResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetTokenAuthUserRequest, TokenAuthUser>
+      getTokenAuthUserMethodDescriptor =
+          ApiMethodDescriptor.<GetTokenAuthUserRequest, TokenAuthUser>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/GetTokenAuthUser")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetTokenAuthUserRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/clusters/*/tokenAuthUsers/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TokenAuthUser>newBuilder()
+                      .setDefaultInstance(TokenAuthUser.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListAuthTokensRequest, ListAuthTokensResponse>
+      listAuthTokensMethodDescriptor =
+          ApiMethodDescriptor.<ListAuthTokensRequest, ListAuthTokensResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/ListAuthTokens")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAuthTokensRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{parent=projects/*/locations/*/clusters/*/tokenAuthUsers/*}/authTokens",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAuthTokensRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAuthTokensRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAuthTokensResponse>newBuilder()
+                      .setDefaultInstance(ListAuthTokensResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAuthTokenRequest, AuthToken>
+      getAuthTokenMethodDescriptor =
+          ApiMethodDescriptor.<GetAuthTokenRequest, AuthToken>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/GetAuthToken")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAuthTokenRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/clusters/*/tokenAuthUsers/*/authTokens/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AuthToken>newBuilder()
+                      .setDefaultInstance(AuthToken.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<AddTokenAuthUserRequest, Operation>
+      addTokenAuthUserMethodDescriptor =
+          ApiMethodDescriptor.<AddTokenAuthUserRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/AddTokenAuthUser")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AddTokenAuthUserRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{cluster=projects/*/locations/*/clusters/*}:addTokenAuthUser",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "cluster", request.getCluster());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearCluster().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (AddTokenAuthUserRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteTokenAuthUserRequest, Operation>
+      deleteTokenAuthUserMethodDescriptor =
+          ApiMethodDescriptor.<DeleteTokenAuthUserRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/DeleteTokenAuthUser")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteTokenAuthUserRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/clusters/*/tokenAuthUsers/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteTokenAuthUserRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "force", request.getForce());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteTokenAuthUserRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<AddAuthTokenRequest, Operation>
+      addAuthTokenMethodDescriptor =
+          ApiMethodDescriptor.<AddAuthTokenRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/AddAuthToken")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AddAuthTokenRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{tokenAuthUser=projects/*/locations/*/clusters/*/tokenAuthUsers/*}:addAuthToken",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "tokenAuthUser", request.getTokenAuthUser());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*", request.toBuilder().clearTokenAuthUser().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (AddAuthTokenRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAuthTokenRequest, Operation>
+      deleteAuthTokenMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAuthTokenRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.redis.cluster.v1beta1.CloudRedisCluster/DeleteAuthToken")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAuthTokenRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/{name=projects/*/locations/*/clusters/*/tokenAuthUsers/*/authTokens/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAuthTokenRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAuthTokenRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -745,15 +1357,33 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   private final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable;
   private final UnaryCallable<ListClustersRequest, ListClustersPagedResponse>
       listClustersPagedCallable;
+  private final UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse>
+      listAclPoliciesCallable;
+  private final UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable;
   private final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable;
+  private final UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable;
   private final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable;
   private final OperationCallable<UpdateClusterRequest, Cluster, Any>
       updateClusterOperationCallable;
+  private final UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable;
+  private final OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable;
   private final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable;
   private final OperationCallable<DeleteClusterRequest, Empty, Any> deleteClusterOperationCallable;
+  private final UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable;
+  private final OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable;
+  private final UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable;
+  private final UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable;
+  private final UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable;
   private final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable;
   private final OperationCallable<CreateClusterRequest, Cluster, Any>
       createClusterOperationCallable;
+  private final UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable;
   private final UnaryCallable<GetClusterCertificateAuthorityRequest, CertificateAuthority>
       getClusterCertificateAuthorityCallable;
   private final UnaryCallable<
@@ -780,6 +1410,27 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   private final UnaryCallable<BackupClusterRequest, Operation> backupClusterCallable;
   private final OperationCallable<BackupClusterRequest, Cluster, Any>
       backupClusterOperationCallable;
+  private final UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersCallable;
+  private final UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersPagedCallable;
+  private final UnaryCallable<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserCallable;
+  private final UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse> listAuthTokensCallable;
+  private final UnaryCallable<ListAuthTokensRequest, ListAuthTokensPagedResponse>
+      listAuthTokensPagedCallable;
+  private final UnaryCallable<GetAuthTokenRequest, AuthToken> getAuthTokenCallable;
+  private final UnaryCallable<AddTokenAuthUserRequest, Operation> addTokenAuthUserCallable;
+  private final OperationCallable<AddTokenAuthUserRequest, Cluster, OperationMetadata>
+      addTokenAuthUserOperationCallable;
+  private final UnaryCallable<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserCallable;
+  private final OperationCallable<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationCallable;
+  private final UnaryCallable<AddAuthTokenRequest, Operation> addAuthTokenCallable;
+  private final OperationCallable<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationCallable;
+  private final UnaryCallable<DeleteAuthTokenRequest, Operation> deleteAuthTokenCallable;
+  private final OperationCallable<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -867,9 +1518,34 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<ListAclPoliciesRequest, ListAclPoliciesResponse>
+        listAclPoliciesTransportSettings =
+            HttpJsonCallSettings.<ListAclPoliciesRequest, ListAclPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listAclPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         HttpJsonCallSettings.<GetClusterRequest, Cluster>newBuilder()
             .setMethodDescriptor(getClusterMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetAclPolicyRequest, AclPolicy> getAclPolicyTransportSettings =
+        HttpJsonCallSettings.<GetAclPolicyRequest, AclPolicy>newBuilder()
+            .setMethodDescriptor(getAclPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -890,6 +1566,17 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<UpdateAclPolicyRequest, Operation> updateAclPolicyTransportSettings =
+        HttpJsonCallSettings.<UpdateAclPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateAclPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("acl_policy.name", String.valueOf(request.getAclPolicy().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<DeleteClusterRequest, Operation> deleteClusterTransportSettings =
         HttpJsonCallSettings.<DeleteClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteClusterMethodDescriptor)
@@ -902,9 +1589,60 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<DeleteAclPolicyRequest, Operation> deleteAclPolicyTransportSettings =
+        HttpJsonCallSettings.<DeleteAclPolicyRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAclPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetAclPolicyRevisionRequest, AclPolicyRevision>
+        getAclPolicyRevisionTransportSettings =
+            HttpJsonCallSettings.<GetAclPolicyRevisionRequest, AclPolicyRevision>newBuilder()
+                .setMethodDescriptor(getAclPolicyRevisionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+        listAclPolicyRevisionsTransportSettings =
+            HttpJsonCallSettings
+                .<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>newBuilder()
+                .setMethodDescriptor(listAclPolicyRevisionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         HttpJsonCallSettings.<CreateClusterRequest, Operation>newBuilder()
             .setMethodDescriptor(createClusterMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<CreateAclPolicyRequest, AclPolicy> createAclPolicyTransportSettings =
+        HttpJsonCallSettings.<CreateAclPolicyRequest, AclPolicy>newBuilder()
+            .setMethodDescriptor(createAclPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -1044,6 +1782,105 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+        listTokenAuthUsersTransportSettings =
+            HttpJsonCallSettings.<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>newBuilder()
+                .setMethodDescriptor(listTokenAuthUsersMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserTransportSettings =
+        HttpJsonCallSettings.<GetTokenAuthUserRequest, TokenAuthUser>newBuilder()
+            .setMethodDescriptor(getTokenAuthUserMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListAuthTokensRequest, ListAuthTokensResponse>
+        listAuthTokensTransportSettings =
+            HttpJsonCallSettings.<ListAuthTokensRequest, ListAuthTokensResponse>newBuilder()
+                .setMethodDescriptor(listAuthTokensMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetAuthTokenRequest, AuthToken> getAuthTokenTransportSettings =
+        HttpJsonCallSettings.<GetAuthTokenRequest, AuthToken>newBuilder()
+            .setMethodDescriptor(getAuthTokenMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<AddTokenAuthUserRequest, Operation> addTokenAuthUserTransportSettings =
+        HttpJsonCallSettings.<AddTokenAuthUserRequest, Operation>newBuilder()
+            .setMethodDescriptor(addTokenAuthUserMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("cluster", String.valueOf(request.getCluster()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getCluster())
+            .build();
+    HttpJsonCallSettings<DeleteTokenAuthUserRequest, Operation>
+        deleteTokenAuthUserTransportSettings =
+            HttpJsonCallSettings.<DeleteTokenAuthUserRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteTokenAuthUserMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<AddAuthTokenRequest, Operation> addAuthTokenTransportSettings =
+        HttpJsonCallSettings.<AddAuthTokenRequest, Operation>newBuilder()
+            .setMethodDescriptor(addAuthTokenMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("token_auth_user", String.valueOf(request.getTokenAuthUser()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getTokenAuthUser())
+            .build();
+    HttpJsonCallSettings<DeleteAuthTokenRequest, Operation> deleteAuthTokenTransportSettings =
+        HttpJsonCallSettings.<DeleteAuthTokenRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteAuthTokenMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1074,9 +1911,18 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
     this.listClustersPagedCallable =
         callableFactory.createPagedCallable(
             listClustersTransportSettings, settings.listClustersSettings(), clientContext);
+    this.listAclPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listAclPoliciesTransportSettings, settings.listAclPoliciesSettings(), clientContext);
+    this.listAclPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAclPoliciesTransportSettings, settings.listAclPoliciesSettings(), clientContext);
     this.getClusterCallable =
         callableFactory.createUnaryCallable(
             getClusterTransportSettings, settings.getClusterSettings(), clientContext);
+    this.getAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getAclPolicyTransportSettings, settings.getAclPolicySettings(), clientContext);
     this.updateClusterCallable =
         callableFactory.createUnaryCallable(
             updateClusterTransportSettings, settings.updateClusterSettings(), clientContext);
@@ -1084,6 +1930,15 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
         callableFactory.createOperationCallable(
             updateClusterTransportSettings,
             settings.updateClusterOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.updateAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateAclPolicyTransportSettings, settings.updateAclPolicySettings(), clientContext);
+    this.updateAclPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAclPolicyTransportSettings,
+            settings.updateAclPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
     this.deleteClusterCallable =
@@ -1095,6 +1950,30 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
             settings.deleteClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.deleteAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteAclPolicyTransportSettings, settings.deleteAclPolicySettings(), clientContext);
+    this.deleteAclPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAclPolicyTransportSettings,
+            settings.deleteAclPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getAclPolicyRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getAclPolicyRevisionTransportSettings,
+            settings.getAclPolicyRevisionSettings(),
+            clientContext);
+    this.listAclPolicyRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listAclPolicyRevisionsTransportSettings,
+            settings.listAclPolicyRevisionsSettings(),
+            clientContext);
+    this.listAclPolicyRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAclPolicyRevisionsTransportSettings,
+            settings.listAclPolicyRevisionsSettings(),
+            clientContext);
     this.createClusterCallable =
         callableFactory.createUnaryCallable(
             createClusterTransportSettings, settings.createClusterSettings(), clientContext);
@@ -1104,6 +1983,9 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
             settings.createClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.createAclPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createAclPolicyTransportSettings, settings.createAclPolicySettings(), clientContext);
     this.getClusterCertificateAuthorityCallable =
         callableFactory.createUnaryCallable(
             getClusterCertificateAuthorityTransportSettings,
@@ -1176,6 +2058,66 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
             settings.backupClusterOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listTokenAuthUsersCallable =
+        callableFactory.createUnaryCallable(
+            listTokenAuthUsersTransportSettings,
+            settings.listTokenAuthUsersSettings(),
+            clientContext);
+    this.listTokenAuthUsersPagedCallable =
+        callableFactory.createPagedCallable(
+            listTokenAuthUsersTransportSettings,
+            settings.listTokenAuthUsersSettings(),
+            clientContext);
+    this.getTokenAuthUserCallable =
+        callableFactory.createUnaryCallable(
+            getTokenAuthUserTransportSettings, settings.getTokenAuthUserSettings(), clientContext);
+    this.listAuthTokensCallable =
+        callableFactory.createUnaryCallable(
+            listAuthTokensTransportSettings, settings.listAuthTokensSettings(), clientContext);
+    this.listAuthTokensPagedCallable =
+        callableFactory.createPagedCallable(
+            listAuthTokensTransportSettings, settings.listAuthTokensSettings(), clientContext);
+    this.getAuthTokenCallable =
+        callableFactory.createUnaryCallable(
+            getAuthTokenTransportSettings, settings.getAuthTokenSettings(), clientContext);
+    this.addTokenAuthUserCallable =
+        callableFactory.createUnaryCallable(
+            addTokenAuthUserTransportSettings, settings.addTokenAuthUserSettings(), clientContext);
+    this.addTokenAuthUserOperationCallable =
+        callableFactory.createOperationCallable(
+            addTokenAuthUserTransportSettings,
+            settings.addTokenAuthUserOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteTokenAuthUserCallable =
+        callableFactory.createUnaryCallable(
+            deleteTokenAuthUserTransportSettings,
+            settings.deleteTokenAuthUserSettings(),
+            clientContext);
+    this.deleteTokenAuthUserOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteTokenAuthUserTransportSettings,
+            settings.deleteTokenAuthUserOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.addAuthTokenCallable =
+        callableFactory.createUnaryCallable(
+            addAuthTokenTransportSettings, settings.addAuthTokenSettings(), clientContext);
+    this.addAuthTokenOperationCallable =
+        callableFactory.createOperationCallable(
+            addAuthTokenTransportSettings,
+            settings.addAuthTokenOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteAuthTokenCallable =
+        callableFactory.createUnaryCallable(
+            deleteAuthTokenTransportSettings, settings.deleteAuthTokenSettings(), clientContext);
+    this.deleteAuthTokenOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAuthTokenTransportSettings,
+            settings.deleteAuthTokenOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1194,10 +2136,17 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(listClustersMethodDescriptor);
+    methodDescriptors.add(listAclPoliciesMethodDescriptor);
     methodDescriptors.add(getClusterMethodDescriptor);
+    methodDescriptors.add(getAclPolicyMethodDescriptor);
     methodDescriptors.add(updateClusterMethodDescriptor);
+    methodDescriptors.add(updateAclPolicyMethodDescriptor);
     methodDescriptors.add(deleteClusterMethodDescriptor);
+    methodDescriptors.add(deleteAclPolicyMethodDescriptor);
+    methodDescriptors.add(getAclPolicyRevisionMethodDescriptor);
+    methodDescriptors.add(listAclPolicyRevisionsMethodDescriptor);
     methodDescriptors.add(createClusterMethodDescriptor);
+    methodDescriptors.add(createAclPolicyMethodDescriptor);
     methodDescriptors.add(getClusterCertificateAuthorityMethodDescriptor);
     methodDescriptors.add(getSharedRegionalCertificateAuthorityMethodDescriptor);
     methodDescriptors.add(rescheduleClusterMaintenanceMethodDescriptor);
@@ -1208,6 +2157,14 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
     methodDescriptors.add(deleteBackupMethodDescriptor);
     methodDescriptors.add(exportBackupMethodDescriptor);
     methodDescriptors.add(backupClusterMethodDescriptor);
+    methodDescriptors.add(listTokenAuthUsersMethodDescriptor);
+    methodDescriptors.add(getTokenAuthUserMethodDescriptor);
+    methodDescriptors.add(listAuthTokensMethodDescriptor);
+    methodDescriptors.add(getAuthTokenMethodDescriptor);
+    methodDescriptors.add(addTokenAuthUserMethodDescriptor);
+    methodDescriptors.add(deleteTokenAuthUserMethodDescriptor);
+    methodDescriptors.add(addAuthTokenMethodDescriptor);
+    methodDescriptors.add(deleteAuthTokenMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -1228,8 +2185,24 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   }
 
   @Override
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse> listAclPoliciesCallable() {
+    return listAclPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable() {
+    return listAclPoliciesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return getClusterCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable() {
+    return getAclPolicyCallable;
   }
 
   @Override
@@ -1243,6 +2216,17 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   }
 
   @Override
+  public UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable() {
+    return updateAclPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable() {
+    return updateAclPolicyOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return deleteClusterCallable;
   }
@@ -1253,6 +2237,35 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   }
 
   @Override
+  public UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable() {
+    return deleteAclPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable() {
+    return deleteAclPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable() {
+    return getAclPolicyRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable() {
+    return listAclPolicyRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable() {
+    return listAclPolicyRevisionsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return createClusterCallable;
   }
@@ -1260,6 +2273,11 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   @Override
   public OperationCallable<CreateClusterRequest, Cluster, Any> createClusterOperationCallable() {
     return createClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable() {
+    return createAclPolicyCallable;
   }
 
   @Override
@@ -1347,6 +2365,83 @@ public class HttpJsonCloudRedisClusterStub extends CloudRedisClusterStub {
   @Override
   public OperationCallable<BackupClusterRequest, Cluster, Any> backupClusterOperationCallable() {
     return backupClusterOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersResponse>
+      listTokenAuthUsersCallable() {
+    return listTokenAuthUsersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListTokenAuthUsersRequest, ListTokenAuthUsersPagedResponse>
+      listTokenAuthUsersPagedCallable() {
+    return listTokenAuthUsersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetTokenAuthUserRequest, TokenAuthUser> getTokenAuthUserCallable() {
+    return getTokenAuthUserCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthTokensRequest, ListAuthTokensResponse> listAuthTokensCallable() {
+    return listAuthTokensCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAuthTokensRequest, ListAuthTokensPagedResponse>
+      listAuthTokensPagedCallable() {
+    return listAuthTokensPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAuthTokenRequest, AuthToken> getAuthTokenCallable() {
+    return getAuthTokenCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddTokenAuthUserRequest, Operation> addTokenAuthUserCallable() {
+    return addTokenAuthUserCallable;
+  }
+
+  @Override
+  public OperationCallable<AddTokenAuthUserRequest, Cluster, OperationMetadata>
+      addTokenAuthUserOperationCallable() {
+    return addTokenAuthUserOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteTokenAuthUserRequest, Operation> deleteTokenAuthUserCallable() {
+    return deleteTokenAuthUserCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteTokenAuthUserRequest, Empty, OperationMetadata>
+      deleteTokenAuthUserOperationCallable() {
+    return deleteTokenAuthUserOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddAuthTokenRequest, Operation> addAuthTokenCallable() {
+    return addAuthTokenCallable;
+  }
+
+  @Override
+  public OperationCallable<AddAuthTokenRequest, TokenAuthUser, OperationMetadata>
+      addAuthTokenOperationCallable() {
+    return addAuthTokenOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAuthTokenRequest, Operation> deleteAuthTokenCallable() {
+    return deleteAuthTokenCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAuthTokenRequest, Empty, OperationMetadata>
+      deleteAuthTokenOperationCallable() {
+    return deleteAuthTokenOperationCallable;
   }
 
   @Override

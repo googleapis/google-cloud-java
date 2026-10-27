@@ -28,43 +28,7 @@ jobs:
           library:
             - 'sdk-platform-java/**'
             - 'google-auth-library-java/**'
-            - .kokoro/downstream-compatibility.sh
             - .github/workflows/sdk-platform-java-downstream.yaml
-  downstream-compatibility:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-22.04
-    strategy:
-      fail-fast: false
-      matrix:
-        repo:
-          - java-bigtable
-          - java-firestore
-          - java-pubsub
-    steps:
-      - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
-        with:
-          persist-credentials: false
-      - uses: actions/setup-java@17f84c3641ba7b8f6deff6309fc4c864478f5d62 # v3.14.1
-        with:
-          java-version: 17
-          distribution: temurin
-          cache: maven
-      - run: mvn -version
-      - name: Install xmllint
-        timeout-minutes: 5
-        run: |
-          # Retry apt-get update and install up to 3 times with a 15-second per-request timeout.
-          # Retries protect against transient network glitches, mirror timeouts, and apt lock contention on runner startup.
-          for i in {1..3}; do
-            sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 update && \
-            sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 -y install libxml2-utils && \
-            break || sleep 5
-          done
-      - name: Test helper scripts
-        run: .kokoro/common_test.sh
-      - name: Perform downstream compatibility testing
-        run: REPOS_UNDER_TEST="${{ matrix.repo }}" .kokoro/downstream-compatibility.sh
   downstream-compatibility-spring-generator:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -92,10 +56,12 @@ jobs:
             sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 -y install libxml2-utils && \
             break || sleep 5
           done
+      - name: Test helper scripts
+        run: .kokoro/common_test.sh
       - name: Perform downstream compatibility testing
         run: .kokoro/downstream-compatibility-spring.sh
   required:
-    needs: [ downstream-compatibility, downstream-compatibility-spring-generator ]
+    needs: [ downstream-compatibility-spring-generator ]
     name: conditional-required-check
     if: ${{ always() }} # Always run even if any "needs" jobs fail
     runs-on: ubuntu-22.04

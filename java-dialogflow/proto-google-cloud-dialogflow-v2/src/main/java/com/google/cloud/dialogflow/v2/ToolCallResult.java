@@ -101,6 +101,19 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
      * @return The bytes for message.
      */
     com.google.protobuf.ByteString getMessageBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether the tool call is retryable.
+     * </pre>
+     *
+     * <code>bool retryable = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The retryable.
+     */
+    boolean getRetryable();
   }
 
   /**
@@ -205,6 +218,25 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int RETRYABLE_FIELD_NUMBER = 2;
+    private boolean retryable_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether the tool call is retryable.
+     * </pre>
+     *
+     * <code>bool retryable = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The retryable.
+     */
+    @java.lang.Override
+    public boolean getRetryable() {
+      return retryable_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -222,6 +254,9 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, message_);
       }
+      if (retryable_ != false) {
+        output.writeBool(2, retryable_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -233,6 +268,9 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
       size = 0;
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, message_);
+      }
+      if (retryable_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, retryable_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -251,6 +289,7 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.dialogflow.v2.ToolCallResult.Error) obj;
 
       if (!getMessage().equals(other.getMessage())) return false;
+      if (getRetryable() != other.getRetryable()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -264,6 +303,8 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
       hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + RETRYABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRetryable());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -406,6 +447,7 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
         super.clear();
         bitField0_ = 0;
         message_ = "";
+        retryable_ = false;
         return this;
       }
 
@@ -445,6 +487,9 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.message_ = message_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retryable_ = retryable_;
+        }
       }
 
       @java.lang.Override
@@ -464,6 +509,9 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
           message_ = other.message_;
           bitField0_ |= 0x00000001;
           onChanged();
+        }
+        if (other.getRetryable() != false) {
+          setRetryable(other.getRetryable());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -497,6 +545,12 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 16:
+                {
+                  retryable_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -623,6 +677,62 @@ public final class ToolCallResult extends com.google.protobuf.GeneratedMessage
         checkByteStringIsUtf8(value);
         message_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private boolean retryable_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether the tool call is retryable.
+       * </pre>
+       *
+       * <code>bool retryable = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The retryable.
+       */
+      @java.lang.Override
+      public boolean getRetryable() {
+        return retryable_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether the tool call is retryable.
+       * </pre>
+       *
+       * <code>bool retryable = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The retryable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetryable(boolean value) {
+
+        retryable_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies whether the tool call is retryable.
+       * </pre>
+       *
+       * <code>bool retryable = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRetryable() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        retryable_ = false;
         onChanged();
         return this;
       }

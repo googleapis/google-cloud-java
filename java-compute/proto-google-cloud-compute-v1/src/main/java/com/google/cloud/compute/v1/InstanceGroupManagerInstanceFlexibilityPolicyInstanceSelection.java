@@ -54,7 +54,9 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
   }
 
   private InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection() {
+    disks_ = java.util.Collections.emptyList();
     machineTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    minCpuPlatform_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -75,6 +77,87 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
   }
 
   private int bitField0_;
+  public static final int DISKS_FIELD_NUMBER = 95594102;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.AttachedDisk> disks_;
+
+  /**
+   *
+   *
+   * <pre>
+   * List of disks to be attached to the instances created from this
+   * selection.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.AttachedDisk> getDisksList() {
+    return disks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * List of disks to be attached to the instances created from this
+   * selection.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.AttachedDiskOrBuilder>
+      getDisksOrBuilderList() {
+    return disks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * List of disks to be attached to the instances created from this
+   * selection.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+   */
+  @java.lang.Override
+  public int getDisksCount() {
+    return disks_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * List of disks to be attached to the instances created from this
+   * selection.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AttachedDisk getDisks(int index) {
+    return disks_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * List of disks to be attached to the instances created from this
+   * selection.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AttachedDiskOrBuilder getDisksOrBuilder(int index) {
+    return disks_.get(index);
+  }
+
   public static final int MACHINE_TYPES_FIELD_NUMBER = 79720065;
 
   @SuppressWarnings("serial")
@@ -143,6 +226,78 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     return machineTypes_.getByteString(index);
   }
 
+  public static final int MIN_CPU_PLATFORM_FIELD_NUMBER = 242912759;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object minCpuPlatform_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the minimum CPU platform to be used by this instance selection.
+   * e.g. 'Intel Ice Lake'.
+   * </pre>
+   *
+   * <code>optional string min_cpu_platform = 242912759;</code>
+   *
+   * @return Whether the minCpuPlatform field is set.
+   */
+  @java.lang.Override
+  public boolean hasMinCpuPlatform() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the minimum CPU platform to be used by this instance selection.
+   * e.g. 'Intel Ice Lake'.
+   * </pre>
+   *
+   * <code>optional string min_cpu_platform = 242912759;</code>
+   *
+   * @return The minCpuPlatform.
+   */
+  @java.lang.Override
+  public java.lang.String getMinCpuPlatform() {
+    java.lang.Object ref = minCpuPlatform_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      minCpuPlatform_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the minimum CPU platform to be used by this instance selection.
+   * e.g. 'Intel Ice Lake'.
+   * </pre>
+   *
+   * <code>optional string min_cpu_platform = 242912759;</code>
+   *
+   * @return The bytes for minCpuPlatform.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMinCpuPlatformBytes() {
+    java.lang.Object ref = minCpuPlatform_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      minCpuPlatform_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int RANK_FIELD_NUMBER = 3492908;
   private int rank_ = 0;
 
@@ -163,7 +318,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
    */
   @java.lang.Override
   public boolean hasRank() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -200,11 +355,17 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(3492908, rank_);
     }
     for (int i = 0; i < machineTypes_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 79720065, machineTypes_.getRaw(i));
+    }
+    for (int i = 0; i < disks_.size(); i++) {
+      output.writeMessage(95594102, disks_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 242912759, minCpuPlatform_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -215,7 +376,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3492908, rank_);
     }
     {
@@ -225,6 +386,12 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       }
       size += dataSize;
       size += 5 * getMachineTypesList().size();
+    }
+    for (int i = 0; i < disks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(95594102, disks_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(242912759, minCpuPlatform_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -248,7 +415,12 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
                     .InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection)
                 obj;
 
+    if (!getDisksList().equals(other.getDisksList())) return false;
     if (!getMachineTypesList().equals(other.getMachineTypesList())) return false;
+    if (hasMinCpuPlatform() != other.hasMinCpuPlatform()) return false;
+    if (hasMinCpuPlatform()) {
+      if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+    }
     if (hasRank() != other.hasRank()) return false;
     if (hasRank()) {
       if (getRank() != other.getRank()) return false;
@@ -264,9 +436,17 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getDisksCount() > 0) {
+      hash = (37 * hash) + DISKS_FIELD_NUMBER;
+      hash = (53 * hash) + getDisksList().hashCode();
+    }
     if (getMachineTypesCount() > 0) {
       hash = (37 * hash) + MACHINE_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + getMachineTypesList().hashCode();
+    }
+    if (hasMinCpuPlatform()) {
+      hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
+      hash = (53 * hash) + getMinCpuPlatform().hashCode();
     }
     if (hasRank()) {
       hash = (37 * hash) + RANK_FIELD_NUMBER;
@@ -436,7 +616,15 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (disksBuilder_ == null) {
+        disks_ = java.util.Collections.emptyList();
+      } else {
+        disks_ = null;
+        disksBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
       machineTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      minCpuPlatform_ = "";
       rank_ = 0;
       return this;
     }
@@ -475,6 +663,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
           result =
               new com.google.cloud.compute.v1
                   .InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -482,18 +671,36 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       return result;
     }
 
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection
+            result) {
+      if (disksBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          disks_ = java.util.Collections.unmodifiableList(disks_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.disks_ = disks_;
+      } else {
+        result.disks_ = disksBuilder_.build();
+      }
+    }
+
     private void buildPartial0(
         com.google.cloud.compute.v1.InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection
             result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         machineTypes_.makeImmutable();
         result.machineTypes_ = machineTypes_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.rank_ = rank_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.minCpuPlatform_ = minCpuPlatform_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rank_ = rank_;
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -521,14 +728,46 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
           == com.google.cloud.compute.v1
               .InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelection.getDefaultInstance())
         return this;
+      if (disksBuilder_ == null) {
+        if (!other.disks_.isEmpty()) {
+          if (disks_.isEmpty()) {
+            disks_ = other.disks_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureDisksIsMutable();
+            disks_.addAll(other.disks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.disks_.isEmpty()) {
+          if (disksBuilder_.isEmpty()) {
+            disksBuilder_.dispose();
+            disksBuilder_ = null;
+            disks_ = other.disks_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            disksBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetDisksFieldBuilder()
+                    : null;
+          } else {
+            disksBuilder_.addAllMessages(other.disks_);
+          }
+        }
+      }
       if (!other.machineTypes_.isEmpty()) {
         if (machineTypes_.isEmpty()) {
           machineTypes_ = other.machineTypes_;
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         } else {
           ensureMachineTypesIsMutable();
           machineTypes_.addAll(other.machineTypes_);
         }
+        onChanged();
+      }
+      if (other.hasMinCpuPlatform()) {
+        minCpuPlatform_ = other.minCpuPlatform_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasRank()) {
@@ -563,7 +802,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
             case 27943264:
               {
                 rank_ = input.readInt32();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 27943264
             case 637760522:
@@ -573,6 +812,25 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
                 machineTypes_.add(s);
                 break;
               } // case 637760522
+            case 764752818:
+              {
+                com.google.cloud.compute.v1.AttachedDisk m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.AttachedDisk.parser(), extensionRegistry);
+                if (disksBuilder_ == null) {
+                  ensureDisksIsMutable();
+                  disks_.add(m);
+                } else {
+                  disksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 764752818
+            case 1943302074:
+              {
+                minCpuPlatform_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 1943302074
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -592,6 +850,389 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
 
     private int bitField0_;
 
+    private java.util.List<com.google.cloud.compute.v1.AttachedDisk> disks_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDisksIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        disks_ = new java.util.ArrayList<com.google.cloud.compute.v1.AttachedDisk>(disks_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.AttachedDisk,
+            com.google.cloud.compute.v1.AttachedDisk.Builder,
+            com.google.cloud.compute.v1.AttachedDiskOrBuilder>
+        disksBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.AttachedDisk> getDisksList() {
+      if (disksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(disks_);
+      } else {
+        return disksBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public int getDisksCount() {
+      if (disksBuilder_ == null) {
+        return disks_.size();
+      } else {
+        return disksBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public com.google.cloud.compute.v1.AttachedDisk getDisks(int index) {
+      if (disksBuilder_ == null) {
+        return disks_.get(index);
+      } else {
+        return disksBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public Builder setDisks(int index, com.google.cloud.compute.v1.AttachedDisk value) {
+      if (disksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisksIsMutable();
+        disks_.set(index, value);
+        onChanged();
+      } else {
+        disksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public Builder setDisks(
+        int index, com.google.cloud.compute.v1.AttachedDisk.Builder builderForValue) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        disksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public Builder addDisks(com.google.cloud.compute.v1.AttachedDisk value) {
+      if (disksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisksIsMutable();
+        disks_.add(value);
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public Builder addDisks(int index, com.google.cloud.compute.v1.AttachedDisk value) {
+      if (disksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisksIsMutable();
+        disks_.add(index, value);
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public Builder addDisks(com.google.cloud.compute.v1.AttachedDisk.Builder builderForValue) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public Builder addDisks(
+        int index, com.google.cloud.compute.v1.AttachedDisk.Builder builderForValue) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public Builder addAllDisks(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.AttachedDisk> values) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, disks_);
+        onChanged();
+      } else {
+        disksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public Builder clearDisks() {
+      if (disksBuilder_ == null) {
+        disks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        disksBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public Builder removeDisks(int index) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.remove(index);
+        onChanged();
+      } else {
+        disksBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public com.google.cloud.compute.v1.AttachedDisk.Builder getDisksBuilder(int index) {
+      return internalGetDisksFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public com.google.cloud.compute.v1.AttachedDiskOrBuilder getDisksOrBuilder(int index) {
+      if (disksBuilder_ == null) {
+        return disks_.get(index);
+      } else {
+        return disksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public java.util.List<? extends com.google.cloud.compute.v1.AttachedDiskOrBuilder>
+        getDisksOrBuilderList() {
+      if (disksBuilder_ != null) {
+        return disksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(disks_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public com.google.cloud.compute.v1.AttachedDisk.Builder addDisksBuilder() {
+      return internalGetDisksFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.AttachedDisk.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public com.google.cloud.compute.v1.AttachedDisk.Builder addDisksBuilder(int index) {
+      return internalGetDisksFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.AttachedDisk.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List of disks to be attached to the instances created from this
+     * selection.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AttachedDisk disks = 95594102;</code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.AttachedDisk.Builder> getDisksBuilderList() {
+      return internalGetDisksFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.AttachedDisk,
+            com.google.cloud.compute.v1.AttachedDisk.Builder,
+            com.google.cloud.compute.v1.AttachedDiskOrBuilder>
+        internalGetDisksFieldBuilder() {
+      if (disksBuilder_ == null) {
+        disksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.compute.v1.AttachedDisk,
+                com.google.cloud.compute.v1.AttachedDisk.Builder,
+                com.google.cloud.compute.v1.AttachedDiskOrBuilder>(
+                disks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        disks_ = null;
+      }
+      return disksBuilder_;
+    }
+
     private com.google.protobuf.LazyStringArrayList machineTypes_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -599,7 +1240,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       if (!machineTypes_.isModifiable()) {
         machineTypes_ = new com.google.protobuf.LazyStringArrayList(machineTypes_);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
     }
 
     /**
@@ -684,7 +1325,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       }
       ensureMachineTypesIsMutable();
       machineTypes_.set(index, value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -707,7 +1348,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       }
       ensureMachineTypesIsMutable();
       machineTypes_.add(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -727,7 +1368,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     public Builder addAllMachineTypes(java.lang.Iterable<java.lang.String> values) {
       ensureMachineTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, machineTypes_);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -745,7 +1386,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
      */
     public Builder clearMachineTypes() {
       machineTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       ;
       onChanged();
       return this;
@@ -770,7 +1411,139 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
       checkByteStringIsUtf8(value);
       ensureMachineTypesIsMutable();
       machineTypes_.add(value);
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object minCpuPlatform_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the minimum CPU platform to be used by this instance selection.
+     * e.g. 'Intel Ice Lake'.
+     * </pre>
+     *
+     * <code>optional string min_cpu_platform = 242912759;</code>
+     *
+     * @return Whether the minCpuPlatform field is set.
+     */
+    public boolean hasMinCpuPlatform() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the minimum CPU platform to be used by this instance selection.
+     * e.g. 'Intel Ice Lake'.
+     * </pre>
+     *
+     * <code>optional string min_cpu_platform = 242912759;</code>
+     *
+     * @return The minCpuPlatform.
+     */
+    public java.lang.String getMinCpuPlatform() {
+      java.lang.Object ref = minCpuPlatform_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        minCpuPlatform_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the minimum CPU platform to be used by this instance selection.
+     * e.g. 'Intel Ice Lake'.
+     * </pre>
+     *
+     * <code>optional string min_cpu_platform = 242912759;</code>
+     *
+     * @return The bytes for minCpuPlatform.
+     */
+    public com.google.protobuf.ByteString getMinCpuPlatformBytes() {
+      java.lang.Object ref = minCpuPlatform_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        minCpuPlatform_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the minimum CPU platform to be used by this instance selection.
+     * e.g. 'Intel Ice Lake'.
+     * </pre>
+     *
+     * <code>optional string min_cpu_platform = 242912759;</code>
+     *
+     * @param value The minCpuPlatform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinCpuPlatform(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      minCpuPlatform_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the minimum CPU platform to be used by this instance selection.
+     * e.g. 'Intel Ice Lake'.
+     * </pre>
+     *
+     * <code>optional string min_cpu_platform = 242912759;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMinCpuPlatform() {
+      minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the minimum CPU platform to be used by this instance selection.
+     * e.g. 'Intel Ice Lake'.
+     * </pre>
+     *
+     * <code>optional string min_cpu_platform = 242912759;</code>
+     *
+     * @param value The bytes for minCpuPlatform to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinCpuPlatformBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      minCpuPlatform_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -794,7 +1567,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
      */
     @java.lang.Override
     public boolean hasRank() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -836,7 +1609,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
     public Builder setRank(int value) {
 
       rank_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -857,7 +1630,7 @@ public final class InstanceGroupManagerInstanceFlexibilityPolicyInstanceSelectio
      * @return This builder for chaining.
      */
     public Builder clearRank() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       rank_ = 0;
       onChanged();
       return this;

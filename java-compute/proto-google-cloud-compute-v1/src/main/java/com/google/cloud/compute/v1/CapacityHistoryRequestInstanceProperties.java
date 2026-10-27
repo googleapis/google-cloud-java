@@ -54,6 +54,8 @@ public final class CapacityHistoryRequestInstanceProperties
   }
 
   private CapacityHistoryRequestInstanceProperties() {
+    disks_ = java.util.Collections.emptyList();
+    guestAccelerators_ = java.util.Collections.emptyList();
     machineType_ = "";
   }
 
@@ -73,6 +75,183 @@ public final class CapacityHistoryRequestInstanceProperties
   }
 
   private int bitField0_;
+  public static final int DISKS_FIELD_NUMBER = 95594102;
+
+  @SuppressWarnings("serial")
+  private java.util.List<
+          com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk>
+      disks_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Local SSDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk>
+      getDisksList() {
+    return disks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Local SSDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends
+              com.google.cloud.compute.v1
+                  .CapacityHistoryRequestInstancePropertiesAttachedDiskOrBuilder>
+      getDisksOrBuilderList() {
+    return disks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Local SSDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+   * </code>
+   */
+  @java.lang.Override
+  public int getDisksCount() {
+    return disks_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Local SSDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk getDisks(
+      int index) {
+    return disks_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Local SSDs.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDiskOrBuilder
+      getDisksOrBuilder(int index) {
+    return disks_.get(index);
+  }
+
+  public static final int GUEST_ACCELERATORS_FIELD_NUMBER = 463595119;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> guestAccelerators_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList() {
+    return guestAccelerators_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
+      getGuestAcceleratorsOrBuilderList() {
+    return guestAccelerators_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * </code>
+   */
+  @java.lang.Override
+  public int getGuestAcceleratorsCount() {
+    return guestAccelerators_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index) {
+    return guestAccelerators_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators configuration.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getGuestAcceleratorsOrBuilder(
+      int index) {
+    return guestAccelerators_.get(index);
+  }
+
   public static final int MACHINE_TYPE_FIELD_NUMBER = 227711026;
 
   @SuppressWarnings("serial")
@@ -220,11 +399,17 @@ public final class CapacityHistoryRequestInstanceProperties
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < disks_.size(); i++) {
+      output.writeMessage(95594102, disks_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 227711026, machineType_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(386688404, getScheduling());
+    }
+    for (int i = 0; i < guestAccelerators_.size(); i++) {
+      output.writeMessage(463595119, guestAccelerators_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -235,11 +420,19 @@ public final class CapacityHistoryRequestInstanceProperties
     if (size != -1) return size;
 
     size = 0;
+    for (int i = 0; i < disks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(95594102, disks_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(227711026, machineType_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(386688404, getScheduling());
+    }
+    for (int i = 0; i < guestAccelerators_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              463595119, guestAccelerators_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -257,6 +450,8 @@ public final class CapacityHistoryRequestInstanceProperties
     com.google.cloud.compute.v1.CapacityHistoryRequestInstanceProperties other =
         (com.google.cloud.compute.v1.CapacityHistoryRequestInstanceProperties) obj;
 
+    if (!getDisksList().equals(other.getDisksList())) return false;
+    if (!getGuestAcceleratorsList().equals(other.getGuestAcceleratorsList())) return false;
     if (hasMachineType() != other.hasMachineType()) return false;
     if (hasMachineType()) {
       if (!getMachineType().equals(other.getMachineType())) return false;
@@ -276,6 +471,14 @@ public final class CapacityHistoryRequestInstanceProperties
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getDisksCount() > 0) {
+      hash = (37 * hash) + DISKS_FIELD_NUMBER;
+      hash = (53 * hash) + getDisksList().hashCode();
+    }
+    if (getGuestAcceleratorsCount() > 0) {
+      hash = (37 * hash) + GUEST_ACCELERATORS_FIELD_NUMBER;
+      hash = (53 * hash) + getGuestAcceleratorsList().hashCode();
+    }
     if (hasMachineType()) {
       hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getMachineType().hashCode();
@@ -428,6 +631,8 @@ public final class CapacityHistoryRequestInstanceProperties
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetDisksFieldBuilder();
+        internalGetGuestAcceleratorsFieldBuilder();
         internalGetSchedulingFieldBuilder();
       }
     }
@@ -436,6 +641,20 @@ public final class CapacityHistoryRequestInstanceProperties
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (disksBuilder_ == null) {
+        disks_ = java.util.Collections.emptyList();
+      } else {
+        disks_ = null;
+        disksBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000001);
+      if (guestAcceleratorsBuilder_ == null) {
+        guestAccelerators_ = java.util.Collections.emptyList();
+      } else {
+        guestAccelerators_ = null;
+        guestAcceleratorsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       machineType_ = "";
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
@@ -471,6 +690,7 @@ public final class CapacityHistoryRequestInstanceProperties
     public com.google.cloud.compute.v1.CapacityHistoryRequestInstanceProperties buildPartial() {
       com.google.cloud.compute.v1.CapacityHistoryRequestInstanceProperties result =
           new com.google.cloud.compute.v1.CapacityHistoryRequestInstanceProperties(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -478,15 +698,37 @@ public final class CapacityHistoryRequestInstanceProperties
       return result;
     }
 
+    private void buildPartialRepeatedFields(
+        com.google.cloud.compute.v1.CapacityHistoryRequestInstanceProperties result) {
+      if (disksBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          disks_ = java.util.Collections.unmodifiableList(disks_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.disks_ = disks_;
+      } else {
+        result.disks_ = disksBuilder_.build();
+      }
+      if (guestAcceleratorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          guestAccelerators_ = java.util.Collections.unmodifiableList(guestAccelerators_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.guestAccelerators_ = guestAccelerators_;
+      } else {
+        result.guestAccelerators_ = guestAcceleratorsBuilder_.build();
+      }
+    }
+
     private void buildPartial0(
         com.google.cloud.compute.v1.CapacityHistoryRequestInstanceProperties result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.machineType_ = machineType_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
@@ -509,9 +751,63 @@ public final class CapacityHistoryRequestInstanceProperties
       if (other
           == com.google.cloud.compute.v1.CapacityHistoryRequestInstanceProperties
               .getDefaultInstance()) return this;
+      if (disksBuilder_ == null) {
+        if (!other.disks_.isEmpty()) {
+          if (disks_.isEmpty()) {
+            disks_ = other.disks_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureDisksIsMutable();
+            disks_.addAll(other.disks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.disks_.isEmpty()) {
+          if (disksBuilder_.isEmpty()) {
+            disksBuilder_.dispose();
+            disksBuilder_ = null;
+            disks_ = other.disks_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            disksBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetDisksFieldBuilder()
+                    : null;
+          } else {
+            disksBuilder_.addAllMessages(other.disks_);
+          }
+        }
+      }
+      if (guestAcceleratorsBuilder_ == null) {
+        if (!other.guestAccelerators_.isEmpty()) {
+          if (guestAccelerators_.isEmpty()) {
+            guestAccelerators_ = other.guestAccelerators_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureGuestAcceleratorsIsMutable();
+            guestAccelerators_.addAll(other.guestAccelerators_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.guestAccelerators_.isEmpty()) {
+          if (guestAcceleratorsBuilder_.isEmpty()) {
+            guestAcceleratorsBuilder_.dispose();
+            guestAcceleratorsBuilder_ = null;
+            guestAccelerators_ = other.guestAccelerators_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            guestAcceleratorsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetGuestAcceleratorsFieldBuilder()
+                    : null;
+          } else {
+            guestAcceleratorsBuilder_.addAllMessages(other.guestAccelerators_);
+          }
+        }
+      }
       if (other.hasMachineType()) {
         machineType_ = other.machineType_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasScheduling()) {
@@ -543,19 +839,47 @@ public final class CapacityHistoryRequestInstanceProperties
             case 0:
               done = true;
               break;
+            case 764752818:
+              {
+                com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1
+                            .CapacityHistoryRequestInstancePropertiesAttachedDisk.parser(),
+                        extensionRegistry);
+                if (disksBuilder_ == null) {
+                  ensureDisksIsMutable();
+                  disks_.add(m);
+                } else {
+                  disksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 764752818
             case 1821688210:
               {
                 machineType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 1821688210
             case -1201460062:
               {
                 input.readMessage(
                     internalGetSchedulingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1201460062
+            case -586206342:
+              {
+                com.google.cloud.compute.v1.AcceleratorConfig m =
+                    input.readMessage(
+                        com.google.cloud.compute.v1.AcceleratorConfig.parser(), extensionRegistry);
+                if (guestAcceleratorsBuilder_ == null) {
+                  ensureGuestAcceleratorsIsMutable();
+                  guestAccelerators_.add(m);
+                } else {
+                  guestAcceleratorsBuilder_.addMessage(m);
+                }
+                break;
+              } // case -586206342
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -575,6 +899,846 @@ public final class CapacityHistoryRequestInstanceProperties
 
     private int bitField0_;
 
+    private java.util.List<
+            com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk>
+        disks_ = java.util.Collections.emptyList();
+
+    private void ensureDisksIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        disks_ =
+            new java.util.ArrayList<
+                com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk>(
+                disks_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk,
+            com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk
+                .Builder,
+            com.google.cloud.compute.v1
+                .CapacityHistoryRequestInstancePropertiesAttachedDiskOrBuilder>
+        disksBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk>
+        getDisksList() {
+      if (disksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(disks_);
+      } else {
+        return disksBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public int getDisksCount() {
+      if (disksBuilder_ == null) {
+        return disks_.size();
+      } else {
+        return disksBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk
+        getDisks(int index) {
+      if (disksBuilder_ == null) {
+        return disks_.get(index);
+      } else {
+        return disksBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public Builder setDisks(
+        int index,
+        com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk value) {
+      if (disksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisksIsMutable();
+        disks_.set(index, value);
+        onChanged();
+      } else {
+        disksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public Builder setDisks(
+        int index,
+        com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk.Builder
+            builderForValue) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        disksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public Builder addDisks(
+        com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk value) {
+      if (disksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisksIsMutable();
+        disks_.add(value);
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public Builder addDisks(
+        int index,
+        com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk value) {
+      if (disksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisksIsMutable();
+        disks_.add(index, value);
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public Builder addDisks(
+        com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk.Builder
+            builderForValue) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public Builder addDisks(
+        int index,
+        com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk.Builder
+            builderForValue) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public Builder addAllDisks(
+        java.lang.Iterable<
+                ? extends
+                    com.google.cloud.compute.v1
+                        .CapacityHistoryRequestInstancePropertiesAttachedDisk>
+            values) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, disks_);
+        onChanged();
+      } else {
+        disksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public Builder clearDisks() {
+      if (disksBuilder_ == null) {
+        disks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        disksBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public Builder removeDisks(int index) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.remove(index);
+        onChanged();
+      } else {
+        disksBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk.Builder
+        getDisksBuilder(int index) {
+      return internalGetDisksFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDiskOrBuilder
+        getDisksOrBuilder(int index) {
+      if (disksBuilder_ == null) {
+        return disks_.get(index);
+      } else {
+        return disksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public java.util.List<
+            ? extends
+                com.google.cloud.compute.v1
+                    .CapacityHistoryRequestInstancePropertiesAttachedDiskOrBuilder>
+        getDisksOrBuilderList() {
+      if (disksBuilder_ != null) {
+        return disksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(disks_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk.Builder
+        addDisksBuilder() {
+      return internalGetDisksFieldBuilder()
+          .addBuilder(
+              com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk.Builder
+        addDisksBuilder(int index) {
+      return internalGetDisksFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Local SSDs.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk disks = 95594102;
+     * </code>
+     */
+    public java.util.List<
+            com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk
+                .Builder>
+        getDisksBuilderList() {
+      return internalGetDisksFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk,
+            com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk
+                .Builder,
+            com.google.cloud.compute.v1
+                .CapacityHistoryRequestInstancePropertiesAttachedDiskOrBuilder>
+        internalGetDisksFieldBuilder() {
+      if (disksBuilder_ == null) {
+        disksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk,
+                com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesAttachedDisk
+                    .Builder,
+                com.google.cloud.compute.v1
+                    .CapacityHistoryRequestInstancePropertiesAttachedDiskOrBuilder>(
+                disks_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        disks_ = null;
+      }
+      return disksBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> guestAccelerators_ =
+        java.util.Collections.emptyList();
+
+    private void ensureGuestAcceleratorsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        guestAccelerators_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.AcceleratorConfig>(
+                guestAccelerators_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.AcceleratorConfig,
+            com.google.cloud.compute.v1.AcceleratorConfig.Builder,
+            com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
+        guestAcceleratorsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig>
+        getGuestAcceleratorsList() {
+      if (guestAcceleratorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(guestAccelerators_);
+      } else {
+        return guestAcceleratorsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public int getGuestAcceleratorsCount() {
+      if (guestAcceleratorsBuilder_ == null) {
+        return guestAccelerators_.size();
+      } else {
+        return guestAcceleratorsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index) {
+      if (guestAcceleratorsBuilder_ == null) {
+        return guestAccelerators_.get(index);
+      } else {
+        return guestAcceleratorsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public Builder setGuestAccelerators(
+        int index, com.google.cloud.compute.v1.AcceleratorConfig value) {
+      if (guestAcceleratorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGuestAcceleratorsIsMutable();
+        guestAccelerators_.set(index, value);
+        onChanged();
+      } else {
+        guestAcceleratorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public Builder setGuestAccelerators(
+        int index, com.google.cloud.compute.v1.AcceleratorConfig.Builder builderForValue) {
+      if (guestAcceleratorsBuilder_ == null) {
+        ensureGuestAcceleratorsIsMutable();
+        guestAccelerators_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        guestAcceleratorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public Builder addGuestAccelerators(com.google.cloud.compute.v1.AcceleratorConfig value) {
+      if (guestAcceleratorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGuestAcceleratorsIsMutable();
+        guestAccelerators_.add(value);
+        onChanged();
+      } else {
+        guestAcceleratorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public Builder addGuestAccelerators(
+        int index, com.google.cloud.compute.v1.AcceleratorConfig value) {
+      if (guestAcceleratorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureGuestAcceleratorsIsMutable();
+        guestAccelerators_.add(index, value);
+        onChanged();
+      } else {
+        guestAcceleratorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public Builder addGuestAccelerators(
+        com.google.cloud.compute.v1.AcceleratorConfig.Builder builderForValue) {
+      if (guestAcceleratorsBuilder_ == null) {
+        ensureGuestAcceleratorsIsMutable();
+        guestAccelerators_.add(builderForValue.build());
+        onChanged();
+      } else {
+        guestAcceleratorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public Builder addGuestAccelerators(
+        int index, com.google.cloud.compute.v1.AcceleratorConfig.Builder builderForValue) {
+      if (guestAcceleratorsBuilder_ == null) {
+        ensureGuestAcceleratorsIsMutable();
+        guestAccelerators_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        guestAcceleratorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public Builder addAllGuestAccelerators(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.AcceleratorConfig> values) {
+      if (guestAcceleratorsBuilder_ == null) {
+        ensureGuestAcceleratorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, guestAccelerators_);
+        onChanged();
+      } else {
+        guestAcceleratorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public Builder clearGuestAccelerators() {
+      if (guestAcceleratorsBuilder_ == null) {
+        guestAccelerators_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        guestAcceleratorsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public Builder removeGuestAccelerators(int index) {
+      if (guestAcceleratorsBuilder_ == null) {
+        ensureGuestAcceleratorsIsMutable();
+        guestAccelerators_.remove(index);
+        onChanged();
+      } else {
+        guestAcceleratorsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.AcceleratorConfig.Builder getGuestAcceleratorsBuilder(
+        int index) {
+      return internalGetGuestAcceleratorsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getGuestAcceleratorsOrBuilder(
+        int index) {
+      if (guestAcceleratorsBuilder_ == null) {
+        return guestAccelerators_.get(index);
+      } else {
+        return guestAcceleratorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
+        getGuestAcceleratorsOrBuilderList() {
+      if (guestAcceleratorsBuilder_ != null) {
+        return guestAcceleratorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(guestAccelerators_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.AcceleratorConfig.Builder addGuestAcceleratorsBuilder() {
+      return internalGetGuestAcceleratorsFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.AcceleratorConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.AcceleratorConfig.Builder addGuestAcceleratorsBuilder(
+        int index) {
+      return internalGetGuestAcceleratorsFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.AcceleratorConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accelerators configuration.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig.Builder>
+        getGuestAcceleratorsBuilderList() {
+      return internalGetGuestAcceleratorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.compute.v1.AcceleratorConfig,
+            com.google.cloud.compute.v1.AcceleratorConfig.Builder,
+            com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
+        internalGetGuestAcceleratorsFieldBuilder() {
+      if (guestAcceleratorsBuilder_ == null) {
+        guestAcceleratorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.compute.v1.AcceleratorConfig,
+                com.google.cloud.compute.v1.AcceleratorConfig.Builder,
+                com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>(
+                guestAccelerators_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        guestAccelerators_ = null;
+      }
+      return guestAcceleratorsBuilder_;
+    }
+
     private java.lang.Object machineType_ = "";
 
     /**
@@ -589,7 +1753,7 @@ public final class CapacityHistoryRequestInstanceProperties
      * @return Whether the machineType field is set.
      */
     public boolean hasMachineType() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -655,7 +1819,7 @@ public final class CapacityHistoryRequestInstanceProperties
         throw new NullPointerException();
       }
       machineType_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -673,7 +1837,7 @@ public final class CapacityHistoryRequestInstanceProperties
      */
     public Builder clearMachineType() {
       machineType_ = getDefaultInstance().getMachineType();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -696,7 +1860,7 @@ public final class CapacityHistoryRequestInstanceProperties
       }
       checkByteStringIsUtf8(value);
       machineType_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -723,7 +1887,7 @@ public final class CapacityHistoryRequestInstanceProperties
      * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -772,7 +1936,7 @@ public final class CapacityHistoryRequestInstanceProperties
       } else {
         schedulingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -796,7 +1960,7 @@ public final class CapacityHistoryRequestInstanceProperties
       } else {
         schedulingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -815,7 +1979,7 @@ public final class CapacityHistoryRequestInstanceProperties
     public Builder mergeScheduling(
         com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesScheduling value) {
       if (schedulingBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && scheduling_ != null
             && scheduling_
                 != com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesScheduling
@@ -828,7 +1992,7 @@ public final class CapacityHistoryRequestInstanceProperties
         schedulingBuilder_.mergeFrom(value);
       }
       if (scheduling_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -846,7 +2010,7 @@ public final class CapacityHistoryRequestInstanceProperties
      * </code>
      */
     public Builder clearScheduling() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
         schedulingBuilder_.dispose();
@@ -869,7 +2033,7 @@ public final class CapacityHistoryRequestInstanceProperties
      */
     public com.google.cloud.compute.v1.CapacityHistoryRequestInstancePropertiesScheduling.Builder
         getSchedulingBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetSchedulingFieldBuilder().getBuilder();
     }

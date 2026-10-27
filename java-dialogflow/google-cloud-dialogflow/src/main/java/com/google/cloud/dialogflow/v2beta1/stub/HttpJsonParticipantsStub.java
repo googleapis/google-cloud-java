@@ -49,6 +49,8 @@ import com.google.cloud.dialogflow.v2beta1.ListSuggestionsResponse;
 import com.google.cloud.dialogflow.v2beta1.Participant;
 import com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest;
 import com.google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentResponse;
+import com.google.cloud.dialogflow.v2beta1.StreamingReactiveCompanionSuggestionsRequest;
+import com.google.cloud.dialogflow.v2beta1.StreamingReactiveCompanionSuggestionsResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest;
 import com.google.cloud.dialogflow.v2beta1.SuggestArticlesResponse;
 import com.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest;
@@ -991,6 +993,16 @@ public class HttpJsonParticipantsStub extends ParticipantsStub {
     throw new UnsupportedOperationException(
         "Not implemented: streamingAnalyzeContentCallable(). REST transport is not implemented for"
             + " this method yet.");
+  }
+
+  @Override
+  public BidiStreamingCallable<
+          StreamingReactiveCompanionSuggestionsRequest,
+          StreamingReactiveCompanionSuggestionsResponse>
+      streamingReactiveCompanionSuggestionsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamingReactiveCompanionSuggestionsCallable(). REST transport is not"
+            + " implemented for this method yet.");
   }
 
   @Override

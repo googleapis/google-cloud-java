@@ -17,7 +17,7 @@ To use it in Maven, add the following to your POM:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.88.0</version>
+      <version>26.91.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -42,7 +42,7 @@ The content of the Libraries BOM consists of 2 categories:
 This is the table of modules included in the latest libraries-bom release:
 
 <!--- {x-version-update-start:libraries-bom:released} -->
-### libraries-bom: v<version>26.88.0</version>
+### libraries-bom: v<version>26.91.0</version>
 <!--- {x-version-update-end} -->
 
 <!-- TABLE_START -->
@@ -53,7 +53,6 @@ This is the table of modules included in the latest libraries-bom release:
 | gax | Runtime | [2.83.0](https://cloud.google.com/java/docs/reference/gax/latest/overview) | N/A |
 | google-analytics-admin | Product | [0.105.0](https://cloud.google.com/java/docs/reference/google-analytics-admin/latest/overview) | [Analytics Admin](https://developers.google.com/analytics) |
 | google-analytics-data | Product | [0.106.0](https://cloud.google.com/java/docs/reference/google-analytics-data/latest/overview) | [Analytics Data](https://developers.google.com/analytics/trusted-testing/analytics-data) |
-| google-area120-tables | Product | [0.99.0](https://cloud.google.com/java/docs/reference/google-area120-tables/latest/overview) | [Area 120 Tables](https://area120.google.com/) |
 | google-auth-library-cab-token-generator | Product | [1.50.0](https://cloud.google.com/java/docs/reference/google-auth-library-cab-token-generator/latest/overview) | N/A |
 | google-auth-library | Runtime | [1.50.0](https://cloud.google.com/java/docs/reference/google-auth-library/latest/overview) | [Google Auth Library](n/a) |
 | google-cloud-accessapproval | Product | [2.96.0](https://cloud.google.com/java/docs/reference/google-cloud-accessapproval/latest/overview) | [Access Approval](https://cloud.google.com/access-approval/docs/) |
@@ -75,7 +74,6 @@ This is the table of modules included in the latest libraries-bom release:
 | google-cloud-asset | Product | [3.99.0](https://cloud.google.com/java/docs/reference/google-cloud-asset/latest/overview) | [Cloud Asset Inventory](https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview) |
 | google-cloud-assured-workloads | Product | [2.95.0](https://cloud.google.com/java/docs/reference/google-cloud-assured-workloads/latest/overview) | [Assured Workloads for Government](https://cloud.google.com/assured-workloads/) |
 | google-cloud-auditmanager | Product | [0.13.0](https://cloud.google.com/java/docs/reference/google-cloud-auditmanager/latest/overview) | N/A |
-| google-cloud-automl | Product | [2.95.0](https://cloud.google.com/java/docs/reference/google-cloud-automl/latest/overview) | [Cloud Auto ML](https://cloud.google.com/automl/docs/) |
 | google-cloud-backstory | Product | [0.3.0](https://cloud.google.com/java/docs/reference/google-cloud-backstory/latest/overview) | N/A |
 | google-cloud-backupdr | Product | [0.54.0](https://cloud.google.com/java/docs/reference/google-cloud-backupdr/latest/overview) | N/A |
 | google-cloud-bare-metal-solution | Product | [0.95.0](https://cloud.google.com/java/docs/reference/google-cloud-bare-metal-solution/latest/overview) | [Bare Metal Solution](https://cloud.google.com/bare-metal/docs) |

@@ -56,14 +56,14 @@ public final class NetworkConfigProto extends com.google.protobuf.GeneratedFile 
       "\n-google/cloud/eventarc/v1/network_confi"
           + "g.proto\022\030google.cloud.eventarc.v1\032\037googl"
           + "e/api/field_behavior.proto\032\031google/api/r"
-          + "esource.proto\"]\n\rNetworkConfig\022L\n\022networ"
-          + "k_attachment\030\001 \001(\tB0\340A\002\372A*\n(compute.goog"
-          + "leapis.com/NetworkAttachmentB\302\001\n\034com.goo"
-          + "gle.cloud.eventarc.v1B\022NetworkConfigProt"
-          + "oP\001Z8cloud.google.com/go/eventarc/apiv1/"
-          + "eventarcpb;eventarcpb\252\002\030Google.Cloud.Eve"
-          + "ntarc.V1\312\002\030Google\\Cloud\\Eventarc\\V1\352\002\033Go"
-          + "ogle::Cloud::Eventarc::V1b\006proto3"
+          + "esource.proto\"^\n\rNetworkConfig\022M\n\022networ"
+          + "k_attachment\030\001 \001(\tB1\342A\001\002\372A*\n(compute.goo"
+          + "gleapis.com/NetworkAttachmentB\302\001\n\034com.go"
+          + "ogle.cloud.eventarc.v1B\022NetworkConfigPro"
+          + "toP\001Z8cloud.google.com/go/eventarc/apiv1"
+          + "/eventarcpb;eventarcpb\252\002\030Google.Cloud.Ev"
+          + "entarc.V1\312\002\030Google\\Cloud\\Eventarc\\V1\352\002\033G"
+          + "oogle::Cloud::Eventarc::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

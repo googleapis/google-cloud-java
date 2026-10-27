@@ -21,18 +21,44 @@ import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import java.math.BigInteger;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Locale;
 
 class BigQueryParameterHandler {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryParameterHandler.class.getName());
   private final int parametersArraySize;
   private final boolean enableTimestampPicos;
   final ArrayList<BigQueryJdbcParameter> parametersList;
-  private long highestIndex = 0;
+  // TIMESTAMP is rendered in UTC with a trailing 'Z': the instant is preserved, the output does not
+  // depend on the JVM zone, and QueryParameterValue's validator accepts 'Z' but rejects "-05:00".
+  // Locale.ROOT marks these as wire formats; the patterns are numeric-only, so it is a guard, not
+  // a fix.
+  private static final DateTimeFormatter TIMESTAMP_MICROS_UTC =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSXXX", Locale.ROOT);
+  private static final DateTimeFormatter TIMESTAMP_NANOS_UTC =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSSSSXXX", Locale.ROOT);
+  // DATETIME is a zone-less wall clock; the validator requires six fraction digits and no offset.
+  private static final DateTimeFormatter DATETIME_MICROS =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS", Locale.ROOT);
+
+  /** Wall-clock digits for DATETIME (read as UTC if sent to TIMESTAMP). Nanos are truncated. */
+  static String formatDateTimeDigits(LocalDateTime value) {
+    return DATETIME_MICROS.format(value);
+  }
 
   BigQueryParameterHandler(int parameterCount) {
     this(parameterCount, false);
@@ -64,24 +90,28 @@ class BigQueryParameterHandler {
   QueryJobConfiguration.Builder configureParameters(
       QueryJobConfiguration.Builder jobConfigurationBuilder) throws SQLException {
     LOG.finest("++enter++");
-    try {
-      for (int i = 1; i <= this.parametersArraySize; i++) {
+    for (int i = 1; i <= this.parametersArraySize; i++) {
 
-        Object parameterValue = getParameter(i);
-        StandardSQLTypeName sqlType = getSqlType(i);
-        parameterValue =
-            formatValueForQueryParameter(parameterValue, sqlType, this.enableTimestampPicos);
-        LOG.finest(
-            "Parameter %s of type %s at index %s added to QueryJobConfiguration",
-            parameterValue, sqlType, i);
-        jobConfigurationBuilder.addPositionalParameter(
-            QueryParameterValue.of(parameterValue, sqlType));
+      int arrayIndex = i - 1;
+      if (this.parametersList.size() <= arrayIndex
+          || this.parametersList.get(arrayIndex) == null
+          || !this.parametersList.get(arrayIndex).isBound()) {
+        throw new BigQueryJdbcException(
+            String.format(
+                "One or more parameters missing in Prepared statement. No value was set for"
+                    + " parameter %d of %d.",
+                i, this.parametersArraySize));
       }
-    } catch (NullPointerException e) {
-      LOG.severe("Null parameter mapping encountered.", e);
-      if (e.getMessage().contains("Null type")) {
-        throw new BigQueryJdbcException("One or more parameters missing in Prepared statement.", e);
-      }
+
+      Object parameterValue = getParameter(i);
+      StandardSQLTypeName sqlType = getSqlType(i);
+      parameterValue =
+          formatValueForQueryParameter(parameterValue, sqlType, this.enableTimestampPicos);
+      LOG.finest(
+          "Parameter %s of type %s at index %s added to QueryJobConfiguration",
+          parameterValue, sqlType, i);
+      jobConfigurationBuilder.addPositionalParameter(
+          QueryParameterValue.of(parameterValue, sqlType));
     }
     return jobConfigurationBuilder;
   }
@@ -100,16 +130,37 @@ class BigQueryParameterHandler {
     if (sqlType == StandardSQLTypeName.FLOAT64 && parameterValue instanceof Float) {
       return ((Number) parameterValue).doubleValue();
     }
-    if (parameterValue instanceof Timestamp) {
-      return formatTimestampParameter((Timestamp) parameterValue, enableTimestampPicos);
-    }
-    if (sqlType == StandardSQLTypeName.TIMESTAMP && parameterValue instanceof String) {
-      String str = ((String) parameterValue).trim();
-      if (str.length() > 10 && str.charAt(10) == 'T') {
-        str = str.substring(0, 10) + ' ' + str.substring(11);
+    if (sqlType == StandardSQLTypeName.TIMESTAMP) {
+      // Reduce to an Instant and render in UTC so digits and 'Z' can never disagree.
+      if (parameterValue instanceof Timestamp) {
+        return formatInstantUtc(((Timestamp) parameterValue).toInstant(), enableTimestampPicos);
       }
-      return BigQueryTemporalUtility.truncateFractionalSeconds(str, enableTimestampPicos ? 12 : 6);
+      if (parameterValue instanceof OffsetDateTime) {
+        return formatInstantUtc(
+            ((OffsetDateTime) parameterValue).toInstant(), enableTimestampPicos);
+      }
+      if (parameterValue instanceof ZonedDateTime) {
+        return formatInstantUtc(((ZonedDateTime) parameterValue).toInstant(), enableTimestampPicos);
+      }
+      if (parameterValue instanceof Instant) {
+        return formatInstantUtc((Instant) parameterValue, enableTimestampPicos);
+      }
+      if (parameterValue instanceof String) {
+        String str = ((String) parameterValue).trim();
+        if (str.length() > 10 && str.charAt(10) == 'T') {
+          str = str.substring(0, 10) + ' ' + str.substring(11);
+        }
+        return BigQueryTemporalUtility.truncateFractionalSeconds(
+            str, enableTimestampPicos ? 12 : 6);
+      }
     }
+
+    if (parameterValue instanceof Timestamp) {
+      // DATETIME slot: JVM-local wall-clock digits, six-digit fraction, no offset (prior
+      // behaviour).
+      return DATETIME_MICROS.format(((Timestamp) parameterValue).toLocalDateTime());
+    }
+
     if (parameterValue instanceof Time) {
       String timeStr = parameterValue.toString();
       if (timeStr.length() == 8) {
@@ -117,47 +168,90 @@ class BigQueryParameterHandler {
       }
       return timeStr;
     }
-    if (parameterValue instanceof java.sql.Date || parameterValue instanceof java.util.Date) {
+    if (parameterValue instanceof Date || parameterValue instanceof java.util.Date) {
       return parameterValue.toString();
     }
     return parameterValue;
   }
 
-  private static String formatTimestampParameter(Timestamp ts, boolean enableTimestampPicos) {
-    if (enableTimestampPicos) {
-      return ts.toString();
-    }
-    Timestamp copy = new Timestamp(ts.getTime());
-    copy.setNanos((ts.getNanos() / 1000) * 1000);
-    return copy.toString();
+  /** Renders an absolute instant as UTC wall-clock digits with a trailing 'Z'. */
+  private static String formatInstantUtc(Instant instant, boolean enableTimestampPicos) {
+    // Fixed-width 'S' truncates (does not round), matching the legacy nanos/1000*1000 behaviour.
+    return (enableTimestampPicos ? TIMESTAMP_NANOS_UTC : TIMESTAMP_MICROS_UTC)
+        .format(instant.atOffset(ZoneOffset.UTC));
   }
 
-  void setParameter(int parameterIndex, Object value, Class type)
-      throws BigQueryJdbcSqlFeatureNotSupportedException {
+  private BigQueryJdbcParameter getOrCreateParameter(int parameterIndex) {
+    int arrayIndex = parameterIndex - 1;
+    parametersList.ensureCapacity(parameterIndex);
+    while (parametersList.size() < parameterIndex) {
+      parametersList.add(null);
+    }
+    BigQueryJdbcParameter parameter = parametersList.get(arrayIndex);
+    if (parameter == null) {
+      parameter = new BigQueryJdbcParameter();
+      parameter.setIndex(parameterIndex);
+      parametersList.set(arrayIndex, parameter);
+    }
+    return parameter;
+  }
+
+  // A null still needs a type, since BigQuery rejects an untyped one. Preference order is the type
+  // the caller named, then the type a dry run inferred for this slot, then STRING.
+  void setNullParameter(int parameterIndex, Class<?> declaredJavaType) {
+    LOG.finest("++enter++");
+    checkValidIndex(parameterIndex);
+
+    BigQueryJdbcParameter parameter = getOrCreateParameter(parameterIndex);
+    Class<?> javaType = declaredJavaType;
+    StandardSQLTypeName sqlType;
+    if (javaType != null) {
+      // Keep the caller's class instead of round-tripping it through BigQuery, which would report
+      // an Integer back as a Long.
+      sqlType = BigQueryTypeRegistry.toBigQueryType(javaType);
+    } else {
+      sqlType = parameter.getSqlType();
+      if (sqlType == null) {
+        sqlType = StandardSQLTypeName.STRING;
+      }
+      javaType = BigQueryTypeRegistry.toJavaClass(sqlType);
+    }
+
+    parameter.setIndex(parameterIndex);
+    parameter.setValue(null);
+    parameter.bindType(javaType, sqlType);
+    parameter.setParamName("");
+    parameter.setParamType(BigQueryStatementParameterType.UNSPECIFIED);
+    parameter.setScale(-1);
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
+
+    LOG.finest("Parameter set { %s }", parameter.toString());
+  }
+
+  void setParameter(int parameterIndex, Object value, Class type) {
     LOG.finest("++enter++");
     LOG.finest("setParameter called by : %s", type.getName());
     checkValidIndex(parameterIndex);
 
-    int arrayIndex = parameterIndex - 1;
-    if (parameterIndex >= this.highestIndex || this.parametersList.get(arrayIndex) == null) {
-      parametersList.ensureCapacity(parameterIndex);
-      while (parametersList.size() < parameterIndex) {
-        parametersList.add(null);
-      }
-      parametersList.set(arrayIndex, new BigQueryJdbcParameter());
-    }
-    this.highestIndex = Math.max(parameterIndex, highestIndex);
-    BigQueryJdbcParameter parameter = parametersList.get(arrayIndex);
-
+    BigQueryJdbcParameter parameter = getOrCreateParameter(parameterIndex);
     parameter.setIndex(parameterIndex);
     parameter.setValue(value);
-    parameter.setType(type);
-    parameter.setSqlType(BigQueryTypeRegistry.toBigQueryType(type));
+    parameter.bindType(type, BigQueryTypeRegistry.toBigQueryType(type));
     parameter.setParamName("");
     parameter.setParamType(BigQueryStatementParameterType.UNSPECIFIED);
     parameter.setScale(-1);
 
     LOG.finest("Parameter set { %s }", parameter.toString());
+  }
+
+  // Records the type BigQuery inferred for a placeholder. Subordinate to the caller: a bound value
+  // keeps its own type.
+  boolean setInferredParameterType(int parameterIndex, StandardSQLTypeName sqlTypeName) {
+    checkValidIndex(parameterIndex);
+    BigQueryJdbcParameter parameter = getOrCreateParameter(parameterIndex);
+    parameter.setIndex(parameterIndex);
+    return parameter.suggestType(BigQueryTypeRegistry.toJavaClass(sqlTypeName), sqlTypeName);
   }
 
   private void checkValidIndex(int parameterIndex) {
@@ -198,8 +292,11 @@ class BigQueryParameterHandler {
 
   void clearParameters() {
     LOG.finest("++enter++");
-    parametersList.clear();
-    highestIndex = 0;
+    for (BigQueryJdbcParameter param : this.parametersList) {
+      if (param != null) {
+        param.clearValue();
+      }
+    }
   }
 
   // set parameter by name and type
@@ -208,8 +305,7 @@ class BigQueryParameterHandler {
       Object value,
       Class<?> type,
       BigQueryStatementParameterType paramType,
-      int scale)
-      throws BigQueryJdbcSqlFeatureNotSupportedException {
+      int scale) {
     LOG.finest("++enter++");
     LOG.finest("setParameter called by : %s", type.getName());
     if (paramName == null || paramName.isEmpty()) {
@@ -231,14 +327,17 @@ class BigQueryParameterHandler {
       parameter.setIndex(-1);
     }
     parameter.setValue(value);
-    parameter.setType(type);
-    parameter.setSqlType(BigQueryTypeRegistry.toBigQueryType(type));
+    parameter.bindType(type, BigQueryTypeRegistry.toBigQueryType(type));
     parameter.setParamName(paramName);
     parameter.setParamType(paramType);
     parameter.setScale(scale);
+
     if (parameter.getIndex() == -1) {
       parametersList.add(parameter);
     }
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
+
     LOG.finest("Parameter set { %s }", parameter.toString());
   }
 
@@ -253,24 +352,17 @@ class BigQueryParameterHandler {
     LOG.finest("++enter++");
     LOG.finest("setParameter called by : %s", type.getName());
     checkValidIndex(parameterIndex);
-    int arrayIndex = parameterIndex - 1;
-    if (parameterIndex >= this.highestIndex || this.parametersList.get(arrayIndex) == null) {
-      parametersList.ensureCapacity(parameterIndex);
-      while (parametersList.size() < parameterIndex) {
-        parametersList.add(null);
-      }
-      parametersList.set(arrayIndex, new BigQueryJdbcParameter());
-    }
-    this.highestIndex = Math.max(parameterIndex, highestIndex);
-    BigQueryJdbcParameter parameter = parametersList.get(arrayIndex);
+
+    BigQueryJdbcParameter parameter = getOrCreateParameter(parameterIndex);
 
     parameter.setIndex(parameterIndex);
     parameter.setValue(value);
-    parameter.setType(type);
-    parameter.setSqlType(BigQueryTypeRegistry.toBigQueryType(type));
+    parameter.bindType(type, BigQueryTypeRegistry.toBigQueryType(type));
     parameter.setParamName("");
     parameter.setParamType(paramType);
     parameter.setScale(scale);
+
+    TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_PARAMETER_BINDING);
 
     LOG.finest("Parameter set { %s }", parameter.toString());
   }

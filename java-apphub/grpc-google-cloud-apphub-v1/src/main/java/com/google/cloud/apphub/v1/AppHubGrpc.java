@@ -1265,6 +1265,189 @@ public final class AppHubGrpc {
     return getDeleteApplicationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.apphub.v1.GetBoundaryRequest, com.google.cloud.apphub.v1.Boundary>
+      getGetBoundaryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetBoundary",
+      requestType = com.google.cloud.apphub.v1.GetBoundaryRequest.class,
+      responseType = com.google.cloud.apphub.v1.Boundary.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.apphub.v1.GetBoundaryRequest, com.google.cloud.apphub.v1.Boundary>
+      getGetBoundaryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.apphub.v1.GetBoundaryRequest, com.google.cloud.apphub.v1.Boundary>
+        getGetBoundaryMethod;
+    if ((getGetBoundaryMethod = AppHubGrpc.getGetBoundaryMethod) == null) {
+      synchronized (AppHubGrpc.class) {
+        if ((getGetBoundaryMethod = AppHubGrpc.getGetBoundaryMethod) == null) {
+          AppHubGrpc.getGetBoundaryMethod =
+              getGetBoundaryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.apphub.v1.GetBoundaryRequest,
+                          com.google.cloud.apphub.v1.Boundary>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetBoundary"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.apphub.v1.GetBoundaryRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.apphub.v1.Boundary.getDefaultInstance()))
+                      .setSchemaDescriptor(new AppHubMethodDescriptorSupplier("GetBoundary"))
+                      .build();
+        }
+      }
+    }
+    return getGetBoundaryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.apphub.v1.UpdateBoundaryRequest, com.google.longrunning.Operation>
+      getUpdateBoundaryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateBoundary",
+      requestType = com.google.cloud.apphub.v1.UpdateBoundaryRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.apphub.v1.UpdateBoundaryRequest, com.google.longrunning.Operation>
+      getUpdateBoundaryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.apphub.v1.UpdateBoundaryRequest, com.google.longrunning.Operation>
+        getUpdateBoundaryMethod;
+    if ((getUpdateBoundaryMethod = AppHubGrpc.getUpdateBoundaryMethod) == null) {
+      synchronized (AppHubGrpc.class) {
+        if ((getUpdateBoundaryMethod = AppHubGrpc.getUpdateBoundaryMethod) == null) {
+          AppHubGrpc.getUpdateBoundaryMethod =
+              getUpdateBoundaryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.apphub.v1.UpdateBoundaryRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBoundary"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.apphub.v1.UpdateBoundaryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new AppHubMethodDescriptorSupplier("UpdateBoundary"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateBoundaryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest,
+          com.google.cloud.apphub.v1.ExtendedMetadataSchema>
+      getGetExtendedMetadataSchemaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetExtendedMetadataSchema",
+      requestType = com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest.class,
+      responseType = com.google.cloud.apphub.v1.ExtendedMetadataSchema.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest,
+          com.google.cloud.apphub.v1.ExtendedMetadataSchema>
+      getGetExtendedMetadataSchemaMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest,
+            com.google.cloud.apphub.v1.ExtendedMetadataSchema>
+        getGetExtendedMetadataSchemaMethod;
+    if ((getGetExtendedMetadataSchemaMethod = AppHubGrpc.getGetExtendedMetadataSchemaMethod)
+        == null) {
+      synchronized (AppHubGrpc.class) {
+        if ((getGetExtendedMetadataSchemaMethod = AppHubGrpc.getGetExtendedMetadataSchemaMethod)
+            == null) {
+          AppHubGrpc.getGetExtendedMetadataSchemaMethod =
+              getGetExtendedMetadataSchemaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest,
+                          com.google.cloud.apphub.v1.ExtendedMetadataSchema>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetExtendedMetadataSchema"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.apphub.v1.ExtendedMetadataSchema
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AppHubMethodDescriptorSupplier("GetExtendedMetadataSchema"))
+                      .build();
+        }
+      }
+    }
+    return getGetExtendedMetadataSchemaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest,
+          com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse>
+      getListExtendedMetadataSchemasMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListExtendedMetadataSchemas",
+      requestType = com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest.class,
+      responseType = com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest,
+          com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse>
+      getListExtendedMetadataSchemasMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest,
+            com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse>
+        getListExtendedMetadataSchemasMethod;
+    if ((getListExtendedMetadataSchemasMethod = AppHubGrpc.getListExtendedMetadataSchemasMethod)
+        == null) {
+      synchronized (AppHubGrpc.class) {
+        if ((getListExtendedMetadataSchemasMethod = AppHubGrpc.getListExtendedMetadataSchemasMethod)
+            == null) {
+          AppHubGrpc.getListExtendedMetadataSchemasMethod =
+              getListExtendedMetadataSchemasMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest,
+                          com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListExtendedMetadataSchemas"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AppHubMethodDescriptorSupplier("ListExtendedMetadataSchemas"))
+                      .build();
+        }
+      }
+    }
+    return getListExtendedMetadataSchemasMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AppHubStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AppHubStub> factory =
@@ -1725,6 +1908,64 @@ public final class AppHubGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteApplicationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Boundary.
+     * </pre>
+     */
+    default void getBoundary(
+        com.google.cloud.apphub.v1.GetBoundaryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.apphub.v1.Boundary> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetBoundaryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Boundary.
+     * </pre>
+     */
+    default void updateBoundary(
+        com.google.cloud.apphub.v1.UpdateBoundaryRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateBoundaryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Extended Metadata Schema.
+     * </pre>
+     */
+    default void getExtendedMetadataSchema(
+        com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.apphub.v1.ExtendedMetadataSchema>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetExtendedMetadataSchemaMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Extended Metadata Schemas available in a host project and location.
+     * </pre>
+     */
+    default void listExtendedMetadataSchemas(
+        com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListExtendedMetadataSchemasMethod(), responseObserver);
     }
   }
 
@@ -2212,6 +2453,72 @@ public final class AppHubGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Boundary.
+     * </pre>
+     */
+    public void getBoundary(
+        com.google.cloud.apphub.v1.GetBoundaryRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.apphub.v1.Boundary> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetBoundaryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Boundary.
+     * </pre>
+     */
+    public void updateBoundary(
+        com.google.cloud.apphub.v1.UpdateBoundaryRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateBoundaryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Extended Metadata Schema.
+     * </pre>
+     */
+    public void getExtendedMetadataSchema(
+        com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.apphub.v1.ExtendedMetadataSchema>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetExtendedMetadataSchemaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Extended Metadata Schemas available in a host project and location.
+     * </pre>
+     */
+    public void listExtendedMetadataSchemas(
+        com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListExtendedMetadataSchemasMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2607,6 +2914,61 @@ public final class AppHubGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getDeleteApplicationMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Boundary.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.Boundary getBoundary(
+        com.google.cloud.apphub.v1.GetBoundaryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetBoundaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Boundary.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBoundary(
+        com.google.cloud.apphub.v1.UpdateBoundaryRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateBoundaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Extended Metadata Schema.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.ExtendedMetadataSchema getExtendedMetadataSchema(
+        com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetExtendedMetadataSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Extended Metadata Schemas available in a host project and location.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse
+        listExtendedMetadataSchemas(
+            com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListExtendedMetadataSchemasMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2986,6 +3348,59 @@ public final class AppHubGrpc {
         com.google.cloud.apphub.v1.DeleteApplicationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Boundary.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.Boundary getBoundary(
+        com.google.cloud.apphub.v1.GetBoundaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBoundaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Boundary.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBoundary(
+        com.google.cloud.apphub.v1.UpdateBoundaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBoundaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Extended Metadata Schema.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.ExtendedMetadataSchema getExtendedMetadataSchema(
+        com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetExtendedMetadataSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Extended Metadata Schemas available in a host project and location.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse
+        listExtendedMetadataSchemas(
+            com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListExtendedMetadataSchemasMethod(), getCallOptions(), request);
     }
   }
 
@@ -3390,6 +3805,62 @@ public final class AppHubGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteApplicationMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Boundary.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.apphub.v1.Boundary>
+        getBoundary(com.google.cloud.apphub.v1.GetBoundaryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetBoundaryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Boundary.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateBoundary(com.google.cloud.apphub.v1.UpdateBoundaryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateBoundaryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Extended Metadata Schema.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.apphub.v1.ExtendedMetadataSchema>
+        getExtendedMetadataSchema(
+            com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetExtendedMetadataSchemaMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Extended Metadata Schemas available in a host project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse>
+        listExtendedMetadataSchemas(
+            com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListExtendedMetadataSchemasMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LOOKUP_SERVICE_PROJECT_ATTACHMENT = 0;
@@ -3419,6 +3890,10 @@ public final class AppHubGrpc {
   private static final int METHODID_GET_APPLICATION = 24;
   private static final int METHODID_UPDATE_APPLICATION = 25;
   private static final int METHODID_DELETE_APPLICATION = 26;
+  private static final int METHODID_GET_BOUNDARY = 27;
+  private static final int METHODID_UPDATE_BOUNDARY = 28;
+  private static final int METHODID_GET_EXTENDED_METADATA_SCHEMA = 29;
+  private static final int METHODID_LIST_EXTENDED_METADATA_SCHEMAS = 30;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3592,6 +4067,29 @@ public final class AppHubGrpc {
           serviceImpl.deleteApplication(
               (com.google.cloud.apphub.v1.DeleteApplicationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_BOUNDARY:
+          serviceImpl.getBoundary(
+              (com.google.cloud.apphub.v1.GetBoundaryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.apphub.v1.Boundary>) responseObserver);
+          break;
+        case METHODID_UPDATE_BOUNDARY:
+          serviceImpl.updateBoundary(
+              (com.google.cloud.apphub.v1.UpdateBoundaryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_EXTENDED_METADATA_SCHEMA:
+          serviceImpl.getExtendedMetadataSchema(
+              (com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.apphub.v1.ExtendedMetadataSchema>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_EXTENDED_METADATA_SCHEMAS:
+          serviceImpl.listExtendedMetadataSchemas(
+              (com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -3788,6 +4286,32 @@ public final class AppHubGrpc {
                 new MethodHandlers<
                     com.google.cloud.apphub.v1.DeleteApplicationRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_APPLICATION)))
+        .addMethod(
+            getGetBoundaryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apphub.v1.GetBoundaryRequest,
+                    com.google.cloud.apphub.v1.Boundary>(service, METHODID_GET_BOUNDARY)))
+        .addMethod(
+            getUpdateBoundaryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apphub.v1.UpdateBoundaryRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_BOUNDARY)))
+        .addMethod(
+            getGetExtendedMetadataSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apphub.v1.GetExtendedMetadataSchemaRequest,
+                    com.google.cloud.apphub.v1.ExtendedMetadataSchema>(
+                    service, METHODID_GET_EXTENDED_METADATA_SCHEMA)))
+        .addMethod(
+            getListExtendedMetadataSchemasMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.apphub.v1.ListExtendedMetadataSchemasRequest,
+                    com.google.cloud.apphub.v1.ListExtendedMetadataSchemasResponse>(
+                    service, METHODID_LIST_EXTENDED_METADATA_SCHEMAS)))
         .build();
   }
 
@@ -3864,6 +4388,10 @@ public final class AppHubGrpc {
                       .addMethod(getGetApplicationMethod())
                       .addMethod(getUpdateApplicationMethod())
                       .addMethod(getDeleteApplicationMethod())
+                      .addMethod(getGetBoundaryMethod())
+                      .addMethod(getUpdateBoundaryMethod())
+                      .addMethod(getGetExtendedMetadataSchemaMethod())
+                      .addMethod(getListExtendedMetadataSchemasMethod())
                       .build();
         }
       }

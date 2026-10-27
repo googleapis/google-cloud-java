@@ -80,7 +80,7 @@ public final class MongodbCollection extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Collection name.
+   * The collection name.
    * </pre>
    *
    * <code>string collection = 1;</code>
@@ -104,7 +104,7 @@ public final class MongodbCollection extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Collection name.
+   * The collection name.
    * </pre>
    *
    * <code>string collection = 1;</code>
@@ -588,7 +588,7 @@ public final class MongodbCollection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Collection name.
+     * The collection name.
      * </pre>
      *
      * <code>string collection = 1;</code>
@@ -611,7 +611,7 @@ public final class MongodbCollection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Collection name.
+     * The collection name.
      * </pre>
      *
      * <code>string collection = 1;</code>
@@ -634,7 +634,7 @@ public final class MongodbCollection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Collection name.
+     * The collection name.
      * </pre>
      *
      * <code>string collection = 1;</code>
@@ -656,7 +656,7 @@ public final class MongodbCollection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Collection name.
+     * The collection name.
      * </pre>
      *
      * <code>string collection = 1;</code>
@@ -674,7 +674,7 @@ public final class MongodbCollection extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Collection name.
+     * The collection name.
      * </pre>
      *
      * <code>string collection = 1;</code>

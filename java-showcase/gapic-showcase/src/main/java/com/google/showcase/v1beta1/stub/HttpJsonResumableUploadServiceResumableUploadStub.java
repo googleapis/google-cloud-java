@@ -54,7 +54,7 @@ import org.jspecify.annotations.NullMarked;
 @InternalApi
 @NullMarked
 @BetaApi
-public class HttpJsonResumableUploadServiceResumableUploadStub implements BackgroundResource {
+class HttpJsonResumableUploadServiceResumableUploadStub implements BackgroundResource {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
 
   private static final ApiMethodDescriptor<UploadMediaRequest, UploadMediaResponse>

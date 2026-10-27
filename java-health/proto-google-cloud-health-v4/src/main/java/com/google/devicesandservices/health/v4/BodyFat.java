@@ -136,7 +136,7 @@ public final class BodyFat extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Body fat percentage, in range [0, 100].
+   * Required. Body fat percentage. Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -152,7 +152,7 @@ public final class BodyFat extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Body fat percentage, in range [0, 100].
+   * Required. Body fat percentage. Must be in the range `[0, 100]`.
    * </pre>
    *
    * <code>optional double percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -751,7 +751,7 @@ public final class BodyFat extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Body fat percentage, in range [0, 100].
+     * Required. Body fat percentage. Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -767,7 +767,7 @@ public final class BodyFat extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Body fat percentage, in range [0, 100].
+     * Required. Body fat percentage. Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -783,7 +783,7 @@ public final class BodyFat extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Body fat percentage, in range [0, 100].
+     * Required. Body fat percentage. Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -803,7 +803,7 @@ public final class BodyFat extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Body fat percentage, in range [0, 100].
+     * Required. Body fat percentage. Must be in the range `[0, 100]`.
      * </pre>
      *
      * <code>optional double percentage = 3 [(.google.api.field_behavior) = REQUIRED];</code>

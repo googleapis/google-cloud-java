@@ -49,6 +49,18 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_netapp_v1_ListVolumesResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_ListBackupConfigsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_ListBackupConfigsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_ListBackupConfigsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_ListBackupConfigsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_VolumeBackupConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_VolumeBackupConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_netapp_v1_GetVolumeRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_netapp_v1_GetVolumeRequest_fieldAccessorTable;
@@ -68,6 +80,18 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_netapp_v1_RevertVolumeRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_netapp_v1_RevertVolumeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_StartSplitRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_StartSplitRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_GetSplitStatusRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_GetSplitStatusRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_SplitStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_SplitStatus_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_netapp_v1_Volume_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -161,9 +185,33 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_netapp_v1_RestoreBackupFilesResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_RestoreVolumeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_RestoreVolumeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_BackupSource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_BackupSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_OntapVolumeTarget_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_OntapVolumeTarget_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_RestoreVolumeResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_RestoreVolumeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_netapp_v1_EstablishVolumePeeringRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_netapp_v1_EstablishVolumePeeringRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_UpdateBackupConfigRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_UpdateBackupConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_netapp_v1_UpdateBackupConfigResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_netapp_v1_UpdateBackupConfigResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -178,10 +226,10 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
           + "oogle.cloud.netapp.v1\032\037google/api/field_"
           + "behavior.proto\032\033google/api/field_info.pr"
           + "oto\032\031google/api/resource.proto\032#google/cloud/netapp/v1/common.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\223\001\n"
-          + "\022ListVolumesRequest\0224\n"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\224\001\n"
+          + "\022ListVolumesRequest\0225\n"
           + "\006parent\030\001 \001("
-          + "\tB$\340A\002\372A\036\022\034netapp.googleapis.com/Volume\022\021\n"
+          + "\tB%\342A\001\002\372A\036\022\034netapp.googleapis.com/Volume\022\021\n"
           + "\tpage_size\030\002 \001(\005\022\022\n\n"
           + "page_token\030\003 \001(\t\022\016\n"
           + "\006filter\030\004 \001(\t\022\020\n"
@@ -189,104 +237,135 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
           + "\023ListVolumesResponse\022/\n"
           + "\007volumes\030\001 \003(\0132\036.google.cloud.netapp.v1.Volume\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t\"F\n"
-          + "\020GetVolumeRequest\0222\n"
-          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
-          + "\034netapp.googleapis.com/Volume\"\230\001\n"
-          + "\023CreateVolumeRequest\0224\n"
-          + "\006parent\030\001 \001("
-          + "\tB$\340A\002\372A\036\022\034netapp.googleapis.com/Volume\022\026\n"
-          + "\tvolume_id\030\002 \001(\tB\003\340A\002\0223\n"
-          + "\006volume\030\003"
-          + " \001(\0132\036.google.cloud.netapp.v1.VolumeB\003\340A\002\"\200\001\n"
-          + "\023UpdateVolumeRequest\0224\n"
-          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\0223\n"
-          + "\006volume\030\002 \001(\0132\036.google.cloud.netapp.v1.VolumeB\003\340A\002\"X\n"
-          + "\023DeleteVolumeRequest\0222\n"
-          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
-          + "\034netapp.googleapis.com/Volume\022\r\n"
-          + "\005force\030\002 \001(\010\"c\n"
-          + "\023RevertVolumeRequest\0222\n"
-          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
-          + "\034netapp.googleapis.com/Volume\022\030\n"
-          + "\013snapshot_id\030\002 \001(\tB\003\340A\002\"\246\025\n"
-          + "\006Volume\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\010\0228\n"
-          + "\005state\030\002 \001(\0162$.g"
-          + "oogle.cloud.netapp.v1.Volume.StateB\003\340A\003\022\032\n\r"
-          + "state_details\030\003 \001(\tB\003\340A\003\0224\n"
-          + "\013create_time\030\004"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\027\n\n"
-          + "share_name\030\005 \001(\tB\003\340A\002\022\026\n"
-          + "\tpsa_range\030\006 \001(\tB\003\340A\003\022?\n"
-          + "\014storage_pool\030\007 \001(\tB)\340A\002\372A#\n"
-          + "!netapp.googleapis.com/StoragePool\0227\n"
-          + "\007network\030\010 \001(\tB&\340A\003\372A \n"
-          + "\036compute.googleapis.com/Network\022@\n\r"
-          + "service_level\030\t \001(\0162$.go"
-          + "ogle.cloud.netapp.v1.ServiceLevelB\003\340A\003\022\031\n"
-          + "\014capacity_gib\030\n"
-          + " \001(\003B\003\340A\002\022@\n\r"
-          + "export_policy\030\013"
-          + " \001(\0132$.google.cloud.netapp.v1.ExportPolicyB\003\340A\001\0229\n"
-          + "\tprotocols\030\014 \003(\0162!.google.cloud.netapp.v1.ProtocolsB\003\340A\002\022>\n"
-          + "\014smb_settings\030\r"
-          + " \003(\0162#.google.cloud.netapp.v1.SMBSettingsB\003\340A\001\022?\n\r"
-          + "mount_options\030\016 \003(\0132#."
-          + "google.cloud.netapp.v1.MountOptionB\003\340A\003\022\035\n"
-          + "\020unix_permissions\030\017 \001(\tB\003\340A\001\022?\n"
-          + "\006labels\030\020"
-          + " \003(\0132*.google.cloud.netapp.v1.Volume.LabelsEntryB\003\340A\001\022\030\n"
-          + "\013description\030\021 \001(\tB\003\340A\001\022D\n"
-          + "\017snapshot_policy\030\022"
-          + " \001(\0132&.google.cloud.netapp.v1.SnapshotPolicyB\003\340A\001\022\031\n"
-          + "\014snap_reserve\030\023 \001(\001B\003\340A\001\022\037\n"
-          + "\022snapshot_directory\030\024 \001(\010B\003\340A\001\022\025\n"
-          + "\010used_gib\030\025 \001(\003B\003\340A\003\022B\n"
-          + "\016security_style\030\026"
-          + " \001(\0162%.google.cloud.netapp.v1.SecurityStyleB\003\340A\001\022\035\n"
-          + "\020kerberos_enabled\030\027 \001(\010B\003\340A\001\022\031\n"
-          + "\014ldap_enabled\030\030 \001(\010B\003\340A\003\022G\n"
-          + "\020active_directory\030\031 \001(\tB-\340A\003\372A\'\n"
-          + "%netapp.googleapis.com/ActiveDirectory\022J\n"
-          + "\022restore_parameters\030\032"
-          + " \001(\0132).google.cloud.netapp.v1.RestoreParametersB\003\340A\001\022;\n\n"
-          + "kms_config\030\033 \001(\tB\'\340A\003\372A!\n"
-          + "\037netapp.googleapis.com/KmsConfig\022D\n"
-          + "\017encryption_type\030\034 \001(\0162&.go"
-          + "ogle.cloud.netapp.v1.EncryptionTypeB\003\340A\003\022\034\n"
-          + "\017has_replication\030\035 \001(\010B\003\340A\003\022@\n\r"
-          + "backup_config\030\036"
-          + " \001(\0132$.google.cloud.netapp.v1.BackupConfigH\000\210\001\001\022I\n"
-          + "\022restricted_actions\030\037"
-          + " \003(\0162(.google.cloud.netapp.v1.RestrictedActionB\003\340A\001\022\033\n"
-          + "\016large_capacity\030  \001(\010B\003\340A\001\022\037\n"
-          + "\022multiple_endpoints\030! \001(\010B\003\340A\001\022B\n"
-          + "\016tiering_policy\030\""
-          + " \001(\0132%.google.cloud.netapp.v1.TieringPolicyH\001\210\001\001\022\031\n"
-          + "\014replica_zone\030$ \001(\tB\003\340A\003\022\021\n"
-          + "\004zone\030% \001(\tB\003\340A\003\022\037\n"
-          + "\022cold_tier_size_gib\030\' \001(\003B\003\340A\003\022_\n"
-          + "\035hybrid_replication_parameters\030("
-          + " \001(\01323.google.cloud.netapp.v1.HybridReplicationParametersB\003\340A\001\022\035\n"
-          + "\020throughput_mibps\030) \001(\001B\003\340A\001\022F\n"
-          + "\020cache_parameters\030*"
-          + " \001(\0132\'.google.cloud.netapp.v1.CacheParametersB\003\340A\001\022#\n"
-          + "\026hot_tier_size_used_gib\030, \001(\003B\003\340A\003\022?\n\r"
-          + "block_devices\030- \003(\0132#.google.cloud.netapp.v1.BlockDeviceB\003\340A\001\022O\n"
-          + "\025large_capacity_config\030. \001(\0132+.goog"
-          + "le.cloud.netapp.v1.LargeCapacityConfigB\003\340A\001\022G\n\r"
-          + "clone_details\030/"
-          + " \001(\0132+.google.cloud.netapp.v1.Volume.CloneDetailsB\003\340A\003\032\253\001\n"
-          + "\014CloneDetails\022?\n"
-          + "\017source_snapshot\030\001 \001(\tB&\340A\003\372A \n"
-          + "\036netapp.googleapis.com/Snapshot\022;\n\r"
-          + "source_volume\030\002 \001(\tB$\340A\003\372A\036\n"
-          + "\034netapp.googleapis.com/Volume\022\035\n"
-          + "\020shared_space_gib\030\003 \001(\003B\003\340A\003\032-\n"
-          + "\013LabelsEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022\r"
+          + "\013unreachable\030\003 \003(\t\"\267\001\n"
+          + "\030ListBackupConfigsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!netapp.googleapis.com/StoragePool\022\027\n"
+          + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n"
           + "\n"
+          + "page_token\030\003 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010order_by\030\004 \001(\tB\004\342A\001\001\022\024\n"
+          + "\006filter\030\005 \001(\tB\004\342A\001\001\"\232\001\n"
+          + "\031ListBackupConfigsResponse\022I\n"
+          + "\025volume_backup_configs\030\001"
+          + " \003(\0132*.google.cloud.netapp.v1.VolumeBackupConfig\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\031\n"
+          + "\013unreachable\030\003 \003(\tB\004\342A\001\006\"f\n"
+          + "\022VolumeBackupConfig\022\023\n"
+          + "\013volume_uuid\030\001 \001(\t\022;\n\r"
+          + "backup_config\030\002 \001(\0132$.google.cloud.netapp.v1.BackupConfig\"G\n"
+          + "\020GetVolumeRequest\0223\n"
+          + "\004name\030\001 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034netapp.googleapis.com/Volume\"\233\001\n"
+          + "\023CreateVolumeRequest\0225\n"
+          + "\006parent\030\001 \001("
+          + "\tB%\342A\001\002\372A\036\022\034netapp.googleapis.com/Volume\022\027\n"
+          + "\tvolume_id\030\002 \001(\tB\004\342A\001\002\0224\n"
+          + "\006volume\030\003 "
+          + "\001(\0132\036.google.cloud.netapp.v1.VolumeB\004\342A\001\002\"\202\001\n"
+          + "\023UpdateVolumeRequest\0225\n"
+          + "\013update_mask\030\001"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\002\0224\n"
+          + "\006volume\030\002 \001(\0132\036.google.cloud.netapp.v1.VolumeB\004\342A\001\002\"Y\n"
+          + "\023DeleteVolumeRequest\0223\n"
+          + "\004name\030\001 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034netapp.googleapis.com/Volume\022\r\n"
+          + "\005force\030\002 \001(\010\"e\n"
+          + "\023RevertVolumeRequest\0223\n"
+          + "\004name\030\001 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034netapp.googleapis.com/Volume\022\031\n"
+          + "\013snapshot_id\030\002 \001(\tB\004\342A\001\002\"H\n"
+          + "\021StartSplitRequest\0223\n"
+          + "\004name\030\001 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034netapp.googleapis.com/Volume\"L\n"
+          + "\025GetSplitStatusRequest\0223\n"
+          + "\004name\030\001 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034netapp.googleapis.com/Volume\"\211\001\n"
+          + "\013SplitStatus\022=\n"
+          + "\013split_state\030\001 \001(\0162\"."
+          + "google.cloud.netapp.v1.SplitStateB\004\342A\001\003\022\033\n\r"
+          + "state_details\030\002 \001(\tB\004\342A\001\003\022\036\n"
+          + "\020progress_percent\030\003 \001(\005B\004\342A\001\003\"\222\026\n"
+          + "\006Volume\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\010\0229\n"
+          + "\005state\030\002"
+          + " \001(\0162$.google.cloud.netapp.v1.Volume.StateB\004\342A\001\003\022\033\n\r"
+          + "state_details\030\003 \001(\tB\004\342A\001\003\0225\n"
+          + "\013create_time\030\004"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\030\n\n"
+          + "share_name\030\005 \001(\tB\004\342A\001\002\022\027\n"
+          + "\tpsa_range\030\006 \001(\tB\004\342A\001\003\022@\n"
+          + "\014storage_pool\030\007 \001(\tB*\342A\001\002\372A#\n"
+          + "!netapp.googleapis.com/StoragePool\0228\n"
+          + "\007network\030\010 \001(\tB\'\342A\001\003\372A \n"
+          + "\036compute.googleapis.com/Network\022A\n\r"
+          + "service_level\030\t"
+          + " \001(\0162$.google.cloud.netapp.v1.ServiceLevelB\004\342A\001\003\022\032\n"
+          + "\014capacity_gib\030\n"
+          + " \001(\003B\004\342A\001\002\022A\n\r"
+          + "export_policy\030\013"
+          + " \001(\0132$.google.cloud.netapp.v1.ExportPolicyB\004\342A\001\001\022:\n"
+          + "\tprotocols\030\014"
+          + " \003(\0162!.google.cloud.netapp.v1.ProtocolsB\004\342A\001\002\022?\n"
+          + "\014smb_settings\030\r"
+          + " \003(\0162#.google.cloud.netapp.v1.SMBSettingsB\004\342A\001\001\022@\n\r"
+          + "mount_options\030\016 \003(\0132"
+          + "#.google.cloud.netapp.v1.MountOptionB\004\342A\001\003\022\036\n"
+          + "\020unix_permissions\030\017 \001(\tB\004\342A\001\001\022@\n"
+          + "\006labels\030\020"
+          + " \003(\0132*.google.cloud.netapp.v1.Volume.LabelsEntryB\004\342A\001\001\022\031\n"
+          + "\013description\030\021 \001(\tB\004\342A\001\001\022E\n"
+          + "\017snapshot_policy\030\022 \001(\0132&.googl"
+          + "e.cloud.netapp.v1.SnapshotPolicyB\004\342A\001\001\022\032\n"
+          + "\014snap_reserve\030\023 \001(\001B\004\342A\001\001\022 \n"
+          + "\022snapshot_directory\030\024 \001(\010B\004\342A\001\001\022\026\n"
+          + "\010used_gib\030\025 \001(\003B\004\342A\001\003\022C\n"
+          + "\016security_style\030\026"
+          + " \001(\0162%.google.cloud.netapp.v1.SecurityStyleB\004\342A\001\001\022\036\n"
+          + "\020kerberos_enabled\030\027 \001(\010B\004\342A\001\001\022\032\n"
+          + "\014ldap_enabled\030\030 \001(\010B\004\342A\001\003\022H\n"
+          + "\020active_directory\030\031 \001(\tB.\342A\001\003\372A\'\n"
+          + "%netapp.googleapis.com/ActiveDirectory\022K\n"
+          + "\022restore_parameters\030\032 \001(\0132).go"
+          + "ogle.cloud.netapp.v1.RestoreParametersB\004\342A\001\001\022<\n\n"
+          + "kms_config\030\033 \001(\tB(\342A\001\003\372A!\n"
+          + "\037netapp.googleapis.com/KmsConfig\022E\n"
+          + "\017encryption_type\030\034"
+          + " \001(\0162&.google.cloud.netapp.v1.EncryptionTypeB\004\342A\001\003\022\035\n"
+          + "\017has_replication\030\035 \001(\010B\004\342A\001\003\022@\n\r"
+          + "backup_config\030\036"
+          + " \001(\0132$.google.cloud.netapp.v1.BackupConfigH\000\210\001\001\022J\n"
+          + "\022restricted_actions\030\037"
+          + " \003(\0162(.google.cloud.netapp.v1.RestrictedActionB\004\342A\001\001\022\034\n"
+          + "\016large_capacity\030  \001(\010B\004\342A\001\001\022 \n"
+          + "\022multiple_endpoints\030! \001(\010B\004\342A\001\001\022B\n"
+          + "\016tiering_policy\030\" \001(\0132%"
+          + ".google.cloud.netapp.v1.TieringPolicyH\001\210\001\001\022\032\n"
+          + "\014replica_zone\030$ \001(\tB\004\342A\001\003\022\022\n"
+          + "\004zone\030% \001(\tB\004\342A\001\003\022 \n"
+          + "\022cold_tier_size_gib\030\' \001(\003B\004\342A\001\003\022`\n"
+          + "\035hybrid_replication_parameters\030( "
+          + "\001(\01323.google.cloud.netapp.v1.HybridReplicationParametersB\004\342A\001\001\022\036\n"
+          + "\020throughput_mibps\030) \001(\001B\004\342A\001\001\022G\n"
+          + "\020cache_parameters\030* \001(\013"
+          + "2\'.google.cloud.netapp.v1.CacheParametersB\004\342A\001\001\022$\n"
+          + "\026hot_tier_size_used_gib\030, \001(\003B\004\342A\001\003\022@\n\r"
+          + "block_devices\030-"
+          + " \003(\0132#.google.cloud.netapp.v1.BlockDeviceB\004\342A\001\001\022P\n"
+          + "\025large_capacity_config\030."
+          + " \001(\0132+.google.cloud.netapp.v1.LargeCapacityConfigB\004\342A\001\001\022H\n\r"
+          + "clone_details\030/"
+          + " \001(\0132+.google.cloud.netapp.v1.Volume.CloneDetailsB\004\342A\001\003\032\355\001\n"
+          + "\014CloneDetails\022@\n"
+          + "\017source_snapshot\030\001 \001(\tB\'\342A\001\003\372A \n"
+          + "\036netapp.googleapis.com/Snapshot\022<\n\r"
+          + "source_volume\030\002 \001(\tB%\342A\001\003\372A\036\n"
+          + "\034netapp.googleapis.com/Volume\022\036\n"
+          + "\020shared_space_gib\030\003 \001(\003B\004\342A\001\003\022=\n"
+          + "\013split_state\030\004"
+          + " \001(\0162\".google.cloud.netapp.v1.SplitStateB\004\342A\001\003\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\231\001\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\t\n"
@@ -297,18 +376,17 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
           + "\tRESTORING\020\005\022\014\n"
           + "\010DISABLED\020\006\022\t\n"
           + "\005ERROR\020\007\022\r\n"
-          + "\tPREPARING\020\010\022\r"
-          + "\n"
+          + "\tPREPARING\020\010\022\r\n"
           + "\tREAD_ONLY\020\t:l\352Ai\n"
-          + "\034netapp.googleapis.com/Volume\0228projects/{project}/locations/{"
-          + "location}/volumes/{volume}*\007volumes2\006volumeB\020\n"
+          + "\034netapp.googleapis.com/Volume\0228projects/{pro"
+          + "ject}/locations/{location}/volumes/{volume}*\007volumes2\006volumeB\020\n"
           + "\016_backup_configB\021\n"
-          + "\017_tiering_policy\"5\n"
-          + "\023LargeCapacityConfig\022\036\n"
-          + "\021constituent_count\030\001 \001(\005B\003\340A\001\"R\n"
-          + "\014ExportPolicy\022B\n"
-          + "\005rules\030\001"
-          + " \003(\0132..google.cloud.netapp.v1.SimpleExportPolicyRuleB\003\340A\002\"\357\006\n"
+          + "\017_tiering_policy\"6\n"
+          + "\023LargeCapacityConfig\022\037\n"
+          + "\021constituent_count\030\001 \001(\005B\004\342A\001\001\"S\n"
+          + "\014ExportPolicy\022C\n"
+          + "\005rules\030\001 \003(\0132..google.cloud."
+          + "netapp.v1.SimpleExportPolicyRuleB\004\342A\001\002\"\361\006\n"
           + "\026SimpleExportPolicyRule\022\034\n"
           + "\017allowed_clients\030\001 \001(\tH\000\210\001\001\022\034\n"
           + "\017has_root_access\030\002 \001(\tH\001\210\001\001\022<\n"
@@ -323,11 +401,11 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
           + "\025kerberos_5p_read_only\030\n"
           + " \001(\010H\t\210\001\001\022#\n"
           + "\026kerberos_5p_read_write\030\013 \001(\010H\n"
-          + "\210\001\001\022X\n"
-          + "\013squash_mode\030\014"
-          + " \001(\01629.google.cloud.netapp.v1.SimpleExportPolicyRule.SquashModeB\003\340A\001H\013\210\001\001\022\032\n"
+          + "\210\001\001\022Y\n"
+          + "\013squash_mode\030\014 \001(\01629.google.cloud"
+          + ".netapp.v1.SimpleExportPolicyRule.SquashModeB\004\342A\001\001H\013\210\001\001\022\033\n"
           + "\010anon_uid\030\r"
-          + " \001(\003B\003\340A\001H\014\210\001\001\"^\n\n"
+          + " \001(\003B\004\342A\001\001H\014\210\001\001\"^\n\n"
           + "SquashMode\022\033\n"
           + "\027SQUASH_MODE_UNSPECIFIED\020\000\022\022\n"
           + "\016NO_ROOT_SQUASH\020\001\022\017\n"
@@ -350,12 +428,12 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
           + "\007enabled\030\001 \001(\010H\000\210\001\001\022D\n"
           + "\017hourly_schedule\030\002"
           + " \001(\0132&.google.cloud.netapp.v1.HourlyScheduleH\001\210\001\001\022B\n"
-          + "\016daily_schedule\030\003 \001(\0132%.g"
-          + "oogle.cloud.netapp.v1.DailyScheduleH\002\210\001\001\022D\n"
+          + "\016daily_schedule\030\003"
+          + " \001(\0132%.google.cloud.netapp.v1.DailyScheduleH\002\210\001\001\022D\n"
           + "\017weekly_schedule\030\004"
           + " \001(\0132&.google.cloud.netapp.v1.WeeklyScheduleH\003\210\001\001\022F\n"
-          + "\020monthly_schedule\030\005"
-          + " \001(\0132\'.google.cloud.netapp.v1.MonthlyScheduleH\004\210\001\001B\n\n"
+          + "\020monthly_schedule\030\005 \001(\0132\'."
+          + "google.cloud.netapp.v1.MonthlyScheduleH\004\210\001\001B\n\n"
           + "\010_enabledB\022\n"
           + "\020_hourly_scheduleB\021\n"
           + "\017_daily_scheduleB\022\n"
@@ -390,57 +468,58 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
           + "\022_snapshots_to_keepB\t\n"
           + "\007_minuteB\007\n"
           + "\005_hourB\020\n"
-          + "\016_days_of_month\"\236\001\n"
+          + "\016_days_of_month\"\237\001\n"
           + "\013MountOption\022\016\n"
           + "\006export\030\001 \001(\t\022\023\n"
           + "\013export_full\030\002 \001(\t\0223\n"
           + "\010protocol\030\003 \001(\0162!.google.cloud.netapp.v1.Protocols\022\024\n"
-          + "\014instructions\030\004 \001(\t\022\037\n\n"
-          + "ip_address\030\005 \001(\tB\013\340A\003\342\214\317\327\010\002\010\002\"t\n"
+          + "\014instructions\030\004 \001(\t\022 \n\n"
+          + "ip_address\030\005 \001(\tB\014\342A\001\003\342\214\317\327\010\002\010\002\"t\n"
           + "\021RestoreParameters\022\031\n"
           + "\017source_snapshot\030\001 \001(\tH\000\022:\n\r"
           + "source_backup\030\002 \001(\tB!\372A\036\n"
           + "\034netapp.googleapis.com/BackupH\000B\010\n"
-          + "\006source\"\232\002\n"
-          + "\014BackupConfig\022C\n"
-          + "\017backup_policies\030\001 \003(\tB*\340A\001\372A$\n"
-          + "\"netapp.googleapis.com/BackupPolicy\022?\n"
-          + "\014backup_vault\030\002 \001(\tB)\340A\001\372A#\n"
-          + "!netapp.googleapis.com/BackupVault\022*\n"
-          + "\030scheduled_backup_enabled\030\003 \001(\010B\003\340A\001H\000\210\001\001\022$\n"
-          + "\022backup_chain_bytes\030\004 \001(\003B\003\340A\003H\001\210\001\001B\033\n"
+          + "\006source\"\236\002\n"
+          + "\014BackupConfig\022D\n"
+          + "\017backup_policies\030\001 \003(\tB+\342A\001\001\372A$\n"
+          + "\"netapp.googleapis.com/BackupPolicy\022@\n"
+          + "\014backup_vault\030\002 \001(\tB*\342A\001\001\372A#\n"
+          + "!netapp.googleapis.com/BackupVault\022+\n"
+          + "\030scheduled_backup_enabled\030\003"
+          + " \001(\010B\004\342A\001\001H\000\210\001\001\022%\n"
+          + "\022backup_chain_bytes\030\004 \001(\003B\004\342A\001\003H\001\210\001\001B\033\n"
           + "\031_scheduled_backup_enabledB\025\n"
-          + "\023_backup_chain_bytes\"\312\002\n\r"
-          + "TieringPolicy\022O\n"
-          + "\013tier_action\030\001"
-          + " \001(\01620.google.cloud.netapp.v1.TieringPolicy.TierActionB\003\340A\001H\000\210\001\001\022(\n"
-          + "\026cooling_threshold_days\030\002 \001(\005B\003\340A\001H\001\210\001\001\022.\n"
+          + "\023_backup_chain_bytes\"\315\002\n\r"
+          + "TieringPolicy\022P\n"
+          + "\013tier_action\030\001 \001(\01620"
+          + ".google.cloud.netapp.v1.TieringPolicy.TierActionB\004\342A\001\001H\000\210\001\001\022)\n"
+          + "\026cooling_threshold_days\030\002 \001(\005B\004\342A\001\001H\001\210\001\001\022/\n"
           + "\034hot_tier_bypass_mode_enabled\030\003"
-          + " \001(\010B\003\340A\001H\002\210\001\001\"B\n\n"
+          + " \001(\010B\004\342A\001\001H\002\210\001\001\"B\n\n"
           + "TierAction\022\033\n"
           + "\027TIER_ACTION_UNSPECIFIED\020\000\022\013\n"
           + "\007ENABLED\020\001\022\n\n"
           + "\006PAUSED\020\002B\016\n"
           + "\014_tier_actionB\031\n"
           + "\027_cooling_threshold_daysB\037\n"
-          + "\035_hot_tier_bypass_mode_enabled\"\303\006\n"
-          + "\033HybridReplicationParameters\022>\n"
-          + "\013replication\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!netapp.googleapis.com/Replication\022\035\n"
-          + "\020peer_volume_name\030\002 \001(\tB\003\340A\002\022\036\n"
-          + "\021peer_cluster_name\030\003 \001(\tB\003\340A\002\022\032\n\r"
-          + "peer_svm_name\030\004 \001(\tB\003\340A\002\022\036\n"
-          + "\021peer_ip_addresses\030\005 \003(\tB\003\340A\002\022\035\n"
-          + "\020cluster_location\030\006 \001(\tB\003\340A\001\022\030\n"
-          + "\013description\030\007 \001(\tB\003\340A\001\022T\n"
-          + "\006labels\030\010 \003(\0132?"
-          + ".google.cloud.netapp.v1.HybridReplicationParameters.LabelsEntryB\003\340A\001\022T\n"
+          + "\035_hot_tier_bypass_mode_enabled\"\316\006\n"
+          + "\033HybridReplicationParameters\022?\n"
+          + "\013replication\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!netapp.googleapis.com/Replication\022\036\n"
+          + "\020peer_volume_name\030\002 \001(\tB\004\342A\001\002\022\037\n"
+          + "\021peer_cluster_name\030\003 \001(\tB\004\342A\001\002\022\033\n\r"
+          + "peer_svm_name\030\004 \001(\tB\004\342A\001\002\022\037\n"
+          + "\021peer_ip_addresses\030\005 \003(\tB\004\342A\001\002\022\036\n"
+          + "\020cluster_location\030\006 \001(\tB\004\342A\001\001\022\031\n"
+          + "\013description\030\007 \001(\tB\004\342A\001\001\022U\n"
+          + "\006labels\030\010 \003(\0132?.goo"
+          + "gle.cloud.netapp.v1.HybridReplicationParameters.LabelsEntryB\004\342A\001\001\022U\n"
           + "\024replication_schedule\030\t"
-          + " \001(\01621.google.cloud.netapp.v1.HybridReplicationScheduleB\003\340A\001\022u\n"
+          + " \001(\01621.google.cloud.netapp.v1.HybridReplicationScheduleB\004\342A\001\001\022v\n"
           + "\027hybrid_replication_type\030\n"
-          + " \001(\0162O.google.clo"
-          + "ud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationTypeB\003\340A\001\022+\n"
-          + "\036large_volume_constituent_count\030\013 \001(\005B\003\340A\001\032-\n"
+          + " \001(\0162O.google.cloud"
+          + ".netapp.v1.HybridReplicationParameters.VolumeHybridReplicationTypeB\004\342A\001\001\022,\n"
+          + "\036large_volume_constituent_count\030\013 \001(\005B\004\342A\001\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\260\001\n"
@@ -449,37 +528,39 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
           + "\tMIGRATION\020\001\022\032\n"
           + "\026CONTINUOUS_REPLICATION\020\002\022\026\n"
           + "\022ONPREM_REPLICATION\020\003\022\036\n"
-          + "\032REVERSE_ONPREM_REPLICATION\020\004\"\352\004\n"
-          + "\017CacheParameters\022\035\n"
-          + "\020peer_volume_name\030\001 \001(\tB\003\340A\002\022\036\n"
-          + "\021peer_cluster_name\030\002 \001(\tB\003\340A\002\022\032\n\r"
-          + "peer_svm_name\030\003 \001(\tB\003\340A\002\022\036\n"
-          + "\021peer_ip_addresses\030\004 \003(\tB\003\340A\002\022)\n"
-          + "\027enable_global_file_lock\030\005 \001(\010B\003\340A\001H\000\210\001\001\022>\n"
-          + "\014cache_config\030\006"
-          + " \001(\0132#.google.cloud.netapp.v1.CacheConfigB\003\340A\001\022L\n"
-          + "\013cache_state\030\007"
-          + " \001(\01622.google.cloud.netapp.v1.CacheParameters.CacheStateB\003\340A\003\022\024\n"
-          + "\007command\030\010 \001(\tB\003\340A\003\022D\n"
+          + "\032REVERSE_ONPREM_REPLICATION\020\004\"\365\004\n"
+          + "\017CacheParameters\022\036\n"
+          + "\020peer_volume_name\030\001 \001(\tB\004\342A\001\002\022\037\n"
+          + "\021peer_cluster_name\030\002 \001(\tB\004\342A\001\002\022\033\n\r"
+          + "peer_svm_name\030\003 \001(\tB\004\342A\001\002\022\037\n"
+          + "\021peer_ip_addresses\030\004 \003(\tB\004\342A\001\002\022*\n"
+          + "\027enable_global_file_lock\030\005"
+          + " \001(\010B\004\342A\001\001H\000\210\001\001\022?\n"
+          + "\014cache_config\030\006 \001(\0132#."
+          + "google.cloud.netapp.v1.CacheConfigB\004\342A\001\001\022M\n"
+          + "\013cache_state\030\007 \001(\01622.google.cloud.net"
+          + "app.v1.CacheParameters.CacheStateB\004\342A\001\003\022\025\n"
+          + "\007command\030\010 \001(\tB\004\342A\001\003\022E\n"
           + "\033peering_command_expiry_time\030\t"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001\022\027\n\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\001\022\030\n\n"
           + "passphrase\030\n"
-          + " \001(\tB\003\340A\003\022\032\n\r"
-          + "state_details\030\014 \001(\tB\003\340A\003\"v\n\n"
+          + " \001(\tB\004\342A\001\003\022\033\n\r"
+          + "state_details\030\014 \001(\tB\004\342A\001\003\"v\n\n"
           + "CacheState\022\033\n"
           + "\027CACHE_STATE_UNSPECIFIED\020\000\022\033\n"
           + "\027PENDING_CLUSTER_PEERING\020\001\022\027\n"
           + "\023PENDING_SVM_PEERING\020\002\022\n\n"
           + "\006PEERED\020\003\022\t\n"
           + "\005ERROR\020\004B\032\n"
-          + "\030_enable_global_file_lock\"\277\003\n"
-          + "\013CacheConfig\022I\n"
+          + "\030_enable_global_file_lock\"\303\003\n"
+          + "\013CacheConfig\022J\n"
           + "\022cache_pre_populate\030\001"
-          + " \001(\0132(.google.cloud.netapp.v1.CachePrePopulateB\003\340A\001\022#\n"
-          + "\021writeback_enabled\030\002 \001(\010B\003\340A\001H\000\210\001\001\022,\n"
-          + "\032cifs_change_notify_enabled\030\005 \001(\010B\003\340A\001H\001\210\001\001\022`\n"
-          + "\030cache_pre_populate_state\030\006"
-          + " \001(\01629.google.cloud.netapp.v1.CacheConfig.CachePrePopulateStateB\003\340A\003\"{\n"
+          + " \001(\0132(.google.cloud.netapp.v1.CachePrePopulateB\004\342A\001\001\022$\n"
+          + "\021writeback_enabled\030\002 \001(\010B\004\342A\001\001H\000\210\001\001\022-\n"
+          + "\032cifs_change_notify_enabled\030\005"
+          + " \001(\010B\004\342A\001\001H\001\210\001\001\022a\n"
+          + "\030cache_pre_populate_state\030\006 \001(\01629.google.clo"
+          + "ud.netapp.v1.CacheConfig.CachePrePopulateStateB\004\342A\001\003\"{\n"
           + "\025CachePrePopulateState\022(\n"
           + "$CACHE_PRE_POPULATE_STATE_UNSPECIFIED\020\000\022\016\n\n"
           + "NOT_NEEDED\020\001\022\017\n"
@@ -487,43 +568,71 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
           + "\010COMPLETE\020\003\022\t\n"
           + "\005ERROR\020\004B\024\n"
           + "\022_writeback_enabledB\035\n"
-          + "\033_cifs_change_notify_enabled\"u\n"
-          + "\020CachePrePopulate\022\026\n"
-          + "\tpath_list\030\001 \003(\tB\003\340A\001\022\036\n"
-          + "\021exclude_path_list\030\002 \003(\tB\003\340A\001\022\033\n"
-          + "\trecursion\030\003 \001(\010B\003\340A\001H\000\210\001\001B\014\n\n"
-          + "_recursion\"\347\001\n"
-          + "\013BlockDevice\022\026\n"
-          + "\004name\030\001 \001(\tB\003\340A\001H\000\210\001\001\022<\n"
-          + "\013host_groups\030\002 \003(\tB\'\340A\001\372A!\n"
-          + "\037netapp.googleapis.com/HostGroup\022\027\n\n"
-          + "identifier\030\003 \001(\tB\003\340A\003\022\032\n"
-          + "\010size_gib\030\004 \001(\003B\003\340A\001H\001\210\001\001\0227\n"
+          + "\033_cifs_change_notify_enabled\"x\n"
+          + "\020CachePrePopulate\022\027\n"
+          + "\tpath_list\030\001 \003(\tB\004\342A\001\001\022\037\n"
+          + "\021exclude_path_list\030\002 \003(\tB\004\342A\001\001\022\034\n"
+          + "\trecursion\030\003 \001(\010B\004\342A\001\001H\000\210\001\001B\014\n\n"
+          + "_recursion\"\352\001\n"
+          + "\013BlockDevice\022\027\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\001H\000\210\001\001\022=\n"
+          + "\013host_groups\030\002 \003(\tB(\342A\001\001\372A!\n"
+          + "\037netapp.googleapis.com/HostGroup\022\030\n\n"
+          + "identifier\030\003 \001(\tB\004\342A\001\003\022\033\n"
+          + "\010size_gib\030\004 \001(\003B\004\342A\001\001H\001\210\001\001\0226\n"
           + "\007os_type\030\005"
-          + " \001(\0162\036.google.cloud.netapp.v1.OsTypeB\006\340A\002\340A\005B\007\n"
+          + " \001(\0162\036.google.cloud.netapp.v1.OsTypeB\005\342A\002\002\005B\007\n"
           + "\005_nameB\013\n"
-          + "\t_size_gib\"\304\001\n"
-          + "\031RestoreBackupFilesRequest\0222\n"
-          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
-          + "\034netapp.googleapis.com/Volume\0224\n"
-          + "\006backup\030\002 \001(\tB$\340A\002\372A\036\n"
-          + "\034netapp.googleapis.com/Backup\022\026\n"
-          + "\tfile_list\030\003 \003(\tB\003\340A\002\022%\n"
-          + "\030restore_destination_path\030\004 \001(\tB\003\340A\001\"\034\n"
-          + "\032RestoreBackupFilesResponse\"\316\001\n"
-          + "\035EstablishVolumePeeringRequest\0222\n"
-          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
-          + "\034netapp.googleapis.com/Volume\022\036\n"
-          + "\021peer_cluster_name\030\002 \001(\tB\003\340A\002\022\032\n\r"
-          + "peer_svm_name\030\003 \001(\tB\003\340A\002\022\036\n"
-          + "\021peer_ip_addresses\030\004 \003(\tB\003\340A\001\022\035\n"
-          + "\020peer_volume_name\030\005 \001(\tB\003\340A\002*P\n"
+          + "\t_size_gib\"\310\001\n"
+          + "\031RestoreBackupFilesRequest\0223\n"
+          + "\004name\030\001 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034netapp.googleapis.com/Volume\0225\n"
+          + "\006backup\030\002 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034netapp.googleapis.com/Backup\022\027\n"
+          + "\tfile_list\030\003 \003(\tB\004\342A\001\002\022&\n"
+          + "\030restore_destination_path\030\004 \001(\tB\004\342A\001\001\"\034\n"
+          + "\032RestoreBackupFilesResponse\"\355\001\n"
+          + "\024RestoreVolumeRequest\022=\n\r"
+          + "backup_source\030\002 \001(\0132$.google.cloud.netapp.v1.BackupSourceH\000\022H\n"
+          + "\023ontap_volume_target\030\003"
+          + " \001(\0132).google.cloud.netapp.v1.OntapVolumeTargetH\001\0228\n"
+          + "\004name\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!netapp.googleapis.com/StoragePoolB\010\n"
+          + "\006sourceB\010\n"
+          + "\006target\"^\n"
+          + "\014BackupSource\0225\n"
+          + "\006backup\030\001 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034netapp.googleapis.com/Backup\022\027\n"
+          + "\tfile_list\030\002 \003(\tB\004\342A\001\001\"V\n"
+          + "\021OntapVolumeTarget\022\031\n"
+          + "\013volume_uuid\030\001 \001(\tB\004\342A\001\002\022&\n"
+          + "\030restore_destination_path\030\002 \001(\tB\004\342A\001\001\"\027\n"
+          + "\025RestoreVolumeResponse\"\323\001\n"
+          + "\035EstablishVolumePeeringRequest\0223\n"
+          + "\004name\030\001 \001(\tB%\342A\001\002\372A\036\n"
+          + "\034netapp.googleapis.com/Volume\022\037\n"
+          + "\021peer_cluster_name\030\002 \001(\tB\004\342A\001\002\022\033\n\r"
+          + "peer_svm_name\030\003 \001(\tB\004\342A\001\002\022\037\n"
+          + "\021peer_ip_addresses\030\004 \003(\tB\004\342A\001\001\022\036\n"
+          + "\020peer_volume_name\030\005 \001(\tB\004\342A\001\002\"\352\001\n"
+          + "\031UpdateBackupConfigRequest\0228\n"
+          + "\004name\030\001 \001(\tB*\342A\001\002\372A#\n"
+          + "!netapp.googleapis.com/StoragePool\022\031\n"
+          + "\013volume_uuid\030\002 \001(\tB\004\342A\001\002\022A\n\r"
+          + "backup_config\030\003"
+          + " \001(\0132$.google.cloud.netapp.v1.BackupConfigB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\004"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\002\"n\n"
+          + "\032UpdateBackupConfigResponse\022\023\n"
+          + "\013volume_uuid\030\001 \001(\t\022;\n\r"
+          + "backup_config\030\002 \001(\0132$.google.cloud.netapp.v1.BackupConfig*Z\n"
           + "\tProtocols\022\031\n"
           + "\025PROTOCOLS_UNSPECIFIED\020\000\022\t\n"
           + "\005NFSV3\020\001\022\t\n"
           + "\005NFSV4\020\002\022\007\n"
           + "\003SMB\020\003\022\t\n"
-          + "\005ISCSI\020\004*W\n\n"
+          + "\005ISCSI\020\004\022\010\n"
+          + "\004NVME\020\005*W\n\n"
           + "AccessType\022\033\n"
           + "\027ACCESS_TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tREAD_ONLY\020\001\022\016\n\n"
@@ -539,7 +648,12 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
           + "SHOW_SNAPSHOT\020\006\022\032\n"
           + "\026SHOW_PREVIOUS_VERSIONS\020\007\022\034\n"
           + "\030ACCESS_BASED_ENUMERATION\020\010\022\032\n"
-          + "\026CONTINUOUSLY_AVAILABLE\020\t*C\n\r"
+          + "\026CONTINUOUSLY_AVAILABLE\020\t*}\n\n"
+          + "SplitState\022\033\n"
+          + "\027SPLIT_STATE_UNSPECIFIED\020\000\022\035\n"
+          + "\031SPLIT_STATE_NOT_SPLITTING\020\001\022\033\n"
+          + "\027SPLIT_STATE_IN_PROGRESS\020\002\022\026\n"
+          + "\022SPLIT_STATE_FAILED\020\003*C\n\r"
           + "SecurityStyle\022\036\n"
           + "\032SECURITY_STYLE_UNSPECIFIED\020\000\022\010\n"
           + "\004NTFS\020\001\022\010\n"
@@ -547,10 +661,10 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
           + "\020RestrictedAction\022!\n"
           + "\035RESTRICTED_ACTION_UNSPECIFIED\020\000\022\n\n"
           + "\006DELETE\020\001B\255\001\n"
-          + "\032com.google.cloud.netapp.v1B\013VolumeProtoP\001Z2clou"
-          + "d.google.com/go/netapp/apiv1/netapppb;ne"
-          + "tapppb\252\002\026Google.Cloud.NetApp.V1\312\002\026Google"
-          + "\\Cloud\\NetApp\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
+          + "\032com.google.cloud.netapp.v1B\013VolumeProtoP\001Z"
+          + "2cloud.google.com/go/netapp/apiv1/netapp"
+          + "pb;netapppb\252\002\026Google.Cloud.NetApp.V1\312\002\026G"
+          + "oogle\\Cloud\\NetApp\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -579,8 +693,32 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Volumes", "NextPageToken", "Unreachable",
             });
-    internal_static_google_cloud_netapp_v1_GetVolumeRequest_descriptor =
+    internal_static_google_cloud_netapp_v1_ListBackupConfigsRequest_descriptor =
         getDescriptor().getMessageType(2);
+    internal_static_google_cloud_netapp_v1_ListBackupConfigsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_ListBackupConfigsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "OrderBy", "Filter",
+            });
+    internal_static_google_cloud_netapp_v1_ListBackupConfigsResponse_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_cloud_netapp_v1_ListBackupConfigsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_ListBackupConfigsResponse_descriptor,
+            new java.lang.String[] {
+              "VolumeBackupConfigs", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_netapp_v1_VolumeBackupConfig_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_cloud_netapp_v1_VolumeBackupConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_VolumeBackupConfig_descriptor,
+            new java.lang.String[] {
+              "VolumeUuid", "BackupConfig",
+            });
+    internal_static_google_cloud_netapp_v1_GetVolumeRequest_descriptor =
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_netapp_v1_GetVolumeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_GetVolumeRequest_descriptor,
@@ -588,7 +726,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_netapp_v1_CreateVolumeRequest_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_netapp_v1_CreateVolumeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_CreateVolumeRequest_descriptor,
@@ -596,7 +734,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "Parent", "VolumeId", "Volume",
             });
     internal_static_google_cloud_netapp_v1_UpdateVolumeRequest_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_netapp_v1_UpdateVolumeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_UpdateVolumeRequest_descriptor,
@@ -604,7 +742,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "UpdateMask", "Volume",
             });
     internal_static_google_cloud_netapp_v1_DeleteVolumeRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_netapp_v1_DeleteVolumeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_DeleteVolumeRequest_descriptor,
@@ -612,14 +750,38 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "Name", "Force",
             });
     internal_static_google_cloud_netapp_v1_RevertVolumeRequest_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_netapp_v1_RevertVolumeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_RevertVolumeRequest_descriptor,
             new java.lang.String[] {
               "Name", "SnapshotId",
             });
-    internal_static_google_cloud_netapp_v1_Volume_descriptor = getDescriptor().getMessageType(7);
+    internal_static_google_cloud_netapp_v1_StartSplitRequest_descriptor =
+        getDescriptor().getMessageType(10);
+    internal_static_google_cloud_netapp_v1_StartSplitRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_StartSplitRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_netapp_v1_GetSplitStatusRequest_descriptor =
+        getDescriptor().getMessageType(11);
+    internal_static_google_cloud_netapp_v1_GetSplitStatusRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_GetSplitStatusRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_netapp_v1_SplitStatus_descriptor =
+        getDescriptor().getMessageType(12);
+    internal_static_google_cloud_netapp_v1_SplitStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_SplitStatus_descriptor,
+            new java.lang.String[] {
+              "SplitState", "StateDetails", "ProgressPercent",
+            });
+    internal_static_google_cloud_netapp_v1_Volume_descriptor = getDescriptor().getMessageType(13);
     internal_static_google_cloud_netapp_v1_Volume_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_Volume_descriptor,
@@ -675,7 +837,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_Volume_CloneDetails_descriptor,
             new java.lang.String[] {
-              "SourceSnapshot", "SourceVolume", "SharedSpaceGib",
+              "SourceSnapshot", "SourceVolume", "SharedSpaceGib", "SplitState",
             });
     internal_static_google_cloud_netapp_v1_Volume_LabelsEntry_descriptor =
         internal_static_google_cloud_netapp_v1_Volume_descriptor.getNestedType(1);
@@ -686,7 +848,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_netapp_v1_LargeCapacityConfig_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_netapp_v1_LargeCapacityConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_LargeCapacityConfig_descriptor,
@@ -694,7 +856,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "ConstituentCount",
             });
     internal_static_google_cloud_netapp_v1_ExportPolicy_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_netapp_v1_ExportPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_ExportPolicy_descriptor,
@@ -702,7 +864,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "Rules",
             });
     internal_static_google_cloud_netapp_v1_SimpleExportPolicyRule_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_netapp_v1_SimpleExportPolicyRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_SimpleExportPolicyRule_descriptor,
@@ -722,7 +884,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "AnonUid",
             });
     internal_static_google_cloud_netapp_v1_SnapshotPolicy_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_netapp_v1_SnapshotPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_SnapshotPolicy_descriptor,
@@ -730,7 +892,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "Enabled", "HourlySchedule", "DailySchedule", "WeeklySchedule", "MonthlySchedule",
             });
     internal_static_google_cloud_netapp_v1_HourlySchedule_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_netapp_v1_HourlySchedule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_HourlySchedule_descriptor,
@@ -738,7 +900,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "SnapshotsToKeep", "Minute",
             });
     internal_static_google_cloud_netapp_v1_DailySchedule_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_netapp_v1_DailySchedule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_DailySchedule_descriptor,
@@ -746,7 +908,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "SnapshotsToKeep", "Minute", "Hour",
             });
     internal_static_google_cloud_netapp_v1_WeeklySchedule_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_netapp_v1_WeeklySchedule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_WeeklySchedule_descriptor,
@@ -754,7 +916,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "SnapshotsToKeep", "Minute", "Hour", "Day",
             });
     internal_static_google_cloud_netapp_v1_MonthlySchedule_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_netapp_v1_MonthlySchedule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_MonthlySchedule_descriptor,
@@ -762,7 +924,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "SnapshotsToKeep", "Minute", "Hour", "DaysOfMonth",
             });
     internal_static_google_cloud_netapp_v1_MountOption_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_netapp_v1_MountOption_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_MountOption_descriptor,
@@ -770,7 +932,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "Export", "ExportFull", "Protocol", "Instructions", "IpAddress",
             });
     internal_static_google_cloud_netapp_v1_RestoreParameters_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_netapp_v1_RestoreParameters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_RestoreParameters_descriptor,
@@ -778,7 +940,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "SourceSnapshot", "SourceBackup", "Source",
             });
     internal_static_google_cloud_netapp_v1_BackupConfig_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(24);
     internal_static_google_cloud_netapp_v1_BackupConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_BackupConfig_descriptor,
@@ -786,7 +948,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "BackupPolicies", "BackupVault", "ScheduledBackupEnabled", "BackupChainBytes",
             });
     internal_static_google_cloud_netapp_v1_TieringPolicy_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(25);
     internal_static_google_cloud_netapp_v1_TieringPolicy_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_TieringPolicy_descriptor,
@@ -794,7 +956,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "TierAction", "CoolingThresholdDays", "HotTierBypassModeEnabled",
             });
     internal_static_google_cloud_netapp_v1_HybridReplicationParameters_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(26);
     internal_static_google_cloud_netapp_v1_HybridReplicationParameters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_HybridReplicationParameters_descriptor,
@@ -821,7 +983,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_netapp_v1_CacheParameters_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(27);
     internal_static_google_cloud_netapp_v1_CacheParameters_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_CacheParameters_descriptor,
@@ -839,7 +1001,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "StateDetails",
             });
     internal_static_google_cloud_netapp_v1_CacheConfig_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(28);
     internal_static_google_cloud_netapp_v1_CacheConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_CacheConfig_descriptor,
@@ -850,7 +1012,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "CachePrePopulateState",
             });
     internal_static_google_cloud_netapp_v1_CachePrePopulate_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(29);
     internal_static_google_cloud_netapp_v1_CachePrePopulate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_CachePrePopulate_descriptor,
@@ -858,7 +1020,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "PathList", "ExcludePathList", "Recursion",
             });
     internal_static_google_cloud_netapp_v1_BlockDevice_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(30);
     internal_static_google_cloud_netapp_v1_BlockDevice_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_BlockDevice_descriptor,
@@ -866,7 +1028,7 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "Name", "HostGroups", "Identifier", "SizeGib", "OsType",
             });
     internal_static_google_cloud_netapp_v1_RestoreBackupFilesRequest_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(31);
     internal_static_google_cloud_netapp_v1_RestoreBackupFilesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_RestoreBackupFilesRequest_descriptor,
@@ -874,18 +1036,64 @@ public final class VolumeProto extends com.google.protobuf.GeneratedFile {
               "Name", "Backup", "FileList", "RestoreDestinationPath",
             });
     internal_static_google_cloud_netapp_v1_RestoreBackupFilesResponse_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(32);
     internal_static_google_cloud_netapp_v1_RestoreBackupFilesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_RestoreBackupFilesResponse_descriptor,
             new java.lang.String[] {});
+    internal_static_google_cloud_netapp_v1_RestoreVolumeRequest_descriptor =
+        getDescriptor().getMessageType(33);
+    internal_static_google_cloud_netapp_v1_RestoreVolumeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_RestoreVolumeRequest_descriptor,
+            new java.lang.String[] {
+              "BackupSource", "OntapVolumeTarget", "Name", "Source", "Target",
+            });
+    internal_static_google_cloud_netapp_v1_BackupSource_descriptor =
+        getDescriptor().getMessageType(34);
+    internal_static_google_cloud_netapp_v1_BackupSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_BackupSource_descriptor,
+            new java.lang.String[] {
+              "Backup", "FileList",
+            });
+    internal_static_google_cloud_netapp_v1_OntapVolumeTarget_descriptor =
+        getDescriptor().getMessageType(35);
+    internal_static_google_cloud_netapp_v1_OntapVolumeTarget_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_OntapVolumeTarget_descriptor,
+            new java.lang.String[] {
+              "VolumeUuid", "RestoreDestinationPath",
+            });
+    internal_static_google_cloud_netapp_v1_RestoreVolumeResponse_descriptor =
+        getDescriptor().getMessageType(36);
+    internal_static_google_cloud_netapp_v1_RestoreVolumeResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_RestoreVolumeResponse_descriptor,
+            new java.lang.String[] {});
     internal_static_google_cloud_netapp_v1_EstablishVolumePeeringRequest_descriptor =
-        getDescriptor().getMessageType(27);
+        getDescriptor().getMessageType(37);
     internal_static_google_cloud_netapp_v1_EstablishVolumePeeringRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_EstablishVolumePeeringRequest_descriptor,
             new java.lang.String[] {
               "Name", "PeerClusterName", "PeerSvmName", "PeerIpAddresses", "PeerVolumeName",
+            });
+    internal_static_google_cloud_netapp_v1_UpdateBackupConfigRequest_descriptor =
+        getDescriptor().getMessageType(38);
+    internal_static_google_cloud_netapp_v1_UpdateBackupConfigRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_UpdateBackupConfigRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "VolumeUuid", "BackupConfig", "UpdateMask",
+            });
+    internal_static_google_cloud_netapp_v1_UpdateBackupConfigResponse_descriptor =
+        getDescriptor().getMessageType(39);
+    internal_static_google_cloud_netapp_v1_UpdateBackupConfigResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_netapp_v1_UpdateBackupConfigResponse_descriptor,
+            new java.lang.String[] {
+              "VolumeUuid", "BackupConfig",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

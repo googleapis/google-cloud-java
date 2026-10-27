@@ -29,13 +29,46 @@
  */
 package com.google.api.gax.retrying;
 
-import com.google.api.core.CurrentMillisClock;
+import static com.google.api.gax.retrying.FailingCallable.FAST_RETRY_SETTINGS;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import com.google.api.core.ApiClock;
+import com.google.api.gax.core.FakeApiClock;
+import java.io.InterruptedIOException;
+import java.net.SocketTimeoutException;
+import java.time.Duration;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.junit.jupiter.api.Test;
 
 class DirectRetryingExecutorTest extends AbstractRetryingExecutorTest {
 
+  // ExponentialRetryAlgorithm and ExponentialPollAlgorithm only compute relative elapsed time
+  // deltas against firstAttemptStartTimeNanos (clock.nanoTime() - firstAttemptStartTimeNanos)
+  // and never treat 0L as a special sentinel value.
+  private final FakeApiClock clock = new FakeApiClock(0L);
+
+  @Override
+  protected ApiClock getClock() {
+    return clock;
+  }
+
   @Override
   protected RetryingExecutorWithContext<String> getExecutor(RetryAlgorithm<String> retryAlgorithm) {
-    return new DirectRetryingExecutor<>(retryAlgorithm);
+    return new DirectRetryingExecutor<String>(retryAlgorithm) {
+      // Advance the fake clock instead of sleeping the current thread so that retry delays
+      // are simulated deterministically without wall-clock pauses on slow CI VMs.
+      @Override
+      protected void sleep(Duration delay) {
+        if (!delay.isZero() && !delay.isNegative()) {
+          clock.incrementNanoTime(delay.toNanos());
+        }
+      }
+    };
   }
 
   @Override
@@ -43,6 +76,62 @@ class DirectRetryingExecutorTest extends AbstractRetryingExecutorTest {
       RetrySettings retrySettings, int apocalypseCountDown, RuntimeException apocalypseException) {
     return new RetryAlgorithm<>(
         new TestResultRetryAlgorithm<String>(apocalypseCountDown, apocalypseException),
-        new ExponentialRetryAlgorithm(retrySettings, CurrentMillisClock.getDefaultClock()));
+        new ExponentialRetryAlgorithm(retrySettings, clock));
+  }
+
+  /**
+   * Runs {@code callable} under an algorithm that retries a {@link SocketTimeoutException} and
+   * nothing else, so the test sees which exception the algorithm was given.
+   */
+  private RetryingFuture<String> runRetryingTimeouts(Callable<String> callable) {
+    setUp(false);
+    RetryAlgorithm<String> algorithm =
+        new RetryAlgorithm<>(
+            new BasicResultRetryAlgorithm<String>() {
+              @Override
+              public boolean shouldRetry(Throwable prevThrowable, String prevResponse) {
+                return prevThrowable instanceof SocketTimeoutException;
+              }
+            },
+            new ExponentialRetryAlgorithm(FAST_RETRY_SETTINGS, clock));
+    RetryingExecutorWithContext<String> executor = getExecutor(algorithm);
+    RetryingFuture<String> future = executor.createFuture(callable, retryingContext);
+    future.setAttemptFuture(executor.submit(future));
+    return future;
+  }
+
+  @Test
+  void testSocketTimeoutReachesTheRetryAlgorithm() throws Exception {
+    AtomicInteger calls = new AtomicInteger();
+    try {
+      RetryingFuture<String> future =
+          runRetryingTimeouts(
+              () -> {
+                if (calls.getAndIncrement() == 0) {
+                  throw new SocketTimeoutException("Read timed out");
+                }
+                return "SUCCESS";
+              });
+      assertFalse(Thread.currentThread().isInterrupted());
+      assertEquals("SUCCESS", future.get());
+      assertEquals(2, calls.get());
+    } finally {
+      Thread.interrupted();
+    }
+  }
+
+  @Test
+  void testInterruptedIOExceptionStillFailsAsInterrupted() {
+    try {
+      RetryingFuture<String> future =
+          runRetryingTimeouts(
+              () -> {
+                throw new InterruptedIOException("interrupted");
+              });
+      ExecutionException e = assertThrows(ExecutionException.class, future::get);
+      assertInstanceOf(InterruptedException.class, e.getCause());
+    } finally {
+      Thread.interrupted();
+    }
   }
 }

@@ -3,7 +3,6 @@
 google-analytics-admin: https://developers.google.com/analytics, Analytics Admin
 google-analytics-data: https://developers.google.com/analytics/trusted-testing/analytics-data,
   Analytics Data
-google-area120-tables: https://area120.google.com/, Area 120 Tables
 google-auth-library: n/a, Google Auth Library
 google-cloud-accessapproval: https://cloud.google.com/access-approval/docs/, Access
   Approval
@@ -24,7 +23,6 @@ google-cloud-asset: https://cloud.google.com/resource-manager/docs/cloud-asset-i
   Cloud Asset Inventory
 google-cloud-assured-workloads: https://cloud.google.com/assured-workloads/, Assured
   Workloads for Government
-google-cloud-automl: https://cloud.google.com/automl/docs/, Cloud Auto ML
 google-cloud-bare-metal-solution: https://cloud.google.com/bare-metal/docs, Bare Metal
   Solution
 google-cloud-batch: https://cloud.google.com/, Cloud Batch

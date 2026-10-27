@@ -435,40 +435,4 @@ public interface ListRegionHealthAggregationPoliciesRequestOrBuilder
    * @return The bytes for region.
    */
   com.google.protobuf.ByteString getRegionBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Opt-in for partial success behavior which provides partial results in case
-   * of failure. The default value is false.
-   *
-   * For example, when partial success behavior is enabled, aggregatedList for a
-   * single zone scope either returns all resources in the zone or no resources,
-   * with an error code.
-   * </pre>
-   *
-   * <code>optional bool return_partial_success = 517198390;</code>
-   *
-   * @return Whether the returnPartialSuccess field is set.
-   */
-  boolean hasReturnPartialSuccess();
-
-  /**
-   *
-   *
-   * <pre>
-   * Opt-in for partial success behavior which provides partial results in case
-   * of failure. The default value is false.
-   *
-   * For example, when partial success behavior is enabled, aggregatedList for a
-   * single zone scope either returns all resources in the zone or no resources,
-   * with an error code.
-   * </pre>
-   *
-   * <code>optional bool return_partial_success = 517198390;</code>
-   *
-   * @return The returnPartialSuccess.
-   */
-  boolean getReturnPartialSuccess();
 }

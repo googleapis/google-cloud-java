@@ -384,12 +384,6 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
-                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
@@ -447,12 +441,6 @@ public class HttpJsonRegionNetworkEndpointGroupsStub extends RegionNetworkEndpoi
                             }
                             if (request.hasPageToken()) {
                               serializer.putQueryParam(fields, "pageToken", request.getPageToken());
-                            }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
                             }
                             return fields;
                           })

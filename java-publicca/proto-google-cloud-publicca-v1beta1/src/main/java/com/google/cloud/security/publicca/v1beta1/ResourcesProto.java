@@ -53,23 +53,20 @@ public final class ResourcesProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n6google/cloud/security/publicca/v1beta1"
-          + "/resources.proto\022&google.cloud.security."
-          + "publicca.v1beta1\032\037google/api/field_behav"
-          + "ior.proto\032\031google/api/resource.proto\"\335\001\n"
-          + "\022ExternalAccountKey\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\023"
-          + "\n\006key_id\030\002 \001(\tB\003\340A\003\022\030\n\013b64_mac_key\030\003 \001(\014"
-          + "B\003\340A\003:\204\001\352A\200\001\n*publicca.googleapis.com/Ex"
-          + "ternalAccountKey\022Rprojects/{project}/loc"
-          + "ations/{location}/externalAccountKeys/{e"
-          + "xternal_account_key}B\205\002\n*com.google.clou"
-          + "d.security.publicca.v1beta1B\016ResourcesPr"
-          + "otoP\001ZFcloud.google.com/go/security/publ"
-          + "icca/apiv1beta1/publiccapb;publiccapb\252\002&"
-          + "Google.Cloud.Security.PublicCA.V1Beta1\312\002"
-          + "&Google\\Cloud\\Security\\PublicCA\\V1beta1\352"
-          + "\002*Google::Cloud::Security::PublicCA::V1b"
-          + "eta1b\006proto3"
+      "\n"
+          + "6google/cloud/security/publicca/v1beta1/resources.proto\022&google.cloud.security."
+          + "publicca.v1beta1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\340\001\n"
+          + "\022ExternalAccountKey\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\003\022\024\n"
+          + "\006key_id\030\002 \001(\tB\004\342A\001\003\022\031\n"
+          + "\013b64_mac_key\030\003 \001(\014B\004\342A\001\003:\204\001\352A\200\001\n"
+          + "*publicca.googleapis.com/ExternalAccountKey\022Rprojects/{project}/"
+          + "locations/{location}/externalAccountKeys/{external_account_key}B\205\002\n"
+          + "*com.google.cloud.security.publicca.v1beta1B\016Resource"
+          + "sProtoP\001ZFcloud.google.com/go/security/publicca/apiv1beta1/publiccapb;publiccapb"
+          + "\252\002&Google.Cloud.Security.PublicCA.V1Beta"
+          + "1\312\002&Google\\Cloud\\Security\\PublicCA\\V1bet"
+          + "a1\352\002*Google::Cloud::Security::PublicCA::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

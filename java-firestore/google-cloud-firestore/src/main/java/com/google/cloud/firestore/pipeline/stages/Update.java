@@ -16,8 +16,6 @@
 
 package com.google.cloud.firestore.pipeline.stages;
 
-import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.PipelineUtils;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
 import com.google.cloud.firestore.pipeline.expressions.Selectable;
@@ -28,7 +26,15 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-@InternalApi
+/**
+ * A pipeline stage that updates existing documents in the database using the documents produced by
+ * the previous stages. Each input document's {@code __name__} field identifies the target document
+ * to update.
+ *
+ * <p>Use with {@link com.google.cloud.firestore.Pipeline#update(Update)}, or call {@link
+ * com.google.cloud.firestore.Pipeline#update()} / {@link
+ * com.google.cloud.firestore.Pipeline#update(Selectable...)} directly.
+ */
 public final class Update extends Stage {
 
   @Nullable private final Selectable[] transformedFields;
@@ -38,12 +44,10 @@ public final class Update extends Stage {
     this.transformedFields = transformedFields;
   }
 
-  @BetaApi
   public Update() {
     this(null, InternalOptions.EMPTY);
   }
 
-  @BetaApi
   public Update withTransformedFields(Selectable... transformedFields) {
     return new Update(transformedFields, this.options);
   }

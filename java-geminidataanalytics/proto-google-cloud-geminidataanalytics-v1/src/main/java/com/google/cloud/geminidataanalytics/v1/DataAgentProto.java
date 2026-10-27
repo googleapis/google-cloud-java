@@ -61,37 +61,44 @@ public final class DataAgentProto extends com.google.protobuf.GeneratedFile {
           + "4google/cloud/geminidataanalytics/v1/data_agent.proto\022#google.cloud.geminidataa"
           + "nalytics.v1\032\037google/api/field_behavior.p"
           + "roto\032\031google/api/resource.proto\032>google/"
-          + "cloud/geminidataanalytics/v1/data_analyt"
-          + "ics_agent.proto\032\037google/protobuf/timestamp.proto\"\350\005\n"
+          + "cloud/geminidataanalytics/v1/data_analytics_agent.proto\0324google/cloud/geminidata"
+          + "analytics/v1/datasource.proto\032\037google/protobuf/timestamp.proto\"\264\007\n"
           + "\tDataAgent\022W\n"
-          + "\024data_analytics_agent\030e"
-          + " \001(\01327.google.cloud.geminidataanalytics.v1.DataAnalyticsAgentH\000\022\024\n"
-          + "\004name\030\001 \001(\tB\006\340A\001\340A\010\022\031\n"
-          + "\014display_name\030\003 \001(\tB\003\340A\001\022\030\n"
-          + "\013description\030\004 \001(\tB\003\340A\001\022O\n"
-          + "\006labels\030\005 \003"
-          + "(\0132:.google.cloud.geminidataanalytics.v1.DataAgent.LabelsEntryB\003\340A\001\0224\n"
-          + "\013create_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\010 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\024data_analytics_agent\030e \001(\01327.google.clou"
+          + "d.geminidataanalytics.v1.DataAnalyticsAgentH\000\022\023\n"
+          + "\004name\030\001 \001(\tB\005\342A\002\001\010\022\032\n"
+          + "\014display_name\030\003 \001(\tB\004\342A\001\001\022\031\n"
+          + "\013description\030\004 \001(\tB\004\342A\001\001\022P\n"
+          + "\006labels\030\005 \003(\0132:.google.cloud.geminid"
+          + "ataanalytics.v1.DataAgent.LabelsEntryB\004\342A\001\001\0225\n"
+          + "\013create_time\030\007"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
+          + "\013update_time\030\010"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013delete_time\030\014"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0223\n\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0224\n\n"
           + "purge_time\030\r"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022?\n"
-          + "\007kms_key\030\016 \001(\tB)\340A\001\372A#\n"
-          + "!cloudkms.googleapis.com/CryptoKeyH\001\210\001\001\032-\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022@\n"
+          + "\007kms_key\030\016 \001(\tB*\342A\001\001\372A#\n"
+          + "!cloudkms.googleapis.com/CryptoKeyH\001\210\001\001\0223\n"
+          + " bigquery_agent_analytics_enabled\030\022"
+          + " \001(\010B\004\342A\001\001H\002\210\001\001\022i\n"
+          + "\036bigquery_agent_analytics_table\030\023 \001(\0132;.google.cloud.gem"
+          + "inidataanalytics.v1.BigQueryTableReferenceB\004\342A\001\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\212\001\352A\206\001\n"
-          + ",geminidataanalytics.googleapis.com/Da"
-          + "taAgent\022?projects/{project}/locations/{location}/dataAgents/{data_agent}*\n"
+          + ",geminidataanalytics.googleapis.com/DataAgent\022?projects/{"
+          + "project}/locations/{location}/dataAgents/{data_agent}*\n"
           + "dataAgents2\tdataAgentB\006\n"
           + "\004typeB\n\n"
-          + "\010_kms_keyB\213\002\n"
-          + "\'com.google.cloud.geminidataanalytics.v1B"
-          + "\016DataAgentProtoP\001ZYcloud.google.com/go/geminidataanalytics/apiv1/geminidataanaly"
-          + "ticspb;geminidataanalyticspb\252\002#Google.Cl"
-          + "oud.GeminiDataAnalytics.V1\312\002#Google\\Clou"
-          + "d\\GeminiDataAnalytics\\V1\352\002&Google::Cloud::GeminiDataAnalytics::V1b\006proto3"
+          + "\010_kms_keyB#\n"
+          + "!_bigquery_agent_analytics_enabledB\213\002\n"
+          + "\'com.google.cloud.geminidataanalytics.v1B\016DataAgentProtoP\001ZYclo"
+          + "ud.google.com/go/geminidataanalytics/apiv1/geminidataanalyticspb;geminidataanaly"
+          + "ticspb\252\002#Google.Cloud.GeminiDataAnalytic"
+          + "s.V1\312\002#Google\\Cloud\\GeminiDataAnalytics\\"
+          + "V1\352\002&Google::Cloud::GeminiDataAnalytics::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -100,6 +107,7 @@ public final class DataAgentProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.geminidataanalytics.v1.DataAnalyticsAgentProto.getDescriptor(),
+              com.google.cloud.geminidataanalytics.v1.DatasourceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_geminidataanalytics_v1_DataAgent_descriptor =
@@ -118,6 +126,8 @@ public final class DataAgentProto extends com.google.protobuf.GeneratedFile {
               "DeleteTime",
               "PurgeTime",
               "KmsKey",
+              "BigqueryAgentAnalyticsEnabled",
+              "BigqueryAgentAnalyticsTable",
               "Type",
             });
     internal_static_google_cloud_geminidataanalytics_v1_DataAgent_LabelsEntry_descriptor =
@@ -132,6 +142,7 @@ public final class DataAgentProto extends com.google.protobuf.GeneratedFile {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.geminidataanalytics.v1.DataAnalyticsAgentProto.getDescriptor();
+    com.google.cloud.geminidataanalytics.v1.DatasourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

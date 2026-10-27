@@ -16,8 +16,10 @@
 
 package com.google.cloud.lustre.v1.stub;
 
+import static com.google.cloud.lustre.v1.LustreClient.ListDirectoryPoliciesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListInstancesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListLocationsPagedResponse;
+import static com.google.cloud.lustre.v1.LustreClient.ListMirrorsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -54,20 +56,35 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.lustre.v1.CreateDirectoryPolicyRequest;
 import com.google.cloud.lustre.v1.CreateInstanceRequest;
+import com.google.cloud.lustre.v1.CreateMirrorMetadata;
+import com.google.cloud.lustre.v1.CreateMirrorRequest;
+import com.google.cloud.lustre.v1.DeleteDirectoryPolicyRequest;
 import com.google.cloud.lustre.v1.DeleteInstanceRequest;
+import com.google.cloud.lustre.v1.DeleteMirrorRequest;
+import com.google.cloud.lustre.v1.DirectoryPolicy;
 import com.google.cloud.lustre.v1.ExportDataMetadata;
 import com.google.cloud.lustre.v1.ExportDataRequest;
 import com.google.cloud.lustre.v1.ExportDataResponse;
+import com.google.cloud.lustre.v1.GetDirectoryPolicyRequest;
 import com.google.cloud.lustre.v1.GetInstanceRequest;
+import com.google.cloud.lustre.v1.GetMirrorRequest;
 import com.google.cloud.lustre.v1.ImportDataMetadata;
 import com.google.cloud.lustre.v1.ImportDataRequest;
 import com.google.cloud.lustre.v1.ImportDataResponse;
 import com.google.cloud.lustre.v1.Instance;
+import com.google.cloud.lustre.v1.ListDirectoryPoliciesRequest;
+import com.google.cloud.lustre.v1.ListDirectoryPoliciesResponse;
 import com.google.cloud.lustre.v1.ListInstancesRequest;
 import com.google.cloud.lustre.v1.ListInstancesResponse;
+import com.google.cloud.lustre.v1.ListMirrorsRequest;
+import com.google.cloud.lustre.v1.ListMirrorsResponse;
+import com.google.cloud.lustre.v1.Mirror;
 import com.google.cloud.lustre.v1.OperationMetadata;
+import com.google.cloud.lustre.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.lustre.v1.UpdateInstanceRequest;
+import com.google.cloud.lustre.v1.UpdateMirrorRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -176,12 +193,44 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings;
   private final OperationCallSettings<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationSettings;
+  private final UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings;
+  private final OperationCallSettings<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationSettings;
   private final UnaryCallSettings<ImportDataRequest, Operation> importDataSettings;
   private final OperationCallSettings<ImportDataRequest, ImportDataResponse, ImportDataMetadata>
       importDataOperationSettings;
   private final UnaryCallSettings<ExportDataRequest, Operation> exportDataSettings;
   private final OperationCallSettings<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
       exportDataOperationSettings;
+  private final UnaryCallSettings<CreateMirrorRequest, Operation> createMirrorSettings;
+  private final OperationCallSettings<CreateMirrorRequest, Mirror, CreateMirrorMetadata>
+      createMirrorOperationSettings;
+  private final UnaryCallSettings<UpdateMirrorRequest, Operation> updateMirrorSettings;
+  private final OperationCallSettings<UpdateMirrorRequest, Mirror, OperationMetadata>
+      updateMirrorOperationSettings;
+  private final UnaryCallSettings<DeleteMirrorRequest, Operation> deleteMirrorSettings;
+  private final OperationCallSettings<DeleteMirrorRequest, Empty, OperationMetadata>
+      deleteMirrorOperationSettings;
+  private final UnaryCallSettings<GetMirrorRequest, Mirror> getMirrorSettings;
+  private final PagedCallSettings<ListMirrorsRequest, ListMirrorsResponse, ListMirrorsPagedResponse>
+      listMirrorsSettings;
+  private final UnaryCallSettings<CreateDirectoryPolicyRequest, Operation>
+      createDirectoryPolicySettings;
+  private final OperationCallSettings<
+          CreateDirectoryPolicyRequest, DirectoryPolicy, OperationMetadata>
+      createDirectoryPolicyOperationSettings;
+  private final UnaryCallSettings<DeleteDirectoryPolicyRequest, Operation>
+      deleteDirectoryPolicySettings;
+  private final OperationCallSettings<DeleteDirectoryPolicyRequest, Empty, OperationMetadata>
+      deleteDirectoryPolicyOperationSettings;
+  private final UnaryCallSettings<GetDirectoryPolicyRequest, DirectoryPolicy>
+      getDirectoryPolicySettings;
+  private final PagedCallSettings<
+          ListDirectoryPoliciesRequest,
+          ListDirectoryPoliciesResponse,
+          ListDirectoryPoliciesPagedResponse>
+      listDirectoryPoliciesSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -218,6 +267,79 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
             @Override
             public Iterable<Instance> extractResources(ListInstancesResponse payload) {
               return payload.getInstancesList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListMirrorsRequest, ListMirrorsResponse, Mirror>
+      LIST_MIRRORS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListMirrorsRequest, ListMirrorsResponse, Mirror>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListMirrorsRequest injectToken(ListMirrorsRequest payload, String token) {
+              return ListMirrorsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListMirrorsRequest injectPageSize(ListMirrorsRequest payload, int pageSize) {
+              return ListMirrorsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMirrorsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListMirrorsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Mirror> extractResources(ListMirrorsResponse payload) {
+              return payload.getMirrorsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse, DirectoryPolicy>
+      LIST_DIRECTORY_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse, DirectoryPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDirectoryPoliciesRequest injectToken(
+                ListDirectoryPoliciesRequest payload, String token) {
+              return ListDirectoryPoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDirectoryPoliciesRequest injectPageSize(
+                ListDirectoryPoliciesRequest payload, int pageSize) {
+              return ListDirectoryPoliciesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDirectoryPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDirectoryPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DirectoryPolicy> extractResources(
+                ListDirectoryPoliciesResponse payload) {
+              return payload.getDirectoryPoliciesList();
             }
           };
 
@@ -269,6 +391,47 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
               PageContext<ListInstancesRequest, ListInstancesResponse, Instance> pageContext =
                   PageContext.create(callable, LIST_INSTANCES_PAGE_STR_DESC, request, context);
               return ListInstancesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListMirrorsRequest, ListMirrorsResponse, ListMirrorsPagedResponse>
+      LIST_MIRRORS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMirrorsRequest, ListMirrorsResponse, ListMirrorsPagedResponse>() {
+            @Override
+            public ApiFuture<ListMirrorsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListMirrorsRequest, ListMirrorsResponse> callable,
+                ListMirrorsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListMirrorsResponse> futureResponse) {
+              PageContext<ListMirrorsRequest, ListMirrorsResponse, Mirror> pageContext =
+                  PageContext.create(callable, LIST_MIRRORS_PAGE_STR_DESC, request, context);
+              return ListMirrorsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDirectoryPoliciesRequest,
+          ListDirectoryPoliciesResponse,
+          ListDirectoryPoliciesPagedResponse>
+      LIST_DIRECTORY_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDirectoryPoliciesRequest,
+              ListDirectoryPoliciesResponse,
+              ListDirectoryPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDirectoryPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse> callable,
+                ListDirectoryPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDirectoryPoliciesResponse> futureResponse) {
+              PageContext<
+                      ListDirectoryPoliciesRequest, ListDirectoryPoliciesResponse, DirectoryPolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DIRECTORY_POLICIES_PAGE_STR_DESC, request, context);
+              return ListDirectoryPoliciesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -333,6 +496,18 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
     return deleteInstanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings() {
+    return rescheduleMaintenanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public OperationCallSettings<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationSettings() {
+    return rescheduleMaintenanceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to importData. */
   public UnaryCallSettings<ImportDataRequest, Operation> importDataSettings() {
     return importDataSettings;
@@ -353,6 +528,89 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
   public OperationCallSettings<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
       exportDataOperationSettings() {
     return exportDataOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createMirror. */
+  public UnaryCallSettings<CreateMirrorRequest, Operation> createMirrorSettings() {
+    return createMirrorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createMirror. */
+  public OperationCallSettings<CreateMirrorRequest, Mirror, CreateMirrorMetadata>
+      createMirrorOperationSettings() {
+    return createMirrorOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateMirror. */
+  public UnaryCallSettings<UpdateMirrorRequest, Operation> updateMirrorSettings() {
+    return updateMirrorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateMirror. */
+  public OperationCallSettings<UpdateMirrorRequest, Mirror, OperationMetadata>
+      updateMirrorOperationSettings() {
+    return updateMirrorOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteMirror. */
+  public UnaryCallSettings<DeleteMirrorRequest, Operation> deleteMirrorSettings() {
+    return deleteMirrorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteMirror. */
+  public OperationCallSettings<DeleteMirrorRequest, Empty, OperationMetadata>
+      deleteMirrorOperationSettings() {
+    return deleteMirrorOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getMirror. */
+  public UnaryCallSettings<GetMirrorRequest, Mirror> getMirrorSettings() {
+    return getMirrorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMirrors. */
+  public PagedCallSettings<ListMirrorsRequest, ListMirrorsResponse, ListMirrorsPagedResponse>
+      listMirrorsSettings() {
+    return listMirrorsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDirectoryPolicy. */
+  public UnaryCallSettings<CreateDirectoryPolicyRequest, Operation>
+      createDirectoryPolicySettings() {
+    return createDirectoryPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDirectoryPolicy. */
+  public OperationCallSettings<CreateDirectoryPolicyRequest, DirectoryPolicy, OperationMetadata>
+      createDirectoryPolicyOperationSettings() {
+    return createDirectoryPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDirectoryPolicy. */
+  public UnaryCallSettings<DeleteDirectoryPolicyRequest, Operation>
+      deleteDirectoryPolicySettings() {
+    return deleteDirectoryPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDirectoryPolicy. */
+  public OperationCallSettings<DeleteDirectoryPolicyRequest, Empty, OperationMetadata>
+      deleteDirectoryPolicyOperationSettings() {
+    return deleteDirectoryPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDirectoryPolicy. */
+  public UnaryCallSettings<GetDirectoryPolicyRequest, DirectoryPolicy>
+      getDirectoryPolicySettings() {
+    return getDirectoryPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDirectoryPolicies. */
+  public PagedCallSettings<
+          ListDirectoryPoliciesRequest,
+          ListDirectoryPoliciesResponse,
+          ListDirectoryPoliciesPagedResponse>
+      listDirectoryPoliciesSettings() {
+    return listDirectoryPoliciesSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -483,10 +741,29 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
     updateInstanceOperationSettings = settingsBuilder.updateInstanceOperationSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
+    rescheduleMaintenanceSettings = settingsBuilder.rescheduleMaintenanceSettings().build();
+    rescheduleMaintenanceOperationSettings =
+        settingsBuilder.rescheduleMaintenanceOperationSettings().build();
     importDataSettings = settingsBuilder.importDataSettings().build();
     importDataOperationSettings = settingsBuilder.importDataOperationSettings().build();
     exportDataSettings = settingsBuilder.exportDataSettings().build();
     exportDataOperationSettings = settingsBuilder.exportDataOperationSettings().build();
+    createMirrorSettings = settingsBuilder.createMirrorSettings().build();
+    createMirrorOperationSettings = settingsBuilder.createMirrorOperationSettings().build();
+    updateMirrorSettings = settingsBuilder.updateMirrorSettings().build();
+    updateMirrorOperationSettings = settingsBuilder.updateMirrorOperationSettings().build();
+    deleteMirrorSettings = settingsBuilder.deleteMirrorSettings().build();
+    deleteMirrorOperationSettings = settingsBuilder.deleteMirrorOperationSettings().build();
+    getMirrorSettings = settingsBuilder.getMirrorSettings().build();
+    listMirrorsSettings = settingsBuilder.listMirrorsSettings().build();
+    createDirectoryPolicySettings = settingsBuilder.createDirectoryPolicySettings().build();
+    createDirectoryPolicyOperationSettings =
+        settingsBuilder.createDirectoryPolicyOperationSettings().build();
+    deleteDirectoryPolicySettings = settingsBuilder.deleteDirectoryPolicySettings().build();
+    deleteDirectoryPolicyOperationSettings =
+        settingsBuilder.deleteDirectoryPolicyOperationSettings().build();
+    getDirectoryPolicySettings = settingsBuilder.getDirectoryPolicySettings().build();
+    listDirectoryPoliciesSettings = settingsBuilder.listDirectoryPoliciesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -519,6 +796,11 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
         deleteInstanceSettings;
     private final OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
         deleteInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings;
+    private final OperationCallSettings.Builder<
+            RescheduleMaintenanceRequest, Instance, OperationMetadata>
+        rescheduleMaintenanceOperationSettings;
     private final UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings;
     private final OperationCallSettings.Builder<
             ImportDataRequest, ImportDataResponse, ImportDataMetadata>
@@ -527,6 +809,36 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
     private final OperationCallSettings.Builder<
             ExportDataRequest, ExportDataResponse, ExportDataMetadata>
         exportDataOperationSettings;
+    private final UnaryCallSettings.Builder<CreateMirrorRequest, Operation> createMirrorSettings;
+    private final OperationCallSettings.Builder<CreateMirrorRequest, Mirror, CreateMirrorMetadata>
+        createMirrorOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateMirrorRequest, Operation> updateMirrorSettings;
+    private final OperationCallSettings.Builder<UpdateMirrorRequest, Mirror, OperationMetadata>
+        updateMirrorOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteMirrorRequest, Operation> deleteMirrorSettings;
+    private final OperationCallSettings.Builder<DeleteMirrorRequest, Empty, OperationMetadata>
+        deleteMirrorOperationSettings;
+    private final UnaryCallSettings.Builder<GetMirrorRequest, Mirror> getMirrorSettings;
+    private final PagedCallSettings.Builder<
+            ListMirrorsRequest, ListMirrorsResponse, ListMirrorsPagedResponse>
+        listMirrorsSettings;
+    private final UnaryCallSettings.Builder<CreateDirectoryPolicyRequest, Operation>
+        createDirectoryPolicySettings;
+    private final OperationCallSettings.Builder<
+            CreateDirectoryPolicyRequest, DirectoryPolicy, OperationMetadata>
+        createDirectoryPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteDirectoryPolicyRequest, Operation>
+        deleteDirectoryPolicySettings;
+    private final OperationCallSettings.Builder<
+            DeleteDirectoryPolicyRequest, Empty, OperationMetadata>
+        deleteDirectoryPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<GetDirectoryPolicyRequest, DirectoryPolicy>
+        getDirectoryPolicySettings;
+    private final PagedCallSettings.Builder<
+            ListDirectoryPoliciesRequest,
+            ListDirectoryPoliciesResponse,
+            ListDirectoryPoliciesPagedResponse>
+        listDirectoryPoliciesSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -566,10 +878,27 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
       updateInstanceOperationSettings = OperationCallSettings.newBuilder();
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
+      rescheduleMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      rescheduleMaintenanceOperationSettings = OperationCallSettings.newBuilder();
       importDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importDataOperationSettings = OperationCallSettings.newBuilder();
       exportDataSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportDataOperationSettings = OperationCallSettings.newBuilder();
+      createMirrorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createMirrorOperationSettings = OperationCallSettings.newBuilder();
+      updateMirrorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateMirrorOperationSettings = OperationCallSettings.newBuilder();
+      deleteMirrorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteMirrorOperationSettings = OperationCallSettings.newBuilder();
+      getMirrorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listMirrorsSettings = PagedCallSettings.newBuilder(LIST_MIRRORS_PAGE_STR_FACT);
+      createDirectoryPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDirectoryPolicyOperationSettings = OperationCallSettings.newBuilder();
+      deleteDirectoryPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDirectoryPolicyOperationSettings = OperationCallSettings.newBuilder();
+      getDirectoryPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDirectoryPoliciesSettings =
+          PagedCallSettings.newBuilder(LIST_DIRECTORY_POLICIES_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -580,8 +909,18 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
               createInstanceSettings,
               updateInstanceSettings,
               deleteInstanceSettings,
+              rescheduleMaintenanceSettings,
               importDataSettings,
               exportDataSettings,
+              createMirrorSettings,
+              updateMirrorSettings,
+              deleteMirrorSettings,
+              getMirrorSettings,
+              listMirrorsSettings,
+              createDirectoryPolicySettings,
+              deleteDirectoryPolicySettings,
+              getDirectoryPolicySettings,
+              listDirectoryPoliciesSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -598,10 +937,29 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
       updateInstanceOperationSettings = settings.updateInstanceOperationSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
+      rescheduleMaintenanceSettings = settings.rescheduleMaintenanceSettings.toBuilder();
+      rescheduleMaintenanceOperationSettings =
+          settings.rescheduleMaintenanceOperationSettings.toBuilder();
       importDataSettings = settings.importDataSettings.toBuilder();
       importDataOperationSettings = settings.importDataOperationSettings.toBuilder();
       exportDataSettings = settings.exportDataSettings.toBuilder();
       exportDataOperationSettings = settings.exportDataOperationSettings.toBuilder();
+      createMirrorSettings = settings.createMirrorSettings.toBuilder();
+      createMirrorOperationSettings = settings.createMirrorOperationSettings.toBuilder();
+      updateMirrorSettings = settings.updateMirrorSettings.toBuilder();
+      updateMirrorOperationSettings = settings.updateMirrorOperationSettings.toBuilder();
+      deleteMirrorSettings = settings.deleteMirrorSettings.toBuilder();
+      deleteMirrorOperationSettings = settings.deleteMirrorOperationSettings.toBuilder();
+      getMirrorSettings = settings.getMirrorSettings.toBuilder();
+      listMirrorsSettings = settings.listMirrorsSettings.toBuilder();
+      createDirectoryPolicySettings = settings.createDirectoryPolicySettings.toBuilder();
+      createDirectoryPolicyOperationSettings =
+          settings.createDirectoryPolicyOperationSettings.toBuilder();
+      deleteDirectoryPolicySettings = settings.deleteDirectoryPolicySettings.toBuilder();
+      deleteDirectoryPolicyOperationSettings =
+          settings.deleteDirectoryPolicyOperationSettings.toBuilder();
+      getDirectoryPolicySettings = settings.getDirectoryPolicySettings.toBuilder();
+      listDirectoryPoliciesSettings = settings.listDirectoryPoliciesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -612,8 +970,18 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
               createInstanceSettings,
               updateInstanceSettings,
               deleteInstanceSettings,
+              rescheduleMaintenanceSettings,
               importDataSettings,
               exportDataSettings,
+              createMirrorSettings,
+              updateMirrorSettings,
+              deleteMirrorSettings,
+              getMirrorSettings,
+              listMirrorsSettings,
+              createDirectoryPolicySettings,
+              deleteDirectoryPolicySettings,
+              getDirectoryPolicySettings,
+              listDirectoryPoliciesSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -669,12 +1037,62 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .rescheduleMaintenanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .importDataSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .exportDataSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createMirrorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateMirrorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteMirrorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getMirrorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listMirrorsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createDirectoryPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteDirectoryPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getDirectoryPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listDirectoryPoliciesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -761,6 +1179,30 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
                       .build()));
 
       builder
+          .rescheduleMaintenanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RescheduleMaintenanceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .importDataOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<ImportDataRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
@@ -794,6 +1236,126 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
               ProtoOperationTransformers.ResponseTransformer.create(ExportDataResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(ExportDataMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createMirrorOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateMirrorRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Mirror.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CreateMirrorMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateMirrorOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateMirrorRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Mirror.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteMirrorOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteMirrorRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createDirectoryPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateDirectoryPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DirectoryPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteDirectoryPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDirectoryPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -869,6 +1431,18 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
       return deleteInstanceOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings() {
+      return rescheduleMaintenanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public OperationCallSettings.Builder<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+        rescheduleMaintenanceOperationSettings() {
+      return rescheduleMaintenanceOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to importData. */
     public UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings() {
       return importDataSettings;
@@ -889,6 +1463,91 @@ public class LustreStubSettings extends StubSettings<LustreStubSettings> {
     public OperationCallSettings.Builder<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
         exportDataOperationSettings() {
       return exportDataOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createMirror. */
+    public UnaryCallSettings.Builder<CreateMirrorRequest, Operation> createMirrorSettings() {
+      return createMirrorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createMirror. */
+    public OperationCallSettings.Builder<CreateMirrorRequest, Mirror, CreateMirrorMetadata>
+        createMirrorOperationSettings() {
+      return createMirrorOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMirror. */
+    public UnaryCallSettings.Builder<UpdateMirrorRequest, Operation> updateMirrorSettings() {
+      return updateMirrorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateMirror. */
+    public OperationCallSettings.Builder<UpdateMirrorRequest, Mirror, OperationMetadata>
+        updateMirrorOperationSettings() {
+      return updateMirrorOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMirror. */
+    public UnaryCallSettings.Builder<DeleteMirrorRequest, Operation> deleteMirrorSettings() {
+      return deleteMirrorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMirror. */
+    public OperationCallSettings.Builder<DeleteMirrorRequest, Empty, OperationMetadata>
+        deleteMirrorOperationSettings() {
+      return deleteMirrorOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getMirror. */
+    public UnaryCallSettings.Builder<GetMirrorRequest, Mirror> getMirrorSettings() {
+      return getMirrorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listMirrors. */
+    public PagedCallSettings.Builder<
+            ListMirrorsRequest, ListMirrorsResponse, ListMirrorsPagedResponse>
+        listMirrorsSettings() {
+      return listMirrorsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDirectoryPolicy. */
+    public UnaryCallSettings.Builder<CreateDirectoryPolicyRequest, Operation>
+        createDirectoryPolicySettings() {
+      return createDirectoryPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDirectoryPolicy. */
+    public OperationCallSettings.Builder<
+            CreateDirectoryPolicyRequest, DirectoryPolicy, OperationMetadata>
+        createDirectoryPolicyOperationSettings() {
+      return createDirectoryPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDirectoryPolicy. */
+    public UnaryCallSettings.Builder<DeleteDirectoryPolicyRequest, Operation>
+        deleteDirectoryPolicySettings() {
+      return deleteDirectoryPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDirectoryPolicy. */
+    public OperationCallSettings.Builder<DeleteDirectoryPolicyRequest, Empty, OperationMetadata>
+        deleteDirectoryPolicyOperationSettings() {
+      return deleteDirectoryPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDirectoryPolicy. */
+    public UnaryCallSettings.Builder<GetDirectoryPolicyRequest, DirectoryPolicy>
+        getDirectoryPolicySettings() {
+      return getDirectoryPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDirectoryPolicies. */
+    public PagedCallSettings.Builder<
+            ListDirectoryPoliciesRequest,
+            ListDirectoryPoliciesResponse,
+            ListDirectoryPoliciesPagedResponse>
+        listDirectoryPoliciesSettings() {
+      return listDirectoryPoliciesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

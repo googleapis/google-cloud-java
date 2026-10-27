@@ -85,6 +85,11 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
     SQL_SERVER_SOURCE_CONFIG(103),
     SALESFORCE_SOURCE_CONFIG(104),
     MONGODB_SOURCE_CONFIG(105),
+    SPANNER_SOURCE_CONFIG(106),
+    DATAVERSE_SOURCE_CONFIG(111),
+    SALESFORCE_MARKETING_CLOUD_SOURCE_CONFIG(116),
+    SERVICE_NOW_SOURCE_CONFIG(117),
+    WORKDAY_SOURCE_CONFIG(118),
     SOURCESTREAMCONFIG_NOT_SET(0);
     private final int value;
 
@@ -116,6 +121,16 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
           return SALESFORCE_SOURCE_CONFIG;
         case 105:
           return MONGODB_SOURCE_CONFIG;
+        case 106:
+          return SPANNER_SOURCE_CONFIG;
+        case 111:
+          return DATAVERSE_SOURCE_CONFIG;
+        case 116:
+          return SALESFORCE_MARKETING_CLOUD_SOURCE_CONFIG;
+        case 117:
+          return SERVICE_NOW_SOURCE_CONFIG;
+        case 118:
+          return WORKDAY_SOURCE_CONFIG;
         case 0:
           return SOURCESTREAMCONFIG_NOT_SET;
         default:
@@ -520,6 +535,299 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.datastream.v1.MongodbSourceConfig.getDefaultInstance();
   }
 
+  public static final int SPANNER_SOURCE_CONFIG_FIELD_NUMBER = 106;
+
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+   *
+   * @return Whether the spannerSourceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpannerSourceConfig() {
+    return sourceStreamConfigCase_ == 106;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+   *
+   * @return The spannerSourceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SpannerSourceConfig getSpannerSourceConfig() {
+    if (sourceStreamConfigCase_ == 106) {
+      return (com.google.cloud.datastream.v1.SpannerSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.SpannerSourceConfig.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Spanner data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SpannerSourceConfigOrBuilder
+      getSpannerSourceConfigOrBuilder() {
+    if (sourceStreamConfigCase_ == 106) {
+      return (com.google.cloud.datastream.v1.SpannerSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.SpannerSourceConfig.getDefaultInstance();
+  }
+
+  public static final int DATAVERSE_SOURCE_CONFIG_FIELD_NUMBER = 111;
+
+  /**
+   *
+   *
+   * <pre>
+   * Dataverse data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+   *
+   * @return Whether the dataverseSourceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataverseSourceConfig() {
+    return sourceStreamConfigCase_ == 111;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Dataverse data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+   *
+   * @return The dataverseSourceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.DataverseSourceConfig getDataverseSourceConfig() {
+    if (sourceStreamConfigCase_ == 111) {
+      return (com.google.cloud.datastream.v1.DataverseSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.DataverseSourceConfig.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Dataverse data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.DataverseSourceConfigOrBuilder
+      getDataverseSourceConfigOrBuilder() {
+    if (sourceStreamConfigCase_ == 111) {
+      return (com.google.cloud.datastream.v1.DataverseSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.DataverseSourceConfig.getDefaultInstance();
+  }
+
+  public static final int SALESFORCE_MARKETING_CLOUD_SOURCE_CONFIG_FIELD_NUMBER = 116;
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce Marketing Cloud data source configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+   * </code>
+   *
+   * @return Whether the salesforceMarketingCloudSourceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSalesforceMarketingCloudSourceConfig() {
+    return sourceStreamConfigCase_ == 116;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce Marketing Cloud data source configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+   * </code>
+   *
+   * @return The salesforceMarketingCloudSourceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig
+      getSalesforceMarketingCloudSourceConfig() {
+    if (sourceStreamConfigCase_ == 116) {
+      return (com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig)
+          sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce Marketing Cloud data source configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfigOrBuilder
+      getSalesforceMarketingCloudSourceConfigOrBuilder() {
+    if (sourceStreamConfigCase_ == 116) {
+      return (com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig)
+          sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig.getDefaultInstance();
+  }
+
+  public static final int SERVICE_NOW_SOURCE_CONFIG_FIELD_NUMBER = 117;
+
+  /**
+   *
+   *
+   * <pre>
+   * ServiceNow data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+   * </code>
+   *
+   * @return Whether the serviceNowSourceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceNowSourceConfig() {
+    return sourceStreamConfigCase_ == 117;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * ServiceNow data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+   * </code>
+   *
+   * @return The serviceNowSourceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.ServiceNowSourceConfig getServiceNowSourceConfig() {
+    if (sourceStreamConfigCase_ == 117) {
+      return (com.google.cloud.datastream.v1.ServiceNowSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.ServiceNowSourceConfig.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * ServiceNow data source configuration.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.ServiceNowSourceConfigOrBuilder
+      getServiceNowSourceConfigOrBuilder() {
+    if (sourceStreamConfigCase_ == 117) {
+      return (com.google.cloud.datastream.v1.ServiceNowSourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.ServiceNowSourceConfig.getDefaultInstance();
+  }
+
+  public static final int WORKDAY_SOURCE_CONFIG_FIELD_NUMBER = 118;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Workday data source configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workdaySourceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasWorkdaySourceConfig() {
+    return sourceStreamConfigCase_ == 118;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Workday data source configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workdaySourceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.WorkdaySourceConfig getWorkdaySourceConfig() {
+    if (sourceStreamConfigCase_ == 118) {
+      return (com.google.cloud.datastream.v1.WorkdaySourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.WorkdaySourceConfig.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Workday data source configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.WorkdaySourceConfigOrBuilder
+      getWorkdaySourceConfigOrBuilder() {
+    if (sourceStreamConfigCase_ == 118) {
+      return (com.google.cloud.datastream.v1.WorkdaySourceConfig) sourceStreamConfig_;
+    }
+    return com.google.cloud.datastream.v1.WorkdaySourceConfig.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -560,6 +868,28 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
     if (sourceStreamConfigCase_ == 105) {
       output.writeMessage(
           105, (com.google.cloud.datastream.v1.MongodbSourceConfig) sourceStreamConfig_);
+    }
+    if (sourceStreamConfigCase_ == 106) {
+      output.writeMessage(
+          106, (com.google.cloud.datastream.v1.SpannerSourceConfig) sourceStreamConfig_);
+    }
+    if (sourceStreamConfigCase_ == 111) {
+      output.writeMessage(
+          111, (com.google.cloud.datastream.v1.DataverseSourceConfig) sourceStreamConfig_);
+    }
+    if (sourceStreamConfigCase_ == 116) {
+      output.writeMessage(
+          116,
+          (com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig)
+              sourceStreamConfig_);
+    }
+    if (sourceStreamConfigCase_ == 117) {
+      output.writeMessage(
+          117, (com.google.cloud.datastream.v1.ServiceNowSourceConfig) sourceStreamConfig_);
+    }
+    if (sourceStreamConfigCase_ == 118) {
+      output.writeMessage(
+          118, (com.google.cloud.datastream.v1.WorkdaySourceConfig) sourceStreamConfig_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -603,6 +933,33 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               105, (com.google.cloud.datastream.v1.MongodbSourceConfig) sourceStreamConfig_);
     }
+    if (sourceStreamConfigCase_ == 106) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              106, (com.google.cloud.datastream.v1.SpannerSourceConfig) sourceStreamConfig_);
+    }
+    if (sourceStreamConfigCase_ == 111) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              111, (com.google.cloud.datastream.v1.DataverseSourceConfig) sourceStreamConfig_);
+    }
+    if (sourceStreamConfigCase_ == 116) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              116,
+              (com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig)
+                  sourceStreamConfig_);
+    }
+    if (sourceStreamConfigCase_ == 117) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              117, (com.google.cloud.datastream.v1.ServiceNowSourceConfig) sourceStreamConfig_);
+    }
+    if (sourceStreamConfigCase_ == 118) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              118, (com.google.cloud.datastream.v1.WorkdaySourceConfig) sourceStreamConfig_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -639,6 +996,22 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
         break;
       case 105:
         if (!getMongodbSourceConfig().equals(other.getMongodbSourceConfig())) return false;
+        break;
+      case 106:
+        if (!getSpannerSourceConfig().equals(other.getSpannerSourceConfig())) return false;
+        break;
+      case 111:
+        if (!getDataverseSourceConfig().equals(other.getDataverseSourceConfig())) return false;
+        break;
+      case 116:
+        if (!getSalesforceMarketingCloudSourceConfig()
+            .equals(other.getSalesforceMarketingCloudSourceConfig())) return false;
+        break;
+      case 117:
+        if (!getServiceNowSourceConfig().equals(other.getServiceNowSourceConfig())) return false;
+        break;
+      case 118:
+        if (!getWorkdaySourceConfig().equals(other.getWorkdaySourceConfig())) return false;
         break;
       case 0:
       default:
@@ -680,6 +1053,26 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
       case 105:
         hash = (37 * hash) + MONGODB_SOURCE_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getMongodbSourceConfig().hashCode();
+        break;
+      case 106:
+        hash = (37 * hash) + SPANNER_SOURCE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSpannerSourceConfig().hashCode();
+        break;
+      case 111:
+        hash = (37 * hash) + DATAVERSE_SOURCE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getDataverseSourceConfig().hashCode();
+        break;
+      case 116:
+        hash = (37 * hash) + SALESFORCE_MARKETING_CLOUD_SOURCE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSalesforceMarketingCloudSourceConfig().hashCode();
+        break;
+      case 117:
+        hash = (37 * hash) + SERVICE_NOW_SOURCE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getServiceNowSourceConfig().hashCode();
+        break;
+      case 118:
+        hash = (37 * hash) + WORKDAY_SOURCE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getWorkdaySourceConfig().hashCode();
         break;
       case 0:
       default:
@@ -843,6 +1236,21 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
       if (mongodbSourceConfigBuilder_ != null) {
         mongodbSourceConfigBuilder_.clear();
       }
+      if (spannerSourceConfigBuilder_ != null) {
+        spannerSourceConfigBuilder_.clear();
+      }
+      if (dataverseSourceConfigBuilder_ != null) {
+        dataverseSourceConfigBuilder_.clear();
+      }
+      if (salesforceMarketingCloudSourceConfigBuilder_ != null) {
+        salesforceMarketingCloudSourceConfigBuilder_.clear();
+      }
+      if (serviceNowSourceConfigBuilder_ != null) {
+        serviceNowSourceConfigBuilder_.clear();
+      }
+      if (workdaySourceConfigBuilder_ != null) {
+        workdaySourceConfigBuilder_.clear();
+      }
       sourceStreamConfigCase_ = 0;
       sourceStreamConfig_ = null;
       return this;
@@ -908,6 +1316,21 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
       if (sourceStreamConfigCase_ == 105 && mongodbSourceConfigBuilder_ != null) {
         result.sourceStreamConfig_ = mongodbSourceConfigBuilder_.build();
       }
+      if (sourceStreamConfigCase_ == 106 && spannerSourceConfigBuilder_ != null) {
+        result.sourceStreamConfig_ = spannerSourceConfigBuilder_.build();
+      }
+      if (sourceStreamConfigCase_ == 111 && dataverseSourceConfigBuilder_ != null) {
+        result.sourceStreamConfig_ = dataverseSourceConfigBuilder_.build();
+      }
+      if (sourceStreamConfigCase_ == 116 && salesforceMarketingCloudSourceConfigBuilder_ != null) {
+        result.sourceStreamConfig_ = salesforceMarketingCloudSourceConfigBuilder_.build();
+      }
+      if (sourceStreamConfigCase_ == 117 && serviceNowSourceConfigBuilder_ != null) {
+        result.sourceStreamConfig_ = serviceNowSourceConfigBuilder_.build();
+      }
+      if (sourceStreamConfigCase_ == 118 && workdaySourceConfigBuilder_ != null) {
+        result.sourceStreamConfig_ = workdaySourceConfigBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -956,6 +1379,32 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
         case MONGODB_SOURCE_CONFIG:
           {
             mergeMongodbSourceConfig(other.getMongodbSourceConfig());
+            break;
+          }
+        case SPANNER_SOURCE_CONFIG:
+          {
+            mergeSpannerSourceConfig(other.getSpannerSourceConfig());
+            break;
+          }
+        case DATAVERSE_SOURCE_CONFIG:
+          {
+            mergeDataverseSourceConfig(other.getDataverseSourceConfig());
+            break;
+          }
+        case SALESFORCE_MARKETING_CLOUD_SOURCE_CONFIG:
+          {
+            mergeSalesforceMarketingCloudSourceConfig(
+                other.getSalesforceMarketingCloudSourceConfig());
+            break;
+          }
+        case SERVICE_NOW_SOURCE_CONFIG:
+          {
+            mergeServiceNowSourceConfig(other.getServiceNowSourceConfig());
+            break;
+          }
+        case WORKDAY_SOURCE_CONFIG:
+          {
+            mergeWorkdaySourceConfig(other.getWorkdaySourceConfig());
             break;
           }
         case SOURCESTREAMCONFIG_NOT_SET:
@@ -1039,6 +1488,43 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
                 sourceStreamConfigCase_ = 105;
                 break;
               } // case 842
+            case 850:
+              {
+                input.readMessage(
+                    internalGetSpannerSourceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                sourceStreamConfigCase_ = 106;
+                break;
+              } // case 850
+            case 890:
+              {
+                input.readMessage(
+                    internalGetDataverseSourceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                sourceStreamConfigCase_ = 111;
+                break;
+              } // case 890
+            case 930:
+              {
+                input.readMessage(
+                    internalGetSalesforceMarketingCloudSourceConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                sourceStreamConfigCase_ = 116;
+                break;
+              } // case 930
+            case 938:
+              {
+                input.readMessage(
+                    internalGetServiceNowSourceConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                sourceStreamConfigCase_ = 117;
+                break;
+              } // case 938
+            case 946:
+              {
+                input.readMessage(
+                    internalGetWorkdaySourceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                sourceStreamConfigCase_ = 118;
+                break;
+              } // case 946
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2563,6 +3049,1183 @@ public final class SourceConfig extends com.google.protobuf.GeneratedMessage
       sourceStreamConfigCase_ = 105;
       onChanged();
       return mongodbSourceConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SpannerSourceConfig,
+            com.google.cloud.datastream.v1.SpannerSourceConfig.Builder,
+            com.google.cloud.datastream.v1.SpannerSourceConfigOrBuilder>
+        spannerSourceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+     *
+     * @return Whether the spannerSourceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSpannerSourceConfig() {
+      return sourceStreamConfigCase_ == 106;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+     *
+     * @return The spannerSourceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SpannerSourceConfig getSpannerSourceConfig() {
+      if (spannerSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 106) {
+          return (com.google.cloud.datastream.v1.SpannerSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.SpannerSourceConfig.getDefaultInstance();
+      } else {
+        if (sourceStreamConfigCase_ == 106) {
+          return spannerSourceConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SpannerSourceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+     */
+    public Builder setSpannerSourceConfig(
+        com.google.cloud.datastream.v1.SpannerSourceConfig value) {
+      if (spannerSourceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceStreamConfig_ = value;
+        onChanged();
+      } else {
+        spannerSourceConfigBuilder_.setMessage(value);
+      }
+      sourceStreamConfigCase_ = 106;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+     */
+    public Builder setSpannerSourceConfig(
+        com.google.cloud.datastream.v1.SpannerSourceConfig.Builder builderForValue) {
+      if (spannerSourceConfigBuilder_ == null) {
+        sourceStreamConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        spannerSourceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      sourceStreamConfigCase_ = 106;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+     */
+    public Builder mergeSpannerSourceConfig(
+        com.google.cloud.datastream.v1.SpannerSourceConfig value) {
+      if (spannerSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 106
+            && sourceStreamConfig_
+                != com.google.cloud.datastream.v1.SpannerSourceConfig.getDefaultInstance()) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.SpannerSourceConfig.newBuilder(
+                      (com.google.cloud.datastream.v1.SpannerSourceConfig) sourceStreamConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceStreamConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceStreamConfigCase_ == 106) {
+          spannerSourceConfigBuilder_.mergeFrom(value);
+        } else {
+          spannerSourceConfigBuilder_.setMessage(value);
+        }
+      }
+      sourceStreamConfigCase_ = 106;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+     */
+    public Builder clearSpannerSourceConfig() {
+      if (spannerSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 106) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceStreamConfigCase_ == 106) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+        }
+        spannerSourceConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+     */
+    public com.google.cloud.datastream.v1.SpannerSourceConfig.Builder
+        getSpannerSourceConfigBuilder() {
+      return internalGetSpannerSourceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SpannerSourceConfigOrBuilder
+        getSpannerSourceConfigOrBuilder() {
+      if ((sourceStreamConfigCase_ == 106) && (spannerSourceConfigBuilder_ != null)) {
+        return spannerSourceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceStreamConfigCase_ == 106) {
+          return (com.google.cloud.datastream.v1.SpannerSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.SpannerSourceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Spanner data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SpannerSourceConfig spanner_source_config = 106;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SpannerSourceConfig,
+            com.google.cloud.datastream.v1.SpannerSourceConfig.Builder,
+            com.google.cloud.datastream.v1.SpannerSourceConfigOrBuilder>
+        internalGetSpannerSourceConfigFieldBuilder() {
+      if (spannerSourceConfigBuilder_ == null) {
+        if (!(sourceStreamConfigCase_ == 106)) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.SpannerSourceConfig.getDefaultInstance();
+        }
+        spannerSourceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.SpannerSourceConfig,
+                com.google.cloud.datastream.v1.SpannerSourceConfig.Builder,
+                com.google.cloud.datastream.v1.SpannerSourceConfigOrBuilder>(
+                (com.google.cloud.datastream.v1.SpannerSourceConfig) sourceStreamConfig_,
+                getParentForChildren(),
+                isClean());
+        sourceStreamConfig_ = null;
+      }
+      sourceStreamConfigCase_ = 106;
+      onChanged();
+      return spannerSourceConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.DataverseSourceConfig,
+            com.google.cloud.datastream.v1.DataverseSourceConfig.Builder,
+            com.google.cloud.datastream.v1.DataverseSourceConfigOrBuilder>
+        dataverseSourceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Dataverse data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+     *
+     * @return Whether the dataverseSourceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataverseSourceConfig() {
+      return sourceStreamConfigCase_ == 111;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dataverse data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+     *
+     * @return The dataverseSourceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.DataverseSourceConfig getDataverseSourceConfig() {
+      if (dataverseSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 111) {
+          return (com.google.cloud.datastream.v1.DataverseSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.DataverseSourceConfig.getDefaultInstance();
+      } else {
+        if (sourceStreamConfigCase_ == 111) {
+          return dataverseSourceConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.DataverseSourceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dataverse data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+     */
+    public Builder setDataverseSourceConfig(
+        com.google.cloud.datastream.v1.DataverseSourceConfig value) {
+      if (dataverseSourceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceStreamConfig_ = value;
+        onChanged();
+      } else {
+        dataverseSourceConfigBuilder_.setMessage(value);
+      }
+      sourceStreamConfigCase_ = 111;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dataverse data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+     */
+    public Builder setDataverseSourceConfig(
+        com.google.cloud.datastream.v1.DataverseSourceConfig.Builder builderForValue) {
+      if (dataverseSourceConfigBuilder_ == null) {
+        sourceStreamConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataverseSourceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      sourceStreamConfigCase_ = 111;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dataverse data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+     */
+    public Builder mergeDataverseSourceConfig(
+        com.google.cloud.datastream.v1.DataverseSourceConfig value) {
+      if (dataverseSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 111
+            && sourceStreamConfig_
+                != com.google.cloud.datastream.v1.DataverseSourceConfig.getDefaultInstance()) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.DataverseSourceConfig.newBuilder(
+                      (com.google.cloud.datastream.v1.DataverseSourceConfig) sourceStreamConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceStreamConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceStreamConfigCase_ == 111) {
+          dataverseSourceConfigBuilder_.mergeFrom(value);
+        } else {
+          dataverseSourceConfigBuilder_.setMessage(value);
+        }
+      }
+      sourceStreamConfigCase_ = 111;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dataverse data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+     */
+    public Builder clearDataverseSourceConfig() {
+      if (dataverseSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 111) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceStreamConfigCase_ == 111) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+        }
+        dataverseSourceConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dataverse data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+     */
+    public com.google.cloud.datastream.v1.DataverseSourceConfig.Builder
+        getDataverseSourceConfigBuilder() {
+      return internalGetDataverseSourceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dataverse data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.DataverseSourceConfigOrBuilder
+        getDataverseSourceConfigOrBuilder() {
+      if ((sourceStreamConfigCase_ == 111) && (dataverseSourceConfigBuilder_ != null)) {
+        return dataverseSourceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceStreamConfigCase_ == 111) {
+          return (com.google.cloud.datastream.v1.DataverseSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.DataverseSourceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Dataverse data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.DataverseSourceConfig dataverse_source_config = 111;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.DataverseSourceConfig,
+            com.google.cloud.datastream.v1.DataverseSourceConfig.Builder,
+            com.google.cloud.datastream.v1.DataverseSourceConfigOrBuilder>
+        internalGetDataverseSourceConfigFieldBuilder() {
+      if (dataverseSourceConfigBuilder_ == null) {
+        if (!(sourceStreamConfigCase_ == 111)) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.DataverseSourceConfig.getDefaultInstance();
+        }
+        dataverseSourceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.DataverseSourceConfig,
+                com.google.cloud.datastream.v1.DataverseSourceConfig.Builder,
+                com.google.cloud.datastream.v1.DataverseSourceConfigOrBuilder>(
+                (com.google.cloud.datastream.v1.DataverseSourceConfig) sourceStreamConfig_,
+                getParentForChildren(),
+                isClean());
+        sourceStreamConfig_ = null;
+      }
+      sourceStreamConfigCase_ = 111;
+      onChanged();
+      return dataverseSourceConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig,
+            com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig.Builder,
+            com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfigOrBuilder>
+        salesforceMarketingCloudSourceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Marketing Cloud data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+     * </code>
+     *
+     * @return Whether the salesforceMarketingCloudSourceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSalesforceMarketingCloudSourceConfig() {
+      return sourceStreamConfigCase_ == 116;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Marketing Cloud data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+     * </code>
+     *
+     * @return The salesforceMarketingCloudSourceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig
+        getSalesforceMarketingCloudSourceConfig() {
+      if (salesforceMarketingCloudSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 116) {
+          return (com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig)
+              sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig
+            .getDefaultInstance();
+      } else {
+        if (sourceStreamConfigCase_ == 116) {
+          return salesforceMarketingCloudSourceConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Marketing Cloud data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+     * </code>
+     */
+    public Builder setSalesforceMarketingCloudSourceConfig(
+        com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig value) {
+      if (salesforceMarketingCloudSourceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceStreamConfig_ = value;
+        onChanged();
+      } else {
+        salesforceMarketingCloudSourceConfigBuilder_.setMessage(value);
+      }
+      sourceStreamConfigCase_ = 116;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Marketing Cloud data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+     * </code>
+     */
+    public Builder setSalesforceMarketingCloudSourceConfig(
+        com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig.Builder
+            builderForValue) {
+      if (salesforceMarketingCloudSourceConfigBuilder_ == null) {
+        sourceStreamConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        salesforceMarketingCloudSourceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      sourceStreamConfigCase_ = 116;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Marketing Cloud data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+     * </code>
+     */
+    public Builder mergeSalesforceMarketingCloudSourceConfig(
+        com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig value) {
+      if (salesforceMarketingCloudSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 116
+            && sourceStreamConfig_
+                != com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig
+                    .getDefaultInstance()) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig.newBuilder(
+                      (com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig)
+                          sourceStreamConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceStreamConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceStreamConfigCase_ == 116) {
+          salesforceMarketingCloudSourceConfigBuilder_.mergeFrom(value);
+        } else {
+          salesforceMarketingCloudSourceConfigBuilder_.setMessage(value);
+        }
+      }
+      sourceStreamConfigCase_ = 116;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Marketing Cloud data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+     * </code>
+     */
+    public Builder clearSalesforceMarketingCloudSourceConfig() {
+      if (salesforceMarketingCloudSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 116) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceStreamConfigCase_ == 116) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+        }
+        salesforceMarketingCloudSourceConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Marketing Cloud data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig.Builder
+        getSalesforceMarketingCloudSourceConfigBuilder() {
+      return internalGetSalesforceMarketingCloudSourceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Marketing Cloud data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfigOrBuilder
+        getSalesforceMarketingCloudSourceConfigOrBuilder() {
+      if ((sourceStreamConfigCase_ == 116)
+          && (salesforceMarketingCloudSourceConfigBuilder_ != null)) {
+        return salesforceMarketingCloudSourceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceStreamConfigCase_ == 116) {
+          return (com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig)
+              sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce Marketing Cloud data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig salesforce_marketing_cloud_source_config = 116;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig,
+            com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig.Builder,
+            com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfigOrBuilder>
+        internalGetSalesforceMarketingCloudSourceConfigFieldBuilder() {
+      if (salesforceMarketingCloudSourceConfigBuilder_ == null) {
+        if (!(sourceStreamConfigCase_ == 116)) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig
+                  .getDefaultInstance();
+        }
+        salesforceMarketingCloudSourceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig,
+                com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig.Builder,
+                com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfigOrBuilder>(
+                (com.google.cloud.datastream.v1.SalesforceMarketingCloudSourceConfig)
+                    sourceStreamConfig_,
+                getParentForChildren(),
+                isClean());
+        sourceStreamConfig_ = null;
+      }
+      sourceStreamConfigCase_ = 116;
+      onChanged();
+      return salesforceMarketingCloudSourceConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.ServiceNowSourceConfig,
+            com.google.cloud.datastream.v1.ServiceNowSourceConfig.Builder,
+            com.google.cloud.datastream.v1.ServiceNowSourceConfigOrBuilder>
+        serviceNowSourceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * ServiceNow data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+     * </code>
+     *
+     * @return Whether the serviceNowSourceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasServiceNowSourceConfig() {
+      return sourceStreamConfigCase_ == 117;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ServiceNow data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+     * </code>
+     *
+     * @return The serviceNowSourceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.ServiceNowSourceConfig getServiceNowSourceConfig() {
+      if (serviceNowSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 117) {
+          return (com.google.cloud.datastream.v1.ServiceNowSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.ServiceNowSourceConfig.getDefaultInstance();
+      } else {
+        if (sourceStreamConfigCase_ == 117) {
+          return serviceNowSourceConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.ServiceNowSourceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ServiceNow data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+     * </code>
+     */
+    public Builder setServiceNowSourceConfig(
+        com.google.cloud.datastream.v1.ServiceNowSourceConfig value) {
+      if (serviceNowSourceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceStreamConfig_ = value;
+        onChanged();
+      } else {
+        serviceNowSourceConfigBuilder_.setMessage(value);
+      }
+      sourceStreamConfigCase_ = 117;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ServiceNow data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+     * </code>
+     */
+    public Builder setServiceNowSourceConfig(
+        com.google.cloud.datastream.v1.ServiceNowSourceConfig.Builder builderForValue) {
+      if (serviceNowSourceConfigBuilder_ == null) {
+        sourceStreamConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        serviceNowSourceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      sourceStreamConfigCase_ = 117;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ServiceNow data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+     * </code>
+     */
+    public Builder mergeServiceNowSourceConfig(
+        com.google.cloud.datastream.v1.ServiceNowSourceConfig value) {
+      if (serviceNowSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 117
+            && sourceStreamConfig_
+                != com.google.cloud.datastream.v1.ServiceNowSourceConfig.getDefaultInstance()) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.ServiceNowSourceConfig.newBuilder(
+                      (com.google.cloud.datastream.v1.ServiceNowSourceConfig) sourceStreamConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceStreamConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceStreamConfigCase_ == 117) {
+          serviceNowSourceConfigBuilder_.mergeFrom(value);
+        } else {
+          serviceNowSourceConfigBuilder_.setMessage(value);
+        }
+      }
+      sourceStreamConfigCase_ = 117;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ServiceNow data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+     * </code>
+     */
+    public Builder clearServiceNowSourceConfig() {
+      if (serviceNowSourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 117) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceStreamConfigCase_ == 117) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+        }
+        serviceNowSourceConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ServiceNow data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.ServiceNowSourceConfig.Builder
+        getServiceNowSourceConfigBuilder() {
+      return internalGetServiceNowSourceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ServiceNow data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.ServiceNowSourceConfigOrBuilder
+        getServiceNowSourceConfigOrBuilder() {
+      if ((sourceStreamConfigCase_ == 117) && (serviceNowSourceConfigBuilder_ != null)) {
+        return serviceNowSourceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceStreamConfigCase_ == 117) {
+          return (com.google.cloud.datastream.v1.ServiceNowSourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.ServiceNowSourceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ServiceNow data source configuration.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.ServiceNowSourceConfig service_now_source_config = 117;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.ServiceNowSourceConfig,
+            com.google.cloud.datastream.v1.ServiceNowSourceConfig.Builder,
+            com.google.cloud.datastream.v1.ServiceNowSourceConfigOrBuilder>
+        internalGetServiceNowSourceConfigFieldBuilder() {
+      if (serviceNowSourceConfigBuilder_ == null) {
+        if (!(sourceStreamConfigCase_ == 117)) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.ServiceNowSourceConfig.getDefaultInstance();
+        }
+        serviceNowSourceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.ServiceNowSourceConfig,
+                com.google.cloud.datastream.v1.ServiceNowSourceConfig.Builder,
+                com.google.cloud.datastream.v1.ServiceNowSourceConfigOrBuilder>(
+                (com.google.cloud.datastream.v1.ServiceNowSourceConfig) sourceStreamConfig_,
+                getParentForChildren(),
+                isClean());
+        sourceStreamConfig_ = null;
+      }
+      sourceStreamConfigCase_ = 117;
+      onChanged();
+      return serviceNowSourceConfigBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.WorkdaySourceConfig,
+            com.google.cloud.datastream.v1.WorkdaySourceConfig.Builder,
+            com.google.cloud.datastream.v1.WorkdaySourceConfigOrBuilder>
+        workdaySourceConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Workday data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the workdaySourceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasWorkdaySourceConfig() {
+      return sourceStreamConfigCase_ == 118;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Workday data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The workdaySourceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.WorkdaySourceConfig getWorkdaySourceConfig() {
+      if (workdaySourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 118) {
+          return (com.google.cloud.datastream.v1.WorkdaySourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.WorkdaySourceConfig.getDefaultInstance();
+      } else {
+        if (sourceStreamConfigCase_ == 118) {
+          return workdaySourceConfigBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.WorkdaySourceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Workday data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkdaySourceConfig(
+        com.google.cloud.datastream.v1.WorkdaySourceConfig value) {
+      if (workdaySourceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceStreamConfig_ = value;
+        onChanged();
+      } else {
+        workdaySourceConfigBuilder_.setMessage(value);
+      }
+      sourceStreamConfigCase_ = 118;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Workday data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setWorkdaySourceConfig(
+        com.google.cloud.datastream.v1.WorkdaySourceConfig.Builder builderForValue) {
+      if (workdaySourceConfigBuilder_ == null) {
+        sourceStreamConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        workdaySourceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      sourceStreamConfigCase_ = 118;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Workday data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeWorkdaySourceConfig(
+        com.google.cloud.datastream.v1.WorkdaySourceConfig value) {
+      if (workdaySourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 118
+            && sourceStreamConfig_
+                != com.google.cloud.datastream.v1.WorkdaySourceConfig.getDefaultInstance()) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.WorkdaySourceConfig.newBuilder(
+                      (com.google.cloud.datastream.v1.WorkdaySourceConfig) sourceStreamConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceStreamConfig_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceStreamConfigCase_ == 118) {
+          workdaySourceConfigBuilder_.mergeFrom(value);
+        } else {
+          workdaySourceConfigBuilder_.setMessage(value);
+        }
+      }
+      sourceStreamConfigCase_ = 118;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Workday data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearWorkdaySourceConfig() {
+      if (workdaySourceConfigBuilder_ == null) {
+        if (sourceStreamConfigCase_ == 118) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceStreamConfigCase_ == 118) {
+          sourceStreamConfigCase_ = 0;
+          sourceStreamConfig_ = null;
+        }
+        workdaySourceConfigBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Workday data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.datastream.v1.WorkdaySourceConfig.Builder
+        getWorkdaySourceConfigBuilder() {
+      return internalGetWorkdaySourceConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Workday data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.WorkdaySourceConfigOrBuilder
+        getWorkdaySourceConfigOrBuilder() {
+      if ((sourceStreamConfigCase_ == 118) && (workdaySourceConfigBuilder_ != null)) {
+        return workdaySourceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceStreamConfigCase_ == 118) {
+          return (com.google.cloud.datastream.v1.WorkdaySourceConfig) sourceStreamConfig_;
+        }
+        return com.google.cloud.datastream.v1.WorkdaySourceConfig.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Workday data source configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.datastream.v1.WorkdaySourceConfig workday_source_config = 118 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.datastream.v1.WorkdaySourceConfig,
+            com.google.cloud.datastream.v1.WorkdaySourceConfig.Builder,
+            com.google.cloud.datastream.v1.WorkdaySourceConfigOrBuilder>
+        internalGetWorkdaySourceConfigFieldBuilder() {
+      if (workdaySourceConfigBuilder_ == null) {
+        if (!(sourceStreamConfigCase_ == 118)) {
+          sourceStreamConfig_ =
+              com.google.cloud.datastream.v1.WorkdaySourceConfig.getDefaultInstance();
+        }
+        workdaySourceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.datastream.v1.WorkdaySourceConfig,
+                com.google.cloud.datastream.v1.WorkdaySourceConfig.Builder,
+                com.google.cloud.datastream.v1.WorkdaySourceConfigOrBuilder>(
+                (com.google.cloud.datastream.v1.WorkdaySourceConfig) sourceStreamConfig_,
+                getParentForChildren(),
+                isClean());
+        sourceStreamConfig_ = null;
+      }
+      sourceStreamConfigCase_ = 118;
+      onChanged();
+      return workdaySourceConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.datastream.v1.SourceConfig)

@@ -81,4 +81,90 @@ public interface ServiceOrBuilder
    * @return The bytes for title.
    */
   com.google.protobuf.ByteString getTitleBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Document requirement for private offers on this service.
+   *
+   * Constraints that apply to every service, such as the restriction against
+   * attaching both a standard and a custom EULA, are documented on
+   * `PrivateOfferDocument` and are not represented here.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.commerceproducer.v1beta.Service.DocumentRequirement document_requirement = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the documentRequirement field is set.
+   */
+  boolean hasDocumentRequirement();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Document requirement for private offers on this service.
+   *
+   * Constraints that apply to every service, such as the restriction against
+   * attaching both a standard and a custom EULA, are documented on
+   * `PrivateOfferDocument` and are not represented here.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.commerceproducer.v1beta.Service.DocumentRequirement document_requirement = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The documentRequirement.
+   */
+  com.google.cloud.commerceproducer.v1beta.Service.DocumentRequirement getDocumentRequirement();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Document requirement for private offers on this service.
+   *
+   * Constraints that apply to every service, such as the restriction against
+   * attaching both a standard and a custom EULA, are documented on
+   * `PrivateOfferDocument` and are not represented here.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.commerceproducer.v1beta.Service.DocumentRequirement document_requirement = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.commerceproducer.v1beta.Service.DocumentRequirementOrBuilder
+      getDocumentRequirementOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the product this service commercializes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.commerceproducer.v1beta.Service.ProductType product_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for productType.
+   */
+  int getProductTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the product this service commercializes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.commerceproducer.v1beta.Service.ProductType product_type = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The productType.
+   */
+  com.google.cloud.commerceproducer.v1beta.Service.ProductType getProductType();
 }

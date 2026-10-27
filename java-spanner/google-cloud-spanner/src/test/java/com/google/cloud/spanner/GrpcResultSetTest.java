@@ -22,6 +22,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -54,6 +57,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
 import javax.annotation.Nullable;
 import org.junit.Before;
 import org.junit.Test;
@@ -1253,5 +1257,124 @@ public class GrpcResultSetTest {
             });
     assertEquals("DEADLINE_EXCEEDED: stream wait timeout", spannerException.getMessage());
     consumer.onCompleted();
+  }
+
+  @Test
+  public void testClosePreservesWithBeginTransactionForListener() {
+    AtomicBoolean listenerReceivedWithBeginTransaction = new AtomicBoolean();
+    AbstractResultSet.Listener listener =
+        new NoOpListener() {
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            listenerReceivedWithBeginTransaction.set(withBeginTransaction);
+          }
+        };
+    AbstractResultSet.CloseableIterator<PartialResultSet> iterator =
+        new AbstractResultSet.CloseableIterator<PartialResultSet>() {
+          private boolean closed;
+
+          @Override
+          public void close(@Nullable String message) {
+            this.closed = true;
+          }
+
+          @Override
+          public boolean isWithBeginTransaction() {
+            // Emulate ResumableStreamIterator: stream is nulled upon close,
+            // so isWithBeginTransaction() returns false once closed.
+            return !closed;
+          }
+
+          @Override
+          public boolean isLastStatement() {
+            return false;
+          }
+
+          @Override
+          public boolean hasNext() {
+            return false;
+          }
+
+          @Override
+          public PartialResultSet next() {
+            throw new java.util.NoSuchElementException();
+          }
+        };
+
+    GrpcResultSet resultSet = new GrpcResultSet(iterator, listener);
+    resultSet.close();
+    assertTrue(listenerReceivedWithBeginTransaction.get());
+  }
+
+  @Test
+  public void testIsDataAvailable() {
+    assertFalse(resultSet.isDataAvailable());
+
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.string()))))
+            .addValues(Value.string("val1").toProto())
+            .addValues(Value.string("val2").toProto())
+            .build());
+
+    assertTrue(resultSet.isDataAvailable());
+    assertTrue(resultSet.next());
+    assertEquals("val1", resultSet.getString(0));
+
+    assertTrue(resultSet.isDataAvailable());
+    assertTrue(resultSet.next());
+    assertEquals("val2", resultSet.getString(0));
+
+    assertFalse(resultSet.isDataAvailable());
+    consumer.onCompleted();
+    assertTrue(resultSet.isDataAvailable());
+    assertFalse(resultSet.next());
+  }
+
+  @Test
+  public void testIsDataAvailableWhenClosed() {
+    assertFalse(resultSet.isDataAvailable());
+    resultSet.close();
+    assertTrue(resultSet.isDataAvailable());
+    assertThrows(SpannerException.class, resultSet::next);
+  }
+
+  @Test
+  public void testIsDataAvailableWhenClosedMidStream() {
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.string()))))
+            .addValues(Value.string("val1").toProto())
+            .build());
+
+    assertTrue(resultSet.isDataAvailable());
+    assertTrue(resultSet.next());
+    assertEquals("val1", resultSet.getString(0));
+
+    // Mid-stream with no further chunks buffered yet
+    assertFalse(resultSet.isDataAvailable());
+    resultSet.close();
+
+    // After close, isDataAvailable returns true and next() returns false immediately
+    assertTrue(resultSet.isDataAvailable());
+    assertFalse(resultSet.next());
+    assertThrows(IllegalStateException.class, () -> resultSet.getString(0));
+  }
+
+  @Test
+  public void testInitiateStreamingDelegation() {
+    @SuppressWarnings("unchecked")
+    AbstractResultSet.CloseableIterator<PartialResultSet> mockStream =
+        mock(AbstractResultSet.CloseableIterator.class);
+    AsyncResultSet.StreamMessageListener listener =
+        mock(AsyncResultSet.StreamMessageListener.class);
+    when(mockStream.initiateStreaming(listener)).thenReturn(true);
+
+    try (GrpcResultSet streamingResultSet = new GrpcResultSet(mockStream, new NoOpListener())) {
+      assertTrue(streamingResultSet.initiateStreaming(listener));
+      verify(mockStream).initiateStreaming(listener);
+    }
+
+    assertFalse(resultSet.initiateStreaming(listener));
   }
 }

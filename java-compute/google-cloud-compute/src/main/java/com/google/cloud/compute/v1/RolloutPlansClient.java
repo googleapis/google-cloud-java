@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RolloutPlans API.
  *
+ * <p>This client uses RolloutPlans version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -613,7 +615,6 @@ public class RolloutPlansClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (RolloutPlan element : rolloutPlansClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -648,7 +649,6 @@ public class RolloutPlansClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<RolloutPlan> future = rolloutPlansClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -682,7 +682,6 @@ public class RolloutPlansClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     RolloutPlansListResponse response = rolloutPlansClient.listCallable().call(request);

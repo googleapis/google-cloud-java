@@ -479,7 +479,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+   * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
    * describes a single solar panel. They are listed in the order that
    * the panel layout algorithm placed this. This is usually, though
    * not always, in decreasing order of annual energy production.
@@ -496,7 +496,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+   * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
    * describes a single solar panel. They are listed in the order that
    * the panel layout algorithm placed this. This is usually, though
    * not always, in decreasing order of annual energy production.
@@ -514,7 +514,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+   * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
    * describes a single solar panel. They are listed in the order that
    * the panel layout algorithm placed this. This is usually, though
    * not always, in decreasing order of annual energy production.
@@ -531,7 +531,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+   * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
    * describes a single solar panel. They are listed in the order that
    * the panel layout algorithm placed this. This is usually, though
    * not always, in decreasing order of annual energy production.
@@ -548,7 +548,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+   * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
    * describes a single solar panel. They are listed in the order that
    * the panel layout algorithm placed this. This is usually, though
    * not always, in decreasing order of annual energy production.
@@ -3014,7 +3014,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3034,7 +3034,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3054,7 +3054,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3074,7 +3074,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3100,7 +3100,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3124,7 +3124,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3150,7 +3150,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3176,7 +3176,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3199,7 +3199,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3223,7 +3223,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3247,7 +3247,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3270,7 +3270,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3293,7 +3293,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3309,7 +3309,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3329,7 +3329,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3350,7 +3350,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3367,7 +3367,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.
@@ -3384,7 +3384,7 @@ public final class SolarPotential extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Each [SolarPanel] [google.maps.solar.v1.SolarPanel]
+     * Each [SolarPanel][google.maps.solar.v1.SolarPanel]
      * describes a single solar panel. They are listed in the order that
      * the panel layout algorithm placed this. This is usually, though
      * not always, in decreasing order of annual energy production.

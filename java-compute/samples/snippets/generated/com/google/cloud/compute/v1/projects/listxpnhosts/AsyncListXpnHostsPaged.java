@@ -46,7 +46,6 @@ public class AsyncListXpnHostsPaged {
               .setProject("project-309310695")
               .setProjectsListXpnHostsRequestResource(
                   ProjectsListXpnHostsRequest.newBuilder().build())
-              .setReturnPartialSuccess(true)
               .build();
       while (true) {
         XpnHostList response = projectsClient.listXpnHostsCallable().call(request);

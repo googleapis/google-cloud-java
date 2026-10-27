@@ -232,6 +232,21 @@ public class RegionNetworkFirewallPoliciesSettings
     return ((RegionNetworkFirewallPoliciesStubSettings) getStubSettings()).patchOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to patchAssociation. */
+  public UnaryCallSettings<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>
+      patchAssociationSettings() {
+    return ((RegionNetworkFirewallPoliciesStubSettings) getStubSettings())
+        .patchAssociationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchAssociation. */
+  public OperationCallSettings<
+          PatchAssociationRegionNetworkFirewallPolicyRequest, Operation, Operation>
+      patchAssociationOperationSettings() {
+    return ((RegionNetworkFirewallPoliciesStubSettings) getStubSettings())
+        .patchAssociationOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to patchRule. */
   public UnaryCallSettings<PatchRuleRegionNetworkFirewallPolicyRequest, Operation>
       patchRuleSettings() {
@@ -501,6 +516,19 @@ public class RegionNetworkFirewallPoliciesSettings
             PatchRegionNetworkFirewallPolicyRequest, Operation, Operation>
         patchOperationSettings() {
       return getStubSettingsBuilder().patchOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchAssociation. */
+    public UnaryCallSettings.Builder<PatchAssociationRegionNetworkFirewallPolicyRequest, Operation>
+        patchAssociationSettings() {
+      return getStubSettingsBuilder().patchAssociationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchAssociation. */
+    public OperationCallSettings.Builder<
+            PatchAssociationRegionNetworkFirewallPolicyRequest, Operation, Operation>
+        patchAssociationOperationSettings() {
+      return getStubSettingsBuilder().patchAssociationOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to patchRule. */

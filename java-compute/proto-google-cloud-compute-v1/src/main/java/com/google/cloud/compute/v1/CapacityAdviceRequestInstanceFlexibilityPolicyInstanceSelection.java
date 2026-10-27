@@ -77,6 +77,7 @@ public final class CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelecti
                 .CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelection.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DISKS_FIELD_NUMBER = 95594102;
 
   @SuppressWarnings("serial")
@@ -326,6 +327,45 @@ public final class CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelecti
     return machineTypes_.getByteString(index);
   }
 
+  public static final int RANK_FIELD_NUMBER = 3492908;
+  private long rank_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rank when prioritizing the shape flexibilities.
+   * The instance selections are considered in the ascending order of the
+   * rank. If not set, defaults to 0.
+   * </pre>
+   *
+   * <code>optional int64 rank = 3492908;</code>
+   *
+   * @return Whether the rank field is set.
+   */
+  @java.lang.Override
+  public boolean hasRank() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Rank when prioritizing the shape flexibilities.
+   * The instance selections are considered in the ascending order of the
+   * rank. If not set, defaults to 0.
+   * </pre>
+   *
+   * <code>optional int64 rank = 3492908;</code>
+   *
+   * @return The rank.
+   */
+  @java.lang.Override
+  public long getRank() {
+    return rank_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -340,6 +380,9 @@ public final class CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelecti
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt64(3492908, rank_);
+    }
     for (int i = 0; i < machineTypes_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 79720065, machineTypes_.getRaw(i));
     }
@@ -358,6 +401,9 @@ public final class CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelecti
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(3492908, rank_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < machineTypes_.size(); i++) {
@@ -399,6 +445,10 @@ public final class CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelecti
     if (!getDisksList().equals(other.getDisksList())) return false;
     if (!getGuestAcceleratorsList().equals(other.getGuestAcceleratorsList())) return false;
     if (!getMachineTypesList().equals(other.getMachineTypesList())) return false;
+    if (hasRank() != other.hasRank()) return false;
+    if (hasRank()) {
+      if (getRank() != other.getRank()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -421,6 +471,10 @@ public final class CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelecti
     if (getMachineTypesCount() > 0) {
       hash = (37 * hash) + MACHINE_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + getMachineTypesList().hashCode();
+    }
+    if (hasRank()) {
+      hash = (37 * hash) + RANK_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRank());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -602,6 +656,7 @@ public final class CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelecti
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       machineTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      rank_ = 0L;
       return this;
     }
 
@@ -678,6 +733,12 @@ public final class CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelecti
         machineTypes_.makeImmutable();
         result.machineTypes_ = machineTypes_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.rank_ = rank_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -767,6 +828,9 @@ public final class CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelecti
         }
         onChanged();
       }
+      if (other.hasRank()) {
+        setRank(other.getRank());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -793,6 +857,12 @@ public final class CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelecti
             case 0:
               done = true;
               break;
+            case 27943264:
+              {
+                rank_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 27943264
             case 637760522:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -1895,6 +1965,86 @@ public final class CapacityAdviceRequestInstanceFlexibilityPolicyInstanceSelecti
       ensureMachineTypesIsMutable();
       machineTypes_.add(value);
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private long rank_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rank when prioritizing the shape flexibilities.
+     * The instance selections are considered in the ascending order of the
+     * rank. If not set, defaults to 0.
+     * </pre>
+     *
+     * <code>optional int64 rank = 3492908;</code>
+     *
+     * @return Whether the rank field is set.
+     */
+    @java.lang.Override
+    public boolean hasRank() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rank when prioritizing the shape flexibilities.
+     * The instance selections are considered in the ascending order of the
+     * rank. If not set, defaults to 0.
+     * </pre>
+     *
+     * <code>optional int64 rank = 3492908;</code>
+     *
+     * @return The rank.
+     */
+    @java.lang.Override
+    public long getRank() {
+      return rank_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rank when prioritizing the shape flexibilities.
+     * The instance selections are considered in the ascending order of the
+     * rank. If not set, defaults to 0.
+     * </pre>
+     *
+     * <code>optional int64 rank = 3492908;</code>
+     *
+     * @param value The rank to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRank(long value) {
+
+      rank_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Rank when prioritizing the shape flexibilities.
+     * The instance selections are considered in the ascending order of the
+     * rank. If not set, defaults to 0.
+     * </pre>
+     *
+     * <code>optional int64 rank = 3492908;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRank() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      rank_ = 0L;
       onChanged();
       return this;
     }

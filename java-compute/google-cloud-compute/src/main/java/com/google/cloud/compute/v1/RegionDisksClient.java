@@ -40,6 +40,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionDisks API.
  *
+ * <p>This client uses RegionDisks version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -1445,7 +1447,6 @@ public class RegionDisksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Disk element : regionDisksClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1481,7 +1482,6 @@ public class RegionDisksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Disk> future = regionDisksClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -1516,7 +1516,6 @@ public class RegionDisksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     DiskList response = regionDisksClient.listCallable().call(request);

@@ -137,6 +137,7 @@ public final class Height extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Height of the user in millimeters.
+   * Must be in the range `[0, 3000]`.
    * </pre>
    *
    * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -153,6 +154,7 @@ public final class Height extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Height of the user in millimeters.
+   * Must be in the range `[0, 3000]`.
    * </pre>
    *
    * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -747,6 +749,7 @@ public final class Height extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Height of the user in millimeters.
+     * Must be in the range `[0, 3000]`.
      * </pre>
      *
      * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -763,6 +766,7 @@ public final class Height extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Height of the user in millimeters.
+     * Must be in the range `[0, 3000]`.
      * </pre>
      *
      * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -779,6 +783,7 @@ public final class Height extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Height of the user in millimeters.
+     * Must be in the range `[0, 3000]`.
      * </pre>
      *
      * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -799,6 +804,7 @@ public final class Height extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Height of the user in millimeters.
+     * Must be in the range `[0, 3000]`.
      * </pre>
      *
      * <code>optional int64 height_millimeters = 2 [(.google.api.field_behavior) = REQUIRED];</code>

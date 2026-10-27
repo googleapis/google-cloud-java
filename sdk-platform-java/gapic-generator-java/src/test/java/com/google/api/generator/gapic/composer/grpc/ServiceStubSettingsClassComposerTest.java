@@ -70,7 +70,7 @@ class ServiceStubSettingsClassComposerTest {
             "v2",
             0),
         Arguments.of(
-            "ResumableUploadServiceStubSettings",
+            "MediaServiceStubSettings",
             GrpcTestProtoLoader.instance().parseShowcaseResumableUpload(),
             "localhost:7469",
             "v1beta1",

@@ -48,9 +48,11 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
 import com.google.api.gax.rpc.mtls.AbstractMtlsTransportChannelTest;
 import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
+import com.google.api.gax.rpc.testing.FakeMtlsProvider;
 import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
 import com.google.auth.http.AuthHttpConstants;
+import com.google.auth.mtls.CertificateSourceUnavailableException;
 import com.google.auth.mtls.MtlsProvider;
 import com.google.auth.oauth2.CloudShellCredentials;
 import com.google.auth.oauth2.ComputeEngineCredentials;
@@ -663,7 +665,9 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     createAndCloseTransportChannel(provider);
     assertThat(logHandler.getAllMessages())
         .contains(
-            "DirectPath is misconfigured. The DirectPath XDS option was set, but the attemptDirectPath option was not. Please set both the attemptDirectPath and attemptDirectPathXds options.");
+            "DirectPath is misconfigured. The DirectPath XDS option was set, but the"
+                + " attemptDirectPath option was not. Please set both the attemptDirectPath and"
+                + " attemptDirectPathXds options.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -681,8 +685,10 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     createAndCloseTransportChannel(provider);
     assertThat(logHandler.getAllMessages())
         .contains(
-            "Env var GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS was found and set to TRUE, but DirectPath was not enabled for this client. If this is intended for "
-                + "this client, please note that this is a misconfiguration and set the attemptDirectPath option as well.");
+            "Env var GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS was found and set to TRUE, but DirectPath"
+                + " was not enabled for this client. If this is intended for this client, please"
+                + " note that this is a misconfiguration and set the attemptDirectPath option as"
+                + " well.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -710,6 +716,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         InstantiatingGrpcChannelProvider.newBuilder()
             .setAttemptDirectPathXds()
             .setAttemptDirectPath(true)
+            .setEnvProvider(name -> null)
             .setHeaderProvider(
                 mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
             .setExecutor(mock(Executor.class))
@@ -876,12 +883,14 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_directPathEnvVarNotSet_attemptDirectPathIsTrue() {
     System.setProperty("os.name", "Linux");
+    EnvironmentProvider envProvider = name -> null;
     InstantiatingGrpcChannelProvider.Builder builder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setCertificateBasedAccess(certificateBasedAccess)
             .setAttemptDirectPath(true)
             .setCredentials(computeEngineCredentials)
-            .setEndpoint(DEFAULT_ENDPOINT);
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setEnvProvider(envProvider);
     InstantiatingGrpcChannelProvider provider =
         new InstantiatingGrpcChannelProvider(builder, GCE_PRODUCTION_NAME_AFTER_2016);
     Truth.assertThat(provider.canUseDirectPath()).isTrue();
@@ -890,12 +899,14 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_directPathEnvVarNotSet_attemptDirectPathIsFalse() {
     System.setProperty("os.name", "Linux");
+    EnvironmentProvider envProvider = name -> null;
     InstantiatingGrpcChannelProvider.Builder builder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setCertificateBasedAccess(certificateBasedAccess)
             .setAttemptDirectPath(false)
             .setCredentials(computeEngineCredentials)
-            .setEndpoint(DEFAULT_ENDPOINT);
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setEnvProvider(envProvider);
     InstantiatingGrpcChannelProvider provider =
         new InstantiatingGrpcChannelProvider(builder, GCE_PRODUCTION_NAME_AFTER_2016);
     Truth.assertThat(provider.canUseDirectPath()).isFalse();
@@ -1200,7 +1211,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     assertThat(provider.createS2ASecuredChannelCredentials()).isNotNull();
     assertThat(logHandler.getAllMessages())
         .contains(
-            "Cannot establish an mTLS connection to S2A because autoconfig endpoint did not return a mtls address to reach S2A.");
+            "Cannot establish an mTLS connection to S2A because autoconfig endpoint did not return"
+                + " a mtls address to reach S2A.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -1246,7 +1258,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     assertThat(provider.createS2ASecuredChannelCredentials()).isNotNull();
     assertThat(logHandler.getAllMessages())
         .contains(
-            "Cannot establish an mTLS connection to S2A because MTLS to MDS credentials do not exist on filesystem, falling back to plaintext connection to S2A");
+            "Cannot establish an mTLS connection to S2A because MTLS to MDS credentials do not"
+                + " exist on filesystem, falling back to plaintext connection to S2A");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -1339,6 +1352,140 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         InstantiatingGrpcChannelProvider.newBuilder().setBackgroundExecutor(mockExecutor).build();
 
     assertThat(provider.getBackgroundExecutor()).isEqualTo(mockExecutor);
+  }
+
+  @Test
+  void createChannel_whenDirectPathEnabled_ignoresWorkloadCertPath() throws Exception {
+    System.setProperty("os.name", "Linux");
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(
+            envProvider.getenv(
+                InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+    CertificateBasedAccess mtlsCertificateBasedAccess =
+        mock(CertificateBasedAccess.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(mtlsCertificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(mtlsCertificateBasedAccess.getWorkloadCertPath())
+        .thenReturn("/path/to/workload/cert.pem");
+    MtlsProvider mtlsProvider =
+        new FakeMtlsProvider(FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
+
+    InstantiatingGrpcChannelProvider.Builder builder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(mtlsCertificateBasedAccess)
+            .setMtlsProvider(mtlsProvider)
+            .setAttemptDirectPath(true)
+            .setCredentials(computeEngineCredentials)
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setEnvProvider(envProvider)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()));
+    InstantiatingGrpcChannelProvider provider =
+        new InstantiatingGrpcChannelProvider(builder, GCE_PRODUCTION_NAME_AFTER_2016);
+    Truth.assertThat(provider.canUseDirectPath()).isTrue();
+
+    TransportChannel transportChannel = provider.getTransportChannel();
+    try {
+      ChannelPool pool = (ChannelPool) ((GrpcTransportChannel) transportChannel).getChannel();
+      assertThat(pool.getWorkloadCertPath()).isNull();
+    } finally {
+      transportChannel.shutdownNow();
+    }
+  }
+
+  @Test
+  void createChannel_whenMtlsActive_passesWorkloadCertPathToChannelPool() throws Exception {
+    CertificateBasedAccess mtlsCertificateBasedAccess =
+        mock(CertificateBasedAccess.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(mtlsCertificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(mtlsCertificateBasedAccess.getWorkloadCertPath())
+        .thenReturn("/path/to/workload/cert.pem");
+    MtlsProvider mtlsProvider =
+        new FakeMtlsProvider(FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(mtlsCertificateBasedAccess)
+            .setMtlsProvider(mtlsProvider)
+            .setAttemptDirectPath(false)
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .build();
+
+    TransportChannel transportChannel = provider.getTransportChannel();
+    try {
+      ChannelPool pool = (ChannelPool) ((GrpcTransportChannel) transportChannel).getChannel();
+      assertThat(pool.getWorkloadCertPath()).isEqualTo("/path/to/workload/cert.pem");
+    } finally {
+      transportChannel.shutdownNow();
+    }
+  }
+
+  @Test
+  void createChannelBuilder_whenMtlsActiveAndKeyStoreNull_throwsIOException() {
+    CertificateBasedAccess mtlsCertificateBasedAccess =
+        mock(CertificateBasedAccess.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(mtlsCertificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    MtlsProvider mtlsProviderWithNullKeyStore = new FakeMtlsProvider(null, "", false);
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(mtlsCertificateBasedAccess)
+            .setMtlsProvider(mtlsProviderWithNullKeyStore)
+            .setAttemptDirectPath(false)
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .build();
+
+    IOException thrown = assertThrows(IOException.class, provider::createChannelBuilder);
+    assertThat(thrown).hasMessageThat().contains("Failed to initialize mTLS channel credentials");
+  }
+
+  @Test
+  void createChannelBuilder_whenDefaultMtlsProviderThrowsIOException_propagatesIOException()
+      throws Exception {
+    CertificateBasedAccess mtlsCertificateBasedAccess =
+        mock(CertificateBasedAccess.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(mtlsCertificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    IOException expected = new IOException("Corrupt PEM file");
+    Mockito.when(mtlsCertificateBasedAccess.createDefaultMtlsProvider()).thenThrow(expected);
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(mtlsCertificateBasedAccess)
+            .setAttemptDirectPath(false)
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .build();
+
+    IOException thrown = assertThrows(IOException.class, provider::createChannelBuilder);
+    assertThat(thrown).isSameInstanceAs(expected);
+  }
+
+  @Test
+  void
+      createChannelBuilder_whenDefaultMtlsProviderThrowsCertificateSourceUnavailable_fallsBackWithoutMtls()
+          throws Exception {
+    CertificateBasedAccess mtlsCertificateBasedAccess =
+        mock(CertificateBasedAccess.class, Mockito.withSettings().withoutAnnotations());
+    Mockito.when(mtlsCertificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    Mockito.when(mtlsCertificateBasedAccess.createDefaultMtlsProvider())
+        .thenThrow(new CertificateSourceUnavailableException("No certificates on disk"));
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(mtlsCertificateBasedAccess)
+            .setAttemptDirectPath(false)
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .build();
+
+    assertThat(provider.createChannelBuilder()).isNotNull();
   }
 
   private static class FakeLogHandler extends Handler {

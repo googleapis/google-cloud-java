@@ -125,6 +125,7 @@ class GrpcClientCallsTest {
         ChannelPool.create(
             ChannelPoolSettings.staticallySized(2),
             new FakeChannelFactory(Arrays.asList(channel0, channel1)),
+            null,
             null);
     GrpcCallContext context = defaultCallContext.withChannel(pool);
 

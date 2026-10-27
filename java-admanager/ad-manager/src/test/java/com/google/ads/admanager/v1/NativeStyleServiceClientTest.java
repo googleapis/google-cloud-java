@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -279,6 +280,112 @@ public class NativeStyleServiceClientTest {
   }
 
   @Test
+  public void createNativeStyleTest() throws Exception {
+    NativeStyle expectedResponse =
+        NativeStyle.newBuilder()
+            .setName(NativeStyleName.of("[NETWORK_CODE]", "[NATIVE_STYLE]").toString())
+            .setCreativeTemplate(
+                CreativeTemplateName.of("[NETWORK_CODE]", "[CREATIVE_TEMPLATE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setHtmlSnippet("htmlSnippet178821874")
+            .setCssSnippet("cssSnippet-1516089958")
+            .setTargeting(Targeting.newBuilder().build())
+            .setSize(Size.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+    NativeStyle nativeStyle = NativeStyle.newBuilder().build();
+
+    NativeStyle actualResponse = client.createNativeStyle(parent, nativeStyle);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createNativeStyleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+      NativeStyle nativeStyle = NativeStyle.newBuilder().build();
+      client.createNativeStyle(parent, nativeStyle);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createNativeStyleTest2() throws Exception {
+    NativeStyle expectedResponse =
+        NativeStyle.newBuilder()
+            .setName(NativeStyleName.of("[NETWORK_CODE]", "[NATIVE_STYLE]").toString())
+            .setCreativeTemplate(
+                CreativeTemplateName.of("[NETWORK_CODE]", "[CREATIVE_TEMPLATE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setHtmlSnippet("htmlSnippet178821874")
+            .setCssSnippet("cssSnippet-1516089958")
+            .setTargeting(Targeting.newBuilder().build())
+            .setSize(Size.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "networks/network-5450";
+    NativeStyle nativeStyle = NativeStyle.newBuilder().build();
+
+    NativeStyle actualResponse = client.createNativeStyle(parent, nativeStyle);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createNativeStyleExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "networks/network-5450";
+      NativeStyle nativeStyle = NativeStyle.newBuilder().build();
+      client.createNativeStyle(parent, nativeStyle);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void batchCreateNativeStylesTest() throws Exception {
     BatchCreateNativeStylesResponse expectedResponse =
         BatchCreateNativeStylesResponse.newBuilder()
@@ -366,6 +473,79 @@ public class NativeStyleServiceClientTest {
       String parent = "networks/network-5450";
       List<CreateNativeStyleRequest> requests = new ArrayList<>();
       client.batchCreateNativeStyles(parent, requests);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateNativeStyleTest() throws Exception {
+    NativeStyle expectedResponse =
+        NativeStyle.newBuilder()
+            .setName(NativeStyleName.of("[NETWORK_CODE]", "[NATIVE_STYLE]").toString())
+            .setCreativeTemplate(
+                CreativeTemplateName.of("[NETWORK_CODE]", "[CREATIVE_TEMPLATE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setHtmlSnippet("htmlSnippet178821874")
+            .setCssSnippet("cssSnippet-1516089958")
+            .setTargeting(Targeting.newBuilder().build())
+            .setSize(Size.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    NativeStyle nativeStyle =
+        NativeStyle.newBuilder()
+            .setName(NativeStyleName.of("[NETWORK_CODE]", "[NATIVE_STYLE]").toString())
+            .setCreativeTemplate(
+                CreativeTemplateName.of("[NETWORK_CODE]", "[CREATIVE_TEMPLATE]").toString())
+            .setDisplayName("displayName1714148973")
+            .setHtmlSnippet("htmlSnippet178821874")
+            .setCssSnippet("cssSnippet-1516089958")
+            .setTargeting(Targeting.newBuilder().build())
+            .setSize(Size.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    NativeStyle actualResponse = client.updateNativeStyle(nativeStyle, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateNativeStyleExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      NativeStyle nativeStyle =
+          NativeStyle.newBuilder()
+              .setName(NativeStyleName.of("[NETWORK_CODE]", "[NATIVE_STYLE]").toString())
+              .setCreativeTemplate(
+                  CreativeTemplateName.of("[NETWORK_CODE]", "[CREATIVE_TEMPLATE]").toString())
+              .setDisplayName("displayName1714148973")
+              .setHtmlSnippet("htmlSnippet178821874")
+              .setCssSnippet("cssSnippet-1516089958")
+              .setTargeting(Targeting.newBuilder().build())
+              .setSize(Size.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateNativeStyle(nativeStyle, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

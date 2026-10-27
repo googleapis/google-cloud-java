@@ -29,21 +29,31 @@ import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
 import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.PeerInfo.TransportType;
+import com.google.bigtable.v2.Row;
+import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
+import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ConfiguredChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.Client;
 import com.google.cloud.bigtable.data.v2.internal.api.Client.Resource;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.CheckAndMutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.DivertingUnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowShim;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadModifyWriteRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
-import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShimInner;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.RowBuilderShim;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.SessionPoolMap;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DirectPathCompatibleTracer;
 import com.google.cloud.bigtable.data.v2.internal.dp.DirectAccessInvestigator;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
+import com.google.cloud.bigtable.data.v2.internal.util.SessionScope;
+import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
+import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
@@ -63,6 +73,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -74,16 +85,31 @@ import javax.annotation.Nullable;
 public class ShimImpl implements Shim {
   private static final Logger logger = Logger.getLogger(ShimImpl.class.getName());
 
-  // TODO: this should be a client config
-  public static final int MAX_CONSECUTIVE_UNIMPLEMENTED_FAILURES = 30;
   private static final Duration DA_CHECK_TIMEOUT = Duration.ofSeconds(5);
+
+  // A ReadRow on a missing key legitimately has no row, and the classic path surfaces that as a
+  // null Row.
+  @VisibleForTesting
+  static final Function<SessionReadRowResponse, Row> READ_ROW_EXTRACTOR =
+      r -> r.hasRow() ? r.getRow() : null;
+
+  // ReadModifyWriteRow always mutates and so always yields a row. The classic path builds a Row
+  // from the (possibly unset) response row rather than returning null, so extract unconditionally
+  // to keep both paths non-null.
+  @VisibleForTesting
+  static final Function<SessionReadModifyWriteRowResponse, Row> READ_MODIFY_WRITE_ROW_EXTRACTOR =
+      SessionReadModifyWriteRowResponse::getRow;
 
   private final ClientConfigurationManager configManager;
   private final Resource<ClientConfigurationManager> configManagerResource;
   private final Client client;
+  private final DebugTagTracer debugTagTracer;
+  private final SessionPoolMap sessionMap;
 
-  private final ReadRowShimInner readRowShimInner;
+  private final ReadRowShim readRowShim;
   private final MutateRowShim mutateRowShim;
+  private final CheckAndMutateRowShim checkAndMutateRowShim;
+  private final ReadModifyWriteRowShim readModifyWriteRowShim;
 
   public static Shim create(
       ClientInfo clientInfo,
@@ -182,16 +208,26 @@ public class ShimImpl implements Shim {
             userCallbackExecutor,
             clientChannelProvider);
 
-    return new ShimImpl(Resource.createOwned(configManager, configManager::close), client);
+    return new ShimImpl(
+        Resource.createOwned(configManager, configManager::close),
+        client,
+        metrics.getDebugTagTracer());
   }
 
-  public ShimImpl(Resource<ClientConfigurationManager> configManagerResource, Client client) {
+  public ShimImpl(
+      Resource<ClientConfigurationManager> configManagerResource,
+      Client client,
+      DebugTagTracer debugTagTracer) {
     this.configManagerResource = configManagerResource;
     this.configManager = configManagerResource.get();
     this.client = client;
+    this.debugTagTracer = debugTagTracer;
+    this.sessionMap = new SessionPoolMap(client);
 
-    this.readRowShimInner = new ReadRowShimInner(client);
-    this.mutateRowShim = new MutateRowShim(client);
+    this.readRowShim = new ReadRowShim(sessionMap);
+    this.mutateRowShim = new MutateRowShim(sessionMap);
+    this.checkAndMutateRowShim = new CheckAndMutateRowShim(sessionMap);
+    this.readModifyWriteRowShim = new ReadModifyWriteRowShim(sessionMap);
   }
 
   /**
@@ -221,7 +257,8 @@ public class ShimImpl implements Shim {
             Resource.createShared(userCallbackExecutor),
             Resource.createShared(sharedChannelPool));
 
-    return new ShimImpl(Resource.createShared(sharedConfigManager), client);
+    return new ShimImpl(
+        Resource.createShared(sharedConfigManager), client, metrics.getDebugTagTracer());
   }
 
   /** Returns the raw config manager (e.g. for sharing with factory children). */
@@ -342,6 +379,7 @@ public class ShimImpl implements Shim {
 
   @Override
   public void close() {
+    sessionMap.invalidateAll();
     client.close();
     configManagerResource.close();
   }
@@ -354,14 +392,47 @@ public class ShimImpl implements Shim {
     return new DivertingUnaryCallable<>(
         configManager,
         classic,
-        new ReadRowShim<>(readRowShimInner, rowAdapter),
-        Util.extractTimeout(settings));
+        new RowBuilderShim<>(readRowShim, rowAdapter, READ_ROW_EXTRACTOR),
+        Util.extractTimeout(settings),
+        debugTagTracer,
+        SessionScope.READ_ROW);
   }
 
   @Override
   public UnaryCallable<RowMutation, Void> decorateMutateRow(
       UnaryCallable<RowMutation, Void> classic, UnaryCallSettings<?, ?> settings) {
     return new DivertingUnaryCallable<>(
-        configManager, classic, mutateRowShim, Util.extractTimeout(settings));
+        configManager,
+        classic,
+        mutateRowShim,
+        Util.extractTimeout(settings),
+        debugTagTracer,
+        SessionScope.MUTATE_ROW);
+  }
+
+  @Override
+  public UnaryCallable<ConditionalRowMutation, Boolean> decorateCheckAndMutateRow(
+      UnaryCallable<ConditionalRowMutation, Boolean> classic, UnaryCallSettings<?, ?> settings) {
+    return new DivertingUnaryCallable<>(
+        configManager,
+        classic,
+        checkAndMutateRowShim,
+        Util.extractTimeout(settings),
+        debugTagTracer,
+        SessionScope.CHECK_AND_MUTATE_ROW);
+  }
+
+  @Override
+  public <RowT> UnaryCallable<ReadModifyWriteRow, RowT> decorateReadModifyWriteRow(
+      UnaryCallable<ReadModifyWriteRow, RowT> classic,
+      RowAdapter<RowT> rowAdapter,
+      UnaryCallSettings<?, ?> settings) {
+    return new DivertingUnaryCallable<>(
+        configManager,
+        classic,
+        new RowBuilderShim<>(readModifyWriteRowShim, rowAdapter, READ_MODIFY_WRITE_ROW_EXTRACTOR),
+        Util.extractTimeout(settings),
+        debugTagTracer,
+        SessionScope.READ_MODIFY_WRITE_ROW);
   }
 }

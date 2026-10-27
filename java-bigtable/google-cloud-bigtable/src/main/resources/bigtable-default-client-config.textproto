@@ -12,8 +12,6 @@ polling_configuration {
 }
 
 session_configuration {
-  session_load: 0
-
   channel_configuration {
     min_server_count: 2
     max_server_count: 25

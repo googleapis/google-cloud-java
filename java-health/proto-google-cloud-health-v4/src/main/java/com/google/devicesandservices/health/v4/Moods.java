@@ -651,6 +651,126 @@ public final class Moods extends com.google.protobuf.GeneratedMessage
      * <code>COMPASSIONATE = 56;</code>
      */
     COMPASSIONATE(56),
+    /**
+     *
+     *
+     * <pre>
+     * Depressed.
+     * </pre>
+     *
+     * <code>DEPRESSED = 57;</code>
+     */
+    DEPRESSED(57),
+    /**
+     *
+     *
+     * <pre>
+     * Good.
+     * </pre>
+     *
+     * <code>GOOD = 58;</code>
+     */
+    GOOD(58),
+    /**
+     *
+     *
+     * <pre>
+     * Low energy.
+     * </pre>
+     *
+     * <code>LOW_ENERGY = 59;</code>
+     */
+    LOW_ENERGY(59),
+    /**
+     *
+     *
+     * <pre>
+     * Obsessive thoughts.
+     * </pre>
+     *
+     * <code>OBSESSIVE_THOUGHTS = 60;</code>
+     */
+    OBSESSIVE_THOUGHTS(60),
+    /**
+     *
+     *
+     * <pre>
+     * Panic.
+     * </pre>
+     *
+     * <code>PANIC = 61;</code>
+     */
+    PANIC(61),
+    /**
+     *
+     *
+     * <pre>
+     * Playful.
+     * </pre>
+     *
+     * <code>PLAYFUL = 62;</code>
+     */
+    PLAYFUL(62),
+    /**
+     *
+     *
+     * <pre>
+     * Pleased.
+     * </pre>
+     *
+     * <code>PLEASED = 63;</code>
+     */
+    PLEASED(63),
+    /**
+     *
+     *
+     * <pre>
+     * Sensitive.
+     * </pre>
+     *
+     * <code>SENSITIVE = 64;</code>
+     */
+    SENSITIVE(64),
+    /**
+     *
+     *
+     * <pre>
+     * Sleepy.
+     * </pre>
+     *
+     * <code>SLEEPY = 65;</code>
+     */
+    SLEEPY(65),
+    /**
+     *
+     *
+     * <pre>
+     * Mood swings.
+     * </pre>
+     *
+     * <code>SWINGS = 66;</code>
+     */
+    SWINGS(66),
+    /**
+     *
+     *
+     * <pre>
+     * Unhappy.
+     * </pre>
+     *
+     * <code>UNHAPPY = 67;</code>
+     */
+    UNHAPPY(67),
+    /**
+     *
+     *
+     * <pre>
+     * Very self-critical.
+     * </pre>
+     *
+     * <code>VERY_SELF_CRITICAL = 68;</code>
+     */
+    VERY_SELF_CRITICAL(68),
     UNRECOGNIZED(-1),
     ;
 
@@ -1291,6 +1411,138 @@ public final class Moods extends com.google.protobuf.GeneratedMessage
      */
     public static final int COMPASSIONATE_VALUE = 56;
 
+    /**
+     *
+     *
+     * <pre>
+     * Depressed.
+     * </pre>
+     *
+     * <code>DEPRESSED = 57;</code>
+     */
+    public static final int DEPRESSED_VALUE = 57;
+
+    /**
+     *
+     *
+     * <pre>
+     * Good.
+     * </pre>
+     *
+     * <code>GOOD = 58;</code>
+     */
+    public static final int GOOD_VALUE = 58;
+
+    /**
+     *
+     *
+     * <pre>
+     * Low energy.
+     * </pre>
+     *
+     * <code>LOW_ENERGY = 59;</code>
+     */
+    public static final int LOW_ENERGY_VALUE = 59;
+
+    /**
+     *
+     *
+     * <pre>
+     * Obsessive thoughts.
+     * </pre>
+     *
+     * <code>OBSESSIVE_THOUGHTS = 60;</code>
+     */
+    public static final int OBSESSIVE_THOUGHTS_VALUE = 60;
+
+    /**
+     *
+     *
+     * <pre>
+     * Panic.
+     * </pre>
+     *
+     * <code>PANIC = 61;</code>
+     */
+    public static final int PANIC_VALUE = 61;
+
+    /**
+     *
+     *
+     * <pre>
+     * Playful.
+     * </pre>
+     *
+     * <code>PLAYFUL = 62;</code>
+     */
+    public static final int PLAYFUL_VALUE = 62;
+
+    /**
+     *
+     *
+     * <pre>
+     * Pleased.
+     * </pre>
+     *
+     * <code>PLEASED = 63;</code>
+     */
+    public static final int PLEASED_VALUE = 63;
+
+    /**
+     *
+     *
+     * <pre>
+     * Sensitive.
+     * </pre>
+     *
+     * <code>SENSITIVE = 64;</code>
+     */
+    public static final int SENSITIVE_VALUE = 64;
+
+    /**
+     *
+     *
+     * <pre>
+     * Sleepy.
+     * </pre>
+     *
+     * <code>SLEEPY = 65;</code>
+     */
+    public static final int SLEEPY_VALUE = 65;
+
+    /**
+     *
+     *
+     * <pre>
+     * Mood swings.
+     * </pre>
+     *
+     * <code>SWINGS = 66;</code>
+     */
+    public static final int SWINGS_VALUE = 66;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unhappy.
+     * </pre>
+     *
+     * <code>UNHAPPY = 67;</code>
+     */
+    public static final int UNHAPPY_VALUE = 67;
+
+    /**
+     *
+     *
+     * <pre>
+     * Very self-critical.
+     * </pre>
+     *
+     * <code>VERY_SELF_CRITICAL = 68;</code>
+     */
+    public static final int VERY_SELF_CRITICAL_VALUE = 68;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -1429,6 +1681,30 @@ public final class Moods extends com.google.protobuf.GeneratedMessage
           return LOVING;
         case 56:
           return COMPASSIONATE;
+        case 57:
+          return DEPRESSED;
+        case 58:
+          return GOOD;
+        case 59:
+          return LOW_ENERGY;
+        case 60:
+          return OBSESSIVE_THOUGHTS;
+        case 61:
+          return PANIC;
+        case 62:
+          return PLAYFUL;
+        case 63:
+          return PLEASED;
+        case 64:
+          return SENSITIVE;
+        case 65:
+          return SLEEPY;
+        case 66:
+          return SWINGS;
+        case 67:
+          return UNHAPPY;
+        case 68:
+          return VERY_SELF_CRITICAL;
         default:
           return null;
       }

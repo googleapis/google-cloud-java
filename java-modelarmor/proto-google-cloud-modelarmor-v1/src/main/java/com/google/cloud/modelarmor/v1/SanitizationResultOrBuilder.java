@@ -75,7 +75,7 @@ public interface SanitizationResultOrBuilder
    *
    * <pre>
    * Output only. Results for all filters where the key is the filter name -
-   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
    * </pre>
    *
    * <code>
@@ -89,7 +89,7 @@ public interface SanitizationResultOrBuilder
    *
    * <pre>
    * Output only. Results for all filters where the key is the filter name -
-   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
    * </pre>
    *
    * <code>
@@ -107,7 +107,7 @@ public interface SanitizationResultOrBuilder
    *
    * <pre>
    * Output only. Results for all filters where the key is the filter name -
-   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
    * </pre>
    *
    * <code>
@@ -122,7 +122,7 @@ public interface SanitizationResultOrBuilder
    *
    * <pre>
    * Output only. Results for all filters where the key is the filter name -
-   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
    * </pre>
    *
    * <code>
@@ -140,7 +140,7 @@ public interface SanitizationResultOrBuilder
    *
    * <pre>
    * Output only. Results for all filters where the key is the filter name -
-   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak" ,"sdp".
+   * either of "csam", "malicious_uris", "rai", "pi_and_jailbreak", "sdp".
    * </pre>
    *
    * <code>

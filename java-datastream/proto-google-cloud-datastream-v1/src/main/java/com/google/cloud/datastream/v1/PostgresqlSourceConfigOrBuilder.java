@@ -30,7 +30,7 @@ public interface PostgresqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * PostgreSQL objects to include in the stream.
+   * The PostgreSQL objects to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -43,7 +43,7 @@ public interface PostgresqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * PostgreSQL objects to include in the stream.
+   * The PostgreSQL objects to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -56,7 +56,7 @@ public interface PostgresqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * PostgreSQL objects to include in the stream.
+   * The PostgreSQL objects to include in the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms include_objects = 1;</code>
@@ -67,7 +67,7 @@ public interface PostgresqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * PostgreSQL objects to exclude from the stream.
+   * The PostgreSQL objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -80,7 +80,7 @@ public interface PostgresqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * PostgreSQL objects to exclude from the stream.
+   * The PostgreSQL objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>
@@ -93,7 +93,7 @@ public interface PostgresqlSourceConfigOrBuilder
    *
    *
    * <pre>
-   * PostgreSQL objects to exclude from the stream.
+   * The PostgreSQL objects to exclude from the stream.
    * </pre>
    *
    * <code>.google.cloud.datastream.v1.PostgresqlRdbms exclude_objects = 2;</code>

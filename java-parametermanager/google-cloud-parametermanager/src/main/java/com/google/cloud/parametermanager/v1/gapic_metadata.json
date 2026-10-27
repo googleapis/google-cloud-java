@@ -16,11 +16,23 @@
             "CreateParameterVersion": {
               "methods": ["createParameterVersion", "createParameterVersion", "createParameterVersion", "createParameterVersionCallable"]
             },
+            "CreateTemplate": {
+              "methods": ["createTemplate", "createTemplate", "createTemplate", "createTemplateCallable"]
+            },
+            "CreateTemplateVersion": {
+              "methods": ["createTemplateVersion", "createTemplateVersion", "createTemplateVersion", "createTemplateVersionCallable"]
+            },
             "DeleteParameter": {
               "methods": ["deleteParameter", "deleteParameter", "deleteParameter", "deleteParameterCallable"]
             },
             "DeleteParameterVersion": {
               "methods": ["deleteParameterVersion", "deleteParameterVersion", "deleteParameterVersion", "deleteParameterVersionCallable"]
+            },
+            "DeleteTemplate": {
+              "methods": ["deleteTemplate", "deleteTemplate", "deleteTemplate", "deleteTemplateCallable"]
+            },
+            "DeleteTemplateVersion": {
+              "methods": ["deleteTemplateVersion", "deleteTemplateVersion", "deleteTemplateVersion", "deleteTemplateVersionCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
@@ -31,6 +43,12 @@
             "GetParameterVersion": {
               "methods": ["getParameterVersion", "getParameterVersion", "getParameterVersion", "getParameterVersionCallable"]
             },
+            "GetTemplate": {
+              "methods": ["getTemplate", "getTemplate", "getTemplate", "getTemplateCallable"]
+            },
+            "GetTemplateVersion": {
+              "methods": ["getTemplateVersion", "getTemplateVersion", "getTemplateVersion", "getTemplateVersionCallable"]
+            },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
@@ -40,14 +58,29 @@
             "ListParameters": {
               "methods": ["listParameters", "listParameters", "listParameters", "listParametersPagedCallable", "listParametersCallable"]
             },
+            "ListTemplateVersions": {
+              "methods": ["listTemplateVersions", "listTemplateVersions", "listTemplateVersions", "listTemplateVersionsPagedCallable", "listTemplateVersionsCallable"]
+            },
+            "ListTemplates": {
+              "methods": ["listTemplates", "listTemplates", "listTemplates", "listTemplatesPagedCallable", "listTemplatesCallable"]
+            },
             "RenderParameterVersion": {
               "methods": ["renderParameterVersion", "renderParameterVersion", "renderParameterVersion", "renderParameterVersionCallable"]
+            },
+            "RenderTemplateVersion": {
+              "methods": ["renderTemplateVersion", "renderTemplateVersion", "renderTemplateVersion", "renderTemplateVersionCallable"]
             },
             "UpdateParameter": {
               "methods": ["updateParameter", "updateParameter", "updateParameterCallable"]
             },
             "UpdateParameterVersion": {
               "methods": ["updateParameterVersion", "updateParameterVersion", "updateParameterVersionCallable"]
+            },
+            "UpdateTemplate": {
+              "methods": ["updateTemplate", "updateTemplate", "updateTemplateCallable"]
+            },
+            "UpdateTemplateVersion": {
+              "methods": ["updateTemplateVersion", "updateTemplateVersion", "updateTemplateVersionCallable"]
             }
           }
         }

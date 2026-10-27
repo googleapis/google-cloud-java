@@ -16,8 +16,10 @@
 
 package com.google.cloud.lustre.v1;
 
+import static com.google.cloud.lustre.v1.LustreClient.ListDirectoryPoliciesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListInstancesPagedResponse;
 import static com.google.cloud.lustre.v1.LustreClient.ListLocationsPagedResponse;
+import static com.google.cloud.lustre.v1.LustreClient.ListMirrorsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -167,6 +169,18 @@ public class LustreSettings extends ClientSettings<LustreSettings> {
     return ((LustreStubSettings) getStubSettings()).deleteInstanceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
+      rescheduleMaintenanceSettings() {
+    return ((LustreStubSettings) getStubSettings()).rescheduleMaintenanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rescheduleMaintenance. */
+  public OperationCallSettings<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+      rescheduleMaintenanceOperationSettings() {
+    return ((LustreStubSettings) getStubSettings()).rescheduleMaintenanceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to importData. */
   public UnaryCallSettings<ImportDataRequest, Operation> importDataSettings() {
     return ((LustreStubSettings) getStubSettings()).importDataSettings();
@@ -187,6 +201,89 @@ public class LustreSettings extends ClientSettings<LustreSettings> {
   public OperationCallSettings<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
       exportDataOperationSettings() {
     return ((LustreStubSettings) getStubSettings()).exportDataOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMirror. */
+  public UnaryCallSettings<CreateMirrorRequest, Operation> createMirrorSettings() {
+    return ((LustreStubSettings) getStubSettings()).createMirrorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createMirror. */
+  public OperationCallSettings<CreateMirrorRequest, Mirror, CreateMirrorMetadata>
+      createMirrorOperationSettings() {
+    return ((LustreStubSettings) getStubSettings()).createMirrorOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMirror. */
+  public UnaryCallSettings<UpdateMirrorRequest, Operation> updateMirrorSettings() {
+    return ((LustreStubSettings) getStubSettings()).updateMirrorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateMirror. */
+  public OperationCallSettings<UpdateMirrorRequest, Mirror, OperationMetadata>
+      updateMirrorOperationSettings() {
+    return ((LustreStubSettings) getStubSettings()).updateMirrorOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMirror. */
+  public UnaryCallSettings<DeleteMirrorRequest, Operation> deleteMirrorSettings() {
+    return ((LustreStubSettings) getStubSettings()).deleteMirrorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteMirror. */
+  public OperationCallSettings<DeleteMirrorRequest, Empty, OperationMetadata>
+      deleteMirrorOperationSettings() {
+    return ((LustreStubSettings) getStubSettings()).deleteMirrorOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getMirror. */
+  public UnaryCallSettings<GetMirrorRequest, Mirror> getMirrorSettings() {
+    return ((LustreStubSettings) getStubSettings()).getMirrorSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listMirrors. */
+  public PagedCallSettings<ListMirrorsRequest, ListMirrorsResponse, ListMirrorsPagedResponse>
+      listMirrorsSettings() {
+    return ((LustreStubSettings) getStubSettings()).listMirrorsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDirectoryPolicy. */
+  public UnaryCallSettings<CreateDirectoryPolicyRequest, Operation>
+      createDirectoryPolicySettings() {
+    return ((LustreStubSettings) getStubSettings()).createDirectoryPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDirectoryPolicy. */
+  public OperationCallSettings<CreateDirectoryPolicyRequest, DirectoryPolicy, OperationMetadata>
+      createDirectoryPolicyOperationSettings() {
+    return ((LustreStubSettings) getStubSettings()).createDirectoryPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDirectoryPolicy. */
+  public UnaryCallSettings<DeleteDirectoryPolicyRequest, Operation>
+      deleteDirectoryPolicySettings() {
+    return ((LustreStubSettings) getStubSettings()).deleteDirectoryPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDirectoryPolicy. */
+  public OperationCallSettings<DeleteDirectoryPolicyRequest, Empty, OperationMetadata>
+      deleteDirectoryPolicyOperationSettings() {
+    return ((LustreStubSettings) getStubSettings()).deleteDirectoryPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDirectoryPolicy. */
+  public UnaryCallSettings<GetDirectoryPolicyRequest, DirectoryPolicy>
+      getDirectoryPolicySettings() {
+    return ((LustreStubSettings) getStubSettings()).getDirectoryPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDirectoryPolicies. */
+  public PagedCallSettings<
+          ListDirectoryPoliciesRequest,
+          ListDirectoryPoliciesResponse,
+          ListDirectoryPoliciesPagedResponse>
+      listDirectoryPoliciesSettings() {
+    return ((LustreStubSettings) getStubSettings()).listDirectoryPoliciesSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -356,6 +453,18 @@ public class LustreSettings extends ClientSettings<LustreSettings> {
       return getStubSettingsBuilder().deleteInstanceOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public UnaryCallSettings.Builder<RescheduleMaintenanceRequest, Operation>
+        rescheduleMaintenanceSettings() {
+      return getStubSettingsBuilder().rescheduleMaintenanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rescheduleMaintenance. */
+    public OperationCallSettings.Builder<RescheduleMaintenanceRequest, Instance, OperationMetadata>
+        rescheduleMaintenanceOperationSettings() {
+      return getStubSettingsBuilder().rescheduleMaintenanceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to importData. */
     public UnaryCallSettings.Builder<ImportDataRequest, Operation> importDataSettings() {
       return getStubSettingsBuilder().importDataSettings();
@@ -376,6 +485,91 @@ public class LustreSettings extends ClientSettings<LustreSettings> {
     public OperationCallSettings.Builder<ExportDataRequest, ExportDataResponse, ExportDataMetadata>
         exportDataOperationSettings() {
       return getStubSettingsBuilder().exportDataOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMirror. */
+    public UnaryCallSettings.Builder<CreateMirrorRequest, Operation> createMirrorSettings() {
+      return getStubSettingsBuilder().createMirrorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createMirror. */
+    public OperationCallSettings.Builder<CreateMirrorRequest, Mirror, CreateMirrorMetadata>
+        createMirrorOperationSettings() {
+      return getStubSettingsBuilder().createMirrorOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMirror. */
+    public UnaryCallSettings.Builder<UpdateMirrorRequest, Operation> updateMirrorSettings() {
+      return getStubSettingsBuilder().updateMirrorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateMirror. */
+    public OperationCallSettings.Builder<UpdateMirrorRequest, Mirror, OperationMetadata>
+        updateMirrorOperationSettings() {
+      return getStubSettingsBuilder().updateMirrorOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMirror. */
+    public UnaryCallSettings.Builder<DeleteMirrorRequest, Operation> deleteMirrorSettings() {
+      return getStubSettingsBuilder().deleteMirrorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteMirror. */
+    public OperationCallSettings.Builder<DeleteMirrorRequest, Empty, OperationMetadata>
+        deleteMirrorOperationSettings() {
+      return getStubSettingsBuilder().deleteMirrorOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getMirror. */
+    public UnaryCallSettings.Builder<GetMirrorRequest, Mirror> getMirrorSettings() {
+      return getStubSettingsBuilder().getMirrorSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listMirrors. */
+    public PagedCallSettings.Builder<
+            ListMirrorsRequest, ListMirrorsResponse, ListMirrorsPagedResponse>
+        listMirrorsSettings() {
+      return getStubSettingsBuilder().listMirrorsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDirectoryPolicy. */
+    public UnaryCallSettings.Builder<CreateDirectoryPolicyRequest, Operation>
+        createDirectoryPolicySettings() {
+      return getStubSettingsBuilder().createDirectoryPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDirectoryPolicy. */
+    public OperationCallSettings.Builder<
+            CreateDirectoryPolicyRequest, DirectoryPolicy, OperationMetadata>
+        createDirectoryPolicyOperationSettings() {
+      return getStubSettingsBuilder().createDirectoryPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDirectoryPolicy. */
+    public UnaryCallSettings.Builder<DeleteDirectoryPolicyRequest, Operation>
+        deleteDirectoryPolicySettings() {
+      return getStubSettingsBuilder().deleteDirectoryPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDirectoryPolicy. */
+    public OperationCallSettings.Builder<DeleteDirectoryPolicyRequest, Empty, OperationMetadata>
+        deleteDirectoryPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteDirectoryPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDirectoryPolicy. */
+    public UnaryCallSettings.Builder<GetDirectoryPolicyRequest, DirectoryPolicy>
+        getDirectoryPolicySettings() {
+      return getStubSettingsBuilder().getDirectoryPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDirectoryPolicies. */
+    public PagedCallSettings.Builder<
+            ListDirectoryPoliciesRequest,
+            ListDirectoryPoliciesResponse,
+            ListDirectoryPoliciesPagedResponse>
+        listDirectoryPoliciesSettings() {
+      return getStubSettingsBuilder().listDirectoryPoliciesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

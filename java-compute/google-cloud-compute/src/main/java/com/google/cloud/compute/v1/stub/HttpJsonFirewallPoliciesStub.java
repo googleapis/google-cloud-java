@@ -468,7 +468,9 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<InsertFirewallPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "parentId", request.getParentId());
+                            if (request.hasParentId()) {
+                              serializer.putQueryParam(fields, "parentId", request.getParentId());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
@@ -537,12 +539,6 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                             }
                             if (request.hasParentId()) {
                               serializer.putQueryParam(fields, "parentId", request.getParentId());
-                            }
-                            if (request.hasReturnPartialSuccess()) {
-                              serializer.putQueryParam(
-                                  fields,
-                                  "returnPartialSuccess",
-                                  request.getReturnPartialSuccess());
                             }
                             return fields;
                           })
@@ -624,7 +620,9 @@ public class HttpJsonFirewallPoliciesStub extends FirewallPoliciesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<MoveFirewallPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
-                            serializer.putQueryParam(fields, "parentId", request.getParentId());
+                            if (request.hasParentId()) {
+                              serializer.putQueryParam(fields, "parentId", request.getParentId());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }

@@ -42,7 +42,6 @@ public class SyncListNamedSets {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setRegion("region-934795532")
-              .setReturnPartialSuccess(true)
               .setRouter("router-925132983")
               .build();
       for (NamedSet element : routersClient.listNamedSets(request).iterateAll()) {

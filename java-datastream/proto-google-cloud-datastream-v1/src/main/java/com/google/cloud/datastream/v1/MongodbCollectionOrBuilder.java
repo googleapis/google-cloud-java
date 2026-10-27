@@ -30,7 +30,7 @@ public interface MongodbCollectionOrBuilder
    *
    *
    * <pre>
-   * Collection name.
+   * The collection name.
    * </pre>
    *
    * <code>string collection = 1;</code>
@@ -43,7 +43,7 @@ public interface MongodbCollectionOrBuilder
    *
    *
    * <pre>
-   * Collection name.
+   * The collection name.
    * </pre>
    *
    * <code>string collection = 1;</code>

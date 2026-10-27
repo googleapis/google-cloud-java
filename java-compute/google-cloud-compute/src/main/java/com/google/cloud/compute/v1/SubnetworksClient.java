@@ -41,6 +41,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The Subnetworks API.
  *
+ * <p>This client uses Subnetworks version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -441,7 +443,6 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .setViews("views112204398")
    *           .build();
@@ -484,7 +485,6 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .setViews("views112204398")
    *           .build();
@@ -526,7 +526,6 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProjectNumber(-1293855239)
    *           .setViews("views112204398")
    *           .build();
@@ -1206,7 +1205,6 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setViews("views112204398")
    *           .build();
    *   for (Subnetwork element : subnetworksClient.list(request).iterateAll()) {
@@ -1243,7 +1241,6 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setViews("views112204398")
    *           .build();
    *   ApiFuture<Subnetwork> future = subnetworksClient.listPagedCallable().futureCall(request);
@@ -1279,7 +1276,6 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .setViews("views112204398")
    *           .build();
    *   while (true) {
@@ -1350,7 +1346,6 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProject("serviceProject1947145892")
    *           .build();
    *   for (UsableSubnetwork element : subnetworksClient.listUsable(request).iterateAll()) {
@@ -1386,7 +1381,6 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProject("serviceProject1947145892")
    *           .build();
    *   ApiFuture<UsableSubnetwork> future =
@@ -1423,7 +1417,6 @@ public class SubnetworksClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
-   *           .setReturnPartialSuccess(true)
    *           .setServiceProject("serviceProject1947145892")
    *           .build();
    *   while (true) {

@@ -55,7 +55,7 @@ import com.google.protobuf.Descriptors.ServiceDescriptor;
 import com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequest;
 import com.google.selective.generate.v1beta1.SelectiveApiGenerationOuterClass;
 import com.google.showcase.v1beta1.EchoOuterClass;
-import com.google.showcase.v1beta1.ResumableUpload;
+import com.google.showcase.v1beta1.MediaProto;
 import com.google.showcase.v1beta1.TestingOuterClass;
 import com.google.testgapic.v1beta1.LockerProto;
 import java.nio.file.Path;
@@ -207,7 +207,7 @@ class ParserTest {
 
   @Test
   void parseMethods_resumableUpload() {
-    FileDescriptor resumableUploadFileDescriptor = ResumableUpload.getDescriptor();
+    FileDescriptor resumableUploadFileDescriptor = MediaProto.getDescriptor();
     ServiceDescriptor resumableUploadService = resumableUploadFileDescriptor.getServices().get(0);
     Map<String, Message> messageTypes = Parser.parseMessages(resumableUploadFileDescriptor);
     Map<String, ResourceName> resourceNames =
@@ -227,10 +227,13 @@ class ParserTest {
             outputResourceNames,
             Transport.GRPC);
 
-    assertThat(methods).hasSize(1);
+    assertThat(methods).hasSize(2);
     Method uploadMethod = methods.get(0);
     assertThat(uploadMethod.name()).isEqualTo("UploadMedia");
     assertThat(uploadMethod.isResumableUpload()).isTrue();
+    Method metadataMethod = methods.get(1);
+    assertThat(metadataMethod.name()).isEqualTo("GetMediaMetadata");
+    assertThat(metadataMethod.isResumableUpload()).isFalse();
   }
 
   @Test

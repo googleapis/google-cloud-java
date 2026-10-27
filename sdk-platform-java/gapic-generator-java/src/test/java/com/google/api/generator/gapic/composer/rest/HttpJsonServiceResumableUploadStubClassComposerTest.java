@@ -31,7 +31,7 @@ class HttpJsonServiceResumableUploadStubClassComposerTest {
     GapicClass clazz =
         HttpJsonServiceResumableUploadStubClassComposer.instance().generate(context, service);
     Assert.assertGoldenClass(
-        this.getClass(), clazz, "HttpJsonResumableUploadServiceResumableUploadStub.golden");
+        this.getClass(), clazz, "HttpJsonMediaServiceResumableUploadStub.golden");
     Assert.assertEmptySamples(clazz.samples());
   }
 }

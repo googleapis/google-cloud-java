@@ -44,8 +44,8 @@ import com.google.pubsub.v1.PubsubProto;
 import com.google.selective.generate.v1beta1.SelectiveApiGenerationOuterClass;
 import com.google.showcase.v1beta1.EchoOuterClass;
 import com.google.showcase.v1beta1.IdentityOuterClass;
+import com.google.showcase.v1beta1.MediaProto;
 import com.google.showcase.v1beta1.MessagingOuterClass;
-import com.google.showcase.v1beta1.ResumableUpload;
 import com.google.showcase.v1beta1.TestingOuterClass;
 import com.google.test.callablenamingtype.CallableNameType;
 import com.google.testdata.v1.DeprecatedServiceOuterClass;
@@ -280,9 +280,9 @@ public class TestProtoLoader {
   }
 
   public GapicContext parseShowcaseResumableUpload() {
-    FileDescriptor fileDescriptor = ResumableUpload.getDescriptor();
+    FileDescriptor fileDescriptor = MediaProto.getDescriptor();
     ServiceDescriptor serviceDescriptor = fileDescriptor.getServices().get(0);
-    assertEquals("ResumableUploadService", serviceDescriptor.getName());
+    assertEquals("MediaService", serviceDescriptor.getName());
 
     Map<String, Message> messageTypes = Parser.parseMessages(fileDescriptor);
     Map<String, ResourceName> resourceNames = Parser.parseResourceNames(fileDescriptor);

@@ -54,21 +54,23 @@ public final class UserProto extends com.google.protobuf.GeneratedFile {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + "\031google/chat/v1/user.proto\022\016google.chat.v1\032\037google/api/field_behavior.proto\"\270\001\n"
+          + "\031google/chat/v1/user.proto\022\016google.chat.v1\032\037google/api/field_behavior.proto\"\351\001\n"
           + "\004User\022\014\n"
-          + "\004name\030\001 \001(\t\022\031\n"
-          + "\014display_name\030\002 \001(\tB\003\340A\003\022\021\n"
+          + "\004name\030\001 \001(\t\022\032\n"
+          + "\014display_name\030\002 \001(\tB\004\342A\001\003\022\030\n\n"
+          + "avatar_url\030\003 \001(\tB\004\342A\001\003\022\023\n"
+          + "\005email\030\004 \001(\tB\004\342A\001\003\022\021\n"
           + "\tdomain_id\030\006 \001(\t\022\'\n"
-          + "\004type\030\005 \001(\0162\031.google.chat.v1.User.Type\022\031\n"
-          + "\014is_anonymous\030\007 \001(\010B\003\340A\003\"0\n"
+          + "\004type\030\005 \001(\0162\031.google.chat.v1.User.Type\022\032\n"
+          + "\014is_anonymous\030\007 \001(\010B\004\342A\001\003\"0\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\t\n"
           + "\005HUMAN\020\001\022\007\n"
           + "\003BOT\020\002B\242\001\n"
-          + "\022com.google.chat.v1B\tUserProtoP\001Z,cloud.google.com/go"
-          + "/chat/apiv1/chatpb;chatpb\242\002\013DYNAPIProto\252"
-          + "\002\023Google.Apps.Chat.V1\312\002\023Google\\Apps\\Chat"
-          + "\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "\022com.google.chat.v1B\tUserProtoP\001Z,cloud.goog"
+          + "le.com/go/chat/apiv1/chatpb;chatpb\242\002\013DYN"
+          + "APIProto\252\002\023Google.Apps.Chat.V1\312\002\023Google\\"
+          + "Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -81,7 +83,7 @@ public final class UserProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_User_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "DomainId", "Type", "IsAnonymous",
+              "Name", "DisplayName", "AvatarUrl", "Email", "DomainId", "Type", "IsAnonymous",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

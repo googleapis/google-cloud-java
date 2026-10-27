@@ -252,6 +252,65 @@ public final class Report extends com.google.protobuf.GeneratedMessage
         : reportDefinition_;
   }
 
+  public static final int DRAFT_REPORT_DEFINITION_FIELD_NUMBER = 14;
+  private com.google.ads.admanager.v1.ReportDefinition draftReportDefinition_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The draft report definition of the report.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the draftReportDefinition field is set.
+   */
+  @java.lang.Override
+  public boolean hasDraftReportDefinition() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The draft report definition of the report.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The draftReportDefinition.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ReportDefinition getDraftReportDefinition() {
+    return draftReportDefinition_ == null
+        ? com.google.ads.admanager.v1.ReportDefinition.getDefaultInstance()
+        : draftReportDefinition_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The draft report definition of the report.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.ReportDefinitionOrBuilder getDraftReportDefinitionOrBuilder() {
+    return draftReportDefinition_ == null
+        ? com.google.ads.admanager.v1.ReportDefinition.getDefaultInstance()
+        : draftReportDefinition_;
+  }
+
   public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
@@ -322,7 +381,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -374,7 +433,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -482,7 +541,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasScheduleOptions() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -553,17 +612,20 @@ public final class Report extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, displayName_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(6, getUpdateTime());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(7, getCreateTime());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(locale_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, locale_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(9, getScheduleOptions());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(14, getDraftReportDefinition());
     }
     getUnknownFields().writeTo(output);
   }
@@ -590,17 +652,21 @@ public final class Report extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, displayName_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getUpdateTime());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCreateTime());
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(locale_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, locale_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getScheduleOptions());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, getDraftReportDefinition());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -623,6 +689,10 @@ public final class Report extends com.google.protobuf.GeneratedMessage
     if (hasReportDefinition() != other.hasReportDefinition()) return false;
     if (hasReportDefinition()) {
       if (!getReportDefinition().equals(other.getReportDefinition())) return false;
+    }
+    if (hasDraftReportDefinition() != other.hasDraftReportDefinition()) return false;
+    if (hasDraftReportDefinition()) {
+      if (!getDraftReportDefinition().equals(other.getDraftReportDefinition())) return false;
     }
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
@@ -658,6 +728,10 @@ public final class Report extends com.google.protobuf.GeneratedMessage
     if (hasReportDefinition()) {
       hash = (37 * hash) + REPORT_DEFINITION_FIELD_NUMBER;
       hash = (53 * hash) + getReportDefinition().hashCode();
+    }
+    if (hasDraftReportDefinition()) {
+      hash = (37 * hash) + DRAFT_REPORT_DEFINITION_FIELD_NUMBER;
+      hash = (53 * hash) + getDraftReportDefinition().hashCode();
     }
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
@@ -816,6 +890,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetReportDefinitionFieldBuilder();
+        internalGetDraftReportDefinitionFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
         internalGetCreateTimeFieldBuilder();
         internalGetScheduleOptionsFieldBuilder();
@@ -833,6 +908,11 @@ public final class Report extends com.google.protobuf.GeneratedMessage
       if (reportDefinitionBuilder_ != null) {
         reportDefinitionBuilder_.dispose();
         reportDefinitionBuilder_ = null;
+      }
+      draftReportDefinition_ = null;
+      if (draftReportDefinitionBuilder_ != null) {
+        draftReportDefinitionBuilder_.dispose();
+        draftReportDefinitionBuilder_ = null;
       }
       displayName_ = "";
       updateTime_ = null;
@@ -902,23 +982,30 @@ public final class Report extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.displayName_ = displayName_;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        result.draftReportDefinition_ =
+            draftReportDefinitionBuilder_ == null
+                ? draftReportDefinition_
+                : draftReportDefinitionBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.displayName_ = displayName_;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.locale_ = locale_;
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.locale_ = locale_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.scheduleOptions_ =
             scheduleOptionsBuilder_ == null ? scheduleOptions_ : scheduleOptionsBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -949,9 +1036,12 @@ public final class Report extends com.google.protobuf.GeneratedMessage
       if (other.hasReportDefinition()) {
         mergeReportDefinition(other.getReportDefinition());
       }
+      if (other.hasDraftReportDefinition()) {
+        mergeDraftReportDefinition(other.getDraftReportDefinition());
+      }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasUpdateTime()) {
@@ -962,7 +1052,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getLocale().isEmpty()) {
         locale_ = other.locale_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasScheduleOptions()) {
@@ -1022,36 +1112,43 @@ public final class Report extends com.google.protobuf.GeneratedMessage
             case 42:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 locale_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(
                     internalGetScheduleOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
+            case 114:
+              {
+                input.readMessage(
+                    internalGetDraftReportDefinitionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1570,6 +1667,221 @@ public final class Report extends com.google.protobuf.GeneratedMessage
       return reportDefinitionBuilder_;
     }
 
+    private com.google.ads.admanager.v1.ReportDefinition draftReportDefinition_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ReportDefinition,
+            com.google.ads.admanager.v1.ReportDefinition.Builder,
+            com.google.ads.admanager.v1.ReportDefinitionOrBuilder>
+        draftReportDefinitionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The draft report definition of the report.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the draftReportDefinition field is set.
+     */
+    public boolean hasDraftReportDefinition() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The draft report definition of the report.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The draftReportDefinition.
+     */
+    public com.google.ads.admanager.v1.ReportDefinition getDraftReportDefinition() {
+      if (draftReportDefinitionBuilder_ == null) {
+        return draftReportDefinition_ == null
+            ? com.google.ads.admanager.v1.ReportDefinition.getDefaultInstance()
+            : draftReportDefinition_;
+      } else {
+        return draftReportDefinitionBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The draft report definition of the report.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDraftReportDefinition(com.google.ads.admanager.v1.ReportDefinition value) {
+      if (draftReportDefinitionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        draftReportDefinition_ = value;
+      } else {
+        draftReportDefinitionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The draft report definition of the report.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDraftReportDefinition(
+        com.google.ads.admanager.v1.ReportDefinition.Builder builderForValue) {
+      if (draftReportDefinitionBuilder_ == null) {
+        draftReportDefinition_ = builderForValue.build();
+      } else {
+        draftReportDefinitionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The draft report definition of the report.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDraftReportDefinition(com.google.ads.admanager.v1.ReportDefinition value) {
+      if (draftReportDefinitionBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && draftReportDefinition_ != null
+            && draftReportDefinition_
+                != com.google.ads.admanager.v1.ReportDefinition.getDefaultInstance()) {
+          getDraftReportDefinitionBuilder().mergeFrom(value);
+        } else {
+          draftReportDefinition_ = value;
+        }
+      } else {
+        draftReportDefinitionBuilder_.mergeFrom(value);
+      }
+      if (draftReportDefinition_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The draft report definition of the report.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDraftReportDefinition() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      draftReportDefinition_ = null;
+      if (draftReportDefinitionBuilder_ != null) {
+        draftReportDefinitionBuilder_.dispose();
+        draftReportDefinitionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The draft report definition of the report.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ReportDefinition.Builder getDraftReportDefinitionBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetDraftReportDefinitionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The draft report definition of the report.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.ads.admanager.v1.ReportDefinitionOrBuilder
+        getDraftReportDefinitionOrBuilder() {
+      if (draftReportDefinitionBuilder_ != null) {
+        return draftReportDefinitionBuilder_.getMessageOrBuilder();
+      } else {
+        return draftReportDefinition_ == null
+            ? com.google.ads.admanager.v1.ReportDefinition.getDefaultInstance()
+            : draftReportDefinition_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The draft report definition of the report.
+     * </pre>
+     *
+     * <code>
+     * .google.ads.admanager.v1.ReportDefinition draft_report_definition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.ads.admanager.v1.ReportDefinition,
+            com.google.ads.admanager.v1.ReportDefinition.Builder,
+            com.google.ads.admanager.v1.ReportDefinitionOrBuilder>
+        internalGetDraftReportDefinitionFieldBuilder() {
+      if (draftReportDefinitionBuilder_ == null) {
+        draftReportDefinitionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.ads.admanager.v1.ReportDefinition,
+                com.google.ads.admanager.v1.ReportDefinition.Builder,
+                com.google.ads.admanager.v1.ReportDefinitionOrBuilder>(
+                getDraftReportDefinition(), getParentForChildren(), isClean());
+        draftReportDefinition_ = null;
+      }
+      return draftReportDefinitionBuilder_;
+    }
+
     private java.lang.Object displayName_ = "";
 
     /**
@@ -1635,7 +1947,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1653,7 +1965,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1676,7 +1988,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1702,7 +2014,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1748,7 +2060,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1770,7 +2082,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1788,7 +2100,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -1799,7 +2111,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1817,7 +2129,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -1839,7 +2151,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -1914,7 +2226,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -1960,7 +2272,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1982,7 +2294,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2000,7 +2312,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2011,7 +2323,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2029,7 +2341,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2051,7 +2363,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -2173,7 +2485,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       locale_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2192,7 +2504,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearLocale() {
       locale_ = getDefaultInstance().getLocale();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2216,7 +2528,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       locale_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2242,7 +2554,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      * @return Whether the scheduleOptions field is set.
      */
     public boolean hasScheduleOptions() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2288,7 +2600,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
       } else {
         scheduleOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2311,7 +2623,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
       } else {
         scheduleOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2329,7 +2641,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeScheduleOptions(com.google.ads.admanager.v1.ScheduleOptions value) {
       if (scheduleOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && scheduleOptions_ != null
             && scheduleOptions_
                 != com.google.ads.admanager.v1.ScheduleOptions.getDefaultInstance()) {
@@ -2341,7 +2653,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
         scheduleOptionsBuilder_.mergeFrom(value);
       }
       if (scheduleOptions_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2359,7 +2671,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearScheduleOptions() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       scheduleOptions_ = null;
       if (scheduleOptionsBuilder_ != null) {
         scheduleOptionsBuilder_.dispose();
@@ -2381,7 +2693,7 @@ public final class Report extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.ads.admanager.v1.ScheduleOptions.Builder getScheduleOptionsBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetScheduleOptionsFieldBuilder().getBuilder();
     }

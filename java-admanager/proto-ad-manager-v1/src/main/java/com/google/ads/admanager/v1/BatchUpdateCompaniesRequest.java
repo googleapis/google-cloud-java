@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [BatchUpdateCompanies][] method.
+ * Request object for `BatchUpdateCompanies` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchUpdateCompaniesRequest}
@@ -80,10 +80,10 @@ public final class BatchUpdateCompaniesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The parent resource where [Companies][] will be updated.
-   * Format: `networks/{network_code}`
-   * The parent field in the UpdateCompanyRequest must match this
-   * field.
+   * Required. The parent resource where
+   * [Companies][google.ads.admanager.v1.Company] will be updated. Format:
+   * `networks/{network_code}` The parent field in the UpdateCompanyRequest must
+   * match this field.
    * </pre>
    *
    * <code>
@@ -109,10 +109,10 @@ public final class BatchUpdateCompaniesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Required. The parent resource where [Companies][] will be updated.
-   * Format: `networks/{network_code}`
-   * The parent field in the UpdateCompanyRequest must match this
-   * field.
+   * Required. The parent resource where
+   * [Companies][google.ads.admanager.v1.Company] will be updated. Format:
+   * `networks/{network_code}` The parent field in the UpdateCompanyRequest must
+   * match this field.
    * </pre>
    *
    * <code>
@@ -401,7 +401,7 @@ public final class BatchUpdateCompaniesRequest extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Request object for [BatchUpdateCompanies][] method.
+   * Request object for `BatchUpdateCompanies` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchUpdateCompaniesRequest}
@@ -615,10 +615,10 @@ public final class BatchUpdateCompaniesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The parent resource where [Companies][] will be updated.
-     * Format: `networks/{network_code}`
-     * The parent field in the UpdateCompanyRequest must match this
-     * field.
+     * Required. The parent resource where
+     * [Companies][google.ads.admanager.v1.Company] will be updated. Format:
+     * `networks/{network_code}` The parent field in the UpdateCompanyRequest must
+     * match this field.
      * </pre>
      *
      * <code>
@@ -643,10 +643,10 @@ public final class BatchUpdateCompaniesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The parent resource where [Companies][] will be updated.
-     * Format: `networks/{network_code}`
-     * The parent field in the UpdateCompanyRequest must match this
-     * field.
+     * Required. The parent resource where
+     * [Companies][google.ads.admanager.v1.Company] will be updated. Format:
+     * `networks/{network_code}` The parent field in the UpdateCompanyRequest must
+     * match this field.
      * </pre>
      *
      * <code>
@@ -671,10 +671,10 @@ public final class BatchUpdateCompaniesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The parent resource where [Companies][] will be updated.
-     * Format: `networks/{network_code}`
-     * The parent field in the UpdateCompanyRequest must match this
-     * field.
+     * Required. The parent resource where
+     * [Companies][google.ads.admanager.v1.Company] will be updated. Format:
+     * `networks/{network_code}` The parent field in the UpdateCompanyRequest must
+     * match this field.
      * </pre>
      *
      * <code>
@@ -698,10 +698,10 @@ public final class BatchUpdateCompaniesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The parent resource where [Companies][] will be updated.
-     * Format: `networks/{network_code}`
-     * The parent field in the UpdateCompanyRequest must match this
-     * field.
+     * Required. The parent resource where
+     * [Companies][google.ads.admanager.v1.Company] will be updated. Format:
+     * `networks/{network_code}` The parent field in the UpdateCompanyRequest must
+     * match this field.
      * </pre>
      *
      * <code>
@@ -721,10 +721,10 @@ public final class BatchUpdateCompaniesRequest extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Required. The parent resource where [Companies][] will be updated.
-     * Format: `networks/{network_code}`
-     * The parent field in the UpdateCompanyRequest must match this
-     * field.
+     * Required. The parent resource where
+     * [Companies][google.ads.admanager.v1.Company] will be updated. Format:
+     * `networks/{network_code}` The parent field in the UpdateCompanyRequest must
+     * match this field.
      * </pre>
      *
      * <code>

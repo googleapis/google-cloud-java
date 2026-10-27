@@ -53,15 +53,17 @@ public final class AgentToolProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n(google/cloud/ces/v1beta/agent_tool.pro"
+      "\n"
+          + "(google/cloud/ces/v1beta/agent_tool.pro"
           + "to\022\027google.cloud.ces.v1beta\032\037google/api/"
-          + "field_behavior.proto\032\031google/api/resourc"
-          + "e.proto\"i\n\tAgentTool\022\021\n\004name\030\001 \001(\tB\003\340A\002\022"
-          + "\030\n\013description\030\002 \001(\tB\003\340A\001\022/\n\005agent\030\004 \001(\t"
-          + "B \340A\001\372A\032\n\030ces.googleapis.com/AgentB^\n\033co"
-          + "m.google.cloud.ces.v1betaB\016AgentToolProt"
-          + "oP\001Z-cloud.google.com/go/ces/apiv1beta/c"
-          + "espb;cespbb\006proto3"
+          + "field_behavior.proto\032\031google/api/resource.proto\"l\n"
+          + "\tAgentTool\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\002\022\031\n"
+          + "\013description\030\002 \001(\tB\004\342A\001\001\0220\n"
+          + "\005agent\030\004 \001(\tB!\342A\001\001\372A\032\n"
+          + "\030ces.googleapis.com/AgentB^\n"
+          + "\033com.google.cloud.ces.v1betaB\016AgentToolP"
+          + "rotoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

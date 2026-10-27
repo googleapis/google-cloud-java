@@ -2629,6 +2629,8 @@ public class BigQueryImplTest {
     assertFalse(result.hasNextPage());
     assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
     assertThat(result.getTotalRows()).isEqualTo(1);
+    assertThat(result.getTotalBytesProcessed()).isEqualTo(42L);
+    assertThat(result.getCacheHit()).isFalse();
     for (FieldValueList row : result.getValues()) {
       assertThat(row.get(0).getBooleanValue()).isFalse();
       assertThat(row.get(1).getLongValue()).isEqualTo(1);
@@ -2685,6 +2687,8 @@ public class BigQueryImplTest {
     TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY);
     assertTrue(result.hasNextPage());
     assertNotNull(result.getNextPageToken());
+    verify(bigqueryRpcMock, never())
+        .getJobSkipExceptionTranslation(PROJECT, JOB, null, EMPTY_RPC_OPTIONS);
     assertNotNull(result.getNextPage());
 
     QueryRequest requestPb = requestPbCapture.getValue();
@@ -2700,6 +2704,85 @@ public class BigQueryImplTest {
             PROJECT, DATASET, TABLE, optionMap(BigQuery.TableDataListOption.pageToken(CURSOR)));
     verify(bigqueryRpcMock)
         .queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture());
+  }
+
+  @Test
+  void testFastQueryMultiplePagesFirstPageOnlySkipsGetJob()
+      throws InterruptedException, IOException {
+    JobId queryJob = JobId.of(PROJECT, JOB);
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setCacheHit(false)
+            .setJobReference(queryJob.toPb())
+            .setJobComplete(true)
+            .setKind("bigquery#queryResponse")
+            .setPageToken(CURSOR)
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setSchema(TABLE_SCHEMA.toPb())
+            .setTotalBytesProcessed(42L)
+            .setTotalRows(BigInteger.valueOf(2L));
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenReturn(queryResponsePb);
+
+    bigquery = options.getService();
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY);
+    assertTrue(result.hasNextPage());
+    assertEquals(CURSOR, result.getNextPageToken());
+    assertThat(result.getSchema()).isEqualTo(TABLE_SCHEMA);
+    assertThat(result.getTotalRows()).isEqualTo(2L);
+    for (FieldValueList row : result.getValues()) {
+      assertThat(row.get(0).getBooleanValue()).isFalse();
+      assertThat(row.get(1).getLongValue()).isEqualTo(1);
+    }
+
+    verify(bigqueryRpcMock)
+        .queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture());
+    verify(bigqueryRpcMock, never()).getJobSkipExceptionTranslation(any(), any(), any(), any());
+    verify(bigqueryRpcMock, never())
+        .listTableDataSkipExceptionTranslation(any(), any(), any(), any());
+  }
+
+  @Test
+  void testFastQueryMultiplePagesCachesDestinationTable() throws InterruptedException, IOException {
+    JobId queryJob = JobId.of(PROJECT, JOB);
+    when(bigqueryRpcMock.getJobSkipExceptionTranslation(PROJECT, JOB, null, EMPTY_RPC_OPTIONS))
+        .thenReturn(COMPLETE_QUERY_JOB.toPb());
+    when(bigqueryRpcMock.listTableDataSkipExceptionTranslation(
+            PROJECT, DATASET, TABLE, optionMap(BigQuery.TableDataListOption.pageToken(CURSOR))))
+        .thenReturn(
+            new TableDataList()
+                .setPageToken(null)
+                .setRows(ImmutableList.of(TABLE_ROW))
+                .setTotalRows(2L));
+
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setCacheHit(false)
+            .setJobReference(queryJob.toPb())
+            .setJobComplete(true)
+            .setKind("bigquery#queryResponse")
+            .setPageToken(CURSOR)
+            .setRows(ImmutableList.of(TABLE_ROW))
+            .setSchema(TABLE_SCHEMA.toPb())
+            .setTotalBytesProcessed(42L)
+            .setTotalRows(BigInteger.valueOf(2L));
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenReturn(queryResponsePb);
+
+    bigquery = options.getService();
+    TableResult firstPage = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY);
+    assertNotNull(firstPage.getNextPage());
+    assertNotNull(firstPage.getNextPage());
+
+    // Destination table is cached after the first getNextPage() call, so jobs.get is only called
+    // once even if getNextPage() is invoked multiple times on the first page.
+    verify(bigqueryRpcMock, times(1))
+        .getJobSkipExceptionTranslation(PROJECT, JOB, null, EMPTY_RPC_OPTIONS);
+    verify(bigqueryRpcMock, times(2))
+        .listTableDataSkipExceptionTranslation(
+            PROJECT, DATASET, TABLE, optionMap(BigQuery.TableDataListOption.pageToken(CURSOR)));
   }
 
   @Test
@@ -3354,7 +3437,8 @@ public class BigQueryImplTest {
             .build();
     ReadRowsResponse streamResponse =
         ReadRowsResponse.newBuilder().setArrowRecordBatch(protoBatch).build();
-    when(mockServerStream.iterator()).thenReturn(ImmutableList.of(streamResponse).iterator());
+    when(mockServerStream.iterator())
+        .thenAnswer(invocation -> ImmutableList.of(streamResponse).iterator());
 
     BigQueryReadClient mockReadClient =
         mock(BigQueryReadClient.class, withSettings().withoutAnnotations());
@@ -3375,16 +3459,15 @@ public class BigQueryImplTest {
     Page<FieldValueList> page2 = result.getNextPage();
     assertNotNull(page2);
     List<FieldValueList> page2Rows = ImmutableList.copyOf(page2.getValues());
-    // Since maxResults is 2 and initialRowOffset is 1, page2 should only contain 1 row even though
-    // stream returned 2 rows
-    assertEquals(1, page2Rows.size());
+    // Since maxResults configures the page size (2 rows), page2 contains the 2 rows from the stream
+    assertEquals(2, page2Rows.size());
     assertEquals("2", page2Rows.get(0).get(0).getStringValue());
-    // Since totalRowsReturned == maxResults, hasNextPage must be false
+    assertEquals("3", page2Rows.get(1).get(0).getStringValue());
+    // End of stream reached (total 3 rows read across pages 1 and 2), hasNextPage must be false
     assertFalse(page2.hasNextPage());
     assertNull(page2.getNextPage());
 
-    // When maxResults is 1, initialRowOffset (1) already reaches maxResults, so hasNextPage is
-    // false immediately
+    // When maxResults is 1, page token is still preserved for subsequent pages
     QueryJobConfiguration configMax1 =
         QueryJobConfiguration.newBuilder("SELECT id FROM test")
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
@@ -3392,8 +3475,12 @@ public class BigQueryImplTest {
             .build();
     TableResult resultMax1 = bigquery.query(configMax1);
     assertNotNull(resultMax1);
-    assertFalse(resultMax1.hasNextPage());
-    assertNull(resultMax1.getNextPage());
+    assertTrue(resultMax1.hasNextPage());
+    Page<FieldValueList> page2Max1 = resultMax1.getNextPage();
+    assertNotNull(page2Max1);
+    List<FieldValueList> page2Max1Rows = ImmutableList.copyOf(page2Max1.getValues());
+    assertEquals(1, page2Max1Rows.size());
+    assertEquals("2", page2Max1Rows.get(0).get(0).getStringValue());
   }
 
   @Test
@@ -3509,6 +3596,7 @@ public class BigQueryImplTest {
                     .setQuery(
                         new com.google.api.services.bigquery.model.JobStatistics2()
                             .setStatementType("SELECT")
+                            .setCacheHit(true)
                             .setTotalBytesBilled(100L)
                             .setTotalBytesProcessed(200L)));
 
@@ -3600,6 +3688,7 @@ public class BigQueryImplTest {
     assertEquals(50L, result.getTotalSlotMs().longValue());
     assertEquals(100L, result.getTotalBytesBilled().longValue());
     assertEquals(200L, result.getTotalBytesProcessed().longValue());
+    assertTrue(result.getCacheHit());
     assertEquals(StatementType.SELECT, result.getStatementType());
   }
 

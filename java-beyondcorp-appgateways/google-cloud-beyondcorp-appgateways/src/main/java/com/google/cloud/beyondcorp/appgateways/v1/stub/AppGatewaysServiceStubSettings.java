@@ -151,8 +151,11 @@ import org.jspecify.annotations.Nullable;
  *     .setPollingAlgorithm(timedRetryAlgorithm)
  *     .build();
  * }</pre>
+ *
+ * @deprecated This class is deprecated and will be removed in the next major version update.
  */
 @NullMarked
+@Deprecated
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class AppGatewaysServiceStubSettings extends StubSettings<AppGatewaysServiceStubSettings> {
@@ -285,19 +288,34 @@ public class AppGatewaysServiceStubSettings extends StubSettings<AppGatewaysServ
             }
           };
 
-  /** Returns the object with the settings used for calls to listAppGateways. */
+  /**
+   * Returns the object with the settings used for calls to listAppGateways.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public PagedCallSettings<
           ListAppGatewaysRequest, ListAppGatewaysResponse, ListAppGatewaysPagedResponse>
       listAppGatewaysSettings() {
     return listAppGatewaysSettings;
   }
 
-  /** Returns the object with the settings used for calls to getAppGateway. */
+  /**
+   * Returns the object with the settings used for calls to getAppGateway.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<GetAppGatewayRequest, AppGateway> getAppGatewaySettings() {
     return getAppGatewaySettings;
   }
 
-  /** Returns the object with the settings used for calls to createAppGateway. */
+  /**
+   * Returns the object with the settings used for calls to createAppGateway.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<CreateAppGatewayRequest, Operation> createAppGatewaySettings() {
     return createAppGatewaySettings;
   }
@@ -308,7 +326,12 @@ public class AppGatewaysServiceStubSettings extends StubSettings<AppGatewaysServ
     return createAppGatewayOperationSettings;
   }
 
-  /** Returns the object with the settings used for calls to deleteAppGateway. */
+  /**
+   * Returns the object with the settings used for calls to deleteAppGateway.
+   *
+   * @deprecated This method is deprecated and will be removed in the next major version update.
+   */
+  @Deprecated
   public UnaryCallSettings<DeleteAppGatewayRequest, Operation> deleteAppGatewaySettings() {
     return deleteAppGatewaySettings;
   }
@@ -682,19 +705,34 @@ public class AppGatewaysServiceStubSettings extends StubSettings<AppGatewaysServ
       return unaryMethodSettingsBuilders;
     }
 
-    /** Returns the builder for the settings used for calls to listAppGateways. */
+    /**
+     * Returns the builder for the settings used for calls to listAppGateways.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public PagedCallSettings.Builder<
             ListAppGatewaysRequest, ListAppGatewaysResponse, ListAppGatewaysPagedResponse>
         listAppGatewaysSettings() {
       return listAppGatewaysSettings;
     }
 
-    /** Returns the builder for the settings used for calls to getAppGateway. */
+    /**
+     * Returns the builder for the settings used for calls to getAppGateway.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<GetAppGatewayRequest, AppGateway> getAppGatewaySettings() {
       return getAppGatewaySettings;
     }
 
-    /** Returns the builder for the settings used for calls to createAppGateway. */
+    /**
+     * Returns the builder for the settings used for calls to createAppGateway.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<CreateAppGatewayRequest, Operation>
         createAppGatewaySettings() {
       return createAppGatewaySettings;
@@ -707,7 +745,12 @@ public class AppGatewaysServiceStubSettings extends StubSettings<AppGatewaysServ
       return createAppGatewayOperationSettings;
     }
 
-    /** Returns the builder for the settings used for calls to deleteAppGateway. */
+    /**
+     * Returns the builder for the settings used for calls to deleteAppGateway.
+     *
+     * @deprecated This method is deprecated and will be removed in the next major version update.
+     */
+    @Deprecated
     public UnaryCallSettings.Builder<DeleteAppGatewayRequest, Operation>
         deleteAppGatewaySettings() {
       return deleteAppGatewaySettings;

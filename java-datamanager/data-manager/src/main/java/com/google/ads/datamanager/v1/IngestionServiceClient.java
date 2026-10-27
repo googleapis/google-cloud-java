@@ -123,6 +123,36 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> IngestUsers</td>
+ *      <td><p> Uploads a list of users to the provided destinations. Unlike [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers] (which adds users to specific advertiser audience lists for targeting), `IngestUsers` ingests account level identity linkage data (for example, user identifiers linked to mobile IDs) independent of specific audience segments.
+ * <p>  This feature is only available to accounts on an allowlist.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> ingestUsers(IngestUsersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> ingestUsersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RemoveUsers</td>
+ *      <td><p> Removes a list of users from the provided destinations.
+ * <p>  This feature is only available to accounts on an allowlist.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> removeUsers(RemoveUsersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> removeUsersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> IngestAdEvents</td>
  *      <td><p> Uploads a list of [AdEvent][google.ads.datamanager.v1.AdEvent] resources to Google Analytics.
  * <p>  This feature is only available to accounts on an allowlist.</td>
@@ -531,6 +561,150 @@ public class IngestionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<IngestEventsRequest, IngestEventsResponse> ingestEventsCallable() {
     return stub.ingestEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Uploads a list of users to the provided destinations. Unlike
+   * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers]
+   * (which adds users to specific advertiser audience lists for targeting), `IngestUsers` ingests
+   * account level identity linkage data (for example, user identifiers linked to mobile IDs)
+   * independent of specific audience segments.
+   *
+   * <p>This feature is only available to accounts on an allowlist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IngestionServiceClient ingestionServiceClient = IngestionServiceClient.create()) {
+   *   IngestUsersRequest request =
+   *       IngestUsersRequest.newBuilder()
+   *           .addAllDestinations(new ArrayList<Destination>())
+   *           .addAllUsers(new ArrayList<User>())
+   *           .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .setEncoding(Encoding.forNumber(0))
+   *           .build();
+   *   IngestUsersResponse response = ingestionServiceClient.ingestUsers(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IngestUsersResponse ingestUsers(IngestUsersRequest request) {
+    return ingestUsersCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Uploads a list of users to the provided destinations. Unlike
+   * [IngestAudienceMembers][google.ads.datamanager.v1.IngestionService.IngestAudienceMembers]
+   * (which adds users to specific advertiser audience lists for targeting), `IngestUsers` ingests
+   * account level identity linkage data (for example, user identifiers linked to mobile IDs)
+   * independent of specific audience segments.
+   *
+   * <p>This feature is only available to accounts on an allowlist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IngestionServiceClient ingestionServiceClient = IngestionServiceClient.create()) {
+   *   IngestUsersRequest request =
+   *       IngestUsersRequest.newBuilder()
+   *           .addAllDestinations(new ArrayList<Destination>())
+   *           .addAllUsers(new ArrayList<User>())
+   *           .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .setEncoding(Encoding.forNumber(0))
+   *           .build();
+   *   ApiFuture<IngestUsersResponse> future =
+   *       ingestionServiceClient.ingestUsersCallable().futureCall(request);
+   *   // Do something.
+   *   IngestUsersResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<IngestUsersRequest, IngestUsersResponse> ingestUsersCallable() {
+    return stub.ingestUsersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes a list of users from the provided destinations.
+   *
+   * <p>This feature is only available to accounts on an allowlist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IngestionServiceClient ingestionServiceClient = IngestionServiceClient.create()) {
+   *   RemoveUsersRequest request =
+   *       RemoveUsersRequest.newBuilder()
+   *           .addAllDestinations(new ArrayList<Destination>())
+   *           .addAllUserData(new ArrayList<UserData>())
+   *           .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .setEncoding(Encoding.forNumber(0))
+   *           .build();
+   *   RemoveUsersResponse response = ingestionServiceClient.removeUsers(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveUsersResponse removeUsers(RemoveUsersRequest request) {
+    return removeUsersCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes a list of users from the provided destinations.
+   *
+   * <p>This feature is only available to accounts on an allowlist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IngestionServiceClient ingestionServiceClient = IngestionServiceClient.create()) {
+   *   RemoveUsersRequest request =
+   *       RemoveUsersRequest.newBuilder()
+   *           .addAllDestinations(new ArrayList<Destination>())
+   *           .addAllUserData(new ArrayList<UserData>())
+   *           .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .setEncoding(Encoding.forNumber(0))
+   *           .build();
+   *   ApiFuture<RemoveUsersResponse> future =
+   *       ingestionServiceClient.removeUsersCallable().futureCall(request);
+   *   // Do something.
+   *   RemoveUsersResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveUsersRequest, RemoveUsersResponse> removeUsersCallable() {
+    return stub.removeUsersCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

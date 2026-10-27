@@ -74,6 +74,7 @@ import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -247,13 +248,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     }
   }
 
-  private class QueryPageFetcher extends Thread implements NextPageFetcher<FieldValueList> {
+  private class QueryPageFetcher implements NextPageFetcher<FieldValueList> {
 
     private static final long serialVersionUID = -8501991114794410114L;
     private final Map<BigQueryRpc.Option, ?> requestOptions;
     private final BigQueryOptions serviceOptions;
-    private Job job;
-    private final TableId table;
+    private final JobId jobId;
+    private TableId table;
     private final Schema schema;
 
     QueryPageFetcher(
@@ -265,20 +266,26 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       this.requestOptions =
           PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
-      this.job = getJob(jobId);
-      this.table = ((QueryJobConfiguration) job.getConfiguration()).getDestinationTable();
+      this.jobId = jobId;
       this.schema = schema;
     }
 
     @Override
     public Page<FieldValueList> getNextPage() {
-      while (!JobStatus.State.DONE.equals(job.getStatus().getState())) {
-        try {
-          sleep(5000);
-        } catch (InterruptedException ex) {
-          throw new RuntimeException(ex.getMessage());
-        }
-        job = job.reload();
+      // Lazily resolve the destination table on the first getNextPage() call rather than in the
+      // constructor. All first-page rows and metadata on TableResult are already populated from
+      // QueryResponse (jobs.query), and the destination table is only ever used here to call
+      // listTableData() for subsequent pages. Deferring getJob(jobId) is therefore behaviorally
+      // identical when iterating multiple pages while avoiding an unused blocking jobs.get RPC
+      // when only the first page is consumed.
+      //
+      // Historically, getNextPage() also polled job.reload() with a 5s sleep until State.DONE
+      // (from before queryRpc() checked results.getJobComplete()). Because QueryPageFetcher is
+      // only created when results.getJobComplete() is true, the job is already complete and does
+      // not need status polling.
+      if (table == null) {
+        Job job = getJob(jobId);
+        table = ((QueryJobConfiguration) job.getConfiguration()).getDestinationTable();
       }
       return listTableData(table, schema, serviceOptions, requestOptions).x();
     }
@@ -2455,7 +2462,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     long numRows;
     Schema schema;
-    if (results.getJobComplete() && results.getSchema() != null) {
+    if (Boolean.TRUE.equals(results.getJobComplete()) && results.getSchema() != null) {
       schema = Schema.fromPb(results.getSchema());
       if (results.getNumDmlAffectedRows() == null && results.getTotalRows() == null) {
         numRows = 0L;
@@ -2469,8 +2476,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       // return the schema, fallback. Some operations don't return the schema and can be optimized
       // here, but this is left as future work.
       JobId jobId = JobId.fromPb(results.getJobReference());
-      Job job = getJob(jobId, options);
-      return job;
+      return getJob(jobId, options);
     }
 
     if (results.getPageToken() != null) {
@@ -2528,7 +2534,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .setTotalSlotMs(results.getTotalSlotMs())
         .setNumDmlAffectedRows(results.getNumDmlAffectedRows())
         .setSessionInfo(
-            results.getSessionInfo() != null ? SessionInfo.fromPb(results.getSessionInfo()) : null);
+            results.getSessionInfo() != null ? SessionInfo.fromPb(results.getSessionInfo()) : null)
+        .setCacheHit(results.getCacheHit());
   }
 
   private static long getNumRows(com.google.api.services.bigquery.model.QueryResponse results) {
@@ -2655,11 +2662,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     // Calculate row offset and determine if subsequent pages exist.
     boolean hasMorePages = results.getPageToken() != null;
     long initialRowOffset = (long) firstPageRows.size();
-    if (hasMorePages) {
-      if (content.getMaxResults() != null && initialRowOffset >= content.getMaxResults()) {
-        hasMorePages = false;
-      }
-    }
 
     // Multi-page results: configure ArrowQueryPageFetcher for subsequent tabledata.list calls.
     if (hasMorePages) {
@@ -2669,6 +2671,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       }
       JobId jobId = JobId.fromPb(results.getJobReference());
       String cursor = results.getPageToken();
+      Map<BigQueryRpc.Option, Object> fetcherOptions = new HashMap<>(optionMap(options));
+      if (content.getMaxResults() != null
+          && !fetcherOptions.containsKey(BigQueryRpc.Option.MAX_RESULTS)) {
+        fetcherOptions.put(BigQueryRpc.Option.MAX_RESULTS, content.getMaxResults());
+      }
       NextPageFetcher<FieldValueList> pageFetcher =
           new ArrowQueryPageFetcher(
               jobId,
@@ -2677,8 +2684,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               arrowSchemaPojo,
               getOptions(),
               initialRowOffset,
-              content.getMaxResults(),
-              optionMap(options));
+              null,
+              fetcherOptions);
 
       return newTableResultBuilder(results)
           .setSchema(schema)
@@ -3101,6 +3108,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     Long totalBytesProcessed = stats != null ? stats.getTotalBytesProcessed() : null;
     Long totalSlotMs = stats != null ? stats.getTotalSlotMs() : null;
     Long numDmlAffectedRows = stats != null ? stats.getNumDmlAffectedRows() : null;
+    Boolean cacheHit = stats != null ? stats.getCacheHit() : null;
     SessionInfo sessionInfo = stats != null ? stats.getSessionInfo() : null;
 
     // If the completed job is a DDL or DML statement, return immediately without
@@ -3119,6 +3127,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setTotalBytesProcessed(totalBytesProcessed)
           .setTotalSlotMs(totalSlotMs)
           .setNumDmlAffectedRows(numDmlAffectedRows)
+          .setCacheHit(cacheHit)
           .setSessionInfo(sessionInfo)
           .build();
     }
@@ -3185,11 +3194,16 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setTotalBytesProcessed(totalBytesProcessed)
           .setTotalSlotMs(totalSlotMs)
           .setNumDmlAffectedRows(numDmlAffectedRows)
+          .setCacheHit(cacheHit)
           .setSessionInfo(sessionInfo)
           .build();
     }
 
     // Initialize the page fetcher targeting the ReadSession stream to load the first page of rows.
+    Map<BigQueryRpc.Option, Object> fetcherOptions = new HashMap<>(optionMap(options));
+    if (maxResults != null && !fetcherOptions.containsKey(BigQueryRpc.Option.MAX_RESULTS)) {
+      fetcherOptions.put(BigQueryRpc.Option.MAX_RESULTS, maxResults);
+    }
     ArrowQueryPageFetcher pageFetcher =
         new ArrowQueryPageFetcher(
             completedJob.getJobId(),
@@ -3199,8 +3213,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             arrowSchemaPojo,
             getOptions(),
             0L,
-            maxResults,
-            optionMap(options));
+            null,
+            fetcherOptions);
 
     Page<FieldValueList> firstPage = pageFetcher.getNextPage();
     List<FieldValueList> firstPageRows =
@@ -3229,6 +3243,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .setTotalBytesProcessed(totalBytesProcessed)
         .setTotalSlotMs(totalSlotMs)
         .setNumDmlAffectedRows(numDmlAffectedRows)
+        .setCacheHit(cacheHit)
         .setSessionInfo(sessionInfo)
         .build();
   }

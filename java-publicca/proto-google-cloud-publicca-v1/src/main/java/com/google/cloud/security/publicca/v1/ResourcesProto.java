@@ -55,17 +55,17 @@ public final class ResourcesProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + "1google/cloud/security/publicca/v1/resources.proto\022!google.cloud.security.publi"
-          + "cca.v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\335\001\n"
-          + "\022ExternalAccountKey\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\003\022\023\n"
-          + "\006key_id\030\002 \001(\tB\003\340A\003\022\030\n"
-          + "\013b64_mac_key\030\003 \001(\014B\003\340A\003:\204\001\352A\200\001\n"
-          + "*publicca.googleapis.com/ExternalAccountKey\022Rprojects/{project}/locations/{lo"
-          + "cation}/externalAccountKeys/{external_account_key}B\354\001\n"
-          + "%com.google.cloud.security.publicca.v1B\016ResourcesProtoP\001ZAcloud.go"
-          + "ogle.com/go/security/publicca/apiv1/publiccapb;publiccapb\252\002!Google.Cloud.Securit"
-          + "y.PublicCA.V1\312\002!Google\\Cloud\\Security\\Pu"
-          + "blicCA\\V1\352\002%Google::Cloud::Security::PublicCA::V1b\006proto3"
+          + "cca.v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\340\001\n"
+          + "\022ExternalAccountKey\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\003\022\024\n"
+          + "\006key_id\030\002 \001(\tB\004\342A\001\003\022\031\n"
+          + "\013b64_mac_key\030\003 \001(\014B\004\342A\001\003:\204\001\352A\200\001\n"
+          + "*publicca.googleapis.com/ExternalAccountKey\022Rprojects/{project}/locations/"
+          + "{location}/externalAccountKeys/{external_account_key}B\354\001\n"
+          + "%com.google.cloud.security.publicca.v1B\016ResourcesProtoP\001ZAcloud"
+          + ".google.com/go/security/publicca/apiv1/publiccapb;publiccapb\252\002!Google.Cloud.Secu"
+          + "rity.PublicCA.V1\312\002!Google\\Cloud\\Security"
+          + "\\PublicCA\\V1\352\002%Google::Cloud::Security::PublicCA::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

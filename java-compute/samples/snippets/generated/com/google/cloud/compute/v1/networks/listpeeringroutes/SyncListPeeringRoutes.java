@@ -45,7 +45,6 @@ public class SyncListPeeringRoutes {
               .setPeeringName("peeringName-1170120213")
               .setProject("project-309310695")
               .setRegion("region-934795532")
-              .setReturnPartialSuccess(true)
               .build();
       for (ExchangedPeeringRoute element : networksClient.listPeeringRoutes(request).iterateAll()) {
         // doThingsWith(element);

@@ -22,9 +22,12 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.compat.FutureAdapter;
 import com.google.cloud.bigtable.data.v2.internal.compat.Util;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
+import com.google.cloud.bigtable.data.v2.internal.util.SessionScope;
 import com.google.common.base.Throwables;
 import io.grpc.Context;
 import io.grpc.Context.CancellableContext;
@@ -46,21 +49,36 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   private final UnaryShim<ReqT, RespT> experimental;
 
   private final Duration defaultTimeout;
+  private final DebugTagTracer debugTagTracer;
+  // The diversion scope this callable's method belongs to.
+  private final SessionScope scope;
 
   public DivertingUnaryCallable(
       ClientConfigurationManager configurationManager,
       UnaryCallable<ReqT, RespT> classic,
       UnaryShim<ReqT, RespT> experimental,
-      Duration defaultTimeout) {
+      Duration defaultTimeout,
+      DebugTagTracer debugTagTracer,
+      SessionScope scope) {
     this.configurationManager = configurationManager;
     this.classic = classic;
     this.experimental = experimental;
     this.defaultTimeout = defaultTimeout;
+    this.debugTagTracer = debugTagTracer;
+    this.scope = scope;
   }
 
   @Override
   public ApiFuture<RespT> futureCall(ReqT request, ApiCallContext context) {
     if (!useExperimental(request)) {
+      return classic.futureCall(request, context);
+    }
+    // Per-RPC credential overrides cannot be forwarded to the session path (sessions are
+    // established with channel-level credentials). Fall back to classic to honor the override.
+    if (context instanceof GrpcCallContext
+        && ((GrpcCallContext) context).getCallOptions().getCredentials() != null) {
+      debugTagTracer.record(
+          TelemetryConfiguration.Level.WARN, "per_rpc_credentials_session_fallback");
       return classic.futureCall(request, context);
     }
 
@@ -96,19 +114,24 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   }
 
   private boolean useExperimental(ReqT req) {
+    float ratio = resolveSessionLoad();
+    if (ratio == 0) {
+      return false;
+    }
+
     if (!experimental.supports(req)) {
       return false;
     }
 
-    float ratio =
-        configurationManager.getClientConfiguration().getSessionConfiguration().getSessionLoad();
-    if (ratio == 0) {
-      return false;
-    }
     if (ratio != 1.0 && ThreadLocalRandom.current().nextFloat() > ratio) {
       return false;
     }
     return true;
+  }
+
+  private float resolveSessionLoad() {
+    return scope.resolveSessionLoad(
+        configurationManager.getClientConfiguration().getSessionConfiguration());
   }
 
   ApiException translateException(Throwable e) {

@@ -324,7 +324,8 @@ public class DiskTypesStubSettings extends StubSettings<DiskTypesStubSettings> {
         .setGeneratedLibToken("gapic", GaxProperties.getLibraryVersion(DiskTypesStubSettings.class))
         .setTransportToken(
             GaxHttpJsonProperties.getHttpJsonTokenName(),
-            GaxHttpJsonProperties.getHttpJsonVersion());
+            GaxHttpJsonProperties.getHttpJsonVersion())
+        .setApiVersionToken("2026-09-01");
   }
 
   /** Returns a new builder for this class. */

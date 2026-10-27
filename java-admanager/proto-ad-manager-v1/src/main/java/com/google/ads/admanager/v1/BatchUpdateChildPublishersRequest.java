@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for [BatchUpdateChildPublishers][] method.
+ * Request object for `BatchUpdateChildPublishers` method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.BatchUpdateChildPublishersRequest}
@@ -82,10 +82,9 @@ public final class BatchUpdateChildPublishersRequest extends com.google.protobuf
    *
    * <pre>
    * Required. The parent resource where
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be updated.
-   * Format: `networks/{network_code}`
-   * The parent field in the UpdateChildPublisherRequest must match this
-   * field.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be updated.
+   * Format: `networks/{network_code}` The parent field in the
+   * UpdateChildPublisherRequest must match this field.
    * </pre>
    *
    * <code>
@@ -112,10 +111,9 @@ public final class BatchUpdateChildPublishersRequest extends com.google.protobuf
    *
    * <pre>
    * Required. The parent resource where
-   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be updated.
-   * Format: `networks/{network_code}`
-   * The parent field in the UpdateChildPublisherRequest must match this
-   * field.
+   * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be updated.
+   * Format: `networks/{network_code}` The parent field in the
+   * UpdateChildPublisherRequest must match this field.
    * </pre>
    *
    * <code>
@@ -405,7 +403,7 @@ public final class BatchUpdateChildPublishersRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Request object for [BatchUpdateChildPublishers][] method.
+   * Request object for `BatchUpdateChildPublishers` method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.BatchUpdateChildPublishersRequest}
@@ -623,10 +621,9 @@ public final class BatchUpdateChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource where
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be updated.
-     * Format: `networks/{network_code}`
-     * The parent field in the UpdateChildPublisherRequest must match this
-     * field.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be updated.
+     * Format: `networks/{network_code}` The parent field in the
+     * UpdateChildPublisherRequest must match this field.
      * </pre>
      *
      * <code>
@@ -652,10 +649,9 @@ public final class BatchUpdateChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource where
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be updated.
-     * Format: `networks/{network_code}`
-     * The parent field in the UpdateChildPublisherRequest must match this
-     * field.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be updated.
+     * Format: `networks/{network_code}` The parent field in the
+     * UpdateChildPublisherRequest must match this field.
      * </pre>
      *
      * <code>
@@ -681,10 +677,9 @@ public final class BatchUpdateChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource where
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be updated.
-     * Format: `networks/{network_code}`
-     * The parent field in the UpdateChildPublisherRequest must match this
-     * field.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be updated.
+     * Format: `networks/{network_code}` The parent field in the
+     * UpdateChildPublisherRequest must match this field.
      * </pre>
      *
      * <code>
@@ -709,10 +704,9 @@ public final class BatchUpdateChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource where
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be updated.
-     * Format: `networks/{network_code}`
-     * The parent field in the UpdateChildPublisherRequest must match this
-     * field.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be updated.
+     * Format: `networks/{network_code}` The parent field in the
+     * UpdateChildPublisherRequest must match this field.
      * </pre>
      *
      * <code>
@@ -733,10 +727,9 @@ public final class BatchUpdateChildPublishersRequest extends com.google.protobuf
      *
      * <pre>
      * Required. The parent resource where
-     * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be updated.
-     * Format: `networks/{network_code}`
-     * The parent field in the UpdateChildPublisherRequest must match this
-     * field.
+     * [ChildPublishers][google.ads.admanager.v1.ChildPublisher] will be updated.
+     * Format: `networks/{network_code}` The parent field in the
+     * UpdateChildPublisherRequest must match this field.
      * </pre>
      *
      * <code>

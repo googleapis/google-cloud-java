@@ -346,6 +346,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -405,6 +406,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -464,6 +466,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -523,6 +526,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1191,6 +1195,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1247,6 +1252,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1303,6 +1309,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1359,6 +1366,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1854,6 +1862,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1912,6 +1921,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2375,6 +2385,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2430,6 +2441,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4893,6 +4905,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4909,6 +4922,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setMostRecentEditor("mostRecentEditor-833861941")
             .setPrincipal("principal-1812041682")
+            .setDeletionNotificationsEnabled(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -4951,6 +4965,7 @@ public class SecurityCenterClientHttpJsonTest {
               .setUpdateTime(Timestamp.newBuilder().build())
               .setMostRecentEditor("mostRecentEditor-833861941")
               .setPrincipal("principal-1812041682")
+              .setDeletionNotificationsEnabled(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBigQueryExport(bigQueryExport, updateMask);
@@ -5370,6 +5385,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeletionNotificationsEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5383,6 +5399,7 @@ public class SecurityCenterClientHttpJsonTest {
             .setPubsubTopic("pubsubTopic255880396")
             .setServiceAccount("serviceAccount1079137720")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeletionNotificationsEnabled(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -5423,6 +5440,7 @@ public class SecurityCenterClientHttpJsonTest {
               .setPubsubTopic("pubsubTopic255880396")
               .setServiceAccount("serviceAccount1079137720")
               .setUpdateTime(Timestamp.newBuilder().build())
+              .setDeletionNotificationsEnabled(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateNotificationConfig(notificationConfig, updateMask);

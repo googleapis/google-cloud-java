@@ -21,6 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
 import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.common.collect.ImmutableList;
@@ -140,6 +141,7 @@ class TableResultTest {
             .setTotalBytesProcessed(2048L)
             .setTotalSlotMs(500L)
             .setNumDmlAffectedRows(0L)
+            .setCacheHit(true)
             .setSessionInfo(SESSION_INFO)
             .build();
 
@@ -148,8 +150,20 @@ class TableResultTest {
     assertThat(result.getTotalBytesProcessed()).isEqualTo(2048L);
     assertThat(result.getTotalSlotMs()).isEqualTo(500L);
     assertThat(result.getNumDmlAffectedRows()).isEqualTo(0L);
+    assertThat(result.getCacheHit()).isTrue();
     assertThat(result.getSessionInfo()).isEqualTo(SESSION_INFO);
     assertThat(result.getSessionInfo().getSessionId()).isEqualTo(SESSION_ID);
+
+    QueryStatistics stats = result.extractQueryStatistics();
+    assertThat(stats).isNotNull();
+    assertThat(stats.getStatementType()).isEqualTo(StatementType.SELECT);
+    assertThat(stats.getTotalBytesBilled()).isEqualTo(1024L);
+    assertThat(stats.getTotalBytesProcessed()).isEqualTo(2048L);
+    assertThat(stats.getTotalSlotMs()).isEqualTo(500L);
+    assertThat(stats.getNumDmlAffectedRows()).isEqualTo(0L);
+    assertThat(stats.getCacheHit()).isTrue();
+    assertThat(stats.getSessionInfo()).isEqualTo(SESSION_INFO);
+    assertThat(stats.getSchema()).isEqualTo(SCHEMA);
 
     TableResult next = result.getNextPage();
     assertThat(next.getStatementType()).isEqualTo(StatementType.SELECT);
@@ -157,6 +171,7 @@ class TableResultTest {
     assertThat(next.getTotalBytesProcessed()).isEqualTo(2048L);
     assertThat(next.getTotalSlotMs()).isEqualTo(500L);
     assertThat(next.getNumDmlAffectedRows()).isEqualTo(0L);
+    assertThat(next.getCacheHit()).isTrue();
     assertThat(next.getSessionInfo()).isEqualTo(SESSION_INFO);
   }
 
@@ -173,6 +188,7 @@ class TableResultTest {
             .setTotalBytesProcessed(1000L)
             .setTotalSlotMs(250L)
             .setNumDmlAffectedRows(5L)
+            .setCacheHit(false)
             .setSessionInfo(SESSION_INFO)
             .build();
 
@@ -185,6 +201,7 @@ class TableResultTest {
     assertThat(modified.getStatementType()).isEqualTo(StatementType.UPDATE);
     assertThat(modified.getNumDmlAffectedRows()).isEqualTo(10L);
     assertThat(modified.getTotalBytesBilled()).isEqualTo(500L);
+    assertThat(modified.getCacheHit()).isFalse();
     assertThat(modified.getSessionInfo()).isEqualTo(SESSION_INFO);
   }
 
@@ -201,6 +218,7 @@ class TableResultTest {
             .setTotalBytesProcessed(200L)
             .setTotalSlotMs(50L)
             .setNumDmlAffectedRows(0L)
+            .setCacheHit(true)
             .setSessionInfo(SESSION_INFO_1)
             .build();
 
@@ -215,6 +233,7 @@ class TableResultTest {
             .setTotalBytesProcessed(200L)
             .setTotalSlotMs(50L)
             .setNumDmlAffectedRows(0L)
+            .setCacheHit(true)
             .setSessionInfo(SESSION_INFO_1)
             .build();
 
@@ -229,6 +248,7 @@ class TableResultTest {
             .setTotalBytesProcessed(200L)
             .setTotalSlotMs(50L)
             .setNumDmlAffectedRows(1L)
+            .setCacheHit(false)
             .setSessionInfo(SESSION_INFO_2)
             .build();
 
@@ -237,6 +257,7 @@ class TableResultTest {
     assertThat(result1).isNotEqualTo(result3);
     assertThat(result1.toString()).contains("statementType=SELECT");
     assertThat(result1.toString()).contains("totalBytesBilled=100");
+    assertThat(result1.toString()).contains("cacheHit=true");
     assertThat(result1.toString()).contains("sessionId=" + SESSION_ID_1);
   }
 }

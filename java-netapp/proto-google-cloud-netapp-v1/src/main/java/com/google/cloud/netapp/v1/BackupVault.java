@@ -2089,12 +2089,12 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Region in which the backup vault is created.
+   * Optional. Region in which the backup vault is created.
    * Format: `projects/{project_id}/locations/{location}`
    * </pre>
    *
    * <code>
-   * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string source_region = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The sourceRegion.
@@ -2116,12 +2116,12 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Region in which the backup vault is created.
+   * Optional. Region in which the backup vault is created.
    * Format: `projects/{project_id}/locations/{location}`
    * </pre>
    *
    * <code>
-   * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string source_region = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for sourceRegion.
@@ -4073,12 +4073,12 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Region in which the backup vault is created.
+     * Optional. Region in which the backup vault is created.
      * Format: `projects/{project_id}/locations/{location}`
      * </pre>
      *
      * <code>
-     * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string source_region = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The sourceRegion.
@@ -4099,12 +4099,12 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Region in which the backup vault is created.
+     * Optional. Region in which the backup vault is created.
      * Format: `projects/{project_id}/locations/{location}`
      * </pre>
      *
      * <code>
-     * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string source_region = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for sourceRegion.
@@ -4125,12 +4125,12 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Region in which the backup vault is created.
+     * Optional. Region in which the backup vault is created.
      * Format: `projects/{project_id}/locations/{location}`
      * </pre>
      *
      * <code>
-     * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string source_region = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The sourceRegion to set.
@@ -4150,12 +4150,12 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Region in which the backup vault is created.
+     * Optional. Region in which the backup vault is created.
      * Format: `projects/{project_id}/locations/{location}`
      * </pre>
      *
      * <code>
-     * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string source_region = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -4171,12 +4171,12 @@ public final class BackupVault extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Region in which the backup vault is created.
+     * Optional. Region in which the backup vault is created.
      * Format: `projects/{project_id}/locations/{location}`
      * </pre>
      *
      * <code>
-     * string source_region = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * string source_region = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for sourceRegion to set.

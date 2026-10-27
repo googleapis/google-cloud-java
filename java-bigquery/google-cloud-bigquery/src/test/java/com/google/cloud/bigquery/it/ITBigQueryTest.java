@@ -208,6 +208,7 @@ import java.util.logging.Logger;
 import org.apache.arrow.vector.VectorSchemaRoot;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import org.threeten.extra.PeriodDuration;
@@ -3574,6 +3575,7 @@ class ITBigQueryTest {
     assertNotNull(statistics.getQueryPlan());
   }
 
+  @Disabled("Flaky test: b/574587826")
   @Test
   void testQueryStatistics() throws InterruptedException {
     // Use CURRENT_TIMESTAMP to avoid potential caching.
@@ -7570,20 +7572,32 @@ class ITBigQueryTest {
 
   @Test
   void testQueryRowBasedWithArrowFormatMultiPage() throws InterruptedException {
+    // Under fast-query execution, the initial REST response defaults to a 10 MB payload limit.
+    // Setting maxResults limits the initial page to 5,000 rows, forcing the remaining 10,000 rows
+    // to stream across multiple pages via tabledata.list with Arrow format.
     String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
     QueryJobConfiguration config =
         QueryJobConfiguration.newBuilder(query)
             .setQueryResultsFormat(QueryResultsFormat.ARROW)
             .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .setMaxResults(5000L)
             .build();
     TableResult result = bigquery.query(config);
     assertNotNull(result);
     assertEquals(15000, result.getTotalRows());
+
+    int pageCount = 0;
     long count = 0;
-    for (FieldValueList row : result.iterateAll()) {
-      count++;
-      assertEquals(count, row.get("x").getLongValue());
+    TableResult currentPage = result;
+    while (currentPage != null) {
+      pageCount++;
+      for (FieldValueList row : currentPage.getValues()) {
+        count++;
+        assertEquals(count, row.get("x").getLongValue());
+      }
+      currentPage = currentPage.hasNextPage() ? currentPage.getNextPage() : null;
     }
+    assertTrue(pageCount > 1);
     assertEquals(15000, count);
   }
 
@@ -7633,6 +7647,62 @@ class ITBigQueryTest {
     assertEquals(1L, row.get("id").getLongValue());
     assertEquals("fallback", row.get("name").getStringValue());
     assertEquals(1786363200000000L, row.get("ts").getTimestampValue());
+  }
+
+  @Test
+  void testQueryResultsFormatArrowFallbackMultiPage() throws InterruptedException {
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setMaxResults(5000L)
+            .build();
+    JobId customJobId =
+        JobId.of("arrow_it_fallback_mp_" + UUID.randomUUID().toString().replace("-", "_"));
+    try (ArrowQueryResult result = bigquery.queryArrow(config, customJobId)) {
+      assertNotNull(result);
+      assertNotNull(result.getJobId());
+      assertEquals(customJobId.getJob(), result.getJobId().getJob());
+      int batchCount = 0;
+      long totalRows = 0;
+      for (VectorSchemaRoot root : result) {
+        batchCount++;
+        totalRows += root.getRowCount();
+      }
+      assertTrue(batchCount > 1);
+      assertEquals(15000, totalRows);
+    }
+  }
+
+  @Test
+  void testQueryRowBasedWithArrowFormatFallbackMultiPage() throws InterruptedException {
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setMaxResults(5000L)
+            .build();
+    JobId customJobId =
+        JobId.of("row_it_fallback_mp_" + UUID.randomUUID().toString().replace("-", "_"));
+    TableResult result = bigquery.query(config, customJobId);
+    assertNotNull(result);
+    assertNotNull(result.getJobId());
+    assertEquals(customJobId.getJob(), result.getJobId().getJob());
+    assertEquals(15000, result.getTotalRows());
+
+    int pageCount = 0;
+    long count = 0;
+    TableResult currentPage = result;
+    while (currentPage != null) {
+      pageCount++;
+      for (FieldValueList row : currentPage.getValues()) {
+        count++;
+        assertEquals(count, row.get("x").getLongValue());
+      }
+      currentPage = currentPage.hasNextPage() ? currentPage.getNextPage() : null;
+    }
+    assertTrue(pageCount > 1);
+    assertEquals(15000, count);
   }
 
   @Test

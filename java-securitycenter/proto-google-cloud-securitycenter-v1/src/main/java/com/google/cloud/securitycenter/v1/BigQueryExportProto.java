@@ -56,25 +56,28 @@ public final class BigQueryExportProto extends com.google.protobuf.GeneratedFile
       "\n"
           + "4google/cloud/securitycenter/v1/bigquery_export.proto\022\036google.cloud.securitycen"
           + "ter.v1\032\037google/api/field_behavior.proto\032"
-          + "\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\336\003\n"
+          + "\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\220\004\n"
           + "\016BigQueryExport\022\014\n"
           + "\004name\030\001 \001(\t\022\023\n"
           + "\013description\030\002 \001(\t\022\016\n"
           + "\006filter\030\003 \001(\t\022\017\n"
-          + "\007dataset\030\004 \001(\t\0224\n"
-          + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
-          + "\013update_time\030\006"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\037\n"
-          + "\022most_recent_editor\030\007 \001(\tB\003\340A\003\022\026\n"
-          + "\tprincipal\030\010 \001(\tB\003\340A\003:\342\001\352A\336\001\n"
-          + ",securitycenter.googleapis.com/BigQueryExport\0225organizations/{organization}/bigQu"
-          + "eryExports/{export}\022)folders/{folder}/bigQueryExports/{export}\022+projects/{projec"
-          + "t}/bigQueryExports/{export}*\017bigQueryExports2\016bigQueryExportB\355\001\n"
-          + "\"com.google.cloud.securitycenter.v1B\023BigQueryExportProto"
-          + "P\001ZJcloud.google.com/go/securitycenter/a"
-          + "piv1/securitycenterpb;securitycenterpb\252\002"
-          + "\036Google.Cloud.SecurityCenter.V1\312\002\036Google"
-          + "\\Cloud\\SecurityCenter\\V1\352\002!Google::Cloud::SecurityCenter::V1b\006proto3"
+          + "\007dataset\030\004 \001(\t\0225\n"
+          + "\013create_time\030\005"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
+          + "\013update_time\030\006 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022"
+          + " \n"
+          + "\022most_recent_editor\030\007 \001(\tB\004\342A\001\003\022\027\n"
+          + "\tprincipal\030\010 \001(\tB\004\342A\001\003\022,\n"
+          + "\036deletion_notifications_enabled\030\t"
+          + " \001(\010B\004\342A\001\001:\342\001\352A\336\001\n"
+          + ",securitycenter.googleapis.com/BigQueryExport\0225organizations/{organizat"
+          + "ion}/bigQueryExports/{export}\022)folders/{folder}/bigQueryExports/{export}\022+projec"
+          + "ts/{project}/bigQueryExports/{export}*\017bigQueryExports2\016bigQueryExportB\355\001\n"
+          + "\"com.google.cloud.securitycenter.v1B\023BigQueryE"
+          + "xportProtoP\001ZJcloud.google.com/go/securitycenter/apiv1/securitycenterpb;security"
+          + "centerpb\252\002\036Google.Cloud.SecurityCenter.V"
+          + "1\312\002\036Google\\Cloud\\SecurityCenter\\V1\352\002!Goo"
+          + "gle::Cloud::SecurityCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -98,6 +101,7 @@ public final class BigQueryExportProto extends com.google.protobuf.GeneratedFile
               "UpdateTime",
               "MostRecentEditor",
               "Principal",
+              "DeletionNotificationsEnabled",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

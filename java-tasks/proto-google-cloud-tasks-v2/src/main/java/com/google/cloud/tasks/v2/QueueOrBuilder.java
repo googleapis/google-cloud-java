@@ -161,6 +161,43 @@ public interface QueueOrBuilder
    *
    *
    * <pre>
+   * Modifies HTTP target for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+   *
+   * @return Whether the httpTarget field is set.
+   */
+  boolean hasHttpTarget();
+
+  /**
+   *
+   *
+   * <pre>
+   * Modifies HTTP target for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+   *
+   * @return The httpTarget.
+   */
+  com.google.cloud.tasks.v2.HttpTarget getHttpTarget();
+
+  /**
+   *
+   *
+   * <pre>
+   * Modifies HTTP target for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2.HttpTarget http_target = 10;</code>
+   */
+  com.google.cloud.tasks.v2.HttpTargetOrBuilder getHttpTargetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Rate limits for task dispatches.
    *
    * [rate_limits][google.cloud.tasks.v2.Queue.rate_limits] and
@@ -174,8 +211,8 @@ public interface QueueOrBuilder
    * queue, regardless of whether the dispatch is from a first
    * attempt or a retry).
    * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-   * happens to
-   * particular a task after its first attempt fails. That is,
+   * happens to a
+   * particular task after its first attempt fails. That is,
    * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
    * retries (the second attempt, third attempt, etc).
    *
@@ -214,8 +251,8 @@ public interface QueueOrBuilder
    * queue, regardless of whether the dispatch is from a first
    * attempt or a retry).
    * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-   * happens to
-   * particular a task after its first attempt fails. That is,
+   * happens to a
+   * particular task after its first attempt fails. That is,
    * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
    * retries (the second attempt, third attempt, etc).
    *
@@ -254,8 +291,8 @@ public interface QueueOrBuilder
    * queue, regardless of whether the dispatch is from a first
    * attempt or a retry).
    * * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls what
-   * happens to
-   * particular a task after its first attempt fails. That is,
+   * happens to a
+   * particular task after its first attempt fails. That is,
    * [retry_config][google.cloud.tasks.v2.Queue.retry_config] controls task
    * retries (the second attempt, third attempt, etc).
    *

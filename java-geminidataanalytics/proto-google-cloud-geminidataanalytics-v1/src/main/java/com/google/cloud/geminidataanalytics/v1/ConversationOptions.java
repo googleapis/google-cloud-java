@@ -85,8 +85,7 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * No model specified. The model may be set on the chat request, or the
-     * default model will be used. Currently, this is
-     * `gemini-3.0-flash-preview`.
+     * default model will be used.
      * </pre>
      *
      * <code>MODEL_UNSPECIFIED = 0;</code>
@@ -96,10 +95,8 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Use the most up-to-date non-preview model. Currently, this is
-     * `gemini-2.5-flash`. This constrains the request level settings. The
-     * default will change to `gemini-2.5-flash`, and setting `thinking_mode`
-     * will not be supported.
+     * Use the most up-to-date non-preview model. This may constrain certain
+     * request level settings.
      * </pre>
      *
      * <code>LATEST_GA_MODEL = 1;</code>
@@ -123,8 +120,7 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * No model specified. The model may be set on the chat request, or the
-     * default model will be used. Currently, this is
-     * `gemini-3.0-flash-preview`.
+     * default model will be used.
      * </pre>
      *
      * <code>MODEL_UNSPECIFIED = 0;</code>
@@ -135,10 +131,8 @@ public final class ConversationOptions extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Use the most up-to-date non-preview model. Currently, this is
-     * `gemini-2.5-flash`. This constrains the request level settings. The
-     * default will change to `gemini-2.5-flash`, and setting `thinking_mode`
-     * will not be supported.
+     * Use the most up-to-date non-preview model. This may constrain certain
+     * request level settings.
      * </pre>
      *
      * <code>LATEST_GA_MODEL = 1;</code>

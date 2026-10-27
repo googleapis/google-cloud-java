@@ -237,4 +237,310 @@ public class MockMarketingplatformAdminServiceImpl extends MarketingplatformAdmi
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getUserGroup(
+      GetUserGroupRequest request, StreamObserver<UserGroup> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserGroup) {
+      requests.add(request);
+      responseObserver.onNext(((UserGroup) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetUserGroup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserGroup.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listUserGroups(
+      ListUserGroupsRequest request, StreamObserver<ListUserGroupsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListUserGroupsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListUserGroupsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListUserGroups, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListUserGroupsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createUserGroup(
+      CreateUserGroupRequest request, StreamObserver<UserGroup> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserGroup) {
+      requests.add(request);
+      responseObserver.onNext(((UserGroup) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateUserGroup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserGroup.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateUserGroup(
+      UpdateUserGroupRequest request, StreamObserver<UserGroup> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserGroup) {
+      requests.add(request);
+      responseObserver.onNext(((UserGroup) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateUserGroup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserGroup.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteUserGroup(
+      DeleteUserGroupRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteUserGroup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getUserGroupMember(
+      GetUserGroupMemberRequest request, StreamObserver<UserGroupMember> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserGroupMember) {
+      requests.add(request);
+      responseObserver.onNext(((UserGroupMember) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetUserGroupMember, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserGroupMember.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listUserGroupMembers(
+      ListUserGroupMembersRequest request,
+      StreamObserver<ListUserGroupMembersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListUserGroupMembersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListUserGroupMembersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListUserGroupMembers, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListUserGroupMembersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createUserGroupMember(
+      CreateUserGroupMemberRequest request, StreamObserver<UserGroupMember> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserGroupMember) {
+      requests.add(request);
+      responseObserver.onNext(((UserGroupMember) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateUserGroupMember, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserGroupMember.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateUserGroupMember(
+      UpdateUserGroupMemberRequest request, StreamObserver<UserGroupMember> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof UserGroupMember) {
+      requests.add(request);
+      responseObserver.onNext(((UserGroupMember) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateUserGroupMember, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  UserGroupMember.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteUserGroupMember(
+      DeleteUserGroupMemberRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteUserGroupMember, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAdminAccessBinding(
+      GetAdminAccessBindingRequest request, StreamObserver<AdminAccessBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AdminAccessBinding) {
+      requests.add(request);
+      responseObserver.onNext(((AdminAccessBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAdminAccessBinding, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AdminAccessBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAdminAccessBindings(
+      ListAdminAccessBindingsRequest request,
+      StreamObserver<ListAdminAccessBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAdminAccessBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAdminAccessBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAdminAccessBindings, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAdminAccessBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAdminAccessBinding(
+      CreateAdminAccessBindingRequest request,
+      StreamObserver<AdminAccessBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AdminAccessBinding) {
+      requests.add(request);
+      responseObserver.onNext(((AdminAccessBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAdminAccessBinding, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AdminAccessBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAdminAccessBinding(
+      UpdateAdminAccessBindingRequest request,
+      StreamObserver<AdminAccessBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AdminAccessBinding) {
+      requests.add(request);
+      responseObserver.onNext(((AdminAccessBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAdminAccessBinding, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AdminAccessBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

@@ -59,11 +59,13 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
     LOG.finestTrace("getAttributes");
     int size = schema.size();
     Object[] attributes = (Object[]) Array.newInstance(Object.class, size);
+    if (this.values == null) {
+      return attributes;
+    }
 
     for (int index = 0; index < size; index++) {
       Field currentSchema = schema.get(index);
-      FieldValue currentValue = values == null ? null : values.get(index);
-      Object coercedValue = getValue(currentSchema, currentValue);
+      Object coercedValue = getValue(currentSchema, getRawAttribute(index));
       Array.set(attributes, index, coercedValue);
     }
     return attributes;
@@ -71,7 +73,7 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
 
   private Object getValue(Field currentSchema, FieldValue currentValue) throws SQLException {
     LOG.finestTrace("getValue");
-    if (currentValue == null || currentValue.isNull()) {
+    if (currentValue == null) {
       return null;
     }
     if (isArray(currentSchema)) {
@@ -93,5 +95,11 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
     }
     return BigQueryTypeRegistry.convert(
         currentValue, currentSchema.getType().getStandardType(), null);
+  }
+
+  @Override
+  FieldValue getRawAttribute(int index) {
+    FieldValue currentValue = this.values.get(index);
+    return (currentValue == null || currentValue.isNull()) ? null : currentValue;
   }
 }

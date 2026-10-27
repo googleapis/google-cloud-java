@@ -590,6 +590,8 @@ public class DatastreamClientTest {
     Assert.assertEquals(request.getSqlServerRdbms(), actualRequest.getSqlServerRdbms());
     Assert.assertEquals(request.getSalesforceOrg(), actualRequest.getSalesforceOrg());
     Assert.assertEquals(request.getMongodbCluster(), actualRequest.getMongodbCluster());
+    Assert.assertEquals(request.getSpannerDatabase(), actualRequest.getSpannerDatabase());
+    Assert.assertEquals(request.getSourceCatalog(), actualRequest.getSourceCatalog());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -717,6 +719,7 @@ public class DatastreamClientTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -766,6 +769,7 @@ public class DatastreamClientTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -815,6 +819,7 @@ public class DatastreamClientTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -878,6 +883,7 @@ public class DatastreamClientTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -941,6 +947,7 @@ public class DatastreamClientTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1085,6 +1092,7 @@ public class DatastreamClientTest {
             .setLastRecoveryTime(Timestamp.newBuilder().build())
             .setSatisfiesPzs(true)
             .setSatisfiesPzi(true)
+            .addAllRuleSets(new ArrayList<Stream.RuleSet>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1150,6 +1158,7 @@ public class DatastreamClientTest {
             .addAllErrors(new ArrayList<Error>())
             .setBackfillJob(BackfillJob.newBuilder().build())
             .setSourceObject(SourceObjectIdentifier.newBuilder().build())
+            .addAllCustomizationRules(new ArrayList<Stream.RuleSet.CustomizationRule>())
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -1196,6 +1205,7 @@ public class DatastreamClientTest {
             .addAllErrors(new ArrayList<Error>())
             .setBackfillJob(BackfillJob.newBuilder().build())
             .setSourceObject(SourceObjectIdentifier.newBuilder().build())
+            .addAllCustomizationRules(new ArrayList<Stream.RuleSet.CustomizationRule>())
             .build();
     mockDatastream.addResponse(expectedResponse);
 
@@ -1241,6 +1251,7 @@ public class DatastreamClientTest {
             .addAllErrors(new ArrayList<Error>())
             .setBackfillJob(BackfillJob.newBuilder().build())
             .setSourceObject(SourceObjectIdentifier.newBuilder().build())
+            .addAllCustomizationRules(new ArrayList<Stream.RuleSet.CustomizationRule>())
             .build();
     mockDatastream.addResponse(expectedResponse);
 

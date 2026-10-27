@@ -35,8 +35,8 @@ import static org.mockito.Mockito.mock;
 
 import com.google.api.client.http.HttpMethods;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.tracing.ApiTracerContext;
 import com.google.api.gax.tracing.SpanName;
 import com.google.api.pathtemplate.PathTemplate;
@@ -126,8 +126,8 @@ class HttpJsonCallableFactoryTest {
     HttpJsonCallSettings<String, String> httpJsonCallSettings =
         HttpJsonCallSettings.<String, String>newBuilder().setMethodDescriptor(descriptor).build();
 
-    ResumableUploadCallSettings callSettings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(256 * 1024).build();
+    UnaryCallSettings<String, String> callSettings =
+        UnaryCallSettings.<String, String>newUnaryCallSettingsBuilder().build();
 
     ClientContext clientContext =
         ClientContext.newBuilder()

@@ -17,6 +17,7 @@
 package com.google.cloud.netapp.v1.stub;
 
 import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListBackupConfigsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupPoliciesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListBackupsPagedResponse;
@@ -95,12 +96,15 @@ import com.google.cloud.netapp.v1.GetKmsConfigRequest;
 import com.google.cloud.netapp.v1.GetQuotaRuleRequest;
 import com.google.cloud.netapp.v1.GetReplicationRequest;
 import com.google.cloud.netapp.v1.GetSnapshotRequest;
+import com.google.cloud.netapp.v1.GetSplitStatusRequest;
 import com.google.cloud.netapp.v1.GetStoragePoolRequest;
 import com.google.cloud.netapp.v1.GetVolumeRequest;
 import com.google.cloud.netapp.v1.HostGroup;
 import com.google.cloud.netapp.v1.KmsConfig;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesRequest;
 import com.google.cloud.netapp.v1.ListActiveDirectoriesResponse;
+import com.google.cloud.netapp.v1.ListBackupConfigsRequest;
+import com.google.cloud.netapp.v1.ListBackupConfigsResponse;
 import com.google.cloud.netapp.v1.ListBackupPoliciesRequest;
 import com.google.cloud.netapp.v1.ListBackupPoliciesResponse;
 import com.google.cloud.netapp.v1.ListBackupVaultsRequest;
@@ -126,15 +130,21 @@ import com.google.cloud.netapp.v1.QuotaRule;
 import com.google.cloud.netapp.v1.Replication;
 import com.google.cloud.netapp.v1.RestoreBackupFilesRequest;
 import com.google.cloud.netapp.v1.RestoreBackupFilesResponse;
+import com.google.cloud.netapp.v1.RestoreVolumeRequest;
+import com.google.cloud.netapp.v1.RestoreVolumeResponse;
 import com.google.cloud.netapp.v1.ResumeReplicationRequest;
 import com.google.cloud.netapp.v1.ReverseReplicationDirectionRequest;
 import com.google.cloud.netapp.v1.RevertVolumeRequest;
 import com.google.cloud.netapp.v1.Snapshot;
+import com.google.cloud.netapp.v1.SplitStatus;
+import com.google.cloud.netapp.v1.StartSplitRequest;
 import com.google.cloud.netapp.v1.StopReplicationRequest;
 import com.google.cloud.netapp.v1.StoragePool;
 import com.google.cloud.netapp.v1.SwitchActiveReplicaZoneRequest;
 import com.google.cloud.netapp.v1.SyncReplicationRequest;
 import com.google.cloud.netapp.v1.UpdateActiveDirectoryRequest;
+import com.google.cloud.netapp.v1.UpdateBackupConfigRequest;
+import com.google.cloud.netapp.v1.UpdateBackupConfigResponse;
 import com.google.cloud.netapp.v1.UpdateBackupPolicyRequest;
 import com.google.cloud.netapp.v1.UpdateBackupRequest;
 import com.google.cloud.netapp.v1.UpdateBackupVaultRequest;
@@ -174,6 +184,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(StoragePool.getDescriptor())
+          .add(RestoreVolumeResponse.getDescriptor())
           .add(BackupPolicy.getDescriptor())
           .add(KmsConfig.getDescriptor())
           .add(ActiveDirectory.getDescriptor())
@@ -184,6 +195,7 @@ public class HttpJsonNetAppStub extends NetAppStub {
           .add(OperationMetadata.getDescriptor())
           .add(RestoreBackupFilesResponse.getDescriptor())
           .add(Volume.getDescriptor())
+          .add(UpdateBackupConfigResponse.getDescriptor())
           .add(Snapshot.getDescriptor())
           .add(BackupVault.getDescriptor())
           .add(Backup.getDescriptor())
@@ -692,6 +704,80 @@ public class HttpJsonNetAppStub extends NetAppStub {
               .setOperationSnapshotFactory(
                   (RevertVolumeRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<StartSplitRequest, Operation>
+      startSplitMethodDescriptor =
+          ApiMethodDescriptor.<StartSplitRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/StartSplit")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<StartSplitRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*}:startSplit",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<StartSplitRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<StartSplitRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (StartSplitRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<GetSplitStatusRequest, SplitStatus>
+      getSplitStatusMethodDescriptor =
+          ApiMethodDescriptor.<GetSplitStatusRequest, SplitStatus>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/GetSplitStatus")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSplitStatusRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/volumes/*}:getSplitStatus",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSplitStatusRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSplitStatusRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SplitStatus>newBuilder()
+                      .setDefaultInstance(SplitStatus.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<EstablishVolumePeeringRequest, Operation>
@@ -2931,6 +3017,124 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<RestoreVolumeRequest, Operation>
+      restoreVolumeMethodDescriptor =
+          ApiMethodDescriptor.<RestoreVolumeRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/RestoreVolume")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RestoreVolumeRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/storagePools/*}:restoreVolume",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RestoreVolumeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RestoreVolumeRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (RestoreVolumeRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListBackupConfigsRequest, ListBackupConfigsResponse>
+      listBackupConfigsMethodDescriptor =
+          ApiMethodDescriptor.<ListBackupConfigsRequest, ListBackupConfigsResponse>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/ListBackupConfigs")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBackupConfigsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/storagePools/*}/backupConfigs",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBackupConfigsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBackupConfigsResponse>newBuilder()
+                      .setDefaultInstance(ListBackupConfigsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateBackupConfigRequest, Operation>
+      updateBackupConfigMethodDescriptor =
+          ApiMethodDescriptor.<UpdateBackupConfigRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateBackupConfig")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateBackupConfigRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/storagePools/*}:updateBackupConfig",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateBackupConfigRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateBackupConfigRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -3037,6 +3241,10 @@ public class HttpJsonNetAppStub extends NetAppStub {
   private final UnaryCallable<RevertVolumeRequest, Operation> revertVolumeCallable;
   private final OperationCallable<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationCallable;
+  private final UnaryCallable<StartSplitRequest, Operation> startSplitCallable;
+  private final OperationCallable<StartSplitRequest, Volume, OperationMetadata>
+      startSplitOperationCallable;
+  private final UnaryCallable<GetSplitStatusRequest, SplitStatus> getSplitStatusCallable;
   private final UnaryCallable<EstablishVolumePeeringRequest, Operation>
       establishVolumePeeringCallable;
   private final OperationCallable<EstablishVolumePeeringRequest, Volume, OperationMetadata>
@@ -3200,6 +3408,17 @@ public class HttpJsonNetAppStub extends NetAppStub {
       executeOntapDeleteCallable;
   private final UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
       executeOntapPatchCallable;
+  private final UnaryCallable<RestoreVolumeRequest, Operation> restoreVolumeCallable;
+  private final OperationCallable<RestoreVolumeRequest, RestoreVolumeResponse, OperationMetadata>
+      restoreVolumeOperationCallable;
+  private final UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsResponse>
+      listBackupConfigsCallable;
+  private final UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsPagedResponse>
+      listBackupConfigsPagedCallable;
+  private final UnaryCallable<UpdateBackupConfigRequest, Operation> updateBackupConfigCallable;
+  private final OperationCallable<
+          UpdateBackupConfigRequest, UpdateBackupConfigResponse, OperationMetadata>
+      updateBackupConfigOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -3421,6 +3640,30 @@ public class HttpJsonNetAppStub extends NetAppStub {
     HttpJsonCallSettings<RevertVolumeRequest, Operation> revertVolumeTransportSettings =
         HttpJsonCallSettings.<RevertVolumeRequest, Operation>newBuilder()
             .setMethodDescriptor(revertVolumeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<StartSplitRequest, Operation> startSplitTransportSettings =
+        HttpJsonCallSettings.<StartSplitRequest, Operation>newBuilder()
+            .setMethodDescriptor(startSplitMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<GetSplitStatusRequest, SplitStatus> getSplitStatusTransportSettings =
+        HttpJsonCallSettings.<GetSplitStatusRequest, SplitStatus>newBuilder()
+            .setMethodDescriptor(getSplitStatusMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -4138,6 +4381,43 @@ public class HttpJsonNetAppStub extends NetAppStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<RestoreVolumeRequest, Operation> restoreVolumeTransportSettings =
+        HttpJsonCallSettings.<RestoreVolumeRequest, Operation>newBuilder()
+            .setMethodDescriptor(restoreVolumeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListBackupConfigsRequest, ListBackupConfigsResponse>
+        listBackupConfigsTransportSettings =
+            HttpJsonCallSettings.<ListBackupConfigsRequest, ListBackupConfigsResponse>newBuilder()
+                .setMethodDescriptor(listBackupConfigsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateBackupConfigRequest, Operation> updateBackupConfigTransportSettings =
+        HttpJsonCallSettings.<UpdateBackupConfigRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateBackupConfigMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -4271,6 +4551,18 @@ public class HttpJsonNetAppStub extends NetAppStub {
             settings.revertVolumeOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.startSplitCallable =
+        callableFactory.createUnaryCallable(
+            startSplitTransportSettings, settings.startSplitSettings(), clientContext);
+    this.startSplitOperationCallable =
+        callableFactory.createOperationCallable(
+            startSplitTransportSettings,
+            settings.startSplitOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getSplitStatusCallable =
+        callableFactory.createUnaryCallable(
+            getSplitStatusTransportSettings, settings.getSplitStatusSettings(), clientContext);
     this.establishVolumePeeringCallable =
         callableFactory.createUnaryCallable(
             establishVolumePeeringTransportSettings,
@@ -4728,6 +5020,36 @@ public class HttpJsonNetAppStub extends NetAppStub {
             executeOntapPatchTransportSettings,
             settings.executeOntapPatchSettings(),
             clientContext);
+    this.restoreVolumeCallable =
+        callableFactory.createUnaryCallable(
+            restoreVolumeTransportSettings, settings.restoreVolumeSettings(), clientContext);
+    this.restoreVolumeOperationCallable =
+        callableFactory.createOperationCallable(
+            restoreVolumeTransportSettings,
+            settings.restoreVolumeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listBackupConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listBackupConfigsTransportSettings,
+            settings.listBackupConfigsSettings(),
+            clientContext);
+    this.listBackupConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBackupConfigsTransportSettings,
+            settings.listBackupConfigsSettings(),
+            clientContext);
+    this.updateBackupConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateBackupConfigTransportSettings,
+            settings.updateBackupConfigSettings(),
+            clientContext);
+    this.updateBackupConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateBackupConfigTransportSettings,
+            settings.updateBackupConfigOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -4758,6 +5080,8 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(updateVolumeMethodDescriptor);
     methodDescriptors.add(deleteVolumeMethodDescriptor);
     methodDescriptors.add(revertVolumeMethodDescriptor);
+    methodDescriptors.add(startSplitMethodDescriptor);
+    methodDescriptors.add(getSplitStatusMethodDescriptor);
     methodDescriptors.add(establishVolumePeeringMethodDescriptor);
     methodDescriptors.add(listSnapshotsMethodDescriptor);
     methodDescriptors.add(getSnapshotMethodDescriptor);
@@ -4816,6 +5140,9 @@ public class HttpJsonNetAppStub extends NetAppStub {
     methodDescriptors.add(executeOntapGetMethodDescriptor);
     methodDescriptors.add(executeOntapDeleteMethodDescriptor);
     methodDescriptors.add(executeOntapPatchMethodDescriptor);
+    methodDescriptors.add(restoreVolumeMethodDescriptor);
+    methodDescriptors.add(listBackupConfigsMethodDescriptor);
+    methodDescriptors.add(updateBackupConfigMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -4956,6 +5283,22 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public OperationCallable<RevertVolumeRequest, Volume, OperationMetadata>
       revertVolumeOperationCallable() {
     return revertVolumeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StartSplitRequest, Operation> startSplitCallable() {
+    return startSplitCallable;
+  }
+
+  @Override
+  public OperationCallable<StartSplitRequest, Volume, OperationMetadata>
+      startSplitOperationCallable() {
+    return startSplitOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSplitStatusRequest, SplitStatus> getSplitStatusCallable() {
+    return getSplitStatusCallable;
   }
 
   @Override
@@ -5517,6 +5860,40 @@ public class HttpJsonNetAppStub extends NetAppStub {
   public UnaryCallable<ExecuteOntapPatchRequest, ExecuteOntapPatchResponse>
       executeOntapPatchCallable() {
     return executeOntapPatchCallable;
+  }
+
+  @Override
+  public UnaryCallable<RestoreVolumeRequest, Operation> restoreVolumeCallable() {
+    return restoreVolumeCallable;
+  }
+
+  @Override
+  public OperationCallable<RestoreVolumeRequest, RestoreVolumeResponse, OperationMetadata>
+      restoreVolumeOperationCallable() {
+    return restoreVolumeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsResponse>
+      listBackupConfigsCallable() {
+    return listBackupConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBackupConfigsRequest, ListBackupConfigsPagedResponse>
+      listBackupConfigsPagedCallable() {
+    return listBackupConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateBackupConfigRequest, Operation> updateBackupConfigCallable() {
+    return updateBackupConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateBackupConfigRequest, UpdateBackupConfigResponse, OperationMetadata>
+      updateBackupConfigOperationCallable() {
+    return updateBackupConfigOperationCallable;
   }
 
   @Override

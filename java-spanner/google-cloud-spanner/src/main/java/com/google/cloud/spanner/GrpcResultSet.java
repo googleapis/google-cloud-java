@@ -28,7 +28,7 @@ import com.google.spanner.v1.ResultSetStats;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 @VisibleForTesting
 class GrpcResultSet extends AbstractResultSet<List<Object>>
@@ -39,9 +39,8 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
   private ResultSetMetadata metadata;
   private GrpcStruct currRow;
   private List<Object> rowData;
-  private SpannerException error;
   private ResultSetStats statistics;
-  private boolean closed;
+  private volatile boolean closed;
 
   GrpcResultSet(CloseableIterator<PartialResultSet> iterator, Listener listener) {
     this(iterator, listener, DecodeMode.DIRECT);
@@ -75,9 +74,6 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
 
   @Override
   public boolean next() throws SpannerException {
-    if (error != null) {
-      throw asSpannerException(error);
-    }
     try {
       if (currRow == null) {
         metadata = iterator.getMetadata();
@@ -133,6 +129,15 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
   }
 
   @Override
+  @InternalApi
+  public boolean isDataAvailable() {
+    // If the result set is already closed, return true so callers (such as async stream
+    // consumers or event loops) do not block or wait indefinitely expecting future data,
+    // and instead proceed immediately to observe EOF or fast-fail.
+    return closed || iterator.isDataAvailable();
+  }
+
+  @Override
   public void close() {
     synchronized (this) {
       if (closed) {
@@ -140,8 +145,9 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
       }
       closed = true;
     }
-    listener.onDone(iterator.isWithBeginTransaction());
+    boolean withBeginTransaction = iterator.isWithBeginTransaction();
     iterator.close("ResultSet closed");
+    listener.onDone(withBeginTransaction);
   }
 
   @Override

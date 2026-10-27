@@ -16,7 +16,21 @@
 
 package com.google.ads.admanager.v1.stub;
 
+import static com.google.ads.admanager.v1.UserServiceClient.ListUsersPagedResponse;
+
+import com.google.ads.admanager.v1.BatchActivateUsersRequest;
+import com.google.ads.admanager.v1.BatchActivateUsersResponse;
+import com.google.ads.admanager.v1.BatchCreateUsersRequest;
+import com.google.ads.admanager.v1.BatchCreateUsersResponse;
+import com.google.ads.admanager.v1.BatchDeactivateUsersRequest;
+import com.google.ads.admanager.v1.BatchDeactivateUsersResponse;
+import com.google.ads.admanager.v1.BatchUpdateUsersRequest;
+import com.google.ads.admanager.v1.BatchUpdateUsersResponse;
+import com.google.ads.admanager.v1.CreateUserRequest;
 import com.google.ads.admanager.v1.GetUserRequest;
+import com.google.ads.admanager.v1.ListUsersRequest;
+import com.google.ads.admanager.v1.ListUsersResponse;
+import com.google.ads.admanager.v1.UpdateUserRequest;
 import com.google.ads.admanager.v1.User;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -35,6 +49,42 @@ public abstract class UserServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetUserRequest, User> getUserCallable() {
     throw new UnsupportedOperationException("Not implemented: getUserCallable()");
+  }
+
+  public UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsersPagedCallable()");
+  }
+
+  public UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsersCallable()");
+  }
+
+  public UnaryCallable<CreateUserRequest, User> createUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: createUserCallable()");
+  }
+
+  public UnaryCallable<BatchCreateUsersRequest, BatchCreateUsersResponse>
+      batchCreateUsersCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateUsersCallable()");
+  }
+
+  public UnaryCallable<BatchActivateUsersRequest, BatchActivateUsersResponse>
+      batchActivateUsersCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchActivateUsersCallable()");
+  }
+
+  public UnaryCallable<BatchDeactivateUsersRequest, BatchDeactivateUsersResponse>
+      batchDeactivateUsersCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeactivateUsersCallable()");
+  }
+
+  public UnaryCallable<UpdateUserRequest, User> updateUserCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateUserCallable()");
+  }
+
+  public UnaryCallable<BatchUpdateUsersRequest, BatchUpdateUsersResponse>
+      batchUpdateUsersCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdateUsersCallable()");
   }
 
   @Override

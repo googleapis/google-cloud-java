@@ -10,17 +10,44 @@
         "grpc": {
           "libraryClient": "MarketingplatformAdminServiceClient",
           "rpcs": {
+            "CreateAdminAccessBinding": {
+              "methods": ["createAdminAccessBinding", "createAdminAccessBinding", "createAdminAccessBinding", "createAdminAccessBindingCallable"]
+            },
             "CreateAnalyticsAccountLink": {
               "methods": ["createAnalyticsAccountLink", "createAnalyticsAccountLink", "createAnalyticsAccountLink", "createAnalyticsAccountLinkCallable"]
+            },
+            "CreateUserGroup": {
+              "methods": ["createUserGroup", "createUserGroup", "createUserGroup", "createUserGroupCallable"]
+            },
+            "CreateUserGroupMember": {
+              "methods": ["createUserGroupMember", "createUserGroupMember", "createUserGroupMember", "createUserGroupMemberCallable"]
             },
             "DeleteAnalyticsAccountLink": {
               "methods": ["deleteAnalyticsAccountLink", "deleteAnalyticsAccountLink", "deleteAnalyticsAccountLink", "deleteAnalyticsAccountLinkCallable"]
             },
+            "DeleteUserGroup": {
+              "methods": ["deleteUserGroup", "deleteUserGroup", "deleteUserGroup", "deleteUserGroupCallable"]
+            },
+            "DeleteUserGroupMember": {
+              "methods": ["deleteUserGroupMember", "deleteUserGroupMember", "deleteUserGroupMember", "deleteUserGroupMemberCallable"]
+            },
             "FindSalesPartnerManagedClients": {
               "methods": ["findSalesPartnerManagedClients", "findSalesPartnerManagedClientsCallable"]
             },
+            "GetAdminAccessBinding": {
+              "methods": ["getAdminAccessBinding", "getAdminAccessBinding", "getAdminAccessBinding", "getAdminAccessBindingCallable"]
+            },
             "GetOrganization": {
               "methods": ["getOrganization", "getOrganization", "getOrganization", "getOrganizationCallable"]
+            },
+            "GetUserGroup": {
+              "methods": ["getUserGroup", "getUserGroup", "getUserGroup", "getUserGroupCallable"]
+            },
+            "GetUserGroupMember": {
+              "methods": ["getUserGroupMember", "getUserGroupMember", "getUserGroupMember", "getUserGroupMemberCallable"]
+            },
+            "ListAdminAccessBindings": {
+              "methods": ["listAdminAccessBindings", "listAdminAccessBindings", "listAdminAccessBindings", "listAdminAccessBindingsPagedCallable", "listAdminAccessBindingsCallable"]
             },
             "ListAnalyticsAccountLinks": {
               "methods": ["listAnalyticsAccountLinks", "listAnalyticsAccountLinks", "listAnalyticsAccountLinks", "listAnalyticsAccountLinksPagedCallable", "listAnalyticsAccountLinksCallable"]
@@ -28,11 +55,26 @@
             "ListOrganizations": {
               "methods": ["listOrganizations", "listOrganizationsPagedCallable", "listOrganizationsCallable"]
             },
+            "ListUserGroupMembers": {
+              "methods": ["listUserGroupMembers", "listUserGroupMembers", "listUserGroupMembers", "listUserGroupMembersPagedCallable", "listUserGroupMembersCallable"]
+            },
+            "ListUserGroups": {
+              "methods": ["listUserGroups", "listUserGroups", "listUserGroups", "listUserGroupsPagedCallable", "listUserGroupsCallable"]
+            },
             "ReportPropertyUsage": {
               "methods": ["reportPropertyUsage", "reportPropertyUsage", "reportPropertyUsageCallable"]
             },
             "SetPropertyServiceLevel": {
               "methods": ["setPropertyServiceLevel", "setPropertyServiceLevel", "setPropertyServiceLevelCallable"]
+            },
+            "UpdateAdminAccessBinding": {
+              "methods": ["updateAdminAccessBinding", "updateAdminAccessBinding", "updateAdminAccessBindingCallable"]
+            },
+            "UpdateUserGroup": {
+              "methods": ["updateUserGroup", "updateUserGroup", "updateUserGroupCallable"]
+            },
+            "UpdateUserGroupMember": {
+              "methods": ["updateUserGroupMember", "updateUserGroupMember", "updateUserGroupMemberCallable"]
             }
           }
         }

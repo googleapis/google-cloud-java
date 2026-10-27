@@ -38,6 +38,8 @@ import org.jspecify.annotations.Nullable;
 /**
  * Service Description: The RegionZones API.
  *
+ * <p>This client uses RegionZones version 2026-09-01.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
@@ -230,7 +232,6 @@ public class RegionZonesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   for (Zone element : regionZonesClient.list(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -267,7 +268,6 @@ public class RegionZonesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   ApiFuture<Zone> future = regionZonesClient.listPagedCallable().futureCall(request);
    *   // Do something.
@@ -303,7 +303,6 @@ public class RegionZonesClient implements BackgroundResource {
    *           .setPageToken("pageToken873572522")
    *           .setProject("project-309310695")
    *           .setRegion("region-934795532")
-   *           .setReturnPartialSuccess(true)
    *           .build();
    *   while (true) {
    *     ZoneList response = regionZonesClient.listCallable().call(request);
