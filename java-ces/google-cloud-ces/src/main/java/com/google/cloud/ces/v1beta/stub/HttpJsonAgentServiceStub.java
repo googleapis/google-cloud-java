@@ -118,6 +118,7 @@ import com.google.cloud.ces.v1beta.Tool;
 import com.google.cloud.ces.v1beta.Toolset;
 import com.google.cloud.ces.v1beta.UpdateAgentRequest;
 import com.google.cloud.ces.v1beta.UpdateAppRequest;
+import com.google.cloud.ces.v1beta.UpdateAppVersionRequest;
 import com.google.cloud.ces.v1beta.UpdateDeploymentRequest;
 import com.google.cloud.ces.v1beta.UpdateExampleRequest;
 import com.google.cloud.ces.v1beta.UpdateGuardrailRequest;
@@ -1851,6 +1852,45 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateAppVersionRequest, AppVersion>
+      updateAppVersionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAppVersionRequest, AppVersion>newBuilder()
+              .setFullMethodName("google.cloud.ces.v1beta.AgentService/UpdateAppVersion")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAppVersionRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{appVersion.name=projects/*/locations/*/apps/*/versions/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAppVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "appVersion.name", request.getAppVersion().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAppVersionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("appVersion", request.getAppVersion(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AppVersion>newBuilder()
+                      .setDefaultInstance(AppVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<DeleteAppVersionRequest, Empty>
       deleteAppVersionMethodDescriptor =
           ApiMethodDescriptor.<DeleteAppVersionRequest, Empty>newBuilder()
@@ -2184,6 +2224,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
       listAppVersionsPagedCallable;
   private final UnaryCallable<GetAppVersionRequest, AppVersion> getAppVersionCallable;
   private final UnaryCallable<CreateAppVersionRequest, AppVersion> createAppVersionCallable;
+  private final UnaryCallable<UpdateAppVersionRequest, AppVersion> updateAppVersionCallable;
   private final UnaryCallable<DeleteAppVersionRequest, Empty> deleteAppVersionCallable;
   private final UnaryCallable<RestoreAppVersionRequest, Operation> restoreAppVersionCallable;
   private final OperationCallable<
@@ -2827,6 +2868,18 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    HttpJsonCallSettings<UpdateAppVersionRequest, AppVersion> updateAppVersionTransportSettings =
+        HttpJsonCallSettings.<UpdateAppVersionRequest, AppVersion>newBuilder()
+            .setMethodDescriptor(updateAppVersionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "app_version.name", String.valueOf(request.getAppVersion().getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<DeleteAppVersionRequest, Empty> deleteAppVersionTransportSettings =
         HttpJsonCallSettings.<DeleteAppVersionRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAppVersionMethodDescriptor)
@@ -3120,6 +3173,9 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
     this.createAppVersionCallable =
         callableFactory.createUnaryCallable(
             createAppVersionTransportSettings, settings.createAppVersionSettings(), clientContext);
+    this.updateAppVersionCallable =
+        callableFactory.createUnaryCallable(
+            updateAppVersionTransportSettings, settings.updateAppVersionSettings(), clientContext);
     this.deleteAppVersionCallable =
         callableFactory.createUnaryCallable(
             deleteAppVersionTransportSettings, settings.deleteAppVersionSettings(), clientContext);
@@ -3217,6 +3273,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
     methodDescriptors.add(listAppVersionsMethodDescriptor);
     methodDescriptors.add(getAppVersionMethodDescriptor);
     methodDescriptors.add(createAppVersionMethodDescriptor);
+    methodDescriptors.add(updateAppVersionMethodDescriptor);
     methodDescriptors.add(deleteAppVersionMethodDescriptor);
     methodDescriptors.add(restoreAppVersionMethodDescriptor);
     methodDescriptors.add(generateAppResourceMethodDescriptor);
@@ -3541,6 +3598,11 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
   @Override
   public UnaryCallable<CreateAppVersionRequest, AppVersion> createAppVersionCallable() {
     return createAppVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAppVersionRequest, AppVersion> updateAppVersionCallable() {
+    return updateAppVersionCallable;
   }
 
   @Override

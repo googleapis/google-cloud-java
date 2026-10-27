@@ -31,8 +31,14 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.ces.v1beta.BidiSessionClientMessage;
 import com.google.cloud.ces.v1beta.BidiSessionServerMessage;
+import com.google.cloud.ces.v1beta.CancelAssistantTurnRequest;
+import com.google.cloud.ces.v1beta.CancelAssistantTurnResponse;
+import com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest;
+import com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse;
 import com.google.cloud.ces.v1beta.RunSessionRequest;
 import com.google.cloud.ces.v1beta.RunSessionResponse;
+import com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest;
+import com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -87,6 +93,46 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+      streamChatAiAssistantMethodDescriptor =
+          MethodDescriptor.<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName("google.cloud.ces.v1beta.SessionService/StreamChatAiAssistant")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StreamChatAiAssistantRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(StreamChatAiAssistantResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+      cancelAssistantTurnMethodDescriptor =
+          MethodDescriptor.<CancelAssistantTurnRequest, CancelAssistantTurnResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.ces.v1beta.SessionService/CancelAssistantTurn")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CancelAssistantTurnRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CancelAssistantTurnResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+      generateOnboardingSuggestionsMethodDescriptor =
+          MethodDescriptor
+              .<GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.ces.v1beta.SessionService/GenerateOnboardingSuggestions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateOnboardingSuggestionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateOnboardingSuggestionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -113,6 +159,13 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
       streamRunSessionCallable;
   private final BidiStreamingCallable<BidiSessionClientMessage, BidiSessionServerMessage>
       bidiRunSessionCallable;
+  private final ServerStreamingCallable<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+      streamChatAiAssistantCallable;
+  private final UnaryCallable<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+      cancelAssistantTurnCallable;
+  private final UnaryCallable<
+          GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+      generateOnboardingSuggestionsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -201,6 +254,44 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+        streamChatAiAssistantTransportSettings =
+            GrpcCallSettings
+                .<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>newBuilder()
+                .setMethodDescriptor(streamChatAiAssistantMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+        cancelAssistantTurnTransportSettings =
+            GrpcCallSettings.<CancelAssistantTurnRequest, CancelAssistantTurnResponse>newBuilder()
+                .setMethodDescriptor(cancelAssistantTurnMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+        generateOnboardingSuggestionsTransportSettings =
+            GrpcCallSettings
+                .<GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(generateOnboardingSuggestionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -231,6 +322,21 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
     this.bidiRunSessionCallable =
         callableFactory.createBidiStreamingCallable(
             bidiRunSessionTransportSettings, settings.bidiRunSessionSettings(), clientContext);
+    this.streamChatAiAssistantCallable =
+        callableFactory.createServerStreamingCallable(
+            streamChatAiAssistantTransportSettings,
+            settings.streamChatAiAssistantSettings(),
+            clientContext);
+    this.cancelAssistantTurnCallable =
+        callableFactory.createUnaryCallable(
+            cancelAssistantTurnTransportSettings,
+            settings.cancelAssistantTurnSettings(),
+            clientContext);
+    this.generateOnboardingSuggestionsCallable =
+        callableFactory.createUnaryCallable(
+            generateOnboardingSuggestionsTransportSettings,
+            settings.generateOnboardingSuggestionsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -263,6 +369,24 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
   public BidiStreamingCallable<BidiSessionClientMessage, BidiSessionServerMessage>
       bidiRunSessionCallable() {
     return bidiRunSessionCallable;
+  }
+
+  @Override
+  public ServerStreamingCallable<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+      streamChatAiAssistantCallable() {
+    return streamChatAiAssistantCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+      cancelAssistantTurnCallable() {
+    return cancelAssistantTurnCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+      generateOnboardingSuggestionsCallable() {
+    return generateOnboardingSuggestionsCallable;
   }
 
   @Override

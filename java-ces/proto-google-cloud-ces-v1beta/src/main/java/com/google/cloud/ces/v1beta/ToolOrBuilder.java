@@ -868,5 +868,19 @@ public interface ToolOrBuilder
    */
   com.google.cloud.ces.v1beta.ToolFakeConfigOrBuilder getToolFakeConfigOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the tool is read-only. If true, the tool
+   * cannot be modified by the user.
+   * </pre>
+   *
+   * <code>bool read_only = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The readOnly.
+   */
+  boolean getReadOnly();
+
   com.google.cloud.ces.v1beta.Tool.ToolTypeCase getToolTypeCase();
 }

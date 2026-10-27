@@ -60,6 +60,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
     databaseTableReferences_ = java.util.Collections.emptyList();
     priority_ = "";
     requestTag_ = "";
+    graphIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -736,6 +737,74 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
     }
   }
 
+  public static final int GRAPH_IDS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList graphIds_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The graph IDs to query.
+   * </pre>
+   *
+   * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the graphIds.
+   */
+  public com.google.protobuf.ProtocolStringList getGraphIdsList() {
+    return graphIds_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The graph IDs to query.
+   * </pre>
+   *
+   * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of graphIds.
+   */
+  public int getGraphIdsCount() {
+    return graphIds_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The graph IDs to query.
+   * </pre>
+   *
+   * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The graphIds at the given index.
+   */
+  public java.lang.String getGraphIds(int index) {
+    return graphIds_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The graph IDs to query.
+   * </pre>
+   *
+   * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the graphIds at the given index.
+   */
+  public com.google.protobuf.ByteString getGraphIdsBytes(int index) {
+    return graphIds_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -776,6 +845,9 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestTag_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 9, requestTag_);
+    }
+    for (int i = 0; i < graphIds_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, graphIds_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -820,6 +892,14 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestTag_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(9, requestTag_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < graphIds_.size(); i++) {
+        dataSize += computeStringSizeNoTag(graphIds_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getGraphIdsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -845,6 +925,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       return false;
     if (!getPriority().equals(other.getPriority())) return false;
     if (!getRequestTag().equals(other.getRequestTag())) return false;
+    if (!getGraphIdsList().equals(other.getGraphIdsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -876,6 +957,10 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
     hash = (53 * hash) + getPriority().hashCode();
     hash = (37 * hash) + REQUEST_TAG_FIELD_NUMBER;
     hash = (53 * hash) + getRequestTag().hashCode();
+    if (getGraphIdsCount() > 0) {
+      hash = (37 * hash) + GRAPH_IDS_FIELD_NUMBER;
+      hash = (53 * hash) + getGraphIdsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1033,6 +1118,7 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       bitField0_ = (bitField0_ & ~0x00000020);
       priority_ = "";
       requestTag_ = "";
+      graphIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1108,6 +1194,10 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.requestTag_ = requestTag_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        graphIds_.makeImmutable();
+        result.graphIds_ = graphIds_;
       }
     }
 
@@ -1190,6 +1280,16 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       if (!other.getRequestTag().isEmpty()) {
         requestTag_ = other.requestTag_;
         bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (!other.graphIds_.isEmpty()) {
+        if (graphIds_.isEmpty()) {
+          graphIds_ = other.graphIds_;
+          bitField0_ |= 0x00000100;
+        } else {
+          ensureGraphIdsIsMutable();
+          graphIds_.addAll(other.graphIds_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1275,6 +1375,13 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000080;
                 break;
               } // case 74
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureGraphIdsIsMutable();
+                graphIds_.add(s);
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2630,6 +2737,189 @@ public final class SpannerDatabaseReference extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       requestTag_ = value;
       bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList graphIds_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureGraphIdsIsMutable() {
+      if (!graphIds_.isModifiable()) {
+        graphIds_ = new com.google.protobuf.LazyStringArrayList(graphIds_);
+      }
+      bitField0_ |= 0x00000100;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The graph IDs to query.
+     * </pre>
+     *
+     * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the graphIds.
+     */
+    public com.google.protobuf.ProtocolStringList getGraphIdsList() {
+      graphIds_.makeImmutable();
+      return graphIds_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The graph IDs to query.
+     * </pre>
+     *
+     * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of graphIds.
+     */
+    public int getGraphIdsCount() {
+      return graphIds_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The graph IDs to query.
+     * </pre>
+     *
+     * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The graphIds at the given index.
+     */
+    public java.lang.String getGraphIds(int index) {
+      return graphIds_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The graph IDs to query.
+     * </pre>
+     *
+     * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the graphIds at the given index.
+     */
+    public com.google.protobuf.ByteString getGraphIdsBytes(int index) {
+      return graphIds_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The graph IDs to query.
+     * </pre>
+     *
+     * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The graphIds to set.
+     * @return This builder for chaining.
+     */
+    public Builder setGraphIds(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureGraphIdsIsMutable();
+      graphIds_.set(index, value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The graph IDs to query.
+     * </pre>
+     *
+     * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The graphIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addGraphIds(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureGraphIdsIsMutable();
+      graphIds_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The graph IDs to query.
+     * </pre>
+     *
+     * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The graphIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllGraphIds(java.lang.Iterable<java.lang.String> values) {
+      ensureGraphIdsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, graphIds_);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The graph IDs to query.
+     * </pre>
+     *
+     * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearGraphIds() {
+      graphIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The graph IDs to query.
+     * </pre>
+     *
+     * <code>repeated string graph_ids = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the graphIds to add.
+     * @return This builder for chaining.
+     */
+    public Builder addGraphIdsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureGraphIdsIsMutable();
+      graphIds_.add(value);
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
