@@ -373,7 +373,7 @@ bash .kokoro/coerce_logs.sh
 
 if [[ "${ENABLE_FLAKYBOT}" == "true" ]]; then
   if [[ -n "${KOKORO_GFILE_DIR:-}" && -f "${KOKORO_GFILE_DIR:-}/linux_amd64/flakybot" ]]; then
-    chmod +x "${KOKORO_GFILE_DIR}/linux_amd64/flakybot"
+    chmod +x "${KOKORO_GFILE_DIR}/linux_amd64/flakybot" || true
     "${KOKORO_GFILE_DIR}/linux_amd64/flakybot" -repo=googleapis/google-cloud-java
   else
     echo "Warning: ENABLE_FLAKYBOT is true, but flakybot binary was not found in KOKORO_GFILE_DIR."
