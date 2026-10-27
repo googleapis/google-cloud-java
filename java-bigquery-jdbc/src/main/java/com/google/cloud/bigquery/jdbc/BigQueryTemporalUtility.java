@@ -150,14 +150,12 @@ final class BigQueryTemporalUtility {
    * the Calendar timezone is explicitly ignored per JDBC 4.2 spec.
    */
   public static Timestamp boxTimestamp(String val) {
-    // Check if the value is a numeric float string (e.g. "1680174859.8202269" from JSON API)
-    try {
-      if (val.indexOf('-') < 0
-          || (val.startsWith("-")
-              && val.indexOf('-', 1) < 0)) { // Quick check to ensure it's not a date string
+    // Epoch decimals never contain ':' but may contain '-' (e.g. "1.0E-6"), so key on ':'.
+    if (val.indexOf(':') < 0) {
+      try {
         return Timestamp.from(parseEpochDecimalToInstant(val));
+      } catch (NumberFormatException ignored) {
       }
-    } catch (NumberFormatException ignored) {
     }
 
     String iso = val;
