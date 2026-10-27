@@ -16,6 +16,8 @@
 
 package com.google.cloud.storage;
 
+import static com.google.common.base.Preconditions.checkArgument;
+
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.NoCredentials;
@@ -33,11 +35,16 @@ import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.metrics.MeterProvider;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.time.Duration;
 import java.util.Locale;
 import java.util.Properties;
+import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 public abstract class StorageOptions extends ServiceOptions<Storage, StorageOptions> {
 
@@ -112,12 +119,53 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
   public abstract static class Builder
       extends ServiceOptions.Builder<Storage, StorageOptions, Builder> {
 
+    private @Nullable Boolean enableOtelMetrics = null;
+    private @Nullable Boolean enableOtelDebugMetrics = null;
+    private @Nullable MeterProvider meterProvider = null;
+    private Duration metricInterval = Duration.ofSeconds(60);
+    private boolean customOpenTelemetryConfigured = false;
+    private boolean customMeterProviderConfigured = false;
+
     Builder() {
       setUseJwtAccessWithScope(false);
     }
 
     Builder(StorageOptions options) {
       super(options);
+      this.enableOtelMetrics = options.getRawEnableOtelMetrics();
+      this.enableOtelDebugMetrics = options.getRawEnableOtelDebugMetrics();
+      this.meterProvider = options.getMeterProvider();
+      this.metricInterval = options.metricInterval;
+      this.customMeterProviderConfigured = options.isCustomMeterProviderConfigured();
+      this.customOpenTelemetryConfigured = options.isCustomOpenTelemetryConfigured();
+    }
+
+    @Nullable Boolean getEnableOtelMetrics() {
+      return enableOtelMetrics;
+    }
+
+    @Nullable Boolean getEnableOtelDebugMetrics() {
+      return enableOtelDebugMetrics;
+    }
+
+    @Nullable MeterProvider getMeterProvider() {
+      return meterProvider;
+    }
+
+    Duration getMetricInterval() {
+      return metricInterval;
+    }
+
+    boolean isCustomOpenTelemetryConfigured() {
+      return customOpenTelemetryConfigured;
+    }
+
+    void setCustomOpenTelemetryConfigured(boolean customOpenTelemetryConfigured) {
+      this.customOpenTelemetryConfigured = customOpenTelemetryConfigured;
+    }
+
+    boolean isCustomMeterProviderConfigured() {
+      return customMeterProviderConfigured;
     }
 
     public abstract Builder setStorageRetryStrategy(StorageRetryStrategy storageRetryStrategy);
@@ -143,12 +191,124 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     @BetaApi
     public abstract StorageOptions.Builder setOpenTelemetry(OpenTelemetry openTelemetry);
 
+    /**
+     * Enable or disable OpenTelemetry client metrics.
+     *
+     * @param enableOtelMetrics whether OpenTelemetry client metrics should be enabled
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    public StorageOptions.Builder setEnableOtelMetrics(boolean enableOtelMetrics) {
+      this.enableOtelMetrics = enableOtelMetrics;
+      return this;
+    }
+
+    /**
+     * Enable or disable OpenTelemetry debug client metrics.
+     *
+     * @param enableOtelDebugMetrics whether OpenTelemetry debug client metrics should be enabled
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    public StorageOptions.Builder setEnableOtelDebugMetrics(boolean enableOtelDebugMetrics) {
+      this.enableOtelDebugMetrics = enableOtelDebugMetrics;
+      return this;
+    }
+
+    /**
+     * Set a custom {@link MeterProvider} for recording client metrics.
+     *
+     * @param meterProvider custom MeterProvider to use, or null to use the default
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    public StorageOptions.Builder setMeterProvider(@Nullable MeterProvider meterProvider) {
+      this.meterProvider = meterProvider;
+      this.customMeterProviderConfigured = meterProvider != null;
+      return this;
+    }
+
+    /**
+     * Set the metric export interval for periodic metric reading.
+     *
+     * <p>When using the default Cloud Monitoring exporter, the interval must be at least 60 seconds
+     * (1 minute). Intervals less than 60 seconds are permitted only when a custom {@link
+     * MeterProvider} is configured via {@link #setMeterProvider(MeterProvider)} or explicit
+     * OpenTelemetry is configured via {@link #setOpenTelemetry(OpenTelemetry)}.
+     *
+     * @param metricInterval interval duration
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    public StorageOptions.Builder setMetricInterval(Duration metricInterval) {
+      checkArgument(
+          metricInterval != null && !metricInterval.isNegative() && !metricInterval.isZero(),
+          "metricInterval must be positive");
+      this.metricInterval = metricInterval;
+      return this;
+    }
+
     @Override
     public abstract StorageOptions build();
   }
 
+  private static final Logger LOGGER = Logger.getLogger(StorageOptions.class.getName());
+
+  private final boolean enableOtelMetrics;
+  private final boolean enableOtelDebugMetrics;
+  @Nullable private final Boolean rawEnableOtelMetrics;
+  @Nullable private final Boolean rawEnableOtelDebugMetrics;
+  private transient MeterProvider meterProvider;
+  private final Duration metricInterval;
+  private final boolean customMeterProviderConfigured;
+  private final boolean customOpenTelemetryConfigured;
+
   StorageOptions(Builder builder, StorageDefaults serviceDefaults) {
     super(StorageFactory.class, StorageRpcFactory.class, builder, serviceDefaults);
+    this.rawEnableOtelMetrics = builder.getEnableOtelMetrics();
+    this.rawEnableOtelDebugMetrics = builder.getEnableOtelDebugMetrics();
+    this.enableOtelMetrics =
+        StorageMetricsConfig.isEnableOtelMetrics(builder.getEnableOtelMetrics());
+    this.enableOtelDebugMetrics =
+        this.enableOtelMetrics
+            && StorageMetricsConfig.isEnableOtelDebugMetrics(builder.getEnableOtelDebugMetrics());
+    this.meterProvider = builder.getMeterProvider();
+    this.customMeterProviderConfigured =
+        builder.isCustomMeterProviderConfigured() || builder.getMeterProvider() != null;
+    this.customOpenTelemetryConfigured = builder.isCustomOpenTelemetryConfigured();
+    this.metricInterval =
+        builder.getMetricInterval() != null ? builder.getMetricInterval() : Duration.ofSeconds(60);
+    boolean hasCustomOtelOrMeterProvider =
+        this.customMeterProviderConfigured || this.customOpenTelemetryConfigured;
+    if (!hasCustomOtelOrMeterProvider && this.metricInterval != null) {
+      checkArgument(
+          this.metricInterval.compareTo(Duration.ofSeconds(60)) >= 0,
+          "Metric export interval cannot be less than 60 seconds when using Cloud Monitoring exporter");
+    }
+  }
+
+  @Nullable Boolean getRawEnableOtelMetrics() {
+    return rawEnableOtelMetrics;
+  }
+
+  @Nullable Boolean getRawEnableOtelDebugMetrics() {
+    return rawEnableOtelDebugMetrics;
+  }
+
+  boolean isCustomMeterProviderConfigured() {
+    return customMeterProviderConfigured;
+  }
+
+  boolean isCustomOpenTelemetryConfigured() {
+    return customOpenTelemetryConfigured;
+  }
+
+  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+    in.defaultReadObject();
+    if (this.customMeterProviderConfigured || this.meterProvider != null) {
+      LOGGER.warning(
+          "Custom MeterProvider is transient and cannot be serialized across workers; falling back to default provider.");
+    }
   }
 
   abstract static class StorageDefaults implements ServiceDefaults<Storage, StorageOptions> {}
@@ -184,6 +344,52 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
    */
   @BetaApi
   public abstract OpenTelemetry getOpenTelemetry();
+
+  /**
+   * Whether OpenTelemetry client metrics are enabled.
+   *
+   * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  public boolean isEnableOtelMetrics() {
+    return enableOtelMetrics;
+  }
+
+  /**
+   * Whether OpenTelemetry debug client metrics are enabled.
+   *
+   * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  public boolean isEnableOtelDebugMetrics() {
+    return enableOtelDebugMetrics;
+  }
+
+  /**
+   * The {@link MeterProvider} configured for recording client metrics.
+   *
+   * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  public @Nullable MeterProvider getMeterProvider() {
+    return meterProvider;
+  }
+
+  /**
+   * The metric export interval configured for periodic metric reading.
+   *
+   * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  public Duration getMetricInterval() {
+    Duration interval = metricInterval != null ? metricInterval : Duration.ofSeconds(60);
+    if (meterProvider == null && !customOpenTelemetryConfigured) {
+      if (interval.compareTo(Duration.ofSeconds(60)) < 0) {
+        return Duration.ofSeconds(60);
+      }
+    }
+    return interval;
+  }
 
   @SuppressWarnings("unchecked")
   @Override

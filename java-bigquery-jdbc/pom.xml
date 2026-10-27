@@ -20,7 +20,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery-jdbc</artifactId>
-  <version>1.7.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
+  <version>1.7.0</version><!-- {x-version-update:google-cloud-bigquery-jdbc:current} -->
   <packaging>jar</packaging>
   <name>BigQuery JDBC</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
@@ -36,6 +36,13 @@
   </properties>
 
   <build>
+    <extensions>
+      <extension>
+        <groupId>kr.motd.maven</groupId>
+        <artifactId>os-maven-plugin</artifactId>
+        <version>1.7.1</version>
+      </extension>
+    </extensions>
     <resources>
       <resource>
         <directory>src/main/resources</directory>
@@ -225,13 +232,30 @@
               </execution>
             </executions>
           </plugin>
+          <plugin>
+            <groupId>org.xolstice.maven.plugins</groupId>
+            <artifactId>protobuf-maven-plugin</artifactId>
+            <version>0.6.1</version>
+            <configuration>
+              <protocArtifact>com.google.protobuf:protoc:3.25.5:exe:${os.detected.classifier}</protocArtifact>
+              <checkStaleness>true</checkStaleness>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>compile</goal>
+                  <goal>test-compile</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
     </plugins>
   </build>
 
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.94.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <version>1.94.0</version><!-- {x-version-update:google-cloud-java:current} -->
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
@@ -239,17 +263,17 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
-      <version>2.74.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+      <version>2.74.0</version><!-- {x-version-update:google-cloud-bigquery:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
-      <version>3.36.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+      <version>3.36.0</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-logging</artifactId>
-      <version>3.41.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging:current} -->
+      <version>3.41.0</version><!-- {x-version-update:google-cloud-logging:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.http-client</groupId>
@@ -282,7 +306,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigquerystorage-v1</artifactId>
-      <version>3.36.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
+      <version>3.36.0</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
     </dependency>
 
     <dependency>
@@ -458,7 +482,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-trace</artifactId>
-      <version>2.100.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+      <version>2.100.0</version><!-- {x-version-update:google-cloud-trace:current} -->
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -482,7 +506,12 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
-              <argLine>--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</argLine>
+              <!--
+              java.nio is opened for Arrow's off-heap memory access. java.util.logging is opened
+              so BigQueryJdbcCustomLoggerTest can read the JDK-internal child-logger list and
+              assert that driver objects do not leak logger registrations.
+              -->
+              <argLine>--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED --add-opens=java.logging/java.util.logging=ALL-UNNAMED</argLine>
             </configuration>
           </plugin>
           <plugin>

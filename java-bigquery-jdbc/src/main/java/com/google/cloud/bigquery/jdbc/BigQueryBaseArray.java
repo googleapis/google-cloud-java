@@ -159,6 +159,8 @@ abstract class BigQueryBaseArray implements java.sql.Array {
 
   abstract Object getCoercedValue(int index) throws SQLException;
 
+  abstract Object getRawElement(int index);
+
   static boolean isArray(Field currentSchema) {
     return currentSchema.getMode() == REPEATED;
   }
@@ -190,6 +192,21 @@ abstract class BigQueryBaseArray implements java.sql.Array {
                   return element.toString();
                 })
             .collect(Collectors.joining(", ", "[", "]"));
+      }
+      if (this.schema.getType().getStandardType() == StandardSQLTypeName.TIME) {
+        StringBuilder sb = new StringBuilder("[");
+        for (int i = 0; i < array.length; i++) {
+          if (i > 0) {
+            sb.append(", ");
+          }
+          sb.append(
+              array[i] == null
+                  ? "null"
+                  : BigQueryTypeRegistry.convert(
+                      getRawElement(i), StandardSQLTypeName.TIME, String.class, null));
+        }
+        sb.append("]");
+        return sb.toString();
       }
       return Arrays.deepToString(array);
     } catch (SQLException e) {

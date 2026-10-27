@@ -84,36 +84,6 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The Gemini ASR model ID used for transcription.
-     * This value overrides the default model ID configured on the server.
-     * Example: "gemini-3-flash-lite-asr-preview"
-     * </pre>
-     *
-     * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The modelId.
-     */
-    java.lang.String getModelId();
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The Gemini ASR model ID used for transcription.
-     * This value overrides the default model ID configured on the server.
-     * Example: "gemini-3-flash-lite-asr-preview"
-     * </pre>
-     *
-     * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for modelId.
-     */
-    com.google.protobuf.ByteString getModelIdBytes();
-
-    /**
-     *
-     *
-     * <pre>
      * Optional. The required duration of detected silence (or non-speech)
      * before end-of-speech is committed.
      * </pre>
@@ -234,7 +204,6 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
 
     private GeminiAsrConfig() {
-      modelId_ = "";
       startOfSpeechSensitivity_ = 0;
       endOfSpeechSensitivity_ = 0;
     }
@@ -603,63 +572,6 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig.EndSensitivity)
     }
 
-    public static final int MODEL_ID_FIELD_NUMBER = 1;
-
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object modelId_ = "";
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The Gemini ASR model ID used for transcription.
-     * This value overrides the default model ID configured on the server.
-     * Example: "gemini-3-flash-lite-asr-preview"
-     * </pre>
-     *
-     * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The modelId.
-     */
-    @java.lang.Override
-    public java.lang.String getModelId() {
-      java.lang.Object ref = modelId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        modelId_ = s;
-        return s;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The Gemini ASR model ID used for transcription.
-     * This value overrides the default model ID configured on the server.
-     * Example: "gemini-3-flash-lite-asr-preview"
-     * </pre>
-     *
-     * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for modelId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getModelIdBytes() {
-      java.lang.Object ref = modelId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        modelId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     public static final int SILENCE_DURATION_MS_FIELD_NUMBER = 2;
     private int silenceDurationMs_ = 0;
 
@@ -806,9 +718,6 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(modelId_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, modelId_);
-      }
       if (silenceDurationMs_ != 0) {
         output.writeInt32(2, silenceDurationMs_);
       }
@@ -836,9 +745,6 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(modelId_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, modelId_);
-      }
       if (silenceDurationMs_ != 0) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, silenceDurationMs_);
       }
@@ -873,7 +779,6 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig other =
           (com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig) obj;
 
-      if (!getModelId().equals(other.getModelId())) return false;
       if (getSilenceDurationMs() != other.getSilenceDurationMs()) return false;
       if (getPrefixPaddingMs() != other.getPrefixPaddingMs()) return false;
       if (startOfSpeechSensitivity_ != other.startOfSpeechSensitivity_) return false;
@@ -889,8 +794,6 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MODEL_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getModelId().hashCode();
       hash = (37 * hash) + SILENCE_DURATION_MS_FIELD_NUMBER;
       hash = (53 * hash) + getSilenceDurationMs();
       hash = (37 * hash) + PREFIX_PADDING_MS_FIELD_NUMBER;
@@ -1044,7 +947,6 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        modelId_ = "";
         silenceDurationMs_ = 0;
         prefixPaddingMs_ = 0;
         startOfSpeechSensitivity_ = 0;
@@ -1089,18 +991,15 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
           com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.modelId_ = modelId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.silenceDurationMs_ = silenceDurationMs_;
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.prefixPaddingMs_ = prefixPaddingMs_;
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.startOfSpeechSensitivity_ = startOfSpeechSensitivity_;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.endOfSpeechSensitivity_ = endOfSpeechSensitivity_;
         }
       }
@@ -1121,11 +1020,6 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
         if (other
             == com.google.cloud.dialogflow.v2.SpeechToTextConfig.GeminiAsrConfig
                 .getDefaultInstance()) return this;
-        if (!other.getModelId().isEmpty()) {
-          modelId_ = other.modelId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
         if (other.getSilenceDurationMs() != 0) {
           setSilenceDurationMs(other.getSilenceDurationMs());
         }
@@ -1164,34 +1058,28 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
               case 0:
                 done = true;
                 break;
-              case 10:
-                {
-                  modelId_ = input.readStringRequireUtf8();
-                  bitField0_ |= 0x00000001;
-                  break;
-                } // case 10
               case 16:
                 {
                   silenceDurationMs_ = input.readInt32();
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000001;
                   break;
                 } // case 16
               case 24:
                 {
                   prefixPaddingMs_ = input.readInt32();
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000002;
                   break;
                 } // case 24
               case 32:
                 {
                   startOfSpeechSensitivity_ = input.readEnum();
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 32
               case 40:
                 {
                   endOfSpeechSensitivity_ = input.readEnum();
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 40
               default:
@@ -1212,127 +1100,6 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       }
 
       private int bitField0_;
-
-      private java.lang.Object modelId_ = "";
-
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The Gemini ASR model ID used for transcription.
-       * This value overrides the default model ID configured on the server.
-       * Example: "gemini-3-flash-lite-asr-preview"
-       * </pre>
-       *
-       * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The modelId.
-       */
-      public java.lang.String getModelId() {
-        java.lang.Object ref = modelId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          modelId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The Gemini ASR model ID used for transcription.
-       * This value overrides the default model ID configured on the server.
-       * Example: "gemini-3-flash-lite-asr-preview"
-       * </pre>
-       *
-       * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return The bytes for modelId.
-       */
-      public com.google.protobuf.ByteString getModelIdBytes() {
-        java.lang.Object ref = modelId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
-              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-          modelId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The Gemini ASR model ID used for transcription.
-       * This value overrides the default model ID configured on the server.
-       * Example: "gemini-3-flash-lite-asr-preview"
-       * </pre>
-       *
-       * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The modelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setModelId(java.lang.String value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        modelId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The Gemini ASR model ID used for transcription.
-       * This value overrides the default model ID configured on the server.
-       * Example: "gemini-3-flash-lite-asr-preview"
-       * </pre>
-       *
-       * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @return This builder for chaining.
-       */
-      public Builder clearModelId() {
-        modelId_ = getDefaultInstance().getModelId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * Optional. The Gemini ASR model ID used for transcription.
-       * This value overrides the default model ID configured on the server.
-       * Example: "gemini-3-flash-lite-asr-preview"
-       * </pre>
-       *
-       * <code>string model_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
-       *
-       * @param value The bytes for modelId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setModelIdBytes(com.google.protobuf.ByteString value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-        modelId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
 
       private int silenceDurationMs_;
 
@@ -1369,7 +1136,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       public Builder setSilenceDurationMs(int value) {
 
         silenceDurationMs_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1387,7 +1154,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearSilenceDurationMs() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         silenceDurationMs_ = 0;
         onChanged();
         return this;
@@ -1428,7 +1195,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       public Builder setPrefixPaddingMs(int value) {
 
         prefixPaddingMs_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1446,7 +1213,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearPrefixPaddingMs() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         prefixPaddingMs_ = 0;
         onChanged();
         return this;
@@ -1488,7 +1255,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
        */
       public Builder setStartOfSpeechSensitivityValue(int value) {
         startOfSpeechSensitivity_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1538,7 +1305,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         startOfSpeechSensitivity_ = value.getNumber();
         onChanged();
         return this;
@@ -1558,7 +1325,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearStartOfSpeechSensitivity() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         startOfSpeechSensitivity_ = 0;
         onChanged();
         return this;
@@ -1600,7 +1367,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
        */
       public Builder setEndOfSpeechSensitivityValue(int value) {
         endOfSpeechSensitivity_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1649,7 +1416,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         endOfSpeechSensitivity_ = value.getNumber();
         onChanged();
         return this;
@@ -1669,7 +1436,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
        * @return This builder for chaining.
        */
       public Builder clearEndOfSpeechSensitivity() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         endOfSpeechSensitivity_ = 0;
         onChanged();
         return this;
@@ -2211,6 +1978,47 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     return useGeminiAsr_;
   }
 
+  public static final int DISABLE_INTERIM_INPUT_TRANSCRIPTS_FIELD_NUMBER = 17;
+  private boolean disableInterimInputTranscripts_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables emission of interim input transcriptions when set to
+   * `true`.
+   * </pre>
+   *
+   * <code>
+   * optional bool disable_interim_input_transcripts = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the disableInterimInputTranscripts field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisableInterimInputTranscripts() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Disables emission of interim input transcriptions when set to
+   * `true`.
+   * </pre>
+   *
+   * <code>
+   * optional bool disable_interim_input_transcripts = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The disableInterimInputTranscripts.
+   */
+  @java.lang.Override
+  public boolean getDisableInterimInputTranscripts() {
+    return disableInterimInputTranscripts_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2257,6 +2065,9 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
     if (useGeminiAsr_ != false) {
       output.writeBool(16, useGeminiAsr_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(17, disableInterimInputTranscripts_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2306,6 +2117,11 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     if (useGeminiAsr_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, useGeminiAsr_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              17, disableInterimInputTranscripts_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2335,6 +2151,12 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       if (!getGeminiAsrConfig().equals(other.getGeminiAsrConfig())) return false;
     }
     if (getUseGeminiAsr() != other.getUseGeminiAsr()) return false;
+    if (hasDisableInterimInputTranscripts() != other.hasDisableInterimInputTranscripts())
+      return false;
+    if (hasDisableInterimInputTranscripts()) {
+      if (getDisableInterimInputTranscripts() != other.getDisableInterimInputTranscripts())
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2370,6 +2192,12 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + USE_GEMINI_ASR_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseGeminiAsr());
+    if (hasDisableInterimInputTranscripts()) {
+      hash = (37 * hash) + DISABLE_INTERIM_INPUT_TRANSCRIPTS_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashBoolean(getDisableInterimInputTranscripts());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2534,6 +2362,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
         geminiAsrConfigBuilder_ = null;
       }
       useGeminiAsr_ = false;
+      disableInterimInputTranscripts_ = false;
       return this;
     }
 
@@ -2604,6 +2433,10 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.useGeminiAsr_ = useGeminiAsr_;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.disableInterimInputTranscripts_ = disableInterimInputTranscripts_;
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2660,6 +2493,9 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       }
       if (other.getUseGeminiAsr() != false) {
         setUseGeminiAsr(other.getUseGeminiAsr());
+      }
+      if (other.hasDisableInterimInputTranscripts()) {
+        setDisableInterimInputTranscripts(other.getDisableInterimInputTranscripts());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2749,6 +2585,12 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000200;
                 break;
               } // case 128
+            case 136:
+              {
+                disableInterimInputTranscripts_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 136
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4050,6 +3892,90 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     public Builder clearUseGeminiAsr() {
       bitField0_ = (bitField0_ & ~0x00000200);
       useGeminiAsr_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean disableInterimInputTranscripts_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables emission of interim input transcriptions when set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * optional bool disable_interim_input_transcripts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the disableInterimInputTranscripts field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisableInterimInputTranscripts() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables emission of interim input transcriptions when set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * optional bool disable_interim_input_transcripts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The disableInterimInputTranscripts.
+     */
+    @java.lang.Override
+    public boolean getDisableInterimInputTranscripts() {
+      return disableInterimInputTranscripts_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables emission of interim input transcriptions when set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * optional bool disable_interim_input_transcripts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The disableInterimInputTranscripts to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisableInterimInputTranscripts(boolean value) {
+
+      disableInterimInputTranscripts_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disables emission of interim input transcriptions when set to
+     * `true`.
+     * </pre>
+     *
+     * <code>
+     * optional bool disable_interim_input_transcripts = 17 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisableInterimInputTranscripts() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      disableInterimInputTranscripts_ = false;
       onChanged();
       return this;
     }

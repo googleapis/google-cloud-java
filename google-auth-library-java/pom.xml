@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.auth</groupId>
   <artifactId>google-auth-library-parent</artifactId>
-  <version>1.55.0-SNAPSHOT</version><!-- {x-version-update:google-auth-library-parent:current} -->
+  <version>1.55.0</version><!-- {x-version-update:google-auth-library-parent:current} -->
   <packaging>pom</packaging>
   <name>Google Auth Library for Java</name>
   <description>Client libraries providing authentication and
@@ -86,7 +86,7 @@
     <project.tink.version>1.15.0</project.tink.version>
     <project.slf4j.version>2.0.17</project.slf4j.version>
     <project.gson.version>2.14.0</project.gson.version>
-    <project.api-common.version>2.71.0-SNAPSHOT</project.api-common.version><!-- {x-version-update:api-common:current} -->
+    <project.api-common.version>2.71.0</project.api-common.version><!-- {x-version-update:api-common:current} -->
     <project.commons-codec.version>1.18.0</project.commons-codec.version>
     <surefire.version>3.5.2</surefire.version>
     <clirr.skip>true</clirr.skip>
@@ -399,22 +399,6 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>clirr-maven-plugin</artifactId>
-        <configuration>
-          <ignoredDifferencesFile>clirr-ignored-differences.xml
-          </ignoredDifferencesFile>
-          <logResults>true</logResults>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <version>3.3.1</version>
@@ -437,6 +421,36 @@
   </build>
 
   <profiles>
+    <profile>
+      <!-- CLIRR in a profile with the same id as java-shared-config, so the release scripts
+           (-P=-clirr-compatibility-check) do not resolve clirr-maven-plugin 2.8. Its dependency
+           tree (plexus-components 1.1.4, classworlds 1.1-alpha-2, ...) is not in Airlock
+           (b/568717591). The JDK activation keeps CLIRR on by default for CI. -->
+      <id>clirr-compatibility-check</id>
+      <activation>
+        <jdk>[1.8,)</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>clirr-maven-plugin</artifactId>
+            <configuration>
+              <ignoredDifferencesFile>clirr-ignored-differences.xml
+              </ignoredDifferencesFile>
+              <logResults>true</logResults>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
     <profile>
       <id>slf4j2x-test</id>
       <!--  This profile is for logging test only, use instead of the default slf4j2x  -->

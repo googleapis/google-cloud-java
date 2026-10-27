@@ -43,7 +43,8 @@ import java.util.Calendar;
 import java.util.Map;
 
 class BigQueryCallableStatement extends BigQueryPreparedStatement implements CallableStatement {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryCallableStatement.class.getName());
   private boolean lastReadWasNull = false;
 
   private Object getParameterAndTrackNull(int parameterIndex) throws SQLException {
