@@ -1382,7 +1382,7 @@ public class GrpcResultSetTest {
       long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(10);
       while (readerThread.get() == null || readerThread.get().getState() != Thread.State.WAITING) {
         assertTrue("reader did not block on the stream", System.nanoTime() < deadline);
-        Thread.yield();
+        Thread.sleep(10);
       }
       resultSet.close();
 

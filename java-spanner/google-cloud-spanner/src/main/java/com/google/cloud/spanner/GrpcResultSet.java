@@ -150,8 +150,12 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
     // that is concurrently blocked in next() to fail with CANCELLED, which would otherwise race
     // with this notification and could fail a pending inline-begin transaction with a different
     // error than the one that is caused by closing this ResultSet.
-    listener.onDone(withBeginTransaction);
-    iterator.close("ResultSet closed");
+    try {
+      listener.onDone(withBeginTransaction);
+    } finally {
+  
+    }
+
   }
 
   @Override
