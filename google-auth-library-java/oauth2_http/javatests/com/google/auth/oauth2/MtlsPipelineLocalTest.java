@@ -128,15 +128,15 @@ class MtlsPipelineLocalTest {
 
   @BeforeAll
   static void beforeAll() throws Exception {
-    originalHostnameVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
-    originalTrustStore = System.getProperty("javax.net.ssl.trustStore");
-    originalTrustStorePassword = System.getProperty("javax.net.ssl.trustStorePassword");
-    originalTrustStoreType = System.getProperty("javax.net.ssl.trustStoreType");
-
     // Initialize the default SSLContext before overriding javax.net.ssl.trustStore below, so it
     // keeps the JVM's default trust settings.
     SSLContext.getDefault();
+    originalHostnameVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
     HttpsURLConnection.setDefaultHostnameVerifier((hostname, session) -> true);
+
+    originalTrustStore = System.getProperty("javax.net.ssl.trustStore");
+    originalTrustStorePassword = System.getProperty("javax.net.ssl.trustStorePassword");
+    originalTrustStoreType = System.getProperty("javax.net.ssl.trustStoreType");
 
     // Create a truststore containing test_cert.pem so client NetHttpTransport trusts the server
     KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());

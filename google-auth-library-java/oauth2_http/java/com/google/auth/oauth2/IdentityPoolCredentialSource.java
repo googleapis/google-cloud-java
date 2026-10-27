@@ -33,7 +33,6 @@ package com.google.auth.oauth2;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.api.client.util.Data;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -307,9 +306,6 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
         credentialFormatType = CredentialFormatType.JSON;
         subjectTokenFieldName = formatMap.get("subject_token_field_name");
         actorTokenFieldName = formatMap.get("actor_token_field_name");
-        if (Data.isNull(actorTokenFieldName)) {
-          actorTokenFieldName = null;
-        }
         if (actorTokenFieldName != null) {
           if (actorTokenFieldName.trim().isEmpty()) {
             throw new IllegalArgumentException("The actor_token_field_name must not be empty.");
@@ -321,8 +317,8 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
         }
       } else if (type != null && "text".equals(type.toLowerCase(Locale.US))) {
         credentialFormatType = CredentialFormatType.TEXT;
-        String textActorTokenFieldName = formatMap.get("actor_token_field_name");
-        if (textActorTokenFieldName != null && !Data.isNull(textActorTokenFieldName)) {
+        if (formatMap.containsKey("actor_token_field_name")
+            && formatMap.get("actor_token_field_name") != null) {
           throw new IllegalArgumentException(
               "Actor tokens are only supported for JSON-formatted credential sources.");
         }
