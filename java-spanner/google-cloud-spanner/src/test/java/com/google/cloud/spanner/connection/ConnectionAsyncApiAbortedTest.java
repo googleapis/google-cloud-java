@@ -141,15 +141,15 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
   public void testSingleQueryAborted() {
     RetryCounter counter = new RetryCounter();
     try (Connection connection = createConnection(counter)) {
-      assertEquals(0, counter.retryCount);
+      assertThat(counter.retryCount).isEqualTo(0);
       mockSpanner.setExecuteStreamingSqlExecutionTime(
           SimulatedExecutionTime.ofException(
               mockSpanner.createAbortedException(ByteString.copyFromUtf8("test"))));
       QueryResult res = executeQueryAsync(connection, SELECT_RANDOM_STATEMENT);
 
       assertThat(get(res.finished)).isNull();
-      assertEquals(RANDOM_RESULT_SET_ROW_COUNT, res.rowCount.get());
-      assertEquals(1, counter.retryCount);
+      assertThat(res.rowCount.get()).isEqualTo(RANDOM_RESULT_SET_ROW_COUNT);
+      assertThat(counter.retryCount).isEqualTo(1);
     }
   }
 
@@ -157,7 +157,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
   public void testTwoQueriesSecondAborted() {
     RetryCounter counter = new RetryCounter();
     try (Connection connection = createConnection(counter)) {
-      assertEquals(0, counter.retryCount);
+      assertThat(counter.retryCount).isEqualTo(0);
       QueryResult res1 = executeQueryAsync(connection, SELECT_RANDOM_STATEMENT);
       mockSpanner.setExecuteStreamingSqlExecutionTime(
           SimulatedExecutionTime.ofException(
@@ -165,10 +165,10 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
       QueryResult res2 = executeQueryAsync(connection, SELECT_RANDOM_STATEMENT_2);
 
       assertThat(get(res1.finished)).isNull();
-      assertEquals(RANDOM_RESULT_SET_ROW_COUNT, res1.rowCount.get());
+      assertThat(res1.rowCount.get()).isEqualTo(RANDOM_RESULT_SET_ROW_COUNT);
       assertThat(get(res2.finished)).isNull();
-      assertEquals(RANDOM_RESULT_SET_ROW_COUNT_2, res2.rowCount.get());
-      assertEquals(1, counter.retryCount);
+      assertThat(res2.rowCount.get()).isEqualTo(RANDOM_RESULT_SET_ROW_COUNT_2);
+      assertThat(counter.retryCount).isEqualTo(1);
     }
   }
 
@@ -176,7 +176,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
   public void testTwoQueriesBothAborted() throws InterruptedException {
     RetryCounter counter = new RetryCounter(1);
     try (Connection connection = createConnection(counter)) {
-      assertEquals(0, counter.retryCount);
+      assertThat(counter.retryCount).isEqualTo(0);
       mockSpanner.setExecuteStreamingSqlExecutionTime(
           SimulatedExecutionTime.ofException(
               mockSpanner.createAbortedException(ByteString.copyFromUtf8("test"))));
@@ -189,10 +189,10 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
       QueryResult res2 = executeQueryAsync(connection, SELECT_RANDOM_STATEMENT_2);
 
       assertThat(get(res1.finished)).isNull();
-      assertEquals(RANDOM_RESULT_SET_ROW_COUNT, res1.rowCount.get());
+      assertThat(res1.rowCount.get()).isEqualTo(RANDOM_RESULT_SET_ROW_COUNT);
       assertThat(get(res2.finished)).isNull();
-      assertEquals(RANDOM_RESULT_SET_ROW_COUNT_2, res2.rowCount.get());
-      assertEquals(2, counter.retryCount);
+      assertThat(res2.rowCount.get()).isEqualTo(RANDOM_RESULT_SET_ROW_COUNT_2);
+      assertThat(counter.retryCount).isEqualTo(2);
     }
   }
 
@@ -204,12 +204,12 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
             RANDOM_RESULT_SET_ROW_COUNT / 2));
     RetryCounter counter = new RetryCounter();
     try (Connection connection = createConnection(counter)) {
-      assertEquals(0, counter.retryCount);
+      assertThat(counter.retryCount).isEqualTo(0);
       QueryResult res = executeQueryAsync(connection, SELECT_RANDOM_STATEMENT);
 
       assertThat(get(res.finished)).isNull();
-      assertEquals(RANDOM_RESULT_SET_ROW_COUNT, res.rowCount.get());
-      assertEquals(1, counter.retryCount);
+      assertThat(res.rowCount.get()).isEqualTo(RANDOM_RESULT_SET_ROW_COUNT);
+      assertThat(counter.retryCount).isEqualTo(1);
     }
   }
 
@@ -217,7 +217,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
   public void testTwoQueriesSecondAbortedMidway() {
     RetryCounter counter = new RetryCounter();
     try (Connection connection = createConnection(counter)) {
-      assertEquals(0, counter.retryCount);
+      assertThat(counter.retryCount).isEqualTo(0);
       QueryResult res1 = executeQueryAsync(connection, SELECT_RANDOM_STATEMENT);
       mockSpanner.setExecuteStreamingSqlExecutionTime(
           SimulatedExecutionTime.ofStreamException(
@@ -226,10 +226,10 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
       QueryResult res2 = executeQueryAsync(connection, SELECT_RANDOM_STATEMENT_2);
 
       assertThat(get(res1.finished)).isNull();
-      assertEquals(RANDOM_RESULT_SET_ROW_COUNT, res1.rowCount.get());
+      assertThat(res1.rowCount.get()).isEqualTo(RANDOM_RESULT_SET_ROW_COUNT);
       assertThat(get(res2.finished)).isNull();
-      assertEquals(RANDOM_RESULT_SET_ROW_COUNT_2, res2.rowCount.get());
-      assertEquals(1, counter.retryCount);
+      assertThat(res2.rowCount.get()).isEqualTo(RANDOM_RESULT_SET_ROW_COUNT_2);
+      assertThat(counter.retryCount).isEqualTo(1);
     }
   }
 
@@ -241,7 +241,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
             Math.min(RANDOM_RESULT_SET_ROW_COUNT / 2, RANDOM_RESULT_SET_ROW_COUNT_2 / 2)));
     RetryCounter counter = new RetryCounter();
     try (Connection connection = createConnection(counter)) {
-      assertEquals(0, counter.retryCount);
+      assertThat(counter.retryCount).isEqualTo(0);
       // These AsyncResultSets will be consumed in parallel. One of them will (at random) abort
       // halfway.
       QueryResult res1 =
@@ -250,10 +250,10 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
           executeQueryAsync(connection, SELECT_RANDOM_STATEMENT_2, multiThreadedExecutor);
 
       assertThat(get(res1.finished)).isNull();
-      assertEquals(RANDOM_RESULT_SET_ROW_COUNT, res1.rowCount.get());
+      assertThat(res1.rowCount.get()).isEqualTo(RANDOM_RESULT_SET_ROW_COUNT);
       assertThat(get(res2.finished)).isNull();
-      assertEquals(RANDOM_RESULT_SET_ROW_COUNT_2, res2.rowCount.get());
-      assertEquals(1, counter.retryCount);
+      assertThat(res2.rowCount.get()).isEqualTo(RANDOM_RESULT_SET_ROW_COUNT_2);
+      assertThat(counter.retryCount).isEqualTo(1);
     }
   }
 
@@ -265,7 +265,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
             RANDOM_RESULT_SET_ROW_COUNT / 2));
     final RetryCounter counter = new RetryCounter();
     try (Connection connection = createConnection(counter)) {
-      assertEquals(0, counter.retryCount);
+      assertThat(counter.retryCount).isEqualTo(0);
       final SettableApiFuture<Long> rowCount = SettableApiFuture.create();
       final CountDownLatch updateLatch = new CountDownLatch(1);
       final CountDownLatch queryLatch = new CountDownLatch(1);
@@ -313,10 +313,10 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
       assertThat(get(finished)).isNull();
       ApiFuture<Void> commit = connection.commitAsync();
 
-      assertEquals(RANDOM_RESULT_SET_ROW_COUNT, get(rowCount));
-      assertEquals(UPDATE_COUNT, get(updateCount));
+      assertThat(get(rowCount)).isEqualTo(RANDOM_RESULT_SET_ROW_COUNT);
+      assertThat(get(updateCount)).isEqualTo(UPDATE_COUNT);
       assertThat(get(commit)).isNull();
-      assertEquals(1, counter.retryCount);
+      assertThat(counter.retryCount).isEqualTo(1);
 
       // Verify the order of the statements on the server.
       List<? extends AbstractMessage> requests =
@@ -325,16 +325,16 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
                   mockSpanner.getRequests(), input -> input instanceof ExecuteSqlRequest));
       // The entire transaction should be retried.
       assertThat(requests).hasSize(4);
-      assertEquals(1L, ((ExecuteSqlRequest) requests.get(0)).getSeqno());
+      assertThat(((ExecuteSqlRequest) requests.get(0)).getSeqno()).isEqualTo(1L);
       assertThat(((ExecuteSqlRequest) requests.get(0)).getSql())
           .isEqualTo(SELECT_RANDOM_STATEMENT.getSql());
-      assertEquals(2L, ((ExecuteSqlRequest) requests.get(1)).getSeqno());
+      assertThat(((ExecuteSqlRequest) requests.get(1)).getSeqno()).isEqualTo(2L);
       assertThat(((ExecuteSqlRequest) requests.get(1)).getSql())
           .isEqualTo(INSERT_STATEMENT.getSql());
-      assertEquals(1L, ((ExecuteSqlRequest) requests.get(2)).getSeqno());
+      assertThat(((ExecuteSqlRequest) requests.get(2)).getSeqno()).isEqualTo(1L);
       assertThat(((ExecuteSqlRequest) requests.get(2)).getSql())
           .isEqualTo(SELECT_RANDOM_STATEMENT.getSql());
-      assertEquals(2L, ((ExecuteSqlRequest) requests.get(3)).getSeqno());
+      assertThat(((ExecuteSqlRequest) requests.get(3)).getSeqno()).isEqualTo(2L);
       assertThat(((ExecuteSqlRequest) requests.get(3)).getSql())
           .isEqualTo(INSERT_STATEMENT.getSql());
     }
@@ -348,7 +348,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
             RANDOM_RESULT_SET_ROW_COUNT / 2));
     final RetryCounter counter = new RetryCounter();
     try (Connection connection = createConnection(counter)) {
-      assertEquals(0, counter.retryCount);
+      assertThat(counter.retryCount).isEqualTo(0);
       final CountDownLatch updateLatch = new CountDownLatch(1);
       final CountDownLatch queryLatch = new CountDownLatch(1);
       ApiFuture<Void> finished;
@@ -393,7 +393,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
         get(finished);
         fail("Missing expected exception");
       } catch (AbortedDueToConcurrentModificationException e) {
-        assertEquals(1, counter.retryCount);
+        assertThat(counter.retryCount).isEqualTo(1);
       } finally {
         mockSpanner.putStatementResult(StatementResult.update(INSERT_STATEMENT, UPDATE_COUNT));
       }
@@ -406,16 +406,16 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
       // The entire transaction should be retried, but will not succeed as the result of the update
       // statement was different during the retry.
       assertThat(requests).hasSize(4);
-      assertEquals(1L, ((ExecuteSqlRequest) requests.get(0)).getSeqno());
+      assertThat(((ExecuteSqlRequest) requests.get(0)).getSeqno()).isEqualTo(1L);
       assertThat(((ExecuteSqlRequest) requests.get(0)).getSql())
           .isEqualTo(SELECT_RANDOM_STATEMENT.getSql());
-      assertEquals(2L, ((ExecuteSqlRequest) requests.get(1)).getSeqno());
+      assertThat(((ExecuteSqlRequest) requests.get(1)).getSeqno()).isEqualTo(2L);
       assertThat(((ExecuteSqlRequest) requests.get(1)).getSql())
           .isEqualTo(INSERT_STATEMENT.getSql());
-      assertEquals(1L, ((ExecuteSqlRequest) requests.get(2)).getSeqno());
+      assertThat(((ExecuteSqlRequest) requests.get(2)).getSeqno()).isEqualTo(1L);
       assertThat(((ExecuteSqlRequest) requests.get(2)).getSql())
           .isEqualTo(SELECT_RANDOM_STATEMENT.getSql());
-      assertEquals(2L, ((ExecuteSqlRequest) requests.get(3)).getSeqno());
+      assertThat(((ExecuteSqlRequest) requests.get(3)).getSeqno()).isEqualTo(2L);
       assertThat(((ExecuteSqlRequest) requests.get(3)).getSql())
           .isEqualTo(INSERT_STATEMENT.getSql());
     }
@@ -491,7 +491,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
         get(res1);
         fail("Missing expected exception");
       } catch (AbortedDueToConcurrentModificationException e) {
-        assertEquals(1, counter.retryCount);
+        assertThat(counter.retryCount).isEqualTo(1);
       }
     }
   }
@@ -504,8 +504,8 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
       ApiFuture<Long> updateCount = connection.executeUpdateAsync(INSERT_STATEMENT);
       get(connection.commitAsync());
 
-      assertEquals(UPDATE_COUNT, get(updateCount));
-      assertEquals(1, counter.retryCount);
+      assertThat(get(updateCount)).isEqualTo(UPDATE_COUNT);
+      assertThat(counter.retryCount).isEqualTo(1);
     }
   }
 
@@ -529,7 +529,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
         get(connection.commitAsync());
         fail("Missing expected exception");
       } catch (AbortedDueToConcurrentModificationException e) {
-        assertEquals(1, counter.retryCount);
+        assertThat(counter.retryCount).isEqualTo(1);
       }
     }
   }
@@ -551,7 +551,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
         get(insert);
         fail("Missing expected exception");
       } catch (AbortedDueToConcurrentModificationException e) {
-        assertEquals(1, counter.retryCount);
+        assertThat(counter.retryCount).isEqualTo(1);
       }
 
       // Committing a transaction that has been aborted must fail and must not silently succeed.
@@ -559,7 +559,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
         get(connection.commitAsync());
         fail("Missing expected exception");
       } catch (AbortedDueToConcurrentModificationException e) {
-        assertEquals(1, counter.retryCount);
+        assertThat(counter.retryCount).isEqualTo(1);
       }
     }
   }
@@ -591,7 +591,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
           get(fut);
           fail("Missing expected exception");
         } catch (AbortedDueToConcurrentModificationException e) {
-          assertEquals(1, counter.retryCount);
+          assertThat(counter.retryCount).isEqualTo(1);
         }
       }
     }
@@ -628,7 +628,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
           assertThat(get(fut)).isNull();
           fail("Missing expected exception");
         } catch (AbortedDueToConcurrentModificationException e) {
-          assertEquals(1, counter.retryCount);
+          assertThat(counter.retryCount).isEqualTo(1);
         }
       }
 
@@ -673,7 +673,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
         get(commit);
         fail("Missing expected exception");
       } catch (AbortedDueToConcurrentModificationException e) {
-        assertEquals(1, counter.retryCount);
+        assertThat(counter.retryCount).isEqualTo(1);
       }
     }
   }
