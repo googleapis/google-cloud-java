@@ -521,7 +521,9 @@ public class EnhancedBigtableStubTest {
     Query request = Query.create(TableId.of("table-id")).rowKey("row-key");
     streamingCallable.call(request).iterator().next();
     ReadRowsRequest expected =
-        request.toProto(RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID));
+        request.toProto(RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID)).toBuilder()
+            .setRowsLimit(1)
+            .build();
     assertThat(fakeDataService.popLastRequest()).isEqualTo(expected);
   }
 
