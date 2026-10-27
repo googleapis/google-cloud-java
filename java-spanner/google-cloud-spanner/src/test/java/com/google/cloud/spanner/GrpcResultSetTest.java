@@ -1381,6 +1381,10 @@ public class GrpcResultSetTest {
       // Wait until the reader is blocked waiting for the first chunk of the stream.
       long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(10);
       while (readerThread.get() == null || readerThread.get().getState() != Thread.State.WAITING) {
+        if (nextFuture.isDone()) {
+          nextFuture.get();
+          throw new AssertionError("Reader thread terminated unexpectedly without blocking");
+        }
         assertTrue("reader did not block on the stream", System.nanoTime() < deadline);
         Thread.sleep(10);
       }
