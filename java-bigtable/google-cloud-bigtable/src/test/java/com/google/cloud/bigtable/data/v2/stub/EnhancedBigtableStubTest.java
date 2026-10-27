@@ -981,6 +981,19 @@ public class EnhancedBigtableStubTest {
     }
   }
 
+  @Test
+  public void testReadRowDoesNotMutateQuery() throws Exception {
+    Query query = Query.create(TABLE_ID).rowKey("row-key");
+    enhancedBigtableStub.readRowCallable().call(query);
+    assertThat(fakeDataService.popLastRequest().getRowsLimit()).isEqualTo(1L);
+    assertThat(query).isEqualTo(Query.create(TABLE_ID).rowKey("row-key"));
+
+    // Reusing the query for a multi-row scan should not inherit rows_limit = 1
+    query.rowKey("row-key-2");
+    enhancedBigtableStub.readRowsCallable().all().call(query);
+    assertThat(fakeDataService.popLastRequest().getRowsLimit()).isEqualTo(0L);
+  }
+
   private static class MetadataInterceptor implements ServerInterceptor {
     final BlockingQueue<Metadata> headers = Queues.newLinkedBlockingDeque();
 
