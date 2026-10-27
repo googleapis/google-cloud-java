@@ -43,9 +43,6 @@ grpc-google-cloud-apikeys-v2:0.98.0:0.98.0
 google-cloud-appengine-admin:2.100.0:2.100.0
 grpc-google-cloud-appengine-admin-v1:2.100.0:2.100.0
 proto-google-cloud-appengine-admin-v1:2.100.0:2.100.0
-google-area120-tables:0.104.0:0.104.0
-grpc-google-area120-tables-v1alpha1:0.104.0:0.104.0
-proto-google-area120-tables-v1alpha1:0.104.0:0.104.0
 google-cloud-artifact-registry:1.99.0:1.99.0
 grpc-google-cloud-artifact-registry-v1beta2:1.99.0:1.99.0
 grpc-google-cloud-artifact-registry-v1:1.99.0:1.99.0
@@ -1122,3 +1119,8 @@ grpc-google-cloud-health-v4beta:0.9.0:0.9.0
 proto-google-cloud-health-v4beta:0.9.0:0.9.0
 proto-google-shopping-merchant-reviews-v1:0.46.0:0.46.0
 grpc-google-shopping-merchant-reviews-v1:0.46.0:0.46.0
+google-cloud-observability-parent:0.0.0:0.1.0-SNAPSHOT
+google-cloud-observability-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-cloud-observability-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-observability-v1:0.0.0:0.1.0-SNAPSHOT
+google-cloud-observability:0.0.0:0.1.0-SNAPSHOT

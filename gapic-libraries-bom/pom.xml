@@ -37,13 +37,6 @@
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>com.google.area120</groupId>
-        <artifactId>google-area120-tables-bom</artifactId>
-        <version>0.104.0</version><!-- {x-version-update:google-area120-tables:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-accessapproval-bom</artifactId>
         <version>2.101.0</version><!-- {x-version-update:google-cloud-accessapproval:current} -->
@@ -1037,6 +1030,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-notification</artifactId>
         <version>0.218.0-beta</version><!-- {x-version-update:google-cloud-notification:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-observability-bom</artifactId>
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-observability:current} -->
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
