@@ -360,17 +360,10 @@ case ${JOB_TYPE} in
 
 esac
 
-if [ "${REPORT_COVERAGE}" == "true" ]; then
-  bash ${KOKORO_GFILE_DIR}/codecov.sh
-fi
 
 # fix output location of logs
 bash .kokoro/coerce_logs.sh
 
-if [[ "${ENABLE_FLAKYBOT}" == "true" ]]; then
-  chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/flakybot
-  ${KOKORO_GFILE_DIR}/linux_amd64/flakybot -repo=googleapis/google-cloud-java
-fi
 
 echo "exiting with ${RETURN_CODE}"
 exit ${RETURN_CODE}
