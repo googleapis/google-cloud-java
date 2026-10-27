@@ -31,6 +31,8 @@ import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.TimeZone;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class BigQueryTemporalUtilityTest {
 
@@ -223,6 +225,37 @@ public class BigQueryTemporalUtilityTest {
     Timestamp picosDt =
         BigQueryTemporalUtility.boxDateTime("2026-08-24 15:30:45.123456789012", ZoneId.of("UTC"));
     assertThat(picosDt.getNanos()).isEqualTo(123456789);
+  }
+
+  /** Pre-1582 and pre-standard-time digits, with and without a Calendar zone. */
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/Los_Angeles", "Asia/Kolkata"})
+  public void testBoxCivilValuesKeepDigits(String jvmZone) {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(jvmZone));
+      ZoneId calZone = ZoneId.of("Asia/Tokyo");
+      for (String digits : new String[] {"0001-01-01", "1582-10-04", "1850-06-01"}) {
+        LocalDateTime noon = LocalDateTime.parse(digits + "T12:00:00");
+        assertThat(BigQueryTemporalUtility.boxDate(digits, null).toLocalDate())
+            .isEqualTo(LocalDate.parse(digits));
+        assertThat(
+                BigQueryTemporalUtility.boxDateTime(digits + " 12:00:00", null).toLocalDateTime())
+            .isEqualTo(noon);
+        assertThat(
+                BigQueryTemporalUtility.unboxDateTime(
+                    BigQueryTemporalUtility.boxDateTime(noon, calZone), calZone))
+            .isEqualTo(noon);
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(calZone));
+        cal.setTime(BigQueryTemporalUtility.boxDate(digits, calZone));
+        assertThat(
+                LocalDate.of(
+                    cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DATE)))
+            .isEqualTo(LocalDate.parse(digits));
+      }
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
   }
 
   @Test
