@@ -1037,6 +1037,31 @@ public class ITObjectTest {
   }
 
   @Test
+  public void testCopyBlob_targetBlobInfo_doesNotInheritMetadata() {
+    String sourceBlobName = generator.randomObjectName() + "-source";
+    BlobId source = BlobId.of(bucket.getName(), sourceBlobName);
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
+    Blob remoteSourceBlob =
+        storage.create(
+            BlobInfo.newBuilder(source).setMetadata(metadata).build(), BLOB_BYTE_CONTENT);
+    assertNotNull(remoteSourceBlob);
+    String targetBlobName = generator.randomObjectName() + "-target";
+    CopyRequest req =
+        CopyRequest.newBuilder()
+            .setSource(source)
+            .setTarget(
+                BlobInfo.newBuilder(bucket, targetBlobName).build(),
+                BlobTargetOption.doesNotExist())
+            .build();
+    CopyWriter copyWriter = storage.copy(req);
+    Blob gen1 = copyWriter.getResult();
+    assertThat(gen1.getMetadata()).isAnyOf(null, ImmutableMap.of());
+    assertTrue(copyWriter.isDone());
+    assertTrue(remoteSourceBlob.delete());
+    assertTrue(storage.delete(gen1.getBlobId()));
+  }
+
+  @Test
   public void testCopyBlobFail() {
 
     String baseName = generator.randomObjectName();
