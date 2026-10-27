@@ -110,6 +110,10 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   @VisibleForTesting
   static final String DIRECT_PATH_ENV_ENABLE_XDS = "GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS";
 
+  @VisibleForTesting
+  static final String DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT =
+      "GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS_OVER_INTERCONNECT";
+
   private static final String DIRECT_PATH_INTERCONNECT_INFIX = "-direct.";
 
   // The public portion of the mTLS MDS root certificate is stored for performing
@@ -445,13 +449,26 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   }
 
   private boolean isAttemptDirectPathXdsOverInterconnect() {
+    String directPathInterconnectEnv =
+        envProvider.getenv(DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT);
+    if (directPathInterconnectEnv != null) {
+      String trimmed = directPathInterconnectEnv.trim();
+      if ("true".equalsIgnoreCase(trimmed)) {
+        return true;
+      }
+      if ("false".equalsIgnoreCase(trimmed)) {
+        return false;
+      }
+    }
     return Boolean.TRUE.equals(attemptDirectPathXdsOverInterconnect);
   }
 
   /**
-   * This method tells if Direct Path xDS was enabled. There are two ways of enabling it: via
-   * environment variable (by setting GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS=true) or when building
-   * this channel provider (via the {@link Builder#setAttemptDirectPathXds()} method).
+   * This method tells if Direct Path xDS was enabled. It can be enabled via environment variables
+   * ({@code GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS=true} or {@code
+   * GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS_OVER_INTERCONNECT=true}) or when building this channel
+   * provider (via {@link Builder#setAttemptDirectPathXds()} or {@link
+   * Builder#setAttemptDirectPathXdsOverInterconnect(boolean)}).
    *
    * @return true if Direct Path xDS was either enabled via env var or via builder option
    */
@@ -1353,7 +1370,13 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       return this;
     }
 
-    /** Use DirectPath xDS over Interconnect. Bypasses GCP GCE environment checks. */
+    /**
+     * Use DirectPath xDS over Interconnect. Bypasses GCP GCE environment checks.
+     *
+     * <p>This can also be enabled or disabled via the {@code
+     * GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS_OVER_INTERCONNECT} environment variable ({@code "true"}
+     * or {@code "false"}), which takes precedence over this builder option.
+     */
     @InternalApi("For internal use by google-cloud-java clients only")
     public Builder setAttemptDirectPathXdsOverInterconnect(
         boolean attemptDirectPathXdsOverInterconnect) {

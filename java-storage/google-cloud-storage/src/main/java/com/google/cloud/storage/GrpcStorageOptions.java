@@ -567,6 +567,10 @@ public final class GrpcStorageOptions extends StorageOptions
      * Option for whether this client should attempt to use DirectPath over Interconnect (on-premise
      * xDS name resolution).
      *
+     * <p>This can also be enabled or disabled via the {@code
+     * GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS_OVER_INTERCONNECT} environment variable ({@code "true"}
+     * or {@code "false"}), which takes precedence over this builder option.
+     *
      * @since 2.76.0
      */
     @BetaApi
