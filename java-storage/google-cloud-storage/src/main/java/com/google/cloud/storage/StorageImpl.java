@@ -209,7 +209,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     if (size == 0L) {
       return create(blobInfo, null, options);
     }
-    StorageMetricsContext multiContext = getOptions().createMultiStepMetricsContext("WriteObject");
+    StorageMetricsContext multiContext =
+        StorageClientMetrics.createMultiStepContext(
+            getOptions().getStorageClientMetrics(), "WriteObject");
     Throwable error = null;
     try {
       Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
@@ -459,7 +461,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
           return new PageImpl<>(
               new BucketPageFetcher(serviceOptions, cursor, optionsMap, retrier), cursor, buckets);
         },
-        serviceOptions.createMetricsContext("ListBuckets"));
+        StorageClientMetrics.createContext(
+            serviceOptions.getStorageClientMetrics(), "ListBuckets"));
   }
 
   private static Page<Blob> listBlobs(
@@ -488,7 +491,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
               cursor,
               blobs);
         },
-        serviceOptions.createMetricsContext("ListObjects"));
+        StorageClientMetrics.createContext(
+            serviceOptions.getStorageClientMetrics(), "ListObjects"));
   }
 
   @Override
@@ -724,7 +728,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
             copyRequest.getMegabytesCopiedPerChunk());
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForObjectsRewrite(rewriteRequest);
     StorageMetricsContext multiContext =
-        getOptions().createMultiStepMetricsContext("RewriteObject");
+        StorageClientMetrics.createMultiStepContext(
+            getOptions().getStorageClientMetrics(), "RewriteObject");
     try {
       return retrier.run(
           algorithm,
@@ -736,7 +741,10 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
             }
             return writer;
           },
-          multiContext != null ? multiContext : getOptions().createMetricsContext("RewriteObject"));
+          multiContext != null
+              ? multiContext
+              : StorageClientMetrics.createContext(
+                  getOptions().getStorageClientMetrics(), "RewriteObject"));
     } catch (Throwable t) {
       if (multiContext != null) {
         multiContext.recordOperation(getOptions().getStorageClientMetrics(), t);
@@ -780,7 +788,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     Opts<ObjectSourceOpt> opts = Opts.unwrap(options).resolveFrom(blob);
     StorageObject storageObject = Conversions.json().blobId().encode(blob);
     ImmutableMap<StorageRpc.Option, ?> optionsMap = opts.getRpcOptions();
-    StorageMetricsContext metricsContext = getOptions().createMultiStepMetricsContext("ReadObject");
+    StorageMetricsContext metricsContext =
+        StorageClientMetrics.createMultiStepContext(
+            getOptions().getStorageClientMetrics(), "ReadObject");
     return new BlobReadChannelV2(
         storageObject, optionsMap, BlobReadChannelContext.from(this), metricsContext);
   }
@@ -821,7 +831,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
 
     StorageObject encode = codecs.blobInfo().encode(updated);
     StorageMetricsContext metricsContext =
-        getOptions().createMultiStepMetricsContext("WriteObject");
+        StorageClientMetrics.createMultiStepContext(
+            getOptions().getStorageClientMetrics(), "WriteObject");
     try {
       // open the resumable session outside the write channel
       // the exception behavior of open is different from #write(ByteBuffer)
@@ -861,7 +872,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     // the exception behavior of open is different from #write(ByteBuffer)
     String signedUrlString = signedURL.toString();
     StorageMetricsContext metricsContext =
-        getOptions().createMultiStepMetricsContext("WriteObject");
+        StorageClientMetrics.createMultiStepContext(
+            getOptions().getStorageClientMetrics(), "WriteObject");
     try {
       Supplier<String> uploadIdSupplier =
           ResumableMedia.startUploadForSignedUrl(
@@ -1677,7 +1689,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
               cursor,
               metadata);
         },
-        serviceOptions.createMetricsContext("ListHMACKeys"));
+        StorageClientMetrics.createContext(
+            serviceOptions.getStorageClientMetrics(), "ListHMACKeys"));
   }
 
   @Override
@@ -1755,7 +1768,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
 
   private <T, U> U run(
       String operationName, ResultRetryAlgorithm<?> algorithm, Callable<T> c, Decoder<T, U> f) {
-    return retrier.run(algorithm, c, f, getOptions().createMetricsContext(operationName));
+    return retrier.run(
+        algorithm,
+        c,
+        f,
+        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), operationName));
   }
 
   @Override
