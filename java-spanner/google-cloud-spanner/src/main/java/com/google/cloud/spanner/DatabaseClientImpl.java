@@ -99,6 +99,11 @@ class DatabaseClientImpl implements DatabaseClient {
             throw SpannerExceptionFactory.propagateInterrupt(e);
           }
         }
+
+        @Override
+        protected boolean shouldCacheError(Exception e) {
+          return MultiplexedSessionDatabaseClient.shouldCacheDialectError(e);
+        }
       };
 
   @Override

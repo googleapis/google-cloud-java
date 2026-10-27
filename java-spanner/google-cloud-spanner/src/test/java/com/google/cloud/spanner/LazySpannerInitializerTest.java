@@ -120,6 +120,11 @@ public class LazySpannerInitializerTest {
             }
             return expectedSpanner;
           }
+
+          @Override
+          protected boolean shouldCacheError(Exception e) {
+            return MultiplexedSessionDatabaseClient.shouldCacheDialectError(e);
+          }
         };
     SpannerException e1 = assertThrows(SpannerException.class, initializer::get);
     assertThat(e1.getErrorCode()).isEqualTo(ErrorCode.UNAVAILABLE);
@@ -146,6 +151,11 @@ public class LazySpannerInitializerTest {
                   ErrorCode.UNAVAILABLE, "Transient error");
             }
             return expectedSpanner;
+          }
+
+          @Override
+          protected boolean shouldCacheError(Exception e) {
+            return MultiplexedSessionDatabaseClient.shouldCacheDialectError(e);
           }
         };
     final int threads = 16;
