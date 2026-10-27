@@ -3212,7 +3212,7 @@ public class DatabaseClientImplTest {
   public void testGetDialectAndStatementFactory_RecoverAfterTransientQueryFailure() {
     mockSpanner.putStatementResult(
         StatementResult.exception(
-            MultiplexedSessionDatabaseClient.DETERMINE_DIALECT_STATEMENT,
+            DatabaseMetadata.STATEMENT,
             Status.DEADLINE_EXCEEDED
                 .withDescription("Transient dialect query timeout")
                 .asRuntimeException()));
@@ -3245,7 +3245,7 @@ public class DatabaseClientImplTest {
   public void testGetDialect_CachesNonRetryableQueryFailure() {
     mockSpanner.putStatementResult(
         StatementResult.exception(
-            MultiplexedSessionDatabaseClient.DETERMINE_DIALECT_STATEMENT,
+            DatabaseMetadata.STATEMENT,
             Status.PERMISSION_DENIED
                 .withDescription("Permission denied on information_schema")
                 .asRuntimeException()));
@@ -3261,6 +3261,55 @@ public class DatabaseClientImplTest {
       mockSpanner.putStatementResult(
           StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));
     }
+  }
+
+  @Test
+  public void testGetDatabaseDefaultIsolationLevelDefault() {
+    DatabaseClient client =
+        spanner.getDatabaseClient(DatabaseId.of(TEST_PROJECT, TEST_INSTANCE, TEST_DATABASE));
+    assertEquals(IsolationLevel.SERIALIZABLE, client.getDatabaseDefaultIsolationLevel());
+  }
+
+  @Test
+  public void testGetDatabaseDefaultIsolationLevelRepeatableRead() {
+    mockSpanner.putStatementResult(
+        StatementResult.detectDialectResult(Dialect.POSTGRESQL, IsolationLevel.REPEATABLE_READ));
+    try {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of(TEST_PROJECT, TEST_INSTANCE, TEST_DATABASE));
+      assertEquals(Dialect.POSTGRESQL, client.getDialect());
+      assertEquals(IsolationLevel.REPEATABLE_READ, client.getDatabaseDefaultIsolationLevel());
+    } finally {
+      mockSpanner.putStatementResult(
+          StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));
+    }
+  }
+
+  @Test
+  public void testGetDialectAndDefaultIsolationLevelCachedWithSingleQuery() {
+    mockSpanner.putStatementResult(
+        StatementResult.detectDialectResult(Dialect.POSTGRESQL, IsolationLevel.REPEATABLE_READ));
+    mockSpanner.setIncludeDetermineDialectStatementInRequests(true);
+    try {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of(TEST_PROJECT, TEST_INSTANCE, TEST_DATABASE));
+      assertEquals(IsolationLevel.REPEATABLE_READ, client.getDatabaseDefaultIsolationLevel());
+      assertEquals(Dialect.POSTGRESQL, client.getDialect());
+      assertEquals(IsolationLevel.REPEATABLE_READ, client.getDatabaseDefaultIsolationLevel());
+      assertEquals(Dialect.POSTGRESQL, client.getDialect());
+
+      assertEquals(1L, countDatabaseMetadataQueries());
+    } finally {
+      mockSpanner.setIncludeDetermineDialectStatementInRequests(false);
+      mockSpanner.putStatementResult(
+          StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));
+    }
+  }
+
+  private long countDatabaseMetadataQueries() {
+    return mockSpanner.getRequestsOfType(ExecuteSqlRequest.class).stream()
+        .filter(request -> request.getSql().equals(DatabaseMetadata.STATEMENT.getSql()))
+        .count();
   }
 
   @Test

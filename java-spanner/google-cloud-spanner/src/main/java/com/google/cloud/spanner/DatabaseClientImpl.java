@@ -27,6 +27,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.spanner.v1.BatchWriteResponse;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import io.opentelemetry.api.common.Attributes;
 import java.util.HashMap;
 import java.util.Map;
@@ -78,6 +79,11 @@ class DatabaseClientImpl implements DatabaseClient {
   @Override
   public Dialect getDialect() {
     return this.multiplexedSessionDatabaseClient.getDialect();
+  }
+
+  @Override
+  public IsolationLevel getDatabaseDefaultIsolationLevel() {
+    return this.multiplexedSessionDatabaseClient.getDatabaseDefaultIsolationLevel();
   }
 
   private final AbstractLazyInitializer<StatementFactory> statementFactorySupplier =

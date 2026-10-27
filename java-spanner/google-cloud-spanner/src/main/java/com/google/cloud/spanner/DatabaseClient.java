@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
@@ -39,6 +40,21 @@ public interface DatabaseClient {
    * @return the SQL dialect that is used by the database.
    */
   default Dialect getDialect() {
+    throw new UnsupportedOperationException("method should be overwritten");
+  }
+
+  /**
+   * Returns the default transaction isolation level that is configured for the database with the
+   * {@code default_transaction_isolation} database option, or {@link IsolationLevel#SERIALIZABLE}
+   * if the option has not been set.
+   *
+   * <p>The option is read once, together with the dialect of the database, and is cached for the
+   * lifetime of this client. Changes to the option after it has been read are not reflected.
+   *
+   * @return the default transaction isolation level configured for the database.
+   */
+  @InternalApi
+  default IsolationLevel getDatabaseDefaultIsolationLevel() {
     throw new UnsupportedOperationException("method should be overwritten");
   }
 
