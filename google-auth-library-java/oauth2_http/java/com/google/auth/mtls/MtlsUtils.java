@@ -323,12 +323,9 @@ public class MtlsUtils {
           initialStartupCompleted = true;
           throw e;
         } catch (IllegalArgumentException | ClassCastException e) {
-          if (!shouldPoll || !"no JSON input found".equals(e.getMessage())) {
-            // Valid JSON missing or mistyped cert_configs, cert_path, or key_path; do not poll.
-            initialStartupCompleted = true;
-            throw e;
-          }
-          // Empty or whitespace-only file during startup write; retry polling.
+          // Valid JSON missing or mistyped cert_configs, cert_path, or key_path; do not poll.
+          initialStartupCompleted = true;
+          throw e;
         } catch (Exception e) {
           if (!shouldPoll) {
             initialStartupCompleted = true;
