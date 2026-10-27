@@ -12,23 +12,6 @@ polling_configuration {
 }
 
 session_configuration {
-  session_diversion_configuration {
-    per_scope_diversion {
-      scope_diversions {
-        key: "method:Bigtable.ReadRow"
-        value {
-          session_load: 0
-        }
-      }
-      scope_diversions {
-        key: "method:Bigtable.MutateRow"
-        value {
-          session_load: 0
-        }
-      }
-    }
-  }
-
   channel_configuration {
     min_server_count: 2
     max_server_count: 25

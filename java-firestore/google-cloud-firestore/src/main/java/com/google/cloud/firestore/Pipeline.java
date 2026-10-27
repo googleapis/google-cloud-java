@@ -21,7 +21,6 @@ import static com.google.cloud.firestore.telemetry.TraceUtil.ATTRIBUTE_KEY_DOC_C
 import static com.google.cloud.firestore.telemetry.TraceUtil.ATTRIBUTE_KEY_IS_TRANSACTIONAL;
 
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.core.SettableApiFuture;
@@ -235,7 +234,6 @@ public final class Pipeline {
    * @param searchStage An object that specifies how search is performed.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline search(Search searchStage) {
     return append(searchStage);
   }
