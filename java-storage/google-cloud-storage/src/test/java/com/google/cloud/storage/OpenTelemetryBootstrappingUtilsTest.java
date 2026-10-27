@@ -215,4 +215,90 @@ public final class OpenTelemetryBootstrappingUtilsTest {
       assertThat(provider.toString()).contains("host.id=\"test-host-123\"");
     }
   }
+
+  @Test
+  public void extractServerAddress_parsesVariousHostFormats() {
+    assertThat(
+            OpenTelemetryBootstrappingUtils.extractServerAddress("https://storage.googleapis.com"))
+        .isEqualTo("storage.googleapis.com");
+    assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress("http://localhost:8080"))
+        .isEqualTo("localhost");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.extractServerAddress(
+                "google-c2p:///storage.googleapis.com"))
+        .isEqualTo("storage.googleapis.com");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.extractServerAddress(
+                "https://storage.googleapis.com/path"))
+        .isEqualTo("storage.googleapis.com");
+    assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress("http://[::1]:8080"))
+        .isEqualTo("::1");
+    assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress("[::1]")).isEqualTo("::1");
+    assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress(null)).isNull();
+    assertThat(OpenTelemetryBootstrappingUtils.extractServerAddress("   ")).isNull();
+  }
+
+  @Test
+  public void formatStorageEndpoint_formatsVariousHostFormats() {
+    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint(null))
+        .isEqualTo("storage.googleapis.com:443");
+    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("   "))
+        .isEqualTo("storage.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.formatStorageEndpoint("https://storage.googleapis.com"))
+        .isEqualTo("storage.googleapis.com:443");
+    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("http://localhost:8080/"))
+        .isEqualTo("localhost:8080");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.formatStorageEndpoint(
+                "google-c2p:///storage.googleapis.com"))
+        .isEqualTo("storage.googleapis.com:443");
+    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("http://[::1]:8080"))
+        .isEqualTo("[::1]:8080");
+    assertThat(OpenTelemetryBootstrappingUtils.formatStorageEndpoint("[::1]"))
+        .isEqualTo("[::1]:443");
+  }
+
+  @Test
+  public void createDefaultClientMeterProvider_detectedProjectIdTakesPrecedence() {
+    Attributes detectedWithProject =
+        Attributes.builder().put("cloud.account.id", "detected-project").build();
+
+    try (SdkMeterProvider provider =
+        OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
+            "https://storage.googleapis.com",
+            "configured-project",
+            "googleapis.com",
+            Duration.ofSeconds(60),
+            "json",
+            detectedWithProject)) {
+      assertThat(provider).isNotNull();
+      assertThat(provider.toString()).contains("project_id=\"detected-project\"");
+      assertThat(provider.toString()).contains("cloud.account.id=\"detected-project\"");
+      assertThat(provider.toString()).contains("api=\"json\"");
+    }
+
+    try (SdkMeterProvider fallbackProvider =
+        OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
+            "https://storage.googleapis.com",
+            "configured-project",
+            "googleapis.com",
+            Duration.ofSeconds(60),
+            "grpc",
+            Attributes.empty())) {
+      assertThat(fallbackProvider).isNotNull();
+      assertThat(fallbackProvider.toString()).contains("project_id=\"configured-project\"");
+      assertThat(fallbackProvider.toString()).contains("api=\"grpc\"");
+    }
+
+    SdkMeterProvider nullProvider =
+        OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
+            "https://storage.googleapis.com",
+            null,
+            "googleapis.com",
+            Duration.ofSeconds(60),
+            "json",
+            Attributes.empty());
+    assertThat(nullProvider).isNull();
+  }
 }
