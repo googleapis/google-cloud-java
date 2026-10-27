@@ -1164,6 +1164,16 @@ final class KeyAwareChannel extends ManagedChannel {
         boolean routePreferLeader = transactionId.isEmpty() && preferLeader;
         endpoint = finder.findServer(reqBuilder, routePreferLeader, excludedEndpoints);
         preferLeader = routePreferLeader;
+      } else if (finder != null) {
+        // The request belongs to a read-write transaction and stays pinned to the transaction's
+        // affinity endpoint. Still populate the routing hint (operation UID, key and target range)
+        // so that:
+        //  - the server returns key recipes for this statement shape, which the client otherwise
+        //    never learns for statements that only run inside read-write transactions; and
+        //  - the server can serve the request on the fastpath, or forward it through the fastpath
+        //    when the key is not local to the transaction owner.
+        // The endpoint selected by the finder is ignored to preserve transaction affinity.
+        finder.findServer(reqBuilder, preferLeader, excludedEndpoints);
       }
       return new RoutingDecision(
           finder, endpoint, databaseId, operationUid(reqBuilder.getRoutingHint()), preferLeader);
@@ -1186,6 +1196,16 @@ final class KeyAwareChannel extends ManagedChannel {
         boolean routePreferLeader = transactionId.isEmpty() && preferLeader;
         endpoint = finder.findServer(reqBuilder, routePreferLeader, excludedEndpoints);
         preferLeader = routePreferLeader;
+      } else if (finder != null) {
+        // The request belongs to a read-write transaction and stays pinned to the transaction's
+        // affinity endpoint. Still populate the routing hint (operation UID, key and target range)
+        // so that:
+        //  - the server returns key recipes for this statement shape, which the client otherwise
+        //    never learns for statements that only run inside read-write transactions; and
+        //  - the server can serve the request on the fastpath, or forward it through the fastpath
+        //    when the key is not local to the transaction owner.
+        // The endpoint selected by the finder is ignored to preserve transaction affinity.
+        finder.findServer(reqBuilder, preferLeader, excludedEndpoints);
       }
       return new RoutingDecision(
           finder, endpoint, databaseId, operationUid(reqBuilder.getRoutingHint()), preferLeader);

@@ -1315,6 +1315,70 @@ public class KeyAwareChannelTest {
   }
 
   @Test
+  public void readWriteTransactionReadAttachesRoutingHintWhilePinnedToAffinityEndpoint()
+      throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("rw-read-routing-hint");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+
+    // Key "n" is owned by server-b, but the transaction is pinned to server-a.
+    ClientCall<ReadRequest, PartialResultSet> call =
+        harness.channel.newCall(SpannerGrpc.getStreamingReadMethod(), CallOptions.DEFAULT);
+    call.start(new CapturingListener<PartialResultSet>(), new Metadata());
+    call.sendMessage(
+        ReadRequest.newBuilder()
+            .setSession(SESSION)
+            .setTable("T")
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .setRoutingHint(RoutingHint.newBuilder().setKey(bytes("n")))
+            .build());
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
+    assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(0);
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ReadRequest, PartialResultSet> delegate =
+        (RecordingClientCall<ReadRequest, PartialResultSet>)
+            harness.endpointCache.latestCallForAddress("server-a:1234");
+    RoutingHint routingHint = delegate.lastMessage.getRoutingHint();
+    assertThat(routingHint.getOperationUid()).isNotEqualTo(0L);
+    assertThat(routingHint.getDatabaseId()).isEqualTo(7L);
+    assertThat(routingHint.getKey()).isEqualTo(bytes("n"));
+    assertThat(routingHint.getGroupUid()).isEqualTo(2L);
+  }
+
+  @Test
+  public void readWriteTransactionQueryAttachesRoutingHintWhilePinnedToAffinityEndpoint()
+      throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("rw-query-routing-hint");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+
+    // Key "n" is owned by server-b, but the transaction is pinned to server-a.
+    ClientCall<ExecuteSqlRequest, PartialResultSet> call =
+        harness.channel.newCall(SpannerGrpc.getExecuteStreamingSqlMethod(), CallOptions.DEFAULT);
+    call.start(new CapturingListener<PartialResultSet>(), new Metadata());
+    call.sendMessage(
+        ExecuteSqlRequest.newBuilder()
+            .setSession(SESSION)
+            .setSql("SELECT * FROM T WHERE K = @k")
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .setRoutingHint(RoutingHint.newBuilder().setKey(bytes("n")))
+            .build());
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
+    assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(0);
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteSqlRequest, PartialResultSet> delegate =
+        (RecordingClientCall<ExecuteSqlRequest, PartialResultSet>)
+            harness.endpointCache.latestCallForAddress("server-a:1234");
+    RoutingHint routingHint = delegate.lastMessage.getRoutingHint();
+    assertThat(routingHint.getOperationUid()).isNotEqualTo(0L);
+    assertThat(routingHint.getDatabaseId()).isEqualTo(7L);
+    assertThat(routingHint.getKey()).isEqualTo(bytes("n"));
+    assertThat(routingHint.getGroupUid()).isEqualTo(2L);
+  }
+
+  @Test
   public void genericUnimplementedReroutesOnceAndLearnsDefaultOnlyMethod() throws Exception {
     TestHarness harness = createHarness();
     ByteString transactionId = ByteString.copyFromUtf8("generic-unimplemented");
