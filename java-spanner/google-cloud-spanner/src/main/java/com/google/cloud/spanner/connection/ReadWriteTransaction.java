@@ -1329,7 +1329,7 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
         @Override
         public Void call() {
           try {
-            if (state != UnitOfWorkState.ABORTED && rolledBackToSavepointException == null) {
+            if (state != UnitOfWorkState.ABORTED && abortedException == null && rolledBackToSavepointException == null) {
               // Make sure the transaction has actually started before we try to rollback.
               get(txContextFuture);
               txManager.rollback();
@@ -1358,10 +1358,11 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
         state == UnitOfWorkState.STARTED || state == UnitOfWorkState.ABORTED,
         "This transaction has status " + state.name());
     cancelScheduledKeepAlivePing();
+    boolean isAborted = (state == UnitOfWorkState.ABORTED) || (this.abortedException != null);
     if (updateStatusAndEndSpan) {
       state = UnitOfWorkState.ROLLED_BACK;
     }
-    if (txContextFuture != null && state != UnitOfWorkState.ABORTED) {
+    if (txContextFuture != null && !isAborted) {
       ApiFuture<Void> result =
           executeStatementAsync(
               callType, ROLLBACK_STATEMENT, rollbackCallable, SpannerGrpc.getRollbackMethod());
