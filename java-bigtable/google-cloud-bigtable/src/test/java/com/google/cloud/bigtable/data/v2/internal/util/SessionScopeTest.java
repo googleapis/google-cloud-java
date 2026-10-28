@@ -23,7 +23,7 @@ import com.google.bigtable.v2.SessionDiversionConfiguration.PerScopeDiversion;
 import com.google.bigtable.v2.SessionScopeDiversionConfiguration;
 import org.junit.jupiter.api.Test;
 
-class SessionScopeTest {
+@SuppressWarnings("deprecation") class SessionScopeTest {
 
   @Test
   void noDiversionConfig_flatSessionLoadIgnored() {
