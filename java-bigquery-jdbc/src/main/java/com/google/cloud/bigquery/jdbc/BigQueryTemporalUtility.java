@@ -462,7 +462,7 @@ final class BigQueryTemporalUtility {
         && field.getRangeElementType() != null
         && field.getRangeElementType().getType() != null) {
       try {
-        return StandardSQLTypeName.valueOf(field.getRangeElementType().getType().toUpperCase());
+        return StandardSQLTypeName.valueOf(field.getRangeElementType().getType());
       } catch (IllegalArgumentException ignored) {
       }
     }
