@@ -62,7 +62,7 @@ public interface QuotaGroupOrBuilder
    * <pre>
    * Output only. The current quota usage, meaning the number of calls already
    * made on a given day to the methods in the group. The daily quota limits
-   * reset at at 12:00 PM midday UTC.
+   * reset at 12:00 PM midday UTC.
    * </pre>
    *
    * <code>int64 quota_usage = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

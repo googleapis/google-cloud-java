@@ -60,6 +60,27 @@ public class MockMemorystoreImpl extends MemorystoreImplBase {
   }
 
   @Override
+  public void listAclPolicies(
+      ListAclPoliciesRequest request, StreamObserver<ListAclPoliciesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAclPoliciesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAclPoliciesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAclPolicies, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAclPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listInstances(
       ListInstancesRequest request, StreamObserver<ListInstancesResponse> responseObserver) {
     Object response = responses.poll();
@@ -81,6 +102,27 @@ public class MockMemorystoreImpl extends MemorystoreImplBase {
   }
 
   @Override
+  public void getAclPolicy(
+      GetAclPolicyRequest request, StreamObserver<AclPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AclPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((AclPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAclPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AclPolicy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getInstance(GetInstanceRequest request, StreamObserver<Instance> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Instance) {
@@ -96,6 +138,27 @@ public class MockMemorystoreImpl extends MemorystoreImplBase {
                   "Unrecognized response type %s for method GetInstance, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Instance.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAclPolicy(
+      CreateAclPolicyRequest request, StreamObserver<AclPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AclPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((AclPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAclPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AclPolicy.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -122,6 +185,27 @@ public class MockMemorystoreImpl extends MemorystoreImplBase {
   }
 
   @Override
+  public void updateAclPolicy(
+      UpdateAclPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAclPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateInstance(
       UpdateInstanceRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
@@ -138,6 +222,72 @@ public class MockMemorystoreImpl extends MemorystoreImplBase {
                   "Unrecognized response type %s for method UpdateInstance, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAclPolicy(
+      DeleteAclPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAclPolicy, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAclPolicyRevision(
+      GetAclPolicyRevisionRequest request, StreamObserver<AclPolicyRevision> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AclPolicyRevision) {
+      requests.add(request);
+      responseObserver.onNext(((AclPolicyRevision) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAclPolicyRevision, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AclPolicyRevision.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAclPolicyRevisions(
+      ListAclPolicyRevisionsRequest request,
+      StreamObserver<ListAclPolicyRevisionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAclPolicyRevisionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAclPolicyRevisionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAclPolicyRevisions, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAclPolicyRevisionsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

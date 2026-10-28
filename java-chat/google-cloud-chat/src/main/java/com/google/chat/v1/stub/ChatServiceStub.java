@@ -92,6 +92,8 @@ import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
 import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.ReplaceMessageCardsRequest;
+import com.google.chat.v1.ReplaceMessageCardsResponse;
 import com.google.chat.v1.SearchMessagesRequest;
 import com.google.chat.v1.SearchMessagesResponse;
 import com.google.chat.v1.SearchSpacesRequest;
@@ -396,6 +398,11 @@ public abstract class ChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse> moveSectionItemCallable() {
     throw new UnsupportedOperationException("Not implemented: moveSectionItemCallable()");
+  }
+
+  public UnaryCallable<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+      replaceMessageCardsCallable() {
+    throw new UnsupportedOperationException("Not implemented: replaceMessageCardsCallable()");
   }
 
   @Override

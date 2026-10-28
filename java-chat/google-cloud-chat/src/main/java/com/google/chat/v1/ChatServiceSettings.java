@@ -389,6 +389,12 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     return ((ChatServiceStubSettings) getStubSettings()).moveSectionItemSettings();
   }
 
+  /** Returns the object with the settings used for calls to replaceMessageCards. */
+  public UnaryCallSettings<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+      replaceMessageCardsSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).replaceMessageCardsSettings();
+  }
+
   public static final ChatServiceSettings create(ChatServiceStubSettings stub) throws IOException {
     return new ChatServiceSettings.Builder(stub.toBuilder()).build();
   }
@@ -799,6 +805,12 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     public UnaryCallSettings.Builder<MoveSectionItemRequest, MoveSectionItemResponse>
         moveSectionItemSettings() {
       return getStubSettingsBuilder().moveSectionItemSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to replaceMessageCards. */
+    public UnaryCallSettings.Builder<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+        replaceMessageCardsSettings() {
+      return getStubSettingsBuilder().replaceMessageCardsSettings();
     }
 
     @Override

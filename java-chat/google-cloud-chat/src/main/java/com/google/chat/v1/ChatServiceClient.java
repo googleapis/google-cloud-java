@@ -1203,6 +1203,23 @@ import org.jspecify.annotations.Nullable;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> ReplaceMessageCards</td>
+ *      <td><p> Replaces the cards included in a message.
+ * <p>  A Chat app can only replace cards on a human-created message if the message already contains cards, and the cards were created by the app.
+ * <p>  If the app replaces the cards with an empty list, the cards are removed. After removing the cards, the app cannot add cards back to the message.
+ * <p>  Requires [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) with the [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):   - `https://www.googleapis.com/auth/chat.bot`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> replaceMessageCards(ReplaceMessageCardsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> replaceMessageCardsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -10978,6 +10995,89 @@ public class ChatServiceClient implements BackgroundResource {
   public final UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse>
       moveSectionItemCallable() {
     return stub.moveSectionItemCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Replaces the cards included in a message.
+   *
+   * <p>A Chat app can only replace cards on a human-created message if the message already contains
+   * cards, and the cards were created by the app.
+   *
+   * <p>If the app replaces the cards with an empty list, the cards are removed. After removing the
+   * cards, the app cannot add cards back to the message.
+   *
+   * <p>Requires [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): -
+   * `https://www.googleapis.com/auth/chat.bot`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ReplaceMessageCardsRequest request =
+   *       ReplaceMessageCardsRequest.newBuilder()
+   *           .setName(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+   *           .addAllCardsV2(new ArrayList<CardWithId>())
+   *           .build();
+   *   ReplaceMessageCardsResponse response = chatServiceClient.replaceMessageCards(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReplaceMessageCardsResponse replaceMessageCards(ReplaceMessageCardsRequest request) {
+    return replaceMessageCardsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Replaces the cards included in a message.
+   *
+   * <p>A Chat app can only replace cards on a human-created message if the message already contains
+   * cards, and the cards were created by the app.
+   *
+   * <p>If the app replaces the cards with an empty list, the cards are removed. After removing the
+   * cards, the app cannot add cards back to the message.
+   *
+   * <p>Requires [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): -
+   * `https://www.googleapis.com/auth/chat.bot`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ReplaceMessageCardsRequest request =
+   *       ReplaceMessageCardsRequest.newBuilder()
+   *           .setName(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+   *           .addAllCardsV2(new ArrayList<CardWithId>())
+   *           .build();
+   *   ApiFuture<ReplaceMessageCardsResponse> future =
+   *       chatServiceClient.replaceMessageCardsCallable().futureCall(request);
+   *   // Do something.
+   *   ReplaceMessageCardsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+      replaceMessageCardsCallable() {
+    return stub.replaceMessageCardsCallable();
   }
 
   @Override

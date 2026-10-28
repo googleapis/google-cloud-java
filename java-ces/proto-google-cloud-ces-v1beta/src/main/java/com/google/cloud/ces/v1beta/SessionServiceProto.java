@@ -81,6 +81,10 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_Citations_CitedChunk_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_Citations_InlineCitation_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_Citations_InlineCitation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_ces_v1beta_Event_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_Event_fieldAccessorTable;
@@ -128,6 +132,82 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
       internal_static_google_cloud_ces_v1beta_BidiSessionServerMessage_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_BidiSessionServerMessage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_StreamChatAiAssistantRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_StreamChatAiAssistantRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_AssistantSuggestion_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_AssistantSuggestion_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_AssistantSuggestion_LoadSession_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_AssistantSuggestion_LoadSession_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateOnboardingSuggestionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateOnboardingSuggestionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_GenerateOnboardingSuggestionsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_GenerateOnboardingSuggestionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_ArtifactChunk_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_ArtifactChunk_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_Option_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_Option_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_Question_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_Question_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_AssistantConfirmationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_AssistantConfirmationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_AssistantConfirmationResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_AssistantConfirmationResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_OperationCompletedEvent_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_OperationCompletedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_TurnMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_TurnMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_StreamChatAiAssistantResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_StreamChatAiAssistantResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_CancelAssistantTurnRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_CancelAssistantTurnRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_CancelAssistantTurnResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_CancelAssistantTurnResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_TurnResumeSnapshot_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_TurnResumeSnapshot_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_TurnHandoffEvent_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_TurnHandoffEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_TurnCompletedEvent_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_TurnCompletedEvent_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -142,15 +222,19 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "e.proto\022\027google.cloud.ces.v1beta\032\034google"
           + "/api/annotations.proto\032\027google/api/clien"
           + "t.proto\032\037google/api/field_behavior.proto"
-          + "\032\031google/api/resource.proto\032\030google/api/"
-          + "routing.proto\032$google/cloud/ces/v1beta/common.proto\032%google/cloud/ces/v1beta/exa"
-          + "mple.proto\032#google/cloud/ces/v1beta/mocks.proto\0320google/cloud/ces/v1beta/search_"
-          + "suggestions.proto\032\031google/protobuf/any.proto\032\034google/protobuf/struct.proto\"\250\002\n\n"
+          + "\032\033google/api/field_info.proto\032\031google/ap"
+          + "i/resource.proto\032\030google/api/routing.pro"
+          + "to\032$google/cloud/ces/v1beta/common.proto"
+          + "\032%google/cloud/ces/v1beta/example.proto\032"
+          + "#google/cloud/ces/v1beta/mocks.proto\0320google/cloud/ces/v1beta/search_suggestions"
+          + ".proto\032\031google/protobuf/any.proto\032\034googl"
+          + "e/protobuf/struct.proto\032\037google/protobuf"
+          + "/timestamp.proto\032\027google/rpc/status.proto\"\250\002\n\n"
           + "MockConfig\022H\n"
-          + "\021mocked_tool_calls\030\001 \003(\0132\'.g"
-          + "oogle.cloud.ces.v1beta.MockedToolCallB\004\342A\001\001\022i\n"
-          + "\034unmatched_tool_call_behavior\030\002 \001("
-          + "\0162=.google.cloud.ces.v1beta.MockConfig.UnmatchedToolCallBehaviorB\004\342A\001\002\"e\n"
+          + "\021mocked_tool_calls\030\001 "
+          + "\003(\0132\'.google.cloud.ces.v1beta.MockedToolCallB\004\342A\001\001\022i\n"
+          + "\034unmatched_tool_call_behavior\030\002"
+          + " \001(\0162=.google.cloud.ces.v1beta.MockConfig.UnmatchedToolCallBehaviorB\004\342A\001\002\"e\n"
           + "\031UnmatchedToolCallBehavior\022,\n"
           + "(UNMATCHED_TOOL_CALL_BEHAVIOR_UNSPECIFIED\020\000\022\010\n"
           + "\004FAIL\020\001\022\020\n"
@@ -163,14 +247,14 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "\021OutputAudioConfig\022D\n"
           + "\016audio_encoding\030\001"
           + " \001(\0162&.google.cloud.ces.v1beta.AudioEncodingB\004\342A\001\002\022\037\n"
-          + "\021sample_rate_hertz\030\002 \001(\005B\004\342A\001\002\"\216\007\n\r"
+          + "\021sample_rate_hertz\030\002 \001(\005B\004\342A\001\002\"\207\010\n\r"
           + "SessionConfig\0224\n"
           + "\007session\030\001 \001(\tB#\342A\001\002\372A\034\n"
           + "\032ces.googleapis.com/Session\022K\n"
-          + "\022input_audio_config\030\002 \001(\013"
-          + "2).google.cloud.ces.v1beta.InputAudioConfigB\004\342A\001\001\022M\n"
-          + "\023output_audio_config\030\003 \001(\0132*"
-          + ".google.cloud.ces.v1beta.OutputAudioConfigB\004\342A\001\001\022C\n"
+          + "\022input_audio_config\030\002"
+          + " \001(\0132).google.cloud.ces.v1beta.InputAudioConfigB\004\342A\001\001\022M\n"
+          + "\023output_audio_config\030\003"
+          + " \001(\0132*.google.cloud.ces.v1beta.OutputAudioConfigB\004\342A\001\001\022C\n"
           + "\023historical_contexts\030\005 \003(\0132"
           + " .google.cloud.ces.v1beta.MessageB\004\342A\001\001\0226\n"
           + "\013entry_agent\030\014 \001(\tB!\342A\001\001\372A\032\n"
@@ -178,12 +262,15 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "deployment\030\010 \001(\tB\004\342A\001\001\022\027\n"
           + "\ttime_zone\030\013 \001(\tB\004\342A\001\001\022\034\n"
           + "\016use_tool_fakes\030\016 \001(\010B\004\342A\001\001\022x\n"
-          + "\"remote_dialogflow_query_parameters\030\017 \001(\0132F.google.cloud.ces.v1"
-          + "beta.SessionConfig.RemoteDialogflowQueryParametersB\004\342A\001\001\022#\n"
-          + "\025enable_text_streaming\030\022 \001(\010B\004\342A\001\001\032\275\002\n"
+          + "\"remote_dialogflow_query_parameters\030\017 \001(\0132F.google.cloud"
+          + ".ces.v1beta.SessionConfig.RemoteDialogflowQueryParametersB\004\342A\001\001\022#\n"
+          + "\025enable_text_streaming\030\022 \001(\010B\004\342A\001\001\022)\n"
+          + "\033include_llm_thought_summary\030\025 \001(\010B\004\342A\001\001\022%\n"
+          + "\027exclude_diagnostic_info\030\030 \001(\010B\004\342A\001\001\022%\n"
+          + "\027include_progress_update\030\034 \001(\010B\004\342A\001\001\032\275\002\n"
           + "\037RemoteDialogflowQueryParameters\022y\n"
-          + "\017webhook_headers\030\001 \003(\0132Z.google.cloud.ces.v1beta.SessionConfig.Remot"
-          + "eDialogflowQueryParameters.WebhookHeadersEntryB\004\342A\001\001\022.\n"
+          + "\017webhook_headers\030\001 \003(\0132Z.google.cloud.ces.v1beta.SessionConf"
+          + "ig.RemoteDialogflowQueryParameters.WebhookHeadersEntryB\004\342A\001\001\022.\n"
           + "\007payload\030\002 \001(\0132\027.google.protobuf.StructB\004\342A\001\001\0228\n"
           + "\021end_user_metadata\030\003"
           + " \001(\0132\027.google.protobuf.StructB\004\342A\001\001\0325\n"
@@ -195,23 +282,31 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + " \003(\0132!.google.cloud.ces.v1beta.ToolCallB\004\342A\001\001\"T\n\r"
           + "ToolResponses\022C\n"
           + "\016tool_responses\030\001"
-          + " \003(\0132%.google.cloud.ces.v1beta.ToolResponseB\004\342A\001\001\"\246\001\n"
+          + " \003(\0132%.google.cloud.ces.v1beta.ToolResponseB\004\342A\001\001\"\320\002\n"
           + "\tCitations\022C\n"
           + "\014cited_chunks\030\001"
-          + " \003(\0132-.google.cloud.ces.v1beta.Citations.CitedChunk\032T\n\n"
+          + " \003(\0132-.google.cloud.ces.v1beta.Citations.CitedChunk\022Q\n"
+          + "\020inline_citations\030\002"
+          + " \003(\01321.google.cloud.ces.v1beta.Citations.InlineCitationB\004\342A\001\001\032T\n\n"
           + "CitedChunk\022\013\n"
           + "\003uri\030\001 \001(\t\022\r\n"
           + "\005title\030\002 \001(\t\022\014\n"
           + "\004text\030\003 \001(\t\022\034\n"
-          + "\024requires_attribution\030\004 \001(\010\"\034\n"
+          + "\024requires_attribution\030\004 \001(\010\032U\n"
+          + "\016InlineCitation\022\023\n"
+          + "\013start_index\030\001 \001(\005\022\021\n"
+          + "\tend_index\030\002 \001(\005\022\033\n"
+          + "\023cited_chunk_indices\030\003 \003(\005\"N\n"
           + "\005Event\022\023\n"
-          + "\005event\030\001 \001(\tB\004\342A\001\002\"\233\003\n"
+          + "\005event\030\001 \001(\tB\004\342A\001\002\0220\n"
+          + "\tvariables\030\002"
+          + " \001(\0132\027.google.protobuf.StructB\004\342A\001\001\"\332\004\n"
           + "\014SessionInput\022\024\n"
           + "\004text\030\001 \001(\tB\004\342A\001\001H\000\022\024\n"
           + "\004dtmf\030\006 \001(\tB\004\342A\001\001H\000\022\025\n"
           + "\005audio\030\002 \001(\014B\004\342A\001\001H\000\022F\n"
-          + "\016tool_responses\030\003 \001(\013"
-          + "2&.google.cloud.ces.v1beta.ToolResponsesB\004\342A\001\001H\000\0225\n"
+          + "\016tool_responses\030\003"
+          + " \001(\0132&.google.cloud.ces.v1beta.ToolResponsesB\004\342A\001\001H\000\0225\n"
           + "\005image\030\004"
           + " \001(\0132\036.google.cloud.ces.v1beta.ImageB\004\342A\001\001H\000\0223\n"
           + "\004blob\030\007"
@@ -220,22 +315,31 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + " \001(\0132\027.google.protobuf.StructB\004\342A\001\001H\000\0225\n"
           + "\005event\030\t"
           + " \001(\0132\036.google.cloud.ces.v1beta.EventB\004\342A\001\001H\000\022\033\n\r"
-          + "will_continue\030\010 \001(\010B\004\342A\001\001B\014\n\n"
-          + "input_type\"\222\005\n\r"
+          + "will_continue\030\010 \001(\010B\004\342A\001\001\022W\n"
+          + "\021recording_control\030\n"
+          + " \001(\01626.google.clo"
+          + "ud.ces.v1beta.SessionInput.RecordingControlB\004\342A\001\001\"d\n"
+          + "\020RecordingControl\022!\n"
+          + "\035RECORDING_CONTROL_UNSPECIFIED\020\000\022\025\n"
+          + "\021RECORDING_ENABLED\020\001\022\026\n"
+          + "\022RECORDING_DISABLED\020\002B\014\n\n"
+          + "input_type\"\327\005\n\r"
           + "SessionOutput\022\016\n"
           + "\004text\030\001 \001(\tH\000\022\017\n"
-          + "\005audio\030\002 \001(\014H\000\0228\n"
-          + "\n"
+          + "\005audio\030\002 \001(\014H\000\0228\n\n"
           + "tool_calls\030\003 \001(\0132\".google.cloud.ces.v1beta.ToolCallsH\000\0227\n"
           + "\tcitations\030\010 \001(\0132\".google.cloud.ces.v1beta.CitationsH\000\022U\n"
           + "\031google_search_suggestions\030\n"
           + " \001(\01320.google.cloud.ces.v1beta.GoogleSearchSuggestionsH\000\022:\n"
           + "\013end_session\030\t \001(\0132#.google.cloud.ces.v1beta.EndSessionH\000\022*\n"
-          + "\007payload\030\013 \001(\0132\027.google.protobuf.StructH\000\022\022\n\n"
+          + "\007payload\030\013 \001(\0132\027.google.protobuf.StructH\000\022/\n"
+          + "\005image\030\r"
+          + " \001(\0132\036.google.cloud.ces.v1beta.ImageH\000\022\022\n"
+          + "\010progress\030\016 \001(\tH\000\022\022\n\n"
           + "turn_index\030\006 \001(\005\022\026\n"
           + "\016turn_completed\030\004 \001(\010\022T\n"
-          + "\017diagnostic_info\030\007"
-          + " \001(\01325.google.cloud.ces.v1beta.SessionOutput.DiagnosticInfoB\004\342A\001\001\022%\n"
+          + "\017diagnostic_info\030\007 \001(\01325.google.cloud.ces."
+          + "v1beta.SessionOutput.DiagnosticInfoB\004\342A\001\001\022%\n"
           + "\007context\030\014 \003(\0132\024.google.protobuf.Any\032v\n"
           + "\016DiagnosticInfo\0222\n"
           + "\010messages\030\001 \003(\0132 .google.cloud.ces.v1beta.Message\0220\n"
@@ -251,52 +355,238 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "\021RunSessionRequest\022<\n"
           + "\006config\030\001"
           + " \001(\0132&.google.cloud.ces.v1beta.SessionConfigB\004\342A\001\002\022;\n"
-          + "\006inputs\030\003"
-          + " \003(\0132%.google.cloud.ces.v1beta.SessionInputB\004\342A\001\002\"M\n"
+          + "\006inputs\030\003 \003(\0132%.go"
+          + "ogle.cloud.ces.v1beta.SessionInputB\004\342A\001\002\"M\n"
           + "\022RunSessionResponse\0227\n"
           + "\007outputs\030\001 \003(\0132&.google.cloud.ces.v1beta.SessionOutput\"\261\001\n"
           + "\030BidiSessionClientMessage\022>\n"
-          + "\006config\030\001 \001(\0132&.g"
-          + "oogle.cloud.ces.v1beta.SessionConfigB\004\342A\001\001H\000\022E\n"
-          + "\016realtime_input\030\002"
-          + " \001(\0132%.google.cloud.ces.v1beta.SessionInputB\004\342A\001\001H\000B\016\n"
+          + "\006config\030\001"
+          + " \001(\0132&.google.cloud.ces.v1beta.SessionConfigB\004\342A\001\001H\000\022E\n"
+          + "\016realtime_input\030\002 \001(\0132%.g"
+          + "oogle.cloud.ces.v1beta.SessionInputB\004\342A\001\001H\000B\016\n"
           + "\014message_type\"\220\003\n"
           + "\030BidiSessionServerMessage\022F\n"
-          + "\016session_output\030\001"
-          + " \001(\0132&.google.cloud.ces.v1beta.SessionOutputB\004\342A\001\001H\000\022N\n"
-          + "\022recognition_result\030\002"
-          + " \001(\0132*.google.cloud.ces.v1beta.RecognitionResultB\004\342A\001\001H\000\022P\n"
-          + "\023interruption_signal\030\003"
-          + " \001(\0132+.google.cloud.ces.v1beta.InterruptionSignalB\004\342A\001\001H\000\022@\n"
+          + "\016session_output\030\001 \001(\0132&.googl"
+          + "e.cloud.ces.v1beta.SessionOutputB\004\342A\001\001H\000\022N\n"
+          + "\022recognition_result\030\002 \001(\0132*.google.cl"
+          + "oud.ces.v1beta.RecognitionResultB\004\342A\001\001H\000\022P\n"
+          + "\023interruption_signal\030\003 \001(\0132+.google.c"
+          + "loud.ces.v1beta.InterruptionSignalB\004\342A\001\001H\000\022@\n"
           + "\013end_session\030\005"
           + " \001(\0132#.google.cloud.ces.v1beta.EndSessionB\004\342A\001\001H\000\0228\n"
-          + "\007go_away\030\006 \001(\0132\037."
-          + "google.cloud.ces.v1beta.GoAwayB\004\342A\001\001H\000B\016\n"
-          + "\014message_type*R\n\r"
+          + "\007go_away\030\006"
+          + " \001(\0132\037.google.cloud.ces.v1beta.GoAwayB\004\342A\001\001H\000B\016\n"
+          + "\014message_type\"\377\004\n"
+          + "\034StreamChatAiAssistantRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\342A\001\002\372A%\n"
+          + "#ces.googleapis.com/AssistantSession\022\025\n"
+          + "\007message\030\003 \001(\tB\004\342A\001\001\022\037\n"
+          + "\021attached_gcs_uris\030\005 \003(\tB\004\342A\001\001\022\033\n\r"
+          + "context_token\030\006 \001(\tB\004\342A\001\001\022[\n"
+          + "\025confirmation_response\030\007 \001(\01326.google"
+          + ".cloud.ces.v1beta.AssistantConfirmationResponseB\004\342A\001\001\022i\n"
+          + "\023client_capabilities\030\010 \003(\0162F.google.cloud.ces.v1beta.StreamChatA"
+          + "iAssistantRequest.ClientCapabilityB\004\342A\001\001\022Y\n"
+          + "\031operation_completed_event\030\t \001(\01320.go"
+          + "ogle.cloud.ces.v1beta.OperationCompletedEventB\004\342A\001\001\022)\n"
+          + "\033resume_from_sequence_number\030\013 \001(\003B\004\342A\001\001\022\031\n"
+          + "\013attach_only\030\014 \001(\010B\004\342A\001\001\"e\n"
+          + "\020ClientCapability\022!\n"
+          + "\035CLIENT_CAPABILITY_UNSPECIFIED\020\000\022\026\n"
+          + "\022CONFIRMATION_CARDS\020\001\022\026\n"
+          + "\022CLIENT_MANAGED_LRO\020\002\"\305\004\n"
+          + "\023AssistantSuggestion\022\025\n"
+          + "\013seed_prompt\030\005 \001(\tH\000\022P\n"
+          + "\014load_session\030\006"
+          + " \001(\01328.google.cloud.ces.v1beta.AssistantSuggestion.LoadSessionH\000\022\026\n"
+          + "\014send_message\030\007 \001(\tH\000\022\025\n\r"
+          + "suggestion_id\030\001 \001(\t\022\r\n"
+          + "\005label\030\002 \001(\t\022\021\n"
+          + "\trationale\030\003 \001(\t\022?\n"
+          + "\004icon\030\004 \001(\01621.google.cloud.ces.v1beta.AssistantSuggestion.Icon\022C\n"
+          + "\006source\030\010 \001(\01623.go"
+          + "ogle.cloud.ces.v1beta.AssistantSuggestion.Source\022\026\n"
+          + "\016candidate_type\030\t \001(\t\032+\n"
+          + "\013LoadSession\022\034\n"
+          + "\024assistant_session_id\030\001 \001(\t\"c\n"
+          + "\004Icon\022\024\n"
+          + "\020ICON_UNSPECIFIED\020\000\022\n\n"
+          + "\006RESUME\020\001\022\t\n"
+          + "\005BUILD\020\002\022\014\n"
+          + "\010EVALUATE\020\003\022\n\n"
+          + "\006DEPLOY\020\004\022\013\n"
+          + "\007EXPLORE\020\005\022\007\n"
+          + "\003FIX\020\006\":\n"
+          + "\006Source\022\026\n"
+          + "\022SOURCE_UNSPECIFIED\020\000\022\010\n"
+          + "\004RULE\020\001\022\016\n\n"
+          + "LLM_RANKED\020\002B\010\n"
+          + "\006action\"t\n"
+          + "$GenerateOnboardingSuggestionsRequest\022-\n"
+          + "\004name\030\001 \001(\tB\037\342A\001\002\372A\030\n"
+          + "\026ces.googleapis.com/App\022\035\n"
+          + "\017max_suggestions\030\002 \001(\005B\004\342A\001\001\"\267\002\n"
+          + "%GenerateOnboardingSuggestionsResponse\022`\n"
+          + "\014user_profile\030\001 \001(\0162J.google."
+          + "cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse.UserProfile\022A\n"
+          + "\013suggestions\030\002"
+          + " \003(\0132,.google.cloud.ces.v1beta.AssistantSuggestion\022\025\n\r"
+          + "context_token\030\003 \001(\t\"R\n"
+          + "\013UserProfile\022\034\n"
+          + "\030USER_PROFILE_UNSPECIFIED\020\000\022\007\n"
+          + "\003NEW\020\001\022\r\n"
+          + "\tEXPLORING\020\002\022\r\n"
+          + "\tRETURNING\020\003\"\221\002\n\r"
+          + "ArtifactChunk\022\023\n"
+          + "\013artifact_id\030\001 \001(\t\022\024\n"
+          + "\014display_name\030\002 \001(\t\022\021\n"
+          + "\tmime_type\030\003 \001(\t\022\025\n\r"
+          + "content_delta\030\004 \001(\t\022\017\n"
+          + "\007gcs_uri\030\005 \001(\t\022;\n"
+          + "\005state\030\006 \001(\0162,.google.cloud.ces.v1beta.ArtifactChunk.State\"]\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007STARTED\020\001\022\t\n"
+          + "\005DELTA\020\002\022\r\n"
+          + "\tFINALIZED\020\003\022\n\n"
+          + "\006FAILED\020\004\022\n\n"
+          + "\006CLOSED\020\005\"\205\002\n"
+          + "\024OptionQuestionsChunk\022I\n"
+          + "\tquestions\030\001 \003(\013"
+          + "26.google.cloud.ces.v1beta.OptionQuestionsChunk.Question\032=\n"
+          + "\006Option\022\r\n"
+          + "\005title\030\001 \001(\t\022\017\n"
+          + "\007details\030\002 \001(\t\022\023\n"
+          + "\013submit_text\030\003 \001(\t\032c\n"
+          + "\010Question\022\020\n"
+          + "\010question\030\001 \001(\t\022E\n"
+          + "\007options\030\002"
+          + " \003(\01324.google.cloud.ces.v1beta.OptionQuestionsChunk.Option\"\226\002\n"
+          + "\034AssistantConfirmationRequest\022\027\n"
+          + "\017confirmation_id\030\001 \001(\t\022\017\n"
+          + "\007context\030\002 \001(\t\022\026\n"
+          + "\016positive_label\030\003 \001(\t\022\026\n"
+          + "\016negative_label\030\004 \001(\t\022I\n"
+          + "\tquestions\030\005 \003"
+          + "(\01326.google.cloud.ces.v1beta.OptionQuestionsChunk.Question\022\014\n"
+          + "\004tool\030\006 \001(\t\022\022\n\n"
+          + "agent_name\030\007 \001(\t\022/\n"
+          + "\013expire_time\030\010 \001(\0132\032.google.protobuf.Timestamp\"p\n"
+          + "\035AssistantConfirmationResponse\022\023\n"
+          + "\tconfirmed\030\002 \001(\010H\000\022\025\n"
+          + "\013answer_text\030\003 \001(\tH\000\022\027\n"
+          + "\017confirmation_id\030\001 \001(\tB\n\n"
+          + "\010response\"\342\001\n"
+          + "\027OperationCompletedEvent\022\026\n"
+          + "\016operation_name\030\001 \001(\t\022\034\n"
+          + "\024target_resource_name\030\002 \001(\t\022\026\n"
+          + "\016operation_type\030\003 \001(\t\022\016\n"
+          + "\006status\030\004 \001(\t\022\033\n"
+          + "\023deduplication_token\030\005 \001(\t\022!\n"
+          + "\005error\030\006 \001(\0132\022.google.rpc.Status\022)\n"
+          + "\010metadata\030\007 \001(\0132\027.google.protobuf.Struct\"\245\002\n"
+          + "\014TurnMetadata\022\030\n"
+          + "\020contract_related\030\001 \001(\010\022\032\n"
+          + "\022contract_finalized\030\003 \001(\010\022^\n"
+          + "\030contract_streaming_phase\030\004 \001(\0162<.google.c"
+          + "loud.ces.v1beta.TurnMetadata.ContractStreamingPhase\022\037\n"
+          + "\027contract_draft_complete\030\005 \001(\010\"^\n"
+          + "\026ContractStreamingPhase\022(\n"
+          + "$CONTRACT_STREAMING_PHASE_UNSPECIFIED\020\000\022\014\n"
+          + "\010DRAFTING\020\001\022\014\n"
+          + "\010REVISING\020\002\"\365\007\n"
+          + "\035StreamChatAiAssistantResponse\022\024\n\n"
+          + "text_chunk\030\003 \001(\tH\000\022$\n"
+          + "\006status\030\004 \001(\0132\022.google.rpc.StatusH\000\022\027\n\r"
+          + "thought_chunk\030\006 \001(\tH\000\0226\n"
+          + "\ttool_call\030\007 \001(\0132!.google.cloud.ces.v1beta.ToolCallH\000\022>\n\r"
+          + "tool_response\030\010 \001(\0132%.google.cloud.ces.v1beta.ToolResponseH\000\022@\n"
+          + "\016artifact_chunk\030\t \001(\0132&.google.cloud.ces.v1beta.ArtifactChunkH\000\022O\n"
+          + "\026option_questions_chunk\030\n"
+          + " \001(\0132-.google.cloud.ces.v1beta.OptionQuestionsChunkH\000\022U\n"
+          + "\024confirmation_request\030\014 \001(\01325.g"
+          + "oogle.cloud.ces.v1beta.AssistantConfirmationRequestH\000\022H\n"
+          + "\022session_checkpoint\030\r"
+          + " \001(\0132*.google.cloud.ces.v1beta.SessionCheckpointH\000\022F\n"
+          + "\017resume_snapshot\030\021 \001(\0132+.googl"
+          + "e.cloud.ces.v1beta.TurnResumeSnapshotH\000\022<\n"
+          + "\007handoff\030\022 \001(\0132).google.cloud.ces.v1beta.TurnHandoffEventH\000\022E\n"
+          + "\016turn_completed\030\023"
+          + " \001(\0132+.google.cloud.ces.v1beta.TurnCompletedEventH\000\022\020\n"
+          + "\010event_id\030\001 \001(\t\022.\n\n"
+          + "event_time\030\002 \001(\0132\032.google.protobuf.Timestamp\0228\n"
+          + "\010ui_event\030\005 \001(\0132"
+          + " .google.cloud.ces.v1beta.UiEventB\004\342A\001\001\022B\n\r"
+          + "turn_metadata\030\013 \001(\0132"
+          + "%.google.cloud.ces.v1beta.TurnMetadataB\004\342A\001\001\022\035\n"
+          + "\017sequence_number\030\017 \001(\003B\004\342A\001\001\022\036\n"
+          + "\020turn_in_progress\030\020 \001(\010B\004\342A\001\001B\007\n"
+          + "\005event\"G\n"
+          + "\032CancelAssistantTurnRequest\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\002\022\025\n"
+          + "\007turn_id\030\002 \001(\tB\004\342A\001\001\"0\n"
+          + "\033CancelAssistantTurnResponse\022\021\n"
+          + "\tcancelled\030\001 \001(\010\"\311\001\n"
+          + "\022TurnResumeSnapshot\022\017\n"
+          + "\007turn_id\030\001 \001(\t\022 \n"
+          + "\030resolved_sequence_number\030\002 \001(\003\022F\n"
+          + "\006events\030\003"
+          + " \003(\01326.google.cloud.ces.v1beta.StreamChatAiAssistantResponse\0228\n"
+          + "\024orphan_deadline_time\030\004 \001(\0132\032.google.protobuf.Timestamp\"\233\001\n"
+          + "\020TurnHandoffEvent\022\017\n"
+          + "\007turn_id\030\001 \001(\t\022@\n"
+          + "\006reason\030\002 \001(\01620.google.cloud.ces.v1beta.TurnHandoffEvent.Reason\"4\n"
+          + "\006Reason\022\026\n"
+          + "\022REASON_UNSPECIFIED\020\000\022\022\n"
+          + "\016SERVER_RESTART\020\001\"\340\001\n"
+          + "\022TurnCompletedEvent\022\017\n"
+          + "\007turn_id\030\001 \001(\t\022B\n"
+          + "\006reason\030\002"
+          + " \001(\01622.google.cloud.ces.v1beta.TurnCompletedEvent.Reason\022\035\n"
+          + "\025final_sequence_number\030\003 \001(\003\"V\n"
+          + "\006Reason\022\026\n"
+          + "\022REASON_UNSPECIFIED\020\000\022\r\n"
+          + "\tCOMPLETED\020\001\022\r\n"
+          + "\tABANDONED\020\002\022\026\n"
+          + "\022RESUME_UNAVAILABLE\020\003*R\n\r"
           + "AudioEncoding\022\036\n"
           + "\032AUDIO_ENCODING_UNSPECIFIED\020\000\022\014\n"
           + "\010LINEAR16\020\001\022\t\n"
           + "\005MULAW\020\002\022\010\n"
-          + "\004ALAW\020\0032\327\005\n"
+          + "\004ALAW\020\0032\241\013\n"
           + "\016SessionService\022\276\001\n\n"
-          + "RunSession\022*.google.cloud.ces.v1beta.RunSessionRequest\032+.google.cloud.ces.v1be"
-          + "ta.RunSessionResponse\"W\202\323\344\223\002Q\"L/v1beta/{"
-          + "config.session=projects/*/locations/*/apps/*/sessions/*}:runSession:\001*\022\314\001\n"
-          + "\020StreamRunSession\022*.google.cloud.ces.v1beta.Ru"
-          + "nSessionRequest\032+.google.cloud.ces.v1bet"
-          + "a.RunSessionResponse\"]\202\323\344\223\002W\"R/v1beta/{c"
-          + "onfig.session=projects/*/locations/*/app"
-          + "s/*/sessions/*}:streamRunSession:\001*0\001\022\310\001\n"
-          + "\016BidiRunSession\0221.google.cloud.ces.v1be"
-          + "ta.BidiSessionClientMessage\0321.google.clo"
-          + "ud.ces.v1beta.BidiSessionServerMessage\"L\212\323\344\223\002F\022D\n"
-          + "\016config.session\0222{session=projects/*/locations/*/apps/*/sessions/*}(\0010\001"
-          + "\032j\312A\022ces.googleapis.com\322ARhttps://www.go"
-          + "ogleapis.com/auth/ces,https://www.googleapis.com/auth/cloud-platformB\311\001\n"
-          + "\033com.google.cloud.ces.v1betaB\023SessionServiceProt"
-          + "oP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespb\352Ac\n"
-          + "\032ces.googleapis.com/Session\022Eprojects/{project}/locations/{locatio"
-          + "n}/apps/{app}/sessions/{session}b\006proto3"
+          + "RunSession\022*.google.cloud.ces.v1beta.RunSessionRequest\032+.google."
+          + "cloud.ces.v1beta.RunSessionResponse\"W\202\323\344"
+          + "\223\002Q\"L/v1beta/{config.session=projects/*/"
+          + "locations/*/apps/*/sessions/*}:runSession:\001*\022\314\001\n"
+          + "\020StreamRunSession\022*.google.cloud.ces.v1beta.RunSessionRequest\032+.google.c"
+          + "loud.ces.v1beta.RunSessionResponse\"]\202\323\344\223"
+          + "\002W\"R/v1beta/{config.session=projects/*/l"
+          + "ocations/*/apps/*/sessions/*}:streamRunSession:\001*0\001\022\310\001\n"
+          + "\016BidiRunSession\0221.google.cloud.ces.v1beta.BidiSessionClientMessag"
+          + "e\0321.google.cloud.ces.v1beta.BidiSessionServerMessage\"L\212\323\344\223\002F\022D\n"
+          + "\016config.session\0222"
+          + "{session=projects/*/locations/*/apps/*/sessions/*}(\0010\001\022\353\001\n"
+          + "\025StreamChatAiAssistant\0225.google.cloud.ces.v1beta.StreamChatAiA"
+          + "ssistantRequest\0326.google.cloud.ces.v1bet"
+          + "a.StreamChatAiAssistantResponse\"a\202\323\344\223\002[\""
+          + "V/v1beta/{name=projects/*/locations/*/ap"
+          + "ps/*/assistantSessions/*}:streamChatAiAssistant:\001*0\001\022\341\001\n"
+          + "\023CancelAssistantTurn\0223.google.cloud.ces.v1beta.CancelAssistantTu"
+          + "rnRequest\0324.google.cloud.ces.v1beta.Canc"
+          + "elAssistantTurnResponse\"_\202\323\344\223\002Y\"T/v1beta"
+          + "/{name=projects/*/locations/*/apps/*/ass"
+          + "istantSessions/*}:cancelAssistantTurn:\001*\022\365\001\n"
+          + "\035GenerateOnboardingSuggestions\022=.google.cloud.ces.v1beta.GenerateOnboardingS"
+          + "uggestionsRequest\032>.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRespons"
+          + "e\"U\202\323\344\223\002O\"J/v1beta/{name=projects/*/loca"
+          + "tions/*/apps/*}:generateOnboardingSugges"
+          + "tions:\001*\032j\312A\022ces.googleapis.com\322ARhttps:"
+          + "//www.googleapis.com/auth/ces,https://www.googleapis.com/auth/cloud-platformB\311\001\n"
+          + "\033com.google.cloud.ces.v1betaB\023SessionSer"
+          + "viceProtoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespb\352Ac\n"
+          + "\032ces.googleapis.com/Session\022Eprojects/{project}/locations/"
+          + "{location}/apps/{app}/sessions/{session}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -305,6 +595,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.api.RoutingProto.getDescriptor(),
               com.google.cloud.ces.v1beta.CommonProto.getDescriptor(),
@@ -313,6 +604,8 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               com.google.cloud.ces.v1beta.SearchSuggestionsProto.getDescriptor(),
               com.google.protobuf.AnyProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_ces_v1beta_MockConfig_descriptor =
         getDescriptor().getMessageType(0);
@@ -354,6 +647,9 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "UseToolFakes",
               "RemoteDialogflowQueryParameters",
               "EnableTextStreaming",
+              "IncludeLlmThoughtSummary",
+              "ExcludeDiagnosticInfo",
+              "IncludeProgressUpdate",
             });
     internal_static_google_cloud_ces_v1beta_SessionConfig_RemoteDialogflowQueryParameters_descriptor =
         internal_static_google_cloud_ces_v1beta_SessionConfig_descriptor.getNestedType(0);
@@ -394,7 +690,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_Citations_descriptor,
             new java.lang.String[] {
-              "CitedChunks",
+              "CitedChunks", "InlineCitations",
             });
     internal_static_google_cloud_ces_v1beta_Citations_CitedChunk_descriptor =
         internal_static_google_cloud_ces_v1beta_Citations_descriptor.getNestedType(0);
@@ -404,12 +700,20 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
             new java.lang.String[] {
               "Uri", "Title", "Text", "RequiresAttribution",
             });
+    internal_static_google_cloud_ces_v1beta_Citations_InlineCitation_descriptor =
+        internal_static_google_cloud_ces_v1beta_Citations_descriptor.getNestedType(1);
+    internal_static_google_cloud_ces_v1beta_Citations_InlineCitation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_Citations_InlineCitation_descriptor,
+            new java.lang.String[] {
+              "StartIndex", "EndIndex", "CitedChunkIndices",
+            });
     internal_static_google_cloud_ces_v1beta_Event_descriptor = getDescriptor().getMessageType(7);
     internal_static_google_cloud_ces_v1beta_Event_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_Event_descriptor,
             new java.lang.String[] {
-              "Event",
+              "Event", "Variables",
             });
     internal_static_google_cloud_ces_v1beta_SessionInput_descriptor =
         getDescriptor().getMessageType(8);
@@ -426,6 +730,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "Variables",
               "Event",
               "WillContinue",
+              "RecordingControl",
               "InputType",
             });
     internal_static_google_cloud_ces_v1beta_SessionOutput_descriptor =
@@ -441,6 +746,8 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "GoogleSearchSuggestions",
               "EndSession",
               "Payload",
+              "Image",
+              "Progress",
               "TurnIndex",
               "TurnCompleted",
               "DiagnosticInfo",
@@ -520,10 +827,214 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "GoAway",
               "MessageType",
             });
+    internal_static_google_cloud_ces_v1beta_StreamChatAiAssistantRequest_descriptor =
+        getDescriptor().getMessageType(18);
+    internal_static_google_cloud_ces_v1beta_StreamChatAiAssistantRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_StreamChatAiAssistantRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "Message",
+              "AttachedGcsUris",
+              "ContextToken",
+              "ConfirmationResponse",
+              "ClientCapabilities",
+              "OperationCompletedEvent",
+              "ResumeFromSequenceNumber",
+              "AttachOnly",
+            });
+    internal_static_google_cloud_ces_v1beta_AssistantSuggestion_descriptor =
+        getDescriptor().getMessageType(19);
+    internal_static_google_cloud_ces_v1beta_AssistantSuggestion_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_AssistantSuggestion_descriptor,
+            new java.lang.String[] {
+              "SeedPrompt",
+              "LoadSession",
+              "SendMessage",
+              "SuggestionId",
+              "Label",
+              "Rationale",
+              "Icon",
+              "Source",
+              "CandidateType",
+              "Action",
+            });
+    internal_static_google_cloud_ces_v1beta_AssistantSuggestion_LoadSession_descriptor =
+        internal_static_google_cloud_ces_v1beta_AssistantSuggestion_descriptor.getNestedType(0);
+    internal_static_google_cloud_ces_v1beta_AssistantSuggestion_LoadSession_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_AssistantSuggestion_LoadSession_descriptor,
+            new java.lang.String[] {
+              "AssistantSessionId",
+            });
+    internal_static_google_cloud_ces_v1beta_GenerateOnboardingSuggestionsRequest_descriptor =
+        getDescriptor().getMessageType(20);
+    internal_static_google_cloud_ces_v1beta_GenerateOnboardingSuggestionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateOnboardingSuggestionsRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "MaxSuggestions",
+            });
+    internal_static_google_cloud_ces_v1beta_GenerateOnboardingSuggestionsResponse_descriptor =
+        getDescriptor().getMessageType(21);
+    internal_static_google_cloud_ces_v1beta_GenerateOnboardingSuggestionsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_GenerateOnboardingSuggestionsResponse_descriptor,
+            new java.lang.String[] {
+              "UserProfile", "Suggestions", "ContextToken",
+            });
+    internal_static_google_cloud_ces_v1beta_ArtifactChunk_descriptor =
+        getDescriptor().getMessageType(22);
+    internal_static_google_cloud_ces_v1beta_ArtifactChunk_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_ArtifactChunk_descriptor,
+            new java.lang.String[] {
+              "ArtifactId", "DisplayName", "MimeType", "ContentDelta", "GcsUri", "State",
+            });
+    internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_descriptor =
+        getDescriptor().getMessageType(23);
+    internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_descriptor,
+            new java.lang.String[] {
+              "Questions",
+            });
+    internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_Option_descriptor =
+        internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_descriptor.getNestedType(0);
+    internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_Option_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_Option_descriptor,
+            new java.lang.String[] {
+              "Title", "Details", "SubmitText",
+            });
+    internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_Question_descriptor =
+        internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_descriptor.getNestedType(1);
+    internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_Question_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_OptionQuestionsChunk_Question_descriptor,
+            new java.lang.String[] {
+              "Question", "Options",
+            });
+    internal_static_google_cloud_ces_v1beta_AssistantConfirmationRequest_descriptor =
+        getDescriptor().getMessageType(24);
+    internal_static_google_cloud_ces_v1beta_AssistantConfirmationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_AssistantConfirmationRequest_descriptor,
+            new java.lang.String[] {
+              "ConfirmationId",
+              "Context",
+              "PositiveLabel",
+              "NegativeLabel",
+              "Questions",
+              "Tool",
+              "AgentName",
+              "ExpireTime",
+            });
+    internal_static_google_cloud_ces_v1beta_AssistantConfirmationResponse_descriptor =
+        getDescriptor().getMessageType(25);
+    internal_static_google_cloud_ces_v1beta_AssistantConfirmationResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_AssistantConfirmationResponse_descriptor,
+            new java.lang.String[] {
+              "Confirmed", "AnswerText", "ConfirmationId", "Response",
+            });
+    internal_static_google_cloud_ces_v1beta_OperationCompletedEvent_descriptor =
+        getDescriptor().getMessageType(26);
+    internal_static_google_cloud_ces_v1beta_OperationCompletedEvent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_OperationCompletedEvent_descriptor,
+            new java.lang.String[] {
+              "OperationName",
+              "TargetResourceName",
+              "OperationType",
+              "Status",
+              "DeduplicationToken",
+              "Error",
+              "Metadata",
+            });
+    internal_static_google_cloud_ces_v1beta_TurnMetadata_descriptor =
+        getDescriptor().getMessageType(27);
+    internal_static_google_cloud_ces_v1beta_TurnMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_TurnMetadata_descriptor,
+            new java.lang.String[] {
+              "ContractRelated",
+              "ContractFinalized",
+              "ContractStreamingPhase",
+              "ContractDraftComplete",
+            });
+    internal_static_google_cloud_ces_v1beta_StreamChatAiAssistantResponse_descriptor =
+        getDescriptor().getMessageType(28);
+    internal_static_google_cloud_ces_v1beta_StreamChatAiAssistantResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_StreamChatAiAssistantResponse_descriptor,
+            new java.lang.String[] {
+              "TextChunk",
+              "Status",
+              "ThoughtChunk",
+              "ToolCall",
+              "ToolResponse",
+              "ArtifactChunk",
+              "OptionQuestionsChunk",
+              "ConfirmationRequest",
+              "SessionCheckpoint",
+              "ResumeSnapshot",
+              "Handoff",
+              "TurnCompleted",
+              "EventId",
+              "EventTime",
+              "UiEvent",
+              "TurnMetadata",
+              "SequenceNumber",
+              "TurnInProgress",
+              "Event",
+            });
+    internal_static_google_cloud_ces_v1beta_CancelAssistantTurnRequest_descriptor =
+        getDescriptor().getMessageType(29);
+    internal_static_google_cloud_ces_v1beta_CancelAssistantTurnRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_CancelAssistantTurnRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "TurnId",
+            });
+    internal_static_google_cloud_ces_v1beta_CancelAssistantTurnResponse_descriptor =
+        getDescriptor().getMessageType(30);
+    internal_static_google_cloud_ces_v1beta_CancelAssistantTurnResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_CancelAssistantTurnResponse_descriptor,
+            new java.lang.String[] {
+              "Cancelled",
+            });
+    internal_static_google_cloud_ces_v1beta_TurnResumeSnapshot_descriptor =
+        getDescriptor().getMessageType(31);
+    internal_static_google_cloud_ces_v1beta_TurnResumeSnapshot_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_TurnResumeSnapshot_descriptor,
+            new java.lang.String[] {
+              "TurnId", "ResolvedSequenceNumber", "Events", "OrphanDeadlineTime",
+            });
+    internal_static_google_cloud_ces_v1beta_TurnHandoffEvent_descriptor =
+        getDescriptor().getMessageType(32);
+    internal_static_google_cloud_ces_v1beta_TurnHandoffEvent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_TurnHandoffEvent_descriptor,
+            new java.lang.String[] {
+              "TurnId", "Reason",
+            });
+    internal_static_google_cloud_ces_v1beta_TurnCompletedEvent_descriptor =
+        getDescriptor().getMessageType(33);
+    internal_static_google_cloud_ces_v1beta_TurnCompletedEvent_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_TurnCompletedEvent_descriptor,
+            new java.lang.String[] {
+              "TurnId", "Reason", "FinalSequenceNumber",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.api.RoutingProto.getDescriptor();
     com.google.cloud.ces.v1beta.CommonProto.getDescriptor();
@@ -532,6 +1043,8 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
     com.google.cloud.ces.v1beta.SearchSuggestionsProto.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
