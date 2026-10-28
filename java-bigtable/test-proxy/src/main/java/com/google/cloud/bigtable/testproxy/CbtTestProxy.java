@@ -395,6 +395,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
             resultBuilder.setStatus(com.google.rpc.Status.getDefaultInstance()).build());
       } else {
         logger.info(String.format("readRow() did not find row: %s", request.getRowKey()));
+        responseObserver.onNext(
+            // Note that the default instance == OK
+            RowResult.newBuilder().setStatus(com.google.rpc.Status.getDefaultInstance()).build());
       }
     } catch (ApiException e) {
       responseObserver.onNext(RowResult.newBuilder().setStatus(convertStatus(e)).build());
@@ -640,6 +643,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
         logger.info(
             String.format(
                 "readModifyWriteRow() did not find row: %s", request.getRequest().getRowKey()));
+        responseObserver.onNext(
+            // Note that the default instance == OK
+            RowResult.newBuilder().setStatus(com.google.rpc.Status.getDefaultInstance()).build());
       }
     } catch (ApiException e) {
       responseObserver.onNext(RowResult.newBuilder().setStatus(convertStatus(e)).build());
@@ -815,7 +821,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
         OAuth2Credentials.create(new AccessToken(accessToken, null)));
   }
 
-  private final ConcurrentHashMap<String, CbtClient> idClientMap;
+  final ConcurrentHashMap<String, CbtClient> idClientMap;
 
   private static final Pattern tablePattern =
       Pattern.compile("projects/([^/]+)/instances/([^/]+)/tables/([^/]+)");
