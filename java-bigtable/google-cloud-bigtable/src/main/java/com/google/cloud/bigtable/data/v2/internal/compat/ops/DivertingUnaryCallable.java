@@ -144,10 +144,6 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
       }
     }
 
-    if (cause instanceof ApiException) {
-      return (ApiException) cause;
-    }
-
     Status.Code code = Status.Code.UNKNOWN;
 
     if (cause instanceof StatusRuntimeException) {

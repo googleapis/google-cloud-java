@@ -32,7 +32,6 @@ import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
-import com.google.cloud.bigtable.data.v2.internal.middleware.SessionMutateRowsRateLimiter;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
@@ -42,7 +41,6 @@ import io.grpc.Deadline;
 import java.io.Closeable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
-import javax.annotation.Nullable;
 
 public class TableAsync implements AutoCloseable, Closeable {
   private final TableBase base;
@@ -59,34 +57,6 @@ public class TableAsync implements AutoCloseable, Closeable {
       BigtableTimer timer,
       Executor backgroundExecutor,
       Executor userCallbackExecutor) {
-    return createAndStart(
-        featureFlags,
-        clientInfo,
-        configManager,
-        channelPool,
-        callOptions,
-        tableId,
-        permission,
-        metrics,
-        timer,
-        backgroundExecutor,
-        userCallbackExecutor,
-        /* mutateRowsRateLimiter= */ null);
-  }
-
-  public static TableAsync createAndStart(
-      FeatureFlags featureFlags,
-      ClientInfo clientInfo,
-      ClientConfigurationManager configManager,
-      ChannelPool channelPool,
-      CallOptions callOptions,
-      String tableId,
-      Permission permission,
-      Metrics metrics,
-      BigtableTimer timer,
-      Executor backgroundExecutor,
-      Executor userCallbackExecutor,
-      @Nullable SessionMutateRowsRateLimiter mutateRowsRateLimiter) {
 
     TableName tableName =
         TableName.builder()
@@ -120,8 +90,7 @@ public class TableAsync implements AutoCloseable, Closeable {
             metrics,
             timer,
             backgroundExecutor,
-            userCallbackExecutor,
-            mutateRowsRateLimiter);
+            userCallbackExecutor);
 
     return new TableAsync(base);
   }

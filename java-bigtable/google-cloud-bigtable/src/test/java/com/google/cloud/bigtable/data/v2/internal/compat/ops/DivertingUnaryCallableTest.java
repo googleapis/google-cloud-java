@@ -16,18 +16,13 @@
 package com.google.cloud.bigtable.data.v2.internal.compat.ops;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.grpc.GrpcCallContext;
-import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiCallContext;
-import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.ApiExceptionFactory;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.auth.Credentials;
 import com.google.bigtable.v2.ClientConfiguration;
@@ -39,12 +34,7 @@ import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.cloud.bigtable.data.v2.internal.util.SessionScope;
-import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
-import com.google.cloud.bigtable.data.v2.models.MutateRowsException.FailedMutation;
-import com.google.common.collect.ImmutableList;
 import io.grpc.Deadline;
-import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.net.URI;
 import java.time.Duration;
@@ -53,7 +43,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -195,42 +184,6 @@ class DivertingUnaryCallableTest {
     assertThat(experimental.callCount).isEqualTo(0);
   }
 
-  @Test
-  void experimentalFailure_preservesMutateRowsException() {
-    ApiException entryError =
-        ApiExceptionFactory.createException(
-            "bad entry", null, GrpcStatusCode.of(Status.Code.INVALID_ARGUMENT), false);
-    MutateRowsException mutateRowsException =
-        MutateRowsException.create(
-            null,
-            GrpcStatusCode.of(Status.Code.OK),
-            ImmutableList.of(FailedMutation.create(1, entryError)),
-            false);
-    experimental.nextResponse = new CompletableFuture<>();
-    experimental.nextResponse.completeExceptionally(mutateRowsException);
-
-    DivertingUnaryCallable<String, String> callable = callable(SessionScope.READ_ROW);
-    ApiFuture<String> future = callable.futureCall("req", GrpcCallContext.createDefault());
-
-    ExecutionException ex = assertThrows(ExecutionException.class, future::get);
-    assertThat(ex.getCause()).isSameInstanceAs(mutateRowsException);
-  }
-
-  @Test
-  void experimentalFailure_translatesStatusRuntimeExceptionToApiException() {
-    experimental.nextResponse = new CompletableFuture<>();
-    experimental.nextResponse.completeExceptionally(
-        new StatusRuntimeException(Status.UNAVAILABLE.withDescription("backend unavailable")));
-
-    DivertingUnaryCallable<String, String> callable = callable(SessionScope.READ_ROW);
-    ApiFuture<String> future = callable.futureCall("req", GrpcCallContext.createDefault());
-
-    ExecutionException ex = assertThrows(ExecutionException.class, future::get);
-    assertThat(ex.getCause()).isInstanceOf(ApiException.class);
-    assertThat(((ApiException) ex.getCause()).getStatusCode().getCode())
-        .isEqualTo(StatusCode.Code.UNAVAILABLE);
-  }
-
   // --- helpers ---
 
   private DivertingUnaryCallable<String, String> callable() {
@@ -299,12 +252,11 @@ class DivertingUnaryCallableTest {
 
   private static class RecordingShim<ReqT, RespT> implements UnaryShim<ReqT, RespT> {
     int callCount;
-    CompletableFuture<RespT> nextResponse = new CompletableFuture<>();
 
     @Override
     public CompletableFuture<RespT> call(ReqT request, Deadline deadline) {
       callCount++;
-      return nextResponse; // never completes by default — test doesn't wait on it
+      return new CompletableFuture<>(); // never completes — test doesn't wait on it
     }
 
     @Override

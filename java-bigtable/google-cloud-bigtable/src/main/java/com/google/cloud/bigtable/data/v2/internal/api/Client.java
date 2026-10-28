@@ -33,12 +33,10 @@ import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricsImpl;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
-import com.google.cloud.bigtable.data.v2.internal.middleware.SessionMutateRowsRateLimiter;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.HashedWheelTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.grpc.CallOptions;
 import io.opencensus.stats.Stats;
@@ -58,7 +56,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
 
 public class Client implements AutoCloseable {
   private static final Logger logger = Logger.getLogger(Client.class.getName());
@@ -109,7 +106,6 @@ public class Client implements AutoCloseable {
   private final Resource<ChannelPool> channelPool;
   private final Resource<Metrics> metrics;
   private final Resource<ClientConfigurationManager> configManager;
-  @Nullable private final SessionMutateRowsRateLimiter mutateRowsRateLimiter;
 
   private final Set<SessionPool<?>> sessionPools = Collections.newSetFromMap(new WeakHashMap<>());
   // Guarded by sessionPools' monitor: close() sets it before snapshotting the pool set, and the
@@ -117,22 +113,9 @@ public class Client implements AutoCloseable {
   // close() has already missed in its snapshot.
   private boolean closed = false;
 
-  @VisibleForTesting
-  static FeatureFlags computeBaseFeatureFlags(ClientSettings settings) {
-    FeatureFlags baseFeatureFlags = BASE_FEATURE_FLAGS;
-    if (settings.isServerInitiatedFlowControlEnabled()) {
-      baseFeatureFlags =
-          baseFeatureFlags.toBuilder()
-              .setMutateRowsRateLimit(true)
-              .setMutateRowsRateLimit2(true)
-              .build();
-    }
-    return baseFeatureFlags;
-  }
-
   public static Client create(ClientSettings settings) throws IOException {
     FeatureFlags featureFlags =
-        settings.getChannelProvider().updateFeatureFlags(computeBaseFeatureFlags(settings));
+        settings.getChannelProvider().updateFeatureFlags(BASE_FEATURE_FLAGS);
 
     ClientInfo clientInfo =
         ClientInfo.builder()
@@ -233,8 +216,6 @@ public class Client implements AutoCloseable {
     this.backgroundExecutor = bgExecutor;
     this.userCallbackExecutor = userCallbackExecutor;
     this.sessionTimer = new HashedWheelTimer("bigtable-session-timer");
-    this.mutateRowsRateLimiter =
-        this.featureFlags.getMutateRowsRateLimit() ? new SessionMutateRowsRateLimiter() : null;
 
     defaultCallOptions = CallOptions.DEFAULT;
 
@@ -281,8 +262,6 @@ public class Client implements AutoCloseable {
     this.userCallbackExecutor = userCallbackExecutor;
     this.channelPool = sharedChannelPool;
     this.sessionTimer = new HashedWheelTimer("bigtable-session-timer");
-    this.mutateRowsRateLimiter =
-        this.featureFlags.getMutateRowsRateLimit() ? new SessionMutateRowsRateLimiter() : null;
     defaultCallOptions = CallOptions.DEFAULT;
   }
 
@@ -389,8 +368,7 @@ public class Client implements AutoCloseable {
               metrics.get(),
               sessionTimer,
               backgroundExecutor.get(),
-              userCallbackExecutor.get(),
-              mutateRowsRateLimiter);
+              userCallbackExecutor.get());
       sessionPools.add(tableAsync.getSessionPool());
       return tableAsync;
     }
@@ -415,8 +393,7 @@ public class Client implements AutoCloseable {
               metrics.get(),
               sessionTimer,
               backgroundExecutor.get(),
-              userCallbackExecutor.get(),
-              mutateRowsRateLimiter);
+              userCallbackExecutor.get());
       sessionPools.add(viewAsync.getSessionPool());
       return viewAsync;
     }

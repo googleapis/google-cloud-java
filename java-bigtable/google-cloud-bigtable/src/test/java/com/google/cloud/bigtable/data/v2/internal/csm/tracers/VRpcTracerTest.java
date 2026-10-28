@@ -69,13 +69,11 @@ import io.grpc.Grpc;
 import io.grpc.InsecureChannelCredentials;
 import io.grpc.Metadata;
 import io.grpc.Server;
-import io.grpc.Status;
 import io.opencensus.stats.Stats;
 import io.opencensus.tags.Tags;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
-import io.opentelemetry.sdk.metrics.data.DoublePointData;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
@@ -412,36 +410,6 @@ public class VRpcTracerTest {
     assertThat(clientBlockingLatency).isAtLeast(sessionDelay);
   }
 
-  @Test
-  public void batchWriteFlowControlMetricsTest() {
-    MethodInfo methodInfo =
-        MethodInfo.builder().setName("Bigtable.MutateRows").setStreaming(false).build();
-    VRpcTracer tracer =
-        new VRpcTracerImpl(
-            recorderRegistry, poolInfo, methodInfo, Deadline.after(1, TimeUnit.MINUTES));
-
-    tracer.recordBatchWriteFlowControlTargetQps(13.0);
-    tracer.recordBatchWriteFlowControlFactor(1.3, Status.Code.OK, true);
-
-    double targetQps =
-        getDoubleMetricValue(
-            metricReader,
-            "bigtable.googleapis.com/internal/client/batch_write_flow_control_target_qps",
-            Attributes.builder().put("method", "Bigtable.MutateRows").build());
-    double factor =
-        getDoubleMetricValue(
-            metricReader,
-            "bigtable.googleapis.com/internal/client/batch_write_flow_control_factor",
-            Attributes.builder()
-                .put("method", "Bigtable.MutateRows")
-                .put("status", "OK")
-                .put("applied", true)
-                .build());
-
-    assertThat(targetQps).isWithin(0.001).of(13.0);
-    assertThat(factor).isWithin(0.001).of(1.3);
-  }
-
   private Action createErrorResponse(
       int errorCode, com.google.protobuf.Duration retryDelay, long rpcId) {
     com.google.rpc.Status status =
@@ -514,33 +482,6 @@ public class VRpcTracerTest {
     assertThat(allMetricData).comparingElementsUsing(METRIC_DATA_BY_NAME).contains(metricName);
     throw new IllegalStateException(
         "MetricData was missing then appeared, this should never happen");
-  }
-
-  private static double getDoubleMetricValue(
-      InMemoryMetricReader reader, String metricName, Attributes attributes) {
-    Collection<MetricData> allMetricData = reader.collectAllMetrics();
-    List<MetricData> matchingMetadata =
-        allMetricData.stream()
-            .filter(md -> METRIC_DATA_BY_NAME.compare(md, metricName))
-            .collect(Collectors.toList());
-    assertWithMessage(
-            "Found multiple MetricData with the same name: %s, in: %s",
-            metricName, matchingMetadata)
-        .that(matchingMetadata.size())
-        .isEqualTo(1);
-
-    MetricData metricData = matchingMetadata.get(0);
-    List<DoublePointData> points =
-        metricData.getDoubleGaugeData().getPoints().stream()
-            .filter(
-                pd ->
-                    pd.getAttributes()
-                        .asMap()
-                        .entrySet()
-                        .containsAll(attributes.asMap().entrySet()))
-            .collect(Collectors.toList());
-    assertWithMessage("ambiguous labels matched points").that(points).hasSize(1);
-    return points.get(0).getValue();
   }
 
   static class DelayedVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {

@@ -23,7 +23,6 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
-import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsAttemptResult;
 
 public class DisabledShim implements Shim {
 
@@ -59,9 +58,8 @@ public class DisabledShim implements Shim {
   }
 
   @Override
-  public UnaryCallable<BulkMutation, MutateRowsAttemptResult> decorateMutateRows(
-      UnaryCallable<BulkMutation, MutateRowsAttemptResult> classic,
-      UnaryCallSettings<?, ?> settings) {
+  public UnaryCallable<BulkMutation, Void> decorateMutateRows(
+      UnaryCallable<BulkMutation, Void> classic, UnaryCallSettings<?, ?> settings) {
     return classic;
   }
 }

@@ -15,8 +15,11 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.api;
 
+import static com.google.common.collect.ImmutableList.toImmutableList;
+
 import com.google.bigtable.v2.CloseSessionRequest;
 import com.google.bigtable.v2.FeatureFlags;
+import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
@@ -33,12 +36,8 @@ import com.google.cloud.bigtable.data.v2.internal.channels.TenantKey;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
-import com.google.cloud.bigtable.data.v2.internal.middleware.MutateRowsRetryingVRpc;
-import com.google.cloud.bigtable.data.v2.internal.middleware.RateLimitingVRpc;
 import com.google.cloud.bigtable.data.v2.internal.middleware.RetryingVRpc;
-import com.google.cloud.bigtable.data.v2.internal.middleware.SessionMutateRowsRateLimiter;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VOperationImpl;
-import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcListener;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
@@ -46,21 +45,19 @@ import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolImpl;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Message;
 import io.grpc.CallOptions;
 import io.grpc.Context;
 import io.grpc.Deadline;
 import io.grpc.Metadata;
 import java.util.concurrent.Executor;
-import java.util.function.Supplier;
-import javax.annotation.Nullable;
 
 class TableBase implements AutoCloseable {
   private final SessionPool<?> sessionPool;
   private final BigtableTimer timer;
   private final Executor userCallbackExecutor;
   private final Metrics metrics;
-  @Nullable private final SessionMutateRowsRateLimiter mutateRowsRateLimiter;
   private final VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor;
   private final VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse>
       mutateRowDescriptor;
@@ -92,48 +89,6 @@ class TableBase implements AutoCloseable {
       BigtableTimer timer,
       Executor backgroundExecutor,
       Executor userCallbackExecutor) {
-    return createAndStart(
-        openReq,
-        sessionDescriptor,
-        readRowDescriptor,
-        mutateRowDescriptor,
-        checkAndMutateRowDescriptor,
-        readModifyWriteRowDescriptor,
-        mutateRowsDescriptor,
-        featureFlags,
-        clientInfo,
-        configManager,
-        channelPool,
-        callOptions,
-        sessionPoolName,
-        metrics,
-        timer,
-        backgroundExecutor,
-        userCallbackExecutor,
-        /* mutateRowsRateLimiter= */ null);
-  }
-
-  static <ReqT extends Message> TableBase createAndStart(
-      ReqT openReq,
-      VRpcDescriptor.SessionDescriptor<ReqT> sessionDescriptor,
-      VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor,
-      VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse> mutateRowDescriptor,
-      VRpcDescriptor<?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
-          checkAndMutateRowDescriptor,
-      VRpcDescriptor<?, SessionReadModifyWriteRowRequest, SessionReadModifyWriteRowResponse>
-          readModifyWriteRowDescriptor,
-      VRpcDescriptor<?, SessionMutateRowsRequest, SessionMutateRowsResponse> mutateRowsDescriptor,
-      FeatureFlags featureFlags,
-      ClientInfo clientInfo,
-      ClientConfigurationManager configManager,
-      ChannelPool channelPool,
-      CallOptions callOptions,
-      String sessionPoolName,
-      Metrics metrics,
-      BigtableTimer timer,
-      Executor backgroundExecutor,
-      Executor userCallbackExecutor,
-      @Nullable SessionMutateRowsRateLimiter mutateRowsRateLimiter) {
 
     // Stamp the tenant key so ChannelPoolDpImpl can make tenant-aware placement decisions.
     CallOptions stamped =
@@ -165,8 +120,7 @@ class TableBase implements AutoCloseable {
         mutateRowsDescriptor,
         metrics,
         timer,
-        userCallbackExecutor,
-        mutateRowsRateLimiter);
+        userCallbackExecutor);
   }
 
   @VisibleForTesting
@@ -182,33 +136,6 @@ class TableBase implements AutoCloseable {
       Metrics metrics,
       BigtableTimer timer,
       Executor userCallbackExecutor) {
-    this(
-        sessionPool,
-        readRowDescriptor,
-        mutateRowDescriptor,
-        checkAndMutateRowDescriptor,
-        readModifyWriteRowDescriptor,
-        mutateRowsDescriptor,
-        metrics,
-        timer,
-        userCallbackExecutor,
-        /* mutateRowsRateLimiter= */ null);
-  }
-
-  @VisibleForTesting
-  TableBase(
-      SessionPool<?> sessionPool,
-      VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor,
-      VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse> mutateRowDescriptor,
-      VRpcDescriptor<?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
-          checkAndMutateRowDescriptor,
-      VRpcDescriptor<?, SessionReadModifyWriteRowRequest, SessionReadModifyWriteRowResponse>
-          readModifyWriteRowDescriptor,
-      VRpcDescriptor<?, SessionMutateRowsRequest, SessionMutateRowsResponse> mutateRowsDescriptor,
-      Metrics metrics,
-      BigtableTimer timer,
-      Executor userCallbackExecutor,
-      @Nullable SessionMutateRowsRateLimiter mutateRowsRateLimiter) {
     this.sessionPool = sessionPool;
     this.readRowDescriptor = readRowDescriptor;
     this.mutateRowDescriptor = mutateRowDescriptor;
@@ -218,7 +145,6 @@ class TableBase implements AutoCloseable {
     this.metrics = metrics;
     this.timer = timer;
     this.userCallbackExecutor = userCallbackExecutor;
-    this.mutateRowsRateLimiter = mutateRowsRateLimiter;
   }
 
   @Override
@@ -293,16 +219,13 @@ class TableBase implements AutoCloseable {
       SessionMutateRowsRequest req,
       VRpcListener<SessionMutateRowsResponse> listener,
       Deadline deadline) {
-    Supplier<VRpc<SessionMutateRowsRequest, SessionMutateRowsResponse>> attemptSupplier =
-        mutateRowsRateLimiter == null
-            ? () -> sessionPool.newCall(mutateRowsDescriptor)
-            : () ->
-                new RateLimitingVRpc(
-                    sessionPool.newCall(mutateRowsDescriptor), mutateRowsRateLimiter, timer);
-    MutateRowsRetryingVRpc retry = new MutateRowsRetryingVRpc(attemptSupplier, timer);
-    boolean idempotent =
+    RetryingVRpc<SessionMutateRowsRequest, SessionMutateRowsResponse> retry =
+        new RetryingVRpc<>(() -> sessionPool.newCall(mutateRowsDescriptor), timer);
+    ImmutableList<Mutation> mutations =
         req.getEntriesList().stream()
-            .allMatch(entry -> Util.isIdempotent(entry.getMutationsList()));
+            .flatMap(entry -> entry.getMutationsList().stream())
+            .collect(toImmutableList());
+    boolean idempotent = Util.isIdempotent(mutations);
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), mutateRowsDescriptor, deadline);
 

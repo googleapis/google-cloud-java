@@ -22,11 +22,9 @@ import static org.mockito.Mockito.verify;
 
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
 import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.api.Client.Resource;
-import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
@@ -117,21 +115,5 @@ public class ShimImplTest {
 
     resource.close();
     assertThat(((ExecutorService) exec).isShutdown()).isTrue();
-  }
-
-  @Test
-  public void computeBaseFeatureFlags_reflectsServerInitiatedFlowControlSetting() {
-    EnhancedBigtableStubSettings defaultSettings =
-        EnhancedBigtableStubSettings.newBuilder().setProjectId("p").setInstanceId("i").build();
-    FeatureFlags defaultFlags = ShimImpl.computeBaseFeatureFlags(defaultSettings);
-    assertThat(defaultFlags.getMutateRowsRateLimit()).isFalse();
-    assertThat(defaultFlags.getMutateRowsRateLimit2()).isFalse();
-
-    EnhancedBigtableStubSettings.Builder enabledBuilder =
-        EnhancedBigtableStubSettings.newBuilder().setProjectId("p").setInstanceId("i");
-    enabledBuilder.bulkMutateRowsSettings().setServerInitiatedFlowControl(true);
-    FeatureFlags enabledFlags = ShimImpl.computeBaseFeatureFlags(enabledBuilder.build());
-    assertThat(enabledFlags.getMutateRowsRateLimit()).isTrue();
-    assertThat(enabledFlags.getMutateRowsRateLimit2()).isTrue();
   }
 }
