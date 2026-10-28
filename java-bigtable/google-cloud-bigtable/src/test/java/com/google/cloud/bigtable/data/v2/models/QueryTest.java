@@ -554,6 +554,10 @@ public class QueryTest {
     assertThat(Query.create(TABLE_ID).filter(FILTERS.family().regex("test")))
         .isNotEqualTo(Query.create(TABLE_ID).filter(FILTERS.family().exactMatch("test-one")));
     assertThat(Query.create(TABLE_ID).limit(4)).isNotEqualTo(Query.create(TABLE_ID).limit(5));
+    assertThat(Query.create(TABLE_ID).reversed(true))
+        .isNotEqualTo(Query.create(TABLE_ID).reversed(false));
+    assertThat(Query.create(TABLE_ID).reversed(true).hashCode())
+        .isNotEqualTo(Query.create(TABLE_ID).reversed(false).hashCode());
 
     // AuthorizedView query test.
     request =
@@ -582,6 +586,8 @@ public class QueryTest {
             Query.create(AUTHORIZED_VIEW_ID).filter(FILTERS.family().exactMatch("test-one")));
     assertThat(Query.create(AUTHORIZED_VIEW_ID).limit(4))
         .isNotEqualTo(Query.create(AUTHORIZED_VIEW_ID).limit(5));
+    assertThat(Query.create(AUTHORIZED_VIEW_ID).reversed(true))
+        .isNotEqualTo(Query.create(AUTHORIZED_VIEW_ID).reversed(false));
 
     assertThat(Query.create(AUTHORIZED_VIEW_ID)).isNotEqualTo(Query.create(TABLE_ID));
   }
