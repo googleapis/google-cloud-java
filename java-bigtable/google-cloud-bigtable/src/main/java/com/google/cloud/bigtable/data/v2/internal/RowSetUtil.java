@@ -51,6 +51,7 @@ public final class RowSetUtil {
 
   /** Removes the {@code #excludePoint} rowkey from the {@code RowSet} */
   public static RowSet eraseLargeRow(RowSet rowSet, ByteString excludePoint) {
+    Preconditions.checkArgument(!excludePoint.isEmpty(), "Can't handle empty excludePoint");
 
     RowSet.Builder newRowSet = RowSet.newBuilder();
 
@@ -89,6 +90,7 @@ public final class RowSetUtil {
    * removed. The primary usecase is to resume a broken ReadRows stream.
    */
   public static RowSet erase(RowSet rowSet, ByteString splitPoint, boolean fromStart) {
+    Preconditions.checkArgument(!splitPoint.isEmpty(), "Can't handle empty splitPoint");
     RowSet.Builder newRowSet = RowSet.newBuilder();
 
     if (rowSet.getRowKeysList().isEmpty() && rowSet.getRowRangesList().isEmpty()) {

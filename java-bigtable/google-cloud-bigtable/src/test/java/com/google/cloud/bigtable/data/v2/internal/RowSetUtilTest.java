@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.data.v2.internal;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
@@ -343,5 +344,21 @@ public class RowSetUtilTest {
             .build();
     RowSet actual = RowSetUtil.eraseLargeRow(rowSet, key);
     assertThat(actual).isNull();
+  }
+
+  @Test
+  public void testEraseEmptyKey() {
+    RowSet rowSet = RowSet.getDefaultInstance();
+    assertThrows(
+        IllegalArgumentException.class, () -> RowSetUtil.erase(rowSet, ByteString.EMPTY, true));
+    assertThrows(
+        IllegalArgumentException.class, () -> RowSetUtil.erase(rowSet, ByteString.EMPTY, false));
+  }
+
+  @Test
+  public void testEraseLargeRowEmptyKey() {
+    RowSet rowSet = RowSet.getDefaultInstance();
+    assertThrows(
+        IllegalArgumentException.class, () -> RowSetUtil.eraseLargeRow(rowSet, ByteString.EMPTY));
   }
 }
