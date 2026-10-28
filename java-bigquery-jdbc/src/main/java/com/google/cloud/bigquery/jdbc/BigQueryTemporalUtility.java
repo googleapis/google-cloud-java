@@ -17,6 +17,8 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.math.BigDecimal;
@@ -37,6 +39,7 @@ import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoField;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Map;
 import java.util.TimeZone;
 
 /**
@@ -419,6 +422,93 @@ final class BigQueryTemporalUtility {
         && field.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP
         && field.getTimestampPrecision() != null
         && field.getTimestampPrecision() > 6;
+  }
+
+  static boolean isRange(Field field) {
+    return field != null
+        && field.getType() != null
+        && field.getType().getStandardType() == StandardSQLTypeName.RANGE;
+  }
+
+  /**
+   * Formats a RANGE value (a REST {@link FieldValue} or an Arrow {@code start}/{@code end} map) as
+   * {@code [start, end)}. Each bound reads like {@code getString} on its element type; null bounds
+   * read as {@code UNBOUNDED}.
+   */
+  static String formatRange(Field field, Object value, boolean enableTimestampPicos)
+      throws BigQueryJdbcException {
+    Object start;
+    Object end;
+    if (value instanceof FieldValue) {
+      Range range = ((FieldValue) value).getRangeValue();
+      start = range.getStart().isNull() ? null : range.getStart().getStringValue();
+      end = range.getEnd().isNull() ? null : range.getEnd().getStringValue();
+    } else if (value instanceof Map) {
+      start = ((Map<?, ?>) value).get("start");
+      end = ((Map<?, ?>) value).get("end");
+    } else {
+      return value == null ? null : value.toString();
+    }
+    StandardSQLTypeName elementType = getRangeElementType(field, start != null ? start : end);
+    return "["
+        + formatRangeBound(start, elementType, enableTimestampPicos)
+        + ", "
+        + formatRangeBound(end, elementType, enableTimestampPicos)
+        + ")";
+  }
+
+  private static StandardSQLTypeName getRangeElementType(Field field, Object bound) {
+    if (field != null
+        && field.getRangeElementType() != null
+        && field.getRangeElementType().getType() != null) {
+      try {
+        return StandardSQLTypeName.valueOf(field.getRangeElementType().getType().toUpperCase());
+      } catch (IllegalArgumentException ignored) {
+      }
+    }
+    // Arrow bound classes: DATE -> Integer epoch days, DATETIME -> LocalDateTime, TIMESTAMP -> Long
+    // epoch micros.
+    if (bound instanceof Integer) {
+      return StandardSQLTypeName.DATE;
+    }
+    if (bound instanceof LocalDateTime) {
+      return StandardSQLTypeName.DATETIME;
+    }
+    if (bound instanceof Long) {
+      return StandardSQLTypeName.TIMESTAMP;
+    }
+    return StandardSQLTypeName.STRING;
+  }
+
+  private static String formatRangeBound(
+      Object bound, StandardSQLTypeName elementType, boolean enableTimestampPicos)
+      throws BigQueryJdbcException {
+    if (bound == null) {
+      return "UNBOUNDED";
+    }
+    try {
+      switch (elementType) {
+        case DATE:
+          return bound instanceof Integer
+              ? LocalDate.ofEpochDay((Integer) bound).toString()
+              : bound.toString();
+        case DATETIME:
+          LocalDateTime ldt =
+              bound instanceof LocalDateTime
+                  ? (LocalDateTime) bound
+                  : LocalDateTime.parse(
+                      truncateFractionalSeconds(bound.toString().replace(' ', 'T'), 9));
+          StringBuilder sb = formatDateTimeBase(ldt, 6);
+          appendPadded(sb, ldt.getNano() / 1_000, 6);
+          return sb.toString();
+        case TIMESTAMP:
+          return formatTimestampValue(bound, enableTimestampPicos);
+        default:
+          return bound.toString();
+      }
+    } catch (DateTimeException e) {
+      throw new BigQueryJdbcException("Invalid RANGE bound: " + bound, e);
+    }
   }
 
   private static StringBuilder formatDateTimeBase(LocalDateTime dt, int scale) {

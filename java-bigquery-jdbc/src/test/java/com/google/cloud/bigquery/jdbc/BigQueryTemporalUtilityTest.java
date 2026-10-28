@@ -16,9 +16,17 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import static com.google.cloud.bigquery.FieldValue.Attribute.RANGE;
+import static com.google.cloud.bigquery.jdbc.BigQueryTemporalUtility.formatRange;
+import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.arrowRange;
+import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.rangeField;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.Range;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.Date;
 import java.sql.Time;
@@ -548,5 +556,55 @@ public class BigQueryTemporalUtilityTest {
             BigQueryTemporalUtility.truncateFractionalSeconds(
                 "2026-04-08 10:00:00.123456789012", 9))
         .isEqualTo("2026-04-08 10:00:00.123456789");
+  }
+
+  @Test
+  public void testFormatRange() throws BigQueryJdbcException {
+    Field date = rangeField("r", "DATE");
+    Field dateTime = rangeField("r", "DATETIME");
+    Field timestamp = rangeField("r", "TIMESTAMP");
+
+    // REST
+    assertThat(formatRange(date, FieldValue.of(RANGE, Range.of("[2026-01-01, 2026-12-31)")), false))
+        .isEqualTo("[2026-01-01, 2026-12-31)");
+    assertThat(
+            formatRange(
+                dateTime,
+                FieldValue.of(RANGE, Range.of("[2026-01-01T00:00:00, 2026-12-31T23:59:59.5)")),
+                false))
+        .isEqualTo("[2026-01-01 00:00:00.000000, 2026-12-31 23:59:59.500000)");
+    FieldValue restTimestamps =
+        FieldValue.of(RANGE, Range.of("[1767225600.000000, 1798761599.000000)"));
+    assertThat(formatRange(timestamp, restTimestamps, false))
+        .isEqualTo("[2026-01-01 00:00:00.000000, 2026-12-31 23:59:59.000000)");
+    assertThat(formatRange(timestamp, restTimestamps, true))
+        .isEqualTo("[2026-01-01 00:00:00.000000000000, 2026-12-31 23:59:59.000000000000)");
+    assertThat(
+            formatRange(
+                timestamp, FieldValue.of(RANGE, Range.of("[1767225600.000000, UNBOUNDED)")), false))
+        .isEqualTo("[2026-01-01 00:00:00.000000, UNBOUNDED)");
+
+    // Arrow
+    assertThat(formatRange(date, arrowRange(20454, 20818), false))
+        .isEqualTo("[2026-01-01, 2026-12-31)");
+    assertThat(
+            formatRange(
+                dateTime,
+                arrowRange(
+                    LocalDateTime.of(2026, 1, 1, 0, 0),
+                    LocalDateTime.of(2026, 12, 31, 23, 59, 59, 500_000_000)),
+                false))
+        .isEqualTo("[2026-01-01 00:00:00.000000, 2026-12-31 23:59:59.500000)");
+    assertThat(formatRange(timestamp, arrowRange(1767225600000000L, null), false))
+        .isEqualTo("[2026-01-01 00:00:00.000000, UNBOUNDED)");
+    // Element type inferred from the Arrow bound class when the schema lacks it.
+    assertThat(
+            formatRange(
+                Field.of("r", StandardSQLTypeName.RANGE),
+                arrowRange(1767225600000000L, 1798761599000000L),
+                false))
+        .isEqualTo("[2026-01-01 00:00:00.000000, 2026-12-31 23:59:59.000000)");
+
+    assertThat(formatRange(timestamp, null, false)).isNull();
   }
 }

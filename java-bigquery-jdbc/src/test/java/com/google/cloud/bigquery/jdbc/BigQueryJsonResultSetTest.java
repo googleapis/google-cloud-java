@@ -681,7 +681,7 @@ public class BigQueryJsonResultSetTest {
     BigQueryJsonResultSet rs = createJsonResultSet(fields, row, false);
     assertThat(rs.next()).isTrue();
     assertThat(rs.getString("rangeTs"))
-        .isEqualTo("[1680174859.123456789123, 1680174860.123456789123)");
+        .isEqualTo("[2023-03-30 11:14:19.123456, 2023-03-30 11:14:20.123456)");
   }
 
   @Test
