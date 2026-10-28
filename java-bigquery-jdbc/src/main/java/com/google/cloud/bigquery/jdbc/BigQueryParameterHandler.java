@@ -48,12 +48,12 @@ class BigQueryParameterHandler {
   // Locale.ROOT marks these as wire formats; the patterns are numeric-only, so it is a guard, not
   // a fix.
   private static final DateTimeFormatter TIMESTAMP_MICROS_UTC =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSXXX", Locale.ROOT);
+      DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.SSSSSSXXX", Locale.ROOT);
   private static final DateTimeFormatter TIMESTAMP_NANOS_UTC =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSSSSXXX", Locale.ROOT);
+      DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.SSSSSSSSSXXX", Locale.ROOT);
   // DATETIME is a zone-less wall clock; the validator requires six fraction digits and no offset.
   private static final DateTimeFormatter DATETIME_MICROS =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS", Locale.ROOT);
+      DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.SSSSSS", Locale.ROOT);
 
   /** Wall-clock digits for DATETIME (read as UTC if sent to TIMESTAMP). Nanos are truncated. */
   static String formatDateTimeDigits(LocalDateTime value) {
