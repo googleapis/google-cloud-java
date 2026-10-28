@@ -129,7 +129,13 @@ final class DefaultStorageRetryStrategy implements StorageRetryStrategy {
       if (baseServiceException.getCode() == BaseServiceException.UNKNOWN_CODE
           && baseServiceException.getReason() == null) {
         final Throwable cause = baseServiceException.getCause();
-        if (cause instanceof IOException) {
+        if (cause instanceof HttpResponseException) {
+          int code = ((HttpResponseException) cause).getStatusCode();
+          return shouldRetryCodeReason(code, null);
+        } else if (cause instanceof Retryable) {
+          Retryable retryable = (Retryable) cause;
+          return (idempotent && retryable.isRetryable()) ? RetryResult.RETRY : RetryResult.NO_RETRY;
+        } else if (cause instanceof IOException) {
           IOException ioException = (IOException) cause;
           return shouldRetryIOException(ioException);
         }

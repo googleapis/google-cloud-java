@@ -347,6 +347,37 @@ public final class DefaultRetryHandlingBehaviorTest {
     AUTH_RETRYABLE_TRUE(new RetryableException(true)),
     AUTH_RETRYABLE_FALSE(new RetryableException(false)),
     UNKNOWN_HOST_EXCEPTION(C.UNKNOWN_HOST_EXCEPTION),
+    STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_401(
+        new StorageException(0, "code 0 wrapping http 401", C.HTTP_401)),
+    STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_403(
+        new StorageException(0, "code 0 wrapping http 403", C.HTTP_403)),
+    STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_404(
+        new StorageException(0, "code 0 wrapping http 404", C.HTTP_404)),
+    STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_408(
+        new StorageException(0, "code 0 wrapping http 408", C.HTTP_409)),
+    STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_429(
+        new StorageException(0, "code 0 wrapping http 429", C.HTTP_429)),
+    STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_500(
+        new StorageException(0, "code 0 wrapping http 500", C.HTTP_500)),
+    STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_502(
+        new StorageException(0, "code 0 wrapping http 502", C.HTTP_502)),
+    STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_503(
+        new StorageException(0, "code 0 wrapping http 503", C.HTTP_503)),
+    STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_504(
+        new StorageException(0, "code 0 wrapping http 504", C.HTTP_504)),
+    COALESCED_HTTP_RESPONSE_EXCEPTION_401(StorageException.coalesce(C.HTTP_401)),
+    COALESCED_HTTP_RESPONSE_EXCEPTION_403(StorageException.coalesce(C.HTTP_403)),
+    COALESCED_HTTP_RESPONSE_EXCEPTION_404(StorageException.coalesce(C.HTTP_404)),
+    COALESCED_HTTP_RESPONSE_EXCEPTION_408(StorageException.coalesce(C.HTTP_409)),
+    COALESCED_HTTP_RESPONSE_EXCEPTION_429(StorageException.coalesce(C.HTTP_429)),
+    COALESCED_HTTP_RESPONSE_EXCEPTION_500(StorageException.coalesce(C.HTTP_500)),
+    COALESCED_HTTP_RESPONSE_EXCEPTION_502(StorageException.coalesce(C.HTTP_502)),
+    COALESCED_HTTP_RESPONSE_EXCEPTION_503(StorageException.coalesce(C.HTTP_503)),
+    COALESCED_HTTP_RESPONSE_EXCEPTION_504(StorageException.coalesce(C.HTTP_504)),
+    STORAGE_EXCEPTION_0_AUTH_RETRYABLE_TRUE(
+        new StorageException(0, "code 0 wrapping auth retryable", new RetryableException(true))),
+    STORAGE_EXCEPTION_0_AUTH_RETRYABLE_FALSE(
+        new StorageException(0, "code 0 wrapping auth retryable", new RetryableException(false))),
     ;
 
     private final Throwable throwable;
@@ -1080,6 +1111,206 @@ public final class DefaultRetryHandlingBehaviorTest {
                 Behavior.DEFAULT_MORE_PERMISSIBLE),
             new Case(
                 ThrowableCategory.UNKNOWN_HOST_EXCEPTION,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_401,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_401,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_403,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_403,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_404,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_404,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_408,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.DEFAULT_MORE_PERMISSIBLE),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_408,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_429,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.DEFAULT_MORE_PERMISSIBLE),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_429,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_500,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.DEFAULT_MORE_PERMISSIBLE),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_500,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_502,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.DEFAULT_MORE_PERMISSIBLE),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_502,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_503,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.DEFAULT_MORE_PERMISSIBLE),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_503,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_504,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.DEFAULT_MORE_PERMISSIBLE),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_HTTP_RESPONSE_EXCEPTION_504,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_401,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_401,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_403,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_403,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_404,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_404,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_408,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_408,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.DEFAULT_MORE_STRICT),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_429,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_429,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.DEFAULT_MORE_STRICT),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_500,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_500,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.DEFAULT_MORE_STRICT),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_502,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_502,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.DEFAULT_MORE_STRICT),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_503,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_503,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.DEFAULT_MORE_STRICT),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_504,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.COALESCED_HTTP_RESPONSE_EXCEPTION_504,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.DEFAULT_MORE_STRICT),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_AUTH_RETRYABLE_TRUE,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.YES,
+                Behavior.DEFAULT_MORE_PERMISSIBLE),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_AUTH_RETRYABLE_TRUE,
+                HandlerCategory.NONIDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_AUTH_RETRYABLE_FALSE,
+                HandlerCategory.IDEMPOTENT,
+                ExpectRetry.NO,
+                Behavior.SAME),
+            new Case(
+                ThrowableCategory.STORAGE_EXCEPTION_0_AUTH_RETRYABLE_FALSE,
                 HandlerCategory.NONIDEMPOTENT,
                 ExpectRetry.NO,
                 Behavior.SAME))

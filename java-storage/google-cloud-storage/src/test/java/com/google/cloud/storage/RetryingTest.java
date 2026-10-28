@@ -20,6 +20,8 @@ import static com.google.cloud.storage.TestUtils.assertAll;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.core.NanoClock;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.retrying.RetrySettings;
@@ -132,6 +134,96 @@ public final class RetryingTest {
         () -> assertThat(messages).contains("{unavailable}"),
         () -> assertThat(messages).contains("{internal}"),
         () -> assertThat(messages).containsMatch(UUID_PATTERN));
+  }
+
+  @Test
+  public void http503ThenSuccess_idempotent_retries() throws Exception {
+    AtomicInteger counter = new AtomicInteger(0);
+    String actual =
+        new DefaultRetrier(UnaryOperator.identity(), RETRYING_DEPENDENCIES)
+            .run(
+                DefaultStorageRetryStrategy.INSTANCE.getIdempotentHandler(),
+                () -> {
+                  int i = counter.incrementAndGet();
+                  if (i < 3) {
+                    throw httpResponseException(503, "Service Unavailable");
+                  }
+                  return "ok";
+                },
+                Decoder.identity());
+    assertAll(
+        () -> assertThat(actual).isEqualTo("ok"), () -> assertThat(counter.get()).isEqualTo(3));
+  }
+
+  @Test
+  public void http503_nonIdempotent_noRetry() throws Exception {
+    AtomicInteger counter = new AtomicInteger(0);
+    StorageException actual =
+        assertThrows(
+            StorageException.class,
+            () ->
+                new DefaultRetrier(UnaryOperator.identity(), RETRYING_DEPENDENCIES)
+                    .run(
+                        DefaultStorageRetryStrategy.INSTANCE.getNonidempotentHandler(),
+                        () -> {
+                          counter.incrementAndGet();
+                          throw httpResponseException(503, "Service Unavailable");
+                        },
+                        Decoder.identity()));
+    assertAll(
+        () -> assertThat(actual.getCode()).isEqualTo(503),
+        () -> assertThat(counter.get()).isEqualTo(1));
+  }
+
+  @Test
+  public void http404_idempotent_noRetry() throws Exception {
+    AtomicInteger counter = new AtomicInteger(0);
+    StorageException actual =
+        assertThrows(
+            StorageException.class,
+            () ->
+                new DefaultRetrier(UnaryOperator.identity(), RETRYING_DEPENDENCIES)
+                    .run(
+                        DefaultStorageRetryStrategy.INSTANCE.getIdempotentHandler(),
+                        () -> {
+                          counter.incrementAndGet();
+                          throw httpResponseException(404, "Not Found");
+                        },
+                        Decoder.identity()));
+    String messages = TestUtils.messagesToText(actual);
+    assertAll(
+        () -> assertThat(actual.getCode()).isEqualTo(404),
+        () -> assertThat(actual.getCause()).isInstanceOf(HttpResponseException.class),
+        () -> assertThat(counter.get()).isEqualTo(1),
+        () -> assertThat(messages).contains("Unretryable error"));
+  }
+
+  @Test
+  public void http503_exhaustsBudget() throws Exception {
+    AtomicInteger counter = new AtomicInteger(0);
+    StorageException actual =
+        assertThrows(
+            StorageException.class,
+            () ->
+                new DefaultRetrier(UnaryOperator.identity(), RETRYING_DEPENDENCIES)
+                    .run(
+                        DefaultStorageRetryStrategy.INSTANCE.getIdempotentHandler(),
+                        () -> {
+                          counter.incrementAndGet();
+                          throw httpResponseException(503, "Service Unavailable");
+                        },
+                        Decoder.identity()));
+    String messages = TestUtils.messagesToText(actual);
+    assertAll(
+        () -> assertThat(actual.getCode()).isEqualTo(503),
+        () -> assertThat(counter.get()).isEqualTo(3),
+        () -> assertThat(messages).contains("Operation failed to complete within attempt budget"));
+  }
+
+  private static HttpResponseException httpResponseException(int code, String statusMessage) {
+    return new HttpResponseException.Builder(code, statusMessage, new HttpHeaders())
+        .setContent("<Error><Code>" + statusMessage + "</Code></Error>")
+        .build();
   }
 
   private static ApiException apiException(Code code, String message) {

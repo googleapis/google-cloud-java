@@ -17,6 +17,7 @@
 package com.google.cloud.storage;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
@@ -128,7 +129,22 @@ public final class StorageException extends BaseHttpServiceException {
     if (t.getCause() instanceof ApiException) {
       return asStorageException((ApiException) t.getCause());
     }
+    if (t instanceof HttpResponseException) {
+      return fromHttpResponseException((HttpResponseException) t);
+    }
+    if (t.getCause() instanceof HttpResponseException) {
+      return fromHttpResponseException((HttpResponseException) t.getCause());
+    }
     return getStorageException(t);
+  }
+
+  /**
+   * Create a {@link StorageException} from an {@link HttpResponseException} preserving its HTTP
+   * status code (and, for a {@code GoogleJsonResponseException}, its JSON error code and reason),
+   * its message and the original exception as the cause.
+   */
+  private static StorageException fromHttpResponseException(HttpResponseException e) {
+    return new StorageException((IOException) e);
   }
 
   static <T> ApiFuture<T> coalesceAsync(ApiFuture<T> originalFuture) {

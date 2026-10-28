@@ -146,7 +146,10 @@ abstract class RewindableContent extends AbstractHttpContent {
     @Override
     void rewindTo(long offset) {
       Preconditions.checkArgument(
-          offset < size, "provided offset must be less than size (%d < %d)", offset, size);
+          0 <= offset && offset <= size,
+          "provided offset must be within [0, size] (0 <= %s <= %s)",
+          offset,
+          size);
       this.readOffset = offset;
     }
 
