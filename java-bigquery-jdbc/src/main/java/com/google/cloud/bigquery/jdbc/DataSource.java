@@ -131,6 +131,7 @@ public class DataSource implements javax.sql.DataSource {
   private OpenTelemetry customOpenTelemetry;
   private boolean useGlobalOpenTelemetry = BigQueryJdbcUrlUtility.DEFAULT_USE_GLOBAL_OTEL_VALUE;
   private Boolean enableDiagnosticTelemetry;
+  private Boolean enableGraphMetadata;
 
   // Make sure the JDBC driver class is loaded.
   static {
@@ -396,6 +397,12 @@ public class DataSource implements javax.sql.DataSource {
                   ds.setEnableDiagnosticTelemetry(
                       BigQueryJdbcUrlUtility.convertIntToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_GRAPH_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableGraphMetadata(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_GRAPH_PROPERTY_NAME)))
           .build();
 
   public static DataSource fromUrl(String url) {
@@ -737,6 +744,11 @@ public class DataSource implements javax.sql.DataSource {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME,
           String.valueOf(this.useGlobalOpenTelemetry));
+    }
+    if (this.enableGraphMetadata != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.ENABLE_GRAPH_PROPERTY_NAME,
+          String.valueOf(this.enableGraphMetadata));
     }
     connectionProperties.setProperty(
         BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME,
@@ -1535,6 +1547,16 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setPrivateServiceConnect(String privateServiceConnect) {
     this.privateServiceConnect = privateServiceConnect;
+  }
+
+  public Boolean getEnableGraphMetadata() {
+    return enableGraphMetadata != null
+        ? enableGraphMetadata
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GRAPH_VALUE;
+  }
+
+  public void setEnableGraphMetadata(Boolean enableGraphMetadata) {
+    this.enableGraphMetadata = enableGraphMetadata;
   }
 
   @Override

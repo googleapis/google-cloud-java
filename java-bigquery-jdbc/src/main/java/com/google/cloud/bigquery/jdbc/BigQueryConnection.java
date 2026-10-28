@@ -240,6 +240,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   boolean enableGcpLogExporter;
   OpenTelemetry customOpenTelemetry;
   boolean useGlobalOpenTelemetry;
+  boolean enableGraphMetadata;
   private OpenTelemetry openTelemetry;
   private Context otelContext;
   Tracer tracer =
@@ -397,6 +398,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.connectionPoolSize = ds.getConnectionPoolSize();
       this.listenerPoolSize = ds.getListenerPoolSize();
       this.partnerToken = ds.getPartnerToken();
+      this.enableGraphMetadata = ds.getEnableGraphMetadata();
 
       this.headerProvider = createHeaderProvider();
       this.enableGcpTraceExporter = ds.getEnableGcpTraceExporter();
@@ -865,6 +867,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   Long getListenerPoolSize() {
     return listenerPoolSize;
+  }
+
+  boolean isEnableGraphMetadata() {
+    return this.enableGraphMetadata;
   }
 
   @Override
