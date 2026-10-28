@@ -67,9 +67,9 @@ fi
 #    produces the required bytecode in target/classes and target/test-classes in seconds.
 # 3. Why -DskipTests=true? Ensures test classes are compiled without executing tests during analysis.
 mvn test-compile -B -V -ntp \
-  -Pquick-build -DskipTests=true -Dmaven.javadoc.skip=true -Denforcer.skip=false -T 1C -Daether.syncContext.named.factory=nolock
+  -Pquick-build -DskipTests=true -Dmaven.javadoc.skip=true -Denforcer.skip=false -T 1C
 
-mvn -B dependency:analyze -Pquick-build -DfailOnWarning=true -Dmdep.analyze.skip=false -T 1C -Daether.syncContext.named.factory=nolock
+mvn -B dependency:analyze -Pquick-build -DfailOnWarning=true -Dmdep.analyze.skip=false -T 1C
 
 if [[ -n "${BUILD_SUBDIR}" ]]
 then

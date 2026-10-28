@@ -1,5 +1,6 @@
 #!/bin/bash
 # Copyright 2020 Google LLC
+export MAVEN_OPTS="${MAVEN_OPTS} -Daether.syncContext.named.factory=nolock"
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -458,7 +459,7 @@ function run_integration_tests() {
     -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -DskipUnitTests=true \
     -Dmaven.wagon.http.retryHandler.count=5 \
-    -T 1C -Daether.syncContext.named.factory=nolock
+    -T 1C
 
   RETURN_CODE=$?
   printf "Finished integration tests for modules:\n%s\n" "$1"
@@ -546,7 +547,7 @@ function install_modules() {
         -DskipTests=true \
         -Dmaven.javadoc.skip=true \
         -Dgcloud.download.skip=true \
-        -T 1C -Daether.syncContext.named.factory=nolock
+        -T 1C
   else
     printf "Installing modules:\n%s\n" "$1"
     parse_all_submodules "$1"
@@ -625,7 +626,7 @@ function install_modules() {
         -DskipTests=true \
         -Dmaven.javadoc.skip=true \
         -Dgcloud.download.skip=true \
-        -T 1C -Daether.syncContext.named.factory=nolock
+        -T 1C
   fi
 }
 
@@ -723,5 +724,5 @@ function install_repo_modules {
   fi
   echo "Installing this repo's modules to local maven."
   mvn -q -B -ntp install ${projects_arg} \
-    -Dcheckstyle.skip -Dfmt.skip -DskipTests -T 1C -Daether.syncContext.named.factory=nolock
+    -Dcheckstyle.skip -Dfmt.skip -DskipTests -T 1C
 }

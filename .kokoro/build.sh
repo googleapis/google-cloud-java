@@ -70,7 +70,7 @@ case ${JOB_TYPE} in
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dmaven.wagon.http.retryHandler.count=5 \
         "${EXCLUDE_PROJECTS_OPTS[@]}" \
-        -T 1C -Daether.syncContext.named.factory=nolock
+        -T 1C
     RETURN_CODE=$?
 
     if [[ -n "${BUILD_SUBDIR}" ]]
@@ -97,7 +97,7 @@ case ${JOB_TYPE} in
           -Dmaven.wagon.http.retryHandler.count=5 \
           -DskipTests=true \
           --also-make \
-          -T 1C -Daether.syncContext.named.factory=nolock
+          -T 1C
     fi
     ;;
   integration)
@@ -317,12 +317,12 @@ case ${JOB_TYPE} in
     # benchmark module in java-bigquery/benchmark. This module is not needed during
     # other builds or releases.
     mvn -B -ntp \
-      -T 1C -Daether.syncContext.named.factory=nolock \
+      -T 1C \
       ${MODULE_FILTER} \
       -Dlint \
       com.spotify.fmt:fmt-maven-plugin:check
     mvn -B -ntp \
-      -T 1C -Daether.syncContext.named.factory=nolock \
+      -T 1C \
       ${MODULE_FILTER} \
       -Dlint \
       checkstyle:check@checkstyle
