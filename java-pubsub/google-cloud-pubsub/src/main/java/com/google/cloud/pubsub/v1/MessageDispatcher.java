@@ -29,6 +29,8 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.SubscriptionName;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.context.Scope;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -688,17 +690,21 @@ class MessageDispatcher {
                   messageWrapper,
                   ackHandler.ackRequestData.getAckId(),
                   exactlyOnceDeliveryEnabled.get());
-              if (shouldSetMessageFuture()) {
-                // This is the message future that is propagated to the user
-                SettableApiFuture<AckResponse> messageFuture =
-                    ackHandler.getMessageFutureIfExists();
-                final AckReplyConsumerWithResponse ackReplyConsumerWithResponse =
-                    new AckReplyConsumerWithResponseImpl(ackReplySettableApiFuture, messageFuture);
-                receiverWithAckResponse.receiveMessage(message, ackReplyConsumerWithResponse);
-              } else {
-                final AckReplyConsumer ackReplyConsumer =
-                    new AckReplyConsumerImpl(ackReplySettableApiFuture);
-                receiver.receiveMessage(message, ackReplyConsumer);
+              final Span processSpan = messageWrapper.getSubscribeProcessSpan();
+              try (Scope ignored = processSpan != null ? processSpan.makeCurrent() : Scope.noop()) {
+                if (shouldSetMessageFuture()) {
+                  // This is the message future that is propagated to the user
+                  SettableApiFuture<AckResponse> messageFuture =
+                      ackHandler.getMessageFutureIfExists();
+                  final AckReplyConsumerWithResponse ackReplyConsumerWithResponse =
+                      new AckReplyConsumerWithResponseImpl(
+                          ackReplySettableApiFuture, messageFuture);
+                  receiverWithAckResponse.receiveMessage(message, ackReplyConsumerWithResponse);
+                } else {
+                  final AckReplyConsumer ackReplyConsumer =
+                      new AckReplyConsumerImpl(ackReplySettableApiFuture);
+                  receiver.receiveMessage(message, ackReplyConsumer);
+                }
               }
             } catch (Exception e) {
               ackReplySettableApiFuture.setException(e);
