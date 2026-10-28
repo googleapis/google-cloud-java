@@ -101,6 +101,7 @@
     <module>java-datastore</module>
     <module>java-datastream</module>
     <module>java-deploy</module>
+    <module>java-designcenter</module>
     <module>java-developerconnect</module>
     <module>java-developerknowledge</module>
     <module>java-devicestreaming</module>

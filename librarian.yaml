@@ -1499,6 +1499,14 @@ libraries:
       released_version: 1.98.0
       name_pretty_override: Google Cloud Deploy
       product_documentation_override: https://cloud.google.com/deploy/docs
+  - name: designcenter
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/designcenter/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
   - name: developerconnect
     version: 0.57.0
     apis:
