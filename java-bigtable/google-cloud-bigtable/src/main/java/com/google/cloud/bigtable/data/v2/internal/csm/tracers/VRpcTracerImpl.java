@@ -26,6 +26,7 @@ import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcResult.Sta
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
 import com.google.common.base.Stopwatch;
 import io.grpc.Deadline;
+import io.grpc.Status;
 import java.time.Duration;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
@@ -131,6 +132,19 @@ public class VRpcTracerImpl implements VRpcTracer {
   @Override
   public void recordApplicationBlockingLatencies(Duration elapsed) {
     applicationBlockingLatency = applicationBlockingLatency.plus(elapsed);
+  }
+
+  @Override
+  public void recordBatchWriteFlowControlTargetQps(double targetQps) {
+    metricRegistry.batchWriteFlowControlTargetQps.record(
+        poolInfo.getClientInfo(), methodInfo, targetQps);
+  }
+
+  @Override
+  public void recordBatchWriteFlowControlFactor(
+      double factor, Status.Code statusCode, boolean applied) {
+    metricRegistry.batchWriteFlowControlFactor.record(
+        poolInfo.getClientInfo(), statusCode, applied, methodInfo, factor);
   }
 
   @Override

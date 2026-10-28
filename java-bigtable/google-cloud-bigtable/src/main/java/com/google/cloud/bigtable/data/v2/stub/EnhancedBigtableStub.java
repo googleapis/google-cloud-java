@@ -203,15 +203,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
     bulkMutateRowsCallable = createMutateRowsBaseCallable();
     UnaryCallable<BulkMutation, Void> bulkMutateRowsVoidCallable =
         new MutateRowsErrorConverterUnaryCallable(bulkMutateRowsCallable);
-    UnaryCallable<BulkMutation, Void> maybePointWriteCallable =
-        new MaybePointWriteCallable(
-            bulkMutateRowsVoidCallable,
-            createPointWriteCallable(bulkMutateRowsVoidCallable),
-            requestContext);
     externalBulkMutateRowsCallable =
-        bigtableClientContext
-            .getSessionShim()
-            .decorateMutateRows(maybePointWriteCallable, perOpSettings.bulkMutateRowsSettings)
+        new MaybePointWriteCallable(
+                bulkMutateRowsVoidCallable,
+                createPointWriteCallable(bulkMutateRowsVoidCallable),
+                requestContext)
             .withDefaultCallContext(
                 bigtableClientContext
                     .getClientContext()
@@ -802,33 +798,42 @@ public class EnhancedBigtableStub implements AutoCloseable {
     UnaryCallable<MutateRowsRequest, MutateRowsAttemptResult> withCookie =
         new CookiesUnaryCallable<>(baseCallable);
 
-    UnaryCallable<MutateRowsRequest, MutateRowsAttemptResult> flowControlCallable = null;
-    if (perOpSettings.bulkMutateRowsSettings.isLatencyBasedThrottlingEnabled()) {
-      flowControlCallable =
-          new DynamicFlowControlCallable(
-              withCookie,
-              bulkMutationFlowController,
-              bulkMutationDynamicFlowControlStats,
-              perOpSettings.bulkMutateRowsSettings.getTargetRpcLatencyMs(),
-              FLOW_CONTROL_ADJUSTING_INTERVAL_MS);
-    }
     UnaryCallable<BulkMutation, MutateRowsAttemptResult> userFacing =
-        new BulkMutateRowsUserFacingCallable(
-            flowControlCallable != null ? flowControlCallable : withCookie, requestContext);
+        new BulkMutateRowsUserFacingCallable(withCookie, requestContext);
 
     SpanName spanName = getSpanName("MutateRows");
 
     UnaryCallable<BulkMutation, MutateRowsAttemptResult> tracedBatcherUnaryCallable =
         new TracedBatcherUnaryCallable<>(userFacing);
 
-    UnaryCallable<BulkMutation, MutateRowsAttemptResult> traced =
-        new TracedUnaryCallable<>(
-            tracedBatcherUnaryCallable, clientContext.getTracerFactory(), spanName);
-
-    return traced.withDefaultCallContext(
+    ApiCallContext defaultCallContext =
         clientContext
             .getDefaultCallContext()
-            .withRetrySettings(perOpSettings.bulkMutateRowsSettings.getRetrySettings()));
+            .withRetrySettings(perOpSettings.bulkMutateRowsSettings.getRetrySettings());
+
+    UnaryCallable<BulkMutation, MutateRowsAttemptResult> classic =
+        new TracedUnaryCallable<>(
+                tracedBatcherUnaryCallable, clientContext.getTracerFactory(), spanName)
+            .withDefaultCallContext(defaultCallContext);
+
+    UnaryCallable<BulkMutation, MutateRowsAttemptResult> diverted =
+        bigtableClientContext
+            .getSessionShim()
+            .decorateMutateRows(classic, perOpSettings.bulkMutateRowsSettings);
+
+    if (perOpSettings.bulkMutateRowsSettings.isLatencyBasedThrottlingEnabled()) {
+      @SuppressWarnings("unchecked")
+      UnaryCallable<BulkMutation, MutateRowsAttemptResult> flowControlled =
+          new DynamicFlowControlCallable(
+              diverted,
+              bulkMutationFlowController,
+              bulkMutationDynamicFlowControlStats,
+              perOpSettings.bulkMutateRowsSettings.getTargetRpcLatencyMs(),
+              FLOW_CONTROL_ADJUSTING_INTERVAL_MS);
+      diverted = flowControlled;
+    }
+
+    return diverted.withDefaultCallContext(defaultCallContext);
   }
 
   /**

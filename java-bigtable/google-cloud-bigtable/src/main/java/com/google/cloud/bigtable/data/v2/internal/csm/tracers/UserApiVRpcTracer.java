@@ -21,6 +21,8 @@ import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
+import com.google.cloud.bigtable.data.v2.stub.metrics.BigtableTracer;
+import io.grpc.Status;
 import java.time.Duration;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -68,6 +70,22 @@ public class UserApiVRpcTracer implements VRpcTracer {
 
   @Override
   public void recordApplicationBlockingLatencies(Duration elapsed) {}
+
+  @Override
+  public void recordBatchWriteFlowControlTargetQps(double targetQps) {
+    if (delegate instanceof BigtableTracer) {
+      ((BigtableTracer) delegate).setBatchWriteFlowControlTargetQps(targetQps);
+    }
+  }
+
+  @Override
+  public void recordBatchWriteFlowControlFactor(
+      double factor, Status.Code statusCode, boolean applied) {
+    if (delegate instanceof BigtableTracer) {
+      Throwable error = statusCode == Status.Code.OK ? null : statusCode.toStatus().asException();
+      ((BigtableTracer) delegate).addBatchWriteFlowControlFactor(factor, error, applied);
+    }
+  }
 
   @Override
   public void onAttemptFinish(VRpc.VRpcResult result) {

@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2.internal.csm.tracers;
 
 import com.google.bigtable.v2.PeerInfo;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
+import io.grpc.Status;
 import java.time.Duration;
 import java.util.List;
 import java.util.logging.Level;
@@ -102,6 +103,37 @@ public class CompositeVRpcTracer implements VRpcTracer {
                 Level.WARNING,
                 "Failed to log application latencies on tracer {0} with duration {1}",
                 new Object[] {c.getClass().getName(), elapsed});
+          }
+        });
+  }
+
+  @Override
+  public void recordBatchWriteFlowControlTargetQps(double targetQps) {
+    children.forEach(
+        c -> {
+          try {
+            c.recordBatchWriteFlowControlTargetQps(targetQps);
+          } catch (Throwable e) {
+            logger.log(
+                Level.WARNING,
+                "Failed to log batch write flow control target QPS on tracer {0}",
+                c.getClass().getName());
+          }
+        });
+  }
+
+  @Override
+  public void recordBatchWriteFlowControlFactor(
+      double factor, Status.Code statusCode, boolean applied) {
+    children.forEach(
+        c -> {
+          try {
+            c.recordBatchWriteFlowControlFactor(factor, statusCode, applied);
+          } catch (Throwable e) {
+            logger.log(
+                Level.WARNING,
+                "Failed to log batch write flow control factor on tracer {0}",
+                c.getClass().getName());
           }
         });
   }

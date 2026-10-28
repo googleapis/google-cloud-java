@@ -89,4 +89,18 @@ class CompositeVRpcTracerTest {
     verify(child1, times(1)).onOperationFinish(result);
     verify(child2, times(1)).onOperationFinish(result);
   }
+
+  @Test
+  void recordBatchWriteFlowControlTargetQpsTest() {
+    compositeVRpcTracer.recordBatchWriteFlowControlTargetQps(12.5);
+    verify(child1, times(1)).recordBatchWriteFlowControlTargetQps(12.5);
+    verify(child2, times(1)).recordBatchWriteFlowControlTargetQps(12.5);
+  }
+
+  @Test
+  void recordBatchWriteFlowControlFactorTest() {
+    compositeVRpcTracer.recordBatchWriteFlowControlFactor(0.8, Status.Code.OK, true);
+    verify(child1, times(1)).recordBatchWriteFlowControlFactor(0.8, Status.Code.OK, true);
+    verify(child2, times(1)).recordBatchWriteFlowControlFactor(0.8, Status.Code.OK, true);
+  }
 }

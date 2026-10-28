@@ -31,6 +31,7 @@ import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.middleware.SessionMutateRowsRateLimiter;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
@@ -40,6 +41,7 @@ import io.grpc.Deadline;
 import java.io.Closeable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
+import javax.annotation.Nullable;
 
 public class AuthorizedViewAsync implements AutoCloseable, Closeable {
 
@@ -58,6 +60,36 @@ public class AuthorizedViewAsync implements AutoCloseable, Closeable {
       BigtableTimer timer,
       Executor backgroundExecutor,
       Executor userCallbackExecutor) {
+    return createAndStart(
+        featureFlags,
+        clientInfo,
+        configManager,
+        channelPool,
+        callOptions,
+        tableId,
+        viewId,
+        permission,
+        metrics,
+        timer,
+        backgroundExecutor,
+        userCallbackExecutor,
+        /* mutateRowsRateLimiter= */ null);
+  }
+
+  static AuthorizedViewAsync createAndStart(
+      FeatureFlags featureFlags,
+      ClientInfo clientInfo,
+      ClientConfigurationManager configManager,
+      ChannelPool channelPool,
+      CallOptions callOptions,
+      String tableId,
+      String viewId,
+      Permission permission,
+      Metrics metrics,
+      BigtableTimer timer,
+      Executor backgroundExecutor,
+      Executor userCallbackExecutor,
+      @Nullable SessionMutateRowsRateLimiter mutateRowsRateLimiter) {
 
     AuthorizedViewName viewName =
         AuthorizedViewName.builder()
@@ -92,7 +124,8 @@ public class AuthorizedViewAsync implements AutoCloseable, Closeable {
             metrics,
             timer,
             backgroundExecutor,
-            userCallbackExecutor);
+            userCallbackExecutor,
+            mutateRowsRateLimiter);
 
     return new AuthorizedViewAsync(base);
   }

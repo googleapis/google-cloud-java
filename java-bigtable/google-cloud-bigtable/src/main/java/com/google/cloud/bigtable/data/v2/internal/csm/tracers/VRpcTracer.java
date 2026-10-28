@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2.internal.csm.tracers;
 
 import com.google.bigtable.v2.PeerInfo;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcResult;
+import io.grpc.Status;
 import java.time.Duration;
 
 public interface VRpcTracer {
@@ -31,6 +32,11 @@ public interface VRpcTracer {
   void onResponseReceived();
 
   void recordApplicationBlockingLatencies(Duration elapsed);
+
+  default void recordBatchWriteFlowControlTargetQps(double targetQps) {}
+
+  default void recordBatchWriteFlowControlFactor(
+      double factor, Status.Code statusCode, boolean applied) {}
 
   void onAttemptFinish(VRpcResult result);
 

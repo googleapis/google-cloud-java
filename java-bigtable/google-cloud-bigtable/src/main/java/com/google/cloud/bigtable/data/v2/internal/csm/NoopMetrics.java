@@ -110,6 +110,13 @@ public class NoopMetrics implements Metrics {
     public void recordApplicationBlockingLatencies(Duration elapsed) {}
 
     @Override
+    public void recordBatchWriteFlowControlTargetQps(double targetQps) {}
+
+    @Override
+    public void recordBatchWriteFlowControlFactor(
+        double factor, Status.Code statusCode, boolean applied) {}
+
+    @Override
     public void onAttemptFinish(VRpc.VRpcResult result) {}
 
     @Override

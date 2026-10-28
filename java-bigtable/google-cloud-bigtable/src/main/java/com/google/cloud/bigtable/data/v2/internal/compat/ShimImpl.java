@@ -58,7 +58,9 @@ import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.RowAdapter;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.data.v2.stub.MetadataExtractorInterceptor;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsAttemptResult;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
@@ -112,7 +114,22 @@ public class ShimImpl implements Shim {
   private final MutateRowShim mutateRowShim;
   private final CheckAndMutateRowShim checkAndMutateRowShim;
   private final ReadModifyWriteRowShim readModifyWriteRowShim;
-  private final MutateRowsShim mutateRowsShim;
+
+  @VisibleForTesting
+  static FeatureFlags computeBaseFeatureFlags(StubSettings<?> stubSettings) {
+    FeatureFlags baseFeatureFlags = Client.BASE_FEATURE_FLAGS;
+    if (stubSettings instanceof EnhancedBigtableStubSettings
+        && ((EnhancedBigtableStubSettings) stubSettings)
+            .bulkMutateRowsSettings()
+            .isServerInitiatedFlowControlEnabled()) {
+      baseFeatureFlags =
+          baseFeatureFlags.toBuilder()
+              .setMutateRowsRateLimit(true)
+              .setMutateRowsRateLimit2(true)
+              .build();
+    }
+    return baseFeatureFlags;
+  }
 
   public static Shim create(
       ClientInfo clientInfo,
@@ -150,6 +167,8 @@ public class ShimImpl implements Shim {
       transportProvider = transportProvider.withMtlsEndpoint(stubSettings.getMtlsEndpoint());
     }
 
+    FeatureFlags baseFeatureFlags = computeBaseFeatureFlags(stubSettings);
+
     // Channel provider for the client. DirectAccess with fallback by default.
     ChannelProvider clientChannelProvider =
         configureChannelProvider(
@@ -158,7 +177,7 @@ public class ShimImpl implements Shim {
             metrics);
 
     if (!checkDirectAccessAvailable(
-        Client.BASE_FEATURE_FLAGS, clientInfo, clientChannelProvider, metrics, bgExecutor)) {
+        baseFeatureFlags, clientInfo, clientChannelProvider, metrics, bgExecutor)) {
       // Directpath failed, revert to basic channel provider for the client.
       clientChannelProvider =
           configureChannelProvider(
@@ -176,7 +195,7 @@ public class ShimImpl implements Shim {
 
     ClientConfigurationManager configManager =
         new ClientConfigurationManager(
-            configChannelProvider.updateFeatureFlags(Client.BASE_FEATURE_FLAGS),
+            configChannelProvider.updateFeatureFlags(baseFeatureFlags),
             clientInfo,
             configChannelProvider,
             metrics.getDebugTagTracer(),
@@ -191,7 +210,7 @@ public class ShimImpl implements Shim {
       return new DisabledShim();
     }
 
-    FeatureFlags featureFlags = Client.BASE_FEATURE_FLAGS;
+    FeatureFlags featureFlags = baseFeatureFlags;
 
     if (configManager.areSessionsRequired()) {
       featureFlags = featureFlags.toBuilder().setSessionsRequired(true).build();
@@ -231,7 +250,6 @@ public class ShimImpl implements Shim {
     this.mutateRowShim = new MutateRowShim(sessionMap);
     this.checkAndMutateRowShim = new CheckAndMutateRowShim(sessionMap);
     this.readModifyWriteRowShim = new ReadModifyWriteRowShim(sessionMap);
-    this.mutateRowsShim = new MutateRowsShim(sessionMap);
   }
 
   /**
@@ -441,12 +459,13 @@ public class ShimImpl implements Shim {
   }
 
   @Override
-  public UnaryCallable<BulkMutation, Void> decorateMutateRows(
-      UnaryCallable<BulkMutation, Void> classic, UnaryCallSettings<?, ?> settings) {
+  public UnaryCallable<BulkMutation, MutateRowsAttemptResult> decorateMutateRows(
+      UnaryCallable<BulkMutation, MutateRowsAttemptResult> classic,
+      UnaryCallSettings<?, ?> settings) {
     return new DivertingUnaryCallable<>(
         configManager,
         classic,
-        mutateRowsShim,
+        new MutateRowsShim(sessionMap, settings.getRetryableCodes()),
         Util.extractTimeout(settings),
         debugTagTracer,
         SessionScope.MUTATE_ROWS);

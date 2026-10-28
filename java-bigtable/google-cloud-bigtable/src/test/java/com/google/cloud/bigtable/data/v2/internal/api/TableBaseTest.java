@@ -17,8 +17,10 @@
 package com.google.cloud.bigtable.data.v2.internal.api;
 
 import static com.google.cloud.bigtable.data.v2.internal.test_helpers.VRpcCallContextSubject.assertThat;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.v2.CloseSessionRequest;
+import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.OpenTableRequest;
 import com.google.bigtable.v2.ReadModifyWriteRule;
@@ -26,17 +28,23 @@ import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowsRequest;
+import com.google.bigtable.v2.SessionMutateRowsResponse;
 import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
+import com.google.bigtable.v2.VirtualRpcResponse;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.middleware.SessionMutateRowsRateLimiter;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
+import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcResult;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.Message;
+import com.google.protobuf.util.Durations;
+import com.google.rpc.Code;
 import io.grpc.Deadline;
 import io.grpc.Metadata;
 import java.time.Duration;
@@ -234,6 +242,113 @@ public class TableBaseTest {
     assertThat(fakeSessionPool.lastVRpc.ctx).isNotIdempotent();
   }
 
+  @Test
+  public void testMutateRowsMixedEntriesNotIdempotent() {
+    table.mutateRows(
+        SessionMutateRowsRequest.newBuilder()
+            .addEntries(
+                SessionMutateRowsRequest.Entry.newBuilder()
+                    .addMutations(
+                        Mutation.newBuilder()
+                            .setSetCell(Mutation.SetCell.newBuilder().setTimestampMicros(1000L))))
+            .addEntries(
+                SessionMutateRowsRequest.Entry.newBuilder()
+                    .addMutations(
+                        Mutation.newBuilder()
+                            .setAddToCell(Mutation.AddToCell.getDefaultInstance())))
+            .build(),
+        new UnaryResponseFuture<>(),
+        deadline);
+    assertThat(fakeSessionPool.lastVRpc.ctx).isNotIdempotent();
+  }
+
+  @Test
+  public void testMutateRowsWithRateLimiterUpdatesLimiterFromResponse() throws Exception {
+    SessionMutateRowsRateLimiter limiter = new SessionMutateRowsRateLimiter();
+    TableBase rateLimitedTable =
+        new TableBase(
+            fakeSessionPool,
+            VRpcDescriptor.READ_ROW,
+            VRpcDescriptor.MUTATE_ROW,
+            VRpcDescriptor.CHECK_AND_MUTATE_ROW,
+            VRpcDescriptor.READ_MODIFY_WRITE_ROW,
+            VRpcDescriptor.MUTATE_ROWS,
+            noopMetrics,
+            mockTimer,
+            MoreExecutors.directExecutor(),
+            limiter);
+
+    assertThat(limiter.isEnabled()).isFalse();
+    assertThat(limiter.getRate()).isEqualTo(10.0);
+
+    UnaryResponseFuture<SessionMutateRowsResponse> future = new UnaryResponseFuture<>();
+    rateLimitedTable.mutateRows(
+        SessionMutateRowsRequest.newBuilder()
+            .addEntries(
+                SessionMutateRowsRequest.Entry.newBuilder()
+                    .addMutations(
+                        Mutation.newBuilder()
+                            .setDeleteFromRow(Mutation.DeleteFromRow.getDefaultInstance())))
+            .build(),
+        future,
+        deadline);
+
+    SessionMutateRowsResponse.Entry.Builder entry =
+        SessionMutateRowsResponse.Entry.newBuilder().setIndex(0);
+    entry.getStatusBuilder().setCode(Code.OK_VALUE);
+    SessionMutateRowsResponse response =
+        SessionMutateRowsResponse.newBuilder()
+            .addEntries(entry)
+            .setRateLimitInfo(
+                SessionMutateRowsResponse.RateLimitInfo.newBuilder()
+                    .setFactor(0.8)
+                    .setPeriod(Durations.fromSeconds(10)))
+            .build();
+
+    @SuppressWarnings("unchecked")
+    VRpc.VRpcListener<SessionMutateRowsResponse> listener =
+        (VRpc.VRpcListener<SessionMutateRowsResponse>) fakeSessionPool.lastVRpc.listener;
+    fakeSessionPool
+        .lastVRpc
+        .ctx
+        .getExecutor()
+        .execute(
+            () -> {
+              listener.onMessage(response);
+              listener.onClose(VRpcResult.createServerOk(VirtualRpcResponse.getDefaultInstance()));
+            });
+
+    assertThat(future.get()).isEqualTo(response);
+    assertThat(limiter.isEnabled()).isTrue();
+    assertThat(limiter.getRate()).isWithin(0.001).of(8.0);
+  }
+
+  @Test
+  public void testClientComputeBaseFeatureFlagsReflectsFlowControlSetting() {
+    ChannelProviders.ChannelProvider channelProvider =
+        Mockito.mock(ChannelProviders.ChannelProvider.class);
+    ClientSettings defaultSettings =
+        ClientSettings.builder()
+            .setChannelProvider(channelProvider)
+            .setInstanceName(clientInfo.getInstanceName())
+            .setAppProfileId("default")
+            .build();
+    FeatureFlags defaultFlags = Client.computeBaseFeatureFlags(defaultSettings);
+    assertThat(defaultFlags.getMutateRowsRateLimit()).isFalse();
+    assertThat(defaultFlags.getMutateRowsRateLimit2()).isFalse();
+
+    ClientSettings enabledSettings =
+        ClientSettings.builder()
+            .setChannelProvider(channelProvider)
+            .setInstanceName(clientInfo.getInstanceName())
+            .setAppProfileId("default")
+            .setServerInitiatedFlowControlEnabled(true)
+            .build();
+    FeatureFlags enabledFlags = Client.computeBaseFeatureFlags(enabledSettings);
+    assertThat(enabledFlags.getMutateRowsRateLimit()).isTrue();
+    assertThat(enabledFlags.getMutateRowsRateLimit2()).isTrue();
+  }
+
   static class FakeSessionPool implements SessionPool<OpenTableRequest> {
 
     private FakeVRpc<?, ?> lastVRpc = null;
@@ -275,10 +390,12 @@ public class TableBaseTest {
 
   static class FakeVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     private VRpcCallContext ctx;
+    private VRpcListener<RespT> listener;
 
     @Override
-    public void start(Object req, VRpcCallContext ctx, VRpcListener ignored) {
+    public void start(ReqT req, VRpcCallContext ctx, VRpcListener<RespT> listener) {
       this.ctx = ctx;
+      this.listener = listener;
     }
 
     @Override

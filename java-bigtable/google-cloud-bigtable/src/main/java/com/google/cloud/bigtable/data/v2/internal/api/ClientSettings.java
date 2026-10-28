@@ -32,8 +32,10 @@ public abstract class ClientSettings {
 
   public abstract String getAppProfileId();
 
+  public abstract boolean isServerInitiatedFlowControlEnabled();
+
   public static Builder builder() {
-    return new AutoValue_ClientSettings.Builder();
+    return new AutoValue_ClientSettings.Builder().setServerInitiatedFlowControlEnabled(false);
   }
 
   @AutoValue.Builder
@@ -46,6 +48,8 @@ public abstract class ClientSettings {
     public abstract Builder setInstanceName(InstanceName name);
 
     public abstract Builder setAppProfileId(String appProfileId);
+
+    public abstract Builder setServerInitiatedFlowControlEnabled(boolean enabled);
 
     abstract ClientSettings autoBuild(); // not public
 
