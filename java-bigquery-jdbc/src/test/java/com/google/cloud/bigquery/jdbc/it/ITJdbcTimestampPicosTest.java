@@ -441,6 +441,7 @@ public class ITJdbcTimestampPicosTest extends ITBase {
    */
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
+  @Tag("advanced") // Relies on this driver's TIMESTAMP parameter conversion.
   public void testPreparedStatement_insertRoundTrip_backendTruncatesToMicroseconds(String zone)
       throws SQLException {
     useJvmZone(zone);
@@ -505,6 +506,7 @@ public class ITJdbcTimestampPicosTest extends ITBase {
    */
   @ParameterizedTest(name = "JVM zone {0}, arrow={1}")
   @MethodSource("jvmZonesAndReadPaths")
+  @Tag("advanced") // Relies on this driver's TIMESTAMP parameter conversion.
   public void testPreparedStatement_batchInsertRoundTrip(String zone, boolean arrow)
       throws SQLException {
     useJvmZone(zone);

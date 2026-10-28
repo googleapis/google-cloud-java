@@ -285,31 +285,33 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     }
 
     boolean shouldRetry(VRpcResult result) {
-      // If the error has RetryInfo, it means it comes from the server and should
-      // be retried.
-      if (!result.getStatus().isOk()
-          && result.getRetryInfo() != null
-          && result.getRetryInfo().hasRetryDelay()) {
-        long retryDelay = Durations.toMillis(result.getRetryInfo().getRetryDelay());
-        // only schedule retry if there's still a chance for the request to succeed
-        return context.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MILLISECONDS)
-                - retryDelay
-            > 1;
+      // Short-circuit successful RPCs.
+      if (result.getStatus().isOk()) {
+        return false;
       }
-      // Do not retry result that is explicitly rejected
+      // Do not retry results that are explicitly rejected by the client (ie. client shutdown).
       if (result.getRejected()) {
         return false;
       }
-      // If the error didn't leave the client or failed in transport and is idempotent, we
-      // can retry up to 3 times.
-      boolean isRetryable =
-          (result.getState() == VRpcResult.State.UNCOMMITED)
-              || (context.getOperationInfo().isIdempotent()
-                  && result.getState() == VRpcResult.State.TRANSPORT_FAILURE);
-      if (isRetryable && context.getOperationInfo().getAttemptNumber() < 3) {
-        return true;
+      long timeRemainingMs =
+          context.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MILLISECONDS);
+
+      // If the error has RetryInfo, it means it comes from the server and should
+      // be retried as long as there's time remaining after the backoff.
+      if (result.getRetryInfo() != null && result.getRetryInfo().hasRetryDelay()) {
+        long retryDelayMs = Durations.toMillis(result.getRetryInfo().getRetryDelay());
+        return timeRemainingMs - retryDelayMs > 1;
       }
-      return false;
+
+      // Client-initiated retries require remaining deadline and are capped at 3 attempts.
+      if (timeRemainingMs <= 1 || context.getOperationInfo().getAttemptNumber() >= 3) {
+        return false;
+      }
+
+      // Safe to retry if the error never left the client, or failed in transport and is idempotent.
+      return result.getState() == VRpcResult.State.UNCOMMITED
+          || (result.getState() == VRpcResult.State.TRANSPORT_FAILURE
+              && context.getOperationInfo().isIdempotent());
     }
   }
 
