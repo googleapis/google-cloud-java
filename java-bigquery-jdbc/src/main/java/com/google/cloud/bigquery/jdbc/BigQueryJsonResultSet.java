@@ -155,7 +155,11 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   }
 
   BigQueryJsonResultSet() {
-    super(null, null, null, false);
+    this(null);
+  }
+
+  BigQueryJsonResultSet(Schema schema) {
+    super(null, null, schema, false);
     totalRows = 0;
     buffer = null;
     fromIndex = 0;
