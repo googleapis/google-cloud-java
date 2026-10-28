@@ -1,6 +1,5 @@
 #!/bin/bash
 # Copyright 2020 Google LLC
-export MAVEN_OPTS="${MAVEN_OPTS} -Daether.syncContext.named.factory=nolock"
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,6 +12,10 @@ export MAVEN_OPTS="${MAVEN_OPTS} -Daether.syncContext.named.factory=nolock"
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+# Disable Maven local repository locking to avoid "Could not acquire lock(s)"
+# failures during parallel (-T 1C) builds.
+export MAVEN_OPTS="${MAVEN_OPTS} -Daether.syncContext.named.factory=nolock"
 
 commonScriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 excluded_modules=(
