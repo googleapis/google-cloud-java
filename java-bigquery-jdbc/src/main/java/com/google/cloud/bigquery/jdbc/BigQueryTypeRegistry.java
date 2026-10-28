@@ -17,7 +17,6 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.FieldValue;
-import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
@@ -656,17 +655,7 @@ final class BigQueryTypeRegistry {
         String.class,
         StandardSQLTypeName.RANGE,
         Arrays.asList(String.class),
-        (val, targetClass, zone) -> {
-          if (val == null) return null;
-          if (val instanceof Range) {
-            Range range = (Range) val;
-            String start =
-                range.getStart().isNull() ? "UNBOUNDED" : range.getStart().getStringValue();
-            String end = range.getEnd().isNull() ? "UNBOUNDED" : range.getEnd().getStringValue();
-            return String.format("[%s, %s)", start, end);
-          }
-          return String.valueOf(val);
-        });
+        (val, targetClass, zone) -> val == null ? null : String.valueOf(val));
   }
 
   private static void register(TypeDescriptor<?> descriptor) {
