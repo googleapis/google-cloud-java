@@ -30,6 +30,7 @@ import static org.mockito.Mockito.when;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
@@ -52,6 +53,7 @@ import java.time.OffsetDateTime;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.TimeZone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -288,15 +290,9 @@ public class BigQueryPreparedStatementSettersTest {
   @Test
   public void testSetObjectWithJavaTime() throws Exception {
     preparedStatement = new BigQueryPreparedStatement(connection, "SELECT ?, ?, ?, ?, ?, ?");
-    LocalDate localDate = LocalDate.of(2025, 12, 3);
-    preparedStatement.setObject(1, localDate);
-    assertEquals(Date.class, preparedStatement.parameterHandler.getType(1));
-    assertEquals(Date.valueOf(localDate), preparedStatement.parameterHandler.getParameter(1));
-
-    LocalTime localTime = LocalTime.of(12, 30, 0);
-    preparedStatement.setObject(2, localTime);
-    assertEquals(Time.class, preparedStatement.parameterHandler.getType(2));
-    assertEquals(Time.valueOf(localTime), preparedStatement.parameterHandler.getParameter(2));
+    // 1582-10-10 does not exist in java.sql's calendar; the time has sub-second digits.
+    preparedStatement.setObject(1, LocalDate.of(1582, 10, 10));
+    preparedStatement.setObject(2, LocalTime.of(12, 34, 56, 789_123_000));
 
     // LocalDateTime is bound as STRING so it is accepted by both DATETIME and TIMESTAMP columns.
     LocalDateTime localDateTime = LocalDateTime.of(2025, 12, 3, 12, 30, 0);
@@ -324,6 +320,18 @@ public class BigQueryPreparedStatementSettersTest {
     assertEquals(
         Timestamp.from(zonedDateTime.toInstant()),
         preparedStatement.parameterHandler.getParameter(6));
+
+    QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder("SELECT 1");
+    List<QueryParameterValue> sent =
+        preparedStatement
+            .parameterHandler
+            .configureParameters(builder)
+            .build()
+            .getPositionalParameters();
+    assertEquals(StandardSQLTypeName.DATE, sent.get(0).getType());
+    assertEquals("1582-10-10", sent.get(0).getValue());
+    assertEquals(StandardSQLTypeName.TIME, sent.get(1).getType());
+    assertEquals("12:34:56.789123", sent.get(1).getValue());
   }
 
   // Verifies standard DML QueryJobConfiguration creates positional parameters with null values when
