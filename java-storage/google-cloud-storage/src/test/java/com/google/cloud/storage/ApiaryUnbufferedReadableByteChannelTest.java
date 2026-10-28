@@ -229,6 +229,46 @@ public final class ApiaryUnbufferedReadableByteChannelTest {
   }
 
   @Test
+  public void testRead_gcsHeaders_mismatchedCrc32c_throwsChecksumMismatch() throws IOException {
+    // GCS returns x-goog-stored-content-* on every download, not only for transcoded objects.
+    Map<String, String> extraHeaders =
+        ImmutableMap.of(
+            "x-goog-stored-content-encoding",
+            "identity",
+            "x-goog-stored-content-length",
+            String.valueOf(CONTENT_BYTES.length));
+    Storage storageClient =
+        createMockStorageClient(200, "crc32c=" + WRONG_CRC32C_BASE64, extraHeaders);
+
+    StorageObject from = new StorageObject().setBucket("bucket").setName("blob");
+    ApiaryReadRequest apiaryReadRequest =
+        new ApiaryReadRequest(from, ImmutableMap.of(), ByteRangeSpec.nullRange());
+
+    SettableApiFuture<StorageObject> resultFuture = SettableApiFuture.create();
+    try (ApiaryUnbufferedReadableByteChannel channel =
+        new ApiaryUnbufferedReadableByteChannel(
+            apiaryReadRequest,
+            storageClient,
+            resultFuture,
+            RetrierWithAlg.attemptOnce(),
+            Retrying.neverRetry(),
+            Hasher.defaultHasher()); ) {
+
+      ByteBuffer buf = ByteBuffer.allocate(4096);
+      Hasher.ChecksumMismatchException expected =
+          assertThrows(
+              Hasher.ChecksumMismatchException.class,
+              () -> {
+                while (channel.read(new ByteBuffer[] {buf}, 0, 1) != -1) {
+                  buf.clear();
+                }
+              });
+
+      assertTrue(expected.getMessage().contains("Mismatch checksum value"));
+    }
+  }
+
+  @Test
   public void logsWarning_whenReceivingMoreBytesThanRequested() throws IOException {
     byte[] content = "0123456789extra_bytes".getBytes();
     MockLowLevelHttpResponse response =

@@ -299,6 +299,25 @@ public final class HttpStorageRpcChecksumTest {
     assertThat(ex.getCause().getMessage()).contains("Mismatch checksum value");
   }
 
+  @Test
+  public void testReadAllBytes_gcsHeaders_failedCrc32cValidation() throws Exception {
+    // GCS returns x-goog-stored-content-* on every download, not only for transcoded objects.
+    MockLowLevelHttpResponse response =
+        new MockLowLevelHttpResponse()
+            .setContentType("application/octet-stream")
+            .addHeader("x-goog-hash", "crc32c=" + BAD_CRC32C_BASE64)
+            .addHeader("x-goog-stored-content-encoding", "identity")
+            .addHeader("x-goog-stored-content-length", String.valueOf(CONTENT.length))
+            .setContent(new String(CONTENT, StandardCharsets.UTF_8))
+            .setStatusCode(200);
+
+    try (Storage storage = createMockStorage(response)) {
+      StorageException ex =
+          assertThrows(StorageException.class, () -> storage.readAllBytes(BlobId.of(BUCKET, BLOB)));
+      assertThat(ex.getMessage()).contains("Mismatch checksum value");
+    }
+  }
+
   private HttpStorageRpc createMockRpc(MockLowLevelHttpResponse response) {
     AuditingHttpTransport transport = new AuditingHttpTransport(response);
     TransportOptions transportOptions =
