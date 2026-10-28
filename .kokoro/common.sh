@@ -458,7 +458,7 @@ function run_integration_tests() {
     -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -DskipUnitTests=true \
     -Dmaven.wagon.http.retryHandler.count=5 \
-    -T 1C
+    -T 1C -Daether.syncContext.named.factory=nolock
 
   RETURN_CODE=$?
   printf "Finished integration tests for modules:\n%s\n" "$1"
@@ -546,7 +546,7 @@ function install_modules() {
         -DskipTests=true \
         -Dmaven.javadoc.skip=true \
         -Dgcloud.download.skip=true \
-        -T 1C
+        -T 1C -Daether.syncContext.named.factory=nolock
   else
     printf "Installing modules:\n%s\n" "$1"
     parse_all_submodules "$1"
@@ -625,7 +625,7 @@ function install_modules() {
         -DskipTests=true \
         -Dmaven.javadoc.skip=true \
         -Dgcloud.download.skip=true \
-        -T 1C
+        -T 1C -Daether.syncContext.named.factory=nolock
   fi
 }
 
@@ -723,5 +723,5 @@ function install_repo_modules {
   fi
   echo "Installing this repo's modules to local maven."
   mvn -q -B -ntp install ${projects_arg} \
-    -Dcheckstyle.skip -Dfmt.skip -DskipTests -T 1C
+    -Dcheckstyle.skip -Dfmt.skip -DskipTests -T 1C -Daether.syncContext.named.factory=nolock
 }
