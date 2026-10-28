@@ -241,7 +241,10 @@ public class ITTimestampTimeZoneTest extends ITBase {
     }
   }
 
-  /** Midnight of 2025-01-01 in Kolkata or Auckland is still 2024-12-31 in UTC. */
+  /**
+   * Midnight of 2025-01-01 in Kolkata or Auckland is still 2024-12-31 in UTC. A pre-standard-time
+   * date built in the Calendar's zone must arrive unchanged.
+   */
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
   public void testSetDateWithCalendar_sendsDateInCalendarZone(String zone) throws SQLException {
@@ -249,6 +252,10 @@ public class ITTimestampTimeZoneTest extends ITBase {
     Date date = Date.valueOf(D_DIGITS);
     String expected =
         Instant.ofEpochMilli(date.getTime()).atZone(ZoneOffset.UTC).toLocalDate().toString();
+    Calendar utc = calendar(ZoneOffset.UTC);
+    utc.clear();
+    utc.set(1850, Calendar.JUNE, 1);
+    Date historical = new Date(utc.getTimeInMillis());
     try (Connection conn = connect();
         PreparedStatement ps = conn.prepareStatement(PROBE_DATE)) {
       ps.setDate(1, date, calendar(ZoneOffset.UTC));
@@ -256,6 +263,9 @@ public class ITTimestampTimeZoneTest extends ITBase {
           expected,
           storedString(ps),
           label(zone, "setDate(d, cal=UTC) must send the date of d in the Calendar's zone"));
+      ps.setDate(1, historical, calendar(ZoneOffset.UTC));
+      assertEquals(
+          "1850-06-01", storedString(ps), label(zone, "setDate(1850-06-01, cal=UTC) digits"));
     }
   }
 

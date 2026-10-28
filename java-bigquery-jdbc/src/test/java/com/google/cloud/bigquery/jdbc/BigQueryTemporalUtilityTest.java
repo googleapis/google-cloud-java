@@ -103,24 +103,41 @@ public class BigQueryTemporalUtilityTest {
     assertThat(result.getTime()).isEqualTo(expectedSystemMillis);
   }
 
-  @Test
-  public void testCrossTimezoneDateRoundtrip() {
-    // Writer in Los Angeles (UTC-7), Reader in Tokyo (UTC+9) across the date line
-    ZoneId writeZone = ZoneId.of("America/Los_Angeles");
-    ZoneId readZone = ZoneId.of("Asia/Tokyo");
-    Calendar writeCal = Calendar.getInstance(TimeZone.getTimeZone(writeZone));
-    Calendar readCal = Calendar.getInstance(TimeZone.getTimeZone(readZone));
+  /** setDate(cal) / getDate(cal) keep the calendar date, including pre-1582 and pre-1900 dates. */
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/Los_Angeles", "Asia/Kolkata"})
+  public void testCrossTimezoneDateRoundtrip(String jvmZone) {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(jvmZone));
+      // Writer in Los Angeles (UTC-8), reader in Tokyo (UTC+9) across the date line.
+      TimeZone writeZone = TimeZone.getTimeZone("America/Los_Angeles");
+      TimeZone readZone = TimeZone.getTimeZone("Asia/Tokyo");
+      for (String digits : new String[] {"0001-01-01", "1582-10-04", "1850-06-01", "2026-08-24"}) {
+        // The caller's Date is midnight of `digits` in the writer's Calendar zone.
+        LocalDate expected = LocalDate.parse(digits);
+        Calendar writeCal = Calendar.getInstance(writeZone);
+        writeCal.clear();
+        writeCal.set(expected.getYear(), expected.getMonthValue() - 1, expected.getDayOfMonth());
 
-    Date inputDate =
-        new Date(LocalDate.of(2026, 8, 24).atStartOfDay(writeZone).toInstant().toEpochMilli());
-    Date normalizedDate = BigQueryTemporalUtility.convertDateToCalendar(inputDate, writeCal);
-    Date readDate = BigQueryTemporalUtility.convertDateWithCalendar(normalizedDate, readCal);
+        Date written =
+            BigQueryTemporalUtility.convertDateToCalendar(
+                new Date(writeCal.getTimeInMillis()), writeCal);
+        assertThat(written.toString()).isEqualTo(digits);
 
-    Calendar verifyCal = Calendar.getInstance(TimeZone.getTimeZone(readZone));
-    verifyCal.setTime(readDate);
-    assertThat(verifyCal.get(Calendar.YEAR)).isEqualTo(2026);
-    assertThat(verifyCal.get(Calendar.MONTH)).isEqualTo(Calendar.AUGUST);
-    assertThat(verifyCal.get(Calendar.DAY_OF_MONTH)).isEqualTo(24);
+        Calendar readCal = Calendar.getInstance(readZone);
+        readCal.setTime(BigQueryTemporalUtility.convertDateWithCalendar(written, readCal));
+        assertThat(
+                LocalDate.of(
+                    readCal.get(Calendar.YEAR),
+                    readCal.get(Calendar.MONTH) + 1,
+                    readCal.get(Calendar.DAY_OF_MONTH)))
+            .isEqualTo(expected);
+        assertThat(readCal.get(Calendar.HOUR_OF_DAY)).isEqualTo(0);
+      }
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
   }
 
   @Test

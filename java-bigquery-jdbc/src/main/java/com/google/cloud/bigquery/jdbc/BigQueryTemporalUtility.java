@@ -31,7 +31,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.DateTimeParseException;
@@ -503,14 +502,12 @@ final class BigQueryTemporalUtility {
     if (date == null || cal == null) {
       return date;
     }
-    ZoneId systemZone = ZoneId.systemDefault();
-    ZoneId targetZone = cal.getTimeZone().toZoneId();
-    if (systemZone.equals(targetZone)) {
+    TimeZone systemZone = TimeZone.getDefault();
+    TimeZone targetZone = cal.getTimeZone();
+    if (systemZone.getID().equals(targetZone.getID())) {
       return date;
     }
-    LocalDate localDate = date.toLocalDate();
-    ZonedDateTime zdt = localDate.atStartOfDay(targetZone);
-    return new Date(zdt.toInstant().toEpochMilli());
+    return moveDateFields(date, systemZone, targetZone);
   }
 
   /**
@@ -527,14 +524,28 @@ final class BigQueryTemporalUtility {
     if (date == null || cal == null) {
       return date;
     }
-    ZoneId systemZone = ZoneId.systemDefault();
-    ZoneId targetZone = cal.getTimeZone().toZoneId();
-    if (systemZone.equals(targetZone)) {
+    TimeZone systemZone = TimeZone.getDefault();
+    TimeZone targetZone = cal.getTimeZone();
+    if (systemZone.getID().equals(targetZone.getID())) {
       return date;
     }
-    LocalDate localDate = Instant.ofEpochMilli(date.getTime()).atZone(targetZone).toLocalDate();
-    ZonedDateTime zdt = localDate.atStartOfDay(systemZone);
-    return new Date(zdt.toInstant().toEpochMilli());
+    return moveDateFields(date, targetZone, systemZone);
+  }
+
+  /**
+   * Returns midnight in {@code to} of the calendar date {@code date} has in {@code from}. Uses
+   * legacy calendars on both sides because {@link Date} is read with legacy rules; java.time
+   * differs before 1582 (Julian vs proleptic Gregorian) and before standard time (LMT offsets).
+   */
+  private static Date moveDateFields(Date date, TimeZone from, TimeZone to) {
+    Calendar source = new GregorianCalendar(from);
+    source.setTime(date);
+    Calendar target = new GregorianCalendar(to);
+    target.clear();
+    target.set(Calendar.ERA, source.get(Calendar.ERA));
+    target.set(
+        source.get(Calendar.YEAR), source.get(Calendar.MONTH), source.get(Calendar.DAY_OF_MONTH));
+    return new Date(target.getTimeInMillis());
   }
 
   /**
