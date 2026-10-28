@@ -85,6 +85,10 @@ public final class DataStoreToolProto extends com.google.protobuf.GeneratedFile 
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_DataStoreTool_BoostSpec_ConditionBoostSpec_BoostControlSpec_ControlPoint_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_DataStoreTool_SnippetsConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_DataStoreTool_SnippetsConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_ces_v1beta_DataStoreTool_ModalityConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_DataStoreTool_ModalityConfig_fieldAccessorTable;
@@ -101,7 +105,7 @@ public final class DataStoreToolProto extends com.google.protobuf.GeneratedFile 
           + "-google/cloud/ces/v1beta/data_store_too"
           + "l.proto\022\027google.cloud.ces.v1beta\032\037google"
           + "/api/field_behavior.proto\032$google/cloud/"
-          + "ces/v1beta/common.proto\032(google/cloud/ces/v1beta/data_store.proto\"\333\025\n\r"
+          + "ces/v1beta/common.proto\032(google/cloud/ces/v1beta/data_store.proto\"\376\026\n\r"
           + "DataStoreTool\022Y\n"
           + "\021data_store_source\030\003 \001(\01326.google."
           + "cloud.ces.v1beta.DataStoreTool.DataStoreSourceB\004\342A\001\001H\000\022R\n\r"
@@ -169,16 +173,21 @@ public final class DataStoreToolProto extends com.google.protobuf.GeneratedFile 
           + "\tFRESHNESS\020\002\"C\n"
           + "\021InterpolationType\022\"\n"
           + "\036INTERPOLATION_TYPE_UNSPECIFIED\020\000\022\n\n"
-          + "\006LINEAR\020\001\032\303\003\n"
+          + "\006LINEAR\020\001\032K\n"
+          + "\016SnippetsConfig\022\035\n"
+          + "\017enable_snippets\030\001 \001(\010B\004\342A\001\001\022\032\n"
+          + "\014max_snippets\030\002 \001(\005B\004\342A\001\001\032\231\004\n"
           + "\016ModalityConfig\022_\n\r"
-          + "modality_type\030\001 \001(\0162B.google.c"
-          + "loud.ces.v1beta.DataStoreTool.ModalityConfig.ModalityTypeB\004\342A\001\002\022T\n"
+          + "modality_type\030\001 \001(\0162B.google.clou"
+          + "d.ces.v1beta.DataStoreTool.ModalityConfig.ModalityTypeB\004\342A\001\002\022T\n"
           + "\017rewriter_config\030\002"
           + " \001(\01325.google.cloud.ces.v1beta.DataStoreTool.RewriterConfigB\004\342A\001\001\022^\n"
-          + "\024summarization_config\030\003 \001(\0132:.google.cloud.ces.v"
-          + "1beta.DataStoreTool.SummarizationConfigB\004\342A\001\001\022V\n"
-          + "\020grounding_config\030\004 \001(\01326.google"
-          + ".cloud.ces.v1beta.DataStoreTool.GroundingConfigB\004\342A\001\001\"B\n"
+          + "\024summarization_config\030\003 \001(\0132:.google.cloud.ces.v1be"
+          + "ta.DataStoreTool.SummarizationConfigB\004\342A\001\001\022V\n"
+          + "\020grounding_config\030\004 \001(\01326.google.cl"
+          + "oud.ces.v1beta.DataStoreTool.GroundingConfigB\004\342A\001\001\022T\n"
+          + "\017snippets_config\030\005 \001(\01325.go"
+          + "ogle.cloud.ces.v1beta.DataStoreTool.SnippetsConfigB\004\342A\001\001\"B\n"
           + "\014ModalityType\022\035\n"
           + "\031MODALITY_TYPE_UNSPECIFIED\020\000\022\010\n"
           + "\004TEXT\020\001\022\t\n"
@@ -188,8 +197,8 @@ public final class DataStoreToolProto extends com.google.protobuf.GeneratedFile 
           + "\016ALWAYS_INCLUDE\020\002\022\021\n\r"
           + "NEVER_INCLUDE\020\003B\017\n\r"
           + "search_sourceBb\n"
-          + "\033com.google.cloud.ces.v1betaB\022DataStoreToolProtoP\001Z-cloud.google.com/g"
-          + "o/ces/apiv1beta/cespb;cespbb\006proto3"
+          + "\033com.google.cloud.ces.v1betaB\022DataStoreToolProtoP\001Z-cloud.google.co"
+          + "m/go/ces/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -296,13 +305,25 @@ public final class DataStoreToolProto extends com.google.protobuf.GeneratedFile 
             new java.lang.String[] {
               "AttributeValue", "BoostAmount",
             });
-    internal_static_google_cloud_ces_v1beta_DataStoreTool_ModalityConfig_descriptor =
+    internal_static_google_cloud_ces_v1beta_DataStoreTool_SnippetsConfig_descriptor =
         internal_static_google_cloud_ces_v1beta_DataStoreTool_descriptor.getNestedType(7);
+    internal_static_google_cloud_ces_v1beta_DataStoreTool_SnippetsConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_DataStoreTool_SnippetsConfig_descriptor,
+            new java.lang.String[] {
+              "EnableSnippets", "MaxSnippets",
+            });
+    internal_static_google_cloud_ces_v1beta_DataStoreTool_ModalityConfig_descriptor =
+        internal_static_google_cloud_ces_v1beta_DataStoreTool_descriptor.getNestedType(8);
     internal_static_google_cloud_ces_v1beta_DataStoreTool_ModalityConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_DataStoreTool_ModalityConfig_descriptor,
             new java.lang.String[] {
-              "ModalityType", "RewriterConfig", "SummarizationConfig", "GroundingConfig",
+              "ModalityType",
+              "RewriterConfig",
+              "SummarizationConfig",
+              "GroundingConfig",
+              "SnippetsConfig",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

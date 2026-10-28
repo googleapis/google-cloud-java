@@ -40,6 +40,9 @@
             "CreateGoldengateDeployment": {
               "methods": ["createGoldengateDeploymentAsync", "createGoldengateDeploymentAsync", "createGoldengateDeploymentAsync", "createGoldengateDeploymentOperationCallable", "createGoldengateDeploymentCallable"]
             },
+            "CreateOdbDnsZone": {
+              "methods": ["createOdbDnsZoneAsync", "createOdbDnsZoneAsync", "createOdbDnsZoneAsync", "createOdbDnsZoneOperationCallable", "createOdbDnsZoneCallable"]
+            },
             "CreateOdbNetwork": {
               "methods": ["createOdbNetworkAsync", "createOdbNetworkAsync", "createOdbNetworkAsync", "createOdbNetworkOperationCallable", "createOdbNetworkCallable"]
             },
@@ -72,6 +75,9 @@
             },
             "DeleteGoldengateDeployment": {
               "methods": ["deleteGoldengateDeploymentAsync", "deleteGoldengateDeploymentAsync", "deleteGoldengateDeploymentAsync", "deleteGoldengateDeploymentOperationCallable", "deleteGoldengateDeploymentCallable"]
+            },
+            "DeleteOdbDnsZone": {
+              "methods": ["deleteOdbDnsZoneAsync", "deleteOdbDnsZoneAsync", "deleteOdbDnsZoneAsync", "deleteOdbDnsZoneOperationCallable", "deleteOdbDnsZoneCallable"]
             },
             "DeleteOdbNetwork": {
               "methods": ["deleteOdbNetworkAsync", "deleteOdbNetworkAsync", "deleteOdbNetworkAsync", "deleteOdbNetworkOperationCallable", "deleteOdbNetworkCallable"]
@@ -120,6 +126,9 @@
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetOdbDnsZone": {
+              "methods": ["getOdbDnsZone", "getOdbDnsZone", "getOdbDnsZone", "getOdbDnsZoneCallable"]
             },
             "GetOdbNetwork": {
               "methods": ["getOdbNetwork", "getOdbNetwork", "getOdbNetwork", "getOdbNetworkCallable"]
@@ -210,6 +219,9 @@
             },
             "ListMinorVersions": {
               "methods": ["listMinorVersions", "listMinorVersions", "listMinorVersions", "listMinorVersionsPagedCallable", "listMinorVersionsCallable"]
+            },
+            "ListOdbDnsZones": {
+              "methods": ["listOdbDnsZones", "listOdbDnsZones", "listOdbDnsZones", "listOdbDnsZonesPagedCallable", "listOdbDnsZonesCallable"]
             },
             "ListOdbNetworks": {
               "methods": ["listOdbNetworks", "listOdbNetworks", "listOdbNetworks", "listOdbNetworksPagedCallable", "listOdbNetworksCallable"]

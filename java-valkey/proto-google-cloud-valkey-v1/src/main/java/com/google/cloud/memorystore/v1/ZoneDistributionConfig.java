@@ -53,6 +53,8 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
 
   private ZoneDistributionConfig() {
     zone_ = "";
+    zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    activeZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
     mode_ = 0;
   }
 
@@ -302,6 +304,154 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int ZONES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList zones_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify the zones of a multi-zone instance where Memorystore
+   * instance allocates resources. This flag isn't applicable for single-zone
+   * instances.
+   * </pre>
+   *
+   * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the zones.
+   */
+  public com.google.protobuf.ProtocolStringList getZonesList() {
+    return zones_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify the zones of a multi-zone instance where Memorystore
+   * instance allocates resources. This flag isn't applicable for single-zone
+   * instances.
+   * </pre>
+   *
+   * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of zones.
+   */
+  public int getZonesCount() {
+    return zones_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify the zones of a multi-zone instance where Memorystore
+   * instance allocates resources. This flag isn't applicable for single-zone
+   * instances.
+   * </pre>
+   *
+   * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The zones at the given index.
+   */
+  public java.lang.String getZones(int index) {
+    return zones_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specify the zones of a multi-zone instance where Memorystore
+   * instance allocates resources. This flag isn't applicable for single-zone
+   * instances.
+   * </pre>
+   *
+   * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the zones at the given index.
+   */
+  public com.google.protobuf.ByteString getZonesBytes(int index) {
+    return zones_.getByteString(index);
+  }
+
+  public static final int ACTIVE_ZONES_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList activeZones_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The exact list of zones where the instance currently has
+   * active VMs.
+   * </pre>
+   *
+   * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return A list containing the activeZones.
+   */
+  public com.google.protobuf.ProtocolStringList getActiveZonesList() {
+    return activeZones_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The exact list of zones where the instance currently has
+   * active VMs.
+   * </pre>
+   *
+   * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The count of activeZones.
+   */
+  public int getActiveZonesCount() {
+    return activeZones_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The exact list of zones where the instance currently has
+   * active VMs.
+   * </pre>
+   *
+   * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The activeZones at the given index.
+   */
+  public java.lang.String getActiveZones(int index) {
+    return activeZones_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The exact list of zones where the instance currently has
+   * active VMs.
+   * </pre>
+   *
+   * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the activeZones at the given index.
+   */
+  public com.google.protobuf.ByteString getActiveZonesBytes(int index) {
+    return activeZones_.getByteString(index);
+  }
+
   public static final int MODE_FIELD_NUMBER = 1;
   private int mode_ = 0;
 
@@ -369,6 +519,12 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, zone_);
     }
+    for (int i = 0; i < zones_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, zones_.getRaw(i));
+    }
+    for (int i = 0; i < activeZones_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, activeZones_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -387,6 +543,22 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, zone_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < zones_.size(); i++) {
+        dataSize += computeStringSizeNoTag(zones_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getZonesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < activeZones_.size(); i++) {
+        dataSize += computeStringSizeNoTag(activeZones_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getActiveZonesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -404,6 +576,8 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
         (com.google.cloud.memorystore.v1.ZoneDistributionConfig) obj;
 
     if (!getZone().equals(other.getZone())) return false;
+    if (!getZonesList().equals(other.getZonesList())) return false;
+    if (!getActiveZonesList().equals(other.getActiveZonesList())) return false;
     if (mode_ != other.mode_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -418,6 +592,14 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
+    if (getZonesCount() > 0) {
+      hash = (37 * hash) + ZONES_FIELD_NUMBER;
+      hash = (53 * hash) + getZonesList().hashCode();
+    }
+    if (getActiveZonesCount() > 0) {
+      hash = (37 * hash) + ACTIVE_ZONES_FIELD_NUMBER;
+      hash = (53 * hash) + getActiveZonesList().hashCode();
+    }
     hash = (37 * hash) + MODE_FIELD_NUMBER;
     hash = (53 * hash) + mode_;
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -562,6 +744,8 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
       super.clear();
       bitField0_ = 0;
       zone_ = "";
+      zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      activeZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       mode_ = 0;
       return this;
     }
@@ -603,6 +787,14 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
         result.zone_ = zone_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        zones_.makeImmutable();
+        result.zones_ = zones_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        activeZones_.makeImmutable();
+        result.activeZones_ = activeZones_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.mode_ = mode_;
       }
     }
@@ -623,6 +815,26 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
         bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      if (!other.zones_.isEmpty()) {
+        if (zones_.isEmpty()) {
+          zones_ = other.zones_;
+          bitField0_ |= 0x00000002;
+        } else {
+          ensureZonesIsMutable();
+          zones_.addAll(other.zones_);
+        }
+        onChanged();
+      }
+      if (!other.activeZones_.isEmpty()) {
+        if (activeZones_.isEmpty()) {
+          activeZones_ = other.activeZones_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureActiveZonesIsMutable();
+          activeZones_.addAll(other.activeZones_);
+        }
         onChanged();
       }
       if (other.mode_ != 0) {
@@ -657,7 +869,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
             case 8:
               {
                 mode_ = input.readEnum();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 8
             case 18:
@@ -666,6 +878,20 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000001;
                 break;
               } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureZonesIsMutable();
+                zones_.add(s);
+                break;
+              } // case 26
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureActiveZonesIsMutable();
+                activeZones_.add(s);
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -801,6 +1027,399 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList zones_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureZonesIsMutable() {
+      if (!zones_.isModifiable()) {
+        zones_ = new com.google.protobuf.LazyStringArrayList(zones_);
+      }
+      bitField0_ |= 0x00000002;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the zones of a multi-zone instance where Memorystore
+     * instance allocates resources. This flag isn't applicable for single-zone
+     * instances.
+     * </pre>
+     *
+     * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the zones.
+     */
+    public com.google.protobuf.ProtocolStringList getZonesList() {
+      zones_.makeImmutable();
+      return zones_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the zones of a multi-zone instance where Memorystore
+     * instance allocates resources. This flag isn't applicable for single-zone
+     * instances.
+     * </pre>
+     *
+     * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of zones.
+     */
+    public int getZonesCount() {
+      return zones_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the zones of a multi-zone instance where Memorystore
+     * instance allocates resources. This flag isn't applicable for single-zone
+     * instances.
+     * </pre>
+     *
+     * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The zones at the given index.
+     */
+    public java.lang.String getZones(int index) {
+      return zones_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the zones of a multi-zone instance where Memorystore
+     * instance allocates resources. This flag isn't applicable for single-zone
+     * instances.
+     * </pre>
+     *
+     * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the zones at the given index.
+     */
+    public com.google.protobuf.ByteString getZonesBytes(int index) {
+      return zones_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the zones of a multi-zone instance where Memorystore
+     * instance allocates resources. This flag isn't applicable for single-zone
+     * instances.
+     * </pre>
+     *
+     * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The zones to set.
+     * @return This builder for chaining.
+     */
+    public Builder setZones(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureZonesIsMutable();
+      zones_.set(index, value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the zones of a multi-zone instance where Memorystore
+     * instance allocates resources. This flag isn't applicable for single-zone
+     * instances.
+     * </pre>
+     *
+     * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The zones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addZones(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureZonesIsMutable();
+      zones_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the zones of a multi-zone instance where Memorystore
+     * instance allocates resources. This flag isn't applicable for single-zone
+     * instances.
+     * </pre>
+     *
+     * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The zones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllZones(java.lang.Iterable<java.lang.String> values) {
+      ensureZonesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, zones_);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the zones of a multi-zone instance where Memorystore
+     * instance allocates resources. This flag isn't applicable for single-zone
+     * instances.
+     * </pre>
+     *
+     * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearZones() {
+      zones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the zones of a multi-zone instance where Memorystore
+     * instance allocates resources. This flag isn't applicable for single-zone
+     * instances.
+     * </pre>
+     *
+     * <code>repeated string zones = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the zones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addZonesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureZonesIsMutable();
+      zones_.add(value);
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList activeZones_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureActiveZonesIsMutable() {
+      if (!activeZones_.isModifiable()) {
+        activeZones_ = new com.google.protobuf.LazyStringArrayList(activeZones_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The exact list of zones where the instance currently has
+     * active VMs.
+     * </pre>
+     *
+     * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return A list containing the activeZones.
+     */
+    public com.google.protobuf.ProtocolStringList getActiveZonesList() {
+      activeZones_.makeImmutable();
+      return activeZones_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The exact list of zones where the instance currently has
+     * active VMs.
+     * </pre>
+     *
+     * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The count of activeZones.
+     */
+    public int getActiveZonesCount() {
+      return activeZones_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The exact list of zones where the instance currently has
+     * active VMs.
+     * </pre>
+     *
+     * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The activeZones at the given index.
+     */
+    public java.lang.String getActiveZones(int index) {
+      return activeZones_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The exact list of zones where the instance currently has
+     * active VMs.
+     * </pre>
+     *
+     * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the activeZones at the given index.
+     */
+    public com.google.protobuf.ByteString getActiveZonesBytes(int index) {
+      return activeZones_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The exact list of zones where the instance currently has
+     * active VMs.
+     * </pre>
+     *
+     * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The activeZones to set.
+     * @return This builder for chaining.
+     */
+    public Builder setActiveZones(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureActiveZonesIsMutable();
+      activeZones_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The exact list of zones where the instance currently has
+     * active VMs.
+     * </pre>
+     *
+     * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The activeZones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addActiveZones(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureActiveZonesIsMutable();
+      activeZones_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The exact list of zones where the instance currently has
+     * active VMs.
+     * </pre>
+     *
+     * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param values The activeZones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllActiveZones(java.lang.Iterable<java.lang.String> values) {
+      ensureActiveZonesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, activeZones_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The exact list of zones where the instance currently has
+     * active VMs.
+     * </pre>
+     *
+     * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearActiveZones() {
+      activeZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The exact list of zones where the instance currently has
+     * active VMs.
+     * </pre>
+     *
+     * <code>repeated string active_zones = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes of the activeZones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addActiveZonesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureActiveZonesIsMutable();
+      activeZones_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private int mode_ = 0;
 
     /**
@@ -837,7 +1456,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
      */
     public Builder setModeValue(int value) {
       mode_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -884,7 +1503,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       mode_ = value.getNumber();
       onChanged();
       return this;
@@ -904,7 +1523,7 @@ public final class ZoneDistributionConfig extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder clearMode() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       mode_ = 0;
       onChanged();
       return this;

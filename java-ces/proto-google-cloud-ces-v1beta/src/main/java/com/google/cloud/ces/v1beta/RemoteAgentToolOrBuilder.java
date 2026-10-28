@@ -120,4 +120,219 @@ public interface RemoteAgentToolOrBuilder
    * </code>
    */
   com.google.cloud.ces.v1beta.AgentCardOrBuilder getAgentCardOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration for calling the remote agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the apiAuthentication field is set.
+   */
+  boolean hasApiAuthentication();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration for calling the remote agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The apiAuthentication.
+   */
+  com.google.cloud.ces.v1beta.ApiAuthentication getApiAuthentication();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Authentication configuration for calling the remote agent.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ApiAuthentication api_authentication = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.ApiAuthenticationOrBuilder getApiAuthenticationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When enabled, the interaction between the CXAS app and the remote
+   * agent will share the same context. If the remote agent returns a
+   * context_id, it will be persisted for the entirety of the session for this
+   * remote agent tool.
+   * </pre>
+   *
+   * <code>bool stateful_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The statefulAgent.
+   */
+  boolean getStatefulAgent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of input variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getInputVariableMappingCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of input variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsInputVariableMapping(java.lang.String key);
+
+  /** Use {@link #getInputVariableMappingMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getInputVariableMapping();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of input variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getInputVariableMappingMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of input variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getInputVariableMappingOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of input variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; input_variable_mapping = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getInputVariableMappingOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of output variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getOutputVariableMappingCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of output variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsOutputVariableMapping(java.lang.String key);
+
+  /** Use {@link #getOutputVariableMappingMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getOutputVariableMapping();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of output variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getOutputVariableMappingMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of output variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getOutputVariableMappingOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mapping of output variable names of remote agent to GECX variable
+   * names.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; output_variable_mapping = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getOutputVariableMappingOrThrow(java.lang.String key);
 }
