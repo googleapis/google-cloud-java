@@ -831,7 +831,7 @@ final class KeyAwareChannel extends ManagedChannel {
             databaseScope = databaseId;
           }
           if (finder != null && reqBuilder.hasMutationKey()) {
-            endpoint = finder.findServer(reqBuilder, excludedEndpoints);
+            endpoint = finder.findServerAndFillRoutingHint(reqBuilder, excludedEndpoints);
           }
           if (reqBuilder.hasOptions() && reqBuilder.getOptions().hasReadOnly()) {
             shouldRecordTransactionAffinity = false;
@@ -850,7 +850,7 @@ final class KeyAwareChannel extends ManagedChannel {
           CommitRequest.Builder reqBuilder = null;
           if (finder != null && request.getMutationsCount() > 0) {
             reqBuilder = request.toBuilder();
-            endpoint = finder.fillRoutingHint(reqBuilder, excludedEndpoints);
+            endpoint = finder.findServerAndFillRoutingHint(reqBuilder, excludedEndpoints);
             request = reqBuilder.build();
           }
           if (!request.getTransactionId().isEmpty()) {
@@ -1162,20 +1162,13 @@ final class KeyAwareChannel extends ManagedChannel {
         // by this request's routing hint without leader bias, as read-only transaction IDs can run
         // on any suitable replica.
         boolean routePreferLeader = transactionId.isEmpty() && preferLeader;
-        endpoint = finder.findServer(reqBuilder, routePreferLeader, excludedEndpoints);
+        endpoint =
+            finder.findServerAndFillRoutingHint(reqBuilder, routePreferLeader, excludedEndpoints);
         preferLeader = routePreferLeader;
       } else if (finder != null) {
-        // The request belongs to a read-write transaction and stays pinned to the transaction's
-        // affinity endpoint. Still populate the routing hint (operation UID, key and target range)
-        // so that:
-        //  - the server returns key recipes for this statement shape, which the client otherwise
-        //    never learns for statements that only run inside read-write transactions; and
-        //  - the server can serve the request on the fastpath, or forward it through the fastpath
-        //    when the key is not local to the transaction owner.
-        // The endpoint selected by the finder is ignored to preserve transaction affinity.
-        // preferLeader is intentionally left unchanged (true for read-write transactions): the
-        // hint must describe the leader tablet, as read-write requests are served by the leader.
-        finder.findServer(reqBuilder, preferLeader, excludedEndpoints);
+        // Pinned to the read-write transaction's endpoint, but still send a routing hint so the
+        // server can use the fastpath and return key recipes for this statement.
+        finder.fillRoutingHint(reqBuilder, preferLeader, excludedEndpoints);
       }
       return new RoutingDecision(
           finder, endpoint, databaseId, operationUid(reqBuilder.getRoutingHint()), preferLeader);
@@ -1196,20 +1189,13 @@ final class KeyAwareChannel extends ManagedChannel {
         // by this request's routing hint without leader bias, as read-only transaction IDs can run
         // on any suitable replica.
         boolean routePreferLeader = transactionId.isEmpty() && preferLeader;
-        endpoint = finder.findServer(reqBuilder, routePreferLeader, excludedEndpoints);
+        endpoint =
+            finder.findServerAndFillRoutingHint(reqBuilder, routePreferLeader, excludedEndpoints);
         preferLeader = routePreferLeader;
       } else if (finder != null) {
-        // The request belongs to a read-write transaction and stays pinned to the transaction's
-        // affinity endpoint. Still populate the routing hint (operation UID, key and target range)
-        // so that:
-        //  - the server returns key recipes for this statement shape, which the client otherwise
-        //    never learns for statements that only run inside read-write transactions; and
-        //  - the server can serve the request on the fastpath, or forward it through the fastpath
-        //    when the key is not local to the transaction owner.
-        // The endpoint selected by the finder is ignored to preserve transaction affinity.
-        // preferLeader is intentionally left unchanged (true for read-write transactions): the
-        // hint must describe the leader tablet, as read-write requests are served by the leader.
-        finder.findServer(reqBuilder, preferLeader, excludedEndpoints);
+        // Pinned to the read-write transaction's endpoint, but still send a routing hint so the
+        // server can use the fastpath and return key recipes for this statement.
+        finder.fillRoutingHint(reqBuilder, preferLeader, excludedEndpoints);
       }
       return new RoutingDecision(
           finder, endpoint, databaseId, operationUid(reqBuilder.getRoutingHint()), preferLeader);
