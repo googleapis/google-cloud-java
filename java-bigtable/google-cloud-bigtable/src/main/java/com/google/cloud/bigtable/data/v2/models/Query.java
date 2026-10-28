@@ -292,13 +292,13 @@ public final class Query implements Serializable {
    *
    * <pre>{@code
    * Query query = Query.create(...).range("a", "z");
-   * Query.QueryPaginator paginator = query.createQueryPaginator(100);
+   * Query.QueryPaginator paginator = query.createPaginator(100);
    * ByteString lastSeenRowKey = ByteString.EMPTY;
    * do {
    *     List<Row> rows = client.readRowsCallable().all().call(paginator.getNextQuery());
    *     for (Row row : rows) {
    *        // do some processing
-   *        lastSeenRow = row;
+   *        lastSeenRowKey = row.getKey();
    *     }
    * } while (paginator.advance(lastSeenRowKey));
    * }</pre>
@@ -437,6 +437,12 @@ public final class Query implements Serializable {
     /**
      * Construct the next query. Return true if there are more queries to return. False if we've
      * read everything.
+     *
+     * @param lastSeenRowKey the key of the last row received across the pagination loop. Initialize
+     *     this to {@link ByteString#EMPTY} before the loop and update it as each row is read (see
+     *     {@link #createPaginator(int)}). If the first page is empty, {@link ByteString#EMPTY}
+     *     signals completion; if a subsequent page is empty, passing the unchanged key from the
+     *     previous page signals completion.
      */
     public boolean advance(@Nonnull ByteString lastSeenRowKey) {
       Preconditions.checkNotNull(
