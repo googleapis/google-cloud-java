@@ -242,8 +242,8 @@ public class ITTimestampTimeZoneTest extends ITBase {
   }
 
   /**
-   * Midnight of 2025-01-01 in Kolkata or Auckland is still 2024-12-31 in UTC. A pre-standard-time
-   * date built in the Calendar's zone must arrive unchanged.
+   * Midnight of 2025-01-01 in Kolkata or Auckland is still 2024-12-31 in UTC. A historical date
+   * read with getDate(col, cal) and bound back with setDate(i, d, cal) must arrive unchanged.
    */
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
@@ -252,20 +252,22 @@ public class ITTimestampTimeZoneTest extends ITBase {
     Date date = Date.valueOf(D_DIGITS);
     String expected =
         Instant.ofEpochMilli(date.getTime()).atZone(ZoneOffset.UTC).toLocalDate().toString();
-    Calendar utc = calendar(ZoneOffset.UTC);
-    utc.clear();
-    utc.set(1850, Calendar.JUNE, 1);
-    Date historical = new Date(utc.getTimeInMillis());
+    Calendar cal = calendar(CAL_ZONE);
     try (Connection conn = connect();
-        PreparedStatement ps = conn.prepareStatement(PROBE_DATE)) {
+        PreparedStatement ps = conn.prepareStatement(PROBE_DATE);
+        Statement read = conn.createStatement();
+        ResultSet rs =
+            read.executeQuery("SELECT DATE '0001-01-01' AS d_min, DATE '1850-06-01' AS d_1850")) {
       ps.setDate(1, date, calendar(ZoneOffset.UTC));
       assertEquals(
           expected,
           storedString(ps),
           label(zone, "setDate(d, cal=UTC) must send the date of d in the Calendar's zone"));
-      ps.setDate(1, historical, calendar(ZoneOffset.UTC));
-      assertEquals(
-          "1850-06-01", storedString(ps), label(zone, "setDate(1850-06-01, cal=UTC) digits"));
+      assertTrue(rs.next());
+      ps.setDate(1, rs.getDate("d_min", cal), cal);
+      assertEquals("0001-01-01", storedString(ps), label(zone, "d_min round trip, cal"));
+      ps.setDate(1, rs.getDate("d_1850", cal), cal);
+      assertEquals("1850-06-01", storedString(ps), label(zone, "d_1850 round trip, cal"));
     }
   }
 
@@ -308,17 +310,30 @@ public class ITTimestampTimeZoneTest extends ITBase {
     }
   }
 
+  /** 1582-10-10 is what getObject(LocalDate) returns for DATE '1582-10-10'; it must round-trip. */
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
-  public void testSetObjectLocalDateTime_sendsDigits(String zone) throws SQLException {
+  public void testSetObjectJavaTime_sendsDigits(String zone) throws SQLException {
     useJvmZone(zone);
     try (Connection conn = connect();
-        PreparedStatement ps = conn.prepareStatement(PROBE_DATETIME)) {
-      ps.setObject(1, DT_DIGITS);
-      assertEquals(
-          "2025-01-01 12:34:56.123",
-          storedString(ps),
-          label(zone, "setObject(LocalDateTime) must send its digits"));
+        PreparedStatement dateTime = conn.prepareStatement(PROBE_DATETIME);
+        PreparedStatement date = conn.prepareStatement(PROBE_DATE);
+        PreparedStatement time = conn.prepareStatement(PROBE_TIME)) {
+      dateTime.setObject(1, DT_DIGITS);
+      date.setObject(1, LocalDate.of(1582, 10, 10));
+      time.setObject(1, LocalTime.of(12, 34, 56, 789_123_000));
+      assertAll(
+          () ->
+              assertEquals(
+                  "2025-01-01 12:34:56.123",
+                  storedString(dateTime),
+                  label(zone, "setObject(LocalDateTime) must send its digits")),
+          () ->
+              assertEquals(
+                  "1582-10-10", storedString(date), label(zone, "setObject(LocalDate) digits")),
+          () ->
+              assertEquals(
+                  "12:34:56.789123", storedString(time), label(zone, "setObject(LocalTime)")));
     }
   }
 

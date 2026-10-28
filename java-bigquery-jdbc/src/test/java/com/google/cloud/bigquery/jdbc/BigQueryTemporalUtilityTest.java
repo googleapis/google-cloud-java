@@ -134,6 +134,11 @@ public class BigQueryTemporalUtilityTest {
                     readCal.get(Calendar.DAY_OF_MONTH)))
             .isEqualTo(expected);
         assertThat(readCal.get(Calendar.HOUR_OF_DAY)).isEqualTo(0);
+
+        // Reverse order: the Date getDate(col, cal) returns, bound back via setDate(i, d, cal).
+        Date read = BigQueryTemporalUtility.boxDate(digits, readZone.toZoneId());
+        assertThat(BigQueryTemporalUtility.convertDateToCalendar(read, readCal).toString())
+            .isEqualTo(digits);
       }
     } finally {
       TimeZone.setDefault(originalDefault);
