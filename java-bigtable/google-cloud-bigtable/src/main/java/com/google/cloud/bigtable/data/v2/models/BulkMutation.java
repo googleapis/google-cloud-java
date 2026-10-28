@@ -20,6 +20,7 @@ import static com.google.cloud.bigtable.data.v2.models.RowMutationEntry.MAX_MUTA
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.MutateRowsRequest;
+import com.google.bigtable.v2.SessionMutateRowsRequest;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.common.base.Preconditions;
@@ -126,6 +127,27 @@ public final class BulkMutation implements Serializable, Cloneable {
 
   public int getEntryCount() {
     return builder.getEntriesCount();
+  }
+
+  @InternalApi
+  public TargetId getTargetId() {
+    return targetId;
+  }
+
+  @InternalApi
+  public SessionMutateRowsRequest toSessionProto() {
+    SessionMutateRowsRequest.Builder sessionBuilder = SessionMutateRowsRequest.newBuilder();
+    for (MutateRowsRequest.Entry entry : builder.getEntriesList()) {
+      SessionMutateRowsRequest.Entry.Builder entryBuilder =
+          SessionMutateRowsRequest.Entry.newBuilder()
+              .setKey(entry.getRowKey())
+              .addAllMutations(entry.getMutationsList());
+      if (entry.hasIdempotency()) {
+        entryBuilder.setIdempotency(entry.getIdempotency());
+      }
+      sessionBuilder.addEntries(entryBuilder);
+    }
+    return sessionBuilder.build();
   }
 
   @InternalApi

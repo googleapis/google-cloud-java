@@ -40,6 +40,7 @@ import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.CheckAndMutateRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.DivertingUnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowShim;
+import com.google.cloud.bigtable.data.v2.internal.compat.ops.MutateRowsShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadModifyWriteRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.ReadRowShim;
 import com.google.cloud.bigtable.data.v2.internal.compat.ops.RowBuilderShim;
@@ -51,6 +52,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DirectPathCompatib
 import com.google.cloud.bigtable.data.v2.internal.dp.DirectAccessInvestigator;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.cloud.bigtable.data.v2.internal.util.SessionScope;
+import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
@@ -110,6 +112,7 @@ public class ShimImpl implements Shim {
   private final MutateRowShim mutateRowShim;
   private final CheckAndMutateRowShim checkAndMutateRowShim;
   private final ReadModifyWriteRowShim readModifyWriteRowShim;
+  private final MutateRowsShim mutateRowsShim;
 
   public static Shim create(
       ClientInfo clientInfo,
@@ -228,6 +231,7 @@ public class ShimImpl implements Shim {
     this.mutateRowShim = new MutateRowShim(sessionMap);
     this.checkAndMutateRowShim = new CheckAndMutateRowShim(sessionMap);
     this.readModifyWriteRowShim = new ReadModifyWriteRowShim(sessionMap);
+    this.mutateRowsShim = new MutateRowsShim(sessionMap);
   }
 
   /**
@@ -434,5 +438,17 @@ public class ShimImpl implements Shim {
         Util.extractTimeout(settings),
         debugTagTracer,
         SessionScope.READ_MODIFY_WRITE_ROW);
+  }
+
+  @Override
+  public UnaryCallable<BulkMutation, Void> decorateMutateRows(
+      UnaryCallable<BulkMutation, Void> classic, UnaryCallSettings<?, ?> settings) {
+    return new DivertingUnaryCallable<>(
+        configManager,
+        classic,
+        mutateRowsShim,
+        Util.extractTimeout(settings),
+        debugTagTracer,
+        SessionScope.MUTATE_ROWS);
   }
 }

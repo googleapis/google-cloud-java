@@ -15,12 +15,17 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.api;
 
+import static com.google.common.collect.ImmutableList.toImmutableList;
+
 import com.google.bigtable.v2.CloseSessionRequest;
 import com.google.bigtable.v2.FeatureFlags;
+import com.google.bigtable.v2.Mutation;
 import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.bigtable.v2.SessionCheckAndMutateRowResponse;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
+import com.google.bigtable.v2.SessionMutateRowsRequest;
+import com.google.bigtable.v2.SessionMutateRowsResponse;
 import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
 import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
@@ -40,6 +45,7 @@ import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolImpl;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Message;
 import io.grpc.CallOptions;
 import io.grpc.Context;
@@ -60,6 +66,8 @@ class TableBase implements AutoCloseable {
   private final VRpcDescriptor<
           ?, SessionReadModifyWriteRowRequest, SessionReadModifyWriteRowResponse>
       readModifyWriteRowDescriptor;
+  private final VRpcDescriptor<?, SessionMutateRowsRequest, SessionMutateRowsResponse>
+      mutateRowsDescriptor;
 
   static <ReqT extends Message> TableBase createAndStart(
       ReqT openReq,
@@ -70,6 +78,7 @@ class TableBase implements AutoCloseable {
           checkAndMutateRowDescriptor,
       VRpcDescriptor<?, SessionReadModifyWriteRowRequest, SessionReadModifyWriteRowResponse>
           readModifyWriteRowDescriptor,
+      VRpcDescriptor<?, SessionMutateRowsRequest, SessionMutateRowsResponse> mutateRowsDescriptor,
       FeatureFlags featureFlags,
       ClientInfo clientInfo,
       ClientConfigurationManager configManager,
@@ -108,6 +117,7 @@ class TableBase implements AutoCloseable {
         mutateRowDescriptor,
         checkAndMutateRowDescriptor,
         readModifyWriteRowDescriptor,
+        mutateRowsDescriptor,
         metrics,
         timer,
         userCallbackExecutor);
@@ -122,6 +132,7 @@ class TableBase implements AutoCloseable {
           checkAndMutateRowDescriptor,
       VRpcDescriptor<?, SessionReadModifyWriteRowRequest, SessionReadModifyWriteRowResponse>
           readModifyWriteRowDescriptor,
+      VRpcDescriptor<?, SessionMutateRowsRequest, SessionMutateRowsResponse> mutateRowsDescriptor,
       Metrics metrics,
       BigtableTimer timer,
       Executor userCallbackExecutor) {
@@ -130,6 +141,7 @@ class TableBase implements AutoCloseable {
     this.mutateRowDescriptor = mutateRowDescriptor;
     this.checkAndMutateRowDescriptor = checkAndMutateRowDescriptor;
     this.readModifyWriteRowDescriptor = readModifyWriteRowDescriptor;
+    this.mutateRowsDescriptor = mutateRowsDescriptor;
     this.metrics = metrics;
     this.timer = timer;
     this.userCallbackExecutor = userCallbackExecutor;
@@ -200,6 +212,25 @@ class TableBase implements AutoCloseable {
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), readModifyWriteRowDescriptor, deadline);
     new VOperationImpl<>(retry, Context.current(), userCallbackExecutor, tracer, deadline, false)
+        .start(req, listener);
+  }
+
+  public void mutateRows(
+      SessionMutateRowsRequest req,
+      VRpcListener<SessionMutateRowsResponse> listener,
+      Deadline deadline) {
+    RetryingVRpc<SessionMutateRowsRequest, SessionMutateRowsResponse> retry =
+        new RetryingVRpc<>(() -> sessionPool.newCall(mutateRowsDescriptor), timer);
+    ImmutableList<Mutation> mutations =
+        req.getEntriesList().stream()
+            .flatMap(entry -> entry.getMutationsList().stream())
+            .collect(toImmutableList());
+    boolean idempotent = Util.isIdempotent(mutations);
+    VRpcTracer tracer =
+        metrics.newTableTracer(sessionPool.getInfo(), mutateRowsDescriptor, deadline);
+
+    new VOperationImpl<>(
+            retry, Context.current(), userCallbackExecutor, tracer, deadline, idempotent)
         .start(req, listener);
   }
 }

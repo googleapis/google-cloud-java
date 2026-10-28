@@ -203,11 +203,20 @@ public class EnhancedBigtableStub implements AutoCloseable {
     bulkMutateRowsCallable = createMutateRowsBaseCallable();
     UnaryCallable<BulkMutation, Void> bulkMutateRowsVoidCallable =
         new MutateRowsErrorConverterUnaryCallable(bulkMutateRowsCallable);
-    externalBulkMutateRowsCallable =
+    UnaryCallable<BulkMutation, Void> maybePointWriteCallable =
         new MaybePointWriteCallable(
             bulkMutateRowsVoidCallable,
             createPointWriteCallable(bulkMutateRowsVoidCallable),
             requestContext);
+    externalBulkMutateRowsCallable =
+        bigtableClientContext
+            .getSessionShim()
+            .decorateMutateRows(maybePointWriteCallable, perOpSettings.bulkMutateRowsSettings)
+            .withDefaultCallContext(
+                bigtableClientContext
+                    .getClientContext()
+                    .getDefaultCallContext()
+                    .withRetrySettings(perOpSettings.bulkMutateRowsSettings.getRetrySettings()));
     checkAndMutateRowCallable = createCheckAndMutateRowCallable();
     readModifyWriteRowCallable = createReadModifyWriteRowCallable();
     generateInitialChangeStreamPartitionsCallable =

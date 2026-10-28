@@ -25,6 +25,7 @@ import com.google.bigtable.v2.ReadModifyWriteRule;
 import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
+import com.google.bigtable.v2.SessionMutateRowsRequest;
 import com.google.bigtable.v2.SessionReadModifyWriteRowRequest;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
@@ -80,6 +81,7 @@ public class TableBaseTest {
             VRpcDescriptor.MUTATE_ROW,
             VRpcDescriptor.CHECK_AND_MUTATE_ROW,
             VRpcDescriptor.READ_MODIFY_WRITE_ROW,
+            VRpcDescriptor.MUTATE_ROWS,
             noopMetrics,
             mockTimer,
             MoreExecutors.directExecutor());
@@ -194,6 +196,38 @@ public class TableBaseTest {
     table.readModifyWriteRow(
         SessionReadModifyWriteRowRequest.newBuilder()
             .addRules(ReadModifyWriteRule.newBuilder().setFamilyName("f").build())
+            .build(),
+        new UnaryResponseFuture<>(),
+        deadline);
+    assertThat(fakeSessionPool.lastVRpc.ctx).isNotIdempotent();
+  }
+
+  @Test
+  public void testMutateRowsIdempotent() {
+    table.mutateRows(
+        SessionMutateRowsRequest.newBuilder()
+            .addEntries(
+                SessionMutateRowsRequest.Entry.newBuilder()
+                    .addMutations(
+                        Mutation.newBuilder()
+                            .setSetCell(Mutation.SetCell.getDefaultInstance())
+                            .build()))
+            .build(),
+        new UnaryResponseFuture<>(),
+        deadline);
+    assertThat(fakeSessionPool.lastVRpc.ctx).isIdempotent();
+  }
+
+  @Test
+  public void testMutateRowsNotIdempotent() {
+    table.mutateRows(
+        SessionMutateRowsRequest.newBuilder()
+            .addEntries(
+                SessionMutateRowsRequest.Entry.newBuilder()
+                    .addMutations(
+                        Mutation.newBuilder()
+                            .setAddToCell(Mutation.AddToCell.getDefaultInstance())
+                            .build()))
             .build(),
         new UnaryResponseFuture<>(),
         deadline);
