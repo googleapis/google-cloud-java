@@ -65,6 +65,7 @@ import java.util.Calendar;
 import java.util.Properties;
 import java.util.Random;
 import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 import java.util.function.BiFunction;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
@@ -1088,6 +1089,19 @@ public class ITBigQueryJDBCTest extends ITBase {
     selectStmt.setString(1, "StringField");
     ResultSet selectResult2 = selectStmt.executeQuery();
     assertNotNull(selectResult2);
+
+    // string literal with ? should pass even if there are no parameters.
+    String noParameterQuery =
+        String.format("SELECT 'Hello, ?World!' FROM %s.%s", DATASET, TABLE_NAME);
+
+    PreparedStatement noParameterStmt = bigQueryConnection.prepareStatement(noParameterQuery);
+
+    // Tests that parameter Metadata is populated before query execution and setter.
+    ParameterMetaData noParameterMetaData = noParameterStmt.getParameterMetaData();
+    assertNotNull(noParameterMetaData);
+    assertEquals(0, noParameterMetaData.getParameterCount());
+
+    ResultSet selectResult3 = noParameterStmt.executeQuery();
 
     boolean dropStatus = bigQueryStatement.execute(dropQuery);
     assertFalse(dropStatus);
@@ -3073,7 +3087,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  public void testSessionAbortedOnConnectionClose() throws SQLException {
+  public void testSessionAbortedOnConnectionClose() throws SQLException, InterruptedException {
     String sessionId;
     try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
       try (Statement statement = connection.createStatement()) {
@@ -3087,15 +3101,25 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     // After connection is closed, the session is aborted on the BigQuery server.
     // Attaching to the same session_id in a new connection should fail when running a query.
+    // CI has observed the first query after close() still succeeding on the session, so poll with
+    // a deadline. The test still fails if the session remains usable for the whole deadline.
     String urlWithAbortedSession =
         connection_uri + "EnableSession=1;QueryProperties=session_id=" + sessionId + ";";
+    long deadline = System.nanoTime() + TimeUnit.SECONDS.toNanos(60);
+    boolean sessionUnusable = false;
     try (Connection newConnection = DriverManager.getConnection(urlWithAbortedSession)) {
-      try (Statement statement = newConnection.createStatement()) {
-        SQLException ex =
-            assertThrows(
-                SQLException.class, () -> statement.execute("SELECT * FROM session_temp_table;"));
+      while (!sessionUnusable && System.nanoTime() < deadline) {
+        try (Statement statement = newConnection.createStatement()) {
+          statement.execute("SELECT * FROM session_temp_table;");
+        } catch (SQLException expected) {
+          sessionUnusable = true;
+        }
+        if (!sessionUnusable) {
+          Thread.sleep(2000);
+        }
       }
     }
+    assertTrue(sessionUnusable, "Session " + sessionId + " was still usable 60s after close()");
   }
 
   @ParameterizedTest
