@@ -22,9 +22,13 @@ import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.storage.ApiaryUnbufferedReadableByteChannel.ApiaryReadRequest;
@@ -33,14 +37,20 @@ import com.google.cloud.storage.Retrying.RetrierWithAlg;
 import com.google.cloud.storage.UnbufferedReadableByteChannelSession.UnbufferedReadableByteChannel;
 import com.google.cloud.storage.spi.v1.AuditingHttpTransport;
 import com.google.common.collect.ImmutableMap;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.SequenceInputStream;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.WritableByteChannel;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
@@ -267,6 +277,87 @@ public final class ApiaryUnbufferedReadableByteChannelTest {
       assertTrue(expected.getMessage().contains("Mismatch checksum value"));
     }
   }
+
+  @Test
+  public void testRead_resumedAfterBrokenStream_doesNotReportFalseChecksumMismatch()
+      throws IOException {
+    int splitAt = 6;
+    int length = CONTENT_BYTES.length;
+    AtomicInteger requestCount = new AtomicInteger();
+    HttpTransport transport =
+        new HttpTransport() {
+          @Override
+          protected LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                MockLowLevelHttpResponse response =
+                    new MockLowLevelHttpResponse()
+                        .addHeader("x-goog-hash", "crc32c=" + CORRECT_CRC32C_BASE64)
+                        .addHeader("x-goog-stored-content-encoding", "identity")
+                        .addHeader("x-goog-stored-content-length", String.valueOf(length))
+                        .addHeader("x-goog-generation", "12345");
+                if (requestCount.getAndIncrement() == 0) {
+                  // Full object response whose stream breaks part way through.
+                  InputStream broken =
+                      new SequenceInputStream(
+                          new ByteArrayInputStream(Arrays.copyOf(CONTENT_BYTES, splitAt)),
+                          new InputStream() {
+                            @Override
+                            public int read() throws IOException {
+                              throw new BrokenStreamException();
+                            }
+                          });
+                  return response.setStatusCode(200).setContent(broken);
+                }
+                // Resumed read of the rest of the object.
+                return response
+                    .setStatusCode(206)
+                    .addHeader(
+                        "Content-Range",
+                        String.format(Locale.US, "bytes %d-%d/%d", splitAt, length - 1, length))
+                    .setContent(Arrays.copyOfRange(CONTENT_BYTES, splitAt, length));
+              }
+            };
+          }
+        };
+    Storage storageClient =
+        new Storage.Builder(transport, GsonFactory.getDefaultInstance(), null)
+            .setApplicationName("test")
+            .build();
+    BasicResultRetryAlgorithm<Object> retryBrokenStream =
+        new BasicResultRetryAlgorithm<Object>() {
+          @Override
+          public boolean shouldRetry(Throwable previousThrowable, Object previousResponse) {
+            return previousThrowable instanceof BrokenStreamException;
+          }
+        };
+
+    StorageObject from = new StorageObject().setBucket("bucket").setName("blob");
+    ApiaryReadRequest apiaryReadRequest =
+        new ApiaryReadRequest(from, ImmutableMap.of(), ByteRangeSpec.nullRange());
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    try (ApiaryUnbufferedReadableByteChannel channel =
+        new ApiaryUnbufferedReadableByteChannel(
+            apiaryReadRequest,
+            storageClient,
+            SettableApiFuture.create(),
+            RetrierWithAlg.attemptOnce(),
+            retryBrokenStream,
+            Hasher.defaultHasher())) {
+      ByteBuffer buf = ByteBuffer.allocate(4096);
+      while (channel.read(new ByteBuffer[] {buf}, 0, 1) != -1) {
+        buf.flip();
+        out.write(buf.array(), 0, buf.limit());
+        buf.clear();
+      }
+    }
+
+    assertThat(requestCount.get()).isEqualTo(2);
+    assertArrayEquals(CONTENT_BYTES, out.toByteArray());
+  }
+
+  private static final class BrokenStreamException extends IOException {}
 
   @Test
   public void logsWarning_whenReceivingMoreBytesThanRequested() throws IOException {
