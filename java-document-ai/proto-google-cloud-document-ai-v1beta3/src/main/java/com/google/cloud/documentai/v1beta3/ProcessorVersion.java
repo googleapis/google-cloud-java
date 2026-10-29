@@ -5306,6 +5306,72 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         : genAiModelInfo_;
   }
 
+  public static final int GROUNDING_SETTINGS_FIELD_NUMBER = 21;
+  private com.google.cloud.documentai.v1beta3.GroundingSettings groundingSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The grounding settings of the processor version. This can only
+   * be set using TrainProcessorVersionRequest to override the default grounding
+   * settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the groundingSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasGroundingSettings() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The grounding settings of the processor version. This can only
+   * be set using TrainProcessorVersionRequest to override the default grounding
+   * settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The groundingSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.GroundingSettings getGroundingSettings() {
+    return groundingSettings_ == null
+        ? com.google.cloud.documentai.v1beta3.GroundingSettings.getDefaultInstance()
+        : groundingSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The grounding settings of the processor version. This can only
+   * be set using TrainProcessorVersionRequest to override the default grounding
+   * settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.GroundingSettingsOrBuilder
+      getGroundingSettingsOrBuilder() {
+    return groundingSettings_ == null
+        ? com.google.cloud.documentai.v1beta3.GroundingSettings.getDefaultInstance()
+        : groundingSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5366,6 +5432,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(18, getGenAiModelInfo());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(21, getGroundingSettings());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -5421,6 +5490,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getGenAiModelInfo());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getGroundingSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5465,6 +5537,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     if (hasGenAiModelInfo() != other.hasGenAiModelInfo()) return false;
     if (hasGenAiModelInfo()) {
       if (!getGenAiModelInfo().equals(other.getGenAiModelInfo())) return false;
+    }
+    if (hasGroundingSettings() != other.hasGroundingSettings()) return false;
+    if (hasGroundingSettings()) {
+      if (!getGroundingSettings().equals(other.getGroundingSettings())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -5514,6 +5590,10 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
     if (hasGenAiModelInfo()) {
       hash = (37 * hash) + GEN_AI_MODEL_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getGenAiModelInfo().hashCode();
+    }
+    if (hasGroundingSettings()) {
+      hash = (37 * hash) + GROUNDING_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getGroundingSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -5664,6 +5744,7 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         internalGetLatestEvaluationFieldBuilder();
         internalGetDeprecationInfoFieldBuilder();
         internalGetGenAiModelInfoFieldBuilder();
+        internalGetGroundingSettingsFieldBuilder();
       }
     }
 
@@ -5704,6 +5785,11 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       if (genAiModelInfoBuilder_ != null) {
         genAiModelInfoBuilder_.dispose();
         genAiModelInfoBuilder_ = null;
+      }
+      groundingSettings_ = null;
+      if (groundingSettingsBuilder_ != null) {
+        groundingSettingsBuilder_.dispose();
+        groundingSettingsBuilder_ = null;
       }
       return this;
     }
@@ -5793,6 +5879,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
             genAiModelInfoBuilder_ == null ? genAiModelInfo_ : genAiModelInfoBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.groundingSettings_ =
+            groundingSettingsBuilder_ == null
+                ? groundingSettings_
+                : groundingSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -5858,6 +5951,9 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasGenAiModelInfo()) {
         mergeGenAiModelInfo(other.getGenAiModelInfo());
+      }
+      if (other.hasGroundingSettings()) {
+        mergeGroundingSettings(other.getGroundingSettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5974,6 +6070,13 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00002000;
                 break;
               } // case 146
+            case 170:
+              {
+                input.readMessage(
+                    internalGetGroundingSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7945,6 +8048,242 @@ public final class ProcessorVersion extends com.google.protobuf.GeneratedMessage
         genAiModelInfo_ = null;
       }
       return genAiModelInfoBuilder_;
+    }
+
+    private com.google.cloud.documentai.v1beta3.GroundingSettings groundingSettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.documentai.v1beta3.GroundingSettings,
+            com.google.cloud.documentai.v1beta3.GroundingSettings.Builder,
+            com.google.cloud.documentai.v1beta3.GroundingSettingsOrBuilder>
+        groundingSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The grounding settings of the processor version. This can only
+     * be set using TrainProcessorVersionRequest to override the default grounding
+     * settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the groundingSettings field is set.
+     */
+    public boolean hasGroundingSettings() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The grounding settings of the processor version. This can only
+     * be set using TrainProcessorVersionRequest to override the default grounding
+     * settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The groundingSettings.
+     */
+    public com.google.cloud.documentai.v1beta3.GroundingSettings getGroundingSettings() {
+      if (groundingSettingsBuilder_ == null) {
+        return groundingSettings_ == null
+            ? com.google.cloud.documentai.v1beta3.GroundingSettings.getDefaultInstance()
+            : groundingSettings_;
+      } else {
+        return groundingSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The grounding settings of the processor version. This can only
+     * be set using TrainProcessorVersionRequest to override the default grounding
+     * settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGroundingSettings(
+        com.google.cloud.documentai.v1beta3.GroundingSettings value) {
+      if (groundingSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        groundingSettings_ = value;
+      } else {
+        groundingSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The grounding settings of the processor version. This can only
+     * be set using TrainProcessorVersionRequest to override the default grounding
+     * settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGroundingSettings(
+        com.google.cloud.documentai.v1beta3.GroundingSettings.Builder builderForValue) {
+      if (groundingSettingsBuilder_ == null) {
+        groundingSettings_ = builderForValue.build();
+      } else {
+        groundingSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The grounding settings of the processor version. This can only
+     * be set using TrainProcessorVersionRequest to override the default grounding
+     * settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeGroundingSettings(
+        com.google.cloud.documentai.v1beta3.GroundingSettings value) {
+      if (groundingSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && groundingSettings_ != null
+            && groundingSettings_
+                != com.google.cloud.documentai.v1beta3.GroundingSettings.getDefaultInstance()) {
+          getGroundingSettingsBuilder().mergeFrom(value);
+        } else {
+          groundingSettings_ = value;
+        }
+      } else {
+        groundingSettingsBuilder_.mergeFrom(value);
+      }
+      if (groundingSettings_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The grounding settings of the processor version. This can only
+     * be set using TrainProcessorVersionRequest to override the default grounding
+     * settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearGroundingSettings() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      groundingSettings_ = null;
+      if (groundingSettingsBuilder_ != null) {
+        groundingSettingsBuilder_.dispose();
+        groundingSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The grounding settings of the processor version. This can only
+     * be set using TrainProcessorVersionRequest to override the default grounding
+     * settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.GroundingSettings.Builder
+        getGroundingSettingsBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return internalGetGroundingSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The grounding settings of the processor version. This can only
+     * be set using TrainProcessorVersionRequest to override the default grounding
+     * settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.GroundingSettingsOrBuilder
+        getGroundingSettingsOrBuilder() {
+      if (groundingSettingsBuilder_ != null) {
+        return groundingSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return groundingSettings_ == null
+            ? com.google.cloud.documentai.v1beta3.GroundingSettings.getDefaultInstance()
+            : groundingSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The grounding settings of the processor version. This can only
+     * be set using TrainProcessorVersionRequest to override the default grounding
+     * settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.GroundingSettings grounding_settings = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.documentai.v1beta3.GroundingSettings,
+            com.google.cloud.documentai.v1beta3.GroundingSettings.Builder,
+            com.google.cloud.documentai.v1beta3.GroundingSettingsOrBuilder>
+        internalGetGroundingSettingsFieldBuilder() {
+      if (groundingSettingsBuilder_ == null) {
+        groundingSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.documentai.v1beta3.GroundingSettings,
+                com.google.cloud.documentai.v1beta3.GroundingSettings.Builder,
+                com.google.cloud.documentai.v1beta3.GroundingSettingsOrBuilder>(
+                getGroundingSettings(), getParentForChildren(), isClean());
+        groundingSettings_ = null;
+      }
+      return groundingSettingsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.ProcessorVersion)
