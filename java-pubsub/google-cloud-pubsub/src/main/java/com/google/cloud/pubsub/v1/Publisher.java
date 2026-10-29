@@ -916,12 +916,6 @@ public class Publisher implements PublisherInterface {
     if (currentAlarmFuture != null && activeAlarm.getAndSet(false)) {
       currentAlarmFuture.cancel(false);
     }
-    if (queueProcessingFuture != null) {
-      queueProcessingFuture.cancel(false);
-    }
-    if (hedgingQueue != null) {
-      hedgingQueue.clear();
-    }
     publishAllOutstanding();
     messagesWaiter.waitComplete();
     // Stop the hedging timer and clear the queue to safely shutdown.
