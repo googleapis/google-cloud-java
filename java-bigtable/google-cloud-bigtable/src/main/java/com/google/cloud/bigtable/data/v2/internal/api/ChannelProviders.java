@@ -19,14 +19,22 @@ package com.google.cloud.bigtable.data.v2.internal.api;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.bigtable.v2.FeatureFlags;
+import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.internal.channels.DirectPathIpInterceptor;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
+import io.grpc.CallOptions;
+import io.grpc.Channel;
 import io.grpc.ChannelCredentials;
+import io.grpc.ClientCall;
+import io.grpc.ClientInterceptor;
 import io.grpc.CompositeChannelCredentials;
+import io.grpc.ForwardingClientCall;
 import io.grpc.Grpc;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
 import io.grpc.TlsChannelCredentials;
 import io.grpc.alts.AltsChannelCredentials;
 import io.grpc.alts.GoogleDefaultChannelCredentials;
@@ -39,6 +47,9 @@ import java.util.function.Function;
 
 public abstract class ChannelProviders {
   public static final String DEFAULT_HOST = "bigtable.googleapis.com";
+  private static final Metadata.Key<String> USER_AGENT_KEY =
+      Metadata.Key.of("user-agent", Metadata.ASCII_STRING_MARSHALLER);
+  private static final String USER_AGENT_VALUE = "bigtable-java/" + Version.VERSION;
 
   public interface ChannelProvider {
 
@@ -49,6 +60,21 @@ public abstract class ChannelProviders {
     FeatureFlags updateFeatureFlags(FeatureFlags featureFlags);
 
     boolean isSingleEndpoint();
+  }
+
+  public static class UserAgentInterceptor implements ClientInterceptor {
+
+    @Override
+    public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+        MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+      ClientCall<ReqT, RespT> call = next.newCall(method, callOptions);
+      return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(call) {
+        public void start(ClientCall.Listener<RespT> responseListener, Metadata headers) {
+          headers.put(USER_AGENT_KEY, USER_AGENT_VALUE);
+          super.start(responseListener, headers);
+        }
+      };
+    }
   }
 
   public static class CloudPath implements ChannelProvider {
@@ -78,7 +104,8 @@ public abstract class ChannelProviders {
 
     @Override
     public ManagedChannelBuilder<?> newChannelBuilder() {
-      return Grpc.newChannelBuilderForAddress(host, port, credentials);
+      return Grpc.newChannelBuilderForAddress(host, port, credentials)
+          .intercept(new UserAgentInterceptor());
     }
 
     @Override
@@ -139,7 +166,8 @@ public abstract class ChannelProviders {
     @Override
     public ManagedChannelBuilder<?> newChannelBuilder() {
       return Grpc.newChannelBuilder("google-c2p:///" + endpoint, credentials)
-          .intercept(new DirectPathIpInterceptor(true));
+          .intercept(new DirectPathIpInterceptor(true))
+          .intercept(new UserAgentInterceptor());
     }
 
     public String getEndpoint() {
@@ -193,7 +221,8 @@ public abstract class ChannelProviders {
       String host = endpoint.substring(0, portSplit);
       int port = Integer.parseInt(endpoint.substring(portSplit + 1));
 
-      return Grpc.newChannelBuilderForAddress(host, port, credentials);
+      return Grpc.newChannelBuilderForAddress(host, port, credentials)
+          .intercept(new UserAgentInterceptor());
     }
 
     @Override
