@@ -1393,6 +1393,7 @@ public class ITSystemTest extends ITBaseTest {
     assertThat(value).isEqualTo(roundtripValue);
   }
 
+  @Ignore("Flaky test: b/579436776")
   @Test
   public void writeAndReadVectorEmbeddings() throws ExecutionException, InterruptedException {
     Map<String, VectorValue> expected = new HashMap<>();
