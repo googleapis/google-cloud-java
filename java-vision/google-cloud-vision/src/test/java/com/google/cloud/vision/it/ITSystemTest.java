@@ -78,6 +78,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITSystemTest {
@@ -283,6 +284,7 @@ public class ITSystemTest {
     return list;
   }
 
+  @Ignore("Flaky test: b/579436107")
   @Test
   public void detectFacesTest() throws IOException {
     AnnotateImageResponse res =
