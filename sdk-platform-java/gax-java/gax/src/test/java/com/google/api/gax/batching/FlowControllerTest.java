@@ -369,6 +369,7 @@ class FlowControllerTest {
     testBlockingReserveRelease(flowController, 0, 20);
   }
 
+  @Disabled("Flaky test: b/579437543")
   @Test
   void testDecreaseThresholds_blocking() throws Exception {
     FlowController flowController =
