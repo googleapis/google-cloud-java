@@ -79,8 +79,7 @@ class FileIdentityPoolSubjectTokenSupplier
   public String getActorToken(ExternalAccountSupplierContext context) throws IOException {
     if (credentialSource.credentialFormatType == CredentialFormatType.TEXT) {
       throw new IllegalArgumentException(
-          "Actor tokens are only supported for JSON-formatted credential files with distinct field"
-              + " names.");
+          "Actor tokens are only supported for JSON-formatted credential files.");
     }
     return getToken(credentialSource.actorTokenFieldName);
   }
@@ -124,6 +123,8 @@ class FileIdentityPoolSubjectTokenSupplier
     return new TokenPair(subject, actor);
   }
 
+  // targetFieldName is null when reading a TEXT-formatted subject token (where the entire file
+  // content is the raw token rather than a JSON object field).
   private String getToken(@Nullable String targetFieldName) throws IOException {
     if (credentialSource.credentialFormatType == CredentialFormatType.JSON
         && targetFieldName == null) {

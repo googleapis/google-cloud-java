@@ -39,7 +39,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpResponseException;
+import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.util.SecurityUtils;
+import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.common.primitives.Bytes;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -231,5 +234,45 @@ class OAuth2UtilsTest {
     KeyStore uninitialized2 = KeyStore.getInstance(KeyStore.getDefaultType());
 
     assertTrue(OAuth2Utils.hasCertificateChanged(uninitialized1, uninitialized2));
+  }
+
+  @Test
+  void hasMtlsKeyStore_and_isKeylessMtlsTransportFactory_classifyFactoriesCorrectly() {
+    KeyStore populated = IdentityPoolCredentialsTest.createPopulatedKeyStore();
+    MtlsHttpTransportFactory withKeyStore = new MtlsHttpTransportFactory(populated);
+    MtlsHttpTransportFactory keyless = new MtlsHttpTransportFactory();
+    HttpTransportFactory customFactory = MockHttpTransport::new;
+
+    assertTrue(OAuth2Utils.hasMtlsKeyStore(withKeyStore));
+    assertFalse(OAuth2Utils.hasMtlsKeyStore(keyless));
+    assertFalse(OAuth2Utils.hasMtlsKeyStore(OAuth2Utils.HTTP_TRANSPORT_FACTORY));
+    assertFalse(OAuth2Utils.hasMtlsKeyStore(customFactory));
+    assertFalse(OAuth2Utils.hasMtlsKeyStore(null));
+
+    assertTrue(OAuth2Utils.isKeylessMtlsTransportFactory(keyless));
+    assertFalse(OAuth2Utils.isKeylessMtlsTransportFactory(withKeyStore));
+    assertFalse(OAuth2Utils.isKeylessMtlsTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY));
+    assertFalse(OAuth2Utils.isKeylessMtlsTransportFactory(customFactory));
+    assertFalse(OAuth2Utils.isKeylessMtlsTransportFactory(null));
+  }
+
+  @Test
+  void isDefaultOrMtlsTransportFactory_classifiesFactoriesCorrectly() {
+    KeyStore populated = IdentityPoolCredentialsTest.createPopulatedKeyStore();
+    MtlsHttpTransportFactory standardMtls = new MtlsHttpTransportFactory(populated);
+    MtlsHttpTransportFactory keylessMtls = new MtlsHttpTransportFactory();
+    MtlsHttpTransportFactory customMtlsSubclassWithKeyStore =
+        new MtlsHttpTransportFactory(populated) {};
+    MtlsHttpTransportFactory customMtlsSubclassKeyless = new MtlsHttpTransportFactory() {};
+    HttpTransportFactory customFactory = MockHttpTransport::new;
+
+    assertTrue(OAuth2Utils.isDefaultOrMtlsTransportFactory(null));
+    assertTrue(OAuth2Utils.isDefaultOrMtlsTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY));
+    assertTrue(OAuth2Utils.isDefaultOrMtlsTransportFactory(standardMtls));
+    assertTrue(OAuth2Utils.isDefaultOrMtlsTransportFactory(keylessMtls));
+    assertTrue(OAuth2Utils.isDefaultOrMtlsTransportFactory(customMtlsSubclassKeyless));
+
+    assertFalse(OAuth2Utils.isDefaultOrMtlsTransportFactory(customMtlsSubclassWithKeyStore));
+    assertFalse(OAuth2Utils.isDefaultOrMtlsTransportFactory(customFactory));
   }
 }

@@ -102,6 +102,8 @@ class OAuthException extends GoogleAuthException {
   static OAuthException createFromHttpResponseException(HttpResponseException e) {
     String content = e.getContent();
     if (content == null || content.trim().isEmpty()) {
+      // OAuthException requires a non-null errorCode, so synthesize "http_error_<status>" as the
+      // errorCode and pass e.getStatusMessage() as the separate errorDescription argument.
       OAuthException oauthException =
           new OAuthException(
               "http_error_" + e.getStatusCode(), e.getStatusMessage(), null, e.getStatusCode());
@@ -119,6 +121,12 @@ class OAuthException extends GoogleAuthException {
         return oauthException;
       }
 
+      // Token and IAM endpoints can return errors in two JSON schemas:
+      // 1. RFC 6749 Section 5.2 OAuth 2.0 format, where "error" is a top-level String:
+      //    {"error": "invalid_grant", "error_description": "...", "error_uri": "..."}
+      // 2. Google API Standard Error format (google.rpc.Status / AIP-193), returned by GFE/STS on
+      //    mTLS or HTTP 401/403 authentication errors, where "error" is a nested JSON object:
+      //    {"error": {"code": 401, "status": "UNAUTHENTICATED", "message": "..."}}
       String errorCode = null;
       String errorDescription = null;
       Object rawError = errorResponse.get("error");
@@ -136,6 +144,8 @@ class OAuthException extends GoogleAuthException {
       if (errorCode == null) {
         errorCode = "http_error_" + e.getStatusCode();
       }
+      // Prefer top-level "error_description" (RFC 6749) when present; otherwise fall back to
+      // nested "error.message", top-level "message", or the HTTP status message / raw body.
       String errorUri = null;
       if (errorResponse.get("error_description") instanceof String) {
         errorDescription = (String) errorResponse.get("error_description");
@@ -156,6 +166,8 @@ class OAuthException extends GoogleAuthException {
       oauthException.initCause(e);
       return oauthException;
     } catch (Exception parseException) {
+      // Non-JSON response body (e.g. HTML/text from a proxy): preserve the status code and raw
+      // body rather than failing with a JSON parse error.
       OAuthException oauthException =
           new OAuthException("http_error_" + e.getStatusCode(), content, null, e.getStatusCode());
       oauthException.initCause(e);

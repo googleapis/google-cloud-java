@@ -640,7 +640,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
     if (this.sourceCredentials instanceof IdentityPoolCredentials) {
       IdentityPoolCredentials identityPoolSource = (IdentityPoolCredentials) this.sourceCredentials;
       if (identityPoolSource.hasMtlsProviderForImpersonation()
-          && IdentityPoolCredentials.isDefaultOrMtlsTransportFactory(this.transportFactory)) {
+          && OAuth2Utils.isDefaultOrMtlsTransportFactory(this.transportFactory)) {
         return identityPoolSource.refreshImpersonatedAccessTokenWithRetry(this);
       }
     }
@@ -702,8 +702,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
     if (cycleTransportFactory != null) {
       // readObject() defers the certificate load, leaving a keyless MtlsHttpTransportFactory.
       // Upgrade it to the pinned factory so sign() and idTokenWithAudience() can use mTLS.
-      if (this.transportFactory instanceof MtlsHttpTransportFactory
-          && !((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore()) {
+      if (OAuth2Utils.isKeylessMtlsTransportFactory(this.transportFactory)) {
         this.transportFactory = cycleTransportFactory;
       }
     }
@@ -1153,12 +1152,10 @@ public class ImpersonatedCredentials extends GoogleCredentials
     input.defaultReadObject();
     transportFactory = newInstance(transportFactoryClassName);
     if (this.sourceCredentials instanceof IdentityPoolCredentials
-        && this.transportFactory instanceof MtlsHttpTransportFactory
-        && !((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore()) {
+        && OAuth2Utils.isKeylessMtlsTransportFactory(this.transportFactory)) {
       HttpTransportFactory sourceTransportFactory =
           ((IdentityPoolCredentials) this.sourceCredentials).getTransportFactory();
-      if (sourceTransportFactory instanceof MtlsHttpTransportFactory
-          && ((MtlsHttpTransportFactory) sourceTransportFactory).hasKeyStore()) {
+      if (OAuth2Utils.hasMtlsKeyStore(sourceTransportFactory)) {
         this.transportFactory = sourceTransportFactory;
       }
     }

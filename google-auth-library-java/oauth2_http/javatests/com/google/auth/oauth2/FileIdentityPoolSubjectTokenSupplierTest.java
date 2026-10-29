@@ -69,8 +69,7 @@ class FileIdentityPoolSubjectTokenSupplierTest {
     IllegalArgumentException exception =
         assertThrows(IllegalArgumentException.class, () -> supplier.getActorToken(null));
     assertEquals(
-        "Actor tokens are only supported for JSON-formatted credential files with distinct field"
-            + " names.",
+        "Actor tokens are only supported for JSON-formatted credential files.",
         exception.getMessage());
   }
 

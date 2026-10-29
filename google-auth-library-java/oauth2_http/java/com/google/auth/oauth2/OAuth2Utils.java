@@ -44,6 +44,7 @@ import com.google.api.client.util.PemReader.Section;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.AuthHttpConstants;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.common.base.Strings;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
@@ -377,6 +378,50 @@ public class OAuth2Utils {
       t = t.getCause();
     }
     return false;
+  }
+
+  /**
+   * Returns whether the given {@link HttpTransportFactory} is an {@link MtlsHttpTransportFactory}
+   * initialized with a client certificate {@link KeyStore}.
+   */
+  static boolean hasMtlsKeyStore(@Nullable HttpTransportFactory transportFactory) {
+    return transportFactory instanceof MtlsHttpTransportFactory
+        && ((MtlsHttpTransportFactory) transportFactory).hasKeyStore();
+  }
+
+  /**
+   * Returns whether the given {@link HttpTransportFactory} is an {@link MtlsHttpTransportFactory}
+   * without an initialized {@link KeyStore} (for example, after deserialization via the no-arg
+   * constructor before certificate loading).
+   */
+  static boolean isKeylessMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
+    return transportFactory instanceof MtlsHttpTransportFactory
+        && !((MtlsHttpTransportFactory) transportFactory).hasKeyStore();
+  }
+
+  /**
+   * Returns whether the given transport factory should be managed and upgraded to {@link
+   * MtlsHttpTransportFactory} when mTLS is configured:
+   *
+   * <ul>
+   *   <li>{@code null}, {@link OAuth2Utils#HTTP_TRANSPORT_FACTORY}, or {@link
+   *       OAuth2Utils.DefaultHttpTransportFactory}: no custom transport factory was provided, so
+   *       mTLS credentials should upgrade to {@link MtlsHttpTransportFactory}.
+   *   <li>Exact class {@link MtlsHttpTransportFactory}: standard mTLS transport (including when
+   *       cloning an already-initialized mTLS credential), which should be refreshed per cycle with
+   *       the latest {@link KeyStore}.
+   *   <li>An {@link MtlsHttpTransportFactory} (or subclass) without a {@link KeyStore} loaded yet.
+   * </ul>
+   *
+   * <p>Conversely, if a caller supplies a custom {@link HttpTransportFactory} or a custom {@link
+   * MtlsHttpTransportFactory} subclass pre-configured with its own {@link KeyStore}, this returns
+   * {@code false} so the caller's custom transport is preserved.
+   */
+  static boolean isDefaultOrMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
+    return transportFactory == null
+        || transportFactory instanceof DefaultHttpTransportFactory
+        || transportFactory.getClass() == MtlsHttpTransportFactory.class
+        || isKeylessMtlsTransportFactory(transportFactory);
   }
 
   /**

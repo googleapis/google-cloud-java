@@ -177,44 +177,18 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
    * has no actual certificates.
    */
   boolean isMtlsConfigured() {
-    return this.x509Provider != null
-        || (this.transportFactory instanceof MtlsHttpTransportFactory
-            && ((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore());
-  }
-
-  /**
-   * Returns whether the given transport factory should be managed and upgraded to {@link
-   * MtlsHttpTransportFactory} when mTLS is configured:
-   *
-   * <ul>
-   *   <li>{@code null}, {@link OAuth2Utils#HTTP_TRANSPORT_FACTORY}, or {@link
-   *       OAuth2Utils.DefaultHttpTransportFactory}: no custom transport factory was provided, so
-   *       mTLS credentials should upgrade to {@link MtlsHttpTransportFactory}.
-   *   <li>Exact class {@link MtlsHttpTransportFactory}: standard mTLS transport (including when
-   *       cloning an already-initialized mTLS credential via {@link #toBuilder()} or {@link
-   *       #createScoped}), which should be refreshed per cycle with the latest {@link KeyStore}.
-   *   <li>An {@link MtlsHttpTransportFactory} (or subclass) without a {@link KeyStore} loaded yet.
-   * </ul>
-   *
-   * <p>Conversely, if a caller supplies a custom {@link HttpTransportFactory} or a custom {@link
-   * MtlsHttpTransportFactory} subclass pre-configured with its own {@link KeyStore}, this returns
-   * {@code false} so the caller's custom transport is preserved.
-   */
-  static boolean isDefaultOrMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
-    return transportFactory == null
-        || transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
-        || transportFactory.getClass() == MtlsHttpTransportFactory.class
-        || (transportFactory instanceof MtlsHttpTransportFactory
-            && !((MtlsHttpTransportFactory) transportFactory).hasKeyStore());
+    return this.x509Provider != null || OAuth2Utils.hasMtlsKeyStore(this.transportFactory);
   }
 
   @VisibleForTesting
   boolean shouldUseMtlsTransportFactory() {
-    // Also check isDefaultOrMtlsTransportFactory(this.transportFactory) because a custom
-    // MtlsHttpTransportFactory subclass constructed with a KeyStore has useMtlsTransportFactory ==
-    // false at build time, but deserialization in ExternalAccountCredentials.readObject()
-    // re-instantiates it via its no-arg constructor without a KeyStore.
-    return this.useMtlsTransportFactory || isDefaultOrMtlsTransportFactory(this.transportFactory);
+    // Also check OAuth2Utils.isDefaultOrMtlsTransportFactory(this.transportFactory) because a
+    // custom MtlsHttpTransportFactory subclass constructed with a KeyStore has
+    // useMtlsTransportFactory == false at build time, but deserialization in
+    // ExternalAccountCredentials.readObject() re-instantiates it via its no-arg constructor
+    // without a KeyStore.
+    return this.useMtlsTransportFactory
+        || OAuth2Utils.isDefaultOrMtlsTransportFactory(this.transportFactory);
   }
 
   boolean hasMtlsProviderForImpersonation() {
@@ -227,9 +201,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
    */
   private boolean hasInitializedMtlsTransport() {
     return this.x509Provider != null
-        && (!shouldUseMtlsTransportFactory()
-            || (this.transportFactory instanceof MtlsHttpTransportFactory
-                && ((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore()));
+        && (!shouldUseMtlsTransportFactory() || OAuth2Utils.hasMtlsKeyStore(this.transportFactory));
   }
 
   AccessToken refreshImpersonatedAccessTokenWithRetry(ImpersonatedCredentials impersonated)
@@ -696,7 +668,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     @CanIgnoreReturnValue
     public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
       super.setHttpTransportFactory(transportFactory);
-      this.useMtlsTransportFactory = isDefaultOrMtlsTransportFactory(transportFactory);
+      this.useMtlsTransportFactory = OAuth2Utils.isDefaultOrMtlsTransportFactory(transportFactory);
       this.isClonedTransportInitialized = false;
       return this;
     }
