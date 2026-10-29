@@ -61,7 +61,6 @@ class MtlsUtilsTest {
     MtlsUtils.setGkeCredentialBundlePathForTesting(null);
     MtlsUtils.setWellKnownSpiffeDirForTesting(null);
     MtlsUtils.setTimeServiceForTesting(null);
-    MtlsUtils.resetStartupStateForTesting();
   }
 
   @Test
@@ -928,7 +927,6 @@ class MtlsUtilsTest {
 
     assertEquals(certFile.toString(), MtlsUtils.getWorkloadCertPath(envProvider, homeInTempDir()));
     assertEquals(3, sleepCount[0]);
-    assertTrue(MtlsUtils.isInitialStartupCompleted());
   }
 
   @Test
@@ -959,7 +957,6 @@ class MtlsUtilsTest {
     assertEquals(0, sleepCount[0]);
 
     // 2. Config inside well-known dir referencing cert/key outside well-known dir does not poll.
-    MtlsUtils.resetStartupStateForTesting();
     Path certOutside = outsideDir.resolve("certificates.pem");
     Path configInside = tempDir.resolve("certificate_config.json");
     String configInsideJson =
@@ -1071,8 +1068,7 @@ class MtlsUtilsTest {
   }
 
   @Test
-  void
-      getWorkloadCertPath_explicitConfigInWellKnownDir_timeout_throwsAndSubsequentCallDoesNotPoll() {
+  void getWorkloadCertPath_explicitConfigInWellKnownDir_timeout_throwsIllegalStateException() {
     MtlsUtils.setWellKnownSpiffeDirForTesting(tempDir.toAbsolutePath().toString() + "/");
     Path missingConfig = tempDir.resolve("missing_config.json");
 
@@ -1082,13 +1078,6 @@ class MtlsUtilsTest {
     EnvironmentProvider envProvider =
         name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? missingConfig.toString() : null;
 
-    assertThrows(
-        IllegalStateException.class,
-        () -> MtlsUtils.getWorkloadCertPath(envProvider, homeInTempDir()));
-    assertEquals(99, sleepCount[0]);
-    assertTrue(MtlsUtils.isInitialStartupCompleted());
-
-    // Subsequent call after initial startup completed fails immediately with 0 additional sleeps.
     assertThrows(
         IllegalStateException.class,
         () -> MtlsUtils.getWorkloadCertPath(envProvider, homeInTempDir()));
@@ -1112,7 +1101,6 @@ class MtlsUtilsTest {
     assertEquals(0, sleepCount[0]);
 
     // 2. Incomplete workload config (missing key_path) throws immediately with 0 sleeps.
-    MtlsUtils.resetStartupStateForTesting();
     Path incompleteConfig = tempDir.resolve("incomplete_config.json");
     Files.write(
         incompleteConfig,
@@ -1129,7 +1117,6 @@ class MtlsUtilsTest {
     assertEquals(0, sleepCount[0]);
 
     // 3. Missing config outside wellKnownSpiffeDir throws immediately with 0 sleeps.
-    MtlsUtils.resetStartupStateForTesting();
     assertThrows(
         IllegalStateException.class,
         () ->

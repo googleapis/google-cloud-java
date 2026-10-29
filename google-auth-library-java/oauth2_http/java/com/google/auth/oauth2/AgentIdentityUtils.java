@@ -528,22 +528,23 @@ final class AgentIdentityUtils {
     }
 
     boolean shouldPoll =
-        MtlsUtils.waitForWorkloadConfigStartupIfNeeded(
-            new File(certConfigPath),
-            wellKnownDir,
-            timeService::sleep,
-            () ->
-                LoggingUtils.log(
-                    LOGGER_PROVIDER,
-                    Level.FINE,
-                    Collections.emptyMap(),
-                    String.format(
-                        "Agent Identity certificate config or referenced credential files not yet"
-                            + " ready at %s (from %s environment variable). Retrying for up to %d"
-                            + " seconds.",
-                        certConfigPath,
-                        GOOGLE_API_CERTIFICATE_CONFIG,
-                        MtlsUtils.STARTUP_POLL_TIMEOUT_SECONDS)));
+        initialCached == null
+            && MtlsUtils.waitForWorkloadConfigStartupIfNeeded(
+                new File(certConfigPath),
+                wellKnownDir,
+                timeService::sleep,
+                () ->
+                    LoggingUtils.log(
+                        LOGGER_PROVIDER,
+                        Level.FINE,
+                        Collections.emptyMap(),
+                        String.format(
+                            "Agent Identity certificate config or referenced credential files not"
+                                + " yet ready at %s (from %s environment variable). Retrying for up"
+                                + " to %d seconds.",
+                            certConfigPath,
+                            GOOGLE_API_CERTIFICATE_CONFIG,
+                            MtlsUtils.STARTUP_POLL_TIMEOUT_SECONDS)));
     IOException lastParseException = null;
 
     try {
@@ -551,7 +552,6 @@ final class AgentIdentityUtils {
         ResolvedCertAndKeyPaths paths = extractPathsFromConfig(certConfigPath);
         if (!paths.hasWorkloadConfig()) {
           // Valid non-workload config (e.g. enterprise certs) - exit early.
-          MtlsUtils.markInitialStartupCompleted();
           return paths;
         }
         boolean certReady =
@@ -559,7 +559,6 @@ final class AgentIdentityUtils {
         boolean keyReady =
             AgentIdentityCacheUtils.checkExistsOrAccessDenied(Paths.get(paths.getKeyPath()));
         if (certReady && keyReady) {
-          MtlsUtils.markInitialStartupCompleted();
           return paths;
         }
       }
@@ -572,12 +571,10 @@ final class AgentIdentityUtils {
       CachedAgentIdentityInfo latestCached =
           AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
       if (!shouldPoll && latestCached == null) {
-        MtlsUtils.markInitialStartupCompleted();
         throw e; // Fail fast on malformed JSON syntax errors when not polling
       }
       lastParseException = e;
     }
-    MtlsUtils.markInitialStartupCompleted();
 
     CachedAgentIdentityInfo fallbackCached =
         AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
@@ -613,7 +610,6 @@ final class AgentIdentityUtils {
   private static ResolvedCertAndKeyPaths getWellKnownCertificatePathWithRetry(
       final @Nullable CachedAgentIdentityInfo initialCached) throws IOException {
     if (isMtlsExplicitlyDisabled()) {
-      MtlsUtils.markInitialStartupCompleted();
       return new ResolvedCertAndKeyPaths(null, null, false);
     }
 
@@ -629,7 +625,6 @@ final class AgentIdentityUtils {
         !MtlsUtils.hasCertificateConfiguration(environmentProvider, propertyProvider);
     String gkeBundlePath = gkeCredentialBundlePath;
     if (gkeBundleAllowed && MtlsUtils.isGkeCredentialBundleReady(gkeBundlePath)) {
-      MtlsUtils.markInitialStartupCompleted();
       // GKE combined bundle file contains both certificate chain and private key
       return new ResolvedCertAndKeyPaths(gkeBundlePath, gkeBundlePath, false);
     }
@@ -637,7 +632,6 @@ final class AgentIdentityUtils {
     // If a GKE credential was previously cached and the bundle is transiently unavailable (e.g.
     // mid-rotation), return the cached paths so loadAndVerifyCredentials can fall back to the
     // cached credential.
-    MtlsUtils.markInitialStartupCompleted();
     CachedAgentIdentityInfo fallbackCached =
         AgentIdentityCacheUtils.getLatestOrInitialCache(initialCached);
     if (gkeBundleAllowed
@@ -768,7 +762,6 @@ final class AgentIdentityUtils {
 
   private static void resetCachedState() {
     AgentIdentityCacheUtils.clearCachedAgentIdentityInfo();
-    MtlsUtils.resetStartupStateForTesting();
     mtlsDisabledLogged = false;
     mtlsDisabledEvaluated = false;
   }

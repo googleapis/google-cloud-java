@@ -119,13 +119,6 @@ public class MtlsUtils {
 
   private static volatile TimeService timeService = Thread::sleep;
 
-  // Tracks whether initial container startup discovery has completed across both mTLS transport
-  // initialization and Agent Identity token binding. Once initial startup discovery completes (or
-  // fails), periodic steady-state token refreshes in AgentIdentityUtils and subsequent calls skip
-  // the 30-second startup poll so transient mid-rotation file updates or caller retries do not
-  // block for 30 seconds.
-  private static volatile boolean initialStartupCompleted = false;
-
   /**
    * Functional interface for sleeping during startup credential polling. Overridable for testing.
    */
@@ -145,40 +138,17 @@ public class MtlsUtils {
   }
 
   /**
-   * Returns {@code true} if initial container startup certificate discovery has already completed.
-   */
-  @InternalApi
-  public static boolean isInitialStartupCompleted() {
-    return initialStartupCompleted;
-  }
-
-  /** Marks initial container startup certificate discovery as completed. */
-  @InternalApi
-  public static void markInitialStartupCompleted() {
-    initialStartupCompleted = true;
-  }
-
-  /** Resets the initial startup completion flag for testing. */
-  @InternalApi
-  @VisibleForTesting
-  public static void resetStartupStateForTesting() {
-    initialStartupCompleted = false;
-  }
-
-  /**
    * Overrides the well-known SPIFFE directory path for testing; {@code null} restores the default.
    */
   @VisibleForTesting
   static void setWellKnownSpiffeDirForTesting(@Nullable String dir) {
     wellKnownSpiffeDir = dir != null ? dir : WELL_KNOWN_SPIFFE_DIR;
-    initialStartupCompleted = false;
   }
 
   /** Overrides the sleep service for testing; {@code null} restores {@code Thread::sleep}. */
   @VisibleForTesting
   static void setTimeServiceForTesting(@Nullable TimeService service) {
     timeService = service != null ? service : Thread::sleep;
-    initialStartupCompleted = false;
   }
 
   /**
@@ -228,10 +198,9 @@ public class MtlsUtils {
   }
 
   /**
-   * On initial container startup ({@code !isInitialStartupCompleted()}), polls up to 30 seconds
-   * when {@code configFile} and its referenced {@code cert_path} and {@code key_path} reside within
-   * {@code targetWellKnownDir} until the configuration and referenced certificate/key files are
-   * non-empty readable files, or a non-retryable state is encountered.
+   * Polls up to 30 seconds when {@code configFile} and its referenced {@code cert_path} and {@code
+   * key_path} reside within {@code targetWellKnownDir} until the configuration and referenced
+   * certificate/key files are non-empty readable files, or a non-retryable state is encountered.
    *
    * @return {@code true} if startup polling was active for {@code configFile}, {@code false}
    *     otherwise
@@ -244,9 +213,6 @@ public class MtlsUtils {
       TimeService sleepService,
       @Nullable Runnable onFirstPollSleep)
       throws IOException {
-    if (initialStartupCompleted) {
-      return false;
-    }
     boolean shouldPoll = isPathInWellKnownDir(configFile.getPath(), targetWellKnownDir);
     try {
       waitForExplicitConfigStartupIfNeeded(
@@ -263,10 +229,9 @@ public class MtlsUtils {
   }
 
   /**
-   * On initial container startup ({@code !initialStartupCompleted}), polls up to 30 seconds when
-   * {@code configFile} and its referenced {@code cert_path} and {@code key_path} reside within the
-   * well-known SPIFFE directory until the configuration and referenced certificate/key files are
-   * non-empty readable files.
+   * Polls up to 30 seconds when {@code configFile} and its referenced {@code cert_path} and {@code
+   * key_path} reside within the well-known SPIFFE directory until the configuration and referenced
+   * certificate/key files are non-empty readable files.
    */
   private static @Nullable WorkloadCertificateConfiguration waitForExplicitConfigStartupIfNeeded(
       File configFile) throws IOException {
@@ -279,17 +244,11 @@ public class MtlsUtils {
       TimeService sleepService,
       @Nullable Runnable onFirstPollSleep)
       throws IOException {
-    if (initialStartupCompleted) {
-      return null;
-    }
     boolean shouldPoll = isPathInWellKnownDir(configFile.getPath(), targetWellKnownDir);
     int maxCycles = shouldPoll ? TOTAL_POLL_CYCLES : 1;
     boolean warned = false;
 
     for (int cycle = 0; cycle < maxCycles; cycle++) {
-      if (initialStartupCompleted) {
-        return null;
-      }
       if (isExistingNonFileOrUnreadable(configFile)) {
         // Directory or permission denied on an existing file will not resolve via startup polling.
         break;
@@ -299,7 +258,6 @@ public class MtlsUtils {
           WorkloadCertificateConfiguration config =
               WorkloadCertificateConfiguration.fromCertificateConfigurationStream(certConfigStream);
           if (!shouldPoll) {
-            initialStartupCompleted = true;
             return config;
           }
           File certFile = new File(config.getCertPath());
@@ -309,7 +267,6 @@ public class MtlsUtils {
             break;
           }
           if (isNonEmptyReadableFile(certFile) && isNonEmptyReadableFile(keyFile)) {
-            initialStartupCompleted = true;
             return config;
           }
           if (!isPathInWellKnownDir(config.getCertPath(), targetWellKnownDir)
@@ -320,15 +277,12 @@ public class MtlsUtils {
           }
         } catch (CertificateSourceUnavailableException e) {
           // Valid JSON without a workload section (e.g. ECP configuration); do not poll.
-          initialStartupCompleted = true;
           throw e;
         } catch (IllegalArgumentException | ClassCastException e) {
           // Valid JSON missing or mistyped cert_configs, cert_path, or key_path; do not poll.
-          initialStartupCompleted = true;
           throw e;
         } catch (Exception e) {
           if (!shouldPoll) {
-            initialStartupCompleted = true;
             if (e instanceof IOException) {
               throw (IOException) e;
             }
@@ -358,9 +312,6 @@ public class MtlsUtils {
           throw interrupted;
         }
       }
-    }
-    if (shouldPoll) {
-      initialStartupCompleted = true;
     }
     return null;
   }

@@ -1001,9 +1001,7 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void
-      getAgentIdentityCertInfo_configInWellKnownDirTimeout_subsequentRefreshDoesNotPollAndThrowsIOException()
-          throws Exception {
+  public void getAgentIdentityCertInfo_configInWellKnownDirTimeout_pollsAndThrowsIOException() {
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
     FakeTimeService fakeTime = new FakeTimeService();
     AgentIdentityUtils.setTimeService(fakeTime);
@@ -1012,11 +1010,7 @@ class AgentIdentityUtilsTest {
         tempDir.resolve("missing_config.json").toAbsolutePath().toString());
     envProvider.setEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE", null);
 
-    // Initial call polls for all 100 cycles (99 sleeps) and fails closed with IOException
-    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
-    assertEquals(99, fakeTime.getSleepCount());
-
-    // Subsequent token refresh fails closed immediately without sleeping
+    // Polls for all 100 cycles (99 sleeps) and fails closed with IOException
     assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertEquals(99, fakeTime.getSleepCount());
   }
@@ -2066,25 +2060,6 @@ class AgentIdentityUtilsTest {
 
     // No other well-known files exist and the cached GKE credential is not allowed anymore.
     assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
-    assertEquals(0, fakeTime.getSleepCount());
-  }
-
-  @Test
-  public void
-      getAgentIdentityCertInfo_afterMtlsUtilsCompletesStartupPoll_doesNotPerformSecondStartupPoll()
-          throws Exception {
-    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
-    FakeTimeService fakeTime = new FakeTimeService();
-    AgentIdentityUtils.setTimeService(fakeTime);
-    envProvider.setEnv(
-        AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG,
-        tempDir.resolve("missing_config.json").toAbsolutePath().toString());
-
-    // Simulate MtlsUtils completing initial startup polling during transport creation.
-    com.google.auth.mtls.MtlsUtils.markInitialStartupCompleted();
-
-    // Subsequent AgentIdentityUtils call must fail fast without a second 30-second poll.
-    assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
     assertEquals(0, fakeTime.getSleepCount());
   }
 

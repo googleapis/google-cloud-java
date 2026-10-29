@@ -444,7 +444,6 @@ class X509ProviderTest {
     } finally {
       MtlsUtils.setWellKnownSpiffeDirForTesting(null);
       MtlsUtils.setTimeServiceForTesting(null);
-      MtlsUtils.resetStartupStateForTesting();
     }
   }
 
