@@ -315,7 +315,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
 
       this.reqGoogleDriveScope =
-          BigQueryJdbcUrlUtility.convertIntToBoolean(
+          BigQueryJdbcUrlUtility.convertToBoolean(
               String.valueOf(ds.getRequestGoogleDriveScope()),
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
 
@@ -1650,7 +1650,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     String readonlyValue =
         authProps.get(BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
     if (readonlyValue != null) {
-      return BigQueryJdbcUrlUtility.convertIntToBoolean(
+      return BigQueryJdbcUrlUtility.convertToBoolean(
           readonlyValue, BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
     }
     return false;

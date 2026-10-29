@@ -174,7 +174,7 @@ public class BigQueryDriver implements Driver {
           boolean enableGcpLogExporter = false;
           if (enableGcpLogExporterStr != null) {
             enableGcpLogExporter =
-                BigQueryJdbcUrlUtility.convertIntToBoolean(
+                BigQueryJdbcUrlUtility.convertToBoolean(
                     enableGcpLogExporterStr,
                     BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME);
           }

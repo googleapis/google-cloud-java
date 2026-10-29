@@ -412,6 +412,6 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=MyBigQueryProject";
     DataSource defaultDs = DataSource.fromUrl(urlWithoutGraph);
     assertThat(defaultDs.getEnableGraphMetadata())
-        .isEqualTo(BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GRAPH_VALUE);
+        .isEqualTo(BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GRAPH_METADATA_VALUE);
   }
 }
