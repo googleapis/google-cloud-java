@@ -18,10 +18,9 @@ package com.google.cloud.spanner.connection;
 
 import static com.google.cloud.spanner.SpannerApiFutures.get;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.fail;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
-
+import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
@@ -547,8 +546,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
       mockSpanner.abortNextStatement();
       ApiFuture<Long> insert = connection.executeUpdateAsync(INSERT_STATEMENT);
       // Wait until the failed retry has marked the transaction as aborted before calling commit.
-      assertThrows(
-          AbortedDueToConcurrentModificationException.class, () -> get(insert));
+      assertThrows(AbortedDueToConcurrentModificationException.class, () -> get(insert));
       assertEquals(1, counter.retryCount);
 
       // Committing a transaction that has been aborted must fail and must not silently succeed.

@@ -1329,7 +1329,9 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
         @Override
         public Void call() {
           try {
-            if (state != UnitOfWorkState.ABORTED && abortedException == null && rolledBackToSavepointException == null) {
+            if (state != UnitOfWorkState.ABORTED
+                && abortedException == null
+                && rolledBackToSavepointException == null) {
               // Make sure the transaction has actually started before we try to rollback.
               get(txContextFuture);
               txManager.rollback();
