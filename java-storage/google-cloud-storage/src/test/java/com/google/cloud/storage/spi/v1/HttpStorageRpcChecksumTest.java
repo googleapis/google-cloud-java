@@ -318,6 +318,25 @@ public final class HttpStorageRpcChecksumTest {
     }
   }
 
+  @Test
+  public void testReadAllBytes_storedGzipServedDecompressed_skipsCrc32cValidation()
+      throws Exception {
+    // The object is stored gzip-compressed but GCS served it decompressed, so the served bytes
+    // cannot match the stored object's checksum and validation must be skipped.
+    MockLowLevelHttpResponse response =
+        new MockLowLevelHttpResponse()
+            .setContentType("application/octet-stream")
+            .addHeader("x-goog-hash", "crc32c=" + BAD_CRC32C_BASE64)
+            .addHeader("x-goog-stored-content-encoding", "gzip")
+            .addHeader("x-goog-stored-content-length", "42")
+            .setContent(new String(CONTENT, StandardCharsets.UTF_8))
+            .setStatusCode(200);
+
+    try (Storage storage = createMockStorage(response)) {
+      assertThat(storage.readAllBytes(BlobId.of(BUCKET, BLOB))).isEqualTo(CONTENT);
+    }
+  }
+
   private HttpStorageRpc createMockRpc(MockLowLevelHttpResponse response) {
     AuditingHttpTransport transport = new AuditingHttpTransport(response);
     TransportOptions transportOptions =
