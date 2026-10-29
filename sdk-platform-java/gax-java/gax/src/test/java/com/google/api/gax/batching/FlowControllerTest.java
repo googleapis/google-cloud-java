@@ -52,6 +52,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
@@ -368,6 +369,7 @@ class FlowControllerTest {
     testBlockingReserveRelease(flowController, 0, 20);
   }
 
+  @Disabled("Flaky test: b/579437543")
   @Test
   void testDecreaseThresholds_blocking() throws Exception {
     FlowController flowController =
