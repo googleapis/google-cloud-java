@@ -78,7 +78,6 @@ import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITSystemTest {
@@ -288,19 +287,6 @@ public class ITSystemTest {
   public void detectFacesTest() throws IOException {
     AnnotateImageResponse res =
         requestAnnotatedImage("face_no_surprise.jpg", Type.FACE_DETECTION, false);
-    for (FaceAnnotation annotation : assertNotEmpty(res, res.getFaceAnnotationsList())) {
-      assertThat(annotation.getAngerLikelihood()).isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
-      assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
-      assertThat(annotation.getSurpriseLikelihood())
-          .isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
-    }
-  }
-
-  @Ignore("Flaky test: b/579436201")
-  @Test
-  public void detectFacesGcsTest() throws IOException {
-    AnnotateImageResponse res =
-        requestAnnotatedImage("face/face_no_surprise.jpg", Type.FACE_DETECTION, true);
     for (FaceAnnotation annotation : assertNotEmpty(res, res.getFaceAnnotationsList())) {
       assertThat(annotation.getAngerLikelihood()).isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
