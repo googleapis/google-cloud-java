@@ -876,6 +876,85 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ListOdbDnsZones</td>
+ *      <td><p> Lists all the ODB DNS Zones in a given ODB Network.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listOdbDnsZones(ListOdbDnsZonesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listOdbDnsZones(OdbNetworkName parent)
+ *           <li><p> listOdbDnsZones(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listOdbDnsZonesPagedCallable()
+ *           <li><p> listOdbDnsZonesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetOdbDnsZone</td>
+ *      <td><p> Gets details of a single ODB DNS Zone.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getOdbDnsZone(GetOdbDnsZoneRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getOdbDnsZone(OdbDnsZoneName name)
+ *           <li><p> getOdbDnsZone(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getOdbDnsZoneCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateOdbDnsZone</td>
+ *      <td><p> Creates a new ODB DNS Zone in a given ODB Network.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createOdbDnsZoneAsync(CreateOdbDnsZoneRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createOdbDnsZoneAsync(OdbNetworkName parent, OdbDnsZone odbDnsZone, String odbDnsZoneId)
+ *           <li><p> createOdbDnsZoneAsync(String parent, OdbDnsZone odbDnsZone, String odbDnsZoneId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createOdbDnsZoneOperationCallable()
+ *           <li><p> createOdbDnsZoneCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteOdbDnsZone</td>
+ *      <td><p> Deletes a single ODB DNS Zone.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteOdbDnsZoneAsync(DeleteOdbDnsZoneRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteOdbDnsZoneAsync(OdbDnsZoneName name)
+ *           <li><p> deleteOdbDnsZoneAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteOdbDnsZoneOperationCallable()
+ *           <li><p> deleteOdbDnsZoneCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListExadbVmClusters</td>
  *      <td><p> Lists all the Exadb (Exascale) VM Clusters for the given project and location.</td>
  *      <td>
@@ -8554,6 +8633,625 @@ public class OracleDatabaseClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetCallable() {
     return stub.deleteOdbSubnetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the ODB DNS Zones in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+   *   for (OdbDnsZone element : oracleDatabaseClient.listOdbDnsZones(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent value for the OdbDnsZone in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOdbDnsZonesPagedResponse listOdbDnsZones(@Nullable OdbNetworkName parent) {
+    ListOdbDnsZonesRequest request =
+        ListOdbDnsZonesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listOdbDnsZones(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the ODB DNS Zones in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString();
+   *   for (OdbDnsZone element : oracleDatabaseClient.listOdbDnsZones(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent value for the OdbDnsZone in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOdbDnsZonesPagedResponse listOdbDnsZones(String parent) {
+    ListOdbDnsZonesRequest request = ListOdbDnsZonesRequest.newBuilder().setParent(parent).build();
+    return listOdbDnsZones(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the ODB DNS Zones in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListOdbDnsZonesRequest request =
+   *       ListOdbDnsZonesRequest.newBuilder()
+   *           .setParent(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (OdbDnsZone element : oracleDatabaseClient.listOdbDnsZones(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListOdbDnsZonesPagedResponse listOdbDnsZones(ListOdbDnsZonesRequest request) {
+    return listOdbDnsZonesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the ODB DNS Zones in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListOdbDnsZonesRequest request =
+   *       ListOdbDnsZonesRequest.newBuilder()
+   *           .setParent(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<OdbDnsZone> future =
+   *       oracleDatabaseClient.listOdbDnsZonesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (OdbDnsZone element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesPagedResponse>
+      listOdbDnsZonesPagedCallable() {
+    return stub.listOdbDnsZonesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all the ODB DNS Zones in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   ListOdbDnsZonesRequest request =
+   *       ListOdbDnsZonesRequest.newBuilder()
+   *           .setParent(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListOdbDnsZonesResponse response =
+   *         oracleDatabaseClient.listOdbDnsZonesCallable().call(request);
+   *     for (OdbDnsZone element : response.getOdbDnsZonesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse>
+      listOdbDnsZonesCallable() {
+    return stub.listOdbDnsZonesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   OdbDnsZoneName name =
+   *       OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]");
+   *   OdbDnsZone response = oracleDatabaseClient.getOdbDnsZone(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the OdbDnsZone in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OdbDnsZone getOdbDnsZone(@Nullable OdbDnsZoneName name) {
+    GetOdbDnsZoneRequest request =
+        GetOdbDnsZoneRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getOdbDnsZone(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *           .toString();
+   *   OdbDnsZone response = oracleDatabaseClient.getOdbDnsZone(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the OdbDnsZone in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OdbDnsZone getOdbDnsZone(String name) {
+    GetOdbDnsZoneRequest request = GetOdbDnsZoneRequest.newBuilder().setName(name).build();
+    return getOdbDnsZone(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   GetOdbDnsZoneRequest request =
+   *       GetOdbDnsZoneRequest.newBuilder()
+   *           .setName(
+   *               OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *                   .toString())
+   *           .build();
+   *   OdbDnsZone response = oracleDatabaseClient.getOdbDnsZone(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OdbDnsZone getOdbDnsZone(GetOdbDnsZoneRequest request) {
+    return getOdbDnsZoneCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   GetOdbDnsZoneRequest request =
+   *       GetOdbDnsZoneRequest.newBuilder()
+   *           .setName(
+   *               OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<OdbDnsZone> future =
+   *       oracleDatabaseClient.getOdbDnsZoneCallable().futureCall(request);
+   *   // Do something.
+   *   OdbDnsZone response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneCallable() {
+    return stub.getOdbDnsZoneCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ODB DNS Zone in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+   *   OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+   *   String odbDnsZoneId = "odbDnsZoneId1807291843";
+   *   OdbDnsZone response =
+   *       oracleDatabaseClient.createOdbDnsZoneAsync(parent, odbDnsZone, odbDnsZoneId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent value for the OdbDnsZone in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}.
+   * @param odbDnsZone Required. Details of the OdbDnsZone instance to create.
+   * @param odbDnsZoneId Required. The ID of the OdbDnsZone to create. This value is restricted to
+   *     (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$) and must be a maximum of 63 characters in length. The
+   *     value must start with a letter and end with a letter or a number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OdbDnsZone, OperationMetadata> createOdbDnsZoneAsync(
+      @Nullable OdbNetworkName parent, OdbDnsZone odbDnsZone, String odbDnsZoneId) {
+    CreateOdbDnsZoneRequest request =
+        CreateOdbDnsZoneRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setOdbDnsZone(odbDnsZone)
+            .setOdbDnsZoneId(odbDnsZoneId)
+            .build();
+    return createOdbDnsZoneAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ODB DNS Zone in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString();
+   *   OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+   *   String odbDnsZoneId = "odbDnsZoneId1807291843";
+   *   OdbDnsZone response =
+   *       oracleDatabaseClient.createOdbDnsZoneAsync(parent, odbDnsZone, odbDnsZoneId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent value for the OdbDnsZone in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}.
+   * @param odbDnsZone Required. Details of the OdbDnsZone instance to create.
+   * @param odbDnsZoneId Required. The ID of the OdbDnsZone to create. This value is restricted to
+   *     (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$) and must be a maximum of 63 characters in length. The
+   *     value must start with a letter and end with a letter or a number.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OdbDnsZone, OperationMetadata> createOdbDnsZoneAsync(
+      String parent, OdbDnsZone odbDnsZone, String odbDnsZoneId) {
+    CreateOdbDnsZoneRequest request =
+        CreateOdbDnsZoneRequest.newBuilder()
+            .setParent(parent)
+            .setOdbDnsZone(odbDnsZone)
+            .setOdbDnsZoneId(odbDnsZoneId)
+            .build();
+    return createOdbDnsZoneAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ODB DNS Zone in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CreateOdbDnsZoneRequest request =
+   *       CreateOdbDnsZoneRequest.newBuilder()
+   *           .setParent(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+   *           .setOdbDnsZoneId("odbDnsZoneId1807291843")
+   *           .setOdbDnsZone(OdbDnsZone.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OdbDnsZone response = oracleDatabaseClient.createOdbDnsZoneAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<OdbDnsZone, OperationMetadata> createOdbDnsZoneAsync(
+      CreateOdbDnsZoneRequest request) {
+    return createOdbDnsZoneOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ODB DNS Zone in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CreateOdbDnsZoneRequest request =
+   *       CreateOdbDnsZoneRequest.newBuilder()
+   *           .setParent(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+   *           .setOdbDnsZoneId("odbDnsZoneId1807291843")
+   *           .setOdbDnsZone(OdbDnsZone.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<OdbDnsZone, OperationMetadata> future =
+   *       oracleDatabaseClient.createOdbDnsZoneOperationCallable().futureCall(request);
+   *   // Do something.
+   *   OdbDnsZone response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      createOdbDnsZoneOperationCallable() {
+    return stub.createOdbDnsZoneOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new ODB DNS Zone in a given ODB Network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   CreateOdbDnsZoneRequest request =
+   *       CreateOdbDnsZoneRequest.newBuilder()
+   *           .setParent(OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]").toString())
+   *           .setOdbDnsZoneId("odbDnsZoneId1807291843")
+   *           .setOdbDnsZone(OdbDnsZone.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.createOdbDnsZoneCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneCallable() {
+    return stub.createOdbDnsZoneCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   OdbDnsZoneName name =
+   *       OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]");
+   *   oracleDatabaseClient.deleteOdbDnsZoneAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteOdbDnsZoneAsync(
+      @Nullable OdbDnsZoneName name) {
+    DeleteOdbDnsZoneRequest request =
+        DeleteOdbDnsZoneRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteOdbDnsZoneAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   String name =
+   *       OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *           .toString();
+   *   oracleDatabaseClient.deleteOdbDnsZoneAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the resource in the following format:
+   *     projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteOdbDnsZoneAsync(String name) {
+    DeleteOdbDnsZoneRequest request = DeleteOdbDnsZoneRequest.newBuilder().setName(name).build();
+    return deleteOdbDnsZoneAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DeleteOdbDnsZoneRequest request =
+   *       DeleteOdbDnsZoneRequest.newBuilder()
+   *           .setName(
+   *               OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   oracleDatabaseClient.deleteOdbDnsZoneAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteOdbDnsZoneAsync(
+      DeleteOdbDnsZoneRequest request) {
+    return deleteOdbDnsZoneOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DeleteOdbDnsZoneRequest request =
+   *       DeleteOdbDnsZoneRequest.newBuilder()
+   *           .setName(
+   *               OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       oracleDatabaseClient.deleteOdbDnsZoneOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+      deleteOdbDnsZoneOperationCallable() {
+    return stub.deleteOdbDnsZoneOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single ODB DNS Zone.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (OracleDatabaseClient oracleDatabaseClient = OracleDatabaseClient.create()) {
+   *   DeleteOdbDnsZoneRequest request =
+   *       DeleteOdbDnsZoneRequest.newBuilder()
+   *           .setName(
+   *               OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       oracleDatabaseClient.deleteOdbDnsZoneCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneCallable() {
+    return stub.deleteOdbDnsZoneCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -16410,6 +17108,83 @@ public class OracleDatabaseClient implements BackgroundResource {
     protected ListOdbSubnetsFixedSizeCollection createCollection(
         @Nullable List<ListOdbSubnetsPage> pages, int collectionSize) {
       return new ListOdbSubnetsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListOdbDnsZonesPagedResponse
+      extends AbstractPagedListResponse<
+          ListOdbDnsZonesRequest,
+          ListOdbDnsZonesResponse,
+          OdbDnsZone,
+          ListOdbDnsZonesPage,
+          ListOdbDnsZonesFixedSizeCollection> {
+
+    public static ApiFuture<ListOdbDnsZonesPagedResponse> createAsync(
+        PageContext<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone> context,
+        ApiFuture<ListOdbDnsZonesResponse> futureResponse) {
+      ApiFuture<ListOdbDnsZonesPage> futurePage =
+          ListOdbDnsZonesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListOdbDnsZonesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListOdbDnsZonesPagedResponse(ListOdbDnsZonesPage page) {
+      super(page, ListOdbDnsZonesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListOdbDnsZonesPage
+      extends AbstractPage<
+          ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone, ListOdbDnsZonesPage> {
+
+    private ListOdbDnsZonesPage(
+        @Nullable PageContext<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone> context,
+        @Nullable ListOdbDnsZonesResponse response) {
+      super(context, response);
+    }
+
+    private static ListOdbDnsZonesPage createEmptyPage() {
+      return new ListOdbDnsZonesPage(null, null);
+    }
+
+    @Override
+    protected ListOdbDnsZonesPage createPage(
+        @Nullable PageContext<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone> context,
+        @Nullable ListOdbDnsZonesResponse response) {
+      return new ListOdbDnsZonesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListOdbDnsZonesPage> createPageAsync(
+        @Nullable PageContext<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone> context,
+        ApiFuture<ListOdbDnsZonesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListOdbDnsZonesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListOdbDnsZonesRequest,
+          ListOdbDnsZonesResponse,
+          OdbDnsZone,
+          ListOdbDnsZonesPage,
+          ListOdbDnsZonesFixedSizeCollection> {
+
+    private ListOdbDnsZonesFixedSizeCollection(
+        @Nullable List<ListOdbDnsZonesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListOdbDnsZonesFixedSizeCollection createEmptyCollection() {
+      return new ListOdbDnsZonesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListOdbDnsZonesFixedSizeCollection createCollection(
+        @Nullable List<ListOdbDnsZonesPage> pages, int collectionSize) {
+      return new ListOdbDnsZonesFixedSizeCollection(pages, collectionSize);
     }
   }
 

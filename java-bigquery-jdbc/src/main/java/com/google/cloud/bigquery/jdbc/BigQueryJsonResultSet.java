@@ -24,9 +24,7 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
 import com.google.cloud.bigquery.Job;
-import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.Schema;
-import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -155,7 +153,11 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   }
 
   BigQueryJsonResultSet() {
-    super(null, null, null, false);
+    this(null);
+  }
+
+  BigQueryJsonResultSet(Schema schema) {
+    super(null, null, schema, false);
     totalRows = 0;
     buffer = null;
     fromIndex = 0;
@@ -281,8 +283,8 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(arrayField)) {
         return BigQueryTemporalUtility.formatTimestampValue(value.getStringValue(), true);
       }
-      if (this.enableTimestampPicos && isRangeTimestamp(arrayField)) {
-        return formatRangeTimestamp(value);
+      if (BigQueryTemporalUtility.isRange(arrayField)) {
+        return BigQueryTemporalUtility.formatRange(arrayField, value, this.enableTimestampPicos);
       }
       return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), zone);
     }
@@ -299,36 +301,13 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
           this.enableTimestampPicos,
           this.LOG.getJsonStructLogger());
     }
-    if (this.enableTimestampPicos && isRangeTimestamp(fieldSchema)) {
-      return formatRangeTimestamp(value);
+    if (BigQueryTemporalUtility.isRange(fieldSchema)) {
+      return BigQueryTemporalUtility.formatRange(fieldSchema, value, this.enableTimestampPicos);
     }
     if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(fieldSchema)) {
       return BigQueryTemporalUtility.formatTimestampValue(value.getStringValue(), true);
     }
     return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), zone);
-  }
-
-  static String formatRangeTimestamp(FieldValue value) throws SQLException {
-    Range range = value.getRangeValue();
-    String start =
-        range.getStart().isNull()
-            ? "UNBOUNDED"
-            : BigQueryTemporalUtility.formatTimestampValue(range.getStart().getStringValue(), true);
-    String end =
-        range.getEnd().isNull()
-            ? "UNBOUNDED"
-            : BigQueryTemporalUtility.formatTimestampValue(range.getEnd().getStringValue(), true);
-    return String.format("[%s, %s)", start, end);
-  }
-
-  static boolean isRangeTimestamp(Field field) {
-    return field != null
-        && field.getRangeElementType() != null
-        && field.getRangeElementType().getType() != null
-        && field
-            .getRangeElementType()
-            .getType()
-            .equalsIgnoreCase(StandardSQLTypeName.TIMESTAMP.name());
   }
 
   /**

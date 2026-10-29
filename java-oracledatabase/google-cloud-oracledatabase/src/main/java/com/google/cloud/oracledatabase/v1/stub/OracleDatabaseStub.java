@@ -43,6 +43,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGolden
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbDnsZonesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
@@ -68,6 +69,7 @@ import com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.Database;
@@ -81,6 +83,7 @@ import com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.ExadbVmCluster;
@@ -99,6 +102,7 @@ import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
@@ -157,12 +161,15 @@ import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsRequest;
 import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsResponse;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest;
+import com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse;
 import com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest;
 import com.google.cloud.oracledatabase.v1.ListOdbNetworksResponse;
 import com.google.cloud.oracledatabase.v1.ListOdbSubnetsRequest;
 import com.google.cloud.oracledatabase.v1.ListOdbSubnetsResponse;
 import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesRequest;
 import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesResponse;
+import com.google.cloud.oracledatabase.v1.OdbDnsZone;
 import com.google.cloud.oracledatabase.v1.OdbNetwork;
 import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
@@ -597,6 +604,37 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
 
   public UnaryCallable<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteOdbSubnetCallable()");
+  }
+
+  public UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesPagedResponse>
+      listOdbDnsZonesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listOdbDnsZonesPagedCallable()");
+  }
+
+  public UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse> listOdbDnsZonesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listOdbDnsZonesCallable()");
+  }
+
+  public UnaryCallable<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneCallable() {
+    throw new UnsupportedOperationException("Not implemented: getOdbDnsZoneCallable()");
+  }
+
+  public OperationCallable<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      createOdbDnsZoneOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createOdbDnsZoneOperationCallable()");
+  }
+
+  public UnaryCallable<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneCallable() {
+    throw new UnsupportedOperationException("Not implemented: createOdbDnsZoneCallable()");
+  }
+
+  public OperationCallable<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+      deleteOdbDnsZoneOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOdbDnsZoneOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteOdbDnsZoneCallable()");
   }
 
   public UnaryCallable<ListExadbVmClustersRequest, ListExadbVmClustersPagedResponse>

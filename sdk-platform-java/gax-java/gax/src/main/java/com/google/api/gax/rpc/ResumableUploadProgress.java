@@ -55,6 +55,12 @@ public abstract class ResumableUploadProgress {
    */
   public abstract @Nullable String getUploadUrl();
 
+  /**
+   * Returns the effective chunk size in bytes aligned to the server's chunk granularity, or {@code
+   * null} if session initiation is pending.
+   */
+  public abstract @Nullable Integer getEffectiveChunkSize();
+
   /** Returns the number of bytes confirmed as uploaded to the server so far. */
   public abstract long getBytesUploaded();
 
@@ -86,6 +92,8 @@ public abstract class ResumableUploadProgress {
   @AutoValue.Builder
   abstract static class Builder {
     abstract Builder setUploadUrl(@Nullable String uploadUrl);
+
+    abstract Builder setEffectiveChunkSize(@Nullable Integer effectiveChunkSize);
 
     abstract Builder setBytesUploaded(long bytesUploaded);
 

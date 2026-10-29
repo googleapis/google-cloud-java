@@ -391,14 +391,6 @@ public class ClientConfigurationManager implements AutoCloseable {
     ClientConfiguration.Builder builder = cfg.toBuilder();
 
     // TODO: remove this once server is updated
-    // Patch PollingConfiguration (migrating PollingInterval)
-    if (!cfg.hasPollingConfiguration()) {
-      builder.setPollingConfiguration(
-          defaultConfig.getPollingConfiguration().toBuilder()
-              .setPollingInterval(cfg.getPollingInterval()));
-    }
-
-    // TODO: remove this once server is updated
     // Patch SessionPoolConfiguration (migrating LoadBalancingOptions)
     if (!cfg.getSessionConfiguration().hasSessionPoolConfiguration()) {
       builder

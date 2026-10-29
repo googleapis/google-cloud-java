@@ -719,6 +719,19 @@ class ClientConfigurationManagerTest {
     }
   }
 
+  @Test
+  void stopPollingTest() throws Exception {
+    ClientConfiguration stopPollingConfig =
+        service.config.get().toBuilder().setStopPolling(true).build();
+    service.config.set(stopPollingConfig);
+
+    ClientConfiguration initialConfig = manager.start().get();
+    assertThat(initialConfig.getStopPolling()).isTrue();
+    assertThat(initialConfig.hasPollingConfiguration()).isFalse();
+
+    verify(mockExecutor, never()).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
+  }
+
   static class FakeConfigService extends BigtableGrpc.BigtableImplBase {
     private final AtomicReference<ClientConfiguration> config = new AtomicReference<>();
 

@@ -255,15 +255,12 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @deprecated google.cloud.ces.v1beta.EvaluationConfig.input_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1503
    * @return Whether the inputAudioConfig field is set.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public boolean hasInputAudioConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
@@ -276,15 +273,12 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @deprecated google.cloud.ces.v1beta.EvaluationConfig.input_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1503
    * @return The inputAudioConfig.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public com.google.cloud.ces.v1beta.InputAudioConfig getInputAudioConfig() {
     return inputAudioConfig_ == null
         ? com.google.cloud.ces.v1beta.InputAudioConfig.getDefaultInstance()
@@ -299,11 +293,10 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public com.google.cloud.ces.v1beta.InputAudioConfigOrBuilder getInputAudioConfigOrBuilder() {
     return inputAudioConfig_ == null
         ? com.google.cloud.ces.v1beta.InputAudioConfig.getDefaultInstance()
@@ -321,15 +314,12 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @deprecated google.cloud.ces.v1beta.EvaluationConfig.output_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1507
    * @return Whether the outputAudioConfig field is set.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public boolean hasOutputAudioConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
@@ -342,15 +332,12 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @deprecated google.cloud.ces.v1beta.EvaluationConfig.output_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1507
    * @return The outputAudioConfig.
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public com.google.cloud.ces.v1beta.OutputAudioConfig getOutputAudioConfig() {
     return outputAudioConfig_ == null
         ? com.google.cloud.ces.v1beta.OutputAudioConfig.getDefaultInstance()
@@ -365,11 +352,10 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
-  @java.lang.Deprecated
   public com.google.cloud.ces.v1beta.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
     return outputAudioConfig_ == null
         ? com.google.cloud.ces.v1beta.OutputAudioConfig.getDefaultInstance()
@@ -903,14 +889,11 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @deprecated google.cloud.ces.v1beta.EvaluationConfig.input_audio_config is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=1503
      * @return Whether the inputAudioConfig field is set.
      */
-    @java.lang.Deprecated
     public boolean hasInputAudioConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
@@ -923,14 +906,11 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @deprecated google.cloud.ces.v1beta.EvaluationConfig.input_audio_config is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=1503
      * @return The inputAudioConfig.
      */
-    @java.lang.Deprecated
     public com.google.cloud.ces.v1beta.InputAudioConfig getInputAudioConfig() {
       if (inputAudioConfigBuilder_ == null) {
         return inputAudioConfig_ == null
@@ -949,10 +929,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Deprecated
     public Builder setInputAudioConfig(com.google.cloud.ces.v1beta.InputAudioConfig value) {
       if (inputAudioConfigBuilder_ == null) {
         if (value == null) {
@@ -975,10 +954,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Deprecated
     public Builder setInputAudioConfig(
         com.google.cloud.ces.v1beta.InputAudioConfig.Builder builderForValue) {
       if (inputAudioConfigBuilder_ == null) {
@@ -999,10 +977,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Deprecated
     public Builder mergeInputAudioConfig(com.google.cloud.ces.v1beta.InputAudioConfig value) {
       if (inputAudioConfigBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)
@@ -1031,10 +1008,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Deprecated
     public Builder clearInputAudioConfig() {
       bitField0_ = (bitField0_ & ~0x00000001);
       inputAudioConfig_ = null;
@@ -1054,10 +1030,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Deprecated
     public com.google.cloud.ces.v1beta.InputAudioConfig.Builder getInputAudioConfigBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
@@ -1072,10 +1047,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Deprecated
     public com.google.cloud.ces.v1beta.InputAudioConfigOrBuilder getInputAudioConfigOrBuilder() {
       if (inputAudioConfigBuilder_ != null) {
         return inputAudioConfigBuilder_.getMessageOrBuilder();
@@ -1094,7 +1068,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -1129,14 +1103,11 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @deprecated google.cloud.ces.v1beta.EvaluationConfig.output_audio_config is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=1507
      * @return Whether the outputAudioConfig field is set.
      */
-    @java.lang.Deprecated
     public boolean hasOutputAudioConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
@@ -1149,14 +1120,11 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
-     * @deprecated google.cloud.ces.v1beta.EvaluationConfig.output_audio_config is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=1507
      * @return The outputAudioConfig.
      */
-    @java.lang.Deprecated
     public com.google.cloud.ces.v1beta.OutputAudioConfig getOutputAudioConfig() {
       if (outputAudioConfigBuilder_ == null) {
         return outputAudioConfig_ == null
@@ -1175,10 +1143,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Deprecated
     public Builder setOutputAudioConfig(com.google.cloud.ces.v1beta.OutputAudioConfig value) {
       if (outputAudioConfigBuilder_ == null) {
         if (value == null) {
@@ -1201,10 +1168,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Deprecated
     public Builder setOutputAudioConfig(
         com.google.cloud.ces.v1beta.OutputAudioConfig.Builder builderForValue) {
       if (outputAudioConfigBuilder_ == null) {
@@ -1225,10 +1191,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Deprecated
     public Builder mergeOutputAudioConfig(com.google.cloud.ces.v1beta.OutputAudioConfig value) {
       if (outputAudioConfigBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)
@@ -1257,10 +1222,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Deprecated
     public Builder clearOutputAudioConfig() {
       bitField0_ = (bitField0_ & ~0x00000002);
       outputAudioConfig_ = null;
@@ -1280,10 +1244,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Deprecated
     public com.google.cloud.ces.v1beta.OutputAudioConfig.Builder getOutputAudioConfigBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
@@ -1298,10 +1261,9 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
-    @java.lang.Deprecated
     public com.google.cloud.ces.v1beta.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder() {
       if (outputAudioConfigBuilder_ != null) {
         return outputAudioConfigBuilder_.getMessageOrBuilder();
@@ -1320,7 +1282,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<

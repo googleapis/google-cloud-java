@@ -59,7 +59,13 @@ public interface RowAdapter<RowT> {
     /** Called to start a new row. This will be called once per row. */
     void startRow(ByteString key);
 
-    /** Called to start a new cell in a row. */
+    /**
+     * Called to start a new cell in a row.
+     *
+     * <p>Note: Unlike {@link com.google.bigtable.v2.ReadRowsResponse.CellChunk#getValueSize()},
+     * which is {@code 0} when a cell is not split across chunks, {@code size} is always the total
+     * byte size of the cell value.
+     */
     void startCell(
         String family, ByteString qualifier, long timestamp, List<String> labels, long size);
 

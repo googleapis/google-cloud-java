@@ -260,6 +260,49 @@ public interface GuardrailOrBuilder
    *
    *
    * <pre>
+   * Optional. Guardrail that runs supervisor intervention.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the supervisor field is set.
+   */
+  boolean hasSupervisor();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Guardrail that runs supervisor intervention.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The supervisor.
+   */
+  com.google.cloud.ces.v1beta.Guardrail.Supervisor getSupervisor();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Guardrail that runs supervisor intervention.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.Guardrail.SupervisorOrBuilder getSupervisorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. The unique identifier of the guardrail.
    * Format:
    * `projects/{project}/locations/{location}/apps/{app}/guardrails/{guardrail}`

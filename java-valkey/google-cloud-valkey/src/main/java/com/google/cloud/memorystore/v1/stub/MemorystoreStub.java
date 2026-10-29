@@ -16,6 +16,8 @@
 
 package com.google.cloud.memorystore.v1.stub;
 
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAclPolicyRevisionsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupsPagedResponse;
@@ -30,6 +32,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.memorystore.v1.AclPolicy;
+import com.google.cloud.memorystore.v1.AclPolicyRevision;
 import com.google.cloud.memorystore.v1.AddAuthTokenRequest;
 import com.google.cloud.memorystore.v1.AddTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.AuthToken;
@@ -37,13 +41,17 @@ import com.google.cloud.memorystore.v1.Backup;
 import com.google.cloud.memorystore.v1.BackupCollection;
 import com.google.cloud.memorystore.v1.BackupInstanceRequest;
 import com.google.cloud.memorystore.v1.CertificateAuthority;
+import com.google.cloud.memorystore.v1.CreateAclPolicyRequest;
 import com.google.cloud.memorystore.v1.CreateInstanceRequest;
+import com.google.cloud.memorystore.v1.DeleteAclPolicyRequest;
 import com.google.cloud.memorystore.v1.DeleteAuthTokenRequest;
 import com.google.cloud.memorystore.v1.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1.DeleteInstanceRequest;
 import com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.ExportBackupRequest;
 import com.google.cloud.memorystore.v1.FinishMigrationRequest;
+import com.google.cloud.memorystore.v1.GetAclPolicyRequest;
+import com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest;
 import com.google.cloud.memorystore.v1.GetAuthTokenRequest;
 import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1.GetBackupRequest;
@@ -52,6 +60,10 @@ import com.google.cloud.memorystore.v1.GetInstanceRequest;
 import com.google.cloud.memorystore.v1.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.GetTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.Instance;
+import com.google.cloud.memorystore.v1.ListAclPoliciesRequest;
+import com.google.cloud.memorystore.v1.ListAclPoliciesResponse;
+import com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest;
+import com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse;
 import com.google.cloud.memorystore.v1.ListAuthTokensRequest;
 import com.google.cloud.memorystore.v1.ListAuthTokensResponse;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsRequest;
@@ -67,6 +79,7 @@ import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.memorystore.v1.StartMigrationRequest;
 import com.google.cloud.memorystore.v1.TokenAuthUser;
+import com.google.cloud.memorystore.v1.UpdateAclPolicyRequest;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -94,6 +107,15 @@ public abstract class MemorystoreStub implements BackgroundResource {
     return null;
   }
 
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesPagedResponse>
+      listAclPoliciesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAclPoliciesPagedCallable()");
+  }
+
+  public UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse> listAclPoliciesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAclPoliciesCallable()");
+  }
+
   public UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listInstancesPagedCallable()");
@@ -103,8 +125,16 @@ public abstract class MemorystoreStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listInstancesCallable()");
   }
 
+  public UnaryCallable<GetAclPolicyRequest, AclPolicy> getAclPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAclPolicyCallable()");
+  }
+
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: getInstanceCallable()");
+  }
+
+  public UnaryCallable<CreateAclPolicyRequest, AclPolicy> createAclPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAclPolicyCallable()");
   }
 
   public OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
@@ -116,6 +146,15 @@ public abstract class MemorystoreStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createInstanceCallable()");
   }
 
+  public OperationCallable<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAclPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateAclPolicyRequest, Operation> updateAclPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAclPolicyCallable()");
+  }
+
   public OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
       updateInstanceOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: updateInstanceOperationCallable()");
@@ -123,6 +162,31 @@ public abstract class MemorystoreStub implements BackgroundResource {
 
   public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: updateInstanceCallable()");
+  }
+
+  public OperationCallable<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAclPolicyOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteAclPolicyRequest, Operation> deleteAclPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAclPolicyCallable()");
+  }
+
+  public UnaryCallable<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAclPolicyRevisionCallable()");
+  }
+
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listAclPolicyRevisionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+      listAclPolicyRevisionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAclPolicyRevisionsCallable()");
   }
 
   public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>

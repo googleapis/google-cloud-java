@@ -63,6 +63,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     odbNetwork_ = "";
     odbSubnet_ = "";
     backupOdbSubnet_ = "";
+    odbDnsZone_ = "";
     exascaleDbStorageVault_ = "";
   }
 
@@ -891,6 +892,67 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int ODB_DNS_ZONE_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object odbDnsZone_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The name of the OdbDnsZone for using custom domain
+   * name for the VM Cluster. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}
+   * </pre>
+   *
+   * <code>
+   * string odb_dns_zone = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The odbDnsZone.
+   */
+  @java.lang.Override
+  public java.lang.String getOdbDnsZone() {
+    java.lang.Object ref = odbDnsZone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      odbDnsZone_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The name of the OdbDnsZone for using custom domain
+   * name for the VM Cluster. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}
+   * </pre>
+   *
+   * <code>
+   * string odb_dns_zone = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for odbDnsZone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOdbDnsZoneBytes() {
+    java.lang.Object ref = odbDnsZone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      odbDnsZone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int IDENTITY_CONNECTOR_FIELD_NUMBER = 16;
   private com.google.cloud.oracledatabase.v1.IdentityConnector identityConnector_;
 
@@ -1073,6 +1135,9 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(exascaleDbStorageVault_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 17, exascaleDbStorageVault_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(odbDnsZone_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 18, odbDnsZone_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1134,6 +1199,9 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(exascaleDbStorageVault_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(17, exascaleDbStorageVault_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(odbDnsZone_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(18, odbDnsZone_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1169,6 +1237,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     if (!getOdbNetwork().equals(other.getOdbNetwork())) return false;
     if (!getOdbSubnet().equals(other.getOdbSubnet())) return false;
     if (!getBackupOdbSubnet().equals(other.getBackupOdbSubnet())) return false;
+    if (!getOdbDnsZone().equals(other.getOdbDnsZone())) return false;
     if (hasIdentityConnector() != other.hasIdentityConnector()) return false;
     if (hasIdentityConnector()) {
       if (!getIdentityConnector().equals(other.getIdentityConnector())) return false;
@@ -1217,6 +1286,8 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getOdbSubnet().hashCode();
     hash = (37 * hash) + BACKUP_ODB_SUBNET_FIELD_NUMBER;
     hash = (53 * hash) + getBackupOdbSubnet().hashCode();
+    hash = (37 * hash) + ODB_DNS_ZONE_FIELD_NUMBER;
+    hash = (53 * hash) + getOdbDnsZone().hashCode();
     if (hasIdentityConnector()) {
       hash = (37 * hash) + IDENTITY_CONNECTOR_FIELD_NUMBER;
       hash = (53 * hash) + getIdentityConnector().hashCode();
@@ -1418,6 +1489,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
       odbNetwork_ = "";
       odbSubnet_ = "";
       backupOdbSubnet_ = "";
+      odbDnsZone_ = "";
       identityConnector_ = null;
       if (identityConnectorBuilder_ != null) {
         identityConnectorBuilder_.dispose();
@@ -1504,13 +1576,16 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
         result.backupOdbSubnet_ = backupOdbSubnet_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.odbDnsZone_ = odbDnsZone_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.identityConnector_ =
             identityConnectorBuilder_ == null
                 ? identityConnector_
                 : identityConnectorBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.exascaleDbStorageVault_ = exascaleDbStorageVault_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1587,12 +1662,17 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00001000;
         onChanged();
       }
+      if (!other.getOdbDnsZone().isEmpty()) {
+        odbDnsZone_ = other.odbDnsZone_;
+        bitField0_ |= 0x00002000;
+        onChanged();
+      }
       if (other.hasIdentityConnector()) {
         mergeIdentityConnector(other.getIdentityConnector());
       }
       if (!other.getExascaleDbStorageVault().isEmpty()) {
         exascaleDbStorageVault_ = other.exascaleDbStorageVault_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1711,15 +1791,21 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetIdentityConnectorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 130
             case 138:
               {
                 exascaleDbStorageVault_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 138
+            case 146:
+              {
+                odbDnsZone_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3572,6 +3658,137 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object odbDnsZone_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The name of the OdbDnsZone for using custom domain
+     * name for the VM Cluster. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}
+     * </pre>
+     *
+     * <code>
+     * string odb_dns_zone = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The odbDnsZone.
+     */
+    public java.lang.String getOdbDnsZone() {
+      java.lang.Object ref = odbDnsZone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        odbDnsZone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The name of the OdbDnsZone for using custom domain
+     * name for the VM Cluster. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}
+     * </pre>
+     *
+     * <code>
+     * string odb_dns_zone = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for odbDnsZone.
+     */
+    public com.google.protobuf.ByteString getOdbDnsZoneBytes() {
+      java.lang.Object ref = odbDnsZone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        odbDnsZone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The name of the OdbDnsZone for using custom domain
+     * name for the VM Cluster. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}
+     * </pre>
+     *
+     * <code>
+     * string odb_dns_zone = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The odbDnsZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOdbDnsZone(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      odbDnsZone_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The name of the OdbDnsZone for using custom domain
+     * name for the VM Cluster. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}
+     * </pre>
+     *
+     * <code>
+     * string odb_dns_zone = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOdbDnsZone() {
+      odbDnsZone_ = getDefaultInstance().getOdbDnsZone();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The name of the OdbDnsZone for using custom domain
+     * name for the VM Cluster. Format:
+     * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}
+     * </pre>
+     *
+     * <code>
+     * string odb_dns_zone = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for odbDnsZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOdbDnsZoneBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      odbDnsZone_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.oracledatabase.v1.IdentityConnector identityConnector_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.oracledatabase.v1.IdentityConnector,
@@ -3594,7 +3811,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      * @return Whether the identityConnector field is set.
      */
     public boolean hasIdentityConnector() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -3643,7 +3860,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
       } else {
         identityConnectorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3667,7 +3884,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
       } else {
         identityConnectorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3687,7 +3904,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
     public Builder mergeIdentityConnector(
         com.google.cloud.oracledatabase.v1.IdentityConnector value) {
       if (identityConnectorBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && identityConnector_ != null
             && identityConnector_
                 != com.google.cloud.oracledatabase.v1.IdentityConnector.getDefaultInstance()) {
@@ -3699,7 +3916,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
         identityConnectorBuilder_.mergeFrom(value);
       }
       if (identityConnector_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -3718,7 +3935,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearIdentityConnector() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       identityConnector_ = null;
       if (identityConnectorBuilder_ != null) {
         identityConnectorBuilder_.dispose();
@@ -3742,7 +3959,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.oracledatabase.v1.IdentityConnector.Builder
         getIdentityConnectorBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetIdentityConnectorFieldBuilder().getBuilder();
     }
@@ -3876,7 +4093,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       exascaleDbStorageVault_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3898,7 +4115,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearExascaleDbStorageVault() {
       exascaleDbStorageVault_ = getDefaultInstance().getExascaleDbStorageVault();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -3925,7 +4142,7 @@ public final class CloudVmCluster extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       exascaleDbStorageVault_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
