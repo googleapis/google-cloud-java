@@ -20,28 +20,40 @@ import static com.google.cloud.storage.ByteSizeConstants._2MiB;
 import static com.google.cloud.storage.ITObjectReadSessionFakeTest.getReadRange;
 import static com.google.cloud.storage.ITObjectReadSessionFakeTest.read;
 import static com.google.cloud.storage.PackagePrivateMethodWorkarounds.maybeGetStorageDataClient;
+import static com.google.cloud.storage.TestUtils.GRPC_STATUS_DETAILS_KEY;
 import static com.google.cloud.storage.TestUtils.xxd;
 import static com.google.common.truth.Truth.assertThat;
 import static java.util.concurrent.TimeUnit.SECONDS;
+import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertThrows;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.rpc.OutOfRangeException;
 import com.google.cloud.storage.ITObjectReadSessionFakeTest.FakeStorage;
 import com.google.cloud.storage.it.ChecksummedTestContent;
+import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.protobuf.Any;
+import com.google.storage.v2.BidiReadObjectError;
 import com.google.storage.v2.BidiReadObjectRequest;
 import com.google.storage.v2.BidiReadObjectResponse;
 import com.google.storage.v2.BidiReadObjectSpec;
 import com.google.storage.v2.BucketName;
 import com.google.storage.v2.Object;
 import com.google.storage.v2.ObjectRangeData;
+import com.google.storage.v2.ReadRangeError;
+import io.grpc.Metadata;
+import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 import org.junit.Test;
 
@@ -234,6 +246,169 @@ public final class ITFastOpenFakeTest {
     }
 
     assertThat(requestsReceived).isEmpty();
+  }
+
+  @Test
+  public void open_whenTheServerFailsTheStreamWithOutOfRange_failsWithoutRetrying()
+      throws Exception {
+    FakeStorage server =
+        FakeStorage.of(
+            ImmutableMap.of(
+                OPEN_WITH_READ_OF_10_TO_20,
+                client -> {
+                  requestsReceived.add(OPEN_WITH_READ_OF_10_TO_20);
+                  client.onError(Status.OUT_OF_RANGE.asRuntimeException());
+                }));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      ApiFuture<ObjectReadSession> open =
+          dataClient.readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20));
+
+      ExecutionException e = assertThrows(ExecutionException.class, () -> open.get(5, SECONDS));
+      // the error the server returned is somewhere in the chain of causes
+      assertThat(
+              Throwables.getCausalChain(e).stream()
+                  .<Class<?>>map(Throwable::getClass)
+                  .collect(toList()))
+          .contains(OutOfRangeException.class);
+    }
+
+    assertThat(requestsReceived).containsExactly(OPEN_WITH_READ_OF_10_TO_20);
+  }
+
+  @Test
+  public void open_whenTheServerRejectsOnlyTheFastOpenRange_reopensWithoutItAndReadAsFails()
+      throws Exception {
+    // OUT_OF_RANGE that names the failing read, as the server reports a bad range on a bidi read
+    BidiReadObjectError rangeError =
+        BidiReadObjectError.newBuilder()
+            .addReadRangeErrors(
+                ReadRangeError.newBuilder()
+                    .setReadId(1)
+                    .setStatus(
+                        com.google.rpc.Status.newBuilder()
+                            .setCode(com.google.rpc.Code.OUT_OF_RANGE_VALUE)))
+            .build();
+    Metadata trailers = new Metadata();
+    trailers.put(
+        GRPC_STATUS_DETAILS_KEY,
+        com.google.rpc.Status.newBuilder()
+            .setCode(com.google.rpc.Code.OUT_OF_RANGE_VALUE)
+            .addDetails(Any.pack(rangeError))
+            .build());
+    FakeStorage server =
+        FakeStorage.of(
+            ImmutableMap.of(
+                OPEN_WITH_READ_OF_10_TO_20,
+                client -> {
+                  requestsReceived.add(OPEN_WITH_READ_OF_10_TO_20);
+                  client.onError(Status.OUT_OF_RANGE.asRuntimeException(trailers));
+                },
+                OPEN,
+                client -> {
+                  requestsReceived.add(OPEN);
+                  client.onNext(metadataOnly());
+                }));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      try (ObjectReadSession session =
+          dataClient.readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20)).get(10, SECONDS)) {
+        ApiFuture<byte[]> read = session.readAs(READ_10_TO_20);
+
+        ExecutionException e = assertThrows(ExecutionException.class, () -> read.get(5, SECONDS));
+        assertThat(
+                Throwables.getCausalChain(e).stream()
+                    .<Class<?>>map(Throwable::getClass)
+                    .collect(toList()))
+            .contains(OutOfRangeException.class);
+      }
+    }
+
+    assertThat(requestsReceived).containsExactly(OPEN_WITH_READ_OF_10_TO_20, OPEN).inOrder();
+  }
+
+  @Test
+  public void open_whenTheConnectionDropsBeforeAnyReply_retriesWithTheSameRange() throws Exception {
+    AtomicInteger attempts = new AtomicInteger();
+    FakeStorage server =
+        FakeStorage.of(
+            ImmutableMap.of(
+                OPEN_WITH_READ_OF_10_TO_20,
+                client -> {
+                  requestsReceived.add(OPEN_WITH_READ_OF_10_TO_20);
+                  if (attempts.getAndIncrement() == 0) {
+                    client.onError(Status.UNAVAILABLE.asRuntimeException());
+                  } else {
+                    client.onNext(metadataAndBytes(1, 10, 10));
+                  }
+                }));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      try (ObjectReadSession session =
+          dataClient.readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20)).get(10, SECONDS)) {
+        byte[] actual = session.readAs(READ_10_TO_20).get(5, SECONDS);
+        assertThat(xxd(actual)).isEqualTo(xxd(slice(10, 10)));
+      }
+    }
+
+    assertThat(requestsReceived)
+        .containsExactly(OPEN_WITH_READ_OF_10_TO_20, OPEN_WITH_READ_OF_10_TO_20)
+        .inOrder();
+  }
+
+  @Test
+  public void open_whenTheConnectionDropsHalfway_fetchesOnlyTheRestOfTheRange() throws Exception {
+    // the first reply has bytes 10-15 only, it is not the end of the range
+    BidiReadObjectResponse bytes10To15 = metadataAndBytes(1, 10, 5);
+    BidiReadObjectResponse firstReply =
+        bytes10To15.toBuilder()
+            .setObjectDataRanges(
+                0, bytes10To15.getObjectDataRanges(0).toBuilder().setRangeEnd(false))
+            .build();
+    // after the first reply the session knows the object's generation, so a re-open pins it
+    BidiReadObjectRequest reopenForBytes15To20 =
+        OPEN.toBuilder()
+            .setReadObjectSpec(OPEN.getReadObjectSpec().toBuilder().setGeneration(1))
+            .addReadRanges(getReadRange(1, 15, 5))
+            .build();
+    FakeStorage server =
+        FakeStorage.of(
+            ImmutableMap.of(
+                OPEN_WITH_READ_OF_10_TO_20,
+                client -> {
+                  requestsReceived.add(OPEN_WITH_READ_OF_10_TO_20);
+                  client.onNext(firstReply);
+                  client.onError(Status.UNAVAILABLE.asRuntimeException());
+                },
+                reopenForBytes15To20,
+                client -> {
+                  requestsReceived.add(reopenForBytes15To20);
+                  client.onNext(metadataAndBytes(1, 15, 5));
+                }));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      try (ObjectReadSession session =
+          dataClient.readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20)).get(10, SECONDS)) {
+        byte[] actual = session.readAs(READ_10_TO_20).get(10, SECONDS);
+        assertThat(xxd(actual)).isEqualTo(xxd(slice(10, 10)));
+      }
+    }
+
+    assertThat(requestsReceived)
+        .containsExactly(OPEN_WITH_READ_OF_10_TO_20, reopenForBytes15To20)
+        .inOrder();
   }
 
   /**
