@@ -85,8 +85,10 @@ class FakePublisherServiceImpl extends PublisherImplBase {
   @Override
   public void publish(
       PublishRequest request, final StreamObserver<PublishResponse> responseObserver) {
-    ((ServerCallStreamObserver<PublishResponse>) responseObserver)
-        .setOnCancelHandler(() -> cancelledCalls.incrementAndGet());
+    if (responseObserver instanceof ServerCallStreamObserver) {
+      ((ServerCallStreamObserver<PublishResponse>) responseObserver)
+          .setOnCancelHandler(() -> cancelledCalls.incrementAndGet());
+    }
     Response response;
     try {
       if (autoPublishResponse) {
@@ -183,5 +185,6 @@ class FakePublisherServiceImpl extends PublisherImplBase {
   public void clearRequests() {
     requests.clear();
     capturedHeaders.clear();
+    cancelledCalls.set(0);
   }
 }

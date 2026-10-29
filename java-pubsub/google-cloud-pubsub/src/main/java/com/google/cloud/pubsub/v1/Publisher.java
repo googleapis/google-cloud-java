@@ -798,16 +798,16 @@ public class Publisher implements PublisherInterface {
         long attemptTimeoutMs = Math.min(10000, remainingTimeoutMs);
 
         if (tryAcquireHedgeToken()) {
+          // Start Hedged Attempt
+          ApiFuture<PublishResponse> hedgedFuture =
+              publishCall(batch, item.getAttemptNumber(), Duration.ofMillis(attemptTimeoutMs));
+          coordinator.addAttempt(item.getAttemptNumber(), hedgedFuture);
+
           // Clone and schedule next attempt check (Attempt + 1)
           long delayMs = hedgingSettings.getHedgeDelay().toMillis();
           HedgedRequest nextItem =
               new HedgedRequest(coordinator, item.getAttemptNumber() + 1, now + delayMs);
           hedgingQueue.add(nextItem);
-
-          // Start Hedged Attempt
-          ApiFuture<PublishResponse> hedgedFuture =
-              publishCall(batch, item.getAttemptNumber(), Duration.ofMillis(attemptTimeoutMs));
-          coordinator.addAttempt(item.getAttemptNumber(), hedgedFuture);
         } else {
           loggingUtil.logPublisher(
               LoggingUtil.SubSystem.PUBLISH_HEDGED,
