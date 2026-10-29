@@ -28,6 +28,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.Map;
 import javax.annotation.Nullable;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -169,6 +170,7 @@ public class ITQueryFindNearestTest extends ITBaseTest {
             .contains(snapshot.getDocuments().get(2).get("docId")));
   }
 
+  @Ignore("Flaky test: b/579437373")
   @Test
   public void findNearestWithDotProductDistance() throws Exception {
     CollectionReference collection =
