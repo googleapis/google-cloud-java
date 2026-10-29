@@ -18,7 +18,6 @@ package com.google.cloud.storage;
 
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.WatchdogTimeoutException;
 import com.google.common.base.Ascii;
@@ -26,8 +25,6 @@ import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.net.ConnectException;
-import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.util.concurrent.CancellationException;
@@ -48,9 +45,10 @@ final class StorageErrorTypeMapper {
   static final String STATUS_UNKNOWN = "UNKNOWN";
   static final String STATUS_NOT_FOUND = "NOT_FOUND";
   static final String STATUS_UNAVAILABLE = "UNAVAILABLE";
+  static final String STATUS_DEADLINE_EXCEEDED = "DEADLINE_EXCEEDED";
 
   private static final String STATUS_INVALID_ARGUMENT = "INVALID_ARGUMENT";
-  private static final String STATUS_ALREADY_EXISTS = "ALREADY_EXISTS";
+  private static final String STATUS_ABORTED = "ABORTED";
   private static final String STATUS_PERMISSION_DENIED = "PERMISSION_DENIED";
   private static final String STATUS_RESOURCE_EXHAUSTED = "RESOURCE_EXHAUSTED";
   private static final String STATUS_FAILED_PRECONDITION = "FAILED_PRECONDITION";
@@ -61,10 +59,8 @@ final class StorageErrorTypeMapper {
 
   static final String STATUS_TIMEOUT = "TIMEOUT";
   static final String STATUS_DNS_FAILURE = "DNS_FAILURE";
-  static final String STATUS_CONNECTION_REFUSED = "CONNECTION_REFUSED";
-  static final String STATUS_CONNECTION_RESET = "CONNECTION_RESET";
   static final String STATUS_TLS_FAILURE = "TLS_FAILURE";
-  static final String STATUS_CONNECTIVITY = "CONNECTIVITY";
+  static final String STATUS_CONNECTION_ERROR = "CONNECTION_ERROR";
   static final String STATUS_AUTHENTICATION_ERROR = "AUTHENTICATION_ERROR";
   static final String STATUS_CHECKSUM_MISMATCH = "CHECKSUM_MISMATCH";
 
@@ -72,18 +68,12 @@ final class StorageErrorTypeMapper {
     if (status == null || status.getCode() == Status.Code.UNKNOWN) {
       return STATUS_UNKNOWN;
     }
-    if (status.getCode() == Status.Code.DEADLINE_EXCEEDED) {
-      return STATUS_TIMEOUT;
-    }
     return status.getCode().name();
   }
 
   private static String mapGaxStatusCode(StatusCode.@Nullable Code code) {
     if (code == null || code == StatusCode.Code.UNKNOWN) {
       return STATUS_UNKNOWN;
-    }
-    if (code == StatusCode.Code.DEADLINE_EXCEEDED) {
-      return STATUS_TIMEOUT;
     }
     return code.name();
   }
@@ -102,9 +92,9 @@ final class StorageErrorTypeMapper {
       case 404:
         return STATUS_NOT_FOUND;
       case 408:
-        return STATUS_TIMEOUT;
+        return STATUS_DEADLINE_EXCEEDED;
       case 409:
-        return STATUS_ALREADY_EXISTS;
+        return STATUS_ABORTED;
       case 412:
         return STATUS_FAILED_PRECONDITION;
       case 416:
@@ -121,7 +111,7 @@ final class StorageErrorTypeMapper {
       case 503:
         return STATUS_UNAVAILABLE;
       case 504:
-        return STATUS_TIMEOUT;
+        return STATUS_DEADLINE_EXCEEDED;
       default:
         if (statusCode >= 400 && statusCode < 600) {
           return String.valueOf(statusCode);
@@ -166,7 +156,6 @@ final class StorageErrorTypeMapper {
     }
 
     if (t instanceof WatchdogTimeoutException
-        || t instanceof DeadlineExceededException
         || t instanceof SocketTimeoutException
         || t instanceof TimeoutException) {
       return STATUS_TIMEOUT;
@@ -224,18 +213,6 @@ final class StorageErrorTypeMapper {
       return STATUS_DNS_FAILURE;
     }
 
-    if (t instanceof ConnectException) {
-      return STATUS_CONNECTION_REFUSED;
-    }
-
-    if (t instanceof SocketException) {
-      String message = t.getMessage();
-      if (message != null && Ascii.toLowerCase(message).contains("reset")) {
-        return STATUS_CONNECTION_RESET;
-      }
-      return STATUS_CONNECTIVITY;
-    }
-
     if (t instanceof SSLException) {
       return STATUS_TLS_FAILURE;
     }
@@ -245,7 +222,7 @@ final class StorageErrorTypeMapper {
       if (mappedCause != null) {
         return mappedCause;
       }
-      return STATUS_CONNECTIVITY;
+      return STATUS_CONNECTION_ERROR;
     }
 
     String causeMapping = mapKnownCause(t, t.getCause());
@@ -279,16 +256,13 @@ final class StorageErrorTypeMapper {
     Throwable current = t;
     while (current != null) {
       if (current instanceof WatchdogTimeoutException
-          || current instanceof DeadlineExceededException
-          || current instanceof SocketTimeoutException
           || current instanceof TimeoutException
-          || current instanceof UnknownHostException
-          || current instanceof ConnectException
-          || current instanceof SocketException
-          || current instanceof SSLException
           || current instanceof CancellationException
           || isChecksumMismatch(current)
-          || (includeAuth && isAuthException(current))) {
+          || (includeAuth && isAuthException(current))
+          || (current instanceof IOException
+              && !(current instanceof HttpResponseException)
+              && (includeAuth || !isAuthException(current)))) {
         return true;
       }
       Throwable next = current.getCause();
@@ -308,7 +282,9 @@ final class StorageErrorTypeMapper {
     String message = t.getMessage();
     if (message != null) {
       String lower = Ascii.toLowerCase(message);
-      if (lower.contains("mismatch checksum") || lower.contains("checksum mismatch")) {
+      if (lower.contains("mismatch checksum")
+          || lower.contains("checksum mismatch")
+          || ((lower.contains("crc32c") || lower.contains("md5")) && lower.contains("match"))) {
         return true;
       }
     }

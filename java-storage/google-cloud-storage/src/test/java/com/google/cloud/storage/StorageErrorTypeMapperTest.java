@@ -31,6 +31,7 @@ import com.google.auth.ServiceAccountSigner.SigningException;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
+import java.io.EOFException;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.net.ConnectException;
@@ -57,7 +58,8 @@ public final class StorageErrorTypeMapperTest {
     assertThat(StorageErrorTypeMapper.mapGrpcStatus(Status.UNKNOWN)).isEqualTo("UNKNOWN");
     assertThat(StorageErrorTypeMapper.mapGrpcStatus(Status.INVALID_ARGUMENT))
         .isEqualTo("INVALID_ARGUMENT");
-    assertThat(StorageErrorTypeMapper.mapGrpcStatus(Status.DEADLINE_EXCEEDED)).isEqualTo("TIMEOUT");
+    assertThat(StorageErrorTypeMapper.mapGrpcStatus(Status.DEADLINE_EXCEEDED))
+        .isEqualTo("DEADLINE_EXCEEDED");
     assertThat(StorageErrorTypeMapper.mapGrpcStatus(Status.NOT_FOUND)).isEqualTo("NOT_FOUND");
     assertThat(StorageErrorTypeMapper.mapGrpcStatus(Status.ALREADY_EXISTS))
         .isEqualTo("ALREADY_EXISTS");
@@ -90,8 +92,8 @@ public final class StorageErrorTypeMapperTest {
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(401)).isEqualTo("UNAUTHENTICATED");
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(403)).isEqualTo("PERMISSION_DENIED");
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(404)).isEqualTo("NOT_FOUND");
-    assertThat(StorageErrorTypeMapper.mapHttpResponseCode(408)).isEqualTo("TIMEOUT");
-    assertThat(StorageErrorTypeMapper.mapHttpResponseCode(409)).isEqualTo("ALREADY_EXISTS");
+    assertThat(StorageErrorTypeMapper.mapHttpResponseCode(408)).isEqualTo("DEADLINE_EXCEEDED");
+    assertThat(StorageErrorTypeMapper.mapHttpResponseCode(409)).isEqualTo("ABORTED");
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(412)).isEqualTo("FAILED_PRECONDITION");
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(416)).isEqualTo("OUT_OF_RANGE");
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(429)).isEqualTo("RESOURCE_EXHAUSTED");
@@ -101,7 +103,7 @@ public final class StorageErrorTypeMapperTest {
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(501)).isEqualTo("UNIMPLEMENTED");
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(502)).isEqualTo("UNAVAILABLE");
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(503)).isEqualTo("UNAVAILABLE");
-    assertThat(StorageErrorTypeMapper.mapHttpResponseCode(504)).isEqualTo("TIMEOUT");
+    assertThat(StorageErrorTypeMapper.mapHttpResponseCode(504)).isEqualTo("DEADLINE_EXCEEDED");
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(505)).isEqualTo("505");
 
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(418)).isEqualTo("418");
@@ -117,7 +119,7 @@ public final class StorageErrorTypeMapperTest {
   @Test
   public void mapThrowable_grpcExceptions() {
     StatusRuntimeException sre = new StatusRuntimeException(Status.DEADLINE_EXCEEDED);
-    assertThat(StorageErrorTypeMapper.mapThrowable(sre)).isEqualTo("TIMEOUT");
+    assertThat(StorageErrorTypeMapper.mapThrowable(sre)).isEqualTo("DEADLINE_EXCEEDED");
 
     StatusException se = new StatusException(Status.PERMISSION_DENIED);
     assertThat(StorageErrorTypeMapper.mapThrowable(se)).isEqualTo("PERMISSION_DENIED");
@@ -161,13 +163,20 @@ public final class StorageErrorTypeMapperTest {
   }
 
   @Test
-  public void mapThrowable_gaxTimeoutExceptions() throws Exception {
+  public void mapThrowable_gaxTimeoutAndDeadlineExceededExceptions() throws Exception {
     DeadlineExceededException dee =
         new DeadlineExceededException(
             new StatusRuntimeException(Status.DEADLINE_EXCEEDED),
             GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
             /* retryable= */ false);
-    assertThat(StorageErrorTypeMapper.mapThrowable(dee)).isEqualTo("TIMEOUT");
+    assertThat(StorageErrorTypeMapper.mapThrowable(dee)).isEqualTo("DEADLINE_EXCEEDED");
+
+    DeadlineExceededException deeWithSocketTimeout =
+        new DeadlineExceededException(
+            new SocketTimeoutException("Read timed out"),
+            GrpcStatusCode.of(Status.Code.DEADLINE_EXCEEDED),
+            /* retryable= */ false);
+    assertThat(StorageErrorTypeMapper.mapThrowable(deeWithSocketTimeout)).isEqualTo("TIMEOUT");
 
     WatchdogTimeoutException wte = createWatchdogTimeoutException();
     assertThat(StorageErrorTypeMapper.mapThrowable(wte)).isEqualTo("TIMEOUT");
@@ -220,17 +229,19 @@ public final class StorageErrorTypeMapperTest {
             StorageErrorTypeMapper.mapThrowable(new UnknownHostException("storage.googleapis.com")))
         .isEqualTo("DNS_FAILURE");
     assertThat(StorageErrorTypeMapper.mapThrowable(new ConnectException("Connection refused")))
-        .isEqualTo("CONNECTION_REFUSED");
+        .isEqualTo("CONNECTION_ERROR");
     assertThat(StorageErrorTypeMapper.mapThrowable(new SocketException("Connection reset")))
-        .isEqualTo("CONNECTION_RESET");
+        .isEqualTo("CONNECTION_ERROR");
     assertThat(StorageErrorTypeMapper.mapThrowable(new SocketException("Broken pipe")))
-        .isEqualTo("CONNECTIVITY");
+        .isEqualTo("CONNECTION_ERROR");
+    assertThat(StorageErrorTypeMapper.mapThrowable(new EOFException("Unexpected EOF")))
+        .isEqualTo("CONNECTION_ERROR");
     assertThat(StorageErrorTypeMapper.mapThrowable(new SSLHandshakeException("Handshake failed")))
         .isEqualTo("TLS_FAILURE");
     assertThat(StorageErrorTypeMapper.mapThrowable(new SSLException("SSL error")))
         .isEqualTo("TLS_FAILURE");
     assertThat(StorageErrorTypeMapper.mapThrowable(new IOException("Broken pipe")))
-        .isEqualTo("CONNECTIVITY");
+        .isEqualTo("CONNECTION_ERROR");
     assertThat(StorageErrorTypeMapper.mapThrowable(new CancellationException("Cancelled")))
         .isEqualTo("CANCELLED");
   }
@@ -277,6 +288,44 @@ public final class StorageErrorTypeMapperTest {
 
     IOException messageMismatch = new IOException("Checksum mismatch for downloaded object");
     assertThat(StorageErrorTypeMapper.mapThrowable(messageMismatch)).isEqualTo("CHECKSUM_MISMATCH");
+  }
+
+  @Test
+  public void mapThrowable_serverChecksumMismatchMessages() {
+    StorageException seHttp400Crc32c =
+        new StorageException(
+            400, "Provided CRC32C \"abc=\" doesn't match calculated CRC32C \"def=\"");
+    assertThat(StorageErrorTypeMapper.mapThrowable(seHttp400Crc32c)).isEqualTo("CHECKSUM_MISMATCH");
+
+    HttpResponseException hreHttp400Md5 =
+        new HttpResponseException.Builder(400, "Bad Request", new HttpHeaders())
+            .setMessage("Provided MD5 hash \"abc=\" doesn't match calculated MD5 hash \"def=\"")
+            .build();
+    assertThat(StorageErrorTypeMapper.mapThrowable(hreHttp400Md5)).isEqualTo("CHECKSUM_MISMATCH");
+
+    StatusRuntimeException sreInvalidArgCrc32c =
+        new StatusRuntimeException(
+            Status.INVALID_ARGUMENT.withDescription(
+                "Object crc32c mismatch: expected 123, got 456"));
+    assertThat(StorageErrorTypeMapper.mapThrowable(sreInvalidArgCrc32c))
+        .isEqualTo("CHECKSUM_MISMATCH");
+
+    StatusRuntimeException sreDataLossMd5 =
+        new StatusRuntimeException(
+            Status.DATA_LOSS.withDescription("Uploaded md5 does not match expected value"));
+    assertThat(StorageErrorTypeMapper.mapThrowable(sreDataLossMd5)).isEqualTo("CHECKSUM_MISMATCH");
+
+    ApiException apiExCrc32c =
+        new ApiException(
+            sreInvalidArgCrc32c,
+            GrpcStatusCode.of(Status.Code.INVALID_ARGUMENT),
+            /* retryable= */ false);
+    assertThat(StorageErrorTypeMapper.mapThrowable(apiExCrc32c)).isEqualTo("CHECKSUM_MISMATCH");
+
+    StorageException seHttp400UnrelatedCrc32c =
+        new StorageException(400, "Invalid crc32c header format");
+    assertThat(StorageErrorTypeMapper.mapThrowable(seHttp400UnrelatedCrc32c))
+        .isEqualTo("INVALID_ARGUMENT");
   }
 
   @Test
@@ -390,11 +439,19 @@ public final class StorageErrorTypeMapperTest {
   }
 
   @Test
-  public void mapThrowable_storageExceptionWrappingSocketResetException() {
+  public void mapThrowable_storageExceptionWrappingConnectionErrors() {
     StorageException seFromSocketReset =
         new StorageException(0, "Socket Reset", new SocketException("Connection reset"));
     assertThat(StorageErrorTypeMapper.mapThrowable(seFromSocketReset))
-        .isEqualTo("CONNECTION_RESET");
+        .isEqualTo("CONNECTION_ERROR");
+
+    StorageException seFromEof =
+        new StorageException(0, "Unexpected EOF", new EOFException("Unexpected end of stream"));
+    assertThat(StorageErrorTypeMapper.mapThrowable(seFromEof)).isEqualTo("CONNECTION_ERROR");
+
+    StorageException seFromIo =
+        new StorageException(503, "Service Unavailable", new IOException("Broken pipe"));
+    assertThat(StorageErrorTypeMapper.mapThrowable(seFromIo)).isEqualTo("CONNECTION_ERROR");
   }
 
   @Test
@@ -410,7 +467,11 @@ public final class StorageErrorTypeMapperTest {
 
     GoogleAuthException authRefused =
         new GoogleAuthException("Auth connect refused", new ConnectException("Connection refused"));
-    assertThat(StorageErrorTypeMapper.mapThrowable(authRefused)).isEqualTo("CONNECTION_REFUSED");
+    assertThat(StorageErrorTypeMapper.mapThrowable(authRefused)).isEqualTo("CONNECTION_ERROR");
+
+    GoogleAuthException authEof =
+        new GoogleAuthException("Auth EOF", new EOFException("Unexpected EOF"));
+    assertThat(StorageErrorTypeMapper.mapThrowable(authEof)).isEqualTo("CONNECTION_ERROR");
 
     GoogleAuthException authTls =
         new GoogleAuthException(
@@ -436,9 +497,15 @@ public final class StorageErrorTypeMapperTest {
     GoogleAuthException simpleAuth = new GoogleAuthException("Invalid credentials");
     assertThat(StorageErrorTypeMapper.mapThrowable(simpleAuth)).isEqualTo("AUTHENTICATION_ERROR");
 
-    GoogleAuthException authWithGenericIo =
-        new GoogleAuthException("Grant error", new IOException("Invalid grant"));
-    assertThat(StorageErrorTypeMapper.mapThrowable(authWithGenericIo))
+    GoogleAuthException authWithRuntimeCause =
+        new GoogleAuthException("Grant error", new IllegalArgumentException("Invalid grant"));
+    assertThat(StorageErrorTypeMapper.mapThrowable(authWithRuntimeCause))
+        .isEqualTo("AUTHENTICATION_ERROR");
+
+    HttpResponseException hre400 =
+        new HttpResponseException.Builder(400, "invalid_grant", new HttpHeaders()).build();
+    GoogleAuthException authWithHttp400 = new GoogleAuthException("Token refresh failed", hre400);
+    assertThat(StorageErrorTypeMapper.mapThrowable(authWithHttp400))
         .isEqualTo("AUTHENTICATION_ERROR");
   }
 
@@ -457,17 +524,22 @@ public final class StorageErrorTypeMapperTest {
     StatusRuntimeException sreRefused =
         new StatusRuntimeException(
             Status.UNAVAILABLE.withCause(new ConnectException("Connection refused")));
-    assertThat(StorageErrorTypeMapper.mapThrowable(sreRefused)).isEqualTo("CONNECTION_REFUSED");
+    assertThat(StorageErrorTypeMapper.mapThrowable(sreRefused)).isEqualTo("CONNECTION_ERROR");
 
     StatusRuntimeException sreReset =
         new StatusRuntimeException(
             Status.UNAVAILABLE.withCause(new SocketException("Connection reset")));
-    assertThat(StorageErrorTypeMapper.mapThrowable(sreReset)).isEqualTo("CONNECTION_RESET");
+    assertThat(StorageErrorTypeMapper.mapThrowable(sreReset)).isEqualTo("CONNECTION_ERROR");
 
     StatusRuntimeException srePipe =
         new StatusRuntimeException(
             Status.UNAVAILABLE.withCause(new SocketException("Broken pipe")));
-    assertThat(StorageErrorTypeMapper.mapThrowable(srePipe)).isEqualTo("CONNECTIVITY");
+    assertThat(StorageErrorTypeMapper.mapThrowable(srePipe)).isEqualTo("CONNECTION_ERROR");
+
+    StatusRuntimeException sreEof =
+        new StatusRuntimeException(
+            Status.UNAVAILABLE.withCause(new EOFException("Unexpected EOF")));
+    assertThat(StorageErrorTypeMapper.mapThrowable(sreEof)).isEqualTo("CONNECTION_ERROR");
   }
 
   @Test
@@ -497,7 +569,14 @@ public final class StorageErrorTypeMapperTest {
             new ConnectException("Refused"),
             GrpcStatusCode.of(Status.Code.UNAVAILABLE),
             /* retryable= */ false);
-    assertThat(StorageErrorTypeMapper.mapThrowable(apiExRefused)).isEqualTo("CONNECTION_REFUSED");
+    assertThat(StorageErrorTypeMapper.mapThrowable(apiExRefused)).isEqualTo("CONNECTION_ERROR");
+
+    ApiException apiExEof =
+        new ApiException(
+            new EOFException("Unexpected EOF"),
+            GrpcStatusCode.of(Status.Code.UNAVAILABLE),
+            /* retryable= */ false);
+    assertThat(StorageErrorTypeMapper.mapThrowable(apiExEof)).isEqualTo("CONNECTION_ERROR");
   }
 
   @Test
