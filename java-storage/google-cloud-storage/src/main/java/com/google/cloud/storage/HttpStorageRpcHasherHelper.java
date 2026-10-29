@@ -119,14 +119,13 @@ public final class HttpStorageRpcHasherHelper {
   }
 
   private static boolean isGzip(String encoding) {
-    return encoding != null && encoding.toLowerCase(Locale.ROOT).contains("gzip");
+    return encoding != null && encoding.trim().toLowerCase(Locale.ROOT).contains("gzip");
   }
 
   private boolean isDecompressedByClient(HttpResponse response) {
     boolean returnRaw = response.getRequest().getResponseReturnRawInputStream();
     if (!returnRaw) {
-      String encoding = response.getHeaders().getContentEncoding();
-      return encoding != null && encoding.contains("gzip");
+      return isGzip(response.getHeaders().getContentEncoding());
     }
     return false;
   }

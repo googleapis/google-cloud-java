@@ -171,4 +171,17 @@ public class HttpStorageRpcHasherHelperTest {
 
     assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
   }
+
+  @Test
+  public void testShouldValidate_decompressedByClient_uppercaseContentEncoding()
+      throws IOException {
+    // GCS echoes the object's Content-Encoding metadata as-is, and the HTTP client matches it
+    // case-insensitively when deciding to decompress.
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", "GZIP");
+    headers.put("Content-Encoding", "GZIP");
+    HttpResponse response = createHttpResponse(200, headers, false);
+
+    assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
 }
