@@ -150,12 +150,26 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     testSpanner.close();
   }
 
+  private DatabaseClientImpl getClient() {
+    return getClient(DatabaseId.of("p", "i", "d"));
+  }
+
+  private DatabaseClientImpl getClient(DatabaseId databaseId) {
+    return getClient(spanner, databaseId);
+  }
+
+  private DatabaseClientImpl getClient(Spanner spanner, DatabaseId databaseId) {
+    DatabaseClientImpl client = (DatabaseClientImpl) spanner.getDatabaseClient(databaseId);
+    client.getDialect();
+    client.multiplexedSessionDatabaseClient.resetAcquiredAndReleasedCounts();
+    return client;
+  }
+
   @Test
   public void testMultiUseReadOnlyTransactionUsesSameSession() {
     // Execute two queries using the same transaction. Both queries should use the same
     // session, also when the maintainer has executed in the meantime.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     try (ReadOnlyTransaction transaction = client.readOnlyTransaction()) {
       try (ResultSet resultSet = transaction.executeQuery(STATEMENT)) {
         //noinspection StatementWithEmptyBody
@@ -188,8 +202,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     // Execute a single-use read-only transactions, then wait for the maintainer to replace the
     // current session, and then run another single-use read-only transaction. The two transactions
     // should use two different sessions.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     try (ResultSet resultSet = client.singleUse().executeQuery(STATEMENT)) {
       //noinspection StatementWithEmptyBody
       while (resultSet.next()) {
@@ -220,12 +233,8 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   public void testMaintainerMaintainsMultipleClients() {
     // Verify that the single-threaded shared executor that is used by the multiplexed client
     // maintains and replaces sessions from multiple clients.
-    DatabaseClientImpl client1 =
-        (DatabaseClientImpl)
-            spanner.getDatabaseClient(DatabaseId.of("p", "i", "d" + UUID.randomUUID()));
-    DatabaseClientImpl client2 =
-        (DatabaseClientImpl)
-            spanner.getDatabaseClient(DatabaseId.of("p", "i", "d" + UUID.randomUUID()));
+    DatabaseClientImpl client1 = getClient(DatabaseId.of("p", "i", "d" + UUID.randomUUID()));
+    DatabaseClientImpl client2 = getClient(DatabaseId.of("p", "i", "d" + UUID.randomUUID()));
 
     for (DatabaseClientImpl client : ImmutableList.of(client1, client2)) {
       try (ResultSet resultSet = client.singleUse().executeQuery(STATEMENT)) {
@@ -292,8 +301,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
             .build()
             .getService();
 
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient(testSpanner, DatabaseId.of("p", "i", "d"));
 
     try (ResultSet resultSet = client.singleUse().executeQuery(STATEMENT)) {
       //noinspection StatementWithEmptyBody
@@ -497,8 +505,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
 
   @Test
   public void testWriteAtLeastOnceAborted() {
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     // Force the Commit RPC to return Aborted the first time it is called. The exception is cleared
     // after the first call, so the retry should succeed.
     mockSpanner.setCommitExecutionTime(
@@ -520,8 +527,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
 
   @Test
   public void testWriteAtLeastOnce() {
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     Timestamp timestamp = MockSpannerTestActions.writeAtLeastOnceInsertMutation(client);
     assertNotNull(timestamp);
 
@@ -542,8 +548,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
 
   @Test
   public void testWriteAtLeastOnceWithCommitStats() {
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     CommitResponse response =
         client.writeAtLeastOnceWithOptions(
             Collections.singletonList(
@@ -570,8 +575,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
 
   @Test
   public void testWriteAtLeastOnceWithOptions() {
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     MockSpannerTestActions.writeAtLeastOnceWithOptionsInsertMutation(
         client, Options.priority(RpcPriority.LOW));
 
@@ -592,8 +596,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
 
   @Test
   public void testWriteAtLeastOnceWithTagOptions() {
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     MockSpannerTestActions.writeAtLeastOnceWithOptionsInsertMutation(
         client, Options.tag("app=spanner,env=test"));
 
@@ -615,8 +618,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
 
   @Test
   public void testWriteAtLeastOnceWithExcludeTxnFromChangeStreams() {
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     MockSpannerTestActions.writeAtLeastOnceWithOptionsInsertMutation(
         client, Options.excludeTxnFromChangeStreams());
 
@@ -639,8 +641,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     // session.
     // During a retry (due to an ABORTED error), the transaction should use the same multiplexed
     // session as before, assuming the maintainer hasn't run in the meantime.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     // Force the Commit RPC to return Aborted the first time it is called. The exception is cleared
     // after the first call, so the retry should succeed.
     mockSpanner.setCommitExecutionTime(
@@ -681,8 +682,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     // session.
     // During a retry (due to an ABORTED error), the transaction should use the same multiplexed
     // session as before, assuming the maintainer hasn't run in the meantime.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     // Force the Commit RPC to return Aborted the first time it is called. The exception is cleared
     // after the first call, so the retry should succeed.
     mockSpanner.setCommitExecutionTime(
@@ -725,8 +725,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
 
   @Test
   public void testMutationUsingWrite() {
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     // Force the Commit RPC to return Aborted the first time it is called. The exception is cleared
     // after the first call, so the retry should succeed.
     mockSpanner.setCommitExecutionTime(
@@ -761,8 +760,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
 
   @Test
   public void testMutationUsingWriteWithOptions() {
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     CommitResponse response =
         client.writeWithOptions(
             Collections.singletonList(
@@ -791,8 +789,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     // session as before, assuming the maintainer hasn't run in the meantime.
     final AtomicInteger attempt = new AtomicInteger();
     CountDownLatch abortedLatch = new CountDownLatch(1);
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     try (AsyncTransactionManager manager = client.transactionManagerAsync()) {
       TransactionContextFuture transactionContextFuture = manager.beginAsync();
       while (true) {
@@ -845,8 +842,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     // During a retry (due to an ABORTED error), the transaction should use the same multiplexed
     // session as before, assuming the maintainer hasn't run in the meantime.
     final AtomicInteger attempt = new AtomicInteger();
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     AsyncRunner runner = client.runAsync();
     ApiFuture<Long> updateCount =
         runner.runAsync(
@@ -910,8 +906,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
 
   @Test
   public void testAbortedReadWriteTxnUsesPreviousTxnIdOnRetryWithInlineBegin() {
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     // Force the Commit RPC to return Aborted the first time it is called. The exception is cleared
     // after the first call, so the retry should succeed.
     mockSpanner.setCommitExecutionTime(
@@ -996,8 +991,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
 
   @Test
   public void testAbortedReadWriteTxnUsesPreviousTxnIdOnRetryWithExplicitBegin() {
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     // Force the Commit RPC to return Aborted the first time it is called. The exception is cleared
     // after the first call, so the retry should succeed.
     mockSpanner.setCommitExecutionTime(
@@ -1085,8 +1079,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   public void testPrecommitTokenForResultSet() {
     // This test verifies that the precommit token received from the ResultSet is properly tracked
     // and set in the CommitRequest.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     Long count =
         client
@@ -1121,8 +1114,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   public void testPrecommitTokenForExecuteBatchDmlResponse() {
     // This test verifies that the precommit token received from the ExecuteBatchDmlResponse is
     // properly tracked and set in the CommitRequest.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     long[] count =
         client
@@ -1157,8 +1149,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   public void testPrecommitTokenForPartialResultSet() {
     // This test verifies that the precommit token received from the PartialResultSet is properly
     // tracked and set in the CommitRequest.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     client
         .readWriteTransaction()
@@ -1193,8 +1184,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   public void testTxnTracksPrecommitTokenWithLatestSeqNo() {
     // This test ensures that the read-write transaction tracks the precommit token with the
     // highest sequence number and sets it in the CommitRequest.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     client
         .readWriteTransaction()
@@ -1245,8 +1235,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     // and applied in the CommitRequest. The Transaction response includes a precommit token
     // only when the read-write transaction consists solely of mutations.
 
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     client
         .readWriteTransaction()
@@ -1280,8 +1269,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   public void testMutationOnlyCaseAborted() {
     // This test verifies that in the case of mutations-only, when a transaction is retried after an
     // ABORT, the mutation key is correctly set in the BeginTransaction request.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     // Force the Commit RPC to return Aborted the first time it is called. The exception is cleared
     // after the first call, so the retry should succeed.
@@ -1324,8 +1312,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   @Test
   public void testMutationOnlyUsingTransactionManager() {
     // Test verifies mutation-only case within a R/W transaction via TransactionManager.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     try (TransactionManager manager = client.transactionManager()) {
       TransactionContext transaction = manager.begin();
@@ -1365,8 +1352,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   @Test
   public void testMutationOnlyUsingAsyncRunner() {
     // Test verifies mutation-only case within a R/W transaction via AsyncRunner.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     MockSpannerTestActions.asyncRunnerCommit(client, MoreExecutors.directExecutor());
     // Verify that the mutation key is set in BeginTransactionRequest
     List<BeginTransactionRequest> beginTransactions =
@@ -1389,8 +1375,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   @Test
   public void testMutationOnlyUsingAsyncTransactionManager() {
     // Test verifies mutation-only case within a R/W transaction via AsyncTransactionManager.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     MockSpannerTestActions.transactionManagerAsyncCommit(client, MoreExecutors.directExecutor());
 
     // Verify that the mutation key is set in BeginTransactionRequest
@@ -1464,8 +1449,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
         SimulatedExecutionTime.ofException(
             mockSpanner.createAbortedException(ByteString.copyFromUtf8("test"))));
 
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     client
         .readWriteTransaction()
@@ -1503,8 +1487,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
         SimulatedExecutionTime.ofException(
             mockSpanner.createAbortedException(ByteString.copyFromUtf8("test"))));
 
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     try (TransactionManager manager = client.transactionManager()) {
       TransactionContext transaction = manager.begin();
@@ -1549,8 +1532,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
         SimulatedExecutionTime.ofException(
             mockSpanner.createAbortedException(ByteString.copyFromUtf8("test"))));
 
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     AsyncRunner runner = client.runAsync();
     get(
@@ -1589,8 +1571,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
         SimulatedExecutionTime.ofException(
             mockSpanner.createAbortedException(ByteString.copyFromUtf8("test"))));
 
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     try (AsyncTransactionManager manager = client.transactionManagerAsync()) {
       TransactionContextFuture transaction = manager.beginAsync();
@@ -1639,8 +1620,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
                 .withDescription("Multiplexed sessions are not supported.")
                 .asRuntimeException()));
 
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     // Try to execute a query using single use transaction.
     try (ResultSet resultSet = client.singleUse().executeQuery(STATEMENT)) {
@@ -1683,8 +1663,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   public void testReadWriteTransactionWithCommitRetryProtocolExtensionSet() {
     // This test simulates the commit retry protocol extension which occurs when a read-write
     // transaction contains read/query + mutation operations.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     client
         .readWriteTransaction()
@@ -1741,8 +1720,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
 
   @Test
   public void testBatchWriteAtLeastOnce() {
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     Iterable<MutationGroup> MUTATION_GROUPS =
         ImmutableList.of(
@@ -1789,8 +1767,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     // 2. Passes the ABORTED exception to the begin(AbortedException) method of a new
     // TransactionManager, and verifies that the transaction ID from the failed transaction is sent
     // during the inline begin of the first request.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     // Force the Commit RPC to return Aborted the first time it is called. The exception is cleared
     // after the first call, so the retry should succeed.
     mockSpanner.setCommitExecutionTime(
@@ -1878,8 +1855,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     // 2. Passes the ABORTED exception to the begin(AbortedException) method of a new
     // TransactionManager, and verifies that the transaction ID from the failed transaction is sent
     // during the inline begin of the first request.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
 
     ByteString abortedTransactionID = null;
     AbortedException exception = null;
@@ -1976,8 +1952,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     // AsyncTransactionManager, and verifies that the transaction ID from the failed transaction is
     // sent
     // during the inline begin of the first request.
-    DatabaseClientImpl client =
-        (DatabaseClientImpl) spanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+    DatabaseClientImpl client = getClient();
     // Force the Commit RPC to return Aborted the first time it is called. The exception is cleared
     // after the first call, so the retry should succeed.
     mockSpanner.setCommitExecutionTime(
@@ -2058,5 +2033,129 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
         == client.multiplexedSessionDatabaseClient.getCurrentSessionReference()) {
       Thread.yield();
     }
+  }
+
+  @Test
+  public void testDatabaseMetadata_allFieldsReturned() throws Exception {
+    mockSpanner.putStatementResult(
+        StatementResult.detectMetadataResult(
+            Dialect.POSTGRESQL,
+            MultiplexedSessionDatabaseClient.ISOLATION_LEVEL_REPEATABLE_READ,
+            MultiplexedSessionDatabaseClient.READ_LOCK_MODE_OPTIMISTIC));
+    Spanner testSpanner =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .setSessionPoolOption(SessionPoolOptions.newBuilder().setFailOnSessionLeak().build())
+            .build()
+            .getService();
+    DatabaseClientImpl client =
+        (DatabaseClientImpl) testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
+
+    DatabaseMetadata metadata = client.multiplexedSessionDatabaseClient.getDatabaseMetadata();
+    assertEquals(Dialect.POSTGRESQL, metadata.getDialect());
+    assertEquals(
+        com.google.spanner.v1.TransactionOptions.IsolationLevel.REPEATABLE_READ,
+        metadata.getIsolationLevel());
+    assertEquals(
+        com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode.OPTIMISTIC,
+        metadata.getReadLockMode());
+
+    // Execute a query to ensure session is created and session reference has the metadata.
+    try (ResultSet resultSet = client.singleUse().executeQuery(STATEMENT)) {
+      while (resultSet.next()) {}
+    }
+    assertNotNull(client.multiplexedSessionDatabaseClient.getCurrentSessionReference());
+    assertEquals(
+        metadata,
+        client.multiplexedSessionDatabaseClient.getCurrentSessionReference().getDatabaseMetadata());
+  }
+
+  @Test
+  public void testDatabaseMetadata_missingFieldsFallbackToDefaults() throws Exception {
+    // Only return dialect, omit transaction isolation and read lock mode.
+    mockSpanner.putStatementResult(
+        StatementResult.detectMetadataResult(Dialect.GOOGLE_STANDARD_SQL, null, null));
+    Spanner testSpanner1 =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .setSessionPoolOption(SessionPoolOptions.newBuilder().setFailOnSessionLeak().build())
+            .build()
+            .getService();
+    DatabaseClientImpl client1 =
+        (DatabaseClientImpl) testSpanner1.getDatabaseClient(DatabaseId.of("p", "i", "d1"));
+
+    DatabaseMetadata metadata1 = client1.multiplexedSessionDatabaseClient.getDatabaseMetadata();
+    assertEquals(Dialect.GOOGLE_STANDARD_SQL, metadata1.getDialect());
+    assertEquals(
+        com.google.spanner.v1.TransactionOptions.IsolationLevel.SERIALIZABLE,
+        metadata1.getIsolationLevel());
+    assertEquals(
+        com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode.READ_LOCK_MODE_UNSPECIFIED,
+        metadata1.getReadLockMode());
+
+    // Now test when all fields (including dialect) are omitted (empty result set).
+    mockSpanner.putStatementResult(StatementResult.detectMetadataResult(null, null, null));
+    Spanner testSpanner2 =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .setSessionPoolOption(SessionPoolOptions.newBuilder().setFailOnSessionLeak().build())
+            .build()
+            .getService();
+    DatabaseClientImpl client2 =
+        (DatabaseClientImpl) testSpanner2.getDatabaseClient(DatabaseId.of("p", "i", "d2"));
+
+    DatabaseMetadata metadata2 = client2.multiplexedSessionDatabaseClient.getDatabaseMetadata();
+    assertEquals(Dialect.GOOGLE_STANDARD_SQL, metadata2.getDialect());
+    assertEquals(
+        com.google.spanner.v1.TransactionOptions.IsolationLevel.SERIALIZABLE,
+        metadata2.getIsolationLevel());
+    assertEquals(
+        com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode.READ_LOCK_MODE_UNSPECIFIED,
+        metadata2.getReadLockMode());
+
+    try (ResultSet resultSet = client2.singleUse().executeQuery(STATEMENT)) {
+      while (resultSet.next()) {}
+    }
+    assertNotNull(client2.multiplexedSessionDatabaseClient.getCurrentSessionReference());
+    assertEquals(
+        metadata2,
+        client2
+            .multiplexedSessionDatabaseClient
+            .getCurrentSessionReference()
+            .getDatabaseMetadata());
+  }
+
+  @Test
+  public void testDatabaseMetadata_repeatableReadDefaultLockMode() throws Exception {
+    mockSpanner.putStatementResult(
+        StatementResult.detectMetadataResult(
+            Dialect.GOOGLE_STANDARD_SQL,
+            MultiplexedSessionDatabaseClient.ISOLATION_LEVEL_REPEATABLE_READ,
+            null));
+    Spanner testSpanner =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setChannelProvider(channelProvider)
+            .setCredentials(NoCredentials.getInstance())
+            .setSessionPoolOption(SessionPoolOptions.newBuilder().setFailOnSessionLeak().build())
+            .build()
+            .getService();
+    DatabaseClientImpl client =
+        (DatabaseClientImpl) testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d-rr"));
+
+    DatabaseMetadata metadata = client.multiplexedSessionDatabaseClient.getDatabaseMetadata();
+    assertEquals(Dialect.GOOGLE_STANDARD_SQL, metadata.getDialect());
+    assertEquals(
+        com.google.spanner.v1.TransactionOptions.IsolationLevel.REPEATABLE_READ,
+        metadata.getIsolationLevel());
+    assertEquals(
+        com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode.READ_LOCK_MODE_UNSPECIFIED,
+        metadata.getReadLockMode());
   }
 }
