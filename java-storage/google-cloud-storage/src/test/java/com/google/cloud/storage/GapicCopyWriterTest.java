@@ -36,7 +36,6 @@ import com.google.storage.v2.Object;
 import com.google.storage.v2.RewriteObjectRequest;
 import com.google.storage.v2.RewriteResponse;
 import com.google.storage.v2.StorageClient;
-import com.google.storage.v2.stub.StorageStub;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
@@ -97,7 +96,7 @@ public final class GapicCopyWriterTest {
             .build();
     metrics = options.getStorageClientMetrics();
 
-    StorageStub storageStub = mock(StorageStub.class);
+    TestStorageStub storageStub = new TestStorageStub();
     StorageClient storageClient = StorageClient.create(storageStub);
     storage =
         new GrpcStorageImpl(

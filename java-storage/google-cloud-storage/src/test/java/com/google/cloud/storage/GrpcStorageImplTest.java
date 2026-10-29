@@ -48,7 +48,6 @@ import com.google.storage.v2.RewriteObjectRequest;
 import com.google.storage.v2.RewriteResponse;
 import com.google.storage.v2.StorageClient;
 import com.google.storage.v2.UpdateObjectRequest;
-import com.google.storage.v2.stub.StorageStub;
 import io.grpc.Status;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
@@ -65,7 +64,7 @@ public final class GrpcStorageImplTest {
 
   private InMemoryMetricReader reader;
   private GrpcStorageOptions options;
-  private StorageStub storageStub;
+  private TestStorageStub storageStub;
   private GrpcStorageImpl grpcStorage;
 
   @Before
@@ -80,7 +79,7 @@ public final class GrpcStorageImplTest {
             .setCredentials(NoCredentials.getInstance())
             .build();
 
-    storageStub = mock(StorageStub.class);
+    storageStub = new TestStorageStub();
     StorageClient storageClient = StorageClient.create(storageStub);
     Retrier retrier = options.createRetrier();
 
@@ -100,7 +99,7 @@ public final class GrpcStorageImplTest {
   public void unaryCalls_recordOperationMetrics() {
     // 1. Create (Bucket)
     UnaryCallable<CreateBucketRequest, Bucket> createBucketCallable = mock(UnaryCallable.class);
-    when(storageStub.createBucketCallable()).thenReturn(createBucketCallable);
+    storageStub.createBucketCallable = createBucketCallable;
     when(createBucketCallable.call(any(CreateBucketRequest.class), any(GrpcCallContext.class)))
         .thenReturn(Bucket.newBuilder().setName("projects/_/buckets/" + BUCKET_NAME).build());
 
@@ -110,7 +109,7 @@ public final class GrpcStorageImplTest {
 
     // 2. Get (Blob)
     UnaryCallable<GetObjectRequest, Object> getObjectCallable = mock(UnaryCallable.class);
-    when(storageStub.getObjectCallable()).thenReturn(getObjectCallable);
+    storageStub.getObjectCallable = getObjectCallable;
     when(getObjectCallable.call(any(GetObjectRequest.class), any(GrpcCallContext.class)))
         .thenReturn(
             Object.newBuilder()
@@ -124,7 +123,7 @@ public final class GrpcStorageImplTest {
 
     // 3. Delete (Blob)
     UnaryCallable<DeleteObjectRequest, Empty> deleteObjectCallable = mock(UnaryCallable.class);
-    when(storageStub.deleteObjectCallable()).thenReturn(deleteObjectCallable);
+    storageStub.deleteObjectCallable = deleteObjectCallable;
     when(deleteObjectCallable.call(any(DeleteObjectRequest.class), any(GrpcCallContext.class)))
         .thenReturn(Empty.getDefaultInstance());
 
@@ -134,7 +133,7 @@ public final class GrpcStorageImplTest {
 
     // 4. Update (Blob)
     UnaryCallable<UpdateObjectRequest, Object> updateObjectCallable = mock(UnaryCallable.class);
-    when(storageStub.updateObjectCallable()).thenReturn(updateObjectCallable);
+    storageStub.updateObjectCallable = updateObjectCallable;
     when(updateObjectCallable.call(any(UpdateObjectRequest.class), any(GrpcCallContext.class)))
         .thenReturn(
             Object.newBuilder()
@@ -151,7 +150,7 @@ public final class GrpcStorageImplTest {
 
     // 5. Restore (Blob)
     UnaryCallable<RestoreObjectRequest, Object> restoreObjectCallable = mock(UnaryCallable.class);
-    when(storageStub.restoreObjectCallable()).thenReturn(restoreObjectCallable);
+    storageStub.restoreObjectCallable = restoreObjectCallable;
     when(restoreObjectCallable.call(any(RestoreObjectRequest.class), any(GrpcCallContext.class)))
         .thenReturn(
             Object.newBuilder()
@@ -166,7 +165,7 @@ public final class GrpcStorageImplTest {
 
     // 6. MoveBlob
     UnaryCallable<MoveObjectRequest, Object> moveObjectCallable = mock(UnaryCallable.class);
-    when(storageStub.moveObjectCallable()).thenReturn(moveObjectCallable);
+    storageStub.moveObjectCallable = moveObjectCallable;
     when(moveObjectCallable.call(any(MoveObjectRequest.class), any(GrpcCallContext.class)))
         .thenReturn(
             Object.newBuilder()
@@ -188,7 +187,7 @@ public final class GrpcStorageImplTest {
   @SuppressWarnings("unchecked")
   public void deleteBlob_onNonExistentObject_returnsFalseWithErrorTypeOk() {
     UnaryCallable<DeleteObjectRequest, Empty> deleteObjectCallable = mock(UnaryCallable.class);
-    when(storageStub.deleteObjectCallable()).thenReturn(deleteObjectCallable);
+    storageStub.deleteObjectCallable = deleteObjectCallable;
     when(deleteObjectCallable.call(any(DeleteObjectRequest.class), any(GrpcCallContext.class)))
         .thenThrow(
             new NotFoundException(
@@ -207,7 +206,7 @@ public final class GrpcStorageImplTest {
   public void copy_propagatesMultiContextToRetrierWithAlg() {
     UnaryCallable<RewriteObjectRequest, RewriteResponse> rewriteObjectCallable =
         mock(UnaryCallable.class);
-    when(storageStub.rewriteObjectCallable()).thenReturn(rewriteObjectCallable);
+    storageStub.rewriteObjectCallable = rewriteObjectCallable;
     when(rewriteObjectCallable.withDefaultCallContext(any(GrpcCallContext.class)))
         .thenReturn(rewriteObjectCallable);
 
