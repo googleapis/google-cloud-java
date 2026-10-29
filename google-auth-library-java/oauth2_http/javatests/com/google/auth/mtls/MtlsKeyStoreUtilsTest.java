@@ -44,6 +44,9 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
+import java.security.GeneralSecurityException;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
 import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.Signature;
@@ -51,6 +54,7 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.security.spec.InvalidKeySpecException;
+import java.util.Base64;
 import java.util.Collections;
 import org.junit.jupiter.api.Test;
 
@@ -308,6 +312,43 @@ class MtlsKeyStoreUtilsTest {
             IllegalArgumentException.class,
             () -> MtlsKeyStoreUtils.createMtlsKeyStore(stream(read(CHAIN_CERT_PATH))));
     assertEquals("private key is missing from certAndKey string", e.getMessage());
+  }
+
+  @Test
+  void createMtlsKeyStore_mismatchedRsaKeyPair_throws() throws Exception {
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    kpg.initialize(1024);
+    KeyPair otherRsaKeyPair = kpg.generateKeyPair();
+    String otherRsaKeyPem = toPkcs8Pem(otherRsaKeyPair.getPrivate());
+
+    GeneralSecurityException e =
+        assertThrows(
+            GeneralSecurityException.class,
+            () ->
+                MtlsKeyStoreUtils.createMtlsKeyStore(
+                    stream(read(SINGLE_CERT_PATH), otherRsaKeyPem)));
+    assertEquals("Certificate and private key do not match", e.getMessage());
+  }
+
+  @Test
+  void createMtlsKeyStore_mismatchedEcKeyPair_throws() throws Exception {
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("EC");
+    kpg.initialize(256);
+    KeyPair otherEcKeyPair = kpg.generateKeyPair();
+    String otherEcKeyPem = toPkcs8Pem(otherEcKeyPair.getPrivate());
+
+    GeneralSecurityException e =
+        assertThrows(
+            GeneralSecurityException.class,
+            () ->
+                MtlsKeyStoreUtils.createMtlsKeyStore(stream(read(CHAIN_CERT_PATH), otherEcKeyPem)));
+    assertEquals("Certificate and private key do not match", e.getMessage());
+  }
+
+  static String toPkcs8Pem(PrivateKey privateKey) {
+    return "-----BEGIN PRIVATE KEY-----\n"
+        + Base64.getMimeEncoder(64, "\n".getBytes(UTF_8)).encodeToString(privateKey.getEncoded())
+        + "\n-----END PRIVATE KEY-----\n";
   }
 
   static String read(String path) throws IOException {

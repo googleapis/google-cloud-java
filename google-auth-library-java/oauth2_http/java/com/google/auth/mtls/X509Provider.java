@@ -35,6 +35,7 @@ import com.google.auth.oauth2.EnvironmentProvider;
 import com.google.auth.oauth2.PropertyProvider;
 import com.google.auth.oauth2.SystemEnvironmentProvider;
 import com.google.auth.oauth2.SystemPropertyProvider;
+import com.google.common.annotations.VisibleForTesting;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -42,6 +43,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.SequenceInputStream;
 import java.security.KeyStore;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -52,6 +55,25 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 @InternalApi
 public class X509Provider implements MtlsProvider {
+  private static final Logger LOGGER = Logger.getLogger(X509Provider.class.getName());
+
+  // Retries for verifying certificate and private key matching during atomic key rotation.
+  static final int CERT_KEY_MATCH_RETRIES = 3;
+  static final long CERT_KEY_MATCH_RETRY_INTERVAL_MS = 100;
+
+  @VisibleForTesting
+  @FunctionalInterface
+  interface TimeService {
+    void sleep(long millis) throws InterruptedException;
+  }
+
+  private static volatile TimeService timeService = Thread::sleep;
+
+  @VisibleForTesting
+  static void setTimeServiceForTesting(@Nullable TimeService service) {
+    timeService = service != null ? service : Thread::sleep;
+  }
+
   private final EnvironmentProvider envProvider;
   private final PropertyProvider propProvider;
   private final @Nullable String certConfigPathOverride;
@@ -193,22 +215,45 @@ public class X509Provider implements MtlsProvider {
       throw configUnavailable;
     }
 
-    // Read the certificate and private key file paths into streams.
-    try (InputStream certStream = new FileInputStream(new File(workloadCertConfig.getCertPath()));
-        InputStream privateKeyStream =
-            new FileInputStream(new File(workloadCertConfig.getPrivateKeyPath()));
-        SequenceInputStream certAndPrivateKeyStream =
-            new SequenceInputStream(certStream, privateKeyStream)) {
+    // Read the certificate and private key file paths into streams, retrying to handle transient
+    // mid-rotation mismatches or file replacements when separate cert_path and key_path files are
+    // updated non-atomically relative to each other.
+    Exception lastException = null;
+    for (int attempt = 0; attempt < CERT_KEY_MATCH_RETRIES; attempt++) {
+      try (InputStream certStream =
+              new FileInputStream(new File(workloadCertConfig.getCertPath()));
+          InputStream privateKeyStream =
+              new FileInputStream(new File(workloadCertConfig.getPrivateKeyPath()));
+          SequenceInputStream certAndPrivateKeyStream =
+              new SequenceInputStream(certStream, privateKeyStream)) {
 
-      // Build a key store using the combined stream.
-      return MtlsKeyStoreUtils.createMtlsKeyStore(certAndPrivateKeyStream);
-    } catch (CertificateSourceUnavailableException e) {
-      // Throw the CertificateSourceUnavailableException without wrapping.
-      throw e;
-    } catch (Exception e) {
-      // Wrap all other exception types to an IOException.
-      throw new IOException("X509Provider: Unexpected IOException:", e);
+        // Build a key store using the combined stream.
+        return MtlsKeyStoreUtils.createMtlsKeyStore(certAndPrivateKeyStream);
+      } catch (CertificateSourceUnavailableException e) {
+        // Throw the CertificateSourceUnavailableException without wrapping.
+        throw e;
+      } catch (Exception e) {
+        lastException = e;
+        if (attempt + 1 < CERT_KEY_MATCH_RETRIES) {
+          LOGGER.log(
+              Level.FINE,
+              "X509Provider: Failed to load or verify certificate and private key on attempt "
+                  + (attempt + 1)
+                  + ", retrying",
+              e);
+          try {
+            timeService.sleep(CERT_KEY_MATCH_RETRY_INTERVAL_MS);
+          } catch (InterruptedException interrupted) {
+            Thread.currentThread().interrupt();
+            throw new IOException(
+                "X509Provider: Interrupted while waiting for certificate and private key match.",
+                interrupted);
+          }
+        }
+      }
     }
+    // Wrap all other exception types to an IOException.
+    throw new IOException("X509Provider: Unexpected IOException:", lastException);
   }
 
   /**

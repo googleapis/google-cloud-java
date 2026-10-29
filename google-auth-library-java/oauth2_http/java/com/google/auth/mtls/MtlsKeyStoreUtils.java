@@ -40,11 +40,14 @@ import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
 import java.security.KeyStore;
 import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.security.Signature;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -75,6 +78,9 @@ final class MtlsKeyStoreUtils {
 
   private static final Logger LOGGER = Logger.getLogger(MtlsKeyStoreUtils.class.getName());
 
+  private static final byte[] VERIFICATION_DATA =
+      "verification-data".getBytes(StandardCharsets.UTF_8);
+
   private MtlsKeyStoreUtils() {}
 
   /**
@@ -89,7 +95,8 @@ final class MtlsKeyStoreUtils {
    * @throws IllegalArgumentException if the input has no certificate or no private key, or if a PEM
    *     section before both a certificate and a private key have been read is malformed
    * @throws GeneralSecurityException if the first certificate or the private key cannot be parsed,
-   *     or the key store cannot be created
+   *     if the private key does not match the leaf certificate's public key, or if the key store
+   *     cannot be created
    * @throws IOException if the input cannot be read
    */
   static KeyStore createMtlsKeyStore(InputStream certAndKey)
@@ -143,14 +150,62 @@ final class MtlsKeyStoreUtils {
         LOGGER.log(Level.FINE, "Skipping unparsable extra certificate in mTLS chain", e);
       }
     }
+    X509Certificate leaf = chain.get(0);
     PrivateKey key =
-        KeyFactory.getInstance(chain.get(0).getPublicKey().getAlgorithm())
+        KeyFactory.getInstance(leaf.getPublicKey().getAlgorithm())
             .generatePrivate(new PKCS8EncodedKeySpec(privateKey));
+    verifyKeyPair(leaf, key);
 
     KeyStore keyStore = KeyStore.getInstance("JKS");
     keyStore.load(null);
     keyStore.setKeyEntry("alias", key, new char[] {}, chain.toArray(new X509Certificate[0]));
     return keyStore;
+  }
+
+  /**
+   * Verifies that {@code privateKey} corresponds to the public key in {@code cert} by performing a
+   * test signature and verification.
+   */
+  private static void verifyKeyPair(X509Certificate cert, PrivateKey privateKey)
+      throws GeneralSecurityException {
+    PublicKey publicKey = cert.getPublicKey();
+    String keyAlgorithm = publicKey.getAlgorithm();
+    String sigAlg;
+    if ("RSA".equals(keyAlgorithm)) {
+      sigAlg = "SHA256withRSA";
+    } else if ("EC".equals(keyAlgorithm) || "ECDSA".equals(keyAlgorithm)) {
+      sigAlg = "SHA256withECDSA";
+    } else {
+      return;
+    }
+
+    boolean matches = false;
+    GeneralSecurityException failureCause = null;
+    try {
+      if ("ECDSA".equals(keyAlgorithm) && publicKey.getEncoded() != null) {
+        // SunEC rejects keys whose algorithm is "ECDSA" rather than "EC"; normalize the key.
+        publicKey =
+            KeyFactory.getInstance("EC")
+                .generatePublic(new X509EncodedKeySpec(publicKey.getEncoded()));
+      }
+
+      Signature signer = Signature.getInstance(sigAlg);
+      signer.initSign(privateKey);
+      signer.update(VERIFICATION_DATA);
+      byte[] signature = signer.sign();
+
+      Signature verifier = Signature.getInstance(sigAlg);
+      verifier.initVerify(publicKey);
+      verifier.update(VERIFICATION_DATA);
+
+      matches = verifier.verify(signature);
+    } catch (GeneralSecurityException e) {
+      failureCause = e;
+    }
+
+    if (!matches) {
+      throw new GeneralSecurityException("Certificate and private key do not match", failureCause);
+    }
   }
 
   private static boolean containsCertificate(List<byte[]> certificates, byte[] candidate) {
