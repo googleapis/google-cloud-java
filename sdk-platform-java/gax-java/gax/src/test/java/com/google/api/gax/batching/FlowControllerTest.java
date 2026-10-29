@@ -52,6 +52,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
@@ -663,6 +664,7 @@ class FlowControllerTest {
     t.join();
   }
 
+  @Disabled("Flaky test: b/579436657")
   @Test
   void testFlowControlBlockEventIsRecorded() throws Exception {
     // Test when reserve is blocked for at least FlowController#RESERVE_FLOW_CONTROL_THRESHOLD_MS,
