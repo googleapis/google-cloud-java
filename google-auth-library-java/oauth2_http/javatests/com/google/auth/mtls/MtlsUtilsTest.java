@@ -932,37 +932,50 @@ class MtlsUtilsTest {
   }
 
   @Test
-  void getWorkloadCertPath_explicitConfigOutsideWellKnownDir_certInWellKnownDir_pollsUntilReady(
-      @TempDir Path outsideDir) throws IOException {
+  void
+      useMtlsClientCertificate_explicitConfigOrCertOutsideWellKnownDir_doesNotPollAndThrowsImmediately(
+          @TempDir Path outsideDir) throws IOException {
     MtlsUtils.setWellKnownSpiffeDirForTesting(tempDir.toAbsolutePath().toString() + "/");
-    Path certFile = tempDir.resolve("certificates.pem");
-    Path keyFile = tempDir.resolve("private_key.pem");
-    Path configFile = outsideDir.resolve("certificate_config.json");
-    String configJson =
+    int[] sleepCount = {0};
+    MtlsUtils.setTimeServiceForTesting(millis -> sleepCount[0]++);
+
+    // 1. Config outside well-known dir referencing cert/key inside well-known dir does not poll.
+    Path certInWellKnown = tempDir.resolve("certificates.pem");
+    Path keyInWellKnown = tempDir.resolve("private_key.pem");
+    Path configOutside = outsideDir.resolve("certificate_config.json");
+    String configOutsideJson =
         String.format(
             "{\"cert_configs\":{\"workload\":{\"cert_path\":\"%s\",\"key_path\":\"%s\"}}}",
-            certFile.toString().replace("\\", "\\\\"), keyFile.toString().replace("\\", "\\\\"));
-    Files.write(configFile, configJson.getBytes());
+            certInWellKnown.toString().replace("\\", "\\\\"),
+            keyInWellKnown.toString().replace("\\", "\\\\"));
+    Files.write(configOutside, configOutsideJson.getBytes());
 
-    int[] sleepCount = {0};
-    MtlsUtils.setTimeServiceForTesting(
-        millis -> {
-          sleepCount[0]++;
-          if (sleepCount[0] == 2) {
-            try {
-              Files.write(certFile, "dummy cert".getBytes());
-              Files.write(keyFile, "dummy key".getBytes());
-            } catch (IOException e) {
-              throw new RuntimeException(e);
-            }
-          }
-        });
+    EnvironmentProvider envOutsideConfig =
+        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configOutside.toString() : null;
 
-    EnvironmentProvider envProvider =
-        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+    assertThrows(
+        IllegalStateException.class,
+        () -> MtlsUtils.useMtlsClientCertificate(envOutsideConfig, homeInTempDir()));
+    assertEquals(0, sleepCount[0]);
 
-    assertTrue(MtlsUtils.useMtlsClientCertificate(envProvider, homeInTempDir()));
-    assertEquals(2, sleepCount[0]);
+    // 2. Config inside well-known dir referencing cert/key outside well-known dir does not poll.
+    MtlsUtils.resetStartupStateForTesting();
+    Path certOutside = outsideDir.resolve("certificates.pem");
+    Path configInside = tempDir.resolve("certificate_config.json");
+    String configInsideJson =
+        String.format(
+            "{\"cert_configs\":{\"workload\":{\"cert_path\":\"%s\",\"key_path\":\"%s\"}}}",
+            certOutside.toString().replace("\\", "\\\\"),
+            keyInWellKnown.toString().replace("\\", "\\\\"));
+    Files.write(configInside, configInsideJson.getBytes());
+
+    EnvironmentProvider envOutsideCert =
+        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configInside.toString() : null;
+
+    assertThrows(
+        IllegalStateException.class,
+        () -> MtlsUtils.useMtlsClientCertificate(envOutsideCert, homeInTempDir()));
+    assertEquals(0, sleepCount[0]);
   }
 
   @Test
@@ -1039,47 +1052,22 @@ class MtlsUtilsTest {
   }
 
   @Test
-  void getWorkloadCertPath_explicitConfigInWellKnownDir_symlinkedWellKnownDir_pollsUntilReady()
-      throws IOException {
-    Path realWellKnown = Files.createDirectory(tempDir.resolve("real_run_secrets"));
-    Path symlinkWellKnown = tempDir.resolve("var_run_secrets");
-    try {
-      Files.createSymbolicLink(symlinkWellKnown, realWellKnown);
-    } catch (UnsupportedOperationException | IOException e) {
-      Assumptions.assumeTrue(false, "Symbolic links not supported: " + e.getMessage());
-    }
-
-    MtlsUtils.setWellKnownSpiffeDirForTesting(symlinkWellKnown.toAbsolutePath().toString() + "/");
-    Path configViaRealPath = realWellKnown.resolve("certificate_config.json");
-    Path certViaRealPath = realWellKnown.resolve("certificates.pem");
-    Path keyViaRealPath = realWellKnown.resolve("private_key.pem");
-
-    int[] sleepCount = {0};
-    MtlsUtils.setTimeServiceForTesting(
-        millis -> {
-          sleepCount[0]++;
-          if (sleepCount[0] == 1) {
-            try {
-              Files.write(certViaRealPath, "dummy cert".getBytes());
-              Files.write(keyViaRealPath, "dummy key".getBytes());
-              String configJson =
-                  String.format(
-                      "{\"cert_configs\":{\"workload\":{\"cert_path\":\"%s\",\"key_path\":\"%s\"}}}",
-                      certViaRealPath.toString().replace("\\", "\\\\"),
-                      keyViaRealPath.toString().replace("\\", "\\\\"));
-              Files.write(configViaRealPath, configJson.getBytes());
-            } catch (IOException e) {
-              throw new RuntimeException(e);
-            }
-          }
-        });
-
-    EnvironmentProvider envProvider =
-        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configViaRealPath.toString() : null;
-
-    assertEquals(
-        certViaRealPath.toString(), MtlsUtils.getWorkloadCertPath(envProvider, homeInTempDir()));
-    assertEquals(1, sleepCount[0]);
+  void isPathInWellKnownDir_matchesVarRunAndRunPrefixesOnly() {
+    assertTrue(
+        MtlsUtils.isPathInWellKnownDir(
+            "/var/run/secrets/workload-spiffe-credentials/certificate_config.json",
+            MtlsUtils.WELL_KNOWN_SPIFFE_DIR));
+    assertTrue(
+        MtlsUtils.isPathInWellKnownDir(
+            "/run/secrets/workload-spiffe-credentials/certificate_config.json",
+            MtlsUtils.WELL_KNOWN_SPIFFE_DIR));
+    assertFalse(
+        MtlsUtils.isPathInWellKnownDir(
+            "/var/run/secrets/workload-spiffe-credentials/../other/certificate_config.json",
+            MtlsUtils.WELL_KNOWN_SPIFFE_DIR));
+    assertFalse(
+        MtlsUtils.isPathInWellKnownDir(
+            "/etc/google-cloud-sdk/certificate_config.json", MtlsUtils.WELL_KNOWN_SPIFFE_DIR));
   }
 
   @Test

@@ -35,6 +35,7 @@ import com.google.auth.oauth2.EnvironmentProvider;
 import com.google.auth.oauth2.PropertyProvider;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableList;
 import com.google.common.io.BaseEncoding;
 import java.io.File;
 import java.io.FileInputStream;
@@ -72,6 +73,20 @@ public class MtlsUtils {
       "/var/run/secrets/workload-spiffe-credentials/";
 
   /**
+   * Alternate well-known directory path where workload SPIFFE credentials and certificate
+   * configurations may be mounted (for example, when {@code /run/secrets} is mounted directly or
+   * referenced via resolved {@code /run} paths).
+   */
+  @InternalApi
+  public static final String WELL_KNOWN_RUN_SPIFFE_DIR =
+      "/run/secrets/workload-spiffe-credentials/";
+
+  private static final ImmutableList<Path> DEFAULT_WELL_KNOWN_SPIFFE_DIRS =
+      ImmutableList.of(
+          Paths.get(WELL_KNOWN_SPIFFE_DIR).toAbsolutePath().normalize(),
+          Paths.get(WELL_KNOWN_RUN_SPIFFE_DIR).toAbsolutePath().normalize());
+
+  /**
    * Well-known path of the combined certificate chain and private key bundle that GKE delivers to
    * pods with Agent Identity (Pod Certificates). Used as a fallback client certificate source when
    * no certificate configuration file is configured or present.
@@ -80,7 +95,7 @@ public class MtlsUtils {
       WELL_KNOWN_SPIFFE_DIR + "x509.credential-bundle.private-key.pem";
 
   // Polling configuration for initial container startup credential file readiness when
-  // GOOGLE_API_CERTIFICATE_CONFIG (or its referenced cert/key files) resides in the well-known
+  // GOOGLE_API_CERTIFICATE_CONFIG and its referenced cert/key files reside in the well-known
   // SPIFFE directory (50 * 100ms + 50 * 500ms = 30 seconds total).
   private static final int FAST_POLL_CYCLES = 50;
   private static final long FAST_POLL_INTERVAL_MS = 100; // 0.1 seconds
@@ -105,8 +120,10 @@ public class MtlsUtils {
   private static volatile TimeService timeService = Thread::sleep;
 
   // Tracks whether initial container startup discovery has completed across both mTLS transport
-  // initialization and Agent Identity token binding so the 30-second startup poll runs at most once
-  // per process.
+  // initialization and Agent Identity token binding. Once initial startup discovery completes (or
+  // fails), periodic steady-state token refreshes in AgentIdentityUtils and subsequent calls skip
+  // the 30-second startup poll so transient mid-rotation file updates or caller retries do not
+  // block for 30 seconds.
   private static volatile boolean initialStartupCompleted = false;
 
   /**
@@ -165,37 +182,26 @@ public class MtlsUtils {
   }
 
   /**
-   * Resolves symlinks on existing ancestor directories of {@code path} (for example, {@code
-   * /var/run} to {@code /run} before startup files are created), preserving any trailing
-   * non-existent path elements.
+   * Checks whether {@code pathStr} resides within {@code targetWellKnownDir} (or either of the
+   * default well-known SPIFFE directories {@link #WELL_KNOWN_SPIFFE_DIR} and {@link
+   * #WELL_KNOWN_RUN_SPIFFE_DIR} when {@code targetWellKnownDir} is {@link #WELL_KNOWN_SPIFFE_DIR}).
    */
-  @InternalApi
-  public static Path resolveRealPathAllowingMissing(Path path) {
-    Path normalized = path.toAbsolutePath().normalize();
-    Path current = normalized;
-    while (current != null) {
-      try {
-        Path realCurrent = current.toRealPath();
-        Path relative = current.relativize(normalized);
-        return relative.toString().isEmpty()
-            ? realCurrent
-            : realCurrent.resolve(relative).normalize();
-      } catch (IOException e) {
-        current = current.getParent();
-      }
-    }
-    return normalized;
-  }
-
-  /** Checks whether {@code pathStr} resides within {@code targetWellKnownDir}. */
   @InternalApi
   public static boolean isPathInWellKnownDir(@Nullable String pathStr, String targetWellKnownDir) {
     if (Strings.isNullOrEmpty(pathStr) || Strings.isNullOrEmpty(targetWellKnownDir)) {
       return false;
     }
     try {
-      Path path = resolveRealPathAllowingMissing(Paths.get(pathStr));
-      Path wellKnown = resolveRealPathAllowingMissing(Paths.get(targetWellKnownDir));
+      Path path = Paths.get(pathStr).toAbsolutePath().normalize();
+      if (WELL_KNOWN_SPIFFE_DIR.equals(targetWellKnownDir)) {
+        for (Path defaultDir : DEFAULT_WELL_KNOWN_SPIFFE_DIRS) {
+          if (path.startsWith(defaultDir)) {
+            return true;
+          }
+        }
+        return false;
+      }
+      Path wellKnown = Paths.get(targetWellKnownDir).toAbsolutePath().normalize();
       return path.startsWith(wellKnown);
     } catch (Exception e) {
       return false;
@@ -223,7 +229,7 @@ public class MtlsUtils {
 
   /**
    * On initial container startup ({@code !isInitialStartupCompleted()}), polls up to 30 seconds
-   * when {@code configFile} or its referenced {@code cert_path}/{@code key_path} resides within
+   * when {@code configFile} and its referenced {@code cert_path} and {@code key_path} reside within
    * {@code targetWellKnownDir} until the configuration and referenced certificate/key files are
    * non-empty readable files, or a non-retryable state is encountered.
    *
@@ -243,14 +249,8 @@ public class MtlsUtils {
     }
     boolean shouldPoll = isPathInWellKnownDir(configFile.getPath(), targetWellKnownDir);
     try {
-      WorkloadCertificateConfiguration config =
-          waitForExplicitConfigStartupIfNeeded(
-              configFile, targetWellKnownDir, sleepService, onFirstPollSleep);
-      if (config != null && !shouldPoll) {
-        shouldPoll =
-            isPathInWellKnownDir(config.getCertPath(), targetWellKnownDir)
-                || isPathInWellKnownDir(config.getPrivateKeyPath(), targetWellKnownDir);
-      }
+      waitForExplicitConfigStartupIfNeeded(
+          configFile, targetWellKnownDir, sleepService, onFirstPollSleep);
     } catch (InterruptedIOException e) {
       throw new IOException(
           "Interrupted while waiting for Agent Identity certificate files for bound"
@@ -264,7 +264,7 @@ public class MtlsUtils {
 
   /**
    * On initial container startup ({@code !initialStartupCompleted}), polls up to 30 seconds when
-   * {@code configFile} or its referenced {@code cert_path}/{@code key_path} resides within the
+   * {@code configFile} and its referenced {@code cert_path} and {@code key_path} reside within the
    * well-known SPIFFE directory until the configuration and referenced certificate/key files are
    * non-empty readable files.
    */
@@ -298,12 +298,6 @@ public class MtlsUtils {
         try (InputStream certConfigStream = new FileInputStream(configFile)) {
           WorkloadCertificateConfiguration config =
               WorkloadCertificateConfiguration.fromCertificateConfigurationStream(certConfigStream);
-          if (!shouldPoll
-              && (isPathInWellKnownDir(config.getCertPath(), targetWellKnownDir)
-                  || isPathInWellKnownDir(config.getPrivateKeyPath(), targetWellKnownDir))) {
-            shouldPoll = true;
-            maxCycles = TOTAL_POLL_CYCLES;
-          }
           if (!shouldPoll) {
             initialStartupCompleted = true;
             return config;
@@ -317,6 +311,12 @@ public class MtlsUtils {
           if (isNonEmptyReadableFile(certFile) && isNonEmptyReadableFile(keyFile)) {
             initialStartupCompleted = true;
             return config;
+          }
+          if (!isPathInWellKnownDir(config.getCertPath(), targetWellKnownDir)
+              || !isPathInWellKnownDir(config.getPrivateKeyPath(), targetWellKnownDir)) {
+            // Startup polling only applies when the config file AND its referenced cert_path and
+            // key_path all reside within the well-known directory.
+            break;
           }
         } catch (CertificateSourceUnavailableException e) {
           // Valid JSON without a workload section (e.g. ECP configuration); do not poll.
