@@ -206,9 +206,7 @@ public class TransactionManagerImplTest {
   public void commitFailsWithCancelledRollsBack() {
     when(session.newTransaction(eq(Options.fromTransactionOptions()), any())).thenReturn(txn);
     manager.begin();
-    doThrow(
-            SpannerExceptionFactory.newSpannerException(
-                ErrorCode.CANCELLED, "commit cancelled"))
+    doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.CANCELLED, "commit cancelled"))
         .when(txn)
         .commit();
     SpannerException e = assertThrows(SpannerException.class, () -> manager.commit());
