@@ -24,7 +24,7 @@ import com.google.cloud.storage.Retrying.RetrierWithAlg;
 import com.google.storage.v2.WriteObjectRequest;
 import com.google.storage.v2.WriteObjectResponse;
 import java.util.function.Supplier;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import org.jspecify.annotations.Nullable;
 
 final class GrpcBlobWriteChannel extends BaseStorageWriteChannel<WriteObjectResponse> {
 
