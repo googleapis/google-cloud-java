@@ -218,6 +218,24 @@ public final class ITFastOpenFakeTest {
     assertThat(requestsReceived).isEmpty();
   }
 
+  @Test
+  public void readSession_withASeekableChannelConfig_isRejected() throws Exception {
+    FakeStorage server = fakeServer(ImmutableMap.of());
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      assertThrows(
+          IllegalArgumentException.class,
+          () ->
+              dataClient.readSession(
+                  OPEN, CTX, ImmutableList.of(ReadProjectionConfigs.asSeekableChannel())));
+    }
+
+    assertThat(requestsReceived).isEmpty();
+  }
+
   /**
    * A fake server that answers each request in {@code responses} and adds it to {@link
    * #requestsReceived}. Any other request is answered with an error.
