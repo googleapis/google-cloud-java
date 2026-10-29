@@ -23,7 +23,6 @@ import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.httpjson.HttpJsonStatusCode;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import io.grpc.CallOptions;
@@ -480,28 +479,6 @@ public final class StorageMetricsContextTest {
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("ALREADY_EXISTS");
     assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("");
-  }
-
-  @Test
-  public void recordAttemptFailure_apiExceptionWithHttpJsonStatusCode() {
-    Attributes base = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http");
-    StorageMetricsContext context = StorageMetricsContext.create("GetObject", base);
-    ApiException apiException =
-        new ApiException(
-            new HttpResponseException.Builder(404, "Not Found", new HttpHeaders()).build(),
-            HttpJsonStatusCode.of(404),
-            false);
-    context.recordAttemptFailure(metrics, apiException);
-
-    Collection<MetricData> collected = reader.collectAllMetrics();
-    LongPointData attemptPoint =
-        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_ERROR_TYPE))
-        .isEqualTo("NOT_FOUND");
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
-        .isEqualTo("404");
-    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
         .isEqualTo("");
   }
 

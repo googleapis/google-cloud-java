@@ -19,7 +19,6 @@ package com.google.cloud.storage;
 import static java.util.Objects.requireNonNull;
 
 import com.google.api.gax.grpc.GrpcCallContext;
-import com.google.api.gax.httpjson.HttpJsonStatusCode;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import io.grpc.CallOptions;
@@ -336,16 +335,6 @@ final class StorageMetricsContext {
         int code = ((com.google.api.client.http.HttpResponseException) curr).getStatusCode();
         if (code > 0) {
           return Integer.toString(code);
-        }
-      }
-      if (curr instanceof ApiException) {
-        ApiException apiException = (ApiException) curr;
-        if (apiException.getStatusCode() instanceof HttpJsonStatusCode) {
-          int code =
-              ((HttpJsonStatusCode) apiException.getStatusCode()).getCode().getHttpStatusCode();
-          if (code > 0) {
-            return Integer.toString(code);
-          }
         }
       }
       curr = curr.getCause();
