@@ -819,9 +819,12 @@ public class Publisher implements PublisherInterface {
     } catch (RuntimeException e) {
       logger.log(Level.WARNING, "Unexpected error while processing the publish hedging queue", e);
     } finally {
-      queueLock.unlock();
-      isQueueProcessingScheduled.set(false);
-      scheduleQueueProcessing();
+      try {
+        isQueueProcessingScheduled.set(false);
+        scheduleQueueProcessing();
+      } finally {
+        queueLock.unlock();
+      }
     }
   }
 
@@ -918,7 +921,7 @@ public class Publisher implements PublisherInterface {
     }
     publishAllOutstanding();
     messagesWaiter.waitComplete();
-    // Stop the hedging timer and clear the queue to safely shutdown.
+    // Stop the hedging timer and clear the queue to safely shut down.
     queueLock.lock();
     try {
       if (queueProcessingFuture != null) {

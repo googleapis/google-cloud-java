@@ -21,6 +21,7 @@ import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc.PublisherImplBase;
 import io.grpc.Metadata;
+import io.grpc.stub.ServerCallStreamObserver;
 import io.grpc.stub.StreamObserver;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 class FakePublisherServiceImpl extends PublisherImplBase {
 
   private final LinkedBlockingQueue<PublishRequest> requests = new LinkedBlockingQueue<>();
+  private final AtomicInteger cancelledCalls = new AtomicInteger();
   private final LinkedBlockingQueue<Metadata> capturedHeaders = new LinkedBlockingQueue<>();
   private final LinkedBlockingQueue<Response> publishResponses = new LinkedBlockingQueue<>();
   private final AtomicInteger nextMessageId = new AtomicInteger(1);
@@ -83,6 +85,8 @@ class FakePublisherServiceImpl extends PublisherImplBase {
   @Override
   public void publish(
       PublishRequest request, final StreamObserver<PublishResponse> responseObserver) {
+    ((ServerCallStreamObserver<PublishResponse>) responseObserver)
+        .setOnCancelHandler(() -> cancelledCalls.incrementAndGet());
     Response response;
     try {
       if (autoPublishResponse) {
@@ -113,6 +117,10 @@ class FakePublisherServiceImpl extends PublisherImplBase {
           TimeUnit.MILLISECONDS);
       requests.add(request);
     }
+  }
+
+  public int getCancelledCallCount() {
+    return cancelledCalls.get();
   }
 
   private void sendResponse(Response response, StreamObserver<PublishResponse> responseObserver) {
