@@ -19,7 +19,9 @@ package com.google.cloud.storage;
 import static java.util.Objects.requireNonNull;
 
 import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.httpjson.HttpJsonStatusCode;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiException;
 import io.grpc.CallOptions;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
@@ -30,12 +32,14 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Package-private holder for operation metric state across asynchronous and thread-hopping
  * boundaries.
  */
+@NullMarked
 final class StorageMetricsContext {
 
   static final CallOptions.Key<StorageMetricsContext> GRPC_CALL_OPTIONS_KEY =
@@ -294,36 +298,34 @@ final class StorageMetricsContext {
     return StorageClientMetrics.NETWORK_PATH_CLOUDPATH;
   }
 
-  @Nullable
-  private String extractRpcStatusCode(Throwable e) {
+  private @Nullable String extractRpcStatusCode(@Nullable Throwable e) {
     String fromContext = baseAttributes.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE);
     if (fromContext != null) {
       return fromContext;
     }
     Throwable curr = e;
-    while (curr != null) {
+    while (curr != null && curr.getCause() != curr) {
       if (curr instanceof io.grpc.StatusRuntimeException) {
         return ((io.grpc.StatusRuntimeException) curr).getStatus().getCode().name();
       }
       if (curr instanceof io.grpc.StatusException) {
         return ((io.grpc.StatusException) curr).getStatus().getCode().name();
       }
-      if (curr instanceof com.google.api.gax.rpc.ApiException) {
-        return ((com.google.api.gax.rpc.ApiException) curr).getStatusCode().getCode().name();
+      if (curr instanceof ApiException) {
+        return ((ApiException) curr).getStatusCode().getCode().name();
       }
       curr = curr.getCause();
     }
     return null;
   }
 
-  @Nullable
-  private String extractHttpStatusCode(Throwable e) {
+  private @Nullable String extractHttpStatusCode(@Nullable Throwable e) {
     String fromContext = baseAttributes.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE);
     if (fromContext != null) {
       return fromContext;
     }
     Throwable curr = e;
-    while (curr != null) {
+    while (curr != null && curr.getCause() != curr) {
       if (curr instanceof StorageException) {
         int code = ((StorageException) curr).getCode();
         if (code > 0) {
@@ -334,6 +336,16 @@ final class StorageMetricsContext {
         int code = ((com.google.api.client.http.HttpResponseException) curr).getStatusCode();
         if (code > 0) {
           return Integer.toString(code);
+        }
+      }
+      if (curr instanceof ApiException) {
+        ApiException apiException = (ApiException) curr;
+        if (apiException.getStatusCode() instanceof HttpJsonStatusCode) {
+          int code =
+              ((HttpJsonStatusCode) apiException.getStatusCode()).getCode().getHttpStatusCode();
+          if (code > 0) {
+            return Integer.toString(code);
+          }
         }
       }
       curr = curr.getCause();
@@ -386,7 +398,7 @@ final class StorageMetricsContext {
         .withOption(API_CALL_CONTEXT_KEY, this);
   }
 
-  ApiCallContext attach(@Nullable ApiCallContext context) {
+  @Nullable ApiCallContext attach(@Nullable ApiCallContext context) {
     if (context == null) {
       return null;
     }
@@ -396,7 +408,7 @@ final class StorageMetricsContext {
     return context.withOption(API_CALL_CONTEXT_KEY, this);
   }
 
-  Map<String, Object> attach(@Nullable Map<String, Object> properties) {
+  @Nullable Map<String, Object> attach(@Nullable Map<String, Object> properties) {
     if (properties != null) {
       properties.put(HTTP_REQUEST_PROPERTY_KEY, this);
     }
@@ -452,6 +464,6 @@ final class StorageMetricsContext {
   }
 
   AttributesBuilder attributesBuilder() {
-    return Attributes.builder().putAll(baseAttributes);
+    return baseAttributes.toBuilder();
   }
 }
