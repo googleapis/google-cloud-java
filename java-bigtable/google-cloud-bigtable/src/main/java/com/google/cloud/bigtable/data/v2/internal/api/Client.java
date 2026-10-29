@@ -24,6 +24,7 @@ import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.OpenAuthorizedViewRequest;
 import com.google.bigtable.v2.OpenMaterializedViewRequest;
 import com.google.bigtable.v2.OpenTableRequest.Permission;
+import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ConfiguredChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
@@ -64,6 +65,8 @@ public class Client implements AutoCloseable {
   // pool can't drain in that window, something is genuinely wrong on the server side and we give
   // up on it so close() returns. The watchdog interval is what makes the worst case finite.
   private static final Duration POOL_DRAIN_TIMEOUT = Duration.ofMinutes(6);
+
+  public static final String USER_AGENT = "bigtable-java/" + Version.VERSION;
 
   public static final FeatureFlags BASE_FEATURE_FLAGS =
       FeatureFlags.newBuilder()
@@ -113,6 +116,19 @@ public class Client implements AutoCloseable {
   // close() has already missed in its snapshot.
   private boolean closed = false;
 
+  public static ChannelProvider configureChannelProvider(
+      ChannelProvider channelProvider, Metrics metrics) {
+    return new ConfiguredChannelProvider(
+        channelProvider,
+        channelBuilder ->
+            metrics
+                .configureGrpcChannel(channelBuilder)
+                .userAgent(USER_AGENT)
+                .keepAliveTime(KEEPALIVE_TIME_MS, TimeUnit.MILLISECONDS)
+                .keepAliveTimeout(KEEPALIVE_TIMEOUT_MS, TimeUnit.MILLISECONDS)
+                .maxInboundMessageSize(256 * 1024 * 1024));
+  }
+
   public static Client create(ClientSettings settings) throws IOException {
     FeatureFlags featureFlags =
         settings.getChannelProvider().updateFeatureFlags(BASE_FEATURE_FLAGS);
@@ -156,6 +172,9 @@ public class Client implements AutoCloseable {
       metrics.start();
     }
 
+    ChannelProvider channelProvider =
+        configureChannelProvider(settings.getChannelProvider(), metrics);
+
     ClientConfigurationManager configManager = null;
 
     try {
@@ -163,7 +182,7 @@ public class Client implements AutoCloseable {
           new ClientConfigurationManager(
               featureFlags,
               clientInfo,
-              settings.getChannelProvider(),
+              channelProvider,
               metrics.getDebugTagTracer(),
               backgroundExecutor);
       configManager.start().get();
@@ -193,7 +212,7 @@ public class Client implements AutoCloseable {
         Resource.createOwned(backgroundExecutor, backgroundExecutor::shutdown),
         Resource.<Executor>createOwned(
             userCallbackExecutor, () -> shutdownAndAwait(userCallbackExecutor)),
-        settings.getChannelProvider());
+        channelProvider);
   }
 
   /**
@@ -219,25 +238,9 @@ public class Client implements AutoCloseable {
 
     defaultCallOptions = CallOptions.DEFAULT;
 
-    ChannelProvider configuredChannelProvider =
-        new ConfiguredChannelProvider(
-            channelProvider,
-            channelBuilder ->
-                metrics
-                    .get()
-                    .configureGrpcChannel(channelBuilder)
-                    .userAgent(ChannelProviders.USER_AGENT)
-                    .keepAliveTime(KEEPALIVE_TIME_MS, TimeUnit.MILLISECONDS)
-                    .keepAliveTimeout(KEEPALIVE_TIMEOUT_MS, TimeUnit.MILLISECONDS)
-                    // TODO: consider localizing this for large reads
-                    .maxInboundMessageSize(256 * 1024 * 1024));
-
     SwitchingChannelPool switchingPool =
         new SwitchingChannelPool(
-            configuredChannelProvider,
-            configManager.get(),
-            metrics.get(),
-            backgroundExecutor.get());
+            channelProvider, configManager.get(), metrics.get(), backgroundExecutor.get());
     switchingPool.start();
     this.channelPool = Resource.createOwned(switchingPool, switchingPool::close);
   }

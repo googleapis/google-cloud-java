@@ -19,7 +19,6 @@ package com.google.cloud.bigtable.data.v2.internal.api;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.bigtable.v2.FeatureFlags;
-import com.google.cloud.bigtable.Version;
 import com.google.cloud.bigtable.data.v2.internal.channels.DirectPathIpInterceptor;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
@@ -40,8 +39,6 @@ import java.util.function.Function;
 
 public abstract class ChannelProviders {
   public static final String DEFAULT_HOST = "bigtable.googleapis.com";
-
-  public static final String USER_AGENT = "java-bigtable/" + Version.VERSION;
 
   public interface ChannelProvider {
 
@@ -81,7 +78,7 @@ public abstract class ChannelProviders {
 
     @Override
     public ManagedChannelBuilder<?> newChannelBuilder() {
-      return Grpc.newChannelBuilderForAddress(host, port, credentials).userAgent(USER_AGENT);
+      return Grpc.newChannelBuilderForAddress(host, port, credentials);
     }
 
     @Override
@@ -142,7 +139,6 @@ public abstract class ChannelProviders {
     @Override
     public ManagedChannelBuilder<?> newChannelBuilder() {
       return Grpc.newChannelBuilder("google-c2p:///" + endpoint, credentials)
-          .userAgent(USER_AGENT)
           .intercept(new DirectPathIpInterceptor(true));
     }
 
@@ -197,7 +193,7 @@ public abstract class ChannelProviders {
       String host = endpoint.substring(0, portSplit);
       int port = Integer.parseInt(endpoint.substring(portSplit + 1));
 
-      return Grpc.newChannelBuilderForAddress(host, port, credentials).userAgent(USER_AGENT);
+      return Grpc.newChannelBuilderForAddress(host, port, credentials);
     }
 
     @Override

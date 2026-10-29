@@ -32,9 +32,7 @@ import com.google.bigtable.v2.PeerInfo.TransportType;
 import com.google.bigtable.v2.Row;
 import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
 import com.google.bigtable.v2.SessionReadRowResponse;
-import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelProvider;
-import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ConfiguredChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.Client;
 import com.google.cloud.bigtable.data.v2.internal.api.Client.Resource;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
@@ -73,7 +71,6 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -150,7 +147,7 @@ public class ShimImpl implements Shim {
 
     // Channel provider for the client. DirectAccess with fallback by default.
     ChannelProvider clientChannelProvider =
-        configureChannelProvider(
+        Client.configureChannelProvider(
             GaxDirectAccessChannelProvider.createWithFallback(
                 (InstantiatingGrpcChannelProvider) transportProvider, callCreds),
             metrics);
@@ -159,7 +156,7 @@ public class ShimImpl implements Shim {
         Client.BASE_FEATURE_FLAGS, clientInfo, clientChannelProvider, metrics, bgExecutor)) {
       // Directpath failed, revert to basic channel provider for the client.
       clientChannelProvider =
-          configureChannelProvider(
+          Client.configureChannelProvider(
               new GaxBasicChannelProvider(
                   (InstantiatingGrpcChannelProvider) transportProvider, callCreds),
               metrics);
@@ -167,7 +164,7 @@ public class ShimImpl implements Shim {
 
     // ChannelProvider for configuration manager.
     ChannelProvider configChannelProvider =
-        configureChannelProvider(
+        Client.configureChannelProvider(
             new GaxBasicChannelProvider(
                 (InstantiatingGrpcChannelProvider) transportProvider, callCreds),
             metrics);
@@ -307,20 +304,6 @@ public class ShimImpl implements Shim {
                 .setDaemon(true)
                 .build());
     return Resource.createOwned(owned, () -> Client.shutdownAndAwait(owned));
-  }
-
-  private static ChannelProvider configureChannelProvider(
-      ChannelProvider channelProvider, Metrics metrics) {
-    return new ConfiguredChannelProvider(
-        channelProvider,
-        channelBuilder ->
-            metrics
-                .configureGrpcChannel(channelBuilder)
-                .userAgent(ChannelProviders.USER_AGENT)
-                .keepAliveTime(Client.KEEPALIVE_TIME_MS, TimeUnit.MILLISECONDS)
-                .keepAliveTimeout(Client.KEEPALIVE_TIMEOUT_MS, TimeUnit.MILLISECONDS)
-                // TODO: consider localizing this for large reads
-                .maxInboundMessageSize(256 * 1024 * 1024));
   }
 
   private static boolean checkDirectAccessAvailable(
