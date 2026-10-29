@@ -25,6 +25,7 @@ import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.CurrentMillisClock;
+import com.google.api.core.NanoClock;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
@@ -51,7 +52,6 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.CodedOutputStream;
 import com.google.protobuf.util.Timestamps;
 import com.google.pubsub.v1.PublishRequest;
@@ -74,7 +74,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CountDownLatch;
@@ -155,7 +154,6 @@ public class Publisher implements PublisherInterface {
   private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
 
   private final HedgingSettings hedgingSettings;
-  private final Set<StatusCode.Code> retryableCodes;
 
   /**
    * Scale factor to represent decimal token values (e.g. 0.1 refill ratio) as integers inside the
@@ -167,7 +165,8 @@ public class Publisher implements PublisherInterface {
   private final AtomicInteger hedgeTokenBucket = new AtomicInteger();
   private int scaledMaxHedgeTokens;
   private int scaledHedgeRefillAmount;
-  private final ApiClock clock;
+  private final ApiClock hedgeClock;
+  private final ApiClock wallClock;
 
   private final ConcurrentLinkedQueue<HedgedRequest> hedgingQueue;
   private final AtomicBoolean isQueueProcessingScheduled;
@@ -263,7 +262,6 @@ public class Publisher implements PublisherInterface {
         .setRetrySettings(this.retrySettings)
         .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
-    this.retryableCodes = ImmutableSet.copyOf(stubSettings.publishSettings().getRetryableCodes());
     backgroundResourceList.add(publisherStub);
     backgroundResources = new BackgroundResourceAggregation(backgroundResourceList);
     shutdown = new AtomicBoolean(false);
@@ -275,7 +273,8 @@ public class Publisher implements PublisherInterface {
           (int) Math.round(this.hedgingSettings.getRefillRatio() * HEDGE_TOKEN_SCALE);
       this.hedgeTokenBucket.set(0);
     }
-    this.clock = builder.clock != null ? builder.clock : CurrentMillisClock.getDefaultClock();
+    this.hedgeClock = builder.clock != null ? builder.clock : NanoClock.getDefaultClock();
+    this.wallClock = builder.clock != null ? builder.clock : CurrentMillisClock.getDefaultClock();
     this.publishContext = GrpcCallContext.createDefault();
     this.publishContextWithCompression =
         GrpcCallContext.createDefault()
@@ -466,10 +465,6 @@ public class Publisher implements PublisherInterface {
    * wait for the send operations to complete. To wait for messages to send, call {@code get} on the
    * futures returned from {@code publish}.
    */
-  Set<StatusCode.Code> getRetryableCodes() {
-    return retryableCodes;
-  }
-
   public void publishAllOutstanding() {
     OutstandingBatch unorderedOutstandingBatch = null;
     messagesBatchLock.lock();
@@ -722,7 +717,7 @@ public class Publisher implements PublisherInterface {
   }
 
   private ApiFuture<PublishResponse> startHedgedCall(final OutstandingBatch outstandingBatch) {
-    long deadlineMs = clock.millisTime() + retrySettings.getTotalTimeoutDuration().toMillis();
+    long deadlineMs = hedgeClock.millisTime() + retrySettings.getTotalTimeoutDuration().toMillis();
     final CancellationSharer coordinator =
         new CancellationSharer(outstandingBatch, this, deadlineMs);
 
@@ -747,7 +742,7 @@ public class Publisher implements PublisherInterface {
     ApiFuture<PublishResponse> firstAttemptFuture = publishCall(outstandingBatch);
     coordinator.addAttempt(0, firstAttemptFuture);
     long delayMs = hedgingSettings.getHedgeDelay().toMillis();
-    HedgedRequest item = new HedgedRequest(coordinator, 1, clock.millisTime() + delayMs);
+    HedgedRequest item = new HedgedRequest(coordinator, 1, hedgeClock.millisTime() + delayMs);
     hedgingQueue.add(item);
     scheduleQueueProcessing();
 
@@ -765,7 +760,7 @@ public class Publisher implements PublisherInterface {
         return;
       }
 
-      long delay = Math.max(0, nextItem.getSendAfterMs() - clock.millisTime());
+      long delay = Math.max(0, nextItem.getSendAfterMs() - hedgeClock.millisTime());
 
       queueProcessingFuture =
           executor.schedule(
@@ -784,7 +779,7 @@ public class Publisher implements PublisherInterface {
   private void processQueue() {
     queueLock.lock();
     try {
-      long now = clock.millisTime();
+      long now = hedgeClock.millisTime();
 
       HedgedRequest item;
       while ((item = hedgingQueue.peek()) != null && item.getSendAfterMs() <= now) {
@@ -796,7 +791,7 @@ public class Publisher implements PublisherInterface {
           continue;
         }
 
-        long remainingTimeoutMs = coordinator.getAbsoluteDeadlineMs() - clock.millisTime();
+        long remainingTimeoutMs = coordinator.getAbsoluteDeadlineMs() - hedgeClock.millisTime();
         if (remainingTimeoutMs <= 0) {
           continue;
         }
@@ -820,11 +815,12 @@ public class Publisher implements PublisherInterface {
               "Hedging rate limited due to lack of tokens.",
               batch.getMessageWrappers().get(0));
         }
-      }
-      isQueueProcessingScheduled.set(false);
-      scheduleQueueProcessing();
+      } catch (RuntimeException e) {
+      logger.log(Level.WARNING, "Unexpected error while processing the publish hedging queue", e);
     } finally {
       queueLock.unlock();
+      isQueueProcessingScheduled.set(false);
+      scheduleQueueProcessing();
     }
   }
 
@@ -841,7 +837,7 @@ public class Publisher implements PublisherInterface {
         List<OutstandingPublish> outstandingPublishes, int batchSizeBytes, String orderingKey) {
       this.outstandingPublishes = outstandingPublishes;
       attempt = 1;
-      creationTime = clock.millisTime();
+      creationTime = wallClock.millisTime();
       this.batchSizeBytes = batchSizeBytes;
       this.orderingKey = orderingKey;
     }
