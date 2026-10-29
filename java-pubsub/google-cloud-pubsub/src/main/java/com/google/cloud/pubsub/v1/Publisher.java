@@ -924,6 +924,16 @@ public class Publisher implements PublisherInterface {
     }
     publishAllOutstanding();
     messagesWaiter.waitComplete();
+    // Stop the hedging timer and clear the queue to safely shutdown.
+    queueLock.lock();
+    try {
+      if (queueProcessingFuture != null) {
+        queueProcessingFuture.cancel(false);
+      }
+      hedgingQueue.clear();
+    } finally {
+      queueLock.unlock();
+    }
     backgroundResources.shutdown();
   }
 
