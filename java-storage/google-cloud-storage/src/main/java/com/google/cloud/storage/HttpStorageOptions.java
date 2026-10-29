@@ -551,10 +551,5 @@ public class HttpStorageOptions extends StorageOptions {
     public ApiClock getClock() {
       return HttpStorageOptions.this.getClock();
     }
-
-    @Override
-    public @Nullable StorageClientMetrics getStorageClientMetrics() {
-      return HttpStorageOptions.this.getStorageClientMetrics();
-    }
   }
 }

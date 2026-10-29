@@ -85,8 +85,8 @@ public final class RetryingMetricsTest {
     reader = InMemoryMetricReader.create();
     provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     metrics = StorageClientMetrics.create(provider, true, false);
-    deps = RetryingDependencies.simple(NanoClock.getDefaultClock(), RETRY_SETTINGS, metrics);
-    baseRetrier = new DefaultRetrier(UnaryOperator.identity(), deps);
+    deps = RetryingDependencies.simple(NanoClock.getDefaultClock(), RETRY_SETTINGS);
+    baseRetrier = new DefaultRetrier(UnaryOperator.identity(), deps, metrics);
     alwaysRetrier = baseRetrier.withAlg(Retrying.alwaysRetry());
     neverRetrier = baseRetrier.withAlg(Retrying.neverRetry());
     collected = null;
@@ -104,7 +104,7 @@ public final class RetryingMetricsTest {
   }
 
   @Test
-  public void retriedCallSuccessOnThirdAttempt_recordsRetriesAndErrors() {
+  public void retriedCallSuccessOnThirdAttempt_recordsAttemptsAndErrors() {
     AtomicInteger attemptCounter = new AtomicInteger(0);
     String result =
         alwaysRetrier.run(
@@ -123,6 +123,27 @@ public final class RetryingMetricsTest {
     assertOutcomeMetrics(STATUS_OK, 3L, 2L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_UNAVAILABLE, 2L);
     assertDuration(STATUS_OK);
+  }
+
+  @Test
+  public void decoderThrowsException_recordsOnlyAttemptFailureNotSuccess() {
+    StorageException se =
+        assertThrows(
+            StorageException.class,
+            () ->
+                neverRetrier.run(
+                    () -> "raw-response",
+                    raw -> {
+                      throw new IllegalArgumentException("decode failed: " + raw);
+                    },
+                    StorageMetricsContext.create("GetObject")));
+
+    assertThat(se.getCause()).isInstanceOf(IllegalArgumentException.class);
+    assertOutcomeMetrics(STATUS_UNKNOWN, 1L, 1L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, KEY_ERROR_TYPE, STATUS_OK, 0L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, KEY_ERROR_TYPE, STATUS_UNKNOWN, 1L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_UNKNOWN, 1L);
+    assertDuration(STATUS_UNKNOWN);
   }
 
   @Test
@@ -150,10 +171,9 @@ public final class RetryingMetricsTest {
   @Test
   public void metricsDisabled_recordsNoMetrics() {
     StorageClientMetrics disabledMetrics = StorageClientMetrics.create(provider, false, false);
-    RetryingDependencies disabledDeps =
-        RetryingDependencies.simple(NanoClock.getDefaultClock(), RETRY_SETTINGS, disabledMetrics);
     RetrierWithAlg retrier =
-        new DefaultRetrier(UnaryOperator.identity(), disabledDeps).withAlg(Retrying.alwaysRetry());
+        new DefaultRetrier(UnaryOperator.identity(), deps, disabledMetrics)
+            .withAlg(Retrying.alwaysRetry());
 
     assertThat(retrier.run(() -> "no-op metrics", Decoder.identity())).isEqualTo("no-op metrics");
     assertThat(collect()).isEmpty();
@@ -161,10 +181,8 @@ public final class RetryingMetricsTest {
 
   @Test
   public void nullMetrics_executesWithoutRecording() {
-    RetryingDependencies nullDeps =
-        RetryingDependencies.simple(NanoClock.getDefaultClock(), RETRY_SETTINGS, null);
     RetrierWithAlg retrier =
-        new DefaultRetrier(UnaryOperator.identity(), nullDeps).withAlg(Retrying.alwaysRetry());
+        new DefaultRetrier(UnaryOperator.identity(), deps, null).withAlg(Retrying.alwaysRetry());
 
     assertThat(retrier.run(() -> "null-metrics", Decoder.identity())).isEqualTo("null-metrics");
   }
@@ -177,70 +195,38 @@ public final class RetryingMetricsTest {
 
   @Test
   public void httpStorageOptions_createRetrier_wiresMetricsWhenEnabled() {
-    HttpStorageOptions options =
+    assertCreateRetrierWiresMetricsWhenEnabled(
         HttpStorageOptions.newBuilder()
             .setMeterProvider(provider)
             .setEnableOtelMetrics(true)
-            .build();
-
-    assertThat(options.getStorageClientMetrics()).isNotNull();
-    Retrier retrier = options.createRetrier();
-    assertThat(retrier).isNotNull();
-
-    StorageMetricsContext ctx = options.getStorageClientMetrics().createContext("GetObject");
-    assertThat(retrier.run(Retrying.neverRetry(), () -> "options-success", Decoder.identity(), ctx))
-        .isEqualTo("options-success");
-    assertAttr(METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_OK, 1L);
+            .build());
   }
 
   @Test
   public void httpStorageOptions_createRetrier_noMetricsWhenDisabled() {
-    HttpStorageOptions options =
+    assertCreateRetrierNoMetricsWhenDisabled(
         HttpStorageOptions.newBuilder()
             .setMeterProvider(provider)
             .setEnableOtelMetrics(false)
-            .build();
-
-    assertThat(options.getStorageClientMetrics()).isNull();
-    Retrier retrier = options.createRetrier();
-    assertThat(retrier.run(Retrying.neverRetry(), () -> "options-disabled", Decoder.identity()))
-        .isEqualTo("options-disabled");
-    assertThat(collect()).isEmpty();
+            .build());
   }
 
   @Test
   public void grpcStorageOptions_createRetrier_wiresMetricsWhenEnabled() {
-    GrpcStorageOptions options =
+    assertCreateRetrierWiresMetricsWhenEnabled(
         GrpcStorageOptions.newBuilder()
             .setMeterProvider(provider)
             .setEnableOtelMetrics(true)
-            .build();
-
-    assertThat(options.getStorageClientMetrics()).isNotNull();
-    Retrier retrier = options.createRetrier();
-    assertThat(retrier).isNotNull();
-
-    StorageMetricsContext ctx = options.getStorageClientMetrics().createContext("GetObject");
-    String res =
-        retrier.run(Retrying.neverRetry(), () -> "grpc-options-success", Decoder.identity(), ctx);
-    assertThat(res).isEqualTo("grpc-options-success");
-    assertAttr(METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_OK, 1L);
+            .build());
   }
 
   @Test
   public void grpcStorageOptions_createRetrier_noMetricsWhenDisabled() {
-    GrpcStorageOptions options =
+    assertCreateRetrierNoMetricsWhenDisabled(
         GrpcStorageOptions.newBuilder()
             .setMeterProvider(provider)
             .setEnableOtelMetrics(false)
-            .build();
-
-    assertThat(options.getStorageClientMetrics()).isNull();
-    Retrier retrier = options.createRetrier();
-    String res =
-        retrier.run(Retrying.neverRetry(), () -> "grpc-options-disabled", Decoder.identity());
-    assertThat(res).isEqualTo("grpc-options-disabled");
-    assertThat(collect()).isEmpty();
+            .build());
   }
 
   @Test
@@ -412,6 +398,11 @@ public final class RetryingMetricsTest {
     assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_ERRORS)).isEqualTo(1L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 2L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 1L);
+
+    multiContext.recordOperation(metrics, null);
+    collected = null;
+    assertOutcomeMetrics(STATUS_OK, 2L, 1L);
+    assertDuration(STATUS_OK);
   }
 
   @Test
@@ -438,6 +429,11 @@ public final class RetryingMetricsTest {
     assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_ERRORS)).isEqualTo(1L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 2L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 1L);
+
+    multiContext.recordOperation(metrics, null);
+    collected = null;
+    assertOutcomeMetrics(STATUS_OK, 2L, 1L);
+    assertDuration(STATUS_OK);
   }
 
   @Test
@@ -464,6 +460,11 @@ public final class RetryingMetricsTest {
     assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_ERRORS)).isEqualTo(1L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 2L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 1L);
+
+    multiContext.recordOperation(metrics, null);
+    collected = null;
+    assertOutcomeMetrics(STATUS_OK, 2L, 1L);
+    assertDuration(STATUS_OK);
   }
 
   @Test
@@ -490,6 +491,30 @@ public final class RetryingMetricsTest {
     assertThat(getCounterValue(collect(), METRIC_GCP_STORAGE_CLIENT_ERRORS)).isEqualTo(1L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 2L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_GCP_STORAGE_OPERATION, "MultiStepOp", 1L);
+
+    multiContext.recordOperation(metrics, null);
+    collected = null;
+    assertOutcomeMetrics(STATUS_OK, 2L, 1L);
+    assertDuration(STATUS_OK);
+  }
+
+  private void assertCreateRetrierWiresMetricsWhenEnabled(StorageOptions options) {
+    assertThat(options.getStorageClientMetrics()).isNotNull();
+    Retrier retrier = options.createRetrier();
+    assertThat(retrier).isNotNull();
+
+    StorageMetricsContext ctx = options.getStorageClientMetrics().createContext("GetObject");
+    assertThat(retrier.run(Retrying.neverRetry(), () -> "options-success", Decoder.identity(), ctx))
+        .isEqualTo("options-success");
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_OK, 1L);
+  }
+
+  private void assertCreateRetrierNoMetricsWhenDisabled(StorageOptions options) {
+    assertThat(options.getStorageClientMetrics()).isNull();
+    Retrier retrier = options.createRetrier();
+    assertThat(retrier.run(Retrying.neverRetry(), () -> "options-disabled", Decoder.identity()))
+        .isEqualTo("options-disabled");
+    assertThat(collect()).isEmpty();
   }
 
   private Collection<MetricData> collect() {

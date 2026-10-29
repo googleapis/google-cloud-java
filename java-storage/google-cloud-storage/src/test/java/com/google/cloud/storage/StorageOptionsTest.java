@@ -22,6 +22,7 @@ import static org.junit.Assert.assertThrows;
 
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.metrics.MeterProvider;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -357,7 +358,7 @@ public final class StorageOptionsTest {
 
   @Test
   public void setMetricInterval_acceptsSubSixtySecondsWithCustomOpenTelemetry() throws Exception {
-    io.opentelemetry.api.OpenTelemetry customOtel = io.opentelemetry.api.OpenTelemetry.noop();
+    OpenTelemetry customOtel = OpenTelemetry.noop();
 
     forEachTransport(
         builder -> {
@@ -461,56 +462,73 @@ public final class StorageOptionsTest {
   }
 
   @Test
-  public void meterProvider_usedWhenExplicitlySet() {
+  public void meterProvider_usedWhenExplicitlySet() throws Exception {
     MeterProvider customMeterProvider = SdkMeterProvider.builder().build();
-    HttpStorageOptions options =
-        StorageOptions.http()
-            .setEnableOtelMetrics(true)
-            .setMeterProvider(customMeterProvider)
-            .build();
-    StorageClientMetrics metrics = options.getStorageClientMetrics();
-    assertThat(metrics).isNotNull();
+    forEachTransport(
+        builder -> {
+          StorageOptions options =
+              builder.setEnableOtelMetrics(true).setMeterProvider(customMeterProvider).build();
+          StorageClientMetrics metrics = options.getStorageClientMetrics();
+          assertThat(metrics).isNotNull();
+        });
   }
 
   @Test
-  public void customOpenTelemetry_meterProviderUsedWhenConfigured() {
+  public void customOpenTelemetry_meterProviderUsedWhenConfigured() throws Exception {
     SdkMeterProvider sdkMeterProvider = SdkMeterProvider.builder().build();
     OpenTelemetry customOtel =
-        io.opentelemetry.sdk.OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
-    HttpStorageOptions options =
-        StorageOptions.http().setEnableOtelMetrics(true).setOpenTelemetry(customOtel).build();
-    assertThat(options.isCustomOpenTelemetryConfigured()).isTrue();
-    StorageClientMetrics metrics = options.getStorageClientMetrics();
-    assertThat(metrics).isNotNull();
+        OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
+    forEachTransport(
+        builder -> {
+          StorageOptions options =
+              builder.setEnableOtelMetrics(true).setOpenTelemetry(customOtel).build();
+          assertThat(options.isCustomOpenTelemetryConfigured()).isTrue();
+          StorageClientMetrics metrics = options.getStorageClientMetrics();
+          assertThat(metrics).isNotNull();
+        });
   }
 
   @Test
-  public void closeStorageClientMetrics_cleansUpMetricsAndClosesSdkOwnedProvider() {
-    StorageClientMetricsTest.TestMetricReader reader =
-        new StorageClientMetricsTest.TestMetricReader();
-    SdkMeterProvider mockOwnedProvider =
-        SdkMeterProvider.builder().registerMetricReader(reader).build();
-    HttpStorageOptions options =
-        StorageOptions.http()
-            .setEnableOtelMetrics(true)
-            .setMeterProvider(mockOwnedProvider)
-            .build();
-    StorageClientMetrics metrics =
-        StorageClientMetrics.create(mockOwnedProvider, mockOwnedProvider, true, false);
-    options.storageClientMetrics = metrics;
+  public void closeStorageClientMetrics_cleansUpMetricsAndClosesSdkOwnedProvider()
+      throws Exception {
+    Field metricsField = StorageOptions.class.getDeclaredField("storageClientMetrics");
+    metricsField.setAccessible(true);
 
-    options.closeStorageClientMetrics();
-    assertThat(options.storageClientMetrics).isNull();
-    assertThat(reader.shutdownCalled.get()).isTrue();
+    forEachTransport(
+        builder -> {
+          StorageClientMetricsTest.TestMetricReader reader =
+              new StorageClientMetricsTest.TestMetricReader();
+          SdkMeterProvider mockOwnedProvider =
+              SdkMeterProvider.builder().registerMetricReader(reader).build();
+          StorageOptions options =
+              builder.setEnableOtelMetrics(true).setMeterProvider(mockOwnedProvider).build();
+          StorageClientMetrics metrics =
+              StorageClientMetrics.create(mockOwnedProvider, mockOwnedProvider, true, false);
+          metricsField.set(options, metrics);
+
+          options.closeStorageClientMetrics();
+
+          assertThat(options.getStorageClientMetrics()).isNull();
+          assertThat(reader.shutdownCalled.get()).isTrue();
+        });
   }
 
   @Test
-  public void closeStorageClientMetrics_doesNotFailOnUserSuppliedMeterProvider() {
-    MeterProvider userProvider = SdkMeterProvider.builder().build();
-    HttpStorageOptions options =
-        StorageOptions.http().setEnableOtelMetrics(true).setMeterProvider(userProvider).build();
-    assertThat(options.getStorageClientMetrics()).isNotNull();
-    options.closeStorageClientMetrics();
-    assertThat(options.storageClientMetrics).isNull();
+  public void closeStorageClientMetrics_doesNotFailOnUserSuppliedMeterProvider() throws Exception {
+    forEachTransport(
+        builder -> {
+          StorageClientMetricsTest.TestMetricReader reader =
+              new StorageClientMetricsTest.TestMetricReader();
+          MeterProvider userProvider =
+              SdkMeterProvider.builder().registerMetricReader(reader).build();
+          StorageOptions options =
+              builder.setEnableOtelMetrics(true).setMeterProvider(userProvider).build();
+          assertThat(options.getStorageClientMetrics()).isNotNull();
+
+          options.closeStorageClientMetrics();
+
+          assertThat(options.getStorageClientMetrics()).isNull();
+          assertThat(reader.shutdownCalled.get()).isFalse();
+        });
   }
 }

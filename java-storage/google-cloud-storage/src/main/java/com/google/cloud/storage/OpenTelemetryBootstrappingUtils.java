@@ -104,26 +104,10 @@ final class OpenTelemetryBootstrappingUtils {
     GCPResourceProvider resourceProvider = new GCPResourceProvider();
     Attributes detectedAttributes = resourceProvider.getAttributes();
 
-    @Nullable String detectedProjectId =
-        detectedAttributes.get(AttributeKey.stringKey("cloud.account.id"));
-    if (projectId == null && detectedProjectId == null) {
-      log.warning(
-          "Unable to determine the Project ID in order to report metrics. No gRPC client metrics"
-              + " will be reported.");
+    String projectIdToUse =
+        resolveProjectIdForMetrics(detectedAttributes, projectId, "gRPC client metrics");
+    if (projectIdToUse == null) {
       return channelConfigurator != null ? channelConfigurator : ChannelConfigurator.identity();
-    }
-
-    String projectIdToUse = detectedProjectId == null ? projectId : detectedProjectId;
-    if (!projectIdToUse.equals(projectId)) {
-      log.warning(
-          "The Project ID configured for gRPC client metrics is "
-              + projectIdToUse
-              + ", but the Project ID of the storage client is "
-              + projectId
-              + ". Make sure that the service account in use has the required metric writing role "
-              + "(roles/monitoring.metricWriter) in the project "
-              + projectIdToUse
-              + ", or metrics will not be written.");
     }
 
     String metricServiceEndpoint = getCloudMonitoringEndpoint(endpoint, universeDomain);
@@ -207,7 +191,9 @@ final class OpenTelemetryBootstrappingUtils {
         metricServiceEndpoint = match;
       }
     }
-    return metricServiceEndpoint + ":" + endpoint.split(":")[1];
+    HostAndPort parsed = parseHostAndPort(endpoint);
+    int port = parsed != null ? parsed.getPortOrDefault(443) : 443;
+    return metricServiceEndpoint + ":" + port;
   }
 
   @Nullable
@@ -230,7 +216,11 @@ final class OpenTelemetryBootstrappingUtils {
     if (s.isEmpty()) {
       return null;
     }
-    return HostAndPort.fromString(s);
+    try {
+      return HostAndPort.fromString(s);
+    } catch (IllegalArgumentException e) {
+      return null;
+    }
   }
 
   static String formatStorageEndpoint(@Nullable String host) {
@@ -245,6 +235,45 @@ final class OpenTelemetryBootstrappingUtils {
   static String extractServerAddress(@Nullable String host) {
     HostAndPort parsed = parseHostAndPort(host);
     return parsed != null ? parsed.getHost() : null;
+  }
+
+  @Nullable
+  private static String resolveProjectIdForMetrics(
+      Attributes detectedAttributes,
+      @Nullable String configuredProjectId,
+      String metricsTypeLabel) {
+    @Nullable String detectedProjectId =
+        detectedAttributes.get(AttributeKey.stringKey("cloud.account.id"));
+    if (detectedProjectId != null && detectedProjectId.trim().isEmpty()) {
+      detectedProjectId = null;
+    }
+    @Nullable String cleanConfiguredProjectId =
+        (configuredProjectId != null && !configuredProjectId.trim().isEmpty())
+            ? configuredProjectId.trim()
+            : null;
+    if (cleanConfiguredProjectId == null && detectedProjectId == null) {
+      log.warning(
+          "Unable to determine the Project ID in order to report metrics. No "
+              + metricsTypeLabel
+              + " will be reported.");
+      return null;
+    }
+    String projectIdToUse =
+        detectedProjectId != null ? detectedProjectId : cleanConfiguredProjectId;
+    if (cleanConfiguredProjectId != null && !projectIdToUse.equals(cleanConfiguredProjectId)) {
+      log.warning(
+          "The Project ID configured for "
+              + metricsTypeLabel
+              + " is "
+              + projectIdToUse
+              + ", but the Project ID of the storage client is "
+              + cleanConfiguredProjectId
+              + ". Make sure that the service account in use has the required metric writing"
+              + " role (roles/monitoring.metricWriter) in the project "
+              + projectIdToUse
+              + ", or metrics will not be written.");
+    }
+    return projectIdToUse;
   }
 
   @Nullable
@@ -275,33 +304,11 @@ final class OpenTelemetryBootstrappingUtils {
       String api,
       Attributes detectedAttributes) {
     try {
-      @Nullable String detectedProjectId =
-          detectedAttributes.get(AttributeKey.stringKey("cloud.account.id"));
-      if (detectedProjectId != null && detectedProjectId.trim().isEmpty()) {
-        detectedProjectId = null;
-      }
-      @Nullable String cleanConfiguredProjectId =
-          (configuredProjectId != null && !configuredProjectId.trim().isEmpty())
-              ? configuredProjectId.trim()
-              : null;
-      if (cleanConfiguredProjectId == null && detectedProjectId == null) {
-        log.warning(
-            "Unable to determine the Project ID in order to report metrics. No storage client"
-                + " metrics will be reported.");
-        return null;
-      }
       String projectIdToUse =
-          detectedProjectId != null ? detectedProjectId : cleanConfiguredProjectId;
-      if (!projectIdToUse.equals(cleanConfiguredProjectId)) {
-        log.warning(
-            "The Project ID configured for storage client metrics is "
-                + projectIdToUse
-                + ", but the Project ID of the storage client is "
-                + cleanConfiguredProjectId
-                + ". Make sure that the service account in use has the required metric writing"
-                + " role (roles/monitoring.metricWriter) in the project "
-                + projectIdToUse
-                + ", or metrics will not be written.");
+          resolveProjectIdForMetrics(
+              detectedAttributes, configuredProjectId, "storage client metrics");
+      if (projectIdToUse == null) {
+        return null;
       }
       Attributes attributesToUse =
           Attributes.builder()

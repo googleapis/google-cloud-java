@@ -86,8 +86,6 @@ public final class StorageClientMetricsTest {
         .isEqualTo(StorageOptions.version());
     assertThat(metrics.getClientAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT))
         .isEqualTo("com.google.cloud:google-cloud-storage");
-    assertThat(metrics.getClientAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID))
-        .isNull();
 
     assertInstruments(metrics, DEBUG_INSTRUMENTS, /* isNull= */ true);
   }
@@ -293,7 +291,6 @@ public final class StorageClientMetricsTest {
 
     Attributes merged = metrics.attachClientAttributes(extra);
 
-    assertThat(merged.get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID)).isNull();
     assertThat(merged.get(StorageClientMetrics.KEY_GCP_CLIENT_VERSION))
         .isEqualTo(StorageOptions.version());
     assertThat(merged.get(StorageClientMetrics.KEY_GCP_CLIENT_ARTIFACT))
@@ -327,24 +324,6 @@ public final class StorageClientMetricsTest {
         .isEqualTo("http.response.status_code");
   }
 
-  private static int findBucketIndex(List<Double> boundaries, double value) {
-    for (int i = 0; i < boundaries.size(); i++) {
-      if (value <= boundaries.get(i)) {
-        return i;
-      }
-    }
-    return boundaries.size();
-  }
-
-  private static void assertHistogramBoundaries(
-      Map<String, MetricData> metricsMap, String metricName, List<Double> expectedBoundaries) {
-    String viewName = metricName.replace(".", "/");
-    assertThat(metricsMap).containsKey(viewName);
-    MetricData metricData = metricsMap.get(viewName);
-    HistogramPointData pointData = metricData.getHistogramData().getPoints().iterator().next();
-    assertThat(pointData.getBoundaries()).isEqualTo(expectedBoundaries);
-  }
-
   @Test
   public void close_closesOwnedMeterProvider() {
     TestMetricReader reader = new TestMetricReader();
@@ -365,9 +344,8 @@ public final class StorageClientMetricsTest {
   }
 
   @Test
-  public void createContext_populatesRpcSystemNameAndServerAddress() {
+  public void createContext_httpOptions_populatesRpcSystemNameAndServerAddress() {
     SdkMeterProvider meterProvider = SdkMeterProvider.builder().build();
-
     HttpStorageOptions httpOptions =
         StorageOptions.http()
             .setEnableOtelMetrics(true)
@@ -376,21 +354,40 @@ public final class StorageClientMetricsTest {
             .build();
     StorageClientMetrics httpMetrics = httpOptions.getStorageClientMetrics();
     assertThat(httpMetrics).isNotNull();
+
     StorageMetricsContext httpContext = httpMetrics.createContext("GetObject");
+
     assertThat(httpContext).isNotNull();
     assertThat(httpContext.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
         .isEqualTo("http");
     assertThat(httpContext.getBaseAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
     assertThat(httpContext.shouldRecordOperationOnRetrierExit()).isTrue();
+  }
+
+  @Test
+  public void createMultiStepContext_disablesRecordOperationOnRetrierExit() {
+    SdkMeterProvider meterProvider = SdkMeterProvider.builder().build();
+    HttpStorageOptions httpOptions =
+        StorageOptions.http()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(meterProvider)
+            .setHost("https://storage.googleapis.com")
+            .build();
+    StorageClientMetrics httpMetrics = httpOptions.getStorageClientMetrics();
 
     StorageMetricsContext httpMultiStep =
         StorageClientMetrics.createMultiStepContext(httpMetrics, "WriteObject");
+
     assertThat(httpMultiStep).isNotNull();
     assertThat(httpMultiStep.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
         .isEqualTo("http");
     assertThat(httpMultiStep.shouldRecordOperationOnRetrierExit()).isFalse();
+  }
 
+  @Test
+  public void createContext_grpcOptions_extractsServerAddressFromC2pUri() {
+    SdkMeterProvider meterProvider = SdkMeterProvider.builder().build();
     GrpcStorageOptions grpcOptions =
         StorageOptions.grpc()
             .setEnableOtelMetrics(true)
@@ -399,14 +396,19 @@ public final class StorageClientMetricsTest {
             .build();
     StorageClientMetrics grpcMetrics = grpcOptions.getStorageClientMetrics();
     assertThat(grpcMetrics).isNotNull();
+
     StorageMetricsContext grpcContext =
         StorageClientMetrics.createContext(grpcMetrics, "GetObject");
+
     assertThat(grpcContext).isNotNull();
     assertThat(grpcContext.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
         .isEqualTo("grpc");
     assertThat(grpcContext.getBaseAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
+  }
 
+  @Test
+  public void createContext_nullMetrics_returnsNull() {
     assertThat(StorageClientMetrics.createContext(null, "GetObject")).isNull();
     assertThat(StorageClientMetrics.createMultiStepContext(null, "WriteObject")).isNull();
   }
@@ -440,6 +442,24 @@ public final class StorageClientMetricsTest {
       shutdownCalled.set(true);
       return delegate.shutdown();
     }
+  }
+
+  private static int findBucketIndex(List<Double> boundaries, double value) {
+    for (int i = 0; i < boundaries.size(); i++) {
+      if (value <= boundaries.get(i)) {
+        return i;
+      }
+    }
+    return boundaries.size();
+  }
+
+  private static void assertHistogramBoundaries(
+      Map<String, MetricData> metricsMap, String metricName, List<Double> expectedBoundaries) {
+    String viewName = metricName.replace(".", "/");
+    assertThat(metricsMap).containsKey(viewName);
+    MetricData metricData = metricsMap.get(viewName);
+    HistogramPointData pointData = metricData.getHistogramData().getPoints().iterator().next();
+    assertThat(pointData.getBoundaries()).isEqualTo(expectedBoundaries);
   }
 
   private static void assertInstruments(

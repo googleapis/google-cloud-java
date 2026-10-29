@@ -42,8 +42,6 @@ final class StorageClientMetrics implements AutoCloseable {
       AttributeKey.stringKey("gcp.client.service");
   static final AttributeKey<String> KEY_GCP_CLIENT_ARTIFACT =
       AttributeKey.stringKey("gcp.client.artifact");
-  static final AttributeKey<String> KEY_GCP_CLIENT_INSTANCE_ID =
-      AttributeKey.stringKey("gcp.client.instance_id");
 
   static final AttributeKey<String> KEY_GCP_STORAGE_OPERATION =
       AttributeKey.stringKey("gcp.storage.operation");
@@ -71,11 +69,6 @@ final class StorageClientMetrics implements AutoCloseable {
 
   static final String NETWORK_IO_DIRECTION_RECEIVE = "receive";
   static final String NETWORK_IO_DIRECTION_TRANSMIT = "transmit";
-
-  static final String ATTRIBUTE_GCP_CLIENT_VERSION = "gcp.client.version";
-  static final String ATTRIBUTE_GCP_CLIENT_SERVICE = "gcp.client.service";
-  static final String ATTRIBUTE_GCP_CLIENT_ARTIFACT = "gcp.client.artifact";
-  static final String ATTRIBUTE_GCP_CLIENT_INSTANCE_ID = "gcp.client.instance_id";
 
   static final String SERVICE_STORAGE = "storage";
   static final String ARTIFACT_STORAGE = "com.google.cloud:google-cloud-storage";
@@ -105,27 +98,6 @@ final class StorageClientMetrics implements AutoCloseable {
   static final String METRIC_GCP_STORAGE_CLIENT_NETWORK_IO = "gcp.storage.client.network.io";
   static final String METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION =
       "gcp.storage.client.auth.credential_refresh.duration";
-
-  @Nullable private final DoubleHistogram rpcClientCallDuration;
-  @Nullable private final DoubleHistogram httpClientRequestDuration;
-  @Nullable private final DoubleHistogram gcpClientRequestDuration;
-  @Nullable private final LongCounter operations;
-  @Nullable private final LongCounter attempts;
-  @Nullable private final LongCounter errors;
-  @Nullable private final DoubleHistogram ttfb;
-  @Nullable private final LongHistogram requestBodySize;
-  @Nullable private final LongHistogram responseBodySize;
-
-  @Nullable private final LongUpDownCounter requestActive;
-  @Nullable private final DoubleHistogram serverDuration;
-  @Nullable private final LongCounter serverUnreached;
-  @Nullable private final DoubleHistogram stallDuration;
-  @Nullable private final LongCounter networkIo;
-  @Nullable private final DoubleHistogram credentialRefreshDuration;
-
-  private final Attributes clientAttributes;
-  private final Attributes baseAttributes;
-  @Nullable private final SdkMeterProvider ownedMeterProvider;
 
   @Nullable
   static StorageClientMetrics fromOptions(StorageOptions options) {
@@ -173,7 +145,7 @@ final class StorageClientMetrics implements AutoCloseable {
         clientAttributes,
         baseBuilder.build(),
         ownedMeterProvider,
-        options.isEnableOtelMetrics(),
+        /* enableOtelMetrics= */ true,
         options.isEnableOtelDebugMetrics());
   }
 
@@ -208,44 +180,28 @@ final class StorageClientMetrics implements AutoCloseable {
         enableOtelDebugMetrics);
   }
 
-  StorageClientMetrics(Meter meter, boolean enableOtelMetrics, boolean enableOtelDebugMetrics) {
-    this(
-        meter,
-        Attributes.builder()
-            .put(KEY_GCP_CLIENT_SERVICE, SERVICE_STORAGE)
-            .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
-            .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
-            .build(),
-        null,
-        enableOtelMetrics,
-        enableOtelDebugMetrics);
-  }
+  @Nullable private final DoubleHistogram rpcClientCallDuration;
+  @Nullable private final DoubleHistogram httpClientRequestDuration;
+  @Nullable private final DoubleHistogram gcpClientRequestDuration;
+  @Nullable private final LongCounter operations;
+  @Nullable private final LongCounter attempts;
+  @Nullable private final LongCounter errors;
+  @Nullable private final DoubleHistogram ttfb;
+  @Nullable private final LongHistogram requestBodySize;
+  @Nullable private final LongHistogram responseBodySize;
 
-  StorageClientMetrics(
-      Meter meter,
-      Attributes clientAttributes,
-      boolean enableOtelMetrics,
-      boolean enableOtelDebugMetrics) {
-    this(
-        meter, clientAttributes, clientAttributes, null, enableOtelMetrics, enableOtelDebugMetrics);
-  }
+  @Nullable private final LongUpDownCounter requestActive;
+  @Nullable private final DoubleHistogram serverDuration;
+  @Nullable private final LongCounter serverUnreached;
+  @Nullable private final DoubleHistogram stallDuration;
+  @Nullable private final LongCounter networkIo;
+  @Nullable private final DoubleHistogram credentialRefreshDuration;
 
-  StorageClientMetrics(
-      Meter meter,
-      Attributes clientAttributes,
-      @Nullable SdkMeterProvider ownedMeterProvider,
-      boolean enableOtelMetrics,
-      boolean enableOtelDebugMetrics) {
-    this(
-        meter,
-        clientAttributes,
-        clientAttributes,
-        ownedMeterProvider,
-        enableOtelMetrics,
-        enableOtelDebugMetrics);
-  }
+  private final Attributes clientAttributes;
+  private final Attributes baseAttributes;
+  @Nullable private final SdkMeterProvider ownedMeterProvider;
 
-  StorageClientMetrics(
+  private StorageClientMetrics(
       Meter meter,
       Attributes clientAttributes,
       Attributes baseAttributes,

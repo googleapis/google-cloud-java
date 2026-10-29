@@ -984,7 +984,9 @@ public final class GrpcStorageOptions extends StorageOptions
           OpenTelemetry otel = options.getOpenTelemetry();
           DefaultRetrier retrier =
               new DefaultRetrier(
-                  OtelStorageDecorator.retryContextDecorator(otel), grpcStorageOptions);
+                  OtelStorageDecorator.retryContextDecorator(otel),
+                  grpcStorageOptions,
+                  grpcStorageOptions.getStorageClientMetrics());
           if (ZeroCopyReadinessChecker.isReady()) {
             LOGGER.config("zero-copy protobuf deserialization available, using it");
             StorageStubSettings baseSettings =
@@ -1458,12 +1460,6 @@ public final class GrpcStorageOptions extends StorageOptions
     public static boolean isReady() {
       return isZeroCopyReady;
     }
-  }
-
-  @InternalApi
-  @Override
-  public StorageClientMetrics getStorageClientMetrics() {
-    return super.getStorageClientMetrics();
   }
 
   private static class ReadObjectRangeResultRetryAlgorithmDecorator

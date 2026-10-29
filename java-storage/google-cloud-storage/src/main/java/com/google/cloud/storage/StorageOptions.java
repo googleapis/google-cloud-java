@@ -81,7 +81,8 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
   Retrier createRetrier() {
     return new DefaultRetrier(
         OtelStorageDecorator.retryContextDecorator(getOpenTelemetry()),
-        RetryingDependencies.simple(getClock(), getRetrySettings(), getStorageClientMetrics()));
+        RetryingDependencies.simple(getClock(), getRetrySettings()),
+        getStorageClientMetrics());
   }
 
   /**
@@ -262,7 +263,8 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
   private final Duration metricInterval;
   private final boolean customMeterProviderConfigured;
   private final boolean customOpenTelemetryConfigured;
-  @Nullable transient StorageClientMetrics storageClientMetrics;
+  @Nullable private transient StorageClientMetrics storageClientMetrics;
+  private transient boolean storageClientMetricsClosed;
 
   StorageOptions(Builder builder, StorageDefaults serviceDefaults) {
     super(StorageFactory.class, StorageRpcFactory.class, builder, serviceDefaults);
@@ -378,7 +380,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
 
   @Nullable
   synchronized StorageClientMetrics getStorageClientMetrics() {
-    if (!isEnableOtelMetrics()) {
+    if (!isEnableOtelMetrics() || storageClientMetricsClosed) {
       return null;
     }
     if (storageClientMetrics == null) {
@@ -388,6 +390,7 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
   }
 
   synchronized void closeStorageClientMetrics() {
+    storageClientMetricsClosed = true;
     if (storageClientMetrics != null) {
       try {
         storageClientMetrics.close();
