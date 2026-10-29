@@ -18,9 +18,12 @@ package com.google.cloud.storage;
 
 import static com.google.cloud.storage.ByteSizeConstants._2MiB;
 import static com.google.cloud.storage.ITObjectReadSessionFakeTest.getReadRange;
+import static com.google.cloud.storage.ITObjectReadSessionFakeTest.read;
 import static com.google.cloud.storage.PackagePrivateMethodWorkarounds.maybeGetStorageDataClient;
+import static com.google.cloud.storage.TestUtils.xxd;
 import static com.google.common.truth.Truth.assertThat;
 import static java.util.concurrent.TimeUnit.SECONDS;
+import static org.junit.Assert.assertThrows;
 
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.cloud.storage.ITObjectReadSessionFakeTest.FakeStorage;
@@ -35,6 +38,7 @@ import com.google.storage.v2.Object;
 import com.google.storage.v2.ObjectRangeData;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -66,6 +70,8 @@ public final class ITFastOpenFakeTest {
 
   private static final ReadAsFutureBytes READ_10_TO_20 =
       ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(10, 10));
+  private static final ReadAsFutureBytes READ_20_TO_30 =
+      ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(20, 10));
 
   /** Every request the fake server received, in order. */
   private final List<BidiReadObjectRequest> requestsReceived =
@@ -104,6 +110,114 @@ public final class ITFastOpenFakeTest {
     assertThat(requestsReceived).containsExactly(OPEN);
   }
 
+  @Test
+  public void readAs_withTheFastOpenConfig_doesNotSendAnotherRequest() throws Exception {
+    FakeStorage server =
+        fakeServer(ImmutableMap.of(OPEN_WITH_READ_OF_10_TO_20, metadataAndBytes(1, 10, 10)));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      try (ObjectReadSession session =
+          dataClient.readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20)).get(5, SECONDS)) {
+        byte[] actual = session.readAs(READ_10_TO_20).get(2, SECONDS);
+        assertThat(xxd(actual)).isEqualTo(xxd(slice(10, 10)));
+      }
+    }
+
+    assertThat(requestsReceived).containsExactly(OPEN_WITH_READ_OF_10_TO_20);
+  }
+
+  @Test
+  public void readAs_withTheFastOpenConfigAgain_sendsANewRead() throws Exception {
+    BidiReadObjectRequest secondReadOf10To20 = read(2, 10, 10);
+    FakeStorage server =
+        fakeServer(
+            ImmutableMap.of(
+                OPEN_WITH_READ_OF_10_TO_20, metadataAndBytes(1, 10, 10),
+                secondReadOf10To20, bytes(2, 10, 10)));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      try (ObjectReadSession session =
+          dataClient.readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20)).get(5, SECONDS)) {
+        byte[] fastOpen = session.readAs(READ_10_TO_20).get(2, SECONDS);
+        byte[] second = session.readAs(READ_10_TO_20).get(2, SECONDS);
+        assertThat(xxd(fastOpen)).isEqualTo(xxd(slice(10, 10)));
+        assertThat(xxd(second)).isEqualTo(xxd(slice(10, 10)));
+      }
+    }
+
+    assertThat(requestsReceived)
+        .containsExactly(OPEN_WITH_READ_OF_10_TO_20, secondReadOf10To20)
+        .inOrder();
+  }
+
+  @Test
+  public void readAs_withADifferentConfig_sendsANewRead_andKeepsTheFastOpenRead() throws Exception {
+    BidiReadObjectRequest readOf20To30 = read(2, 20, 10);
+    FakeStorage server =
+        fakeServer(
+            ImmutableMap.of(
+                OPEN_WITH_READ_OF_10_TO_20, metadataAndBytes(1, 10, 10),
+                readOf20To30, bytes(2, 20, 10)));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      try (ObjectReadSession session =
+          dataClient.readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20)).get(5, SECONDS)) {
+        byte[] other = session.readAs(READ_20_TO_30).get(2, SECONDS);
+        byte[] fastOpen = session.readAs(READ_10_TO_20).get(2, SECONDS);
+        assertThat(xxd(other)).isEqualTo(xxd(slice(20, 10)));
+        assertThat(xxd(fastOpen)).isEqualTo(xxd(slice(10, 10)));
+      }
+    }
+
+    assertThat(requestsReceived)
+        .containsExactly(OPEN_WITH_READ_OF_10_TO_20, readOf20To30)
+        .inOrder();
+  }
+
+  @Test
+  public void close_withAnUnclaimedFastOpenRead_closesTheSession() throws Exception {
+    FakeStorage server =
+        fakeServer(ImmutableMap.of(OPEN_WITH_READ_OF_10_TO_20, metadataAndBytes(1, 10, 10)));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      ObjectReadSession session =
+          dataClient.readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20)).get(5, SECONDS);
+      session.close();
+
+      assertThrows(IllegalStateException.class, () -> session.readAs(READ_10_TO_20));
+    }
+
+    assertThat(requestsReceived).containsExactly(OPEN_WITH_READ_OF_10_TO_20);
+  }
+
+  @Test
+  public void readSession_withMoreThanOneFastOpenConfig_isRejected() throws Exception {
+    FakeStorage server = fakeServer(ImmutableMap.of());
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      assertThrows(
+          IllegalArgumentException.class,
+          () -> dataClient.readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20, READ_20_TO_30)));
+    }
+
+    assertThat(requestsReceived).isEmpty();
+  }
+
   /**
    * A fake server that answers each request in {@code responses} and adds it to {@link
    * #requestsReceived}. Any other request is answered with an error.
@@ -137,5 +251,14 @@ public final class ITFastOpenFakeTest {
                 .setReadRange(getReadRange(readId, offset, length))
                 .setRangeEnd(true))
         .build();
+  }
+
+  /** The response to a read request of {@code [offset, offset + length)}. */
+  private static BidiReadObjectResponse bytes(int readId, int offset, int length) {
+    return metadataAndBytes(readId, offset, length).toBuilder().clearMetadata().build();
+  }
+
+  private static byte[] slice(int offset, int length) {
+    return Arrays.copyOfRange(ALL_OBJECT_BYTES, offset, offset + length);
   }
 }
