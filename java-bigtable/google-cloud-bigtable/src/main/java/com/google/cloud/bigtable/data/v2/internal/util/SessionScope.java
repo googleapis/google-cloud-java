@@ -47,11 +47,9 @@ public enum SessionScope {
   }
 
   /**
-   * Returns the fraction of this scope's traffic that should be served by sessions.
-   *
-   * <p>A {@link SessionDiversionConfiguration} is authoritative when present: the server only sends
-   * the deprecated flat {@code session_load} to keep ReadRow and MutateRow working on older
-   * clients, so this client ignores it entirely once a diversion configuration arrives.
+   * Returns the fraction of this scope's traffic that should be served by sessions, as configured
+   * by {@link SessionDiversionConfiguration}. The deprecated flat {@code session_load} field is
+   * ignored.
    */
   public float resolveSessionLoad(SessionClientConfiguration sessionConfig) {
     if (sessionConfig.hasSessionDiversionConfiguration()) {

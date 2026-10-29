@@ -446,8 +446,8 @@ public class ClientConfigurationManager implements AutoCloseable {
     }
 
     // When sessions are disabled make sure to clear out the config. Read from the builder, not
-    // cfg, so that a nonzero session_load supplied via the override sys-prop is honoured even when
-    // the server-returned config has session_load=0.
+    // cfg, so that a diversion config supplied via the override sys-prop is honoured even when
+    // the server-returned config disables sessions.
     if (!divertsAnyTrafficToSessions(builder.getSessionConfiguration())) {
       builder.clearSessionConfiguration();
       return builder.build();
