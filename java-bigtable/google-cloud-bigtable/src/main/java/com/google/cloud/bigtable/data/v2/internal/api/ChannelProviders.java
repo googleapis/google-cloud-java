@@ -40,7 +40,8 @@ import java.util.function.Function;
 
 public abstract class ChannelProviders {
   public static final String DEFAULT_HOST = "bigtable.googleapis.com";
-  private static final String USER_AGENT = "bigtable-java/" + Version.VERSION;
+
+  public static final String USER_AGENT = "java-bigtable/" + Version.VERSION;
 
   public interface ChannelProvider {
 

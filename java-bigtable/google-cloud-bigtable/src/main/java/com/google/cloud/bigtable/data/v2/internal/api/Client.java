@@ -226,6 +226,7 @@ public class Client implements AutoCloseable {
                 metrics
                     .get()
                     .configureGrpcChannel(channelBuilder)
+                    .userAgent(ChannelProviders.USER_AGENT)
                     .keepAliveTime(KEEPALIVE_TIME_MS, TimeUnit.MILLISECONDS)
                     .keepAliveTimeout(KEEPALIVE_TIMEOUT_MS, TimeUnit.MILLISECONDS)
                     // TODO: consider localizing this for large reads

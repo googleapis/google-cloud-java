@@ -18,6 +18,7 @@ package com.google.cloud.bigtable.data.v2.internal.api;
 
 import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.Mutation;
+import com.google.cloud.bigtable.data.v2.stub.BigtableStubSettings;
 import io.grpc.Metadata;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -34,6 +35,14 @@ public class Util {
       Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
   private static final Metadata.Key<String> FEATURE_FLAGS_KEY =
       Metadata.Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER);
+
+  private static final Metadata.Key<String> API_CLIENT_KEY =
+      Metadata.Key.of("x-goog-api-client", Metadata.ASCII_STRING_MARSHALLER);
+  private static final String API_CLIENT_VALUE =
+      BigtableStubSettings.defaultApiClientHeaderProviderBuilder()
+          .build()
+          .getHeaders()
+          .get("x-goog-api-client");
 
   public static Metadata composeMetadata(
       FeatureFlags featureFlags, Map<String, String> headerParams) {
@@ -58,6 +67,8 @@ public class Util {
         headerParams.entrySet().stream()
             .map(e -> String.format("%s=%s", e.getKey(), urlEncode(e.getValue())))
             .collect(Collectors.joining("&")));
+
+    metadata.put(API_CLIENT_KEY, API_CLIENT_VALUE);
 
     return metadata;
   }

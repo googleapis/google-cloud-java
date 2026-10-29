@@ -32,6 +32,7 @@ import com.google.bigtable.v2.PeerInfo.TransportType;
 import com.google.bigtable.v2.Row;
 import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
 import com.google.bigtable.v2.SessionReadRowResponse;
+import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ConfiguredChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.Client;
@@ -315,6 +316,7 @@ public class ShimImpl implements Shim {
         channelBuilder ->
             metrics
                 .configureGrpcChannel(channelBuilder)
+                .userAgent(ChannelProviders.USER_AGENT)
                 .keepAliveTime(Client.KEEPALIVE_TIME_MS, TimeUnit.MILLISECONDS)
                 .keepAliveTimeout(Client.KEEPALIVE_TIMEOUT_MS, TimeUnit.MILLISECONDS)
                 // TODO: consider localizing this for large reads
