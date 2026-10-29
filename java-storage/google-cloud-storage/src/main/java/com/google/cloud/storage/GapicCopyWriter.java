@@ -23,7 +23,10 @@ import com.google.cloud.storage.Conversions.Decoder;
 import com.google.cloud.storage.Retrying.RetrierWithAlg;
 import com.google.storage.v2.RewriteObjectRequest;
 import com.google.storage.v2.RewriteResponse;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 final class GapicCopyWriter extends CopyWriter {
 
   // needed for #getResult
@@ -32,27 +35,45 @@ final class GapicCopyWriter extends CopyWriter {
   private final RetrierWithAlg retrier;
   private final RewriteObjectRequest originalRequest;
   private final RewriteResponse initialResponse;
+  @Nullable private final StorageMetricsContext metricsContext;
 
   private RewriteResponse mostRecentResponse;
+  private boolean operationRecorded;
 
   GapicCopyWriter(
       GrpcStorageImpl storage,
       UnaryCallable<RewriteObjectRequest, RewriteResponse> callable,
       RetrierWithAlg retrier,
       RewriteObjectRequest originalRequest,
-      RewriteResponse initialResponse) {
+      RewriteResponse initialResponse,
+      @Nullable StorageMetricsContext metricsContext) {
     this.storage = storage;
     this.callable = callable;
     this.retrier = retrier;
     this.initialResponse = initialResponse;
     this.mostRecentResponse = initialResponse;
     this.originalRequest = originalRequest;
+    this.metricsContext = metricsContext;
+    this.operationRecorded = initialResponse.getDone();
+  }
+
+  private void recordOperation(@Nullable Throwable error) {
+    if (metricsContext != null && !operationRecorded) {
+      metricsContext.recordOperation(storage.getOptions().getStorageClientMetrics(), error);
+      operationRecorded = true;
+    }
   }
 
   @Override
   public Blob getResult() {
-    while (!isDone()) {
-      copyChunk();
+    try {
+      while (!isDone()) {
+        copyChunk();
+      }
+      recordOperation(null);
+    } catch (Throwable t) {
+      recordOperation(t);
+      throw t;
     }
     BlobInfo info = Conversions.grpc().blobInfo().decode(mostRecentResponse.getResource());
     return info.asBlob(storage);
@@ -76,10 +97,25 @@ final class GapicCopyWriter extends CopyWriter {
   @Override
   public void copyChunk() {
     if (!isDone()) {
-      RewriteObjectRequest req =
-          originalRequest.toBuilder().setRewriteToken(mostRecentResponse.getRewriteToken()).build();
-      GrpcCallContext retryContext = Retrying.newCallContext();
-      mostRecentResponse = retrier.run(() -> callable.call(req, retryContext), Decoder.identity());
+      try {
+        RewriteObjectRequest req =
+            originalRequest.toBuilder()
+                .setRewriteToken(mostRecentResponse.getRewriteToken())
+                .build();
+        StorageMetricsContext chunkContext = metricsContext;
+        GrpcCallContext retryContext = Retrying.newCallContext(chunkContext);
+        RewriteResponse resp =
+            retrier.run(() -> callable.call(req, retryContext), Decoder.identity(), chunkContext);
+        if (resp != null) {
+          mostRecentResponse = resp;
+        }
+        if (isDone()) {
+          recordOperation(null);
+        }
+      } catch (Throwable t) {
+        recordOperation(t);
+        throw t;
+      }
     }
   }
 

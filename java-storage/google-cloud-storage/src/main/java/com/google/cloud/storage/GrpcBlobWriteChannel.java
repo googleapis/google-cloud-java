@@ -24,6 +24,7 @@ import com.google.cloud.storage.Retrying.RetrierWithAlg;
 import com.google.storage.v2.WriteObjectRequest;
 import com.google.storage.v2.WriteObjectResponse;
 import java.util.function.Supplier;
+import org.jspecify.annotations.Nullable;
 
 final class GrpcBlobWriteChannel extends BaseStorageWriteChannel<WriteObjectResponse> {
 
@@ -37,7 +38,20 @@ final class GrpcBlobWriteChannel extends BaseStorageWriteChannel<WriteObjectResp
       RetrierWithAlg retrier,
       Supplier<ApiFuture<ResumableWrite>> start,
       Hasher hasher) {
-    super(Conversions.grpc().blobInfo().compose(WriteObjectResponse::getResource));
+    this(write, retrier, start, hasher, null, null);
+  }
+
+  GrpcBlobWriteChannel(
+      ClientStreamingCallable<WriteObjectRequest, WriteObjectResponse> write,
+      RetrierWithAlg retrier,
+      Supplier<ApiFuture<ResumableWrite>> start,
+      Hasher hasher,
+      @Nullable StorageMetricsContext metricsContext,
+      @Nullable StorageClientMetrics storageClientMetrics) {
+    super(
+        Conversions.grpc().blobInfo().compose(WriteObjectResponse::getResource),
+        metricsContext,
+        storageClientMetrics);
     this.write = write;
     this.retrier = retrier;
     this.start = start;
