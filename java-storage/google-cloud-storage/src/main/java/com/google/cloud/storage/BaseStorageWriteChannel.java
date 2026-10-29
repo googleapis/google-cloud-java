@@ -46,6 +46,7 @@ abstract class BaseStorageWriteChannel<T> implements StorageWriteChannel {
   private BufferHandle bufferHandle;
   @Nullable private final StorageMetricsContext metricsContext;
   @Nullable private final StorageClientMetrics storageClientMetrics;
+  @Nullable private Throwable lastOperationError;
 
   /**
    * This is tracked for compatibility with BlobWriteChannel, such that simply creating a writer
@@ -116,7 +117,8 @@ abstract class BaseStorageWriteChannel<T> implements StorageWriteChannel {
       open = false;
       try {
         if (metricsContext != null && storageClientMetrics != null) {
-          metricsContext.recordOperation(storageClientMetrics, error);
+          metricsContext.recordOperation(
+              storageClientMetrics, error != null ? error : lastOperationError);
         }
       } finally {
         lock.unlock();
@@ -140,11 +142,15 @@ abstract class BaseStorageWriteChannel<T> implements StorageWriteChannel {
         int write = tmp.write(src);
         return write;
       } catch (StorageException e) {
+        lastOperationError = e;
         throw new IOException(e);
       } catch (IOException e) {
+        lastOperationError = e;
         throw e;
       } catch (Exception e) {
-        throw new IOException(StorageException.coalesce(e));
+        Throwable coalesced = StorageException.coalesce(e);
+        lastOperationError = coalesced;
+        throw new IOException(coalesced);
       }
     } finally {
       lock.unlock();

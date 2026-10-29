@@ -135,7 +135,11 @@ final class BlobWriteChannelV2 extends BaseStorageWriteChannel<StorageObject> {
         resumableWrite = resumableWrite.withBeginOffset(position);
       }
       BlobWriteChannelV2 channel =
-          new BlobWriteChannelV2(BlobReadChannelContext.from(options), resumableWrite);
+          new BlobWriteChannelV2(
+              BlobReadChannelContext.from(options),
+              resumableWrite,
+              StorageClientMetrics.createMultiStepContext(
+                  options.getStorageClientMetrics(), "WriteObject"));
       if (chunkSize != null) {
         channel.setChunkSize(chunkSize);
       }
