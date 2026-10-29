@@ -57,6 +57,10 @@ public final class ChannelProfileProto extends com.google.protobuf.GeneratedFile
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_Deployment_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_AgentRegistryDeployment_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_AgentRegistryDeployment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_ces_v1beta_WhatsAppCredentials_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_WhatsAppCredentials_fieldAccessorTable;
@@ -97,7 +101,7 @@ public final class ChannelProfileProto extends com.google.protobuf.GeneratedFile
           + "\007PENDING\020\001\022\013\n"
           + "\007RUNNING\020\002\022\010\n"
           + "\004DONE\020\003\022\013\n"
-          + "\007EXPIRED\020\004\"\303\005\n\n"
+          + "\007EXPIRED\020\004\"\213\010\n\n"
           + "Deployment\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\032\n"
           + "\014display_name\030\010 \001(\tB\004\342A\001\002\022;\n"
@@ -115,22 +119,38 @@ public final class ChannelProfileProto extends com.google.protobuf.GeneratedFile
           + "\024whatsapp_credentials\030\n"
           + " \001(\0132,.google.cloud.ces.v1beta.WhatsAppCredentialsB\005\342A\002\001\004\022S\n"
           + "\025instagram_credentials\030\013 \001(\013"
-          + "2-.google.cloud.ces.v1beta.InstagramCredentialsB\005\342A\002\001\004:\211\001\352A\205\001\n"
-          + "\035ces.googleapis.com/Deployment\022Kprojects/{project}/locatio"
-          + "ns/{location}/apps/{app}/deployments/{deployment}*\013deployments2\n"
-          + "deployment\"\276\001\n"
+          + "2-.google.cloud.ces.v1beta.InstagramCredentialsB\005\342A\002\001\004\022D\n"
+          + "\016model_settings\030\014 \001(\0132&"
+          + ".google.cloud.ces.v1beta.ModelSettingsB\004\342A\001\001\022D\n"
+          + "\010modality\030\r"
+          + " \001(\0162,.google.cloud.ces.v1beta.Deployment.ModalityB\004\342A\001\001\022Y\n"
+          + "\031agent_registry_deployment\030\016 \001(\01320.google.c"
+          + "loud.ces.v1beta.AgentRegistryDeploymentB\004\342A\001\001\"_\n"
+          + "\010Modality\022\030\n"
+          + "\024MODALITY_UNSPECIFIED\020\000\022\021\n\r"
+          + "MODALITY_TEXT\020\001\022\022\n"
+          + "\016MODALITY_VOICE\020\002\022\022\n"
+          + "\016MODALITY_VIDEO\020\003:\211\001\352A\205\001\n"
+          + "\035ces.googleapis.com/Deployment\022Kprojects/{project}"
+          + "/locations/{location}/apps/{app}/deployments/{deployment}*\013deployments2\n"
+          + "deployment\"n\n"
+          + "\027AgentRegistryDeployment\022S\n"
+          + "\033agent_registry_service_name\030\001 \001(\tB.\342A\002\001\003\372A&\n"
+          + "$agentregistry.googleapis.com/Service\"\276\001\n"
           + "\023WhatsAppCredentials\022\027\n"
           + "\tauth_code\030\001 \001(\tB\004\342A\001\002\022\021\n"
           + "\003pin\030\002 \001(\tB\004\342A\001\002\022\032\n"
           + "\014phone_number\030\003 \001(\tB\004\342A\001\002\022!\n"
           + "\023business_account_id\030\004 \001(\tB\004\342A\001\002\022\025\n"
           + "\007waba_id\030\005 \001(\tB\004\342A\001\002\022%\n"
-          + "\027conversation_profile_id\030\006 \001(\tB\004\342A\001\002\"V\n"
+          + "\027conversation_profile_id\030\006 \001(\tB\004\342A\001\001\"V\n"
           + "\024InstagramCredentials\022\027\n"
           + "\tauth_code\030\001 \001(\tB\004\342A\001\002\022%\n"
-          + "\027conversation_profile_id\030\002 \001(\tB\004\342A\001\002Bc\n"
-          + "\033com.google.cloud.ces.v1betaB\023ChannelProfi"
-          + "leProtoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
+          + "\027conversation_profile_id\030\002 \001(\tB\004\342A\001\001B\310\001\n"
+          + "\033com.google.cloud.ces.v1betaB\023ChannelProf"
+          + "ileProtoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespb\352Ab\n"
+          + "$agentregistry.googleapis.com/Service\022:projects/{project}/l"
+          + "ocations/{location}/services/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -182,9 +202,20 @@ public final class ChannelProfileProto extends com.google.protobuf.GeneratedFile
               "ExperimentConfig",
               "WhatsappCredentials",
               "InstagramCredentials",
+              "ModelSettings",
+              "Modality",
+              "AgentRegistryDeployment",
+            });
+    internal_static_google_cloud_ces_v1beta_AgentRegistryDeployment_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_ces_v1beta_AgentRegistryDeployment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_AgentRegistryDeployment_descriptor,
+            new java.lang.String[] {
+              "AgentRegistryServiceName",
             });
     internal_static_google_cloud_ces_v1beta_WhatsAppCredentials_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_ces_v1beta_WhatsAppCredentials_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_WhatsAppCredentials_descriptor,
@@ -197,7 +228,7 @@ public final class ChannelProfileProto extends com.google.protobuf.GeneratedFile
               "ConversationProfileId",
             });
     internal_static_google_cloud_ces_v1beta_InstagramCredentials_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_ces_v1beta_InstagramCredentials_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_InstagramCredentials_descriptor,
@@ -213,6 +244,7 @@ public final class ChannelProfileProto extends com.google.protobuf.GeneratedFile
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

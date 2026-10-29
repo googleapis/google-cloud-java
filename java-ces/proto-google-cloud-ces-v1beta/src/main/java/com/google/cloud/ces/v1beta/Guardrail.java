@@ -303,6 +303,84 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      * @return The disregardDiacritics.
      */
     boolean getDisregardDiacritics();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Entries of the sensitive words list that this guardrail allows.
+     * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+     * list entry (case-insensitive, surrounding whitespace ignored); other
+     * values have no effect. Applies to this guardrail only. At most 1000
+     * entries of up to 256 characters each.
+     * </pre>
+     *
+     * <code>
+     * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the sensitiveWordsExemptions.
+     */
+    java.util.List<java.lang.String> getSensitiveWordsExemptionsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Entries of the sensitive words list that this guardrail allows.
+     * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+     * list entry (case-insensitive, surrounding whitespace ignored); other
+     * values have no effect. Applies to this guardrail only. At most 1000
+     * entries of up to 256 characters each.
+     * </pre>
+     *
+     * <code>
+     * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of sensitiveWordsExemptions.
+     */
+    int getSensitiveWordsExemptionsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Entries of the sensitive words list that this guardrail allows.
+     * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+     * list entry (case-insensitive, surrounding whitespace ignored); other
+     * values have no effect. Applies to this guardrail only. At most 1000
+     * entries of up to 256 characters each.
+     * </pre>
+     *
+     * <code>
+     * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The sensitiveWordsExemptions at the given index.
+     */
+    java.lang.String getSensitiveWordsExemptions(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Entries of the sensitive words list that this guardrail allows.
+     * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+     * list entry (case-insensitive, surrounding whitespace ignored); other
+     * values have no effect. Applies to this guardrail only. At most 1000
+     * entries of up to 256 characters each.
+     * </pre>
+     *
+     * <code>
+     * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the sensitiveWordsExemptions at the given index.
+     */
+    com.google.protobuf.ByteString getSensitiveWordsExemptionsBytes(int index);
   }
 
   /**
@@ -340,6 +418,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       bannedContentsInUserInput_ = com.google.protobuf.LazyStringArrayList.emptyList();
       bannedContentsInAgentResponse_ = com.google.protobuf.LazyStringArrayList.emptyList();
       matchType_ = 0;
+      sensitiveWordsExemptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -409,6 +488,19 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
        * <code>REGEXP_MATCH = 3;</code>
        */
       REGEXP_MATCH(3),
+      /**
+       *
+       *
+       * <pre>
+       * Content is matched against a system-managed list of sensitive words
+       * and phrases. Attaching a guardrail with this match type to an app or
+       * agent replaces the default sensitive words filter for the affected
+       * agents; disable the guardrail to opt out of the default filter.
+       * </pre>
+       *
+       * <code>SENSITIVE_WORDS = 4;</code>
+       */
+      SENSITIVE_WORDS(4),
       UNRECOGNIZED(-1),
       ;
 
@@ -468,6 +560,20 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
        */
       public static final int REGEXP_MATCH_VALUE = 3;
 
+      /**
+       *
+       *
+       * <pre>
+       * Content is matched against a system-managed list of sensitive words
+       * and phrases. Attaching a guardrail with this match type to an app or
+       * agent replaces the default sensitive words filter for the affected
+       * agents; disable the guardrail to opt out of the default filter.
+       * </pre>
+       *
+       * <code>SENSITIVE_WORDS = 4;</code>
+       */
+      public static final int SENSITIVE_WORDS_VALUE = 4;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -500,6 +606,8 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
             return WORD_BOUNDARY_STRING_MATCH;
           case 3:
             return REGEXP_MATCH;
+          case 4:
+            return SENSITIVE_WORDS;
           default:
             return null;
         }
@@ -841,6 +949,98 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       return disregardDiacritics_;
     }
 
+    public static final int SENSITIVE_WORDS_EXEMPTIONS_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList sensitiveWordsExemptions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Entries of the sensitive words list that this guardrail allows.
+     * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+     * list entry (case-insensitive, surrounding whitespace ignored); other
+     * values have no effect. Applies to this guardrail only. At most 1000
+     * entries of up to 256 characters each.
+     * </pre>
+     *
+     * <code>
+     * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the sensitiveWordsExemptions.
+     */
+    public com.google.protobuf.ProtocolStringList getSensitiveWordsExemptionsList() {
+      return sensitiveWordsExemptions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Entries of the sensitive words list that this guardrail allows.
+     * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+     * list entry (case-insensitive, surrounding whitespace ignored); other
+     * values have no effect. Applies to this guardrail only. At most 1000
+     * entries of up to 256 characters each.
+     * </pre>
+     *
+     * <code>
+     * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of sensitiveWordsExemptions.
+     */
+    public int getSensitiveWordsExemptionsCount() {
+      return sensitiveWordsExemptions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Entries of the sensitive words list that this guardrail allows.
+     * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+     * list entry (case-insensitive, surrounding whitespace ignored); other
+     * values have no effect. Applies to this guardrail only. At most 1000
+     * entries of up to 256 characters each.
+     * </pre>
+     *
+     * <code>
+     * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The sensitiveWordsExemptions at the given index.
+     */
+    public java.lang.String getSensitiveWordsExemptions(int index) {
+      return sensitiveWordsExemptions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Entries of the sensitive words list that this guardrail allows.
+     * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+     * list entry (case-insensitive, surrounding whitespace ignored); other
+     * values have no effect. Applies to this guardrail only. At most 1000
+     * entries of up to 256 characters each.
+     * </pre>
+     *
+     * <code>
+     * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the sensitiveWordsExemptions at the given index.
+     */
+    public com.google.protobuf.ByteString getSensitiveWordsExemptionsBytes(int index) {
+      return sensitiveWordsExemptions_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -873,6 +1073,10 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       }
       if (disregardDiacritics_ != false) {
         output.writeBool(5, disregardDiacritics_);
+      }
+      for (int i = 0; i < sensitiveWordsExemptions_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(
+            output, 7, sensitiveWordsExemptions_.getRaw(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -915,6 +1119,14 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       if (disregardDiacritics_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, disregardDiacritics_);
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < sensitiveWordsExemptions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(sensitiveWordsExemptions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getSensitiveWordsExemptionsList().size();
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -938,6 +1150,8 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
           .equals(other.getBannedContentsInAgentResponseList())) return false;
       if (matchType_ != other.matchType_) return false;
       if (getDisregardDiacritics() != other.getDisregardDiacritics()) return false;
+      if (!getSensitiveWordsExemptionsList().equals(other.getSensitiveWordsExemptionsList()))
+        return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -965,6 +1179,10 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + matchType_;
       hash = (37 * hash) + DISREGARD_DIACRITICS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisregardDiacritics());
+      if (getSensitiveWordsExemptionsCount() > 0) {
+        hash = (37 * hash) + SENSITIVE_WORDS_EXEMPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getSensitiveWordsExemptionsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1111,6 +1329,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
         bannedContentsInAgentResponse_ = com.google.protobuf.LazyStringArrayList.emptyList();
         matchType_ = 0;
         disregardDiacritics_ = false;
+        sensitiveWordsExemptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -1165,6 +1384,10 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.disregardDiacritics_ = disregardDiacritics_;
         }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          sensitiveWordsExemptions_.makeImmutable();
+          result.sensitiveWordsExemptions_ = sensitiveWordsExemptions_;
+        }
       }
 
       @java.lang.Override
@@ -1215,6 +1438,16 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
         }
         if (other.getDisregardDiacritics() != false) {
           setDisregardDiacritics(other.getDisregardDiacritics());
+        }
+        if (!other.sensitiveWordsExemptions_.isEmpty()) {
+          if (sensitiveWordsExemptions_.isEmpty()) {
+            sensitiveWordsExemptions_ = other.sensitiveWordsExemptions_;
+            bitField0_ |= 0x00000020;
+          } else {
+            ensureSensitiveWordsExemptionsIsMutable();
+            sensitiveWordsExemptions_.addAll(other.sensitiveWordsExemptions_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1275,6 +1508,13 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 40
+              case 58:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureSensitiveWordsExemptionsIsMutable();
+                  sensitiveWordsExemptions_.add(s);
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2052,6 +2292,244 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       public Builder clearDisregardDiacritics() {
         bitField0_ = (bitField0_ & ~0x00000010);
         disregardDiacritics_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList sensitiveWordsExemptions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureSensitiveWordsExemptionsIsMutable() {
+        if (!sensitiveWordsExemptions_.isModifiable()) {
+          sensitiveWordsExemptions_ =
+              new com.google.protobuf.LazyStringArrayList(sensitiveWordsExemptions_);
+        }
+        bitField0_ |= 0x00000020;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entries of the sensitive words list that this guardrail allows.
+       * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+       * list entry (case-insensitive, surrounding whitespace ignored); other
+       * values have no effect. Applies to this guardrail only. At most 1000
+       * entries of up to 256 characters each.
+       * </pre>
+       *
+       * <code>
+       * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the sensitiveWordsExemptions.
+       */
+      public com.google.protobuf.ProtocolStringList getSensitiveWordsExemptionsList() {
+        sensitiveWordsExemptions_.makeImmutable();
+        return sensitiveWordsExemptions_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entries of the sensitive words list that this guardrail allows.
+       * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+       * list entry (case-insensitive, surrounding whitespace ignored); other
+       * values have no effect. Applies to this guardrail only. At most 1000
+       * entries of up to 256 characters each.
+       * </pre>
+       *
+       * <code>
+       * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of sensitiveWordsExemptions.
+       */
+      public int getSensitiveWordsExemptionsCount() {
+        return sensitiveWordsExemptions_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entries of the sensitive words list that this guardrail allows.
+       * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+       * list entry (case-insensitive, surrounding whitespace ignored); other
+       * values have no effect. Applies to this guardrail only. At most 1000
+       * entries of up to 256 characters each.
+       * </pre>
+       *
+       * <code>
+       * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The sensitiveWordsExemptions at the given index.
+       */
+      public java.lang.String getSensitiveWordsExemptions(int index) {
+        return sensitiveWordsExemptions_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entries of the sensitive words list that this guardrail allows.
+       * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+       * list entry (case-insensitive, surrounding whitespace ignored); other
+       * values have no effect. Applies to this guardrail only. At most 1000
+       * entries of up to 256 characters each.
+       * </pre>
+       *
+       * <code>
+       * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the sensitiveWordsExemptions at the given index.
+       */
+      public com.google.protobuf.ByteString getSensitiveWordsExemptionsBytes(int index) {
+        return sensitiveWordsExemptions_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entries of the sensitive words list that this guardrail allows.
+       * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+       * list entry (case-insensitive, surrounding whitespace ignored); other
+       * values have no effect. Applies to this guardrail only. At most 1000
+       * entries of up to 256 characters each.
+       * </pre>
+       *
+       * <code>
+       * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The sensitiveWordsExemptions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSensitiveWordsExemptions(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSensitiveWordsExemptionsIsMutable();
+        sensitiveWordsExemptions_.set(index, value);
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entries of the sensitive words list that this guardrail allows.
+       * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+       * list entry (case-insensitive, surrounding whitespace ignored); other
+       * values have no effect. Applies to this guardrail only. At most 1000
+       * entries of up to 256 characters each.
+       * </pre>
+       *
+       * <code>
+       * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The sensitiveWordsExemptions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSensitiveWordsExemptions(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSensitiveWordsExemptionsIsMutable();
+        sensitiveWordsExemptions_.add(value);
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entries of the sensitive words list that this guardrail allows.
+       * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+       * list entry (case-insensitive, surrounding whitespace ignored); other
+       * values have no effect. Applies to this guardrail only. At most 1000
+       * entries of up to 256 characters each.
+       * </pre>
+       *
+       * <code>
+       * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The sensitiveWordsExemptions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSensitiveWordsExemptions(java.lang.Iterable<java.lang.String> values) {
+        ensureSensitiveWordsExemptionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sensitiveWordsExemptions_);
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entries of the sensitive words list that this guardrail allows.
+       * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+       * list entry (case-insensitive, surrounding whitespace ignored); other
+       * values have no effect. Applies to this guardrail only. At most 1000
+       * entries of up to 256 characters each.
+       * </pre>
+       *
+       * <code>
+       * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSensitiveWordsExemptions() {
+        sensitiveWordsExemptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Entries of the sensitive words list that this guardrail allows.
+       * Only valid when match_type is SENSITIVE_WORDS. Each value must equal a
+       * list entry (case-insensitive, surrounding whitespace ignored); other
+       * values have no effect. Applies to this guardrail only. At most 1000
+       * entries of up to 256 characters each.
+       * </pre>
+       *
+       * <code>
+       * repeated string sensitive_words_exemptions = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the sensitiveWordsExemptions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSensitiveWordsExemptionsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureSensitiveWordsExemptionsIsMutable();
+        sensitiveWordsExemptions_.add(value);
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -4317,7 +4795,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Policy prompt.
+     * Required. Policy prompt. Supports session variable placeholders (`{var}`)
+     * as well as `{agent_system_instruction}` to inject the agent's resolved
+     * system instructions.
      * </pre>
      *
      * <code>string prompt = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4330,7 +4810,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Policy prompt.
+     * Required. Policy prompt. Supports session variable placeholders (`{var}`)
+     * as well as `{agent_system_instruction}` to inject the agent's resolved
+     * system instructions.
      * </pre>
      *
      * <code>string prompt = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4745,7 +5227,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Policy prompt.
+     * Required. Policy prompt. Supports session variable placeholders (`{var}`)
+     * as well as `{agent_system_instruction}` to inject the agent's resolved
+     * system instructions.
      * </pre>
      *
      * <code>string prompt = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4769,7 +5253,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Policy prompt.
+     * Required. Policy prompt. Supports session variable placeholders (`{var}`)
+     * as well as `{agent_system_instruction}` to inject the agent's resolved
+     * system instructions.
      * </pre>
      *
      * <code>string prompt = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5605,7 +6091,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Policy prompt.
+       * Required. Policy prompt. Supports session variable placeholders (`{var}`)
+       * as well as `{agent_system_instruction}` to inject the agent's resolved
+       * system instructions.
        * </pre>
        *
        * <code>string prompt = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5628,7 +6116,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Policy prompt.
+       * Required. Policy prompt. Supports session variable placeholders (`{var}`)
+       * as well as `{agent_system_instruction}` to inject the agent's resolved
+       * system instructions.
        * </pre>
        *
        * <code>string prompt = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5651,7 +6141,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Policy prompt.
+       * Required. Policy prompt. Supports session variable placeholders (`{var}`)
+       * as well as `{agent_system_instruction}` to inject the agent's resolved
+       * system instructions.
        * </pre>
        *
        * <code>string prompt = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5673,7 +6165,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Policy prompt.
+       * Required. Policy prompt. Supports session variable placeholders (`{var}`)
+       * as well as `{agent_system_instruction}` to inject the agent's resolved
+       * system instructions.
        * </pre>
        *
        * <code>string prompt = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -5691,7 +6185,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Policy prompt.
+       * Required. Policy prompt. Supports session variable placeholders (`{var}`)
+       * as well as `{agent_system_instruction}` to inject the agent's resolved
+       * system instructions.
        * </pre>
        *
        * <code>string prompt = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -6192,6 +6688,26 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
        * <code>HARM_CATEGORY_SEXUALLY_EXPLICIT = 4;</code>
        */
       HARM_CATEGORY_SEXUALLY_EXPLICIT(4),
+      /**
+       *
+       *
+       * <pre>
+       * The harm category is profanity.
+       * </pre>
+       *
+       * <code>HARM_CATEGORY_PROFANITY = 5;</code>
+       */
+      HARM_CATEGORY_PROFANITY(5),
+      /**
+       *
+       *
+       * <pre>
+       * The harm category is toxic.
+       * </pre>
+       *
+       * <code>HARM_CATEGORY_TOXIC = 6;</code>
+       */
+      HARM_CATEGORY_TOXIC(6),
       UNRECOGNIZED(-1),
       ;
 
@@ -6260,6 +6776,28 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
        */
       public static final int HARM_CATEGORY_SEXUALLY_EXPLICIT_VALUE = 4;
 
+      /**
+       *
+       *
+       * <pre>
+       * The harm category is profanity.
+       * </pre>
+       *
+       * <code>HARM_CATEGORY_PROFANITY = 5;</code>
+       */
+      public static final int HARM_CATEGORY_PROFANITY_VALUE = 5;
+
+      /**
+       *
+       *
+       * <pre>
+       * The harm category is toxic.
+       * </pre>
+       *
+       * <code>HARM_CATEGORY_TOXIC = 6;</code>
+       */
+      public static final int HARM_CATEGORY_TOXIC_VALUE = 6;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -6294,6 +6832,10 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
             return HARM_CATEGORY_HARASSMENT;
           case 4:
             return HARM_CATEGORY_SEXUALLY_EXPLICIT;
+          case 5:
+            return HARM_CATEGORY_PROFANITY;
+          case 6:
+            return HARM_CATEGORY_TOXIC;
           default:
             return null;
         }
@@ -10500,6 +11042,1300 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface SupervisorOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.Guardrail.Supervisor)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the supervisor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the supervisor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The type.
+     */
+    com.google.cloud.ces.v1beta.Guardrail.Supervisor.Type getType();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detection mode of the supervisor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode detection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for detectionMode.
+     */
+    int getDetectionModeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detection mode of the supervisor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode detection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The detectionMode.
+     */
+    com.google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode getDetectionMode();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Guardrail that runs supervisor intervention.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.ces.v1beta.Guardrail.Supervisor}
+   */
+  public static final class Supervisor extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.ces.v1beta.Guardrail.Supervisor)
+      SupervisorOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "Supervisor");
+    }
+
+    // Use Supervisor.newBuilder() to construct.
+    private Supervisor(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Supervisor() {
+      type_ = 0;
+      detectionMode_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.GuardrailProto
+          .internal_static_google_cloud_ces_v1beta_Guardrail_Supervisor_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.ces.v1beta.GuardrailProto
+          .internal_static_google_cloud_ces_v1beta_Guardrail_Supervisor_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.ces.v1beta.Guardrail.Supervisor.class,
+              com.google.cloud.ces.v1beta.Guardrail.Supervisor.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Type of supervisor.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.ces.v1beta.Guardrail.Supervisor.Type}
+     */
+    public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Type is unspecified.
+       * </pre>
+       *
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Invalid text issue type.
+       * </pre>
+       *
+       * <code>INVALID_TEXT = 1;</code>
+       */
+      INVALID_TEXT(1),
+      /**
+       *
+       *
+       * <pre>
+       * Language shift issue type.
+       * </pre>
+       *
+       * <code>LANGUAGE_SHIFT = 2;</code>
+       */
+      LANGUAGE_SHIFT(2),
+      /**
+       *
+       *
+       * <pre>
+       * Speaker shift issue type.
+       * </pre>
+       *
+       * <code>SPEAKER_SHIFT = 3;</code>
+       */
+      SPEAKER_SHIFT(3),
+      /**
+       *
+       *
+       * <pre>
+       * Audio mismatch issue type.
+       * </pre>
+       *
+       * <code>AUDIO_MISMATCH = 4;</code>
+       */
+      AUDIO_MISMATCH(4),
+      /**
+       *
+       *
+       * <pre>
+       * Missing tool call issue type.
+       * </pre>
+       *
+       * <code>MISSING_TOOL_CALL = 5;</code>
+       */
+      MISSING_TOOL_CALL(5),
+      /**
+       *
+       *
+       * <pre>
+       * Custom issue type.
+       * </pre>
+       *
+       * <code>CUSTOM = 6;</code>
+       */
+      CUSTOM(6),
+      /**
+       *
+       *
+       * <pre>
+       * Choppy audio issue type.
+       * </pre>
+       *
+       * <code>CHOPPY_AUDIO = 7;</code>
+       */
+      CHOPPY_AUDIO(7),
+      /**
+       *
+       *
+       * <pre>
+       * Agent profanity issue type.
+       * </pre>
+       *
+       * <code>PROFANITY = 8;</code>
+       */
+      PROFANITY(8),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "Type");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Type is unspecified.
+       * </pre>
+       *
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Invalid text issue type.
+       * </pre>
+       *
+       * <code>INVALID_TEXT = 1;</code>
+       */
+      public static final int INVALID_TEXT_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Language shift issue type.
+       * </pre>
+       *
+       * <code>LANGUAGE_SHIFT = 2;</code>
+       */
+      public static final int LANGUAGE_SHIFT_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Speaker shift issue type.
+       * </pre>
+       *
+       * <code>SPEAKER_SHIFT = 3;</code>
+       */
+      public static final int SPEAKER_SHIFT_VALUE = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * Audio mismatch issue type.
+       * </pre>
+       *
+       * <code>AUDIO_MISMATCH = 4;</code>
+       */
+      public static final int AUDIO_MISMATCH_VALUE = 4;
+
+      /**
+       *
+       *
+       * <pre>
+       * Missing tool call issue type.
+       * </pre>
+       *
+       * <code>MISSING_TOOL_CALL = 5;</code>
+       */
+      public static final int MISSING_TOOL_CALL_VALUE = 5;
+
+      /**
+       *
+       *
+       * <pre>
+       * Custom issue type.
+       * </pre>
+       *
+       * <code>CUSTOM = 6;</code>
+       */
+      public static final int CUSTOM_VALUE = 6;
+
+      /**
+       *
+       *
+       * <pre>
+       * Choppy audio issue type.
+       * </pre>
+       *
+       * <code>CHOPPY_AUDIO = 7;</code>
+       */
+      public static final int CHOPPY_AUDIO_VALUE = 7;
+
+      /**
+       *
+       *
+       * <pre>
+       * Agent profanity issue type.
+       * </pre>
+       *
+       * <code>PROFANITY = 8;</code>
+       */
+      public static final int PROFANITY_VALUE = 8;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TYPE_UNSPECIFIED;
+          case 1:
+            return INVALID_TEXT;
+          case 2:
+            return LANGUAGE_SHIFT;
+          case 3:
+            return SPEAKER_SHIFT;
+          case 4:
+            return AUDIO_MISMATCH;
+          case 5:
+            return MISSING_TOOL_CALL;
+          case 6:
+            return CUSTOM;
+          case 7:
+            return CHOPPY_AUDIO;
+          case 8:
+            return PROFANITY;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+            public Type findValueByNumber(int number) {
+              return Type.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.Guardrail.Supervisor.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.Guardrail.Supervisor.Type)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detection mode of the supervisor.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode}
+     */
+    public enum DetectionMode implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Detection mode is unspecified. Default to NON_BLOCKING.
+       * </pre>
+       *
+       * <code>DETECTION_MODE_UNSPECIFIED = 0;</code>
+       */
+      DETECTION_MODE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Non blocking detection mode.
+       * Response is not blocked when the supervisor detection is ongoing.
+       * </pre>
+       *
+       * <code>NON_BLOCKING = 1;</code>
+       */
+      NON_BLOCKING(1),
+      /**
+       *
+       *
+       * <pre>
+       * Blocking detection mode.
+       * Response is blocked when the supervisor detection is ongoing.
+       * </pre>
+       *
+       * <code>BLOCKING = 2;</code>
+       */
+      BLOCKING(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "DetectionMode");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Detection mode is unspecified. Default to NON_BLOCKING.
+       * </pre>
+       *
+       * <code>DETECTION_MODE_UNSPECIFIED = 0;</code>
+       */
+      public static final int DETECTION_MODE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Non blocking detection mode.
+       * Response is not blocked when the supervisor detection is ongoing.
+       * </pre>
+       *
+       * <code>NON_BLOCKING = 1;</code>
+       */
+      public static final int NON_BLOCKING_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Blocking detection mode.
+       * Response is blocked when the supervisor detection is ongoing.
+       * </pre>
+       *
+       * <code>BLOCKING = 2;</code>
+       */
+      public static final int BLOCKING_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DetectionMode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static DetectionMode forNumber(int value) {
+        switch (value) {
+          case 0:
+            return DETECTION_MODE_UNSPECIFIED;
+          case 1:
+            return NON_BLOCKING;
+          case 2:
+            return BLOCKING;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DetectionMode> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<DetectionMode>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<DetectionMode>() {
+                public DetectionMode findValueByNumber(int number) {
+                  return DetectionMode.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.Guardrail.Supervisor.getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final DetectionMode[] VALUES = values();
+
+      public static DetectionMode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private DetectionMode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode)
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private int type_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the supervisor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The type of the supervisor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.Guardrail.Supervisor.Type getType() {
+      com.google.cloud.ces.v1beta.Guardrail.Supervisor.Type result =
+          com.google.cloud.ces.v1beta.Guardrail.Supervisor.Type.forNumber(type_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.Guardrail.Supervisor.Type.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int DETECTION_MODE_FIELD_NUMBER = 2;
+    private int detectionMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detection mode of the supervisor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode detection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for detectionMode.
+     */
+    @java.lang.Override
+    public int getDetectionModeValue() {
+      return detectionMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The detection mode of the supervisor.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode detection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The detectionMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode getDetectionMode() {
+      com.google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode result =
+          com.google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode.forNumber(detectionMode_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (type_
+          != com.google.cloud.ces.v1beta.Guardrail.Supervisor.Type.TYPE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(1, type_);
+      }
+      if (detectionMode_
+          != com.google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode
+              .DETECTION_MODE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, detectionMode_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (type_
+          != com.google.cloud.ces.v1beta.Guardrail.Supervisor.Type.TYPE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
+      }
+      if (detectionMode_
+          != com.google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode
+              .DETECTION_MODE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, detectionMode_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.ces.v1beta.Guardrail.Supervisor)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.ces.v1beta.Guardrail.Supervisor other =
+          (com.google.cloud.ces.v1beta.Guardrail.Supervisor) obj;
+
+      if (type_ != other.type_) return false;
+      if (detectionMode_ != other.detectionMode_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (37 * hash) + DETECTION_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + detectionMode_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.ces.v1beta.Guardrail.Supervisor prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Guardrail that runs supervisor intervention.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.ces.v1beta.Guardrail.Supervisor}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.ces.v1beta.Guardrail.Supervisor)
+        com.google.cloud.ces.v1beta.Guardrail.SupervisorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.GuardrailProto
+            .internal_static_google_cloud_ces_v1beta_Guardrail_Supervisor_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.ces.v1beta.GuardrailProto
+            .internal_static_google_cloud_ces_v1beta_Guardrail_Supervisor_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.ces.v1beta.Guardrail.Supervisor.class,
+                com.google.cloud.ces.v1beta.Guardrail.Supervisor.Builder.class);
+      }
+
+      // Construct using com.google.cloud.ces.v1beta.Guardrail.Supervisor.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        type_ = 0;
+        detectionMode_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.ces.v1beta.GuardrailProto
+            .internal_static_google_cloud_ces_v1beta_Guardrail_Supervisor_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.Guardrail.Supervisor getDefaultInstanceForType() {
+        return com.google.cloud.ces.v1beta.Guardrail.Supervisor.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.Guardrail.Supervisor build() {
+        com.google.cloud.ces.v1beta.Guardrail.Supervisor result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.Guardrail.Supervisor buildPartial() {
+        com.google.cloud.ces.v1beta.Guardrail.Supervisor result =
+            new com.google.cloud.ces.v1beta.Guardrail.Supervisor(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.ces.v1beta.Guardrail.Supervisor result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.detectionMode_ = detectionMode_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.ces.v1beta.Guardrail.Supervisor) {
+          return mergeFrom((com.google.cloud.ces.v1beta.Guardrail.Supervisor) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.ces.v1beta.Guardrail.Supervisor other) {
+        if (other == com.google.cloud.ces.v1beta.Guardrail.Supervisor.getDefaultInstance())
+          return this;
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        if (other.detectionMode_ != 0) {
+          setDetectionModeValue(other.getDetectionModeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  type_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  detectionMode_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int type_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The type of the supervisor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.Guardrail.Supervisor.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override
+      public int getTypeValue() {
+        return type_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The type of the supervisor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.Guardrail.Supervisor.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The type of the supervisor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.Guardrail.Supervisor.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.Guardrail.Supervisor.Type getType() {
+        com.google.cloud.ces.v1beta.Guardrail.Supervisor.Type result =
+            com.google.cloud.ces.v1beta.Guardrail.Supervisor.Type.forNumber(type_);
+        return result == null
+            ? com.google.cloud.ces.v1beta.Guardrail.Supervisor.Type.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The type of the supervisor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.Guardrail.Supervisor.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.google.cloud.ces.v1beta.Guardrail.Supervisor.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The type of the supervisor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.Guardrail.Supervisor.Type type = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int detectionMode_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The detection mode of the supervisor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode detection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for detectionMode.
+       */
+      @java.lang.Override
+      public int getDetectionModeValue() {
+        return detectionMode_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The detection mode of the supervisor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode detection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for detectionMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDetectionModeValue(int value) {
+        detectionMode_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The detection mode of the supervisor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode detection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The detectionMode.
+       */
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode getDetectionMode() {
+        com.google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode result =
+            com.google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode.forNumber(
+                detectionMode_);
+        return result == null
+            ? com.google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The detection mode of the supervisor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode detection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The detectionMode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDetectionMode(
+          com.google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        detectionMode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The detection mode of the supervisor.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.Guardrail.Supervisor.DetectionMode detection_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDetectionMode() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        detectionMode_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.Guardrail.Supervisor)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.ces.v1beta.Guardrail.Supervisor)
+    private static final com.google.cloud.ces.v1beta.Guardrail.Supervisor DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.ces.v1beta.Guardrail.Supervisor();
+    }
+
+    public static com.google.cloud.ces.v1beta.Guardrail.Supervisor getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Supervisor> PARSER =
+        new com.google.protobuf.AbstractParser<Supervisor>() {
+          @java.lang.Override
+          public Supervisor parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Supervisor> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Supervisor> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.Guardrail.Supervisor getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int guardrailTypeCase_ = 0;
 
@@ -10515,6 +12351,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
     LLM_POLICY(10),
     MODEL_SAFETY(13),
     CODE_CALLBACK(14),
+    SUPERVISOR(16),
     GUARDRAILTYPE_NOT_SET(0);
     private final int value;
 
@@ -10544,6 +12381,8 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
           return MODEL_SAFETY;
         case 14:
           return CODE_CALLBACK;
+        case 16:
+          return SUPERVISOR;
         case 0:
           return GUARDRAILTYPE_NOT_SET;
         default:
@@ -10874,6 +12713,66 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       return (com.google.cloud.ces.v1beta.Guardrail.CodeCallback) guardrailType_;
     }
     return com.google.cloud.ces.v1beta.Guardrail.CodeCallback.getDefaultInstance();
+  }
+
+  public static final int SUPERVISOR_FIELD_NUMBER = 16;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Guardrail that runs supervisor intervention.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the supervisor field is set.
+   */
+  @java.lang.Override
+  public boolean hasSupervisor() {
+    return guardrailTypeCase_ == 16;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Guardrail that runs supervisor intervention.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The supervisor.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.Guardrail.Supervisor getSupervisor() {
+    if (guardrailTypeCase_ == 16) {
+      return (com.google.cloud.ces.v1beta.Guardrail.Supervisor) guardrailType_;
+    }
+    return com.google.cloud.ces.v1beta.Guardrail.Supervisor.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Guardrail that runs supervisor intervention.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.Guardrail.SupervisorOrBuilder getSupervisorOrBuilder() {
+    if (guardrailTypeCase_ == 16) {
+      return (com.google.cloud.ces.v1beta.Guardrail.Supervisor) guardrailType_;
+    }
+    return com.google.cloud.ces.v1beta.Guardrail.Supervisor.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -11332,6 +13231,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
     if (guardrailTypeCase_ == 14) {
       output.writeMessage(14, (com.google.cloud.ces.v1beta.Guardrail.CodeCallback) guardrailType_);
     }
+    if (guardrailTypeCase_ == 16) {
+      output.writeMessage(16, (com.google.cloud.ces.v1beta.Guardrail.Supervisor) guardrailType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -11390,6 +13292,11 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, (com.google.cloud.ces.v1beta.Guardrail.CodeCallback) guardrailType_);
     }
+    if (guardrailTypeCase_ == 16) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              16, (com.google.cloud.ces.v1beta.Guardrail.Supervisor) guardrailType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -11438,6 +13345,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
         break;
       case 14:
         if (!getCodeCallback().equals(other.getCodeCallback())) return false;
+        break;
+      case 16:
+        if (!getSupervisor().equals(other.getSupervisor())) return false;
         break;
       case 0:
       default:
@@ -11495,6 +13405,10 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       case 14:
         hash = (37 * hash) + CODE_CALLBACK_FIELD_NUMBER;
         hash = (53 * hash) + getCodeCallback().hashCode();
+        break;
+      case 16:
+        hash = (37 * hash) + SUPERVISOR_FIELD_NUMBER;
+        hash = (53 * hash) + getSupervisor().hashCode();
         break;
       case 0:
       default:
@@ -11665,6 +13579,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       if (codeCallbackBuilder_ != null) {
         codeCallbackBuilder_.clear();
       }
+      if (supervisorBuilder_ != null) {
+        supervisorBuilder_.clear();
+      }
       name_ = "";
       displayName_ = "";
       description_ = "";
@@ -11724,32 +13641,32 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.ces.v1beta.Guardrail result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.enabled_ = enabled_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.action_ = actionBuilder_ == null ? action_ : actionBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.etag_ = etag_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -11773,6 +13690,9 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       if (guardrailTypeCase_ == 14 && codeCallbackBuilder_ != null) {
         result.guardrailType_ = codeCallbackBuilder_.build();
       }
+      if (guardrailTypeCase_ == 16 && supervisorBuilder_ != null) {
+        result.guardrailType_ = supervisorBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -11789,17 +13709,17 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.ces.v1beta.Guardrail.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.getEnabled() != false) {
@@ -11816,7 +13736,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       switch (other.getGuardrailTypeCase()) {
@@ -11843,6 +13763,11 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
         case CODE_CALLBACK:
           {
             mergeCodeCallback(other.getCodeCallback());
+            break;
+          }
+        case SUPERVISOR:
+          {
+            mergeSupervisor(other.getSupervisor());
             break;
           }
         case GUARDRAILTYPE_NOT_SET:
@@ -11879,45 +13804,45 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 10
             case 18:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 26
             case 32:
               {
                 enabled_ = input.readBool();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 32
             case 42:
               {
                 input.readMessage(internalGetActionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 58
             case 66:
@@ -11944,7 +13869,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
             case 90:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 90
             case 106:
@@ -11961,6 +13886,13 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
                 guardrailTypeCase_ = 14;
                 break;
               } // case 114
+            case 130:
+              {
+                input.readMessage(
+                    internalGetSupervisorFieldBuilder().getBuilder(), extensionRegistry);
+                guardrailTypeCase_ = 16;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13230,6 +15162,243 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       return codeCallbackBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.Guardrail.Supervisor,
+            com.google.cloud.ces.v1beta.Guardrail.Supervisor.Builder,
+            com.google.cloud.ces.v1beta.Guardrail.SupervisorOrBuilder>
+        supervisorBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Guardrail that runs supervisor intervention.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the supervisor field is set.
+     */
+    @java.lang.Override
+    public boolean hasSupervisor() {
+      return guardrailTypeCase_ == 16;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Guardrail that runs supervisor intervention.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The supervisor.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.Guardrail.Supervisor getSupervisor() {
+      if (supervisorBuilder_ == null) {
+        if (guardrailTypeCase_ == 16) {
+          return (com.google.cloud.ces.v1beta.Guardrail.Supervisor) guardrailType_;
+        }
+        return com.google.cloud.ces.v1beta.Guardrail.Supervisor.getDefaultInstance();
+      } else {
+        if (guardrailTypeCase_ == 16) {
+          return supervisorBuilder_.getMessage();
+        }
+        return com.google.cloud.ces.v1beta.Guardrail.Supervisor.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Guardrail that runs supervisor intervention.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSupervisor(com.google.cloud.ces.v1beta.Guardrail.Supervisor value) {
+      if (supervisorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        guardrailType_ = value;
+        onChanged();
+      } else {
+        supervisorBuilder_.setMessage(value);
+      }
+      guardrailTypeCase_ = 16;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Guardrail that runs supervisor intervention.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSupervisor(
+        com.google.cloud.ces.v1beta.Guardrail.Supervisor.Builder builderForValue) {
+      if (supervisorBuilder_ == null) {
+        guardrailType_ = builderForValue.build();
+        onChanged();
+      } else {
+        supervisorBuilder_.setMessage(builderForValue.build());
+      }
+      guardrailTypeCase_ = 16;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Guardrail that runs supervisor intervention.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSupervisor(com.google.cloud.ces.v1beta.Guardrail.Supervisor value) {
+      if (supervisorBuilder_ == null) {
+        if (guardrailTypeCase_ == 16
+            && guardrailType_
+                != com.google.cloud.ces.v1beta.Guardrail.Supervisor.getDefaultInstance()) {
+          guardrailType_ =
+              com.google.cloud.ces.v1beta.Guardrail.Supervisor.newBuilder(
+                      (com.google.cloud.ces.v1beta.Guardrail.Supervisor) guardrailType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          guardrailType_ = value;
+        }
+        onChanged();
+      } else {
+        if (guardrailTypeCase_ == 16) {
+          supervisorBuilder_.mergeFrom(value);
+        } else {
+          supervisorBuilder_.setMessage(value);
+        }
+      }
+      guardrailTypeCase_ = 16;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Guardrail that runs supervisor intervention.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSupervisor() {
+      if (supervisorBuilder_ == null) {
+        if (guardrailTypeCase_ == 16) {
+          guardrailTypeCase_ = 0;
+          guardrailType_ = null;
+          onChanged();
+        }
+      } else {
+        if (guardrailTypeCase_ == 16) {
+          guardrailTypeCase_ = 0;
+          guardrailType_ = null;
+        }
+        supervisorBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Guardrail that runs supervisor intervention.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.Guardrail.Supervisor.Builder getSupervisorBuilder() {
+      return internalGetSupervisorFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Guardrail that runs supervisor intervention.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.Guardrail.SupervisorOrBuilder getSupervisorOrBuilder() {
+      if ((guardrailTypeCase_ == 16) && (supervisorBuilder_ != null)) {
+        return supervisorBuilder_.getMessageOrBuilder();
+      } else {
+        if (guardrailTypeCase_ == 16) {
+          return (com.google.cloud.ces.v1beta.Guardrail.Supervisor) guardrailType_;
+        }
+        return com.google.cloud.ces.v1beta.Guardrail.Supervisor.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Guardrail that runs supervisor intervention.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Guardrail.Supervisor supervisor = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.Guardrail.Supervisor,
+            com.google.cloud.ces.v1beta.Guardrail.Supervisor.Builder,
+            com.google.cloud.ces.v1beta.Guardrail.SupervisorOrBuilder>
+        internalGetSupervisorFieldBuilder() {
+      if (supervisorBuilder_ == null) {
+        if (!(guardrailTypeCase_ == 16)) {
+          guardrailType_ = com.google.cloud.ces.v1beta.Guardrail.Supervisor.getDefaultInstance();
+        }
+        supervisorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.Guardrail.Supervisor,
+                com.google.cloud.ces.v1beta.Guardrail.Supervisor.Builder,
+                com.google.cloud.ces.v1beta.Guardrail.SupervisorOrBuilder>(
+                (com.google.cloud.ces.v1beta.Guardrail.Supervisor) guardrailType_,
+                getParentForChildren(),
+                isClean());
+        guardrailType_ = null;
+      }
+      guardrailTypeCase_ = 16;
+      onChanged();
+      return supervisorBuilder_;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -13301,7 +15470,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -13321,7 +15490,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -13346,7 +15515,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -13416,7 +15585,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -13434,7 +15603,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -13457,7 +15626,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -13527,7 +15696,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -13545,7 +15714,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -13568,7 +15737,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -13606,7 +15775,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -13623,7 +15792,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearEnabled() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       enabled_ = false;
       onChanged();
       return this;
@@ -13650,7 +15819,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      * @return Whether the action field is set.
      */
     public boolean hasAction() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -13696,7 +15865,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       } else {
         actionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -13718,7 +15887,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       } else {
         actionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -13736,7 +15905,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeAction(com.google.cloud.ces.v1beta.TriggerAction value) {
       if (actionBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && action_ != null
             && action_ != com.google.cloud.ces.v1beta.TriggerAction.getDefaultInstance()) {
           getActionBuilder().mergeFrom(value);
@@ -13747,7 +15916,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
         actionBuilder_.mergeFrom(value);
       }
       if (action_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -13765,7 +15934,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAction() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       action_ = null;
       if (actionBuilder_ != null) {
         actionBuilder_.dispose();
@@ -13787,7 +15956,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.ces.v1beta.TriggerAction.Builder getActionBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetActionFieldBuilder().getBuilder();
     }
@@ -13862,7 +16031,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -13908,7 +16077,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -13930,7 +16099,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -13948,7 +16117,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -13959,7 +16128,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -13977,7 +16146,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -13999,7 +16168,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -14074,7 +16243,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -14120,7 +16289,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -14142,7 +16311,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -14160,7 +16329,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -14171,7 +16340,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -14189,7 +16358,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -14211,7 +16380,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -14336,7 +16505,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -14356,7 +16525,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       onChanged();
       return this;
     }
@@ -14381,7 +16550,7 @@ public final class Guardrail extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }

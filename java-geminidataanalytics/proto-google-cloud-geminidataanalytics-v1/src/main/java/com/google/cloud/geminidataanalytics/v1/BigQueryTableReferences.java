@@ -73,6 +73,7 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
             com.google.cloud.geminidataanalytics.v1.BigQueryTableReferences.Builder.class);
   }
 
+  private int bitField0_;
   public static final int TABLE_REFERENCES_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -275,6 +276,95 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     return propertyGraphReferences_.get(index);
   }
 
+  public static final int SEARCH_SCOPE_FIELD_NUMBER = 3;
+  private com.google.cloud.geminidataanalytics.v1.SearchScope searchScope_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Search over BigQuery resources to discover most relevant tables
+   * to the query.
+   *
+   * When set, at least one of `include_project_ids` or
+   * `include_dataset_references` must be populated with non-blank identifiers.
+   * Matches from the two fields are unioned (OR-ed).
+   *
+   * Note: `search_scope` is only supported for standalone conversations
+   * (`ChatRequest.inline_context` or
+   * `ClientManagedResourceContext.inline_context`) and is not supported in
+   * [DataAgent][google.cloud.geminidataanalytics.v1.DataAgent].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchScope field is set.
+   */
+  @java.lang.Override
+  public boolean hasSearchScope() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Search over BigQuery resources to discover most relevant tables
+   * to the query.
+   *
+   * When set, at least one of `include_project_ids` or
+   * `include_dataset_references` must be populated with non-blank identifiers.
+   * Matches from the two fields are unioned (OR-ed).
+   *
+   * Note: `search_scope` is only supported for standalone conversations
+   * (`ChatRequest.inline_context` or
+   * `ClientManagedResourceContext.inline_context`) and is not supported in
+   * [DataAgent][google.cloud.geminidataanalytics.v1.DataAgent].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchScope.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1.SearchScope getSearchScope() {
+    return searchScope_ == null
+        ? com.google.cloud.geminidataanalytics.v1.SearchScope.getDefaultInstance()
+        : searchScope_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Search over BigQuery resources to discover most relevant tables
+   * to the query.
+   *
+   * When set, at least one of `include_project_ids` or
+   * `include_dataset_references` must be populated with non-blank identifiers.
+   * Matches from the two fields are unioned (OR-ed).
+   *
+   * Note: `search_scope` is only supported for standalone conversations
+   * (`ChatRequest.inline_context` or
+   * `ClientManagedResourceContext.inline_context`) and is not supported in
+   * [DataAgent][google.cloud.geminidataanalytics.v1.DataAgent].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1.SearchScopeOrBuilder getSearchScopeOrBuilder() {
+    return searchScope_ == null
+        ? com.google.cloud.geminidataanalytics.v1.SearchScope.getDefaultInstance()
+        : searchScope_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -295,6 +385,9 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     for (int i = 0; i < propertyGraphReferences_.size(); i++) {
       output.writeMessage(2, propertyGraphReferences_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getSearchScope());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -311,6 +404,9 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, propertyGraphReferences_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSearchScope());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -331,6 +427,10 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     if (!getTableReferencesList().equals(other.getTableReferencesList())) return false;
     if (!getPropertyGraphReferencesList().equals(other.getPropertyGraphReferencesList()))
       return false;
+    if (hasSearchScope() != other.hasSearchScope()) return false;
+    if (hasSearchScope()) {
+      if (!getSearchScope().equals(other.getSearchScope())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -349,6 +449,10 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     if (getPropertyGraphReferencesCount() > 0) {
       hash = (37 * hash) + PROPERTY_GRAPH_REFERENCES_FIELD_NUMBER;
       hash = (53 * hash) + getPropertyGraphReferencesList().hashCode();
+    }
+    if (hasSearchScope()) {
+      hash = (37 * hash) + SEARCH_SCOPE_FIELD_NUMBER;
+      hash = (53 * hash) + getSearchScope().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -483,10 +587,21 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     }
 
     // Construct using com.google.cloud.geminidataanalytics.v1.BigQueryTableReferences.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetTableReferencesFieldBuilder();
+        internalGetPropertyGraphReferencesFieldBuilder();
+        internalGetSearchScopeFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -507,6 +622,11 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
         propertyGraphReferencesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      searchScope_ = null;
+      if (searchScopeBuilder_ != null) {
+        searchScopeBuilder_.dispose();
+        searchScopeBuilder_ = null;
+      }
       return this;
     }
 
@@ -569,6 +689,13 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
     private void buildPartial0(
         com.google.cloud.geminidataanalytics.v1.BigQueryTableReferences result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.searchScope_ =
+            searchScopeBuilder_ == null ? searchScope_ : searchScopeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -640,6 +767,9 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
           }
         }
       }
+      if (other.hasSearchScope()) {
+        mergeSearchScope(other.getSearchScope());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -695,6 +825,13 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
                 }
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetSearchScopeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1641,6 +1778,310 @@ public final class BigQueryTableReferences extends com.google.protobuf.Generated
         propertyGraphReferences_ = null;
       }
       return propertyGraphReferencesBuilder_;
+    }
+
+    private com.google.cloud.geminidataanalytics.v1.SearchScope searchScope_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1.SearchScope,
+            com.google.cloud.geminidataanalytics.v1.SearchScope.Builder,
+            com.google.cloud.geminidataanalytics.v1.SearchScopeOrBuilder>
+        searchScopeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search over BigQuery resources to discover most relevant tables
+     * to the query.
+     *
+     * When set, at least one of `include_project_ids` or
+     * `include_dataset_references` must be populated with non-blank identifiers.
+     * Matches from the two fields are unioned (OR-ed).
+     *
+     * Note: `search_scope` is only supported for standalone conversations
+     * (`ChatRequest.inline_context` or
+     * `ClientManagedResourceContext.inline_context`) and is not supported in
+     * [DataAgent][google.cloud.geminidataanalytics.v1.DataAgent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the searchScope field is set.
+     */
+    public boolean hasSearchScope() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search over BigQuery resources to discover most relevant tables
+     * to the query.
+     *
+     * When set, at least one of `include_project_ids` or
+     * `include_dataset_references` must be populated with non-blank identifiers.
+     * Matches from the two fields are unioned (OR-ed).
+     *
+     * Note: `search_scope` is only supported for standalone conversations
+     * (`ChatRequest.inline_context` or
+     * `ClientManagedResourceContext.inline_context`) and is not supported in
+     * [DataAgent][google.cloud.geminidataanalytics.v1.DataAgent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The searchScope.
+     */
+    public com.google.cloud.geminidataanalytics.v1.SearchScope getSearchScope() {
+      if (searchScopeBuilder_ == null) {
+        return searchScope_ == null
+            ? com.google.cloud.geminidataanalytics.v1.SearchScope.getDefaultInstance()
+            : searchScope_;
+      } else {
+        return searchScopeBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search over BigQuery resources to discover most relevant tables
+     * to the query.
+     *
+     * When set, at least one of `include_project_ids` or
+     * `include_dataset_references` must be populated with non-blank identifiers.
+     * Matches from the two fields are unioned (OR-ed).
+     *
+     * Note: `search_scope` is only supported for standalone conversations
+     * (`ChatRequest.inline_context` or
+     * `ClientManagedResourceContext.inline_context`) and is not supported in
+     * [DataAgent][google.cloud.geminidataanalytics.v1.DataAgent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchScope(com.google.cloud.geminidataanalytics.v1.SearchScope value) {
+      if (searchScopeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        searchScope_ = value;
+      } else {
+        searchScopeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search over BigQuery resources to discover most relevant tables
+     * to the query.
+     *
+     * When set, at least one of `include_project_ids` or
+     * `include_dataset_references` must be populated with non-blank identifiers.
+     * Matches from the two fields are unioned (OR-ed).
+     *
+     * Note: `search_scope` is only supported for standalone conversations
+     * (`ChatRequest.inline_context` or
+     * `ClientManagedResourceContext.inline_context`) and is not supported in
+     * [DataAgent][google.cloud.geminidataanalytics.v1.DataAgent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchScope(
+        com.google.cloud.geminidataanalytics.v1.SearchScope.Builder builderForValue) {
+      if (searchScopeBuilder_ == null) {
+        searchScope_ = builderForValue.build();
+      } else {
+        searchScopeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search over BigQuery resources to discover most relevant tables
+     * to the query.
+     *
+     * When set, at least one of `include_project_ids` or
+     * `include_dataset_references` must be populated with non-blank identifiers.
+     * Matches from the two fields are unioned (OR-ed).
+     *
+     * Note: `search_scope` is only supported for standalone conversations
+     * (`ChatRequest.inline_context` or
+     * `ClientManagedResourceContext.inline_context`) and is not supported in
+     * [DataAgent][google.cloud.geminidataanalytics.v1.DataAgent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSearchScope(com.google.cloud.geminidataanalytics.v1.SearchScope value) {
+      if (searchScopeBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && searchScope_ != null
+            && searchScope_
+                != com.google.cloud.geminidataanalytics.v1.SearchScope.getDefaultInstance()) {
+          getSearchScopeBuilder().mergeFrom(value);
+        } else {
+          searchScope_ = value;
+        }
+      } else {
+        searchScopeBuilder_.mergeFrom(value);
+      }
+      if (searchScope_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search over BigQuery resources to discover most relevant tables
+     * to the query.
+     *
+     * When set, at least one of `include_project_ids` or
+     * `include_dataset_references` must be populated with non-blank identifiers.
+     * Matches from the two fields are unioned (OR-ed).
+     *
+     * Note: `search_scope` is only supported for standalone conversations
+     * (`ChatRequest.inline_context` or
+     * `ClientManagedResourceContext.inline_context`) and is not supported in
+     * [DataAgent][google.cloud.geminidataanalytics.v1.DataAgent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSearchScope() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      searchScope_ = null;
+      if (searchScopeBuilder_ != null) {
+        searchScopeBuilder_.dispose();
+        searchScopeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search over BigQuery resources to discover most relevant tables
+     * to the query.
+     *
+     * When set, at least one of `include_project_ids` or
+     * `include_dataset_references` must be populated with non-blank identifiers.
+     * Matches from the two fields are unioned (OR-ed).
+     *
+     * Note: `search_scope` is only supported for standalone conversations
+     * (`ChatRequest.inline_context` or
+     * `ClientManagedResourceContext.inline_context`) and is not supported in
+     * [DataAgent][google.cloud.geminidataanalytics.v1.DataAgent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1.SearchScope.Builder getSearchScopeBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetSearchScopeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search over BigQuery resources to discover most relevant tables
+     * to the query.
+     *
+     * When set, at least one of `include_project_ids` or
+     * `include_dataset_references` must be populated with non-blank identifiers.
+     * Matches from the two fields are unioned (OR-ed).
+     *
+     * Note: `search_scope` is only supported for standalone conversations
+     * (`ChatRequest.inline_context` or
+     * `ClientManagedResourceContext.inline_context`) and is not supported in
+     * [DataAgent][google.cloud.geminidataanalytics.v1.DataAgent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1.SearchScopeOrBuilder getSearchScopeOrBuilder() {
+      if (searchScopeBuilder_ != null) {
+        return searchScopeBuilder_.getMessageOrBuilder();
+      } else {
+        return searchScope_ == null
+            ? com.google.cloud.geminidataanalytics.v1.SearchScope.getDefaultInstance()
+            : searchScope_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Search over BigQuery resources to discover most relevant tables
+     * to the query.
+     *
+     * When set, at least one of `include_project_ids` or
+     * `include_dataset_references` must be populated with non-blank identifiers.
+     * Matches from the two fields are unioned (OR-ed).
+     *
+     * Note: `search_scope` is only supported for standalone conversations
+     * (`ChatRequest.inline_context` or
+     * `ClientManagedResourceContext.inline_context`) and is not supported in
+     * [DataAgent][google.cloud.geminidataanalytics.v1.DataAgent].
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1.SearchScope search_scope = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.geminidataanalytics.v1.SearchScope,
+            com.google.cloud.geminidataanalytics.v1.SearchScope.Builder,
+            com.google.cloud.geminidataanalytics.v1.SearchScopeOrBuilder>
+        internalGetSearchScopeFieldBuilder() {
+      if (searchScopeBuilder_ == null) {
+        searchScopeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.geminidataanalytics.v1.SearchScope,
+                com.google.cloud.geminidataanalytics.v1.SearchScope.Builder,
+                com.google.cloud.geminidataanalytics.v1.SearchScopeOrBuilder>(
+                getSearchScope(), getParentForChildren(), isClean());
+        searchScope_ = null;
+      }
+      return searchScopeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.geminidataanalytics.v1.BigQueryTableReferences)

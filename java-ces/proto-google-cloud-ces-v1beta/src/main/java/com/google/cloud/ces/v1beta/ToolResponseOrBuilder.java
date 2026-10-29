@@ -217,5 +217,65 @@ public interface ToolResponseOrBuilder
    */
   com.google.protobuf.StructOrBuilder getResponseOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The id of the tool call that caused this one, when it was
+   * issued by a sub-agent working on behalf of a parent call. Empty for
+   * top-level calls. Lets a client group a sub-agent's work under the call that
+   * started it instead of rendering every step as a sibling.
+   * </pre>
+   *
+   * <code>string parent_tool_call_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The parentToolCallId.
+   */
+  java.lang.String getParentToolCallId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The id of the tool call that caused this one, when it was
+   * issued by a sub-agent working on behalf of a parent call. Empty for
+   * top-level calls. Lets a client group a sub-agent's work under the call that
+   * started it instead of rendering every step as a sibling.
+   * </pre>
+   *
+   * <code>string parent_tool_call_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for parentToolCallId.
+   */
+  com.google.protobuf.ByteString getParentToolCallIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable name of the agent that issued this call, e.g.
+   * "Contract Architect". Empty when the root agent issued it.
+   * </pre>
+   *
+   * <code>string agent_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The agentName.
+   */
+  java.lang.String getAgentName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Human-readable name of the agent that issued this call, e.g.
+   * "Contract Architect". Empty when the root agent issued it.
+   * </pre>
+   *
+   * <code>string agent_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for agentName.
+   */
+  com.google.protobuf.ByteString getAgentNameBytes();
+
   com.google.cloud.ces.v1beta.ToolResponse.ToolIdentifierCase getToolIdentifierCase();
 }

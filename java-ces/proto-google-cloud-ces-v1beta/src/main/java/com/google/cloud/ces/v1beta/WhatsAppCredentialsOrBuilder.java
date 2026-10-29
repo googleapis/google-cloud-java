@@ -160,10 +160,10 @@ public interface WhatsAppCredentialsOrBuilder
    *
    *
    * <pre>
-   * Required. The Conversation Profile ID to use for the deployment.
+   * Optional. The Conversation Profile ID to use for the deployment.
    * </pre>
    *
-   * <code>string conversation_profile_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string conversation_profile_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The conversationProfileId.
    */
@@ -173,10 +173,10 @@ public interface WhatsAppCredentialsOrBuilder
    *
    *
    * <pre>
-   * Required. The Conversation Profile ID to use for the deployment.
+   * Optional. The Conversation Profile ID to use for the deployment.
    * </pre>
    *
-   * <code>string conversation_profile_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string conversation_profile_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for conversationProfileId.
    */
