@@ -1772,8 +1772,7 @@ public class PublisherImplTest {
   private void waitForCancelledCalls(FakePublisherServiceImpl service, int expectedCount)
       throws InterruptedException {
     long timeout = System.currentTimeMillis() + 5000;
-    while (shutdownThread.getState() != Thread.State.WAITING
-        && shutdownThread.isAlive()
+    while (service.getCancelledCallCount() < expectedCount
         && System.currentTimeMillis() < timeout) {
       Thread.sleep(5);
     }
@@ -1801,6 +1800,7 @@ public class PublisherImplTest {
     shutdownThread.start();
     long timeout = System.currentTimeMillis() + 5000;
     while (shutdownThread.getState() != Thread.State.WAITING
+        && shutdownThread.isAlive()
         && System.currentTimeMillis() < timeout) {
       Thread.sleep(5);
     }
