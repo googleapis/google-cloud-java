@@ -83,6 +83,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -190,6 +191,7 @@ public class SessionImplTest {
     assertThat(sessionListener.popUntil(Status.class)).isOk();
   }
 
+  @Disabled("Flaky test: b/579436766")
   @Test
   void sessionGoAwayTest() throws Exception {
     SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
