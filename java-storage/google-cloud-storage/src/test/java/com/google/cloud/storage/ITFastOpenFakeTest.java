@@ -32,7 +32,9 @@ import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.OutOfRangeException;
 import com.google.cloud.storage.ITObjectReadSessionFakeTest.FakeStorage;
 import com.google.cloud.storage.ReadProjectionConfigs.BaseConfig;
+import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.it.ChecksummedTestContent;
+import com.google.cloud.storage.otel.TestExporter;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -48,6 +50,11 @@ import com.google.storage.v2.ReadRangeError;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
+import io.opentelemetry.api.trace.StatusCode;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.trace.SdkTracerProvider;
+import io.opentelemetry.sdk.trace.data.SpanData;
+import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -69,6 +76,7 @@ public final class ITFastOpenFakeTest {
           .setSize(_2MiB)
           .build();
   private static final GrpcCallContext CTX = GrpcCallContext.createDefault();
+  private static final BlobId BLOB_ID = BlobId.of("b", "o");
 
   private static final BidiReadObjectRequest OPEN =
       BidiReadObjectRequest.newBuilder()
@@ -314,36 +322,7 @@ public final class ITFastOpenFakeTest {
   @Test
   public void open_whenTheServerRejectsOnlyTheFastOpenRange_reopensWithoutItAndReadAsFails()
       throws Exception {
-    // OUT_OF_RANGE that names the failing read, as the server reports a bad range on a bidi read
-    BidiReadObjectError rangeError =
-        BidiReadObjectError.newBuilder()
-            .addReadRangeErrors(
-                ReadRangeError.newBuilder()
-                    .setReadId(1)
-                    .setStatus(
-                        com.google.rpc.Status.newBuilder()
-                            .setCode(com.google.rpc.Code.OUT_OF_RANGE_VALUE)))
-            .build();
-    Metadata trailers = new Metadata();
-    trailers.put(
-        GRPC_STATUS_DETAILS_KEY,
-        com.google.rpc.Status.newBuilder()
-            .setCode(com.google.rpc.Code.OUT_OF_RANGE_VALUE)
-            .addDetails(Any.pack(rangeError))
-            .build());
-    FakeStorage server =
-        FakeStorage.of(
-            ImmutableMap.of(
-                OPEN_WITH_READ_OF_10_TO_20,
-                client -> {
-                  requestsReceived.add(OPEN_WITH_READ_OF_10_TO_20);
-                  client.onError(Status.OUT_OF_RANGE.asRuntimeException(trailers));
-                },
-                OPEN,
-                client -> {
-                  requestsReceived.add(OPEN);
-                  client.onNext(metadataOnly());
-                }));
+    FakeStorage server = rejectsOnlyTheFastOpenRange();
 
     try (FakeServer fakeServer = FakeServer.of(server);
         Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
@@ -443,6 +422,168 @@ public final class ITFastOpenFakeTest {
         .inOrder();
   }
 
+  @Test
+  public void blobReadSession_withAFastOpenConfig_doesNotSendAnotherRequest() throws Exception {
+    FakeStorage server =
+        fakeServer(ImmutableMap.of(OPEN_WITH_READ_OF_10_TO_20, metadataAndBytes(1, 10, 10)));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      try (BlobReadSession session =
+          storage.blobReadSession(BLOB_ID, READ_10_TO_20).get(5, SECONDS)) {
+        byte[] actual = session.readAs(READ_10_TO_20).get(2, SECONDS);
+        assertThat(xxd(actual)).isEqualTo(xxd(slice(10, 10)));
+      }
+    }
+
+    assertThat(requestsReceived).containsExactly(OPEN_WITH_READ_OF_10_TO_20);
+  }
+
+  @Test
+  public void blobReadSession_withTracing_doesNotSendAnotherRequest_andEndsTheSpans()
+      throws Exception {
+    FakeStorage server =
+        fakeServer(ImmutableMap.of(OPEN_WITH_READ_OF_10_TO_20, metadataAndBytes(1, 10, 10)));
+    TestExporter exporter = new TestExporter();
+    OpenTelemetrySdk otel =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(exporter))
+                    .build())
+            .build();
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage =
+            fakeServer.getGrpcStorageOptions().toBuilder()
+                .setOpenTelemetry(otel)
+                .build()
+                .getService()) {
+      try (BlobReadSession session =
+          storage.blobReadSession(BLOB_ID, READ_10_TO_20).get(5, SECONDS)) {
+        byte[] actual = session.readAs(READ_10_TO_20).get(2, SECONDS);
+        assertThat(xxd(actual)).isEqualTo(xxd(slice(10, 10)));
+      }
+    }
+
+    assertThat(requestsReceived).containsExactly(OPEN_WITH_READ_OF_10_TO_20);
+    List<String> endedSpans =
+        exporter.getExportedSpans().stream().map(SpanData::getName).collect(toList());
+    assertThat(endedSpans)
+        .containsAtLeast(
+            "com.google.cloud.storage.Storage/blobReadSession",
+            "com.google.cloud.storage.Storage/blobReadSession/readAs");
+  }
+
+  @Test
+  public void blobReadSession_withTracing_whenTheFastOpenReadFails_recordsTheErrorOnReadAs()
+      throws Exception {
+    FakeStorage server = rejectsOnlyTheFastOpenRange();
+    TestExporter exporter = new TestExporter();
+    OpenTelemetrySdk otel =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(exporter))
+                    .build())
+            .build();
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage =
+            fakeServer.getGrpcStorageOptions().toBuilder()
+                .setOpenTelemetry(otel)
+                .build()
+                .getService()) {
+      try (BlobReadSession session =
+          storage.blobReadSession(BLOB_ID, READ_10_TO_20).get(10, SECONDS)) {
+        ApiFuture<byte[]> read = session.readAs(READ_10_TO_20);
+        assertThrows(ExecutionException.class, () -> read.get(5, SECONDS));
+      }
+    }
+
+    List<StatusCode> readAsStatus =
+        exporter.getExportedSpans().stream()
+            .filter(
+                s -> s.getName().equals("com.google.cloud.storage.Storage/blobReadSession/readAs"))
+            .map(s -> s.getStatus().getStatusCode())
+            .collect(toList());
+    assertThat(readAsStatus).containsExactly(StatusCode.ERROR);
+  }
+
+  @Test
+  public void blobReadSession_withANullFastOpenConfig_isAPlainOpen() throws Exception {
+    FakeStorage server = fakeServer(ImmutableMap.of(OPEN, metadataOnly()));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      BlobReadSession session =
+          storage.blobReadSession(BLOB_ID, (ReadAsFutureBytes) null).get(5, SECONDS);
+      session.close();
+    }
+
+    assertThat(requestsReceived).containsExactly(OPEN);
+  }
+
+  @Test
+  public void blobReadSession_withASeekableChannelConfig_isRejected() throws Exception {
+    FakeStorage server = fakeServer(ImmutableMap.of());
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      IllegalArgumentException e =
+          assertThrows(
+              IllegalArgumentException.class,
+              () -> storage.blobReadSession(BLOB_ID, ReadProjectionConfigs.asSeekableChannel()));
+      assertThat(e).hasMessageThat().startsWith("fastOpenConfig must be");
+    }
+
+    assertThat(requestsReceived).isEmpty();
+  }
+
+  @Test
+  public void blobReadSession_whenTheFastOpenReadIsOutOfRange_failsTheOpen() throws Exception {
+    FakeStorage server =
+        FakeStorage.of(
+            ImmutableMap.of(
+                OPEN_WITH_READ_OF_10_TO_20,
+                client -> {
+                  requestsReceived.add(OPEN_WITH_READ_OF_10_TO_20);
+                  client.onError(Status.OUT_OF_RANGE.asRuntimeException());
+                }));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      ApiFuture<BlobReadSession> open = storage.blobReadSession(BLOB_ID, READ_10_TO_20);
+
+      ExecutionException e = assertThrows(ExecutionException.class, () -> open.get(5, SECONDS));
+      assertThat(e).hasCauseThat().isInstanceOf(StorageException.class);
+      assertThat(((StorageException) e.getCause()).getCode()).isEqualTo(400);
+    }
+
+    assertThat(requestsReceived).containsExactly(OPEN_WITH_READ_OF_10_TO_20);
+  }
+
+  @Test
+  public void blobReadSession_withAFastOpenConfig_stillAppliesBlobSourceOptions() throws Exception {
+    BidiReadObjectRequest openWithGenerationMatchAndRead =
+        OPEN_WITH_READ_OF_10_TO_20.toBuilder()
+            .setReadObjectSpec(OPEN.getReadObjectSpec().toBuilder().setIfGenerationMatch(1))
+            .build();
+    FakeStorage server =
+        fakeServer(ImmutableMap.of(openWithGenerationMatchAndRead, metadataAndBytes(1, 10, 10)));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      BlobReadSession session =
+          storage
+              .blobReadSession(BLOB_ID, READ_10_TO_20, BlobSourceOption.generationMatch(1))
+              .get(5, SECONDS);
+      session.close();
+    }
+
+    assertThat(requestsReceived).containsExactly(openWithGenerationMatchAndRead);
+  }
+
   /**
    * A fake server that answers each request in {@code responses} and adds it to {@link
    * #requestsReceived}. Any other request is answered with an error.
@@ -463,6 +604,41 @@ public final class ITFastOpenFakeTest {
 
   private static BidiReadObjectResponse metadataOnly() {
     return BidiReadObjectResponse.newBuilder().setMetadata(METADATA).build();
+  }
+
+  /**
+   * A fake server that fails the open with an OUT_OF_RANGE that names only the fast open read (read
+   * id 1), as the server reports a bad range on a bidi read, and accepts the plain re-open.
+   */
+  private FakeStorage rejectsOnlyTheFastOpenRange() {
+    BidiReadObjectError rangeError =
+        BidiReadObjectError.newBuilder()
+            .addReadRangeErrors(
+                ReadRangeError.newBuilder()
+                    .setReadId(1)
+                    .setStatus(
+                        com.google.rpc.Status.newBuilder()
+                            .setCode(com.google.rpc.Code.OUT_OF_RANGE_VALUE)))
+            .build();
+    Metadata trailers = new Metadata();
+    trailers.put(
+        GRPC_STATUS_DETAILS_KEY,
+        com.google.rpc.Status.newBuilder()
+            .setCode(com.google.rpc.Code.OUT_OF_RANGE_VALUE)
+            .addDetails(Any.pack(rangeError))
+            .build());
+    return FakeStorage.of(
+        ImmutableMap.of(
+            OPEN_WITH_READ_OF_10_TO_20,
+            client -> {
+              requestsReceived.add(OPEN_WITH_READ_OF_10_TO_20);
+              client.onError(Status.OUT_OF_RANGE.asRuntimeException(trailers));
+            },
+            OPEN,
+            client -> {
+              requestsReceived.add(OPEN);
+              client.onNext(metadataOnly());
+            }));
   }
 
   /** The response to an open request that has a read of {@code [offset, offset + length)}. */
