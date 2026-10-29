@@ -606,7 +606,7 @@
                     <bigtable.data-jwt-audience>${bigtable.cfe-jwt-audience}</bigtable.data-jwt-audience>
                     <bigtable.enable-grpc-logs>${bigtable.enable-grpc-logs}</bigtable.enable-grpc-logs>
                     <bigtable.grpc-log-dir>${project.build.directory}/test-grpc-logs/session-it</bigtable.grpc-log-dir>
-                    <bigtable.internal.client-config-override>session_configuration { session_load: 1.0 }</bigtable.internal.client-config-override>
+                    <bigtable.internal.client-config-override>session_configuration { session_diversion_configuration { global_diversion { session_load: 1.0 } } }</bigtable.internal.client-config-override>
                   </systemPropertyVariables>
                   <includes>
                     <include>com.google.cloud.bigtable.data.v2.it.SessionIT</include>
