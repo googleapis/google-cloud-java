@@ -78,7 +78,6 @@ import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ITSystemTest {
@@ -282,19 +281,6 @@ public class ITSystemTest {
   private static <T> List<T> assertNotEmpty(AnnotateImageResponse response, List<T> list) {
     Assert.assertFalse("Empty response list: " + response, list.isEmpty());
     return list;
-  }
-
-  @Ignore("Flaky test: b/579436107")
-  @Test
-  public void detectFacesTest() throws IOException {
-    AnnotateImageResponse res =
-        requestAnnotatedImage("face_no_surprise.jpg", Type.FACE_DETECTION, false);
-    for (FaceAnnotation annotation : assertNotEmpty(res, res.getFaceAnnotationsList())) {
-      assertThat(annotation.getAngerLikelihood()).isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
-      assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
-      assertThat(annotation.getSurpriseLikelihood())
-          .isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
-    }
   }
 
   @Test
