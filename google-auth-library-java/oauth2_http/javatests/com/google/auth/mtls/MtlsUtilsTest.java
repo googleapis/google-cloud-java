@@ -1068,19 +1068,40 @@ class MtlsUtilsTest {
   }
 
   @Test
-  void getWorkloadCertPath_explicitConfigInWellKnownDir_timeout_throwsIllegalStateException() {
+  void getWorkloadCertPath_explicitConfigInWellKnownDir_timeout_throwsIllegalStateException()
+      throws IOException {
     MtlsUtils.setWellKnownSpiffeDirForTesting(tempDir.toAbsolutePath().toString() + "/");
     Path missingConfig = tempDir.resolve("missing_config.json");
 
     int[] sleepCount = {0};
     MtlsUtils.setTimeServiceForTesting(millis -> sleepCount[0]++);
 
-    EnvironmentProvider envProvider =
+    EnvironmentProvider envMissingConfig =
         name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? missingConfig.toString() : null;
 
     assertThrows(
         IllegalStateException.class,
-        () -> MtlsUtils.getWorkloadCertPath(envProvider, homeInTempDir()));
+        () -> MtlsUtils.getWorkloadCertPath(envMissingConfig, homeInTempDir()));
+    assertEquals(99, sleepCount[0]);
+
+    // Existing config referencing missing cert/key in well-known dir also polls once (99 sleeps)
+    // and throws IllegalStateException.
+    sleepCount[0] = 0;
+    Path configWithMissingCerts = tempDir.resolve("config_missing_certs.json");
+    String configJson =
+        String.format(
+            "{\"cert_configs\":{\"workload\":{\"cert_path\":\"%s\",\"key_path\":\"%s\"}}}",
+            tempDir.resolve("missing_cert.pem").toString().replace("\\", "\\\\"),
+            tempDir.resolve("missing_key.pem").toString().replace("\\", "\\\\"));
+    Files.write(configWithMissingCerts, configJson.getBytes());
+
+    EnvironmentProvider envMissingCerts =
+        name ->
+            "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configWithMissingCerts.toString() : null;
+
+    assertThrows(
+        IllegalStateException.class,
+        () -> MtlsUtils.getWorkloadCertPath(envMissingCerts, homeInTempDir()));
     assertEquals(99, sleepCount[0]);
   }
 

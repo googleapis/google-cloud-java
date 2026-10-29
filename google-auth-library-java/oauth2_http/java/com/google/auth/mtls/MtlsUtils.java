@@ -464,9 +464,9 @@ public class MtlsUtils {
                 + "'.");
       }
       if (config == null) {
-        try {
+        try (InputStream certConfigStream = new FileInputStream(configFile)) {
           config =
-              getWorkloadCertificateConfiguration(envProvider, propProvider, explicitConfigPath);
+              WorkloadCertificateConfiguration.fromCertificateConfigurationStream(certConfigStream);
         } catch (CertificateSourceUnavailableException e) {
           // ECP / PKCS11 configuration without workload section; safe fallback
           return null;
