@@ -17,6 +17,7 @@
 package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 import static io.grpc.netty.shaded.io.netty.handler.codec.http.HttpHeaderNames.CONTENT_TYPE;
 import static io.grpc.netty.shaded.io.netty.handler.codec.http.HttpResponseStatus.BAD_REQUEST;
 import static io.grpc.netty.shaded.io.netty.handler.codec.http.HttpResponseStatus.NO_CONTENT;
@@ -54,6 +55,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -109,26 +111,36 @@ public final class ITMultipartUploadClientRetryTest {
             HttpResponseStatus.BAD_GATEWAY,
             SERVICE_UNAVAILABLE,
             HttpResponseStatus.GATEWAY_TIMEOUT);
-    for (HttpResponseStatus status : retryable) {
-      FailFirst handler =
-          new FailFirst(
-              1,
-              status,
-              req -> {
-                DefaultFullHttpResponse resp =
-                    new DefaultFullHttpResponse(req.protocolVersion(), OK);
-                resp.headers().set("ETag", ETAG);
-                return resp;
-              });
+    // Share a single server across all status codes; the handler reads the status to fail with
+    // from currentStatus, and attempts is reset before each iteration.
+    AtomicReference<HttpResponseStatus> currentStatus = new AtomicReference<>();
+    AtomicInteger attempts = new AtomicInteger();
+    HttpRequestHandler handler =
+        req -> {
+          if (attempts.incrementAndGet() == 1) {
+            HttpResponseStatus status = currentStatus.get();
+            ByteBuf buf =
+                Unpooled.wrappedBuffer(status.reasonPhrase().getBytes(StandardCharsets.UTF_8));
+            FullHttpResponse resp = new DefaultFullHttpResponse(req.protocolVersion(), status, buf);
+            resp.headers().set(CONTENT_TYPE, "text/plain; charset=utf-8");
+            return resp;
+          }
+          DefaultFullHttpResponse resp = new DefaultFullHttpResponse(req.protocolVersion(), OK);
+          resp.headers().set("ETag", ETAG);
+          return resp;
+        };
 
-      try (FakeHttpServer server = FakeHttpServer.of(handler)) {
-        MultipartUploadClient client = newClient(server);
+    try (FakeHttpServer server = FakeHttpServer.of(handler)) {
+      MultipartUploadClient client = newClient(server);
+      for (HttpResponseStatus status : retryable) {
+        currentStatus.set(status);
+        attempts.set(0);
 
         UploadPartResponse response =
             client.uploadPart(uploadPartRequest(), RequestBody.of(ByteBuffer.wrap(PART_CONTENT)));
 
-        assertThat(response.eTag()).isEqualTo(ETAG);
-        assertThat(handler.attempts()).isEqualTo(2);
+        assertWithMessage("status %s", status).that(response.eTag()).isEqualTo(ETAG);
+        assertWithMessage("status %s", status).that(attempts.get()).isEqualTo(2);
       }
     }
   }
