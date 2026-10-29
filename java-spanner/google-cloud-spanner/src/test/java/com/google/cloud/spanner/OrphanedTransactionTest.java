@@ -16,21 +16,26 @@
 
 package com.google.cloud.spanner;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThrows;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.spanner.AsyncTransactionManager.CommitTimestampFuture;
 import com.google.cloud.spanner.AsyncTransactionManager.TransactionContextFuture;
 import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.connection.AbstractMockServerTest;
 import com.google.cloud.spanner.connection.RandomResultSetGenerator;
 import com.google.common.base.Function;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.RollbackRequest;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status;
 import java.util.Objects;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.junit.BeforeClass;
@@ -142,6 +147,113 @@ public class OrphanedTransactionTest extends AbstractMockServerTest {
       assertNull(closeResult.get());
     } finally {
       executor.shutdown();
+    }
+  }
+
+  private void assertRollbackRequestReceived() throws InterruptedException {
+    long deadline = System.currentTimeMillis() + 200L;
+    while (mockSpanner.countRequestsOfType(RollbackRequest.class) == 0
+        && System.currentTimeMillis() < deadline) {
+      Thread.sleep(10L);
+    }
+    assertEquals(
+        "Expected RollbackRequest after Commit DEADLINE_EXCEEDED",
+        1,
+        mockSpanner.countRequestsOfType(RollbackRequest.class));
+  }
+
+  @Test
+  public void testTransactionRunnerCommitDeadlineExceededSendsRollback() throws Exception {
+    mockSpanner.clearRequests();
+    mockSpanner.setCommitExecutionTime(
+        SimulatedExecutionTime.ofException(
+            Status.DEADLINE_EXCEEDED
+                .withDescription("commit deadline exceeded")
+                .asRuntimeException()));
+    try (Spanner spanner = createSpanner()) {
+      DatabaseClient client =
+          spanner.getDatabaseClient(
+              DatabaseId.of("fake-project", "fake-instance", "fake-database"));
+      SpannerException e =
+          assertThrows(
+              SpannerException.class,
+              () ->
+                  client
+                      .readWriteTransaction()
+                      .run(
+                          txn -> {
+                            try (ResultSet rs = txn.executeQuery(STATEMENT)) {
+                              while (rs.next()) {}
+                            }
+                            return null;
+                          }));
+      assertEquals(ErrorCode.DEADLINE_EXCEEDED, e.getErrorCode());
+      assertRollbackRequestReceived();
+    } finally {
+      mockSpanner.removeAllExecutionTimes();
+    }
+  }
+
+  @Test
+  public void testTransactionManagerCommitDeadlineExceededSendsRollback() throws Exception {
+    mockSpanner.clearRequests();
+    mockSpanner.setCommitExecutionTime(
+        SimulatedExecutionTime.ofException(
+            Status.DEADLINE_EXCEEDED
+                .withDescription("commit deadline exceeded")
+                .asRuntimeException()));
+    try (Spanner spanner = createSpanner()) {
+      DatabaseClient client =
+          spanner.getDatabaseClient(
+              DatabaseId.of("fake-project", "fake-instance", "fake-database"));
+      try (TransactionManager manager = client.transactionManager()) {
+        TransactionContext txn = manager.begin();
+        try (ResultSet rs = txn.executeQuery(STATEMENT)) {
+          while (rs.next()) {}
+        }
+        SpannerException e = assertThrows(SpannerException.class, manager::commit);
+        assertEquals(ErrorCode.DEADLINE_EXCEEDED, e.getErrorCode());
+      }
+      assertRollbackRequestReceived();
+    } finally {
+      mockSpanner.removeAllExecutionTimes();
+    }
+  }
+
+  @Test
+  public void testAsyncTransactionManagerCommitDeadlineExceededSendsRollback() throws Exception {
+    mockSpanner.clearRequests();
+    mockSpanner.setCommitExecutionTime(
+        SimulatedExecutionTime.ofException(
+            Status.DEADLINE_EXCEEDED
+                .withDescription("commit deadline exceeded")
+                .asRuntimeException()));
+    try (Spanner spanner = createSpanner()) {
+      DatabaseClient client =
+          spanner.getDatabaseClient(
+              DatabaseId.of("fake-project", "fake-instance", "fake-database"));
+      try (AsyncTransactionManager manager = client.transactionManagerAsync()) {
+        TransactionContextFuture context = manager.beginAsync();
+        CommitTimestampFuture commitFuture =
+            context
+                .then(
+                    (txn, input) -> {
+                      try (AsyncResultSet rs = txn.executeQueryAsync(STATEMENT)) {
+                        return rs.toListAsync(
+                            row -> Objects.requireNonNull(row).getValue(0).getAsString(),
+                            MoreExecutors.directExecutor());
+                      }
+                    },
+                    MoreExecutors.directExecutor())
+                .commitAsync();
+        ExecutionException e = assertThrows(ExecutionException.class, commitFuture::get);
+        assertEquals(
+            ErrorCode.DEADLINE_EXCEEDED,
+            SpannerExceptionFactory.asSpannerException(e.getCause()).getErrorCode());
+      }
+      assertRollbackRequestReceived();
+    } finally {
+      mockSpanner.removeAllExecutionTimes();
     }
   }
 }

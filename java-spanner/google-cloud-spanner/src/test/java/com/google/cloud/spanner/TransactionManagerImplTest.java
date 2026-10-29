@@ -179,10 +179,68 @@ public class TransactionManagerImplTest {
     doThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.UNKNOWN, "")).when(txn).commit();
     SpannerException e = assertThrows(SpannerException.class, () -> manager.commit());
     assertEquals(ErrorCode.UNKNOWN, e.getErrorCode());
+    verify(txn, Mockito.never()).rollback();
+    verify(txn, Mockito.never()).rollbackAsync();
 
     IllegalStateException illegal =
         assertThrows(IllegalStateException.class, () -> manager.resetForRetry());
     assertNotNull(illegal.getMessage());
+  }
+
+  @Test
+  public void commitFailsWithDeadlineExceededRollsBack() {
+    when(session.newTransaction(eq(Options.fromTransactionOptions()), any())).thenReturn(txn);
+    manager.begin();
+    doThrow(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.DEADLINE_EXCEEDED, "commit deadline exceeded"))
+        .when(txn)
+        .commit();
+    SpannerException e = assertThrows(SpannerException.class, () -> manager.commit());
+    assertEquals(ErrorCode.DEADLINE_EXCEEDED, e.getErrorCode());
+    assertEquals(TransactionState.COMMIT_FAILED, manager.getState());
+    verify(txn, times(1)).rollbackAsync();
+  }
+
+  @Test
+  public void commitFailsWithCancelledRollsBack() {
+    when(session.newTransaction(eq(Options.fromTransactionOptions()), any())).thenReturn(txn);
+    manager.begin();
+    doThrow(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.CANCELLED, "commit cancelled"))
+        .when(txn)
+        .commit();
+    SpannerException e = assertThrows(SpannerException.class, () -> manager.commit());
+    assertEquals(ErrorCode.CANCELLED, e.getErrorCode());
+    assertEquals(TransactionState.COMMIT_FAILED, manager.getState());
+    verify(txn, times(1)).rollbackAsync();
+  }
+
+  @Test
+  public void commitFailsWithUnavailableRollsBack() {
+    when(session.newTransaction(eq(Options.fromTransactionOptions()), any())).thenReturn(txn);
+    manager.begin();
+    doThrow(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.UNAVAILABLE, "commit unavailable"))
+        .when(txn)
+        .commit();
+    SpannerException e = assertThrows(SpannerException.class, () -> manager.commit());
+    assertEquals(ErrorCode.UNAVAILABLE, e.getErrorCode());
+    assertEquals(TransactionState.COMMIT_FAILED, manager.getState());
+    verify(txn, times(1)).rollbackAsync();
+  }
+
+  @Test
+  public void commitFailsWithResourceExhaustedWithRetryInfoRollsBack() {
+    when(session.newTransaction(eq(Options.fromTransactionOptions()), any())).thenReturn(txn);
+    manager.begin();
+    doThrow(TransactionRunnerImplTest.resourceExhaustedWithRetryInfo()).when(txn).commit();
+    SpannerException e = assertThrows(SpannerException.class, () -> manager.commit());
+    assertEquals(ErrorCode.RESOURCE_EXHAUSTED, e.getErrorCode());
+    assertEquals(TransactionState.COMMIT_FAILED, manager.getState());
+    verify(txn, times(1)).rollbackAsync();
   }
 
   @Test

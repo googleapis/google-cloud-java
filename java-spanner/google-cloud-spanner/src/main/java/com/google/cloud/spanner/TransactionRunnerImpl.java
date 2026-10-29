@@ -1404,6 +1404,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                 "Transaction Attempt Failed in Commit",
                 ImmutableMap.of(
                     "Attempt", attempt.longValue(), "Status", e.getErrorCode().toString()));
+            if (shouldRollbackOnCommitFailure(e)) {
+              rollbackBestEffort(txn, e);
+            }
             throw e;
           }
         };
@@ -1428,4 +1431,26 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
 
   @Override
   public void close() {}
+
+  static boolean shouldRollbackOnCommitFailure(Throwable t) {
+    SpannerException e = SpannerExceptionFactory.asSpannerException(t);
+    switch (e.getErrorCode()) {
+      case DEADLINE_EXCEEDED:
+      case CANCELLED:
+      case UNAVAILABLE:
+        return true;
+      case RESOURCE_EXHAUSTED:
+        return e.getRetryDelayInMillis() > -1L;
+      default:
+        return false;
+    }
+  }
+
+  static void rollbackBestEffort(TransactionContextImpl txn, Throwable commitError) {
+    try {
+      ApiFuture<Empty> unused = txn.rollbackAsync();
+    } catch (RuntimeException rollbackError) {
+      commitError.addSuppressed(rollbackError);
+    }
+  }
 }
