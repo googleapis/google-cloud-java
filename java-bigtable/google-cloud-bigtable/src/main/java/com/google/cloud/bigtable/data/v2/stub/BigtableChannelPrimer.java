@@ -90,12 +90,7 @@ public class BigtableChannelPrimer implements ChannelPrimer {
 
   @Override
   public void primeChannel(Channel channel) {
-    try {
-      sendPrimeRequestsBlocking(channel);
-    } catch (RuntimeException e) {
-      LOG.log(Level.WARNING, "Unexpected error while trying to prime a channel", e);
-      throw e;
-    }
+    sendPrimeRequestsBlocking(channel);
   }
 
   private void sendPrimeRequestsBlocking(Channel channel) {

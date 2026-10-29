@@ -188,7 +188,7 @@ public class ChannelPoolHealthCheckerTest {
   }
 
   @Test
-  public void testEviction_usesEntryReplacerWhenProvided() {
+  public void testEviction_usesOutlierHandlerWhenProvided() {
     Entry healthyEntry = createTestEntry();
     Entry worseEntry = createTestEntry();
 
@@ -203,10 +203,7 @@ public class ChannelPoolHealthCheckerTest {
             mockPrimer,
             executor,
             fakeClock,
-            entry -> {
-              replacedEntries.add(entry);
-              return true;
-            });
+            replacedEntries::add);
 
     replacingHealthChecker.detectAndRemoveOutlierEntries();
 

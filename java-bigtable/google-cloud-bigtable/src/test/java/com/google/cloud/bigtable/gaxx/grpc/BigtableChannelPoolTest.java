@@ -19,6 +19,9 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
+import com.google.bigtable.v2.PingAndWarmResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import io.grpc.CallOptions;
@@ -33,7 +36,9 @@ import java.time.Clock;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -114,6 +119,16 @@ public class BigtableChannelPoolTest {
     // Capture the listener when start is called
     // Configure mockClientCall.start to capture the listener
     doNothing().when(mockClientCall).start(listenerCaptor.capture(), any(Metadata.class));
+  }
+
+  @After
+  public void tearDown() {
+    executorService.shutdownNow();
+  }
+
+  private void flushExecutor() throws Exception {
+    executorService.submit(() -> {}).get(5, TimeUnit.SECONDS);
+    executorService.submit(() -> {}).get(5, TimeUnit.SECONDS);
   }
 
   private BigtableChannelPool.Entry getSingleEntry() {
@@ -274,40 +289,66 @@ public class BigtableChannelPoolTest {
   }
 
   @Test
-  public void testReplaceEntryReplacesUnhealthyChannel() {
+  public void testReplaceOutlierEntryAsyncReplacesUnhealthyChannel() throws Exception {
     BigtableChannelPool.Entry initialEntry = getSingleEntry();
     ManagedChannel replacementChannel = mock(ManagedChannel.class);
     when(mockChannelFactory.get()).thenReturn(replacementChannel);
+    when(mockChannelPrimer.sendPrimeRequestsAsync(replacementChannel))
+        .thenReturn(ApiFutures.immediateFuture(PingAndWarmResponse.getDefaultInstance()));
 
-    boolean replaced = channelPool.replaceEntry(initialEntry);
+    channelPool.replaceOutlierEntryAsync(initialEntry);
+    flushExecutor();
 
-    assertThat(replaced).isTrue();
     BigtableChannelPool.Entry updatedEntry = getSingleEntry();
     assertThat(updatedEntry).isNotSameInstanceAs(initialEntry);
     assertThat(updatedEntry.getManagedChannel()).isSameInstanceAs(replacementChannel);
-    verify(mockChannelPrimer).primeChannel(replacementChannel);
+    verify(mockChannelPrimer).sendPrimeRequestsAsync(replacementChannel);
+    verify(mockChannel).shutdown();
+    verify(mockChannel, never()).enterIdle();
+  }
+
+  @Test
+  public void testReplaceOutlierEntryAsyncFallsBackToEnterIdleWhenPrimingFails() throws Exception {
+    BigtableChannelPool.Entry initialEntry = getSingleEntry();
+    ManagedChannel badReplacementChannel = mock(ManagedChannel.class);
+    when(mockChannelFactory.get()).thenReturn(badReplacementChannel);
+    when(mockChannelPrimer.sendPrimeRequestsAsync(badReplacementChannel))
+        .thenReturn(ApiFutures.immediateFailedFuture(new RuntimeException("PingAndWarm failed")));
+
+    channelPool.replaceOutlierEntryAsync(initialEntry);
+    flushExecutor();
+
+    assertThat(getSingleEntry()).isSameInstanceAs(initialEntry);
+    verify(badReplacementChannel).shutdownNow();
+    verify(mockChannel, never()).shutdown();
+    verify(mockChannel).enterIdle();
+  }
+
+  @Test
+  public void testReplaceOutlierEntryAsyncDoesNotBlockExecutorWhilePrimingInFlight()
+      throws Exception {
+    BigtableChannelPool.Entry initialEntry = getSingleEntry();
+    ManagedChannel replacementChannel = mock(ManagedChannel.class);
+    SettableApiFuture<PingAndWarmResponse> pendingPrime = SettableApiFuture.create();
+    when(mockChannelFactory.get()).thenReturn(replacementChannel);
+    when(mockChannelPrimer.sendPrimeRequestsAsync(replacementChannel)).thenReturn(pendingPrime);
+
+    channelPool.replaceOutlierEntryAsync(initialEntry);
+
+    // The single-threaded executor must remain unblocked while PingAndWarm is still in flight.
+    assertThat(executorService.submit(() -> "unblocked").get(5, TimeUnit.SECONDS))
+        .isEqualTo("unblocked");
+    assertThat(getSingleEntry()).isSameInstanceAs(initialEntry);
+
+    pendingPrime.set(PingAndWarmResponse.getDefaultInstance());
+    flushExecutor();
+
+    assertThat(getSingleEntry().getManagedChannel()).isSameInstanceAs(replacementChannel);
     verify(mockChannel).shutdown();
   }
 
   @Test
-  public void testReplaceEntryKeepsOldChannelWhenPrimingFails() {
-    BigtableChannelPool.Entry initialEntry = getSingleEntry();
-    ManagedChannel badReplacementChannel = mock(ManagedChannel.class);
-    when(mockChannelFactory.get()).thenReturn(badReplacementChannel);
-    doThrow(new RuntimeException("PingAndWarm failed"))
-        .when(mockChannelPrimer)
-        .primeChannel(badReplacementChannel);
-
-    boolean replaced = channelPool.replaceEntry(initialEntry);
-
-    assertThat(replaced).isFalse();
-    assertThat(getSingleEntry()).isSameInstanceAs(initialEntry);
-    verify(badReplacementChannel).shutdownNow();
-    verify(mockChannel, never()).shutdown();
-  }
-
-  @Test
-  public void testHealthCheckerEvictionReplacesOutlierEntryInPool() throws IOException {
+  public void testHealthCheckerEvictionReplacesOutlierEntryInPool() throws Exception {
     BigtableChannelPoolSettings multiChannelSettings =
         BigtableChannelPoolSettings.builder()
             .setInitialChannelCount(2)
@@ -318,6 +359,8 @@ public class BigtableChannelPoolTest {
     ManagedChannel unhealthyChannel = mock(ManagedChannel.class);
     ManagedChannel replacementChannel = mock(ManagedChannel.class);
     when(mockChannelFactory.get()).thenReturn(healthyChannel, unhealthyChannel, replacementChannel);
+    when(mockChannelPrimer.sendPrimeRequestsAsync(replacementChannel))
+        .thenReturn(ApiFutures.immediateFuture(PingAndWarmResponse.getDefaultInstance()));
 
     BigtableChannelPool pool =
         new BigtableChannelPool(
@@ -338,9 +381,10 @@ public class BigtableChannelPoolTest {
             mockChannelPrimer,
             executorService,
             Clock.systemUTC(),
-            pool::replaceEntry);
+            pool::replaceOutlierEntryAsync);
 
     healthChecker.detectAndRemoveOutlierEntries();
+    flushExecutor();
 
     @SuppressWarnings("unchecked")
     List<BigtableChannelPool.Entry> updatedEntries =
