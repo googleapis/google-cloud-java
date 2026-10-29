@@ -53,6 +53,7 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
 
   private Citations() {
     citedChunks_ = java.util.Collections.emptyList();
+    inlineCitations_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1217,6 +1218,926 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface InlineCitationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.Citations.InlineCitation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The starting index (in bytes) of the text segment in the agent response.
+     * </pre>
+     *
+     * <code>int32 start_index = 1;</code>
+     *
+     * @return The startIndex.
+     */
+    int getStartIndex();
+
+    /**
+     *
+     *
+     * <pre>
+     * The ending index (in bytes) of the text segment in the agent response.
+     * </pre>
+     *
+     * <code>int32 end_index = 2;</code>
+     *
+     * @return The endIndex.
+     */
+    int getEndIndex();
+
+    /**
+     *
+     *
+     * <pre>
+     * The indices of the cited chunks that back this text segment.
+     * Indices refer to the elements in `cited_chunks`.
+     * </pre>
+     *
+     * <code>repeated int32 cited_chunk_indices = 3;</code>
+     *
+     * @return A list containing the citedChunkIndices.
+     */
+    java.util.List<java.lang.Integer> getCitedChunkIndicesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The indices of the cited chunks that back this text segment.
+     * Indices refer to the elements in `cited_chunks`.
+     * </pre>
+     *
+     * <code>repeated int32 cited_chunk_indices = 3;</code>
+     *
+     * @return The count of citedChunkIndices.
+     */
+    int getCitedChunkIndicesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The indices of the cited chunks that back this text segment.
+     * Indices refer to the elements in `cited_chunks`.
+     * </pre>
+     *
+     * <code>repeated int32 cited_chunk_indices = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The citedChunkIndices at the given index.
+     */
+    int getCitedChunkIndices(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * An inline citation in the response text.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.ces.v1beta.Citations.InlineCitation}
+   */
+  public static final class InlineCitation extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.ces.v1beta.Citations.InlineCitation)
+      InlineCitationOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "InlineCitation");
+    }
+
+    // Use InlineCitation.newBuilder() to construct.
+    private InlineCitation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private InlineCitation() {
+      citedChunkIndices_ = emptyIntList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.SessionServiceProto
+          .internal_static_google_cloud_ces_v1beta_Citations_InlineCitation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.ces.v1beta.SessionServiceProto
+          .internal_static_google_cloud_ces_v1beta_Citations_InlineCitation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.ces.v1beta.Citations.InlineCitation.class,
+              com.google.cloud.ces.v1beta.Citations.InlineCitation.Builder.class);
+    }
+
+    public static final int START_INDEX_FIELD_NUMBER = 1;
+    private int startIndex_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The starting index (in bytes) of the text segment in the agent response.
+     * </pre>
+     *
+     * <code>int32 start_index = 1;</code>
+     *
+     * @return The startIndex.
+     */
+    @java.lang.Override
+    public int getStartIndex() {
+      return startIndex_;
+    }
+
+    public static final int END_INDEX_FIELD_NUMBER = 2;
+    private int endIndex_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The ending index (in bytes) of the text segment in the agent response.
+     * </pre>
+     *
+     * <code>int32 end_index = 2;</code>
+     *
+     * @return The endIndex.
+     */
+    @java.lang.Override
+    public int getEndIndex() {
+      return endIndex_;
+    }
+
+    public static final int CITED_CHUNK_INDICES_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.Internal.IntList citedChunkIndices_ = emptyIntList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The indices of the cited chunks that back this text segment.
+     * Indices refer to the elements in `cited_chunks`.
+     * </pre>
+     *
+     * <code>repeated int32 cited_chunk_indices = 3;</code>
+     *
+     * @return A list containing the citedChunkIndices.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getCitedChunkIndicesList() {
+      return citedChunkIndices_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The indices of the cited chunks that back this text segment.
+     * Indices refer to the elements in `cited_chunks`.
+     * </pre>
+     *
+     * <code>repeated int32 cited_chunk_indices = 3;</code>
+     *
+     * @return The count of citedChunkIndices.
+     */
+    public int getCitedChunkIndicesCount() {
+      return citedChunkIndices_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The indices of the cited chunks that back this text segment.
+     * Indices refer to the elements in `cited_chunks`.
+     * </pre>
+     *
+     * <code>repeated int32 cited_chunk_indices = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The citedChunkIndices at the given index.
+     */
+    public int getCitedChunkIndices(int index) {
+      return citedChunkIndices_.getInt(index);
+    }
+
+    private int citedChunkIndicesMemoizedSerializedSize = -1;
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
+      if (startIndex_ != 0) {
+        output.writeInt32(1, startIndex_);
+      }
+      if (endIndex_ != 0) {
+        output.writeInt32(2, endIndex_);
+      }
+      if (getCitedChunkIndicesList().size() > 0) {
+        output.writeUInt32NoTag(26);
+        output.writeUInt32NoTag(citedChunkIndicesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < citedChunkIndices_.size(); i++) {
+        output.writeInt32NoTag(citedChunkIndices_.getInt(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (startIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, startIndex_);
+      }
+      if (endIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, endIndex_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < citedChunkIndices_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(
+                  citedChunkIndices_.getInt(i));
+        }
+        size += dataSize;
+        if (!getCitedChunkIndicesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+        }
+        citedChunkIndicesMemoizedSerializedSize = dataSize;
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.ces.v1beta.Citations.InlineCitation)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.ces.v1beta.Citations.InlineCitation other =
+          (com.google.cloud.ces.v1beta.Citations.InlineCitation) obj;
+
+      if (getStartIndex() != other.getStartIndex()) return false;
+      if (getEndIndex() != other.getEndIndex()) return false;
+      if (!getCitedChunkIndicesList().equals(other.getCitedChunkIndicesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + START_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getStartIndex();
+      hash = (37 * hash) + END_INDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getEndIndex();
+      if (getCitedChunkIndicesCount() > 0) {
+        hash = (37 * hash) + CITED_CHUNK_INDICES_FIELD_NUMBER;
+        hash = (53 * hash) + getCitedChunkIndicesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.ces.v1beta.Citations.InlineCitation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An inline citation in the response text.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.ces.v1beta.Citations.InlineCitation}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.ces.v1beta.Citations.InlineCitation)
+        com.google.cloud.ces.v1beta.Citations.InlineCitationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.SessionServiceProto
+            .internal_static_google_cloud_ces_v1beta_Citations_InlineCitation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.ces.v1beta.SessionServiceProto
+            .internal_static_google_cloud_ces_v1beta_Citations_InlineCitation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.ces.v1beta.Citations.InlineCitation.class,
+                com.google.cloud.ces.v1beta.Citations.InlineCitation.Builder.class);
+      }
+
+      // Construct using com.google.cloud.ces.v1beta.Citations.InlineCitation.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        startIndex_ = 0;
+        endIndex_ = 0;
+        citedChunkIndices_ = emptyIntList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.ces.v1beta.SessionServiceProto
+            .internal_static_google_cloud_ces_v1beta_Citations_InlineCitation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.Citations.InlineCitation getDefaultInstanceForType() {
+        return com.google.cloud.ces.v1beta.Citations.InlineCitation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.Citations.InlineCitation build() {
+        com.google.cloud.ces.v1beta.Citations.InlineCitation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.Citations.InlineCitation buildPartial() {
+        com.google.cloud.ces.v1beta.Citations.InlineCitation result =
+            new com.google.cloud.ces.v1beta.Citations.InlineCitation(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.ces.v1beta.Citations.InlineCitation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.startIndex_ = startIndex_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.endIndex_ = endIndex_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          citedChunkIndices_.makeImmutable();
+          result.citedChunkIndices_ = citedChunkIndices_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.ces.v1beta.Citations.InlineCitation) {
+          return mergeFrom((com.google.cloud.ces.v1beta.Citations.InlineCitation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.ces.v1beta.Citations.InlineCitation other) {
+        if (other == com.google.cloud.ces.v1beta.Citations.InlineCitation.getDefaultInstance())
+          return this;
+        if (other.getStartIndex() != 0) {
+          setStartIndex(other.getStartIndex());
+        }
+        if (other.getEndIndex() != 0) {
+          setEndIndex(other.getEndIndex());
+        }
+        if (!other.citedChunkIndices_.isEmpty()) {
+          if (citedChunkIndices_.isEmpty()) {
+            citedChunkIndices_ = other.citedChunkIndices_;
+            citedChunkIndices_.makeImmutable();
+            bitField0_ |= 0x00000004;
+          } else {
+            ensureCitedChunkIndicesIsMutable();
+            citedChunkIndices_.addAll(other.citedChunkIndices_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  startIndex_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  endIndex_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  int v = input.readInt32();
+                  ensureCitedChunkIndicesIsMutable();
+                  citedChunkIndices_.addInt(v);
+                  break;
+                } // case 24
+              case 26:
+                {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  ensureCitedChunkIndicesIsMutable();
+                  while (input.getBytesUntilLimit() > 0) {
+                    citedChunkIndices_.addInt(input.readInt32());
+                  }
+                  input.popLimit(limit);
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int startIndex_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The starting index (in bytes) of the text segment in the agent response.
+       * </pre>
+       *
+       * <code>int32 start_index = 1;</code>
+       *
+       * @return The startIndex.
+       */
+      @java.lang.Override
+      public int getStartIndex() {
+        return startIndex_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The starting index (in bytes) of the text segment in the agent response.
+       * </pre>
+       *
+       * <code>int32 start_index = 1;</code>
+       *
+       * @param value The startIndex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStartIndex(int value) {
+
+        startIndex_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The starting index (in bytes) of the text segment in the agent response.
+       * </pre>
+       *
+       * <code>int32 start_index = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearStartIndex() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        startIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int endIndex_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The ending index (in bytes) of the text segment in the agent response.
+       * </pre>
+       *
+       * <code>int32 end_index = 2;</code>
+       *
+       * @return The endIndex.
+       */
+      @java.lang.Override
+      public int getEndIndex() {
+        return endIndex_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ending index (in bytes) of the text segment in the agent response.
+       * </pre>
+       *
+       * <code>int32 end_index = 2;</code>
+       *
+       * @param value The endIndex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndIndex(int value) {
+
+        endIndex_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The ending index (in bytes) of the text segment in the agent response.
+       * </pre>
+       *
+       * <code>int32 end_index = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEndIndex() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        endIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.Internal.IntList citedChunkIndices_ = emptyIntList();
+
+      private void ensureCitedChunkIndicesIsMutable() {
+        if (!citedChunkIndices_.isModifiable()) {
+          citedChunkIndices_ = makeMutableCopy(citedChunkIndices_);
+        }
+        bitField0_ |= 0x00000004;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The indices of the cited chunks that back this text segment.
+       * Indices refer to the elements in `cited_chunks`.
+       * </pre>
+       *
+       * <code>repeated int32 cited_chunk_indices = 3;</code>
+       *
+       * @return A list containing the citedChunkIndices.
+       */
+      public java.util.List<java.lang.Integer> getCitedChunkIndicesList() {
+        citedChunkIndices_.makeImmutable();
+        return citedChunkIndices_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The indices of the cited chunks that back this text segment.
+       * Indices refer to the elements in `cited_chunks`.
+       * </pre>
+       *
+       * <code>repeated int32 cited_chunk_indices = 3;</code>
+       *
+       * @return The count of citedChunkIndices.
+       */
+      public int getCitedChunkIndicesCount() {
+        return citedChunkIndices_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The indices of the cited chunks that back this text segment.
+       * Indices refer to the elements in `cited_chunks`.
+       * </pre>
+       *
+       * <code>repeated int32 cited_chunk_indices = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The citedChunkIndices at the given index.
+       */
+      public int getCitedChunkIndices(int index) {
+        return citedChunkIndices_.getInt(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The indices of the cited chunks that back this text segment.
+       * Indices refer to the elements in `cited_chunks`.
+       * </pre>
+       *
+       * <code>repeated int32 cited_chunk_indices = 3;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The citedChunkIndices to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCitedChunkIndices(int index, int value) {
+
+        ensureCitedChunkIndicesIsMutable();
+        citedChunkIndices_.setInt(index, value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The indices of the cited chunks that back this text segment.
+       * Indices refer to the elements in `cited_chunks`.
+       * </pre>
+       *
+       * <code>repeated int32 cited_chunk_indices = 3;</code>
+       *
+       * @param value The citedChunkIndices to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCitedChunkIndices(int value) {
+
+        ensureCitedChunkIndicesIsMutable();
+        citedChunkIndices_.addInt(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The indices of the cited chunks that back this text segment.
+       * Indices refer to the elements in `cited_chunks`.
+       * </pre>
+       *
+       * <code>repeated int32 cited_chunk_indices = 3;</code>
+       *
+       * @param values The citedChunkIndices to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCitedChunkIndices(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureCitedChunkIndicesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, citedChunkIndices_);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The indices of the cited chunks that back this text segment.
+       * Indices refer to the elements in `cited_chunks`.
+       * </pre>
+       *
+       * <code>repeated int32 cited_chunk_indices = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCitedChunkIndices() {
+        citedChunkIndices_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.Citations.InlineCitation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.ces.v1beta.Citations.InlineCitation)
+    private static final com.google.cloud.ces.v1beta.Citations.InlineCitation DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.ces.v1beta.Citations.InlineCitation();
+    }
+
+    public static com.google.cloud.ces.v1beta.Citations.InlineCitation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<InlineCitation> PARSER =
+        new com.google.protobuf.AbstractParser<InlineCitation>() {
+          @java.lang.Override
+          public InlineCitation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<InlineCitation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InlineCitation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.Citations.InlineCitation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int CITED_CHUNKS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1294,6 +2215,94 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
     return citedChunks_.get(index);
   }
 
+  public static final int INLINE_CITATIONS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.ces.v1beta.Citations.InlineCitation> inlineCitations_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of inline citations in the agent response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.ces.v1beta.Citations.InlineCitation>
+      getInlineCitationsList() {
+    return inlineCitations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of inline citations in the agent response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.ces.v1beta.Citations.InlineCitationOrBuilder>
+      getInlineCitationsOrBuilderList() {
+    return inlineCitations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of inline citations in the agent response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getInlineCitationsCount() {
+    return inlineCitations_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of inline citations in the agent response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.Citations.InlineCitation getInlineCitations(int index) {
+    return inlineCitations_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of inline citations in the agent response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.Citations.InlineCitationOrBuilder getInlineCitationsOrBuilder(
+      int index) {
+    return inlineCitations_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1311,6 +2320,9 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < citedChunks_.size(); i++) {
       output.writeMessage(1, citedChunks_.get(i));
     }
+    for (int i = 0; i < inlineCitations_.size(); i++) {
+      output.writeMessage(2, inlineCitations_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1322,6 +2334,9 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
     size = 0;
     for (int i = 0; i < citedChunks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, citedChunks_.get(i));
+    }
+    for (int i = 0; i < inlineCitations_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, inlineCitations_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1339,6 +2354,7 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
     com.google.cloud.ces.v1beta.Citations other = (com.google.cloud.ces.v1beta.Citations) obj;
 
     if (!getCitedChunksList().equals(other.getCitedChunksList())) return false;
+    if (!getInlineCitationsList().equals(other.getInlineCitationsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1353,6 +2369,10 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
     if (getCitedChunksCount() > 0) {
       hash = (37 * hash) + CITED_CHUNKS_FIELD_NUMBER;
       hash = (53 * hash) + getCitedChunksList().hashCode();
+    }
+    if (getInlineCitationsCount() > 0) {
+      hash = (37 * hash) + INLINE_CITATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getInlineCitationsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1500,6 +2520,13 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
         citedChunksBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      if (inlineCitationsBuilder_ == null) {
+        inlineCitations_ = java.util.Collections.emptyList();
+      } else {
+        inlineCitations_ = null;
+        inlineCitationsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -1544,6 +2571,15 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
         result.citedChunks_ = citedChunks_;
       } else {
         result.citedChunks_ = citedChunksBuilder_.build();
+      }
+      if (inlineCitationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          inlineCitations_ = java.util.Collections.unmodifiableList(inlineCitations_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.inlineCitations_ = inlineCitations_;
+      } else {
+        result.inlineCitations_ = inlineCitationsBuilder_.build();
       }
     }
 
@@ -1590,6 +2626,33 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
           }
         }
       }
+      if (inlineCitationsBuilder_ == null) {
+        if (!other.inlineCitations_.isEmpty()) {
+          if (inlineCitations_.isEmpty()) {
+            inlineCitations_ = other.inlineCitations_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureInlineCitationsIsMutable();
+            inlineCitations_.addAll(other.inlineCitations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.inlineCitations_.isEmpty()) {
+          if (inlineCitationsBuilder_.isEmpty()) {
+            inlineCitationsBuilder_.dispose();
+            inlineCitationsBuilder_ = null;
+            inlineCitations_ = other.inlineCitations_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            inlineCitationsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetInlineCitationsFieldBuilder()
+                    : null;
+          } else {
+            inlineCitationsBuilder_.addAllMessages(other.inlineCitations_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1630,6 +2693,20 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 10
+            case 18:
+              {
+                com.google.cloud.ces.v1beta.Citations.InlineCitation m =
+                    input.readMessage(
+                        com.google.cloud.ces.v1beta.Citations.InlineCitation.parser(),
+                        extensionRegistry);
+                if (inlineCitationsBuilder_ == null) {
+                  ensureInlineCitationsIsMutable();
+                  inlineCitations_.add(m);
+                } else {
+                  inlineCitationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2020,6 +3097,422 @@ public final class Citations extends com.google.protobuf.GeneratedMessage
         citedChunks_ = null;
       }
       return citedChunksBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.ces.v1beta.Citations.InlineCitation> inlineCitations_ =
+        java.util.Collections.emptyList();
+
+    private void ensureInlineCitationsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        inlineCitations_ =
+            new java.util.ArrayList<com.google.cloud.ces.v1beta.Citations.InlineCitation>(
+                inlineCitations_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.ces.v1beta.Citations.InlineCitation,
+            com.google.cloud.ces.v1beta.Citations.InlineCitation.Builder,
+            com.google.cloud.ces.v1beta.Citations.InlineCitationOrBuilder>
+        inlineCitationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.ces.v1beta.Citations.InlineCitation>
+        getInlineCitationsList() {
+      if (inlineCitationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(inlineCitations_);
+      } else {
+        return inlineCitationsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getInlineCitationsCount() {
+      if (inlineCitationsBuilder_ == null) {
+        return inlineCitations_.size();
+      } else {
+        return inlineCitationsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.Citations.InlineCitation getInlineCitations(int index) {
+      if (inlineCitationsBuilder_ == null) {
+        return inlineCitations_.get(index);
+      } else {
+        return inlineCitationsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInlineCitations(
+        int index, com.google.cloud.ces.v1beta.Citations.InlineCitation value) {
+      if (inlineCitationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInlineCitationsIsMutable();
+        inlineCitations_.set(index, value);
+        onChanged();
+      } else {
+        inlineCitationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInlineCitations(
+        int index, com.google.cloud.ces.v1beta.Citations.InlineCitation.Builder builderForValue) {
+      if (inlineCitationsBuilder_ == null) {
+        ensureInlineCitationsIsMutable();
+        inlineCitations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        inlineCitationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addInlineCitations(com.google.cloud.ces.v1beta.Citations.InlineCitation value) {
+      if (inlineCitationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInlineCitationsIsMutable();
+        inlineCitations_.add(value);
+        onChanged();
+      } else {
+        inlineCitationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addInlineCitations(
+        int index, com.google.cloud.ces.v1beta.Citations.InlineCitation value) {
+      if (inlineCitationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInlineCitationsIsMutable();
+        inlineCitations_.add(index, value);
+        onChanged();
+      } else {
+        inlineCitationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addInlineCitations(
+        com.google.cloud.ces.v1beta.Citations.InlineCitation.Builder builderForValue) {
+      if (inlineCitationsBuilder_ == null) {
+        ensureInlineCitationsIsMutable();
+        inlineCitations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        inlineCitationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addInlineCitations(
+        int index, com.google.cloud.ces.v1beta.Citations.InlineCitation.Builder builderForValue) {
+      if (inlineCitationsBuilder_ == null) {
+        ensureInlineCitationsIsMutable();
+        inlineCitations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        inlineCitationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllInlineCitations(
+        java.lang.Iterable<? extends com.google.cloud.ces.v1beta.Citations.InlineCitation> values) {
+      if (inlineCitationsBuilder_ == null) {
+        ensureInlineCitationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, inlineCitations_);
+        onChanged();
+      } else {
+        inlineCitationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearInlineCitations() {
+      if (inlineCitationsBuilder_ == null) {
+        inlineCitations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        inlineCitationsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeInlineCitations(int index) {
+      if (inlineCitationsBuilder_ == null) {
+        ensureInlineCitationsIsMutable();
+        inlineCitations_.remove(index);
+        onChanged();
+      } else {
+        inlineCitationsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.Citations.InlineCitation.Builder getInlineCitationsBuilder(
+        int index) {
+      return internalGetInlineCitationsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.Citations.InlineCitationOrBuilder
+        getInlineCitationsOrBuilder(int index) {
+      if (inlineCitationsBuilder_ == null) {
+        return inlineCitations_.get(index);
+      } else {
+        return inlineCitationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.ces.v1beta.Citations.InlineCitationOrBuilder>
+        getInlineCitationsOrBuilderList() {
+      if (inlineCitationsBuilder_ != null) {
+        return inlineCitationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(inlineCitations_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.Citations.InlineCitation.Builder
+        addInlineCitationsBuilder() {
+      return internalGetInlineCitationsFieldBuilder()
+          .addBuilder(com.google.cloud.ces.v1beta.Citations.InlineCitation.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.Citations.InlineCitation.Builder addInlineCitationsBuilder(
+        int index) {
+      return internalGetInlineCitationsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.ces.v1beta.Citations.InlineCitation.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of inline citations in the agent response.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.ces.v1beta.Citations.InlineCitation.Builder>
+        getInlineCitationsBuilderList() {
+      return internalGetInlineCitationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.ces.v1beta.Citations.InlineCitation,
+            com.google.cloud.ces.v1beta.Citations.InlineCitation.Builder,
+            com.google.cloud.ces.v1beta.Citations.InlineCitationOrBuilder>
+        internalGetInlineCitationsFieldBuilder() {
+      if (inlineCitationsBuilder_ == null) {
+        inlineCitationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.ces.v1beta.Citations.InlineCitation,
+                com.google.cloud.ces.v1beta.Citations.InlineCitation.Builder,
+                com.google.cloud.ces.v1beta.Citations.InlineCitationOrBuilder>(
+                inlineCitations_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        inlineCitations_ = null;
+      }
+      return inlineCitationsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.Citations)

@@ -57,6 +57,7 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     displayName_ = "";
     appVersion_ = "";
     etag_ = "";
+    modality_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -72,6 +73,198 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.ces.v1beta.Deployment.class,
             com.google.cloud.ces.v1beta.Deployment.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The modality of the deployment.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.ces.v1beta.Deployment.Modality}
+   */
+  public enum Modality implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unknown modality.
+     * </pre>
+     *
+     * <code>MODALITY_UNSPECIFIED = 0;</code>
+     */
+    MODALITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Text modality.
+     * </pre>
+     *
+     * <code>MODALITY_TEXT = 1;</code>
+     */
+    MODALITY_TEXT(1),
+    /**
+     *
+     *
+     * <pre>
+     * Voice modality.
+     * </pre>
+     *
+     * <code>MODALITY_VOICE = 2;</code>
+     */
+    MODALITY_VOICE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Video modality.
+     * </pre>
+     *
+     * <code>MODALITY_VIDEO = 3;</code>
+     */
+    MODALITY_VIDEO(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "Modality");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unknown modality.
+     * </pre>
+     *
+     * <code>MODALITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int MODALITY_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Text modality.
+     * </pre>
+     *
+     * <code>MODALITY_TEXT = 1;</code>
+     */
+    public static final int MODALITY_TEXT_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Voice modality.
+     * </pre>
+     *
+     * <code>MODALITY_VOICE = 2;</code>
+     */
+    public static final int MODALITY_VOICE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Video modality.
+     * </pre>
+     *
+     * <code>MODALITY_VIDEO = 3;</code>
+     */
+    public static final int MODALITY_VIDEO_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Modality valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Modality forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MODALITY_UNSPECIFIED;
+        case 1:
+          return MODALITY_TEXT;
+        case 2:
+          return MODALITY_VOICE;
+        case 3:
+          return MODALITY_VIDEO;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Modality> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Modality> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Modality>() {
+          public Modality findValueByNumber(int number) {
+            return Modality.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.Deployment.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Modality[] VALUES = values();
+
+    public static Modality valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Modality(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.Deployment.Modality)
   }
 
   private int bitField0_;
@@ -655,6 +848,182 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
         : instagramCredentials_;
   }
 
+  public static final int MODEL_SETTINGS_FIELD_NUMBER = 12;
+  private com.google.cloud.ces.v1beta.ModelSettings modelSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Model settings for the deployment.
+   * Overrides model settings configured at the app/agent levels.
+   * Note: Deployment-level model settings override is gated behind an
+   * allowlist. Contact the CXAS team to enable this field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the modelSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasModelSettings() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Model settings for the deployment.
+   * Overrides model settings configured at the app/agent levels.
+   * Note: Deployment-level model settings override is gated behind an
+   * allowlist. Contact the CXAS team to enable this field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The modelSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ModelSettings getModelSettings() {
+    return modelSettings_ == null
+        ? com.google.cloud.ces.v1beta.ModelSettings.getDefaultInstance()
+        : modelSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Model settings for the deployment.
+   * Overrides model settings configured at the app/agent levels.
+   * Note: Deployment-level model settings override is gated behind an
+   * allowlist. Contact the CXAS team to enable this field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.ModelSettingsOrBuilder getModelSettingsOrBuilder() {
+    return modelSettings_ == null
+        ? com.google.cloud.ces.v1beta.ModelSettings.getDefaultInstance()
+        : modelSettings_;
+  }
+
+  public static final int MODALITY_FIELD_NUMBER = 13;
+  private int modality_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modality of the deployment.
+   * Note: Deployment-level modality override is gated behind an allowlist.
+   * Contact the CXAS team to enable this field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Deployment.Modality modality = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for modality.
+   */
+  @java.lang.Override
+  public int getModalityValue() {
+    return modality_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The modality of the deployment.
+   * Note: Deployment-level modality override is gated behind an allowlist.
+   * Contact the CXAS team to enable this field.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Deployment.Modality modality = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The modality.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.Deployment.Modality getModality() {
+    com.google.cloud.ces.v1beta.Deployment.Modality result =
+        com.google.cloud.ces.v1beta.Deployment.Modality.forNumber(modality_);
+    return result == null ? com.google.cloud.ces.v1beta.Deployment.Modality.UNRECOGNIZED : result;
+  }
+
+  public static final int AGENT_REGISTRY_DEPLOYMENT_FIELD_NUMBER = 14;
+  private com.google.cloud.ces.v1beta.AgentRegistryDeployment agentRegistryDeployment_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for deploying this deployment to Agent Registry.
+   * If present, this deployment will be published to Agent Registry.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentRegistryDeployment field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgentRegistryDeployment() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for deploying this deployment to Agent Registry.
+   * If present, this deployment will be published to Agent Registry.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentRegistryDeployment.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.AgentRegistryDeployment getAgentRegistryDeployment() {
+    return agentRegistryDeployment_ == null
+        ? com.google.cloud.ces.v1beta.AgentRegistryDeployment.getDefaultInstance()
+        : agentRegistryDeployment_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for deploying this deployment to Agent Registry.
+   * If present, this deployment will be published to Agent Registry.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.AgentRegistryDeploymentOrBuilder
+      getAgentRegistryDeploymentOrBuilder() {
+    return agentRegistryDeployment_ == null
+        ? com.google.cloud.ces.v1beta.AgentRegistryDeployment.getDefaultInstance()
+        : agentRegistryDeployment_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -699,6 +1068,16 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(11, getInstagramCredentials());
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(12, getModelSettings());
+    }
+    if (modality_
+        != com.google.cloud.ces.v1beta.Deployment.Modality.MODALITY_UNSPECIFIED.getNumber()) {
+      output.writeEnum(13, modality_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(14, getAgentRegistryDeployment());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -739,6 +1118,18 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(11, getInstagramCredentials());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getModelSettings());
+    }
+    if (modality_
+        != com.google.cloud.ces.v1beta.Deployment.Modality.MODALITY_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, modality_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, getAgentRegistryDeployment());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -783,6 +1174,15 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     if (hasInstagramCredentials()) {
       if (!getInstagramCredentials().equals(other.getInstagramCredentials())) return false;
     }
+    if (hasModelSettings() != other.hasModelSettings()) return false;
+    if (hasModelSettings()) {
+      if (!getModelSettings().equals(other.getModelSettings())) return false;
+    }
+    if (modality_ != other.modality_) return false;
+    if (hasAgentRegistryDeployment() != other.hasAgentRegistryDeployment()) return false;
+    if (hasAgentRegistryDeployment()) {
+      if (!getAgentRegistryDeployment().equals(other.getAgentRegistryDeployment())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -825,6 +1225,16 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
     if (hasInstagramCredentials()) {
       hash = (37 * hash) + INSTAGRAM_CREDENTIALS_FIELD_NUMBER;
       hash = (53 * hash) + getInstagramCredentials().hashCode();
+    }
+    if (hasModelSettings()) {
+      hash = (37 * hash) + MODEL_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getModelSettings().hashCode();
+    }
+    hash = (37 * hash) + MODALITY_FIELD_NUMBER;
+    hash = (53 * hash) + modality_;
+    if (hasAgentRegistryDeployment()) {
+      hash = (37 * hash) + AGENT_REGISTRY_DEPLOYMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getAgentRegistryDeployment().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -974,6 +1384,8 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
         internalGetExperimentConfigFieldBuilder();
         internalGetWhatsappCredentialsFieldBuilder();
         internalGetInstagramCredentialsFieldBuilder();
+        internalGetModelSettingsFieldBuilder();
+        internalGetAgentRegistryDeploymentFieldBuilder();
       }
     }
 
@@ -1014,6 +1426,17 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
       if (instagramCredentialsBuilder_ != null) {
         instagramCredentialsBuilder_.dispose();
         instagramCredentialsBuilder_ = null;
+      }
+      modelSettings_ = null;
+      if (modelSettingsBuilder_ != null) {
+        modelSettingsBuilder_.dispose();
+        modelSettingsBuilder_ = null;
+      }
+      modality_ = 0;
+      agentRegistryDeployment_ = null;
+      if (agentRegistryDeploymentBuilder_ != null) {
+        agentRegistryDeploymentBuilder_.dispose();
+        agentRegistryDeploymentBuilder_ = null;
       }
       return this;
     }
@@ -1096,6 +1519,21 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
                 : instagramCredentialsBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.modelSettings_ =
+            modelSettingsBuilder_ == null ? modelSettings_ : modelSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.modality_ = modality_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.agentRegistryDeployment_ =
+            agentRegistryDeploymentBuilder_ == null
+                ? agentRegistryDeployment_
+                : agentRegistryDeploymentBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1148,6 +1586,15 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasInstagramCredentials()) {
         mergeInstagramCredentials(other.getInstagramCredentials());
+      }
+      if (other.hasModelSettings()) {
+        mergeModelSettings(other.getModelSettings());
+      }
+      if (other.modality_ != 0) {
+        setModalityValue(other.getModalityValue());
+      }
+      if (other.hasAgentRegistryDeployment()) {
+        mergeAgentRegistryDeployment(other.getAgentRegistryDeployment());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1241,6 +1688,27 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    internalGetModelSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 98
+            case 104:
+              {
+                modality_ = input.readEnum();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 104
+            case 114:
+              {
+                input.readMessage(
+                    internalGetAgentRegistryDeploymentFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3053,6 +3521,588 @@ public final class Deployment extends com.google.protobuf.GeneratedMessage
         instagramCredentials_ = null;
       }
       return instagramCredentialsBuilder_;
+    }
+
+    private com.google.cloud.ces.v1beta.ModelSettings modelSettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.ModelSettings,
+            com.google.cloud.ces.v1beta.ModelSettings.Builder,
+            com.google.cloud.ces.v1beta.ModelSettingsOrBuilder>
+        modelSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Model settings for the deployment.
+     * Overrides model settings configured at the app/agent levels.
+     * Note: Deployment-level model settings override is gated behind an
+     * allowlist. Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the modelSettings field is set.
+     */
+    public boolean hasModelSettings() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Model settings for the deployment.
+     * Overrides model settings configured at the app/agent levels.
+     * Note: Deployment-level model settings override is gated behind an
+     * allowlist. Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The modelSettings.
+     */
+    public com.google.cloud.ces.v1beta.ModelSettings getModelSettings() {
+      if (modelSettingsBuilder_ == null) {
+        return modelSettings_ == null
+            ? com.google.cloud.ces.v1beta.ModelSettings.getDefaultInstance()
+            : modelSettings_;
+      } else {
+        return modelSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Model settings for the deployment.
+     * Overrides model settings configured at the app/agent levels.
+     * Note: Deployment-level model settings override is gated behind an
+     * allowlist. Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setModelSettings(com.google.cloud.ces.v1beta.ModelSettings value) {
+      if (modelSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelSettings_ = value;
+      } else {
+        modelSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Model settings for the deployment.
+     * Overrides model settings configured at the app/agent levels.
+     * Note: Deployment-level model settings override is gated behind an
+     * allowlist. Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setModelSettings(
+        com.google.cloud.ces.v1beta.ModelSettings.Builder builderForValue) {
+      if (modelSettingsBuilder_ == null) {
+        modelSettings_ = builderForValue.build();
+      } else {
+        modelSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Model settings for the deployment.
+     * Overrides model settings configured at the app/agent levels.
+     * Note: Deployment-level model settings override is gated behind an
+     * allowlist. Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeModelSettings(com.google.cloud.ces.v1beta.ModelSettings value) {
+      if (modelSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && modelSettings_ != null
+            && modelSettings_ != com.google.cloud.ces.v1beta.ModelSettings.getDefaultInstance()) {
+          getModelSettingsBuilder().mergeFrom(value);
+        } else {
+          modelSettings_ = value;
+        }
+      } else {
+        modelSettingsBuilder_.mergeFrom(value);
+      }
+      if (modelSettings_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Model settings for the deployment.
+     * Overrides model settings configured at the app/agent levels.
+     * Note: Deployment-level model settings override is gated behind an
+     * allowlist. Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearModelSettings() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      modelSettings_ = null;
+      if (modelSettingsBuilder_ != null) {
+        modelSettingsBuilder_.dispose();
+        modelSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Model settings for the deployment.
+     * Overrides model settings configured at the app/agent levels.
+     * Note: Deployment-level model settings override is gated behind an
+     * allowlist. Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.ModelSettings.Builder getModelSettingsBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return internalGetModelSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Model settings for the deployment.
+     * Overrides model settings configured at the app/agent levels.
+     * Note: Deployment-level model settings override is gated behind an
+     * allowlist. Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.ModelSettingsOrBuilder getModelSettingsOrBuilder() {
+      if (modelSettingsBuilder_ != null) {
+        return modelSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return modelSettings_ == null
+            ? com.google.cloud.ces.v1beta.ModelSettings.getDefaultInstance()
+            : modelSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Model settings for the deployment.
+     * Overrides model settings configured at the app/agent levels.
+     * Note: Deployment-level model settings override is gated behind an
+     * allowlist. Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.ModelSettings model_settings = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.ModelSettings,
+            com.google.cloud.ces.v1beta.ModelSettings.Builder,
+            com.google.cloud.ces.v1beta.ModelSettingsOrBuilder>
+        internalGetModelSettingsFieldBuilder() {
+      if (modelSettingsBuilder_ == null) {
+        modelSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.ModelSettings,
+                com.google.cloud.ces.v1beta.ModelSettings.Builder,
+                com.google.cloud.ces.v1beta.ModelSettingsOrBuilder>(
+                getModelSettings(), getParentForChildren(), isClean());
+        modelSettings_ = null;
+      }
+      return modelSettingsBuilder_;
+    }
+
+    private int modality_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modality of the deployment.
+     * Note: Deployment-level modality override is gated behind an allowlist.
+     * Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Deployment.Modality modality = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for modality.
+     */
+    @java.lang.Override
+    public int getModalityValue() {
+      return modality_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modality of the deployment.
+     * Note: Deployment-level modality override is gated behind an allowlist.
+     * Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Deployment.Modality modality = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for modality to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModalityValue(int value) {
+      modality_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modality of the deployment.
+     * Note: Deployment-level modality override is gated behind an allowlist.
+     * Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Deployment.Modality modality = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The modality.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.Deployment.Modality getModality() {
+      com.google.cloud.ces.v1beta.Deployment.Modality result =
+          com.google.cloud.ces.v1beta.Deployment.Modality.forNumber(modality_);
+      return result == null ? com.google.cloud.ces.v1beta.Deployment.Modality.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modality of the deployment.
+     * Note: Deployment-level modality override is gated behind an allowlist.
+     * Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Deployment.Modality modality = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The modality to set.
+     * @return This builder for chaining.
+     */
+    public Builder setModality(com.google.cloud.ces.v1beta.Deployment.Modality value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000800;
+      modality_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The modality of the deployment.
+     * Note: Deployment-level modality override is gated behind an allowlist.
+     * Contact the CXAS team to enable this field.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Deployment.Modality modality = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearModality() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      modality_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.ces.v1beta.AgentRegistryDeployment agentRegistryDeployment_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.AgentRegistryDeployment,
+            com.google.cloud.ces.v1beta.AgentRegistryDeployment.Builder,
+            com.google.cloud.ces.v1beta.AgentRegistryDeploymentOrBuilder>
+        agentRegistryDeploymentBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for deploying this deployment to Agent Registry.
+     * If present, this deployment will be published to Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the agentRegistryDeployment field is set.
+     */
+    public boolean hasAgentRegistryDeployment() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for deploying this deployment to Agent Registry.
+     * If present, this deployment will be published to Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The agentRegistryDeployment.
+     */
+    public com.google.cloud.ces.v1beta.AgentRegistryDeployment getAgentRegistryDeployment() {
+      if (agentRegistryDeploymentBuilder_ == null) {
+        return agentRegistryDeployment_ == null
+            ? com.google.cloud.ces.v1beta.AgentRegistryDeployment.getDefaultInstance()
+            : agentRegistryDeployment_;
+      } else {
+        return agentRegistryDeploymentBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for deploying this deployment to Agent Registry.
+     * If present, this deployment will be published to Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAgentRegistryDeployment(
+        com.google.cloud.ces.v1beta.AgentRegistryDeployment value) {
+      if (agentRegistryDeploymentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        agentRegistryDeployment_ = value;
+      } else {
+        agentRegistryDeploymentBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for deploying this deployment to Agent Registry.
+     * If present, this deployment will be published to Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAgentRegistryDeployment(
+        com.google.cloud.ces.v1beta.AgentRegistryDeployment.Builder builderForValue) {
+      if (agentRegistryDeploymentBuilder_ == null) {
+        agentRegistryDeployment_ = builderForValue.build();
+      } else {
+        agentRegistryDeploymentBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for deploying this deployment to Agent Registry.
+     * If present, this deployment will be published to Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAgentRegistryDeployment(
+        com.google.cloud.ces.v1beta.AgentRegistryDeployment value) {
+      if (agentRegistryDeploymentBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && agentRegistryDeployment_ != null
+            && agentRegistryDeployment_
+                != com.google.cloud.ces.v1beta.AgentRegistryDeployment.getDefaultInstance()) {
+          getAgentRegistryDeploymentBuilder().mergeFrom(value);
+        } else {
+          agentRegistryDeployment_ = value;
+        }
+      } else {
+        agentRegistryDeploymentBuilder_.mergeFrom(value);
+      }
+      if (agentRegistryDeployment_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for deploying this deployment to Agent Registry.
+     * If present, this deployment will be published to Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAgentRegistryDeployment() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      agentRegistryDeployment_ = null;
+      if (agentRegistryDeploymentBuilder_ != null) {
+        agentRegistryDeploymentBuilder_.dispose();
+        agentRegistryDeploymentBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for deploying this deployment to Agent Registry.
+     * If present, this deployment will be published to Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.AgentRegistryDeployment.Builder
+        getAgentRegistryDeploymentBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return internalGetAgentRegistryDeploymentFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for deploying this deployment to Agent Registry.
+     * If present, this deployment will be published to Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.AgentRegistryDeploymentOrBuilder
+        getAgentRegistryDeploymentOrBuilder() {
+      if (agentRegistryDeploymentBuilder_ != null) {
+        return agentRegistryDeploymentBuilder_.getMessageOrBuilder();
+      } else {
+        return agentRegistryDeployment_ == null
+            ? com.google.cloud.ces.v1beta.AgentRegistryDeployment.getDefaultInstance()
+            : agentRegistryDeployment_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for deploying this deployment to Agent Registry.
+     * If present, this deployment will be published to Agent Registry.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.AgentRegistryDeployment agent_registry_deployment = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.AgentRegistryDeployment,
+            com.google.cloud.ces.v1beta.AgentRegistryDeployment.Builder,
+            com.google.cloud.ces.v1beta.AgentRegistryDeploymentOrBuilder>
+        internalGetAgentRegistryDeploymentFieldBuilder() {
+      if (agentRegistryDeploymentBuilder_ == null) {
+        agentRegistryDeploymentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.AgentRegistryDeployment,
+                com.google.cloud.ces.v1beta.AgentRegistryDeployment.Builder,
+                com.google.cloud.ces.v1beta.AgentRegistryDeploymentOrBuilder>(
+                getAgentRegistryDeployment(), getParentForChildren(), isClean());
+        agentRegistryDeployment_ = null;
+      }
+      return agentRegistryDeploymentBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.Deployment)

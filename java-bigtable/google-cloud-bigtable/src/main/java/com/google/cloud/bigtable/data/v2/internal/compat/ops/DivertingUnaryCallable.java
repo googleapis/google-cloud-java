@@ -22,14 +22,12 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.bigtable.v2.SessionClientConfiguration;
-import com.google.bigtable.v2.SessionDiversionConfiguration;
-import com.google.bigtable.v2.SessionScopeDiversionConfiguration;
 import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.compat.FutureAdapter;
 import com.google.cloud.bigtable.data.v2.internal.compat.Util;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
+import com.google.cloud.bigtable.data.v2.internal.util.SessionScope;
 import com.google.common.base.Throwables;
 import io.grpc.Context;
 import io.grpc.Context.CancellableContext;
@@ -52,12 +50,8 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
 
   private final Duration defaultTimeout;
   private final DebugTagTracer debugTagTracer;
-  // Scope key for per-method diversion lookup, e.g. "method:Bigtable.ReadRow".
-  private final String methodScopeKey;
-  // When true, falls back to the flat SessionClientConfiguration.session_load when no
-  // SessionDiversionConfiguration is present. Used for ReadRow/MutateRow during the server
-  // rollout window before the server starts sending SessionDiversionConfiguration.
-  private final boolean fallbackToGlobalSessionLoad;
+  // The diversion scope this callable's method belongs to.
+  private final SessionScope scope;
 
   public DivertingUnaryCallable(
       ClientConfigurationManager configurationManager,
@@ -65,15 +59,13 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
       UnaryShim<ReqT, RespT> experimental,
       Duration defaultTimeout,
       DebugTagTracer debugTagTracer,
-      String methodScopeKey,
-      boolean fallbackToGlobalSessionLoad) {
+      SessionScope scope) {
     this.configurationManager = configurationManager;
     this.classic = classic;
     this.experimental = experimental;
     this.defaultTimeout = defaultTimeout;
     this.debugTagTracer = debugTagTracer;
-    this.methodScopeKey = methodScopeKey;
-    this.fallbackToGlobalSessionLoad = fallbackToGlobalSessionLoad;
+    this.scope = scope;
   }
 
   @Override
@@ -138,25 +130,8 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   }
 
   private float resolveSessionLoad() {
-    SessionClientConfiguration sessionConfig =
-        configurationManager.getClientConfiguration().getSessionConfiguration();
-
-    if (sessionConfig.hasSessionDiversionConfiguration()) {
-      SessionDiversionConfiguration diversionConfig =
-          sessionConfig.getSessionDiversionConfiguration();
-      switch (diversionConfig.getDiversionStrategyCase()) {
-        case GLOBAL_DIVERSION:
-          return diversionConfig.getGlobalDiversion().getSessionLoad();
-        case PER_SCOPE_DIVERSION:
-          SessionScopeDiversionConfiguration scopeConfig =
-              diversionConfig.getPerScopeDiversion().getScopeDiversionsMap().get(methodScopeKey);
-          return scopeConfig != null ? scopeConfig.getSessionLoad() : 0f;
-        default:
-          return 0f;
-      }
-    }
-
-    return fallbackToGlobalSessionLoad ? sessionConfig.getSessionLoad() : 0f;
+    return scope.resolveSessionLoad(
+        configurationManager.getClientConfiguration().getSessionConfiguration());
   }
 
   ApiException translateException(Throwable e) {

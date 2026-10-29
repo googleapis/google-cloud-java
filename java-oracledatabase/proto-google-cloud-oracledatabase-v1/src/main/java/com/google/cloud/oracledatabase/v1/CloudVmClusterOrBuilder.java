@@ -484,6 +484,40 @@ public interface CloudVmClusterOrBuilder
    *
    *
    * <pre>
+   * Optional. Immutable. The name of the OdbDnsZone for using custom domain
+   * name for the VM Cluster. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}
+   * </pre>
+   *
+   * <code>
+   * string odb_dns_zone = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The odbDnsZone.
+   */
+  java.lang.String getOdbDnsZone();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The name of the OdbDnsZone for using custom domain
+   * name for the VM Cluster. Format:
+   * projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbDnsZones/{odb_dns_zone}
+   * </pre>
+   *
+   * <code>
+   * string odb_dns_zone = 18 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for odbDnsZone.
+   */
+  com.google.protobuf.ByteString getOdbDnsZoneBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The identity connector details which will allow OCI to
    * securely access the resources in the customer project.
    * </pre>

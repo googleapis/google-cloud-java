@@ -110,6 +110,7 @@ import com.google.cloud.ces.v1beta.Tool;
 import com.google.cloud.ces.v1beta.Toolset;
 import com.google.cloud.ces.v1beta.UpdateAgentRequest;
 import com.google.cloud.ces.v1beta.UpdateAppRequest;
+import com.google.cloud.ces.v1beta.UpdateAppVersionRequest;
 import com.google.cloud.ces.v1beta.UpdateDeploymentRequest;
 import com.google.cloud.ces.v1beta.UpdateExampleRequest;
 import com.google.cloud.ces.v1beta.UpdateGuardrailRequest;
@@ -610,6 +611,17 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateAppVersionRequest, AppVersion>
+      updateAppVersionMethodDescriptor =
+          MethodDescriptor.<UpdateAppVersionRequest, AppVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.ces.v1beta.AgentService/UpdateAppVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAppVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AppVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteAppVersionRequest, Empty>
       deleteAppVersionMethodDescriptor =
           MethodDescriptor.<DeleteAppVersionRequest, Empty>newBuilder()
@@ -764,6 +776,7 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
       listAppVersionsPagedCallable;
   private final UnaryCallable<GetAppVersionRequest, AppVersion> getAppVersionCallable;
   private final UnaryCallable<CreateAppVersionRequest, AppVersion> createAppVersionCallable;
+  private final UnaryCallable<UpdateAppVersionRequest, AppVersion> updateAppVersionCallable;
   private final UnaryCallable<DeleteAppVersionRequest, Empty> deleteAppVersionCallable;
   private final UnaryCallable<RestoreAppVersionRequest, Operation> restoreAppVersionCallable;
   private final OperationCallable<
@@ -1333,6 +1346,17 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<UpdateAppVersionRequest, AppVersion> updateAppVersionTransportSettings =
+        GrpcCallSettings.<UpdateAppVersionRequest, AppVersion>newBuilder()
+            .setMethodDescriptor(updateAppVersionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "app_version.name", String.valueOf(request.getAppVersion().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteAppVersionRequest, Empty> deleteAppVersionTransportSettings =
         GrpcCallSettings.<DeleteAppVersionRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAppVersionMethodDescriptor)
@@ -1617,6 +1641,9 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
     this.createAppVersionCallable =
         callableFactory.createUnaryCallable(
             createAppVersionTransportSettings, settings.createAppVersionSettings(), clientContext);
+    this.updateAppVersionCallable =
+        callableFactory.createUnaryCallable(
+            updateAppVersionTransportSettings, settings.updateAppVersionSettings(), clientContext);
     this.deleteAppVersionCallable =
         callableFactory.createUnaryCallable(
             deleteAppVersionTransportSettings, settings.deleteAppVersionSettings(), clientContext);
@@ -1979,6 +2006,11 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
   @Override
   public UnaryCallable<CreateAppVersionRequest, AppVersion> createAppVersionCallable() {
     return createAppVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAppVersionRequest, AppVersion> updateAppVersionCallable() {
+    return updateAppVersionCallable;
   }
 
   @Override

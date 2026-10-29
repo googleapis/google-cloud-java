@@ -285,6 +285,28 @@ class ClientConfigurationManagerTest {
     assertThat(manager.areSessionsRequired()).isTrue();
   }
 
+  /**
+   * The bundled default config must not carry a SessionDiversionConfiguration. A diversion config
+   * is authoritative once present, so one baked into the default would shadow the flat session_load
+   * for every scope -- including in the two windows where the default is the live config: before
+   * the first GetClientConfiguration response, and after handleFailedFetch falls back to it when
+   * the validity window expires.
+   */
+  @Test
+  void defaultConfigDoesNotShadowFlatSessionLoad() throws IOException {
+    ClientConfiguration defaultConfig = ClientConfigurationManager.loadDefault();
+    assertThat(defaultConfig.getSessionConfiguration().hasSessionDiversionConfiguration())
+        .isFalse();
+
+    // A flat session_load merged onto the default -- what the sys-prop override produces -- must
+    // still divert traffic.
+    ClientConfiguration.Builder merged = defaultConfig.toBuilder();
+    merged.getSessionConfigurationBuilder().setSessionLoad(1.0f);
+    assertThat(SessionScope.READ_ROW.resolveSessionLoad(merged.getSessionConfiguration()))
+        .isEqualTo(1.0f);
+    assertThat(SessionScope.divertsAnyTraffic(merged.getSessionConfiguration())).isTrue();
+  }
+
   @Deprecated
   @Test
   void testMigrateSessionPool() throws ExecutionException, InterruptedException {
@@ -695,6 +717,19 @@ class ClientConfigurationManagerTest {
       assertThat(fetchedChannelConfig.getPerServerSessionCount())
           .isEqualTo(serverChannelConfig.getPerServerSessionCount());
     }
+  }
+
+  @Test
+  void stopPollingTest() throws Exception {
+    ClientConfiguration stopPollingConfig =
+        service.config.get().toBuilder().setStopPolling(true).build();
+    service.config.set(stopPollingConfig);
+
+    ClientConfiguration initialConfig = manager.start().get();
+    assertThat(initialConfig.getStopPolling()).isTrue();
+    assertThat(initialConfig.hasPollingConfiguration()).isFalse();
+
+    verify(mockExecutor, never()).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
   }
 
   static class FakeConfigService extends BigtableGrpc.BigtableImplBase {

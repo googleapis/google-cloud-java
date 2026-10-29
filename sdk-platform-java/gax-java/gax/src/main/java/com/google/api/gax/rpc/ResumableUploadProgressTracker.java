@@ -116,10 +116,14 @@ class ResumableUploadProgressTracker {
     }
   }
 
-  void onStarted(String uploadUrl) {
+  void onStarted(String uploadUrl, int effectiveChunkSize) {
     checkNotNull(uploadUrl, "uploadUrl must not be null");
     transition(
-        builder -> builder.setState(ResumableUploadProgress.STATE_STARTED).setUploadUrl(uploadUrl));
+        builder ->
+            builder
+                .setState(ResumableUploadProgress.STATE_STARTED)
+                .setUploadUrl(uploadUrl)
+                .setEffectiveChunkSize(effectiveChunkSize));
   }
 
   void onChunkUploaded(long bytesUploaded) {

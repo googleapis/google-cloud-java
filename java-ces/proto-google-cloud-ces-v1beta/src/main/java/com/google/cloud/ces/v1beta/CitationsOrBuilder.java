@@ -81,4 +81,71 @@ public interface CitationsOrBuilder
    * <code>repeated .google.cloud.ces.v1beta.Citations.CitedChunk cited_chunks = 1;</code>
    */
   com.google.cloud.ces.v1beta.Citations.CitedChunkOrBuilder getCitedChunksOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of inline citations in the agent response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.ces.v1beta.Citations.InlineCitation> getInlineCitationsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of inline citations in the agent response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.Citations.InlineCitation getInlineCitations(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of inline citations in the agent response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getInlineCitationsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of inline citations in the agent response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.ces.v1beta.Citations.InlineCitationOrBuilder>
+      getInlineCitationsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of inline citations in the agent response.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.Citations.InlineCitation inline_citations = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.Citations.InlineCitationOrBuilder getInlineCitationsOrBuilder(
+      int index);
 }

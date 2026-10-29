@@ -100,6 +100,7 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.ProtoUtils;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.metrics.MeterProvider;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
@@ -122,6 +123,7 @@ import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * @since 2.14.0
@@ -436,6 +438,10 @@ public final class GrpcStorageOptions extends StorageOptions
         grpcInterceptorProvider,
         blobWriteSessionConfig,
         openTelemetry,
+        isEnableOtelMetrics(),
+        isEnableOtelDebugMetrics(),
+        getMeterProvider(),
+        getMetricInterval(),
         baseHashCode());
   }
 
@@ -451,11 +457,15 @@ public final class GrpcStorageOptions extends StorageOptions
     return attemptDirectPath == that.attemptDirectPath
         && attemptDirectPathXdsOverInterconnect == that.attemptDirectPathXdsOverInterconnect
         && enableGrpcClientMetrics == that.enableGrpcClientMetrics
+        && isEnableOtelMetrics() == that.isEnableOtelMetrics()
+        && isEnableOtelDebugMetrics() == that.isEnableOtelDebugMetrics()
         && Objects.equals(retryAlgorithmManager, that.retryAlgorithmManager)
         && Objects.equals(terminationAwaitDuration, that.terminationAwaitDuration)
         && Objects.equals(grpcInterceptorProvider, that.grpcInterceptorProvider)
         && Objects.equals(blobWriteSessionConfig, that.blobWriteSessionConfig)
         && Objects.equals(openTelemetry, that.openTelemetry)
+        && Objects.equals(getMeterProvider(), that.getMeterProvider())
+        && Objects.equals(getMetricInterval(), that.getMetricInterval())
         && this.baseEquals(that);
   }
 
@@ -771,6 +781,64 @@ public final class GrpcStorageOptions extends StorageOptions
     public GrpcStorageOptions.Builder setOpenTelemetry(OpenTelemetry openTelemetry) {
       requireNonNull(openTelemetry, "openTelemetry must be non null");
       this.openTelemetry = openTelemetry;
+      setCustomOpenTelemetryConfigured(true);
+      return this;
+    }
+
+    /**
+     * Enable or disable OpenTelemetry client metrics.
+     *
+     * @param enableOtelMetrics whether OpenTelemetry client metrics should be enabled
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setEnableOtelMetrics(boolean enableOtelMetrics) {
+      super.setEnableOtelMetrics(enableOtelMetrics);
+      return this;
+    }
+
+    /**
+     * Enable or disable OpenTelemetry debug client metrics.
+     *
+     * @param enableOtelDebugMetrics whether OpenTelemetry debug client metrics should be enabled
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setEnableOtelDebugMetrics(boolean enableOtelDebugMetrics) {
+      super.setEnableOtelDebugMetrics(enableOtelDebugMetrics);
+      return this;
+    }
+
+    /**
+     * Set a custom {@link MeterProvider} for recording client metrics.
+     *
+     * @param meterProvider custom MeterProvider to use, or null to use the default
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setMeterProvider(@Nullable MeterProvider meterProvider) {
+      super.setMeterProvider(meterProvider);
+      return this;
+    }
+
+    /**
+     * Set the metric export interval for periodic metric reading.
+     *
+     * <p>When using the default Cloud Monitoring exporter, the interval must be at least 60 seconds
+     * (1 minute). Intervals less than 60 seconds are permitted only when a custom {@link
+     * MeterProvider} is configured via {@link #setMeterProvider(MeterProvider)} or explicit
+     * OpenTelemetry is configured via {@link #setOpenTelemetry(OpenTelemetry)}.
+     *
+     * @param metricInterval interval duration
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setMetricInterval(Duration metricInterval) {
+      super.setMetricInterval(metricInterval);
       return this;
     }
 

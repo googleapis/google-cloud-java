@@ -47,6 +47,7 @@ import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
@@ -87,6 +88,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -1559,5 +1561,158 @@ public class BigQueryStatementTest {
     assertNotNull(
         marker.getException(),
         "Stopping early due to worker shutdown must enqueue an error marker rather than normal end-of-stream");
+  }
+
+  private static FieldValueList createTestRow(boolean first, long second) {
+    return FieldValueList.of(
+        Arrays.asList(
+            FieldValue.of(FieldValue.Attribute.PRIMITIVE, Boolean.toString(first)),
+            FieldValue.of(FieldValue.Attribute.PRIMITIVE, Long.toString(second))),
+        fieldList);
+  }
+
+  @Test
+  public void testRunNextPageTaskAsyncPropagatesOutOfMemoryErrorInsteadOfTruncating()
+      throws Exception {
+    JobId testJobId = JobId.of("project", "job_oom_next_page");
+    TableId destTable = TableId.of("project", "dataset", "dest_table");
+
+    Job mockJob = mock(Job.class);
+    QueryJobConfiguration jobConfig =
+        QueryJobConfiguration.newBuilder("SELECT first, second FROM test")
+            .setDestinationTable(destTable)
+            .build();
+    doReturn(mockJob).when(bigquery).getJob(testJobId);
+    doReturn(jobConfig).when(mockJob).getConfiguration();
+
+    Schema schema = Schema.of(fieldList);
+    TableResult firstPage = mock(TableResult.class);
+    doReturn(schema).when(firstPage).getSchema();
+    doReturn(10L).when(firstPage).getTotalRows();
+    doReturn(testJobId).when(firstPage).getJobId();
+    doReturn("page_2_token").when(firstPage).getNextPageToken();
+    doReturn(Arrays.asList(createTestRow(true, 1L), createTestRow(false, 2L)))
+        .when(firstPage)
+        .getValues();
+
+    Mockito.doThrow(new OutOfMemoryError("Simulated OOM allocating TableResult for page 2"))
+        .when(bigquery)
+        .listTableData(
+            any(TableId.class), any(TableDataListOption.class), any(TableDataListOption.class));
+
+    try (ResultSet rs = bigQueryStatement.processJsonResultSet(firstPage, mockJob)) {
+      SQLException thrown =
+          assertThrows(
+              SQLException.class,
+              () -> {
+                while (rs.next()) {
+                  // consume until error
+                }
+              });
+      assertTrue(thrown.getCause() instanceof OutOfMemoryError);
+    }
+  }
+
+  @Test
+  public void testParseAndPopulateRpcDataAsyncPropagatesOutOfMemoryErrorInsteadOfTruncating()
+      throws Exception {
+    Iterable<FieldValueList> oomOnThirdRowIterable =
+        () ->
+            new Iterator<FieldValueList>() {
+              private int index = 0;
+
+              @Override
+              public boolean hasNext() {
+                return index < 10;
+              }
+
+              @Override
+              public FieldValueList next() {
+                index++;
+                if (index <= 2) {
+                  return createTestRow(true, index);
+                }
+                throw new OutOfMemoryError("Simulated OOM unpacking row " + index);
+              }
+            };
+
+    Schema schema = Schema.of(fieldList);
+    TableResult firstPage = mock(TableResult.class);
+    doReturn(schema).when(firstPage).getSchema();
+    doReturn(10L).when(firstPage).getTotalRows();
+    doReturn(null).when(firstPage).getJobId();
+    doReturn(oomOnThirdRowIterable).when(firstPage).getValues();
+
+    try (ResultSet rs = bigQueryStatement.processJsonResultSet(firstPage, null)) {
+      SQLException thrown =
+          assertThrows(
+              SQLException.class,
+              () -> {
+                while (rs.next()) {
+                  // consume until error
+                }
+              });
+      assertTrue(thrown.getCause() instanceof OutOfMemoryError);
+    }
+  }
+
+  @Test
+  public void testPopulateArrowBufferedQueuePropagatesOutOfMemoryErrorInsteadOfTruncating()
+      throws Exception {
+    BlockingQueue<BigQueryArrowBatchWrapper> boundedQueue = new LinkedBlockingDeque<>(4);
+    ReadSession readSession =
+        ReadSession.newBuilder()
+            .setArrowSchema(arrowSchema)
+            .addStreams(
+                ReadStream.newBuilder().setName("projects/p/locations/l/sessions/s/streams/0"))
+            .build();
+
+    @SuppressWarnings("unchecked")
+    ServerStream<ReadRowsResponse> serverStream = mock(ServerStream.class);
+    Iterator<ReadRowsResponse> responseIterator =
+        new Iterator<ReadRowsResponse>() {
+          @Override
+          public boolean hasNext() {
+            return true;
+          }
+
+          @Override
+          public ReadRowsResponse next() {
+            throw new OutOfMemoryError("Simulated OOM reading Arrow batch");
+          }
+        };
+    doReturn(responseIterator).when(serverStream).iterator();
+
+    @SuppressWarnings("unchecked")
+    ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> callable =
+        mock(ServerStreamingCallable.class);
+    doReturn(serverStream).when(callable).call(any(ReadRowsRequest.class));
+
+    BigQueryReadClient readClient = mock(BigQueryReadClient.class);
+    doReturn(callable).when(readClient).readRowsCallable();
+
+    Future<?> producerFuture =
+        bigQueryStatement.populateArrowBufferedQueue(readSession, boundedQueue, readClient);
+
+    try (BigQueryArrowResultSet rs =
+        BigQueryArrowResultSet.of(
+            Schema.of(fieldList),
+            arrowSchema,
+            10L,
+            bigQueryStatement,
+            boundedQueue,
+            producerFuture,
+            bigquery)) {
+      SQLException thrown =
+          assertThrows(
+              SQLException.class,
+              () -> {
+                while (rs.next()) {
+                  // consume until error
+                }
+              });
+      assertNotNull(thrown.getCause());
+      assertTrue(thrown.getCause().getCause() instanceof OutOfMemoryError);
+    }
   }
 }

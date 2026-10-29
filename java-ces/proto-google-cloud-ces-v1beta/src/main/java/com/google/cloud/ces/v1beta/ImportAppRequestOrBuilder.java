@@ -103,6 +103,87 @@ public interface ImportAppRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Patch content as a JSON string.
+   * </pre>
+   *
+   * <code>string json_patch_content = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the jsonPatchContent field is set.
+   */
+  boolean hasJsonPatchContent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Patch content as a JSON string.
+   * </pre>
+   *
+   * <code>string json_patch_content = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The jsonPatchContent.
+   */
+  java.lang.String getJsonPatchContent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Patch content as a JSON string.
+   * </pre>
+   *
+   * <code>string json_patch_content = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for jsonPatchContent.
+   */
+  com.google.protobuf.ByteString getJsonPatchContentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Cloud Storage URI pointing to a JSON file containing the
+   * patches.
+   * </pre>
+   *
+   * <code>string json_patch_gcs_uri = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the jsonPatchGcsUri field is set.
+   */
+  boolean hasJsonPatchGcsUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Cloud Storage URI pointing to a JSON file containing the
+   * patches.
+   * </pre>
+   *
+   * <code>string json_patch_gcs_uri = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The jsonPatchGcsUri.
+   */
+  java.lang.String getJsonPatchGcsUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A Cloud Storage URI pointing to a JSON file containing the
+   * patches.
+   * </pre>
+   *
+   * <code>string json_patch_gcs_uri = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for jsonPatchGcsUri.
+   */
+  com.google.protobuf.ByteString getJsonPatchGcsUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The parent resource name with the location of the app to import.
    * </pre>
    *
@@ -263,4 +344,6 @@ public interface ImportAppRequestOrBuilder
   boolean getIgnoreAppLock();
 
   com.google.cloud.ces.v1beta.ImportAppRequest.AppCase getAppCase();
+
+  com.google.cloud.ces.v1beta.ImportAppRequest.JsonPatchCase getJsonPatchCase();
 }
