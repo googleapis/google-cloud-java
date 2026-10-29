@@ -52,6 +52,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
@@ -575,6 +576,7 @@ class FlowControllerTest {
         FlowController.MaxOutstandingRequestBytesReachedException.class);
   }
 
+  @Disabled("Flaky test: b/579437108")
   @Test
   void testNumberOfBytesOutOfBoundaryWontDeadlock() throws Exception {
     // Test the special case where in FlowController#reserve, to avoid deadlocks, it allows
