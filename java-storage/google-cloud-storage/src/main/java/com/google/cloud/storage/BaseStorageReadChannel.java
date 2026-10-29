@@ -43,13 +43,25 @@ abstract class BaseStorageReadChannel<T> implements StorageReadChannel {
   private BufferHandle bufferHandle;
   private LazyReadChannel<?, T> lazyReadChannel;
   protected final ReentrantLock lock;
+  @Nullable private final StorageMetricsContext metricsContext;
+  @Nullable private final StorageClientMetrics storageClientMetrics;
+  @Nullable private Throwable lastOperationError;
 
   protected BaseStorageReadChannel(Decoder<T, BlobInfo> objectDecoder) {
+    this(objectDecoder, null, null);
+  }
+
+  protected BaseStorageReadChannel(
+      Decoder<T, BlobInfo> objectDecoder,
+      @Nullable StorageMetricsContext metricsContext,
+      @Nullable StorageClientMetrics storageClientMetrics) {
     this.objectDecoder = objectDecoder;
     this.result = SettableApiFuture.create();
     this.open = true;
     this.byteRangeSpec = ByteRangeSpec.nullRange();
     this.lock = new ReentrantLock();
+    this.metricsContext = metricsContext;
+    this.storageClientMetrics = storageClientMetrics;
   }
 
   @Override
@@ -76,14 +88,27 @@ abstract class BaseStorageReadChannel<T> implements StorageReadChannel {
   @Override
   public final void close() {
     lock.lock();
+    Throwable error = null;
     try {
-      open = false;
-      if (internalGetLazyChannel().isOpen()) {
-        ReadableByteChannel channel = internalGetLazyChannel().getChannel();
-        StorageException.wrapIOException(channel::close);
+      if (open) {
+        open = false;
+        if (internalGetLazyChannel().isOpen()) {
+          ReadableByteChannel channel = internalGetLazyChannel().getChannel();
+          StorageException.wrapIOException(channel::close);
+        }
       }
+    } catch (Throwable t) {
+      error = t;
+      throw t;
     } finally {
-      lock.unlock();
+      try {
+        if (metricsContext != null && storageClientMetrics != null) {
+          metricsContext.recordOperation(
+              storageClientMetrics, error != null ? error : lastOperationError);
+        }
+      } finally {
+        lock.unlock();
+      }
     }
   }
 
@@ -140,12 +165,16 @@ abstract class BaseStorageReadChannel<T> implements StorageReadChannel {
           // be removed in the next major version.
           return -1;
         } else {
+          lastOperationError = e;
           throw new IOException(e);
         }
       } catch (IOException e) {
+        lastOperationError = e;
         throw e;
       } catch (Exception e) {
-        throw new IOException(StorageException.coalesce(e));
+        Throwable coalesced = StorageException.coalesce(e);
+        lastOperationError = coalesced;
+        throw new IOException(coalesced);
       }
     } finally {
       lock.unlock();
@@ -175,6 +204,10 @@ abstract class BaseStorageReadChannel<T> implements StorageReadChannel {
     } else {
       return null;
     }
+  }
+
+  protected final @Nullable StorageMetricsContext getMetricsContext() {
+    return metricsContext;
   }
 
   protected abstract LazyReadChannel<?, T> newLazyReadChannel();
