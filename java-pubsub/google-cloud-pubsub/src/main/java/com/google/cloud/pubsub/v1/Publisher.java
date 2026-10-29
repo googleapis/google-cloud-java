@@ -815,7 +815,8 @@ public class Publisher implements PublisherInterface {
               "Hedging rate limited due to lack of tokens.",
               batch.getMessageWrappers().get(0));
         }
-      } catch (RuntimeException e) {
+      }
+    } catch (RuntimeException e) {
       logger.log(Level.WARNING, "Unexpected error while processing the publish hedging queue", e);
     } finally {
       queueLock.unlock();
