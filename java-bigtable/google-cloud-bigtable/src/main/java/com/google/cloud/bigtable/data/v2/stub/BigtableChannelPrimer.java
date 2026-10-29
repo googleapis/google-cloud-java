@@ -31,11 +31,12 @@ import io.grpc.ClientCall;
 import io.grpc.Deadline;
 import io.grpc.Metadata;
 import io.grpc.Status;
+import io.grpc.StatusException;
 import io.grpc.auth.MoreCallCredentials;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -90,24 +91,33 @@ public class BigtableChannelPrimer implements ChannelPrimer {
   @Override
   public void primeChannel(Channel channel) {
     try {
-      primeChannelUnsafe(channel);
-    } catch (IOException | RuntimeException e) {
+      sendPrimeRequestsBlocking(channel);
+    } catch (RuntimeException e) {
       LOG.log(Level.WARNING, "Unexpected error while trying to prime a channel", e);
+      throw e;
     }
-  }
-
-  private void primeChannelUnsafe(Channel channel) throws IOException {
-    sendPrimeRequestsBlocking(channel);
   }
 
   private void sendPrimeRequestsBlocking(Channel channel) {
     try {
       sendPrimeRequestsAsync(channel).get(1, TimeUnit.MINUTES);
+    } catch (ExecutionException e) {
+      Throwable cause = e.getCause();
+      if (cause instanceof RuntimeException) {
+        throw (RuntimeException) cause;
+      }
+      if (cause instanceof StatusException) {
+        StatusException statusException = (StatusException) cause;
+        throw statusException.getStatus().asRuntimeException(statusException.getTrailers());
+      }
+      throw new RuntimeException("Failed to prime channel", cause != null ? cause : e);
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new RuntimeException("Interrupted while priming channel", e);
+    } catch (RuntimeException e) {
+      throw e;
     } catch (Throwable e) {
-      // TODO: Not sure if we should swallow the error here. We are pre-emptively swapping
-      // channels if the new
-      // channel is bad.
-      LOG.log(Level.WARNING, "Failed to prime channel", e);
+      throw new RuntimeException("Failed to prime channel", e);
     }
   }
 

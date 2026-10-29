@@ -106,14 +106,23 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
     this.channelPrimer = channelPrimer;
     Clock systemClock = Clock.systemUTC();
     ChannelPoolHealthChecker channelPoolHealthChecker =
-        new ChannelPoolHealthChecker(entries::get, channelPrimer, executor, systemClock);
+        new ChannelPoolHealthChecker(
+            entries::get, channelPrimer, executor, systemClock, this::replaceEntry);
     channelPoolHealthChecker.start();
 
     ImmutableList.Builder<Entry> initialListBuilder = ImmutableList.builder();
 
     for (int i = 0; i < settings.getInitialChannelCount(); i++) {
       ManagedChannel newChannel = channelSupplier.get();
-      channelPrimer.primeChannel(newChannel);
+      try {
+        channelPrimer.primeChannel(newChannel);
+      } catch (Exception e) {
+        LOG.log(
+            Level.WARNING,
+            "Failed to prime initial channel during pool creation, continuing with unprimed"
+                + " channel",
+            e);
+      }
       initialListBuilder.add(new Entry(newChannel));
     }
 
@@ -417,12 +426,16 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
     ImmutableList.Builder<Entry> newEntries = ImmutableList.<Entry>builder().addAll(localEntries);
 
     for (int i = 0; i < desiredSize - localEntries.size(); i++) {
+      ManagedChannel newChannel = null;
       try {
-        ManagedChannel newChannel = channelSupplier.get();
+        newChannel = channelSupplier.get();
         this.channelPrimer.primeChannel(newChannel);
         newEntries.add(new Entry(newChannel));
       } catch (Exception e) {
         LOG.log(Level.WARNING, "Failed to add channel", e);
+        if (newChannel != null) {
+          newChannel.shutdownNow();
+        }
       }
     }
 
@@ -457,12 +470,16 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
       ArrayList<Entry> newEntries = new ArrayList<>(entries.get());
 
       for (int i = 0; i < newEntries.size(); i++) {
+        ManagedChannel newChannel = null;
         try {
-          ManagedChannel newChannel = channelSupplier.get();
+          newChannel = channelSupplier.get();
           this.channelPrimer.primeChannel(newChannel);
           newEntries.set(i, new Entry(newChannel));
         } catch (Exception e) {
           LOG.log(Level.WARNING, "Failed to refresh channel, leaving old channel", e);
+          if (newChannel != null) {
+            newChannel.shutdownNow();
+          }
         }
       }
 
@@ -475,6 +492,47 @@ public class BigtableChannelPool extends ManagedChannel implements BigtableChann
         }
       }
     }
+  }
+
+  /**
+   * Replaces a single unhealthy entry in the pool with a newly created and primed channel.
+   *
+   * @return true if the entry was replaced, or false if channel creation/priming failed or the
+   *     entry is no longer in the pool.
+   */
+  @VisibleForTesting
+  boolean replaceEntry(Entry unhealthyEntry) {
+    if (!entries.get().contains(unhealthyEntry)) {
+      return false;
+    }
+
+    ManagedChannel newChannel = null;
+    try {
+      newChannel = channelSupplier.get();
+      this.channelPrimer.primeChannel(newChannel);
+    } catch (Exception e) {
+      LOG.log(Level.WARNING, "Failed to replace unhealthy channel, leaving old channel", e);
+      if (newChannel != null) {
+        newChannel.shutdownNow();
+      }
+      return false;
+    }
+
+    synchronized (entryWriteLock) {
+      List<Entry> currentEntries = entries.get();
+      int index = currentEntries.indexOf(unhealthyEntry);
+      if (index < 0) {
+        newChannel.shutdownNow();
+        return false;
+      }
+
+      ArrayList<Entry> newEntries = new ArrayList<>(currentEntries);
+      newEntries.set(index, new Entry(newChannel));
+      entries.set(ImmutableList.copyOf(newEntries));
+    }
+
+    unhealthyEntry.requestShutdown();
+    return true;
   }
 
   /**

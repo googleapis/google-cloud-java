@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
@@ -28,6 +29,7 @@ import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Clock;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -232,5 +234,121 @@ public class BigtableChannelPoolTest {
     assertThat(entry.getAndResetSuccessCount()).isEqualTo(0);
     assertThat(entry.getAndResetErrorCount()).isEqualTo(1); // The last failure
     assertThat(entry.totalOutstandingRpcs()).isEqualTo(0);
+  }
+
+  @Test
+  public void testConstructorContinuesWhenInitialPrimingFails() throws IOException {
+    ManagedChannel initialChannel = mock(ManagedChannel.class);
+    when(mockChannelFactory.get()).thenReturn(initialChannel);
+    doThrow(new RuntimeException("Initial PingAndWarm failed"))
+        .when(mockChannelPrimer)
+        .primeChannel(initialChannel);
+
+    BigtableChannelPoolSettings settings =
+        BigtableChannelPoolSettings.builder()
+            .setInitialChannelCount(1)
+            .setMinChannelCount(1)
+            .setMaxChannelCount(1)
+            .build();
+    BigtableChannelPool pool =
+        new BigtableChannelPool(settings, mockChannelFactory, mockChannelPrimer, executorService);
+
+    assertThat(pool.getChannelInfos()).hasSize(1);
+    verify(initialChannel, never()).shutdownNow();
+  }
+
+  @Test
+  public void testRefreshKeepsOldChannelWhenPrimingFails() {
+    BigtableChannelPool.Entry initialEntry = getSingleEntry();
+    ManagedChannel badNewChannel = mock(ManagedChannel.class);
+    when(mockChannelFactory.get()).thenReturn(badNewChannel);
+    doThrow(new RuntimeException("PingAndWarm failed"))
+        .when(mockChannelPrimer)
+        .primeChannel(badNewChannel);
+
+    channelPool.refresh();
+
+    assertThat(getSingleEntry()).isSameInstanceAs(initialEntry);
+    verify(badNewChannel).shutdownNow();
+    verify(mockChannel, never()).shutdown();
+  }
+
+  @Test
+  public void testReplaceEntryReplacesUnhealthyChannel() {
+    BigtableChannelPool.Entry initialEntry = getSingleEntry();
+    ManagedChannel replacementChannel = mock(ManagedChannel.class);
+    when(mockChannelFactory.get()).thenReturn(replacementChannel);
+
+    boolean replaced = channelPool.replaceEntry(initialEntry);
+
+    assertThat(replaced).isTrue();
+    BigtableChannelPool.Entry updatedEntry = getSingleEntry();
+    assertThat(updatedEntry).isNotSameInstanceAs(initialEntry);
+    assertThat(updatedEntry.getManagedChannel()).isSameInstanceAs(replacementChannel);
+    verify(mockChannelPrimer).primeChannel(replacementChannel);
+    verify(mockChannel).shutdown();
+  }
+
+  @Test
+  public void testReplaceEntryKeepsOldChannelWhenPrimingFails() {
+    BigtableChannelPool.Entry initialEntry = getSingleEntry();
+    ManagedChannel badReplacementChannel = mock(ManagedChannel.class);
+    when(mockChannelFactory.get()).thenReturn(badReplacementChannel);
+    doThrow(new RuntimeException("PingAndWarm failed"))
+        .when(mockChannelPrimer)
+        .primeChannel(badReplacementChannel);
+
+    boolean replaced = channelPool.replaceEntry(initialEntry);
+
+    assertThat(replaced).isFalse();
+    assertThat(getSingleEntry()).isSameInstanceAs(initialEntry);
+    verify(badReplacementChannel).shutdownNow();
+    verify(mockChannel, never()).shutdown();
+  }
+
+  @Test
+  public void testHealthCheckerEvictionReplacesOutlierEntryInPool() throws IOException {
+    BigtableChannelPoolSettings multiChannelSettings =
+        BigtableChannelPoolSettings.builder()
+            .setInitialChannelCount(2)
+            .setMinChannelCount(2)
+            .setMaxChannelCount(2)
+            .build();
+    ManagedChannel healthyChannel = mock(ManagedChannel.class);
+    ManagedChannel unhealthyChannel = mock(ManagedChannel.class);
+    ManagedChannel replacementChannel = mock(ManagedChannel.class);
+    when(mockChannelFactory.get()).thenReturn(healthyChannel, unhealthyChannel, replacementChannel);
+
+    BigtableChannelPool pool =
+        new BigtableChannelPool(
+            multiChannelSettings, mockChannelFactory, mockChannelPrimer, executorService);
+    @SuppressWarnings("unchecked")
+    List<BigtableChannelPool.Entry> initialEntries =
+        (List<BigtableChannelPool.Entry>) pool.getChannelInfos();
+    BigtableChannelPool.Entry healthyEntry = initialEntries.get(0);
+    BigtableChannelPool.Entry outlierEntry = initialEntries.get(1);
+
+    healthyEntry.successfulProbesInWindow.set(10);
+    outlierEntry.failedProbesInWindow.set(10);
+
+    @SuppressWarnings("unchecked")
+    ChannelPoolHealthChecker healthChecker =
+        new ChannelPoolHealthChecker(
+            () -> ImmutableList.copyOf((List<BigtableChannelPool.Entry>) pool.getChannelInfos()),
+            mockChannelPrimer,
+            executorService,
+            Clock.systemUTC(),
+            pool::replaceEntry);
+
+    healthChecker.detectAndRemoveOutlierEntries();
+
+    @SuppressWarnings("unchecked")
+    List<BigtableChannelPool.Entry> updatedEntries =
+        (List<BigtableChannelPool.Entry>) pool.getChannelInfos();
+    assertThat(updatedEntries.get(0)).isSameInstanceAs(healthyEntry);
+    assertThat(updatedEntries.get(1)).isNotSameInstanceAs(outlierEntry);
+    assertThat(updatedEntries.get(1).getManagedChannel()).isSameInstanceAs(replacementChannel);
+    verify(unhealthyChannel).shutdown();
+    verify(unhealthyChannel, never()).enterIdle();
   }
 }
