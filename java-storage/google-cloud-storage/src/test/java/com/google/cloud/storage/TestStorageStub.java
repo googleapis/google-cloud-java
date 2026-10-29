@@ -30,6 +30,7 @@ import com.google.storage.v2.RewriteResponse;
 import com.google.storage.v2.UpdateObjectRequest;
 import com.google.storage.v2.stub.StorageStub;
 import java.util.concurrent.TimeUnit;
+import org.mockito.Mockito;
 
 class TestStorageStub extends StorageStub {
   UnaryCallable<CreateBucketRequest, Bucket> createBucketCallable;
@@ -39,6 +40,11 @@ class TestStorageStub extends StorageStub {
   UnaryCallable<RestoreObjectRequest, Object> restoreObjectCallable;
   UnaryCallable<MoveObjectRequest, Object> moveObjectCallable;
   UnaryCallable<RewriteObjectRequest, RewriteResponse> rewriteObjectCallable;
+
+  @SuppressWarnings("unchecked")
+  static <ReqT, RespT> UnaryCallable<ReqT, RespT> mockCallable() {
+    return Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+  }
 
   @Override
   public UnaryCallable<CreateBucketRequest, Bucket> createBucketCallable() {

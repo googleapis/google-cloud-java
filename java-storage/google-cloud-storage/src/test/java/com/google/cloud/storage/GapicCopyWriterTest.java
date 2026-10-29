@@ -23,7 +23,6 @@ import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_UNAVAILABLE
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.api.gax.grpc.GrpcCallContext;
@@ -108,7 +107,7 @@ public final class GapicCopyWriterTest {
             options.createRetrier(),
             Opts.empty());
 
-    callable = mock(UnaryCallable.class);
+    callable = TestStorageStub.mockCallable();
     retrier = Retrier.attemptOnce().withAlg(Retrying.neverRetry());
   }
 
