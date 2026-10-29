@@ -38,8 +38,10 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore("Flaky test: b/579436401")
 public class ITSystemTest {
 
   private static CloudSchedulerClient client;
