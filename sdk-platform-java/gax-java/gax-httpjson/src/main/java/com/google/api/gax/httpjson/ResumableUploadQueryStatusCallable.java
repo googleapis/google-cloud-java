@@ -29,14 +29,19 @@
  */
 package com.google.api.gax.httpjson;
 
+import static com.google.api.gax.httpjson.ResumableUploadHeaders.UPLOAD_COMMAND_HEADER;
+import static com.google.api.gax.httpjson.ResumableUploadHeaders.UPLOAD_SIZE_RECEIVED_HEADER;
+
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.resumable.QueryStatusRequest;
 import com.google.api.gax.resumable.QueryStatusResponse;
+import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.resumable.ResumableUploadStatus;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
@@ -61,9 +66,6 @@ import org.jspecify.annotations.Nullable;
 class ResumableUploadQueryStatusCallable<ResponseT>
     extends UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> {
 
-  private static final String UPLOAD_COMMAND_HEADER = "X-Goog-Upload-Command";
-  private static final String UPLOAD_STATUS_HEADER = "X-Goog-Upload-Status";
-  private static final String UPLOAD_SIZE_RECEIVED_HEADER = "X-Goog-Upload-Size-Received";
   private static final String COMMAND_QUERY = "query";
 
   private static final Map<String, List<String>> QUERY_STATUS_HEADERS =
@@ -119,6 +121,9 @@ class ResumableUploadQueryStatusCallable<ResponseT>
             HttpJsonCallContext.createDefault()
                 .nullToSelf(clientContext.getDefaultCallContext())
                 .merge(inputContext)
+                // Session URLs are self-authenticating; omit credentials and reset EndpointContext.
+                .withCredentials(null)
+                .withEndpointContext(EndpointContext.getDefaultInstance())
                 .withExtraHeaders(QUERY_STATUS_HEADERS);
 
     HttpJsonClientCall<QueryStatusRequest, String> clientCall =
@@ -183,6 +188,7 @@ class ResumableUploadQueryStatusCallable<ResponseT>
     private final ResumableUploadHttpJsonFuture<QueryStatusResponse<ResponseT>> future;
     private final HttpResponseParser<ResponseT> responseParser;
     private ResumableUploadStatus uploadStatus = ResumableUploadStatus.UNKNOWN;
+    private int chunkGranularity = ResumableUploadSession.DEFAULT_CHUNK_GRANULARITY;
     @Nullable private Long committedOffset = null;
     @Nullable private Throwable headerParsingException;
     private String responseBody = "";
@@ -196,12 +202,10 @@ class ResumableUploadQueryStatusCallable<ResponseT>
 
     @Override
     public void onHeaders(HttpJsonMetadata responseHeaders) {
-      Map<String, Object> headers = responseHeaders.getHeaders();
-      this.uploadStatus =
-          ResumableUploadStatus.fromHeader(
-              HttpHeadersUtils.getSingleHeader(headers, UPLOAD_STATUS_HEADER));
+      this.uploadStatus = ResumableUploadHeaders.parseUploadStatus(responseHeaders);
       try {
         this.committedOffset = parseSizeReceived(responseHeaders);
+        this.chunkGranularity = ResumableUploadHeaders.parseChunkGranularity(responseHeaders);
       } catch (Throwable t) {
         this.headerParsingException = t;
       }
@@ -229,12 +233,14 @@ class ResumableUploadQueryStatusCallable<ResponseT>
                 QueryStatusResponse.<ResponseT>newBuilder()
                     .setUploadStatus(uploadStatus)
                     .setResponse(responseParser.parse(stream))
+                    .setChunkGranularity(chunkGranularity)
                     .build());
           } else if (committedOffset != null) {
             future.set(
                 QueryStatusResponse.<ResponseT>newBuilder()
                     .setCommittedOffset(committedOffset)
                     .setUploadStatus(uploadStatus)
+                    .setChunkGranularity(chunkGranularity)
                     .build());
           } else {
             future.setException(

@@ -57,6 +57,9 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.auth.Credentials;
+import com.google.auth.oauth2.AccessToken;
+import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.common.base.Strings;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -161,7 +164,7 @@ class HttpJsonResumableUploadClientTest {
     assertThat(exception.getCause()).isInstanceOf(InternalException.class);
     assertThat(exception.getCause())
         .hasMessageThat()
-        .contains("Start upload response contained non-positive chunk granularity header: -256");
+        .contains("Response contained non-positive X-Goog-Upload-Chunk-Granularity header: -256");
   }
 
   @Test
@@ -205,6 +208,7 @@ class HttpJsonResumableUploadClientTest {
     assertThat(transport.capturedHeaders.get("x-goog-upload-protocol"))
         .containsExactly("resumable");
     assertThat(transport.capturedHeaders.get("x-goog-upload-command")).containsExactly("start");
+    assertThat(transport.capturedHeaders.get("authorization")).containsExactly("Bearer test-token");
   }
 
   @Test
@@ -336,6 +340,7 @@ class HttpJsonResumableUploadClientTest {
     assertThat(transport.capturedUrl).isEqualTo(TEST_UPLOAD_URL);
     assertThat(transport.capturedHeaders.get("x-goog-upload-command")).containsExactly("upload");
     assertThat(transport.capturedHeaders.get("x-goog-upload-offset")).containsExactly("0");
+    assertThat(transport.capturedHeaders).doesNotContainKey("authorization");
   }
 
   @Test
@@ -512,6 +517,25 @@ class HttpJsonResumableUploadClientTest {
     assertThat(response.getUploadStatus()).isEqualTo(ResumableUploadStatus.ACTIVE);
 
     assertThat(transport.capturedHeaders.get("x-goog-upload-command")).containsExactly("query");
+    assertThat(transport.capturedHeaders).doesNotContainKey("authorization");
+  }
+
+  @Test
+  void queryStatus_withChunkGranularity_returnsGranularity() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(200);
+    httpResponse.addHeader("X-Goog-Upload-Status", "active");
+    httpResponse.addHeader("X-Goog-Upload-Size-Received", "524288");
+    httpResponse.addHeader("X-Goog-Upload-Chunk-Granularity", "262144");
+
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(httpResponse);
+    QueryStatusRequest request = QueryStatusRequest.create(TEST_UPLOAD_URL);
+
+    QueryStatusResponse<String> response = client.queryStatusCallable().call(request);
+
+    assertThat(response.getCommittedOffset()).isEqualTo(524288L);
+    assertThat(response.getChunkGranularity()).isEqualTo(262144);
+    assertThat(response.getUploadStatus()).isEqualTo(ResumableUploadStatus.ACTIVE);
   }
 
   @Test
@@ -622,10 +646,15 @@ class HttpJsonResumableUploadClientTest {
             .setHttpTransport(transport)
             .build();
 
+    Credentials credentials = OAuth2Credentials.create(new AccessToken("test-token", null));
+    HttpJsonCallContext defaultCallContext =
+        HttpJsonCallContext.createDefault().withChannel(channel).withCredentials(credentials);
+
     ClientContext clientContext =
         ClientContext.newBuilder()
             .setTransportChannel(HttpJsonTransportChannel.create(channel))
-            .setDefaultCallContext(HttpJsonCallContext.createDefault().withChannel(channel))
+            .setDefaultCallContext(defaultCallContext)
+            .setCredentials(credentials)
             .build();
 
     return HttpJsonResumableUploadClient.create(

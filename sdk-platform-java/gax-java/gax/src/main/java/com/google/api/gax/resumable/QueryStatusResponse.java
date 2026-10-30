@@ -65,11 +65,18 @@ public abstract class QueryStatusResponse<ResponseT> {
   /** Returns the status of the upload session returned by the server. */
   public abstract ResumableUploadStatus getUploadStatus();
 
+  /**
+   * Returns the byte alignment granularity required by the server for chunk uploads, or {@code 1}
+   * if no alignment restriction was returned.
+   */
+  public abstract int getChunkGranularity();
+
   public abstract Builder<ResponseT> toBuilder();
 
   public static <ResponseT> Builder<ResponseT> newBuilder() {
     return new AutoValue_QueryStatusResponse.Builder<ResponseT>()
-        .setUploadStatus(ResumableUploadStatus.ACTIVE);
+        .setUploadStatus(ResumableUploadStatus.ACTIVE)
+        .setChunkGranularity(ResumableUploadSession.DEFAULT_CHUNK_GRANULARITY);
   }
 
   @AutoValue.Builder
@@ -79,6 +86,8 @@ public abstract class QueryStatusResponse<ResponseT> {
     public abstract Builder<ResponseT> setResponse(@Nullable ResponseT response);
 
     public abstract Builder<ResponseT> setUploadStatus(ResumableUploadStatus uploadStatus);
+
+    public abstract Builder<ResponseT> setChunkGranularity(int chunkGranularity);
 
     public abstract QueryStatusResponse<ResponseT> build();
   }

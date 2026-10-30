@@ -29,6 +29,10 @@
  */
 package com.google.api.gax.httpjson;
 
+import static com.google.api.gax.httpjson.ResumableUploadHeaders.UPLOAD_COMMAND_HEADER;
+import static com.google.api.gax.httpjson.ResumableUploadHeaders.UPLOAD_PROTOCOL_HEADER;
+import static com.google.api.gax.httpjson.ResumableUploadHeaders.UPLOAD_URL_HEADER;
+
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -51,11 +55,6 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 class ResumableUploadStartCallable<RequestT>
     extends UnaryCallable<RequestT, ResumableUploadSession> {
-
-  private static final String UPLOAD_PROTOCOL_HEADER = "X-Goog-Upload-Protocol";
-  private static final String UPLOAD_COMMAND_HEADER = "X-Goog-Upload-Command";
-  private static final String UPLOAD_URL_HEADER = "X-Goog-Upload-URL";
-  private static final String UPLOAD_GRANULARITY_HEADER = "X-Goog-Upload-Chunk-Granularity";
 
   private static final Map<String, List<String>> START_UPLOAD_HEADERS =
       ImmutableMap.of(
@@ -108,7 +107,7 @@ class ResumableUploadStartCallable<RequestT>
   /** A listener that parses HTTP response headers to produce a {@link ResumableUploadSession}. */
   private static class StartUploadResponseListener extends HttpJsonClientCall.Listener<String> {
     private final ResumableUploadHttpJsonFuture<ResumableUploadSession> future;
-    private int chunkGranularity = 1;
+    private int chunkGranularity = ResumableUploadSession.DEFAULT_CHUNK_GRANULARITY;
     @Nullable private String uploadUrl;
     @Nullable private Throwable headerParsingException;
 
@@ -119,39 +118,16 @@ class ResumableUploadStartCallable<RequestT>
 
     @Override
     public void onHeaders(HttpJsonMetadata responseHeaders) {
-      Map<String, Object> headers = responseHeaders.getHeaders();
-
-      String url = HttpHeadersUtils.getSingleHeader(headers, UPLOAD_URL_HEADER);
+      String url =
+          HttpHeadersUtils.getSingleHeader(responseHeaders.getHeaders(), UPLOAD_URL_HEADER);
       if (!Strings.isNullOrEmpty(url)) {
         this.uploadUrl = url;
       }
 
-      String granularityStr = HttpHeadersUtils.getSingleHeader(headers, UPLOAD_GRANULARITY_HEADER);
-      if (Strings.isNullOrEmpty(granularityStr)) {
-        return;
-      }
-
       try {
-        int parsed = Integer.parseInt(granularityStr);
-        if (parsed <= 0) {
-          this.headerParsingException =
-              ApiExceptionFactory.createException(
-                  "Start upload response contained non-positive chunk granularity header: "
-                      + granularityStr,
-                  /* cause= */ null,
-                  HttpJsonStatusCode.of(StatusCode.Code.INTERNAL),
-                  /* retryable= */ false);
-        } else {
-          this.chunkGranularity = parsed;
-        }
-      } catch (NumberFormatException e) {
-        this.headerParsingException =
-            ApiExceptionFactory.createException(
-                "Start upload response contained invalid chunk granularity header: "
-                    + granularityStr,
-                e,
-                HttpJsonStatusCode.of(StatusCode.Code.INTERNAL),
-                /* retryable= */ false);
+        this.chunkGranularity = ResumableUploadHeaders.parseChunkGranularity(responseHeaders);
+      } catch (Throwable t) {
+        this.headerParsingException = t;
       }
     }
 
