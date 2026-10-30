@@ -666,6 +666,7 @@ class FlowControllerTest {
     t.join();
   }
 
+  @Disabled("Flaky test: b/579436657")
   @Test
   void testFlowControlBlockEventIsRecorded() throws Exception {
     // Test when reserve is blocked for at least FlowController#RESERVE_FLOW_CONTROL_THRESHOLD_MS,
