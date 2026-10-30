@@ -56,6 +56,9 @@ final class ObjectReadSessionState {
   private final AtomicReference<@MonotonicNonNull Object> metadata;
   private final AtomicLong readIdSeq;
 
+  /** Shared between a parent state and all of its children, see {@link #forkChild()}. */
+  private final FeatureTracking.Mask featureMask;
+
   @GuardedBy("this.lock") // https://errorprone.info/bugpattern/GuardedBy
   private final Map<Long, ObjectReadSessionStreamRead<?>> outstandingReads;
 
@@ -69,7 +72,8 @@ final class ObjectReadSessionState {
         new AtomicLong(1),
         new AtomicReference<>(),
         new AtomicReference<>(),
-        new AtomicReference<>());
+        new AtomicReference<>(),
+        new FeatureTracking.Mask());
   }
 
   private ObjectReadSessionState(
@@ -78,25 +82,37 @@ final class ObjectReadSessionState {
       AtomicLong readIdSeq,
       AtomicReference<@Nullable BidiReadHandle> bidiReadHandle,
       AtomicReference<@Nullable String> routingToken,
-      AtomicReference<@MonotonicNonNull Object> metadata) {
+      AtomicReference<@MonotonicNonNull Object> metadata,
+      FeatureTracking.Mask featureMask) {
     this.baseContext = baseContext;
     this.openRequest = openRequest;
     this.bidiReadHandle = bidiReadHandle;
     this.routingToken = routingToken;
     this.metadata = metadata;
     this.readIdSeq = readIdSeq;
+    this.featureMask = featureMask;
     this.outstandingReads = new HashMap<>();
     this.lock = new ReentrantLock();
   }
 
+  /**
+   * Forks a new state for an additional stream of the same read session.
+   *
+   * <p>A fork means the session is now backed by more than one BidiReadObject stream, so this marks
+   * {@link TrackedFeature#MULTISTREAM_IN_MRD} in the feature mask shared by the parent and all
+   * children. Any stream opened (or re-opened) by this session afterwards carries the {@link
+   * FeatureTracking#HEADER} header.
+   */
   ObjectReadSessionState forkChild() {
+    featureMask.set(TrackedFeature.MULTISTREAM_IN_MRD);
     return new ObjectReadSessionState(
         baseContext,
         openRequest,
         readIdSeq,
         new AtomicReference<>(bidiReadHandle.get()),
         new AtomicReference<>(routingToken.get()),
-        new AtomicReference<>(metadata.get()));
+        new AtomicReference<>(metadata.get()),
+        featureMask);
   }
 
   boolean canHandleNewRead(ObjectReadSessionStreamRead<?> newRead) {
@@ -136,14 +152,17 @@ final class ObjectReadSessionState {
           .forEach(b::addReadRanges);
 
       ImmutableMap<String, List<String>> headers =
-          ImmutableMap.of(
-              "x-goog-request-params",
-              ImmutableList.of(
-                  Stream.of(
-                          "bucket=" + spec.getBucket(),
-                          routingToken != null ? "routing_token=" + routingToken : null)
-                      .filter(Objects::nonNull)
-                      .collect(Collectors.joining("&"))));
+          ImmutableMap.<String, List<String>>builder()
+              .put(
+                  "x-goog-request-params",
+                  ImmutableList.of(
+                      Stream.of(
+                              "bucket=" + spec.getBucket(),
+                              routingToken != null ? "routing_token=" + routingToken : null)
+                          .filter(Objects::nonNull)
+                          .collect(Collectors.joining("&"))))
+              .putAll(featureMask.headers())
+              .build();
       return OpenArguments.of(baseContext.withExtraHeaders(headers), b.build());
     } finally {
       lock.unlock();
