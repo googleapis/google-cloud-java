@@ -39,6 +39,7 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.SessionClient.SessionConsumer;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.common.util.concurrent.MoreExecutors;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Field;
@@ -245,6 +246,91 @@ public class MultiplexedSessionDatabaseClientTest {
 
     // The refreshed session of the closed client is ignored.
     assertEquals(sessionReference1, client.getCurrentSessionReference());
+  }
+
+  @Test
+  public void testRetryOfInitialSessionIsInstalledBeforeFailureIsPropagated() throws Exception {
+    Clock clock = mock(Clock.class);
+    when(clock.instant()).thenReturn(Instant.now());
+    SessionClient sessionClient = mock(SessionClient.class);
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    SessionPoolOptions sessionPoolOptions = mock(SessionPoolOptions.class);
+    when(sessionClient.getSpanner()).thenReturn(spanner);
+    when(sessionClient.getDatabaseId()).thenReturn(TEST_DATABASE_ID);
+    when(spanner.getRpc()).thenReturn(mock(SpannerRpc.class));
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceDuration())
+        .thenReturn(Duration.ofDays(7));
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceLoopFrequency())
+        .thenReturn(Duration.ofMinutes(10));
+    SessionImpl session = mock(SessionImpl.class);
+    SessionReference sessionReference = mock(SessionReference.class);
+    when(session.getSessionReference()).thenReturn(sessionReference);
+
+    // Capture the consumers of the initial attempt and of the retry.
+    AtomicReference<SessionConsumer> initialConsumer = new AtomicReference<>();
+    AtomicReference<SessionConsumer> retryConsumer = new AtomicReference<>();
+    doAnswer(
+            (Answer<?>)
+                invocationOnMock -> {
+                  initialConsumer.set(invocationOnMock.getArgument(0));
+                  return null;
+                })
+        .doAnswer(
+            (Answer<?>)
+                invocationOnMock -> {
+                  retryConsumer.set(invocationOnMock.getArgument(0));
+                  return null;
+                })
+        .when(sessionClient)
+        .asyncCreateMultiplexedSession(any(SessionConsumer.class));
+    MultiplexedSessionDatabaseClient client =
+        new MultiplexedSessionDatabaseClient(sessionClient, clock);
+    try {
+      assertNotNull(initialConsumer.get());
+
+      AtomicReference<ApiFuture<SessionReference>> currentReference =
+          getMultiplexedSessionReference(client);
+      ApiFuture<SessionReference> initialFuture = currentReference.get();
+      // A transaction that waits for the initial attempt is woken up as soon as that attempt fails.
+      // At that moment, a new transaction must already see the pending retry instead of the failed
+      // initial attempt, as it would otherwise fail with the (retryable) error of that attempt.
+      AtomicReference<ApiFuture<SessionReference>> futureSeenByNewTransaction =
+          new AtomicReference<>();
+      initialFuture.addListener(
+          () -> futureSeenByNewTransaction.set(currentReference.get()),
+          MoreExecutors.directExecutor());
+
+      initialConsumer
+          .get()
+          .onSessionCreateFailure(
+              SpannerExceptionFactory.newSpannerException(ErrorCode.DEADLINE_EXCEEDED, "test"), 1);
+
+      // Waiters for the initial attempt receive the error of that attempt.
+      SpannerException exception =
+          assertThrows(SpannerException.class, () -> SpannerApiFutures.get(initialFuture));
+      assertEquals(ErrorCode.DEADLINE_EXCEEDED, exception.getErrorCode());
+      // New transactions that started after the failure was propagated wait for the retry.
+      assertNotNull(futureSeenByNewTransaction.get());
+      assertFalse(futureSeenByNewTransaction.get().isDone());
+      assertNotNull(retryConsumer.get());
+      retryConsumer.get().onSessionReady(session);
+      assertEquals(sessionReference, futureSeenByNewTransaction.get().get());
+      assertEquals(sessionReference, client.getCurrentSessionReference());
+    } finally {
+      client.close();
+    }
+  }
+
+  @SuppressWarnings("unchecked")
+  private static AtomicReference<ApiFuture<SessionReference>> getMultiplexedSessionReference(
+      MultiplexedSessionDatabaseClient client) throws Exception {
+    Field field =
+        MultiplexedSessionDatabaseClient.class.getDeclaredField("multiplexedSessionReference");
+    field.setAccessible(true);
+    return (AtomicReference<ApiFuture<SessionReference>>) field.get(client);
   }
 
   @Test
