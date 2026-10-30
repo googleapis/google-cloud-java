@@ -119,8 +119,11 @@ class AwsRequestSigner {
   AwsRequestSignature sign() {
     // Retrieve the service name. For example: iam.amazonaws.com host => iam service.
     // sts-fips.us-east-2.amazonaws.com host => sts service.
+    String firstSegment = Splitter.on(".").split(uri.getHost()).iterator().next();
     String serviceName =
-        Splitter.on(".").split(uri.getHost()).iterator().next().replaceAll("-fips$", "");
+        firstSegment.endsWith("-fips")
+            ? firstSegment.substring(0, firstSegment.length() - 5)
+            : firstSegment;
 
     Map<String, String> canonicalHeaders = getCanonicalHeaders(dates.getOriginalDate());
     // Headers must be sorted.
