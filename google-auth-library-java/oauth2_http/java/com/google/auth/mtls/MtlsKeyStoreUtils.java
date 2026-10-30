@@ -42,12 +42,12 @@ import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.Signature;
+import java.security.SignatureException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.security.spec.PKCS8EncodedKeySpec;
-import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -175,38 +175,30 @@ final class MtlsKeyStoreUtils {
     String sigAlg;
     if ("RSA".equals(keyAlgorithm)) {
       sigAlg = "SHA256withRSA";
-    } else if ("EC".equals(keyAlgorithm) || "ECDSA".equals(keyAlgorithm)) {
+    } else if ("EC".equals(keyAlgorithm)) {
       sigAlg = "SHA256withECDSA";
     } else {
       return;
     }
 
-    boolean matches = false;
-    GeneralSecurityException failureCause = null;
+    Signature signer = Signature.getInstance(sigAlg);
+    signer.initSign(privateKey);
+    signer.update(VERIFICATION_DATA);
+    byte[] signature = signer.sign();
+
+    Signature verifier = Signature.getInstance(sigAlg);
+    verifier.initVerify(publicKey);
+    verifier.update(VERIFICATION_DATA);
+
+    boolean matches;
     try {
-      if ("ECDSA".equals(keyAlgorithm) && publicKey.getEncoded() != null) {
-        // SunEC rejects keys whose algorithm is "ECDSA" rather than "EC"; normalize the key.
-        publicKey =
-            KeyFactory.getInstance("EC")
-                .generatePublic(new X509EncodedKeySpec(publicKey.getEncoded()));
-      }
-
-      Signature signer = Signature.getInstance(sigAlg);
-      signer.initSign(privateKey);
-      signer.update(VERIFICATION_DATA);
-      byte[] signature = signer.sign();
-
-      Signature verifier = Signature.getInstance(sigAlg);
-      verifier.initVerify(publicKey);
-      verifier.update(VERIFICATION_DATA);
-
       matches = verifier.verify(signature);
-    } catch (GeneralSecurityException e) {
-      failureCause = e;
+    } catch (SignatureException e) {
+      throw new GeneralSecurityException("Certificate and private key do not match", e);
     }
 
     if (!matches) {
-      throw new GeneralSecurityException("Certificate and private key do not match", failureCause);
+      throw new GeneralSecurityException("Certificate and private key do not match");
     }
   }
 
