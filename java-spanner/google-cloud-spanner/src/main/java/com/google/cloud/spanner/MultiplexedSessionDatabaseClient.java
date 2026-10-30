@@ -324,16 +324,22 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
               MultiplexedSessionDatabaseClient.this.resourceNotFoundException.set(
                   (ResourceNotFoundException) spannerException);
             }
-            // Set the exception to trigger an error for all waiters.
-            // Then retry the session creation if the error is (potentially) transient and the
-            // client has not been closed in the meantime.
-            sessionReferenceFuture.setException(t);
+            // Retry the session creation if the error is (potentially) transient and the client
+            // has not been closed in the meantime. The future for the retry is installed before
+            // the exception is set, so that transactions that are started after the waiters of
+            // this attempt have received the error, wait for the retry instead of failing with
+            // the error of this attempt.
             if (remainingAttempts > 1
                 && !isClientClosed()
                 && RETRYABLE_ERROR_CODES.contains(spannerException.getErrorCode())) {
               final SettableApiFuture<SessionReference> future = SettableApiFuture.create();
               MultiplexedSessionDatabaseClient.this.multiplexedSessionReference.set(future);
+              // Set the exception to trigger an error for all waiters of this attempt.
+              sessionReferenceFuture.setException(t);
               asyncCreateMultiplexedSession(future, remainingAttempts - 1);
+            } else {
+              // Set the exception to trigger an error for all waiters.
+              sessionReferenceFuture.setException(t);
             }
           }
         });
