@@ -42,6 +42,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -72,6 +73,7 @@ public final class ITReadableByteChannelBehaviorTest {
     eofReturnedMultipleTimes_doTestBlobReadSession(ReadProjectionConfigs.asChannel());
   }
 
+  @Ignore("Flaky test: b/579437195")
   @Test
   @CrossRun.Exclude(transports = Transport.HTTP)
   public void eofReturnedMultipleTimes_blobReadSession_seekableChannel()
