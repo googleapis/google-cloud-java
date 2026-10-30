@@ -16,9 +16,17 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import static com.google.cloud.bigquery.FieldValue.Attribute.RANGE;
+import static com.google.cloud.bigquery.jdbc.BigQueryTemporalUtility.formatRange;
+import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.arrowRange;
+import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.rangeField;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.Range;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.Date;
 import java.sql.Time;
@@ -31,6 +39,8 @@ import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.TimeZone;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class BigQueryTemporalUtilityTest {
 
@@ -101,24 +111,46 @@ public class BigQueryTemporalUtilityTest {
     assertThat(result.getTime()).isEqualTo(expectedSystemMillis);
   }
 
-  @Test
-  public void testCrossTimezoneDateRoundtrip() {
-    // Writer in Los Angeles (UTC-7), Reader in Tokyo (UTC+9) across the date line
-    ZoneId writeZone = ZoneId.of("America/Los_Angeles");
-    ZoneId readZone = ZoneId.of("Asia/Tokyo");
-    Calendar writeCal = Calendar.getInstance(TimeZone.getTimeZone(writeZone));
-    Calendar readCal = Calendar.getInstance(TimeZone.getTimeZone(readZone));
+  /** setDate(cal) / getDate(cal) keep the calendar date, including pre-1582 and pre-1900 dates. */
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/Los_Angeles", "Asia/Kolkata"})
+  public void testCrossTimezoneDateRoundtrip(String jvmZone) {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(jvmZone));
+      // Writer in Los Angeles (UTC-8), reader in Tokyo (UTC+9) across the date line.
+      TimeZone writeZone = TimeZone.getTimeZone("America/Los_Angeles");
+      TimeZone readZone = TimeZone.getTimeZone("Asia/Tokyo");
+      for (String digits : new String[] {"0001-01-01", "1582-10-04", "1850-06-01", "2026-08-24"}) {
+        // The caller's Date is midnight of `digits` in the writer's Calendar zone.
+        LocalDate expected = LocalDate.parse(digits);
+        Calendar writeCal = Calendar.getInstance(writeZone);
+        writeCal.clear();
+        writeCal.set(expected.getYear(), expected.getMonthValue() - 1, expected.getDayOfMonth());
 
-    Date inputDate =
-        new Date(LocalDate.of(2026, 8, 24).atStartOfDay(writeZone).toInstant().toEpochMilli());
-    Date normalizedDate = BigQueryTemporalUtility.convertDateToCalendar(inputDate, writeCal);
-    Date readDate = BigQueryTemporalUtility.convertDateWithCalendar(normalizedDate, readCal);
+        Date written =
+            BigQueryTemporalUtility.convertDateToCalendar(
+                new Date(writeCal.getTimeInMillis()), writeCal);
+        assertThat(written.toString()).isEqualTo(digits);
 
-    Calendar verifyCal = Calendar.getInstance(TimeZone.getTimeZone(readZone));
-    verifyCal.setTime(readDate);
-    assertThat(verifyCal.get(Calendar.YEAR)).isEqualTo(2026);
-    assertThat(verifyCal.get(Calendar.MONTH)).isEqualTo(Calendar.AUGUST);
-    assertThat(verifyCal.get(Calendar.DAY_OF_MONTH)).isEqualTo(24);
+        Calendar readCal = Calendar.getInstance(readZone);
+        readCal.setTime(BigQueryTemporalUtility.convertDateWithCalendar(written, readCal));
+        assertThat(
+                LocalDate.of(
+                    readCal.get(Calendar.YEAR),
+                    readCal.get(Calendar.MONTH) + 1,
+                    readCal.get(Calendar.DAY_OF_MONTH)))
+            .isEqualTo(expected);
+        assertThat(readCal.get(Calendar.HOUR_OF_DAY)).isEqualTo(0);
+
+        // Reverse order: the Date getDate(col, cal) returns, bound back via setDate(i, d, cal).
+        Date read = BigQueryTemporalUtility.boxDate(digits, readZone.toZoneId());
+        assertThat(BigQueryTemporalUtility.convertDateToCalendar(read, readCal).toString())
+            .isEqualTo(digits);
+      }
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
   }
 
   @Test
@@ -225,6 +257,37 @@ public class BigQueryTemporalUtilityTest {
     assertThat(picosDt.getNanos()).isEqualTo(123456789);
   }
 
+  /** Pre-1582 and pre-standard-time digits, with and without a Calendar zone. */
+  @ParameterizedTest
+  @ValueSource(strings = {"UTC", "America/Los_Angeles", "Asia/Kolkata"})
+  public void testBoxCivilValuesKeepDigits(String jvmZone) {
+    TimeZone originalDefault = TimeZone.getDefault();
+    try {
+      TimeZone.setDefault(TimeZone.getTimeZone(jvmZone));
+      ZoneId calZone = ZoneId.of("Asia/Tokyo");
+      for (String digits : new String[] {"0001-01-01", "1582-10-04", "1850-06-01"}) {
+        LocalDateTime noon = LocalDateTime.parse(digits + "T12:00:00");
+        assertThat(BigQueryTemporalUtility.boxDate(digits, null).toLocalDate())
+            .isEqualTo(LocalDate.parse(digits));
+        assertThat(
+                BigQueryTemporalUtility.boxDateTime(digits + " 12:00:00", null).toLocalDateTime())
+            .isEqualTo(noon);
+        assertThat(
+                BigQueryTemporalUtility.unboxDateTime(
+                    BigQueryTemporalUtility.boxDateTime(noon, calZone), calZone))
+            .isEqualTo(noon);
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(calZone));
+        cal.setTime(BigQueryTemporalUtility.boxDate(digits, calZone));
+        assertThat(
+                LocalDate.of(
+                    cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DATE)))
+            .isEqualTo(LocalDate.parse(digits));
+      }
+    } finally {
+      TimeZone.setDefault(originalDefault);
+    }
+  }
+
   @Test
   public void testBoxTime() {
     // Null zone (modern JSR-310)
@@ -272,6 +335,16 @@ public class BigQueryTemporalUtilityTest {
     Timestamp picosIsoTs =
         BigQueryTemporalUtility.boxTimestamp("2026-08-24T15:30:45.123456789012Z");
     assertThat(picosIsoTs.getNanos()).isEqualTo(123456789);
+
+    // JSON API uses scientific notation for |t| < 1 ms
+    assertThat(BigQueryTemporalUtility.boxTimestamp("1.0E-6").toInstant())
+        .isEqualTo(Instant.parse("1970-01-01T00:00:00.000001Z"));
+    assertThat(BigQueryTemporalUtility.boxTimestamp("9.99E-4").toInstant())
+        .isEqualTo(Instant.parse("1970-01-01T00:00:00.000999Z"));
+    assertThat(BigQueryTemporalUtility.boxTimestamp("-1.0E-6").toInstant())
+        .isEqualTo(Instant.parse("1969-12-31T23:59:59.999999Z"));
+    assertThat(BigQueryTemporalUtility.boxTimestamp("-1.0E-4").toInstant())
+        .isEqualTo(Instant.parse("1969-12-31T23:59:59.999900Z"));
   }
 
   @Test
@@ -483,5 +556,55 @@ public class BigQueryTemporalUtilityTest {
             BigQueryTemporalUtility.truncateFractionalSeconds(
                 "2026-04-08 10:00:00.123456789012", 9))
         .isEqualTo("2026-04-08 10:00:00.123456789");
+  }
+
+  @Test
+  public void testFormatRange() throws BigQueryJdbcException {
+    Field date = rangeField("r", "DATE");
+    Field dateTime = rangeField("r", "DATETIME");
+    Field timestamp = rangeField("r", "TIMESTAMP");
+
+    // REST
+    assertThat(formatRange(date, FieldValue.of(RANGE, Range.of("[2026-01-01, 2026-12-31)")), false))
+        .isEqualTo("[2026-01-01, 2026-12-31)");
+    assertThat(
+            formatRange(
+                dateTime,
+                FieldValue.of(RANGE, Range.of("[2026-01-01T00:00:00, 2026-12-31T23:59:59.5)")),
+                false))
+        .isEqualTo("[2026-01-01 00:00:00.000000, 2026-12-31 23:59:59.500000)");
+    FieldValue restTimestamps =
+        FieldValue.of(RANGE, Range.of("[1767225600.000000, 1798761599.000000)"));
+    assertThat(formatRange(timestamp, restTimestamps, false))
+        .isEqualTo("[2026-01-01 00:00:00.000000, 2026-12-31 23:59:59.000000)");
+    assertThat(formatRange(timestamp, restTimestamps, true))
+        .isEqualTo("[2026-01-01 00:00:00.000000000000, 2026-12-31 23:59:59.000000000000)");
+    assertThat(
+            formatRange(
+                timestamp, FieldValue.of(RANGE, Range.of("[1767225600.000000, UNBOUNDED)")), false))
+        .isEqualTo("[2026-01-01 00:00:00.000000, UNBOUNDED)");
+
+    // Arrow
+    assertThat(formatRange(date, arrowRange(20454, 20818), false))
+        .isEqualTo("[2026-01-01, 2026-12-31)");
+    assertThat(
+            formatRange(
+                dateTime,
+                arrowRange(
+                    LocalDateTime.of(2026, 1, 1, 0, 0),
+                    LocalDateTime.of(2026, 12, 31, 23, 59, 59, 500_000_000)),
+                false))
+        .isEqualTo("[2026-01-01 00:00:00.000000, 2026-12-31 23:59:59.500000)");
+    assertThat(formatRange(timestamp, arrowRange(1767225600000000L, null), false))
+        .isEqualTo("[2026-01-01 00:00:00.000000, UNBOUNDED)");
+    // Element type inferred from the Arrow bound class when the schema lacks it.
+    assertThat(
+            formatRange(
+                Field.of("r", StandardSQLTypeName.RANGE),
+                arrowRange(1767225600000000L, 1798761599000000L),
+                false))
+        .isEqualTo("[2026-01-01 00:00:00.000000, 2026-12-31 23:59:59.000000)");
+
+    assertThat(formatRange(timestamp, null, false)).isNull();
   }
 }

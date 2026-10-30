@@ -24,6 +24,7 @@ import com.google.cloud.spanner.admin.instance.v1.InstanceAdminClient;
 import com.google.spanner.admin.instance.v1.AutoscalingConfig;
 import com.google.spanner.admin.instance.v1.CreateInstanceRequest;
 import com.google.spanner.admin.instance.v1.Instance;
+import com.google.spanner.admin.instance.v1.Instance.Edition;
 import com.google.spanner.admin.instance.v1.InstanceConfigName;
 import com.google.spanner.admin.instance.v1.ProjectName;
 import com.google.spanner.admin.instance.v1.ReplicaSelection;
@@ -78,6 +79,7 @@ class CreateInstanceWithAsymmetricAutoscalingConfigExample {
               .setDisplayName(displayName)
               .setConfig(
                   InstanceConfigName.of(projectId, configId).toString())
+              .setEdition(Edition.ENTERPRISE_PLUS)
               .build();
 
       // Creates a new instance

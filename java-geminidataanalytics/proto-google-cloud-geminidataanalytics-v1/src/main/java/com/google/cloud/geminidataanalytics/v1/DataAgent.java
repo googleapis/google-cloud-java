@@ -833,7 +833,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
    * `bigquery_agent_analytics_table` is set. On a BigQuery agent, enabling
    * this without a table has no effect: no table is created for the agent
    * and no rows are written. On an agent whose datasource is not BigQuery,
-   * `CreateDataAgent` rejects either field with `INVALID_ARGUMENT`.
+   * `CreateDataAgent` and `UpdateDataAgent` reject setting this field to
+   * `true` or setting `bigquery_agent_analytics_table` with
+   * `INVALID_ARGUMENT`. See `bigquery_agent_analytics_table` for when this
+   * is checked.
    *
    * This setting is independent of the project-level BigQuery Agent Analytics
    * setting configured through `SetAgentOpsObservability`. An agent does not
@@ -872,7 +875,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
    * `bigquery_agent_analytics_table` is set. On a BigQuery agent, enabling
    * this without a table has no effect: no table is created for the agent
    * and no rows are written. On an agent whose datasource is not BigQuery,
-   * `CreateDataAgent` rejects either field with `INVALID_ARGUMENT`.
+   * `CreateDataAgent` and `UpdateDataAgent` reject setting this field to
+   * `true` or setting `bigquery_agent_analytics_table` with
+   * `INVALID_ARGUMENT`. See `bigquery_agent_analytics_table` for when this
+   * is checked.
    *
    * This setting is independent of the project-level BigQuery Agent Analytics
    * setting configured through `SetAgentOpsObservability`. An agent does not
@@ -903,17 +909,26 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
    * `true`. The Preview enrollment described on that field applies here too.
    *
    * The trace table is validated when it is set on `CreateDataAgent`, or when
-   * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+   * an `UpdateDataAgent` call writes a table to it. An `UpdateDataAgent` call
+   * writes a field if the field is in `update_mask` or, when `update_mask` is
+   * omitted, if the field is present in the request, even if its value is
+   * unchanged. An update that only clears this field is not validated. The
    * following are rejected with `INVALID_ARGUMENT`:
    *
    * * The table must belong to the same project as the agent.
    * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
    * supported for Looker, Looker Studio or AlloyDB agents.
    *
-   * These are validated against the agent as sent in the request. An agent
-   * that carries no datasource is not validated, and an agent switched to a
-   * non-BigQuery datasource is not re-validated; in the latter case no trace
-   * rows are written.
+   * On `CreateDataAgent`, the datasource is validated against the agent in
+   * the request. On `UpdateDataAgent`, it is validated against the stored
+   * agent after applying the update whenever the call writes a table to this
+   * field or writes `true` to `bigquery_agent_analytics_enabled`. For example,
+   * an `UpdateDataAgent` call without `update_mask` that carries an unchanged
+   * `bigquery_agent_analytics_enabled = true` is rejected on an agent whose
+   * datasource is not BigQuery. An agent that carries no datasource is not
+   * validated, and an agent switched to a non-BigQuery datasource by an update
+   * that does neither is not re-validated; in the latter case no trace rows
+   * are written.
    *
    * The destination dataset must already exist and must grant write access to
    * the project's Gemini Data Analytics service agent, whose address is
@@ -945,17 +960,26 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
    * `true`. The Preview enrollment described on that field applies here too.
    *
    * The trace table is validated when it is set on `CreateDataAgent`, or when
-   * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+   * an `UpdateDataAgent` call writes a table to it. An `UpdateDataAgent` call
+   * writes a field if the field is in `update_mask` or, when `update_mask` is
+   * omitted, if the field is present in the request, even if its value is
+   * unchanged. An update that only clears this field is not validated. The
    * following are rejected with `INVALID_ARGUMENT`:
    *
    * * The table must belong to the same project as the agent.
    * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
    * supported for Looker, Looker Studio or AlloyDB agents.
    *
-   * These are validated against the agent as sent in the request. An agent
-   * that carries no datasource is not validated, and an agent switched to a
-   * non-BigQuery datasource is not re-validated; in the latter case no trace
-   * rows are written.
+   * On `CreateDataAgent`, the datasource is validated against the agent in
+   * the request. On `UpdateDataAgent`, it is validated against the stored
+   * agent after applying the update whenever the call writes a table to this
+   * field or writes `true` to `bigquery_agent_analytics_enabled`. For example,
+   * an `UpdateDataAgent` call without `update_mask` that carries an unchanged
+   * `bigquery_agent_analytics_enabled = true` is rejected on an agent whose
+   * datasource is not BigQuery. An agent that carries no datasource is not
+   * validated, and an agent switched to a non-BigQuery datasource by an update
+   * that does neither is not re-validated; in the latter case no trace rows
+   * are written.
    *
    * The destination dataset must already exist and must grant write access to
    * the project's Gemini Data Analytics service agent, whose address is
@@ -990,17 +1014,26 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
    * `true`. The Preview enrollment described on that field applies here too.
    *
    * The trace table is validated when it is set on `CreateDataAgent`, or when
-   * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+   * an `UpdateDataAgent` call writes a table to it. An `UpdateDataAgent` call
+   * writes a field if the field is in `update_mask` or, when `update_mask` is
+   * omitted, if the field is present in the request, even if its value is
+   * unchanged. An update that only clears this field is not validated. The
    * following are rejected with `INVALID_ARGUMENT`:
    *
    * * The table must belong to the same project as the agent.
    * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
    * supported for Looker, Looker Studio or AlloyDB agents.
    *
-   * These are validated against the agent as sent in the request. An agent
-   * that carries no datasource is not validated, and an agent switched to a
-   * non-BigQuery datasource is not re-validated; in the latter case no trace
-   * rows are written.
+   * On `CreateDataAgent`, the datasource is validated against the agent in
+   * the request. On `UpdateDataAgent`, it is validated against the stored
+   * agent after applying the update whenever the call writes a table to this
+   * field or writes `true` to `bigquery_agent_analytics_enabled`. For example,
+   * an `UpdateDataAgent` call without `update_mask` that carries an unchanged
+   * `bigquery_agent_analytics_enabled = true` is rejected on an agent whose
+   * datasource is not BigQuery. An agent that carries no datasource is not
+   * validated, and an agent switched to a non-BigQuery datasource by an update
+   * that does neither is not re-validated; in the latter case no trace rows
+   * are written.
    *
    * The destination dataset must already exist and must grant write access to
    * the project's Gemini Data Analytics service agent, whose address is
@@ -3659,7 +3692,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `bigquery_agent_analytics_table` is set. On a BigQuery agent, enabling
      * this without a table has no effect: no table is created for the agent
      * and no rows are written. On an agent whose datasource is not BigQuery,
-     * `CreateDataAgent` rejects either field with `INVALID_ARGUMENT`.
+     * `CreateDataAgent` and `UpdateDataAgent` reject setting this field to
+     * `true` or setting `bigquery_agent_analytics_table` with
+     * `INVALID_ARGUMENT`. See `bigquery_agent_analytics_table` for when this
+     * is checked.
      *
      * This setting is independent of the project-level BigQuery Agent Analytics
      * setting configured through `SetAgentOpsObservability`. An agent does not
@@ -3698,7 +3734,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `bigquery_agent_analytics_table` is set. On a BigQuery agent, enabling
      * this without a table has no effect: no table is created for the agent
      * and no rows are written. On an agent whose datasource is not BigQuery,
-     * `CreateDataAgent` rejects either field with `INVALID_ARGUMENT`.
+     * `CreateDataAgent` and `UpdateDataAgent` reject setting this field to
+     * `true` or setting `bigquery_agent_analytics_table` with
+     * `INVALID_ARGUMENT`. See `bigquery_agent_analytics_table` for when this
+     * is checked.
      *
      * This setting is independent of the project-level BigQuery Agent Analytics
      * setting configured through `SetAgentOpsObservability`. An agent does not
@@ -3737,7 +3776,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `bigquery_agent_analytics_table` is set. On a BigQuery agent, enabling
      * this without a table has no effect: no table is created for the agent
      * and no rows are written. On an agent whose datasource is not BigQuery,
-     * `CreateDataAgent` rejects either field with `INVALID_ARGUMENT`.
+     * `CreateDataAgent` and `UpdateDataAgent` reject setting this field to
+     * `true` or setting `bigquery_agent_analytics_table` with
+     * `INVALID_ARGUMENT`. See `bigquery_agent_analytics_table` for when this
+     * is checked.
      *
      * This setting is independent of the project-level BigQuery Agent Analytics
      * setting configured through `SetAgentOpsObservability`. An agent does not
@@ -3780,7 +3822,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `bigquery_agent_analytics_table` is set. On a BigQuery agent, enabling
      * this without a table has no effect: no table is created for the agent
      * and no rows are written. On an agent whose datasource is not BigQuery,
-     * `CreateDataAgent` rejects either field with `INVALID_ARGUMENT`.
+     * `CreateDataAgent` and `UpdateDataAgent` reject setting this field to
+     * `true` or setting `bigquery_agent_analytics_table` with
+     * `INVALID_ARGUMENT`. See `bigquery_agent_analytics_table` for when this
+     * is checked.
      *
      * This setting is independent of the project-level BigQuery Agent Analytics
      * setting configured through `SetAgentOpsObservability`. An agent does not
@@ -3817,17 +3862,26 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `true`. The Preview enrollment described on that field applies here too.
      *
      * The trace table is validated when it is set on `CreateDataAgent`, or when
-     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * an `UpdateDataAgent` call writes a table to it. An `UpdateDataAgent` call
+     * writes a field if the field is in `update_mask` or, when `update_mask` is
+     * omitted, if the field is present in the request, even if its value is
+     * unchanged. An update that only clears this field is not validated. The
      * following are rejected with `INVALID_ARGUMENT`:
      *
      * * The table must belong to the same project as the agent.
      * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
      * supported for Looker, Looker Studio or AlloyDB agents.
      *
-     * These are validated against the agent as sent in the request. An agent
-     * that carries no datasource is not validated, and an agent switched to a
-     * non-BigQuery datasource is not re-validated; in the latter case no trace
-     * rows are written.
+     * On `CreateDataAgent`, the datasource is validated against the agent in
+     * the request. On `UpdateDataAgent`, it is validated against the stored
+     * agent after applying the update whenever the call writes a table to this
+     * field or writes `true` to `bigquery_agent_analytics_enabled`. For example,
+     * an `UpdateDataAgent` call without `update_mask` that carries an unchanged
+     * `bigquery_agent_analytics_enabled = true` is rejected on an agent whose
+     * datasource is not BigQuery. An agent that carries no datasource is not
+     * validated, and an agent switched to a non-BigQuery datasource by an update
+     * that does neither is not re-validated; in the latter case no trace rows
+     * are written.
      *
      * The destination dataset must already exist and must grant write access to
      * the project's Gemini Data Analytics service agent, whose address is
@@ -3858,17 +3912,26 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `true`. The Preview enrollment described on that field applies here too.
      *
      * The trace table is validated when it is set on `CreateDataAgent`, or when
-     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * an `UpdateDataAgent` call writes a table to it. An `UpdateDataAgent` call
+     * writes a field if the field is in `update_mask` or, when `update_mask` is
+     * omitted, if the field is present in the request, even if its value is
+     * unchanged. An update that only clears this field is not validated. The
      * following are rejected with `INVALID_ARGUMENT`:
      *
      * * The table must belong to the same project as the agent.
      * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
      * supported for Looker, Looker Studio or AlloyDB agents.
      *
-     * These are validated against the agent as sent in the request. An agent
-     * that carries no datasource is not validated, and an agent switched to a
-     * non-BigQuery datasource is not re-validated; in the latter case no trace
-     * rows are written.
+     * On `CreateDataAgent`, the datasource is validated against the agent in
+     * the request. On `UpdateDataAgent`, it is validated against the stored
+     * agent after applying the update whenever the call writes a table to this
+     * field or writes `true` to `bigquery_agent_analytics_enabled`. For example,
+     * an `UpdateDataAgent` call without `update_mask` that carries an unchanged
+     * `bigquery_agent_analytics_enabled = true` is rejected on an agent whose
+     * datasource is not BigQuery. An agent that carries no datasource is not
+     * validated, and an agent switched to a non-BigQuery datasource by an update
+     * that does neither is not re-validated; in the latter case no trace rows
+     * are written.
      *
      * The destination dataset must already exist and must grant write access to
      * the project's Gemini Data Analytics service agent, whose address is
@@ -3906,17 +3969,26 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `true`. The Preview enrollment described on that field applies here too.
      *
      * The trace table is validated when it is set on `CreateDataAgent`, or when
-     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * an `UpdateDataAgent` call writes a table to it. An `UpdateDataAgent` call
+     * writes a field if the field is in `update_mask` or, when `update_mask` is
+     * omitted, if the field is present in the request, even if its value is
+     * unchanged. An update that only clears this field is not validated. The
      * following are rejected with `INVALID_ARGUMENT`:
      *
      * * The table must belong to the same project as the agent.
      * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
      * supported for Looker, Looker Studio or AlloyDB agents.
      *
-     * These are validated against the agent as sent in the request. An agent
-     * that carries no datasource is not validated, and an agent switched to a
-     * non-BigQuery datasource is not re-validated; in the latter case no trace
-     * rows are written.
+     * On `CreateDataAgent`, the datasource is validated against the agent in
+     * the request. On `UpdateDataAgent`, it is validated against the stored
+     * agent after applying the update whenever the call writes a table to this
+     * field or writes `true` to `bigquery_agent_analytics_enabled`. For example,
+     * an `UpdateDataAgent` call without `update_mask` that carries an unchanged
+     * `bigquery_agent_analytics_enabled = true` is rejected on an agent whose
+     * datasource is not BigQuery. An agent that carries no datasource is not
+     * validated, and an agent switched to a non-BigQuery datasource by an update
+     * that does neither is not re-validated; in the latter case no trace rows
+     * are written.
      *
      * The destination dataset must already exist and must grant write access to
      * the project's Gemini Data Analytics service agent, whose address is
@@ -3956,17 +4028,26 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `true`. The Preview enrollment described on that field applies here too.
      *
      * The trace table is validated when it is set on `CreateDataAgent`, or when
-     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * an `UpdateDataAgent` call writes a table to it. An `UpdateDataAgent` call
+     * writes a field if the field is in `update_mask` or, when `update_mask` is
+     * omitted, if the field is present in the request, even if its value is
+     * unchanged. An update that only clears this field is not validated. The
      * following are rejected with `INVALID_ARGUMENT`:
      *
      * * The table must belong to the same project as the agent.
      * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
      * supported for Looker, Looker Studio or AlloyDB agents.
      *
-     * These are validated against the agent as sent in the request. An agent
-     * that carries no datasource is not validated, and an agent switched to a
-     * non-BigQuery datasource is not re-validated; in the latter case no trace
-     * rows are written.
+     * On `CreateDataAgent`, the datasource is validated against the agent in
+     * the request. On `UpdateDataAgent`, it is validated against the stored
+     * agent after applying the update whenever the call writes a table to this
+     * field or writes `true` to `bigquery_agent_analytics_enabled`. For example,
+     * an `UpdateDataAgent` call without `update_mask` that carries an unchanged
+     * `bigquery_agent_analytics_enabled = true` is rejected on an agent whose
+     * datasource is not BigQuery. An agent that carries no datasource is not
+     * validated, and an agent switched to a non-BigQuery datasource by an update
+     * that does neither is not re-validated; in the latter case no trace rows
+     * are written.
      *
      * The destination dataset must already exist and must grant write access to
      * the project's Gemini Data Analytics service agent, whose address is
@@ -4003,17 +4084,26 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `true`. The Preview enrollment described on that field applies here too.
      *
      * The trace table is validated when it is set on `CreateDataAgent`, or when
-     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * an `UpdateDataAgent` call writes a table to it. An `UpdateDataAgent` call
+     * writes a field if the field is in `update_mask` or, when `update_mask` is
+     * omitted, if the field is present in the request, even if its value is
+     * unchanged. An update that only clears this field is not validated. The
      * following are rejected with `INVALID_ARGUMENT`:
      *
      * * The table must belong to the same project as the agent.
      * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
      * supported for Looker, Looker Studio or AlloyDB agents.
      *
-     * These are validated against the agent as sent in the request. An agent
-     * that carries no datasource is not validated, and an agent switched to a
-     * non-BigQuery datasource is not re-validated; in the latter case no trace
-     * rows are written.
+     * On `CreateDataAgent`, the datasource is validated against the agent in
+     * the request. On `UpdateDataAgent`, it is validated against the stored
+     * agent after applying the update whenever the call writes a table to this
+     * field or writes `true` to `bigquery_agent_analytics_enabled`. For example,
+     * an `UpdateDataAgent` call without `update_mask` that carries an unchanged
+     * `bigquery_agent_analytics_enabled = true` is rejected on an agent whose
+     * datasource is not BigQuery. An agent that carries no datasource is not
+     * validated, and an agent switched to a non-BigQuery datasource by an update
+     * that does neither is not re-validated; in the latter case no trace rows
+     * are written.
      *
      * The destination dataset must already exist and must grant write access to
      * the project's Gemini Data Analytics service agent, whose address is
@@ -4060,17 +4150,26 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `true`. The Preview enrollment described on that field applies here too.
      *
      * The trace table is validated when it is set on `CreateDataAgent`, or when
-     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * an `UpdateDataAgent` call writes a table to it. An `UpdateDataAgent` call
+     * writes a field if the field is in `update_mask` or, when `update_mask` is
+     * omitted, if the field is present in the request, even if its value is
+     * unchanged. An update that only clears this field is not validated. The
      * following are rejected with `INVALID_ARGUMENT`:
      *
      * * The table must belong to the same project as the agent.
      * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
      * supported for Looker, Looker Studio or AlloyDB agents.
      *
-     * These are validated against the agent as sent in the request. An agent
-     * that carries no datasource is not validated, and an agent switched to a
-     * non-BigQuery datasource is not re-validated; in the latter case no trace
-     * rows are written.
+     * On `CreateDataAgent`, the datasource is validated against the agent in
+     * the request. On `UpdateDataAgent`, it is validated against the stored
+     * agent after applying the update whenever the call writes a table to this
+     * field or writes `true` to `bigquery_agent_analytics_enabled`. For example,
+     * an `UpdateDataAgent` call without `update_mask` that carries an unchanged
+     * `bigquery_agent_analytics_enabled = true` is rejected on an agent whose
+     * datasource is not BigQuery. An agent that carries no datasource is not
+     * validated, and an agent switched to a non-BigQuery datasource by an update
+     * that does neither is not re-validated; in the latter case no trace rows
+     * are written.
      *
      * The destination dataset must already exist and must grant write access to
      * the project's Gemini Data Analytics service agent, whose address is
@@ -4106,17 +4205,26 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `true`. The Preview enrollment described on that field applies here too.
      *
      * The trace table is validated when it is set on `CreateDataAgent`, or when
-     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * an `UpdateDataAgent` call writes a table to it. An `UpdateDataAgent` call
+     * writes a field if the field is in `update_mask` or, when `update_mask` is
+     * omitted, if the field is present in the request, even if its value is
+     * unchanged. An update that only clears this field is not validated. The
      * following are rejected with `INVALID_ARGUMENT`:
      *
      * * The table must belong to the same project as the agent.
      * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
      * supported for Looker, Looker Studio or AlloyDB agents.
      *
-     * These are validated against the agent as sent in the request. An agent
-     * that carries no datasource is not validated, and an agent switched to a
-     * non-BigQuery datasource is not re-validated; in the latter case no trace
-     * rows are written.
+     * On `CreateDataAgent`, the datasource is validated against the agent in
+     * the request. On `UpdateDataAgent`, it is validated against the stored
+     * agent after applying the update whenever the call writes a table to this
+     * field or writes `true` to `bigquery_agent_analytics_enabled`. For example,
+     * an `UpdateDataAgent` call without `update_mask` that carries an unchanged
+     * `bigquery_agent_analytics_enabled = true` is rejected on an agent whose
+     * datasource is not BigQuery. An agent that carries no datasource is not
+     * validated, and an agent switched to a non-BigQuery datasource by an update
+     * that does neither is not re-validated; in the latter case no trace rows
+     * are written.
      *
      * The destination dataset must already exist and must grant write access to
      * the project's Gemini Data Analytics service agent, whose address is
@@ -4148,17 +4256,26 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `true`. The Preview enrollment described on that field applies here too.
      *
      * The trace table is validated when it is set on `CreateDataAgent`, or when
-     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * an `UpdateDataAgent` call writes a table to it. An `UpdateDataAgent` call
+     * writes a field if the field is in `update_mask` or, when `update_mask` is
+     * omitted, if the field is present in the request, even if its value is
+     * unchanged. An update that only clears this field is not validated. The
      * following are rejected with `INVALID_ARGUMENT`:
      *
      * * The table must belong to the same project as the agent.
      * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
      * supported for Looker, Looker Studio or AlloyDB agents.
      *
-     * These are validated against the agent as sent in the request. An agent
-     * that carries no datasource is not validated, and an agent switched to a
-     * non-BigQuery datasource is not re-validated; in the latter case no trace
-     * rows are written.
+     * On `CreateDataAgent`, the datasource is validated against the agent in
+     * the request. On `UpdateDataAgent`, it is validated against the stored
+     * agent after applying the update whenever the call writes a table to this
+     * field or writes `true` to `bigquery_agent_analytics_enabled`. For example,
+     * an `UpdateDataAgent` call without `update_mask` that carries an unchanged
+     * `bigquery_agent_analytics_enabled = true` is rejected on an agent whose
+     * datasource is not BigQuery. An agent that carries no datasource is not
+     * validated, and an agent switched to a non-BigQuery datasource by an update
+     * that does neither is not re-validated; in the latter case no trace rows
+     * are written.
      *
      * The destination dataset must already exist and must grant write access to
      * the project's Gemini Data Analytics service agent, whose address is
@@ -4194,17 +4311,26 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessage
      * `true`. The Preview enrollment described on that field applies here too.
      *
      * The trace table is validated when it is set on `CreateDataAgent`, or when
-     * it is included in the `update_mask` of an `UpdateDataAgent` call. The
+     * an `UpdateDataAgent` call writes a table to it. An `UpdateDataAgent` call
+     * writes a field if the field is in `update_mask` or, when `update_mask` is
+     * omitted, if the field is present in the request, even if its value is
+     * unchanged. An update that only clears this field is not validated. The
      * following are rejected with `INVALID_ARGUMENT`:
      *
      * * The table must belong to the same project as the agent.
      * * The agent's datasource must be BigQuery. BigQuery Agent Analytics is not
      * supported for Looker, Looker Studio or AlloyDB agents.
      *
-     * These are validated against the agent as sent in the request. An agent
-     * that carries no datasource is not validated, and an agent switched to a
-     * non-BigQuery datasource is not re-validated; in the latter case no trace
-     * rows are written.
+     * On `CreateDataAgent`, the datasource is validated against the agent in
+     * the request. On `UpdateDataAgent`, it is validated against the stored
+     * agent after applying the update whenever the call writes a table to this
+     * field or writes `true` to `bigquery_agent_analytics_enabled`. For example,
+     * an `UpdateDataAgent` call without `update_mask` that carries an unchanged
+     * `bigquery_agent_analytics_enabled = true` is rejected on an agent whose
+     * datasource is not BigQuery. An agent that carries no datasource is not
+     * validated, and an agent switched to a non-BigQuery datasource by an update
+     * that does neither is not re-validated; in the latter case no trace rows
+     * are written.
      *
      * The destination dataset must already exist and must grant write access to
      * the project's Gemini Data Analytics service agent, whose address is

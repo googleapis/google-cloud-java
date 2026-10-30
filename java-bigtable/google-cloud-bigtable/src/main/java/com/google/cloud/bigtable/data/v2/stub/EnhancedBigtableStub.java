@@ -328,7 +328,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     ServerStreamingCallable<Query, RowT> readRowCallable =
         new TransformingServerStreamingCallable<>(
             readRowsCallable,
-            (query) -> query.limit(1).toProto(requestContext),
+            (query) -> query.toProto(requestContext).toBuilder().setRowsLimit(1).build(),
             Functions.identity());
 
     BigtableUnaryOperationCallable<Query, RowT> classic =
@@ -941,7 +941,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return bigtableClientContext
         .getSessionShim()
         .decorateCheckAndMutateRow(classic, perOpSettings.checkAndMutateRowSettings)
-        .withDefaultCallContext(bigtableClientContext.getClientContext().getDefaultCallContext());
+        .withDefaultCallContext(
+            bigtableClientContext
+                .getClientContext()
+                .getDefaultCallContext()
+                .withRetrySettings(perOpSettings.checkAndMutateRowSettings.getRetrySettings()));
   }
 
   /**
@@ -970,7 +974,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return bigtableClientContext
         .getSessionShim()
         .decorateReadModifyWriteRow(classic, rowAdapter, perOpSettings.readModifyWriteRowSettings)
-        .withDefaultCallContext(bigtableClientContext.getClientContext().getDefaultCallContext());
+        .withDefaultCallContext(
+            bigtableClientContext
+                .getClientContext()
+                .getDefaultCallContext()
+                .withRetrySettings(perOpSettings.readModifyWriteRowSettings.getRetrySettings()));
   }
 
   /**

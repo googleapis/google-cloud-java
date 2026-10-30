@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc.utils;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Mode;
+import com.google.cloud.bigquery.FieldElementType;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
@@ -104,6 +105,20 @@ public class TestUtilities {
     JsonStringArrayList<T> arrayValues = new JsonStringArrayList<>();
     arrayValues.addAll(Arrays.asList(values));
     return arrayValues;
+  }
+
+  public static Field rangeField(String name, String elementType) {
+    return Field.newBuilder(name, StandardSQLTypeName.RANGE)
+        .setRangeElementType(FieldElementType.newBuilder().setType(elementType).build())
+        .build();
+  }
+
+  /** Arrow RANGE value; a null bound is unbounded. */
+  public static JsonStringHashMap<String, Object> arrowRange(Object start, Object end) {
+    JsonStringHashMap<String, Object> range = new JsonStringHashMap<>();
+    range.put("start", start);
+    range.put("end", end);
+    return range;
   }
 
   // struct of arrays

@@ -421,9 +421,12 @@ public final class Query implements Serializable {
     QueryPaginator(@Nonnull Query query, int pageSize) {
       this.hasOverallLimit = query.builder.getRowsLimit() > 0;
       this.remainingRows = query.builder.getRowsLimit();
-      this.query = query.limit(pageSize);
+      this.query = query.clone();
       if (hasOverallLimit) {
+        this.query.limit(Math.min(pageSize, remainingRows));
         remainingRows -= pageSize;
+      } else {
+        this.query.limit(pageSize);
       }
       this.pageSize = pageSize;
       this.prevSplitPoint = ByteString.EMPTY;
@@ -491,13 +494,18 @@ public final class Query implements Serializable {
     return Objects.equal(targetId, query.targetId)
         && Objects.equal(builder.getRows(), query.builder.getRows())
         && Objects.equal(builder.getFilter(), query.builder.getFilter())
-        && Objects.equal(builder.getRowsLimit(), query.builder.getRowsLimit());
+        && Objects.equal(builder.getRowsLimit(), query.builder.getRowsLimit())
+        && Objects.equal(builder.getReversed(), query.builder.getReversed());
   }
 
   @Override
   public int hashCode() {
     return Objects.hashCode(
-        targetId, builder.getRows(), builder.getFilter(), builder.getRowsLimit());
+        targetId,
+        builder.getRows(),
+        builder.getFilter(),
+        builder.getRowsLimit(),
+        builder.getReversed());
   }
 
   @Override
@@ -510,6 +518,7 @@ public final class Query implements Serializable {
         .add("ranges", request.getRows().getRowRangesList())
         .add("filter", request.getFilter())
         .add("limit", request.getRowsLimit())
+        .add("reversed", request.getReversed())
         .toString();
   }
 }
