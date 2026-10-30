@@ -69,8 +69,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "-google/cloud/discoveryengine/v1/session.proto\022\037google.cloud.discoveryengine.v1"
           + "\032\037google/api/field_behavior.proto\032\031googl"
           + "e/api/resource.proto\032,google/cloud/discoveryengine/v1/answer.proto\0323google/cloud"
-          + "/discoveryengine/v1/assist_answer.proto\032\037google/protobuf/timestamp.proto\"\264"
-          + "\t\n"
+          + "/discoveryengine/v1/assist_answer.proto\032\037google/protobuf/timestamp.proto\"\216\013\n"
           + "\007Session\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\005\022\032\n"
           + "\014display_name\030\007 \001(\tB\004\342A\001\001\022=\n"
@@ -81,39 +80,43 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
           + "start_time\030\005 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0222\n"
           + "\010end_time\030\006"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\027\n"
-          + "\tis_pinned\030\010 \001(\010B\004\342A\001\001\032\260\003\n"
+          + "\tis_pinned\030\010 \001(\010B\004\342A\001\001\022/\n"
+          + "!pending_async_assist_operation_id\030\026 \001(\tB\004\342A\001\003\032\304\003\n"
           + "\004Turn\022;\n"
           + "\005query\030\001"
           + " \001(\0132&.google.cloud.discoveryengine.v1.QueryB\004\342A\001\001\022>\n"
           + "\006answer\030\002 \001(\tB.\342A\001\001\372A\'\n"
           + "%discoveryengine.googleapis.com/Answer\022F\n"
-          + "\017detailed_answer\030\007 \001(\0132\'.goog"
-          + "le.cloud.discoveryengine.v1.AnswerB\004\342A\001\003\022S\n"
-          + "\026detailed_assist_answer\030\010 \001(\0132-.googl"
-          + "e.cloud.discoveryengine.v1.AssistAnswerB\004\342A\001\003\022Z\n"
-          + "\014query_config\030\020 \003(\0132>.google.clo"
-          + "ud.discoveryengine.v1.Session.Turn.QueryConfigEntryB\004\342A\001\001\0322\n"
+          + "\017detailed_answer\030\007 \001"
+          + "(\0132\'.google.cloud.discoveryengine.v1.AnswerB\004\342A\001\003\022S\n"
+          + "\026detailed_assist_answer\030\010 \001("
+          + "\0132-.google.cloud.discoveryengine.v1.AssistAnswerB\004\342A\001\003\022Z\n"
+          + "\014query_config\030\020 \003(\0132>.g"
+          + "oogle.cloud.discoveryengine.v1.Session.Turn.QueryConfigEntryB\004\342A\001\001\022\022\n"
+          + "\004live\030\024 \001(\010B\004\342A\001\001\0322\n"
           + "\020QueryConfigEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"/\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\017\n"
-          + "\013IN_PROGRESS\020\001:\346\002\352A\342\002\n"
-          + "&discoveryengine.googleapis.com/Session\022Rprojects/{project}/locations/{loc"
-          + "ation}/dataStores/{data_store}/sessions/{session}\022kprojects/{project}/locations/"
-          + "{location}/collections/{collection}/dataStores/{data_store}/sessions/{session}\022d"
-          + "projects/{project}/locations/{location}/collections/{collection}/engines/{engine"
-          + "}/sessions/{session}*\010sessions2\007session\":\n"
+          + "\013IN_PROGRESS\020\001:\373\003\352A\367\003\n"
+          + "&discoveryengine.googleapis.com/Session\022Rproj"
+          + "ects/{project}/locations/{location}/dataStores/{data_store}/sessions/{session}\022k"
+          + "projects/{project}/locations/{location}/collections/{collection}/dataStores/{dat"
+          + "a_store}/sessions/{session}\022dprojects/{project}/locations/{location}/collections"
+          + "/{collection}/engines/{engine}/sessions/"
+          + "{session}\022\222\001projects/{project}/locations"
+          + "/{location}/collections/{collection}/engines/{engine}/collaborativeProjects/{col"
+          + "laborative_project}/sessions/{session}*\010sessions2\007session\":\n"
           + "\005Query\022\016\n"
           + "\004text\030\002 \001(\tH\000\022\026\n"
           + "\010query_id\030\001 \001(\tB\004\342A\001\003B\t\n"
           + "\007contentB\377\001\n"
-          + "#com.google.cloud.discoveryengine.v1B\014SessionProtoP\001ZMclo"
-          + "ud.google.com/go/discoveryengine/apiv1/d"
-          + "iscoveryenginepb;discoveryenginepb\242\002\017DIS"
-          + "COVERYENGINE\252\002\037Google.Cloud.DiscoveryEng"
-          + "ine.V1\312\002\037Google\\Cloud\\DiscoveryEngine\\V1"
-          + "\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
+          + "#com.google.cloud.discoveryengine.v1B\014SessionProtoP\001ZMcloud.google.com/go/disco"
+          + "veryengine/apiv1/discoveryenginepb;disco"
+          + "veryenginepb\242\002\017DISCOVERYENGINE\252\002\037Google."
+          + "Cloud.DiscoveryEngine.V1\312\002\037Google\\Cloud\\"
+          + "DiscoveryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -140,6 +143,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
               "StartTime",
               "EndTime",
               "IsPinned",
+              "PendingAsyncAssistOperationId",
             });
     internal_static_google_cloud_discoveryengine_v1_Session_Turn_descriptor =
         internal_static_google_cloud_discoveryengine_v1_Session_descriptor.getNestedType(0);
@@ -147,7 +151,7 @@ public final class SessionProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_Session_Turn_descriptor,
             new java.lang.String[] {
-              "Query", "Answer", "DetailedAnswer", "DetailedAssistAnswer", "QueryConfig",
+              "Query", "Answer", "DetailedAnswer", "DetailedAssistAnswer", "QueryConfig", "Live",
             });
     internal_static_google_cloud_discoveryengine_v1_Session_Turn_QueryConfigEntry_descriptor =
         internal_static_google_cloud_discoveryengine_v1_Session_Turn_descriptor.getNestedType(0);

@@ -79,6 +79,7 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*}:provision")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -212,6 +213,11 @@ public class HttpJsonProjectServiceStub extends ProjectServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1/{name=projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine/targetSites/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1/{name=projects/*/locations/*/collections/*/engines/*/assistants/*/agents/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()

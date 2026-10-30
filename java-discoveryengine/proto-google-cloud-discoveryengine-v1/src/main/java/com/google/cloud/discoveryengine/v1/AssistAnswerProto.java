@@ -49,6 +49,26 @@ public final class AssistAnswerProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_AssistAnswer_Reply_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_BannedPhraseEnforcementResult_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_BannedPhraseEnforcementResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_ModelArmorEnforcementResult_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_ModelArmorEnforcementResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_PolicyEnforcementResult_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_PolicyEnforcementResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AssistAnswer_ConnectorDisplayNamesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AssistAnswer_ConnectorDisplayNamesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_AssistantContent_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_AssistantContent_fieldAccessorTable;
@@ -81,6 +101,10 @@ public final class AssistAnswerProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_Segment_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_VisualSegment_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_VisualSegment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_Reference_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_Reference_fieldAccessorTable;
@@ -99,42 +123,86 @@ public final class AssistAnswerProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + "3google/cloud/discoveryengine/v1/assist_answer.proto\022\037google.cloud.discoveryeng"
-          + "ine.v1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\216\006\n"
-          + "\014AssistAnswer\022\022\n"
-          + "\004name\030\001 \001(\tB\004\342A\001\005\022B\n"
-          + "\005state\030\002 \001(\01623"
-          + ".google.cloud.discoveryengine.v1.AssistAnswer.State\022D\n"
-          + "\007replies\030\003 \003(\01323.google.cl"
-          + "oud.discoveryengine.v1.AssistAnswer.Reply\022a\n"
-          + "\026assist_skipped_reasons\030\005 \003(\0162A.goog"
-          + "le.cloud.discoveryengine.v1.AssistAnswer.AssistSkippedReason\032g\n"
+          + "ine.v1\032\037google/api/field_behavior.proto\032"
+          + "\031google/api/resource.proto\032Agoogle/cloud/discoveryengine/v1/grounded_generation_"
+          + "service.proto\032\034google/protobuf/struct.pr"
+          + "oto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\243\021\n"
+          + "\014AssistAnswer\022\023\n"
+          + "\004name\030\001 \001(\tB\005\342A\002\005\010\022B\n"
+          + "\005state\030\002 \001(\01623.goo"
+          + "gle.cloud.discoveryengine.v1.AssistAnswer.State\022o\n"
+          + "\027connector_display_names\030\016 \003(\0132H.google.cloud.discoveryengine.v1.Assis"
+          + "tAnswer.ConnectorDisplayNamesEntryB\004\342A\001\003\022D\n"
+          + "\007replies\030\003"
+          + " \003(\01323.google.cloud.discoveryengine.v1.AssistAnswer.Reply\022a\n"
+          + "\026assist_skipped_reasons\030\005 \003(\0162A.google.cloud.di"
+          + "scoveryengine.v1.AssistAnswer.AssistSkippedReason\022\177\n"
+          + "\"customer_policy_enforcement_result\030\010 \001(\0132M.google.cloud.discoveryen"
+          + "gine.v1.AssistAnswer.CustomerPolicyEnforcementResultB\004\342A\001\001\032\230\001\n"
           + "\005Reply\022U\n"
           + "\020grounded_content\030\001"
-          + " \001(\01329.google.cloud.discoveryengine.v1.AssistantGroundedContentH\000B\007\n"
-          + "\005reply\"W\n"
+          + " \001(\01329.google.cloud.discoveryengine.v1.AssistantGroundedContentH\000\022/\n"
+          + "\013create_time\030\016 \001(\0132\032.google.protobuf.TimestampB\007\n"
+          + "\005reply\032\240\010\n"
+          + "\037CustomerPolicyEnforcementResult\022f\n"
+          + "\007verdict\030\001 \001(\0162U.google.clou"
+          + "d.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict\022}\n"
+          + "\016policy_results\030\003 \003(\0132e.google.cloud.discove"
+          + "ryengine.v1.AssistAnswer.CustomerPolicyE"
+          + "nforcementResult.PolicyEnforcementResult\022}\n"
+          + "\020violation_source\030\004 \001(\0162].google.clou"
+          + "d.discoveryengine.v1.AssistAnswer.Custom"
+          + "erPolicyEnforcementResult.ViolationSourceB\004\342A\001\003\0327\n"
+          + "\035BannedPhraseEnforcementResult\022\026\n"
+          + "\016banned_phrases\030\001 \003(\t\032m\n"
+          + "\033ModelArmorEnforcementResult\022\037\n"
+          + "\025model_armor_violation\030\001 \001(\tH\000\022#\n"
+          + "\005error\030\002 \001(\0132\022.google.rpc.StatusH\000B\010\n"
+          + "\006result\032\337\002\n"
+          + "\027PolicyEnforcementResult\022\227\001\n"
+          + " banned_phrase_enforcement_result\030\003 \001(\0132k.google.cloud.discoveryengine.v1"
+          + ".AssistAnswer.CustomerPolicyEnforcementR"
+          + "esult.BannedPhraseEnforcementResultH\000\022\223\001\n"
+          + "\036model_armor_enforcement_result\030\004 \001(\0132i"
+          + ".google.cloud.discoveryengine.v1.AssistA"
+          + "nswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResultH\000B\024\n"
+          + "\022enforcement_result\"0\n"
+          + "\007Verdict\022\017\n"
+          + "\013UNSPECIFIED\020\000\022\t\n"
+          + "\005ALLOW\020\001\022\t\n"
+          + "\005BLOCK\020\002\"[\n"
+          + "\017ViolationSource\022 \n"
+          + "\034VIOLATION_SOURCE_UNSPECIFIED\020\000\022\n\n"
+          + "\006SYSTEM\020\001\022\n\n"
+          + "\006PROMPT\020\002\022\016\n\n"
+          + "ATTACHMENT\020\003\032<\n"
+          + "\032ConnectorDisplayNamesEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"f\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\017\n"
           + "\013IN_PROGRESS\020\001\022\n\n"
           + "\006FAILED\020\002\022\r\n"
           + "\tSUCCEEDED\020\003\022\013\n"
-          + "\007SKIPPED\020\004\"\201\001\n"
+          + "\007SKIPPED\020\004\022\r\n"
+          + "\tCANCELLED\020\005\"\201\001\n"
           + "\023AssistSkippedReason\022%\n"
           + "!ASSIST_SKIPPED_REASON_UNSPECIFIED\020\000\022$\n"
           + " NON_ASSIST_SEEKING_QUERY_IGNORED\020\001\022\035\n"
           + "\031CUSTOMER_POLICY_VIOLATION\020\002:\266\001\352A\262\001\n"
-          + "+discoveryengine.googleapis.com/AssistAnswer\022\202"
-          + "\001projects/{project}/locations/{location}/collections/{collection}/engines/{engin"
-          + "e}/sessions/{session}/assistAnswers/{assist_answer}\"\271\006\n"
+          + "+discoveryengine.googleapis.com/AssistAnswer\022\202\001projects/{proje"
+          + "ct}/locations/{location}/collections/{co"
+          + "llection}/engines/{engine}/sessions/{session}/assistAnswers/{assist_answer}\"\271\006\n"
           + "\020AssistantContent\022\016\n"
           + "\004text\030\002 \001(\tH\000\022M\n"
-          + "\013inline_data\030\003 \001(\01326.google.c"
-          + "loud.discoveryengine.v1.AssistantContent.BlobH\000\022F\n"
-          + "\004file\030\004 \001(\01326.google.cloud.dis"
-          + "coveryengine.v1.AssistantContent.FileH\000\022[\n"
-          + "\017executable_code\030\007 \001(\0132@.google.cloud."
-          + "discoveryengine.v1.AssistantContent.ExecutableCodeH\000\022f\n"
-          + "\025code_execution_result\030\010 "
-          + "\001(\0132E.google.cloud.discoveryengine.v1.AssistantContent.CodeExecutionResultH\000\022\014\n"
+          + "\013inline_data\030\003"
+          + " \001(\01326.google.cloud.discoveryengine.v1.AssistantContent.BlobH\000\022F\n"
+          + "\004file\030\004"
+          + " \001(\01326.google.cloud.discoveryengine.v1.AssistantContent.FileH\000\022[\n"
+          + "\017executable_code\030\007"
+          + " \001(\0132@.google.cloud.discoveryengine.v1.AssistantContent.ExecutableCodeH\000\022f\n"
+          + "\025code_execution_result\030\010 \001(\0132E.google.clo"
+          + "ud.discoveryengine.v1.AssistantContent.CodeExecutionResultH\000\022\014\n"
           + "\004role\030\001 \001(\t\022\025\n"
           + "\007thought\030\006 \001(\010B\004\342A\001\001\0323\n"
           + "\004Blob\022\027\n"
@@ -146,54 +214,73 @@ public final class AssistAnswerProto extends com.google.protobuf.GeneratedFile {
           + "\016ExecutableCode\022\022\n"
           + "\004code\030\002 \001(\tB\004\342A\001\002\032\370\001\n"
           + "\023CodeExecutionResult\022d\n"
-          + "\007outcome\030\001 \001(\0162M.google.cloud.dis"
-          + "coveryengine.v1.AssistantContent.CodeExecutionResult.OutcomeB\004\342A\001\002\022\024\n"
+          + "\007outcome\030\001 \001(\0162M.google.cloud.discoveryengine.v1."
+          + "AssistantContent.CodeExecutionResult.OutcomeB\004\342A\001\002\022\024\n"
           + "\006output\030\002 \001(\tB\004\342A\001\001\"e\n"
           + "\007Outcome\022\027\n"
           + "\023OUTCOME_UNSPECIFIED\020\000\022\016\n\n"
           + "OUTCOME_OK\020\001\022\022\n"
           + "\016OUTCOME_FAILED\020\002\022\035\n"
           + "\031OUTCOME_DEADLINE_EXCEEDED\020\003B\006\n"
-          + "\004data\"\337\007\n"
+          + "\004data\"\233\014\n"
           + "\030AssistantGroundedContent\022r\n"
-          + "\027text_grounding_metadata\030\003 \001(\0132O.google.cloud.dis"
-          + "coveryengine.v1.AssistantGroundedContent.TextGroundingMetadataH\000\022B\n"
-          + "\007content\030\001 \001("
-          + "\01321.google.cloud.discoveryengine.v1.AssistantContent\032\376\005\n"
+          + "\027text_grounding_metadata\030\003 \001(\0132O.google.cloud.discoveryengine.v1."
+          + "AssistantGroundedContent.TextGroundingMetadataH\000\022B\n"
+          + "\007content\030\001"
+          + " \001(\01321.google.cloud.discoveryengine.v1.AssistantContent\022L\n"
+          + "\021citation_metadata\030\005"
+          + " \001(\01321.google.cloud.discoveryengine.v1.CitationMetadata\032\354\t\n"
           + "\025TextGroundingMetadata\022i\n"
-          + "\010segments\030\004 \003(\0132W.google.cloud.discover"
-          + "yengine.v1.AssistantGroundedContent.TextGroundingMetadata.Segment\022m\n\n"
-          + "references\030\002 \003(\0132Y.google.cloud.discoveryengine.v1."
-          + "AssistantGroundedContent.TextGroundingMetadata.Reference\032s\n"
+          + "\010segments\030\004 \003(\0132W.google.cloud.discoveryengine.v1.Assista"
+          + "ntGroundedContent.TextGroundingMetadata.Segment\022v\n"
+          + "\017visual_segments\030\006 \003(\0132].google.cloud.discoveryengine.v1.AssistantGrou"
+          + "ndedContent.TextGroundingMetadata.VisualSegment\022m\n\n"
+          + "references\030\002 \003(\0132Y.google.cloud.discoveryengine.v1.AssistantGroundedC"
+          + "ontent.TextGroundingMetadata.Reference\032s\n"
           + "\007Segment\022\023\n"
           + "\013start_index\030\001 \001(\003\022\021\n"
           + "\tend_index\030\002 \001(\003\022\031\n"
           + "\021reference_indices\030\004 \003(\005\022\027\n"
           + "\017grounding_score\030\005 \001(\002\022\014\n"
-          + "\004text\030\006 \001(\t\032\225\003\n"
+          + "\004text\030\006 \001(\t\032>\n\r"
+          + "VisualSegment\022\031\n"
+          + "\021reference_indices\030\001 \003(\005\022\022\n\n"
+          + "content_id\030\002 \001(\t\032\313\005\n"
           + "\tReference\022\017\n"
-          + "\007content\030\001 \001(\t\022\205\001\n"
-          + "\021document_metadata\030\002 \001(\0132j.googl"
-          + "e.cloud.discoveryengine.v1.AssistantGrou"
-          + "ndedContent.TextGroundingMetadata.Reference.DocumentMetadata\032\356\001\n"
-          + "\020DocumentMetadata\022C\n"
+          + "\007content\030\001 \001(\t\022\024\n"
+          + "\014code_snippet\030\004 \001(\t\022\205\001\n"
+          + "\021document_metadata\030\002 \001(\0132j.google.cloud.disc"
+          + "overyengine.v1.AssistantGroundedContent."
+          + "TextGroundingMetadata.Reference.DocumentMetadata\0225\n"
+          + "\016chunk_metadata\030\005"
+          + " \001(\0132\027.google.protobuf.StructB\004\342A\001\003\032\327\003\n"
+          + "\020DocumentMetadata\022\205\001\n"
+          + "\010language\030\010 \001(\0162s.google.cloud.d"
+          + "iscoveryengine.v1.AssistantGroundedConte"
+          + "nt.TextGroundingMetadata.Reference.DocumentMetadata.Language\022C\n"
           + "\010document\030\001 \001(\tB,\372A)\n"
           + "\'discoveryengine.googleapis.com/DocumentH\000\210\001\001\022\020\n"
           + "\003uri\030\002 \001(\tH\001\210\001\001\022\022\n"
           + "\005title\030\003 \001(\tH\002\210\001\001\022\034\n"
           + "\017page_identifier\030\004 \001(\tH\003\210\001\001\022\023\n"
-          + "\006domain\030\005 \001(\tH\004\210\001\001B\013\n"
+          + "\006domain\030\005 \001(\tH\004\210\001\001\022\026\n"
+          + "\tmime_type\030\007 \001(\tH\005\210\001\001\"9\n"
+          + "\010Language\022\030\n"
+          + "\024LANGUAGE_UNSPECIFIED\020\000\022\n\n"
+          + "\006PYTHON\020\001\022\007\n"
+          + "\003SQL\020\002B\013\n"
           + "\t_documentB\006\n"
           + "\004_uriB\010\n"
           + "\006_titleB\022\n"
           + "\020_page_identifierB\t\n"
-          + "\007_domainB\n\n"
+          + "\007_domainB\014\n\n"
+          + "_mime_typeB\n\n"
           + "\010metadataB\204\002\n"
-          + "#com.google.cloud.discoveryengine.v1B\021Assis"
-          + "tAnswerProtoP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;disc"
-          + "overyenginepb\242\002\017DISCOVERYENGINE\252\002\037Google"
-          + ".Cloud.DiscoveryEngine.V1\312\002\037Google\\Cloud"
-          + "\\DiscoveryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
+          + "#com.google.cloud.discoveryengine.v1B\021AssistAns"
+          + "werProtoP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;discover"
+          + "yenginepb\242\002\017DISCOVERYENGINE\252\002\037Google.Clo"
+          + "ud.DiscoveryEngine.V1\312\002\037Google\\Cloud\\Dis"
+          + "coveryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -201,6 +288,10 @@ public final class AssistAnswerProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1_AssistAnswer_descriptor =
         getDescriptor().getMessageType(0);
@@ -208,7 +299,12 @@ public final class AssistAnswerProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_AssistAnswer_descriptor,
             new java.lang.String[] {
-              "Name", "State", "Replies", "AssistSkippedReasons",
+              "Name",
+              "State",
+              "ConnectorDisplayNames",
+              "Replies",
+              "AssistSkippedReasons",
+              "CustomerPolicyEnforcementResult",
             });
     internal_static_google_cloud_discoveryengine_v1_AssistAnswer_Reply_descriptor =
         internal_static_google_cloud_discoveryengine_v1_AssistAnswer_descriptor.getNestedType(0);
@@ -216,7 +312,50 @@ public final class AssistAnswerProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_AssistAnswer_Reply_descriptor,
             new java.lang.String[] {
-              "GroundedContent", "Reply",
+              "GroundedContent", "CreateTime", "Reply",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AssistAnswer_descriptor.getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_descriptor,
+            new java.lang.String[] {
+              "Verdict", "PolicyResults", "ViolationSource",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_BannedPhraseEnforcementResult_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_BannedPhraseEnforcementResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_BannedPhraseEnforcementResult_descriptor,
+            new java.lang.String[] {
+              "BannedPhrases",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_ModelArmorEnforcementResult_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_ModelArmorEnforcementResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_ModelArmorEnforcementResult_descriptor,
+            new java.lang.String[] {
+              "ModelArmorViolation", "Error", "Result",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_PolicyEnforcementResult_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_descriptor
+            .getNestedType(2);
+    internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_PolicyEnforcementResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_PolicyEnforcementResult_descriptor,
+            new java.lang.String[] {
+              "BannedPhraseEnforcementResult", "ModelArmorEnforcementResult", "EnforcementResult",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AssistAnswer_ConnectorDisplayNamesEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AssistAnswer_descriptor.getNestedType(2);
+    internal_static_google_cloud_discoveryengine_v1_AssistAnswer_ConnectorDisplayNamesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AssistAnswer_ConnectorDisplayNamesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     internal_static_google_cloud_discoveryengine_v1_AssistantContent_descriptor =
         getDescriptor().getMessageType(1);
@@ -275,7 +414,7 @@ public final class AssistAnswerProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_descriptor,
             new java.lang.String[] {
-              "TextGroundingMetadata", "Content", "Metadata",
+              "TextGroundingMetadata", "Content", "CitationMetadata", "Metadata",
             });
     internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_descriptor =
         internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_descriptor
@@ -284,7 +423,7 @@ public final class AssistAnswerProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_descriptor,
             new java.lang.String[] {
-              "Segments", "References",
+              "Segments", "VisualSegments", "References",
             });
     internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_Segment_descriptor =
         internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_descriptor
@@ -295,14 +434,23 @@ public final class AssistAnswerProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "StartIndex", "EndIndex", "ReferenceIndices", "GroundingScore", "Text",
             });
-    internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_Reference_descriptor =
+    internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_VisualSegment_descriptor =
         internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_descriptor
             .getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_VisualSegment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_VisualSegment_descriptor,
+            new java.lang.String[] {
+              "ReferenceIndices", "ContentId",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_Reference_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_descriptor
+            .getNestedType(2);
     internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_Reference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_Reference_descriptor,
             new java.lang.String[] {
-              "Content", "DocumentMetadata",
+              "Content", "CodeSnippet", "DocumentMetadata", "ChunkMetadata",
             });
     internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_Reference_DocumentMetadata_descriptor =
         internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_Reference_descriptor
@@ -311,11 +459,15 @@ public final class AssistAnswerProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_Reference_DocumentMetadata_descriptor,
             new java.lang.String[] {
-              "Document", "Uri", "Title", "PageIdentifier", "Domain",
+              "Language", "Document", "Uri", "Title", "PageIdentifier", "Domain", "MimeType",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

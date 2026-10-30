@@ -27,16 +27,22 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.discoveryengine.v1.stub.HttpJsonEngineServiceStub;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.Policy;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
@@ -95,7 +101,17 @@ public class EngineServiceClientHttpJsonTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setKnowledgeGraphConfig(Engine.KnowledgeGraphConfig.newBuilder().build())
             .setDisableAnalytics(true)
+            .setSessionConfig(SessionConfig.newBuilder().build())
+            .putAllFeatures(new HashMap<String, Engine.FeatureState>())
+            .setCmekConfig(CmekConfig.newBuilder().build())
+            .putAllModelConfigs(new HashMap<String, Engine.ModelState>())
+            .setObservabilityConfig(ObservabilityConfig.newBuilder().build())
+            .putAllConnectorTenantInfo(new HashMap<String, String>())
+            .setAgentGatewaySetting(AgentGatewaySetting.newBuilder().build())
+            .addAllProcurementContactEmails(new ArrayList<String>())
+            .setAssociatedAgentRegistry("associatedAgentRegistry-1486670084")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -157,7 +173,17 @@ public class EngineServiceClientHttpJsonTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setKnowledgeGraphConfig(Engine.KnowledgeGraphConfig.newBuilder().build())
             .setDisableAnalytics(true)
+            .setSessionConfig(SessionConfig.newBuilder().build())
+            .putAllFeatures(new HashMap<String, Engine.FeatureState>())
+            .setCmekConfig(CmekConfig.newBuilder().build())
+            .putAllModelConfigs(new HashMap<String, Engine.ModelState>())
+            .setObservabilityConfig(ObservabilityConfig.newBuilder().build())
+            .putAllConnectorTenantInfo(new HashMap<String, String>())
+            .setAgentGatewaySetting(AgentGatewaySetting.newBuilder().build())
+            .addAllProcurementContactEmails(new ArrayList<String>())
+            .setAssociatedAgentRegistry("associatedAgentRegistry-1486670084")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -311,7 +337,17 @@ public class EngineServiceClientHttpJsonTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setKnowledgeGraphConfig(Engine.KnowledgeGraphConfig.newBuilder().build())
             .setDisableAnalytics(true)
+            .setSessionConfig(SessionConfig.newBuilder().build())
+            .putAllFeatures(new HashMap<String, Engine.FeatureState>())
+            .setCmekConfig(CmekConfig.newBuilder().build())
+            .putAllModelConfigs(new HashMap<String, Engine.ModelState>())
+            .setObservabilityConfig(ObservabilityConfig.newBuilder().build())
+            .putAllConnectorTenantInfo(new HashMap<String, String>())
+            .setAgentGatewaySetting(AgentGatewaySetting.newBuilder().build())
+            .addAllProcurementContactEmails(new ArrayList<String>())
+            .setAssociatedAgentRegistry("associatedAgentRegistry-1486670084")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -326,7 +362,17 @@ public class EngineServiceClientHttpJsonTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setKnowledgeGraphConfig(Engine.KnowledgeGraphConfig.newBuilder().build())
             .setDisableAnalytics(true)
+            .setSessionConfig(SessionConfig.newBuilder().build())
+            .putAllFeatures(new HashMap<String, Engine.FeatureState>())
+            .setCmekConfig(CmekConfig.newBuilder().build())
+            .putAllModelConfigs(new HashMap<String, Engine.ModelState>())
+            .setObservabilityConfig(ObservabilityConfig.newBuilder().build())
+            .putAllConnectorTenantInfo(new HashMap<String, String>())
+            .setAgentGatewaySetting(AgentGatewaySetting.newBuilder().build())
+            .addAllProcurementContactEmails(new ArrayList<String>())
+            .setAssociatedAgentRegistry("associatedAgentRegistry-1486670084")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -367,7 +413,17 @@ public class EngineServiceClientHttpJsonTest {
               .setSolutionType(SolutionType.forNumber(0))
               .setIndustryVertical(IndustryVertical.forNumber(0))
               .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+              .setKnowledgeGraphConfig(Engine.KnowledgeGraphConfig.newBuilder().build())
               .setDisableAnalytics(true)
+              .setSessionConfig(SessionConfig.newBuilder().build())
+              .putAllFeatures(new HashMap<String, Engine.FeatureState>())
+              .setCmekConfig(CmekConfig.newBuilder().build())
+              .putAllModelConfigs(new HashMap<String, Engine.ModelState>())
+              .setObservabilityConfig(ObservabilityConfig.newBuilder().build())
+              .putAllConnectorTenantInfo(new HashMap<String, String>())
+              .setAgentGatewaySetting(AgentGatewaySetting.newBuilder().build())
+              .addAllProcurementContactEmails(new ArrayList<String>())
+              .setAssociatedAgentRegistry("associatedAgentRegistry-1486670084")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEngine(engine, updateMask);
@@ -390,7 +446,17 @@ public class EngineServiceClientHttpJsonTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setKnowledgeGraphConfig(Engine.KnowledgeGraphConfig.newBuilder().build())
             .setDisableAnalytics(true)
+            .setSessionConfig(SessionConfig.newBuilder().build())
+            .putAllFeatures(new HashMap<String, Engine.FeatureState>())
+            .setCmekConfig(CmekConfig.newBuilder().build())
+            .putAllModelConfigs(new HashMap<String, Engine.ModelState>())
+            .setObservabilityConfig(ObservabilityConfig.newBuilder().build())
+            .putAllConnectorTenantInfo(new HashMap<String, String>())
+            .setAgentGatewaySetting(AgentGatewaySetting.newBuilder().build())
+            .addAllProcurementContactEmails(new ArrayList<String>())
+            .setAssociatedAgentRegistry("associatedAgentRegistry-1486670084")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -443,7 +509,17 @@ public class EngineServiceClientHttpJsonTest {
             .setSolutionType(SolutionType.forNumber(0))
             .setIndustryVertical(IndustryVertical.forNumber(0))
             .setCommonConfig(Engine.CommonConfig.newBuilder().build())
+            .setKnowledgeGraphConfig(Engine.KnowledgeGraphConfig.newBuilder().build())
             .setDisableAnalytics(true)
+            .setSessionConfig(SessionConfig.newBuilder().build())
+            .putAllFeatures(new HashMap<String, Engine.FeatureState>())
+            .setCmekConfig(CmekConfig.newBuilder().build())
+            .putAllModelConfigs(new HashMap<String, Engine.ModelState>())
+            .setObservabilityConfig(ObservabilityConfig.newBuilder().build())
+            .putAllConnectorTenantInfo(new HashMap<String, String>())
+            .setAgentGatewaySetting(AgentGatewaySetting.newBuilder().build())
+            .addAllProcurementContactEmails(new ArrayList<String>())
+            .setAssociatedAgentRegistry("associatedAgentRegistry-1486670084")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -579,6 +655,202 @@ public class EngineServiceClientHttpJsonTest {
     try {
       String parent = "projects/project-566/locations/location-566/collections/collection-566";
       client.listEngines(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceName resource = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceName resource = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String resource =
+        "projects/project-277/locations/location-277/collections/collection-277/engines/engine-277";
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String resource =
+          "projects/project-277/locations/location-277/collections/collection-277/engines/engine-277";
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceName resource = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+    Policy policy = Policy.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicy(resource, policy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceName resource = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      Policy policy = Policy.newBuilder().build();
+      client.setIamPolicy(resource, policy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String resource =
+        "projects/project-277/locations/location-277/collections/collection-277/engines/engine-277";
+    Policy policy = Policy.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicy(resource, policy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String resource =
+          "projects/project-277/locations/location-277/collections/collection-277/engines/engine-277";
+      Policy policy = Policy.newBuilder().build();
+      client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

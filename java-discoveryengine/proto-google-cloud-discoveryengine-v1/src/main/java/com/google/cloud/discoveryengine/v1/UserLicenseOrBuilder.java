@@ -93,7 +93,7 @@ public interface UserLicenseOrBuilder
    *
    * <pre>
    * Output only. License assignment state of the user.
-   * If the user is assigned with a license config, the user loggin will be
+   * If the user is assigned with a license config, the user login will be
    * assigned with the license;
    * If the user's license assignment state is unassigned or unspecified, no
    * license config will be associated to the user;
@@ -112,7 +112,7 @@ public interface UserLicenseOrBuilder
    *
    * <pre>
    * Output only. License assignment state of the user.
-   * If the user is assigned with a license config, the user loggin will be
+   * If the user is assigned with a license config, the user login will be
    * assigned with the license;
    * If the user's license assignment state is unassigned or unspecified, no
    * license config will be associated to the user;

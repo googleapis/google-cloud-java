@@ -798,6 +798,50 @@ public interface DataStoreOrBuilder
    *
    *
    * <pre>
+   * Optional. Stores serving config at DataStore level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.ServingConfigDataStore serving_config_data_store = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the servingConfigDataStore field is set.
+   */
+  boolean hasServingConfigDataStore();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stores serving config at DataStore level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.ServingConfigDataStore serving_config_data_store = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The servingConfigDataStore.
+   */
+  com.google.cloud.discoveryengine.v1.DataStore.ServingConfigDataStore getServingConfigDataStore();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Stores serving config at DataStore level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.ServingConfigDataStore serving_config_data_store = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.DataStore.ServingConfigDataStoreOrBuilder
+      getServingConfigDataStoreOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. The fully qualified resource name of the associated
    * [IdentityMappingStore][google.cloud.discoveryengine.v1.IdentityMappingStore].
    * This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or
@@ -831,4 +875,182 @@ public interface DataStoreOrBuilder
    * @return The bytes for identityMappingStore.
    */
   com.google.protobuf.ByteString getIdentityMappingStoreBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, this DataStore is an Infobot FAQ DataStore.
+   * </pre>
+   *
+   * <code>bool is_infobot_faq_data_store = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isInfobotFaqDataStore.
+   */
+  boolean getIsInfobotFaqDataStore();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, this DataStore is a federated search DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the federatedSearchConfig field is set.
+   */
+  boolean hasFederatedSearchConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, this DataStore is a federated search DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The federatedSearchConfig.
+   */
+  com.google.cloud.discoveryengine.v1.DataStore.FederatedSearchConfig getFederatedSearchConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, this DataStore is a federated search DataStore.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.FederatedSearchConfig federated_search_config = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.DataStore.FederatedSearchConfigOrBuilder
+      getFederatedSearchConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for configurable billing approach. See
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.ConfigurableBillingApproach configurable_billing_approach = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for configurableBillingApproach.
+   */
+  int getConfigurableBillingApproachValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for configurable billing approach. See
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataStore.ConfigurableBillingApproach configurable_billing_approach = 45 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The configurableBillingApproach.
+   */
+  com.google.cloud.discoveryengine.v1.DataStore.ConfigurableBillingApproach
+      getConfigurableBillingApproach();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when configurable_billing_approach was last
+   * updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the configurableBillingApproachUpdateTime field is set.
+   */
+  boolean hasConfigurableBillingApproachUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when configurable_billing_approach was last
+   * updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The configurableBillingApproachUpdateTime.
+   */
+  com.google.protobuf.Timestamp getConfigurableBillingApproachUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The timestamp when configurable_billing_approach was last
+   * updated.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp configurable_billing_approach_update_time = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getConfigurableBillingApproachUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the data protection policy for the data store.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataProtectionPolicy data_protection_policy = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dataProtectionPolicy field is set.
+   */
+  boolean hasDataProtectionPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the data protection policy for the data store.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataProtectionPolicy data_protection_policy = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dataProtectionPolicy.
+   */
+  com.google.cloud.discoveryengine.v1.DataProtectionPolicy getDataProtectionPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the data protection policy for the data store.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.DataProtectionPolicy data_protection_policy = 48 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.DataProtectionPolicyOrBuilder
+      getDataProtectionPolicyOrBuilder();
 }

@@ -80,6 +80,234 @@ public final class AssistantServiceGrpc {
     return getStreamAssistMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.CreateAssistantRequest,
+          com.google.cloud.discoveryengine.v1.Assistant>
+      getCreateAssistantMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAssistant",
+      requestType = com.google.cloud.discoveryengine.v1.CreateAssistantRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1.Assistant.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.CreateAssistantRequest,
+          com.google.cloud.discoveryengine.v1.Assistant>
+      getCreateAssistantMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.CreateAssistantRequest,
+            com.google.cloud.discoveryengine.v1.Assistant>
+        getCreateAssistantMethod;
+    if ((getCreateAssistantMethod = AssistantServiceGrpc.getCreateAssistantMethod) == null) {
+      synchronized (AssistantServiceGrpc.class) {
+        if ((getCreateAssistantMethod = AssistantServiceGrpc.getCreateAssistantMethod) == null) {
+          AssistantServiceGrpc.getCreateAssistantMethod =
+              getCreateAssistantMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.CreateAssistantRequest,
+                          com.google.cloud.discoveryengine.v1.Assistant>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAssistant"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.CreateAssistantRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.Assistant.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssistantServiceMethodDescriptorSupplier("CreateAssistant"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAssistantMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.DeleteAssistantRequest, com.google.protobuf.Empty>
+      getDeleteAssistantMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAssistant",
+      requestType = com.google.cloud.discoveryengine.v1.DeleteAssistantRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.DeleteAssistantRequest, com.google.protobuf.Empty>
+      getDeleteAssistantMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.DeleteAssistantRequest, com.google.protobuf.Empty>
+        getDeleteAssistantMethod;
+    if ((getDeleteAssistantMethod = AssistantServiceGrpc.getDeleteAssistantMethod) == null) {
+      synchronized (AssistantServiceGrpc.class) {
+        if ((getDeleteAssistantMethod = AssistantServiceGrpc.getDeleteAssistantMethod) == null) {
+          AssistantServiceGrpc.getDeleteAssistantMethod =
+              getDeleteAssistantMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.DeleteAssistantRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAssistant"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.DeleteAssistantRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssistantServiceMethodDescriptorSupplier("DeleteAssistant"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAssistantMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.UpdateAssistantRequest,
+          com.google.cloud.discoveryengine.v1.Assistant>
+      getUpdateAssistantMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAssistant",
+      requestType = com.google.cloud.discoveryengine.v1.UpdateAssistantRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1.Assistant.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.UpdateAssistantRequest,
+          com.google.cloud.discoveryengine.v1.Assistant>
+      getUpdateAssistantMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.UpdateAssistantRequest,
+            com.google.cloud.discoveryengine.v1.Assistant>
+        getUpdateAssistantMethod;
+    if ((getUpdateAssistantMethod = AssistantServiceGrpc.getUpdateAssistantMethod) == null) {
+      synchronized (AssistantServiceGrpc.class) {
+        if ((getUpdateAssistantMethod = AssistantServiceGrpc.getUpdateAssistantMethod) == null) {
+          AssistantServiceGrpc.getUpdateAssistantMethod =
+              getUpdateAssistantMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.UpdateAssistantRequest,
+                          com.google.cloud.discoveryengine.v1.Assistant>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAssistant"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.UpdateAssistantRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.Assistant.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssistantServiceMethodDescriptorSupplier("UpdateAssistant"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAssistantMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.GetAssistantRequest,
+          com.google.cloud.discoveryengine.v1.Assistant>
+      getGetAssistantMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAssistant",
+      requestType = com.google.cloud.discoveryengine.v1.GetAssistantRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1.Assistant.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.GetAssistantRequest,
+          com.google.cloud.discoveryengine.v1.Assistant>
+      getGetAssistantMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.GetAssistantRequest,
+            com.google.cloud.discoveryengine.v1.Assistant>
+        getGetAssistantMethod;
+    if ((getGetAssistantMethod = AssistantServiceGrpc.getGetAssistantMethod) == null) {
+      synchronized (AssistantServiceGrpc.class) {
+        if ((getGetAssistantMethod = AssistantServiceGrpc.getGetAssistantMethod) == null) {
+          AssistantServiceGrpc.getGetAssistantMethod =
+              getGetAssistantMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.GetAssistantRequest,
+                          com.google.cloud.discoveryengine.v1.Assistant>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAssistant"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.GetAssistantRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.Assistant.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssistantServiceMethodDescriptorSupplier("GetAssistant"))
+                      .build();
+        }
+      }
+    }
+    return getGetAssistantMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.ListAssistantsRequest,
+          com.google.cloud.discoveryengine.v1.ListAssistantsResponse>
+      getListAssistantsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAssistants",
+      requestType = com.google.cloud.discoveryengine.v1.ListAssistantsRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1.ListAssistantsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.ListAssistantsRequest,
+          com.google.cloud.discoveryengine.v1.ListAssistantsResponse>
+      getListAssistantsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.ListAssistantsRequest,
+            com.google.cloud.discoveryengine.v1.ListAssistantsResponse>
+        getListAssistantsMethod;
+    if ((getListAssistantsMethod = AssistantServiceGrpc.getListAssistantsMethod) == null) {
+      synchronized (AssistantServiceGrpc.class) {
+        if ((getListAssistantsMethod = AssistantServiceGrpc.getListAssistantsMethod) == null) {
+          AssistantServiceGrpc.getListAssistantsMethod =
+              getListAssistantsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.ListAssistantsRequest,
+                          com.google.cloud.discoveryengine.v1.ListAssistantsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAssistants"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.ListAssistantsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.ListAssistantsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AssistantServiceMethodDescriptorSupplier("ListAssistants"))
+                      .build();
+        }
+      }
+    }
+    return getListAssistantsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AssistantServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AssistantServiceStub> factory =
@@ -157,6 +385,81 @@ public final class AssistantServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getStreamAssistMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    default void createAssistant(
+        com.google.cloud.discoveryengine.v1.CreateAssistantRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.Assistant>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAssistantMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    default void deleteAssistant(
+        com.google.cloud.discoveryengine.v1.DeleteAssistantRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAssistantMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [Assistant][google.cloud.discoveryengine.v1.Assistant]
+     * </pre>
+     */
+    default void updateAssistant(
+        com.google.cloud.discoveryengine.v1.UpdateAssistantRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.Assistant>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAssistantMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    default void getAssistant(
+        com.google.cloud.discoveryengine.v1.GetAssistantRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.Assistant>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAssistantMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [Assistant][google.cloud.discoveryengine.v1.Assistant]s under an
+     * [Engine][google.cloud.discoveryengine.v1.Engine].
+     * </pre>
+     */
+    default void listAssistants(
+        com.google.cloud.discoveryengine.v1.ListAssistantsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.ListAssistantsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAssistantsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -209,6 +512,91 @@ public final class AssistantServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    public void createAssistant(
+        com.google.cloud.discoveryengine.v1.CreateAssistantRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.Assistant>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAssistantMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    public void deleteAssistant(
+        com.google.cloud.discoveryengine.v1.DeleteAssistantRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAssistantMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [Assistant][google.cloud.discoveryengine.v1.Assistant]
+     * </pre>
+     */
+    public void updateAssistant(
+        com.google.cloud.discoveryengine.v1.UpdateAssistantRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.Assistant>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAssistantMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    public void getAssistant(
+        com.google.cloud.discoveryengine.v1.GetAssistantRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.Assistant>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAssistantMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [Assistant][google.cloud.discoveryengine.v1.Assistant]s under an
+     * [Engine][google.cloud.discoveryengine.v1.Engine].
+     * </pre>
+     */
+    public void listAssistants(
+        com.google.cloud.discoveryengine.v1.ListAssistantsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.ListAssistantsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAssistantsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -245,6 +633,77 @@ public final class AssistantServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
           getChannel(), getStreamAssistMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.Assistant createAssistant(
+        com.google.cloud.discoveryengine.v1.CreateAssistantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAssistantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAssistant(
+        com.google.cloud.discoveryengine.v1.DeleteAssistantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAssistantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [Assistant][google.cloud.discoveryengine.v1.Assistant]
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.Assistant updateAssistant(
+        com.google.cloud.discoveryengine.v1.UpdateAssistantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAssistantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.Assistant getAssistant(
+        com.google.cloud.discoveryengine.v1.GetAssistantRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAssistantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [Assistant][google.cloud.discoveryengine.v1.Assistant]s under an
+     * [Engine][google.cloud.discoveryengine.v1.Engine].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ListAssistantsResponse listAssistants(
+        com.google.cloud.discoveryengine.v1.ListAssistantsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAssistantsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -278,6 +737,72 @@ public final class AssistantServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getStreamAssistMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.Assistant createAssistant(
+        com.google.cloud.discoveryengine.v1.CreateAssistantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAssistantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAssistant(
+        com.google.cloud.discoveryengine.v1.DeleteAssistantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAssistantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [Assistant][google.cloud.discoveryengine.v1.Assistant]
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.Assistant updateAssistant(
+        com.google.cloud.discoveryengine.v1.UpdateAssistantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAssistantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.Assistant getAssistant(
+        com.google.cloud.discoveryengine.v1.GetAssistantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAssistantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [Assistant][google.cloud.discoveryengine.v1.Assistant]s under an
+     * [Engine][google.cloud.discoveryengine.v1.Engine].
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ListAssistantsResponse listAssistants(
+        com.google.cloud.discoveryengine.v1.ListAssistantsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAssistantsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -298,9 +823,84 @@ public final class AssistantServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new AssistantServiceFutureStub(channel, callOptions);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1.Assistant>
+        createAssistant(com.google.cloud.discoveryengine.v1.CreateAssistantRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAssistantMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteAssistant(com.google.cloud.discoveryengine.v1.DeleteAssistantRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAssistantMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an [Assistant][google.cloud.discoveryengine.v1.Assistant]
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1.Assistant>
+        updateAssistant(com.google.cloud.discoveryengine.v1.UpdateAssistantRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAssistantMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an [Assistant][google.cloud.discoveryengine.v1.Assistant].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1.Assistant>
+        getAssistant(com.google.cloud.discoveryengine.v1.GetAssistantRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAssistantMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all [Assistant][google.cloud.discoveryengine.v1.Assistant]s under an
+     * [Engine][google.cloud.discoveryengine.v1.Engine].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1.ListAssistantsResponse>
+        listAssistants(com.google.cloud.discoveryengine.v1.ListAssistantsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAssistantsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_STREAM_ASSIST = 0;
+  private static final int METHODID_CREATE_ASSISTANT = 1;
+  private static final int METHODID_DELETE_ASSISTANT = 2;
+  private static final int METHODID_UPDATE_ASSISTANT = 3;
+  private static final int METHODID_GET_ASSISTANT = 4;
+  private static final int METHODID_LIST_ASSISTANTS = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -324,6 +924,36 @@ public final class AssistantServiceGrpc {
               (com.google.cloud.discoveryengine.v1.StreamAssistRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.discoveryengine.v1.StreamAssistResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_ASSISTANT:
+          serviceImpl.createAssistant(
+              (com.google.cloud.discoveryengine.v1.CreateAssistantRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.Assistant>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_ASSISTANT:
+          serviceImpl.deleteAssistant(
+              (com.google.cloud.discoveryengine.v1.DeleteAssistantRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_ASSISTANT:
+          serviceImpl.updateAssistant(
+              (com.google.cloud.discoveryengine.v1.UpdateAssistantRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.Assistant>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ASSISTANT:
+          serviceImpl.getAssistant(
+              (com.google.cloud.discoveryengine.v1.GetAssistantRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.Assistant>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ASSISTANTS:
+          serviceImpl.listAssistants(
+              (com.google.cloud.discoveryengine.v1.ListAssistantsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1.ListAssistantsResponse>)
                   responseObserver);
           break;
         default:
@@ -351,6 +981,40 @@ public final class AssistantServiceGrpc {
                     com.google.cloud.discoveryengine.v1.StreamAssistRequest,
                     com.google.cloud.discoveryengine.v1.StreamAssistResponse>(
                     service, METHODID_STREAM_ASSIST)))
+        .addMethod(
+            getCreateAssistantMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.CreateAssistantRequest,
+                    com.google.cloud.discoveryengine.v1.Assistant>(
+                    service, METHODID_CREATE_ASSISTANT)))
+        .addMethod(
+            getDeleteAssistantMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.DeleteAssistantRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_ASSISTANT)))
+        .addMethod(
+            getUpdateAssistantMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.UpdateAssistantRequest,
+                    com.google.cloud.discoveryengine.v1.Assistant>(
+                    service, METHODID_UPDATE_ASSISTANT)))
+        .addMethod(
+            getGetAssistantMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.GetAssistantRequest,
+                    com.google.cloud.discoveryengine.v1.Assistant>(
+                    service, METHODID_GET_ASSISTANT)))
+        .addMethod(
+            getListAssistantsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.ListAssistantsRequest,
+                    com.google.cloud.discoveryengine.v1.ListAssistantsResponse>(
+                    service, METHODID_LIST_ASSISTANTS)))
         .build();
   }
 
@@ -403,6 +1067,11 @@ public final class AssistantServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new AssistantServiceFileDescriptorSupplier())
                       .addMethod(getStreamAssistMethod())
+                      .addMethod(getCreateAssistantMethod())
+                      .addMethod(getDeleteAssistantMethod())
+                      .addMethod(getUpdateAssistantMethod())
+                      .addMethod(getGetAssistantMethod())
+                      .addMethod(getListAssistantsMethod())
                       .build();
         }
       }

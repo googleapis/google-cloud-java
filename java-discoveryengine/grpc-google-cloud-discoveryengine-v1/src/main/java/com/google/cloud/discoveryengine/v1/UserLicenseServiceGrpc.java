@@ -82,6 +82,59 @@ public final class UserLicenseServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest,
+          com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse>
+      getListLicenseConfigsUsageStatsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListLicenseConfigsUsageStats",
+      requestType = com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest,
+          com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse>
+      getListLicenseConfigsUsageStatsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest,
+            com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse>
+        getListLicenseConfigsUsageStatsMethod;
+    if ((getListLicenseConfigsUsageStatsMethod =
+            UserLicenseServiceGrpc.getListLicenseConfigsUsageStatsMethod)
+        == null) {
+      synchronized (UserLicenseServiceGrpc.class) {
+        if ((getListLicenseConfigsUsageStatsMethod =
+                UserLicenseServiceGrpc.getListLicenseConfigsUsageStatsMethod)
+            == null) {
+          UserLicenseServiceGrpc.getListLicenseConfigsUsageStatsMethod =
+              getListLicenseConfigsUsageStatsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest,
+                          com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListLicenseConfigsUsageStats"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1
+                                  .ListLicenseConfigsUsageStatsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1
+                                  .ListLicenseConfigsUsageStatsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new UserLicenseServiceMethodDescriptorSupplier(
+                              "ListLicenseConfigsUsageStats"))
+                      .build();
+        }
+      }
+    }
+    return getListLicenseConfigsUsageStatsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesRequest,
           com.google.longrunning.Operation>
       getBatchUpdateUserLicensesMethod;
@@ -213,6 +266,24 @@ public final class UserLicenseServiceGrpc {
      *
      *
      * <pre>
+     * Lists all the
+     * [LicenseConfigUsageStats][google.cloud.discoveryengine.v1.LicenseConfigUsageStats]s
+     * associated with the project.
+     * </pre>
+     */
+    default void listLicenseConfigsUsageStats(
+        com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListLicenseConfigsUsageStatsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the User License.
      * This method is used for batch assign/unassign licenses to users.
      * </pre>
@@ -281,6 +352,26 @@ public final class UserLicenseServiceGrpc {
      *
      *
      * <pre>
+     * Lists all the
+     * [LicenseConfigUsageStats][google.cloud.discoveryengine.v1.LicenseConfigUsageStats]s
+     * associated with the project.
+     * </pre>
+     */
+    public void listLicenseConfigsUsageStats(
+        com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListLicenseConfigsUsageStatsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the User License.
      * This method is used for batch assign/unassign licenses to users.
      * </pre>
@@ -327,6 +418,23 @@ public final class UserLicenseServiceGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListUserLicensesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the
+     * [LicenseConfigUsageStats][google.cloud.discoveryengine.v1.LicenseConfigUsageStats]s
+     * associated with the project.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse
+        listLicenseConfigsUsageStats(
+            com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListLicenseConfigsUsageStatsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -382,6 +490,22 @@ public final class UserLicenseServiceGrpc {
      *
      *
      * <pre>
+     * Lists all the
+     * [LicenseConfigUsageStats][google.cloud.discoveryengine.v1.LicenseConfigUsageStats]s
+     * associated with the project.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse
+        listLicenseConfigsUsageStats(
+            com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLicenseConfigsUsageStatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the User License.
      * This method is used for batch assign/unassign licenses to users.
      * </pre>
@@ -430,6 +554,23 @@ public final class UserLicenseServiceGrpc {
      *
      *
      * <pre>
+     * Lists all the
+     * [LicenseConfigUsageStats][google.cloud.discoveryengine.v1.LicenseConfigUsageStats]s
+     * associated with the project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse>
+        listLicenseConfigsUsageStats(
+            com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListLicenseConfigsUsageStatsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the User License.
      * This method is used for batch assign/unassign licenses to users.
      * </pre>
@@ -443,7 +584,8 @@ public final class UserLicenseServiceGrpc {
   }
 
   private static final int METHODID_LIST_USER_LICENSES = 0;
-  private static final int METHODID_BATCH_UPDATE_USER_LICENSES = 1;
+  private static final int METHODID_LIST_LICENSE_CONFIGS_USAGE_STATS = 1;
+  private static final int METHODID_BATCH_UPDATE_USER_LICENSES = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -467,6 +609,13 @@ public final class UserLicenseServiceGrpc {
               (com.google.cloud.discoveryengine.v1.ListUserLicensesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.discoveryengine.v1.ListUserLicensesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_LICENSE_CONFIGS_USAGE_STATS:
+          serviceImpl.listLicenseConfigsUsageStats(
+              (com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse>)
                   responseObserver);
           break;
         case METHODID_BATCH_UPDATE_USER_LICENSES:
@@ -499,6 +648,13 @@ public final class UserLicenseServiceGrpc {
                     com.google.cloud.discoveryengine.v1.ListUserLicensesRequest,
                     com.google.cloud.discoveryengine.v1.ListUserLicensesResponse>(
                     service, METHODID_LIST_USER_LICENSES)))
+        .addMethod(
+            getListLicenseConfigsUsageStatsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest,
+                    com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse>(
+                    service, METHODID_LIST_LICENSE_CONFIGS_USAGE_STATS)))
         .addMethod(
             getBatchUpdateUserLicensesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -558,6 +714,7 @@ public final class UserLicenseServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new UserLicenseServiceFileDescriptorSupplier())
                       .addMethod(getListUserLicensesMethod())
+                      .addMethod(getListLicenseConfigsUsageStatsMethod())
                       .addMethod(getBatchUpdateUserLicensesMethod())
                       .build();
         }

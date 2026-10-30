@@ -128,7 +128,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A flexible specification of machine type of instances to create.
+   * A specification of alternative machine types to use when creating
+   * instances. A single bulkInsert request can create instances with multiple
+   * different machine types based on capacity and quota availability. This
+   * field is supported only for regional bulkInsert requests. For more
+   * information, see About
+   * instance flexibility for VMs created in bulk.
    * </pre>
    *
    * <code>
@@ -146,7 +151,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A flexible specification of machine type of instances to create.
+   * A specification of alternative machine types to use when creating
+   * instances. A single bulkInsert request can create instances with multiple
+   * different machine types based on capacity and quota availability. This
+   * field is supported only for regional bulkInsert requests. For more
+   * information, see About
+   * instance flexibility for VMs created in bulk.
    * </pre>
    *
    * <code>
@@ -166,7 +176,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A flexible specification of machine type of instances to create.
+   * A specification of alternative machine types to use when creating
+   * instances. A single bulkInsert request can create instances with multiple
+   * different machine types based on capacity and quota availability. This
+   * field is supported only for regional bulkInsert requests. For more
+   * information, see About
+   * instance flexibility for VMs created in bulk.
    * </pre>
    *
    * <code>
@@ -1389,7 +1404,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A flexible specification of machine type of instances to create.
+     * A specification of alternative machine types to use when creating
+     * instances. A single bulkInsert request can create instances with multiple
+     * different machine types based on capacity and quota availability. This
+     * field is supported only for regional bulkInsert requests. For more
+     * information, see About
+     * instance flexibility for VMs created in bulk.
      * </pre>
      *
      * <code>
@@ -1406,7 +1426,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A flexible specification of machine type of instances to create.
+     * A specification of alternative machine types to use when creating
+     * instances. A single bulkInsert request can create instances with multiple
+     * different machine types based on capacity and quota availability. This
+     * field is supported only for regional bulkInsert requests. For more
+     * information, see About
+     * instance flexibility for VMs created in bulk.
      * </pre>
      *
      * <code>
@@ -1429,7 +1454,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A flexible specification of machine type of instances to create.
+     * A specification of alternative machine types to use when creating
+     * instances. A single bulkInsert request can create instances with multiple
+     * different machine types based on capacity and quota availability. This
+     * field is supported only for regional bulkInsert requests. For more
+     * information, see About
+     * instance flexibility for VMs created in bulk.
      * </pre>
      *
      * <code>
@@ -1455,7 +1485,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A flexible specification of machine type of instances to create.
+     * A specification of alternative machine types to use when creating
+     * instances. A single bulkInsert request can create instances with multiple
+     * different machine types based on capacity and quota availability. This
+     * field is supported only for regional bulkInsert requests. For more
+     * information, see About
+     * instance flexibility for VMs created in bulk.
      * </pre>
      *
      * <code>
@@ -1478,7 +1513,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A flexible specification of machine type of instances to create.
+     * A specification of alternative machine types to use when creating
+     * instances. A single bulkInsert request can create instances with multiple
+     * different machine types based on capacity and quota availability. This
+     * field is supported only for regional bulkInsert requests. For more
+     * information, see About
+     * instance flexibility for VMs created in bulk.
      * </pre>
      *
      * <code>
@@ -1510,7 +1550,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A flexible specification of machine type of instances to create.
+     * A specification of alternative machine types to use when creating
+     * instances. A single bulkInsert request can create instances with multiple
+     * different machine types based on capacity and quota availability. This
+     * field is supported only for regional bulkInsert requests. For more
+     * information, see About
+     * instance flexibility for VMs created in bulk.
      * </pre>
      *
      * <code>
@@ -1532,7 +1577,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A flexible specification of machine type of instances to create.
+     * A specification of alternative machine types to use when creating
+     * instances. A single bulkInsert request can create instances with multiple
+     * different machine types based on capacity and quota availability. This
+     * field is supported only for regional bulkInsert requests. For more
+     * information, see About
+     * instance flexibility for VMs created in bulk.
      * </pre>
      *
      * <code>
@@ -1550,7 +1600,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A flexible specification of machine type of instances to create.
+     * A specification of alternative machine types to use when creating
+     * instances. A single bulkInsert request can create instances with multiple
+     * different machine types based on capacity and quota availability. This
+     * field is supported only for regional bulkInsert requests. For more
+     * information, see About
+     * instance flexibility for VMs created in bulk.
      * </pre>
      *
      * <code>
@@ -1572,7 +1627,12 @@ public final class BulkInsertInstanceResource extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A flexible specification of machine type of instances to create.
+     * A specification of alternative machine types to use when creating
+     * instances. A single bulkInsert request can create instances with multiple
+     * different machine types based on capacity and quota availability. This
+     * field is supported only for regional bulkInsert requests. For more
+     * information, see About
+     * instance flexibility for VMs created in bulk.
      * </pre>
      *
      * <code>

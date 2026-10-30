@@ -265,6 +265,84 @@ public final class DataStoreServiceGrpc {
     return getUpdateDataStoreMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIamPolicy",
+      requestType = com.google.iam.v1.GetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+      getGetIamPolicyMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
+        getGetIamPolicyMethod;
+    if ((getGetIamPolicyMethod = DataStoreServiceGrpc.getGetIamPolicyMethod) == null) {
+      synchronized (DataStoreServiceGrpc.class) {
+        if ((getGetIamPolicyMethod = DataStoreServiceGrpc.getGetIamPolicyMethod) == null) {
+          DataStoreServiceGrpc.getGetIamPolicyMethod =
+              getGetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.GetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataStoreServiceMethodDescriptorSupplier("GetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetIamPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetIamPolicy",
+      requestType = com.google.iam.v1.SetIamPolicyRequest.class,
+      responseType = com.google.iam.v1.Policy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+      getSetIamPolicyMethod() {
+    io.grpc.MethodDescriptor<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>
+        getSetIamPolicyMethod;
+    if ((getSetIamPolicyMethod = DataStoreServiceGrpc.getSetIamPolicyMethod) == null) {
+      synchronized (DataStoreServiceGrpc.class) {
+        if ((getSetIamPolicyMethod = DataStoreServiceGrpc.getSetIamPolicyMethod) == null) {
+          DataStoreServiceGrpc.getSetIamPolicyMethod =
+              getSetIamPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetIamPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.SetIamPolicyRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.iam.v1.Policy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataStoreServiceMethodDescriptorSupplier("SetIamPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getSetIamPolicyMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static DataStoreServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<DataStoreServiceStub> factory =
@@ -407,6 +485,48 @@ public final class DataStoreServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateDataStoreMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]. A `NOT_FOUND` error
+     * is returned if the resource does not exist. An empty policy is returned if
+     * the resource exists but does not have a policy set on it.
+     * </pre>
+     */
+    default void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIamPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy for a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]. A `NOT_FOUND` error
+     * is returned if the resource does not exist.
+     * **Important:** When setting a policy directly on a DataStore resource,
+     * the only recommended roles in the bindings are:
+     * `roles/discoveryengine.admin`
+     * `roles/discoveryengine.agentspaceAdmin`
+     * `roles/discoveryengine.viewer`
+     * `roles/discoveryengine.agentspaceViewer`
+     * `roles/discoveryengine.user`
+     * `roles/discoveryengine.agentspaceUser`
+     * Attempting to grant any other role will result in a warning in logging.
+     * </pre>
+     */
+    default void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSetIamPolicyMethod(), responseObserver);
+    }
   }
 
   /**
@@ -533,6 +653,52 @@ public final class DataStoreServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]. A `NOT_FOUND` error
+     * is returned if the resource does not exist. An empty policy is returned if
+     * the resource exists but does not have a policy set on it.
+     * </pre>
+     */
+    public void getIamPolicy(
+        com.google.iam.v1.GetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy for a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]. A `NOT_FOUND` error
+     * is returned if the resource does not exist.
+     * **Important:** When setting a policy directly on a DataStore resource,
+     * the only recommended roles in the bindings are:
+     * `roles/discoveryengine.admin`
+     * `roles/discoveryengine.agentspaceAdmin`
+     * `roles/discoveryengine.viewer`
+     * `roles/discoveryengine.agentspaceViewer`
+     * `roles/discoveryengine.user`
+     * `roles/discoveryengine.agentspaceUser`
+     * Attempting to grant any other role will result in a warning in logging.
+     * </pre>
+     */
+    public void setIamPolicy(
+        com.google.iam.v1.SetIamPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.iam.v1.Policy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -631,6 +797,46 @@ public final class DataStoreServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateDataStoreMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]. A `NOT_FOUND` error
+     * is returned if the resource does not exist. An empty policy is returned if
+     * the resource exists but does not have a policy set on it.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy for a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]. A `NOT_FOUND` error
+     * is returned if the resource does not exist.
+     * **Important:** When setting a policy directly on a DataStore resource,
+     * the only recommended roles in the bindings are:
+     * `roles/discoveryengine.admin`
+     * `roles/discoveryengine.agentspaceAdmin`
+     * `roles/discoveryengine.viewer`
+     * `roles/discoveryengine.agentspaceViewer`
+     * `roles/discoveryengine.user`
+     * `roles/discoveryengine.agentspaceUser`
+     * Attempting to grant any other role will result in a warning in logging.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -722,6 +928,44 @@ public final class DataStoreServiceGrpc {
         com.google.cloud.discoveryengine.v1.UpdateDataStoreRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDataStoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]. A `NOT_FOUND` error
+     * is returned if the resource does not exist. An empty policy is returned if
+     * the resource exists but does not have a policy set on it.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy for a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]. A `NOT_FOUND` error
+     * is returned if the resource does not exist.
+     * **Important:** When setting a policy directly on a DataStore resource,
+     * the only recommended roles in the bindings are:
+     * `roles/discoveryengine.admin`
+     * `roles/discoveryengine.agentspaceAdmin`
+     * `roles/discoveryengine.viewer`
+     * `roles/discoveryengine.agentspaceViewer`
+     * `roles/discoveryengine.user`
+     * `roles/discoveryengine.agentspaceUser`
+     * Attempting to grant any other role will result in a warning in logging.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
     }
   }
 
@@ -818,6 +1062,46 @@ public final class DataStoreServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDataStoreMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the IAM access control policy for a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]. A `NOT_FOUND` error
+     * is returned if the resource does not exist. An empty policy is returned if
+     * the resource exists but does not have a policy set on it.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIamPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the IAM access control policy for a
+     * [DataStore][google.cloud.discoveryengine.v1.DataStore]. A `NOT_FOUND` error
+     * is returned if the resource does not exist.
+     * **Important:** When setting a policy directly on a DataStore resource,
+     * the only recommended roles in the bindings are:
+     * `roles/discoveryengine.admin`
+     * `roles/discoveryengine.agentspaceAdmin`
+     * `roles/discoveryengine.viewer`
+     * `roles/discoveryengine.agentspaceViewer`
+     * `roles/discoveryengine.user`
+     * `roles/discoveryengine.agentspaceUser`
+     * Attempting to grant any other role will result in a warning in logging.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy>
+        setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetIamPolicyMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_DATA_STORE = 0;
@@ -825,6 +1109,8 @@ public final class DataStoreServiceGrpc {
   private static final int METHODID_LIST_DATA_STORES = 2;
   private static final int METHODID_DELETE_DATA_STORE = 3;
   private static final int METHODID_UPDATE_DATA_STORE = 4;
+  private static final int METHODID_GET_IAM_POLICY = 5;
+  private static final int METHODID_SET_IAM_POLICY = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -871,6 +1157,16 @@ public final class DataStoreServiceGrpc {
               (com.google.cloud.discoveryengine.v1.UpdateDataStoreRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.DataStore>)
                   responseObserver);
+          break;
+        case METHODID_GET_IAM_POLICY:
+          serviceImpl.getIamPolicy(
+              (com.google.iam.v1.GetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
+          break;
+        case METHODID_SET_IAM_POLICY:
+          serviceImpl.setIamPolicy(
+              (com.google.iam.v1.SetIamPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.iam.v1.Policy>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -923,6 +1219,16 @@ public final class DataStoreServiceGrpc {
                     com.google.cloud.discoveryengine.v1.UpdateDataStoreRequest,
                     com.google.cloud.discoveryengine.v1.DataStore>(
                     service, METHODID_UPDATE_DATA_STORE)))
+        .addMethod(
+            getGetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_GET_IAM_POLICY)))
+        .addMethod(
+            getSetIamPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<com.google.iam.v1.SetIamPolicyRequest, com.google.iam.v1.Policy>(
+                    service, METHODID_SET_IAM_POLICY)))
         .build();
   }
 
@@ -979,6 +1285,8 @@ public final class DataStoreServiceGrpc {
                       .addMethod(getListDataStoresMethod())
                       .addMethod(getDeleteDataStoreMethod())
                       .addMethod(getUpdateDataStoreMethod())
+                      .addMethod(getGetIamPolicyMethod())
+                      .addMethod(getSetIamPolicyMethod())
                       .build();
         }
       }

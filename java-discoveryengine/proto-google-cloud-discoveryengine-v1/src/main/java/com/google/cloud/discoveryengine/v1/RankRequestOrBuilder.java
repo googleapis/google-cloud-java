@@ -138,7 +138,7 @@ public interface RankRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of records to rank. At most 200 records to rank.
+   * Required. A list of records to rank.
    * </pre>
    *
    * <code>
@@ -151,7 +151,7 @@ public interface RankRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of records to rank. At most 200 records to rank.
+   * Required. A list of records to rank.
    * </pre>
    *
    * <code>
@@ -164,7 +164,7 @@ public interface RankRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of records to rank. At most 200 records to rank.
+   * Required. A list of records to rank.
    * </pre>
    *
    * <code>
@@ -177,7 +177,7 @@ public interface RankRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of records to rank. At most 200 records to rank.
+   * Required. A list of records to rank.
    * </pre>
    *
    * <code>
@@ -191,7 +191,7 @@ public interface RankRequestOrBuilder
    *
    *
    * <pre>
-   * Required. A list of records to rank. At most 200 records to rank.
+   * Required. A list of records to rank.
    * </pre>
    *
    * <code>

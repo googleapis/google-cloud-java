@@ -67,11 +67,12 @@ public interface ImportUserEventsMetadataOrBuilder
    *
    *
    * <pre>
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
+   * Output only. Operation last update time. If the operation is done, this is
+   * also the finish time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -81,11 +82,12 @@ public interface ImportUserEventsMetadataOrBuilder
    *
    *
    * <pre>
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
+   * Output only. Operation last update time. If the operation is done, this is
+   * also the finish time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -95,11 +97,12 @@ public interface ImportUserEventsMetadataOrBuilder
    *
    *
    * <pre>
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
+   * Output only. Operation last update time. If the operation is done, this is
+   * also the finish time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 

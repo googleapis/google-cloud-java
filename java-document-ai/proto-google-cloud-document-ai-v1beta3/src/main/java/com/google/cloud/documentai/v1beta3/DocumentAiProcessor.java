@@ -68,6 +68,14 @@ public final class DocumentAiProcessor extends com.google.protobuf.GeneratedFile
       internal_static_google_cloud_documentai_v1beta3_Processor_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_Processor_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_GroundingSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_GroundingSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_ProcessorVersionOverrides_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_ProcessorVersionOverrides_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -82,7 +90,7 @@ public final class DocumentAiProcessor extends com.google.protobuf.GeneratedFile
           + "a3\032\037google/api/field_behavior.proto\032\031goo"
           + "gle/api/resource.proto\0325google/cloud/documentai/v1beta3/document_schema.proto\0320g"
           + "oogle/cloud/documentai/v1beta3/evaluatio"
-          + "n.proto\032\037google/protobuf/timestamp.proto\"\345\017\n"
+          + "n.proto\032\037google/protobuf/timestamp.proto\"\273\020\n"
           + "\020ProcessorVersion\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\024\n"
           + "\014display_name\030\002 \001(\t\022N\n"
@@ -105,23 +113,27 @@ public final class DocumentAiProcessor extends com.google.protobuf.GeneratedFile
           + "satisfies_pzs\030\020 \001(\010B\004\342A\001\003\022\033\n\r"
           + "satisfies_pzi\030\021 \001(\010B\004\342A\001\003\022a\n"
           + "\021gen_ai_model_info\030\022 \001(\0132@.google.cloud.documentai.v1bet"
-          + "a3.ProcessorVersion.GenAiModelInfoB\004\342A\001\003\032\237\001\n"
+          + "a3.ProcessorVersion.GenAiModelInfoB\004\342A\001\003\022T\n"
+          + "\022grounding_settings\030\025 \001(\01322.google.cl"
+          + "oud.documentai.v1beta3.GroundingSettingsB\004\342A\001\003\032\237\001\n"
           + "\017DeprecationInfo\0224\n"
           + "\020deprecation_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022V\n"
           + "\035replacement_processor_version\030\002 \001(\tB/\372A,\n"
           + "*documentai.googleapis.com/ProcessorVersion\032\231\005\n"
           + "\016GenAiModelInfo\022\201\001\n"
-          + "\034foundation_gen_ai_model_info\030\001 \001(\0132Y.google.cloud.docu"
-          + "mentai.v1beta3.ProcessorVersion.GenAiModelInfo.FoundationGenAiModelInfoH\000\022y\n"
-          + "\030custom_gen_ai_model_info\030\002 \001(\0132U.google.clo"
-          + "ud.documentai.v1beta3.ProcessorVersion.GenAiModelInfo.CustomGenAiModelInfoH\000\032[\n"
+          + "\034foundation_gen_ai_model_info\030\001 \001(\0132Y.google.clou"
+          + "d.documentai.v1beta3.ProcessorVersion.Ge"
+          + "nAiModelInfo.FoundationGenAiModelInfoH\000\022y\n"
+          + "\030custom_gen_ai_model_info\030\002 \001(\0132U.goog"
+          + "le.cloud.documentai.v1beta3.ProcessorVer"
+          + "sion.GenAiModelInfo.CustomGenAiModelInfoH\000\032[\n"
           + "\030FoundationGenAiModelInfo\022\032\n"
           + "\022finetuning_allowed\030\001 \001(\010\022#\n"
           + "\033min_train_labeled_documents\030\002 \001(\005\032\234\002\n"
           + "\024CustomGenAiModelInfo\022\200\001\n"
-          + "\021custom_model_type\030\001 \001(\0162e.google.cloud.do"
-          + "cumentai.v1beta3.ProcessorVersion.GenAiM"
-          + "odelInfo.CustomGenAiModelInfo.CustomModelType\022!\n"
+          + "\021custom_model_type\030\001 \001(\0162e.google.cl"
+          + "oud.documentai.v1beta3.ProcessorVersion."
+          + "GenAiModelInfo.CustomGenAiModelInfo.CustomModelType\022!\n"
           + "\031base_processor_version_id\030\002 \001(\t\"^\n"
           + "\017CustomModelType\022!\n"
           + "\035CUSTOM_MODEL_TYPE_UNSPECIFIED\020\000\022\030\n"
@@ -142,8 +154,8 @@ public final class DocumentAiProcessor extends com.google.protobuf.GeneratedFile
           + "\026MODEL_TYPE_UNSPECIFIED\020\000\022\031\n"
           + "\025MODEL_TYPE_GENERATIVE\020\001\022\025\n"
           + "\021MODEL_TYPE_CUSTOM\020\002:\226\001\352A\222\001\n"
-          + "*documentai.googleapis.com/ProcessorVersion\022dprojects/{project}/locations/{locati"
-          + "on}/processors/{processor}/processorVersions/{processor_version}\"r\n"
+          + "*documentai.googleapis.com/ProcessorVersion\022dprojects/{project}/locations/{"
+          + "location}/processors/{processor}/processorVersions/{processor_version}\"r\n"
           + "\025ProcessorVersionAlias\022\r\n"
           + "\005alias\030\001 \001(\t\022J\n"
           + "\021processor_version\030\002 \001(\tB/\372A,\n"
@@ -152,13 +164,12 @@ public final class DocumentAiProcessor extends com.google.protobuf.GeneratedFile
           + "\004name\030\001 \001(\tB\005\342A\002\005\003\022\014\n"
           + "\004type\030\002 \001(\t\022\024\n"
           + "\014display_name\030\003 \001(\t\022E\n"
-          + "\005state\030\004 \001(\01620.google.clou"
-          + "d.documentai.v1beta3.Processor.StateB\004\342A\001\003\022R\n"
+          + "\005state\030\004 \001(\01620.googl"
+          + "e.cloud.documentai.v1beta3.Processor.StateB\004\342A\001\003\022R\n"
           + "\031default_processor_version\030\t \001(\tB/\372A,\n"
           + "*documentai.googleapis.com/ProcessorVersion\022_\n"
           + "\031processor_version_aliases\030\n"
-          + " \003("
-          + "\01326.google.cloud.documentai.v1beta3.ProcessorVersionAliasB\004\342A\001\003\022\037\n"
+          + " \003(\01326.google.cloud.documentai.v1beta3.ProcessorVersionAliasB\004\342A\001\003\022\037\n"
           + "\020process_endpoint\030\006 \001(\tB\005\342A\002\003\005\0225\n"
           + "\013create_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\024\n"
@@ -175,13 +186,24 @@ public final class DocumentAiProcessor extends com.google.protobuf.GeneratedFile
           + "\010CREATING\020\005\022\n\n"
           + "\006FAILED\020\006\022\014\n"
           + "\010DELETING\020\007:h\352Ae\n"
-          + "#documentai.googleapis.com/Processo"
-          + "r\022>projects/{project}/locations/{location}/processors/{processor}B\352\001\n"
-          + "#com.google.cloud.documentai.v1beta3B\023DocumentAiPro"
-          + "cessorP\001ZCcloud.google.com/go/documentai"
-          + "/apiv1beta3/documentaipb;documentaipb\252\002\037"
-          + "Google.Cloud.DocumentAI.V1Beta3\312\002\037Google"
-          + "\\Cloud\\DocumentAI\\V1beta3\352\002\"Google::Cloud::DocumentAI::V1beta3b\006proto3"
+          + "#documentai.googleapis.com/Pr"
+          + "ocessor\022>projects/{project}/locations/{location}/processors/{processor}\"\313\001\n"
+          + "\021GroundingSettings\022X\n"
+          + "\016grounding_type\030\001 \001(\0162@."
+          + "google.cloud.documentai.v1beta3.GroundingSettings.GroundingType\"\\\n\r"
+          + "GroundingType\022\036\n"
+          + "\032GROUNDING_TYPE_UNSPECIFIED\020\000\022\010\n"
+          + "\004HARD\020\001\022\017\n"
+          + "\013OCR_RELAXED\020\002\022\020\n"
+          + "\014NO_GROUNDING\020\003\"q\n"
+          + "\031ProcessorVersionOverrides\022T\n"
+          + "\022grounding_settings\030\001"
+          + " \001(\01322.google.cloud.documentai.v1beta3.GroundingSettingsB\004\342A\001\001B\352\001\n"
+          + "#com.google.cloud.documentai.v1beta3B\023Docume"
+          + "ntAiProcessorP\001ZCcloud.google.com/go/documentai/apiv1beta3/documentaipb;document"
+          + "aipb\252\002\037Google.Cloud.DocumentAI.V1Beta3\312\002"
+          + "\037Google\\Cloud\\DocumentAI\\V1beta3\352\002\"Googl"
+          + "e::Cloud::DocumentAI::V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -213,6 +235,7 @@ public final class DocumentAiProcessor extends com.google.protobuf.GeneratedFile
               "SatisfiesPzs",
               "SatisfiesPzi",
               "GenAiModelInfo",
+              "GroundingSettings",
             });
     internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_DeprecationInfo_descriptor =
         internal_static_google_cloud_documentai_v1beta3_ProcessorVersion_descriptor.getNestedType(
@@ -275,6 +298,22 @@ public final class DocumentAiProcessor extends com.google.protobuf.GeneratedFile
               "KmsKeyName",
               "SatisfiesPzs",
               "SatisfiesPzi",
+            });
+    internal_static_google_cloud_documentai_v1beta3_GroundingSettings_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_cloud_documentai_v1beta3_GroundingSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_GroundingSettings_descriptor,
+            new java.lang.String[] {
+              "GroundingType",
+            });
+    internal_static_google_cloud_documentai_v1beta3_ProcessorVersionOverrides_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_cloud_documentai_v1beta3_ProcessorVersionOverrides_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_ProcessorVersionOverrides_descriptor,
+            new java.lang.String[] {
+              "GroundingSettings",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

@@ -64,6 +64,18 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
         .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 14:
+        return internalGetConnectorDisplayNames();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -134,6 +146,17 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      * <code>SKIPPED = 4;</code>
      */
     SKIPPED(4),
+    /**
+     *
+     *
+     * <pre>
+     * Assist operation has been cancelled (e.g. client closed the stream).
+     * May contain a partial response.
+     * </pre>
+     *
+     * <code>CANCELLED = 5;</code>
+     */
+    CANCELLED(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -202,6 +225,18 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      */
     public static final int SKIPPED_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * Assist operation has been cancelled (e.g. client closed the stream).
+     * May contain a partial response.
+     * </pre>
+     *
+     * <code>CANCELLED = 5;</code>
+     */
+    public static final int CANCELLED_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -236,6 +271,8 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
           return SUCCEEDED;
         case 4:
           return SKIPPED;
+        case 5:
+          return CANCELLED;
         default:
           return null;
       }
@@ -510,6 +547,43 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
     com.google.cloud.discoveryengine.v1.AssistantGroundedContentOrBuilder
         getGroundedContentOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * The time when the reply was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 14;</code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    boolean hasCreateTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the reply was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 14;</code>
+     *
+     * @return The createTime.
+     */
+    com.google.protobuf.Timestamp getCreateTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the reply was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 14;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
     com.google.cloud.discoveryengine.v1.AssistAnswer.Reply.ReplyCase getReplyCase();
   }
 
@@ -560,6 +634,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
               com.google.cloud.discoveryengine.v1.AssistAnswer.Reply.Builder.class);
     }
 
+    private int bitField0_;
     private int replyCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -662,6 +737,55 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
       return com.google.cloud.discoveryengine.v1.AssistantGroundedContent.getDefaultInstance();
     }
 
+    public static final int CREATE_TIME_FIELD_NUMBER = 14;
+    private com.google.protobuf.Timestamp createTime_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the reply was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 14;</code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the reply was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 14;</code>
+     *
+     * @return The createTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreateTime() {
+      return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The time when the reply was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 14;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -680,6 +804,9 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
         output.writeMessage(
             1, (com.google.cloud.discoveryengine.v1.AssistantGroundedContent) reply_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(14, getCreateTime());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -693,6 +820,9 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 1, (com.google.cloud.discoveryengine.v1.AssistantGroundedContent) reply_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getCreateTime());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -710,6 +840,10 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
       com.google.cloud.discoveryengine.v1.AssistAnswer.Reply other =
           (com.google.cloud.discoveryengine.v1.AssistAnswer.Reply) obj;
 
+      if (hasCreateTime() != other.hasCreateTime()) return false;
+      if (hasCreateTime()) {
+        if (!getCreateTime().equals(other.getCreateTime())) return false;
+      }
       if (!getReplyCase().equals(other.getReplyCase())) return false;
       switch (replyCase_) {
         case 1:
@@ -729,6 +863,10 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasCreateTime()) {
+        hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getCreateTime().hashCode();
+      }
       switch (replyCase_) {
         case 1:
           hash = (37 * hash) + GROUNDED_CONTENT_FIELD_NUMBER;
@@ -868,10 +1006,19 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.cloud.discoveryengine.v1.AssistAnswer.Reply.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetCreateTimeFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -880,6 +1027,11 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
         bitField0_ = 0;
         if (groundedContentBuilder_ != null) {
           groundedContentBuilder_.clear();
+        }
+        createTime_ = null;
+        if (createTimeBuilder_ != null) {
+          createTimeBuilder_.dispose();
+          createTimeBuilder_ = null;
         }
         replyCase_ = 0;
         reply_ = null;
@@ -920,6 +1072,13 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
 
       private void buildPartial0(com.google.cloud.discoveryengine.v1.AssistAnswer.Reply result) {
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.createTime_ =
+              createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       private void buildPartialOneofs(
@@ -944,6 +1103,9 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
       public Builder mergeFrom(com.google.cloud.discoveryengine.v1.AssistAnswer.Reply other) {
         if (other == com.google.cloud.discoveryengine.v1.AssistAnswer.Reply.getDefaultInstance())
           return this;
+        if (other.hasCreateTime()) {
+          mergeCreateTime(other.getCreateTime());
+        }
         switch (other.getReplyCase()) {
           case GROUNDED_CONTENT:
             {
@@ -988,6 +1150,13 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
                   replyCase_ = 1;
                   break;
                 } // case 10
+              case 114:
+                {
+                  input.readMessage(
+                      internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 114
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1255,6 +1424,200 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
         return groundedContentBuilder_;
       }
 
+      private com.google.protobuf.Timestamp createTime_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          createTimeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The time when the reply was created.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_time = 14;</code>
+       *
+       * @return Whether the createTime field is set.
+       */
+      public boolean hasCreateTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The time when the reply was created.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_time = 14;</code>
+       *
+       * @return The createTime.
+       */
+      public com.google.protobuf.Timestamp getCreateTime() {
+        if (createTimeBuilder_ == null) {
+          return createTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : createTime_;
+        } else {
+          return createTimeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The time when the reply was created.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_time = 14;</code>
+       */
+      public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+        if (createTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createTime_ = value;
+        } else {
+          createTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The time when the reply was created.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_time = 14;</code>
+       */
+      public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createTimeBuilder_ == null) {
+          createTime_ = builderForValue.build();
+        } else {
+          createTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The time when the reply was created.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_time = 14;</code>
+       */
+      public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+        if (createTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && createTime_ != null
+              && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreateTimeBuilder().mergeFrom(value);
+          } else {
+            createTime_ = value;
+          }
+        } else {
+          createTimeBuilder_.mergeFrom(value);
+        }
+        if (createTime_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The time when the reply was created.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_time = 14;</code>
+       */
+      public Builder clearCreateTime() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        createTime_ = null;
+        if (createTimeBuilder_ != null) {
+          createTimeBuilder_.dispose();
+          createTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The time when the reply was created.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_time = 14;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetCreateTimeFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The time when the reply was created.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_time = 14;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+        if (createTimeBuilder_ != null) {
+          return createTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return createTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : createTime_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The time when the reply was created.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp create_time = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          internalGetCreateTimeFieldBuilder() {
+        if (createTimeBuilder_ == null) {
+          createTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getCreateTime(), getParentForChildren(), isClean());
+          createTime_ = null;
+        }
+        return createTimeBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.AssistAnswer.Reply)
     }
 
@@ -1307,6 +1670,5496 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface CustomerPolicyEnforcementResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Final verdict of the customer policy enforcement. If only one policy
+     * blocked the processing, the verdict is BLOCK.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict verdict = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for verdict.
+     */
+    int getVerdictValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Final verdict of the customer policy enforcement. If only one policy
+     * blocked the processing, the verdict is BLOCK.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict verdict = 1;
+     * </code>
+     *
+     * @return The verdict.
+     */
+    com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict
+        getVerdict();
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement results.
+     * Populated only if the assist call was skipped due to a policy
+     * violation. It contains results from those filters that blocked the
+     * processing of the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+     * </code>
+     */
+    java.util.List<
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .PolicyEnforcementResult>
+        getPolicyResultsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement results.
+     * Populated only if the assist call was skipped due to a policy
+     * violation. It contains results from those filters that blocked the
+     * processing of the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .PolicyEnforcementResult
+        getPolicyResults(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement results.
+     * Populated only if the assist call was skipped due to a policy
+     * violation. It contains results from those filters that blocked the
+     * processing of the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+     * </code>
+     */
+    int getPolicyResultsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement results.
+     * Populated only if the assist call was skipped due to a policy
+     * violation. It contains results from those filters that blocked the
+     * processing of the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .PolicyEnforcementResultOrBuilder>
+        getPolicyResultsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement results.
+     * Populated only if the assist call was skipped due to a policy
+     * violation. It contains results from those filters that blocked the
+     * processing of the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .PolicyEnforcementResultOrBuilder
+        getPolicyResultsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The source of the violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ViolationSource violation_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for violationSource.
+     */
+    int getViolationSourceValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The source of the violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ViolationSource violation_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The violationSource.
+     */
+    com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ViolationSource
+        getViolationSource();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer policy enforcement results. Contains the results of the various
+   * policy checks, like the banned phrases or the Model Armor checks.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult}
+   */
+  public static final class CustomerPolicyEnforcementResult
+      extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult)
+      CustomerPolicyEnforcementResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "CustomerPolicyEnforcementResult");
+    }
+
+    // Use CustomerPolicyEnforcementResult.newBuilder() to construct.
+    private CustomerPolicyEnforcementResult(
+        com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CustomerPolicyEnforcementResult() {
+      verdict_ = 0;
+      policyResults_ = java.util.Collections.emptyList();
+      violationSource_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+          .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+          .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .class,
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The verdict of the customer policy enforcement.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict}
+     */
+    public enum Verdict implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unknown value.
+       * </pre>
+       *
+       * <code>UNSPECIFIED = 0;</code>
+       */
+      UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * There was no policy violation.
+       * </pre>
+       *
+       * <code>ALLOW = 1;</code>
+       */
+      ALLOW(1),
+      /**
+       *
+       *
+       * <pre>
+       * Processing was blocked by the customer policy.
+       * </pre>
+       *
+       * <code>BLOCK = 2;</code>
+       */
+      BLOCK(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "Verdict");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unknown value.
+       * </pre>
+       *
+       * <code>UNSPECIFIED = 0;</code>
+       */
+      public static final int UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * There was no policy violation.
+       * </pre>
+       *
+       * <code>ALLOW = 1;</code>
+       */
+      public static final int ALLOW_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing was blocked by the customer policy.
+       * </pre>
+       *
+       * <code>BLOCK = 2;</code>
+       */
+      public static final int BLOCK_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Verdict valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Verdict forNumber(int value) {
+        switch (value) {
+          case 0:
+            return UNSPECIFIED;
+          case 1:
+            return ALLOW;
+          case 2:
+            return BLOCK;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Verdict> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Verdict> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Verdict>() {
+            public Verdict findValueByNumber(int number) {
+              return Verdict.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Verdict[] VALUES = values();
+
+      public static Verdict valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Verdict(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If the assist call was skipped due to a policy violation, this contains
+     * the source of the violation.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ViolationSource}
+     */
+    public enum ViolationSource implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unknown value.
+       * </pre>
+       *
+       * <code>VIOLATION_SOURCE_UNSPECIFIED = 0;</code>
+       */
+      VIOLATION_SOURCE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Violation found in the system response.
+       * </pre>
+       *
+       * <code>SYSTEM = 1;</code>
+       */
+      SYSTEM(1),
+      /**
+       *
+       *
+       * <pre>
+       * Violation found in the user prompt.
+       * </pre>
+       *
+       * <code>PROMPT = 2;</code>
+       */
+      PROMPT(2),
+      /**
+       *
+       *
+       * <pre>
+       * Violation found in the user attachment.
+       * </pre>
+       *
+       * <code>ATTACHMENT = 3;</code>
+       */
+      ATTACHMENT(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "ViolationSource");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unknown value.
+       * </pre>
+       *
+       * <code>VIOLATION_SOURCE_UNSPECIFIED = 0;</code>
+       */
+      public static final int VIOLATION_SOURCE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Violation found in the system response.
+       * </pre>
+       *
+       * <code>SYSTEM = 1;</code>
+       */
+      public static final int SYSTEM_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Violation found in the user prompt.
+       * </pre>
+       *
+       * <code>PROMPT = 2;</code>
+       */
+      public static final int PROMPT_VALUE = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * Violation found in the user attachment.
+       * </pre>
+       *
+       * <code>ATTACHMENT = 3;</code>
+       */
+      public static final int ATTACHMENT_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ViolationSource valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static ViolationSource forNumber(int value) {
+        switch (value) {
+          case 0:
+            return VIOLATION_SOURCE_UNSPECIFIED;
+          case 1:
+            return SYSTEM;
+          case 2:
+            return PROMPT;
+          case 3:
+            return ATTACHMENT;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<ViolationSource>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<ViolationSource>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<ViolationSource>() {
+                public ViolationSource findValueByNumber(int number) {
+                  return ViolationSource.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final ViolationSource[] VALUES = values();
+
+      public static ViolationSource valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private ViolationSource(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ViolationSource)
+    }
+
+    public interface BannedPhraseEnforcementResultOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The banned phrases that were found in the query or the answer.
+       * </pre>
+       *
+       * <code>repeated string banned_phrases = 1;</code>
+       *
+       * @return A list containing the bannedPhrases.
+       */
+      java.util.List<java.lang.String> getBannedPhrasesList();
+
+      /**
+       *
+       *
+       * <pre>
+       * The banned phrases that were found in the query or the answer.
+       * </pre>
+       *
+       * <code>repeated string banned_phrases = 1;</code>
+       *
+       * @return The count of bannedPhrases.
+       */
+      int getBannedPhrasesCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * The banned phrases that were found in the query or the answer.
+       * </pre>
+       *
+       * <code>repeated string banned_phrases = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The bannedPhrases at the given index.
+       */
+      java.lang.String getBannedPhrases(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * The banned phrases that were found in the query or the answer.
+       * </pre>
+       *
+       * <code>repeated string banned_phrases = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the bannedPhrases at the given index.
+       */
+      com.google.protobuf.ByteString getBannedPhrasesBytes(int index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement result for the banned phrase policy.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult}
+     */
+    public static final class BannedPhraseEnforcementResult
+        extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult)
+        BannedPhraseEnforcementResultOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "BannedPhraseEnforcementResult");
+      }
+
+      // Use BannedPhraseEnforcementResult.newBuilder() to construct.
+      private BannedPhraseEnforcementResult(
+          com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private BannedPhraseEnforcementResult() {
+        bannedPhrases_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_BannedPhraseEnforcementResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_BannedPhraseEnforcementResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResult.class,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResult.Builder.class);
+      }
+
+      public static final int BANNED_PHRASES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList bannedPhrases_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * The banned phrases that were found in the query or the answer.
+       * </pre>
+       *
+       * <code>repeated string banned_phrases = 1;</code>
+       *
+       * @return A list containing the bannedPhrases.
+       */
+      public com.google.protobuf.ProtocolStringList getBannedPhrasesList() {
+        return bannedPhrases_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The banned phrases that were found in the query or the answer.
+       * </pre>
+       *
+       * <code>repeated string banned_phrases = 1;</code>
+       *
+       * @return The count of bannedPhrases.
+       */
+      public int getBannedPhrasesCount() {
+        return bannedPhrases_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The banned phrases that were found in the query or the answer.
+       * </pre>
+       *
+       * <code>repeated string banned_phrases = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The bannedPhrases at the given index.
+       */
+      public java.lang.String getBannedPhrases(int index) {
+        return bannedPhrases_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The banned phrases that were found in the query or the answer.
+       * </pre>
+       *
+       * <code>repeated string banned_phrases = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the bannedPhrases at the given index.
+       */
+      public com.google.protobuf.ByteString getBannedPhrasesBytes(int index) {
+        return bannedPhrases_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < bannedPhrases_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, bannedPhrases_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < bannedPhrases_.size(); i++) {
+            dataSize += computeStringSizeNoTag(bannedPhrases_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getBannedPhrasesList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .BannedPhraseEnforcementResult)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .BannedPhraseEnforcementResult
+            other =
+                (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                        .BannedPhraseEnforcementResult)
+                    obj;
+
+        if (!getBannedPhrasesList().equals(other.getBannedPhrasesList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getBannedPhrasesCount() > 0) {
+          hash = (37 * hash) + BANNED_PHRASES_FIELD_NUMBER;
+          hash = (53 * hash) + getBannedPhrasesList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .BannedPhraseEnforcementResult
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement result for the banned phrase policy.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult)
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResultOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+              .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_BannedPhraseEnforcementResult_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+              .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_BannedPhraseEnforcementResult_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .BannedPhraseEnforcementResult.class,
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .BannedPhraseEnforcementResult.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          bannedPhrases_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+              .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_BannedPhraseEnforcementResult_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .BannedPhraseEnforcementResult
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .BannedPhraseEnforcementResult
+            build() {
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .BannedPhraseEnforcementResult
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .BannedPhraseEnforcementResult
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .BannedPhraseEnforcementResult
+              result =
+                  new com.google.cloud.discoveryengine.v1.AssistAnswer
+                      .CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResult
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            bannedPhrases_.makeImmutable();
+            result.bannedPhrases_ = bannedPhrases_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .BannedPhraseEnforcementResult) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                        .BannedPhraseEnforcementResult)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResult
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .BannedPhraseEnforcementResult.getDefaultInstance()) return this;
+          if (!other.bannedPhrases_.isEmpty()) {
+            if (bannedPhrases_.isEmpty()) {
+              bannedPhrases_ = other.bannedPhrases_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureBannedPhrasesIsMutable();
+              bannedPhrases_.addAll(other.bannedPhrases_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureBannedPhrasesIsMutable();
+                    bannedPhrases_.add(s);
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList bannedPhrases_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureBannedPhrasesIsMutable() {
+          if (!bannedPhrases_.isModifiable()) {
+            bannedPhrases_ = new com.google.protobuf.LazyStringArrayList(bannedPhrases_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The banned phrases that were found in the query or the answer.
+         * </pre>
+         *
+         * <code>repeated string banned_phrases = 1;</code>
+         *
+         * @return A list containing the bannedPhrases.
+         */
+        public com.google.protobuf.ProtocolStringList getBannedPhrasesList() {
+          bannedPhrases_.makeImmutable();
+          return bannedPhrases_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The banned phrases that were found in the query or the answer.
+         * </pre>
+         *
+         * <code>repeated string banned_phrases = 1;</code>
+         *
+         * @return The count of bannedPhrases.
+         */
+        public int getBannedPhrasesCount() {
+          return bannedPhrases_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The banned phrases that were found in the query or the answer.
+         * </pre>
+         *
+         * <code>repeated string banned_phrases = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The bannedPhrases at the given index.
+         */
+        public java.lang.String getBannedPhrases(int index) {
+          return bannedPhrases_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The banned phrases that were found in the query or the answer.
+         * </pre>
+         *
+         * <code>repeated string banned_phrases = 1;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the bannedPhrases at the given index.
+         */
+        public com.google.protobuf.ByteString getBannedPhrasesBytes(int index) {
+          return bannedPhrases_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The banned phrases that were found in the query or the answer.
+         * </pre>
+         *
+         * <code>repeated string banned_phrases = 1;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The bannedPhrases to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBannedPhrases(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBannedPhrasesIsMutable();
+          bannedPhrases_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The banned phrases that were found in the query or the answer.
+         * </pre>
+         *
+         * <code>repeated string banned_phrases = 1;</code>
+         *
+         * @param value The bannedPhrases to add.
+         * @return This builder for chaining.
+         */
+        public Builder addBannedPhrases(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBannedPhrasesIsMutable();
+          bannedPhrases_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The banned phrases that were found in the query or the answer.
+         * </pre>
+         *
+         * <code>repeated string banned_phrases = 1;</code>
+         *
+         * @param values The bannedPhrases to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllBannedPhrases(java.lang.Iterable<java.lang.String> values) {
+          ensureBannedPhrasesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, bannedPhrases_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The banned phrases that were found in the query or the answer.
+         * </pre>
+         *
+         * <code>repeated string banned_phrases = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBannedPhrases() {
+          bannedPhrases_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The banned phrases that were found in the query or the answer.
+         * </pre>
+         *
+         * <code>repeated string banned_phrases = 1;</code>
+         *
+         * @param value The bytes of the bannedPhrases to add.
+         * @return This builder for chaining.
+         */
+        public Builder addBannedPhrasesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureBannedPhrasesIsMutable();
+          bannedPhrases_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult)
+      private static final com.google.cloud.discoveryengine.v1.AssistAnswer
+              .CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .BannedPhraseEnforcementResult();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BannedPhraseEnforcementResult> PARSER =
+          new com.google.protobuf.AbstractParser<BannedPhraseEnforcementResult>() {
+            @java.lang.Override
+            public BannedPhraseEnforcementResult parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<BannedPhraseEnforcementResult> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BannedPhraseEnforcementResult> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface ModelArmorEnforcementResultOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The Model Armor violation that was found.
+       * </pre>
+       *
+       * <code>string model_armor_violation = 1;</code>
+       *
+       * @return Whether the modelArmorViolation field is set.
+       */
+      boolean hasModelArmorViolation();
+
+      /**
+       *
+       *
+       * <pre>
+       * The Model Armor violation that was found.
+       * </pre>
+       *
+       * <code>string model_armor_violation = 1;</code>
+       *
+       * @return The modelArmorViolation.
+       */
+      java.lang.String getModelArmorViolation();
+
+      /**
+       *
+       *
+       * <pre>
+       * The Model Armor violation that was found.
+       * </pre>
+       *
+       * <code>string model_armor_violation = 1;</code>
+       *
+       * @return The bytes for modelArmorViolation.
+       */
+      com.google.protobuf.ByteString getModelArmorViolationBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * The error returned by Model Armor if the policy enforcement failed
+       * for some reason.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2;</code>
+       *
+       * @return Whether the error field is set.
+       */
+      boolean hasError();
+
+      /**
+       *
+       *
+       * <pre>
+       * The error returned by Model Armor if the policy enforcement failed
+       * for some reason.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2;</code>
+       *
+       * @return The error.
+       */
+      com.google.rpc.Status getError();
+
+      /**
+       *
+       *
+       * <pre>
+       * The error returned by Model Armor if the policy enforcement failed
+       * for some reason.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2;</code>
+       */
+      com.google.rpc.StatusOrBuilder getErrorOrBuilder();
+
+      com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult.ResultCase
+          getResultCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement result for the Model Armor policy.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult}
+     */
+    public static final class ModelArmorEnforcementResult
+        extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult)
+        ModelArmorEnforcementResultOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "ModelArmorEnforcementResult");
+      }
+
+      // Use ModelArmorEnforcementResult.newBuilder() to construct.
+      private ModelArmorEnforcementResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private ModelArmorEnforcementResult() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_ModelArmorEnforcementResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_ModelArmorEnforcementResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResult.class,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResult.Builder.class);
+      }
+
+      private int resultCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object result_;
+
+      public enum ResultCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        MODEL_ARMOR_VIOLATION(1),
+        ERROR(2),
+        RESULT_NOT_SET(0);
+        private final int value;
+
+        private ResultCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ResultCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static ResultCase forNumber(int value) {
+          switch (value) {
+            case 1:
+              return MODEL_ARMOR_VIOLATION;
+            case 2:
+              return ERROR;
+            case 0:
+              return RESULT_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public ResultCase getResultCase() {
+        return ResultCase.forNumber(resultCase_);
+      }
+
+      public static final int MODEL_ARMOR_VIOLATION_FIELD_NUMBER = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * The Model Armor violation that was found.
+       * </pre>
+       *
+       * <code>string model_armor_violation = 1;</code>
+       *
+       * @return Whether the modelArmorViolation field is set.
+       */
+      public boolean hasModelArmorViolation() {
+        return resultCase_ == 1;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Model Armor violation that was found.
+       * </pre>
+       *
+       * <code>string model_armor_violation = 1;</code>
+       *
+       * @return The modelArmorViolation.
+       */
+      public java.lang.String getModelArmorViolation() {
+        java.lang.Object ref = "";
+        if (resultCase_ == 1) {
+          ref = result_;
+        }
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (resultCase_ == 1) {
+            result_ = s;
+          }
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The Model Armor violation that was found.
+       * </pre>
+       *
+       * <code>string model_armor_violation = 1;</code>
+       *
+       * @return The bytes for modelArmorViolation.
+       */
+      public com.google.protobuf.ByteString getModelArmorViolationBytes() {
+        java.lang.Object ref = "";
+        if (resultCase_ == 1) {
+          ref = result_;
+        }
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (resultCase_ == 1) {
+            result_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ERROR_FIELD_NUMBER = 2;
+
+      /**
+       *
+       *
+       * <pre>
+       * The error returned by Model Armor if the policy enforcement failed
+       * for some reason.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2;</code>
+       *
+       * @return Whether the error field is set.
+       */
+      @java.lang.Override
+      public boolean hasError() {
+        return resultCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The error returned by Model Armor if the policy enforcement failed
+       * for some reason.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2;</code>
+       *
+       * @return The error.
+       */
+      @java.lang.Override
+      public com.google.rpc.Status getError() {
+        if (resultCase_ == 2) {
+          return (com.google.rpc.Status) result_;
+        }
+        return com.google.rpc.Status.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The error returned by Model Armor if the policy enforcement failed
+       * for some reason.
+       * </pre>
+       *
+       * <code>.google.rpc.Status error = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+        if (resultCase_ == 2) {
+          return (com.google.rpc.Status) result_;
+        }
+        return com.google.rpc.Status.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (resultCase_ == 1) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, result_);
+        }
+        if (resultCase_ == 2) {
+          output.writeMessage(2, (com.google.rpc.Status) result_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (resultCase_ == 1) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, result_);
+        }
+        if (resultCase_ == 2) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  2, (com.google.rpc.Status) result_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ModelArmorEnforcementResult)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ModelArmorEnforcementResult
+            other =
+                (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                        .ModelArmorEnforcementResult)
+                    obj;
+
+        if (!getResultCase().equals(other.getResultCase())) return false;
+        switch (resultCase_) {
+          case 1:
+            if (!getModelArmorViolation().equals(other.getModelArmorViolation())) return false;
+            break;
+          case 2:
+            if (!getError().equals(other.getError())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (resultCase_) {
+          case 1:
+            hash = (37 * hash) + MODEL_ARMOR_VIOLATION_FIELD_NUMBER;
+            hash = (53 * hash) + getModelArmorViolation().hashCode();
+            break;
+          case 2:
+            hash = (37 * hash) + ERROR_FIELD_NUMBER;
+            hash = (53 * hash) + getError().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .ModelArmorEnforcementResult
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement result for the Model Armor policy.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult)
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResultOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+              .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_ModelArmorEnforcementResult_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+              .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_ModelArmorEnforcementResult_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .ModelArmorEnforcementResult.class,
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .ModelArmorEnforcementResult.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (errorBuilder_ != null) {
+            errorBuilder_.clear();
+          }
+          resultCase_ = 0;
+          result_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+              .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_ModelArmorEnforcementResult_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ModelArmorEnforcementResult
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ModelArmorEnforcementResult
+            build() {
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .ModelArmorEnforcementResult
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ModelArmorEnforcementResult
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .ModelArmorEnforcementResult
+              result =
+                  new com.google.cloud.discoveryengine.v1.AssistAnswer
+                      .CustomerPolicyEnforcementResult.ModelArmorEnforcementResult(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResult
+                result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResult
+                result) {
+          result.resultCase_ = resultCase_;
+          result.result_ = this.result_;
+          if (resultCase_ == 2 && errorBuilder_ != null) {
+            result.result_ = errorBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .ModelArmorEnforcementResult) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                        .ModelArmorEnforcementResult)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResult
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .ModelArmorEnforcementResult.getDefaultInstance()) return this;
+          switch (other.getResultCase()) {
+            case MODEL_ARMOR_VIOLATION:
+              {
+                resultCase_ = 1;
+                result_ = other.result_;
+                onChanged();
+                break;
+              }
+            case ERROR:
+              {
+                mergeError(other.getError());
+                break;
+              }
+            case RESULT_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    resultCase_ = 1;
+                    result_ = s;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        internalGetErrorFieldBuilder().getBuilder(), extensionRegistry);
+                    resultCase_ = 2;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int resultCase_ = 0;
+        private java.lang.Object result_;
+
+        public ResultCase getResultCase() {
+          return ResultCase.forNumber(resultCase_);
+        }
+
+        public Builder clearResult() {
+          resultCase_ = 0;
+          result_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The Model Armor violation that was found.
+         * </pre>
+         *
+         * <code>string model_armor_violation = 1;</code>
+         *
+         * @return Whether the modelArmorViolation field is set.
+         */
+        @java.lang.Override
+        public boolean hasModelArmorViolation() {
+          return resultCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Model Armor violation that was found.
+         * </pre>
+         *
+         * <code>string model_armor_violation = 1;</code>
+         *
+         * @return The modelArmorViolation.
+         */
+        @java.lang.Override
+        public java.lang.String getModelArmorViolation() {
+          java.lang.Object ref = "";
+          if (resultCase_ == 1) {
+            ref = result_;
+          }
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (resultCase_ == 1) {
+              result_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Model Armor violation that was found.
+         * </pre>
+         *
+         * <code>string model_armor_violation = 1;</code>
+         *
+         * @return The bytes for modelArmorViolation.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getModelArmorViolationBytes() {
+          java.lang.Object ref = "";
+          if (resultCase_ == 1) {
+            ref = result_;
+          }
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (resultCase_ == 1) {
+              result_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Model Armor violation that was found.
+         * </pre>
+         *
+         * <code>string model_armor_violation = 1;</code>
+         *
+         * @param value The modelArmorViolation to set.
+         * @return This builder for chaining.
+         */
+        public Builder setModelArmorViolation(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resultCase_ = 1;
+          result_ = value;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Model Armor violation that was found.
+         * </pre>
+         *
+         * <code>string model_armor_violation = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearModelArmorViolation() {
+          if (resultCase_ == 1) {
+            resultCase_ = 0;
+            result_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The Model Armor violation that was found.
+         * </pre>
+         *
+         * <code>string model_armor_violation = 1;</code>
+         *
+         * @param value The bytes for modelArmorViolation to set.
+         * @return This builder for chaining.
+         */
+        public Builder setModelArmorViolationBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          resultCase_ = 1;
+          result_ = value;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>
+            errorBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The error returned by Model Armor if the policy enforcement failed
+         * for some reason.
+         * </pre>
+         *
+         * <code>.google.rpc.Status error = 2;</code>
+         *
+         * @return Whether the error field is set.
+         */
+        @java.lang.Override
+        public boolean hasError() {
+          return resultCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The error returned by Model Armor if the policy enforcement failed
+         * for some reason.
+         * </pre>
+         *
+         * <code>.google.rpc.Status error = 2;</code>
+         *
+         * @return The error.
+         */
+        @java.lang.Override
+        public com.google.rpc.Status getError() {
+          if (errorBuilder_ == null) {
+            if (resultCase_ == 2) {
+              return (com.google.rpc.Status) result_;
+            }
+            return com.google.rpc.Status.getDefaultInstance();
+          } else {
+            if (resultCase_ == 2) {
+              return errorBuilder_.getMessage();
+            }
+            return com.google.rpc.Status.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The error returned by Model Armor if the policy enforcement failed
+         * for some reason.
+         * </pre>
+         *
+         * <code>.google.rpc.Status error = 2;</code>
+         */
+        public Builder setError(com.google.rpc.Status value) {
+          if (errorBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            result_ = value;
+            onChanged();
+          } else {
+            errorBuilder_.setMessage(value);
+          }
+          resultCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The error returned by Model Armor if the policy enforcement failed
+         * for some reason.
+         * </pre>
+         *
+         * <code>.google.rpc.Status error = 2;</code>
+         */
+        public Builder setError(com.google.rpc.Status.Builder builderForValue) {
+          if (errorBuilder_ == null) {
+            result_ = builderForValue.build();
+            onChanged();
+          } else {
+            errorBuilder_.setMessage(builderForValue.build());
+          }
+          resultCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The error returned by Model Armor if the policy enforcement failed
+         * for some reason.
+         * </pre>
+         *
+         * <code>.google.rpc.Status error = 2;</code>
+         */
+        public Builder mergeError(com.google.rpc.Status value) {
+          if (errorBuilder_ == null) {
+            if (resultCase_ == 2 && result_ != com.google.rpc.Status.getDefaultInstance()) {
+              result_ =
+                  com.google.rpc.Status.newBuilder((com.google.rpc.Status) result_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              result_ = value;
+            }
+            onChanged();
+          } else {
+            if (resultCase_ == 2) {
+              errorBuilder_.mergeFrom(value);
+            } else {
+              errorBuilder_.setMessage(value);
+            }
+          }
+          resultCase_ = 2;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The error returned by Model Armor if the policy enforcement failed
+         * for some reason.
+         * </pre>
+         *
+         * <code>.google.rpc.Status error = 2;</code>
+         */
+        public Builder clearError() {
+          if (errorBuilder_ == null) {
+            if (resultCase_ == 2) {
+              resultCase_ = 0;
+              result_ = null;
+              onChanged();
+            }
+          } else {
+            if (resultCase_ == 2) {
+              resultCase_ = 0;
+              result_ = null;
+            }
+            errorBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The error returned by Model Armor if the policy enforcement failed
+         * for some reason.
+         * </pre>
+         *
+         * <code>.google.rpc.Status error = 2;</code>
+         */
+        public com.google.rpc.Status.Builder getErrorBuilder() {
+          return internalGetErrorFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The error returned by Model Armor if the policy enforcement failed
+         * for some reason.
+         * </pre>
+         *
+         * <code>.google.rpc.Status error = 2;</code>
+         */
+        @java.lang.Override
+        public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
+          if ((resultCase_ == 2) && (errorBuilder_ != null)) {
+            return errorBuilder_.getMessageOrBuilder();
+          } else {
+            if (resultCase_ == 2) {
+              return (com.google.rpc.Status) result_;
+            }
+            return com.google.rpc.Status.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The error returned by Model Armor if the policy enforcement failed
+         * for some reason.
+         * </pre>
+         *
+         * <code>.google.rpc.Status error = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>
+            internalGetErrorFieldBuilder() {
+          if (errorBuilder_ == null) {
+            if (!(resultCase_ == 2)) {
+              result_ = com.google.rpc.Status.getDefaultInstance();
+            }
+            errorBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.rpc.Status,
+                    com.google.rpc.Status.Builder,
+                    com.google.rpc.StatusOrBuilder>(
+                    (com.google.rpc.Status) result_, getParentForChildren(), isClean());
+            result_ = null;
+          }
+          resultCase_ = 2;
+          onChanged();
+          return errorBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult)
+      private static final com.google.cloud.discoveryengine.v1.AssistAnswer
+              .CustomerPolicyEnforcementResult.ModelArmorEnforcementResult
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ModelArmorEnforcementResult();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ModelArmorEnforcementResult> PARSER =
+          new com.google.protobuf.AbstractParser<ModelArmorEnforcementResult>() {
+            @java.lang.Override
+            public ModelArmorEnforcementResult parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<ModelArmorEnforcementResult> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ModelArmorEnforcementResult> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public interface PolicyEnforcementResultOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The policy enforcement result for the banned phrase policy.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+       * </code>
+       *
+       * @return Whether the bannedPhraseEnforcementResult field is set.
+       */
+      boolean hasBannedPhraseEnforcementResult();
+
+      /**
+       *
+       *
+       * <pre>
+       * The policy enforcement result for the banned phrase policy.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+       * </code>
+       *
+       * @return The bannedPhraseEnforcementResult.
+       */
+      com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          getBannedPhraseEnforcementResult();
+
+      /**
+       *
+       *
+       * <pre>
+       * The policy enforcement result for the banned phrase policy.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResultOrBuilder
+          getBannedPhraseEnforcementResultOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * The policy enforcement result for the Model Armor policy.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+       * </code>
+       *
+       * @return Whether the modelArmorEnforcementResult field is set.
+       */
+      boolean hasModelArmorEnforcementResult();
+
+      /**
+       *
+       *
+       * <pre>
+       * The policy enforcement result for the Model Armor policy.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+       * </code>
+       *
+       * @return The modelArmorEnforcementResult.
+       */
+      com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          getModelArmorEnforcementResult();
+
+      /**
+       *
+       *
+       * <pre>
+       * The policy enforcement result for the Model Armor policy.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResultOrBuilder
+          getModelArmorEnforcementResultOrBuilder();
+
+      com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult.EnforcementResultCase
+          getEnforcementResultCase();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement result for a single policy type.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult}
+     */
+    public static final class PolicyEnforcementResult extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult)
+        PolicyEnforcementResultOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "PolicyEnforcementResult");
+      }
+
+      // Use PolicyEnforcementResult.newBuilder() to construct.
+      private PolicyEnforcementResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private PolicyEnforcementResult() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_PolicyEnforcementResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_PolicyEnforcementResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .PolicyEnforcementResult.class,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .PolicyEnforcementResult.Builder.class);
+      }
+
+      private int enforcementResultCase_ = 0;
+
+      @SuppressWarnings("serial")
+      private java.lang.Object enforcementResult_;
+
+      public enum EnforcementResultCase
+          implements
+              com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        BANNED_PHRASE_ENFORCEMENT_RESULT(3),
+        MODEL_ARMOR_ENFORCEMENT_RESULT(4),
+        ENFORCEMENTRESULT_NOT_SET(0);
+        private final int value;
+
+        private EnforcementResultCase(int value) {
+          this.value = value;
+        }
+
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static EnforcementResultCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static EnforcementResultCase forNumber(int value) {
+          switch (value) {
+            case 3:
+              return BANNED_PHRASE_ENFORCEMENT_RESULT;
+            case 4:
+              return MODEL_ARMOR_ENFORCEMENT_RESULT;
+            case 0:
+              return ENFORCEMENTRESULT_NOT_SET;
+            default:
+              return null;
+          }
+        }
+
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public EnforcementResultCase getEnforcementResultCase() {
+        return EnforcementResultCase.forNumber(enforcementResultCase_);
+      }
+
+      public static final int BANNED_PHRASE_ENFORCEMENT_RESULT_FIELD_NUMBER = 3;
+
+      /**
+       *
+       *
+       * <pre>
+       * The policy enforcement result for the banned phrase policy.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+       * </code>
+       *
+       * @return Whether the bannedPhraseEnforcementResult field is set.
+       */
+      @java.lang.Override
+      public boolean hasBannedPhraseEnforcementResult() {
+        return enforcementResultCase_ == 3;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The policy enforcement result for the banned phrase policy.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+       * </code>
+       *
+       * @return The bannedPhraseEnforcementResult.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResult
+          getBannedPhraseEnforcementResult() {
+        if (enforcementResultCase_ == 3) {
+          return (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .BannedPhraseEnforcementResult)
+              enforcementResult_;
+        }
+        return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .BannedPhraseEnforcementResult.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The policy enforcement result for the banned phrase policy.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .BannedPhraseEnforcementResultOrBuilder
+          getBannedPhraseEnforcementResultOrBuilder() {
+        if (enforcementResultCase_ == 3) {
+          return (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .BannedPhraseEnforcementResult)
+              enforcementResult_;
+        }
+        return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .BannedPhraseEnforcementResult.getDefaultInstance();
+      }
+
+      public static final int MODEL_ARMOR_ENFORCEMENT_RESULT_FIELD_NUMBER = 4;
+
+      /**
+       *
+       *
+       * <pre>
+       * The policy enforcement result for the Model Armor policy.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+       * </code>
+       *
+       * @return Whether the modelArmorEnforcementResult field is set.
+       */
+      @java.lang.Override
+      public boolean hasModelArmorEnforcementResult() {
+        return enforcementResultCase_ == 4;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The policy enforcement result for the Model Armor policy.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+       * </code>
+       *
+       * @return The modelArmorEnforcementResult.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResult
+          getModelArmorEnforcementResult() {
+        if (enforcementResultCase_ == 4) {
+          return (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .ModelArmorEnforcementResult)
+              enforcementResult_;
+        }
+        return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .ModelArmorEnforcementResult.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The policy enforcement result for the Model Armor policy.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ModelArmorEnforcementResultOrBuilder
+          getModelArmorEnforcementResultOrBuilder() {
+        if (enforcementResultCase_ == 4) {
+          return (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .ModelArmorEnforcementResult)
+              enforcementResult_;
+        }
+        return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .ModelArmorEnforcementResult.getDefaultInstance();
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (enforcementResultCase_ == 3) {
+          output.writeMessage(
+              3,
+              (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .BannedPhraseEnforcementResult)
+                  enforcementResult_);
+        }
+        if (enforcementResultCase_ == 4) {
+          output.writeMessage(
+              4,
+              (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .ModelArmorEnforcementResult)
+                  enforcementResult_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (enforcementResultCase_ == 3) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  3,
+                  (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                          .BannedPhraseEnforcementResult)
+                      enforcementResult_);
+        }
+        if (enforcementResultCase_ == 4) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  4,
+                  (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                          .ModelArmorEnforcementResult)
+                      enforcementResult_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .PolicyEnforcementResult)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .PolicyEnforcementResult
+            other =
+                (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                        .PolicyEnforcementResult)
+                    obj;
+
+        if (!getEnforcementResultCase().equals(other.getEnforcementResultCase())) return false;
+        switch (enforcementResultCase_) {
+          case 3:
+            if (!getBannedPhraseEnforcementResult()
+                .equals(other.getBannedPhraseEnforcementResult())) return false;
+            break;
+          case 4:
+            if (!getModelArmorEnforcementResult().equals(other.getModelArmorEnforcementResult()))
+              return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        switch (enforcementResultCase_) {
+          case 3:
+            hash = (37 * hash) + BANNED_PHRASE_ENFORCEMENT_RESULT_FIELD_NUMBER;
+            hash = (53 * hash) + getBannedPhraseEnforcementResult().hashCode();
+            break;
+          case 4:
+            hash = (37 * hash) + MODEL_ARMOR_ENFORCEMENT_RESULT_FIELD_NUMBER;
+            hash = (53 * hash) + getModelArmorEnforcementResult().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement result for a single policy type.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult)
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResultOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+              .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_PolicyEnforcementResult_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+              .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_PolicyEnforcementResult_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .PolicyEnforcementResult.class,
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .PolicyEnforcementResult.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (bannedPhraseEnforcementResultBuilder_ != null) {
+            bannedPhraseEnforcementResultBuilder_.clear();
+          }
+          if (modelArmorEnforcementResultBuilder_ != null) {
+            modelArmorEnforcementResultBuilder_.clear();
+          }
+          enforcementResultCase_ = 0;
+          enforcementResult_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+              .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_PolicyEnforcementResult_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .PolicyEnforcementResult
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .PolicyEnforcementResult
+            build() {
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .PolicyEnforcementResult
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult
+              result =
+                  new com.google.cloud.discoveryengine.v1.AssistAnswer
+                      .CustomerPolicyEnforcementResult.PolicyEnforcementResult(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          buildPartialOneofs(result);
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .PolicyEnforcementResult
+                result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        private void buildPartialOneofs(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .PolicyEnforcementResult
+                result) {
+          result.enforcementResultCase_ = enforcementResultCase_;
+          result.enforcementResult_ = this.enforcementResult_;
+          if (enforcementResultCase_ == 3 && bannedPhraseEnforcementResultBuilder_ != null) {
+            result.enforcementResult_ = bannedPhraseEnforcementResultBuilder_.build();
+          }
+          if (enforcementResultCase_ == 4 && modelArmorEnforcementResultBuilder_ != null) {
+            result.enforcementResult_ = modelArmorEnforcementResultBuilder_.build();
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                        .PolicyEnforcementResult)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .PolicyEnforcementResult
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult.getDefaultInstance()) return this;
+          switch (other.getEnforcementResultCase()) {
+            case BANNED_PHRASE_ENFORCEMENT_RESULT:
+              {
+                mergeBannedPhraseEnforcementResult(other.getBannedPhraseEnforcementResult());
+                break;
+              }
+            case MODEL_ARMOR_ENFORCEMENT_RESULT:
+              {
+                mergeModelArmorEnforcementResult(other.getModelArmorEnforcementResult());
+                break;
+              }
+            case ENFORCEMENTRESULT_NOT_SET:
+              {
+                break;
+              }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 26:
+                  {
+                    input.readMessage(
+                        internalGetBannedPhraseEnforcementResultFieldBuilder().getBuilder(),
+                        extensionRegistry);
+                    enforcementResultCase_ = 3;
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    input.readMessage(
+                        internalGetModelArmorEnforcementResultFieldBuilder().getBuilder(),
+                        extensionRegistry);
+                    enforcementResultCase_ = 4;
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int enforcementResultCase_ = 0;
+        private java.lang.Object enforcementResult_;
+
+        public EnforcementResultCase getEnforcementResultCase() {
+          return EnforcementResultCase.forNumber(enforcementResultCase_);
+        }
+
+        public Builder clearEnforcementResult() {
+          enforcementResultCase_ = 0;
+          enforcementResult_ = null;
+          onChanged();
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResult,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResult.Builder,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResultOrBuilder>
+            bannedPhraseEnforcementResultBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the banned phrase policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+         * </code>
+         *
+         * @return Whether the bannedPhraseEnforcementResult field is set.
+         */
+        @java.lang.Override
+        public boolean hasBannedPhraseEnforcementResult() {
+          return enforcementResultCase_ == 3;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the banned phrase policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+         * </code>
+         *
+         * @return The bannedPhraseEnforcementResult.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .BannedPhraseEnforcementResult
+            getBannedPhraseEnforcementResult() {
+          if (bannedPhraseEnforcementResultBuilder_ == null) {
+            if (enforcementResultCase_ == 3) {
+              return (com.google.cloud.discoveryengine.v1.AssistAnswer
+                      .CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult)
+                  enforcementResult_;
+            }
+            return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .BannedPhraseEnforcementResult.getDefaultInstance();
+          } else {
+            if (enforcementResultCase_ == 3) {
+              return bannedPhraseEnforcementResultBuilder_.getMessage();
+            }
+            return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .BannedPhraseEnforcementResult.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the banned phrase policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+         * </code>
+         */
+        public Builder setBannedPhraseEnforcementResult(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResult
+                value) {
+          if (bannedPhraseEnforcementResultBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            enforcementResult_ = value;
+            onChanged();
+          } else {
+            bannedPhraseEnforcementResultBuilder_.setMessage(value);
+          }
+          enforcementResultCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the banned phrase policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+         * </code>
+         */
+        public Builder setBannedPhraseEnforcementResult(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResult.Builder
+                builderForValue) {
+          if (bannedPhraseEnforcementResultBuilder_ == null) {
+            enforcementResult_ = builderForValue.build();
+            onChanged();
+          } else {
+            bannedPhraseEnforcementResultBuilder_.setMessage(builderForValue.build());
+          }
+          enforcementResultCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the banned phrase policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+         * </code>
+         */
+        public Builder mergeBannedPhraseEnforcementResult(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResult
+                value) {
+          if (bannedPhraseEnforcementResultBuilder_ == null) {
+            if (enforcementResultCase_ == 3
+                && enforcementResult_
+                    != com.google.cloud.discoveryengine.v1.AssistAnswer
+                        .CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult
+                        .getDefaultInstance()) {
+              enforcementResult_ =
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .BannedPhraseEnforcementResult.newBuilder(
+                          (com.google.cloud.discoveryengine.v1.AssistAnswer
+                                  .CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult)
+                              enforcementResult_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              enforcementResult_ = value;
+            }
+            onChanged();
+          } else {
+            if (enforcementResultCase_ == 3) {
+              bannedPhraseEnforcementResultBuilder_.mergeFrom(value);
+            } else {
+              bannedPhraseEnforcementResultBuilder_.setMessage(value);
+            }
+          }
+          enforcementResultCase_ = 3;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the banned phrase policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+         * </code>
+         */
+        public Builder clearBannedPhraseEnforcementResult() {
+          if (bannedPhraseEnforcementResultBuilder_ == null) {
+            if (enforcementResultCase_ == 3) {
+              enforcementResultCase_ = 0;
+              enforcementResult_ = null;
+              onChanged();
+            }
+          } else {
+            if (enforcementResultCase_ == 3) {
+              enforcementResultCase_ = 0;
+              enforcementResult_ = null;
+            }
+            bannedPhraseEnforcementResultBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the banned phrase policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .BannedPhraseEnforcementResult.Builder
+            getBannedPhraseEnforcementResultBuilder() {
+          return internalGetBannedPhraseEnforcementResultFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the banned phrase policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .BannedPhraseEnforcementResultOrBuilder
+            getBannedPhraseEnforcementResultOrBuilder() {
+          if ((enforcementResultCase_ == 3) && (bannedPhraseEnforcementResultBuilder_ != null)) {
+            return bannedPhraseEnforcementResultBuilder_.getMessageOrBuilder();
+          } else {
+            if (enforcementResultCase_ == 3) {
+              return (com.google.cloud.discoveryengine.v1.AssistAnswer
+                      .CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult)
+                  enforcementResult_;
+            }
+            return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .BannedPhraseEnforcementResult.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the banned phrase policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult banned_phrase_enforcement_result = 3;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResult,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResult.Builder,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .BannedPhraseEnforcementResultOrBuilder>
+            internalGetBannedPhraseEnforcementResultFieldBuilder() {
+          if (bannedPhraseEnforcementResultBuilder_ == null) {
+            if (!(enforcementResultCase_ == 3)) {
+              enforcementResult_ =
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .BannedPhraseEnforcementResult.getDefaultInstance();
+            }
+            bannedPhraseEnforcementResultBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                        .BannedPhraseEnforcementResult,
+                    com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                        .BannedPhraseEnforcementResult.Builder,
+                    com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                        .BannedPhraseEnforcementResultOrBuilder>(
+                    (com.google.cloud.discoveryengine.v1.AssistAnswer
+                            .CustomerPolicyEnforcementResult.BannedPhraseEnforcementResult)
+                        enforcementResult_,
+                    getParentForChildren(),
+                    isClean());
+            enforcementResult_ = null;
+          }
+          enforcementResultCase_ = 3;
+          onChanged();
+          return bannedPhraseEnforcementResultBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResult,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResult.Builder,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResultOrBuilder>
+            modelArmorEnforcementResultBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the Model Armor policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+         * </code>
+         *
+         * @return Whether the modelArmorEnforcementResult field is set.
+         */
+        @java.lang.Override
+        public boolean hasModelArmorEnforcementResult() {
+          return enforcementResultCase_ == 4;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the Model Armor policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+         * </code>
+         *
+         * @return The modelArmorEnforcementResult.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ModelArmorEnforcementResult
+            getModelArmorEnforcementResult() {
+          if (modelArmorEnforcementResultBuilder_ == null) {
+            if (enforcementResultCase_ == 4) {
+              return (com.google.cloud.discoveryengine.v1.AssistAnswer
+                      .CustomerPolicyEnforcementResult.ModelArmorEnforcementResult)
+                  enforcementResult_;
+            }
+            return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ModelArmorEnforcementResult.getDefaultInstance();
+          } else {
+            if (enforcementResultCase_ == 4) {
+              return modelArmorEnforcementResultBuilder_.getMessage();
+            }
+            return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ModelArmorEnforcementResult.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the Model Armor policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+         * </code>
+         */
+        public Builder setModelArmorEnforcementResult(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResult
+                value) {
+          if (modelArmorEnforcementResultBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            enforcementResult_ = value;
+            onChanged();
+          } else {
+            modelArmorEnforcementResultBuilder_.setMessage(value);
+          }
+          enforcementResultCase_ = 4;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the Model Armor policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+         * </code>
+         */
+        public Builder setModelArmorEnforcementResult(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResult.Builder
+                builderForValue) {
+          if (modelArmorEnforcementResultBuilder_ == null) {
+            enforcementResult_ = builderForValue.build();
+            onChanged();
+          } else {
+            modelArmorEnforcementResultBuilder_.setMessage(builderForValue.build());
+          }
+          enforcementResultCase_ = 4;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the Model Armor policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+         * </code>
+         */
+        public Builder mergeModelArmorEnforcementResult(
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResult
+                value) {
+          if (modelArmorEnforcementResultBuilder_ == null) {
+            if (enforcementResultCase_ == 4
+                && enforcementResult_
+                    != com.google.cloud.discoveryengine.v1.AssistAnswer
+                        .CustomerPolicyEnforcementResult.ModelArmorEnforcementResult
+                        .getDefaultInstance()) {
+              enforcementResult_ =
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .ModelArmorEnforcementResult.newBuilder(
+                          (com.google.cloud.discoveryengine.v1.AssistAnswer
+                                  .CustomerPolicyEnforcementResult.ModelArmorEnforcementResult)
+                              enforcementResult_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              enforcementResult_ = value;
+            }
+            onChanged();
+          } else {
+            if (enforcementResultCase_ == 4) {
+              modelArmorEnforcementResultBuilder_.mergeFrom(value);
+            } else {
+              modelArmorEnforcementResultBuilder_.setMessage(value);
+            }
+          }
+          enforcementResultCase_ = 4;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the Model Armor policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+         * </code>
+         */
+        public Builder clearModelArmorEnforcementResult() {
+          if (modelArmorEnforcementResultBuilder_ == null) {
+            if (enforcementResultCase_ == 4) {
+              enforcementResultCase_ = 0;
+              enforcementResult_ = null;
+              onChanged();
+            }
+          } else {
+            if (enforcementResultCase_ == 4) {
+              enforcementResultCase_ = 0;
+              enforcementResult_ = null;
+            }
+            modelArmorEnforcementResultBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the Model Armor policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ModelArmorEnforcementResult.Builder
+            getModelArmorEnforcementResultBuilder() {
+          return internalGetModelArmorEnforcementResultFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the Model Armor policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ModelArmorEnforcementResultOrBuilder
+            getModelArmorEnforcementResultOrBuilder() {
+          if ((enforcementResultCase_ == 4) && (modelArmorEnforcementResultBuilder_ != null)) {
+            return modelArmorEnforcementResultBuilder_.getMessageOrBuilder();
+          } else {
+            if (enforcementResultCase_ == 4) {
+              return (com.google.cloud.discoveryengine.v1.AssistAnswer
+                      .CustomerPolicyEnforcementResult.ModelArmorEnforcementResult)
+                  enforcementResult_;
+            }
+            return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ModelArmorEnforcementResult.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The policy enforcement result for the Model Armor policy.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ModelArmorEnforcementResult model_armor_enforcement_result = 4;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResult,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResult.Builder,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ModelArmorEnforcementResultOrBuilder>
+            internalGetModelArmorEnforcementResultFieldBuilder() {
+          if (modelArmorEnforcementResultBuilder_ == null) {
+            if (!(enforcementResultCase_ == 4)) {
+              enforcementResult_ =
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .ModelArmorEnforcementResult.getDefaultInstance();
+            }
+            modelArmorEnforcementResultBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                        .ModelArmorEnforcementResult,
+                    com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                        .ModelArmorEnforcementResult.Builder,
+                    com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                        .ModelArmorEnforcementResultOrBuilder>(
+                    (com.google.cloud.discoveryengine.v1.AssistAnswer
+                            .CustomerPolicyEnforcementResult.ModelArmorEnforcementResult)
+                        enforcementResult_,
+                    getParentForChildren(),
+                    isClean());
+            enforcementResult_ = null;
+          }
+          enforcementResultCase_ = 4;
+          onChanged();
+          return modelArmorEnforcementResultBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult)
+      private static final com.google.cloud.discoveryengine.v1.AssistAnswer
+              .CustomerPolicyEnforcementResult.PolicyEnforcementResult
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .PolicyEnforcementResult();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<PolicyEnforcementResult> PARSER =
+          new com.google.protobuf.AbstractParser<PolicyEnforcementResult>() {
+            @java.lang.Override
+            public PolicyEnforcementResult parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<PolicyEnforcementResult> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<PolicyEnforcementResult> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int VERDICT_FIELD_NUMBER = 1;
+    private int verdict_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Final verdict of the customer policy enforcement. If only one policy
+     * blocked the processing, the verdict is BLOCK.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict verdict = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for verdict.
+     */
+    @java.lang.Override
+    public int getVerdictValue() {
+      return verdict_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Final verdict of the customer policy enforcement. If only one policy
+     * blocked the processing, the verdict is BLOCK.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict verdict = 1;
+     * </code>
+     *
+     * @return The verdict.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict
+        getVerdict() {
+      com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict
+          result =
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .Verdict.forNumber(verdict_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict
+              .UNRECOGNIZED
+          : result;
+    }
+
+    public static final int POLICY_RESULTS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .PolicyEnforcementResult>
+        policyResults_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement results.
+     * Populated only if the assist call was skipped due to a policy
+     * violation. It contains results from those filters that blocked the
+     * processing of the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .PolicyEnforcementResult>
+        getPolicyResultsList() {
+      return policyResults_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement results.
+     * Populated only if the assist call was skipped due to a policy
+     * violation. It contains results from those filters that blocked the
+     * processing of the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .PolicyEnforcementResultOrBuilder>
+        getPolicyResultsOrBuilderList() {
+      return policyResults_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement results.
+     * Populated only if the assist call was skipped due to a policy
+     * violation. It contains results from those filters that blocked the
+     * processing of the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public int getPolicyResultsCount() {
+      return policyResults_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement results.
+     * Populated only if the assist call was skipped due to a policy
+     * violation. It contains results from those filters that blocked the
+     * processing of the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .PolicyEnforcementResult
+        getPolicyResults(int index) {
+      return policyResults_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement results.
+     * Populated only if the assist call was skipped due to a policy
+     * violation. It contains results from those filters that blocked the
+     * processing of the query.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .PolicyEnforcementResultOrBuilder
+        getPolicyResultsOrBuilder(int index) {
+      return policyResults_.get(index);
+    }
+
+    public static final int VIOLATION_SOURCE_FIELD_NUMBER = 4;
+    private int violationSource_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The source of the violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ViolationSource violation_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for violationSource.
+     */
+    @java.lang.Override
+    public int getViolationSourceValue() {
+      return violationSource_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The source of the violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ViolationSource violation_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The violationSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .ViolationSource
+        getViolationSource() {
+      com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ViolationSource
+          result =
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .ViolationSource.forNumber(violationSource_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ViolationSource.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (verdict_
+          != com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .Verdict.UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, verdict_);
+      }
+      for (int i = 0; i < policyResults_.size(); i++) {
+        output.writeMessage(3, policyResults_.get(i));
+      }
+      if (violationSource_
+          != com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ViolationSource.VIOLATION_SOURCE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, violationSource_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (verdict_
+          != com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .Verdict.UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, verdict_);
+      }
+      for (int i = 0; i < policyResults_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, policyResults_.get(i));
+      }
+      if (violationSource_
+          != com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ViolationSource.VIOLATION_SOURCE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, violationSource_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult other =
+          (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult) obj;
+
+      if (verdict_ != other.verdict_) return false;
+      if (!getPolicyResultsList().equals(other.getPolicyResultsList())) return false;
+      if (violationSource_ != other.violationSource_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + VERDICT_FIELD_NUMBER;
+      hash = (53 * hash) + verdict_;
+      if (getPolicyResultsCount() > 0) {
+        hash = (37 * hash) + POLICY_RESULTS_FIELD_NUMBER;
+        hash = (53 * hash) + getPolicyResultsList().hashCode();
+      }
+      hash = (37 * hash) + VIOLATION_SOURCE_FIELD_NUMBER;
+      hash = (53 * hash) + violationSource_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer policy enforcement results. Contains the results of the various
+     * policy checks, like the banned phrases or the Model Armor checks.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult)
+        com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .class,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        verdict_ = 0;
+        if (policyResultsBuilder_ == null) {
+          policyResults_ = java.util.Collections.emptyList();
+        } else {
+          policyResults_ = null;
+          policyResultsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        violationSource_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_CustomerPolicyEnforcementResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+          build() {
+        com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult result =
+            new com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult(
+                this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult result) {
+        if (policyResultsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            policyResults_ = java.util.Collections.unmodifiableList(policyResults_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.policyResults_ = policyResults_;
+        } else {
+          result.policyResults_ = policyResultsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.verdict_ = verdict_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.violationSource_ = violationSource_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .getDefaultInstance()) return this;
+        if (other.verdict_ != 0) {
+          setVerdictValue(other.getVerdictValue());
+        }
+        if (policyResultsBuilder_ == null) {
+          if (!other.policyResults_.isEmpty()) {
+            if (policyResults_.isEmpty()) {
+              policyResults_ = other.policyResults_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensurePolicyResultsIsMutable();
+              policyResults_.addAll(other.policyResults_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.policyResults_.isEmpty()) {
+            if (policyResultsBuilder_.isEmpty()) {
+              policyResultsBuilder_.dispose();
+              policyResultsBuilder_ = null;
+              policyResults_ = other.policyResults_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              policyResultsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetPolicyResultsFieldBuilder()
+                      : null;
+            } else {
+              policyResultsBuilder_.addAllMessages(other.policyResults_);
+            }
+          }
+        }
+        if (other.violationSource_ != 0) {
+          setViolationSourceValue(other.getViolationSourceValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  verdict_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 26:
+                {
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                          .PolicyEnforcementResult
+                      m =
+                          input.readMessage(
+                              com.google.cloud.discoveryengine.v1.AssistAnswer
+                                  .CustomerPolicyEnforcementResult.PolicyEnforcementResult.parser(),
+                              extensionRegistry);
+                  if (policyResultsBuilder_ == null) {
+                    ensurePolicyResultsIsMutable();
+                    policyResults_.add(m);
+                  } else {
+                    policyResultsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
+              case 32:
+                {
+                  violationSource_ = input.readEnum();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 32
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int verdict_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Final verdict of the customer policy enforcement. If only one policy
+       * blocked the processing, the verdict is BLOCK.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict verdict = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for verdict.
+       */
+      @java.lang.Override
+      public int getVerdictValue() {
+        return verdict_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Final verdict of the customer policy enforcement. If only one policy
+       * blocked the processing, the verdict is BLOCK.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict verdict = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for verdict to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVerdictValue(int value) {
+        verdict_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Final verdict of the customer policy enforcement. If only one policy
+       * blocked the processing, the verdict is BLOCK.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict verdict = 1;
+       * </code>
+       *
+       * @return The verdict.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .Verdict
+          getVerdict() {
+        com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict
+            result =
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .Verdict.forNumber(verdict_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .Verdict.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Final verdict of the customer policy enforcement. If only one policy
+       * blocked the processing, the verdict is BLOCK.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict verdict = 1;
+       * </code>
+       *
+       * @param value The verdict to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVerdict(
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        verdict_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Final verdict of the customer policy enforcement. If only one policy
+       * blocked the processing, the verdict is BLOCK.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Verdict verdict = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearVerdict() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        verdict_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult>
+          policyResults_ = java.util.Collections.emptyList();
+
+      private void ensurePolicyResultsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          policyResults_ =
+              new java.util.ArrayList<
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .PolicyEnforcementResult>(policyResults_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult,
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult.Builder,
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResultOrBuilder>
+          policyResultsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult>
+          getPolicyResultsList() {
+        if (policyResultsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(policyResults_);
+        } else {
+          return policyResultsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public int getPolicyResultsCount() {
+        if (policyResultsBuilder_ == null) {
+          return policyResults_.size();
+        } else {
+          return policyResultsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult
+          getPolicyResults(int index) {
+        if (policyResultsBuilder_ == null) {
+          return policyResults_.get(index);
+        } else {
+          return policyResultsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public Builder setPolicyResults(
+          int index,
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult
+              value) {
+        if (policyResultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePolicyResultsIsMutable();
+          policyResults_.set(index, value);
+          onChanged();
+        } else {
+          policyResultsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public Builder setPolicyResults(
+          int index,
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult.Builder
+              builderForValue) {
+        if (policyResultsBuilder_ == null) {
+          ensurePolicyResultsIsMutable();
+          policyResults_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          policyResultsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public Builder addPolicyResults(
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult
+              value) {
+        if (policyResultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePolicyResultsIsMutable();
+          policyResults_.add(value);
+          onChanged();
+        } else {
+          policyResultsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public Builder addPolicyResults(
+          int index,
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult
+              value) {
+        if (policyResultsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePolicyResultsIsMutable();
+          policyResults_.add(index, value);
+          onChanged();
+        } else {
+          policyResultsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public Builder addPolicyResults(
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult.Builder
+              builderForValue) {
+        if (policyResultsBuilder_ == null) {
+          ensurePolicyResultsIsMutable();
+          policyResults_.add(builderForValue.build());
+          onChanged();
+        } else {
+          policyResultsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public Builder addPolicyResults(
+          int index,
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult.Builder
+              builderForValue) {
+        if (policyResultsBuilder_ == null) {
+          ensurePolicyResultsIsMutable();
+          policyResults_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          policyResultsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public Builder addAllPolicyResults(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.discoveryengine.v1.AssistAnswer
+                          .CustomerPolicyEnforcementResult.PolicyEnforcementResult>
+              values) {
+        if (policyResultsBuilder_ == null) {
+          ensurePolicyResultsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, policyResults_);
+          onChanged();
+        } else {
+          policyResultsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public Builder clearPolicyResults() {
+        if (policyResultsBuilder_ == null) {
+          policyResults_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          policyResultsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public Builder removePolicyResults(int index) {
+        if (policyResultsBuilder_ == null) {
+          ensurePolicyResultsIsMutable();
+          policyResults_.remove(index);
+          onChanged();
+        } else {
+          policyResultsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult.Builder
+          getPolicyResultsBuilder(int index) {
+        return internalGetPolicyResultsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResultOrBuilder
+          getPolicyResultsOrBuilder(int index) {
+        if (policyResultsBuilder_ == null) {
+          return policyResults_.get(index);
+        } else {
+          return policyResultsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .PolicyEnforcementResultOrBuilder>
+          getPolicyResultsOrBuilderList() {
+        if (policyResultsBuilder_ != null) {
+          return policyResultsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(policyResults_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult.Builder
+          addPolicyResultsBuilder() {
+        return internalGetPolicyResultsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .PolicyEnforcementResult.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .PolicyEnforcementResult.Builder
+          addPolicyResultsBuilder(int index) {
+        return internalGetPolicyResultsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .PolicyEnforcementResult.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Customer policy enforcement results.
+       * Populated only if the assist call was skipped due to a policy
+       * violation. It contains results from those filters that blocked the
+       * processing of the query.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.PolicyEnforcementResult policy_results = 3;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult.Builder>
+          getPolicyResultsBuilderList() {
+        return internalGetPolicyResultsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult,
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResult.Builder,
+              com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .PolicyEnforcementResultOrBuilder>
+          internalGetPolicyResultsFieldBuilder() {
+        if (policyResultsBuilder_ == null) {
+          policyResultsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .PolicyEnforcementResult,
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .PolicyEnforcementResult.Builder,
+                  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                      .PolicyEnforcementResultOrBuilder>(
+                  policyResults_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          policyResults_ = null;
+        }
+        return policyResultsBuilder_;
+      }
+
+      private int violationSource_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The source of the violation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ViolationSource violation_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for violationSource.
+       */
+      @java.lang.Override
+      public int getViolationSourceValue() {
+        return violationSource_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The source of the violation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ViolationSource violation_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for violationSource to set.
+       * @return This builder for chaining.
+       */
+      public Builder setViolationSourceValue(int value) {
+        violationSource_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The source of the violation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ViolationSource violation_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The violationSource.
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+              .ViolationSource
+          getViolationSource() {
+        com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ViolationSource
+            result =
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .ViolationSource.forNumber(violationSource_);
+        return result == null
+            ? com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .ViolationSource.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The source of the violation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ViolationSource violation_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The violationSource to set.
+       * @return This builder for chaining.
+       */
+      public Builder setViolationSource(
+          com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                  .ViolationSource
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        violationSource_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The source of the violation.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.ViolationSource violation_source = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearViolationSource() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        violationSource_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult)
+    private static final com.google.cloud.discoveryengine.v1.AssistAnswer
+            .CustomerPolicyEnforcementResult
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult();
+    }
+
+    public static com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CustomerPolicyEnforcementResult> PARSER =
+        new com.google.protobuf.AbstractParser<CustomerPolicyEnforcementResult>() {
+          @java.lang.Override
+          public CustomerPolicyEnforcementResult parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CustomerPolicyEnforcementResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CustomerPolicyEnforcementResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -1316,7 +7169,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Immutable. Resource name of the `AssistAnswer`.
+   * Immutable. Identifier. Resource name of the `AssistAnswer`.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/assistAnswers/{assist_answer}`
    *
@@ -1324,7 +7177,9 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
    * characters.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -1345,7 +7200,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Immutable. Resource name of the `AssistAnswer`.
+   * Immutable. Identifier. Resource name of the `AssistAnswer`.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/assistAnswers/{assist_answer}`
    *
@@ -1353,7 +7208,9 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
    * characters.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -1407,6 +7264,145 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
     return result == null
         ? com.google.cloud.discoveryengine.v1.AssistAnswer.State.UNRECOGNIZED
         : result;
+  }
+
+  public static final int CONNECTOR_DISPLAY_NAMES_FIELD_NUMBER = 14;
+
+  private static final class ConnectorDisplayNamesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.discoveryengine.v1.AssistAnswerProto
+                .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_ConnectorDisplayNamesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> connectorDisplayNames_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetConnectorDisplayNames() {
+    if (connectorDisplayNames_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ConnectorDisplayNamesDefaultEntryHolder.defaultEntry);
+    }
+    return connectorDisplayNames_;
+  }
+
+  public int getConnectorDisplayNamesCount() {
+    return internalGetConnectorDisplayNames().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Maps an internal connector agent name (the machine identifier
+   * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+   * connector's human-readable display name. Populated at serving time for
+   * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+   * tool-call chip) can show the connector name instead of its internal
+   * identifier. Empty when there are no such connectors.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsConnectorDisplayNames(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetConnectorDisplayNames().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getConnectorDisplayNamesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getConnectorDisplayNames() {
+    return getConnectorDisplayNamesMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Maps an internal connector agent name (the machine identifier
+   * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+   * connector's human-readable display name. Populated at serving time for
+   * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+   * tool-call chip) can show the connector name instead of its internal
+   * identifier. Empty when there are no such connectors.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getConnectorDisplayNamesMap() {
+    return internalGetConnectorDisplayNames().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Maps an internal connector agent name (the machine identifier
+   * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+   * connector's human-readable display name. Populated at serving time for
+   * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+   * tool-call chip) can show the connector name instead of its internal
+   * identifier. Empty when there are no such connectors.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getConnectorDisplayNamesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetConnectorDisplayNames().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Maps an internal connector agent name (the machine identifier
+   * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+   * connector's human-readable display name. Populated at serving time for
+   * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+   * tool-call chip) can show the connector name instead of its internal
+   * identifier. Empty when there are no such connectors.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getConnectorDisplayNamesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetConnectorDisplayNames().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   public static final int REPLIES_FIELD_NUMBER = 3;
@@ -1606,6 +7602,76 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
 
   private int assistSkippedReasonsMemoizedSerializedSize;
 
+  public static final int CUSTOMER_POLICY_ENFORCEMENT_RESULT_FIELD_NUMBER = 8;
+  private com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+      customerPolicyEnforcementResult_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field contains information about the various policy checks'
+   * results like the banned phrases or the Model Armor checks. This field is
+   * populated only if the assist call was skipped due to a policy violation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customerPolicyEnforcementResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomerPolicyEnforcementResult() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field contains information about the various policy checks'
+   * results like the banned phrases or the Model Armor checks. This field is
+   * populated only if the assist call was skipped due to a policy violation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customerPolicyEnforcementResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+      getCustomerPolicyEnforcementResult() {
+    return customerPolicyEnforcementResult_ == null
+        ? com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .getDefaultInstance()
+        : customerPolicyEnforcementResult_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field contains information about the various policy checks'
+   * results like the banned phrases or the Model Armor checks. This field is
+   * populated only if the assist call was skipped due to a policy violation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResultOrBuilder
+      getCustomerPolicyEnforcementResultOrBuilder() {
+    return customerPolicyEnforcementResult_ == null
+        ? com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+            .getDefaultInstance()
+        : customerPolicyEnforcementResult_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1638,6 +7704,14 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < assistSkippedReasons_.size(); i++) {
       output.writeEnumNoTag(assistSkippedReasons_.getInt(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(8, getCustomerPolicyEnforcementResult());
+    }
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output,
+        internalGetConnectorDisplayNames(),
+        ConnectorDisplayNamesDefaultEntryHolder.defaultEntry,
+        14);
     getUnknownFields().writeTo(output);
   }
 
@@ -1671,6 +7745,21 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
       }
       assistSkippedReasonsMemoizedSerializedSize = dataSize;
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, getCustomerPolicyEnforcementResult());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetConnectorDisplayNames().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> connectorDisplayNames__ =
+          ConnectorDisplayNamesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, connectorDisplayNames__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1689,8 +7778,16 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
 
     if (!getName().equals(other.getName())) return false;
     if (state_ != other.state_) return false;
+    if (!internalGetConnectorDisplayNames().equals(other.internalGetConnectorDisplayNames()))
+      return false;
     if (!getRepliesList().equals(other.getRepliesList())) return false;
     if (!assistSkippedReasons_.equals(other.assistSkippedReasons_)) return false;
+    if (hasCustomerPolicyEnforcementResult() != other.hasCustomerPolicyEnforcementResult())
+      return false;
+    if (hasCustomerPolicyEnforcementResult()) {
+      if (!getCustomerPolicyEnforcementResult().equals(other.getCustomerPolicyEnforcementResult()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1706,6 +7803,10 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    if (!internalGetConnectorDisplayNames().getMap().isEmpty()) {
+      hash = (37 * hash) + CONNECTOR_DISPLAY_NAMES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetConnectorDisplayNames().hashCode();
+    }
     if (getRepliesCount() > 0) {
       hash = (37 * hash) + REPLIES_FIELD_NUMBER;
       hash = (53 * hash) + getRepliesList().hashCode();
@@ -1713,6 +7814,10 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
     if (getAssistSkippedReasonsCount() > 0) {
       hash = (37 * hash) + ASSIST_SKIPPED_REASONS_FIELD_NUMBER;
       hash = (53 * hash) + assistSkippedReasons_.hashCode();
+    }
+    if (hasCustomerPolicyEnforcementResult()) {
+      hash = (37 * hash) + CUSTOMER_POLICY_ENFORCEMENT_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerPolicyEnforcementResult().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1834,6 +7939,28 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
           .internal_static_google_cloud_discoveryengine_v1_AssistAnswer_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 14:
+          return internalGetConnectorDisplayNames();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 14:
+          return internalGetMutableConnectorDisplayNames();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1845,10 +7972,20 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.discoveryengine.v1.AssistAnswer.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetRepliesFieldBuilder();
+        internalGetCustomerPolicyEnforcementResultFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1857,14 +7994,20 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       name_ = "";
       state_ = 0;
+      internalGetMutableConnectorDisplayNames().clear();
       if (repliesBuilder_ == null) {
         replies_ = java.util.Collections.emptyList();
       } else {
         replies_ = null;
         repliesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       assistSkippedReasons_ = emptyIntList();
+      customerPolicyEnforcementResult_ = null;
+      if (customerPolicyEnforcementResultBuilder_ != null) {
+        customerPolicyEnforcementResultBuilder_.dispose();
+        customerPolicyEnforcementResultBuilder_ = null;
+      }
       return this;
     }
 
@@ -1903,9 +8046,9 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
     private void buildPartialRepeatedFields(
         com.google.cloud.discoveryengine.v1.AssistAnswer result) {
       if (repliesBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           replies_ = java.util.Collections.unmodifiableList(replies_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.replies_ = replies_;
       } else {
@@ -1921,10 +8064,23 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.connectorDisplayNames_ = internalGetConnectorDisplayNames();
+        result.connectorDisplayNames_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         assistSkippedReasons_.makeImmutable();
         result.assistSkippedReasons_ = assistSkippedReasons_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.customerPolicyEnforcementResult_ =
+            customerPolicyEnforcementResultBuilder_ == null
+                ? customerPolicyEnforcementResult_
+                : customerPolicyEnforcementResultBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1948,11 +8104,13 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
+      internalGetMutableConnectorDisplayNames().mergeFrom(other.internalGetConnectorDisplayNames());
+      bitField0_ |= 0x00000004;
       if (repliesBuilder_ == null) {
         if (!other.replies_.isEmpty()) {
           if (replies_.isEmpty()) {
             replies_ = other.replies_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureRepliesIsMutable();
             replies_.addAll(other.replies_);
@@ -1965,7 +8123,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
             repliesBuilder_.dispose();
             repliesBuilder_ = null;
             replies_ = other.replies_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             repliesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetRepliesFieldBuilder()
@@ -1979,12 +8137,15 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
         if (assistSkippedReasons_.isEmpty()) {
           assistSkippedReasons_ = other.assistSkippedReasons_;
           assistSkippedReasons_.makeImmutable();
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
         } else {
           ensureAssistSkippedReasonsIsMutable();
           assistSkippedReasons_.addAll(other.assistSkippedReasons_);
         }
         onChanged();
+      }
+      if (other.hasCustomerPolicyEnforcementResult()) {
+        mergeCustomerPolicyEnforcementResult(other.getCustomerPolicyEnforcementResult());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2056,6 +8217,27 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
                 input.popLimit(limit);
                 break;
               } // case 42
+            case 66:
+              {
+                input.readMessage(
+                    internalGetCustomerPolicyEnforcementResultFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 66
+            case 114:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                    connectorDisplayNames__ =
+                        input.readMessage(
+                            ConnectorDisplayNamesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableConnectorDisplayNames()
+                    .getMutableMap()
+                    .put(connectorDisplayNames__.getKey(), connectorDisplayNames__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2081,7 +8263,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Resource name of the `AssistAnswer`.
+     * Immutable. Identifier. Resource name of the `AssistAnswer`.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/assistAnswers/{assist_answer}`
      *
@@ -2089,7 +8271,9 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The name.
      */
@@ -2109,7 +8293,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Resource name of the `AssistAnswer`.
+     * Immutable. Identifier. Resource name of the `AssistAnswer`.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/assistAnswers/{assist_answer}`
      *
@@ -2117,7 +8301,9 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -2137,7 +8323,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Resource name of the `AssistAnswer`.
+     * Immutable. Identifier. Resource name of the `AssistAnswer`.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/assistAnswers/{assist_answer}`
      *
@@ -2145,7 +8331,9 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2164,7 +8352,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Resource name of the `AssistAnswer`.
+     * Immutable. Identifier. Resource name of the `AssistAnswer`.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/assistAnswers/{assist_answer}`
      *
@@ -2172,7 +8360,9 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -2187,7 +8377,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Resource name of the `AssistAnswer`.
+     * Immutable. Identifier. Resource name of the `AssistAnswer`.
      * Format:
      * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/assistAnswers/{assist_answer}`
      *
@@ -2195,7 +8385,9 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      * characters.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2308,15 +8500,243 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> connectorDisplayNames_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetConnectorDisplayNames() {
+      if (connectorDisplayNames_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ConnectorDisplayNamesDefaultEntryHolder.defaultEntry);
+      }
+      return connectorDisplayNames_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableConnectorDisplayNames() {
+      if (connectorDisplayNames_ == null) {
+        connectorDisplayNames_ =
+            com.google.protobuf.MapField.newMapField(
+                ConnectorDisplayNamesDefaultEntryHolder.defaultEntry);
+      }
+      if (!connectorDisplayNames_.isMutable()) {
+        connectorDisplayNames_ = connectorDisplayNames_.copy();
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return connectorDisplayNames_;
+    }
+
+    public int getConnectorDisplayNamesCount() {
+      return internalGetConnectorDisplayNames().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Maps an internal connector agent name (the machine identifier
+     * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+     * connector's human-readable display name. Populated at serving time for
+     * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+     * tool-call chip) can show the connector name instead of its internal
+     * identifier. Empty when there are no such connectors.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsConnectorDisplayNames(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetConnectorDisplayNames().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getConnectorDisplayNamesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getConnectorDisplayNames() {
+      return getConnectorDisplayNamesMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Maps an internal connector agent name (the machine identifier
+     * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+     * connector's human-readable display name. Populated at serving time for
+     * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+     * tool-call chip) can show the connector name instead of its internal
+     * identifier. Empty when there are no such connectors.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getConnectorDisplayNamesMap() {
+      return internalGetConnectorDisplayNames().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Maps an internal connector agent name (the machine identifier
+     * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+     * connector's human-readable display name. Populated at serving time for
+     * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+     * tool-call chip) can show the connector name instead of its internal
+     * identifier. Empty when there are no such connectors.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getConnectorDisplayNamesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetConnectorDisplayNames().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Maps an internal connector agent name (the machine identifier
+     * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+     * connector's human-readable display name. Populated at serving time for
+     * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+     * tool-call chip) can show the connector name instead of its internal
+     * identifier. Empty when there are no such connectors.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getConnectorDisplayNamesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetConnectorDisplayNames().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearConnectorDisplayNames() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      internalGetMutableConnectorDisplayNames().getMutableMap().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Maps an internal connector agent name (the machine identifier
+     * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+     * connector's human-readable display name. Populated at serving time for
+     * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+     * tool-call chip) can show the connector name instead of its internal
+     * identifier. Empty when there are no such connectors.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeConnectorDisplayNames(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableConnectorDisplayNames().getMutableMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableConnectorDisplayNames() {
+      bitField0_ |= 0x00000004;
+      return internalGetMutableConnectorDisplayNames().getMutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Maps an internal connector agent name (the machine identifier
+     * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+     * connector's human-readable display name. Populated at serving time for
+     * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+     * tool-call chip) can show the connector name instead of its internal
+     * identifier. Empty when there are no such connectors.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putConnectorDisplayNames(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableConnectorDisplayNames().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Maps an internal connector agent name (the machine identifier
+     * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+     * connector's human-readable display name. Populated at serving time for
+     * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+     * tool-call chip) can show the connector name instead of its internal
+     * identifier. Empty when there are no such connectors.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllConnectorDisplayNames(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableConnectorDisplayNames().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+
     private java.util.List<com.google.cloud.discoveryengine.v1.AssistAnswer.Reply> replies_ =
         java.util.Collections.emptyList();
 
     private void ensureRepliesIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         replies_ =
             new java.util.ArrayList<com.google.cloud.discoveryengine.v1.AssistAnswer.Reply>(
                 replies_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -2545,7 +8965,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
     public Builder clearReplies() {
       if (repliesBuilder_ == null) {
         replies_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         repliesBuilder_.clear();
@@ -2678,7 +9098,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.discoveryengine.v1.AssistAnswer.Reply,
                 com.google.cloud.discoveryengine.v1.AssistAnswer.Reply.Builder,
                 com.google.cloud.discoveryengine.v1.AssistAnswer.ReplyOrBuilder>(
-                replies_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                replies_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         replies_ = null;
       }
       return repliesBuilder_;
@@ -2690,7 +9110,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
       if (!assistSkippedReasons_.isModifiable()) {
         assistSkippedReasons_ = makeMutableCopy(assistSkippedReasons_);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
     }
 
     /**
@@ -2841,7 +9261,7 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearAssistSkippedReasons() {
       assistSkippedReasons_ = emptyIntList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2946,6 +9366,254 @@ public final class AssistAnswer extends com.google.protobuf.GeneratedMessage
       }
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        customerPolicyEnforcementResult_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult,
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .Builder,
+            com.google.cloud.discoveryengine.v1.AssistAnswer
+                .CustomerPolicyEnforcementResultOrBuilder>
+        customerPolicyEnforcementResultBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field contains information about the various policy checks'
+     * results like the banned phrases or the Model Armor checks. This field is
+     * populated only if the assist call was skipped due to a policy violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customerPolicyEnforcementResult field is set.
+     */
+    public boolean hasCustomerPolicyEnforcementResult() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field contains information about the various policy checks'
+     * results like the banned phrases or the Model Armor checks. This field is
+     * populated only if the assist call was skipped due to a policy violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customerPolicyEnforcementResult.
+     */
+    public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+        getCustomerPolicyEnforcementResult() {
+      if (customerPolicyEnforcementResultBuilder_ == null) {
+        return customerPolicyEnforcementResult_ == null
+            ? com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .getDefaultInstance()
+            : customerPolicyEnforcementResult_;
+      } else {
+        return customerPolicyEnforcementResultBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field contains information about the various policy checks'
+     * results like the banned phrases or the Model Armor checks. This field is
+     * populated only if the assist call was skipped due to a policy violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomerPolicyEnforcementResult(
+        com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult value) {
+      if (customerPolicyEnforcementResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customerPolicyEnforcementResult_ = value;
+      } else {
+        customerPolicyEnforcementResultBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field contains information about the various policy checks'
+     * results like the banned phrases or the Model Armor checks. This field is
+     * populated only if the assist call was skipped due to a policy violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomerPolicyEnforcementResult(
+        com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Builder
+            builderForValue) {
+      if (customerPolicyEnforcementResultBuilder_ == null) {
+        customerPolicyEnforcementResult_ = builderForValue.build();
+      } else {
+        customerPolicyEnforcementResultBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field contains information about the various policy checks'
+     * results like the banned phrases or the Model Armor checks. This field is
+     * populated only if the assist call was skipped due to a policy violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCustomerPolicyEnforcementResult(
+        com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult value) {
+      if (customerPolicyEnforcementResultBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && customerPolicyEnforcementResult_ != null
+            && customerPolicyEnforcementResult_
+                != com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .getDefaultInstance()) {
+          getCustomerPolicyEnforcementResultBuilder().mergeFrom(value);
+        } else {
+          customerPolicyEnforcementResult_ = value;
+        }
+      } else {
+        customerPolicyEnforcementResultBuilder_.mergeFrom(value);
+      }
+      if (customerPolicyEnforcementResult_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field contains information about the various policy checks'
+     * results like the banned phrases or the Model Armor checks. This field is
+     * populated only if the assist call was skipped due to a policy violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomerPolicyEnforcementResult() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      customerPolicyEnforcementResult_ = null;
+      if (customerPolicyEnforcementResultBuilder_ != null) {
+        customerPolicyEnforcementResultBuilder_.dispose();
+        customerPolicyEnforcementResultBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field contains information about the various policy checks'
+     * results like the banned phrases or the Model Armor checks. This field is
+     * populated only if the assist call was skipped due to a policy violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult.Builder
+        getCustomerPolicyEnforcementResultBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetCustomerPolicyEnforcementResultFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field contains information about the various policy checks'
+     * results like the banned phrases or the Model Armor checks. This field is
+     * populated only if the assist call was skipped due to a policy violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResultOrBuilder
+        getCustomerPolicyEnforcementResultOrBuilder() {
+      if (customerPolicyEnforcementResultBuilder_ != null) {
+        return customerPolicyEnforcementResultBuilder_.getMessageOrBuilder();
+      } else {
+        return customerPolicyEnforcementResult_ == null
+            ? com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .getDefaultInstance()
+            : customerPolicyEnforcementResult_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field contains information about the various policy checks'
+     * results like the banned phrases or the Model Armor checks. This field is
+     * populated only if the assist call was skipped due to a policy violation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult,
+            com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                .Builder,
+            com.google.cloud.discoveryengine.v1.AssistAnswer
+                .CustomerPolicyEnforcementResultOrBuilder>
+        internalGetCustomerPolicyEnforcementResultFieldBuilder() {
+      if (customerPolicyEnforcementResultBuilder_ == null) {
+        customerPolicyEnforcementResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult,
+                com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+                    .Builder,
+                com.google.cloud.discoveryengine.v1.AssistAnswer
+                    .CustomerPolicyEnforcementResultOrBuilder>(
+                getCustomerPolicyEnforcementResult(), getParentForChildren(), isClean());
+        customerPolicyEnforcementResult_ = null;
+      }
+      return customerPolicyEnforcementResultBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.AssistAnswer)
