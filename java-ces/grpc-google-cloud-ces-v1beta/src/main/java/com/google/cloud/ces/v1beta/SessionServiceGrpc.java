@@ -168,6 +168,158 @@ public final class SessionServiceGrpc {
     return getBidiRunSessionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest,
+          com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse>
+      getStreamChatAiAssistantMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamChatAiAssistant",
+      requestType = com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest.class,
+      responseType = com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest,
+          com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse>
+      getStreamChatAiAssistantMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest,
+            com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse>
+        getStreamChatAiAssistantMethod;
+    if ((getStreamChatAiAssistantMethod = SessionServiceGrpc.getStreamChatAiAssistantMethod)
+        == null) {
+      synchronized (SessionServiceGrpc.class) {
+        if ((getStreamChatAiAssistantMethod = SessionServiceGrpc.getStreamChatAiAssistantMethod)
+            == null) {
+          SessionServiceGrpc.getStreamChatAiAssistantMethod =
+              getStreamChatAiAssistantMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest,
+                          com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "StreamChatAiAssistant"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SessionServiceMethodDescriptorSupplier("StreamChatAiAssistant"))
+                      .build();
+        }
+      }
+    }
+    return getStreamChatAiAssistantMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.CancelAssistantTurnRequest,
+          com.google.cloud.ces.v1beta.CancelAssistantTurnResponse>
+      getCancelAssistantTurnMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelAssistantTurn",
+      requestType = com.google.cloud.ces.v1beta.CancelAssistantTurnRequest.class,
+      responseType = com.google.cloud.ces.v1beta.CancelAssistantTurnResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.CancelAssistantTurnRequest,
+          com.google.cloud.ces.v1beta.CancelAssistantTurnResponse>
+      getCancelAssistantTurnMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.ces.v1beta.CancelAssistantTurnRequest,
+            com.google.cloud.ces.v1beta.CancelAssistantTurnResponse>
+        getCancelAssistantTurnMethod;
+    if ((getCancelAssistantTurnMethod = SessionServiceGrpc.getCancelAssistantTurnMethod) == null) {
+      synchronized (SessionServiceGrpc.class) {
+        if ((getCancelAssistantTurnMethod = SessionServiceGrpc.getCancelAssistantTurnMethod)
+            == null) {
+          SessionServiceGrpc.getCancelAssistantTurnMethod =
+              getCancelAssistantTurnMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.ces.v1beta.CancelAssistantTurnRequest,
+                          com.google.cloud.ces.v1beta.CancelAssistantTurnResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CancelAssistantTurn"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.CancelAssistantTurnRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.CancelAssistantTurnResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SessionServiceMethodDescriptorSupplier("CancelAssistantTurn"))
+                      .build();
+        }
+      }
+    }
+    return getCancelAssistantTurnMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest,
+          com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse>
+      getGenerateOnboardingSuggestionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateOnboardingSuggestions",
+      requestType = com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest.class,
+      responseType = com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest,
+          com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse>
+      getGenerateOnboardingSuggestionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest,
+            com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse>
+        getGenerateOnboardingSuggestionsMethod;
+    if ((getGenerateOnboardingSuggestionsMethod =
+            SessionServiceGrpc.getGenerateOnboardingSuggestionsMethod)
+        == null) {
+      synchronized (SessionServiceGrpc.class) {
+        if ((getGenerateOnboardingSuggestionsMethod =
+                SessionServiceGrpc.getGenerateOnboardingSuggestionsMethod)
+            == null) {
+          SessionServiceGrpc.getGenerateOnboardingSuggestionsMethod =
+              getGenerateOnboardingSuggestionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest,
+                          com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateOnboardingSuggestions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new SessionServiceMethodDescriptorSupplier(
+                              "GenerateOnboardingSuggestions"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateOnboardingSuggestionsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static SessionServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<SessionServiceStub> factory =
@@ -334,6 +486,60 @@ public final class SessionServiceGrpc {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
           getBidiRunSessionMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs Arc, the AI assistant, for the specified assistant session in a
+     * streaming fashion.
+     * </pre>
+     */
+    default void streamChatAiAssistant(
+        com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getStreamChatAiAssistantMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels the assistant session's in-flight turn, if any: the explicit user
+     * stop for a turn running detached from any stream. A cancel landing on a
+     * task that does not host the turn preempts it through the session turn
+     * epoch instead, ending it within one lease renewal.
+     * </pre>
+     */
+    default void cancelAssistantTurn(
+        com.google.cloud.ces.v1beta.CancelAssistantTurnRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.CancelAssistantTurnResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCancelAssistantTurnMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates personalized onboarding suggestions for the Arc
+     * zero state: classifies the requesting user (new / exploring / returning)
+     * from their assistant-session history in the app and returns suggestion
+     * chips (resume a session, continue work, or start something new) to render
+     * before any message is sent.
+     * </pre>
+     */
+    default void generateOnboardingSuggestions(
+        com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateOnboardingSuggestionsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -476,6 +682,66 @@ public final class SessionServiceGrpc {
       return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
           getChannel().newCall(getBidiRunSessionMethod(), getCallOptions()), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs Arc, the AI assistant, for the specified assistant session in a
+     * streaming fashion.
+     * </pre>
+     */
+    public void streamChatAiAssistant(
+        com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
+          getChannel().newCall(getStreamChatAiAssistantMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels the assistant session's in-flight turn, if any: the explicit user
+     * stop for a turn running detached from any stream. A cancel landing on a
+     * task that does not host the turn preempts it through the session turn
+     * epoch instead, ending it within one lease renewal.
+     * </pre>
+     */
+    public void cancelAssistantTurn(
+        com.google.cloud.ces.v1beta.CancelAssistantTurnRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.CancelAssistantTurnResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelAssistantTurnMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates personalized onboarding suggestions for the Arc
+     * zero state: classifies the requesting user (new / exploring / returning)
+     * from their assistant-session history in the app and returns suggestion
+     * chips (resume a session, continue work, or start something new) to render
+     * before any message is sent.
+     * </pre>
+     */
+    public void generateOnboardingSuggestions(
+        com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateOnboardingSuggestionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -599,6 +865,58 @@ public final class SessionServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
           getChannel(), getBidiRunSessionMethod(), getCallOptions());
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs Arc, the AI assistant, for the specified assistant session in a
+     * streaming fashion.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            ?, com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse>
+        streamChatAiAssistant(com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getStreamChatAiAssistantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels the assistant session's in-flight turn, if any: the explicit user
+     * stop for a turn running detached from any stream. A cancel landing on a
+     * task that does not host the turn preempts it through the session turn
+     * epoch instead, ending it within one lease renewal.
+     * </pre>
+     */
+    public com.google.cloud.ces.v1beta.CancelAssistantTurnResponse cancelAssistantTurn(
+        com.google.cloud.ces.v1beta.CancelAssistantTurnRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCancelAssistantTurnMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates personalized onboarding suggestions for the Arc
+     * zero state: classifies the requesting user (new / exploring / returning)
+     * from their assistant-session history in the app and returns suggestion
+     * chips (resume a session, continue work, or start something new) to render
+     * before any message is sent.
+     * </pre>
+     */
+    public com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse
+        generateOnboardingSuggestions(
+            com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGenerateOnboardingSuggestionsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -652,6 +970,54 @@ public final class SessionServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getStreamRunSessionMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs Arc, the AI assistant, for the specified assistant session in a
+     * streaming fashion.
+     * </pre>
+     */
+    public java.util.Iterator<com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse>
+        streamChatAiAssistant(com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
+          getChannel(), getStreamChatAiAssistantMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels the assistant session's in-flight turn, if any: the explicit user
+     * stop for a turn running detached from any stream. A cancel landing on a
+     * task that does not host the turn preempts it through the session turn
+     * epoch instead, ending it within one lease renewal.
+     * </pre>
+     */
+    public com.google.cloud.ces.v1beta.CancelAssistantTurnResponse cancelAssistantTurn(
+        com.google.cloud.ces.v1beta.CancelAssistantTurnRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelAssistantTurnMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates personalized onboarding suggestions for the Arc
+     * zero state: classifies the requesting user (new / exploring / returning)
+     * from their assistant-session history in the app and returns suggestion
+     * chips (resume a session, continue work, or start something new) to render
+     * before any message is sent.
+     * </pre>
+     */
+    public com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse
+        generateOnboardingSuggestions(
+            com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateOnboardingSuggestionsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -686,11 +1052,51 @@ public final class SessionServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunSessionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels the assistant session's in-flight turn, if any: the explicit user
+     * stop for a turn running detached from any stream. A cancel landing on a
+     * task that does not host the turn preempts it through the session turn
+     * epoch instead, ending it within one lease renewal.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.ces.v1beta.CancelAssistantTurnResponse>
+        cancelAssistantTurn(com.google.cloud.ces.v1beta.CancelAssistantTurnRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelAssistantTurnMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates personalized onboarding suggestions for the Arc
+     * zero state: classifies the requesting user (new / exploring / returning)
+     * from their assistant-session history in the app and returns suggestion
+     * chips (resume a session, continue work, or start something new) to render
+     * before any message is sent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse>
+        generateOnboardingSuggestions(
+            com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateOnboardingSuggestionsMethod(), getCallOptions()),
+          request);
+    }
   }
 
   private static final int METHODID_RUN_SESSION = 0;
   private static final int METHODID_STREAM_RUN_SESSION = 1;
-  private static final int METHODID_BIDI_RUN_SESSION = 2;
+  private static final int METHODID_STREAM_CHAT_AI_ASSISTANT = 2;
+  private static final int METHODID_CANCEL_ASSISTANT_TURN = 3;
+  private static final int METHODID_GENERATE_ONBOARDING_SUGGESTIONS = 4;
+  private static final int METHODID_BIDI_RUN_SESSION = 5;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -719,6 +1125,26 @@ public final class SessionServiceGrpc {
           serviceImpl.streamRunSession(
               (com.google.cloud.ces.v1beta.RunSessionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.RunSessionResponse>)
+                  responseObserver);
+          break;
+        case METHODID_STREAM_CHAT_AI_ASSISTANT:
+          serviceImpl.streamChatAiAssistant(
+              (com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CANCEL_ASSISTANT_TURN:
+          serviceImpl.cancelAssistantTurn(
+              (com.google.cloud.ces.v1beta.CancelAssistantTurnRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.CancelAssistantTurnResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GENERATE_ONBOARDING_SUGGESTIONS:
+          serviceImpl.generateOnboardingSuggestions(
+              (com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse>)
                   responseObserver);
           break;
         default:
@@ -765,6 +1191,27 @@ public final class SessionServiceGrpc {
                     com.google.cloud.ces.v1beta.BidiSessionClientMessage,
                     com.google.cloud.ces.v1beta.BidiSessionServerMessage>(
                     service, METHODID_BIDI_RUN_SESSION)))
+        .addMethod(
+            getStreamChatAiAssistantMethod(),
+            io.grpc.stub.ServerCalls.asyncServerStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest,
+                    com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse>(
+                    service, METHODID_STREAM_CHAT_AI_ASSISTANT)))
+        .addMethod(
+            getCancelAssistantTurnMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ces.v1beta.CancelAssistantTurnRequest,
+                    com.google.cloud.ces.v1beta.CancelAssistantTurnResponse>(
+                    service, METHODID_CANCEL_ASSISTANT_TURN)))
+        .addMethod(
+            getGenerateOnboardingSuggestionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest,
+                    com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse>(
+                    service, METHODID_GENERATE_ONBOARDING_SUGGESTIONS)))
         .build();
   }
 
@@ -819,6 +1266,9 @@ public final class SessionServiceGrpc {
                       .addMethod(getRunSessionMethod())
                       .addMethod(getStreamRunSessionMethod())
                       .addMethod(getBidiRunSessionMethod())
+                      .addMethod(getStreamChatAiAssistantMethod())
+                      .addMethod(getCancelAssistantTurnMethod())
+                      .addMethod(getGenerateOnboardingSuggestionsMethod())
                       .build();
         }
       }

@@ -16,6 +16,8 @@
 
 package com.google.cloud.memorystore.v1.stub;
 
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAclPoliciesPagedResponse;
+import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAclPolicyRevisionsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListAuthTokensPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupCollectionsPagedResponse;
 import static com.google.cloud.memorystore.v1.MemorystoreClient.ListBackupsPagedResponse;
@@ -58,6 +60,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.memorystore.v1.AclPolicy;
+import com.google.cloud.memorystore.v1.AclPolicyRevision;
 import com.google.cloud.memorystore.v1.AddAuthTokenRequest;
 import com.google.cloud.memorystore.v1.AddTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.AuthToken;
@@ -65,13 +69,17 @@ import com.google.cloud.memorystore.v1.Backup;
 import com.google.cloud.memorystore.v1.BackupCollection;
 import com.google.cloud.memorystore.v1.BackupInstanceRequest;
 import com.google.cloud.memorystore.v1.CertificateAuthority;
+import com.google.cloud.memorystore.v1.CreateAclPolicyRequest;
 import com.google.cloud.memorystore.v1.CreateInstanceRequest;
+import com.google.cloud.memorystore.v1.DeleteAclPolicyRequest;
 import com.google.cloud.memorystore.v1.DeleteAuthTokenRequest;
 import com.google.cloud.memorystore.v1.DeleteBackupRequest;
 import com.google.cloud.memorystore.v1.DeleteInstanceRequest;
 import com.google.cloud.memorystore.v1.DeleteTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.ExportBackupRequest;
 import com.google.cloud.memorystore.v1.FinishMigrationRequest;
+import com.google.cloud.memorystore.v1.GetAclPolicyRequest;
+import com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest;
 import com.google.cloud.memorystore.v1.GetAuthTokenRequest;
 import com.google.cloud.memorystore.v1.GetBackupCollectionRequest;
 import com.google.cloud.memorystore.v1.GetBackupRequest;
@@ -80,6 +88,10 @@ import com.google.cloud.memorystore.v1.GetInstanceRequest;
 import com.google.cloud.memorystore.v1.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1.GetTokenAuthUserRequest;
 import com.google.cloud.memorystore.v1.Instance;
+import com.google.cloud.memorystore.v1.ListAclPoliciesRequest;
+import com.google.cloud.memorystore.v1.ListAclPoliciesResponse;
+import com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest;
+import com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse;
 import com.google.cloud.memorystore.v1.ListAuthTokensRequest;
 import com.google.cloud.memorystore.v1.ListAuthTokensResponse;
 import com.google.cloud.memorystore.v1.ListBackupCollectionsRequest;
@@ -95,6 +107,7 @@ import com.google.cloud.memorystore.v1.RescheduleMaintenanceRequest;
 import com.google.cloud.memorystore.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.memorystore.v1.StartMigrationRequest;
 import com.google.cloud.memorystore.v1.TokenAuthUser;
+import com.google.cloud.memorystore.v1.UpdateAclPolicyRequest;
 import com.google.cloud.memorystore.v1.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -126,7 +139,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of getInstance:
+ * of getAclPolicy:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -137,10 +150,10 @@ import org.jspecify.annotations.Nullable;
  * MemorystoreStubSettings.Builder memorystoreSettingsBuilder =
  *     MemorystoreStubSettings.newBuilder();
  * memorystoreSettingsBuilder
- *     .getInstanceSettings()
+ *     .getAclPolicySettings()
  *     .setRetrySettings(
  *         memorystoreSettingsBuilder
- *             .getInstanceSettings()
+ *             .getAclPolicySettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -198,15 +211,33 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
           .build();
 
   private final PagedCallSettings<
+          ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+      listAclPoliciesSettings;
+  private final PagedCallSettings<
           ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       listInstancesSettings;
+  private final UnaryCallSettings<GetAclPolicyRequest, AclPolicy> getAclPolicySettings;
   private final UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings;
+  private final UnaryCallSettings<CreateAclPolicyRequest, AclPolicy> createAclPolicySettings;
   private final UnaryCallSettings<CreateInstanceRequest, Operation> createInstanceSettings;
   private final OperationCallSettings<CreateInstanceRequest, Instance, OperationMetadata>
       createInstanceOperationSettings;
+  private final UnaryCallSettings<UpdateAclPolicyRequest, Operation> updateAclPolicySettings;
+  private final OperationCallSettings<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationSettings;
   private final UnaryCallSettings<UpdateInstanceRequest, Operation> updateInstanceSettings;
   private final OperationCallSettings<UpdateInstanceRequest, Instance, OperationMetadata>
       updateInstanceOperationSettings;
+  private final UnaryCallSettings<DeleteAclPolicyRequest, Operation> deleteAclPolicySettings;
+  private final OperationCallSettings<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationSettings;
+  private final UnaryCallSettings<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionSettings;
+  private final PagedCallSettings<
+          ListAclPolicyRevisionsRequest,
+          ListAclPolicyRevisionsResponse,
+          ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsSettings;
   private final UnaryCallSettings<DeleteInstanceRequest, Operation> deleteInstanceSettings;
   private final OperationCallSettings<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationSettings;
@@ -270,6 +301,43 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
+  private static final PagedListDescriptor<
+          ListAclPoliciesRequest, ListAclPoliciesResponse, AclPolicy>
+      LIST_ACL_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListAclPoliciesRequest, ListAclPoliciesResponse, AclPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAclPoliciesRequest injectToken(
+                ListAclPoliciesRequest payload, String token) {
+              return ListAclPoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAclPoliciesRequest injectPageSize(
+                ListAclPoliciesRequest payload, int pageSize) {
+              return ListAclPoliciesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAclPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAclPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AclPolicy> extractResources(ListAclPoliciesResponse payload) {
+              return payload.getAclPoliciesList();
+            }
+          };
+
   private static final PagedListDescriptor<ListInstancesRequest, ListInstancesResponse, Instance>
       LIST_INSTANCES_PAGE_STR_DESC =
           new PagedListDescriptor<ListInstancesRequest, ListInstancesResponse, Instance>() {
@@ -301,6 +369,47 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
             @Override
             public Iterable<Instance> extractResources(ListInstancesResponse payload) {
               return payload.getInstancesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse, AclPolicyRevision>
+      LIST_ACL_POLICY_REVISIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse, AclPolicyRevision>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAclPolicyRevisionsRequest injectToken(
+                ListAclPolicyRevisionsRequest payload, String token) {
+              return ListAclPolicyRevisionsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAclPolicyRevisionsRequest injectPageSize(
+                ListAclPolicyRevisionsRequest payload, int pageSize) {
+              return ListAclPolicyRevisionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAclPolicyRevisionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAclPolicyRevisionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AclPolicyRevision> extractResources(
+                ListAclPolicyRevisionsResponse payload) {
+              return payload.getAclPolicyRevisionsList();
             }
           };
 
@@ -485,6 +594,23 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
           };
 
   private static final PagedListResponseFactory<
+          ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+      LIST_ACL_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAclPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAclPoliciesRequest, ListAclPoliciesResponse> callable,
+                ListAclPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAclPoliciesResponse> futureResponse) {
+              PageContext<ListAclPoliciesRequest, ListAclPoliciesResponse, AclPolicy> pageContext =
+                  PageContext.create(callable, LIST_ACL_POLICIES_PAGE_STR_DESC, request, context);
+              return ListAclPoliciesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       LIST_INSTANCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -498,6 +624,33 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               PageContext<ListInstancesRequest, ListInstancesResponse, Instance> pageContext =
                   PageContext.create(callable, LIST_INSTANCES_PAGE_STR_DESC, request, context);
               return ListInstancesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAclPolicyRevisionsRequest,
+          ListAclPolicyRevisionsResponse,
+          ListAclPolicyRevisionsPagedResponse>
+      LIST_ACL_POLICY_REVISIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAclPolicyRevisionsRequest,
+              ListAclPolicyRevisionsResponse,
+              ListAclPolicyRevisionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAclPolicyRevisionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAclPolicyRevisionsRequest, ListAclPolicyRevisionsResponse>
+                    callable,
+                ListAclPolicyRevisionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAclPolicyRevisionsResponse> futureResponse) {
+              PageContext<
+                      ListAclPolicyRevisionsRequest,
+                      ListAclPolicyRevisionsResponse,
+                      AclPolicyRevision>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ACL_POLICY_REVISIONS_PAGE_STR_DESC, request, context);
+              return ListAclPolicyRevisionsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -597,15 +750,32 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
             }
           };
 
+  /** Returns the object with the settings used for calls to listAclPolicies. */
+  public PagedCallSettings<
+          ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+      listAclPoliciesSettings() {
+    return listAclPoliciesSettings;
+  }
+
   /** Returns the object with the settings used for calls to listInstances. */
   public PagedCallSettings<ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
       listInstancesSettings() {
     return listInstancesSettings;
   }
 
+  /** Returns the object with the settings used for calls to getAclPolicy. */
+  public UnaryCallSettings<GetAclPolicyRequest, AclPolicy> getAclPolicySettings() {
+    return getAclPolicySettings;
+  }
+
   /** Returns the object with the settings used for calls to getInstance. */
   public UnaryCallSettings<GetInstanceRequest, Instance> getInstanceSettings() {
     return getInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAclPolicy. */
+  public UnaryCallSettings<CreateAclPolicyRequest, AclPolicy> createAclPolicySettings() {
+    return createAclPolicySettings;
   }
 
   /** Returns the object with the settings used for calls to createInstance. */
@@ -619,6 +789,17 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     return createInstanceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateAclPolicy. */
+  public UnaryCallSettings<UpdateAclPolicyRequest, Operation> updateAclPolicySettings() {
+    return updateAclPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAclPolicy. */
+  public OperationCallSettings<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+      updateAclPolicyOperationSettings() {
+    return updateAclPolicyOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateInstance. */
   public UnaryCallSettings<UpdateInstanceRequest, Operation> updateInstanceSettings() {
     return updateInstanceSettings;
@@ -628,6 +809,32 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
   public OperationCallSettings<UpdateInstanceRequest, Instance, OperationMetadata>
       updateInstanceOperationSettings() {
     return updateInstanceOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAclPolicy. */
+  public UnaryCallSettings<DeleteAclPolicyRequest, Operation> deleteAclPolicySettings() {
+    return deleteAclPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAclPolicy. */
+  public OperationCallSettings<DeleteAclPolicyRequest, Empty, OperationMetadata>
+      deleteAclPolicyOperationSettings() {
+    return deleteAclPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAclPolicyRevision. */
+  public UnaryCallSettings<GetAclPolicyRevisionRequest, AclPolicyRevision>
+      getAclPolicyRevisionSettings() {
+    return getAclPolicyRevisionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAclPolicyRevisions. */
+  public PagedCallSettings<
+          ListAclPolicyRevisionsRequest,
+          ListAclPolicyRevisionsResponse,
+          ListAclPolicyRevisionsPagedResponse>
+      listAclPolicyRevisionsSettings() {
+    return listAclPolicyRevisionsSettings;
   }
 
   /** Returns the object with the settings used for calls to deleteInstance. */
@@ -939,12 +1146,21 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
   protected MemorystoreStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    listAclPoliciesSettings = settingsBuilder.listAclPoliciesSettings().build();
     listInstancesSettings = settingsBuilder.listInstancesSettings().build();
+    getAclPolicySettings = settingsBuilder.getAclPolicySettings().build();
     getInstanceSettings = settingsBuilder.getInstanceSettings().build();
+    createAclPolicySettings = settingsBuilder.createAclPolicySettings().build();
     createInstanceSettings = settingsBuilder.createInstanceSettings().build();
     createInstanceOperationSettings = settingsBuilder.createInstanceOperationSettings().build();
+    updateAclPolicySettings = settingsBuilder.updateAclPolicySettings().build();
+    updateAclPolicyOperationSettings = settingsBuilder.updateAclPolicyOperationSettings().build();
     updateInstanceSettings = settingsBuilder.updateInstanceSettings().build();
     updateInstanceOperationSettings = settingsBuilder.updateInstanceOperationSettings().build();
+    deleteAclPolicySettings = settingsBuilder.deleteAclPolicySettings().build();
+    deleteAclPolicyOperationSettings = settingsBuilder.deleteAclPolicyOperationSettings().build();
+    getAclPolicyRevisionSettings = settingsBuilder.getAclPolicyRevisionSettings().build();
+    listAclPolicyRevisionsSettings = settingsBuilder.listAclPolicyRevisionsSettings().build();
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
     getCertificateAuthoritySettings = settingsBuilder.getCertificateAuthoritySettings().build();
@@ -997,17 +1213,39 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
   public static class Builder extends StubSettings.Builder<MemorystoreStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final PagedCallSettings.Builder<
+            ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+        listAclPoliciesSettings;
+    private final PagedCallSettings.Builder<
             ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
         listInstancesSettings;
+    private final UnaryCallSettings.Builder<GetAclPolicyRequest, AclPolicy> getAclPolicySettings;
     private final UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings;
+    private final UnaryCallSettings.Builder<CreateAclPolicyRequest, AclPolicy>
+        createAclPolicySettings;
     private final UnaryCallSettings.Builder<CreateInstanceRequest, Operation>
         createInstanceSettings;
     private final OperationCallSettings.Builder<CreateInstanceRequest, Instance, OperationMetadata>
         createInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateAclPolicyRequest, Operation>
+        updateAclPolicySettings;
+    private final OperationCallSettings.Builder<
+            UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+        updateAclPolicyOperationSettings;
     private final UnaryCallSettings.Builder<UpdateInstanceRequest, Operation>
         updateInstanceSettings;
     private final OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
         updateInstanceOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteAclPolicyRequest, Operation>
+        deleteAclPolicySettings;
+    private final OperationCallSettings.Builder<DeleteAclPolicyRequest, Empty, OperationMetadata>
+        deleteAclPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<GetAclPolicyRevisionRequest, AclPolicyRevision>
+        getAclPolicyRevisionSettings;
+    private final PagedCallSettings.Builder<
+            ListAclPolicyRevisionsRequest,
+            ListAclPolicyRevisionsResponse,
+            ListAclPolicyRevisionsPagedResponse>
+        listAclPolicyRevisionsSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceRequest, Operation>
         deleteInstanceSettings;
     private final OperationCallSettings.Builder<DeleteInstanceRequest, Empty, OperationMetadata>
@@ -1133,12 +1371,22 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
+      listAclPoliciesSettings = PagedCallSettings.newBuilder(LIST_ACL_POLICIES_PAGE_STR_FACT);
       listInstancesSettings = PagedCallSettings.newBuilder(LIST_INSTANCES_PAGE_STR_FACT);
+      getAclPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAclPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createInstanceOperationSettings = OperationCallSettings.newBuilder();
+      updateAclPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAclPolicyOperationSettings = OperationCallSettings.newBuilder();
       updateInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateInstanceOperationSettings = OperationCallSettings.newBuilder();
+      deleteAclPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAclPolicyOperationSettings = OperationCallSettings.newBuilder();
+      getAclPolicyRevisionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAclPolicyRevisionsSettings =
+          PagedCallSettings.newBuilder(LIST_ACL_POLICY_REVISIONS_PAGE_STR_FACT);
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
       getCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1179,10 +1427,17 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listAclPoliciesSettings,
               listInstancesSettings,
+              getAclPolicySettings,
               getInstanceSettings,
+              createAclPolicySettings,
               createInstanceSettings,
+              updateAclPolicySettings,
               updateInstanceSettings,
+              deleteAclPolicySettings,
+              getAclPolicyRevisionSettings,
+              listAclPolicyRevisionsSettings,
               deleteInstanceSettings,
               getCertificateAuthoritySettings,
               getSharedRegionalCertificateAuthoritySettings,
@@ -1212,12 +1467,21 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     protected Builder(MemorystoreStubSettings settings) {
       super(settings);
 
+      listAclPoliciesSettings = settings.listAclPoliciesSettings.toBuilder();
       listInstancesSettings = settings.listInstancesSettings.toBuilder();
+      getAclPolicySettings = settings.getAclPolicySettings.toBuilder();
       getInstanceSettings = settings.getInstanceSettings.toBuilder();
+      createAclPolicySettings = settings.createAclPolicySettings.toBuilder();
       createInstanceSettings = settings.createInstanceSettings.toBuilder();
       createInstanceOperationSettings = settings.createInstanceOperationSettings.toBuilder();
+      updateAclPolicySettings = settings.updateAclPolicySettings.toBuilder();
+      updateAclPolicyOperationSettings = settings.updateAclPolicyOperationSettings.toBuilder();
       updateInstanceSettings = settings.updateInstanceSettings.toBuilder();
       updateInstanceOperationSettings = settings.updateInstanceOperationSettings.toBuilder();
+      deleteAclPolicySettings = settings.deleteAclPolicySettings.toBuilder();
+      deleteAclPolicyOperationSettings = settings.deleteAclPolicyOperationSettings.toBuilder();
+      getAclPolicyRevisionSettings = settings.getAclPolicyRevisionSettings.toBuilder();
+      listAclPolicyRevisionsSettings = settings.listAclPolicyRevisionsSettings.toBuilder();
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
       getCertificateAuthoritySettings = settings.getCertificateAuthoritySettings.toBuilder();
@@ -1258,10 +1522,17 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listAclPoliciesSettings,
               listInstancesSettings,
+              getAclPolicySettings,
               getInstanceSettings,
+              createAclPolicySettings,
               createInstanceSettings,
+              updateAclPolicySettings,
               updateInstanceSettings,
+              deleteAclPolicySettings,
+              getAclPolicyRevisionSettings,
+              listAclPolicyRevisionsSettings,
               deleteInstanceSettings,
               getCertificateAuthoritySettings,
               getSharedRegionalCertificateAuthoritySettings,
@@ -1313,7 +1584,17 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
 
     private static Builder initDefaults(Builder builder) {
       builder
+          .listAclPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listInstancesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAclPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1323,7 +1604,17 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .createAclPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .createInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateAclPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1331,6 +1622,21 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
           .updateInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteAclPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getAclPolicyRevisionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAclPolicyRevisionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteInstanceSettings()
@@ -1472,6 +1778,30 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
                       .build()));
 
       builder
+          .updateAclPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAclPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AclPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .updateInstanceOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1481,6 +1811,30 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteAclPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteAclPolicyRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -1777,6 +2131,13 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to listAclPolicies. */
+    public PagedCallSettings.Builder<
+            ListAclPoliciesRequest, ListAclPoliciesResponse, ListAclPoliciesPagedResponse>
+        listAclPoliciesSettings() {
+      return listAclPoliciesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listInstances. */
     public PagedCallSettings.Builder<
             ListInstancesRequest, ListInstancesResponse, ListInstancesPagedResponse>
@@ -1784,9 +2145,19 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       return listInstancesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getAclPolicy. */
+    public UnaryCallSettings.Builder<GetAclPolicyRequest, AclPolicy> getAclPolicySettings() {
+      return getAclPolicySettings;
+    }
+
     /** Returns the builder for the settings used for calls to getInstance. */
     public UnaryCallSettings.Builder<GetInstanceRequest, Instance> getInstanceSettings() {
       return getInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAclPolicy. */
+    public UnaryCallSettings.Builder<CreateAclPolicyRequest, AclPolicy> createAclPolicySettings() {
+      return createAclPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to createInstance. */
@@ -1800,6 +2171,17 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       return createInstanceOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateAclPolicy. */
+    public UnaryCallSettings.Builder<UpdateAclPolicyRequest, Operation> updateAclPolicySettings() {
+      return updateAclPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAclPolicy. */
+    public OperationCallSettings.Builder<UpdateAclPolicyRequest, AclPolicy, OperationMetadata>
+        updateAclPolicyOperationSettings() {
+      return updateAclPolicyOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateInstance. */
     public UnaryCallSettings.Builder<UpdateInstanceRequest, Operation> updateInstanceSettings() {
       return updateInstanceSettings;
@@ -1809,6 +2191,32 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     public OperationCallSettings.Builder<UpdateInstanceRequest, Instance, OperationMetadata>
         updateInstanceOperationSettings() {
       return updateInstanceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAclPolicy. */
+    public UnaryCallSettings.Builder<DeleteAclPolicyRequest, Operation> deleteAclPolicySettings() {
+      return deleteAclPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAclPolicy. */
+    public OperationCallSettings.Builder<DeleteAclPolicyRequest, Empty, OperationMetadata>
+        deleteAclPolicyOperationSettings() {
+      return deleteAclPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAclPolicyRevision. */
+    public UnaryCallSettings.Builder<GetAclPolicyRevisionRequest, AclPolicyRevision>
+        getAclPolicyRevisionSettings() {
+      return getAclPolicyRevisionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAclPolicyRevisions. */
+    public PagedCallSettings.Builder<
+            ListAclPolicyRevisionsRequest,
+            ListAclPolicyRevisionsResponse,
+            ListAclPolicyRevisionsPagedResponse>
+        listAclPolicyRevisionsSettings() {
+      return listAclPolicyRevisionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteInstance. */

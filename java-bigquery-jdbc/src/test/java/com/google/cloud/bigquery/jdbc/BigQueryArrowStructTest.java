@@ -29,8 +29,11 @@ import static com.google.cloud.bigquery.StandardSQLTypeName.STRING;
 import static com.google.cloud.bigquery.StandardSQLTypeName.TIME;
 import static com.google.cloud.bigquery.StandardSQLTypeName.TIMESTAMP;
 import static com.google.cloud.bigquery.jdbc.BigQueryErrorMessage.CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED;
+import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.arrowArrayOf;
 import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.arrowArraySchemaAndValue;
+import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.arrowRange;
 import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.arrowStructOf;
+import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.rangeField;
 import static com.google.cloud.bigquery.jdbc.utils.TestUtilities.toArrowStruct;
 import static com.google.common.truth.Truth.assertThat;
 import static java.lang.Boolean.FALSE;
@@ -42,12 +45,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.LegacySQLTypeName;
 import com.google.cloud.bigquery.jdbc.rules.TimeZoneRule;
 import java.math.BigDecimal;
 import java.sql.Array;
 import java.sql.Date;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLFeatureNotSupportedException;
 import java.sql.Struct;
@@ -243,6 +248,32 @@ public class BigQueryArrowStructTest {
 
     assertThat(profileStruct.getAttributes()).isEqualTo(asList("Arya", 15L, false).toArray());
     assertThat(addressStruct.getAttributes()).isEqualTo(asList("Michigan", 49086L).toArray());
+  }
+
+  @Test
+  public void structOfRanges() throws SQLException {
+    FieldList schema =
+        FieldList.of(
+            rangeField("ts_range", "TIMESTAMP"),
+            rangeField("dt_ranges", "DATETIME").toBuilder().setMode(Mode.REPEATED).build());
+    JsonStringHashMap<String, Object> value = new JsonStringHashMap<>();
+    value.put("ts_range", arrowRange(1767225600000000L, null));
+    value.put(
+        "dt_ranges",
+        arrowArrayOf(
+            arrowRange(
+                LocalDateTime.parse("2026-01-01T00:00:00"),
+                LocalDateTime.parse("2026-12-31T23:59:59"))));
+
+    Object[] attributes = new BigQueryArrowStruct(schema, value).getAttributes();
+
+    assertThat(attributes[0]).isEqualTo("[2026-01-01 00:00:00.000000, UNBOUNDED)");
+    String expectedDtRange = "[2026-01-01 00:00:00.000000, 2026-12-31 23:59:59.000000)";
+    Array dtArray = (Array) attributes[1];
+    assertThat((Object[]) dtArray.getArray()).asList().containsExactly(expectedDtRange);
+    ResultSet dtResultSet = dtArray.getResultSet();
+    assertThat(dtResultSet.next()).isTrue();
+    assertThat(dtResultSet.getString(2)).isEqualTo(expectedDtRange);
   }
 
   @Test

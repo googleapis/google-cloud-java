@@ -43,6 +43,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGolden
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbDnsZonesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
@@ -81,6 +82,7 @@ import com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.Database;
@@ -94,6 +96,7 @@ import com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.ExadbVmCluster;
@@ -112,6 +115,7 @@ import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
@@ -170,12 +174,15 @@ import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsRequest;
 import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsResponse;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest;
+import com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse;
 import com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest;
 import com.google.cloud.oracledatabase.v1.ListOdbNetworksResponse;
 import com.google.cloud.oracledatabase.v1.ListOdbSubnetsRequest;
 import com.google.cloud.oracledatabase.v1.ListOdbSubnetsResponse;
 import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesRequest;
 import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesResponse;
+import com.google.cloud.oracledatabase.v1.OdbDnsZone;
 import com.google.cloud.oracledatabase.v1.OdbNetwork;
 import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
@@ -225,6 +232,7 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
           .add(CloudVmCluster.getDescriptor())
           .add(Empty.getDescriptor())
           .add(OdbNetwork.getDescriptor())
+          .add(OdbDnsZone.getDescriptor())
           .add(ExadbVmCluster.getDescriptor())
           .add(GoldengateDeployment.getDescriptor())
           .add(OdbSubnet.getDescriptor())
@@ -1826,6 +1834,159 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
                       .build())
               .setOperationSnapshotFactory(
                   (DeleteOdbSubnetRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse>
+      listOdbDnsZonesMethodDescriptor =
+          ApiMethodDescriptor.<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse>newBuilder()
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/ListOdbDnsZones")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListOdbDnsZonesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/odbNetworks/*}/odbDnsZones",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListOdbDnsZonesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListOdbDnsZonesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListOdbDnsZonesResponse>newBuilder()
+                      .setDefaultInstance(ListOdbDnsZonesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetOdbDnsZoneRequest, OdbDnsZone>
+      getOdbDnsZoneMethodDescriptor =
+          ApiMethodDescriptor.<GetOdbDnsZoneRequest, OdbDnsZone>newBuilder()
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/GetOdbDnsZone")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetOdbDnsZoneRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/odbNetworks/*/odbDnsZones/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetOdbDnsZoneRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetOdbDnsZoneRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<OdbDnsZone>newBuilder()
+                      .setDefaultInstance(OdbDnsZone.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CreateOdbDnsZoneRequest, Operation>
+      createOdbDnsZoneMethodDescriptor =
+          ApiMethodDescriptor.<CreateOdbDnsZoneRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/CreateOdbDnsZone")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateOdbDnsZoneRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/odbNetworks/*}/odbDnsZones",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateOdbDnsZoneRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateOdbDnsZoneRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "odbDnsZoneId", request.getOdbDnsZoneId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("odbDnsZone", request.getOdbDnsZone(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateOdbDnsZoneRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteOdbDnsZoneRequest, Operation>
+      deleteOdbDnsZoneMethodDescriptor =
+          ApiMethodDescriptor.<DeleteOdbDnsZoneRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.oracledatabase.v1.OracleDatabase/DeleteOdbDnsZone")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteOdbDnsZoneRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/odbNetworks/*/odbDnsZones/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteOdbDnsZoneRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteOdbDnsZoneRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteOdbDnsZoneRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -3678,6 +3839,17 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   private final UnaryCallable<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetCallable;
   private final OperationCallable<DeleteOdbSubnetRequest, Empty, OperationMetadata>
       deleteOdbSubnetOperationCallable;
+  private final UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse>
+      listOdbDnsZonesCallable;
+  private final UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesPagedResponse>
+      listOdbDnsZonesPagedCallable;
+  private final UnaryCallable<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneCallable;
+  private final UnaryCallable<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneCallable;
+  private final OperationCallable<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      createOdbDnsZoneOperationCallable;
+  private final UnaryCallable<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneCallable;
+  private final OperationCallable<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+      deleteOdbDnsZoneOperationCallable;
   private final UnaryCallable<ListExadbVmClustersRequest, ListExadbVmClustersResponse>
       listExadbVmClustersCallable;
   private final UnaryCallable<ListExadbVmClustersRequest, ListExadbVmClustersPagedResponse>
@@ -4442,6 +4614,55 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
     HttpJsonCallSettings<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetTransportSettings =
         HttpJsonCallSettings.<DeleteOdbSubnetRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteOdbSubnetMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse>
+        listOdbDnsZonesTransportSettings =
+            HttpJsonCallSettings.<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse>newBuilder()
+                .setMethodDescriptor(listOdbDnsZonesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneTransportSettings =
+        HttpJsonCallSettings.<GetOdbDnsZoneRequest, OdbDnsZone>newBuilder()
+            .setMethodDescriptor(getOdbDnsZoneMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneTransportSettings =
+        HttpJsonCallSettings.<CreateOdbDnsZoneRequest, Operation>newBuilder()
+            .setMethodDescriptor(createOdbDnsZoneMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneTransportSettings =
+        HttpJsonCallSettings.<DeleteOdbDnsZoneRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteOdbDnsZoneMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .setParamsExtractor(
                 request -> {
@@ -5377,6 +5598,33 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
             settings.deleteOdbSubnetOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.listOdbDnsZonesCallable =
+        callableFactory.createUnaryCallable(
+            listOdbDnsZonesTransportSettings, settings.listOdbDnsZonesSettings(), clientContext);
+    this.listOdbDnsZonesPagedCallable =
+        callableFactory.createPagedCallable(
+            listOdbDnsZonesTransportSettings, settings.listOdbDnsZonesSettings(), clientContext);
+    this.getOdbDnsZoneCallable =
+        callableFactory.createUnaryCallable(
+            getOdbDnsZoneTransportSettings, settings.getOdbDnsZoneSettings(), clientContext);
+    this.createOdbDnsZoneCallable =
+        callableFactory.createUnaryCallable(
+            createOdbDnsZoneTransportSettings, settings.createOdbDnsZoneSettings(), clientContext);
+    this.createOdbDnsZoneOperationCallable =
+        callableFactory.createOperationCallable(
+            createOdbDnsZoneTransportSettings,
+            settings.createOdbDnsZoneOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteOdbDnsZoneCallable =
+        callableFactory.createUnaryCallable(
+            deleteOdbDnsZoneTransportSettings, settings.deleteOdbDnsZoneSettings(), clientContext);
+    this.deleteOdbDnsZoneOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteOdbDnsZoneTransportSettings,
+            settings.deleteOdbDnsZoneOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listExadbVmClustersCallable =
         callableFactory.createUnaryCallable(
             listExadbVmClustersTransportSettings,
@@ -5785,6 +6033,10 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
     methodDescriptors.add(getOdbSubnetMethodDescriptor);
     methodDescriptors.add(createOdbSubnetMethodDescriptor);
     methodDescriptors.add(deleteOdbSubnetMethodDescriptor);
+    methodDescriptors.add(listOdbDnsZonesMethodDescriptor);
+    methodDescriptors.add(getOdbDnsZoneMethodDescriptor);
+    methodDescriptors.add(createOdbDnsZoneMethodDescriptor);
+    methodDescriptors.add(deleteOdbDnsZoneMethodDescriptor);
     methodDescriptors.add(listExadbVmClustersMethodDescriptor);
     methodDescriptors.add(getExadbVmClusterMethodDescriptor);
     methodDescriptors.add(createExadbVmClusterMethodDescriptor);
@@ -6267,6 +6519,44 @@ public class HttpJsonOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<DeleteOdbSubnetRequest, Empty, OperationMetadata>
       deleteOdbSubnetOperationCallable() {
     return deleteOdbSubnetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse> listOdbDnsZonesCallable() {
+    return listOdbDnsZonesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesPagedResponse>
+      listOdbDnsZonesPagedCallable() {
+    return listOdbDnsZonesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneCallable() {
+    return getOdbDnsZoneCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneCallable() {
+    return createOdbDnsZoneCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      createOdbDnsZoneOperationCallable() {
+    return createOdbDnsZoneOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneCallable() {
+    return deleteOdbDnsZoneCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+      deleteOdbDnsZoneOperationCallable() {
+    return deleteOdbDnsZoneOperationCallable;
   }
 
   @Override

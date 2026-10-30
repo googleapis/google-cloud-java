@@ -121,6 +121,14 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_chat_v1_CardWithId_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_ReplaceMessageCardsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_chat_v1_ReplaceMessageCardsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_ReplaceMessageCardsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_chat_v1_ReplaceMessageCardsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_chat_v1_SearchMessagesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_chat_v1_SearchMessagesRequest_fieldAccessorTable;
@@ -320,10 +328,17 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\034.google.chat.v1.ActionStatusB\004\342A\001\004B\010\n"
           + "\006action\"7\n"
           + "\006Dialog\022-\n"
-          + "\004body\030\001 \001(\0132\031.google.apps.card.v1.CardB\004\342A\001\004\"F\n\n"
+          + "\004body\030\001 \001(\0132\031.google.apps.card.v1.CardB\004\342A\001\004\"v\n\n"
           + "CardWithId\022\017\n"
           + "\007card_id\030\001 \001(\t\022\'\n"
-          + "\004card\030\002 \001(\0132\031.google.apps.card.v1.Card\"\260\003\n"
+          + "\004card\030\002 \001(\0132\031.google.apps.card.v1.Card\022.\n\n"
+          + "owner_user\030\003 \001(\0132\024.google.chat.v1.UserB\004\342A\001\003\"\204\001\n"
+          + "\032ReplaceMessageCardsRequest\0222\n"
+          + "\004name\030\001 \001(\tB$\342A\001\002\372A\035\n"
+          + "\033chat.googleapis.com/Message\0222\n"
+          + "\010cards_v2\030\002"
+          + " \003(\0132\032.google.chat.v1.CardWithIdB\004\342A\001\001\"\035\n"
+          + "\033ReplaceMessageCardsResponse\"\260\003\n"
           + "\025SearchMessagesRequest\0222\n"
           + "\006parent\030\001 \001(\tB\"\342A\001\002\372A\033\n"
           + "\031chat.googleapis.com/Space\022\024\n"
@@ -331,10 +346,10 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
           + "\tpage_size\030\003 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\004 \001(\tB\004\342A\001\001\022\026\n"
           + "\010order_by\030\005 \001(\tB\004\342A\001\001\0229\n\r"
-          + "markup_syntax\030\006 "
-          + "\001(\0162\034.google.chat.v1.MarkupSyntaxB\004\342A\001\001\022L\n"
-          + "\004view\030\007"
-          + " \001(\01628.google.chat.v1.SearchMessagesRequest.SearchMessagesViewB\004\342A\001\001\"y\n"
+          + "markup_syntax\030\006"
+          + " \001(\0162\034.google.chat.v1.MarkupSyntaxB\004\342A\001\001\022L\n"
+          + "\004view\030\007 \001(\01628.google.cha"
+          + "t.v1.SearchMessagesRequest.SearchMessagesViewB\004\342A\001\001\"y\n"
           + "\022SearchMessagesView\022$\n"
           + " SEARCH_MESSAGES_VIEW_UNSPECIFIED\020\000\022\036\n"
           + "\032SEARCH_MESSAGES_VIEW_BASIC\020\001\022\035\n"
@@ -345,12 +360,13 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
           + "\023SearchMessageResult\022(\n"
           + "\007message\030\001 \001(\0132\027.google.chat.v1.Message\022\021\n"
           + "\004read\030\003 \001(\010H\000\210\001\001\022P\n"
-          + "\022space_mute_setting\030\004"
-          + " \001(\01624.google.chat.v1.SpaceNotificationSetting.MuteSettingB\007\n"
+          + "\022space_mute_setting\030\004 \001(\01624.googl"
+          + "e.chat.v1.SpaceNotificationSetting.MuteSettingB\007\n"
           + "\005_readB\245\001\n"
-          + "\022com.google.chat.v1B\014MessageProtoP\001Z,cloud.google.com/go/chat/apiv1/chatpb;"
-          + "chatpb\242\002\013DYNAPIProto\252\002\023Google.Apps.Chat."
-          + "V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "\022com.google.chat.v1B\014MessageProtoP\001Z,cloud.google.com/go/chat"
+          + "/apiv1/chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Goo"
+          + "gle.Apps.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002"
+          + "\026Google::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -555,10 +571,24 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_CardWithId_descriptor,
             new java.lang.String[] {
-              "CardId", "Card",
+              "CardId", "Card", "OwnerUser",
             });
-    internal_static_google_chat_v1_SearchMessagesRequest_descriptor =
+    internal_static_google_chat_v1_ReplaceMessageCardsRequest_descriptor =
         getDescriptor().getMessageType(18);
+    internal_static_google_chat_v1_ReplaceMessageCardsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_chat_v1_ReplaceMessageCardsRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "CardsV2",
+            });
+    internal_static_google_chat_v1_ReplaceMessageCardsResponse_descriptor =
+        getDescriptor().getMessageType(19);
+    internal_static_google_chat_v1_ReplaceMessageCardsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_chat_v1_ReplaceMessageCardsResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_chat_v1_SearchMessagesRequest_descriptor =
+        getDescriptor().getMessageType(20);
     internal_static_google_chat_v1_SearchMessagesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_SearchMessagesRequest_descriptor,
@@ -566,7 +596,7 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
               "Parent", "Filter", "PageSize", "PageToken", "OrderBy", "MarkupSyntax", "View",
             });
     internal_static_google_chat_v1_SearchMessagesResponse_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(21);
     internal_static_google_chat_v1_SearchMessagesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_SearchMessagesResponse_descriptor,
@@ -574,7 +604,7 @@ public final class MessageProto extends com.google.protobuf.GeneratedFile {
               "Results", "NextPageToken",
             });
     internal_static_google_chat_v1_SearchMessageResult_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(22);
     internal_static_google_chat_v1_SearchMessageResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_SearchMessageResult_descriptor,

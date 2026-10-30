@@ -796,15 +796,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         "getProcedures called for catalog: %s, schemaPattern: %s, procedureNamePattern: %s",
         catalog, schemaPattern, procedureNamePattern);
 
+    final Schema resultSchema = defineGetProceduresSchema();
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())
         || (procedureNamePattern != null && procedureNamePattern.isEmpty())) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
-      return new BigQueryJsonResultSet();
+      return new BigQueryJsonResultSet(resultSchema);
     }
 
-    final Schema resultSchema = defineGetProceduresSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schemaPattern);
 
@@ -955,16 +955,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         "getProcedureColumns called for catalog: %s, schemaPattern: %s, procedureNamePattern: %s, columnNamePattern: %s",
         catalog, schemaPattern, procedureNamePattern, columnNamePattern);
 
+    final Schema resultSchema = defineGetProcedureColumnsSchema();
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())
         || (procedureNamePattern != null && procedureNamePattern.isEmpty())
         || (columnNamePattern != null && columnNamePattern.isEmpty())) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
-      return new BigQueryJsonResultSet();
+      return new BigQueryJsonResultSet(resultSchema);
     }
-
-    final Schema resultSchema = defineGetProcedureColumnsSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schemaPattern);
     Pattern columnNameRegex = compileSqlLikePattern(columnNamePattern);
@@ -1301,14 +1300,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         "getTables called for catalog: %s, schemaPattern: %s, tableNamePattern: %s, types: %s",
         catalog, schemaPattern, tableNamePattern, Arrays.toString(types));
 
+    final Schema resultSchema = defineGetTablesSchema();
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())
         || (tableNamePattern != null && tableNamePattern.isEmpty())) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
-      return new BigQueryJsonResultSet();
+      return new BigQueryJsonResultSet(resultSchema);
     }
-    final Schema resultSchema = defineGetTablesSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
     Tuple<String, String> effectiveIdentifiers =
         determineEffectiveCatalogAndSchema(catalog, schemaPattern);
@@ -1682,15 +1681,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         "getColumns called for catalog: %s, schemaPattern: %s, tableNamePattern: %s, columnNamePattern: %s",
         catalog, schemaPattern, tableNamePattern, columnNamePattern);
 
+    final Schema resultSchema = defineGetColumnsSchema();
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())
         || (tableNamePattern != null && tableNamePattern.isEmpty())
         || (columnNamePattern != null && columnNamePattern.isEmpty())) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
-      return new BigQueryJsonResultSet();
+      return new BigQueryJsonResultSet(resultSchema);
     }
-    final Schema resultSchema = defineGetColumnsSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
     Tuple<String, String> effectiveIdentifiers =
         determineEffectiveCatalogAndSchema(catalog, schemaPattern);
@@ -2004,12 +2003,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             + " %s. BigQuery IAM model differs from SQL privileges; returning empty ResultSet.",
         catalog, schema, table, columnNamePattern);
 
-    final Schema resultSchema = defineGetColumnPrivilegesSchema();
-    final FieldList resultSchemaFields = resultSchema.getFields();
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
-    signalEndOfData(queue, resultSchemaFields);
-
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+    return new BigQueryJsonResultSet(defineGetColumnPrivilegesSchema());
   }
 
   Schema defineGetColumnPrivilegesSchema() {
@@ -2032,12 +2026,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             + "BigQuery IAM model differs from SQL privileges; returning empty ResultSet.",
         catalog, schemaPattern, tableNamePattern);
 
-    final Schema resultSchema = defineGetTablePrivilegesSchema();
-    final FieldList resultSchemaFields = resultSchema.getFields();
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
-    signalEndOfData(queue, resultSchemaFields);
-
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+    return new BigQueryJsonResultSet(defineGetTablePrivilegesSchema());
   }
 
   Schema defineGetTablePrivilegesSchema() {
@@ -2054,12 +2043,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             + " ResultSet.",
         catalog, schema, table, scope, nullable);
 
-    final Schema resultSchema = defineGetBestRowIdentifierSchema();
-    final FieldList resultSchemaFields = resultSchema.getFields();
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
-    signalEndOfData(queue, resultSchemaFields);
-
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+    return new BigQueryJsonResultSet(defineGetBestRowIdentifierSchema());
   }
 
   Schema defineGetBestRowIdentifierSchema() {
@@ -2104,12 +2088,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             + "Automatic version columns not supported by BigQuery; returning empty ResultSet.",
         catalog, schema, table);
 
-    final Schema resultSchema = defineGetVersionColumnsSchema();
-    final FieldList resultSchemaFields = resultSchema.getFields();
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
-    signalEndOfData(queue, resultSchemaFields);
-
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+    return new BigQueryJsonResultSet(defineGetVersionColumnsSchema());
   }
 
   Schema defineGetVersionColumnsSchema() {
@@ -2151,16 +2130,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
     LOG.info(
         "getPrimaryKeys called for catalog: %s, schema: %s, table: %s", catalog, schema, table);
+    final Schema resultSchema = defineGetPrimaryKeysSchema();
     if ((catalog != null && catalog.isEmpty())
         || (schema != null && schema.isEmpty())
         || table == null
         || table.isEmpty()) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
-      return new BigQueryJsonResultSet();
+      return new BigQueryJsonResultSet(resultSchema);
     }
 
-    final Schema resultSchema = defineGetPrimaryKeysSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema, false);
 
@@ -2255,16 +2234,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       throws SQLException {
     LOG.info(
         "getImportedKeys called for catalog: %s, schema: %s, table: %s", catalog, schema, table);
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
     if ((catalog != null && catalog.isEmpty())
         || (schema != null && schema.isEmpty())
         || table == null
         || table.isEmpty()) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
-      return new BigQueryJsonResultSet();
+      return new BigQueryJsonResultSet(resultSchema);
     }
 
-    final Schema resultSchema = defineForeignKeyResultSetSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema, false);
 
@@ -2306,24 +2285,22 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       throws SQLException {
     LOG.info(
         "getExportedKeys called for catalog: %s, schema: %s, table: %s", catalog, schema, table);
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
     if ((catalog != null && catalog.isEmpty())
         || (schema != null && schema.isEmpty())
         || table == null
         || table.isEmpty()) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
-      return new BigQueryJsonResultSet();
+      return new BigQueryJsonResultSet(resultSchema);
     }
 
-    final Schema resultSchema = defineForeignKeyResultSetSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
 
     // Early return for PCNT catalog schemas (containing '.') as they do not support table
     // constraints.
     if (schema != null && schema.contains(".")) {
-      final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
-      signalEndOfData(queue, resultSchemaFields);
-      return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+      return new BigQueryJsonResultSet(resultSchema);
     }
 
     // Fallback Path: If catalog or schema is null, fall back to REST API metadata scan.
@@ -2395,6 +2372,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     LOG.info(
         "getCrossReference called for parentCatalog: %s, parentSchema: %s, parentTable: %s, foreignCatalog: %s, foreignSchema: %s, foreignTable: %s",
         parentCatalog, parentSchema, parentTable, foreignCatalog, foreignSchema, foreignTable);
+    final Schema resultSchema = defineForeignKeyResultSetSchema();
     if ((parentCatalog != null && parentCatalog.isEmpty())
         || (parentSchema != null && parentSchema.isEmpty())
         || parentTable == null
@@ -2405,10 +2383,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         || foreignTable.isEmpty()) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
-      return new BigQueryJsonResultSet();
+      return new BigQueryJsonResultSet(resultSchema);
     }
 
-    final Schema resultSchema = defineForeignKeyResultSetSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
     List<DatasetId> targetDatasets = getTargetDatasets(foreignCatalog, foreignSchema, false);
 
@@ -2919,12 +2896,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             + " %s. Traditional indexes not supported by BigQuery; returning empty ResultSet.",
         catalog, schema, table, unique, approximate);
 
-    final Schema resultSchema = defineGetIndexInfoSchema();
-    final FieldList resultSchemaFields = resultSchema.getFields();
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
-    signalEndOfData(queue, resultSchemaFields);
-
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+    return new BigQueryJsonResultSet(defineGetIndexInfoSchema());
   }
 
   Schema defineGetIndexInfoSchema() {
@@ -3050,12 +3022,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             + "Feature not supported by BigQuery; returning empty ResultSet.",
         catalog, schemaPattern, typeNamePattern, (types == null ? "null" : Arrays.toString(types)));
 
-    final Schema resultSchema = defineGetUDTsSchema();
-    final FieldList resultSchemaFields = resultSchema.getFields();
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
-    signalEndOfData(queue, resultSchemaFields);
-
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+    return new BigQueryJsonResultSet(defineGetUDTsSchema());
   }
 
   Schema defineGetUDTsSchema() {
@@ -3123,13 +3090,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             + "BigQuery does not support super tables; returning empty ResultSet.",
         catalog, schemaPattern, tableNamePattern);
 
-    final Schema resultSchema = defineGetSuperTablesSchema();
-    final FieldList resultSchemaFields = resultSchema.getFields();
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
-
-    signalEndOfData(queue, resultSchemaFields);
-
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+    return new BigQueryJsonResultSet(defineGetSuperTablesSchema());
   }
 
   Schema defineGetSuperTablesSchema() {
@@ -3160,13 +3121,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             + " does not support user-defined type hierarchies; returning empty ResultSet.",
         catalog, schemaPattern, typeNamePattern);
 
-    final Schema resultSchema = defineGetSuperTypesSchema();
-    final FieldList resultSchemaFields = resultSchema.getFields();
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
-
-    signalEndOfData(queue, resultSchemaFields);
-
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+    return new BigQueryJsonResultSet(defineGetSuperTypesSchema());
   }
 
   Schema defineGetSuperTypesSchema() {
@@ -3207,12 +3162,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             + " ResultSet.",
         catalog, schemaPattern, typeNamePattern, attributeNamePattern);
 
-    final Schema resultSchema = defineGetAttributesSchema();
-    final FieldList resultSchemaFields = resultSchema.getFields();
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
-    signalEndOfData(queue, resultSchemaFields);
-
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+    return new BigQueryJsonResultSet(defineGetAttributesSchema());
   }
 
   Schema defineGetAttributesSchema() {
@@ -3367,14 +3317,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private ResultSet getSchemasImpl(String catalog, String schemaPattern) throws SQLException {
     LOG.info("getSchemas called for catalog: %s, schemaPattern: %s", catalog, schemaPattern);
+    final Schema resultSchema = defineGetSchemasSchema();
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
-      return new BigQueryJsonResultSet();
+      return new BigQueryJsonResultSet(resultSchema);
     }
 
-    final Schema resultSchema = defineGetSchemasSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
     final Pattern schemaRegex = compileSqlLikePattern(schemaPattern);
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
@@ -3536,15 +3486,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         "getFunctions called for catalog: %s, schemaPattern: %s, functionNamePattern: %s",
         catalog, schemaPattern, functionNamePattern);
 
+    final Schema resultSchema = defineGetFunctionsSchema();
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())
         || (functionNamePattern != null && functionNamePattern.isEmpty())) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
-      return new BigQueryJsonResultSet();
+      return new BigQueryJsonResultSet(resultSchema);
     }
 
-    final Schema resultSchema = defineGetFunctionsSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schemaPattern);
 
@@ -3677,16 +3627,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         "getFunctionColumns called for catalog: %s, schemaPattern: %s, functionNamePattern: %s, columnNamePattern: %s",
         catalog, schemaPattern, functionNamePattern, columnNamePattern);
 
+    final Schema resultSchema = defineGetFunctionColumnsSchema();
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())
         || (functionNamePattern != null && functionNamePattern.isEmpty())
         || (columnNamePattern != null && columnNamePattern.isEmpty())) {
       LOG.warning(
           "Returning empty ResultSet as one or more patterns are empty or catalog is empty.");
-      return new BigQueryJsonResultSet();
+      return new BigQueryJsonResultSet(resultSchema);
     }
 
-    final Schema resultSchema = defineGetFunctionColumnsSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
     List<DatasetId> targetDatasets = getTargetDatasets(catalog, schemaPattern);
 
@@ -3984,12 +3934,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             + " empty ResultSet.",
         catalog, schemaPattern, tableNamePattern, columnNamePattern);
 
-    final Schema resultSchema = defineGetPseudoColumnsSchema();
-    final FieldList resultSchemaFields = resultSchema.getFields();
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>(1);
-    signalEndOfData(queue, resultSchemaFields);
-
-    return BigQueryJsonResultSet.of(resultSchema, 0, queue, null);
+    return new BigQueryJsonResultSet(defineGetPseudoColumnsSchema());
   }
 
   Schema defineGetPseudoColumnsSchema() {

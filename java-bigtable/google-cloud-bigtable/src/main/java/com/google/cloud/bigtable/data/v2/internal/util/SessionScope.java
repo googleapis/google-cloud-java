@@ -30,19 +30,15 @@ import com.google.bigtable.v2.SessionScopeDiversionConfiguration;
  * the scope list and the resolution rule in one place is what keeps them in sync.
  */
 public enum SessionScope {
-  READ_ROW("method:Bigtable.ReadRow", /* fallbackToGlobalSessionLoad= */ true),
-  MUTATE_ROW("method:Bigtable.MutateRow", /* fallbackToGlobalSessionLoad= */ true),
-  CHECK_AND_MUTATE_ROW(
-      "method:Bigtable.CheckAndMutateRow", /* fallbackToGlobalSessionLoad= */ false),
-  READ_MODIFY_WRITE_ROW(
-      "method:Bigtable.ReadModifyWriteRow", /* fallbackToGlobalSessionLoad= */ false);
+  READ_ROW("method:Bigtable.ReadRow"),
+  MUTATE_ROW("method:Bigtable.MutateRow"),
+  CHECK_AND_MUTATE_ROW("method:Bigtable.CheckAndMutateRow"),
+  READ_MODIFY_WRITE_ROW("method:Bigtable.ReadModifyWriteRow");
 
   private final String key;
-  private final boolean fallbackToGlobalSessionLoad;
 
-  SessionScope(String key, boolean fallbackToGlobalSessionLoad) {
+  SessionScope(String key) {
     this.key = key;
-    this.fallbackToGlobalSessionLoad = fallbackToGlobalSessionLoad;
   }
 
   /** The {@code method:<service>.<method>} key the server uses to address this scope. */
@@ -51,13 +47,10 @@ public enum SessionScope {
   }
 
   /**
-   * Returns the fraction of this scope's traffic that should be served by sessions.
-   *
-   * <p>A {@link SessionDiversionConfiguration} is authoritative when present: the server only sends
-   * the deprecated flat {@code session_load} to keep ReadRow and MutateRow working on older
-   * clients, so this client ignores it entirely once a diversion configuration arrives.
+   * Returns the fraction of this scope's traffic that should be served by sessions, as configured
+   * by {@link SessionDiversionConfiguration}. The deprecated flat {@code session_load} field is
+   * ignored.
    */
-  @SuppressWarnings("deprecation")
   public float resolveSessionLoad(SessionClientConfiguration sessionConfig) {
     if (sessionConfig.hasSessionDiversionConfiguration()) {
       SessionDiversionConfiguration diversionConfig =
@@ -74,7 +67,7 @@ public enum SessionScope {
       }
     }
 
-    return fallbackToGlobalSessionLoad ? sessionConfig.getSessionLoad() : 0f;
+    return 0f;
   }
 
   /**

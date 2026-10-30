@@ -133,6 +133,9 @@
             "PositionSection": {
               "methods": ["positionSection", "positionSectionCallable"]
             },
+            "ReplaceMessageCards": {
+              "methods": ["replaceMessageCards", "replaceMessageCardsCallable"]
+            },
             "SearchMessages": {
               "methods": ["searchMessages", "searchMessages", "searchMessages", "searchMessagesPagedCallable", "searchMessagesCallable"]
             },

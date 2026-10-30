@@ -23,21 +23,15 @@ import com.google.bigtable.v2.SessionDiversionConfiguration.PerScopeDiversion;
 import com.google.bigtable.v2.SessionScopeDiversionConfiguration;
 import org.junit.jupiter.api.Test;
 
-@SuppressWarnings("deprecation") // exercises the deprecated flat session_load on purpose
+@SuppressWarnings("deprecation")
 class SessionScopeTest {
 
   @Test
-  void noDiversionConfig_fallbackScopesUseFlatSessionLoad() {
+  void noDiversionConfig_flatSessionLoadIgnored() {
     SessionClientConfiguration config = sessionLoad(0.75f).build();
 
-    assertThat(SessionScope.READ_ROW.resolveSessionLoad(config)).isEqualTo(0.75f);
-    assertThat(SessionScope.MUTATE_ROW.resolveSessionLoad(config)).isEqualTo(0.75f);
-  }
-
-  @Test
-  void noDiversionConfig_nonFallbackScopesIgnoreFlatSessionLoad() {
-    SessionClientConfiguration config = sessionLoad(0.75f).build();
-
+    assertThat(SessionScope.READ_ROW.resolveSessionLoad(config)).isEqualTo(0f);
+    assertThat(SessionScope.MUTATE_ROW.resolveSessionLoad(config)).isEqualTo(0f);
     assertThat(SessionScope.CHECK_AND_MUTATE_ROW.resolveSessionLoad(config)).isEqualTo(0f);
     assertThat(SessionScope.READ_MODIFY_WRITE_ROW.resolveSessionLoad(config)).isEqualTo(0f);
   }
@@ -112,7 +106,7 @@ class SessionScopeTest {
                         perScope("method:Bigtable.ReadModifyWriteRow", 0.01f))
                     .build()))
         .isTrue();
-    assertThat(SessionScope.divertsAnyTraffic(sessionLoad(0.25f).build())).isTrue();
+    assertThat(SessionScope.divertsAnyTraffic(sessionLoad(0.25f).build())).isFalse();
     assertThat(SessionScope.divertsAnyTraffic(sessionLoad(0f).build())).isFalse();
   }
 

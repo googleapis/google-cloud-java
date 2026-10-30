@@ -3834,4 +3834,133 @@ public class BigQueryDatabaseMetaDataTest {
           .inOrder();
     }
   }
+
+  @FunctionalInterface
+  private interface MetadataResultSetSupplier {
+    ResultSet get(BigQueryDatabaseMetaData metadata) throws SQLException;
+  }
+
+  static Stream<Arguments> emptyArgumentMetadataProvider() {
+    return Stream.of(
+        Arguments.of(
+            10,
+            "TABLE_CAT",
+            "REF_GENERATION",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getTables("", null, "%", null),
+                m -> m.getTables(null, "", "%", null),
+                m -> m.getTables(null, null, "", null))),
+        Arguments.of(
+            24,
+            "TABLE_CAT",
+            "IS_GENERATEDCOLUMN",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getColumns("", null, "%", "%"),
+                m -> m.getColumns(null, "", "%", "%"),
+                m -> m.getColumns(null, null, "", "%"),
+                m -> m.getColumns(null, null, "%", ""))),
+        Arguments.of(
+            2,
+            "TABLE_SCHEM",
+            "TABLE_CATALOG",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getSchemas("", null), m -> m.getSchemas(null, ""))),
+        Arguments.of(
+            9,
+            "PROCEDURE_CAT",
+            "SPECIFIC_NAME",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getProcedures("", null, "%"),
+                m -> m.getProcedures(null, "", "%"),
+                m -> m.getProcedures(null, null, ""))),
+        Arguments.of(
+            20,
+            "PROCEDURE_CAT",
+            "SPECIFIC_NAME",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getProcedureColumns("", null, "%", "%"),
+                m -> m.getProcedureColumns(null, "", "%", "%"),
+                m -> m.getProcedureColumns(null, null, "", "%"),
+                m -> m.getProcedureColumns(null, null, "%", ""))),
+        Arguments.of(
+            6,
+            "FUNCTION_CAT",
+            "SPECIFIC_NAME",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getFunctions("", null, "%"),
+                m -> m.getFunctions(null, "", "%"),
+                m -> m.getFunctions(null, null, ""))),
+        Arguments.of(
+            17,
+            "FUNCTION_CAT",
+            "SPECIFIC_NAME",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getFunctionColumns("", null, "%", "%"),
+                m -> m.getFunctionColumns(null, "", "%", "%"),
+                m -> m.getFunctionColumns(null, null, "", "%"),
+                m -> m.getFunctionColumns(null, null, "%", ""))),
+        Arguments.of(
+            6,
+            "TABLE_CAT",
+            "PK_NAME",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getPrimaryKeys("", "dataset", "table"),
+                m -> m.getPrimaryKeys("project", "", "table"),
+                m -> m.getPrimaryKeys("project", "dataset", ""),
+                m -> m.getPrimaryKeys("project", "dataset", null))),
+        Arguments.of(
+            14,
+            "PKTABLE_CAT",
+            "DEFERRABILITY",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getImportedKeys("", "dataset", "table"),
+                m -> m.getImportedKeys("project", "", "table"),
+                m -> m.getImportedKeys("project", "dataset", ""),
+                m -> m.getImportedKeys("project", "dataset", null))),
+        Arguments.of(
+            14,
+            "PKTABLE_CAT",
+            "DEFERRABILITY",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getExportedKeys("", "dataset", "table"),
+                m -> m.getExportedKeys("project", "", "table"),
+                m -> m.getExportedKeys("project", "dataset", ""),
+                m -> m.getExportedKeys("project", "dataset", null))),
+        Arguments.of(
+            14,
+            "PKTABLE_CAT",
+            "DEFERRABILITY",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getCrossReference("", "pSchema", "pTable", "fCat", "fSchema", "fTable"),
+                m -> m.getCrossReference("pCat", "", "pTable", "fCat", "fSchema", "fTable"),
+                m -> m.getCrossReference("pCat", "pSchema", "", "fCat", "fSchema", "fTable"),
+                m -> m.getCrossReference("pCat", "pSchema", null, "fCat", "fSchema", "fTable"),
+                m -> m.getCrossReference("pCat", "pSchema", "pTable", "", "fSchema", "fTable"),
+                m -> m.getCrossReference("pCat", "pSchema", "pTable", "fCat", "", "fTable"),
+                m -> m.getCrossReference("pCat", "pSchema", "pTable", "fCat", "fSchema", ""),
+                m -> m.getCrossReference("pCat", "pSchema", "pTable", "fCat", "fSchema", null))));
+  }
+
+  @ParameterizedTest
+  @MethodSource("emptyArgumentMetadataProvider")
+  public void testEmptyOrNullArguments_ReturnsEmptyResultSetWithMetadata(
+      int expectedColumnCount,
+      String firstColumnName,
+      String lastColumnName,
+      List<MetadataResultSetSupplier> suppliers)
+      throws SQLException {
+    for (MetadataResultSetSupplier supplier : suppliers) {
+      try (ResultSet rs = supplier.get(dbMetadata)) {
+        assertNotNull(rs, "ResultSet should not be null");
+        ResultSetMetaData metaData = rs.getMetaData();
+        assertNotNull(metaData, "ResultSetMetaData should not be null");
+        assertEquals(expectedColumnCount, metaData.getColumnCount());
+        assertEquals(firstColumnName, metaData.getColumnName(1));
+        assertEquals(lastColumnName, metaData.getColumnName(expectedColumnCount));
+        assertEquals(1, rs.findColumn(firstColumnName));
+        assertEquals(expectedColumnCount, rs.findColumn(lastColumnName));
+        assertFalse(rs.next(), "ResultSet should have 0 rows");
+      }
+    }
+  }
 }
