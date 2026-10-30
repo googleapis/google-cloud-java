@@ -71,10 +71,12 @@ public final class StorageOptionsBuilderTest {
 
   @Test
   public void grpc_attemptDirectPathXdsOverInterconnect() throws Exception {
-    com.google.auth.Credentials mockCreds = com.google.cloud.NoCredentials.getInstance();
+    com.google.auth.Credentials credentials =
+        com.google.auth.oauth2.GoogleCredentials.create(
+            new com.google.auth.oauth2.AccessToken("token", null));
     GrpcStorageOptions options =
         GrpcStorageOptions.grpc()
-            .setCredentials(mockCreds)
+            .setCredentials(credentials)
             .setAttemptDirectPathXdsOverInterconnect(true)
             .build();
 
@@ -88,8 +90,11 @@ public final class StorageOptionsBuilderTest {
 
     com.google.api.gax.rpc.TransportChannelProvider tcp = settings.getTransportChannelProvider();
     assertThat(tcp).isInstanceOf(com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.class);
+    // ClientContext attaches the settings' credentials to the channel provider when the client is
+    // created; DirectPath over Interconnect requires them.
     com.google.api.gax.grpc.InstantiatingGrpcChannelProvider provider =
-        (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider) tcp;
+        (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider)
+            tcp.withCredentials(settings.getCredentialsProvider().getCredentials());
 
     assertThat(provider.getEndpoint()).isEqualTo("storage.googleapis.com:443");
     assertThat(provider.isDirectPathXdsEnabled()).isTrue();
@@ -98,6 +103,26 @@ public final class StorageOptionsBuilderTest {
     } else {
       assertThat(provider.canUseDirectPath()).isTrue();
     }
+  }
+
+  @Test
+  public void grpc_attemptDirectPathXdsOverInterconnect_noCredentials_fallsBackToCloudPath()
+      throws Exception {
+    GrpcStorageOptions options =
+        GrpcStorageOptions.grpc()
+            .setCredentials(com.google.cloud.NoCredentials.getInstance())
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .build();
+    com.google.storage.v2.StorageSettings settings = options.getStorageSettings();
+
+    // NoCredentials resolves to no credentials, so ClientContext leaves the channel provider
+    // without any, and the channel uses CloudPath.
+    assertThat(settings.getCredentialsProvider().getCredentials()).isNull();
+    com.google.api.gax.grpc.InstantiatingGrpcChannelProvider provider =
+        (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider)
+            settings.getTransportChannelProvider();
+    assertThat(provider.isDirectPathXdsEnabled()).isTrue();
+    assertThat(provider.canUseDirectPath()).isFalse();
   }
 
   @Test
