@@ -1513,7 +1513,8 @@ public class PublisherImplTest {
 
   @Test
   public void testHedgingNotTriggeredIfFast() throws Exception {
-    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100));
+    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
+    fillTokenBucket(publisher, 5);
 
     // Prepare fast response (10ms delay)
     testPublisherServiceImpl.setAutoPublishResponse(false);
@@ -1528,10 +1529,11 @@ public class PublisherImplTest {
 
     // Future should be completed
     assertEquals("1", future.get());
+    fakeExecutor.advanceTime(Duration.ofMillis(200));
 
     // Only 1 request should be received by server
     assertThat(testPublisherServiceImpl.getCapturedRequests()).hasSize(1);
-
+    assertThat(publisher.getHedgeTokenBalance()).isWithin(0.0001f).of(1.2f);
     shutdownTestPublisher(publisher);
   }
 
@@ -1610,12 +1612,15 @@ public class PublisherImplTest {
 
   @Test
   public void testHedgingBypassedIfNoTokens() throws Exception {
-    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100));
+    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
 
-    // Drain the token bucket completely (since it starts full)
-    while (publisher.tryAcquireHedgeToken()) {}
+    // The bucket starts empty. Earn one token (5 successes x 0.2), then spend it.
+    fillTokenBucket(publisher, 5);
+    assertTrue(publisher.tryAcquireHedgeToken());
+    assertFalse(publisher.tryAcquireHedgeToken());
     assertThat(publisher.getHedgeTokenBalance()).isEqualTo(0.0f);
 
+    testPublisherServiceImpl.setAutoPublishResponse(false);
     testPublisherServiceImpl.setPublishResponseDelay(Duration.ofMillis(200));
     testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
 
@@ -1726,6 +1731,94 @@ public class PublisherImplTest {
     assertThat(future.get(1, TimeUnit.SECONDS)).isEqualTo("1");
 
     shutdownTestPublisher(publisher);
+  }
+
+  @Test
+  public void testHedgedAttemptWins() throws Exception {
+    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
+    fillTokenBucket(publisher, 5); // 5 successes x 0.2 refill = 1 token
+
+    // Original attempt: slow (500ms).
+    testPublisherServiceImpl.setAutoPublishResponse(false);
+    testPublisherServiceImpl.setPublishResponseDelay(Duration.ofMillis(500));
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
+
+    ApiFuture<String> future = sendTestMessage(publisher, "msg-hedge-wins");
+    waitForRequests(testPublisherServiceImpl, 1);
+
+    // Hedged attempt: answered immediately.
+    testPublisherServiceImpl.setPublishResponseDelay(Duration.ZERO);
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("2"));
+
+    // Past the 100ms hedge delay: the hedge is sent and wins well before the original's 500ms.
+    fakeExecutor.advanceTime(Duration.ofMillis(120));
+    waitForRequests(testPublisherServiceImpl, 2);
+    assertEquals("2", future.get(5, TimeUnit.SECONDS));
+
+    // The winning request was the hedge.
+    PubsubClientTelemetry hedgedTelemetry =
+        extractTelemetryHeader(testPublisherServiceImpl.getCapturedHeaders().get(1));
+    assertThat(hedgedTelemetry.getPublishOperation().getHedgedAttemptCount()).isEqualTo(1);
+
+    // The hedge spent the only token, and the win refilled 0.2.
+    assertThat(publisher.getHedgeTokenBalance()).isWithin(0.0001f).of(0.2f);
+
+    // The losing original RPC was actually cancelled on the server.
+    waitForCancelledCalls(testPublisherServiceImpl, 1);
+
+    shutdownTestPublisher(publisher);
+  }
+
+  private void waitForCancelledCalls(FakePublisherServiceImpl service, int expectedCount)
+      throws InterruptedException {
+    long timeout = System.currentTimeMillis() + 5000;
+    while (service.getCancelledCallCount() < expectedCount
+        && System.currentTimeMillis() < timeout) {
+      Thread.sleep(5);
+    }
+    assertThat(service.getCancelledCallCount()).isEqualTo(expectedCount);
+  }
+
+  @Test
+  public void testInFlightBatchStillHedgedDuringShutdown() throws Exception {
+    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
+    // Fills 1 token and, like steady traffic, leaves a hedge timer pending.
+    fillTokenBucket(publisher, 5);
+
+    // Original attempt is slow; the hedge is answered immediately.
+    testPublisherServiceImpl.setAutoPublishResponse(false);
+    testPublisherServiceImpl.setPublishResponseDelay(Duration.ofMillis(500));
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
+    ApiFuture<String> future = sendTestMessage(publisher, "msg-during-shutdown");
+    waitForRequests(testPublisherServiceImpl, 1);
+    testPublisherServiceImpl.setPublishResponseDelay(Duration.ZERO);
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("2"));
+
+    // Start shutdown() and wait until it's parked in waitComplete().
+    Thread shutdownThread = new Thread(publisher::shutdown);
+    shutdownThread.setDaemon(true); // don't hang the JVM if the test fails
+    shutdownThread.start();
+    long timeout = System.currentTimeMillis() + 5000;
+    while (shutdownThread.getState() != Thread.State.WAITING
+        && shutdownThread.isAlive()
+        && System.currentTimeMillis() < timeout) {
+      Thread.sleep(5);
+    }
+    assertEquals(Thread.State.WAITING, shutdownThread.getState());
+
+    // The pending hedge timer still fires during shutdown, and the hedge completes the batch.
+    fakeExecutor.advanceTime(Duration.ofMillis(120));
+    waitForRequests(testPublisherServiceImpl, 2);
+    assertEquals("2", future.get(5, TimeUnit.SECONDS));
+    PubsubClientTelemetry hedgedTelemetry =
+        extractTelemetryHeader(testPublisherServiceImpl.getCapturedHeaders().get(1));
+    assertThat(hedgedTelemetry.getPublishOperation().getHedgedAttemptCount()).isEqualTo(1);
+
+    // shutdown() can now finish.
+    shutdownThread.join(5000);
+    assertFalse(shutdownThread.isAlive());
+    fakeExecutor.advanceTime(Duration.ofSeconds(10));
+    assertTrue(publisher.awaitTermination(1, TimeUnit.MINUTES));
   }
 
   private Builder getTestPublisherBuilder() {
