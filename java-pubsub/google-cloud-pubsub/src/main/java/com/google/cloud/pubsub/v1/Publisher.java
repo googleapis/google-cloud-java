@@ -817,7 +817,7 @@ public class Publisher implements PublisherInterface {
         }
       }
     } catch (RuntimeException e) {
-      logger.log(Level.WARNING, "Unexpected error while processing the publish hedging queue", e);
+      logger.log(Level.FINE, "Unexpected error while processing the publish hedging queue", e);
     } finally {
       try {
         isQueueProcessingScheduled.set(false);
