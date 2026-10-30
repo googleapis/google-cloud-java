@@ -59,6 +59,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -107,6 +108,7 @@ public final class ITObjectReadSessionTest {
     }
   }
 
+  @Ignore("Flaky test: b/579436582")
   @Test
   public void attemptingToGetFutureOutSizeSessionFails() throws Throwable {
     ChecksummedTestContent testContent =
