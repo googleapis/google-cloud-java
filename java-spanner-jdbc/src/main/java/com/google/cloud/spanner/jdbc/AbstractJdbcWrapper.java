@@ -19,6 +19,7 @@ package com.google.cloud.spanner.jdbc;
 import static com.google.cloud.spanner.jdbc.JdbcTypeConverter.getMainTypeCode;
 
 import com.google.cloud.spanner.Dialect;
+import com.google.cloud.spanner.Interval;
 import com.google.cloud.spanner.Type;
 import com.google.cloud.spanner.Type.Code;
 import com.google.common.base.Preconditions;
@@ -174,6 +175,8 @@ abstract class AbstractJdbcWrapper implements Wrapper {
         return String.class.getName();
       case TIMESTAMP:
         return Timestamp.class.getName();
+      case INTERVAL:
+        return Interval.class.getName();
       case ARRAY:
         switch (getMainTypeCode(type.getArrayElementType())) {
           case BOOL:
@@ -199,6 +202,8 @@ abstract class AbstractJdbcWrapper implements Wrapper {
             return String[].class.getName();
           case TIMESTAMP:
             return Timestamp[].class.getName();
+          case INTERVAL:
+            return Interval[].class.getName();
         }
       case STRUCT:
       default:
