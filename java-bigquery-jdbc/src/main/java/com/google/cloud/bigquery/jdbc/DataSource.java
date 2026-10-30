@@ -131,6 +131,7 @@ public class DataSource implements javax.sql.DataSource {
   private OpenTelemetry customOpenTelemetry;
   private boolean useGlobalOpenTelemetry = BigQueryJdbcUrlUtility.DEFAULT_USE_GLOBAL_OTEL_VALUE;
   private Boolean enableDiagnosticTelemetry;
+  private Boolean enableGraphMetadata;
 
   // Make sure the JDBC driver class is loaded.
   static {
@@ -157,13 +158,13 @@ public class DataSource implements javax.sql.DataSource {
               BigQueryJdbcUrlUtility.ENABLE_HTAPI_PROPERTY_NAME,
               (ds, val) ->
                   ds.setEnableHighThroughputAPI(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_HTAPI_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.UNSUPPORTED_HTAPI_FALLBACK_PROPERTY_NAME,
               (ds, val) ->
                   ds.setUnsupportedHTAPIFallback(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.UNSUPPORTED_HTAPI_FALLBACK_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME,
@@ -182,13 +183,13 @@ public class DataSource implements javax.sql.DataSource {
               BigQueryJdbcUrlUtility.ENABLE_SESSION_PROPERTY_NAME,
               (ds, val) ->
                   ds.setEnableSession(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_SESSION_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME,
               (ds, val) ->
                   ds.setEnableTimestampPicos(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME)))
           .put(BigQueryJdbcUrlUtility.LOG_LEVEL_PROPERTY_NAME, DataSource::setLogLevel)
           .put(BigQueryJdbcUrlUtility.LOG_PATH_PROPERTY_NAME, DataSource::setLogPath)
@@ -209,7 +210,7 @@ public class DataSource implements javax.sql.DataSource {
               BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME,
               (ds, val) ->
                   ds.setOAuthAccessTokenReadonly(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.OAUTH_REFRESH_TOKEN_PROPERTY_NAME,
@@ -218,14 +219,14 @@ public class DataSource implements javax.sql.DataSource {
               BigQueryJdbcUrlUtility.USE_QUERY_CACHE_PROPERTY_NAME,
               (ds, val) ->
                   ds.setUseQueryCache(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.USE_QUERY_CACHE_PROPERTY_NAME)))
           .put(BigQueryJdbcUrlUtility.QUERY_DIALECT_PROPERTY_NAME, DataSource::setQueryDialect)
           .put(
               BigQueryJdbcUrlUtility.ALLOW_LARGE_RESULTS_PROPERTY_NAME,
               (ds, val) ->
                   ds.setAllowLargeResults(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.ALLOW_LARGE_RESULTS_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.LARGE_RESULTS_TABLE_PROPERTY_NAME,
@@ -258,7 +259,7 @@ public class DataSource implements javax.sql.DataSource {
               BigQueryJdbcUrlUtility.ENABLE_WRITE_API_PROPERTY_NAME,
               (ds, val) ->
                   ds.setEnableWriteAPI(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_WRITE_API_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.ADDITIONAL_PROJECTS_PROPERTY_NAME,
@@ -267,14 +268,14 @@ public class DataSource implements javax.sql.DataSource {
               BigQueryJdbcUrlUtility.FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME,
               (ds, val) ->
                   ds.setFilterTablesOnDefaultDataset(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val,
                           BigQueryJdbcUrlUtility.FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME,
               (ds, val) ->
                   ds.setEnableProjectDiscovery(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME,
@@ -376,26 +377,32 @@ public class DataSource implements javax.sql.DataSource {
               BigQueryJdbcUrlUtility.ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME,
               (ds, val) ->
                   ds.setEnableGcpTraceExporter(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME,
               (ds, val) ->
                   ds.setEnableGcpLogExporter(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME,
               (ds, val) ->
                   ds.setUseGlobalOpenTelemetry(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME,
               (ds, val) ->
                   ds.setEnableDiagnosticTelemetry(
-                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
                           val, BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_GRAPH_METADATA_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableGraphMetadata(
+                      BigQueryJdbcUrlUtility.convertToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_GRAPH_METADATA_PROPERTY_NAME)))
           .build();
 
   public static DataSource fromUrl(String url) {
@@ -737,6 +744,11 @@ public class DataSource implements javax.sql.DataSource {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.USE_GLOBAL_OTEL_PROPERTY_NAME,
           String.valueOf(this.useGlobalOpenTelemetry));
+    }
+    if (this.enableGraphMetadata != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.ENABLE_GRAPH_METADATA_PROPERTY_NAME,
+          String.valueOf(this.enableGraphMetadata));
     }
     connectionProperties.setProperty(
         BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME,
@@ -1535,6 +1547,16 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setPrivateServiceConnect(String privateServiceConnect) {
     this.privateServiceConnect = privateServiceConnect;
+  }
+
+  public boolean getEnableGraphMetadata() {
+    return enableGraphMetadata != null
+        ? enableGraphMetadata
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GRAPH_METADATA_VALUE;
+  }
+
+  public void setEnableGraphMetadata(Boolean enableGraphMetadata) {
+    this.enableGraphMetadata = enableGraphMetadata;
   }
 
   @Override
