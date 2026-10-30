@@ -823,6 +823,81 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   @Tag("disable_tpc")
+  public void testDatabaseMetadataGetTables_PropertyGraph() throws SQLException {
+    String nodeTable = "GRAPH_NODE_TABLE_" + randomNumber;
+    String edgeTable = "GRAPH_EDGE_TABLE_" + randomNumber;
+    String graphName = "TEST_GRAPH_GET_TABLES" + randomNumber;
+    String graphUrl = ITBase.connectionUrl + ";EnableGraphMetadata=1";
+
+    try (Connection conn = DriverManager.getConnection(graphUrl);
+        Statement stmt = conn.createStatement()) {
+      stmt.execute(
+          String.format(
+              "CREATE OR REPLACE TABLE `%s.%s.%s` (id INT64 NOT NULL, name STRING)",
+              PROJECT_ID, DATASET, nodeTable));
+      stmt.execute(
+          String.format(
+              "CREATE OR REPLACE TABLE `%s.%s.%s` (id INT64 NOT NULL, dst_id INT64 NOT NULL)",
+              PROJECT_ID, DATASET, edgeTable));
+      stmt.execute(
+          String.format(
+              "CREATE OR REPLACE PROPERTY GRAPH `%s.%s.%s` "
+                  + "NODE TABLES (`%s.%s.%s` AS Person KEY (id)) "
+                  + "EDGE TABLES (`%s.%s.%s` AS Knows KEY (id, dst_id) "
+                  + "SOURCE KEY (id) REFERENCES Person (id) "
+                  + "DESTINATION KEY (dst_id) REFERENCES Person (id))",
+              PROJECT_ID,
+              DATASET,
+              graphName,
+              PROJECT_ID,
+              DATASET,
+              nodeTable,
+              PROJECT_ID,
+              DATASET,
+              edgeTable));
+
+      DatabaseMetaData metaData = conn.getMetaData();
+
+      // 1. Verify getTableTypes() includes "GRAPH TABLE"
+      Set<String> tableTypes = new HashSet<>();
+      try (ResultSet rsTypes = metaData.getTableTypes()) {
+        while (rsTypes.next()) {
+          tableTypes.add(rsTypes.getString("TABLE_TYPE"));
+        }
+      }
+      Assertions.assertTrue(tableTypes.contains("GRAPH TABLE"));
+
+      // 2. Verify getTables() with wildcard pattern returns both node and edge elements
+      Set<String> graphTables = new HashSet<>();
+      try (ResultSet rs =
+          metaData.getTables(PROJECT_ID, DATASET, graphName + ".%", new String[] {"GRAPH TABLE"})) {
+        while (rs.next()) {
+          Assertions.assertEquals(PROJECT_ID, rs.getString("TABLE_CAT"));
+          Assertions.assertEquals(DATASET, rs.getString("TABLE_SCHEM"));
+          Assertions.assertEquals("GRAPH TABLE", rs.getString("TABLE_TYPE"));
+          Assertions.assertTrue(rs.getString("REMARKS").startsWith("Source: "));
+          graphTables.add(rs.getString("TABLE_NAME"));
+        }
+      }
+      Assertions.assertTrue(graphTables.contains(graphName + ".Person"));
+      Assertions.assertTrue(graphTables.contains(graphName + ".Knows"));
+      Assertions.assertEquals(2, graphTables.size());
+    } finally {
+      try (Connection cleanupConn = DriverManager.getConnection(ITBase.connectionUrl);
+          Statement cleanupStmt = cleanupConn.createStatement()) {
+        cleanupStmt.execute(
+            String.format(
+                "DROP PROPERTY GRAPH IF EXISTS `%s.%s.%s`", PROJECT_ID, DATASET, graphName));
+        cleanupStmt.execute(
+            String.format("DROP TABLE IF EXISTS `%s.%s.%s`", PROJECT_ID, DATASET, edgeTable));
+        cleanupStmt.execute(
+            String.format("DROP TABLE IF EXISTS `%s.%s.%s`", PROJECT_ID, DATASET, nodeTable));
+      }
+    }
+  }
+
+  @Test
+  @Tag("disable_tpc")
   public void testDatabaseMetadataGetSchemas() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();

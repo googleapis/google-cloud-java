@@ -193,8 +193,8 @@ final class BigQueryJdbcUrlUtility {
   static final String MAX_BYTES_BILLED_PROPERTY_NAME = "MaximumBytesBilled";
   static final Long DEFAULT_MAX_BYTES_BILLED_VALUE = 0L;
   static final String LABELS_PROPERTY_NAME = "Labels";
-  static final String ENABLE_GRAPH_METADATA_PROPERTY_NAME = "EnablePropertyGraphMetadata";
-  static final boolean DEFAULT_ENABLE_GRAPH_VALUE = false;
+  static final String ENABLE_GRAPH_METADATA_PROPERTY_NAME = "EnableGraphMetadata";
+  static final boolean DEFAULT_ENABLE_GRAPH_METADATA_VALUE = false;
   static final List<String> OVERRIDE_PROPERTIES =
       Arrays.asList(
           BIGQUERY_ENDPOINT_OVERRIDE_PROPERTY_NAME,

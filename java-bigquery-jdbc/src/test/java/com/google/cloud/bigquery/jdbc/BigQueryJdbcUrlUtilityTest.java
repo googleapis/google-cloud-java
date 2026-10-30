@@ -397,21 +397,20 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
     String url =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
             + "ProjectId=MyBigQueryProject;"
-            + "EnablePropertyGraphMetadata=1";
+            + "EnableGraphMetadata=1";
 
-    assertThat(BigQueryJdbcUrlUtility.parseUriProperty(url, "EnablePropertyGraphMetadata"))
-        .isEqualTo("1");
+    assertThat(BigQueryJdbcUrlUtility.parseUriProperty(url, "EnableGraphMetadata")).isEqualTo("1");
 
     DataSource ds = DataSource.fromUrl(url);
     assertThat(ds.getEnableGraphMetadata()).isTrue();
 
     Properties props = ds.createProperties();
-    assertThat(props.getProperty("EnablePropertyGraphMetadata")).isEqualTo("true");
+    assertThat(props.getProperty("EnableGraphMetadata")).isEqualTo("true");
 
     String urlWithoutGraph =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=MyBigQueryProject";
     DataSource defaultDs = DataSource.fromUrl(urlWithoutGraph);
     assertThat(defaultDs.getEnableGraphMetadata())
-        .isEqualTo(BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GRAPH_VALUE);
+        .isEqualTo(BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GRAPH_METADATA_VALUE);
   }
 }

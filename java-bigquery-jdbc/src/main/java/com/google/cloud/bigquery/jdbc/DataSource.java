@@ -1552,7 +1552,7 @@ public class DataSource implements javax.sql.DataSource {
   public boolean getEnableGraphMetadata() {
     return enableGraphMetadata != null
         ? enableGraphMetadata
-        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GRAPH_VALUE;
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GRAPH_METADATA_VALUE;
   }
 
   public void setEnableGraphMetadata(Boolean enableGraphMetadata) {

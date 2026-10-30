@@ -26,6 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
@@ -3802,5 +3803,35 @@ public class BigQueryDatabaseMetaDataTest {
 
     assertEquals(
         Arrays.asList("extra-proj1", "extra-proj2", "pcnt-warehouse", "primary-project"), catalogs);
+  }
+
+  @Test
+  public void testPrepareGetTableTypesRows_withGraphTablesEnabled() {
+    Schema schema = BigQueryDatabaseMetaData.defineGetTableTypesSchema();
+    List<FieldValueList> rows = BigQueryDatabaseMetaData.prepareGetTableTypesRows(schema, true);
+
+    List<String> actualTypes = new ArrayList<>();
+    for (FieldValueList row : rows) {
+      actualTypes.add(row.get(0).getStringValue());
+    }
+    assertThat(actualTypes)
+        .containsExactly(
+            "EXTERNAL", "GRAPH TABLE", "MATERIALIZED VIEW", "SNAPSHOT", "TABLE", "VIEW")
+        .inOrder();
+  }
+
+  @Test
+  public void testGetTableTypes_withGraphTablesEnabled() throws SQLException {
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
+    try (ResultSet rs = dbMetadata.getTableTypes()) {
+      List<String> actualTypes = new ArrayList<>();
+      while (rs.next()) {
+        actualTypes.add(rs.getString("TABLE_TYPE"));
+      }
+      assertThat(actualTypes)
+          .containsExactly(
+              "EXTERNAL", "GRAPH TABLE", "MATERIALIZED VIEW", "SNAPSHOT", "TABLE", "VIEW")
+          .inOrder();
+    }
   }
 }
