@@ -5691,7 +5691,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/dummy
       skip_api_id: true
   - name: spanner
-    version: 6.121.0
+    version: 6.121.1
     apis:
       - path: google/spanner/v1
         java:
@@ -5731,7 +5731,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/spanner/docs/
       recommended_package: com.google.cloud.spanner
       transport_override: grpc
-      released_version: 6.121.0
+      released_version: 6.121.1
   - name: spanneradapter
     version: 0.32.0
     apis:

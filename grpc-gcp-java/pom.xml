@@ -17,7 +17,7 @@
 
   <groupId>com.google.cloud</groupId>
   <artifactId>grpc-gcp</artifactId>
-  <version>1.14.0</version><!-- {x-version-update:grpc-gcp:current} -->
+  <version>1.14.1</version><!-- {x-version-update:grpc-gcp:current} -->
   <packaging>jar</packaging>
 
   <name>gRPC extension library for Google Cloud Platform</name>
