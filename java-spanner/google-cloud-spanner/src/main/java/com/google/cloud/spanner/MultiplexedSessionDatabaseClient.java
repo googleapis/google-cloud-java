@@ -337,7 +337,11 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
                   sessionReferenceFuture, future)) {
                 // Set the exception to trigger an error for all waiters of this attempt.
                 sessionReferenceFuture.setException(t);
-                asyncCreateMultiplexedSession(future, remainingAttempts - 1);
+                try {
+                  asyncCreateMultiplexedSession(future, remainingAttempts - 1);
+                } catch (Throwable e) {
+                  future.setException(e);
+                }
                 return;
               }
             }
