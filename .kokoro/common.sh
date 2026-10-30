@@ -13,10 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Raise the Maven resolver named-lock timeout (default 30s) to avoid
-# "Could not acquire lock(s)" failures during parallel (-T 1C) builds.
-export MAVEN_OPTS="${MAVEN_OPTS:-} -Daether.syncContext.named.time=300"
-
 commonScriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 excluded_modules=(
   'gapic-libraries-bom'
