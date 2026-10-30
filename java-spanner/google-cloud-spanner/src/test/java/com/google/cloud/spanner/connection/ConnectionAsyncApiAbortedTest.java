@@ -18,6 +18,11 @@ package com.google.cloud.spanner.connection;
 
 import static com.google.cloud.spanner.SpannerApiFutures.get;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
@@ -35,6 +40,7 @@ import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.connection.ConnectionOptions.Builder;
 import com.google.cloud.spanner.connection.ITAbstractSpannerTest.ITConnection;
 import com.google.cloud.spanner.connection.StatementExecutor.StatementExecutorType;
+import com.google.cloud.spanner.connection.UnitOfWork.UnitOfWorkState;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -70,6 +76,7 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
 
   private static final class RetryCounter implements TransactionRetryListener {
     final CountDownLatch latch;
+    final CountDownLatch finishedLatch;
     int retryCount = 0;
 
     RetryCounter() {
@@ -77,7 +84,12 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
     }
 
     RetryCounter(int countDown) {
-      latch = new CountDownLatch(countDown);
+      this(countDown, 0);
+    }
+
+    RetryCounter(int startCountDown, int finishCountDown) {
+      latch = new CountDownLatch(startCountDown);
+      finishedLatch = new CountDownLatch(finishCountDown);
     }
 
     @Override
@@ -88,7 +100,9 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
 
     @Override
     public void retryFinished(
-        Timestamp transactionStarted, long transactionId, int retryAttempt, RetryResult result) {}
+        Timestamp transactionStarted, long transactionId, int retryAttempt, RetryResult result) {
+      finishedLatch.countDown();
+    }
   }
 
   private static final ExecutorService singleThreadedExecutor = Executors.newSingleThreadExecutor();
@@ -528,6 +542,112 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
       } catch (AbortedDueToConcurrentModificationException e) {
         assertThat(counter.retryCount).isEqualTo(1);
       }
+    }
+  }
+
+  @Test
+  public void testCommitAfterUpdateAborted_WithConcurrentModification() {
+    Statement update1 = Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=100");
+    mockSpanner.putStatementResult(StatementResult.update(update1, 100));
+
+    RetryCounter counter = new RetryCounter();
+    try (Connection connection = createConnection(counter)) {
+      get(connection.executeUpdateAsync(update1));
+      mockSpanner.putStatementResult(StatementResult.update(update1, 200));
+
+      mockSpanner.abortNextStatement();
+      ApiFuture<Long> insert = connection.executeUpdateAsync(INSERT_STATEMENT);
+      // Wait until the failed retry has marked the transaction as aborted before calling commit.
+      assertThrows(AbortedDueToConcurrentModificationException.class, () -> get(insert));
+      assertEquals(1, counter.retryCount);
+
+      // Committing a transaction that has been aborted must fail and must not silently succeed.
+      assertThrows(
+          AbortedDueToConcurrentModificationException.class, () -> get(connection.commitAsync()));
+      assertEquals(1, counter.retryCount);
+    }
+  }
+
+  @Test
+  public void testBlindUpdateAborted_ConcurrentCommit_WithConcurrentModification()
+      throws InterruptedException {
+    Statement update1 = Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=100");
+    for (int i = 0; i < 10; i++) {
+      mockSpanner.putStatementResult(StatementResult.update(update1, 100));
+
+      RetryCounter counter = new RetryCounter(0, 1);
+      try (Connection connection = createConnection(counter)) {
+        get(connection.executeUpdateAsync(update1));
+        mockSpanner.putStatementResult(StatementResult.update(update1, 200));
+
+        mockSpanner.abortNextStatement();
+        // Execute a blind (shoot-and-forget) update without waiting for its future.
+        connection.executeUpdateAsync(INSERT_STATEMENT);
+        // Trigger commitAsync concurrently as the internal retry finishes (while the blind update
+        // is still rolling back and marking the transaction as aborted on the executor thread).
+        assertThat(counter.finishedLatch.await(10L, TimeUnit.SECONDS)).isTrue();
+        assertThrows(
+            AbortedDueToConcurrentModificationException.class, () -> get(connection.commitAsync()));
+        assertEquals(1, counter.retryCount);
+      }
+    }
+  }
+
+  @Test
+  public void testRollbackAfterTransactionAborted_UpdatesStateToRolledBack() {
+    Statement update1 = Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=100");
+    mockSpanner.putStatementResult(StatementResult.update(update1, 100));
+
+    RetryCounter counter = new RetryCounter();
+    try (Connection connection = createConnection(counter)) {
+      get(connection.executeUpdateAsync(update1));
+      mockSpanner.putStatementResult(StatementResult.update(update1, 200));
+
+      mockSpanner.abortNextStatement();
+      ApiFuture<Long> insert = connection.executeUpdateAsync(INSERT_STATEMENT);
+      assertThrows(AbortedDueToConcurrentModificationException.class, () -> get(insert));
+      assertEquals(1, counter.retryCount);
+
+      // Verify the transaction is currently in the ABORTED state.
+      ConnectionImpl connectionImpl = (ConnectionImpl) connection;
+      ReadWriteTransaction transaction =
+          (ReadWriteTransaction) connectionImpl.getCurrentUnitOfWorkOrStartNewUnitOfWork();
+      assertEquals(UnitOfWorkState.ABORTED, transaction.getState());
+
+      // Rollback the aborted transaction.
+      get(connection.rollbackAsync());
+
+      assertEquals(UnitOfWorkState.ROLLED_BACK, transaction.getState());
+    }
+  }
+
+  @Test
+  public void testRollbackAfterTransactionAborted_CancelsKeepAlivePing() {
+    Statement update1 = Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=100");
+    mockSpanner.putStatementResult(StatementResult.update(update1, 100));
+
+    RetryCounter counter = new RetryCounter();
+    try (Connection connection = createConnection(counter)) {
+      connection.setKeepTransactionAlive(true);
+      get(connection.executeUpdateAsync(update1));
+      mockSpanner.putStatementResult(StatementResult.update(update1, 200));
+
+      ConnectionImpl connectionImpl = (ConnectionImpl) connection;
+      ReadWriteTransaction transaction =
+          (ReadWriteTransaction) connectionImpl.getCurrentUnitOfWorkOrStartNewUnitOfWork();
+      assertNotNull(transaction.getKeepAliveFuture());
+      assertFalse(transaction.getKeepAliveFuture().isCancelled());
+
+      mockSpanner.abortNextStatement();
+      ApiFuture<Long> insert = connection.executeUpdateAsync(INSERT_STATEMENT);
+      assertThrows(AbortedDueToConcurrentModificationException.class, () -> get(insert));
+      assertEquals(1, counter.retryCount);
+      assertEquals(UnitOfWorkState.ABORTED, transaction.getState());
+
+      // Rollback the aborted transaction.
+      get(connection.rollbackAsync());
+
+      assertNull(transaction.getKeepAliveFuture());
     }
   }
 

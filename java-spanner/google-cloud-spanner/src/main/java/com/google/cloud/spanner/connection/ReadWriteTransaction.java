@@ -473,7 +473,8 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
   }
 
   private boolean shouldPing() {
-    return isActive()
+    return getState().isActive()
+        && this.abortedException == null
         && keepAliveLock != null
         && keepTransactionAlive
         && !timedOutOrCancelled
@@ -601,7 +602,9 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
   }
 
   void checkAborted() {
-    if (this.state == UnitOfWorkState.ABORTED && this.abortedException != null) {
+    // Only check abortedException and not the state, as the ABORTED state can be overwritten by a
+    // commit that is called while (or after) an asynchronous statement aborted the transaction.
+    if (this.abortedException != null) {
       if (this.abortedException instanceof AbortedDueToConcurrentModificationException) {
         throw SpannerExceptionFactory.newAbortedDueToConcurrentModificationException(
             (AbortedDueToConcurrentModificationException) this.abortedException);
@@ -1243,8 +1246,7 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
           } catch (Throwable t) {
             // ignore
           }
-          this.state = UnitOfWorkState.ABORTED;
-          this.abortedException = e;
+          markAborted(e);
           throw e;
         } catch (AbortedException abortedExceptionDuringRetry) {
           // Retry aborted, do another retry of the transaction.
@@ -1269,8 +1271,7 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
             // ignore
           }
           // Set transaction state to aborted as the retry failed.
-          this.state = UnitOfWorkState.ABORTED;
-          this.abortedException = aborted;
+          markAborted(aborted);
           // Re-throw underlying exception.
           throw e;
         }
@@ -1282,10 +1283,16 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
         // ignore
       }
       // Internal retry is not enabled.
-      this.state = UnitOfWorkState.ABORTED;
-      this.abortedException = aborted;
+      markAborted(aborted);
       throw aborted;
     }
+  }
+
+  private void markAborted(AbortedException aborted) {
+    if (this.state == UnitOfWorkState.STARTED) {
+      this.state = UnitOfWorkState.ABORTED;
+    }
+    this.abortedException = aborted;
   }
 
   private void throwAbortWithRetryAttemptsExceeded() throws SpannerException {
@@ -1302,11 +1309,10 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
     } catch (Throwable t) {
       // ignore
     }
-    this.state = UnitOfWorkState.ABORTED;
-    this.abortedException =
+    markAborted(
         (AbortedException)
             SpannerExceptionFactory.newSpannerException(
-                ErrorCode.ABORTED, MAX_INTERNAL_RETRIES_EXCEEDED);
+                ErrorCode.ABORTED, MAX_INTERNAL_RETRIES_EXCEEDED));
     throw this.abortedException;
   }
 
@@ -1327,7 +1333,9 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
         @Override
         public Void call() {
           try {
-            if (state != UnitOfWorkState.ABORTED && rolledBackToSavepointException == null) {
+            if (state != UnitOfWorkState.ABORTED
+                && abortedException == null
+                && rolledBackToSavepointException == null) {
               // Make sure the transaction has actually started before we try to rollback.
               get(txContextFuture);
               txManager.rollback();
@@ -1356,10 +1364,11 @@ class ReadWriteTransaction extends AbstractMultiUseTransaction {
         state == UnitOfWorkState.STARTED || state == UnitOfWorkState.ABORTED,
         "This transaction has status " + state.name());
     cancelScheduledKeepAlivePing();
+    boolean isAborted = (state == UnitOfWorkState.ABORTED) || (this.abortedException != null);
     if (updateStatusAndEndSpan) {
       state = UnitOfWorkState.ROLLED_BACK;
     }
-    if (txContextFuture != null && state != UnitOfWorkState.ABORTED) {
+    if (txContextFuture != null && !isAborted) {
       ApiFuture<Void> result =
           executeStatementAsync(
               callType, ROLLBACK_STATEMENT, rollbackCallable, SpannerGrpc.getRollbackMethod());
