@@ -29,6 +29,9 @@
  */
 package com.google.api.gax.httpjson;
 
+import static com.google.api.gax.httpjson.ResumableUploadHeaders.UPLOAD_COMMAND_HEADER;
+import static com.google.api.gax.httpjson.ResumableUploadHeaders.UPLOAD_OFFSET_HEADER;
+
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
@@ -36,6 +39,7 @@ import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.ResumableUploadStatus;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.EndpointContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
@@ -54,10 +58,6 @@ import org.jspecify.annotations.Nullable;
 @NullMarked
 class ResumableUploadChunkCallable<ResponseT>
     extends UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> {
-
-  private static final String UPLOAD_COMMAND_HEADER = "X-Goog-Upload-Command";
-  private static final String UPLOAD_OFFSET_HEADER = "X-Goog-Upload-Offset";
-  private static final String UPLOAD_STATUS_HEADER = "X-Goog-Upload-Status";
 
   private static final String COMMAND_UPLOAD = "upload";
   private static final String COMMAND_FINALIZE = "finalize";
@@ -129,6 +129,9 @@ class ResumableUploadChunkCallable<ResponseT>
             HttpJsonCallContext.createDefault()
                 .nullToSelf(clientContext.getDefaultCallContext())
                 .merge(inputContext)
+                // Session URLs are self-authenticating; omit credentials and reset EndpointContext.
+                .withCredentials(null)
+                .withEndpointContext(EndpointContext.getDefaultInstance())
                 .withExtraHeaders(chunkHeaders);
 
     HttpJsonClientCall<ChunkUploadRequest, String> clientCall =
@@ -175,10 +178,7 @@ class ResumableUploadChunkCallable<ResponseT>
 
     @Override
     public void onHeaders(HttpJsonMetadata responseHeaders) {
-      Map<String, Object> headers = responseHeaders.getHeaders();
-      this.uploadStatus =
-          ResumableUploadStatus.fromHeader(
-              HttpHeadersUtils.getSingleHeader(headers, UPLOAD_STATUS_HEADER));
+      this.uploadStatus = ResumableUploadHeaders.parseUploadStatus(responseHeaders);
     }
 
     @Override
