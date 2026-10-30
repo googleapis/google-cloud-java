@@ -1387,6 +1387,57 @@ public class KeyAwareChannelTest {
   }
 
   @Test
+  public void partitionedDmlQueryDoesNotAttachRoutingHintWhilePinnedToAffinityEndpoint()
+      throws Exception {
+    TestHarness harness = createHarness();
+    seedCache(harness, createTwoRangeCacheUpdate());
+    ByteString transactionId = ByteString.copyFromUtf8("pdml-no-routing-hint");
+    String sql = "DELETE FROM T WHERE K = @k";
+
+    // Begin a Partitioned DML transaction. This records a transaction affinity in the same way as
+    // a read-write transaction.
+    ClientCall<BeginTransactionRequest, Transaction> beginCall =
+        harness.channel.newCall(SpannerGrpc.getBeginTransactionMethod(), CallOptions.DEFAULT);
+    beginCall.start(new CapturingListener<Transaction>(), new Metadata());
+    beginCall.sendMessage(
+        BeginTransactionRequest.newBuilder()
+            .setSession(SESSION)
+            .setOptions(
+                TransactionOptions.newBuilder()
+                    .setPartitionedDml(TransactionOptions.PartitionedDml.getDefaultInstance()))
+            .build());
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<BeginTransactionRequest, Transaction> beginDelegate =
+        (RecordingClientCall<BeginTransactionRequest, Transaction>)
+            harness.defaultManagedChannel.latestCall();
+    beginDelegate.emitOnMessage(Transaction.newBuilder().setId(transactionId).build());
+    beginDelegate.emitOnClose(Status.OK, new Metadata());
+
+    // Execute the Partitioned DML statement. Spanner rejects ExecuteSql requests for a Partitioned
+    // DML transaction that carry a routing hint, because the server fastpath treats them as reads:
+    // "PartitionedDml Transactions may only be used to execute DML statements".
+    ClientCall<ExecuteSqlRequest, PartialResultSet> pdmlCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteStreamingSqlMethod(), CallOptions.DEFAULT);
+    pdmlCall.start(new CapturingListener<PartialResultSet>(), new Metadata());
+    pdmlCall.sendMessage(
+        ExecuteSqlRequest.newBuilder()
+            .setSession(SESSION)
+            .setSql(sql)
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .build());
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteSqlRequest, PartialResultSet> pdmlDelegate =
+        (RecordingClientCall<ExecuteSqlRequest, PartialResultSet>)
+            harness.defaultManagedChannel.latestCall();
+    assertNotNull(pdmlDelegate.lastMessage);
+    assertThat(pdmlDelegate.lastMessage.getSql()).isEqualTo(sql);
+    assertThat(pdmlDelegate.lastMessage.hasRoutingHint()).isFalse();
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(0);
+    assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(0);
+  }
+
+  @Test
   public void genericUnimplementedReroutesOnceAndLearnsDefaultOnlyMethod() throws Exception {
     TestHarness harness = createHarness();
     ByteString transactionId = ByteString.copyFromUtf8("generic-unimplemented");
