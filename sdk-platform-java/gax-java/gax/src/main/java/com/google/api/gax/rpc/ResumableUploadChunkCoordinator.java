@@ -47,6 +47,7 @@ import com.google.api.gax.rpc.ResumableUploadErrorClassifier.Category;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Optional;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
@@ -114,6 +115,15 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     try {
       buffer.fill();
       transmitChunk();
+    } catch (Throwable t) {
+      uploadResultFuture.setException(t);
+    }
+  }
+
+  void resume(QueryStatusResponse<ResponseT> initialQueryResponse) {
+    registerCancellationListener();
+    try {
+      handleQueryResponse(initialQueryResponse);
     } catch (Throwable t) {
       uploadResultFuture.setException(t);
     }
@@ -271,7 +281,10 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       throw new IllegalStateException("Query status response missing X-Goog-Upload-Status header");
     }
     if (queryResponse.getUploadStatus() == ResumableUploadStatus.FINAL) {
-      progressTracker.onFinalized(buffer.getBufferBaseOffset() + buffer.getPayload().length);
+      long finalizedBytes =
+          Optional.ofNullable(queryResponse.getCommittedOffset())
+              .orElse(buffer.getBufferBaseOffset() + buffer.getPayload().length);
+      progressTracker.onFinalized(finalizedBytes);
       uploadResultFuture.set(queryResponse.getResponse());
       return;
     }
@@ -280,7 +293,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
       throw new IllegalStateException(
           "Incomplete query status response did not include a committed offset");
     }
-    progressTracker.onOffsetReceived(committedOffset);
+    progressTracker.onOffsetReceived(committedOffset, chunkSize);
     buffer.realignTo(committedOffset);
     transmitChunk();
   }
