@@ -34,6 +34,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -85,6 +86,7 @@ class ChannelPoolHealthChecker {
   private ScheduledFuture<?> detectAndRemoveTaskScheduledFuture;
 
   private final Clock clock;
+  private final Consumer<Entry> outlierHandler;
 
   /** Constructor for the pool health checker. */
   public ChannelPoolHealthChecker(
@@ -92,11 +94,28 @@ class ChannelPoolHealthChecker {
       ChannelPrimer channelPrimer,
       ScheduledExecutorService executor,
       Clock clock) {
+    this(
+        entrySupplier,
+        channelPrimer,
+        executor,
+        clock,
+        entry -> entry.getManagedChannel().enterIdle());
+  }
+
+  /** Constructor for the pool health checker with an unhealthy outlier handler callback. */
+  public ChannelPoolHealthChecker(
+      Supplier<ImmutableList<Entry>> entrySupplier,
+      ChannelPrimer channelPrimer,
+      ScheduledExecutorService executor,
+      Clock clock,
+      Consumer<Entry> outlierHandler) {
     this.entrySupplier = entrySupplier;
     this.lastEviction = Instant.MIN;
     this.channelPrimer = channelPrimer;
     this.executor = executor;
     this.clock = clock;
+    this.outlierHandler =
+        Preconditions.checkNotNull(outlierHandler, "outlierHandler cannot be null");
   }
 
   void start() {
@@ -252,7 +271,7 @@ class ChannelPoolHealthChecker {
       outlier.failedProbesInWindow.set(0);
       outlier.successfulProbesInWindow.set(0);
       outlier.probeHistory.clear();
-      outlier.getManagedChannel().enterIdle();
+      outlierHandler.accept(outlier);
     }
   }
 }

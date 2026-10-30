@@ -127,7 +127,7 @@ public class BigtableChannelPrimerTest {
   }
 
   @Test
-  public void testErrorsAreLogged() {
+  public void testErrorsAreThrownWithoutLogging() {
     fakeService.pingAndWarmCallback =
         new ApiFunction<PingAndWarmRequest, PingAndWarmResponse>() {
           @Override
@@ -135,25 +135,19 @@ public class BigtableChannelPrimerTest {
             throw new StatusRuntimeException(Status.FAILED_PRECONDITION);
           }
         };
-    primer.primeChannel(channel);
-
-    assertThat(logHandler.logs).hasSize(1);
-    for (LogRecord log : logHandler.logs) {
-      assertThat(log.getThrown().getMessage()).contains("FAILED_PRECONDITION");
-    }
+    StatusRuntimeException e =
+        assertThrows(StatusRuntimeException.class, () -> primer.primeChannel(channel));
+    assertThat(e).hasMessageThat().contains("FAILED_PRECONDITION");
+    assertThat(logHandler.logs).isEmpty();
   }
 
   @Test
-  public void testChannelErrorsAreLogged() {
+  public void testChannelErrorsAreThrownWithoutLogging() {
     ManagedChannel channel =
         Mockito.mock(
             ManagedChannel.class, new ThrowsException(new UnsupportedOperationException()));
-    primer.primeChannel(channel);
-
-    assertThat(logHandler.logs).hasSize(1);
-    for (LogRecord log : logHandler.logs) {
-      assertThat(log.getThrown()).isInstanceOf(UnsupportedOperationException.class);
-    }
+    assertThrows(UnsupportedOperationException.class, () -> primer.primeChannel(channel));
+    assertThat(logHandler.logs).isEmpty();
   }
 
   @Test

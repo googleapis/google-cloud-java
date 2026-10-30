@@ -197,19 +197,21 @@ public final class BigtableTransportChannelProvider implements TransportChannelP
     // with a custom BigtableChannelPool, reusing the delegate's configuration.
 
     // To create our pool, we need a factory for raw gRPC channels.
-    // We achieve this by configuring our delegate to not use its own pooling
-    // (by setting pool size to 1) and then calling getTransportChannel() on it.
-    InstantiatingGrpcChannelProvider singleChannelProvider =
-        selectedProvider.toBuilder()
-            .setChannelPoolSettings(ChannelPoolSettings.staticallySized(1))
-            .build();
+    // We build each channel directly via createDecoratedChannelBuilder().build() rather than
+    // wrapping each single channel in a statically-sized(1) GAX ChannelPool (whose enterIdle()
+    // implementation is a no-op and which adds an extra wrapper per channel).
+    final InstantiatingGrpcChannelProvider singleChannelProvider = selectedProvider;
+    if (singleChannelProvider.needsHeaders()) {
+      throw new IllegalStateException("getTransportChannel() called when needsHeaders() is true");
+    }
+    if (singleChannelProvider.needsEndpoint()) {
+      throw new IllegalStateException("getTransportChannel() called when needsEndpoint() is true");
+    }
 
     Supplier<ManagedChannel> channelSupplier =
         () -> {
           try {
-            GrpcTransportChannel channel =
-                (GrpcTransportChannel) singleChannelProvider.getTransportChannel();
-            return (ManagedChannel) channel.getChannel();
+            return singleChannelProvider.createDecoratedChannelBuilder().build();
           } catch (IOException e) {
             throw new java.io.UncheckedIOException(e);
           }

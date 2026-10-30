@@ -186,4 +186,28 @@ public class ChannelPoolHealthCheckerTest {
     Mockito.verify(entry2.getManagedChannel(), Mockito.never()).enterIdle();
     Mockito.verify(entry3.getManagedChannel(), Mockito.never()).enterIdle();
   }
+
+  @Test
+  public void testEviction_usesOutlierHandlerWhenProvided() {
+    Entry healthyEntry = createTestEntry();
+    Entry worseEntry = createTestEntry();
+
+    healthyEntry.successfulProbesInWindow.set(10);
+    worseEntry.failedProbesInWindow.set(10);
+
+    channelList.addAll(Arrays.asList(healthyEntry, worseEntry));
+    List<Entry> replacedEntries = new ArrayList<>();
+    ChannelPoolHealthChecker replacingHealthChecker =
+        new ChannelPoolHealthChecker(
+            () -> ImmutableList.copyOf(channelList),
+            mockPrimer,
+            executor,
+            fakeClock,
+            replacedEntries::add);
+
+    replacingHealthChecker.detectAndRemoveOutlierEntries();
+
+    assertThat(replacedEntries).containsExactly(worseEntry);
+    Mockito.verify(worseEntry.getManagedChannel(), Mockito.never()).enterIdle();
+  }
 }
