@@ -62,6 +62,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
     changelog_ = "";
     executionState_ = 0;
     goldenRunMethod_ = 0;
+    outcomeMetadata_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -511,6 +512,154 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.EvaluationResult.ExecutionState)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata about the outcome of the evaluation.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata}
+   */
+  public enum OutcomeMetadata implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified outcome metadata.
+     * </pre>
+     *
+     * <code>OUTCOME_METADATA_UNSPECIFIED = 0;</code>
+     */
+    OUTCOME_METADATA_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The evaluation resulted in a graceful handoff to a human representative.
+     * </pre>
+     *
+     * <code>GRACEFUL_HANDOFF = 1;</code>
+     */
+    GRACEFUL_HANDOFF(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "OutcomeMetadata");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified outcome metadata.
+     * </pre>
+     *
+     * <code>OUTCOME_METADATA_UNSPECIFIED = 0;</code>
+     */
+    public static final int OUTCOME_METADATA_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The evaluation resulted in a graceful handoff to a human representative.
+     * </pre>
+     *
+     * <code>GRACEFUL_HANDOFF = 1;</code>
+     */
+    public static final int GRACEFUL_HANDOFF_VALUE = 1;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OutcomeMetadata valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static OutcomeMetadata forNumber(int value) {
+      switch (value) {
+        case 0:
+          return OUTCOME_METADATA_UNSPECIFIED;
+        case 1:
+          return GRACEFUL_HANDOFF;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<OutcomeMetadata> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<OutcomeMetadata>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<OutcomeMetadata>() {
+              public OutcomeMetadata findValueByNumber(int number) {
+                return OutcomeMetadata.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.EvaluationResult.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final OutcomeMetadata[] VALUES = values();
+
+    public static OutcomeMetadata valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private OutcomeMetadata(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata)
   }
 
   public interface GoldenExpectationOutcomeOrBuilder
@@ -30279,7 +30428,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The user task satisfaction score. Can be -1, 0, 1.
+     * Output only. The user task satisfaction score. Can be -1, 0, 1, 2.
      * </pre>
      *
      * <code>optional int32 score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -30292,7 +30441,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The user task satisfaction score. Can be -1, 0, 1.
+     * Output only. The user task satisfaction score. Can be -1, 0, 1, 2.
      * </pre>
      *
      * <code>optional int32 score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -30306,6 +30455,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The label associated with each score.
+     * Score 2: Graceful Handoff
      * Score 1: User Task Satisfied
      * Score 0: User Task Not Satisfied
      * Score -1: User Task Unspecified
@@ -30322,6 +30472,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The label associated with each score.
+     * Score 2: Graceful Handoff
      * Score 1: User Task Satisfied
      * Score 0: User Task Not Satisfied
      * Score -1: User Task Unspecified
@@ -30419,7 +30570,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The user task satisfaction score. Can be -1, 0, 1.
+     * Output only. The user task satisfaction score. Can be -1, 0, 1, 2.
      * </pre>
      *
      * <code>optional int32 score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -30435,7 +30586,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The user task satisfaction score. Can be -1, 0, 1.
+     * Output only. The user task satisfaction score. Can be -1, 0, 1, 2.
      * </pre>
      *
      * <code>optional int32 score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -30457,6 +30608,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The label associated with each score.
+     * Score 2: Graceful Handoff
      * Score 1: User Task Satisfied
      * Score 0: User Task Not Satisfied
      * Score -1: User Task Unspecified
@@ -30484,6 +30636,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Output only. The label associated with each score.
+     * Score 2: Graceful Handoff
      * Score 1: User Task Satisfied
      * Score 0: User Task Not Satisfied
      * Score -1: User Task Unspecified
@@ -30943,7 +31096,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Output only. The user task satisfaction score. Can be -1, 0, 1.
+       * Output only. The user task satisfaction score. Can be -1, 0, 1, 2.
        * </pre>
        *
        * <code>optional int32 score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -30959,7 +31112,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Output only. The user task satisfaction score. Can be -1, 0, 1.
+       * Output only. The user task satisfaction score. Can be -1, 0, 1, 2.
        * </pre>
        *
        * <code>optional int32 score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -30975,7 +31128,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Output only. The user task satisfaction score. Can be -1, 0, 1.
+       * Output only. The user task satisfaction score. Can be -1, 0, 1, 2.
        * </pre>
        *
        * <code>optional int32 score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -30995,7 +31148,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Output only. The user task satisfaction score. Can be -1, 0, 1.
+       * Output only. The user task satisfaction score. Can be -1, 0, 1, 2.
        * </pre>
        *
        * <code>optional int32 score = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -31016,6 +31169,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Output only. The label associated with each score.
+       * Score 2: Graceful Handoff
        * Score 1: User Task Satisfied
        * Score 0: User Task Not Satisfied
        * Score -1: User Task Unspecified
@@ -31042,6 +31196,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Output only. The label associated with each score.
+       * Score 2: Graceful Handoff
        * Score 1: User Task Satisfied
        * Score 0: User Task Not Satisfied
        * Score -1: User Task Unspecified
@@ -31068,6 +31223,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Output only. The label associated with each score.
+       * Score 2: Graceful Handoff
        * Score 1: User Task Satisfied
        * Score 0: User Task Not Satisfied
        * Score -1: User Task Unspecified
@@ -31093,6 +31249,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Output only. The label associated with each score.
+       * Score 2: Graceful Handoff
        * Score 1: User Task Satisfied
        * Score 0: User Task Not Satisfied
        * Score -1: User Task Unspecified
@@ -31114,6 +31271,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Output only. The label associated with each score.
+       * Score 2: Graceful Handoff
        * Score 1: User Task Satisfied
        * Score 0: User Task Not Satisfied
        * Score -1: User Task Unspecified
@@ -35037,7 +35195,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1055
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1065
    * @return Whether the error field is set.
    */
   @java.lang.Override
@@ -35059,7 +35217,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1055
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1065
    * @return The error.
    */
   @java.lang.Override
@@ -35587,6 +35745,109 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
     return result == null ? com.google.cloud.ces.v1beta.GoldenRunMethod.UNRECOGNIZED : result;
   }
 
+  public static final int ROOT_SPAN_FIELD_NUMBER = 24;
+  private com.google.cloud.ces.v1beta.Span rootSpan_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root span of the evaluation execution, which includes
+   * information about each step of the evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the rootSpan field is set.
+   */
+  @java.lang.Override
+  public boolean hasRootSpan() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root span of the evaluation execution, which includes
+   * information about each step of the evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The rootSpan.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.Span getRootSpan() {
+    return rootSpan_ == null ? com.google.cloud.ces.v1beta.Span.getDefaultInstance() : rootSpan_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root span of the evaluation execution, which includes
+   * information about each step of the evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.SpanOrBuilder getRootSpanOrBuilder() {
+    return rootSpan_ == null ? com.google.cloud.ces.v1beta.Span.getDefaultInstance() : rootSpan_;
+  }
+
+  public static final int OUTCOME_METADATA_FIELD_NUMBER = 25;
+  private int outcomeMetadata_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The outcome metadata of the evaluation. Only populated if
+   * execution_state is COMPLETE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata outcome_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for outcomeMetadata.
+   */
+  @java.lang.Override
+  public int getOutcomeMetadataValue() {
+    return outcomeMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The outcome metadata of the evaluation. Only populated if
+   * execution_state is COMPLETE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata outcome_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The outcomeMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata getOutcomeMetadata() {
+    com.google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata result =
+        com.google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata.forNumber(outcomeMetadata_);
+    return result == null
+        ? com.google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -35661,6 +35922,14 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(22, getChangelogCreateTime());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(24, getRootSpan());
+    }
+    if (outcomeMetadata_
+        != com.google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata.OUTCOME_METADATA_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(25, outcomeMetadata_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -35739,6 +36008,14 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(22, getChangelogCreateTime());
     }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getRootSpan());
+    }
+    if (outcomeMetadata_
+        != com.google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata.OUTCOME_METADATA_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(25, outcomeMetadata_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -35794,6 +36071,11 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
       if (!getConfig().equals(other.getConfig())) return false;
     }
     if (goldenRunMethod_ != other.goldenRunMethod_) return false;
+    if (hasRootSpan() != other.hasRootSpan()) return false;
+    if (hasRootSpan()) {
+      if (!getRootSpan().equals(other.getRootSpan())) return false;
+    }
+    if (outcomeMetadata_ != other.outcomeMetadata_) return false;
     if (!getResultCase().equals(other.getResultCase())) return false;
     switch (resultCase_) {
       case 7:
@@ -35864,6 +36146,12 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + GOLDEN_RUN_METHOD_FIELD_NUMBER;
     hash = (53 * hash) + goldenRunMethod_;
+    if (hasRootSpan()) {
+      hash = (37 * hash) + ROOT_SPAN_FIELD_NUMBER;
+      hash = (53 * hash) + getRootSpan().hashCode();
+    }
+    hash = (37 * hash) + OUTCOME_METADATA_FIELD_NUMBER;
+    hash = (53 * hash) + outcomeMetadata_;
     switch (resultCase_) {
       case 7:
         hash = (37 * hash) + GOLDEN_RESULT_FIELD_NUMBER;
@@ -36024,6 +36312,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         internalGetChangelogCreateTimeFieldBuilder();
         internalGetEvaluationMetricsThresholdsFieldBuilder();
         internalGetConfigFieldBuilder();
+        internalGetRootSpanFieldBuilder();
       }
     }
 
@@ -36082,6 +36371,12 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
         configBuilder_ = null;
       }
       goldenRunMethod_ = 0;
+      rootSpan_ = null;
+      if (rootSpanBuilder_ != null) {
+        rootSpanBuilder_.dispose();
+        rootSpanBuilder_ = null;
+      }
+      outcomeMetadata_ = 0;
       resultCase_ = 0;
       result_ = null;
       return this;
@@ -36186,6 +36481,13 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.goldenRunMethod_ = goldenRunMethod_;
       }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.rootSpan_ = rootSpanBuilder_ == null ? rootSpan_ : rootSpanBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.outcomeMetadata_ = outcomeMetadata_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -36276,6 +36578,12 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
       }
       if (other.goldenRunMethod_ != 0) {
         setGoldenRunMethodValue(other.getGoldenRunMethodValue());
+      }
+      if (other.hasRootSpan()) {
+        mergeRootSpan(other.getRootSpan());
+      }
+      if (other.outcomeMetadata_ != 0) {
+        setOutcomeMetadataValue(other.getOutcomeMetadataValue());
       }
       switch (other.getResultCase()) {
         case GOLDEN_RESULT:
@@ -36440,6 +36748,19 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00004000;
                 break;
               } // case 178
+            case 194:
+              {
+                input.readMessage(
+                    internalGetRootSpanFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 194
+            case 200:
+              {
+                outcomeMetadata_ = input.readEnum();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 200
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -38112,7 +38433,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=1055
+     *     google/cloud/ces/v1beta/evaluation.proto;l=1065
      * @return Whether the error field is set.
      */
     @java.lang.Deprecated
@@ -38133,7 +38454,7 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=1055
+     *     google/cloud/ces/v1beta/evaluation.proto;l=1065
      * @return The error.
      */
     @java.lang.Deprecated
@@ -39691,6 +40012,340 @@ public final class EvaluationResult extends com.google.protobuf.GeneratedMessage
     public Builder clearGoldenRunMethod() {
       bitField0_ = (bitField0_ & ~0x00040000);
       goldenRunMethod_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.ces.v1beta.Span rootSpan_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.Span,
+            com.google.cloud.ces.v1beta.Span.Builder,
+            com.google.cloud.ces.v1beta.SpanOrBuilder>
+        rootSpanBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root span of the evaluation execution, which includes
+     * information about each step of the evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the rootSpan field is set.
+     */
+    public boolean hasRootSpan() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root span of the evaluation execution, which includes
+     * information about each step of the evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The rootSpan.
+     */
+    public com.google.cloud.ces.v1beta.Span getRootSpan() {
+      if (rootSpanBuilder_ == null) {
+        return rootSpan_ == null
+            ? com.google.cloud.ces.v1beta.Span.getDefaultInstance()
+            : rootSpan_;
+      } else {
+        return rootSpanBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root span of the evaluation execution, which includes
+     * information about each step of the evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRootSpan(com.google.cloud.ces.v1beta.Span value) {
+      if (rootSpanBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        rootSpan_ = value;
+      } else {
+        rootSpanBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root span of the evaluation execution, which includes
+     * information about each step of the evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRootSpan(com.google.cloud.ces.v1beta.Span.Builder builderForValue) {
+      if (rootSpanBuilder_ == null) {
+        rootSpan_ = builderForValue.build();
+      } else {
+        rootSpanBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root span of the evaluation execution, which includes
+     * information about each step of the evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeRootSpan(com.google.cloud.ces.v1beta.Span value) {
+      if (rootSpanBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && rootSpan_ != null
+            && rootSpan_ != com.google.cloud.ces.v1beta.Span.getDefaultInstance()) {
+          getRootSpanBuilder().mergeFrom(value);
+        } else {
+          rootSpan_ = value;
+        }
+      } else {
+        rootSpanBuilder_.mergeFrom(value);
+      }
+      if (rootSpan_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root span of the evaluation execution, which includes
+     * information about each step of the evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRootSpan() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      rootSpan_ = null;
+      if (rootSpanBuilder_ != null) {
+        rootSpanBuilder_.dispose();
+        rootSpanBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root span of the evaluation execution, which includes
+     * information about each step of the evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.Span.Builder getRootSpanBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return internalGetRootSpanFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root span of the evaluation execution, which includes
+     * information about each step of the evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.SpanOrBuilder getRootSpanOrBuilder() {
+      if (rootSpanBuilder_ != null) {
+        return rootSpanBuilder_.getMessageOrBuilder();
+      } else {
+        return rootSpan_ == null
+            ? com.google.cloud.ces.v1beta.Span.getDefaultInstance()
+            : rootSpan_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The root span of the evaluation execution, which includes
+     * information about each step of the evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.Span,
+            com.google.cloud.ces.v1beta.Span.Builder,
+            com.google.cloud.ces.v1beta.SpanOrBuilder>
+        internalGetRootSpanFieldBuilder() {
+      if (rootSpanBuilder_ == null) {
+        rootSpanBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.Span,
+                com.google.cloud.ces.v1beta.Span.Builder,
+                com.google.cloud.ces.v1beta.SpanOrBuilder>(
+                getRootSpan(), getParentForChildren(), isClean());
+        rootSpan_ = null;
+      }
+      return rootSpanBuilder_;
+    }
+
+    private int outcomeMetadata_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The outcome metadata of the evaluation. Only populated if
+     * execution_state is COMPLETE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata outcome_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for outcomeMetadata.
+     */
+    @java.lang.Override
+    public int getOutcomeMetadataValue() {
+      return outcomeMetadata_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The outcome metadata of the evaluation. Only populated if
+     * execution_state is COMPLETE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata outcome_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for outcomeMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOutcomeMetadataValue(int value) {
+      outcomeMetadata_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The outcome metadata of the evaluation. Only populated if
+     * execution_state is COMPLETE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata outcome_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The outcomeMetadata.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata getOutcomeMetadata() {
+      com.google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata result =
+          com.google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata.forNumber(outcomeMetadata_);
+      return result == null
+          ? com.google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The outcome metadata of the evaluation. Only populated if
+     * execution_state is COMPLETE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata outcome_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The outcomeMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOutcomeMetadata(
+        com.google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00100000;
+      outcomeMetadata_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The outcome metadata of the evaluation. Only populated if
+     * execution_state is COMPLETE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata outcome_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOutcomeMetadata() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      outcomeMetadata_ = 0;
       onChanged();
       return this;
     }

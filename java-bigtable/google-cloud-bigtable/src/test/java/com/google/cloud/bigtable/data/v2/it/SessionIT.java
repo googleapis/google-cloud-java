@@ -55,8 +55,8 @@ import org.junit.runners.JUnit4;
  * enabled.
  *
  * <p>This test only runs under the {@code bigtable-session-it} Maven profile, which sets {@code
- * bigtable.internal.client-config-override} to force {@code session_load: 1.0} and points the
- * client at a session-allowlisted instance.
+ * bigtable.internal.client-config-override} to force {@code global_diversion { session_load: 1.0 }}
+ * and points the client at a session-allowlisted instance.
  *
  * <p>Session path activity is verified by observing the {@code bigtable-peer-info} response header
  * on the {@code OpenTable} session stream. When sessions are active, this header contains a {@link

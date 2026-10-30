@@ -692,7 +692,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     // only set the destination if it is not equal to the default instance
     // otherwise we will clobber default values populated in the gcs server side for the object
     // metadata
-    if (!cleanedDst.equals(Object.getDefaultInstance())) {
+    // If the caller provided a BlobInfo target (overrideInfo), always send the destination so the
+    // server does not fall back to copying the source object's metadata.
+    if (copyRequest.overrideInfo() || !cleanedDst.equals(Object.getDefaultInstance())) {
       b.setDestination(cleanedDst);
     }
 

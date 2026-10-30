@@ -3252,6 +3252,68 @@ public final class App extends com.google.protobuf.GeneratedMessage
     return validationErrors_.getByteString(index);
   }
 
+  public static final int DASHBOARD_SETTINGS_FIELD_NUMBER = 43;
+  private com.google.cloud.ces.v1beta.DashboardSettings dashboardSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. App-specific dashboard settings for linking and configuring
+   * Contact Center Insights dashboards.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dashboardSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasDashboardSettings() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. App-specific dashboard settings for linking and configuring
+   * Contact Center Insights dashboards.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dashboardSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.DashboardSettings getDashboardSettings() {
+    return dashboardSettings_ == null
+        ? com.google.cloud.ces.v1beta.DashboardSettings.getDefaultInstance()
+        : dashboardSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. App-specific dashboard settings for linking and configuring
+   * Contact Center Insights dashboards.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.ces.v1beta.DashboardSettingsOrBuilder getDashboardSettingsOrBuilder() {
+    return dashboardSettings_ == null
+        ? com.google.cloud.ces.v1beta.DashboardSettings.getDefaultInstance()
+        : dashboardSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3356,6 +3418,9 @@ public final class App extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < validationErrors_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 39, validationErrors_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeMessage(43, getDashboardSettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3487,6 +3552,9 @@ public final class App extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 2 * getValidationErrorsList().size();
     }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(43, getDashboardSettings());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3577,6 +3645,10 @@ public final class App extends com.google.protobuf.GeneratedMessage
       if (!getEvaluationSettings().equals(other.getEvaluationSettings())) return false;
     }
     if (!getValidationErrorsList().equals(other.getValidationErrorsList())) return false;
+    if (hasDashboardSettings() != other.hasDashboardSettings()) return false;
+    if (hasDashboardSettings()) {
+      if (!getDashboardSettings().equals(other.getDashboardSettings())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3687,6 +3759,10 @@ public final class App extends com.google.protobuf.GeneratedMessage
     if (getValidationErrorsCount() > 0) {
       hash = (37 * hash) + VALIDATION_ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getValidationErrorsList().hashCode();
+    }
+    if (hasDashboardSettings()) {
+      hash = (37 * hash) + DASHBOARD_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getDashboardSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3869,6 +3945,7 @@ public final class App extends com.google.protobuf.GeneratedMessage
         internalGetVpcScSettingsFieldBuilder();
         internalGetEvaluationPersonasFieldBuilder();
         internalGetEvaluationSettingsFieldBuilder();
+        internalGetDashboardSettingsFieldBuilder();
       }
     }
 
@@ -3980,6 +4057,11 @@ public final class App extends com.google.protobuf.GeneratedMessage
         evaluationSettingsBuilder_ = null;
       }
       validationErrors_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      dashboardSettings_ = null;
+      if (dashboardSettingsBuilder_ != null) {
+        dashboardSettingsBuilder_.dispose();
+        dashboardSettingsBuilder_ = null;
+      }
       return this;
     }
 
@@ -4171,6 +4253,13 @@ public final class App extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x20000000) != 0)) {
         validationErrors_.makeImmutable();
         result.validationErrors_ = validationErrors_;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.dashboardSettings_ =
+            dashboardSettingsBuilder_ == null
+                ? dashboardSettings_
+                : dashboardSettingsBuilder_.build();
+        to_bitField0_ |= 0x00004000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4374,6 +4463,9 @@ public final class App extends com.google.protobuf.GeneratedMessage
           validationErrors_.addAll(other.validationErrors_);
         }
         onChanged();
+      }
+      if (other.hasDashboardSettings()) {
+        mergeDashboardSettings(other.getDashboardSettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4628,6 +4720,13 @@ public final class App extends com.google.protobuf.GeneratedMessage
                 validationErrors_.add(s);
                 break;
               } // case 314
+            case 346:
+              {
+                input.readMessage(
+                    internalGetDashboardSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 346
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10544,6 +10643,229 @@ public final class App extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x20000000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.ces.v1beta.DashboardSettings dashboardSettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.DashboardSettings,
+            com.google.cloud.ces.v1beta.DashboardSettings.Builder,
+            com.google.cloud.ces.v1beta.DashboardSettingsOrBuilder>
+        dashboardSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. App-specific dashboard settings for linking and configuring
+     * Contact Center Insights dashboards.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dashboardSettings field is set.
+     */
+    public boolean hasDashboardSettings() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. App-specific dashboard settings for linking and configuring
+     * Contact Center Insights dashboards.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dashboardSettings.
+     */
+    public com.google.cloud.ces.v1beta.DashboardSettings getDashboardSettings() {
+      if (dashboardSettingsBuilder_ == null) {
+        return dashboardSettings_ == null
+            ? com.google.cloud.ces.v1beta.DashboardSettings.getDefaultInstance()
+            : dashboardSettings_;
+      } else {
+        return dashboardSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. App-specific dashboard settings for linking and configuring
+     * Contact Center Insights dashboards.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDashboardSettings(com.google.cloud.ces.v1beta.DashboardSettings value) {
+      if (dashboardSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dashboardSettings_ = value;
+      } else {
+        dashboardSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. App-specific dashboard settings for linking and configuring
+     * Contact Center Insights dashboards.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDashboardSettings(
+        com.google.cloud.ces.v1beta.DashboardSettings.Builder builderForValue) {
+      if (dashboardSettingsBuilder_ == null) {
+        dashboardSettings_ = builderForValue.build();
+      } else {
+        dashboardSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. App-specific dashboard settings for linking and configuring
+     * Contact Center Insights dashboards.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDashboardSettings(com.google.cloud.ces.v1beta.DashboardSettings value) {
+      if (dashboardSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x40000000) != 0)
+            && dashboardSettings_ != null
+            && dashboardSettings_
+                != com.google.cloud.ces.v1beta.DashboardSettings.getDefaultInstance()) {
+          getDashboardSettingsBuilder().mergeFrom(value);
+        } else {
+          dashboardSettings_ = value;
+        }
+      } else {
+        dashboardSettingsBuilder_.mergeFrom(value);
+      }
+      if (dashboardSettings_ != null) {
+        bitField0_ |= 0x40000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. App-specific dashboard settings for linking and configuring
+     * Contact Center Insights dashboards.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDashboardSettings() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      dashboardSettings_ = null;
+      if (dashboardSettingsBuilder_ != null) {
+        dashboardSettingsBuilder_.dispose();
+        dashboardSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. App-specific dashboard settings for linking and configuring
+     * Contact Center Insights dashboards.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.DashboardSettings.Builder getDashboardSettingsBuilder() {
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return internalGetDashboardSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. App-specific dashboard settings for linking and configuring
+     * Contact Center Insights dashboards.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.ces.v1beta.DashboardSettingsOrBuilder getDashboardSettingsOrBuilder() {
+      if (dashboardSettingsBuilder_ != null) {
+        return dashboardSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return dashboardSettings_ == null
+            ? com.google.cloud.ces.v1beta.DashboardSettings.getDefaultInstance()
+            : dashboardSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. App-specific dashboard settings for linking and configuring
+     * Contact Center Insights dashboards.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.ces.v1beta.DashboardSettings,
+            com.google.cloud.ces.v1beta.DashboardSettings.Builder,
+            com.google.cloud.ces.v1beta.DashboardSettingsOrBuilder>
+        internalGetDashboardSettingsFieldBuilder() {
+      if (dashboardSettingsBuilder_ == null) {
+        dashboardSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.ces.v1beta.DashboardSettings,
+                com.google.cloud.ces.v1beta.DashboardSettings.Builder,
+                com.google.cloud.ces.v1beta.DashboardSettingsOrBuilder>(
+                getDashboardSettings(), getParentForChildren(), isClean());
+        dashboardSettings_ = null;
+      }
+      return dashboardSettingsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.App)

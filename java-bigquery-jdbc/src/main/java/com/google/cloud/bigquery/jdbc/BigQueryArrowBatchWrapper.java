@@ -29,13 +29,13 @@ class BigQueryArrowBatchWrapper {
   // Marks the end of the stream for the ResultSet
   private final boolean isLast;
 
-  private final Exception exception;
+  private final Throwable exception;
 
   private BigQueryArrowBatchWrapper(
       ArrowRecordBatch currentArrowBatch,
       JsonStringArrayList nestedRecords,
       boolean isLast,
-      Exception exception) {
+      Throwable exception) {
     this.currentArrowBatch = currentArrowBatch;
     this.nestedRecords = nestedRecords;
     this.isLast = isLast;
@@ -53,7 +53,7 @@ class BigQueryArrowBatchWrapper {
     return new BigQueryArrowBatchWrapper(null, nestedRecords, isLastFlag, null);
   }
 
-  static BigQueryArrowBatchWrapper ofError(Exception exception) {
+  static BigQueryArrowBatchWrapper ofError(Throwable exception) {
     return new BigQueryArrowBatchWrapper(null, null, true, exception);
   }
 
@@ -69,7 +69,7 @@ class BigQueryArrowBatchWrapper {
     return this.isLast;
   }
 
-  Exception getException() {
+  Throwable getException() {
     return this.exception;
   }
 }

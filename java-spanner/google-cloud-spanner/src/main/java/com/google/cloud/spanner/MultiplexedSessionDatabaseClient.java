@@ -182,6 +182,13 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
   private static final EnumSet<ErrorCode> RETRYABLE_ERROR_CODES =
       EnumSet.of(ErrorCode.DEADLINE_EXCEEDED, ErrorCode.RESOURCE_EXHAUSTED, ErrorCode.UNAVAILABLE);
 
+  static boolean shouldCacheDialectError(Exception e) {
+    if (e instanceof SpannerException) {
+      return !RETRYABLE_ERROR_CODES.contains(((SpannerException) e).getErrorCode());
+    }
+    return true;
+  }
+
   private final BitSet channelUsage;
 
   private final int numChannels;
@@ -538,6 +545,11 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
           }
           // This should not really happen, but it is the safest fallback value.
           return Dialect.GOOGLE_STANDARD_SQL;
+        }
+
+        @Override
+        protected boolean shouldCacheError(Exception e) {
+          return shouldCacheDialectError(e);
         }
       };
 

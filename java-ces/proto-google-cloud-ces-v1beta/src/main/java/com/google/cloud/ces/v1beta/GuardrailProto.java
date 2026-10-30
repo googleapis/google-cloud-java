@@ -72,6 +72,10 @@ public final class GuardrailProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_ces_v1beta_Guardrail_CodeCallback_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_Guardrail_CodeCallback_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_Guardrail_Supervisor_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_Guardrail_Supervisor_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -86,7 +90,7 @@ public final class GuardrailProto extends com.google.protobuf.GeneratedFile {
           + "o\022\027google.cloud.ces.v1beta\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
           + ".proto\032$google/cloud/ces/v1beta/common.p"
-          + "roto\032\037google/protobuf/timestamp.proto\"\344\026\n"
+          + "roto\032\037google/protobuf/timestamp.proto\"\330\033\n"
           + "\tGuardrail\022P\n"
           + "\016content_filter\030\010 \001(\01320.go"
           + "ogle.cloud.ces.v1beta.Guardrail.ContentFilterB\004\342A\001\001H\000\022Y\n"
@@ -98,7 +102,9 @@ public final class GuardrailProto extends com.google.protobuf.GeneratedFile {
           + " \001(\013"
           + "2..google.cloud.ces.v1beta.Guardrail.ModelSafetyB\004\342A\001\001H\000\022N\n\r"
           + "code_callback\030\016 \001(\0132"
-          + "/.google.cloud.ces.v1beta.Guardrail.CodeCallbackB\004\342A\001\001H\000\022\022\n"
+          + "/.google.cloud.ces.v1beta.Guardrail.CodeCallbackB\004\342A\001\001H\000\022I\n\n"
+          + "supervisor\030\020 \001(\0132-.g"
+          + "oogle.cloud.ces.v1beta.Guardrail.SupervisorB\004\342A\001\001H\000\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\002\022\031\n"
           + "\013description\030\003 \001(\tB\004\342A\001\001\022\025\n"
@@ -109,56 +115,60 @@ public final class GuardrailProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\014\n"
-          + "\004etag\030\013 \001(\t\032\372\002\n\r"
+          + "\004etag\030\013 \001(\t\032\272\003\n\r"
           + "ContentFilter\022\035\n"
           + "\017banned_contents\030\001 \003(\tB\004\342A\001\001\022+\n"
           + "\035banned_contents_in_user_input\030\002 \003(\tB\004\342A\001\001\022/\n"
           + "!banned_contents_in_agent_response\030\003 \003(\tB\004\342A\001\001\022T\n\n"
-          + "match_type\030\004 \001(\0162:.google.cloud.c"
-          + "es.v1beta.Guardrail.ContentFilter.MatchTypeB\004\342A\001\002\022\"\n"
-          + "\024disregard_diacritics\030\005 \001(\010B\004\342A\001\001\"r\n"
+          + "match_type\030\004 \001(\0162:.google.cloud.ces.v1"
+          + "beta.Guardrail.ContentFilter.MatchTypeB\004\342A\001\002\022\"\n"
+          + "\024disregard_diacritics\030\005 \001(\010B\004\342A\001\001\022(\n"
+          + "\032sensitive_words_exemptions\030\007 \003(\tB\004\342A\001\001\"\207\001\n"
           + "\tMatchType\022\032\n"
           + "\026MATCH_TYPE_UNSPECIFIED\020\000\022\027\n"
           + "\023SIMPLE_STRING_MATCH\020\001\022\036\n"
           + "\032WORD_BOUNDARY_STRING_MATCH\020\002\022\020\n"
-          + "\014REGEXP_MATCH\020\003\032\276\002\n"
+          + "\014REGEXP_MATCH\020\003\022\023\n"
+          + "\017SENSITIVE_WORDS\020\004\032\276\002\n"
           + "\021LlmPromptSecurity\022n\n"
-          + "\020default_settings\030\001 \001(\0132L.google.cloud.ces.v1beta.Guar"
-          + "drail.LlmPromptSecurity.DefaultSecuritySettingsB\004\342A\001\001H\000\022K\n\r"
-          + "custom_policy\030\002 \001(\0132,"
-          + ".google.cloud.ces.v1beta.Guardrail.LlmPolicyB\004\342A\001\001H\000\022\027\n"
+          + "\020default_settings\030\001 \001(\0132L.google.cl"
+          + "oud.ces.v1beta.Guardrail.LlmPromptSecurity.DefaultSecuritySettingsB\004\342A\001\001H\000\022K\n\r"
+          + "custom_policy\030\002"
+          + " \001(\0132,.google.cloud.ces.v1beta.Guardrail.LlmPolicyB\004\342A\001\001H\000\022\027\n"
           + "\tfail_open\030\003 \001(\010B\004\342A\001\001\032@\n"
           + "\027DefaultSecuritySettings\022%\n"
           + "\027default_prompt_template\030\001 \001(\tB\004\342A\001\003B\021\n"
           + "\017security_config\032\230\003\n"
           + "\tLlmPolicy\022\'\n"
           + "\031max_conversation_messages\030\001 \001(\005B\004\342A\001\001\022D\n"
-          + "\016model_settings\030\002 \001("
-          + "\0132&.google.cloud.ces.v1beta.ModelSettingsB\004\342A\001\001\022\024\n"
+          + "\016model_settings\030\002"
+          + " \001(\0132&.google.cloud.ces.v1beta.ModelSettingsB\004\342A\001\001\022\024\n"
           + "\006prompt\030\003 \001(\tB\004\342A\001\002\022T\n"
-          + "\014policy_scope\030\004"
-          + " \001(\01628.google.cloud.ces.v1beta.Guardrail.LlmPolicy.PolicyScopeB\004\342A\001\002\022\027\n"
+          + "\014policy_scope\030\004 \001(\01628.google."
+          + "cloud.ces.v1beta.Guardrail.LlmPolicy.PolicyScopeB\004\342A\001\002\022\027\n"
           + "\tfail_open\030\005 \001(\010B\004\342A\001\001\022#\n"
           + "\025allow_short_utterance\030\006 \001(\010B\004\342A\001\001\"r\n"
           + "\013PolicyScope\022\034\n"
           + "\030POLICY_SCOPE_UNSPECIFIED\020\000\022\016\n\n"
           + "USER_QUERY\020\001\022\022\n"
           + "\016AGENT_RESPONSE\020\002\022!\n"
-          + "\035USER_QUERY_AND_AGENT_RESPONSE\020\003\032\204\005\n"
+          + "\035USER_QUERY_AND_AGENT_RESPONSE\020\003\032\272\005\n"
           + "\013ModelSafety\022[\n"
-          + "\017safety_settings\030\001 \003(\0132<.google.cloud.ces.v1beta"
-          + ".Guardrail.ModelSafety.SafetySettingB\004\342A\001\002\032\300\001\n\r"
+          + "\017safety_settings\030\001 \003(\0132<.goog"
+          + "le.cloud.ces.v1beta.Guardrail.ModelSafety.SafetySettingB\004\342A\001\002\032\300\001\n\r"
           + "SafetySetting\022S\n"
-          + "\010category\030\001 \001(\0162;"
-          + ".google.cloud.ces.v1beta.Guardrail.ModelSafety.HarmCategoryB\004\342A\001\002\022Z\n"
-          + "\tthreshold\030\002 \001(\0162A.google.cloud.ces.v1beta.Guardrail"
-          + ".ModelSafety.HarmBlockThresholdB\004\342A\001\002\"\264\001\n"
+          + "\010category\030\001 \001(\0162;.google.cloud.ces.v1b"
+          + "eta.Guardrail.ModelSafety.HarmCategoryB\004\342A\001\002\022Z\n"
+          + "\tthreshold\030\002 \001(\0162A.google.cloud.c"
+          + "es.v1beta.Guardrail.ModelSafety.HarmBlockThresholdB\004\342A\001\002\"\352\001\n"
           + "\014HarmCategory\022\035\n"
           + "\031HARM_CATEGORY_UNSPECIFIED\020\000\022\035\n"
           + "\031HARM_CATEGORY_HATE_SPEECH\020\001\022#\n"
           + "\037HARM_CATEGORY_DANGEROUS_CONTENT\020\002\022\034\n"
           + "\030HARM_CATEGORY_HARASSMENT\020\003\022#\n"
-          + "\037HARM_CATEGORY_SEXUALLY_EXPLICIT\020\004\"\235\001\n"
+          + "\037HARM_CATEGORY_SEXUALLY_EXPLICIT\020\004\022\033\n"
+          + "\027HARM_CATEGORY_PROFANITY\020\005\022\027\n"
+          + "\023HARM_CATEGORY_TOXIC\020\006\"\235\001\n"
           + "\022HarmBlockThreshold\022$\n"
           + " HARM_BLOCK_THRESHOLD_UNSPECIFIED\020\000\022\027\n"
           + "\023BLOCK_LOW_AND_ABOVE\020\001\022\032\n"
@@ -173,14 +183,34 @@ public final class GuardrailProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132!.google.cloud.ces.v1beta.CallbackB\004\342A\001\001\022F\n"
           + "\025before_model_callback\030\003"
           + " \001(\0132!.google.cloud.ces.v1beta.CallbackB\004\342A\001\001\022E\n"
-          + "\024after_model_callback\030\004 \001"
-          + "(\0132!.google.cloud.ces.v1beta.CallbackB\004\342A\001\001:\204\001\352A\200\001\n"
-          + "\034ces.googleapis.com/Guardrail"
-          + "\022Iprojects/{project}/locations/{location}/apps/{app}/guardrails/{guardrail}*\n"
+          + "\024after_model_callback\030\004"
+          + " \001(\0132!.google.cloud.ces.v1beta.CallbackB\004\342A\001\001\032\260\003\n"
+          + "\n"
+          + "Supervisor\022F\n"
+          + "\004type\030\001 \001(\01622.google.cloud"
+          + ".ces.v1beta.Guardrail.Supervisor.TypeB\004\342A\001\001\022Y\n"
+          + "\016detection_mode\030\002 \001(\0162;.google.clo"
+          + "ud.ces.v1beta.Guardrail.Supervisor.DetectionModeB\004\342A\001\001\"\255\001\n"
+          + "\004Type\022\024\n"
+          + "\020TYPE_UNSPECIFIED\020\000\022\020\n"
+          + "\014INVALID_TEXT\020\001\022\022\n"
+          + "\016LANGUAGE_SHIFT\020\002\022\021\n\r"
+          + "SPEAKER_SHIFT\020\003\022\022\n"
+          + "\016AUDIO_MISMATCH\020\004\022\025\n"
+          + "\021MISSING_TOOL_CALL\020\005\022\n\n"
+          + "\006CUSTOM\020\006\022\020\n"
+          + "\014CHOPPY_AUDIO\020\007\022\r\n"
+          + "\tPROFANITY\020\010\"O\n\r"
+          + "DetectionMode\022\036\n"
+          + "\032DETECTION_MODE_UNSPECIFIED\020\000\022\020\n"
+          + "\014NON_BLOCKING\020\001\022\014\n"
+          + "\010BLOCKING\020\002:\204\001\352A\200\001\n"
+          + "\034ces.googleapis.com/Guardrail\022Iprojects/{"
+          + "project}/locations/{location}/apps/{app}/guardrails/{guardrail}*\n"
           + "guardrails2\tguardrailB\020\n"
           + "\016guardrail_typeB^\n"
-          + "\033com.google.cloud.ces.v1betaB\016GuardrailPr"
-          + "otoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
+          + "\033com.google.cloud.ces.v1betaB\016GuardrailProtoP\001Z-cloud"
+          + ".google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -202,6 +232,7 @@ public final class GuardrailProto extends com.google.protobuf.GeneratedFile {
               "LlmPolicy",
               "ModelSafety",
               "CodeCallback",
+              "Supervisor",
               "Name",
               "DisplayName",
               "Description",
@@ -223,6 +254,7 @@ public final class GuardrailProto extends com.google.protobuf.GeneratedFile {
               "BannedContentsInAgentResponse",
               "MatchType",
               "DisregardDiacritics",
+              "SensitiveWordsExemptions",
             });
     internal_static_google_cloud_ces_v1beta_Guardrail_LlmPromptSecurity_descriptor =
         internal_static_google_cloud_ces_v1beta_Guardrail_descriptor.getNestedType(1);
@@ -280,6 +312,14 @@ public final class GuardrailProto extends com.google.protobuf.GeneratedFile {
               "AfterAgentCallback",
               "BeforeModelCallback",
               "AfterModelCallback",
+            });
+    internal_static_google_cloud_ces_v1beta_Guardrail_Supervisor_descriptor =
+        internal_static_google_cloud_ces_v1beta_Guardrail_descriptor.getNestedType(5);
+    internal_static_google_cloud_ces_v1beta_Guardrail_Supervisor_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_Guardrail_Supervisor_descriptor,
+            new java.lang.String[] {
+              "Type", "DetectionMode",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
@@ -792,6 +793,12 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     checkClosed();
     if (value == null) {
       setNull(parameterName, Types.OTHER);
+      return;
+    }
+    Tuple<Object, Class<?>> binding = BigQueryParameterHandler.bindingForJavaTime(value);
+    if (binding != null) {
+      this.parameterHandler.setParameter(
+          parameterName, binding.x(), binding.y(), BigQueryStatementParameterType.IN, 0);
       return;
     }
     this.parameterHandler.setParameter(

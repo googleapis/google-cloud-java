@@ -85,4 +85,34 @@ public interface ModelSettingsOrBuilder
    * @return The temperature.
    */
   double getTemperature();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The thinking level of the model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ModelSettings.ThinkingLevel thinking_level = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for thinkingLevel.
+   */
+  int getThinkingLevelValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The thinking level of the model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ModelSettings.ThinkingLevel thinking_level = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The thinkingLevel.
+   */
+  com.google.cloud.ces.v1beta.ModelSettings.ThinkingLevel getThinkingLevel();
 }

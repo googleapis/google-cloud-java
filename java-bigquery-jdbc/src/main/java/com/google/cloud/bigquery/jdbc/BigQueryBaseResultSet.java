@@ -52,8 +52,13 @@ import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.OffsetDateTime;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.List;
 import javax.sql.rowset.serial.SerialBlob;
@@ -317,9 +322,12 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
     LOG.finestTrace("getObject");
     try {
-      if (type == LocalTime.class || type == String.class) {
+      if (isRawViewTarget(type)) {
         StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
-        if (bqType == StandardSQLTypeName.TIME) {
+        // java.sql types can't hold every value of these (sub-ms TIME, pre-1582 DATE/DATETIME).
+        if (bqType == StandardSQLTypeName.TIME
+            || bqType == StandardSQLTypeName.DATE
+            || bqType == StandardSQLTypeName.DATETIME) {
           return BigQueryTypeRegistry.convert(getObjectInternal(columnIndex), bqType, type, null);
         }
       }
@@ -337,6 +345,16 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     } catch (RuntimeException e) {
       throw createCoercionException(columnIndex, type, e);
     }
+  }
+
+  private static boolean isRawViewTarget(Class<?> type) {
+    return type == String.class
+        || type == LocalDate.class
+        || type == LocalDateTime.class
+        || type == LocalTime.class
+        || type == Instant.class
+        || type == OffsetDateTime.class
+        || type == ZonedDateTime.class;
   }
 
   @Override
@@ -854,7 +872,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     this.warningsLoaded = true;
   }
 
-  static BigQueryJdbcException backgroundFetchError(Exception cause) {
+  static BigQueryJdbcException backgroundFetchError(Throwable cause) {
     String msg = "Error occurred while fetching query results";
     return cause instanceof BigQueryException
         ? new BigQueryJdbcException(msg, (BigQueryException) cause)

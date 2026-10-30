@@ -420,6 +420,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("advanced") // Asserts this driver returns only the connection's project as a catalog.
   public void testDatabaseMetadataGetCatalogs() throws SQLException {
 
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);

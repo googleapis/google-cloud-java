@@ -33,6 +33,53 @@ public final class MemorystoreGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.ListAclPoliciesRequest,
+          com.google.cloud.memorystore.v1.ListAclPoliciesResponse>
+      getListAclPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAclPolicies",
+      requestType = com.google.cloud.memorystore.v1.ListAclPoliciesRequest.class,
+      responseType = com.google.cloud.memorystore.v1.ListAclPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.ListAclPoliciesRequest,
+          com.google.cloud.memorystore.v1.ListAclPoliciesResponse>
+      getListAclPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.ListAclPoliciesRequest,
+            com.google.cloud.memorystore.v1.ListAclPoliciesResponse>
+        getListAclPoliciesMethod;
+    if ((getListAclPoliciesMethod = MemorystoreGrpc.getListAclPoliciesMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getListAclPoliciesMethod = MemorystoreGrpc.getListAclPoliciesMethod) == null) {
+          MemorystoreGrpc.getListAclPoliciesMethod =
+              getListAclPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.ListAclPoliciesRequest,
+                          com.google.cloud.memorystore.v1.ListAclPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAclPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.ListAclPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.ListAclPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("ListAclPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getListAclPoliciesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.memorystore.v1.ListInstancesRequest,
           com.google.cloud.memorystore.v1.ListInstancesResponse>
       getListInstancesMethod;
@@ -76,6 +123,51 @@ public final class MemorystoreGrpc {
       }
     }
     return getListInstancesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.GetAclPolicyRequest,
+          com.google.cloud.memorystore.v1.AclPolicy>
+      getGetAclPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAclPolicy",
+      requestType = com.google.cloud.memorystore.v1.GetAclPolicyRequest.class,
+      responseType = com.google.cloud.memorystore.v1.AclPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.GetAclPolicyRequest,
+          com.google.cloud.memorystore.v1.AclPolicy>
+      getGetAclPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.GetAclPolicyRequest,
+            com.google.cloud.memorystore.v1.AclPolicy>
+        getGetAclPolicyMethod;
+    if ((getGetAclPolicyMethod = MemorystoreGrpc.getGetAclPolicyMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getGetAclPolicyMethod = MemorystoreGrpc.getGetAclPolicyMethod) == null) {
+          MemorystoreGrpc.getGetAclPolicyMethod =
+              getGetAclPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.GetAclPolicyRequest,
+                          com.google.cloud.memorystore.v1.AclPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAclPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.GetAclPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.AclPolicy.getDefaultInstance()))
+                      .setSchemaDescriptor(new MemorystoreMethodDescriptorSupplier("GetAclPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetAclPolicyMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -124,6 +216,52 @@ public final class MemorystoreGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.CreateAclPolicyRequest,
+          com.google.cloud.memorystore.v1.AclPolicy>
+      getCreateAclPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAclPolicy",
+      requestType = com.google.cloud.memorystore.v1.CreateAclPolicyRequest.class,
+      responseType = com.google.cloud.memorystore.v1.AclPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.CreateAclPolicyRequest,
+          com.google.cloud.memorystore.v1.AclPolicy>
+      getCreateAclPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.CreateAclPolicyRequest,
+            com.google.cloud.memorystore.v1.AclPolicy>
+        getCreateAclPolicyMethod;
+    if ((getCreateAclPolicyMethod = MemorystoreGrpc.getCreateAclPolicyMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getCreateAclPolicyMethod = MemorystoreGrpc.getCreateAclPolicyMethod) == null) {
+          MemorystoreGrpc.getCreateAclPolicyMethod =
+              getCreateAclPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.CreateAclPolicyRequest,
+                          com.google.cloud.memorystore.v1.AclPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAclPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.CreateAclPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.AclPolicy.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("CreateAclPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAclPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.memorystore.v1.CreateInstanceRequest, com.google.longrunning.Operation>
       getCreateInstanceMethod;
 
@@ -167,6 +305,50 @@ public final class MemorystoreGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.UpdateAclPolicyRequest, com.google.longrunning.Operation>
+      getUpdateAclPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAclPolicy",
+      requestType = com.google.cloud.memorystore.v1.UpdateAclPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.UpdateAclPolicyRequest, com.google.longrunning.Operation>
+      getUpdateAclPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.UpdateAclPolicyRequest,
+            com.google.longrunning.Operation>
+        getUpdateAclPolicyMethod;
+    if ((getUpdateAclPolicyMethod = MemorystoreGrpc.getUpdateAclPolicyMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getUpdateAclPolicyMethod = MemorystoreGrpc.getUpdateAclPolicyMethod) == null) {
+          MemorystoreGrpc.getUpdateAclPolicyMethod =
+              getUpdateAclPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.UpdateAclPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAclPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.UpdateAclPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("UpdateAclPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAclPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.memorystore.v1.UpdateInstanceRequest, com.google.longrunning.Operation>
       getUpdateInstanceMethod;
 
@@ -207,6 +389,149 @@ public final class MemorystoreGrpc {
       }
     }
     return getUpdateInstanceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.DeleteAclPolicyRequest, com.google.longrunning.Operation>
+      getDeleteAclPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAclPolicy",
+      requestType = com.google.cloud.memorystore.v1.DeleteAclPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.DeleteAclPolicyRequest, com.google.longrunning.Operation>
+      getDeleteAclPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.DeleteAclPolicyRequest,
+            com.google.longrunning.Operation>
+        getDeleteAclPolicyMethod;
+    if ((getDeleteAclPolicyMethod = MemorystoreGrpc.getDeleteAclPolicyMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getDeleteAclPolicyMethod = MemorystoreGrpc.getDeleteAclPolicyMethod) == null) {
+          MemorystoreGrpc.getDeleteAclPolicyMethod =
+              getDeleteAclPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.DeleteAclPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAclPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.DeleteAclPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("DeleteAclPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAclPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest,
+          com.google.cloud.memorystore.v1.AclPolicyRevision>
+      getGetAclPolicyRevisionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAclPolicyRevision",
+      requestType = com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest.class,
+      responseType = com.google.cloud.memorystore.v1.AclPolicyRevision.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest,
+          com.google.cloud.memorystore.v1.AclPolicyRevision>
+      getGetAclPolicyRevisionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest,
+            com.google.cloud.memorystore.v1.AclPolicyRevision>
+        getGetAclPolicyRevisionMethod;
+    if ((getGetAclPolicyRevisionMethod = MemorystoreGrpc.getGetAclPolicyRevisionMethod) == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getGetAclPolicyRevisionMethod = MemorystoreGrpc.getGetAclPolicyRevisionMethod)
+            == null) {
+          MemorystoreGrpc.getGetAclPolicyRevisionMethod =
+              getGetAclPolicyRevisionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest,
+                          com.google.cloud.memorystore.v1.AclPolicyRevision>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAclPolicyRevision"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.AclPolicyRevision
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("GetAclPolicyRevision"))
+                      .build();
+        }
+      }
+    }
+    return getGetAclPolicyRevisionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest,
+          com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse>
+      getListAclPolicyRevisionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAclPolicyRevisions",
+      requestType = com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest.class,
+      responseType = com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest,
+          com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse>
+      getListAclPolicyRevisionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest,
+            com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse>
+        getListAclPolicyRevisionsMethod;
+    if ((getListAclPolicyRevisionsMethod = MemorystoreGrpc.getListAclPolicyRevisionsMethod)
+        == null) {
+      synchronized (MemorystoreGrpc.class) {
+        if ((getListAclPolicyRevisionsMethod = MemorystoreGrpc.getListAclPolicyRevisionsMethod)
+            == null) {
+          MemorystoreGrpc.getListAclPolicyRevisionsMethod =
+              getListAclPolicyRevisionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest,
+                          com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAclPolicyRevisions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new MemorystoreMethodDescriptorSupplier("ListAclPolicyRevisions"))
+                      .build();
+        }
+      }
+    }
+    return getListAclPolicyRevisionsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1235,6 +1560,26 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Lists all ACL policies owned by a project in either the specified
+     * location (region) or all locations.
+     * The location should have the following format:
+     * * `projects/{project_id}/locations/{location_id}`
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    default void listAclPolicies(
+        com.google.cloud.memorystore.v1.ListAclPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.ListAclPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAclPoliciesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Instances in a given project and location.
      * </pre>
      */
@@ -1244,6 +1589,20 @@ public final class MemorystoreGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListInstancesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific Memorystore ACL policy.
+     * </pre>
+     */
+    default void getAclPolicy(
+        com.google.cloud.memorystore.v1.GetAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.AclPolicy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAclPolicyMethod(), responseObserver);
     }
 
     /**
@@ -1264,6 +1623,22 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Creates an ACL policy.
+     * The creation is executed synchronously and the policy is available for use
+     * immediately after the RPC returns.
+     * </pre>
+     */
+    default void createAclPolicy(
+        com.google.cloud.memorystore.v1.CreateAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.AclPolicy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAclPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new Instance in a given project and location.
      * </pre>
      */
@@ -1278,6 +1653,27 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Updates the ACL policy.
+     * The operation will apply the updated ACL policy to all the linked
+     * instances. The operation will return success if it successfully applied the
+     * policy to all the instances. If the operation completed with a failure, the
+     * service will continue to apply the policy via reconciliation for the failed
+     * instances even after operation completion to ensure eventual consistency.
+     * Completed longrunning.Operation will contain the new ACL policy object
+     * in the response field.
+     * </pre>
+     */
+    default void updateAclPolicy(
+        com.google.cloud.memorystore.v1.UpdateAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAclPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the parameters of a single Instance.
      * </pre>
      */
@@ -1286,6 +1682,52 @@ public final class MemorystoreGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateInstanceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific ACL policy. This action will delete the ACL policy and
+     * all the rules associated with it. An ACL policy cannot be deleted if it is
+     * attached to an instance.
+     * </pre>
+     */
+    default void deleteAclPolicy(
+        com.google.cloud.memorystore.v1.DeleteAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAclPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a specific ACL policy revision.
+     * </pre>
+     */
+    default void getAclPolicyRevision(
+        com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.AclPolicyRevision>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAclPolicyRevisionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ACL policy revisions in a given ACL policy.
+     * </pre>
+     */
+    default void listAclPolicyRevisions(
+        com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAclPolicyRevisionsMethod(), responseObserver);
     }
 
     /**
@@ -1654,6 +2096,28 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Lists all ACL policies owned by a project in either the specified
+     * location (region) or all locations.
+     * The location should have the following format:
+     * * `projects/{project_id}/locations/{location_id}`
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public void listAclPolicies(
+        com.google.cloud.memorystore.v1.ListAclPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.ListAclPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAclPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Instances in a given project and location.
      * </pre>
      */
@@ -1663,6 +2127,22 @@ public final class MemorystoreGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListInstancesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific Memorystore ACL policy.
+     * </pre>
+     */
+    public void getAclPolicy(
+        com.google.cloud.memorystore.v1.GetAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.AclPolicy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAclPolicyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1687,6 +2167,24 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Creates an ACL policy.
+     * The creation is executed synchronously and the policy is available for use
+     * immediately after the RPC returns.
+     * </pre>
+     */
+    public void createAclPolicy(
+        com.google.cloud.memorystore.v1.CreateAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.AclPolicy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAclPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new Instance in a given project and location.
      * </pre>
      */
@@ -1703,6 +2201,29 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Updates the ACL policy.
+     * The operation will apply the updated ACL policy to all the linked
+     * instances. The operation will return success if it successfully applied the
+     * policy to all the instances. If the operation completed with a failure, the
+     * service will continue to apply the policy via reconciliation for the failed
+     * instances even after operation completion to ensure eventual consistency.
+     * Completed longrunning.Operation will contain the new ACL policy object
+     * in the response field.
+     * </pre>
+     */
+    public void updateAclPolicy(
+        com.google.cloud.memorystore.v1.UpdateAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAclPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the parameters of a single Instance.
      * </pre>
      */
@@ -1711,6 +2232,58 @@ public final class MemorystoreGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific ACL policy. This action will delete the ACL policy and
+     * all the rules associated with it. An ACL policy cannot be deleted if it is
+     * attached to an instance.
+     * </pre>
+     */
+    public void deleteAclPolicy(
+        com.google.cloud.memorystore.v1.DeleteAclPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAclPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a specific ACL policy revision.
+     * </pre>
+     */
+    public void getAclPolicyRevision(
+        com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.AclPolicyRevision>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAclPolicyRevisionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ACL policy revisions in a given ACL policy.
+     * </pre>
+     */
+    public void listAclPolicyRevisions(
+        com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAclPolicyRevisionsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2107,6 +2680,25 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Lists all ACL policies owned by a project in either the specified
+     * location (region) or all locations.
+     * The location should have the following format:
+     * * `projects/{project_id}/locations/{location_id}`
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.ListAclPoliciesResponse listAclPolicies(
+        com.google.cloud.memorystore.v1.ListAclPoliciesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAclPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Instances in a given project and location.
      * </pre>
      */
@@ -2121,6 +2713,20 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Gets the details of a specific Memorystore ACL policy.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.AclPolicy getAclPolicy(
+        com.google.cloud.memorystore.v1.GetAclPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAclPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets details of a single Instance.
      * </pre>
      */
@@ -2128,6 +2734,22 @@ public final class MemorystoreGrpc {
         com.google.cloud.memorystore.v1.GetInstanceRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an ACL policy.
+     * The creation is executed synchronously and the policy is available for use
+     * immediately after the RPC returns.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.AclPolicy createAclPolicy(
+        com.google.cloud.memorystore.v1.CreateAclPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAclPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2148,6 +2770,27 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Updates the ACL policy.
+     * The operation will apply the updated ACL policy to all the linked
+     * instances. The operation will return success if it successfully applied the
+     * policy to all the instances. If the operation completed with a failure, the
+     * service will continue to apply the policy via reconciliation for the failed
+     * instances even after operation completion to ensure eventual consistency.
+     * Completed longrunning.Operation will contain the new ACL policy object
+     * in the response field.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAclPolicy(
+        com.google.cloud.memorystore.v1.UpdateAclPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAclPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the parameters of a single Instance.
      * </pre>
      */
@@ -2156,6 +2799,50 @@ public final class MemorystoreGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific ACL policy. This action will delete the ACL policy and
+     * all the rules associated with it. An ACL policy cannot be deleted if it is
+     * attached to an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAclPolicy(
+        com.google.cloud.memorystore.v1.DeleteAclPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAclPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a specific ACL policy revision.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.AclPolicyRevision getAclPolicyRevision(
+        com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAclPolicyRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ACL policy revisions in a given ACL policy.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse listAclPolicyRevisions(
+        com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAclPolicyRevisionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2503,6 +3190,24 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Lists all ACL policies owned by a project in either the specified
+     * location (region) or all locations.
+     * The location should have the following format:
+     * * `projects/{project_id}/locations/{location_id}`
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.ListAclPoliciesResponse listAclPolicies(
+        com.google.cloud.memorystore.v1.ListAclPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAclPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Instances in a given project and location.
      * </pre>
      */
@@ -2510,6 +3215,19 @@ public final class MemorystoreGrpc {
         com.google.cloud.memorystore.v1.ListInstancesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific Memorystore ACL policy.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.AclPolicy getAclPolicy(
+        com.google.cloud.memorystore.v1.GetAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAclPolicyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2529,6 +3247,21 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Creates an ACL policy.
+     * The creation is executed synchronously and the policy is available for use
+     * immediately after the RPC returns.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.AclPolicy createAclPolicy(
+        com.google.cloud.memorystore.v1.CreateAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAclPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new Instance in a given project and location.
      * </pre>
      */
@@ -2542,6 +3275,26 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Updates the ACL policy.
+     * The operation will apply the updated ACL policy to all the linked
+     * instances. The operation will return success if it successfully applied the
+     * policy to all the instances. If the operation completed with a failure, the
+     * service will continue to apply the policy via reconciliation for the failed
+     * instances even after operation completion to ensure eventual consistency.
+     * Completed longrunning.Operation will contain the new ACL policy object
+     * in the response field.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAclPolicy(
+        com.google.cloud.memorystore.v1.UpdateAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAclPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the parameters of a single Instance.
      * </pre>
      */
@@ -2549,6 +3302,47 @@ public final class MemorystoreGrpc {
         com.google.cloud.memorystore.v1.UpdateInstanceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific ACL policy. This action will delete the ACL policy and
+     * all the rules associated with it. An ACL policy cannot be deleted if it is
+     * attached to an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAclPolicy(
+        com.google.cloud.memorystore.v1.DeleteAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAclPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a specific ACL policy revision.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.AclPolicyRevision getAclPolicyRevision(
+        com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAclPolicyRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ACL policy revisions in a given ACL policy.
+     * </pre>
+     */
+    public com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse listAclPolicyRevisions(
+        com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAclPolicyRevisionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2877,6 +3671,25 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Lists all ACL policies owned by a project in either the specified
+     * location (region) or all locations.
+     * The location should have the following format:
+     * * `projects/{project_id}/locations/{location_id}`
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1.ListAclPoliciesResponse>
+        listAclPolicies(com.google.cloud.memorystore.v1.ListAclPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAclPoliciesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Instances in a given project and location.
      * </pre>
      */
@@ -2885,6 +3698,20 @@ public final class MemorystoreGrpc {
         listInstances(com.google.cloud.memorystore.v1.ListInstancesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListInstancesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific Memorystore ACL policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1.AclPolicy>
+        getAclPolicy(com.google.cloud.memorystore.v1.GetAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAclPolicyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2905,6 +3732,22 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Creates an ACL policy.
+     * The creation is executed synchronously and the policy is available for use
+     * immediately after the RPC returns.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1.AclPolicy>
+        createAclPolicy(com.google.cloud.memorystore.v1.CreateAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAclPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new Instance in a given project and location.
      * </pre>
      */
@@ -2918,6 +3761,26 @@ public final class MemorystoreGrpc {
      *
      *
      * <pre>
+     * Updates the ACL policy.
+     * The operation will apply the updated ACL policy to all the linked
+     * instances. The operation will return success if it successfully applied the
+     * policy to all the instances. If the operation completed with a failure, the
+     * service will continue to apply the policy via reconciliation for the failed
+     * instances even after operation completion to ensure eventual consistency.
+     * Completed longrunning.Operation will contain the new ACL policy object
+     * in the response field.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateAclPolicy(com.google.cloud.memorystore.v1.UpdateAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAclPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates the parameters of a single Instance.
      * </pre>
      */
@@ -2925,6 +3788,50 @@ public final class MemorystoreGrpc {
         updateInstance(com.google.cloud.memorystore.v1.UpdateInstanceRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateInstanceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific ACL policy. This action will delete the ACL policy and
+     * all the rules associated with it. An ACL policy cannot be deleted if it is
+     * attached to an instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAclPolicy(com.google.cloud.memorystore.v1.DeleteAclPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAclPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a specific ACL policy revision.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1.AclPolicyRevision>
+        getAclPolicyRevision(com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAclPolicyRevisionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ACL policy revisions in a given ACL policy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse>
+        listAclPolicyRevisions(
+            com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAclPolicyRevisionsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3241,31 +4148,38 @@ public final class MemorystoreGrpc {
     }
   }
 
-  private static final int METHODID_LIST_INSTANCES = 0;
-  private static final int METHODID_GET_INSTANCE = 1;
-  private static final int METHODID_CREATE_INSTANCE = 2;
-  private static final int METHODID_UPDATE_INSTANCE = 3;
-  private static final int METHODID_DELETE_INSTANCE = 4;
-  private static final int METHODID_GET_CERTIFICATE_AUTHORITY = 5;
-  private static final int METHODID_GET_SHARED_REGIONAL_CERTIFICATE_AUTHORITY = 6;
-  private static final int METHODID_RESCHEDULE_MAINTENANCE = 7;
-  private static final int METHODID_LIST_BACKUP_COLLECTIONS = 8;
-  private static final int METHODID_GET_BACKUP_COLLECTION = 9;
-  private static final int METHODID_LIST_BACKUPS = 10;
-  private static final int METHODID_GET_BACKUP = 11;
-  private static final int METHODID_DELETE_BACKUP = 12;
-  private static final int METHODID_EXPORT_BACKUP = 13;
-  private static final int METHODID_BACKUP_INSTANCE = 14;
-  private static final int METHODID_START_MIGRATION = 15;
-  private static final int METHODID_FINISH_MIGRATION = 16;
-  private static final int METHODID_LIST_TOKEN_AUTH_USERS = 17;
-  private static final int METHODID_GET_TOKEN_AUTH_USER = 18;
-  private static final int METHODID_LIST_AUTH_TOKENS = 19;
-  private static final int METHODID_GET_AUTH_TOKEN = 20;
-  private static final int METHODID_ADD_TOKEN_AUTH_USER = 21;
-  private static final int METHODID_DELETE_TOKEN_AUTH_USER = 22;
-  private static final int METHODID_ADD_AUTH_TOKEN = 23;
-  private static final int METHODID_DELETE_AUTH_TOKEN = 24;
+  private static final int METHODID_LIST_ACL_POLICIES = 0;
+  private static final int METHODID_LIST_INSTANCES = 1;
+  private static final int METHODID_GET_ACL_POLICY = 2;
+  private static final int METHODID_GET_INSTANCE = 3;
+  private static final int METHODID_CREATE_ACL_POLICY = 4;
+  private static final int METHODID_CREATE_INSTANCE = 5;
+  private static final int METHODID_UPDATE_ACL_POLICY = 6;
+  private static final int METHODID_UPDATE_INSTANCE = 7;
+  private static final int METHODID_DELETE_ACL_POLICY = 8;
+  private static final int METHODID_GET_ACL_POLICY_REVISION = 9;
+  private static final int METHODID_LIST_ACL_POLICY_REVISIONS = 10;
+  private static final int METHODID_DELETE_INSTANCE = 11;
+  private static final int METHODID_GET_CERTIFICATE_AUTHORITY = 12;
+  private static final int METHODID_GET_SHARED_REGIONAL_CERTIFICATE_AUTHORITY = 13;
+  private static final int METHODID_RESCHEDULE_MAINTENANCE = 14;
+  private static final int METHODID_LIST_BACKUP_COLLECTIONS = 15;
+  private static final int METHODID_GET_BACKUP_COLLECTION = 16;
+  private static final int METHODID_LIST_BACKUPS = 17;
+  private static final int METHODID_GET_BACKUP = 18;
+  private static final int METHODID_DELETE_BACKUP = 19;
+  private static final int METHODID_EXPORT_BACKUP = 20;
+  private static final int METHODID_BACKUP_INSTANCE = 21;
+  private static final int METHODID_START_MIGRATION = 22;
+  private static final int METHODID_FINISH_MIGRATION = 23;
+  private static final int METHODID_LIST_TOKEN_AUTH_USERS = 24;
+  private static final int METHODID_GET_TOKEN_AUTH_USER = 25;
+  private static final int METHODID_LIST_AUTH_TOKENS = 26;
+  private static final int METHODID_GET_AUTH_TOKEN = 27;
+  private static final int METHODID_ADD_TOKEN_AUTH_USER = 28;
+  private static final int METHODID_DELETE_TOKEN_AUTH_USER = 29;
+  private static final int METHODID_ADD_AUTH_TOKEN = 30;
+  private static final int METHODID_DELETE_AUTH_TOKEN = 31;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3284,10 +4198,22 @@ public final class MemorystoreGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_LIST_ACL_POLICIES:
+          serviceImpl.listAclPolicies(
+              (com.google.cloud.memorystore.v1.ListAclPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.ListAclPoliciesResponse>)
+                  responseObserver);
+          break;
         case METHODID_LIST_INSTANCES:
           serviceImpl.listInstances(
               (com.google.cloud.memorystore.v1.ListInstancesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.ListInstancesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ACL_POLICY:
+          serviceImpl.getAclPolicy(
+              (com.google.cloud.memorystore.v1.GetAclPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.AclPolicy>)
                   responseObserver);
           break;
         case METHODID_GET_INSTANCE:
@@ -3296,15 +4222,44 @@ public final class MemorystoreGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.Instance>)
                   responseObserver);
           break;
+        case METHODID_CREATE_ACL_POLICY:
+          serviceImpl.createAclPolicy(
+              (com.google.cloud.memorystore.v1.CreateAclPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.AclPolicy>)
+                  responseObserver);
+          break;
         case METHODID_CREATE_INSTANCE:
           serviceImpl.createInstance(
               (com.google.cloud.memorystore.v1.CreateInstanceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_ACL_POLICY:
+          serviceImpl.updateAclPolicy(
+              (com.google.cloud.memorystore.v1.UpdateAclPolicyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_UPDATE_INSTANCE:
           serviceImpl.updateInstance(
               (com.google.cloud.memorystore.v1.UpdateInstanceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_ACL_POLICY:
+          serviceImpl.deleteAclPolicy(
+              (com.google.cloud.memorystore.v1.DeleteAclPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_ACL_POLICY_REVISION:
+          serviceImpl.getAclPolicyRevision(
+              (com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.memorystore.v1.AclPolicyRevision>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_ACL_POLICY_REVISIONS:
+          serviceImpl.listAclPolicyRevisions(
+              (com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse>)
+                  responseObserver);
           break;
         case METHODID_DELETE_INSTANCE:
           serviceImpl.deleteInstance(
@@ -3444,6 +4399,13 @@ public final class MemorystoreGrpc {
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
         .addMethod(
+            getListAclPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.ListAclPoliciesRequest,
+                    com.google.cloud.memorystore.v1.ListAclPoliciesResponse>(
+                    service, METHODID_LIST_ACL_POLICIES)))
+        .addMethod(
             getListInstancesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3451,11 +4413,24 @@ public final class MemorystoreGrpc {
                     com.google.cloud.memorystore.v1.ListInstancesResponse>(
                     service, METHODID_LIST_INSTANCES)))
         .addMethod(
+            getGetAclPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.GetAclPolicyRequest,
+                    com.google.cloud.memorystore.v1.AclPolicy>(service, METHODID_GET_ACL_POLICY)))
+        .addMethod(
             getGetInstanceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.memorystore.v1.GetInstanceRequest,
                     com.google.cloud.memorystore.v1.Instance>(service, METHODID_GET_INSTANCE)))
+        .addMethod(
+            getCreateAclPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.CreateAclPolicyRequest,
+                    com.google.cloud.memorystore.v1.AclPolicy>(
+                    service, METHODID_CREATE_ACL_POLICY)))
         .addMethod(
             getCreateInstanceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3463,11 +4438,37 @@ public final class MemorystoreGrpc {
                     com.google.cloud.memorystore.v1.CreateInstanceRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_INSTANCE)))
         .addMethod(
+            getUpdateAclPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.UpdateAclPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_ACL_POLICY)))
+        .addMethod(
             getUpdateInstanceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.memorystore.v1.UpdateInstanceRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_INSTANCE)))
+        .addMethod(
+            getDeleteAclPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.DeleteAclPolicyRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ACL_POLICY)))
+        .addMethod(
+            getGetAclPolicyRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.GetAclPolicyRevisionRequest,
+                    com.google.cloud.memorystore.v1.AclPolicyRevision>(
+                    service, METHODID_GET_ACL_POLICY_REVISION)))
+        .addMethod(
+            getListAclPolicyRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.memorystore.v1.ListAclPolicyRevisionsRequest,
+                    com.google.cloud.memorystore.v1.ListAclPolicyRevisionsResponse>(
+                    service, METHODID_LIST_ACL_POLICY_REVISIONS)))
         .addMethod(
             getDeleteInstanceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3653,10 +4654,17 @@ public final class MemorystoreGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new MemorystoreFileDescriptorSupplier())
+                      .addMethod(getListAclPoliciesMethod())
                       .addMethod(getListInstancesMethod())
+                      .addMethod(getGetAclPolicyMethod())
                       .addMethod(getGetInstanceMethod())
+                      .addMethod(getCreateAclPolicyMethod())
                       .addMethod(getCreateInstanceMethod())
+                      .addMethod(getUpdateAclPolicyMethod())
                       .addMethod(getUpdateInstanceMethod())
+                      .addMethod(getDeleteAclPolicyMethod())
+                      .addMethod(getGetAclPolicyRevisionMethod())
+                      .addMethod(getListAclPolicyRevisionsMethod())
                       .addMethod(getDeleteInstanceMethod())
                       .addMethod(getGetCertificateAuthorityMethod())
                       .addMethod(getGetSharedRegionalCertificateAuthorityMethod())

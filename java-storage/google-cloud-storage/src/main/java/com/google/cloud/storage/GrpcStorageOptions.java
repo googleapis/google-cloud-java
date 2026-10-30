@@ -100,6 +100,7 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.protobuf.ProtoUtils;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.metrics.MeterProvider;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
@@ -122,6 +123,7 @@ import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * @since 2.14.0
@@ -142,6 +144,7 @@ public final class GrpcStorageOptions extends StorageOptions
   private final GrpcRetryAlgorithmManager retryAlgorithmManager;
   private final java.time.Duration terminationAwaitDuration;
   private final boolean attemptDirectPath;
+  private final boolean attemptDirectPathXdsOverInterconnect;
   private final boolean enableGrpcClientMetrics;
 
   private final boolean grpcClientMetricsManuallyEnabled;
@@ -160,6 +163,7 @@ public final class GrpcStorageOptions extends StorageOptions
             builder.terminationAwaitDuration,
             serviceDefaults.getTerminationAwaitDurationJavaTime());
     this.attemptDirectPath = builder.attemptDirectPath;
+    this.attemptDirectPathXdsOverInterconnect = builder.attemptDirectPathXdsOverInterconnect;
     this.enableGrpcClientMetrics = builder.enableGrpcClientMetrics;
     this.grpcClientMetricsManuallyEnabled = builder.grpcMetricsManuallyEnabled;
     this.grpcInterceptorProvider = builder.grpcInterceptorProvider;
@@ -322,7 +326,8 @@ public final class GrpcStorageOptions extends StorageOptions
         InstantiatingGrpcChannelProvider.newBuilder()
             .setEndpoint(endpoint)
             .setAllowNonDefaultServiceAccount(true)
-            .setAttemptDirectPath(attemptDirectPath);
+            .setAttemptDirectPath(attemptDirectPath || attemptDirectPathXdsOverInterconnect)
+            .setAttemptDirectPathXdsOverInterconnect(attemptDirectPathXdsOverInterconnect);
 
     if (!DIRECT_PATH_BOUND_TOKEN_DISABLED) {
       channelProviderBuilder.setAllowHardBoundTokenTypes(
@@ -428,10 +433,15 @@ public final class GrpcStorageOptions extends StorageOptions
         retryAlgorithmManager,
         terminationAwaitDuration,
         attemptDirectPath,
+        attemptDirectPathXdsOverInterconnect,
         enableGrpcClientMetrics,
         grpcInterceptorProvider,
         blobWriteSessionConfig,
         openTelemetry,
+        isEnableOtelMetrics(),
+        isEnableOtelDebugMetrics(),
+        getMeterProvider(),
+        getMetricInterval(),
         baseHashCode());
   }
 
@@ -445,12 +455,17 @@ public final class GrpcStorageOptions extends StorageOptions
     }
     GrpcStorageOptions that = (GrpcStorageOptions) o;
     return attemptDirectPath == that.attemptDirectPath
+        && attemptDirectPathXdsOverInterconnect == that.attemptDirectPathXdsOverInterconnect
         && enableGrpcClientMetrics == that.enableGrpcClientMetrics
+        && isEnableOtelMetrics() == that.isEnableOtelMetrics()
+        && isEnableOtelDebugMetrics() == that.isEnableOtelDebugMetrics()
         && Objects.equals(retryAlgorithmManager, that.retryAlgorithmManager)
         && Objects.equals(terminationAwaitDuration, that.terminationAwaitDuration)
         && Objects.equals(grpcInterceptorProvider, that.grpcInterceptorProvider)
         && Objects.equals(blobWriteSessionConfig, that.blobWriteSessionConfig)
         && Objects.equals(openTelemetry, that.openTelemetry)
+        && Objects.equals(getMeterProvider(), that.getMeterProvider())
+        && Objects.equals(getMetricInterval(), that.getMetricInterval())
         && this.baseEquals(that);
   }
 
@@ -494,6 +509,7 @@ public final class GrpcStorageOptions extends StorageOptions
     private StorageRetryStrategy storageRetryStrategy;
     private java.time.Duration terminationAwaitDuration;
     private boolean attemptDirectPath = GrpcStorageDefaults.INSTANCE.isAttemptDirectPath();
+    private boolean attemptDirectPathXdsOverInterconnect = false;
     private boolean enableGrpcClientMetrics =
         GrpcStorageDefaults.INSTANCE.isEnableGrpcClientMetrics();
     private GrpcInterceptorProvider grpcInterceptorProvider =
@@ -512,6 +528,7 @@ public final class GrpcStorageOptions extends StorageOptions
       this.storageRetryStrategy = gso.getRetryAlgorithmManager().retryStrategy;
       this.terminationAwaitDuration = gso.getTerminationAwaitDuration();
       this.attemptDirectPath = gso.attemptDirectPath;
+      this.attemptDirectPathXdsOverInterconnect = gso.attemptDirectPathXdsOverInterconnect;
       this.enableGrpcClientMetrics = gso.enableGrpcClientMetrics;
       this.grpcInterceptorProvider = gso.grpcInterceptorProvider;
       this.blobWriteSessionConfig = gso.blobWriteSessionConfig;
@@ -553,6 +570,23 @@ public final class GrpcStorageOptions extends StorageOptions
      */
     public GrpcStorageOptions.Builder setAttemptDirectPath(boolean attemptDirectPath) {
       this.attemptDirectPath = attemptDirectPath;
+      return this;
+    }
+
+    /**
+     * Option for whether this client should attempt to use DirectPath over Interconnect (on-premise
+     * xDS name resolution).
+     *
+     * <p>This can also be enabled or disabled via the {@code
+     * GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS_OVER_INTERCONNECT} environment variable ({@code "true"}
+     * or {@code "false"}), which takes precedence over this builder option.
+     *
+     * @since 2.76.0
+     */
+    @BetaApi
+    public GrpcStorageOptions.Builder setAttemptDirectPathXdsOverInterconnect(
+        boolean attemptDirectPathXdsOverInterconnect) {
+      this.attemptDirectPathXdsOverInterconnect = attemptDirectPathXdsOverInterconnect;
       return this;
     }
 
@@ -747,6 +781,64 @@ public final class GrpcStorageOptions extends StorageOptions
     public GrpcStorageOptions.Builder setOpenTelemetry(OpenTelemetry openTelemetry) {
       requireNonNull(openTelemetry, "openTelemetry must be non null");
       this.openTelemetry = openTelemetry;
+      setCustomOpenTelemetryConfigured(true);
+      return this;
+    }
+
+    /**
+     * Enable or disable OpenTelemetry client metrics.
+     *
+     * @param enableOtelMetrics whether OpenTelemetry client metrics should be enabled
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setEnableOtelMetrics(boolean enableOtelMetrics) {
+      super.setEnableOtelMetrics(enableOtelMetrics);
+      return this;
+    }
+
+    /**
+     * Enable or disable OpenTelemetry debug client metrics.
+     *
+     * @param enableOtelDebugMetrics whether OpenTelemetry debug client metrics should be enabled
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setEnableOtelDebugMetrics(boolean enableOtelDebugMetrics) {
+      super.setEnableOtelDebugMetrics(enableOtelDebugMetrics);
+      return this;
+    }
+
+    /**
+     * Set a custom {@link MeterProvider} for recording client metrics.
+     *
+     * @param meterProvider custom MeterProvider to use, or null to use the default
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setMeterProvider(@Nullable MeterProvider meterProvider) {
+      super.setMeterProvider(meterProvider);
+      return this;
+    }
+
+    /**
+     * Set the metric export interval for periodic metric reading.
+     *
+     * <p>When using the default Cloud Monitoring exporter, the interval must be at least 60 seconds
+     * (1 minute). Intervals less than 60 seconds are permitted only when a custom {@link
+     * MeterProvider} is configured via {@link #setMeterProvider(MeterProvider)} or explicit
+     * OpenTelemetry is configured via {@link #setOpenTelemetry(OpenTelemetry)}.
+     *
+     * @param metricInterval interval duration
+     * @since 2.76.0 This new api is in preview and is subject to breaking changes.
+     */
+    @BetaApi
+    @Override
+    public GrpcStorageOptions.Builder setMetricInterval(Duration metricInterval) {
+      super.setMetricInterval(metricInterval);
       return this;
     }
 

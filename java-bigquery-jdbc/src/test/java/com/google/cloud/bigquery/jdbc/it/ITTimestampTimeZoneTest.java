@@ -63,17 +63,25 @@ public class ITTimestampTimeZoneTest extends ITBase {
   private static final LocalDateTime DT_DIGITS = LocalDateTime.parse("2025-01-01T12:34:56.123");
   private static final LocalDate D_DIGITS = LocalDate.parse("2025-01-01");
   private static final LocalTime T_DIGITS = LocalTime.parse("12:34:56");
+  private static final Instant TS_MIN = Instant.parse("0001-01-01T00:00:00Z");
 
   // Never one of the JVM zones under test, so the Calendar always differs from the JVM zone.
   private static final ZoneId CAL_ZONE = ZoneId.of("Asia/Tokyo");
 
   private static final String READ_SQL =
-      "SELECT TIMESTAMP '2025-01-01 12:34:56.123 UTC' AS ts,"
+      // Pre-1582 and pre-standard-time values.
+      "SELECT TIMESTAMP '0001-01-01 00:00:00 UTC' AS ts_min, DATETIME '0001-01-01 00:00:00' AS"
+          + " dt_min, DATE '0001-01-01' AS d_min, DATETIME '1850-06-01 12:00:00' AS dt_1850,"
+          + " DATE '1850-06-01' AS d_1850, DATE '1582-10-10' AS d_gap,"
+          + " TIMESTAMP '2025-01-01 12:34:56.123 UTC' AS ts,"
           + " DATETIME '2025-01-01 12:34:56.123' AS dt,"
           + " DATE '2025-01-01' AS d,"
           + " TIME '12:34:56' AS t,"
           + " [TIMESTAMP '2025-01-01 12:34:56.123 UTC'] AS ts_array,"
-          + " STRUCT(TIMESTAMP '2025-01-01 12:34:56.123 UTC' AS ts) AS ts_struct";
+          + " STRUCT(TIMESTAMP '2025-01-01 12:34:56.123 UTC' AS ts) AS ts_struct,"
+          // REST API sends these as scientific notation ("1.0E-6", "-1.0E-6").
+          + " TIMESTAMP '1970-01-01 00:00:00.000001 UTC' AS ts_post_epoch,"
+          + " TIMESTAMP '1969-12-31 23:59:59.999999 UTC' AS ts_pre_epoch";
 
   // Same coercion as an INSERT into a TIMESTAMP column, for TIMESTAMP and STRING parameters.
   private static final String PROBE_TIMESTAMP = "SELECT UNIX_MILLIS(CAST(? AS TIMESTAMP))";
@@ -233,7 +241,10 @@ public class ITTimestampTimeZoneTest extends ITBase {
     }
   }
 
-  /** Midnight of 2025-01-01 in Kolkata or Auckland is still 2024-12-31 in UTC. */
+  /**
+   * Midnight of 2025-01-01 in Kolkata or Auckland is still 2024-12-31 in UTC. A historical date
+   * read with getDate(col, cal) and bound back with setDate(i, d, cal) must arrive unchanged.
+   */
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
   public void testSetDateWithCalendar_sendsDateInCalendarZone(String zone) throws SQLException {
@@ -241,13 +252,22 @@ public class ITTimestampTimeZoneTest extends ITBase {
     Date date = Date.valueOf(D_DIGITS);
     String expected =
         Instant.ofEpochMilli(date.getTime()).atZone(ZoneOffset.UTC).toLocalDate().toString();
+    Calendar cal = calendar(CAL_ZONE);
     try (Connection conn = connect();
-        PreparedStatement ps = conn.prepareStatement(PROBE_DATE)) {
+        PreparedStatement ps = conn.prepareStatement(PROBE_DATE);
+        Statement read = conn.createStatement();
+        ResultSet rs =
+            read.executeQuery("SELECT DATE '0001-01-01' AS d_min, DATE '1850-06-01' AS d_1850")) {
       ps.setDate(1, date, calendar(ZoneOffset.UTC));
       assertEquals(
           expected,
           storedString(ps),
           label(zone, "setDate(d, cal=UTC) must send the date of d in the Calendar's zone"));
+      assertTrue(rs.next());
+      ps.setDate(1, rs.getDate("d_min", cal), cal);
+      assertEquals("0001-01-01", storedString(ps), label(zone, "d_min round trip, cal"));
+      ps.setDate(1, rs.getDate("d_1850", cal), cal);
+      assertEquals("1850-06-01", storedString(ps), label(zone, "d_1850 round trip, cal"));
     }
   }
 
@@ -290,17 +310,30 @@ public class ITTimestampTimeZoneTest extends ITBase {
     }
   }
 
+  /** 1582-10-10 is what getObject(LocalDate) returns for DATE '1582-10-10'; it must round-trip. */
   @ParameterizedTest(name = "JVM zone {0}")
   @MethodSource("jvmZones")
-  public void testSetObjectLocalDateTime_sendsDigits(String zone) throws SQLException {
+  public void testSetObjectJavaTime_sendsDigits(String zone) throws SQLException {
     useJvmZone(zone);
     try (Connection conn = connect();
-        PreparedStatement ps = conn.prepareStatement(PROBE_DATETIME)) {
-      ps.setObject(1, DT_DIGITS);
-      assertEquals(
-          "2025-01-01 12:34:56.123",
-          storedString(ps),
-          label(zone, "setObject(LocalDateTime) must send its digits"));
+        PreparedStatement dateTime = conn.prepareStatement(PROBE_DATETIME);
+        PreparedStatement date = conn.prepareStatement(PROBE_DATE);
+        PreparedStatement time = conn.prepareStatement(PROBE_TIME)) {
+      dateTime.setObject(1, DT_DIGITS);
+      date.setObject(1, LocalDate.of(1582, 10, 10));
+      time.setObject(1, LocalTime.of(12, 34, 56, 789_123_000));
+      assertAll(
+          () ->
+              assertEquals(
+                  "2025-01-01 12:34:56.123",
+                  storedString(dateTime),
+                  label(zone, "setObject(LocalDateTime) must send its digits")),
+          () ->
+              assertEquals(
+                  "1582-10-10", storedString(date), label(zone, "setObject(LocalDate) digits")),
+          () ->
+              assertEquals(
+                  "12:34:56.789123", storedString(time), label(zone, "setObject(LocalTime)")));
     }
   }
 
@@ -321,7 +354,17 @@ public class ITTimestampTimeZoneTest extends ITBase {
               assertEquals(
                   Timestamp.from(REF),
                   rs.getObject("ts"),
-                  label(zone, "getObject must return a Timestamp of the stored moment")));
+                  label(zone, "getObject must return a Timestamp of the stored moment")),
+          () ->
+              assertEquals(
+                  Instant.parse("1970-01-01T00:00:00.000001Z"),
+                  rs.getTimestamp("ts_post_epoch").toInstant(),
+                  label(zone, "getTimestamp just after the epoch")),
+          () ->
+              assertEquals(
+                  Instant.parse("1969-12-31T23:59:59.999999Z"),
+                  rs.getTimestamp("ts_pre_epoch").toInstant(),
+                  label(zone, "getTimestamp just before the epoch")));
     }
   }
 
@@ -369,7 +412,17 @@ public class ITTimestampTimeZoneTest extends ITBase {
               assertEquals(
                   local.toLocalTime().withNano(0),
                   rs.getTime("ts").toLocalTime(),
-                  label(zone, "getTime on TIMESTAMP")));
+                  label(zone, "getTime on TIMESTAMP")),
+          () ->
+              assertEquals(
+                  TS_MIN.atZone(ZoneId.of(zone)).toLocalDateTime(),
+                  rs.getObject("ts_min", LocalDateTime.class),
+                  label(zone, "getObject(LocalDateTime) on pre-1582 TIMESTAMP")),
+          () ->
+              assertEquals(
+                  TS_MIN.atZone(ZoneId.of(zone)).toLocalDate(),
+                  rs.getObject("ts_min", LocalDate.class),
+                  label(zone, "getObject(LocalDate) on pre-1582 TIMESTAMP")));
     }
   }
 
@@ -405,9 +458,38 @@ public class ITTimestampTimeZoneTest extends ITBase {
           () ->
               assertEquals(D_DIGITS, rs.getDate("d").toLocalDate(), label(zone, "getDate on DATE")),
           () ->
+              assertEquals(T_DIGITS, rs.getTime("t").toLocalTime(), label(zone, "getTime on TIME")),
+          () -> assertHistoricDigits(rs, zone, "dt_min", "d_min", "0001-01-01T00:00"),
+          () -> assertHistoricDigits(rs, zone, "dt_1850", "d_1850", "1850-06-01T12:00"),
+          () ->
               assertEquals(
-                  T_DIGITS, rs.getTime("t").toLocalTime(), label(zone, "getTime on TIME")));
+                  LocalDateTime.parse("0001-01-01T00:00").atZone(ZoneId.of(zone)).toInstant(),
+                  rs.getObject("dt_min", Instant.class),
+                  label(zone, "getObject(Instant) on pre-1582 DATETIME")),
+          () -> assertEquals("1582-10-10", rs.getString("d_gap"), label(zone, "d_gap")),
+          () ->
+              assertEquals(
+                  LocalDate.parse("1582-10-10"),
+                  rs.getObject("d_gap", LocalDate.class),
+                  label(zone, "d_gap")));
     }
+  }
+
+  private static void assertHistoricDigits(
+      ResultSet rs, String zone, String dtColumn, String dColumn, String dateTime) {
+    LocalDateTime dt = LocalDateTime.parse(dateTime);
+    LocalDate d = dt.toLocalDate();
+    assertAll(
+        () -> assertEquals(dt, rs.getObject(dtColumn, LocalDateTime.class), label(zone, dtColumn)),
+        () -> assertEquals(dt, rs.getTimestamp(dtColumn).toLocalDateTime(), label(zone, dtColumn)),
+        () ->
+            assertEquals(
+                dt.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS")),
+                rs.getString(dtColumn),
+                label(zone, dtColumn)),
+        () -> assertEquals(d, rs.getObject(dColumn, LocalDate.class), label(zone, dColumn)),
+        () -> assertEquals(d, rs.getDate(dColumn).toLocalDate(), label(zone, dColumn)),
+        () -> assertEquals(d.toString(), rs.getString(dColumn), label(zone, dColumn)));
   }
 
   /** For DATETIME, DATE and TIME the Calendar is the zone the digits are interpreted in. */
@@ -444,8 +526,30 @@ public class ITTimestampTimeZoneTest extends ITBase {
               assertEquals(
                   T_DIGITS,
                   inCalendarZone(rs.getTime("t", cal).getTime()).toLocalTime().withNano(0),
-                  label(zone, "getTime(TIME, cal)")));
+                  label(zone, "getTime(TIME, cal)")),
+          () ->
+              assertEquals(
+                  "0001-01-01",
+                  calendarDate(rs.getDate("d_min", cal).getTime()),
+                  label(zone, "d_min, cal")),
+          () ->
+              assertEquals(
+                  "1850-06-01",
+                  calendarDate(rs.getDate("d_1850", cal).getTime()),
+                  label(zone, "d_1850, cal")),
+          () ->
+              assertEquals(
+                  "1850-06-01",
+                  calendarDate(rs.getTimestamp("dt_1850", cal).getTime()),
+                  label(zone, "dt_1850, cal")));
     }
+  }
+
+  private static String calendarDate(long epochMillis) {
+    Calendar c = calendar(CAL_ZONE);
+    c.setTimeInMillis(epochMillis);
+    return String.format(
+        "%04d-%02d-%02d", c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1, c.get(Calendar.DATE));
   }
 
   /** A TIMESTAMP is already a moment, so the Calendar does not change the result. */
@@ -500,7 +604,17 @@ public class ITTimestampTimeZoneTest extends ITBase {
               assertEquals(
                   "{\"ts\":\"2025-01-01 12:34:56.123\"}",
                   rs.getString("ts_struct"),
-                  label(zone, "getString on STRUCT<TIMESTAMP> must return UTC digits")));
+                  label(zone, "getString on STRUCT<TIMESTAMP> must return UTC digits")),
+          () ->
+              assertEquals(
+                  "1970-01-01 00:00:00.000001",
+                  rs.getString("ts_post_epoch"),
+                  label(zone, "getString just after the epoch")),
+          () ->
+              assertEquals(
+                  "1969-12-31 23:59:59.999999",
+                  rs.getString("ts_pre_epoch"),
+                  label(zone, "getString just before the epoch")));
     }
   }
 
