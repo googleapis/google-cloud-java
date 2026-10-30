@@ -67,11 +67,13 @@ import org.jspecify.annotations.NullMarked;
  *
  * <p>Everything else matches the upstream method: key store type (JKS), alias, empty password,
  * accepted key format (PKCS#8 {@code PRIVATE KEY}), which private key is chosen, and error
- * messages. Any input that the upstream method accepted is still accepted, even though more of it
- * is now used: once a certificate and a private key have been found (the point where the upstream
- * method stopped reading), a malformed later PEM section ends the input instead of failing, and an
- * extra certificate that cannot be parsed is left out of the chain. Unlike the upstream method, the
- * input is decoded as UTF-8 rather than the platform default charset, and it is read to the end.
+ * messages. Any valid certificate-and-key pair that the upstream method accepted is still accepted,
+ * even though more of the input is now used: once a certificate and a private key have been found
+ * (the point where the upstream method stopped reading), a malformed later PEM section ends the
+ * input instead of failing, and an extra certificate that cannot be parsed is left out of the
+ * chain. Unlike the upstream method, the input is decoded as UTF-8 rather than the platform default
+ * charset, it is read to the end, and the private key is verified against the leaf certificate's
+ * public key.
  */
 @NullMarked
 final class MtlsKeyStoreUtils {

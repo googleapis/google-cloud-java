@@ -562,9 +562,9 @@ class X509ProviderTest {
     Files.write(
         config,
         ("{\"cert_configs\":{\"workload\":{\"cert_path\":\""
-                + certFile.toString()
+                + certFile.toString().replace("\\", "\\\\")
                 + "\",\"key_path\":\""
-                + keyFile.toString()
+                + keyFile.toString().replace("\\", "\\\\")
                 + "\"}}}")
             .getBytes(UTF_8));
     return config;
