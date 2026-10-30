@@ -464,7 +464,7 @@ class ConnectionImpl implements Connection {
         if (isBatchActive()) {
           abortBatch();
         }
-        if (isTransactionStarted()) {
+        if (isTransactionStarted() || isCurrentTransactionAborted()) {
           try {
             futures.add(rollbackAsync());
           } catch (Exception exception) {
@@ -1143,9 +1143,10 @@ class ConnectionImpl implements Connection {
   }
 
   /**
-   * Returns true if the current transaction has been aborted and could not be retried. Committing
-   * such a transaction must return the abort error instead of silently succeeding. This can happen
-   * when a statement that was executed asynchronously aborts before commit is called.
+   * Returns true if the current transaction has been aborted and could not be retried. Ending such
+   * a transaction must be delegated to the underlying unit of work so that committing returns the
+   * abort error instead of silently succeeding, and rolling back transitions the state to
+   * ROLLED_BACK, cancels any scheduled keep-alive ping, and ends the OpenTelemetry span.
    */
   private boolean isCurrentTransactionAborted() {
     return internalIsInTransaction()
@@ -1398,8 +1399,7 @@ class ConnectionImpl implements Connection {
         statementTag == null, "Statement tags are not supported for COMMIT or ROLLBACK");
     ApiFuture<Void> res;
     try {
-      if (hasTransactionalChanges()
-          || (endTransactionMethod == commit && isCurrentTransactionAborted())) {
+      if (hasTransactionalChanges() || isCurrentTransactionAborted()) {
         res =
             endTransactionMethod.endAsync(
                 callType, getCurrentUnitOfWorkOrStartNewUnitOfWork(parsedStatement));
