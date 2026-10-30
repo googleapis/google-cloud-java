@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.spanner.Type.StructField;
 import com.google.spanner.v1.TransactionOptions.IsolationLevel;
@@ -47,7 +48,7 @@ public class DatabaseMetadataTest {
     DatabaseMetadata metadata = fromOptions();
 
     assertEquals(Dialect.GOOGLE_STANDARD_SQL, metadata.getDialect());
-    assertEquals(IsolationLevel.SERIALIZABLE, metadata.getDefaultIsolationLevel());
+    assertEquals(IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED, metadata.getDefaultIsolationLevel());
   }
 
   @Test
@@ -62,10 +63,39 @@ public class DatabaseMetadataTest {
   }
 
   @Test
+  public void testFromResultSetWithSerializable() {
+    DatabaseMetadata metadata =
+        fromOptions(option(DatabaseMetadata.DEFAULT_TRANSACTION_ISOLATION_OPTION, "serializable"));
+
+    assertEquals(IsolationLevel.SERIALIZABLE, metadata.getDefaultIsolationLevel());
+  }
+
+  @Test
   public void testFromResultSetWithNullIsolationLevelReturnsDefault() {
     DatabaseMetadata metadata =
         fromOptions(option(DatabaseMetadata.DEFAULT_TRANSACTION_ISOLATION_OPTION, null));
 
-    assertEquals(IsolationLevel.SERIALIZABLE, metadata.getDefaultIsolationLevel());
+    assertEquals(IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED, metadata.getDefaultIsolationLevel());
+  }
+
+  @Test
+  public void testFromResultSetWithUnknownIsolationLevel() {
+    DatabaseMetadata metadata =
+        fromOptions(
+            option(DatabaseMetadata.DEFAULT_TRANSACTION_ISOLATION_OPTION, "read committed"));
+
+    assertEquals(IsolationLevel.UNRECOGNIZED, metadata.getDefaultIsolationLevel());
+  }
+
+  @Test
+  public void testFromResultSetWithUnknownDialect() {
+    DatabaseMetadata metadata =
+        fromOptions(
+            option(DatabaseMetadata.DATABASE_DIALECT_OPTION, "UNKNOWN_DIALECT"),
+            option(DatabaseMetadata.DEFAULT_TRANSACTION_ISOLATION_OPTION, "repeatable read"));
+
+    assertThrows(IllegalArgumentException.class, metadata::getDialect);
+    // The other options can still be read.
+    assertEquals(IsolationLevel.REPEATABLE_READ, metadata.getDefaultIsolationLevel());
   }
 }

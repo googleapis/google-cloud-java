@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import com.google.spanner.v1.TransactionOptions.IsolationLevel;
+import java.util.Locale;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -39,25 +40,25 @@ final class DatabaseMetadata {
                   + "where option_name in ('%s', '%s')",
               DATABASE_DIALECT_OPTION, DEFAULT_TRANSACTION_ISOLATION_OPTION));
 
-  private final Dialect dialect;
+  private final String dialect;
   private final IsolationLevel defaultIsolationLevel;
 
-  private DatabaseMetadata(Dialect dialect, IsolationLevel defaultIsolationLevel) {
+  private DatabaseMetadata(String dialect, IsolationLevel defaultIsolationLevel) {
     this.dialect = dialect;
     this.defaultIsolationLevel = defaultIsolationLevel;
   }
 
   /**
    * Creates a {@link DatabaseMetadata} from the result of {@link #STATEMENT}. Options that are not
-   * in the result keep the value that Spanner uses when the option has not been set.
+   * in the result have not been set.
    */
   static DatabaseMetadata fromResultSet(ResultSet resultSet) {
-    Dialect dialect = Dialect.GOOGLE_STANDARD_SQL;
-    IsolationLevel defaultIsolationLevel = IsolationLevel.SERIALIZABLE;
+    String dialect = Dialect.GOOGLE_STANDARD_SQL.name();
+    IsolationLevel defaultIsolationLevel = IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED;
     while (resultSet.next()) {
       switch (resultSet.getString(0)) {
         case DATABASE_DIALECT_OPTION:
-          dialect = Dialect.fromName(resultSet.getString(1));
+          dialect = resultSet.getString(1);
           break;
         case DEFAULT_TRANSACTION_ISOLATION_OPTION:
           defaultIsolationLevel =
@@ -72,18 +73,26 @@ final class DatabaseMetadata {
 
   /**
    * Parses the value of the {@code default_transaction_isolation} option. {@code null} means that
-   * the option has not been set. {@code null}, {@link #SERIALIZABLE_VALUE}, and unrecognized values
-   * return {@link IsolationLevel#SERIALIZABLE}, which is the isolation level that Spanner uses when
-   * the option has not been set.
+   * the option has not been set and returns {@link IsolationLevel#ISOLATION_LEVEL_UNSPECIFIED}.
+   * Values that are not known to this version of the client return {@link
+   * IsolationLevel#UNRECOGNIZED}.
    */
   private static IsolationLevel parseIsolationLevel(@Nullable String optionValue) {
-    return REPEATABLE_READ_VALUE.equalsIgnoreCase(optionValue)
-        ? IsolationLevel.REPEATABLE_READ
-        : IsolationLevel.SERIALIZABLE;
+    if (optionValue == null) {
+      return IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED;
+    }
+    switch (optionValue.toLowerCase(Locale.ROOT)) {
+      case SERIALIZABLE_VALUE:
+        return IsolationLevel.SERIALIZABLE;
+      case REPEATABLE_READ_VALUE:
+        return IsolationLevel.REPEATABLE_READ;
+      default:
+        return IsolationLevel.UNRECOGNIZED;
+    }
   }
 
   Dialect getDialect() {
-    return dialect;
+    return Dialect.fromName(dialect);
   }
 
   IsolationLevel getDefaultIsolationLevel() {

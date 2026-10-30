@@ -55,7 +55,8 @@ public class ITDatabaseDefaultIsolationLevelTest {
     Database database = testHelper.createTestDatabase(dialect, Collections.emptyList());
     DatabaseClient client = testHelper.getDatabaseClient(database);
 
-    assertEquals(IsolationLevel.SERIALIZABLE, client.getDatabaseDefaultIsolationLevel());
+    assertEquals(
+        IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED, client.getDatabaseDefaultIsolationLevel());
     assertEquals(dialect, client.getDialect());
   }
 

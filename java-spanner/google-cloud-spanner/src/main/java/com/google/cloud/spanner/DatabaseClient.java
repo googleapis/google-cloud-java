@@ -45,8 +45,10 @@ public interface DatabaseClient {
 
   /**
    * Returns the default transaction isolation level that is configured for the database with the
-   * {@code default_transaction_isolation} database option, or {@link IsolationLevel#SERIALIZABLE}
-   * if the option has not been set.
+   * {@code default_transaction_isolation} database option. Returns {@link
+   * IsolationLevel#ISOLATION_LEVEL_UNSPECIFIED} if the option has not been set, and {@link
+   * IsolationLevel#UNRECOGNIZED} if the option is set to a value that is not known to this version
+   * of the client.
    *
    * <p>The option is read once, together with the dialect of the database, and is cached for the
    * lifetime of this client. Changes to the option after it has been read are not reflected.

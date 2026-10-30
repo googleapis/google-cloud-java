@@ -3267,7 +3267,8 @@ public class DatabaseClientImplTest {
   public void testGetDatabaseDefaultIsolationLevelDefault() {
     DatabaseClient client =
         spanner.getDatabaseClient(DatabaseId.of(TEST_PROJECT, TEST_INSTANCE, TEST_DATABASE));
-    assertEquals(IsolationLevel.SERIALIZABLE, client.getDatabaseDefaultIsolationLevel());
+    assertEquals(
+        IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED, client.getDatabaseDefaultIsolationLevel());
   }
 
   @Test
