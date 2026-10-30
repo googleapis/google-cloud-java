@@ -75,11 +75,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
@@ -352,7 +351,7 @@ public class GcpFallbackChannelTest {
   }
 
   private class TestMetricExporter implements MetricExporter {
-    public final List<MetricData> exportedMetrics = Collections.synchronizedList(new ArrayList<>());
+    public final List<MetricData> exportedMetrics = new CopyOnWriteArrayList<>();
 
     @Override
     public CompletableResultCode export(@Nonnull Collection<MetricData> metrics) {

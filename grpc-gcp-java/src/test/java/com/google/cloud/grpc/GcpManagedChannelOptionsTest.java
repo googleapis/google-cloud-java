@@ -20,11 +20,14 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpResiliencyOptions;
+import com.google.common.util.concurrent.Futures;
+import io.grpc.ManagedChannel;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricRegistry;
@@ -206,6 +209,132 @@ public final class GcpManagedChannelOptionsTest {
     final GcpChannelPoolOptions channelPoolOptions = opts.getChannelPoolOptions();
     assertThat(channelPoolOptions.getAffinityKeyLifetime()).isEqualTo(Duration.ZERO);
     assertThat(channelPoolOptions.getCleanupInterval()).isEqualTo(Duration.ZERO);
+  }
+
+  @Test
+  public void testDynamicScalingKnobsHaveDefaultsAndSurviveCopy() {
+    GcpChannelPoolOptions defaults = GcpChannelPoolOptions.newBuilder().build();
+
+    assertThat(defaults.getScaleUpCooldown()).isEqualTo(Duration.ofSeconds(10));
+    assertThat(defaults.getMaxScaleUpPercent()).isEqualTo(30);
+    assertThat(defaults.getErrorPenaltyStep()).isEqualTo(5);
+    assertThat(defaults.getErrorPenaltyDuration()).isEqualTo(Duration.ofSeconds(5));
+    assertThat(defaults.getChannelPrimer()).isNull();
+    assertThat(defaults.getChannelPrimeTimeout()).isEqualTo(Duration.ofSeconds(10));
+    assertThat(defaults.getChannelPrimeMaxAttempts()).isEqualTo(3);
+
+    GcpChannelPoolOptions copiedDefaults = GcpChannelPoolOptions.newBuilder(defaults).build();
+    assertThat(copiedDefaults.getErrorPenaltyStep()).isEqualTo(5);
+    assertThat(copiedDefaults.getErrorPenaltyDuration()).isEqualTo(Duration.ofSeconds(5));
+    assertThat(copiedDefaults.toString()).contains("errorPenaltyStep: 5");
+    GcpChannelPoolOptions zeroValues =
+        GcpChannelPoolOptions.newBuilder()
+            .setChannelPrimeTimeout(Duration.ZERO)
+            .setChannelPrimeMaxAttempts(0)
+            .build();
+    assertThat(zeroValues.getChannelPrimeTimeout()).isEqualTo(Duration.ofSeconds(10));
+    assertThat(zeroValues.getChannelPrimeMaxAttempts()).isEqualTo(3);
+    GcpChannelPoolOptions copiedZeroValues = GcpChannelPoolOptions.newBuilder(zeroValues).build();
+    assertThat(copiedZeroValues.getChannelPrimeTimeout()).isEqualTo(Duration.ofSeconds(10));
+    assertThat(copiedZeroValues.getChannelPrimeMaxAttempts()).isEqualTo(3);
+    assertThat(copiedZeroValues.toString()).contains("channelPrimeTimeout: PT10S");
+    assertThat(copiedZeroValues.toString()).contains("channelPrimeMaxAttempts: 3");
+
+    GcpChannelPoolOptions configured =
+        GcpChannelPoolOptions.newBuilder(defaults)
+            .setScaleUpCooldown(Duration.ofSeconds(1))
+            .setMaxScaleUpPercent(40)
+            .setErrorPenaltyStep(2)
+            .setErrorPenaltyDuration(Duration.ofSeconds(3))
+            .build();
+    GcpChannelPoolOptions copied = GcpChannelPoolOptions.newBuilder(configured).build();
+
+    assertThat(copied.getScaleUpCooldown()).isEqualTo(Duration.ofSeconds(1));
+    assertThat(copied.getMaxScaleUpPercent()).isEqualTo(40);
+    assertThat(copied.getErrorPenaltyStep()).isEqualTo(2);
+    assertThat(copied.getErrorPenaltyDuration()).isEqualTo(Duration.ofSeconds(3));
+
+    GcpChannelPoolOptions disabled =
+        GcpChannelPoolOptions.newBuilder().setErrorPenaltyStep(0).build();
+    assertThat(disabled.getErrorPenaltyStep()).isEqualTo(0);
+  }
+
+  @Test
+  public void dynamicScalingDefaultKnobsRejectNegativeAndDefaultZeroCooldown() {
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> GcpChannelPoolOptions.newBuilder().setScaleUpCooldown(Duration.ofNanos(-1)));
+    assertThat(
+            GcpChannelPoolOptions.newBuilder()
+                .setScaleUpCooldown(Duration.ZERO)
+                .build()
+                .getScaleUpCooldown())
+        .isEqualTo(Duration.ofSeconds(10));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> GcpChannelPoolOptions.newBuilder().setErrorPenaltyStep(-1));
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            GcpChannelPoolOptions.newBuilder()
+                .setErrorPenaltyDuration(Duration.ofSeconds(Long.MAX_VALUE)));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> GcpChannelPoolOptions.newBuilder().setChannelPrimeTimeout(Duration.ofNanos(-1)));
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            GcpChannelPoolOptions.newBuilder()
+                .setChannelPrimeTimeout(Duration.ofSeconds(Long.MAX_VALUE)));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> GcpChannelPoolOptions.newBuilder().setChannelPrimeMaxAttempts(-1));
+  }
+
+  @Test
+  public void channelPoolOptionsToStringIncludesEveryKnob() {
+    String options = GcpChannelPoolOptions.newBuilder().build().toString();
+
+    assertThat(options).contains("maxSize:");
+    assertThat(options).contains("minSize:");
+    assertThat(options).contains("initSize:");
+    assertThat(options).contains("minRpcPerChannel:");
+    assertThat(options).contains("maxRpcPerChannel:");
+    assertThat(options).contains("scaleDownInterval:");
+    assertThat(options).contains("scaleUpCooldown:");
+    assertThat(options).contains("scaleDownConsecutiveLowLoadChecks:");
+    assertThat(options).contains("maxScaleUpPercent:");
+    assertThat(options).contains("maxScaleDownChannels:");
+    assertThat(options).contains("drainIdleGrace:");
+    assertThat(options).contains("errorPenaltyStep:");
+    assertThat(options).contains("errorPenaltyDuration:");
+    assertThat(options).contains("concurrentStreamsLowWatermark:");
+    assertThat(options).contains("useRoundRobinOnBind:");
+    assertThat(options).contains("affinityKeyLifetime:");
+    assertThat(options).contains("cleanupInterval:");
+    assertThat(options).contains("channelPickStrategy:");
+    assertThat(options).contains("channelPrimer:");
+    assertThat(options).contains("channelPrimeTimeout:");
+    assertThat(options).contains("channelPrimeMaxAttempts:");
+  }
+
+  @Test
+  public void channelPrimerOptionsSurviveCopy() {
+    GcpChannelPrimer primer = (ManagedChannel channel) -> Futures.immediateVoidFuture();
+    GcpChannelPoolOptions configured =
+        GcpChannelPoolOptions.newBuilder()
+            .setChannelPrimer(primer)
+            .setChannelPrimeTimeout(Duration.ofSeconds(7))
+            .setChannelPrimeMaxAttempts(2)
+            .build();
+
+    GcpChannelPoolOptions copied = GcpChannelPoolOptions.newBuilder(configured).build();
+
+    assertThat(copied.getChannelPrimer()).isSameInstanceAs(primer);
+    assertThat(copied.getChannelPrimeTimeout()).isEqualTo(Duration.ofSeconds(7));
+    assertThat(copied.getChannelPrimeMaxAttempts()).isEqualTo(2);
+    assertThat(copied.toString()).contains("channelPrimeTimeout: PT7S");
+    assertThat(copied.toString()).contains("channelPrimeMaxAttempts: 2");
   }
 
   @Test

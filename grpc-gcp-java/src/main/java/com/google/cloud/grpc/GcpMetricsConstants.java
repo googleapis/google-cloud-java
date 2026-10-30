@@ -77,4 +77,5 @@ class GcpMetricsConstants {
   public static String METRIC_ENDPOINT_SWITCH = "endpoint_switch";
   public static String METRIC_CURRENT_ENDPOINT = "current_endpoint";
   public static String METRIC_CHANNEL_POOL_SCALING = "channel_pool_scaling";
+  public static String METRIC_SCALE_UP_PRIME_FAILURES = "scale_up_prime_failures";
 }
