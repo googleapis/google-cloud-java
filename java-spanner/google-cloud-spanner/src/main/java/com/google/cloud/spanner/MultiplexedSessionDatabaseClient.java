@@ -333,14 +333,16 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
                 && !isClientClosed()
                 && RETRYABLE_ERROR_CODES.contains(spannerException.getErrorCode())) {
               final SettableApiFuture<SessionReference> future = SettableApiFuture.create();
-              MultiplexedSessionDatabaseClient.this.multiplexedSessionReference.set(future);
-              // Set the exception to trigger an error for all waiters of this attempt.
-              sessionReferenceFuture.setException(t);
-              asyncCreateMultiplexedSession(future, remainingAttempts - 1);
-            } else {
-              // Set the exception to trigger an error for all waiters.
-              sessionReferenceFuture.setException(t);
+              if (MultiplexedSessionDatabaseClient.this.multiplexedSessionReference.compareAndSet(
+                  sessionReferenceFuture, future)) {
+                // Set the exception to trigger an error for all waiters of this attempt.
+                sessionReferenceFuture.setException(t);
+                asyncCreateMultiplexedSession(future, remainingAttempts - 1);
+                return;
+              }
             }
+            // Set the exception to trigger an error for all waiters.
+            sessionReferenceFuture.setException(t);
           }
         });
   }

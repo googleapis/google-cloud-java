@@ -288,37 +288,40 @@ public class MultiplexedSessionDatabaseClientTest {
         .asyncCreateMultiplexedSession(any(SessionConsumer.class));
     MultiplexedSessionDatabaseClient client =
         new MultiplexedSessionDatabaseClient(sessionClient, clock);
-    assertNotNull(initialConsumer.get());
+    try {
+      assertNotNull(initialConsumer.get());
 
-    AtomicReference<ApiFuture<SessionReference>> currentReference =
-        getMultiplexedSessionReference(client);
-    ApiFuture<SessionReference> initialFuture = currentReference.get();
-    // A transaction that waits for the initial attempt is woken up as soon as that attempt fails.
-    // At that moment, a new transaction must already see the pending retry instead of the failed
-    // initial attempt, as it would otherwise fail with the (retryable) error of that attempt.
-    AtomicReference<ApiFuture<SessionReference>> futureSeenByNewTransaction =
-        new AtomicReference<>();
-    initialFuture.addListener(
-        () -> futureSeenByNewTransaction.set(currentReference.get()),
-        MoreExecutors.directExecutor());
+      AtomicReference<ApiFuture<SessionReference>> currentReference =
+          getMultiplexedSessionReference(client);
+      ApiFuture<SessionReference> initialFuture = currentReference.get();
+      // A transaction that waits for the initial attempt is woken up as soon as that attempt fails.
+      // At that moment, a new transaction must already see the pending retry instead of the failed
+      // initial attempt, as it would otherwise fail with the (retryable) error of that attempt.
+      AtomicReference<ApiFuture<SessionReference>> futureSeenByNewTransaction =
+          new AtomicReference<>();
+      initialFuture.addListener(
+          () -> futureSeenByNewTransaction.set(currentReference.get()),
+          MoreExecutors.directExecutor());
 
-    initialConsumer
-        .get()
-        .onSessionCreateFailure(
-            SpannerExceptionFactory.newSpannerException(ErrorCode.DEADLINE_EXCEEDED, "test"), 1);
+      initialConsumer
+          .get()
+          .onSessionCreateFailure(
+              SpannerExceptionFactory.newSpannerException(ErrorCode.DEADLINE_EXCEEDED, "test"), 1);
 
-    // Waiters for the initial attempt receive the error of that attempt.
-    SpannerException exception =
-        assertThrows(SpannerException.class, () -> SpannerApiFutures.get(initialFuture));
-    assertEquals(ErrorCode.DEADLINE_EXCEEDED, exception.getErrorCode());
-    // New transactions that started after the failure was propagated wait for the retry.
-    assertNotNull(futureSeenByNewTransaction.get());
-    assertFalse(futureSeenByNewTransaction.get().isDone());
-    assertNotNull(retryConsumer.get());
-    retryConsumer.get().onSessionReady(session);
-    assertEquals(sessionReference, futureSeenByNewTransaction.get().get());
-    assertEquals(sessionReference, client.getCurrentSessionReference());
-    client.close();
+      // Waiters for the initial attempt receive the error of that attempt.
+      SpannerException exception =
+          assertThrows(SpannerException.class, () -> SpannerApiFutures.get(initialFuture));
+      assertEquals(ErrorCode.DEADLINE_EXCEEDED, exception.getErrorCode());
+      // New transactions that started after the failure was propagated wait for the retry.
+      assertNotNull(futureSeenByNewTransaction.get());
+      assertFalse(futureSeenByNewTransaction.get().isDone());
+      assertNotNull(retryConsumer.get());
+      retryConsumer.get().onSessionReady(session);
+      assertEquals(sessionReference, futureSeenByNewTransaction.get().get());
+      assertEquals(sessionReference, client.getCurrentSessionReference());
+    } finally {
+      client.close();
+    }
   }
 
   @SuppressWarnings("unchecked")
