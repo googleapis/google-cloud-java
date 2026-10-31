@@ -41,7 +41,7 @@ import org.jspecify.annotations.NullMarked;
 @AutoValue
 public abstract class ResumableUploadSession {
 
-  private static final long DEFAULT_CHUNK_GRANULARITY = 1L;
+  private static final int DEFAULT_CHUNK_GRANULARITY = 1;
 
   /** Returns the server-provided URL to which data uploads are directed. */
   public abstract String getUploadUrl();
@@ -56,7 +56,7 @@ public abstract class ResumableUploadSession {
    *
    * @return the chunk granularity in bytes
    */
-  public abstract long getChunkGranularity();
+  public abstract int getChunkGranularity();
 
   public abstract Builder toBuilder();
 
@@ -69,7 +69,7 @@ public abstract class ResumableUploadSession {
   public abstract static class Builder {
     public abstract Builder setUploadUrl(String uploadUrl);
 
-    public abstract Builder setChunkGranularity(long chunkGranularity);
+    public abstract Builder setChunkGranularity(int chunkGranularity);
 
     public abstract ResumableUploadSession build();
   }

@@ -153,18 +153,33 @@ public class HttpStorageRpcHasherHelperTest {
   }
 
   @Test
-  public void testShouldValidate_transcoded_storedLength() throws IOException {
+  public void testShouldValidate_normalDownload_realGcsHeaders() throws IOException {
+    // GCS sends these headers on every download, including uncompressed objects (#14773).
     Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", "identity");
     headers.put("x-goog-stored-content-length", "123");
     HttpResponse response = createHttpResponse(200, headers, true);
 
-    assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+    assertTrue(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
   }
 
   @Test
   public void testShouldValidate_decompressedByClient() throws IOException {
     Map<String, String> headers = new HashMap<>();
     headers.put("Content-Encoding", "gzip");
+    HttpResponse response = createHttpResponse(200, headers, false);
+
+    assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));
+  }
+
+  @Test
+  public void testShouldValidate_decompressedByClient_uppercaseContentEncoding()
+      throws IOException {
+    // GCS echoes the object's Content-Encoding metadata as-is, and the HTTP client matches it
+    // case-insensitively when deciding to decompress.
+    Map<String, String> headers = new HashMap<>();
+    headers.put("x-goog-stored-content-encoding", "GZIP");
+    headers.put("Content-Encoding", "GZIP");
     HttpResponse response = createHttpResponse(200, headers, false);
 
     assertFalse(HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(response));

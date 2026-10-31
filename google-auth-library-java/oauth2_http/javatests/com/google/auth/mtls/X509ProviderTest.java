@@ -409,6 +409,50 @@ class X509ProviderTest {
   }
 
   @Test
+  void x509Provider_explicitConfigInWellKnownSpiffeDir_pollsDuringStartupUntilFilesReady(
+      @TempDir Path tempDir) throws Exception {
+    MtlsUtils.setWellKnownSpiffeDirForTesting(tempDir.toAbsolutePath().toString() + "/");
+    try {
+      Path configFile = tempDir.resolve("certificate_config.json");
+      Path certFile = tempDir.resolve("certificates.pem");
+      Path keyFile = tempDir.resolve("private_key.pem");
+
+      int[] sleepCount = {0};
+      MtlsUtils.setTimeServiceForTesting(
+          millis -> {
+            sleepCount[0]++;
+            if (sleepCount[0] == 2) {
+              try {
+                Files.copy(new File(TEST_CERT_PATH).toPath(), certFile);
+                Files.copy(new File(TEST_KEY_PATH).toPath(), keyFile);
+                String configJson =
+                    String.format(
+                        "{\"cert_configs\":{\"workload\":{\"cert_path\":\"%s\",\"key_path\":\"%s\"}}}",
+                        certFile.toString().replace("\\", "\\\\"),
+                        keyFile.toString().replace("\\", "\\\\"));
+                Files.write(configFile, configJson.getBytes(UTF_8));
+              } catch (IOException e) {
+                throw new RuntimeException(e);
+              }
+            }
+          });
+
+      TestEnvironmentProvider envProvider = new TestEnvironmentProvider();
+      envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configFile.toString());
+      X509Provider testProvider =
+          new X509Provider(envProvider, noGcloudConfig(tempDir), null, true);
+
+      KeyStore store = testProvider.getKeyStore();
+      assertEquals(1, store.size());
+      assertNotNull(store.getCertificateAlias(loadTestCert()));
+      assertEquals(2, sleepCount[0]);
+    } finally {
+      MtlsUtils.setWellKnownSpiffeDirForTesting(null);
+      MtlsUtils.setTimeServiceForTesting(null);
+    }
+  }
+
+  @Test
   void x509Provider_mismatchedKeyPair_retriesAndSucceedsWhenKeyRotates(@TempDir Path tempDir)
       throws Exception {
     Path certFile = tempDir.resolve("cert.pem");

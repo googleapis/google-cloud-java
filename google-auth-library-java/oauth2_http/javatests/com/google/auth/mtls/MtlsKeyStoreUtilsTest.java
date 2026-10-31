@@ -320,8 +320,8 @@ class MtlsKeyStoreUtilsTest {
 
   @Test
   void createMtlsKeyStore_mismatchedRsaKeyPairSameKeySize_throws() throws Exception {
-    // Generate a 1024-bit RSA key whose modulus is strictly smaller than SINGLE_CERT_PATH's
-    // 1024-bit RSA modulus, guaranteeing that Signature.verify() returns false (rather than
+    // Generate a 2048-bit RSA key whose modulus is strictly smaller than SINGLE_CERT_PATH's
+    // 2048-bit RSA modulus, guaranteeing that Signature.verify() returns false (rather than
     // throwing SignatureException on s >= n).
     X509Certificate singleCert =
         (X509Certificate)
@@ -330,7 +330,7 @@ class MtlsKeyStoreUtilsTest {
                     new ByteArrayInputStream(read(SINGLE_CERT_PATH).getBytes(UTF_8)));
     RSAPublicKey certPublicKey = (RSAPublicKey) singleCert.getPublicKey();
     KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
-    kpg.initialize(1024);
+    kpg.initialize(certPublicKey.getModulus().bitLength());
     KeyPair otherRsaKeyPair;
     do {
       otherRsaKeyPair = kpg.generateKeyPair();
@@ -352,12 +352,12 @@ class MtlsKeyStoreUtilsTest {
 
   @Test
   void createMtlsKeyStore_mismatchedRsaKeyPairDifferentKeySize_throws() throws Exception {
-    // Pairing a 2048-bit RSA private key with the 1024-bit RSA SINGLE_CERT_PATH deterministically
-    // causes Signature.verify() to throw SignatureException ("Bad signature length: got 256 but was
-    // expecting 128"), which must be translated into GeneralSecurityException("Certificate and
+    // Pairing a 1024-bit RSA private key with the 2048-bit RSA SINGLE_CERT_PATH deterministically
+    // causes Signature.verify() to throw SignatureException ("Bad signature length: got 128 but was
+    // expecting 256"), which must be translated into GeneralSecurityException("Certificate and
     // private key do not match").
     KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
-    kpg.initialize(2048);
+    kpg.initialize(1024);
     KeyPair otherRsaKeyPair = kpg.generateKeyPair();
     String otherRsaKeyPem = toPkcs8Pem(otherRsaKeyPair.getPrivate());
 

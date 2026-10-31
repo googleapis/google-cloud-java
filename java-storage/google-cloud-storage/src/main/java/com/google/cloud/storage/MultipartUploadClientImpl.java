@@ -17,6 +17,7 @@ package com.google.cloud.storage;
 
 import com.google.cloud.storage.Conversions.Decoder;
 import com.google.cloud.storage.Retrying.Retrier;
+import com.google.cloud.storage.StorageException.IOExceptionCallable;
 import com.google.cloud.storage.multipartupload.model.AbortMultipartUploadRequest;
 import com.google.cloud.storage.multipartupload.model.AbortMultipartUploadResponse;
 import com.google.cloud.storage.multipartupload.model.CompleteMultipartUploadRequest;
@@ -29,6 +30,8 @@ import com.google.cloud.storage.multipartupload.model.ListPartsRequest;
 import com.google.cloud.storage.multipartupload.model.ListPartsResponse;
 import com.google.cloud.storage.multipartupload.model.UploadPartRequest;
 import com.google.cloud.storage.multipartupload.model.UploadPartResponse;
+import java.io.IOException;
+import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -54,7 +57,7 @@ final class MultipartUploadClientImpl extends MultipartUploadClient {
   public CreateMultipartUploadResponse createMultipartUpload(CreateMultipartUploadRequest request) {
     return retrier.run(
         retryAlgorithmManager.nonIdempotent(),
-        () -> httpRequestManager.sendCreateMultipartUploadRequest(request),
+        translateIOException(() -> httpRequestManager.sendCreateMultipartUploadRequest(request)),
         Decoder.identity());
   }
 
@@ -63,7 +66,7 @@ final class MultipartUploadClientImpl extends MultipartUploadClient {
 
     return retrier.run(
         retryAlgorithmManager.idempotent(),
-        () -> httpRequestManager.sendListPartsRequest(request),
+        translateIOException(() -> httpRequestManager.sendListPartsRequest(request)),
         Decoder.identity());
   }
 
@@ -72,7 +75,7 @@ final class MultipartUploadClientImpl extends MultipartUploadClient {
 
     return retrier.run(
         retryAlgorithmManager.idempotent(),
-        () -> httpRequestManager.sendAbortMultipartUploadRequest(request),
+        translateIOException(() -> httpRequestManager.sendAbortMultipartUploadRequest(request)),
         Decoder.identity());
   }
 
@@ -81,7 +84,7 @@ final class MultipartUploadClientImpl extends MultipartUploadClient {
       CompleteMultipartUploadRequest request) {
     return retrier.run(
         retryAlgorithmManager.idempotent(),
-        () -> httpRequestManager.sendCompleteMultipartUploadRequest(request),
+        translateIOException(() -> httpRequestManager.sendCompleteMultipartUploadRequest(request)),
         Decoder.identity());
   }
 
@@ -90,12 +93,13 @@ final class MultipartUploadClientImpl extends MultipartUploadClient {
     AtomicBoolean dirty = new AtomicBoolean(false);
     return retrier.run(
         retryAlgorithmManager.idempotent(),
-        () -> {
-          if (dirty.getAndSet(true)) {
-            requestBody.getContent().rewindTo(0);
-          }
-          return httpRequestManager.sendUploadPartRequest(request, requestBody.getContent());
-        },
+        translateIOException(
+            () -> {
+              if (dirty.getAndSet(true)) {
+                requestBody.getContent().rewindTo(0);
+              }
+              return httpRequestManager.sendUploadPartRequest(request, requestBody.getContent());
+            }),
         Decoder.identity());
   }
 
@@ -103,7 +107,23 @@ final class MultipartUploadClientImpl extends MultipartUploadClient {
   public ListMultipartUploadsResponse listMultipartUploads(ListMultipartUploadsRequest request) {
     return retrier.run(
         retryAlgorithmManager.idempotent(),
-        () -> httpRequestManager.sendListMultipartUploadsRequest(request),
+        translateIOException(() -> httpRequestManager.sendListMultipartUploadsRequest(request)),
         Decoder.identity());
+  }
+
+  /**
+   * XML API requests surface error responses as a plain {@link
+   * com.google.api.client.http.HttpResponseException}. Translate any {@link IOException} into a
+   * {@link StorageException} before it reaches the retrier so the HTTP status code is preserved and
+   * the retry algorithm can classify it (e.g. 503 as retryable).
+   */
+  private static <T> Callable<T> translateIOException(IOExceptionCallable<T> c) {
+    return () -> {
+      try {
+        return c.call();
+      } catch (IOException e) {
+        throw StorageException.translate(e);
+      }
+    };
   }
 }

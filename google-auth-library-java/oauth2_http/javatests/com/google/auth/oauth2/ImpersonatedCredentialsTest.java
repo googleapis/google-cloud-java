@@ -70,9 +70,13 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -1372,5 +1376,224 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     GenericJson json =
         buildImpersonationCredentialsJson(impersonationUrl, delegates, quotaProjectId, scopes);
     return TestUtils.jsonToInputStream(json);
+  }
+
+  @Test
+  void refreshAccessToken_withExternalAccountSource_usesProvidedTransportFactory()
+      throws IOException {
+    MockIAMCredentialsServiceTransportFactory customTransportFactory =
+        new MockIAMCredentialsServiceTransportFactory();
+    customTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
+    customTransportFactory.getTransport().setAccessToken("final-iam-token");
+    customTransportFactory.getTransport().setExpireTime(getDefaultExpireTime());
+    customTransportFactory
+        .getTransport()
+        .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+
+    AtomicReference<HttpTransportFactory> capturedSourceTransport = new AtomicReference<>();
+    ExternalAccountCredentials mockExternalAccountCredentials =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setSubjectTokenSupplier(context -> "token")
+                .setQuotaProjectId("test-quota-project")
+                .setTokenUrl("https://sts.googleapis.com/v1/token")) {
+          @Override
+          AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory) {
+            capturedSourceTransport.set(cycleTransportFactory);
+            return new AccessToken("intermediate-sts-token-xyz", null);
+          }
+        };
+
+    ImpersonatedCredentials credentials =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(mockExternalAccountCredentials)
+            .setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL)
+            .setScopes(IMMUTABLE_SCOPES_LIST)
+            .setLifetime(VALID_LIFETIME)
+            .setHttpTransportFactory(mockTransportFactory)
+            .build();
+
+    AccessToken token = credentials.refreshAccessToken(customTransportFactory);
+    assertEquals("final-iam-token", token.getTokenValue());
+    assertSame(customTransportFactory, capturedSourceTransport.get());
+    assertEquals(
+        "Bearer intermediate-sts-token-xyz",
+        customTransportFactory.getTransport().getRequest().getFirstHeaderValue("Authorization"));
+    assertEquals(
+        "test-quota-project",
+        customTransportFactory
+            .getTransport()
+            .getRequest()
+            .getFirstHeaderValue("x-goog-user-project"));
+  }
+
+  @Test
+  void refreshAccessToken_nullTransportFactory_fallsBackToCredentialsTransportAndUsesCache()
+      throws IOException {
+    MockIAMCredentialsServiceTransportFactory credentialsTransportFactory =
+        new MockIAMCredentialsServiceTransportFactory();
+    credentialsTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
+    credentialsTransportFactory.getTransport().setAccessToken("final-iam-token-null-transport");
+    credentialsTransportFactory.getTransport().setExpireTime(getDefaultExpireTime());
+    credentialsTransportFactory
+        .getTransport()
+        .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+
+    AtomicBoolean sourceRefreshed = new AtomicBoolean(false);
+    ExternalAccountCredentials mockExternalAccountCredentials =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setSubjectTokenSupplier(context -> "token")
+                .setTokenUrl("https://sts.googleapis.com/v1/token")) {
+          @Override
+          public AccessToken refreshAccessToken() {
+            sourceRefreshed.set(true);
+            return new AccessToken("intermediate-sts-token-null", null);
+          }
+        };
+
+    ImpersonatedCredentials credentials =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(mockExternalAccountCredentials)
+            .setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL)
+            .setScopes(IMMUTABLE_SCOPES_LIST)
+            .setLifetime(VALID_LIFETIME)
+            .setHttpTransportFactory(credentialsTransportFactory)
+            .build();
+
+    AccessToken token = credentials.refreshAccessToken(null);
+    assertEquals("final-iam-token-null-transport", token.getTokenValue());
+    assertTrue(sourceRefreshed.get());
+    assertEquals(
+        "Bearer intermediate-sts-token-null",
+        credentialsTransportFactory
+            .getTransport()
+            .getRequest()
+            .getFirstHeaderValue("Authorization"));
+
+    // Verify subsequent no-arg refreshAccessToken() uses refreshIfExpired() and reuses cached
+    // source token
+    sourceRefreshed.set(false);
+    credentialsTransportFactory
+        .getTransport()
+        .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+    AccessToken token2 = credentials.refreshAccessToken();
+    assertEquals("final-iam-token-null-transport", token2.getTokenValue());
+    assertFalse(sourceRefreshed.get());
+  }
+
+  @Test
+  void
+      refreshAccessToken_externalAccountSource_appliesCloudPlatformScopeToSourceAndTargetScopeToIam()
+          throws IOException {
+    MockExternalAccountCredentialsTransport stsTransport =
+        new MockExternalAccountCredentialsTransport();
+    stsTransport.setExpireTime(getDefaultExpireTime());
+
+    MockIAMCredentialsServiceTransportFactory iamTransportFactory =
+        new MockIAMCredentialsServiceTransportFactory();
+    iamTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
+    iamTransportFactory.getTransport().setAccessToken("final-iam-token");
+    iamTransportFactory.getTransport().setExpireTime(getDefaultExpireTime());
+    iamTransportFactory.getTransport().addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+
+    IdentityPoolCredentials sourceCredentials =
+        IdentityPoolCredentials.newBuilder()
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+            .setSubjectTokenSupplier(context -> "subject-token")
+            .setScopes(
+                Collections.singletonList("https://www.googleapis.com/auth/devstorage.read_only"))
+            .setTokenUrl(stsTransport.getStsUrl())
+            .setHttpTransportFactory(() -> stsTransport)
+            .build();
+
+    List<String> targetScopes = Arrays.asList("https://www.googleapis.com/auth/bigquery");
+    ImpersonatedCredentials impersonated =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(sourceCredentials)
+            .setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL)
+            .setScopes(targetScopes)
+            .setLifetime(VALID_LIFETIME)
+            .setHttpTransportFactory(iamTransportFactory)
+            .build();
+
+    AccessToken token = impersonated.refreshAccessToken();
+    assertEquals("final-iam-token", token.getTokenValue());
+
+    // Verify STS request preserved existing source scope and added cloud-platform scope
+    String stsContent = stsTransport.getRequests().get(0).getContentAsString();
+    Map<String, String> stsParams = TestUtils.parseQuery(stsContent);
+    assertEquals(
+        "https://www.googleapis.com/auth/devstorage.read_only " + OAuth2Utils.CLOUD_PLATFORM_SCOPE,
+        stsParams.get("scope"));
+
+    // Verify IAM request received the target bigquery scope
+    assertTrue(
+        iamTransportFactory
+            .getTransport()
+            .getRequest()
+            .getContentAsString()
+            .contains("https://www.googleapis.com/auth/bigquery"));
+  }
+
+  @Test
+  void refreshAccessToken_withoutCycleTransportFactory_externalAccountSourceRetriesOn401FromIam()
+      throws IOException {
+    AtomicInteger sourceRefreshCount = new AtomicInteger(0);
+    ExternalAccountCredentials mockExternalAccountCredentials =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setSubjectTokenSupplier(context -> "token")
+                .setScopes(Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE))
+                .setTokenUrl("https://sts.googleapis.com/v1/token")) {
+          @Override
+          public AccessToken refreshAccessToken() {
+            int count = sourceRefreshCount.incrementAndGet();
+            return new AccessToken("intermediate-sts-token-" + count, null);
+          }
+        };
+
+    MockIAMCredentialsServiceTransportFactory credentialsTransportFactory =
+        new MockIAMCredentialsServiceTransportFactory();
+    credentialsTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
+    credentialsTransportFactory.getTransport().setAccessToken("final-iam-token-after-retry");
+    credentialsTransportFactory.getTransport().setExpireTime(getDefaultExpireTime());
+    // First IAM call returns 401 Unauthorized, second returns 200 OK
+    credentialsTransportFactory
+        .getTransport()
+        .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_UNAUTHORIZED, "Unauthorized");
+    credentialsTransportFactory
+        .getTransport()
+        .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+
+    ImpersonatedCredentials credentials =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(mockExternalAccountCredentials)
+            .setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL)
+            .setScopes(IMMUTABLE_SCOPES_LIST)
+            .setLifetime(VALID_LIFETIME)
+            .setHttpTransportFactory(credentialsTransportFactory)
+            .build();
+
+    AccessToken token = credentials.refreshAccessToken();
+    assertEquals("final-iam-token-after-retry", token.getTokenValue());
+    assertEquals(2, sourceRefreshCount.get());
+    assertEquals(
+        "Bearer intermediate-sts-token-2",
+        credentialsTransportFactory
+            .getTransport()
+            .getRequest()
+            .getFirstHeaderValue("Authorization"));
   }
 }

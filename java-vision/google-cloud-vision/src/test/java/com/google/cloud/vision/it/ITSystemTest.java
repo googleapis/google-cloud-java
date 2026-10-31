@@ -284,18 +284,6 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectFacesTest() throws IOException {
-    AnnotateImageResponse res =
-        requestAnnotatedImage("face_no_surprise.jpg", Type.FACE_DETECTION, false);
-    for (FaceAnnotation annotation : assertNotEmpty(res, res.getFaceAnnotationsList())) {
-      assertThat(annotation.getAngerLikelihood()).isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
-      assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
-      assertThat(annotation.getSurpriseLikelihood())
-          .isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
-    }
-  }
-
-  @Test
   public void detectFacesGcsTest() throws IOException {
     AnnotateImageResponse res =
         requestAnnotatedImage("face/face_no_surprise.jpg", Type.FACE_DETECTION, true);

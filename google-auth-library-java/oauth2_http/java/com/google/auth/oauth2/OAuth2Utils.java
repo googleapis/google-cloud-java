@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.GenericJson;
@@ -43,6 +44,7 @@ import com.google.api.client.util.PemReader.Section;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.AuthHttpConstants;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.common.base.Strings;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
@@ -57,13 +59,20 @@ import java.io.StringReader;
 import java.math.BigDecimal;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
+import java.security.GeneralSecurityException;
+import java.security.Key;
 import java.security.KeyFactory;
+import java.security.KeyStore;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.security.cert.Certificate;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -326,6 +335,150 @@ public class OAuth2Utils {
     String credentials = username + ":" + password;
     String encodedCredentials = BaseEncoding.base64().encode(credentials.getBytes());
     return "Basic " + encodedCredentials;
+  }
+
+  /**
+   * Returns whether the given throwable or any exception in its causal chain represents a 401
+   * Unauthorized error (either an {@link OAuthException} or {@link HttpResponseException} with
+   * status code 401).
+   *
+   * @param t the throwable to inspect
+   * @return {@code true} if {@code t} or any cause in its chain is a 401 error
+   */
+  static boolean isUnauthorizedException(@Nullable Throwable t) {
+    while (t != null) {
+      if (t instanceof OAuthException && ((OAuthException) t).getHttpStatusCode() == 401) {
+        return true;
+      }
+      if (t instanceof HttpResponseException
+          && ((HttpResponseException) t).getStatusCode() == 401) {
+        return true;
+      }
+      t = t.getCause();
+    }
+    return false;
+  }
+
+  /**
+   * Returns whether the given throwable or any exception in its causal chain represents an OAuth
+   * {@code invalid_grant} error (for example, HTTP 400 {@code invalid_grant} returned by STS when
+   * {@code trust_chain_path} is rotated before {@code cert_path} and {@code key_path}, so the
+   * pinned leaf certificate does not match the trust chain read from disk).
+   *
+   * @param t the throwable to inspect
+   * @return {@code true} if {@code t} or any cause in its chain is an {@code invalid_grant} {@link
+   *     OAuthException}
+   */
+  static boolean isInvalidGrantException(@Nullable Throwable t) {
+    while (t != null) {
+      if (t instanceof OAuthException
+          && "invalid_grant".equals(((OAuthException) t).getErrorCode())) {
+        return true;
+      }
+      t = t.getCause();
+    }
+    return false;
+  }
+
+  /**
+   * Returns whether the given {@link HttpTransportFactory} is an {@link MtlsHttpTransportFactory}
+   * initialized with a client certificate {@link KeyStore}.
+   */
+  static boolean hasMtlsKeyStore(@Nullable HttpTransportFactory transportFactory) {
+    return transportFactory instanceof MtlsHttpTransportFactory
+        && ((MtlsHttpTransportFactory) transportFactory).hasKeyStore();
+  }
+
+  /**
+   * Returns whether the given {@link HttpTransportFactory} is an {@link MtlsHttpTransportFactory}
+   * without an initialized {@link KeyStore} (for example, after deserialization via the no-arg
+   * constructor before certificate loading).
+   */
+  static boolean isKeylessMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
+    return transportFactory instanceof MtlsHttpTransportFactory
+        && !((MtlsHttpTransportFactory) transportFactory).hasKeyStore();
+  }
+
+  /**
+   * Returns whether the given transport factory should be managed and upgraded to {@link
+   * MtlsHttpTransportFactory} when mTLS is configured:
+   *
+   * <ul>
+   *   <li>{@code null}, {@link OAuth2Utils#HTTP_TRANSPORT_FACTORY}, or {@link
+   *       OAuth2Utils.DefaultHttpTransportFactory}: no custom transport factory was provided, so
+   *       mTLS credentials should upgrade to {@link MtlsHttpTransportFactory}.
+   *   <li>Exact class {@link MtlsHttpTransportFactory}: standard mTLS transport (including when
+   *       cloning an already-initialized mTLS credential), which should be refreshed per cycle with
+   *       the latest {@link KeyStore}.
+   *   <li>An {@link MtlsHttpTransportFactory} (or subclass) without a {@link KeyStore} loaded yet.
+   * </ul>
+   *
+   * <p>Conversely, if a caller supplies a custom {@link HttpTransportFactory} or a custom {@link
+   * MtlsHttpTransportFactory} subclass pre-configured with its own {@link KeyStore}, this returns
+   * {@code false} so the caller's custom transport is preserved.
+   */
+  static boolean isDefaultOrMtlsTransportFactory(@Nullable HttpTransportFactory transportFactory) {
+    return transportFactory == null
+        || transportFactory instanceof DefaultHttpTransportFactory
+        || transportFactory.getClass() == MtlsHttpTransportFactory.class
+        || isKeylessMtlsTransportFactory(transportFactory);
+  }
+
+  /**
+   * Returns whether the certificate chain or private key in {@code newKeyStore} differs from {@code
+   * oldKeyStore}. Used to avoid retrying 401, STS {@code invalid_grant}, and transport failures
+   * when the reloaded certificate and key are unchanged, and to decide whether a cached STS token
+   * can be reused.
+   *
+   * @param oldKeyStore the previously loaded keystore
+   * @param newKeyStore the newly reloaded keystore
+   * @return {@code true} if the certificates or keys differ, or if either keystore cannot be read
+   */
+  static boolean hasCertificateChanged(
+      @Nullable KeyStore oldKeyStore, @Nullable KeyStore newKeyStore) {
+    if (oldKeyStore == newKeyStore) {
+      return false;
+    }
+    if (oldKeyStore == null || newKeyStore == null) {
+      return true;
+    }
+    List<Object> oldEntries = getKeyStoreEntries(oldKeyStore);
+    List<Object> newEntries = getKeyStoreEntries(newKeyStore);
+    if (oldEntries == null || newEntries == null) {
+      return true;
+    }
+    return !oldEntries.equals(newEntries);
+  }
+
+  private static @Nullable List<Object> getKeyStoreEntries(KeyStore keyStore) {
+    List<Object> entries = new ArrayList<>();
+    try {
+      Enumeration<String> aliases = keyStore.aliases();
+      if (aliases != null) {
+        List<String> aliasList = Collections.list(aliases);
+        Collections.sort(aliasList);
+        for (String alias : aliasList) {
+          Certificate[] chain = keyStore.getCertificateChain(alias);
+          if (chain != null && chain.length > 0) {
+            Collections.addAll(entries, chain);
+          } else {
+            Certificate cert = keyStore.getCertificate(alias);
+            if (cert != null) {
+              entries.add(cert);
+            }
+          }
+          if (keyStore.isKeyEntry(alias)) {
+            Key key = keyStore.getKey(alias, "".toCharArray());
+            if (key != null) {
+              entries.add(key);
+            }
+          }
+        }
+      }
+    } catch (GeneralSecurityException e) {
+      return null;
+    }
+    return entries;
   }
 
   private OAuth2Utils() {}

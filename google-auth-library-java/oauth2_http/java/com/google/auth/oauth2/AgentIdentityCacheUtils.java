@@ -242,12 +242,6 @@ final class AgentIdentityCacheUtils {
       if (cached.configMetadata != null) {
         return false;
       }
-      if (cached.certMetadata.path.endsWith("certificates.pem")
-          && Files.exists(
-              Paths.get(AgentIdentityUtils.getWellKnownDir(), "credentialbundle.pem"))) {
-        // credentialbundle.pem takes precedence if added after certificates.pem was cached
-        return false;
-      }
     }
     if (!cached.certMetadata.isUnchangedOnDisk()) {
       return false;
