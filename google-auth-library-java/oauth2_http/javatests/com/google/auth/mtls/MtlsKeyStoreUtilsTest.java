@@ -34,6 +34,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -44,13 +45,20 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
+import java.security.GeneralSecurityException;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
 import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.Signature;
+import java.security.SignatureException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
+import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
+import java.util.Base64;
 import java.util.Collections;
 import org.junit.jupiter.api.Test;
 
@@ -308,6 +316,97 @@ class MtlsKeyStoreUtilsTest {
             IllegalArgumentException.class,
             () -> MtlsKeyStoreUtils.createMtlsKeyStore(stream(read(CHAIN_CERT_PATH))));
     assertEquals("private key is missing from certAndKey string", e.getMessage());
+  }
+
+  @Test
+  void createMtlsKeyStore_mismatchedRsaKeyPairSameKeySize_throws() throws Exception {
+    // Generate a 2048-bit RSA key whose modulus is strictly smaller than SINGLE_CERT_PATH's
+    // 2048-bit RSA modulus, guaranteeing that Signature.verify() returns false (rather than
+    // throwing SignatureException on s >= n).
+    X509Certificate singleCert =
+        (X509Certificate)
+            CertificateFactory.getInstance("X.509")
+                .generateCertificate(
+                    new ByteArrayInputStream(read(SINGLE_CERT_PATH).getBytes(UTF_8)));
+    RSAPublicKey certPublicKey = (RSAPublicKey) singleCert.getPublicKey();
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    kpg.initialize(certPublicKey.getModulus().bitLength());
+    KeyPair otherRsaKeyPair;
+    do {
+      otherRsaKeyPair = kpg.generateKeyPair();
+    } while (((RSAPublicKey) otherRsaKeyPair.getPublic())
+            .getModulus()
+            .compareTo(certPublicKey.getModulus())
+        >= 0);
+    String otherRsaKeyPem = toPkcs8Pem(otherRsaKeyPair.getPrivate());
+
+    GeneralSecurityException e =
+        assertThrows(
+            GeneralSecurityException.class,
+            () ->
+                MtlsKeyStoreUtils.createMtlsKeyStore(
+                    stream(read(SINGLE_CERT_PATH), otherRsaKeyPem)));
+    assertEquals("Certificate and private key do not match", e.getMessage());
+    assertNull(e.getCause());
+  }
+
+  @Test
+  void createMtlsKeyStore_mismatchedRsaKeyPairDifferentKeySize_throws() throws Exception {
+    // Pairing a 1024-bit RSA private key with the 2048-bit RSA SINGLE_CERT_PATH deterministically
+    // causes Signature.verify() to throw SignatureException ("Bad signature length: got 128 but was
+    // expecting 256"), which must be translated into GeneralSecurityException("Certificate and
+    // private key do not match").
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    kpg.initialize(1024);
+    KeyPair otherRsaKeyPair = kpg.generateKeyPair();
+    String otherRsaKeyPem = toPkcs8Pem(otherRsaKeyPair.getPrivate());
+
+    GeneralSecurityException e =
+        assertThrows(
+            GeneralSecurityException.class,
+            () ->
+                MtlsKeyStoreUtils.createMtlsKeyStore(
+                    stream(read(SINGLE_CERT_PATH), otherRsaKeyPem)));
+    assertEquals("Certificate and private key do not match", e.getMessage());
+    assertTrue(e.getCause() instanceof SignatureException);
+  }
+
+  @Test
+  void createMtlsKeyStore_mismatchedEcKeyPair_throws() throws Exception {
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("EC");
+    kpg.initialize(256);
+    KeyPair otherEcKeyPair = kpg.generateKeyPair();
+    String otherEcKeyPem = toPkcs8Pem(otherEcKeyPair.getPrivate());
+
+    GeneralSecurityException e =
+        assertThrows(
+            GeneralSecurityException.class,
+            () ->
+                MtlsKeyStoreUtils.createMtlsKeyStore(stream(read(CHAIN_CERT_PATH), otherEcKeyPem)));
+    assertEquals("Certificate and private key do not match", e.getMessage());
+    assertNull(e.getCause());
+  }
+
+  @Test
+  void createMtlsKeyStore_mismatchedEcKeyPairDifferentCurve_throws() throws Exception {
+    // Pairing a 384-bit (secp384r1) EC private key with the 256-bit (secp256r1) EC CHAIN_CERT_PATH.
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("EC");
+    kpg.initialize(384);
+    KeyPair otherEcKeyPair = kpg.generateKeyPair();
+    String otherEcKeyPem = toPkcs8Pem(otherEcKeyPair.getPrivate());
+
+    GeneralSecurityException e =
+        assertThrows(
+            GeneralSecurityException.class,
+            () ->
+                MtlsKeyStoreUtils.createMtlsKeyStore(stream(read(CHAIN_CERT_PATH), otherEcKeyPem)));
+    assertEquals("Certificate and private key do not match", e.getMessage());
+  }
+
+  static String toPkcs8Pem(PrivateKey privateKey) {
+    return "-----BEGIN PRIVATE KEY-----\n"
+        + Base64.getMimeEncoder(64, "\n".getBytes(UTF_8)).encodeToString(privateKey.getEncoded())
+        + "\n-----END PRIVATE KEY-----\n";
   }
 
   static String read(String path) throws IOException {

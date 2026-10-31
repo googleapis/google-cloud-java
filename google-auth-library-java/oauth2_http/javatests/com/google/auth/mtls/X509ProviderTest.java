@@ -46,11 +46,16 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.GeneralSecurityException;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -445,6 +450,168 @@ class X509ProviderTest {
       MtlsUtils.setWellKnownSpiffeDirForTesting(null);
       MtlsUtils.setTimeServiceForTesting(null);
     }
+  }
+
+  @Test
+  void x509Provider_mismatchedKeyPair_retriesAndSucceedsWhenKeyRotates(@TempDir Path tempDir)
+      throws Exception {
+    Path certFile = tempDir.resolve("cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.copy(new File(TEST_CERT_PATH).toPath(), certFile);
+
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    kpg.initialize(1024);
+    KeyPair oldRsaKeyPair = kpg.generateKeyPair();
+    Files.write(
+        keyFile, MtlsKeyStoreUtilsTest.toPkcs8Pem(oldRsaKeyPair.getPrivate()).getBytes(UTF_8));
+
+    Path config = writeWorkloadConfig(tempDir, certFile, keyFile);
+    List<Long> sleeps = new ArrayList<>();
+    X509Provider.setTimeServiceForTesting(
+        millis -> {
+          sleeps.add(millis);
+          if (sleeps.size() == 2) {
+            // Simulate external rotator finishing key_path update before the 3rd attempt.
+            try {
+              Files.copy(
+                  new File(TEST_KEY_PATH).toPath(),
+                  keyFile,
+                  java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            } catch (IOException e) {
+              throw new RuntimeException(e);
+            }
+          }
+        });
+    try {
+      X509Provider testProvider = new X509Provider(config.toString());
+
+      KeyStore store = testProvider.getKeyStore();
+
+      assertEquals(1, store.size());
+      assertNotNull(store.getCertificateAlias(loadTestCert()));
+      assertEquals(2, sleeps.size());
+      assertEquals(X509Provider.CERT_KEY_MATCH_RETRY_INTERVAL_MS, sleeps.get(0));
+      assertEquals(X509Provider.CERT_KEY_MATCH_RETRY_INTERVAL_MS, sleeps.get(1));
+    } finally {
+      X509Provider.setTimeServiceForTesting(null);
+    }
+  }
+
+  @Test
+  void x509Provider_mismatchedKeyPair_throwsAfterExhaustingRetries(@TempDir Path tempDir)
+      throws Exception {
+    Path certFile = tempDir.resolve("cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.copy(new File(TEST_CERT_PATH).toPath(), certFile);
+
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    kpg.initialize(1024);
+    KeyPair mismatchedRsaKeyPair = kpg.generateKeyPair();
+    Files.write(
+        keyFile,
+        MtlsKeyStoreUtilsTest.toPkcs8Pem(mismatchedRsaKeyPair.getPrivate()).getBytes(UTF_8));
+
+    Path config = writeWorkloadConfig(tempDir, certFile, keyFile);
+    List<Long> sleeps = new ArrayList<>();
+    X509Provider.setTimeServiceForTesting(sleeps::add);
+    try {
+      X509Provider testProvider = new X509Provider(config.toString());
+
+      IOException exception = assertThrows(IOException.class, testProvider::getKeyStore);
+
+      assertEquals("X509Provider: Unexpected IOException:", exception.getMessage());
+      assertNotNull(exception.getCause());
+      assertTrue(exception.getCause() instanceof GeneralSecurityException);
+      assertEquals("Certificate and private key do not match", exception.getCause().getMessage());
+      assertEquals(X509Provider.CERT_KEY_MATCH_RETRIES - 1, sleeps.size());
+    } finally {
+      X509Provider.setTimeServiceForTesting(null);
+    }
+  }
+
+  @Test
+  void x509Provider_transientlyEmptyCertFile_retriesAndSucceeds(@TempDir Path tempDir)
+      throws Exception {
+    Path certFile = tempDir.resolve("cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    // Simulate cert_path being truncated mid-write on the first attempt.
+    Files.write(certFile, new byte[0]);
+    Files.copy(new File(TEST_KEY_PATH).toPath(), keyFile);
+
+    Path config = writeWorkloadConfig(tempDir, certFile, keyFile);
+    List<Long> sleeps = new ArrayList<>();
+    X509Provider.setTimeServiceForTesting(
+        millis -> {
+          sleeps.add(millis);
+          try {
+            Files.copy(
+                new File(TEST_CERT_PATH).toPath(),
+                certFile,
+                java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+          } catch (IOException e) {
+            throw new RuntimeException(e);
+          }
+        });
+    try {
+      X509Provider testProvider = new X509Provider(config.toString());
+
+      KeyStore store = testProvider.getKeyStore();
+
+      assertEquals(1, store.size());
+      assertNotNull(store.getCertificateAlias(loadTestCert()));
+      assertEquals(1, sleeps.size());
+    } finally {
+      X509Provider.setTimeServiceForTesting(null);
+    }
+  }
+
+  @Test
+  void x509Provider_interruptedDuringRetrySleep_restoresInterruptAndThrows(@TempDir Path tempDir)
+      throws Exception {
+    Path certFile = tempDir.resolve("cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.copy(new File(TEST_CERT_PATH).toPath(), certFile);
+
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    kpg.initialize(1024);
+    KeyPair mismatchedRsaKeyPair = kpg.generateKeyPair();
+    Files.write(
+        keyFile,
+        MtlsKeyStoreUtilsTest.toPkcs8Pem(mismatchedRsaKeyPair.getPrivate()).getBytes(UTF_8));
+
+    Path config = writeWorkloadConfig(tempDir, certFile, keyFile);
+    X509Provider.setTimeServiceForTesting(
+        millis -> {
+          throw new InterruptedException("simulated interrupt");
+        });
+    try {
+      X509Provider testProvider = new X509Provider(config.toString());
+
+      IOException exception = assertThrows(IOException.class, testProvider::getKeyStore);
+
+      assertTrue(Thread.currentThread().isInterrupted());
+      assertEquals(
+          "X509Provider: Interrupted while waiting for certificate and private key match.",
+          exception.getMessage());
+      assertTrue(exception.getCause() instanceof InterruptedException);
+    } finally {
+      Thread.interrupted(); // Clear interrupt flag
+      X509Provider.setTimeServiceForTesting(null);
+    }
+  }
+
+  private static Path writeWorkloadConfig(Path tempDir, Path certFile, Path keyFile)
+      throws IOException {
+    Path config = tempDir.resolve("certificate_config.json");
+    Files.write(
+        config,
+        ("{\"cert_configs\":{\"workload\":{\"cert_path\":\""
+                + certFile.toString().replace("\\", "\\\\")
+                + "\",\"key_path\":\""
+                + keyFile.toString().replace("\\", "\\\\")
+                + "\"}}}")
+            .getBytes(UTF_8));
+    return config;
   }
 
   /** Property provider whose user.home has no gcloud certificate_config.json. */
