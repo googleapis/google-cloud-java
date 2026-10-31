@@ -56,10 +56,12 @@ public interface WorkspaceConfigOrBuilder
    *
    *
    * <pre>
-   * Obfuscated Dasher customer ID.
+   * Output only. Obfuscated Dasher customer ID. Derived by the server from
+   * the project's GCP organization at data store creation time; any value
+   * supplied in the request payload is ignored.
    * </pre>
    *
-   * <code>string dasher_customer_id = 2;</code>
+   * <code>string dasher_customer_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The dasherCustomerId.
    */
@@ -69,10 +71,12 @@ public interface WorkspaceConfigOrBuilder
    *
    *
    * <pre>
-   * Obfuscated Dasher customer ID.
+   * Output only. Obfuscated Dasher customer ID. Derived by the server from
+   * the project's GCP organization at data store creation time; any value
+   * supplied in the request payload is ignored.
    * </pre>
    *
-   * <code>string dasher_customer_id = 2;</code>
+   * <code>string dasher_customer_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for dasherCustomerId.
    */

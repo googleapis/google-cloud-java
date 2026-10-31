@@ -895,6 +895,7 @@ public class ConversationalSearchServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -948,6 +949,7 @@ public class ConversationalSearchServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -1071,6 +1073,7 @@ public class ConversationalSearchServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -1122,6 +1125,7 @@ public class ConversationalSearchServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 
@@ -1174,6 +1178,7 @@ public class ConversationalSearchServiceClientTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockConversationalSearchService.addResponse(expectedResponse);
 

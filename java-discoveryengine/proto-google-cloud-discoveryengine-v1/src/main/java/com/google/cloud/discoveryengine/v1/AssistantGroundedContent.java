@@ -155,6 +155,81 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
      *
      *
      * <pre>
+     * Grounding information for parts of the visual content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+     * </code>
+     */
+    java.util.List<
+            com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                .VisualSegment>
+        getVisualSegmentsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding information for parts of the visual content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment
+        getVisualSegments(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding information for parts of the visual content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+     * </code>
+     */
+    int getVisualSegmentsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding information for parts of the visual content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                    .VisualSegmentOrBuilder>
+        getVisualSegmentsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding information for parts of the visual content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+            .VisualSegmentOrBuilder
+        getVisualSegmentsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
      * References for the grounded text.
      * </pre>
      *
@@ -260,6 +335,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
 
     private TextGroundingMetadata() {
       segments_ = java.util.Collections.emptyList();
+      visualSegments_ = java.util.Collections.emptyList();
       references_ = java.util.Collections.emptyList();
     }
 
@@ -1591,6 +1667,998 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
       }
     }
 
+    public interface VisualSegmentOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * References for the visual segment.
+       * </pre>
+       *
+       * <code>repeated int32 reference_indices = 1;</code>
+       *
+       * @return A list containing the referenceIndices.
+       */
+      java.util.List<java.lang.Integer> getReferenceIndicesList();
+
+      /**
+       *
+       *
+       * <pre>
+       * References for the visual segment.
+       * </pre>
+       *
+       * <code>repeated int32 reference_indices = 1;</code>
+       *
+       * @return The count of referenceIndices.
+       */
+      int getReferenceIndicesCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * References for the visual segment.
+       * </pre>
+       *
+       * <code>repeated int32 reference_indices = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The referenceIndices at the given index.
+       */
+      int getReferenceIndices(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * The content id of the visual segment. In order to display the citation
+       * of the visual element, this content_id needs to match with the
+       * `grounded_content.content_metadata.content_id` field.
+       * </pre>
+       *
+       * <code>string content_id = 2;</code>
+       *
+       * @return The contentId.
+       */
+      java.lang.String getContentId();
+
+      /**
+       *
+       *
+       * <pre>
+       * The content id of the visual segment. In order to display the citation
+       * of the visual element, this content_id needs to match with the
+       * `grounded_content.content_metadata.content_id` field.
+       * </pre>
+       *
+       * <code>string content_id = 2;</code>
+       *
+       * @return The bytes for contentId.
+       */
+      com.google.protobuf.ByteString getContentIdBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding information for a visual segment.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment}
+     */
+    public static final class VisualSegment extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment)
+        VisualSegmentOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "VisualSegment");
+      }
+
+      // Use VisualSegment.newBuilder() to construct.
+      private VisualSegment(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private VisualSegment() {
+        referenceIndices_ = emptyIntList();
+        contentId_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_VisualSegment_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+            .internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_VisualSegment_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                    .VisualSegment.class,
+                com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                    .VisualSegment.Builder.class);
+      }
+
+      public static final int REFERENCE_INDICES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.Internal.IntList referenceIndices_ = emptyIntList();
+
+      /**
+       *
+       *
+       * <pre>
+       * References for the visual segment.
+       * </pre>
+       *
+       * <code>repeated int32 reference_indices = 1;</code>
+       *
+       * @return A list containing the referenceIndices.
+       */
+      @java.lang.Override
+      public java.util.List<java.lang.Integer> getReferenceIndicesList() {
+        return referenceIndices_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * References for the visual segment.
+       * </pre>
+       *
+       * <code>repeated int32 reference_indices = 1;</code>
+       *
+       * @return The count of referenceIndices.
+       */
+      public int getReferenceIndicesCount() {
+        return referenceIndices_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * References for the visual segment.
+       * </pre>
+       *
+       * <code>repeated int32 reference_indices = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The referenceIndices at the given index.
+       */
+      public int getReferenceIndices(int index) {
+        return referenceIndices_.getInt(index);
+      }
+
+      private int referenceIndicesMemoizedSerializedSize = -1;
+
+      public static final int CONTENT_ID_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object contentId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The content id of the visual segment. In order to display the citation
+       * of the visual element, this content_id needs to match with the
+       * `grounded_content.content_metadata.content_id` field.
+       * </pre>
+       *
+       * <code>string content_id = 2;</code>
+       *
+       * @return The contentId.
+       */
+      @java.lang.Override
+      public java.lang.String getContentId() {
+        java.lang.Object ref = contentId_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contentId_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The content id of the visual segment. In order to display the citation
+       * of the visual element, this content_id needs to match with the
+       * `grounded_content.content_metadata.content_id` field.
+       * </pre>
+       *
+       * <code>string content_id = 2;</code>
+       *
+       * @return The bytes for contentId.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getContentIdBytes() {
+        java.lang.Object ref = contentId_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          contentId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getSerializedSize();
+        if (getReferenceIndicesList().size() > 0) {
+          output.writeUInt32NoTag(10);
+          output.writeUInt32NoTag(referenceIndicesMemoizedSerializedSize);
+        }
+        for (int i = 0; i < referenceIndices_.size(); i++) {
+          output.writeInt32NoTag(referenceIndices_.getInt(i));
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentId_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, contentId_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < referenceIndices_.size(); i++) {
+            dataSize +=
+                com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(
+                    referenceIndices_.getInt(i));
+          }
+          size += dataSize;
+          if (!getReferenceIndicesList().isEmpty()) {
+            size += 1;
+            size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+          }
+          referenceIndicesMemoizedSerializedSize = dataSize;
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(contentId_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, contentId_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                .VisualSegment)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                .VisualSegment
+            other =
+                (com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                        .VisualSegment)
+                    obj;
+
+        if (!getReferenceIndicesList().equals(other.getReferenceIndicesList())) return false;
+        if (!getContentId().equals(other.getContentId())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getReferenceIndicesCount() > 0) {
+          hash = (37 * hash) + REFERENCE_INDICES_FIELD_NUMBER;
+          hash = (53 * hash) + getReferenceIndicesList().hashCode();
+        }
+        hash = (37 * hash) + CONTENT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getContentId().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for a visual segment.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment)
+          com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+              .VisualSegmentOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+              .internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_VisualSegment_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+              .internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_VisualSegment_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                      .VisualSegment.class,
+                  com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                      .VisualSegment.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          referenceIndices_ = emptyIntList();
+          contentId_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1.AssistAnswerProto
+              .internal_static_google_cloud_discoveryengine_v1_AssistantGroundedContent_TextGroundingMetadata_VisualSegment_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                .VisualSegment
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+              .VisualSegment.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                .VisualSegment
+            build() {
+          com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                .VisualSegment
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment
+              result =
+                  new com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+                      .TextGroundingMetadata.VisualSegment(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                    .VisualSegment
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            referenceIndices_.makeImmutable();
+            result.referenceIndices_ = referenceIndices_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.contentId_ = contentId_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                        .VisualSegment)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                    .VisualSegment
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment.getDefaultInstance()) return this;
+          if (!other.referenceIndices_.isEmpty()) {
+            if (referenceIndices_.isEmpty()) {
+              referenceIndices_ = other.referenceIndices_;
+              referenceIndices_.makeImmutable();
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureReferenceIndicesIsMutable();
+              referenceIndices_.addAll(other.referenceIndices_);
+            }
+            onChanged();
+          }
+          if (!other.getContentId().isEmpty()) {
+            contentId_ = other.contentId_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    int v = input.readInt32();
+                    ensureReferenceIndicesIsMutable();
+                    referenceIndices_.addInt(v);
+                    break;
+                  } // case 8
+                case 10:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    ensureReferenceIndicesIsMutable();
+                    while (input.getBytesUntilLimit() > 0) {
+                      referenceIndices_.addInt(input.readInt32());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    contentId_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.Internal.IntList referenceIndices_ = emptyIntList();
+
+        private void ensureReferenceIndicesIsMutable() {
+          if (!referenceIndices_.isModifiable()) {
+            referenceIndices_ = makeMutableCopy(referenceIndices_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * References for the visual segment.
+         * </pre>
+         *
+         * <code>repeated int32 reference_indices = 1;</code>
+         *
+         * @return A list containing the referenceIndices.
+         */
+        public java.util.List<java.lang.Integer> getReferenceIndicesList() {
+          referenceIndices_.makeImmutable();
+          return referenceIndices_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * References for the visual segment.
+         * </pre>
+         *
+         * <code>repeated int32 reference_indices = 1;</code>
+         *
+         * @return The count of referenceIndices.
+         */
+        public int getReferenceIndicesCount() {
+          return referenceIndices_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * References for the visual segment.
+         * </pre>
+         *
+         * <code>repeated int32 reference_indices = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The referenceIndices at the given index.
+         */
+        public int getReferenceIndices(int index) {
+          return referenceIndices_.getInt(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * References for the visual segment.
+         * </pre>
+         *
+         * <code>repeated int32 reference_indices = 1;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The referenceIndices to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReferenceIndices(int index, int value) {
+
+          ensureReferenceIndicesIsMutable();
+          referenceIndices_.setInt(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * References for the visual segment.
+         * </pre>
+         *
+         * <code>repeated int32 reference_indices = 1;</code>
+         *
+         * @param value The referenceIndices to add.
+         * @return This builder for chaining.
+         */
+        public Builder addReferenceIndices(int value) {
+
+          ensureReferenceIndicesIsMutable();
+          referenceIndices_.addInt(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * References for the visual segment.
+         * </pre>
+         *
+         * <code>repeated int32 reference_indices = 1;</code>
+         *
+         * @param values The referenceIndices to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllReferenceIndices(
+            java.lang.Iterable<? extends java.lang.Integer> values) {
+          ensureReferenceIndicesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, referenceIndices_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * References for the visual segment.
+         * </pre>
+         *
+         * <code>repeated int32 reference_indices = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearReferenceIndices() {
+          referenceIndices_ = emptyIntList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object contentId_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The content id of the visual segment. In order to display the citation
+         * of the visual element, this content_id needs to match with the
+         * `grounded_content.content_metadata.content_id` field.
+         * </pre>
+         *
+         * <code>string content_id = 2;</code>
+         *
+         * @return The contentId.
+         */
+        public java.lang.String getContentId() {
+          java.lang.Object ref = contentId_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            contentId_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The content id of the visual segment. In order to display the citation
+         * of the visual element, this content_id needs to match with the
+         * `grounded_content.content_metadata.content_id` field.
+         * </pre>
+         *
+         * <code>string content_id = 2;</code>
+         *
+         * @return The bytes for contentId.
+         */
+        public com.google.protobuf.ByteString getContentIdBytes() {
+          java.lang.Object ref = contentId_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            contentId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The content id of the visual segment. In order to display the citation
+         * of the visual element, this content_id needs to match with the
+         * `grounded_content.content_metadata.content_id` field.
+         * </pre>
+         *
+         * <code>string content_id = 2;</code>
+         *
+         * @param value The contentId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentId(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          contentId_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The content id of the visual segment. In order to display the citation
+         * of the visual element, this content_id needs to match with the
+         * `grounded_content.content_metadata.content_id` field.
+         * </pre>
+         *
+         * <code>string content_id = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearContentId() {
+          contentId_ = getDefaultInstance().getContentId();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The content id of the visual segment. In order to display the citation
+         * of the visual element, this content_id needs to match with the
+         * `grounded_content.content_metadata.content_id` field.
+         * </pre>
+         *
+         * <code>string content_id = 2;</code>
+         *
+         * @param value The bytes for contentId to set.
+         * @return This builder for chaining.
+         */
+        public Builder setContentIdBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          contentId_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment)
+      private static final com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                .VisualSegment();
+      }
+
+      public static com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+              .TextGroundingMetadata.VisualSegment
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<VisualSegment> PARSER =
+          new com.google.protobuf.AbstractParser<VisualSegment>() {
+            @java.lang.Override
+            public VisualSegment parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<VisualSegment> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<VisualSegment> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+              .VisualSegment
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     public interface ReferenceOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference)
@@ -1621,6 +2689,32 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
        * @return The bytes for content.
        */
       com.google.protobuf.ByteString getContentBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk of code snippet from the referenced document.
+       * </pre>
+       *
+       * <code>string code_snippet = 4;</code>
+       *
+       * @return The codeSnippet.
+       */
+      java.lang.String getCodeSnippet();
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk of code snippet from the referenced document.
+       * </pre>
+       *
+       * <code>string code_snippet = 4;</code>
+       *
+       * @return The bytes for codeSnippet.
+       */
+      com.google.protobuf.ByteString getCodeSnippetBytes();
 
       /**
        *
@@ -1668,6 +2762,52 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
       com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference
               .DocumentMetadataOrBuilder
           getDocumentMetadataOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Generic structured chunk metadata from upstream data
+       * source connectors.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the chunkMetadata field is set.
+       */
+      boolean hasChunkMetadata();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Generic structured chunk metadata from upstream data
+       * source connectors.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The chunkMetadata.
+       */
+      com.google.protobuf.Struct getChunkMetadata();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Generic structured chunk metadata from upstream data
+       * source connectors.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      com.google.protobuf.StructOrBuilder getChunkMetadataOrBuilder();
     }
 
     /**
@@ -1703,6 +2843,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
 
       private Reference() {
         content_ = "";
+        codeSnippet_ = "";
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1726,6 +2867,26 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           extends
           // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference.DocumentMetadata)
           com.google.protobuf.MessageOrBuilder {
+
+        /**
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference.DocumentMetadata.Language language = 8;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for language.
+         */
+        int getLanguageValue();
+
+        /**
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference.DocumentMetadata.Language language = 8;
+         * </code>
+         *
+         * @return The language.
+         */
+        com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference
+                .DocumentMetadata.Language
+            getLanguage();
 
         /**
          *
@@ -1930,6 +3091,48 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
          * @return The bytes for domain.
          */
         com.google.protobuf.ByteString getDomainBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * The mime type of the document.
+         * https://www.iana.org/assignments/media-types/media-types.xhtml.
+         * </pre>
+         *
+         * <code>optional string mime_type = 7;</code>
+         *
+         * @return Whether the mimeType field is set.
+         */
+        boolean hasMimeType();
+
+        /**
+         *
+         *
+         * <pre>
+         * The mime type of the document.
+         * https://www.iana.org/assignments/media-types/media-types.xhtml.
+         * </pre>
+         *
+         * <code>optional string mime_type = 7;</code>
+         *
+         * @return The mimeType.
+         */
+        java.lang.String getMimeType();
+
+        /**
+         *
+         *
+         * <pre>
+         * The mime type of the document.
+         * https://www.iana.org/assignments/media-types/media-types.xhtml.
+         * </pre>
+         *
+         * <code>optional string mime_type = 7;</code>
+         *
+         * @return The bytes for mimeType.
+         */
+        com.google.protobuf.ByteString getMimeTypeBytes();
       }
 
       /**
@@ -1964,11 +3167,13 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
         }
 
         private DocumentMetadata() {
+          language_ = 0;
           document_ = "";
           uri_ = "";
           title_ = "";
           pageIdentifier_ = "";
           domain_ = "";
+          mimeType_ = "";
         }
 
         public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1988,7 +3193,171 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
                       .Reference.DocumentMetadata.Builder.class);
         }
 
+        /**
+         *
+         *
+         * <pre>
+         * Language of the referenced content. For now, it is only used for
+         * code.
+         * </pre>
+         *
+         * Protobuf enum {@code
+         * google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference.DocumentMetadata.Language}
+         */
+        public enum Language implements com.google.protobuf.ProtocolMessageEnum {
+          /** <code>LANGUAGE_UNSPECIFIED = 0;</code> */
+          LANGUAGE_UNSPECIFIED(0),
+          /** <code>PYTHON = 1;</code> */
+          PYTHON(1),
+          /** <code>SQL = 2;</code> */
+          SQL(2),
+          UNRECOGNIZED(-1),
+          ;
+
+          static {
+            com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+                com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+                /* major= */ 4,
+                /* minor= */ 33,
+                /* patch= */ 6,
+                /* suffix= */ "",
+                "Language");
+          }
+
+          /** <code>LANGUAGE_UNSPECIFIED = 0;</code> */
+          public static final int LANGUAGE_UNSPECIFIED_VALUE = 0;
+
+          /** <code>PYTHON = 1;</code> */
+          public static final int PYTHON_VALUE = 1;
+
+          /** <code>SQL = 2;</code> */
+          public static final int SQL_VALUE = 2;
+
+          public final int getNumber() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalArgumentException(
+                  "Can't get the number of an unknown enum value.");
+            }
+            return value;
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static Language valueOf(int value) {
+            return forNumber(value);
+          }
+
+          /**
+           * @param value The numeric wire value of the corresponding enum entry.
+           * @return The enum associated with the given numeric wire value.
+           */
+          public static Language forNumber(int value) {
+            switch (value) {
+              case 0:
+                return LANGUAGE_UNSPECIFIED;
+              case 1:
+                return PYTHON;
+              case 2:
+                return SQL;
+              default:
+                return null;
+            }
+          }
+
+          public static com.google.protobuf.Internal.EnumLiteMap<Language> internalGetValueMap() {
+            return internalValueMap;
+          }
+
+          private static final com.google.protobuf.Internal.EnumLiteMap<Language> internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<Language>() {
+                public Language findValueByNumber(int number) {
+                  return Language.forNumber(number);
+                }
+              };
+
+          public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+            if (this == UNRECOGNIZED) {
+              throw new java.lang.IllegalStateException(
+                  "Can't get the descriptor of an unrecognized enum value.");
+            }
+            return getDescriptor().getValues().get(ordinal());
+          }
+
+          public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+            return getDescriptor();
+          }
+
+          public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+                .TextGroundingMetadata.Reference.DocumentMetadata.getDescriptor()
+                .getEnumTypes()
+                .get(0);
+          }
+
+          private static final Language[] VALUES = values();
+
+          public static Language valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+            if (desc.getType() != getDescriptor()) {
+              throw new java.lang.IllegalArgumentException(
+                  "EnumValueDescriptor is not for this type.");
+            }
+            if (desc.getIndex() == -1) {
+              return UNRECOGNIZED;
+            }
+            return VALUES[desc.getIndex()];
+          }
+
+          private final int value;
+
+          private Language(int value) {
+            this.value = value;
+          }
+
+          // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference.DocumentMetadata.Language)
+        }
+
         private int bitField0_;
+        public static final int LANGUAGE_FIELD_NUMBER = 8;
+        private int language_ = 0;
+
+        /**
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference.DocumentMetadata.Language language = 8;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for language.
+         */
+        @java.lang.Override
+        public int getLanguageValue() {
+          return language_;
+        }
+
+        /**
+         * <code>
+         * .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference.DocumentMetadata.Language language = 8;
+         * </code>
+         *
+         * @return The language.
+         */
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                .Reference.DocumentMetadata.Language
+            getLanguage() {
+          com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .Reference.DocumentMetadata.Language
+              result =
+                  com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                      .Reference.DocumentMetadata.Language.forNumber(language_);
+          return result == null
+              ? com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .Reference.DocumentMetadata.Language.UNRECOGNIZED
+              : result;
+        }
+
         public static final int DOCUMENT_FIELD_NUMBER = 1;
 
         @SuppressWarnings("serial")
@@ -2343,6 +3712,78 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           }
         }
 
+        public static final int MIME_TYPE_FIELD_NUMBER = 7;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object mimeType_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The mime type of the document.
+         * https://www.iana.org/assignments/media-types/media-types.xhtml.
+         * </pre>
+         *
+         * <code>optional string mime_type = 7;</code>
+         *
+         * @return Whether the mimeType field is set.
+         */
+        @java.lang.Override
+        public boolean hasMimeType() {
+          return ((bitField0_ & 0x00000020) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The mime type of the document.
+         * https://www.iana.org/assignments/media-types/media-types.xhtml.
+         * </pre>
+         *
+         * <code>optional string mime_type = 7;</code>
+         *
+         * @return The mimeType.
+         */
+        @java.lang.Override
+        public java.lang.String getMimeType() {
+          java.lang.Object ref = mimeType_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            mimeType_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The mime type of the document.
+         * https://www.iana.org/assignments/media-types/media-types.xhtml.
+         * </pre>
+         *
+         * <code>optional string mime_type = 7;</code>
+         *
+         * @return The bytes for mimeType.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getMimeTypeBytes() {
+          java.lang.Object ref = mimeType_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            mimeType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -2373,6 +3814,15 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           if (((bitField0_ & 0x00000010) != 0)) {
             com.google.protobuf.GeneratedMessage.writeString(output, 5, domain_);
           }
+          if (((bitField0_ & 0x00000020) != 0)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 7, mimeType_);
+          }
+          if (language_
+              != com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .Reference.DocumentMetadata.Language.LANGUAGE_UNSPECIFIED
+                  .getNumber()) {
+            output.writeEnum(8, language_);
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -2397,6 +3847,15 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           if (((bitField0_ & 0x00000010) != 0)) {
             size += com.google.protobuf.GeneratedMessage.computeStringSize(5, domain_);
           }
+          if (((bitField0_ & 0x00000020) != 0)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(7, mimeType_);
+          }
+          if (language_
+              != com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .Reference.DocumentMetadata.Language.LANGUAGE_UNSPECIFIED
+                  .getNumber()) {
+            size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, language_);
+          }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
@@ -2420,6 +3879,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
                           .TextGroundingMetadata.Reference.DocumentMetadata)
                       obj;
 
+          if (language_ != other.language_) return false;
           if (hasDocument() != other.hasDocument()) return false;
           if (hasDocument()) {
             if (!getDocument().equals(other.getDocument())) return false;
@@ -2440,6 +3900,10 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           if (hasDomain()) {
             if (!getDomain().equals(other.getDomain())) return false;
           }
+          if (hasMimeType() != other.hasMimeType()) return false;
+          if (hasMimeType()) {
+            if (!getMimeType().equals(other.getMimeType())) return false;
+          }
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -2451,6 +3915,8 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           }
           int hash = 41;
           hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
+          hash = (53 * hash) + language_;
           if (hasDocument()) {
             hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
             hash = (53 * hash) + getDocument().hashCode();
@@ -2470,6 +3936,10 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           if (hasDomain()) {
             hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
             hash = (53 * hash) + getDomain().hashCode();
+          }
+          if (hasMimeType()) {
+            hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
+            hash = (53 * hash) + getMimeType().hashCode();
           }
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
@@ -2642,11 +4112,13 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           public Builder clear() {
             super.clear();
             bitField0_ = 0;
+            language_ = 0;
             document_ = "";
             uri_ = "";
             title_ = "";
             pageIdentifier_ = "";
             domain_ = "";
+            mimeType_ = "";
             return this;
           }
 
@@ -2698,26 +4170,33 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
                       .Reference.DocumentMetadata
                   result) {
             int from_bitField0_ = bitField0_;
-            int to_bitField0_ = 0;
             if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.language_ = language_;
+            }
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000002) != 0)) {
               result.document_ = document_;
               to_bitField0_ |= 0x00000001;
             }
-            if (((from_bitField0_ & 0x00000002) != 0)) {
+            if (((from_bitField0_ & 0x00000004) != 0)) {
               result.uri_ = uri_;
               to_bitField0_ |= 0x00000002;
             }
-            if (((from_bitField0_ & 0x00000004) != 0)) {
+            if (((from_bitField0_ & 0x00000008) != 0)) {
               result.title_ = title_;
               to_bitField0_ |= 0x00000004;
             }
-            if (((from_bitField0_ & 0x00000008) != 0)) {
+            if (((from_bitField0_ & 0x00000010) != 0)) {
               result.pageIdentifier_ = pageIdentifier_;
               to_bitField0_ |= 0x00000008;
             }
-            if (((from_bitField0_ & 0x00000010) != 0)) {
+            if (((from_bitField0_ & 0x00000020) != 0)) {
               result.domain_ = domain_;
               to_bitField0_ |= 0x00000010;
+            }
+            if (((from_bitField0_ & 0x00000040) != 0)) {
+              result.mimeType_ = mimeType_;
+              to_bitField0_ |= 0x00000020;
             }
             result.bitField0_ |= to_bitField0_;
           }
@@ -2746,29 +4225,37 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
                 == com.google.cloud.discoveryengine.v1.AssistantGroundedContent
                     .TextGroundingMetadata.Reference.DocumentMetadata.getDefaultInstance())
               return this;
+            if (other.language_ != 0) {
+              setLanguageValue(other.getLanguageValue());
+            }
             if (other.hasDocument()) {
               document_ = other.document_;
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
               onChanged();
             }
             if (other.hasUri()) {
               uri_ = other.uri_;
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               onChanged();
             }
             if (other.hasTitle()) {
               title_ = other.title_;
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               onChanged();
             }
             if (other.hasPageIdentifier()) {
               pageIdentifier_ = other.pageIdentifier_;
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               onChanged();
             }
             if (other.hasDomain()) {
               domain_ = other.domain_;
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
+              onChanged();
+            }
+            if (other.hasMimeType()) {
+              mimeType_ = other.mimeType_;
+              bitField0_ |= 0x00000040;
               onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
@@ -2800,33 +4287,45 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
                   case 10:
                     {
                       document_ = input.readStringRequireUtf8();
-                      bitField0_ |= 0x00000001;
+                      bitField0_ |= 0x00000002;
                       break;
                     } // case 10
                   case 18:
                     {
                       uri_ = input.readStringRequireUtf8();
-                      bitField0_ |= 0x00000002;
+                      bitField0_ |= 0x00000004;
                       break;
                     } // case 18
                   case 26:
                     {
                       title_ = input.readStringRequireUtf8();
-                      bitField0_ |= 0x00000004;
+                      bitField0_ |= 0x00000008;
                       break;
                     } // case 26
                   case 34:
                     {
                       pageIdentifier_ = input.readStringRequireUtf8();
-                      bitField0_ |= 0x00000008;
+                      bitField0_ |= 0x00000010;
                       break;
                     } // case 34
                   case 42:
                     {
                       domain_ = input.readStringRequireUtf8();
-                      bitField0_ |= 0x00000010;
+                      bitField0_ |= 0x00000020;
                       break;
                     } // case 42
+                  case 58:
+                    {
+                      mimeType_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000040;
+                      break;
+                    } // case 58
+                  case 64:
+                    {
+                      language_ = input.readEnum();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 64
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2846,6 +4345,93 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
 
           private int bitField0_;
 
+          private int language_ = 0;
+
+          /**
+           * <code>
+           * .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference.DocumentMetadata.Language language = 8;
+           * </code>
+           *
+           * @return The enum numeric value on the wire for language.
+           */
+          @java.lang.Override
+          public int getLanguageValue() {
+            return language_;
+          }
+
+          /**
+           * <code>
+           * .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference.DocumentMetadata.Language language = 8;
+           * </code>
+           *
+           * @param value The enum numeric value on the wire for language to set.
+           * @return This builder for chaining.
+           */
+          public Builder setLanguageValue(int value) {
+            language_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           * <code>
+           * .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference.DocumentMetadata.Language language = 8;
+           * </code>
+           *
+           * @return The language.
+           */
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .Reference.DocumentMetadata.Language
+              getLanguage() {
+            com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                    .Reference.DocumentMetadata.Language
+                result =
+                    com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+                        .TextGroundingMetadata.Reference.DocumentMetadata.Language.forNumber(
+                        language_);
+            return result == null
+                ? com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                    .Reference.DocumentMetadata.Language.UNRECOGNIZED
+                : result;
+          }
+
+          /**
+           * <code>
+           * .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference.DocumentMetadata.Language language = 8;
+           * </code>
+           *
+           * @param value The language to set.
+           * @return This builder for chaining.
+           */
+          public Builder setLanguage(
+              com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                      .Reference.DocumentMetadata.Language
+                  value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            bitField0_ |= 0x00000001;
+            language_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+
+          /**
+           * <code>
+           * .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference.DocumentMetadata.Language language = 8;
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearLanguage() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            language_ = 0;
+            onChanged();
+            return this;
+          }
+
           private java.lang.Object document_ = "";
 
           /**
@@ -2860,7 +4446,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
            * @return Whether the document field is set.
            */
           public boolean hasDocument() {
-            return ((bitField0_ & 0x00000001) != 0);
+            return ((bitField0_ & 0x00000002) != 0);
           }
 
           /**
@@ -2926,7 +4512,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
               throw new NullPointerException();
             }
             document_ = value;
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -2944,7 +4530,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
            */
           public Builder clearDocument() {
             document_ = getDefaultInstance().getDocument();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -2967,7 +4553,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
             }
             checkByteStringIsUtf8(value);
             document_ = value;
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
             onChanged();
             return this;
           }
@@ -2987,7 +4573,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
            * @return Whether the uri field is set.
            */
           public boolean hasUri() {
-            return ((bitField0_ & 0x00000002) != 0);
+            return ((bitField0_ & 0x00000004) != 0);
           }
 
           /**
@@ -3056,7 +4642,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
               throw new NullPointerException();
             }
             uri_ = value;
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -3075,7 +4661,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
            */
           public Builder clearUri() {
             uri_ = getDefaultInstance().getUri();
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
             onChanged();
             return this;
           }
@@ -3099,7 +4685,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
             }
             checkByteStringIsUtf8(value);
             uri_ = value;
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
             onChanged();
             return this;
           }
@@ -3118,7 +4704,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
            * @return Whether the title field is set.
            */
           public boolean hasTitle() {
-            return ((bitField0_ & 0x00000004) != 0);
+            return ((bitField0_ & 0x00000008) != 0);
           }
 
           /**
@@ -3184,7 +4770,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
               throw new NullPointerException();
             }
             title_ = value;
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -3202,7 +4788,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
            */
           public Builder clearTitle() {
             title_ = getDefaultInstance().getTitle();
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
             return this;
           }
@@ -3225,7 +4811,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
             }
             checkByteStringIsUtf8(value);
             title_ = value;
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000008;
             onChanged();
             return this;
           }
@@ -3244,7 +4830,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
            * @return Whether the pageIdentifier field is set.
            */
           public boolean hasPageIdentifier() {
-            return ((bitField0_ & 0x00000008) != 0);
+            return ((bitField0_ & 0x00000010) != 0);
           }
 
           /**
@@ -3310,7 +4896,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
               throw new NullPointerException();
             }
             pageIdentifier_ = value;
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             onChanged();
             return this;
           }
@@ -3328,7 +4914,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
            */
           public Builder clearPageIdentifier() {
             pageIdentifier_ = getDefaultInstance().getPageIdentifier();
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
             onChanged();
             return this;
           }
@@ -3351,7 +4937,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
             }
             checkByteStringIsUtf8(value);
             pageIdentifier_ = value;
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             onChanged();
             return this;
           }
@@ -3372,7 +4958,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
            * @return Whether the domain field is set.
            */
           public boolean hasDomain() {
-            return ((bitField0_ & 0x00000010) != 0);
+            return ((bitField0_ & 0x00000020) != 0);
           }
 
           /**
@@ -3444,7 +5030,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
               throw new NullPointerException();
             }
             domain_ = value;
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000020;
             onChanged();
             return this;
           }
@@ -3464,7 +5050,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
            */
           public Builder clearDomain() {
             domain_ = getDefaultInstance().getDomain();
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             onChanged();
             return this;
           }
@@ -3489,7 +5075,139 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
             }
             checkByteStringIsUtf8(value);
             domain_ = value;
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000020;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object mimeType_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * The mime type of the document.
+           * https://www.iana.org/assignments/media-types/media-types.xhtml.
+           * </pre>
+           *
+           * <code>optional string mime_type = 7;</code>
+           *
+           * @return Whether the mimeType field is set.
+           */
+          public boolean hasMimeType() {
+            return ((bitField0_ & 0x00000040) != 0);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The mime type of the document.
+           * https://www.iana.org/assignments/media-types/media-types.xhtml.
+           * </pre>
+           *
+           * <code>optional string mime_type = 7;</code>
+           *
+           * @return The mimeType.
+           */
+          public java.lang.String getMimeType() {
+            java.lang.Object ref = mimeType_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              mimeType_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The mime type of the document.
+           * https://www.iana.org/assignments/media-types/media-types.xhtml.
+           * </pre>
+           *
+           * <code>optional string mime_type = 7;</code>
+           *
+           * @return The bytes for mimeType.
+           */
+          public com.google.protobuf.ByteString getMimeTypeBytes() {
+            java.lang.Object ref = mimeType_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              mimeType_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The mime type of the document.
+           * https://www.iana.org/assignments/media-types/media-types.xhtml.
+           * </pre>
+           *
+           * <code>optional string mime_type = 7;</code>
+           *
+           * @param value The mimeType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMimeType(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            mimeType_ = value;
+            bitField0_ |= 0x00000040;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The mime type of the document.
+           * https://www.iana.org/assignments/media-types/media-types.xhtml.
+           * </pre>
+           *
+           * <code>optional string mime_type = 7;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearMimeType() {
+            mimeType_ = getDefaultInstance().getMimeType();
+            bitField0_ = (bitField0_ & ~0x00000040);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The mime type of the document.
+           * https://www.iana.org/assignments/media-types/media-types.xhtml.
+           * </pre>
+           *
+           * <code>optional string mime_type = 7;</code>
+           *
+           * @param value The bytes for mimeType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            mimeType_ = value;
+            bitField0_ |= 0x00000040;
             onChanged();
             return this;
           }
@@ -3608,6 +5326,59 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
         }
       }
 
+      public static final int CODE_SNIPPET_FIELD_NUMBER = 4;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object codeSnippet_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk of code snippet from the referenced document.
+       * </pre>
+       *
+       * <code>string code_snippet = 4;</code>
+       *
+       * @return The codeSnippet.
+       */
+      @java.lang.Override
+      public java.lang.String getCodeSnippet() {
+        java.lang.Object ref = codeSnippet_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          codeSnippet_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk of code snippet from the referenced document.
+       * </pre>
+       *
+       * <code>string code_snippet = 4;</code>
+       *
+       * @return The bytes for codeSnippet.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getCodeSnippetBytes() {
+        java.lang.Object ref = codeSnippet_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          codeSnippet_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       public static final int DOCUMENT_METADATA_FIELD_NUMBER = 2;
       private com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
               .Reference.DocumentMetadata
@@ -3675,6 +5446,68 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
             : documentMetadata_;
       }
 
+      public static final int CHUNK_METADATA_FIELD_NUMBER = 5;
+      private com.google.protobuf.Struct chunkMetadata_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Generic structured chunk metadata from upstream data
+       * source connectors.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the chunkMetadata field is set.
+       */
+      @java.lang.Override
+      public boolean hasChunkMetadata() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Generic structured chunk metadata from upstream data
+       * source connectors.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The chunkMetadata.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Struct getChunkMetadata() {
+        return chunkMetadata_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : chunkMetadata_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Generic structured chunk metadata from upstream data
+       * source connectors.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.StructOrBuilder getChunkMetadataOrBuilder() {
+        return chunkMetadata_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : chunkMetadata_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -3695,6 +5528,12 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeMessage(2, getDocumentMetadata());
         }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(codeSnippet_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 4, codeSnippet_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeMessage(5, getChunkMetadata());
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -3710,6 +5549,12 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
         if (((bitField0_ & 0x00000001) != 0)) {
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDocumentMetadata());
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(codeSnippet_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(4, codeSnippet_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getChunkMetadata());
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -3734,9 +5579,14 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
                     obj;
 
         if (!getContent().equals(other.getContent())) return false;
+        if (!getCodeSnippet().equals(other.getCodeSnippet())) return false;
         if (hasDocumentMetadata() != other.hasDocumentMetadata()) return false;
         if (hasDocumentMetadata()) {
           if (!getDocumentMetadata().equals(other.getDocumentMetadata())) return false;
+        }
+        if (hasChunkMetadata() != other.hasChunkMetadata()) return false;
+        if (hasChunkMetadata()) {
+          if (!getChunkMetadata().equals(other.getChunkMetadata())) return false;
         }
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
@@ -3751,9 +5601,15 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + CONTENT_FIELD_NUMBER;
         hash = (53 * hash) + getContent().hashCode();
+        hash = (37 * hash) + CODE_SNIPPET_FIELD_NUMBER;
+        hash = (53 * hash) + getCodeSnippet().hashCode();
         if (hasDocumentMetadata()) {
           hash = (37 * hash) + DOCUMENT_METADATA_FIELD_NUMBER;
           hash = (53 * hash) + getDocumentMetadata().hashCode();
+        }
+        if (hasChunkMetadata()) {
+          hash = (37 * hash) + CHUNK_METADATA_FIELD_NUMBER;
+          hash = (53 * hash) + getChunkMetadata().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -3927,6 +5783,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
         private void maybeForceBuilderInitialization() {
           if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
             internalGetDocumentMetadataFieldBuilder();
+            internalGetChunkMetadataFieldBuilder();
           }
         }
 
@@ -3935,10 +5792,16 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           super.clear();
           bitField0_ = 0;
           content_ = "";
+          codeSnippet_ = "";
           documentMetadata_ = null;
           if (documentMetadataBuilder_ != null) {
             documentMetadataBuilder_.dispose();
             documentMetadataBuilder_ = null;
+          }
+          chunkMetadata_ = null;
+          if (chunkMetadataBuilder_ != null) {
+            chunkMetadataBuilder_.dispose();
+            chunkMetadataBuilder_ = null;
           }
           return this;
         }
@@ -3994,13 +5857,21 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.content_ = content_;
           }
-          int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.codeSnippet_ = codeSnippet_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
             result.documentMetadata_ =
                 documentMetadataBuilder_ == null
                     ? documentMetadata_
                     : documentMetadataBuilder_.build();
             to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.chunkMetadata_ =
+                chunkMetadataBuilder_ == null ? chunkMetadata_ : chunkMetadataBuilder_.build();
+            to_bitField0_ |= 0x00000002;
           }
           result.bitField0_ |= to_bitField0_;
         }
@@ -4033,8 +5904,16 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
             bitField0_ |= 0x00000001;
             onChanged();
           }
+          if (!other.getCodeSnippet().isEmpty()) {
+            codeSnippet_ = other.codeSnippet_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
           if (other.hasDocumentMetadata()) {
             mergeDocumentMetadata(other.getDocumentMetadata());
+          }
+          if (other.hasChunkMetadata()) {
+            mergeChunkMetadata(other.getChunkMetadata());
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -4072,9 +5951,22 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
                   {
                     input.readMessage(
                         internalGetDocumentMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000002;
+                    bitField0_ |= 0x00000004;
                     break;
                   } // case 18
+                case 34:
+                  {
+                    codeSnippet_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 34
+                case 42:
+                  {
+                    input.readMessage(
+                        internalGetChunkMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 42
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4205,6 +6097,117 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           return this;
         }
 
+        private java.lang.Object codeSnippet_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk of code snippet from the referenced document.
+         * </pre>
+         *
+         * <code>string code_snippet = 4;</code>
+         *
+         * @return The codeSnippet.
+         */
+        public java.lang.String getCodeSnippet() {
+          java.lang.Object ref = codeSnippet_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            codeSnippet_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk of code snippet from the referenced document.
+         * </pre>
+         *
+         * <code>string code_snippet = 4;</code>
+         *
+         * @return The bytes for codeSnippet.
+         */
+        public com.google.protobuf.ByteString getCodeSnippetBytes() {
+          java.lang.Object ref = codeSnippet_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            codeSnippet_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk of code snippet from the referenced document.
+         * </pre>
+         *
+         * <code>string code_snippet = 4;</code>
+         *
+         * @param value The codeSnippet to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCodeSnippet(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          codeSnippet_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk of code snippet from the referenced document.
+         * </pre>
+         *
+         * <code>string code_snippet = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCodeSnippet() {
+          codeSnippet_ = getDefaultInstance().getCodeSnippet();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk of code snippet from the referenced document.
+         * </pre>
+         *
+         * <code>string code_snippet = 4;</code>
+         *
+         * @param value The bytes for codeSnippet to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCodeSnippetBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          codeSnippet_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
         private com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
                 .Reference.DocumentMetadata
             documentMetadata_;
@@ -4231,7 +6234,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
          * @return Whether the documentMetadata field is set.
          */
         public boolean hasDocumentMetadata() {
-          return ((bitField0_ & 0x00000002) != 0);
+          return ((bitField0_ & 0x00000004) != 0);
         }
 
         /**
@@ -4283,7 +6286,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           } else {
             documentMetadataBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4308,7 +6311,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           } else {
             documentMetadataBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -4329,7 +6332,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
                     .Reference.DocumentMetadata
                 value) {
           if (documentMetadataBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)
+            if (((bitField0_ & 0x00000004) != 0)
                 && documentMetadata_ != null
                 && documentMetadata_
                     != com.google.cloud.discoveryengine.v1.AssistantGroundedContent
@@ -4342,7 +6345,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
             documentMetadataBuilder_.mergeFrom(value);
           }
           if (documentMetadata_ != null) {
-            bitField0_ |= 0x00000002;
+            bitField0_ |= 0x00000004;
             onChanged();
           }
           return this;
@@ -4360,7 +6363,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
          * </code>
          */
         public Builder clearDocumentMetadata() {
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           documentMetadata_ = null;
           if (documentMetadataBuilder_ != null) {
             documentMetadataBuilder_.dispose();
@@ -4384,7 +6387,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
         public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
                 .Reference.DocumentMetadata.Builder
             getDocumentMetadataBuilder() {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
           return internalGetDocumentMetadataFieldBuilder().getBuilder();
         }
@@ -4445,6 +6448,227 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
             documentMetadata_ = null;
           }
           return documentMetadataBuilder_;
+        }
+
+        private com.google.protobuf.Struct chunkMetadata_;
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>
+            chunkMetadataBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Generic structured chunk metadata from upstream data
+         * source connectors.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return Whether the chunkMetadata field is set.
+         */
+        public boolean hasChunkMetadata() {
+          return ((bitField0_ & 0x00000008) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Generic structured chunk metadata from upstream data
+         * source connectors.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The chunkMetadata.
+         */
+        public com.google.protobuf.Struct getChunkMetadata() {
+          if (chunkMetadataBuilder_ == null) {
+            return chunkMetadata_ == null
+                ? com.google.protobuf.Struct.getDefaultInstance()
+                : chunkMetadata_;
+          } else {
+            return chunkMetadataBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Generic structured chunk metadata from upstream data
+         * source connectors.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setChunkMetadata(com.google.protobuf.Struct value) {
+          if (chunkMetadataBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            chunkMetadata_ = value;
+          } else {
+            chunkMetadataBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Generic structured chunk metadata from upstream data
+         * source connectors.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder setChunkMetadata(com.google.protobuf.Struct.Builder builderForValue) {
+          if (chunkMetadataBuilder_ == null) {
+            chunkMetadata_ = builderForValue.build();
+          } else {
+            chunkMetadataBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Generic structured chunk metadata from upstream data
+         * source connectors.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder mergeChunkMetadata(com.google.protobuf.Struct value) {
+          if (chunkMetadataBuilder_ == null) {
+            if (((bitField0_ & 0x00000008) != 0)
+                && chunkMetadata_ != null
+                && chunkMetadata_ != com.google.protobuf.Struct.getDefaultInstance()) {
+              getChunkMetadataBuilder().mergeFrom(value);
+            } else {
+              chunkMetadata_ = value;
+            }
+          } else {
+            chunkMetadataBuilder_.mergeFrom(value);
+          }
+          if (chunkMetadata_ != null) {
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Generic structured chunk metadata from upstream data
+         * source connectors.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public Builder clearChunkMetadata() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          chunkMetadata_ = null;
+          if (chunkMetadataBuilder_ != null) {
+            chunkMetadataBuilder_.dispose();
+            chunkMetadataBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Generic structured chunk metadata from upstream data
+         * source connectors.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.protobuf.Struct.Builder getChunkMetadataBuilder() {
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return internalGetChunkMetadataFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Generic structured chunk metadata from upstream data
+         * source connectors.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        public com.google.protobuf.StructOrBuilder getChunkMetadataOrBuilder() {
+          if (chunkMetadataBuilder_ != null) {
+            return chunkMetadataBuilder_.getMessageOrBuilder();
+          } else {
+            return chunkMetadata_ == null
+                ? com.google.protobuf.Struct.getDefaultInstance()
+                : chunkMetadata_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Generic structured chunk metadata from upstream data
+         * source connectors.
+         * </pre>
+         *
+         * <code>
+         * .google.protobuf.Struct chunk_metadata = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>
+            internalGetChunkMetadataFieldBuilder() {
+          if (chunkMetadataBuilder_ == null) {
+            chunkMetadataBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.protobuf.Struct,
+                    com.google.protobuf.Struct.Builder,
+                    com.google.protobuf.StructOrBuilder>(
+                    getChunkMetadata(), getParentForChildren(), isClean());
+            chunkMetadata_ = null;
+          }
+          return chunkMetadataBuilder_;
         }
 
         // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.Reference)
@@ -4606,6 +6830,105 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
       return segments_.get(index);
     }
 
+    public static final int VISUAL_SEGMENTS_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                .VisualSegment>
+        visualSegments_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding information for parts of the visual content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                .VisualSegment>
+        getVisualSegmentsList() {
+      return visualSegments_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding information for parts of the visual content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                    .VisualSegmentOrBuilder>
+        getVisualSegmentsOrBuilderList() {
+      return visualSegments_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding information for parts of the visual content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public int getVisualSegmentsCount() {
+      return visualSegments_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding information for parts of the visual content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+            .VisualSegment
+        getVisualSegments(int index) {
+      return visualSegments_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Grounding information for parts of the visual content.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+            .VisualSegmentOrBuilder
+        getVisualSegmentsOrBuilder(int index) {
+      return visualSegments_.get(index);
+    }
+
     public static final int REFERENCES_FIELD_NUMBER = 2;
 
     @SuppressWarnings("serial")
@@ -4725,6 +7048,9 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
       for (int i = 0; i < segments_.size(); i++) {
         output.writeMessage(4, segments_.get(i));
       }
+      for (int i = 0; i < visualSegments_.size(); i++) {
+        output.writeMessage(6, visualSegments_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4739,6 +7065,9 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
       }
       for (int i = 0; i < segments_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, segments_.get(i));
+      }
+      for (int i = 0; i < visualSegments_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, visualSegments_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4759,6 +7088,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           (com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata) obj;
 
       if (!getSegmentsList().equals(other.getSegmentsList())) return false;
+      if (!getVisualSegmentsList().equals(other.getVisualSegmentsList())) return false;
       if (!getReferencesList().equals(other.getReferencesList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -4774,6 +7104,10 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
       if (getSegmentsCount() > 0) {
         hash = (37 * hash) + SEGMENTS_FIELD_NUMBER;
         hash = (53 * hash) + getSegmentsList().hashCode();
+      }
+      if (getVisualSegmentsCount() > 0) {
+        hash = (37 * hash) + VISUAL_SEGMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getVisualSegmentsList().hashCode();
       }
       if (getReferencesCount() > 0) {
         hash = (37 * hash) + REFERENCES_FIELD_NUMBER;
@@ -4939,13 +7273,20 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           segmentsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        if (visualSegmentsBuilder_ == null) {
+          visualSegments_ = java.util.Collections.emptyList();
+        } else {
+          visualSegments_ = null;
+          visualSegmentsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (referencesBuilder_ == null) {
           references_ = java.util.Collections.emptyList();
         } else {
           references_ = null;
           referencesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -4999,10 +7340,19 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
         } else {
           result.segments_ = segmentsBuilder_.build();
         }
-        if (referencesBuilder_ == null) {
+        if (visualSegmentsBuilder_ == null) {
           if (((bitField0_ & 0x00000002) != 0)) {
-            references_ = java.util.Collections.unmodifiableList(references_);
+            visualSegments_ = java.util.Collections.unmodifiableList(visualSegments_);
             bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.visualSegments_ = visualSegments_;
+        } else {
+          result.visualSegments_ = visualSegmentsBuilder_.build();
+        }
+        if (referencesBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            references_ = java.util.Collections.unmodifiableList(references_);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.references_ = references_;
         } else {
@@ -5063,11 +7413,38 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
             }
           }
         }
+        if (visualSegmentsBuilder_ == null) {
+          if (!other.visualSegments_.isEmpty()) {
+            if (visualSegments_.isEmpty()) {
+              visualSegments_ = other.visualSegments_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureVisualSegmentsIsMutable();
+              visualSegments_.addAll(other.visualSegments_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.visualSegments_.isEmpty()) {
+            if (visualSegmentsBuilder_.isEmpty()) {
+              visualSegmentsBuilder_.dispose();
+              visualSegmentsBuilder_ = null;
+              visualSegments_ = other.visualSegments_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              visualSegmentsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetVisualSegmentsFieldBuilder()
+                      : null;
+            } else {
+              visualSegmentsBuilder_.addAllMessages(other.visualSegments_);
+            }
+          }
+        }
         if (referencesBuilder_ == null) {
           if (!other.references_.isEmpty()) {
             if (references_.isEmpty()) {
               references_ = other.references_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureReferencesIsMutable();
               references_.addAll(other.references_);
@@ -5080,7 +7457,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
               referencesBuilder_.dispose();
               referencesBuilder_ = null;
               references_ = other.references_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               referencesBuilder_ =
                   com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                       ? internalGetReferencesFieldBuilder()
@@ -5150,6 +7527,23 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
                   }
                   break;
                 } // case 34
+              case 50:
+                {
+                  com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                          .VisualSegment
+                      m =
+                          input.readMessage(
+                              com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+                                  .TextGroundingMetadata.VisualSegment.parser(),
+                              extensionRegistry);
+                  if (visualSegmentsBuilder_ == null) {
+                    ensureVisualSegmentsIsMutable();
+                    visualSegments_.add(m);
+                  } else {
+                    visualSegmentsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5631,16 +8025,482 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
 
       private java.util.List<
               com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment>
+          visualSegments_ = java.util.Collections.emptyList();
+
+      private void ensureVisualSegmentsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          visualSegments_ =
+              new java.util.ArrayList<
+                  com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                      .VisualSegment>(visualSegments_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment,
+              com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment.Builder,
+              com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegmentOrBuilder>
+          visualSegmentsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment>
+          getVisualSegmentsList() {
+        if (visualSegmentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(visualSegments_);
+        } else {
+          return visualSegmentsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public int getVisualSegmentsCount() {
+        if (visualSegmentsBuilder_ == null) {
+          return visualSegments_.size();
+        } else {
+          return visualSegmentsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+              .VisualSegment
+          getVisualSegments(int index) {
+        if (visualSegmentsBuilder_ == null) {
+          return visualSegments_.get(index);
+        } else {
+          return visualSegmentsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public Builder setVisualSegments(
+          int index,
+          com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment
+              value) {
+        if (visualSegmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVisualSegmentsIsMutable();
+          visualSegments_.set(index, value);
+          onChanged();
+        } else {
+          visualSegmentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public Builder setVisualSegments(
+          int index,
+          com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment.Builder
+              builderForValue) {
+        if (visualSegmentsBuilder_ == null) {
+          ensureVisualSegmentsIsMutable();
+          visualSegments_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          visualSegmentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public Builder addVisualSegments(
+          com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment
+              value) {
+        if (visualSegmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVisualSegmentsIsMutable();
+          visualSegments_.add(value);
+          onChanged();
+        } else {
+          visualSegmentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public Builder addVisualSegments(
+          int index,
+          com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment
+              value) {
+        if (visualSegmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVisualSegmentsIsMutable();
+          visualSegments_.add(index, value);
+          onChanged();
+        } else {
+          visualSegmentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public Builder addVisualSegments(
+          com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment.Builder
+              builderForValue) {
+        if (visualSegmentsBuilder_ == null) {
+          ensureVisualSegmentsIsMutable();
+          visualSegments_.add(builderForValue.build());
+          onChanged();
+        } else {
+          visualSegmentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public Builder addVisualSegments(
+          int index,
+          com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment.Builder
+              builderForValue) {
+        if (visualSegmentsBuilder_ == null) {
+          ensureVisualSegmentsIsMutable();
+          visualSegments_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          visualSegmentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public Builder addAllVisualSegments(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.discoveryengine.v1.AssistantGroundedContent
+                          .TextGroundingMetadata.VisualSegment>
+              values) {
+        if (visualSegmentsBuilder_ == null) {
+          ensureVisualSegmentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, visualSegments_);
+          onChanged();
+        } else {
+          visualSegmentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public Builder clearVisualSegments() {
+        if (visualSegmentsBuilder_ == null) {
+          visualSegments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          visualSegmentsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public Builder removeVisualSegments(int index) {
+        if (visualSegmentsBuilder_ == null) {
+          ensureVisualSegmentsIsMutable();
+          visualSegments_.remove(index);
+          onChanged();
+        } else {
+          visualSegmentsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+              .VisualSegment.Builder
+          getVisualSegmentsBuilder(int index) {
+        return internalGetVisualSegmentsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+              .VisualSegmentOrBuilder
+          getVisualSegmentsOrBuilder(int index) {
+        if (visualSegmentsBuilder_ == null) {
+          return visualSegments_.get(index);
+        } else {
+          return visualSegmentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                      .VisualSegmentOrBuilder>
+          getVisualSegmentsOrBuilderList() {
+        if (visualSegmentsBuilder_ != null) {
+          return visualSegmentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(visualSegments_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+              .VisualSegment.Builder
+          addVisualSegmentsBuilder() {
+        return internalGetVisualSegmentsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                    .VisualSegment.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+              .VisualSegment.Builder
+          addVisualSegmentsBuilder(int index) {
+        return internalGetVisualSegmentsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                    .VisualSegment.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Grounding information for parts of the visual content.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata.VisualSegment visual_segments = 6;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment.Builder>
+          getVisualSegmentsBuilderList() {
+        return internalGetVisualSegmentsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment,
+              com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegment.Builder,
+              com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                  .VisualSegmentOrBuilder>
+          internalGetVisualSegmentsFieldBuilder() {
+        if (visualSegmentsBuilder_ == null) {
+          visualSegmentsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                      .VisualSegment,
+                  com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                      .VisualSegment.Builder,
+                  com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
+                      .VisualSegmentOrBuilder>(
+                  visualSegments_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          visualSegments_ = null;
+        }
+        return visualSegmentsBuilder_;
+      }
+
+      private java.util.List<
+              com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
                   .Reference>
           references_ = java.util.Collections.emptyList();
 
       private void ensureReferencesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           references_ =
               new java.util.ArrayList<
                   com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
                       .Reference>(references_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         }
       }
 
@@ -5919,7 +8779,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
       public Builder clearReferences() {
         if (referencesBuilder_ == null) {
           references_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           referencesBuilder_.clear();
@@ -6086,7 +8946,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
                       .Reference.Builder,
                   com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata
                       .ReferenceOrBuilder>(
-                  references_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+                  references_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
           references_ = null;
         }
         return referencesBuilder_;
@@ -6316,6 +9176,63 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
         : content_;
   }
 
+  public static final int CITATION_METADATA_FIELD_NUMBER = 5;
+  private com.google.cloud.discoveryengine.v1.CitationMetadata citationMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Source attribution of the generated content. See also
+   * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+   *
+   * @return Whether the citationMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasCitationMetadata() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Source attribution of the generated content. See also
+   * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+   *
+   * @return The citationMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.CitationMetadata getCitationMetadata() {
+    return citationMetadata_ == null
+        ? com.google.cloud.discoveryengine.v1.CitationMetadata.getDefaultInstance()
+        : citationMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Source attribution of the generated content. See also
+   * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.CitationMetadataOrBuilder
+      getCitationMetadataOrBuilder() {
+    return citationMetadata_ == null
+        ? com.google.cloud.discoveryengine.v1.CitationMetadata.getDefaultInstance()
+        : citationMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6339,6 +9256,9 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
           (com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata)
               metadata_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getCitationMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -6357,6 +9277,9 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
               3,
               (com.google.cloud.discoveryengine.v1.AssistantGroundedContent.TextGroundingMetadata)
                   metadata_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCitationMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -6377,6 +9300,10 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
     if (hasContent() != other.hasContent()) return false;
     if (hasContent()) {
       if (!getContent().equals(other.getContent())) return false;
+    }
+    if (hasCitationMetadata() != other.hasCitationMetadata()) return false;
+    if (hasCitationMetadata()) {
+      if (!getCitationMetadata().equals(other.getCitationMetadata())) return false;
     }
     if (!getMetadataCase().equals(other.getMetadataCase())) return false;
     switch (metadataCase_) {
@@ -6400,6 +9327,10 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
     if (hasContent()) {
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
+    }
+    if (hasCitationMetadata()) {
+      hash = (37 * hash) + CITATION_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getCitationMetadata().hashCode();
     }
     switch (metadataCase_) {
       case 3:
@@ -6555,6 +9486,7 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetContentFieldBuilder();
+        internalGetCitationMetadataFieldBuilder();
       }
     }
 
@@ -6569,6 +9501,11 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
       if (contentBuilder_ != null) {
         contentBuilder_.dispose();
         contentBuilder_ = null;
+      }
+      citationMetadata_ = null;
+      if (citationMetadataBuilder_ != null) {
+        citationMetadataBuilder_.dispose();
+        citationMetadataBuilder_ = null;
       }
       metadataCase_ = 0;
       metadata_ = null;
@@ -6616,6 +9553,11 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
         result.content_ = contentBuilder_ == null ? content_ : contentBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.citationMetadata_ =
+            citationMetadataBuilder_ == null ? citationMetadata_ : citationMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -6644,6 +9586,9 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
         return this;
       if (other.hasContent()) {
         mergeContent(other.getContent());
+      }
+      if (other.hasCitationMetadata()) {
+        mergeCitationMetadata(other.getCitationMetadata());
       }
       switch (other.getMetadataCase()) {
         case TEXT_GROUNDING_METADATA:
@@ -6695,6 +9640,13 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
                 metadataCase_ = 3;
                 break;
               } // case 26
+            case 42:
+              {
+                input.readMessage(
+                    internalGetCitationMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7187,6 +10139,214 @@ public final class AssistantGroundedContent extends com.google.protobuf.Generate
         content_ = null;
       }
       return contentBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1.CitationMetadata citationMetadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.CitationMetadata,
+            com.google.cloud.discoveryengine.v1.CitationMetadata.Builder,
+            com.google.cloud.discoveryengine.v1.CitationMetadataOrBuilder>
+        citationMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Source attribution of the generated content. See also
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+     *
+     * @return Whether the citationMetadata field is set.
+     */
+    public boolean hasCitationMetadata() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source attribution of the generated content. See also
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+     *
+     * @return The citationMetadata.
+     */
+    public com.google.cloud.discoveryengine.v1.CitationMetadata getCitationMetadata() {
+      if (citationMetadataBuilder_ == null) {
+        return citationMetadata_ == null
+            ? com.google.cloud.discoveryengine.v1.CitationMetadata.getDefaultInstance()
+            : citationMetadata_;
+      } else {
+        return citationMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source attribution of the generated content. See also
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+     */
+    public Builder setCitationMetadata(com.google.cloud.discoveryengine.v1.CitationMetadata value) {
+      if (citationMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        citationMetadata_ = value;
+      } else {
+        citationMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source attribution of the generated content. See also
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+     */
+    public Builder setCitationMetadata(
+        com.google.cloud.discoveryengine.v1.CitationMetadata.Builder builderForValue) {
+      if (citationMetadataBuilder_ == null) {
+        citationMetadata_ = builderForValue.build();
+      } else {
+        citationMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source attribution of the generated content. See also
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+     */
+    public Builder mergeCitationMetadata(
+        com.google.cloud.discoveryengine.v1.CitationMetadata value) {
+      if (citationMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && citationMetadata_ != null
+            && citationMetadata_
+                != com.google.cloud.discoveryengine.v1.CitationMetadata.getDefaultInstance()) {
+          getCitationMetadataBuilder().mergeFrom(value);
+        } else {
+          citationMetadata_ = value;
+        }
+      } else {
+        citationMetadataBuilder_.mergeFrom(value);
+      }
+      if (citationMetadata_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source attribution of the generated content. See also
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+     */
+    public Builder clearCitationMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      citationMetadata_ = null;
+      if (citationMetadataBuilder_ != null) {
+        citationMetadataBuilder_.dispose();
+        citationMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source attribution of the generated content. See also
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.CitationMetadata.Builder
+        getCitationMetadataBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetCitationMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source attribution of the generated content. See also
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+     */
+    public com.google.cloud.discoveryengine.v1.CitationMetadataOrBuilder
+        getCitationMetadataOrBuilder() {
+      if (citationMetadataBuilder_ != null) {
+        return citationMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return citationMetadata_ == null
+            ? com.google.cloud.discoveryengine.v1.CitationMetadata.getDefaultInstance()
+            : citationMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source attribution of the generated content. See also
+     * https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#citation_check
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1.CitationMetadata citation_metadata = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.CitationMetadata,
+            com.google.cloud.discoveryengine.v1.CitationMetadata.Builder,
+            com.google.cloud.discoveryengine.v1.CitationMetadataOrBuilder>
+        internalGetCitationMetadataFieldBuilder() {
+      if (citationMetadataBuilder_ == null) {
+        citationMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1.CitationMetadata,
+                com.google.cloud.discoveryengine.v1.CitationMetadata.Builder,
+                com.google.cloud.discoveryengine.v1.CitationMetadataOrBuilder>(
+                getCitationMetadata(), getParentForChildren(), isClean());
+        citationMetadata_ = null;
+      }
+      return citationMetadataBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.AssistantGroundedContent)

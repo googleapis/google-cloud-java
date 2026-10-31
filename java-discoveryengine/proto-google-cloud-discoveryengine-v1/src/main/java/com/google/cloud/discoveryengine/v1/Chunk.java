@@ -329,6 +329,34 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The mime type of the document.
+     * https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * </pre>
+     *
+     * <code>string mime_type = 4;</code>
+     *
+     * @return The mimeType.
+     */
+    java.lang.String getMimeType();
+
+    /**
+     *
+     *
+     * <pre>
+     * The mime type of the document.
+     * https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * </pre>
+     *
+     * <code>string mime_type = 4;</code>
+     *
+     * @return The bytes for mimeType.
+     */
+    com.google.protobuf.ByteString getMimeTypeBytes();
+
+    /**
+     *
+     *
+     * <pre>
      * Data representation.
      * The structured JSON data for the document. It should conform to the
      * registered [Schema][google.cloud.discoveryengine.v1.Schema] or an
@@ -406,6 +434,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
     private DocumentMetadata() {
       uri_ = "";
       title_ = "";
+      mimeType_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -530,6 +559,61 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int MIME_TYPE_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object mimeType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The mime type of the document.
+     * https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * </pre>
+     *
+     * <code>string mime_type = 4;</code>
+     *
+     * @return The mimeType.
+     */
+    @java.lang.Override
+    public java.lang.String getMimeType() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mimeType_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The mime type of the document.
+     * https://www.iana.org/assignments/media-types/media-types.xhtml.
+     * </pre>
+     *
+     * <code>string mime_type = 4;</code>
+     *
+     * @return The bytes for mimeType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMimeTypeBytes() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mimeType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int STRUCT_DATA_FIELD_NUMBER = 3;
     private com.google.protobuf.Struct structData_;
 
@@ -611,6 +695,9 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(3, getStructData());
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mimeType_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, mimeType_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -628,6 +715,9 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStructData());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mimeType_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, mimeType_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -647,6 +737,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
 
       if (!getUri().equals(other.getUri())) return false;
       if (!getTitle().equals(other.getTitle())) return false;
+      if (!getMimeType().equals(other.getMimeType())) return false;
       if (hasStructData() != other.hasStructData()) return false;
       if (hasStructData()) {
         if (!getStructData().equals(other.getStructData())) return false;
@@ -666,6 +757,8 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getUri().hashCode();
       hash = (37 * hash) + TITLE_FIELD_NUMBER;
       hash = (53 * hash) + getTitle().hashCode();
+      hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getMimeType().hashCode();
       if (hasStructData()) {
         hash = (37 * hash) + STRUCT_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getStructData().hashCode();
@@ -823,6 +916,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
         bitField0_ = 0;
         uri_ = "";
         title_ = "";
+        mimeType_ = "";
         structData_ = null;
         if (structDataBuilder_ != null) {
           structDataBuilder_.dispose();
@@ -872,8 +966,11 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.title_ = title_;
         }
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.mimeType_ = mimeType_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.structData_ =
               structDataBuilder_ == null ? structData_ : structDataBuilder_.build();
           to_bitField0_ |= 0x00000001;
@@ -903,6 +1000,11 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
         if (!other.getTitle().isEmpty()) {
           title_ = other.title_;
           bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getMimeType().isEmpty()) {
+          mimeType_ = other.mimeType_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.hasStructData()) {
@@ -950,9 +1052,15 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
                 {
                   input.readMessage(
                       internalGetStructDataFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 26
+              case 34:
+                {
+                  mimeType_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1194,6 +1302,122 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private java.lang.Object mimeType_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The mime type of the document.
+       * https://www.iana.org/assignments/media-types/media-types.xhtml.
+       * </pre>
+       *
+       * <code>string mime_type = 4;</code>
+       *
+       * @return The mimeType.
+       */
+      public java.lang.String getMimeType() {
+        java.lang.Object ref = mimeType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mimeType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The mime type of the document.
+       * https://www.iana.org/assignments/media-types/media-types.xhtml.
+       * </pre>
+       *
+       * <code>string mime_type = 4;</code>
+       *
+       * @return The bytes for mimeType.
+       */
+      public com.google.protobuf.ByteString getMimeTypeBytes() {
+        java.lang.Object ref = mimeType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          mimeType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The mime type of the document.
+       * https://www.iana.org/assignments/media-types/media-types.xhtml.
+       * </pre>
+       *
+       * <code>string mime_type = 4;</code>
+       *
+       * @param value The mimeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mimeType_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The mime type of the document.
+       * https://www.iana.org/assignments/media-types/media-types.xhtml.
+       * </pre>
+       *
+       * <code>string mime_type = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMimeType() {
+        mimeType_ = getDefaultInstance().getMimeType();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The mime type of the document.
+       * https://www.iana.org/assignments/media-types/media-types.xhtml.
+       * </pre>
+       *
+       * <code>string mime_type = 4;</code>
+       *
+       * @param value The bytes for mimeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        mimeType_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Struct structData_;
       private com.google.protobuf.SingleFieldBuilder<
               com.google.protobuf.Struct,
@@ -1216,7 +1440,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
        * @return Whether the structData field is set.
        */
       public boolean hasStructData() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
 
       /**
@@ -1264,7 +1488,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
         } else {
           structDataBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1287,7 +1511,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
         } else {
           structDataBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1306,7 +1530,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeStructData(com.google.protobuf.Struct value) {
         if (structDataBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)
+          if (((bitField0_ & 0x00000008) != 0)
               && structData_ != null
               && structData_ != com.google.protobuf.Struct.getDefaultInstance()) {
             getStructDataBuilder().mergeFrom(value);
@@ -1317,7 +1541,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
           structDataBuilder_.mergeFrom(value);
         }
         if (structData_ != null) {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         return this;
@@ -1336,7 +1560,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
        * <code>.google.protobuf.Struct struct_data = 3;</code>
        */
       public Builder clearStructData() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         structData_ = null;
         if (structDataBuilder_ != null) {
           structDataBuilder_.dispose();
@@ -1359,7 +1583,7 @@ public final class Chunk extends com.google.protobuf.GeneratedMessage
        * <code>.google.protobuf.Struct struct_data = 3;</code>
        */
       public com.google.protobuf.Struct.Builder getStructDataBuilder() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return internalGetStructDataFieldBuilder().getBuilder();
       }

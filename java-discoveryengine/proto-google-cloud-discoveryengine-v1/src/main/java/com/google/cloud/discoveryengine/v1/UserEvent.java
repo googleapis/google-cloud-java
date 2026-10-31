@@ -65,6 +65,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     tagIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
     panels_ = java.util.Collections.emptyList();
+    entity_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -113,7 +114,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -160,7 +160,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    * * `view-item-list`: View of a panel or ordered list of Documents.
    * * `view-home-page`: View of the home page.
    * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-   * * `add-feedback`: Add a user feedback.
    *
    * Retail-related values:
    *
@@ -858,8 +857,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The filter syntax consists of an expression language for constructing a
-   * predicate from one or more fields of the documents being filtered.
+   * Optional. The filter syntax consists of an expression language for
+   * constructing a predicate from one or more fields of the documents being
+   * filtered.
    *
    * One example is for `search` events, the associated
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] may contain
@@ -877,7 +877,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string filter = 9;</code>
+   * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -898,8 +898,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The filter syntax consists of an expression language for constructing a
-   * predicate from one or more fields of the documents being filtered.
+   * Optional. The filter syntax consists of an expression language for
+   * constructing a predicate from one or more fields of the documents being
+   * filtered.
    *
    * One example is for `search` events, the associated
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] may contain
@@ -917,7 +918,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
-   * <code>string filter = 9;</code>
+   * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -1517,7 +1518,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Extra user event features to include in the recommendation model.
+   * Optional. Extra user event features to include in the recommendation model.
    * These attributes must NOT contain data that needs to be parsed or processed
    * further, e.g. JSON or other encodings.
    *
@@ -1545,7 +1546,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    * search, or in other ways.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1568,7 +1570,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Extra user event features to include in the recommendation model.
+   * Optional. Extra user event features to include in the recommendation model.
    * These attributes must NOT contain data that needs to be parsed or processed
    * further, e.g. JSON or other encodings.
    *
@@ -1596,7 +1598,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    * search, or in other ways.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1609,7 +1612,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Extra user event features to include in the recommendation model.
+   * Optional. Extra user event features to include in the recommendation model.
    * These attributes must NOT contain data that needs to be parsed or processed
    * further, e.g. JSON or other encodings.
    *
@@ -1637,7 +1640,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    * search, or in other ways.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1657,7 +1661,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Extra user event features to include in the recommendation model.
+   * Optional. Extra user event features to include in the recommendation model.
    * These attributes must NOT contain data that needs to be parsed or processed
    * further, e.g. JSON or other encodings.
    *
@@ -1685,7 +1689,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
    * search, or in other ways.
    * </pre>
    *
-   * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+   * <code>
+   * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -1846,6 +1851,126 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     return panels_.get(index);
   }
 
+  public static final int FEEDBACK_FIELD_NUMBER = 23;
+  private com.google.cloud.discoveryengine.v1.Feedback feedback_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional except for the `add-feedback` event types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the feedback field is set.
+   */
+  @java.lang.Override
+  public boolean hasFeedback() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional except for the `add-feedback` event types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The feedback.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.Feedback getFeedback() {
+    return feedback_ == null
+        ? com.google.cloud.discoveryengine.v1.Feedback.getDefaultInstance()
+        : feedback_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional except for the `add-feedback` event types.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.FeedbackOrBuilder getFeedbackOrBuilder() {
+    return feedback_ == null
+        ? com.google.cloud.discoveryengine.v1.Feedback.getDefaultInstance()
+        : feedback_;
+  }
+
+  public static final int ENTITY_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object entity_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the entity for customers that may run multiple
+   * different entities, domains, sites or regions, for example, `Google US`,
+   * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+   * you set `entity` to get better per-entity search, completion, and
+   * prediction results.
+   * </pre>
+   *
+   * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The entity.
+   */
+  @java.lang.Override
+  public java.lang.String getEntity() {
+    java.lang.Object ref = entity_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      entity_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the entity for customers that may run multiple
+   * different entities, domains, sites or regions, for example, `Google US`,
+   * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+   * you set `entity` to get better per-entity search, completion, and
+   * prediction results.
+   * </pre>
+   *
+   * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for entity.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEntityBytes() {
+    java.lang.Object ref = entity_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      entity_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1924,6 +2049,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < panels_.size(); i++) {
       output.writeMessage(22, panels_.get(i));
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(23, getFeedback());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entity_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 25, entity_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2019,6 +2150,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < panels_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, panels_.get(i));
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getFeedback());
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(entity_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(25, entity_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2081,6 +2218,11 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       if (!getMediaInfo().equals(other.getMediaInfo())) return false;
     }
     if (!getPanelsList().equals(other.getPanelsList())) return false;
+    if (hasFeedback() != other.hasFeedback()) return false;
+    if (hasFeedback()) {
+      if (!getFeedback().equals(other.getFeedback())) return false;
+    }
+    if (!getEntity().equals(other.getEntity())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2162,6 +2304,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + PANELS_FIELD_NUMBER;
       hash = (53 * hash) + getPanelsList().hashCode();
     }
+    if (hasFeedback()) {
+      hash = (37 * hash) + FEEDBACK_FIELD_NUMBER;
+      hash = (53 * hash) + getFeedback().hashCode();
+    }
+    hash = (37 * hash) + ENTITY_FIELD_NUMBER;
+    hash = (53 * hash) + getEntity().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2336,6 +2484,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         internalGetTransactionInfoFieldBuilder();
         internalGetMediaInfoFieldBuilder();
         internalGetPanelsFieldBuilder();
+        internalGetFeedbackFieldBuilder();
       }
     }
 
@@ -2409,6 +2558,12 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         panelsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00200000);
+      feedback_ = null;
+      if (feedbackBuilder_ != null) {
+        feedbackBuilder_.dispose();
+        feedbackBuilder_ = null;
+      }
+      entity_ = "";
       return this;
     }
 
@@ -2540,6 +2695,13 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.mediaInfo_ = mediaInfoBuilder_ == null ? mediaInfo_ : mediaInfoBuilder_.build();
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.feedback_ = feedbackBuilder_ == null ? feedback_ : feedbackBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.entity_ = entity_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2698,6 +2860,14 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
             panelsBuilder_.addAllMessages(other.panels_);
           }
         }
+      }
+      if (other.hasFeedback()) {
+        mergeFeedback(other.getFeedback());
+      }
+      if (!other.getEntity().isEmpty()) {
+        entity_ = other.entity_;
+        bitField0_ |= 0x00800000;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2889,6 +3059,19 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 178
+            case 186:
+              {
+                input.readMessage(
+                    internalGetFeedbackFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 186
+            case 202:
+              {
+                entity_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 202
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2923,7 +3106,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -2969,7 +3151,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -3015,7 +3196,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -3060,7 +3240,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -3101,7 +3280,6 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * * `view-item-list`: View of a panel or ordered list of Documents.
      * * `view-home-page`: View of the home page.
      * * `view-category-page`: View of a category page, e.g. Home &gt; Men &gt; Jeans
-     * * `add-feedback`: Add a user feedback.
      *
      * Retail-related values:
      *
@@ -4859,8 +5037,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter syntax consists of an expression language for constructing a
-     * predicate from one or more fields of the documents being filtered.
+     * Optional. The filter syntax consists of an expression language for
+     * constructing a predicate from one or more fields of the documents being
+     * filtered.
      *
      * One example is for `search` events, the associated
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] may contain
@@ -4878,7 +5057,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string filter = 9;</code>
+     * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -4898,8 +5077,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter syntax consists of an expression language for constructing a
-     * predicate from one or more fields of the documents being filtered.
+     * Optional. The filter syntax consists of an expression language for
+     * constructing a predicate from one or more fields of the documents being
+     * filtered.
      *
      * One example is for `search` events, the associated
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] may contain
@@ -4917,7 +5097,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string filter = 9;</code>
+     * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -4937,8 +5117,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter syntax consists of an expression language for constructing a
-     * predicate from one or more fields of the documents being filtered.
+     * Optional. The filter syntax consists of an expression language for
+     * constructing a predicate from one or more fields of the documents being
+     * filtered.
      *
      * One example is for `search` events, the associated
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] may contain
@@ -4956,7 +5137,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string filter = 9;</code>
+     * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -4975,8 +5156,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter syntax consists of an expression language for constructing a
-     * predicate from one or more fields of the documents being filtered.
+     * Optional. The filter syntax consists of an expression language for
+     * constructing a predicate from one or more fields of the documents being
+     * filtered.
      *
      * One example is for `search` events, the associated
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] may contain
@@ -4994,7 +5176,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string filter = 9;</code>
+     * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -5009,8 +5191,9 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The filter syntax consists of an expression language for constructing a
-     * predicate from one or more fields of the documents being filtered.
+     * Optional. The filter syntax consists of an expression language for
+     * constructing a predicate from one or more fields of the documents being
+     * filtered.
      *
      * One example is for `search` events, the associated
      * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] may contain
@@ -5028,7 +5211,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
-     * <code>string filter = 9;</code>
+     * <code>string filter = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -7024,7 +7207,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Extra user event features to include in the recommendation model.
+     * Optional. Extra user event features to include in the recommendation model.
      * These attributes must NOT contain data that needs to be parsed or processed
      * further, e.g. JSON or other encodings.
      *
@@ -7052,7 +7235,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * search, or in other ways.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -7075,7 +7259,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Extra user event features to include in the recommendation model.
+     * Optional. Extra user event features to include in the recommendation model.
      * These attributes must NOT contain data that needs to be parsed or processed
      * further, e.g. JSON or other encodings.
      *
@@ -7103,7 +7287,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * search, or in other ways.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -7116,7 +7301,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Extra user event features to include in the recommendation model.
+     * Optional. Extra user event features to include in the recommendation model.
      * These attributes must NOT contain data that needs to be parsed or processed
      * further, e.g. JSON or other encodings.
      *
@@ -7144,7 +7329,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * search, or in other ways.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -7165,7 +7351,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Extra user event features to include in the recommendation model.
+     * Optional. Extra user event features to include in the recommendation model.
      * These attributes must NOT contain data that needs to be parsed or processed
      * further, e.g. JSON or other encodings.
      *
@@ -7193,7 +7379,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * search, or in other ways.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     @java.lang.Override
@@ -7220,7 +7407,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Extra user event features to include in the recommendation model.
+     * Optional. Extra user event features to include in the recommendation model.
      * These attributes must NOT contain data that needs to be parsed or processed
      * further, e.g. JSON or other encodings.
      *
@@ -7248,7 +7435,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * search, or in other ways.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removeAttributes(java.lang.String key) {
@@ -7271,7 +7459,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Extra user event features to include in the recommendation model.
+     * Optional. Extra user event features to include in the recommendation model.
      * These attributes must NOT contain data that needs to be parsed or processed
      * further, e.g. JSON or other encodings.
      *
@@ -7299,7 +7487,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * search, or in other ways.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder putAttributes(
@@ -7319,7 +7508,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Extra user event features to include in the recommendation model.
+     * Optional. Extra user event features to include in the recommendation model.
      * These attributes must NOT contain data that needs to be parsed or processed
      * further, e.g. JSON or other encodings.
      *
@@ -7347,7 +7536,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * search, or in other ways.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder putAllAttributes(
@@ -7369,7 +7559,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Extra user event features to include in the recommendation model.
+     * Optional. Extra user event features to include in the recommendation model.
      * These attributes must NOT contain data that needs to be parsed or processed
      * further, e.g. JSON or other encodings.
      *
@@ -7397,7 +7587,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
      * search, or in other ways.
      * </pre>
      *
-     * <code>map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17;
+     * <code>
+     * map&lt;string, .google.cloud.discoveryengine.v1.CustomAttribute&gt; attributes = 17 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.discoveryengine.v1.CustomAttribute.Builder putAttributesBuilderIfAbsent(
@@ -8030,6 +8221,350 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessage
         panels_ = null;
       }
       return panelsBuilder_;
+    }
+
+    private com.google.cloud.discoveryengine.v1.Feedback feedback_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.Feedback,
+            com.google.cloud.discoveryengine.v1.Feedback.Builder,
+            com.google.cloud.discoveryengine.v1.FeedbackOrBuilder>
+        feedbackBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the feedback field is set.
+     */
+    public boolean hasFeedback() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The feedback.
+     */
+    public com.google.cloud.discoveryengine.v1.Feedback getFeedback() {
+      if (feedbackBuilder_ == null) {
+        return feedback_ == null
+            ? com.google.cloud.discoveryengine.v1.Feedback.getDefaultInstance()
+            : feedback_;
+      } else {
+        return feedbackBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFeedback(com.google.cloud.discoveryengine.v1.Feedback value) {
+      if (feedbackBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        feedback_ = value;
+      } else {
+        feedbackBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFeedback(
+        com.google.cloud.discoveryengine.v1.Feedback.Builder builderForValue) {
+      if (feedbackBuilder_ == null) {
+        feedback_ = builderForValue.build();
+      } else {
+        feedbackBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFeedback(com.google.cloud.discoveryengine.v1.Feedback value) {
+      if (feedbackBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && feedback_ != null
+            && feedback_ != com.google.cloud.discoveryengine.v1.Feedback.getDefaultInstance()) {
+          getFeedbackBuilder().mergeFrom(value);
+        } else {
+          feedback_ = value;
+        }
+      } else {
+        feedbackBuilder_.mergeFrom(value);
+      }
+      if (feedback_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFeedback() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      feedback_ = null;
+      if (feedbackBuilder_ != null) {
+        feedbackBuilder_.dispose();
+        feedbackBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.Feedback.Builder getFeedbackBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return internalGetFeedbackFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.FeedbackOrBuilder getFeedbackOrBuilder() {
+      if (feedbackBuilder_ != null) {
+        return feedbackBuilder_.getMessageOrBuilder();
+      } else {
+        return feedback_ == null
+            ? com.google.cloud.discoveryengine.v1.Feedback.getDefaultInstance()
+            : feedback_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. This field is optional except for the `add-feedback` event types.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.Feedback feedback = 23 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.Feedback,
+            com.google.cloud.discoveryengine.v1.Feedback.Builder,
+            com.google.cloud.discoveryengine.v1.FeedbackOrBuilder>
+        internalGetFeedbackFieldBuilder() {
+      if (feedbackBuilder_ == null) {
+        feedbackBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1.Feedback,
+                com.google.cloud.discoveryengine.v1.Feedback.Builder,
+                com.google.cloud.discoveryengine.v1.FeedbackOrBuilder>(
+                getFeedback(), getParentForChildren(), isClean());
+        feedback_ = null;
+      }
+      return feedbackBuilder_;
+    }
+
+    private java.lang.Object entity_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the entity for customers that may run multiple
+     * different entities, domains, sites or regions, for example, `Google US`,
+     * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+     * you set `entity` to get better per-entity search, completion, and
+     * prediction results.
+     * </pre>
+     *
+     * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The entity.
+     */
+    public java.lang.String getEntity() {
+      java.lang.Object ref = entity_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        entity_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the entity for customers that may run multiple
+     * different entities, domains, sites or regions, for example, `Google US`,
+     * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+     * you set `entity` to get better per-entity search, completion, and
+     * prediction results.
+     * </pre>
+     *
+     * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for entity.
+     */
+    public com.google.protobuf.ByteString getEntityBytes() {
+      java.lang.Object ref = entity_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        entity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the entity for customers that may run multiple
+     * different entities, domains, sites or regions, for example, `Google US`,
+     * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+     * you set `entity` to get better per-entity search, completion, and
+     * prediction results.
+     * </pre>
+     *
+     * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The entity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntity(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      entity_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the entity for customers that may run multiple
+     * different entities, domains, sites or regions, for example, `Google US`,
+     * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+     * you set `entity` to get better per-entity search, completion, and
+     * prediction results.
+     * </pre>
+     *
+     * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEntity() {
+      entity_ = getDefaultInstance().getEntity();
+      bitField0_ = (bitField0_ & ~0x00800000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the entity for customers that may run multiple
+     * different entities, domains, sites or regions, for example, `Google US`,
+     * `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that
+     * you set `entity` to get better per-entity search, completion, and
+     * prediction results.
+     * </pre>
+     *
+     * <code>string entity = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for entity to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEntityBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      entity_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.UserEvent)

@@ -1711,6 +1711,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
    *                   .toString())
    *           .setSession(Session.newBuilder().build())
+   *           .setSessionId("sessionId607796817")
    *           .build();
    *   Session response = conversationalSearchServiceClient.createSession(request);
    * }
@@ -1747,6 +1748,7 @@ public class ConversationalSearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
    *                   .toString())
    *           .setSession(Session.newBuilder().build())
+   *           .setSessionId("sessionId607796817")
    *           .build();
    *   ApiFuture<Session> future =
    *       conversationalSearchServiceClient.createSessionCallable().futureCall(request);

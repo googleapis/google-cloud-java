@@ -16,10 +16,18 @@
 
 package com.google.cloud.discoveryengine.v1.stub;
 
+import static com.google.cloud.discoveryengine.v1.ServingConfigServiceClient.ListServingConfigsPagedResponse;
+
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.CreateServingConfigRequest;
+import com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest;
+import com.google.cloud.discoveryengine.v1.GetServingConfigRequest;
+import com.google.cloud.discoveryengine.v1.ListServingConfigsRequest;
+import com.google.cloud.discoveryengine.v1.ListServingConfigsResponse;
 import com.google.cloud.discoveryengine.v1.ServingConfig;
 import com.google.cloud.discoveryengine.v1.UpdateServingConfigRequest;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
 
@@ -33,8 +41,30 @@ import org.jspecify.annotations.NullMarked;
 @Generated("by gapic-generator-java")
 public abstract class ServingConfigServiceStub implements BackgroundResource {
 
+  public UnaryCallable<CreateServingConfigRequest, ServingConfig> createServingConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: createServingConfigCallable()");
+  }
+
+  public UnaryCallable<DeleteServingConfigRequest, Empty> deleteServingConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteServingConfigCallable()");
+  }
+
   public UnaryCallable<UpdateServingConfigRequest, ServingConfig> updateServingConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: updateServingConfigCallable()");
+  }
+
+  public UnaryCallable<GetServingConfigRequest, ServingConfig> getServingConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: getServingConfigCallable()");
+  }
+
+  public UnaryCallable<ListServingConfigsRequest, ListServingConfigsPagedResponse>
+      listServingConfigsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listServingConfigsPagedCallable()");
+  }
+
+  public UnaryCallable<ListServingConfigsRequest, ListServingConfigsResponse>
+      listServingConfigsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listServingConfigsCallable()");
   }
 
   @Override

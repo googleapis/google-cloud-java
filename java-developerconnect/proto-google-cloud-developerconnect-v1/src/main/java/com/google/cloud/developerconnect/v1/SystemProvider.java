@@ -330,7 +330,7 @@ public enum SystemProvider implements com.google.protobuf.ProtocolMessageEnum {
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.developerconnect.v1.DeveloperConnectProto.getDescriptor()
         .getEnumTypes()
-        .get(0);
+        .get(1);
   }
 
   private static final SystemProvider[] VALUES = values();

@@ -17,6 +17,8 @@
 package com.google.cloud.developerconnect.v1.stub;
 
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRefsPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRepositoryLinkCommitListPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRepositoryLinkPullRequestListPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchLinkableGitRepositoriesPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListAccountConnectorsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListConnectionsPagedResponse;
@@ -41,6 +43,8 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.developerconnect.v1.AccountConnector;
+import com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest;
+import com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestReviewCommentRequest;
 import com.google.cloud.developerconnect.v1.Connection;
 import com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.CreateConnectionRequest;
@@ -50,12 +54,23 @@ import com.google.cloud.developerconnect.v1.DeleteConnectionRequest;
 import com.google.cloud.developerconnect.v1.DeleteGitRepositoryLinkRequest;
 import com.google.cloud.developerconnect.v1.DeleteSelfRequest;
 import com.google.cloud.developerconnect.v1.DeleteUserRequest;
+import com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest;
+import com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse;
 import com.google.cloud.developerconnect.v1.FetchAccessTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchAccessTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsRequest;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse;
 import com.google.cloud.developerconnect.v1.FetchGitRefsRequest;
 import com.google.cloud.developerconnect.v1.FetchGitRefsResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest;
 import com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesRequest;
 import com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesResponse;
 import com.google.cloud.developerconnect.v1.FetchReadTokenRequest;
@@ -77,7 +92,12 @@ import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksRequest;
 import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse;
 import com.google.cloud.developerconnect.v1.ListUsersRequest;
 import com.google.cloud.developerconnect.v1.ListUsersResponse;
+import com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest;
+import com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
+import com.google.cloud.developerconnect.v1.PullRequest;
+import com.google.cloud.developerconnect.v1.PullRequestComment;
+import com.google.cloud.developerconnect.v1.PullRequestReviewComment;
 import com.google.cloud.developerconnect.v1.StartOAuthRequest;
 import com.google.cloud.developerconnect.v1.StartOAuthResponse;
 import com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest;
@@ -575,6 +595,44 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<OpenGitRepositoryLinkPullRequestRequest, PullRequest>
+      openGitRepositoryLinkPullRequestMethodDescriptor =
+          ApiMethodDescriptor.<OpenGitRepositoryLinkPullRequestRequest, PullRequest>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/OpenGitRepositoryLinkPullRequest")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<OpenGitRepositoryLinkPullRequestRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/connections/*/gitRepositoryLinks/*}:openPullRequest",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<OpenGitRepositoryLinkPullRequestRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<OpenGitRepositoryLinkPullRequestRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PullRequest>newBuilder()
+                      .setDefaultInstance(PullRequest.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<
           FetchLinkableGitRepositoriesRequest, FetchLinkableGitRepositoriesResponse>
       fetchLinkableGitRepositoriesMethodDescriptor =
@@ -686,6 +744,381 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<FetchGitRefsResponse>newBuilder()
                       .setDefaultInstance(FetchGitRefsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+      diffGitRepositoryLinkCommitMethodDescriptor =
+          ApiMethodDescriptor
+              .<DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/DiffGitRepositoryLinkCommit")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DiffGitRepositoryLinkCommitRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/connections/*/gitRepositoryLinks/*}:diffCommit",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DiffGitRepositoryLinkCommitRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DiffGitRepositoryLinkCommitRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "baseSha", request.getBaseSha());
+                            serializer.putQueryParam(fields, "headSha", request.getHeadSha());
+                            serializer.putQueryParam(
+                                fields, "pathFilters", request.getPathFiltersList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DiffGitRepositoryLinkCommitResponse>newBuilder()
+                      .setDefaultInstance(DiffGitRepositoryLinkCommitResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+      fetchGitRepositoryLinkCommitMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/FetchGitRepositoryLinkCommit")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchGitRepositoryLinkCommitRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/connections/*/gitRepositoryLinks/*}:fetchCommit",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRepositoryLinkCommitRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRepositoryLinkCommitRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "commitSha", request.getCommitSha());
+                            serializer.putQueryParam(
+                                fields, "pathFilters", request.getPathFiltersList());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchGitRepositoryLinkCommitResponse>newBuilder()
+                      .setDefaultInstance(FetchGitRepositoryLinkCommitResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+      fetchGitRepositoryLinkCommitListMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/FetchGitRepositoryLinkCommitList")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchGitRepositoryLinkCommitListRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/connections/*/gitRepositoryLinks/*}:fetchCommitList",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRepositoryLinkCommitListRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRepositoryLinkCommitListRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "ref", request.getRef());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchGitRepositoryLinkCommitListResponse>newBuilder()
+                      .setDefaultInstance(
+                          FetchGitRepositoryLinkCommitListResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+      fetchGitRepositoryLinkFileBlameMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/FetchGitRepositoryLinkFileBlame")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FetchGitRepositoryLinkFileBlameRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/connections/*/gitRepositoryLinks/*}:fetchFileBlame",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRepositoryLinkFileBlameRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRepositoryLinkFileBlameRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "firstLine", request.getFirstLine());
+                            serializer.putQueryParam(fields, "lastLine", request.getLastLine());
+                            serializer.putQueryParam(fields, "path", request.getPath());
+                            serializer.putQueryParam(fields, "ref", request.getRef());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FetchGitRepositoryLinkFileBlameResponse>newBuilder()
+                      .setDefaultInstance(
+                          FetchGitRepositoryLinkFileBlameResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<FetchGitRepositoryLinkPullRequestRequest, PullRequest>
+      fetchGitRepositoryLinkPullRequestMethodDescriptor =
+          ApiMethodDescriptor.<FetchGitRepositoryLinkPullRequestRequest, PullRequest>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/FetchGitRepositoryLinkPullRequest")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<FetchGitRepositoryLinkPullRequestRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/connections/*/gitRepositoryLinks/*}:fetchPullRequest",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRepositoryLinkPullRequestRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRepositoryLinkPullRequestRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "pullRequestId", request.getPullRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PullRequest>newBuilder()
+                      .setDefaultInstance(PullRequest.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>
+      addGitRepositoryLinkPullRequestCommentMethodDescriptor =
+          ApiMethodDescriptor
+              .<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/AddGitRepositoryLinkPullRequestComment")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<AddGitRepositoryLinkPullRequestCommentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/connections/*/gitRepositoryLinks/*}:addPullRequestComment",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddGitRepositoryLinkPullRequestCommentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddGitRepositoryLinkPullRequestCommentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PullRequestComment>newBuilder()
+                      .setDefaultInstance(PullRequestComment.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+      addGitRepositoryLinkPullRequestReviewCommentMethodDescriptor =
+          ApiMethodDescriptor
+              .<AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/AddGitRepositoryLinkPullRequestReviewComment")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<AddGitRepositoryLinkPullRequestReviewCommentRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/connections/*/gitRepositoryLinks/*}:addPullRequestReviewComment",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AddGitRepositoryLinkPullRequestReviewCommentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AddGitRepositoryLinkPullRequestReviewCommentRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PullRequestReviewComment>newBuilder()
+                      .setDefaultInstance(PullRequestReviewComment.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>
+      modifyGitRepositoryLinkPullRequestMethodDescriptor =
+          ApiMethodDescriptor.<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/ModifyGitRepositoryLinkPullRequest")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ModifyGitRepositoryLinkPullRequestRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/connections/*/gitRepositoryLinks/*}:modifyPullRequest",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ModifyGitRepositoryLinkPullRequestRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ModifyGitRepositoryLinkPullRequestRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PullRequest>newBuilder()
+                      .setDefaultInstance(PullRequest.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListResponse>
+      fetchGitRepositoryLinkPullRequestListMethodDescriptor =
+          ApiMethodDescriptor
+              .<FetchGitRepositoryLinkPullRequestListRequest,
+                  FetchGitRepositoryLinkPullRequestListResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/FetchGitRepositoryLinkPullRequestList")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<FetchGitRepositoryLinkPullRequestListRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/connections/*/gitRepositoryLinks/*}:fetchPullRequestList",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRepositoryLinkPullRequestListRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FetchGitRepositoryLinkPullRequestListRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<FetchGitRepositoryLinkPullRequestListResponse>newBuilder()
+                      .setDefaultInstance(
+                          FetchGitRepositoryLinkPullRequestListResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1270,6 +1703,8 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
   private final UnaryCallable<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
       fetchReadWriteTokenCallable;
   private final UnaryCallable<FetchReadTokenRequest, FetchReadTokenResponse> fetchReadTokenCallable;
+  private final UnaryCallable<OpenGitRepositoryLinkPullRequestRequest, PullRequest>
+      openGitRepositoryLinkPullRequestCallable;
   private final UnaryCallable<
           FetchLinkableGitRepositoriesRequest, FetchLinkableGitRepositoriesResponse>
       fetchLinkableGitRepositoriesCallable;
@@ -1281,6 +1716,38 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
   private final UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable;
   private final UnaryCallable<FetchGitRefsRequest, FetchGitRefsPagedResponse>
       fetchGitRefsPagedCallable;
+  private final UnaryCallable<
+          DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+      diffGitRepositoryLinkCommitCallable;
+  private final UnaryCallable<
+          FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+      fetchGitRepositoryLinkCommitCallable;
+  private final UnaryCallable<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+      fetchGitRepositoryLinkCommitListCallable;
+  private final UnaryCallable<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListPagedResponse>
+      fetchGitRepositoryLinkCommitListPagedCallable;
+  private final UnaryCallable<
+          FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+      fetchGitRepositoryLinkFileBlameCallable;
+  private final UnaryCallable<FetchGitRepositoryLinkPullRequestRequest, PullRequest>
+      fetchGitRepositoryLinkPullRequestCallable;
+  private final UnaryCallable<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>
+      addGitRepositoryLinkPullRequestCommentCallable;
+  private final UnaryCallable<
+          AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+      addGitRepositoryLinkPullRequestReviewCommentCallable;
+  private final UnaryCallable<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>
+      modifyGitRepositoryLinkPullRequestCallable;
+  private final UnaryCallable<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListResponse>
+      fetchGitRepositoryLinkPullRequestListCallable;
+  private final UnaryCallable<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListPagedResponse>
+      fetchGitRepositoryLinkPullRequestListPagedCallable;
   private final UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
       listAccountConnectorsCallable;
   private final UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsPagedResponse>
@@ -1531,6 +1998,19 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                     })
                 .setResourceNameExtractor(request -> request.getGitRepositoryLink())
                 .build();
+    HttpJsonCallSettings<OpenGitRepositoryLinkPullRequestRequest, PullRequest>
+        openGitRepositoryLinkPullRequestTransportSettings =
+            HttpJsonCallSettings.<OpenGitRepositoryLinkPullRequestRequest, PullRequest>newBuilder()
+                .setMethodDescriptor(openGitRepositoryLinkPullRequestMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<FetchLinkableGitRepositoriesRequest, FetchLinkableGitRepositoriesResponse>
         fetchLinkableGitRepositoriesTransportSettings =
             HttpJsonCallSettings
@@ -1573,6 +2053,143 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
                 })
             .setResourceNameExtractor(request -> request.getGitRepositoryLink())
             .build();
+    HttpJsonCallSettings<DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+        diffGitRepositoryLinkCommitTransportSettings =
+            HttpJsonCallSettings
+                .<DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+                    newBuilder()
+                .setMethodDescriptor(diffGitRepositoryLinkCommitMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+        fetchGitRepositoryLinkCommitTransportSettings =
+            HttpJsonCallSettings
+                .<FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchGitRepositoryLinkCommitMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+        fetchGitRepositoryLinkCommitListTransportSettings =
+            HttpJsonCallSettings
+                .<FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchGitRepositoryLinkCommitListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+        fetchGitRepositoryLinkFileBlameTransportSettings =
+            HttpJsonCallSettings
+                .<FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchGitRepositoryLinkFileBlameMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<FetchGitRepositoryLinkPullRequestRequest, PullRequest>
+        fetchGitRepositoryLinkPullRequestTransportSettings =
+            HttpJsonCallSettings.<FetchGitRepositoryLinkPullRequestRequest, PullRequest>newBuilder()
+                .setMethodDescriptor(fetchGitRepositoryLinkPullRequestMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>
+        addGitRepositoryLinkPullRequestCommentTransportSettings =
+            HttpJsonCallSettings
+                .<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>newBuilder()
+                .setMethodDescriptor(addGitRepositoryLinkPullRequestCommentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+        addGitRepositoryLinkPullRequestReviewCommentTransportSettings =
+            HttpJsonCallSettings
+                .<AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+                    newBuilder()
+                .setMethodDescriptor(addGitRepositoryLinkPullRequestReviewCommentMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>
+        modifyGitRepositoryLinkPullRequestTransportSettings =
+            HttpJsonCallSettings
+                .<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>newBuilder()
+                .setMethodDescriptor(modifyGitRepositoryLinkPullRequestMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            FetchGitRepositoryLinkPullRequestListRequest,
+            FetchGitRepositoryLinkPullRequestListResponse>
+        fetchGitRepositoryLinkPullRequestListTransportSettings =
+            HttpJsonCallSettings
+                .<FetchGitRepositoryLinkPullRequestListRequest,
+                    FetchGitRepositoryLinkPullRequestListResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchGitRepositoryLinkPullRequestListMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
         listAccountConnectorsTransportSettings =
             HttpJsonCallSettings
@@ -1831,6 +2448,11 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
     this.fetchReadTokenCallable =
         callableFactory.createUnaryCallable(
             fetchReadTokenTransportSettings, settings.fetchReadTokenSettings(), clientContext);
+    this.openGitRepositoryLinkPullRequestCallable =
+        callableFactory.createUnaryCallable(
+            openGitRepositoryLinkPullRequestTransportSettings,
+            settings.openGitRepositoryLinkPullRequestSettings(),
+            clientContext);
     this.fetchLinkableGitRepositoriesCallable =
         callableFactory.createUnaryCallable(
             fetchLinkableGitRepositoriesTransportSettings,
@@ -1852,6 +2474,61 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
     this.fetchGitRefsPagedCallable =
         callableFactory.createPagedCallable(
             fetchGitRefsTransportSettings, settings.fetchGitRefsSettings(), clientContext);
+    this.diffGitRepositoryLinkCommitCallable =
+        callableFactory.createUnaryCallable(
+            diffGitRepositoryLinkCommitTransportSettings,
+            settings.diffGitRepositoryLinkCommitSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkCommitCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRepositoryLinkCommitTransportSettings,
+            settings.fetchGitRepositoryLinkCommitSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkCommitListCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRepositoryLinkCommitListTransportSettings,
+            settings.fetchGitRepositoryLinkCommitListSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkCommitListPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchGitRepositoryLinkCommitListTransportSettings,
+            settings.fetchGitRepositoryLinkCommitListSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkFileBlameCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRepositoryLinkFileBlameTransportSettings,
+            settings.fetchGitRepositoryLinkFileBlameSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkPullRequestCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRepositoryLinkPullRequestTransportSettings,
+            settings.fetchGitRepositoryLinkPullRequestSettings(),
+            clientContext);
+    this.addGitRepositoryLinkPullRequestCommentCallable =
+        callableFactory.createUnaryCallable(
+            addGitRepositoryLinkPullRequestCommentTransportSettings,
+            settings.addGitRepositoryLinkPullRequestCommentSettings(),
+            clientContext);
+    this.addGitRepositoryLinkPullRequestReviewCommentCallable =
+        callableFactory.createUnaryCallable(
+            addGitRepositoryLinkPullRequestReviewCommentTransportSettings,
+            settings.addGitRepositoryLinkPullRequestReviewCommentSettings(),
+            clientContext);
+    this.modifyGitRepositoryLinkPullRequestCallable =
+        callableFactory.createUnaryCallable(
+            modifyGitRepositoryLinkPullRequestTransportSettings,
+            settings.modifyGitRepositoryLinkPullRequestSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkPullRequestListCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRepositoryLinkPullRequestListTransportSettings,
+            settings.fetchGitRepositoryLinkPullRequestListSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkPullRequestListPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchGitRepositoryLinkPullRequestListTransportSettings,
+            settings.fetchGitRepositoryLinkPullRequestListSettings(),
+            clientContext);
     this.listAccountConnectorsCallable =
         callableFactory.createUnaryCallable(
             listAccountConnectorsTransportSettings,
@@ -1964,9 +2641,19 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
     methodDescriptors.add(getGitRepositoryLinkMethodDescriptor);
     methodDescriptors.add(fetchReadWriteTokenMethodDescriptor);
     methodDescriptors.add(fetchReadTokenMethodDescriptor);
+    methodDescriptors.add(openGitRepositoryLinkPullRequestMethodDescriptor);
     methodDescriptors.add(fetchLinkableGitRepositoriesMethodDescriptor);
     methodDescriptors.add(fetchGitHubInstallationsMethodDescriptor);
     methodDescriptors.add(fetchGitRefsMethodDescriptor);
+    methodDescriptors.add(diffGitRepositoryLinkCommitMethodDescriptor);
+    methodDescriptors.add(fetchGitRepositoryLinkCommitMethodDescriptor);
+    methodDescriptors.add(fetchGitRepositoryLinkCommitListMethodDescriptor);
+    methodDescriptors.add(fetchGitRepositoryLinkFileBlameMethodDescriptor);
+    methodDescriptors.add(fetchGitRepositoryLinkPullRequestMethodDescriptor);
+    methodDescriptors.add(addGitRepositoryLinkPullRequestCommentMethodDescriptor);
+    methodDescriptors.add(addGitRepositoryLinkPullRequestReviewCommentMethodDescriptor);
+    methodDescriptors.add(modifyGitRepositoryLinkPullRequestMethodDescriptor);
+    methodDescriptors.add(fetchGitRepositoryLinkPullRequestListMethodDescriptor);
     methodDescriptors.add(listAccountConnectorsMethodDescriptor);
     methodDescriptors.add(getAccountConnectorMethodDescriptor);
     methodDescriptors.add(createAccountConnectorMethodDescriptor);
@@ -2091,6 +2778,12 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
   }
 
   @Override
+  public UnaryCallable<OpenGitRepositoryLinkPullRequestRequest, PullRequest>
+      openGitRepositoryLinkPullRequestCallable() {
+    return openGitRepositoryLinkPullRequestCallable;
+  }
+
+  @Override
   public UnaryCallable<FetchLinkableGitRepositoriesRequest, FetchLinkableGitRepositoriesResponse>
       fetchLinkableGitRepositoriesCallable() {
     return fetchLinkableGitRepositoriesCallable;
@@ -2117,6 +2810,80 @@ public class HttpJsonDeveloperConnectStub extends DeveloperConnectStub {
   @Override
   public UnaryCallable<FetchGitRefsRequest, FetchGitRefsPagedResponse> fetchGitRefsPagedCallable() {
     return fetchGitRefsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+      diffGitRepositoryLinkCommitCallable() {
+    return diffGitRepositoryLinkCommitCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+      fetchGitRepositoryLinkCommitCallable() {
+    return fetchGitRepositoryLinkCommitCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+      fetchGitRepositoryLinkCommitListCallable() {
+    return fetchGitRepositoryLinkCommitListCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListPagedResponse>
+      fetchGitRepositoryLinkCommitListPagedCallable() {
+    return fetchGitRepositoryLinkCommitListPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+      fetchGitRepositoryLinkFileBlameCallable() {
+    return fetchGitRepositoryLinkFileBlameCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchGitRepositoryLinkPullRequestRequest, PullRequest>
+      fetchGitRepositoryLinkPullRequestCallable() {
+    return fetchGitRepositoryLinkPullRequestCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>
+      addGitRepositoryLinkPullRequestCommentCallable() {
+    return addGitRepositoryLinkPullRequestCommentCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+      addGitRepositoryLinkPullRequestReviewCommentCallable() {
+    return addGitRepositoryLinkPullRequestReviewCommentCallable;
+  }
+
+  @Override
+  public UnaryCallable<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>
+      modifyGitRepositoryLinkPullRequestCallable() {
+    return modifyGitRepositoryLinkPullRequestCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListResponse>
+      fetchGitRepositoryLinkPullRequestListCallable() {
+    return fetchGitRepositoryLinkPullRequestListCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListPagedResponse>
+      fetchGitRepositoryLinkPullRequestListPagedCallable() {
+    return fetchGitRepositoryLinkPullRequestListPagedCallable;
   }
 
   @Override

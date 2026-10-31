@@ -665,6 +665,82 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
       com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
               .GroundingMetadata.ImageMetadataOrBuilder
           getImagesOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Videos from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.VideoMetadata>
+          getVideosList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Videos from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+              .GroundingMetadata.VideoMetadata
+          getVideos(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Videos from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+       * </code>
+       */
+      int getVideosCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Videos from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.VideoMetadataOrBuilder>
+          getVideosOrBuilderList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Videos from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+              .GroundingMetadata.VideoMetadataOrBuilder
+          getVideosOrBuilder(int index);
     }
 
     /**
@@ -704,6 +780,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         webSearchQueries_ = com.google.protobuf.LazyStringArrayList.emptyList();
         groundingSupport_ = java.util.Collections.emptyList();
         images_ = java.util.Collections.emptyList();
+        videos_ = java.util.Collections.emptyList();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6233,6 +6310,32 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
            * @return The bytes for title.
            */
           com.google.protobuf.ByteString getTitleBytes();
+
+          /**
+           *
+           *
+           * <pre>
+           * The display name of the website.
+           * </pre>
+           *
+           * <code>string site_display_name = 3;</code>
+           *
+           * @return The siteDisplayName.
+           */
+          java.lang.String getSiteDisplayName();
+
+          /**
+           *
+           *
+           * <pre>
+           * The display name of the website.
+           * </pre>
+           *
+           * <code>string site_display_name = 3;</code>
+           *
+           * @return The bytes for siteDisplayName.
+           */
+          com.google.protobuf.ByteString getSiteDisplayNameBytes();
         }
 
         /**
@@ -6269,6 +6372,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
           private WebsiteInfo() {
             uri_ = "";
             title_ = "";
+            siteDisplayName_ = "";
           }
 
           public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6394,6 +6498,59 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
           }
 
+          public static final int SITE_DISPLAY_NAME_FIELD_NUMBER = 3;
+
+          @SuppressWarnings("serial")
+          private volatile java.lang.Object siteDisplayName_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * The display name of the website.
+           * </pre>
+           *
+           * <code>string site_display_name = 3;</code>
+           *
+           * @return The siteDisplayName.
+           */
+          @java.lang.Override
+          public java.lang.String getSiteDisplayName() {
+            java.lang.Object ref = siteDisplayName_;
+            if (ref instanceof java.lang.String) {
+              return (java.lang.String) ref;
+            } else {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              siteDisplayName_ = s;
+              return s;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The display name of the website.
+           * </pre>
+           *
+           * <code>string site_display_name = 3;</code>
+           *
+           * @return The bytes for siteDisplayName.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getSiteDisplayNameBytes() {
+            java.lang.Object ref = siteDisplayName_;
+            if (ref instanceof java.lang.String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              siteDisplayName_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
           private byte memoizedIsInitialized = -1;
 
           @java.lang.Override
@@ -6415,6 +6572,9 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
               com.google.protobuf.GeneratedMessage.writeString(output, 2, title_);
             }
+            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteDisplayName_)) {
+              com.google.protobuf.GeneratedMessage.writeString(output, 3, siteDisplayName_);
+            }
             getUnknownFields().writeTo(output);
           }
 
@@ -6429,6 +6589,9 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             }
             if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
               size += com.google.protobuf.GeneratedMessage.computeStringSize(2, title_);
+            }
+            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(siteDisplayName_)) {
+              size += com.google.protobuf.GeneratedMessage.computeStringSize(3, siteDisplayName_);
             }
             size += getUnknownFields().getSerializedSize();
             memoizedSize = size;
@@ -6455,6 +6618,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
 
             if (!getUri().equals(other.getUri())) return false;
             if (!getTitle().equals(other.getTitle())) return false;
+            if (!getSiteDisplayName().equals(other.getSiteDisplayName())) return false;
             if (!getUnknownFields().equals(other.getUnknownFields())) return false;
             return true;
           }
@@ -6470,6 +6634,8 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             hash = (53 * hash) + getUri().hashCode();
             hash = (37 * hash) + TITLE_FIELD_NUMBER;
             hash = (53 * hash) + getTitle().hashCode();
+            hash = (37 * hash) + SITE_DISPLAY_NAME_FIELD_NUMBER;
+            hash = (53 * hash) + getSiteDisplayName().hashCode();
             hash = (29 * hash) + getUnknownFields().hashCode();
             memoizedHashCode = hash;
             return hash;
@@ -6644,6 +6810,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               bitField0_ = 0;
               uri_ = "";
               title_ = "";
+              siteDisplayName_ = "";
               return this;
             }
 
@@ -6701,6 +6868,9 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               if (((from_bitField0_ & 0x00000002) != 0)) {
                 result.title_ = title_;
               }
+              if (((from_bitField0_ & 0x00000004) != 0)) {
+                result.siteDisplayName_ = siteDisplayName_;
+              }
             }
 
             @java.lang.Override
@@ -6735,6 +6905,11 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               if (!other.getTitle().isEmpty()) {
                 title_ = other.title_;
                 bitField0_ |= 0x00000002;
+                onChanged();
+              }
+              if (!other.getSiteDisplayName().isEmpty()) {
+                siteDisplayName_ = other.siteDisplayName_;
+                bitField0_ |= 0x00000004;
                 onChanged();
               }
               this.mergeUnknownFields(other.getUnknownFields());
@@ -6775,6 +6950,12 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                         bitField0_ |= 0x00000002;
                         break;
                       } // case 18
+                    case 26:
+                      {
+                        siteDisplayName_ = input.readStringRequireUtf8();
+                        bitField0_ |= 0x00000004;
+                        break;
+                      } // case 26
                     default:
                       {
                         if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7012,6 +7193,117 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               checkByteStringIsUtf8(value);
               title_ = value;
               bitField0_ |= 0x00000002;
+              onChanged();
+              return this;
+            }
+
+            private java.lang.Object siteDisplayName_ = "";
+
+            /**
+             *
+             *
+             * <pre>
+             * The display name of the website.
+             * </pre>
+             *
+             * <code>string site_display_name = 3;</code>
+             *
+             * @return The siteDisplayName.
+             */
+            public java.lang.String getSiteDisplayName() {
+              java.lang.Object ref = siteDisplayName_;
+              if (!(ref instanceof java.lang.String)) {
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+                java.lang.String s = bs.toStringUtf8();
+                siteDisplayName_ = s;
+                return s;
+              } else {
+                return (java.lang.String) ref;
+              }
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The display name of the website.
+             * </pre>
+             *
+             * <code>string site_display_name = 3;</code>
+             *
+             * @return The bytes for siteDisplayName.
+             */
+            public com.google.protobuf.ByteString getSiteDisplayNameBytes() {
+              java.lang.Object ref = siteDisplayName_;
+              if (ref instanceof String) {
+                com.google.protobuf.ByteString b =
+                    com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+                siteDisplayName_ = b;
+                return b;
+              } else {
+                return (com.google.protobuf.ByteString) ref;
+              }
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The display name of the website.
+             * </pre>
+             *
+             * <code>string site_display_name = 3;</code>
+             *
+             * @param value The siteDisplayName to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSiteDisplayName(java.lang.String value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              siteDisplayName_ = value;
+              bitField0_ |= 0x00000004;
+              onChanged();
+              return this;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The display name of the website.
+             * </pre>
+             *
+             * <code>string site_display_name = 3;</code>
+             *
+             * @return This builder for chaining.
+             */
+            public Builder clearSiteDisplayName() {
+              siteDisplayName_ = getDefaultInstance().getSiteDisplayName();
+              bitField0_ = (bitField0_ & ~0x00000004);
+              onChanged();
+              return this;
+            }
+
+            /**
+             *
+             *
+             * <pre>
+             * The display name of the website.
+             * </pre>
+             *
+             * <code>string site_display_name = 3;</code>
+             *
+             * @param value The bytes for siteDisplayName to set.
+             * @return This builder for chaining.
+             */
+            public Builder setSiteDisplayNameBytes(com.google.protobuf.ByteString value) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              checkByteStringIsUtf8(value);
+              siteDisplayName_ = value;
+              bitField0_ |= 0x00000004;
               onChanged();
               return this;
             }
@@ -9431,6 +9723,688 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         }
       }
 
+      public interface VideoMetadataOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * The external id of the video.
+         * </pre>
+         *
+         * <code>string youtube_external_id = 1;</code>
+         *
+         * @return The youtubeExternalId.
+         */
+        java.lang.String getYoutubeExternalId();
+
+        /**
+         *
+         *
+         * <pre>
+         * The external id of the video.
+         * </pre>
+         *
+         * <code>string youtube_external_id = 1;</code>
+         *
+         * @return The bytes for youtubeExternalId.
+         */
+        com.google.protobuf.ByteString getYoutubeExternalIdBytes();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Metadata about a video from the web search.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata}
+       */
+      public static final class VideoMetadata extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata)
+          VideoMetadataOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 6,
+              /* suffix= */ "",
+              "VideoMetadata");
+        }
+
+        // Use VideoMetadata.newBuilder() to construct.
+        private VideoMetadata(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private VideoMetadata() {
+          youtubeExternalId_ = "";
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_VideoMetadata_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+              .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_VideoMetadata_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.VideoMetadata.class,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.VideoMetadata.Builder.class);
+        }
+
+        public static final int YOUTUBE_EXTERNAL_ID_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object youtubeExternalId_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * The external id of the video.
+         * </pre>
+         *
+         * <code>string youtube_external_id = 1;</code>
+         *
+         * @return The youtubeExternalId.
+         */
+        @java.lang.Override
+        public java.lang.String getYoutubeExternalId() {
+          java.lang.Object ref = youtubeExternalId_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            youtubeExternalId_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The external id of the video.
+         * </pre>
+         *
+         * <code>string youtube_external_id = 1;</code>
+         *
+         * @return The bytes for youtubeExternalId.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getYoutubeExternalIdBytes() {
+          java.lang.Object ref = youtubeExternalId_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            youtubeExternalId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(youtubeExternalId_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, youtubeExternalId_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(youtubeExternalId_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, youtubeExternalId_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.VideoMetadata)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.VideoMetadata
+              other =
+                  (com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.VideoMetadata)
+                      obj;
+
+          if (!getYoutubeExternalId().equals(other.getYoutubeExternalId())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + YOUTUBE_EXTERNAL_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getYoutubeExternalId().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Metadata about a video from the web search.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata)
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadataOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_VideoMetadata_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_VideoMetadata_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.VideoMetadata.class,
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.VideoMetadata.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            youtubeExternalId_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1.GroundedGenerationServiceProto
+                .internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_VideoMetadata_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.VideoMetadata
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.VideoMetadata
+              build() {
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.VideoMetadata
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata
+                result =
+                    new com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                        .Candidate.GroundingMetadata.VideoMetadata(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.VideoMetadata
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.youtubeExternalId_ = youtubeExternalId_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                          .GroundingMetadata.VideoMetadata)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.VideoMetadata
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata.getDefaultInstance()) return this;
+            if (!other.getYoutubeExternalId().isEmpty()) {
+              youtubeExternalId_ = other.youtubeExternalId_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      youtubeExternalId_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object youtubeExternalId_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * The external id of the video.
+           * </pre>
+           *
+           * <code>string youtube_external_id = 1;</code>
+           *
+           * @return The youtubeExternalId.
+           */
+          public java.lang.String getYoutubeExternalId() {
+            java.lang.Object ref = youtubeExternalId_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              youtubeExternalId_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The external id of the video.
+           * </pre>
+           *
+           * <code>string youtube_external_id = 1;</code>
+           *
+           * @return The bytes for youtubeExternalId.
+           */
+          public com.google.protobuf.ByteString getYoutubeExternalIdBytes() {
+            java.lang.Object ref = youtubeExternalId_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              youtubeExternalId_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The external id of the video.
+           * </pre>
+           *
+           * <code>string youtube_external_id = 1;</code>
+           *
+           * @param value The youtubeExternalId to set.
+           * @return This builder for chaining.
+           */
+          public Builder setYoutubeExternalId(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            youtubeExternalId_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The external id of the video.
+           * </pre>
+           *
+           * <code>string youtube_external_id = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearYoutubeExternalId() {
+            youtubeExternalId_ = getDefaultInstance().getYoutubeExternalId();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The external id of the video.
+           * </pre>
+           *
+           * <code>string youtube_external_id = 1;</code>
+           *
+           * @param value The bytes for youtubeExternalId to set.
+           * @return This builder for chaining.
+           */
+          public Builder setYoutubeExternalIdBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            youtubeExternalId_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata)
+        private static final com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                .Candidate.GroundingMetadata.VideoMetadata
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.VideoMetadata();
+        }
+
+        public static com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<VideoMetadata> PARSER =
+            new com.google.protobuf.AbstractParser<VideoMetadata>() {
+              @java.lang.Override
+              public VideoMetadata parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<VideoMetadata> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<VideoMetadata> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
       private int bitField0_;
       public static final int RETRIEVAL_METADATA_FIELD_NUMBER = 5;
 
@@ -9971,6 +10945,105 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         return images_.get(index);
       }
 
+      public static final int VIDEOS_FIELD_NUMBER = 11;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.VideoMetadata>
+          videos_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Videos from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                  .GroundingMetadata.VideoMetadata>
+          getVideosList() {
+        return videos_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Videos from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.VideoMetadataOrBuilder>
+          getVideosOrBuilderList() {
+        return videos_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Videos from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+       * </code>
+       */
+      @java.lang.Override
+      public int getVideosCount() {
+        return videos_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Videos from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+              .GroundingMetadata.VideoMetadata
+          getVideos(int index) {
+        return videos_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Videos from the web search.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+              .GroundingMetadata.VideoMetadataOrBuilder
+          getVideosOrBuilder(int index) {
+        return videos_.get(index);
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -10002,6 +11075,9 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         }
         for (int i = 0; i < images_.size(); i++) {
           output.writeMessage(9, images_.get(i));
+        }
+        for (int i = 0; i < videos_.size(); i++) {
+          output.writeMessage(11, videos_.get(i));
         }
         getUnknownFields().writeTo(output);
       }
@@ -10040,6 +11116,9 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         for (int i = 0; i < images_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, images_.get(i));
         }
+        for (int i = 0; i < videos_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, videos_.get(i));
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -10072,6 +11151,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         }
         if (!getGroundingSupportList().equals(other.getGroundingSupportList())) return false;
         if (!getImagesList().equals(other.getImagesList())) return false;
+        if (!getVideosList().equals(other.getVideosList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -10106,6 +11186,10 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
         if (getImagesCount() > 0) {
           hash = (37 * hash) + IMAGES_FIELD_NUMBER;
           hash = (53 * hash) + getImagesList().hashCode();
+        }
+        if (getVideosCount() > 0) {
+          hash = (37 * hash) + VIDEOS_FIELD_NUMBER;
+          hash = (53 * hash) + getVideosList().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -10283,6 +11367,7 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             internalGetSearchEntryPointFieldBuilder();
             internalGetGroundingSupportFieldBuilder();
             internalGetImagesFieldBuilder();
+            internalGetVideosFieldBuilder();
           }
         }
 
@@ -10324,6 +11409,13 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             imagesBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000020);
+          if (videosBuilder_ == null) {
+            videos_ = java.util.Collections.emptyList();
+          } else {
+            videos_ = null;
+            videosBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000040);
           return this;
         }
 
@@ -10410,6 +11502,15 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             result.images_ = images_;
           } else {
             result.images_ = imagesBuilder_.build();
+          }
+          if (videosBuilder_ == null) {
+            if (((bitField0_ & 0x00000040) != 0)) {
+              videos_ = java.util.Collections.unmodifiableList(videos_);
+              bitField0_ = (bitField0_ & ~0x00000040);
+            }
+            result.videos_ = videos_;
+          } else {
+            result.videos_ = videosBuilder_.build();
           }
         }
 
@@ -10577,6 +11678,33 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
               }
             }
           }
+          if (videosBuilder_ == null) {
+            if (!other.videos_.isEmpty()) {
+              if (videos_.isEmpty()) {
+                videos_ = other.videos_;
+                bitField0_ = (bitField0_ & ~0x00000040);
+              } else {
+                ensureVideosIsMutable();
+                videos_.addAll(other.videos_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.videos_.isEmpty()) {
+              if (videosBuilder_.isEmpty()) {
+                videosBuilder_.dispose();
+                videosBuilder_ = null;
+                videos_ = other.videos_;
+                bitField0_ = (bitField0_ & ~0x00000040);
+                videosBuilder_ =
+                    com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                        ? internalGetVideosFieldBuilder()
+                        : null;
+              } else {
+                videosBuilder_.addAllMessages(other.videos_);
+              }
+            }
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -10682,6 +11810,23 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
                     }
                     break;
                   } // case 74
+                case 90:
+                  {
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                            .GroundingMetadata.VideoMetadata
+                        m =
+                            input.readMessage(
+                                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                                    .Candidate.GroundingMetadata.VideoMetadata.parser(),
+                                extensionRegistry);
+                    if (videosBuilder_ == null) {
+                      ensureVideosIsMutable();
+                      videos_.add(m);
+                    } else {
+                      videosBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 90
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13006,6 +14151,469 @@ public final class GenerateGroundedContentResponse extends com.google.protobuf.G
             images_ = null;
           }
           return imagesBuilder_;
+        }
+
+        private java.util.List<
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata>
+            videos_ = java.util.Collections.emptyList();
+
+        private void ensureVideosIsMutable() {
+          if (!((bitField0_ & 0x00000040) != 0)) {
+            videos_ =
+                new java.util.ArrayList<
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.VideoMetadata>(videos_);
+            bitField0_ |= 0x00000040;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata,
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata.Builder,
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadataOrBuilder>
+            videosBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata>
+            getVideosList() {
+          if (videosBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(videos_);
+          } else {
+            return videosBuilder_.getMessageList();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public int getVideosCount() {
+          if (videosBuilder_ == null) {
+            return videos_.size();
+          } else {
+            return videosBuilder_.getCount();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata
+            getVideos(int index) {
+          if (videosBuilder_ == null) {
+            return videos_.get(index);
+          } else {
+            return videosBuilder_.getMessage(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public Builder setVideos(
+            int index,
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata
+                value) {
+          if (videosBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureVideosIsMutable();
+            videos_.set(index, value);
+            onChanged();
+          } else {
+            videosBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public Builder setVideos(
+            int index,
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata.Builder
+                builderForValue) {
+          if (videosBuilder_ == null) {
+            ensureVideosIsMutable();
+            videos_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            videosBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public Builder addVideos(
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata
+                value) {
+          if (videosBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureVideosIsMutable();
+            videos_.add(value);
+            onChanged();
+          } else {
+            videosBuilder_.addMessage(value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public Builder addVideos(
+            int index,
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata
+                value) {
+          if (videosBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureVideosIsMutable();
+            videos_.add(index, value);
+            onChanged();
+          } else {
+            videosBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public Builder addVideos(
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata.Builder
+                builderForValue) {
+          if (videosBuilder_ == null) {
+            ensureVideosIsMutable();
+            videos_.add(builderForValue.build());
+            onChanged();
+          } else {
+            videosBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public Builder addVideos(
+            int index,
+            com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata.Builder
+                builderForValue) {
+          if (videosBuilder_ == null) {
+            ensureVideosIsMutable();
+            videos_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            videosBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public Builder addAllVideos(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse
+                            .Candidate.GroundingMetadata.VideoMetadata>
+                values) {
+          if (videosBuilder_ == null) {
+            ensureVideosIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, videos_);
+            onChanged();
+          } else {
+            videosBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public Builder clearVideos() {
+          if (videosBuilder_ == null) {
+            videos_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000040);
+            onChanged();
+          } else {
+            videosBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public Builder removeVideos(int index) {
+          if (videosBuilder_ == null) {
+            ensureVideosIsMutable();
+            videos_.remove(index);
+            onChanged();
+          } else {
+            videosBuilder_.remove(index);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata.Builder
+            getVideosBuilder(int index) {
+          return internalGetVideosFieldBuilder().getBuilder(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadataOrBuilder
+            getVideosOrBuilder(int index) {
+          if (videosBuilder_ == null) {
+            return videos_.get(index);
+          } else {
+            return videosBuilder_.getMessageOrBuilder(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.VideoMetadataOrBuilder>
+            getVideosOrBuilderList() {
+          if (videosBuilder_ != null) {
+            return videosBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(videos_);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata.Builder
+            addVideosBuilder() {
+          return internalGetVideosFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.VideoMetadata.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                .GroundingMetadata.VideoMetadata.Builder
+            addVideosBuilder(int index) {
+          return internalGetVideosFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                      .GroundingMetadata.VideoMetadata.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Videos from the web search.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.VideoMetadata videos = 11;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata.Builder>
+            getVideosBuilderList() {
+          return internalGetVideosFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata,
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadata.Builder,
+                com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                    .GroundingMetadata.VideoMetadataOrBuilder>
+            internalGetVideosFieldBuilder() {
+          if (videosBuilder_ == null) {
+            videosBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilder<
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.VideoMetadata,
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.VideoMetadata.Builder,
+                    com.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate
+                        .GroundingMetadata.VideoMetadataOrBuilder>(
+                    videos_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+            videos_ = null;
+          }
+          return videosBuilder_;
         }
 
         // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata)

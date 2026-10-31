@@ -88,11 +88,14 @@ public interface CmekConfigOrBuilder
    *
    *
    * <pre>
-   * KMS key version resource name which will be used to encrypt resources
+   * Output only. KMS key version resource name which will be used to encrypt
+   * resources
    * `&lt;kms_key&gt;/cryptoKeyVersions/{keyVersion}`.
    * </pre>
    *
-   * <code>string kms_key_version = 6 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The kmsKeyVersion.
    */
@@ -102,11 +105,14 @@ public interface CmekConfigOrBuilder
    *
    *
    * <pre>
-   * KMS key version resource name which will be used to encrypt resources
+   * Output only. KMS key version resource name which will be used to encrypt
+   * resources
    * `&lt;kms_key&gt;/cryptoKeyVersions/{keyVersion}`.
    * </pre>
    *
-   * <code>string kms_key_version = 6 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string kms_key_version = 6 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for kmsKeyVersion.
    */

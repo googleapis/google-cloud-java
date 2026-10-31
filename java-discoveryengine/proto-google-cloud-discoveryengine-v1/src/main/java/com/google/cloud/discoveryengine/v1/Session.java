@@ -58,6 +58,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
     userPseudoId_ = "";
     turns_ = java.util.Collections.emptyList();
     labels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    pendingAsyncAssistOperationId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -506,6 +507,19 @@ public final class Session extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     java.lang.String getQueryConfigOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether this turn is a live turn.
+     * </pre>
+     *
+     * <code>bool live = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The live.
+     */
+    boolean getLive();
   }
 
   /**
@@ -970,6 +984,25 @@ public final class Session extends com.google.protobuf.GeneratedMessage
       return map.get(key);
     }
 
+    public static final int LIVE_FIELD_NUMBER = 20;
+    private boolean live_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether this turn is a live turn.
+     * </pre>
+     *
+     * <code>bool live = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The live.
+     */
+    @java.lang.Override
+    public boolean getLive() {
+      return live_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -998,6 +1031,9 @@ public final class Session extends com.google.protobuf.GeneratedMessage
       }
       com.google.protobuf.GeneratedMessage.serializeStringMapTo(
           output, internalGetQueryConfig(), QueryConfigDefaultEntryHolder.defaultEntry, 16);
+      if (live_ != false) {
+        output.writeBool(20, live_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1030,6 +1066,9 @@ public final class Session extends com.google.protobuf.GeneratedMessage
                 .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, queryConfig__);
       }
+      if (live_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, live_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1060,6 +1099,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
         if (!getDetailedAssistAnswer().equals(other.getDetailedAssistAnswer())) return false;
       }
       if (!internalGetQueryConfig().equals(other.internalGetQueryConfig())) return false;
+      if (getLive() != other.getLive()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1089,6 +1129,8 @@ public final class Session extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + QUERY_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + internalGetQueryConfig().hashCode();
       }
+      hash = (37 * hash) + LIVE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLive());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1280,6 +1322,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
           detailedAssistAnswerBuilder_ = null;
         }
         internalGetMutableQueryConfig().clear();
+        live_ = false;
         return this;
       }
 
@@ -1340,6 +1383,9 @@ public final class Session extends com.google.protobuf.GeneratedMessage
           result.queryConfig_ = internalGetQueryConfig();
           result.queryConfig_.makeImmutable();
         }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.live_ = live_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1372,6 +1418,9 @@ public final class Session extends com.google.protobuf.GeneratedMessage
         }
         internalGetMutableQueryConfig().mergeFrom(other.internalGetQueryConfig());
         bitField0_ |= 0x00000010;
+        if (other.getLive() != false) {
+          setLive(other.getLive());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1437,6 +1486,12 @@ public final class Session extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 130
+              case 160:
+                {
+                  live_ = input.readBool();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 160
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2545,6 +2600,62 @@ public final class Session extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private boolean live_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates whether this turn is a live turn.
+       * </pre>
+       *
+       * <code>bool live = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The live.
+       */
+      @java.lang.Override
+      public boolean getLive() {
+        return live_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates whether this turn is a live turn.
+       * </pre>
+       *
+       * <code>bool live = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The live to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLive(boolean value) {
+
+        live_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Indicates whether this turn is a live turn.
+       * </pre>
+       *
+       * <code>bool live = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLive() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        live_ = false;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.Session.Turn)
     }
 
@@ -3074,6 +3185,69 @@ public final class Session extends com.google.protobuf.GeneratedMessage
     return isPinned_;
   }
 
+  public static final int PENDING_ASYNC_ASSIST_OPERATION_ID_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pendingAsyncAssistOperationId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Full resource name of an in-progress AsyncAssist operation for
+   * this session, e.g.
+   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;engines/&#42;&#47;sessions/&#42;&#47;operations/&#42;`.
+   * Set when the operation starts and cleared when it finishes.
+   * </pre>
+   *
+   * <code>
+   * string pending_async_assist_operation_id = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The pendingAsyncAssistOperationId.
+   */
+  @java.lang.Override
+  public java.lang.String getPendingAsyncAssistOperationId() {
+    java.lang.Object ref = pendingAsyncAssistOperationId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pendingAsyncAssistOperationId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Full resource name of an in-progress AsyncAssist operation for
+   * this session, e.g.
+   * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;engines/&#42;&#47;sessions/&#42;&#47;operations/&#42;`.
+   * Set when the operation starts and cleared when it finishes.
+   * </pre>
+   *
+   * <code>
+   * string pending_async_assist_operation_id = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for pendingAsyncAssistOperationId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPendingAsyncAssistOperationIdBytes() {
+    java.lang.Object ref = pendingAsyncAssistOperationId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pendingAsyncAssistOperationId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3114,6 +3288,9 @@ public final class Session extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < labels_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 9, labels_.getRaw(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pendingAsyncAssistOperationId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 22, pendingAsyncAssistOperationId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3156,6 +3333,11 @@ public final class Session extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 1 * getLabelsList().size();
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pendingAsyncAssistOperationId_)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(
+              22, pendingAsyncAssistOperationId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3187,6 +3369,8 @@ public final class Session extends com.google.protobuf.GeneratedMessage
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
     if (getIsPinned() != other.getIsPinned()) return false;
+    if (!getPendingAsyncAssistOperationId().equals(other.getPendingAsyncAssistOperationId()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3224,6 +3408,8 @@ public final class Session extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + IS_PINNED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsPinned());
+    hash = (37 * hash) + PENDING_ASYNC_ASSIST_OPERATION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPendingAsyncAssistOperationId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3398,6 +3584,7 @@ public final class Session extends com.google.protobuf.GeneratedMessage
         endTimeBuilder_ = null;
       }
       isPinned_ = false;
+      pendingAsyncAssistOperationId_ = "";
       return this;
     }
 
@@ -3474,6 +3661,9 @@ public final class Session extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.isPinned_ = isPinned_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.pendingAsyncAssistOperationId_ = pendingAsyncAssistOperationId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3553,6 +3743,11 @@ public final class Session extends com.google.protobuf.GeneratedMessage
       }
       if (other.getIsPinned() != false) {
         setIsPinned(other.getIsPinned());
+      }
+      if (!other.getPendingAsyncAssistOperationId().isEmpty()) {
+        pendingAsyncAssistOperationId_ = other.pendingAsyncAssistOperationId_;
+        bitField0_ |= 0x00000200;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3644,6 +3839,12 @@ public final class Session extends com.google.protobuf.GeneratedMessage
                 labels_.add(s);
                 break;
               } // case 74
+            case 178:
+              {
+                pendingAsyncAssistOperationId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5125,6 +5326,142 @@ public final class Session extends com.google.protobuf.GeneratedMessage
     public Builder clearIsPinned() {
       bitField0_ = (bitField0_ & ~0x00000100);
       isPinned_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pendingAsyncAssistOperationId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Full resource name of an in-progress AsyncAssist operation for
+     * this session, e.g.
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;engines/&#42;&#47;sessions/&#42;&#47;operations/&#42;`.
+     * Set when the operation starts and cleared when it finishes.
+     * </pre>
+     *
+     * <code>
+     * string pending_async_assist_operation_id = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The pendingAsyncAssistOperationId.
+     */
+    public java.lang.String getPendingAsyncAssistOperationId() {
+      java.lang.Object ref = pendingAsyncAssistOperationId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pendingAsyncAssistOperationId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Full resource name of an in-progress AsyncAssist operation for
+     * this session, e.g.
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;engines/&#42;&#47;sessions/&#42;&#47;operations/&#42;`.
+     * Set when the operation starts and cleared when it finishes.
+     * </pre>
+     *
+     * <code>
+     * string pending_async_assist_operation_id = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for pendingAsyncAssistOperationId.
+     */
+    public com.google.protobuf.ByteString getPendingAsyncAssistOperationIdBytes() {
+      java.lang.Object ref = pendingAsyncAssistOperationId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pendingAsyncAssistOperationId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Full resource name of an in-progress AsyncAssist operation for
+     * this session, e.g.
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;engines/&#42;&#47;sessions/&#42;&#47;operations/&#42;`.
+     * Set when the operation starts and cleared when it finishes.
+     * </pre>
+     *
+     * <code>
+     * string pending_async_assist_operation_id = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The pendingAsyncAssistOperationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPendingAsyncAssistOperationId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pendingAsyncAssistOperationId_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Full resource name of an in-progress AsyncAssist operation for
+     * this session, e.g.
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;engines/&#42;&#47;sessions/&#42;&#47;operations/&#42;`.
+     * Set when the operation starts and cleared when it finishes.
+     * </pre>
+     *
+     * <code>
+     * string pending_async_assist_operation_id = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPendingAsyncAssistOperationId() {
+      pendingAsyncAssistOperationId_ = getDefaultInstance().getPendingAsyncAssistOperationId();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Full resource name of an in-progress AsyncAssist operation for
+     * this session, e.g.
+     * `projects/&#42;&#47;locations/&#42;&#47;collections/&#42;&#47;engines/&#42;&#47;sessions/&#42;&#47;operations/&#42;`.
+     * Set when the operation starts and cleared when it finishes.
+     * </pre>
+     *
+     * <code>
+     * string pending_async_assist_operation_id = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for pendingAsyncAssistOperationId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPendingAsyncAssistOperationIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pendingAsyncAssistOperationId_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

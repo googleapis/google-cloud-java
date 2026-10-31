@@ -176,6 +176,86 @@ public class UserLicenseServiceClientTest {
   }
 
   @Test
+  public void listLicenseConfigsUsageStatsTest() throws Exception {
+    ListLicenseConfigsUsageStatsResponse expectedResponse =
+        ListLicenseConfigsUsageStatsResponse.newBuilder()
+            .addAllLicenseConfigUsageStats(new ArrayList<LicenseConfigUsageStats>())
+            .build();
+    mockUserLicenseService.addResponse(expectedResponse);
+
+    UserStoreName parent = UserStoreName.of("[PROJECT]", "[LOCATION]", "[USER_STORE]");
+
+    ListLicenseConfigsUsageStatsResponse actualResponse =
+        client.listLicenseConfigsUsageStats(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockUserLicenseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLicenseConfigsUsageStatsRequest actualRequest =
+        ((ListLicenseConfigsUsageStatsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLicenseConfigsUsageStatsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockUserLicenseService.addException(exception);
+
+    try {
+      UserStoreName parent = UserStoreName.of("[PROJECT]", "[LOCATION]", "[USER_STORE]");
+      client.listLicenseConfigsUsageStats(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listLicenseConfigsUsageStatsTest2() throws Exception {
+    ListLicenseConfigsUsageStatsResponse expectedResponse =
+        ListLicenseConfigsUsageStatsResponse.newBuilder()
+            .addAllLicenseConfigUsageStats(new ArrayList<LicenseConfigUsageStats>())
+            .build();
+    mockUserLicenseService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListLicenseConfigsUsageStatsResponse actualResponse =
+        client.listLicenseConfigsUsageStats(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockUserLicenseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLicenseConfigsUsageStatsRequest actualRequest =
+        ((ListLicenseConfigsUsageStatsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listLicenseConfigsUsageStatsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockUserLicenseService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listLicenseConfigsUsageStats(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void batchUpdateUserLicensesTest() throws Exception {
     BatchUpdateUserLicensesResponse expectedResponse =
         BatchUpdateUserLicensesResponse.newBuilder()
