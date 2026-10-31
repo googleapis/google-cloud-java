@@ -68,6 +68,7 @@ public class MockIAMCredentialsServiceTransport extends MockHttpTransport {
       "https://iamcredentials.%s/v1/projects/-/serviceAccounts/%s:signBlob";
 
   private final Deque<ServerResponse> serverResponses;
+  private final Deque<IOException> responseErrorSequence = new ArrayDeque<>();
 
   private String targetPrincipal;
   private byte[] signedBlob;
@@ -93,6 +94,12 @@ public class MockIAMCredentialsServiceTransport extends MockHttpTransport {
 
   public MockIAMCredentialsServiceTransport() {
     this.serverResponses = new ArrayDeque<>();
+  }
+
+  public void addResponseErrorSequence(IOException... errors) {
+    for (IOException error : errors) {
+      responseErrorSequence.offer(error);
+    }
   }
 
   public void setTargetPrincipal(String targetPrincipal) {
@@ -161,6 +168,9 @@ public class MockIAMCredentialsServiceTransport extends MockHttpTransport {
           new MockLowLevelHttpRequest(url) {
             @Override
             public LowLevelHttpResponse execute() throws IOException {
+              if (!responseErrorSequence.isEmpty()) {
+                throw responseErrorSequence.poll();
+              }
               if (serverResponse.statusCode != HttpStatusCodes.STATUS_CODE_OK) {
                 return new MockLowLevelHttpResponse()
                     .setStatusCode(serverResponse.statusCode)

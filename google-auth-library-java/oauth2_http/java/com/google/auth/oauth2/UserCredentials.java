@@ -35,6 +35,7 @@ import static com.google.auth.oauth2.OAuth2Utils.JSON_FACTORY;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpBackOffIOExceptionHandler;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
@@ -42,6 +43,7 @@ import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.UrlEncodedContent;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
+import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.client.util.GenericData;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.http.HttpTransportFactory;
@@ -290,6 +292,14 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
         MetricsUtils.getGoogleCredentialsMetricsHeader(
             RequestType.UNTRACKED, getMetricsCredentialType()));
     request.setParser(new JsonObjectParser(JSON_FACTORY));
+    request.setNumberOfRetries(OAuth2Utils.DEFAULT_NUMBER_OF_RETRIES);
+    ExponentialBackOff backoff =
+        new ExponentialBackOff.Builder()
+            .setInitialIntervalMillis(OAuth2Utils.INITIAL_RETRY_INTERVAL_MILLIS)
+            .setRandomizationFactor(OAuth2Utils.RETRY_RANDOMIZATION_FACTOR)
+            .setMultiplier(OAuth2Utils.RETRY_MULTIPLIER)
+            .build();
+    request.setIOExceptionHandler(new HttpBackOffIOExceptionHandler(backoff));
     HttpResponse response;
 
     try {

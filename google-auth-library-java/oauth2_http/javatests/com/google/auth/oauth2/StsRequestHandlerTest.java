@@ -172,9 +172,10 @@ final class StsRequestHandlerTest {
                 TOKEN_URL, stsTokenExchangeRequest, transport.createRequestFactory())
             .build();
 
-    transport.addResponseErrorSequence(
+    IOException error =
         TestUtils.buildHttpResponseException(
-            "invalidRequest", /* errorDescription= */ null, /* errorUri= */ null));
+            "invalidRequest", /* errorDescription= */ null, /* errorUri= */ null);
+    transport.addResponseErrorSequence(error, error, error, error);
 
     OAuthException e = assertThrows(OAuthException.class, requestHandler::exchangeToken);
 
@@ -193,8 +194,9 @@ final class StsRequestHandlerTest {
                 TOKEN_URL, stsTokenExchangeRequest, transport.createRequestFactory())
             .build();
 
-    transport.addResponseErrorSequence(
-        TestUtils.buildHttpResponseException("invalidRequest", "errorDescription", "errorUri"));
+    IOException error =
+        TestUtils.buildHttpResponseException("invalidRequest", "errorDescription", "errorUri");
+    transport.addResponseErrorSequence(error, error, error, error);
 
     OAuthException e = assertThrows(OAuthException.class, requestHandler::exchangeToken);
 
@@ -214,10 +216,26 @@ final class StsRequestHandlerTest {
             .build();
 
     IOException e = new IOException();
-    transport.addResponseErrorSequence(e);
+    transport.addResponseErrorSequence(e, e, e, e);
 
     IOException thrownException = assertThrows(IOException.class, requestHandler::exchangeToken);
     assertEquals(e, thrownException);
+  }
+
+  @Test
+  void exchangeToken_retriesIOException() throws IOException {
+    StsTokenExchangeRequest stsTokenExchangeRequest =
+        StsTokenExchangeRequest.newBuilder("credential", "subjectTokenType").build();
+    StsRequestHandler requestHandler =
+        StsRequestHandler.newBuilder(
+                TOKEN_URL, stsTokenExchangeRequest, transport.createRequestFactory())
+            .build();
+    transport.addResponseErrorSequence(new IOException("dropped connection"));
+
+    StsTokenExchangeResponse response = requestHandler.exchangeToken();
+
+    assertEquals(transport.getAccessToken(), response.getAccessToken().getTokenValue());
+    assertEquals(2, transport.getRequestCount());
   }
 
   @Test
