@@ -26,10 +26,12 @@ import com.google.cloud.storage.GrpcUtils.ZeroCopyBidiStreamingCallable;
 import com.google.cloud.storage.ObjectReadSessionState.OpenArguments;
 import com.google.cloud.storage.ReadProjectionConfig.ProjectionType;
 import com.google.cloud.storage.RetryContext.RetryContextProvider;
+import com.google.common.collect.ImmutableList;
 import com.google.storage.v2.BidiReadObjectRequest;
 import com.google.storage.v2.BidiReadObjectResponse;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
@@ -57,6 +59,21 @@ final class StorageDataClient implements AutoCloseable {
   }
 
   ApiFuture<ObjectReadSession> readSession(BidiReadObjectRequest req, GrpcCallContext ctx) {
+    return readSession(req, ctx, ImmutableList.of());
+  }
+
+  /**
+   * Open a new {@link ObjectReadSession} using fast open: the ranges in {@code fastOpenConfigs} are
+   * sent in the same request that opens the session, saving a round trip before the first bytes.
+   *
+   * @param fastOpenConfigs the reads to send with the open, for example {@code
+   *     ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(0, 1024))}; empty to only
+   *     open the session
+   */
+  ApiFuture<ObjectReadSession> readSession(
+      BidiReadObjectRequest req,
+      GrpcCallContext ctx,
+      List<ReadProjectionConfig<?>> fastOpenConfigs) {
     checkArgument(
         req.getReadRangesList().isEmpty(),
         "ranges included in the initial request are not supported");
@@ -67,13 +84,22 @@ final class StorageDataClient implements AutoCloseable {
     ObjectReadSessionStream stream =
         ObjectReadSessionStream.create(executor, callable, state, retryContextProvider.create());
 
+    // Add each fast open read to the session state. The open request below is built from the
+    // state, so these reads are sent as part of the open.
+    for (ReadProjectionConfig<?> config : fastOpenConfigs) {
+      long readId = state.newReadId();
+      ObjectReadSessionStreamRead<?> read =
+          config.cast().newRead(readId, retryContextProvider.create());
+      state.putOutstandingRead(readId, read);
+    }
+
     ApiFuture<ObjectReadSession> objectReadSessionFuture =
         ApiFutures.transform(
             stream,
             nowOpen ->
                 new ObjectReadSessionImpl(executor, callable, stream, state, retryContextProvider),
             executor);
-    stream.send(req);
+    stream.send(state.getOpenArguments().getReq());
     return objectReadSessionFuture;
   }
 
