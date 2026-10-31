@@ -290,6 +290,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
         MetricsUtils.getGoogleCredentialsMetricsHeader(
             RequestType.UNTRACKED, getMetricsCredentialType()));
     request.setParser(new JsonObjectParser(JSON_FACTORY));
+    OAuth2Utils.setDefaultRetrySettings(request);
     HttpResponse response;
 
     try {

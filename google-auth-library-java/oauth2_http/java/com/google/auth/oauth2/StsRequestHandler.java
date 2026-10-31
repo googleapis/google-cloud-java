@@ -113,6 +113,7 @@ public final class StsRequestHandler {
     // is used instead to mask those tokens.
     httpRequest.setLoggingEnabled(false);
     httpRequest.setParser(new JsonObjectParser(OAuth2Utils.JSON_FACTORY));
+    OAuth2Utils.setDefaultRetrySettings(httpRequest);
     if (headers != null) {
       httpRequest.setHeaders(headers);
     }

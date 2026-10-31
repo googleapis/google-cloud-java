@@ -495,6 +495,29 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     assertTrue(requestHeader.containsKey("authorization"));
   }
 
+  @Test
+  void refreshAccessToken_retriesIOException() throws IOException {
+    mockTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
+    mockTransportFactory.getTransport().setAccessToken(ACCESS_TOKEN);
+    mockTransportFactory.getTransport().setExpireTime(getDefaultExpireTime());
+    mockTransportFactory
+        .getTransport()
+        .addResponseErrorSequence(new IOException("dropped connection"));
+    mockTransportFactory.getTransport().addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+    mockTransportFactory.getTransport().addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+    ImpersonatedCredentials targetCredentials =
+        ImpersonatedCredentials.create(
+            sourceCredentials,
+            IMPERSONATED_CLIENT_EMAIL,
+            null,
+            IMMUTABLE_SCOPES_LIST,
+            VALID_LIFETIME,
+            mockTransportFactory);
+
+    assertEquals(ACCESS_TOKEN, targetCredentials.refreshAccessToken().getTokenValue());
+    assertEquals(2, mockTransportFactory.getTransport().getNumRequests());
+  }
+
   @Test()
   void refreshAccessToken_success_SSJflow() throws IOException, IllegalStateException {
     mockTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
