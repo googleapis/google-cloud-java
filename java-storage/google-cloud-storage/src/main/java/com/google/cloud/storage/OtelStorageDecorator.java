@@ -1488,6 +1488,7 @@ final class OtelStorageDecorator implements Storage {
         tracer
             .spanBuilder(BLOB_READ_SESSION)
             .setAttribute("gsutil.uri", id.toGsUtilUriWithGeneration())
+            .setAttribute("gcs.bidi.fast_open", fastOpenConfig != null)
             .startSpan();
     try (Scope ignore1 = blobReadSessionSpan.makeCurrent()) {
       Context blobReadSessionContext = Context.current();
@@ -1500,7 +1501,11 @@ final class OtelStorageDecorator implements Storage {
               delegate -> {
                 ready.end();
                 return new OtelDecoratingBlobReadSession(
-                    delegate, id, blobReadSessionContext, blobReadSessionSpan);
+                    delegate,
+                    id,
+                    blobReadSessionContext,
+                    blobReadSessionSpan,
+                    fastOpenConfig != null);
               },
               MoreExecutors.directExecutor());
       ApiFutures.addCallback(
@@ -1909,6 +1914,7 @@ final class OtelStorageDecorator implements Storage {
 
     @Override
     void onFastOpenReadClaimed(Projection projection) {
+      parentSpan.setAttribute("gcs.bidi.cache_status", "HIT");
       if (!(projection instanceof ApiFuture)) {
         parentSpan.end();
         return;
@@ -2011,16 +2017,19 @@ final class OtelStorageDecorator implements Storage {
     private final BlobId id;
     private final Context blobReadSessionContext;
     private final Span blobReadSessionSpan;
+    private final boolean fastOpen;
 
     private OtelDecoratingBlobReadSession(
         BlobReadSession delegate,
         BlobId id,
         Context blobReadSessionContext,
-        Span blobReadSessionSpan) {
+        Span blobReadSessionSpan,
+        boolean fastOpen) {
       this.delegate = delegate;
       this.id = id;
       this.blobReadSessionContext = blobReadSessionContext;
       this.blobReadSessionSpan = blobReadSessionSpan;
+      this.fastOpen = fastOpen;
     }
 
     @Override
@@ -2036,6 +2045,10 @@ final class OtelStorageDecorator implements Storage {
               .setAttribute("gsutil.uri", id.toGsUtilUriWithGeneration())
               .setParent(blobReadSessionContext)
               .startSpan();
+      if (fastOpen) {
+        // changed to HIT if this readAs is served from the fast open read
+        readRangeSpan.setAttribute("gcs.bidi.cache_status", "MISS");
+      }
       try (Scope ignore2 = readRangeSpan.makeCurrent()) {
         OtelReadProjectionConfig<Projection> c =
             new OtelReadProjectionConfig<>(config, readRangeSpan);
