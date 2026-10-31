@@ -1476,6 +1476,14 @@ final class OtelStorageDecorator implements Storage {
 
   @Override
   public ApiFuture<BlobReadSession> blobReadSession(BlobId id, BlobSourceOption... options) {
+    return blobReadSession(id, null, options);
+  }
+
+  @Override
+  public <Projection> ApiFuture<BlobReadSession> blobReadSession(
+      BlobId id,
+      @Nullable ReadProjectionConfig<Projection> fastOpenConfig,
+      BlobSourceOption... options) {
     Span blobReadSessionSpan =
         tracer
             .spanBuilder(BLOB_READ_SESSION)
@@ -1484,7 +1492,8 @@ final class OtelStorageDecorator implements Storage {
     try (Scope ignore1 = blobReadSessionSpan.makeCurrent()) {
       Context blobReadSessionContext = Context.current();
       Span ready = tracer.spanBuilder(BLOB_READ_SESSION + "/ready").startSpan();
-      ApiFuture<BlobReadSession> blobReadSessionApiFuture = delegate.blobReadSession(id, options);
+      ApiFuture<BlobReadSession> blobReadSessionApiFuture =
+          delegate.blobReadSession(id, fastOpenConfig, options);
       ApiFuture<BlobReadSession> futureDecorated =
           ApiFutures.transform(
               blobReadSessionApiFuture,

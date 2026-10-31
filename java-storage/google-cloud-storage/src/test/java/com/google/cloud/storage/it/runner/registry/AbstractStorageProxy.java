@@ -41,6 +41,7 @@ import com.google.cloud.storage.NotificationInfo;
 import com.google.cloud.storage.PostPolicyV4;
 import com.google.cloud.storage.PostPolicyV4.PostConditionsV4;
 import com.google.cloud.storage.PostPolicyV4.PostFieldsV4;
+import com.google.cloud.storage.ReadProjectionConfig;
 import com.google.cloud.storage.ServiceAccount;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageBatch;
@@ -496,6 +497,12 @@ abstract class AbstractStorageProxy implements Storage {
   @Override
   public ApiFuture<BlobReadSession> blobReadSession(BlobId id, BlobSourceOption... options) {
     return delegate.blobReadSession(id, options);
+  }
+
+  @Override
+  public <Projection> ApiFuture<BlobReadSession> blobReadSession(
+      BlobId id, ReadProjectionConfig<Projection> fastOpenConfig, BlobSourceOption... options) {
+    return delegate.blobReadSession(id, fastOpenConfig, options);
   }
 
   @Override

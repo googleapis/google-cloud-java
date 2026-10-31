@@ -5956,6 +5956,44 @@ public interface Storage extends Service<StorageOptions>, AutoCloseable {
   }
 
   /**
+   * Asynchronously set up a new {@link BlobReadSession} for the specified {@link BlobId} and {@code
+   * options}, sending the read described by {@code fastOpenConfig} in the same request that opens
+   * the session ("fast open"). This saves the round trip a separate first read would take.
+   *
+   * <p>The first {@link BlobReadSession#readAs(ReadProjectionConfig)} with a config equal to {@code
+   * fastOpenConfig} is given that read; any other {@code readAs} sends a new read. If the fast open
+   * read fails, the error is reported by the returned future or by that first {@code readAs}.
+   *
+   * <h4>Example of reading the first 1 KiB of an object with fast open:</h4>
+   *
+   * <pre>{@code
+   * ReadAsFutureBytes first1KiB =
+   *     ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(0, 1024));
+   * try (BlobReadSession session =
+   *     storage.blobReadSession(blobId, first1KiB).get(10, TimeUnit.SECONDS)) {
+   *   byte[] bytes = session.readAs(first1KiB).get(10, TimeUnit.SECONDS);
+   * }
+   * }</pre>
+   *
+   * @param id the blob to read from
+   * @param fastOpenConfig the read to send with the open, or {@code null} to only open the session.
+   *     Must be {@link ReadProjectionConfigs#asFutureBytes()}, {@link
+   *     ReadProjectionConfigs#asFutureByteString()} or {@link ReadProjectionConfigs#asChannel()},
+   *     optionally with a range.
+   * @since 2.77.0 This new api is in preview and is subject to breaking changes.
+   */
+  @BetaApi
+  @TransportCompatibility({Transport.GRPC})
+  default <Projection> ApiFuture<BlobReadSession> blobReadSession(
+      BlobId id,
+      @Nullable ReadProjectionConfig<Projection> fastOpenConfig,
+      BlobSourceOption... options) {
+    return throwGrpcOnly(
+        fmtMethodName(
+            "blobReadSession", BlobId.class, ReadProjectionConfig.class, BlobSourceOption.class));
+  }
+
+  /**
    * Create a new {@link BlobAppendableUpload} for the specified {@code blobInfo} and {@code
    * options}.
    *
