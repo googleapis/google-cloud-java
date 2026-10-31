@@ -93,7 +93,7 @@ public class ProtoSchemaConverter {
           resultField.setTypeName(actualEnumFullName);
         } else {
           EnumDescriptorProto enumType = inputField.getEnumType().toProto();
-          resultProto.addNestedType(
+          rootProtoSchema.addNestedType(
               DescriptorProto.newBuilder()
                   .setName(enclosingTypeName)
                   .addEnumType(enumType.toBuilder().setName(enumName))
