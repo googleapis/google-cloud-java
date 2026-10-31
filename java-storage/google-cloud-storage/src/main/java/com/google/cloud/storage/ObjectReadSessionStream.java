@@ -31,7 +31,6 @@ import com.google.cloud.storage.Hasher.UncheckedChecksumMismatchException;
 import com.google.cloud.storage.ObjectReadSessionState.OpenArguments;
 import com.google.cloud.storage.ResponseContentLifecycleHandle.ChildRef;
 import com.google.cloud.storage.RetryContext.OnSuccess;
-import com.google.cloud.storage.StorageDataClient.Borrowable;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
@@ -58,7 +57,7 @@ import java.util.function.Supplier;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 final class ObjectReadSessionStream
-    implements ClientStream<BidiReadObjectRequest>, ApiFuture<Void>, IOAutoCloseable, Borrowable {
+    implements ClientStream<BidiReadObjectRequest>, ApiFuture<Void>, IOAutoCloseable {
 
   private final SettableApiFuture<Void> objectReadSessionResolveFuture;
 
@@ -204,11 +203,6 @@ final class ObjectReadSessionStream
 
   boolean isOpen() {
     return openLeases.get() > 0;
-  }
-
-  public void borrow() {
-    checkOpen();
-    openLeases.incrementAndGet();
   }
 
   private void checkOpen() {
