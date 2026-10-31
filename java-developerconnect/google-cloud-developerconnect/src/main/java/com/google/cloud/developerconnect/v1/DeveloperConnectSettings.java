@@ -17,6 +17,8 @@
 package com.google.cloud.developerconnect.v1;
 
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRefsPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRepositoryLinkCommitListPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRepositoryLinkPullRequestListPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchLinkableGitRepositoriesPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListAccountConnectorsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListConnectionsPagedResponse;
@@ -228,6 +230,13 @@ public class DeveloperConnectSettings extends ClientSettings<DeveloperConnectSet
     return ((DeveloperConnectStubSettings) getStubSettings()).fetchReadTokenSettings();
   }
 
+  /** Returns the object with the settings used for calls to openGitRepositoryLinkPullRequest. */
+  public UnaryCallSettings<OpenGitRepositoryLinkPullRequestRequest, PullRequest>
+      openGitRepositoryLinkPullRequestSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings())
+        .openGitRepositoryLinkPullRequestSettings();
+  }
+
   /** Returns the object with the settings used for calls to fetchLinkableGitRepositories. */
   public PagedCallSettings<
           FetchLinkableGitRepositoriesRequest,
@@ -248,6 +257,84 @@ public class DeveloperConnectSettings extends ClientSettings<DeveloperConnectSet
   public PagedCallSettings<FetchGitRefsRequest, FetchGitRefsResponse, FetchGitRefsPagedResponse>
       fetchGitRefsSettings() {
     return ((DeveloperConnectStubSettings) getStubSettings()).fetchGitRefsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to diffGitRepositoryLinkCommit. */
+  public UnaryCallSettings<DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+      diffGitRepositoryLinkCommitSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings()).diffGitRepositoryLinkCommitSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchGitRepositoryLinkCommit. */
+  public UnaryCallSettings<
+          FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+      fetchGitRepositoryLinkCommitSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings())
+        .fetchGitRepositoryLinkCommitSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchGitRepositoryLinkCommitList. */
+  public PagedCallSettings<
+          FetchGitRepositoryLinkCommitListRequest,
+          FetchGitRepositoryLinkCommitListResponse,
+          FetchGitRepositoryLinkCommitListPagedResponse>
+      fetchGitRepositoryLinkCommitListSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings())
+        .fetchGitRepositoryLinkCommitListSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchGitRepositoryLinkFileBlame. */
+  public UnaryCallSettings<
+          FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+      fetchGitRepositoryLinkFileBlameSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings())
+        .fetchGitRepositoryLinkFileBlameSettings();
+  }
+
+  /** Returns the object with the settings used for calls to fetchGitRepositoryLinkPullRequest. */
+  public UnaryCallSettings<FetchGitRepositoryLinkPullRequestRequest, PullRequest>
+      fetchGitRepositoryLinkPullRequestSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings())
+        .fetchGitRepositoryLinkPullRequestSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to addGitRepositoryLinkPullRequestComment.
+   */
+  public UnaryCallSettings<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>
+      addGitRepositoryLinkPullRequestCommentSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings())
+        .addGitRepositoryLinkPullRequestCommentSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * addGitRepositoryLinkPullRequestReviewComment.
+   */
+  public UnaryCallSettings<
+          AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+      addGitRepositoryLinkPullRequestReviewCommentSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings())
+        .addGitRepositoryLinkPullRequestReviewCommentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to modifyGitRepositoryLinkPullRequest. */
+  public UnaryCallSettings<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>
+      modifyGitRepositoryLinkPullRequestSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings())
+        .modifyGitRepositoryLinkPullRequestSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to fetchGitRepositoryLinkPullRequestList.
+   */
+  public PagedCallSettings<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListResponse,
+          FetchGitRepositoryLinkPullRequestListPagedResponse>
+      fetchGitRepositoryLinkPullRequestListSettings() {
+    return ((DeveloperConnectStubSettings) getStubSettings())
+        .fetchGitRepositoryLinkPullRequestListSettings();
   }
 
   /** Returns the object with the settings used for calls to listAccountConnectors. */
@@ -576,6 +663,12 @@ public class DeveloperConnectSettings extends ClientSettings<DeveloperConnectSet
       return getStubSettingsBuilder().fetchReadTokenSettings();
     }
 
+    /** Returns the builder for the settings used for calls to openGitRepositoryLinkPullRequest. */
+    public UnaryCallSettings.Builder<OpenGitRepositoryLinkPullRequestRequest, PullRequest>
+        openGitRepositoryLinkPullRequestSettings() {
+      return getStubSettingsBuilder().openGitRepositoryLinkPullRequestSettings();
+    }
+
     /** Returns the builder for the settings used for calls to fetchLinkableGitRepositories. */
     public PagedCallSettings.Builder<
             FetchLinkableGitRepositoriesRequest,
@@ -597,6 +690,81 @@ public class DeveloperConnectSettings extends ClientSettings<DeveloperConnectSet
             FetchGitRefsRequest, FetchGitRefsResponse, FetchGitRefsPagedResponse>
         fetchGitRefsSettings() {
       return getStubSettingsBuilder().fetchGitRefsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to diffGitRepositoryLinkCommit. */
+    public UnaryCallSettings.Builder<
+            DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+        diffGitRepositoryLinkCommitSettings() {
+      return getStubSettingsBuilder().diffGitRepositoryLinkCommitSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchGitRepositoryLinkCommit. */
+    public UnaryCallSettings.Builder<
+            FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+        fetchGitRepositoryLinkCommitSettings() {
+      return getStubSettingsBuilder().fetchGitRepositoryLinkCommitSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchGitRepositoryLinkCommitList. */
+    public PagedCallSettings.Builder<
+            FetchGitRepositoryLinkCommitListRequest,
+            FetchGitRepositoryLinkCommitListResponse,
+            FetchGitRepositoryLinkCommitListPagedResponse>
+        fetchGitRepositoryLinkCommitListSettings() {
+      return getStubSettingsBuilder().fetchGitRepositoryLinkCommitListSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchGitRepositoryLinkFileBlame. */
+    public UnaryCallSettings.Builder<
+            FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+        fetchGitRepositoryLinkFileBlameSettings() {
+      return getStubSettingsBuilder().fetchGitRepositoryLinkFileBlameSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to fetchGitRepositoryLinkPullRequest. */
+    public UnaryCallSettings.Builder<FetchGitRepositoryLinkPullRequestRequest, PullRequest>
+        fetchGitRepositoryLinkPullRequestSettings() {
+      return getStubSettingsBuilder().fetchGitRepositoryLinkPullRequestSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * addGitRepositoryLinkPullRequestComment.
+     */
+    public UnaryCallSettings.Builder<
+            AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>
+        addGitRepositoryLinkPullRequestCommentSettings() {
+      return getStubSettingsBuilder().addGitRepositoryLinkPullRequestCommentSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * addGitRepositoryLinkPullRequestReviewComment.
+     */
+    public UnaryCallSettings.Builder<
+            AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+        addGitRepositoryLinkPullRequestReviewCommentSettings() {
+      return getStubSettingsBuilder().addGitRepositoryLinkPullRequestReviewCommentSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to modifyGitRepositoryLinkPullRequest.
+     */
+    public UnaryCallSettings.Builder<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>
+        modifyGitRepositoryLinkPullRequestSettings() {
+      return getStubSettingsBuilder().modifyGitRepositoryLinkPullRequestSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to fetchGitRepositoryLinkPullRequestList.
+     */
+    public PagedCallSettings.Builder<
+            FetchGitRepositoryLinkPullRequestListRequest,
+            FetchGitRepositoryLinkPullRequestListResponse,
+            FetchGitRepositoryLinkPullRequestListPagedResponse>
+        fetchGitRepositoryLinkPullRequestListSettings() {
+      return getStubSettingsBuilder().fetchGitRepositoryLinkPullRequestListSettings();
     }
 
     /** Returns the builder for the settings used for calls to listAccountConnectors. */

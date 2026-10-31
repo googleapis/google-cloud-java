@@ -110,6 +110,8 @@ public class UserEventServiceClientHttpJsonTest {
             .putAllAttributes(new HashMap<String, CustomAttribute>())
             .setMediaInfo(MediaInfo.newBuilder().build())
             .addAllPanels(new ArrayList<PanelInfo>())
+            .setFeedback(Feedback.newBuilder().build())
+            .setEntity("entity-1298275357")
             .build();
     mockService.addResponse(expectedResponse);
 

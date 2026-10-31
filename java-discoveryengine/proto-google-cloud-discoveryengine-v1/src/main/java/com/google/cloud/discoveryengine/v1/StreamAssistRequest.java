@@ -1894,8 +1894,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
      * Optional. Specification of the web grounding tool.
      * If field is present, enables grounding with web search. Works only if
      * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-     * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-     * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+     * is
+     * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+     * or
+     * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
      * </pre>
      *
      * <code>
@@ -1913,8 +1915,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
      * Optional. Specification of the web grounding tool.
      * If field is present, enables grounding with web search. Works only if
      * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-     * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-     * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+     * is
+     * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+     * or
+     * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
      * </pre>
      *
      * <code>
@@ -1933,8 +1937,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
      * Optional. Specification of the web grounding tool.
      * If field is present, enables grounding with web search. Works only if
      * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-     * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-     * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+     * is
+     * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+     * or
+     * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
      * </pre>
      *
      * <code>
@@ -5051,8 +5057,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
      * Optional. Specification of the web grounding tool.
      * If field is present, enables grounding with web search. Works only if
      * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-     * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-     * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+     * is
+     * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+     * or
+     * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
      * </pre>
      *
      * <code>
@@ -5073,8 +5081,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
      * Optional. Specification of the web grounding tool.
      * If field is present, enables grounding with web search. Works only if
      * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-     * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-     * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+     * is
+     * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+     * or
+     * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
      * </pre>
      *
      * <code>
@@ -5099,8 +5109,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
      * Optional. Specification of the web grounding tool.
      * If field is present, enables grounding with web search. Works only if
      * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-     * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-     * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+     * is
+     * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+     * or
+     * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
      * </pre>
      *
      * <code>
@@ -5956,8 +5968,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
        * Optional. Specification of the web grounding tool.
        * If field is present, enables grounding with web search. Works only if
        * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-       * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+       * is
+       * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+       * or
+       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
        * </pre>
        *
        * <code>
@@ -5977,8 +5991,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
        * Optional. Specification of the web grounding tool.
        * If field is present, enables grounding with web search. Works only if
        * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-       * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+       * is
+       * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+       * or
+       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
        * </pre>
        *
        * <code>
@@ -6006,8 +6022,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
        * Optional. Specification of the web grounding tool.
        * If field is present, enables grounding with web search. Works only if
        * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-       * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+       * is
+       * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+       * or
+       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
        * </pre>
        *
        * <code>
@@ -6037,8 +6055,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
        * Optional. Specification of the web grounding tool.
        * If field is present, enables grounding with web search. Works only if
        * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-       * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+       * is
+       * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+       * or
+       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
        * </pre>
        *
        * <code>
@@ -6065,8 +6085,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
        * Optional. Specification of the web grounding tool.
        * If field is present, enables grounding with web search. Works only if
        * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-       * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+       * is
+       * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+       * or
+       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
        * </pre>
        *
        * <code>
@@ -6103,8 +6125,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
        * Optional. Specification of the web grounding tool.
        * If field is present, enables grounding with web search. Works only if
        * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-       * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+       * is
+       * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+       * or
+       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
        * </pre>
        *
        * <code>
@@ -6129,8 +6153,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
        * Optional. Specification of the web grounding tool.
        * If field is present, enables grounding with web search. Works only if
        * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-       * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+       * is
+       * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+       * or
+       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
        * </pre>
        *
        * <code>
@@ -6152,8 +6178,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
        * Optional. Specification of the web grounding tool.
        * If field is present, enables grounding with web search. Works only if
        * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-       * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+       * is
+       * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+       * or
+       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
        * </pre>
        *
        * <code>
@@ -6180,8 +6208,10 @@ public final class StreamAssistRequest extends com.google.protobuf.GeneratedMess
        * Optional. Specification of the web grounding tool.
        * If field is present, enables grounding with web search. Works only if
        * [Assistant.web_grounding_type][google.cloud.discoveryengine.v1.Assistant.web_grounding_type]
-       * is [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][] or
-       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][].
+       * is
+       * [WEB_GROUNDING_TYPE_GOOGLE_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_GOOGLE_SEARCH]
+       * or
+       * [WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH][google.cloud.discoveryengine.v1.Assistant.WebGroundingType.WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH].
        * </pre>
        *
        * <code>

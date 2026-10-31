@@ -110,6 +110,7 @@ public interface PurgeIdentityMappingsRequestOrBuilder
    * <pre>
    * Filter matching identity mappings to purge.
    * The eligible field for filtering is:
+   *
    * * `update_time`: in ISO 8601 "zulu" format.
    * * `external_id`
    *
@@ -140,6 +141,7 @@ public interface PurgeIdentityMappingsRequestOrBuilder
    * <pre>
    * Filter matching identity mappings to purge.
    * The eligible field for filtering is:
+   *
    * * `update_time`: in ISO 8601 "zulu" format.
    * * `external_id`
    *

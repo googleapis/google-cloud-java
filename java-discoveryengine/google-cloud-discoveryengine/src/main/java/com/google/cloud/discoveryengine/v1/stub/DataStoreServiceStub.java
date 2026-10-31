@@ -30,6 +30,9 @@ import com.google.cloud.discoveryengine.v1.GetDataStoreRequest;
 import com.google.cloud.discoveryengine.v1.ListDataStoresRequest;
 import com.google.cloud.discoveryengine.v1.ListDataStoresResponse;
 import com.google.cloud.discoveryengine.v1.UpdateDataStoreRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -89,6 +92,14 @@ public abstract class DataStoreServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateDataStoreRequest, DataStore> updateDataStoreCallable() {
     throw new UnsupportedOperationException("Not implemented: updateDataStoreCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
   }
 
   @Override

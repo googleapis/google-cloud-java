@@ -141,6 +141,10 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_VideoMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_VideoMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_CheckGroundingSpec_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_CheckGroundingSpec_fieldAccessorTable;
@@ -164,6 +168,14 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
       internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_Claim_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_CheckGroundingResponse_Claim_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_CitationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_CitationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Citation_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Citation_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -178,27 +190,28 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
           + "d.discoveryengine.v1\032\034google/api/annotat"
           + "ions.proto\032\027google/api/client.proto\032\037goo"
           + "gle/api/field_behavior.proto\032\031google/api"
-          + "/resource.proto\032/google/cloud/discoveryengine/v1/grounding.proto\"\231\001\n"
+          + "/resource.proto\032/google/cloud/discoverye"
+          + "ngine/v1/grounding.proto\032\026google/type/date.proto\"\231\001\n"
           + "\031GroundedGenerationContent\022\014\n"
           + "\004role\030\001 \001(\t\022N\n"
-          + "\005parts\030\002 "
-          + "\003(\0132?.google.cloud.discoveryengine.v1.GroundedGenerationContent.Part\032\036\n"
+          + "\005parts\030\002 \003(\0132?.google.clo"
+          + "ud.discoveryengine.v1.GroundedGenerationContent.Part\032\036\n"
           + "\004Part\022\016\n"
           + "\004text\030\001 \001(\tH\000B\006\n"
-          + "\004data\"\241\025\n"
+          + "\004data\"\312\031\n"
           + "\036GenerateGroundedContentRequest\022B\n"
           + "\010location\030\001 \001(\tB0\342A\001\002\372A)\n"
           + "\'discoveryengine.googleapis.com/Location\022V\n"
-          + "\022system_instruction\030\005 \001(\0132:.google"
-          + ".cloud.discoveryengine.v1.GroundedGenerationContent\022L\n"
-          + "\010contents\030\002 \003(\0132:.google.c"
-          + "loud.discoveryengine.v1.GroundedGenerationContent\022g\n"
-          + "\017generation_spec\030\003 \001(\0132N.goo"
-          + "gle.cloud.discoveryengine.v1.GenerateGroundedContentRequest.GenerationSpec\022e\n"
-          + "\016grounding_spec\030\004 \001(\0132M.google.cloud.discov"
-          + "eryengine.v1.GenerateGroundedContentRequest.GroundingSpec\022d\n"
-          + "\013user_labels\030\006 \003(\0132O.google.cloud.discoveryengine.v1.Generat"
-          + "eGroundedContentRequest.UserLabelsEntry\032\333\002\n"
+          + "\022system_instruction\030\005"
+          + " \001(\0132:.google.cloud.discoveryengine.v1.GroundedGenerationContent\022L\n"
+          + "\010contents\030\002"
+          + " \003(\0132:.google.cloud.discoveryengine.v1.GroundedGenerationContent\022g\n"
+          + "\017generation_spec\030\003 \001(\0132N.google.cloud.discov"
+          + "eryengine.v1.GenerateGroundedContentRequest.GenerationSpec\022e\n"
+          + "\016grounding_spec\030\004 \001(\0132M.google.cloud.discoveryengine.v1.Gen"
+          + "erateGroundedContentRequest.GroundingSpec\022d\n"
+          + "\013user_labels\030\006 \003(\0132O.google.cloud.di"
+          + "scoveryengine.v1.GenerateGroundedContentRequest.UserLabelsEntry\032\201\005\n"
           + "\016GenerationSpec\022\020\n"
           + "\010model_id\030\003 \001(\t\022\025\n\r"
           + "language_code\030\002 \001(\t\022\030\n"
@@ -209,7 +222,14 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
           + "\004seed\030\014 \001(\005H\004\210\001\001\022\035\n"
           + "\020presence_penalty\030\t \001(\002H\005\210\001\001\022\036\n"
           + "\021max_output_tokens\030\n"
-          + " \001(\005H\006\210\001\001B\016\n"
+          + " \001(\005H\006\210\001\001\022\231\001\n"
+          + "\036provisioned_throughput_setting\030\r"
+          + " \001(\0162k.google.cloud.discoveryengine.v1.GenerateGroundedConte"
+          + "ntRequest.GenerationSpec.ProvisionedThroughputSettingB\004\342A\001\001\"\207\001\n"
+          + "\034ProvisionedThroughputSetting\022.\n"
+          + "*PROVISIONED_THROUGHPUT_SETTING_UNSPECIFIED\020\000\022\037\n"
+          + "\033PROVISIONED_THROUGHPUT_ONLY\020\001\022\026\n"
+          + "\022PAY_AS_YOU_GO_ONLY\020\002B\016\n"
           + "\014_temperatureB\010\n"
           + "\006_top_pB\010\n"
           + "\006_top_kB\024\n"
@@ -218,34 +238,33 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
           + "\021_presence_penaltyB\024\n"
           + "\022_max_output_tokens\032\273\003\n"
           + "\035DynamicRetrievalConfiguration\022\212\001\n"
-          + "\tpredictor\030\001 \001(\0132w.google.cloud.discoveryengine.v1.Ge"
-          + "nerateGroundedContentRequest.DynamicRetr"
-          + "ievalConfiguration.DynamicRetrievalPredictor\032\214\002\n"
+          + "\tpredictor\030\001 \001(\0132w.google.cloud.discoveryengine.v1.Gene"
+          + "rateGroundedContentRequest.DynamicRetrie"
+          + "valConfiguration.DynamicRetrievalPredictor\032\214\002\n"
           + "\031DynamicRetrievalPredictor\022\220\001\n"
-          + "\007version\030\001 \001(\0162\177.google.cloud.discoveryeng"
-          + "ine.v1.GenerateGroundedContentRequest.Dy"
-          + "namicRetrievalConfiguration.DynamicRetrievalPredictor.Version\022\026\n"
+          + "\007version\030\001 \001(\0162\177.google.cloud.discoveryengin"
+          + "e.v1.GenerateGroundedContentRequest.Dyna"
+          + "micRetrievalConfiguration.DynamicRetrievalPredictor.Version\022\026\n"
           + "\tthreshold\030\002 \001(\002H\000\210\001\001\"6\n"
           + "\007Version\022\027\n"
           + "\023VERSION_UNSPECIFIED\020\000\022\022\n"
           + "\016V1_INDEPENDENT\020\001B\014\n\n"
-          + "_threshold\032\222\t\n"
+          + "_threshold\032\225\013\n"
           + "\017GroundingSource\022u\n\r"
-          + "inline_source\030\001 \001(\0132\\.google.cloud.discoveryengine.v1.Generat"
-          + "eGroundedContentRequest.GroundingSource.InlineSourceH\000\022u\n\r"
-          + "search_source\030\002 \001(\0132\\.google.cloud.discoveryengine.v1.Generate"
-          + "GroundedContentRequest.GroundingSource.SearchSourceH\000\022\202\001\n"
-          + "\024google_search_source\030\003 \001(\0132b.google.cloud.discoveryengine.v1.G"
-          + "enerateGroundedContentRequest.GroundingSource.GoogleSearchSourceH\000\022\227\001\n"
-          + "\037enterprise_web_retrieval_source\030\010 \001(\0132l.google.cl"
-          + "oud.discoveryengine.v1.GenerateGroundedC"
-          + "ontentRequest.GroundingSource.EnterpriseWebRetrievalSourceH\000\032\215\002\n"
+          + "inline_source\030\001 \001(\0132\\.google.cloud.discoveryengine.v1.GenerateG"
+          + "roundedContentRequest.GroundingSource.InlineSourceH\000\022u\n\r"
+          + "search_source\030\002 \001(\0132\\.google.cloud.discoveryengine.v1.GenerateGr"
+          + "oundedContentRequest.GroundingSource.SearchSourceH\000\022\202\001\n"
+          + "\024google_search_source\030\003 \001(\0132b.google.cloud.discoveryengine.v1.Gen"
+          + "erateGroundedContentRequest.GroundingSource.GoogleSearchSourceH\000\022\227\001\n"
+          + "\037enterprise_web_retrieval_source\030\010 \001(\0132l.google.clou"
+          + "d.discoveryengine.v1.GenerateGroundedCon"
+          + "tentRequest.GroundingSource.EnterpriseWebRetrievalSourceH\000\032\215\002\n"
           + "\014InlineSource\022G\n"
           + "\017grounding_facts\030\001"
           + " \003(\0132..google.cloud.discoveryengine.v1.GroundingFact\022\200\001\n\n"
-          + "attributes\030\002 \003(\0132l.google.cloud.discoveryengi"
-          + "ne.v1.GenerateGroundedContentRequest.Gro"
-          + "undingSource.InlineSource.AttributesEntry\0321\n"
+          + "attributes\030\002 \003(\0132l.google.cloud.discoveryengine"
+          + ".v1.GenerateGroundedContentRequest.GroundingSource.InlineSource.AttributesEntry\0321\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032\230\001\n"
@@ -254,49 +273,58 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
           + ",discoveryengine.googleapis.com/ServingConfig\022\030\n"
           + "\020max_result_count\030\002 \001(\005\022\016\n"
           + "\006filter\030\003 \001(\t\022\023\n"
-          + "\013safe_search\030\005 \001(\010\032\234\001\n"
+          + "\013safe_search\030\005 \001(\010\032\235\002\n"
           + "\022GoogleSearchSource\022\205\001\n"
-          + "\030dynamic_retrieval_config\030\002 \001(\0132].google.cloud"
-          + ".discoveryengine.v1.GenerateGroundedCont"
-          + "entRequest.DynamicRetrievalConfigurationB\004\342A\001\001\032\036\n"
-          + "\034EnterpriseWebRetrievalSourceB\010\n"
+          + "\030dynamic_retrieval_config\030\002 \001(\0132].google.cloud.d"
+          + "iscoveryengine.v1.GenerateGroundedConten"
+          + "tRequest.DynamicRetrievalConfigurationB\004\342A\001\001\022\035\n"
+          + "\017exclude_domains\030\005 \003(\tB\004\342A\001\001\022`\n"
+          + "\023blocking_confidence\030\006 \001(\0162=.google.cloud."
+          + "discoveryengine.v1.Citation.PhishBlockThresholdB\004\342A\001\001\032\237\001\n"
+          + "\034EnterpriseWebRetrievalSource\022\035\n"
+          + "\017exclude_domains\030\001 \003(\tB\004\342A\001\001\022`\n"
+          + "\023blocking_confidence\030\002 \001(\0162=.google.clou"
+          + "d.discoveryengine.v1.Citation.PhishBlockThresholdB\004\342A\001\001B\010\n"
           + "\006source\032{\n\r"
           + "GroundingSpec\022j\n"
-          + "\021grounding_sources\030\001 \003(\0132O.google.cloud.discoveryeng"
-          + "ine.v1.GenerateGroundedContentRequest.GroundingSource\0321\n"
+          + "\021grounding_sources\030\001 \003(\0132O.google.c"
+          + "loud.discoveryengine.v1.GenerateGroundedContentRequest.GroundingSource\0321\n"
           + "\017UserLabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\351\024\n"
-          + "\037GenerateGroundedContentResponse\022^\n\n"
-          + "candidates\030\001 \003(\013"
-          + "2J.google.cloud.discoveryengine.v1.GenerateGroundedContentResponse.Candidate\032\345\023\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\256\026\n"
+          + "\037GenerateGroundedContentResponse\022^\n"
+          + "\n"
+          + "candidates\030\001 \003(\0132J.google.cloud.discove"
+          + "ryengine.v1.GenerateGroundedContentResponse.Candidate\032\252\025\n"
           + "\tCandidate\022\r\n"
           + "\005index\030\001 \001(\005\022K\n"
-          + "\007content\030\002 \001"
-          + "(\0132:.google.cloud.discoveryengine.v1.GroundedGenerationContent\022\034\n"
+          + "\007content\030\002 \001(\0132:.google.cloud.disco"
+          + "veryengine.v1.GroundedGenerationContent\022\034\n"
           + "\017grounding_score\030\003 \001(\002H\000\210\001\001\022x\n"
-          + "\022grounding_metadata\030\004 \001(\0132\\.google.cloud.discoveryengine.v1.Gener"
-          + "ateGroundedContentResponse.Candidate.GroundingMetadata\032\317\021\n"
+          + "\022grounding_metadata\030\004 \001(\0132\\.google.cloud.discove"
+          + "ryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata\032\224\023\n"
           + "\021GroundingMetadata\022\212\001\n"
-          + "\022retrieval_metadata\030\005 \003(\0132n.google.cloud"
-          + ".discoveryengine.v1.GenerateGroundedCont"
-          + "entResponse.Candidate.GroundingMetadata.RetrievalMetadata\022B\n"
-          + "\016support_chunks\030\001 \003("
-          + "\0132*.google.cloud.discoveryengine.v1.FactChunk\022\032\n"
+          + "\022retrieval_metadata\030\005 \003(\0132n.google.cloud.discoveryengine.v1.Gen"
+          + "erateGroundedContentResponse.Candidate.GroundingMetadata.RetrievalMetadata\022B\n"
+          + "\016support_chunks\030\001"
+          + " \003(\0132*.google.cloud.discoveryengine.v1.FactChunk\022\032\n"
           + "\022web_search_queries\030\003 \003(\t\022\211\001\n"
-          + "\022search_entry_point\030\004 \001(\0132m.google.cloud.di"
-          + "scoveryengine.v1.GenerateGroundedContent"
-          + "Response.Candidate.GroundingMetadata.SearchEntryPoint\022\210\001\n"
-          + "\021grounding_support\030\002 \003(\0132m.google.cloud.discoveryengine.v1.Gene"
-          + "rateGroundedContentResponse.Candidate.GroundingMetadata.GroundingSupport\022z\n"
-          + "\006images\030\t \003(\0132j.google.cloud.discoveryengine."
-          + "v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata\032\247\003\n"
+          + "\022search_entry_point\030\004 \001(\0132m.google.cloud.discoveryengine.v1.Genera"
+          + "teGroundedContentResponse.Candidate.GroundingMetadata.SearchEntryPoint\022\210\001\n"
+          + "\021grounding_support\030\002 \003(\0132m.google.cloud.discov"
+          + "eryengine.v1.GenerateGroundedContentResp"
+          + "onse.Candidate.GroundingMetadata.GroundingSupport\022z\n"
+          + "\006images\030\t \003(\0132j.google.cloud.discoveryengine.v1.GenerateGroundedCont"
+          + "entResponse.Candidate.GroundingMetadata.ImageMetadata\022z\n"
+          + "\006videos\030\013 \003(\0132j.google.cloud.discoveryengine.v1.GenerateGrounded"
+          + "ContentResponse.Candidate.GroundingMetadata.VideoMetadata\032\247\003\n"
           + "\021RetrievalMetadata\022\205\001\n"
-          + "\006source\030\001 \001(\0162u.google.cloud.discoveryengine.v1.GenerateGr"
-          + "oundedContentResponse.Candidate.GroundingMetadata.RetrievalMetadata.Source\022\231\001\n"
-          + "\032dynamic_retrieval_metadata\030\002 \001(\0132u.google"
-          + ".cloud.discoveryengine.v1.GenerateGround"
-          + "edContentResponse.Candidate.GroundingMetadata.DynamicRetrievalMetadata\"n\n"
+          + "\006source\030\001 \001(\0162u.google.cloud.discover"
+          + "yengine.v1.GenerateGroundedContentRespon"
+          + "se.Candidate.GroundingMetadata.RetrievalMetadata.Source\022\231\001\n"
+          + "\032dynamic_retrieval_metadata\030\002 \001(\0132u.google.cloud.discoveryeng"
+          + "ine.v1.GenerateGroundedContentResponse.C"
+          + "andidate.GroundingMetadata.DynamicRetrievalMetadata\"n\n"
           + "\006Source\022\026\n"
           + "\022SOURCE_UNSPECIFIED\020\000\022\024\n"
           + "\020VERTEX_AI_SEARCH\020\001\022\021\n\r"
@@ -304,13 +332,13 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
           + "\016INLINE_CONTENT\020\002\022\017\n"
           + "\013GOOGLE_MAPS\020\004\032\267\001\n"
           + "\030DynamicRetrievalMetadata\022\232\001\n"
-          + "\022predictor_metadata\030\001 \001(\0132~.google.cloud.discoveryengine.v1.Gener"
-          + "ateGroundedContentResponse.Candidate.Gro"
-          + "undingMetadata.DynamicRetrievalPredictorMetadata\032\236\002\n"
+          + "\022predictor_metadata\030\001 \001(\0132~.google.cloud.dis"
+          + "coveryengine.v1.GenerateGroundedContentR"
+          + "esponse.Candidate.GroundingMetadata.DynamicRetrievalPredictorMetadata\032\236\002\n"
           + "!DynamicRetrievalPredictorMetadata\022\230\001\n"
-          + "\007version\030\001 \001(\0162\206\001.google.cloud"
-          + ".discoveryengine.v1.GenerateGroundedContentResponse.Candidate.GroundingMetadata."
-          + "DynamicRetrievalPredictorMetadata.Version\022\027\n\n"
+          + "\007version\030\001 \001(\0162\206\001.google.cloud.discoveryengine.v1"
+          + ".GenerateGroundedContentResponse.Candida"
+          + "te.GroundingMetadata.DynamicRetrievalPredictorMetadata.Version\022\027\n\n"
           + "prediction\030\002 \001(\002H\000\210\001\001\"6\n"
           + "\007Version\022\027\n"
           + "\023VERSION_UNSPECIFIED\020\000\022\022\n"
@@ -323,23 +351,25 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
           + "claim_text\030\001 \001(\t\022\035\n"
           + "\025support_chunk_indices\030\003 \003(\005\022\032\n\r"
           + "support_score\030\002 \001(\002H\000\210\001\001B\020\n"
-          + "\016_support_score\032\377\003\n\r"
+          + "\016_support_score\032\232\004\n\r"
           + "ImageMetadata\022\177\n"
-          + "\005image\030\001 \001(\0132p.google.cloud.discoveryengine.v1.GenerateGround"
-          + "edContentResponse.Candidate.GroundingMetadata.ImageMetadata.Image\022\203\001\n"
-          + "\tthumbnail\030\002 \001(\0132p.google.cloud.discoveryengine.v1."
-          + "GenerateGroundedContentResponse.Candidat"
-          + "e.GroundingMetadata.ImageMetadata.Image\022\206\001\n"
-          + "\006source\030\003 \001(\0132v.google.cloud.discover"
-          + "yengine.v1.GenerateGroundedContentRespon"
-          + "se.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo\032)\n"
+          + "\005image\030\001 \001(\0132p.google.cloud.discoveryeng"
+          + "ine.v1.GenerateGroundedContentResponse.C"
+          + "andidate.GroundingMetadata.ImageMetadata.Image\022\203\001\n"
+          + "\tthumbnail\030\002 \001(\0132p.google.cloud.discoveryengine.v1.GenerateGroundedCon"
+          + "tentResponse.Candidate.GroundingMetadata.ImageMetadata.Image\022\206\001\n"
+          + "\006source\030\003 \001(\0132v.google.cloud.discoveryengine.v1.Generate"
+          + "GroundedContentResponse.Candidate.GroundingMetadata.ImageMetadata.WebsiteInfo\032D\n"
           + "\013WebsiteInfo\022\013\n"
           + "\003uri\030\001 \001(\t\022\r\n"
-          + "\005title\030\002 \001(\t\0323\n"
+          + "\005title\030\002 \001(\t\022\031\n"
+          + "\021site_display_name\030\003 \001(\t\0323\n"
           + "\005Image\022\013\n"
           + "\003uri\030\001 \001(\t\022\r\n"
           + "\005width\030\002 \001(\005\022\016\n"
-          + "\006height\030\003 \001(\005B\022\n"
+          + "\006height\030\003 \001(\005\032,\n\r"
+          + "VideoMetadata\022\033\n"
+          + "\023youtube_external_id\030\001 \001(\tB\022\n"
           + "\020_grounding_score\"\220\001\n"
           + "\022CheckGroundingSpec\022\037\n"
           + "\022citation_threshold\030\001 \001(\001H\000\210\001\001\022%\n"
@@ -351,25 +381,26 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
           + ".discoveryengine.googleapis.com/GroundingConfig\022\030\n"
           + "\020answer_candidate\030\002 \001(\t\022=\n"
           + "\005facts\030\003 \003(\0132..google.cloud.discoveryengine.v1.GroundingFact\022K\n"
-          + "\016grounding_spec\030\004"
-          + " \001(\01323.google.cloud.discoveryengine.v1.CheckGroundingSpec\022[\n"
-          + "\013user_labels\030\005 \003(\0132F.google.cloud.discovery"
-          + "engine.v1.CheckGroundingRequest.UserLabelsEntry\0321\n"
+          + "\016grounding_spec\030\004 \001(\01323.go"
+          + "ogle.cloud.discoveryengine.v1.CheckGroundingSpec\022[\n"
+          + "\013user_labels\030\005 \003(\0132F.google.c"
+          + "loud.discoveryengine.v1.CheckGroundingRequest.UserLabelsEntry\0321\n"
           + "\017UserLabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\316\004\n"
           + "\026CheckGroundingResponse\022\032\n\r"
           + "support_score\030\001 \001(\002H\000\210\001\001\022@\n"
           + "\014cited_chunks\030\003 \003(\0132*.google.cloud.discoveryengine.v1.FactChunk\022d\n"
-          + "\013cited_facts\030\006 \003(\0132O.google.cloud.discoveryengine.v1.Check"
-          + "GroundingResponse.CheckGroundingFactChunk\022M\n"
-          + "\006claims\030\004 \003(\0132=.google.cloud.discove"
-          + "ryengine.v1.CheckGroundingResponse.Claim\032-\n"
+          + "\013cited_facts\030\006 \003(\0132O.google.cloud.discoverye"
+          + "ngine.v1.CheckGroundingResponse.CheckGroundingFactChunk\022M\n"
+          + "\006claims\030\004 \003(\0132=.google"
+          + ".cloud.discoveryengine.v1.CheckGroundingResponse.Claim\032-\n"
           + "\027CheckGroundingFactChunk\022\022\n\n"
           + "chunk_text\030\001 \001(\t\032\337\001\n"
           + "\005Claim\022\026\n"
           + "\tstart_pos\030\001 \001(\005H\000\210\001\001\022\024\n"
-          + "\007end_pos\030\002 \001(\005H\001\210\001\001\022\022\n\n"
+          + "\007end_pos\030\002 \001(\005H\001\210\001\001\022\022\n"
+          + "\n"
           + "claim_text\030\003 \001(\t\022\030\n"
           + "\020citation_indices\030\004 \003(\005\022%\n"
           + "\030grounding_check_required\030\006 \001(\010H\002\210\001\001\022\022\n"
@@ -378,27 +409,48 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
           + "\010_end_posB\033\n"
           + "\031_grounding_check_requiredB\010\n"
           + "\006_scoreB\020\n"
-          + "\016_support_score2\250\006\n"
+          + "\016_support_score\"V\n"
+          + "\020CitationMetadata\022B\n"
+          + "\tcitations\030\001"
+          + " \003(\0132).google.cloud.discoveryengine.v1.CitationB\004\342A\001\003\"\230\003\n"
+          + "\010Citation\022\031\n"
+          + "\013start_index\030\001 \001(\005B\004\342A\001\003\022\027\n"
+          + "\tend_index\030\002 \001(\005B\004\342A\001\003\022\021\n"
+          + "\003uri\030\003 \001(\tB\004\342A\001\003\022\023\n"
+          + "\005title\030\004 \001(\tB\004\342A\001\003\022\025\n"
+          + "\007license\030\005 \001(\tB\004\342A\001\003\0221\n"
+          + "\020publication_date\030\006"
+          + " \001(\0132\021.google.type.DateB\004\342A\001\003\"\345\001\n"
+          + "\023PhishBlockThreshold\022%\n"
+          + "!PHISH_BLOCK_THRESHOLD_UNSPECIFIED\020\000\022\027\n"
+          + "\023BLOCK_LOW_AND_ABOVE\020\036\022\032\n"
+          + "\026BLOCK_MEDIUM_AND_ABOVE\020(\022\030\n"
+          + "\024BLOCK_HIGH_AND_ABOVE\0202\022\032\n"
+          + "\026BLOCK_HIGHER_AND_ABOVE\0207\022\035\n"
+          + "\031BLOCK_VERY_HIGH_AND_ABOVE\020<\022\035\n"
+          + "\031BLOCK_ONLY_EXTREMELY_HIGH\020d2\246\007\n"
           + "\031GroundedGenerationService\022\366\001\n"
-          + "\035StreamGenerateGroundedContent\022?.google.cloud.discoveryengine.v1.GenerateGr"
-          + "oundedContentRequest\032@.google.cloud.discoveryengine.v1.GenerateGroundedContentRe"
-          + "sponse\"N\202\323\344\223\002H\"C/v1/{location=projects/*"
-          + "/locations/*}:streamGenerateGroundedContent:\001*(\0010\001\022\346\001\n"
-          + "\027GenerateGroundedContent\022?.google.cloud.discoveryengine.v1.Generat"
-          + "eGroundedContentRequest\032@.google.cloud.discoveryengine.v1.GenerateGroundedConten"
-          + "tResponse\"H\202\323\344\223\002B\"=/v1/{location=project"
-          + "s/*/locations/*}:generateGroundedContent:\001*\022\324\001\n"
-          + "\016CheckGrounding\0226.google.cloud.discoveryengine.v1.CheckGroundingRequest\0327"
-          + ".google.cloud.discoveryengine.v1.CheckGr"
-          + "oundingResponse\"Q\202\323\344\223\002K\"F/v1/{grounding_"
-          + "config=projects/*/locations/*/groundingC"
-          + "onfigs/*}:check:\001*\032R\312A\036discoveryengine.g"
-          + "oogleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\221\002\n"
-          + "#com.google.cloud.discoveryengine.v1B\036GroundedGenerati"
-          + "onServiceProtoP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;di"
-          + "scoveryenginepb\242\002\017DISCOVERYENGINE\252\002\037Goog"
-          + "le.Cloud.DiscoveryEngine.V1\312\002\037Google\\Clo"
-          + "ud\\DiscoveryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
+          + "\035StreamGenerateGroundedContent\022?.google.cl"
+          + "oud.discoveryengine.v1.GenerateGroundedContentRequest\032@.google.cloud.discoveryen"
+          + "gine.v1.GenerateGroundedContentResponse\""
+          + "N\202\323\344\223\002H\"C/v1/{location=projects/*/locati"
+          + "ons/*}:streamGenerateGroundedContent:\001*(\0010\001\022\346\001\n"
+          + "\027GenerateGroundedContent\022?.google.cloud.discoveryengine.v1.GenerateGround"
+          + "edContentRequest\032@.google.cloud.discoveryengine.v1.GenerateGroundedContentRespon"
+          + "se\"H\202\323\344\223\002B\"=/v1/{location=projects/*/locations/*}:generateGroundedContent:\001*\022\324\001\n"
+          + "\016CheckGrounding\0226.google.cloud.discovery"
+          + "engine.v1.CheckGroundingRequest\0327.google.cloud.discoveryengine.v1.CheckGrounding"
+          + "Response\"Q\202\323\344\223\002K\"F/v1/{grounding_config="
+          + "projects/*/locations/*/groundingConfigs/"
+          + "*}:check:\001*\032\317\001\312A\036discoveryengine.googlea"
+          + "pis.com\322A\252\001https://www.googleapis.com/au"
+          + "th/cloud-platform,https://www.googleapis.com/auth/discoveryengine.readwrite,http"
+          + "s://www.googleapis.com/auth/discoveryengine.serving.readwriteB\221\002\n"
+          + "#com.google.cloud.discoveryengine.v1B\036GroundedGeneratio"
+          + "nServiceProtoP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;dis"
+          + "coveryenginepb\242\002\017DISCOVERYENGINE\252\002\037Googl"
+          + "e.Cloud.DiscoveryEngine.V1\312\002\037Google\\Clou"
+          + "d\\DiscoveryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -409,6 +461,7 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1.GroundingProto.getDescriptor(),
+              com.google.type.DateProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1_GroundedGenerationContent_descriptor =
         getDescriptor().getMessageType(0);
@@ -456,6 +509,7 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
               "Seed",
               "PresencePenalty",
               "MaxOutputTokens",
+              "ProvisionedThroughputSetting",
             });
     internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_DynamicRetrievalConfiguration_descriptor =
         internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_descriptor
@@ -522,7 +576,7 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_GoogleSearchSource_descriptor,
             new java.lang.String[] {
-              "DynamicRetrievalConfig",
+              "DynamicRetrievalConfig", "ExcludeDomains", "BlockingConfidence",
             });
     internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_descriptor =
         internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_descriptor
@@ -530,7 +584,9 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
     internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSource_EnterpriseWebRetrievalSource_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "ExcludeDomains", "BlockingConfidence",
+            });
     internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_GroundingSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentRequest_descriptor
             .getNestedType(3);
@@ -579,6 +635,7 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
               "SearchEntryPoint",
               "GroundingSupport",
               "Images",
+              "Videos",
             });
     internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_RetrievalMetadata_descriptor =
         internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_descriptor
@@ -641,7 +698,7 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_WebsiteInfo_descriptor,
             new java.lang.String[] {
-              "Uri", "Title",
+              "Uri", "Title", "SiteDisplayName",
             });
     internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_descriptor =
         internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_descriptor
@@ -651,6 +708,15 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
             internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_ImageMetadata_Image_descriptor,
             new java.lang.String[] {
               "Uri", "Width", "Height",
+            });
+    internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_VideoMetadata_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_descriptor
+            .getNestedType(6);
+    internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_VideoMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_GenerateGroundedContentResponse_Candidate_GroundingMetadata_VideoMetadata_descriptor,
+            new java.lang.String[] {
+              "YoutubeExternalId",
             });
     internal_static_google_cloud_discoveryengine_v1_CheckGroundingSpec_descriptor =
         getDescriptor().getMessageType(3);
@@ -708,12 +774,29 @@ public final class GroundedGenerationServiceProto extends com.google.protobuf.Ge
               "GroundingCheckRequired",
               "Score",
             });
+    internal_static_google_cloud_discoveryengine_v1_CitationMetadata_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_cloud_discoveryengine_v1_CitationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_CitationMetadata_descriptor,
+            new java.lang.String[] {
+              "Citations",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Citation_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_cloud_discoveryengine_v1_Citation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Citation_descriptor,
+            new java.lang.String[] {
+              "StartIndex", "EndIndex", "Uri", "Title", "License", "PublicationDate",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.discoveryengine.v1.GroundingProto.getDescriptor();
+    com.google.type.DateProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

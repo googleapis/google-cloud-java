@@ -30,7 +30,8 @@ public interface ListUserLicensesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent [UserStore][] resource name, format:
+   * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+   * resource name, format:
    * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
    * </pre>
    *
@@ -46,7 +47,8 @@ public interface ListUserLicensesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent [UserStore][] resource name, format:
+   * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+   * resource name, format:
    * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
    * </pre>
    *
@@ -63,8 +65,8 @@ public interface ListUserLicensesRequestOrBuilder
    *
    * <pre>
    * Optional. Requested page size. Server may return fewer items than
-   * requested. If unspecified, defaults to 10. The maximum value is 50; values
-   * above 50 will be coerced to 50.
+   * requested. If unspecified, defaults to 100. The maximum value is 1000;
+   * values above 1000 will be coerced to 1000.
    *
    * If this field is negative, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -118,7 +120,8 @@ public interface ListUserLicensesRequestOrBuilder
    * Supported fields:
    *
    * * `license_assignment_state`
-   *
+   * * `user_principal`
+   * *
    * Examples:
    *
    * * `license_assignment_state = ASSIGNED` to list assigned user licenses.
@@ -127,6 +130,8 @@ public interface ListUserLicensesRequestOrBuilder
    * who attempted login but no license assigned.
    * * `license_assignment_state != NO_LICENSE_ATTEMPTED_LOGIN` to filter
    * out users who attempted login but no license assigned.
+   * * `user_principal = user1&#64;example.com` to list user license for
+   * `user1&#64;example.com`.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -144,7 +149,8 @@ public interface ListUserLicensesRequestOrBuilder
    * Supported fields:
    *
    * * `license_assignment_state`
-   *
+   * * `user_principal`
+   * *
    * Examples:
    *
    * * `license_assignment_state = ASSIGNED` to list assigned user licenses.
@@ -153,6 +159,8 @@ public interface ListUserLicensesRequestOrBuilder
    * who attempted login but no license assigned.
    * * `license_assignment_state != NO_LICENSE_ATTEMPTED_LOGIN` to filter
    * out users who attempted login but no license assigned.
+   * * `user_principal = user1&#64;example.com` to list user license for
+   * `user1&#64;example.com`.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -160,4 +168,60 @@ public interface ListUserLicensesRequestOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order in which the
+   * [UserLicense][google.cloud.discoveryengine.v1.UserLicense]s are listed. The
+   * value must be a comma-separated list of fields. Default sorting order is
+   * ascending. To specify descending order for a field, append a " desc"
+   * suffix. Redundant space characters in the syntax are insignificant.
+   *
+   * Supported fields (only `user_principal` is supported for now):
+   *
+   * * `user_principal`
+   *
+   * If not set, the default ordering is by `user_principal`.
+   *
+   * Examples:
+   *
+   * * `user_principal` to order by `user_principal` in ascending order.
+   * * `user_principal desc` to order by `user_principal` in descending order.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order in which the
+   * [UserLicense][google.cloud.discoveryengine.v1.UserLicense]s are listed. The
+   * value must be a comma-separated list of fields. Default sorting order is
+   * ascending. To specify descending order for a field, append a " desc"
+   * suffix. Redundant space characters in the syntax are insignificant.
+   *
+   * Supported fields (only `user_principal` is supported for now):
+   *
+   * * `user_principal`
+   *
+   * If not set, the default ordering is by `user_principal`.
+   *
+   * Examples:
+   *
+   * * `user_principal` to order by `user_principal` in ascending order.
+   * * `user_principal desc` to order by `user_principal` in descending order.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

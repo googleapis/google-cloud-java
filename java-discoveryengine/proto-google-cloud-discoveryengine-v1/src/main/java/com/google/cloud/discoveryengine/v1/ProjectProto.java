@@ -49,6 +49,38 @@ public final class ProjectProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_Project_ServiceTerms_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_ModelArmorConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_ModelArmorConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_DataProtectionPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_DataProtectionPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_DataProtectionPolicy_SensitiveDataProtectionPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_DataProtectionPolicy_SensitiveDataProtectionPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_ResourceAccessControlConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_ResourceAccessControlConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Project_ConfigurableBillingStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Project_ConfigurableBillingStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Project_ConfigurableBillingStatus_AgentSearchTokenSubscriptionStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Project_ConfigurableBillingStatus_AgentSearchTokenSubscriptionStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_Project_ServiceTermsMapEntry_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_Project_ServiceTermsMapEntry_fieldAccessorTable;
@@ -61,36 +93,108 @@ public final class ProjectProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n-google/cloud/discoveryengine/v1/projec"
-          + "t.proto\022\037google.cloud.discoveryengine.v1"
+      "\n"
+          + "-google/cloud/discoveryengine/v1/project.proto\022\037google.cloud.discoveryengine.v1"
           + "\032\037google/api/field_behavior.proto\032\031googl"
-          + "e/api/resource.proto\032\037google/protobuf/ti"
-          + "mestamp.proto\"\341\005\n\007Project\022\022\n\004name\030\001 \001(\tB"
-          + "\004\342A\001\003\0225\n\013create_time\030\002 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\004\342A\001\003\022C\n\031provision_comple"
-          + "tion_time\030\003 \001(\0132\032.google.protobuf.Timest"
-          + "ampB\004\342A\001\003\022^\n\021service_terms_map\030\004 \003(\0132=.g"
-          + "oogle.cloud.discoveryengine.v1.Project.S"
-          + "erviceTermsMapEntryB\004\342A\001\003\032\265\002\n\014ServiceTer"
-          + "ms\022\n\n\002id\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022J\n\005state"
-          + "\030\004 \001(\0162;.google.cloud.discoveryengine.v1"
-          + ".Project.ServiceTerms.State\022/\n\013accept_ti"
-          + "me\030\005 \001(\0132\032.google.protobuf.Timestamp\0220\n\014"
-          + "decline_time\030\006 \001(\0132\032.google.protobuf.Tim"
-          + "estamp\"Y\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\022"
-          + "\n\016TERMS_ACCEPTED\020\001\022\021\n\rTERMS_PENDING\020\002\022\022\n"
-          + "\016TERMS_DECLINED\020\003\032m\n\024ServiceTermsMapEntr"
-          + "y\022\013\n\003key\030\001 \001(\t\022D\n\005value\030\002 \001(\01325.google.c"
-          + "loud.discoveryengine.v1.Project.ServiceT"
-          + "erms:\0028\001:?\352A<\n&discoveryengine.googleapi"
-          + "s.com/Project\022\022projects/{project}B\377\001\n#co"
-          + "m.google.cloud.discoveryengine.v1B\014Proje"
-          + "ctProtoP\001ZMcloud.google.com/go/discovery"
-          + "engine/apiv1/discoveryenginepb;discovery"
-          + "enginepb\242\002\017DISCOVERYENGINE\252\002\037Google.Clou"
-          + "d.DiscoveryEngine.V1\312\002\037Google\\Cloud\\Disc"
-          + "overyEngine\\V1\352\002\"Google::Cloud::Discover"
-          + "yEngine::V1b\006proto3"
+          + "e/api/resource.proto\032-google/cloud/disco"
+          + "veryengine/v1/logging.proto\032\037google/protobuf/timestamp.proto\"\247\032\n"
+          + "\007Project\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\003\0225\n"
+          + "\013create_time\030\002"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022C\n"
+          + "\031provision_completion_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022^\n"
+          + "\021service_terms_map\030\004 "
+          + "\003(\0132=.google.cloud.discoveryengine.v1.Project.ServiceTermsMapEntryB\004\342A\001\003\022g\n"
+          + "\030customer_provided_config\030\006 \001(\0132?.google.clou"
+          + "d.discoveryengine.v1.Project.CustomerProvidedConfigB\004\342A\001\001\022m\n"
+          + "\033configurable_billing_status\030\n"
+          + " \001(\0132B.google.cloud.discoverye"
+          + "ngine.v1.Project.ConfigurableBillingStatusB\004\342A\001\003\032\265\002\n"
+          + "\014ServiceTerms\022\n\n"
+          + "\002id\030\001 \001(\t\022\017\n"
+          + "\007version\030\002 \001(\t\022J\n"
+          + "\005state\030\004 \001(\0162;.google.c"
+          + "loud.discoveryengine.v1.Project.ServiceTerms.State\022/\n"
+          + "\013accept_time\030\005 \001(\0132\032.google.protobuf.Timestamp\0220\n"
+          + "\014decline_time\030\006 \001(\0132\032.google.protobuf.Timestamp\"Y\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\022\n"
+          + "\016TERMS_ACCEPTED\020\001\022\021\n\r"
+          + "TERMS_PENDING\020\002\022\022\n"
+          + "\016TERMS_DECLINED\020\003\032\337\t\n"
+          + "\026CustomerProvidedConfig\022q\n"
+          + "\021notebooklm_config\030\003 \001(\0132P.google.cloud.discoverye"
+          + "ngine.v1.Project.CustomerProvidedConfig.NotebooklmConfigB\004\342A\001\001\022\211\001\n"
+          + "\036resource_access_control_config\030\006 \001(\0132[.google.cloud.d"
+          + "iscoveryengine.v1.Project.CustomerProvid"
+          + "edConfig.ResourceAccessControlConfigB\004\342A\001\001\032\365\006\n"
+          + "\020NotebooklmConfig\022}\n"
+          + "\022model_armor_config\030\001 \001(\0132a.google.cloud.discoveryengi"
+          + "ne.v1.Project.CustomerProvidedConfig.NotebooklmConfig.ModelArmorConfig\022&\n"
+          + "\030opt_out_notebook_sharing\030\002 \001(\010B\004\342A\001\001\022\213\001\n"
+          + "\026data_protection_policy\030\005 \001(\0132e.google.cloud.d"
+          + "iscoveryengine.v1.Project.CustomerProvid"
+          + "edConfig.NotebooklmConfig.DataProtectionPolicyB\004\342A\001\001\022X\n"
+          + "\024observability_config\030\006 \001"
+          + "(\01324.google.cloud.discoveryengine.v1.ObservabilityConfigB\004\342A\001\001\032\245\001\n"
+          + "\020ModelArmorConfig\022I\n"
+          + "\024user_prompt_template\030\001 \001(\tB+\342A\001\001\372A$\n"
+          + "\"modelarmor.googleapis.com/Template\022F\n"
+          + "\021response_template\030\002 \001(\tB+\342A\001\001\372A$\n"
+          + "\"modelarmor.googleapis.com/Template\032\251\002\n"
+          + "\024DataProtectionPolicy\022\264\001\n"
+          + " sensitive_data_protection_policy\030\001 \001(\0132\203\001.google.cloud.disco"
+          + "veryengine.v1.Project.CustomerProvidedConfig.NotebooklmConfig.DataProtectionPoli"
+          + "cy.SensitiveDataProtectionPolicyB\004\342A\001\001\032Z\n"
+          + "\035SensitiveDataProtectionPolicy\0229\n"
+          + "\006policy\030\001 \001(\tB)\342A\001\001\372A\"\n"
+          + " dlp.googleapis.com/ContentPolicy\032N\n"
+          + "\033ResourceAccessControlConfig\022/\n"
+          + "!data_store_access_control_enabled\030\001 \001(\010B\004\342A\001\001\032\211\t\n"
+          + "\031ConfigurableBillingStatus\022,\n"
+          + "\036effective_search_qpm_threshold\030\001 \001(\003B\004\342A\001\001\022/\n"
+          + "!effective_indexing_core_threshold\030\002 \001(\003B\004\342A\001\001\0224\n\n"
+          + "start_time\030\003 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\001\0228\n"
+          + "\016terminate_time\030\004"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022O\n"
+          + "%search_qpm_threshold_next_update_time\030\005"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022R\n"
+          + "(indexing_core_threshold_next_update_time\030\006"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022h\n"
+          + "\013update_type\030\007 \001(\0162M.google.cloud.discoveryengine.v1.Project.Conf"
+          + "igurableBillingStatus.UpdateTypeB\004\342A\001\003\022\235\001\n"
+          + "(agent_search_token_subscription_statuses\030\010"
+          + " \003(\0132e.google.cloud.discoveryengine.v1.Project.ConfigurableBillingStatus.Ag"
+          + "entSearchTokenSubscriptionStatusB\004\342A\001\003\032\214\003\n"
+          + "\"AgentSearchTokenSubscriptionStatus\022\033\n"
+          + "\r"
+          + "model_version\030\001 \001(\tB\004\342A\001\003\022%\n"
+          + "\027effective_tpm_threshold\030\002 \001(\003B\004\342A\001\003\022H\n"
+          + "\036tpm_threshold_next_update_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0224\n\n"
+          + "start_time\030\004 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0228\n"
+          + "\016terminate_time\030\005"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022h\n"
+          + "\013update_type\030\006 \001(\0162M.googl"
+          + "e.cloud.discoveryengine.v1.Project.ConfigurableBillingStatus.UpdateTypeB\004\342A\001\003\"_\n"
+          + "\n"
+          + "UpdateType\022\033\n"
+          + "\027UPDATE_TYPE_UNSPECIFIED\020\000\022\n\n"
+          + "\006CREATE\020\001\022\n\n"
+          + "\006DELETE\020\002\022\014\n"
+          + "\010SCALE_UP\020\003\022\016\n\n"
+          + "SCALE_DOWN\020\004\032m\n"
+          + "\024ServiceTermsMapEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022D\n"
+          + "\005value\030\002 \001(\01325.google.clou"
+          + "d.discoveryengine.v1.Project.ServiceTerms:\0028\001:?\352A<\n"
+          + "&discoveryengine.googleapis.com/Project\022\022projects/{project}B\377\001\n"
+          + "#com.google.cloud.discoveryengine.v1B\014ProjectP"
+          + "rotoP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;discoveryeng"
+          + "inepb\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud.D"
+          + "iscoveryEngine.V1\312\002\037Google\\Cloud\\Discove"
+          + "ryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -98,6 +202,7 @@ public final class ProjectProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1.LoggingProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1_Project_descriptor =
@@ -106,7 +211,12 @@ public final class ProjectProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_Project_descriptor,
             new java.lang.String[] {
-              "Name", "CreateTime", "ProvisionCompletionTime", "ServiceTermsMap",
+              "Name",
+              "CreateTime",
+              "ProvisionCompletionTime",
+              "ServiceTermsMap",
+              "CustomerProvidedConfig",
+              "ConfigurableBillingStatus",
             });
     internal_static_google_cloud_discoveryengine_v1_Project_ServiceTerms_descriptor =
         internal_static_google_cloud_discoveryengine_v1_Project_descriptor.getNestedType(0);
@@ -116,8 +226,93 @@ public final class ProjectProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Id", "Version", "State", "AcceptTime", "DeclineTime",
             });
-    internal_static_google_cloud_discoveryengine_v1_Project_ServiceTermsMapEntry_descriptor =
+    internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_descriptor =
         internal_static_google_cloud_discoveryengine_v1_Project_descriptor.getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_descriptor,
+            new java.lang.String[] {
+              "NotebooklmConfig", "ResourceAccessControlConfig",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_descriptor,
+            new java.lang.String[] {
+              "ModelArmorConfig",
+              "OptOutNotebookSharing",
+              "DataProtectionPolicy",
+              "ObservabilityConfig",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_ModelArmorConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_ModelArmorConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_ModelArmorConfig_descriptor,
+            new java.lang.String[] {
+              "UserPromptTemplate", "ResponseTemplate",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_DataProtectionPolicy_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_DataProtectionPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_DataProtectionPolicy_descriptor,
+            new java.lang.String[] {
+              "SensitiveDataProtectionPolicy",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_DataProtectionPolicy_SensitiveDataProtectionPolicy_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_DataProtectionPolicy_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_DataProtectionPolicy_SensitiveDataProtectionPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_NotebooklmConfig_DataProtectionPolicy_SensitiveDataProtectionPolicy_descriptor,
+            new java.lang.String[] {
+              "Policy",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_ResourceAccessControlConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_ResourceAccessControlConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Project_CustomerProvidedConfig_ResourceAccessControlConfig_descriptor,
+            new java.lang.String[] {
+              "DataStoreAccessControlEnabled",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Project_ConfigurableBillingStatus_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Project_descriptor.getNestedType(2);
+    internal_static_google_cloud_discoveryengine_v1_Project_ConfigurableBillingStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Project_ConfigurableBillingStatus_descriptor,
+            new java.lang.String[] {
+              "EffectiveSearchQpmThreshold",
+              "EffectiveIndexingCoreThreshold",
+              "StartTime",
+              "TerminateTime",
+              "SearchQpmThresholdNextUpdateTime",
+              "IndexingCoreThresholdNextUpdateTime",
+              "UpdateType",
+              "AgentSearchTokenSubscriptionStatuses",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Project_ConfigurableBillingStatus_AgentSearchTokenSubscriptionStatus_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Project_ConfigurableBillingStatus_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_Project_ConfigurableBillingStatus_AgentSearchTokenSubscriptionStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Project_ConfigurableBillingStatus_AgentSearchTokenSubscriptionStatus_descriptor,
+            new java.lang.String[] {
+              "ModelVersion",
+              "EffectiveTpmThreshold",
+              "TpmThresholdNextUpdateTime",
+              "StartTime",
+              "TerminateTime",
+              "UpdateType",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Project_ServiceTermsMapEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Project_descriptor.getNestedType(3);
     internal_static_google_cloud_discoveryengine_v1_Project_ServiceTermsMapEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_Project_ServiceTermsMapEntry_descriptor,
@@ -127,11 +322,13 @@ public final class ProjectProto extends com.google.protobuf.GeneratedFile {
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1.LoggingProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

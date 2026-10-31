@@ -291,6 +291,25 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> OpenGitRepositoryLinkPullRequest</td>
+ *      <td><p> Opens a Pull Request in the remote SCM repository associated with a GitRepositoryLink.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> openGitRepositoryLinkPullRequest(OpenGitRepositoryLinkPullRequestRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> openGitRepositoryLinkPullRequest(GitRepositoryLinkName name, PullRequest pullRequest)
+ *           <li><p> openGitRepositoryLinkPullRequest(String name, PullRequest pullRequest)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> openGitRepositoryLinkPullRequestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> FetchLinkableGitRepositories</td>
  *      <td><p> FetchLinkableGitRepositories returns a list of git repositories from an SCM that are available to be added to a Connection.</td>
  *      <td>
@@ -346,6 +365,179 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> fetchGitRefsPagedCallable()
  *           <li><p> fetchGitRefsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DiffGitRepositoryLinkCommit</td>
+ *      <td><p> Diff commits for a GitRepositoryLink.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> diffGitRepositoryLinkCommit(DiffGitRepositoryLinkCommitRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> diffGitRepositoryLinkCommit(GitRepositoryLinkName name, String baseSha, String headSha)
+ *           <li><p> diffGitRepositoryLinkCommit(String name, String baseSha, String headSha)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> diffGitRepositoryLinkCommitCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchGitRepositoryLinkCommit</td>
+ *      <td><p> Fetch Commit details from a Git repository link.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkCommit(FetchGitRepositoryLinkCommitRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkCommit(GitRepositoryLinkName name, String commitSha)
+ *           <li><p> fetchGitRepositoryLinkCommit(String name, String commitSha)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkCommitCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchGitRepositoryLinkCommitList</td>
+ *      <td><p> Fetch a list of Commits from a Git repository link.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkCommitList(FetchGitRepositoryLinkCommitListRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkCommitList(GitRepositoryLinkName name, String ref)
+ *           <li><p> fetchGitRepositoryLinkCommitList(String name, String ref)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkCommitListPagedCallable()
+ *           <li><p> fetchGitRepositoryLinkCommitListCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchGitRepositoryLinkFileBlame</td>
+ *      <td><p> Fetches blame information for a file or line range in a file.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkFileBlame(FetchGitRepositoryLinkFileBlameRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkFileBlame(GitRepositoryLinkName name, String ref, String path)
+ *           <li><p> fetchGitRepositoryLinkFileBlame(String name, String ref, String path)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkFileBlameCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchGitRepositoryLinkPullRequest</td>
+ *      <td><p> Fetch Pull Request details from a Git repository link.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkPullRequest(FetchGitRepositoryLinkPullRequestRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkPullRequest(GitRepositoryLinkName name, String pullRequestId)
+ *           <li><p> fetchGitRepositoryLinkPullRequest(String name, String pullRequestId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkPullRequestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AddGitRepositoryLinkPullRequestComment</td>
+ *      <td><p> Add a comment to a Pull Request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> addGitRepositoryLinkPullRequestComment(AddGitRepositoryLinkPullRequestCommentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> addGitRepositoryLinkPullRequestComment(GitRepositoryLinkName name, String pullRequestId, PullRequestComment comment)
+ *           <li><p> addGitRepositoryLinkPullRequestComment(String name, String pullRequestId, PullRequestComment comment)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> addGitRepositoryLinkPullRequestCommentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> AddGitRepositoryLinkPullRequestReviewComment</td>
+ *      <td><p> Add a review comment (inline on diff) to a Pull Request.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> addGitRepositoryLinkPullRequestReviewComment(AddGitRepositoryLinkPullRequestReviewCommentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> addGitRepositoryLinkPullRequestReviewComment(GitRepositoryLinkName name, String pullRequestId, PullRequestReviewComment comment)
+ *           <li><p> addGitRepositoryLinkPullRequestReviewComment(String name, String pullRequestId, PullRequestReviewComment comment)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> addGitRepositoryLinkPullRequestReviewCommentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ModifyGitRepositoryLinkPullRequest</td>
+ *      <td><p> Modifies a Pull Request in the remote SCM repository associated with a GitRepositoryLink.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> modifyGitRepositoryLinkPullRequest(ModifyGitRepositoryLinkPullRequestRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> modifyGitRepositoryLinkPullRequest(GitRepositoryLinkName name, String pullRequestId)
+ *           <li><p> modifyGitRepositoryLinkPullRequest(String name, String pullRequestId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> modifyGitRepositoryLinkPullRequestCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchGitRepositoryLinkPullRequestList</td>
+ *      <td><p> Fetches a list of Pull Requests from the remote repository.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkPullRequestList(FetchGitRepositoryLinkPullRequestListRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkPullRequestList(GitRepositoryLinkName name)
+ *           <li><p> fetchGitRepositoryLinkPullRequestList(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchGitRepositoryLinkPullRequestListPagedCallable()
+ *           <li><p> fetchGitRepositoryLinkPullRequestListCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2414,6 +2606,148 @@ public class DeveloperConnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Opens a Pull Request in the remote SCM repository associated with a GitRepositoryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   GitRepositoryLinkName name =
+   *       GitRepositoryLinkName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+   *   PullRequest pullRequest = PullRequest.newBuilder().build();
+   *   PullRequest response =
+   *       developerConnectClient.openGitRepositoryLinkPullRequest(name, pullRequest);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The GitRepositoryLink resource name in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param pullRequest Required. The Pull Request details to open. Input fields used: title, body,
+   *     head_ref, base_ref.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequest openGitRepositoryLinkPullRequest(
+      @Nullable GitRepositoryLinkName name, PullRequest pullRequest) {
+    OpenGitRepositoryLinkPullRequestRequest request =
+        OpenGitRepositoryLinkPullRequestRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setPullRequest(pullRequest)
+            .build();
+    return openGitRepositoryLinkPullRequest(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens a Pull Request in the remote SCM repository associated with a GitRepositoryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       GitRepositoryLinkName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *           .toString();
+   *   PullRequest pullRequest = PullRequest.newBuilder().build();
+   *   PullRequest response =
+   *       developerConnectClient.openGitRepositoryLinkPullRequest(name, pullRequest);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The GitRepositoryLink resource name in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param pullRequest Required. The Pull Request details to open. Input fields used: title, body,
+   *     head_ref, base_ref.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequest openGitRepositoryLinkPullRequest(String name, PullRequest pullRequest) {
+    OpenGitRepositoryLinkPullRequestRequest request =
+        OpenGitRepositoryLinkPullRequestRequest.newBuilder()
+            .setName(name)
+            .setPullRequest(pullRequest)
+            .build();
+    return openGitRepositoryLinkPullRequest(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens a Pull Request in the remote SCM repository associated with a GitRepositoryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   OpenGitRepositoryLinkPullRequestRequest request =
+   *       OpenGitRepositoryLinkPullRequestRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setPullRequest(PullRequest.newBuilder().build())
+   *           .build();
+   *   PullRequest response = developerConnectClient.openGitRepositoryLinkPullRequest(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequest openGitRepositoryLinkPullRequest(
+      OpenGitRepositoryLinkPullRequestRequest request) {
+    return openGitRepositoryLinkPullRequestCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Opens a Pull Request in the remote SCM repository associated with a GitRepositoryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   OpenGitRepositoryLinkPullRequestRequest request =
+   *       OpenGitRepositoryLinkPullRequestRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setPullRequest(PullRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<PullRequest> future =
+   *       developerConnectClient.openGitRepositoryLinkPullRequestCallable().futureCall(request);
+   *   // Do something.
+   *   PullRequest response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<OpenGitRepositoryLinkPullRequestRequest, PullRequest>
+      openGitRepositoryLinkPullRequestCallable() {
+    return stub.openGitRepositoryLinkPullRequestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * FetchLinkableGitRepositories returns a list of git repositories from an SCM that are available
    * to be added to a Connection.
    *
@@ -2914,6 +3248,1462 @@ public class DeveloperConnectClient implements BackgroundResource {
    */
   public final UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable() {
     return stub.fetchGitRefsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Diff commits for a GitRepositoryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   GitRepositoryLinkName name =
+   *       GitRepositoryLinkName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+   *   String baseSha = "baseSha-332627941";
+   *   String headSha = "headSha795290284";
+   *   DiffGitRepositoryLinkCommitResponse response =
+   *       developerConnectClient.diffGitRepositoryLinkCommit(name, baseSha, headSha);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink.
+   * @param baseSha Required. The base commit SHA or ref.
+   * @param headSha Required. The head commit SHA or ref.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiffGitRepositoryLinkCommitResponse diffGitRepositoryLinkCommit(
+      @Nullable GitRepositoryLinkName name, String baseSha, String headSha) {
+    DiffGitRepositoryLinkCommitRequest request =
+        DiffGitRepositoryLinkCommitRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setBaseSha(baseSha)
+            .setHeadSha(headSha)
+            .build();
+    return diffGitRepositoryLinkCommit(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Diff commits for a GitRepositoryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       GitRepositoryLinkName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *           .toString();
+   *   String baseSha = "baseSha-332627941";
+   *   String headSha = "headSha795290284";
+   *   DiffGitRepositoryLinkCommitResponse response =
+   *       developerConnectClient.diffGitRepositoryLinkCommit(name, baseSha, headSha);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink.
+   * @param baseSha Required. The base commit SHA or ref.
+   * @param headSha Required. The head commit SHA or ref.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiffGitRepositoryLinkCommitResponse diffGitRepositoryLinkCommit(
+      String name, String baseSha, String headSha) {
+    DiffGitRepositoryLinkCommitRequest request =
+        DiffGitRepositoryLinkCommitRequest.newBuilder()
+            .setName(name)
+            .setBaseSha(baseSha)
+            .setHeadSha(headSha)
+            .build();
+    return diffGitRepositoryLinkCommit(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Diff commits for a GitRepositoryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   DiffGitRepositoryLinkCommitRequest request =
+   *       DiffGitRepositoryLinkCommitRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setBaseSha("baseSha-332627941")
+   *           .setHeadSha("headSha795290284")
+   *           .addAllPathFilters(new ArrayList<String>())
+   *           .build();
+   *   DiffGitRepositoryLinkCommitResponse response =
+   *       developerConnectClient.diffGitRepositoryLinkCommit(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DiffGitRepositoryLinkCommitResponse diffGitRepositoryLinkCommit(
+      DiffGitRepositoryLinkCommitRequest request) {
+    return diffGitRepositoryLinkCommitCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Diff commits for a GitRepositoryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   DiffGitRepositoryLinkCommitRequest request =
+   *       DiffGitRepositoryLinkCommitRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setBaseSha("baseSha-332627941")
+   *           .setHeadSha("headSha795290284")
+   *           .addAllPathFilters(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<DiffGitRepositoryLinkCommitResponse> future =
+   *       developerConnectClient.diffGitRepositoryLinkCommitCallable().futureCall(request);
+   *   // Do something.
+   *   DiffGitRepositoryLinkCommitResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+      diffGitRepositoryLinkCommitCallable() {
+    return stub.diffGitRepositoryLinkCommitCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Commit details from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   GitRepositoryLinkName name =
+   *       GitRepositoryLinkName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+   *   String commitSha = "commitSha-1491174411";
+   *   FetchGitRepositoryLinkCommitResponse response =
+   *       developerConnectClient.fetchGitRepositoryLinkCommit(name, commitSha);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param commitSha Required. The commit SHA, or symbolic revision (e.g., branch name, tag, or Git
+   *     reference).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRepositoryLinkCommitResponse fetchGitRepositoryLinkCommit(
+      @Nullable GitRepositoryLinkName name, String commitSha) {
+    FetchGitRepositoryLinkCommitRequest request =
+        FetchGitRepositoryLinkCommitRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setCommitSha(commitSha)
+            .build();
+    return fetchGitRepositoryLinkCommit(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Commit details from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       GitRepositoryLinkName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *           .toString();
+   *   String commitSha = "commitSha-1491174411";
+   *   FetchGitRepositoryLinkCommitResponse response =
+   *       developerConnectClient.fetchGitRepositoryLinkCommit(name, commitSha);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param commitSha Required. The commit SHA, or symbolic revision (e.g., branch name, tag, or Git
+   *     reference).
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRepositoryLinkCommitResponse fetchGitRepositoryLinkCommit(
+      String name, String commitSha) {
+    FetchGitRepositoryLinkCommitRequest request =
+        FetchGitRepositoryLinkCommitRequest.newBuilder()
+            .setName(name)
+            .setCommitSha(commitSha)
+            .build();
+    return fetchGitRepositoryLinkCommit(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Commit details from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchGitRepositoryLinkCommitRequest request =
+   *       FetchGitRepositoryLinkCommitRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setCommitSha("commitSha-1491174411")
+   *           .setView(CommitView.forNumber(0))
+   *           .addAllPathFilters(new ArrayList<String>())
+   *           .build();
+   *   FetchGitRepositoryLinkCommitResponse response =
+   *       developerConnectClient.fetchGitRepositoryLinkCommit(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRepositoryLinkCommitResponse fetchGitRepositoryLinkCommit(
+      FetchGitRepositoryLinkCommitRequest request) {
+    return fetchGitRepositoryLinkCommitCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Commit details from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchGitRepositoryLinkCommitRequest request =
+   *       FetchGitRepositoryLinkCommitRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setCommitSha("commitSha-1491174411")
+   *           .setView(CommitView.forNumber(0))
+   *           .addAllPathFilters(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<FetchGitRepositoryLinkCommitResponse> future =
+   *       developerConnectClient.fetchGitRepositoryLinkCommitCallable().futureCall(request);
+   *   // Do something.
+   *   FetchGitRepositoryLinkCommitResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+      fetchGitRepositoryLinkCommitCallable() {
+    return stub.fetchGitRepositoryLinkCommitCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch a list of Commits from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   GitRepositoryLinkName name =
+   *       GitRepositoryLinkName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+   *   String ref = "ref112787";
+   *   for (SCMCommit element :
+   *       developerConnectClient.fetchGitRepositoryLinkCommitList(name, ref).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param ref Optional. The commit SHA, or symbolic revision (e.g., branch name, tag, or Git
+   *     reference) from which to start listing commits.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRepositoryLinkCommitListPagedResponse fetchGitRepositoryLinkCommitList(
+      @Nullable GitRepositoryLinkName name, String ref) {
+    FetchGitRepositoryLinkCommitListRequest request =
+        FetchGitRepositoryLinkCommitListRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setRef(ref)
+            .build();
+    return fetchGitRepositoryLinkCommitList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch a list of Commits from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       GitRepositoryLinkName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *           .toString();
+   *   String ref = "ref112787";
+   *   for (SCMCommit element :
+   *       developerConnectClient.fetchGitRepositoryLinkCommitList(name, ref).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param ref Optional. The commit SHA, or symbolic revision (e.g., branch name, tag, or Git
+   *     reference) from which to start listing commits.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRepositoryLinkCommitListPagedResponse fetchGitRepositoryLinkCommitList(
+      String name, String ref) {
+    FetchGitRepositoryLinkCommitListRequest request =
+        FetchGitRepositoryLinkCommitListRequest.newBuilder().setName(name).setRef(ref).build();
+    return fetchGitRepositoryLinkCommitList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch a list of Commits from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchGitRepositoryLinkCommitListRequest request =
+   *       FetchGitRepositoryLinkCommitListRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setRef("ref112787")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(CommitView.forNumber(0))
+   *           .build();
+   *   for (SCMCommit element :
+   *       developerConnectClient.fetchGitRepositoryLinkCommitList(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRepositoryLinkCommitListPagedResponse fetchGitRepositoryLinkCommitList(
+      FetchGitRepositoryLinkCommitListRequest request) {
+    return fetchGitRepositoryLinkCommitListPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch a list of Commits from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchGitRepositoryLinkCommitListRequest request =
+   *       FetchGitRepositoryLinkCommitListRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setRef("ref112787")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(CommitView.forNumber(0))
+   *           .build();
+   *   ApiFuture<SCMCommit> future =
+   *       developerConnectClient
+   *           .fetchGitRepositoryLinkCommitListPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (SCMCommit element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListPagedResponse>
+      fetchGitRepositoryLinkCommitListPagedCallable() {
+    return stub.fetchGitRepositoryLinkCommitListPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch a list of Commits from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchGitRepositoryLinkCommitListRequest request =
+   *       FetchGitRepositoryLinkCommitListRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setRef("ref112787")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(CommitView.forNumber(0))
+   *           .build();
+   *   while (true) {
+   *     FetchGitRepositoryLinkCommitListResponse response =
+   *         developerConnectClient.fetchGitRepositoryLinkCommitListCallable().call(request);
+   *     for (SCMCommit element : response.getCommitsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+      fetchGitRepositoryLinkCommitListCallable() {
+    return stub.fetchGitRepositoryLinkCommitListCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches blame information for a file or line range in a file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   GitRepositoryLinkName name =
+   *       GitRepositoryLinkName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+   *   String ref = "ref112787";
+   *   String path = "path3433509";
+   *   FetchGitRepositoryLinkFileBlameResponse response =
+   *       developerConnectClient.fetchGitRepositoryLinkFileBlame(name, ref, path);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param ref Required. The SCM commit SHA, or symbolic revision (e.g., branch name, tag) from
+   *     which to fetch the blame.
+   * @param path Required. The file path within the repository.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRepositoryLinkFileBlameResponse fetchGitRepositoryLinkFileBlame(
+      @Nullable GitRepositoryLinkName name, String ref, String path) {
+    FetchGitRepositoryLinkFileBlameRequest request =
+        FetchGitRepositoryLinkFileBlameRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setRef(ref)
+            .setPath(path)
+            .build();
+    return fetchGitRepositoryLinkFileBlame(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches blame information for a file or line range in a file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       GitRepositoryLinkName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *           .toString();
+   *   String ref = "ref112787";
+   *   String path = "path3433509";
+   *   FetchGitRepositoryLinkFileBlameResponse response =
+   *       developerConnectClient.fetchGitRepositoryLinkFileBlame(name, ref, path);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param ref Required. The SCM commit SHA, or symbolic revision (e.g., branch name, tag) from
+   *     which to fetch the blame.
+   * @param path Required. The file path within the repository.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRepositoryLinkFileBlameResponse fetchGitRepositoryLinkFileBlame(
+      String name, String ref, String path) {
+    FetchGitRepositoryLinkFileBlameRequest request =
+        FetchGitRepositoryLinkFileBlameRequest.newBuilder()
+            .setName(name)
+            .setRef(ref)
+            .setPath(path)
+            .build();
+    return fetchGitRepositoryLinkFileBlame(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches blame information for a file or line range in a file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchGitRepositoryLinkFileBlameRequest request =
+   *       FetchGitRepositoryLinkFileBlameRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setRef("ref112787")
+   *           .setPath("path3433509")
+   *           .setFirstLine(-161037277)
+   *           .setLastLine(2013070333)
+   *           .build();
+   *   FetchGitRepositoryLinkFileBlameResponse response =
+   *       developerConnectClient.fetchGitRepositoryLinkFileBlame(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRepositoryLinkFileBlameResponse fetchGitRepositoryLinkFileBlame(
+      FetchGitRepositoryLinkFileBlameRequest request) {
+    return fetchGitRepositoryLinkFileBlameCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches blame information for a file or line range in a file.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchGitRepositoryLinkFileBlameRequest request =
+   *       FetchGitRepositoryLinkFileBlameRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setRef("ref112787")
+   *           .setPath("path3433509")
+   *           .setFirstLine(-161037277)
+   *           .setLastLine(2013070333)
+   *           .build();
+   *   ApiFuture<FetchGitRepositoryLinkFileBlameResponse> future =
+   *       developerConnectClient.fetchGitRepositoryLinkFileBlameCallable().futureCall(request);
+   *   // Do something.
+   *   FetchGitRepositoryLinkFileBlameResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+      fetchGitRepositoryLinkFileBlameCallable() {
+    return stub.fetchGitRepositoryLinkFileBlameCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Pull Request details from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   GitRepositoryLinkName name =
+   *       GitRepositoryLinkName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+   *   String pullRequestId = "pullRequestId1573471045";
+   *   PullRequest response =
+   *       developerConnectClient.fetchGitRepositoryLinkPullRequest(name, pullRequestId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param pullRequestId Required. The ID of the Pull Request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequest fetchGitRepositoryLinkPullRequest(
+      @Nullable GitRepositoryLinkName name, String pullRequestId) {
+    FetchGitRepositoryLinkPullRequestRequest request =
+        FetchGitRepositoryLinkPullRequestRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setPullRequestId(pullRequestId)
+            .build();
+    return fetchGitRepositoryLinkPullRequest(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Pull Request details from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       GitRepositoryLinkName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *           .toString();
+   *   String pullRequestId = "pullRequestId1573471045";
+   *   PullRequest response =
+   *       developerConnectClient.fetchGitRepositoryLinkPullRequest(name, pullRequestId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param pullRequestId Required. The ID of the Pull Request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequest fetchGitRepositoryLinkPullRequest(String name, String pullRequestId) {
+    FetchGitRepositoryLinkPullRequestRequest request =
+        FetchGitRepositoryLinkPullRequestRequest.newBuilder()
+            .setName(name)
+            .setPullRequestId(pullRequestId)
+            .build();
+    return fetchGitRepositoryLinkPullRequest(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Pull Request details from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchGitRepositoryLinkPullRequestRequest request =
+   *       FetchGitRepositoryLinkPullRequestRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setPullRequestId("pullRequestId1573471045")
+   *           .build();
+   *   PullRequest response = developerConnectClient.fetchGitRepositoryLinkPullRequest(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequest fetchGitRepositoryLinkPullRequest(
+      FetchGitRepositoryLinkPullRequestRequest request) {
+    return fetchGitRepositoryLinkPullRequestCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch Pull Request details from a Git repository link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchGitRepositoryLinkPullRequestRequest request =
+   *       FetchGitRepositoryLinkPullRequestRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setPullRequestId("pullRequestId1573471045")
+   *           .build();
+   *   ApiFuture<PullRequest> future =
+   *       developerConnectClient.fetchGitRepositoryLinkPullRequestCallable().futureCall(request);
+   *   // Do something.
+   *   PullRequest response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchGitRepositoryLinkPullRequestRequest, PullRequest>
+      fetchGitRepositoryLinkPullRequestCallable() {
+    return stub.fetchGitRepositoryLinkPullRequestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Add a comment to a Pull Request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   GitRepositoryLinkName name =
+   *       GitRepositoryLinkName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+   *   String pullRequestId = "pullRequestId1573471045";
+   *   PullRequestComment comment = PullRequestComment.newBuilder().build();
+   *   PullRequestComment response =
+   *       developerConnectClient.addGitRepositoryLinkPullRequestComment(
+   *           name, pullRequestId, comment);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param pullRequestId Required. The ID of the Pull Request.
+   * @param comment Required. The comment to add.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequestComment addGitRepositoryLinkPullRequestComment(
+      @Nullable GitRepositoryLinkName name, String pullRequestId, PullRequestComment comment) {
+    AddGitRepositoryLinkPullRequestCommentRequest request =
+        AddGitRepositoryLinkPullRequestCommentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setPullRequestId(pullRequestId)
+            .setComment(comment)
+            .build();
+    return addGitRepositoryLinkPullRequestComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Add a comment to a Pull Request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       GitRepositoryLinkName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *           .toString();
+   *   String pullRequestId = "pullRequestId1573471045";
+   *   PullRequestComment comment = PullRequestComment.newBuilder().build();
+   *   PullRequestComment response =
+   *       developerConnectClient.addGitRepositoryLinkPullRequestComment(
+   *           name, pullRequestId, comment);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param pullRequestId Required. The ID of the Pull Request.
+   * @param comment Required. The comment to add.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequestComment addGitRepositoryLinkPullRequestComment(
+      String name, String pullRequestId, PullRequestComment comment) {
+    AddGitRepositoryLinkPullRequestCommentRequest request =
+        AddGitRepositoryLinkPullRequestCommentRequest.newBuilder()
+            .setName(name)
+            .setPullRequestId(pullRequestId)
+            .setComment(comment)
+            .build();
+    return addGitRepositoryLinkPullRequestComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Add a comment to a Pull Request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AddGitRepositoryLinkPullRequestCommentRequest request =
+   *       AddGitRepositoryLinkPullRequestCommentRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setPullRequestId("pullRequestId1573471045")
+   *           .setComment(PullRequestComment.newBuilder().build())
+   *           .build();
+   *   PullRequestComment response =
+   *       developerConnectClient.addGitRepositoryLinkPullRequestComment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequestComment addGitRepositoryLinkPullRequestComment(
+      AddGitRepositoryLinkPullRequestCommentRequest request) {
+    return addGitRepositoryLinkPullRequestCommentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Add a comment to a Pull Request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AddGitRepositoryLinkPullRequestCommentRequest request =
+   *       AddGitRepositoryLinkPullRequestCommentRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setPullRequestId("pullRequestId1573471045")
+   *           .setComment(PullRequestComment.newBuilder().build())
+   *           .build();
+   *   ApiFuture<PullRequestComment> future =
+   *       developerConnectClient
+   *           .addGitRepositoryLinkPullRequestCommentCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   PullRequestComment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>
+      addGitRepositoryLinkPullRequestCommentCallable() {
+    return stub.addGitRepositoryLinkPullRequestCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Add a review comment (inline on diff) to a Pull Request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   GitRepositoryLinkName name =
+   *       GitRepositoryLinkName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+   *   String pullRequestId = "pullRequestId1573471045";
+   *   PullRequestReviewComment comment = PullRequestReviewComment.newBuilder().build();
+   *   PullRequestReviewComment response =
+   *       developerConnectClient.addGitRepositoryLinkPullRequestReviewComment(
+   *           name, pullRequestId, comment);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param pullRequestId Required. The ID of the Pull Request.
+   * @param comment Required. The review comment to add.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequestReviewComment addGitRepositoryLinkPullRequestReviewComment(
+      @Nullable GitRepositoryLinkName name,
+      String pullRequestId,
+      PullRequestReviewComment comment) {
+    AddGitRepositoryLinkPullRequestReviewCommentRequest request =
+        AddGitRepositoryLinkPullRequestReviewCommentRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setPullRequestId(pullRequestId)
+            .setComment(comment)
+            .build();
+    return addGitRepositoryLinkPullRequestReviewComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Add a review comment (inline on diff) to a Pull Request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       GitRepositoryLinkName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *           .toString();
+   *   String pullRequestId = "pullRequestId1573471045";
+   *   PullRequestReviewComment comment = PullRequestReviewComment.newBuilder().build();
+   *   PullRequestReviewComment response =
+   *       developerConnectClient.addGitRepositoryLinkPullRequestReviewComment(
+   *           name, pullRequestId, comment);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the GitRepositoryLink in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param pullRequestId Required. The ID of the Pull Request.
+   * @param comment Required. The review comment to add.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequestReviewComment addGitRepositoryLinkPullRequestReviewComment(
+      String name, String pullRequestId, PullRequestReviewComment comment) {
+    AddGitRepositoryLinkPullRequestReviewCommentRequest request =
+        AddGitRepositoryLinkPullRequestReviewCommentRequest.newBuilder()
+            .setName(name)
+            .setPullRequestId(pullRequestId)
+            .setComment(comment)
+            .build();
+    return addGitRepositoryLinkPullRequestReviewComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Add a review comment (inline on diff) to a Pull Request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AddGitRepositoryLinkPullRequestReviewCommentRequest request =
+   *       AddGitRepositoryLinkPullRequestReviewCommentRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setPullRequestId("pullRequestId1573471045")
+   *           .setComment(PullRequestReviewComment.newBuilder().build())
+   *           .setCommitId("commitId-602292046")
+   *           .build();
+   *   PullRequestReviewComment response =
+   *       developerConnectClient.addGitRepositoryLinkPullRequestReviewComment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequestReviewComment addGitRepositoryLinkPullRequestReviewComment(
+      AddGitRepositoryLinkPullRequestReviewCommentRequest request) {
+    return addGitRepositoryLinkPullRequestReviewCommentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Add a review comment (inline on diff) to a Pull Request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   AddGitRepositoryLinkPullRequestReviewCommentRequest request =
+   *       AddGitRepositoryLinkPullRequestReviewCommentRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setPullRequestId("pullRequestId1573471045")
+   *           .setComment(PullRequestReviewComment.newBuilder().build())
+   *           .setCommitId("commitId-602292046")
+   *           .build();
+   *   ApiFuture<PullRequestReviewComment> future =
+   *       developerConnectClient
+   *           .addGitRepositoryLinkPullRequestReviewCommentCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   PullRequestReviewComment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+      addGitRepositoryLinkPullRequestReviewCommentCallable() {
+    return stub.addGitRepositoryLinkPullRequestReviewCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies a Pull Request in the remote SCM repository associated with a GitRepositoryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   GitRepositoryLinkName name =
+   *       GitRepositoryLinkName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+   *   String pullRequestId = "pullRequestId1573471045";
+   *   PullRequest response =
+   *       developerConnectClient.modifyGitRepositoryLinkPullRequest(name, pullRequestId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The GitRepositoryLink resource name in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param pullRequestId Required. The SCM-specific Pull Request identifier (e.g., "45").
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequest modifyGitRepositoryLinkPullRequest(
+      @Nullable GitRepositoryLinkName name, String pullRequestId) {
+    ModifyGitRepositoryLinkPullRequestRequest request =
+        ModifyGitRepositoryLinkPullRequestRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setPullRequestId(pullRequestId)
+            .build();
+    return modifyGitRepositoryLinkPullRequest(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies a Pull Request in the remote SCM repository associated with a GitRepositoryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       GitRepositoryLinkName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *           .toString();
+   *   String pullRequestId = "pullRequestId1573471045";
+   *   PullRequest response =
+   *       developerConnectClient.modifyGitRepositoryLinkPullRequest(name, pullRequestId);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The GitRepositoryLink resource name in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @param pullRequestId Required. The SCM-specific Pull Request identifier (e.g., "45").
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequest modifyGitRepositoryLinkPullRequest(String name, String pullRequestId) {
+    ModifyGitRepositoryLinkPullRequestRequest request =
+        ModifyGitRepositoryLinkPullRequestRequest.newBuilder()
+            .setName(name)
+            .setPullRequestId(pullRequestId)
+            .build();
+    return modifyGitRepositoryLinkPullRequest(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies a Pull Request in the remote SCM repository associated with a GitRepositoryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   ModifyGitRepositoryLinkPullRequestRequest request =
+   *       ModifyGitRepositoryLinkPullRequestRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setPullRequestId("pullRequestId1573471045")
+   *           .setTitle("title110371416")
+   *           .setBody("body3029410")
+   *           .setBaseRef("baseRef-332628990")
+   *           .build();
+   *   PullRequest response = developerConnectClient.modifyGitRepositoryLinkPullRequest(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PullRequest modifyGitRepositoryLinkPullRequest(
+      ModifyGitRepositoryLinkPullRequestRequest request) {
+    return modifyGitRepositoryLinkPullRequestCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies a Pull Request in the remote SCM repository associated with a GitRepositoryLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   ModifyGitRepositoryLinkPullRequestRequest request =
+   *       ModifyGitRepositoryLinkPullRequestRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setPullRequestId("pullRequestId1573471045")
+   *           .setTitle("title110371416")
+   *           .setBody("body3029410")
+   *           .setBaseRef("baseRef-332628990")
+   *           .build();
+   *   ApiFuture<PullRequest> future =
+   *       developerConnectClient.modifyGitRepositoryLinkPullRequestCallable().futureCall(request);
+   *   // Do something.
+   *   PullRequest response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>
+      modifyGitRepositoryLinkPullRequestCallable() {
+    return stub.modifyGitRepositoryLinkPullRequestCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a list of Pull Requests from the remote repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   GitRepositoryLinkName name =
+   *       GitRepositoryLinkName.of(
+   *           "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+   *   for (PullRequest element :
+   *       developerConnectClient.fetchGitRepositoryLinkPullRequestList(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The GitRepositoryLink resource name in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRepositoryLinkPullRequestListPagedResponse
+      fetchGitRepositoryLinkPullRequestList(@Nullable GitRepositoryLinkName name) {
+    FetchGitRepositoryLinkPullRequestListRequest request =
+        FetchGitRepositoryLinkPullRequestListRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return fetchGitRepositoryLinkPullRequestList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a list of Pull Requests from the remote repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   String name =
+   *       GitRepositoryLinkName.of(
+   *               "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *           .toString();
+   *   for (PullRequest element :
+   *       developerConnectClient.fetchGitRepositoryLinkPullRequestList(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The GitRepositoryLink resource name in the format
+   *     `projects/&#42;/locations/&#42;/connections/&#42;/gitRepositoryLinks/&#42;`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRepositoryLinkPullRequestListPagedResponse
+      fetchGitRepositoryLinkPullRequestList(String name) {
+    FetchGitRepositoryLinkPullRequestListRequest request =
+        FetchGitRepositoryLinkPullRequestListRequest.newBuilder().setName(name).build();
+    return fetchGitRepositoryLinkPullRequestList(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a list of Pull Requests from the remote repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchGitRepositoryLinkPullRequestListRequest request =
+   *       FetchGitRepositoryLinkPullRequestListRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (PullRequest element :
+   *       developerConnectClient.fetchGitRepositoryLinkPullRequestList(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchGitRepositoryLinkPullRequestListPagedResponse
+      fetchGitRepositoryLinkPullRequestList(FetchGitRepositoryLinkPullRequestListRequest request) {
+    return fetchGitRepositoryLinkPullRequestListPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a list of Pull Requests from the remote repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchGitRepositoryLinkPullRequestListRequest request =
+   *       FetchGitRepositoryLinkPullRequestListRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<PullRequest> future =
+   *       developerConnectClient
+   *           .fetchGitRepositoryLinkPullRequestListPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (PullRequest element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListPagedResponse>
+      fetchGitRepositoryLinkPullRequestListPagedCallable() {
+    return stub.fetchGitRepositoryLinkPullRequestListPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches a list of Pull Requests from the remote repository.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeveloperConnectClient developerConnectClient = DeveloperConnectClient.create()) {
+   *   FetchGitRepositoryLinkPullRequestListRequest request =
+   *       FetchGitRepositoryLinkPullRequestListRequest.newBuilder()
+   *           .setName(
+   *               GitRepositoryLinkName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     FetchGitRepositoryLinkPullRequestListResponse response =
+   *         developerConnectClient.fetchGitRepositoryLinkPullRequestListCallable().call(request);
+   *     for (PullRequest element : response.getPullRequestsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListResponse>
+      fetchGitRepositoryLinkPullRequestListCallable() {
+    return stub.fetchGitRepositoryLinkPullRequestListCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -5185,6 +6975,209 @@ public class DeveloperConnectClient implements BackgroundResource {
     protected FetchGitRefsFixedSizeCollection createCollection(
         @Nullable List<FetchGitRefsPage> pages, int collectionSize) {
       return new FetchGitRefsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class FetchGitRepositoryLinkCommitListPagedResponse
+      extends AbstractPagedListResponse<
+          FetchGitRepositoryLinkCommitListRequest,
+          FetchGitRepositoryLinkCommitListResponse,
+          SCMCommit,
+          FetchGitRepositoryLinkCommitListPage,
+          FetchGitRepositoryLinkCommitListFixedSizeCollection> {
+
+    public static ApiFuture<FetchGitRepositoryLinkCommitListPagedResponse> createAsync(
+        PageContext<
+                FetchGitRepositoryLinkCommitListRequest,
+                FetchGitRepositoryLinkCommitListResponse,
+                SCMCommit>
+            context,
+        ApiFuture<FetchGitRepositoryLinkCommitListResponse> futureResponse) {
+      ApiFuture<FetchGitRepositoryLinkCommitListPage> futurePage =
+          FetchGitRepositoryLinkCommitListPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new FetchGitRepositoryLinkCommitListPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private FetchGitRepositoryLinkCommitListPagedResponse(
+        FetchGitRepositoryLinkCommitListPage page) {
+      super(page, FetchGitRepositoryLinkCommitListFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class FetchGitRepositoryLinkCommitListPage
+      extends AbstractPage<
+          FetchGitRepositoryLinkCommitListRequest,
+          FetchGitRepositoryLinkCommitListResponse,
+          SCMCommit,
+          FetchGitRepositoryLinkCommitListPage> {
+
+    private FetchGitRepositoryLinkCommitListPage(
+        @Nullable
+            PageContext<
+                FetchGitRepositoryLinkCommitListRequest,
+                FetchGitRepositoryLinkCommitListResponse,
+                SCMCommit>
+            context,
+        @Nullable FetchGitRepositoryLinkCommitListResponse response) {
+      super(context, response);
+    }
+
+    private static FetchGitRepositoryLinkCommitListPage createEmptyPage() {
+      return new FetchGitRepositoryLinkCommitListPage(null, null);
+    }
+
+    @Override
+    protected FetchGitRepositoryLinkCommitListPage createPage(
+        @Nullable
+            PageContext<
+                FetchGitRepositoryLinkCommitListRequest,
+                FetchGitRepositoryLinkCommitListResponse,
+                SCMCommit>
+            context,
+        @Nullable FetchGitRepositoryLinkCommitListResponse response) {
+      return new FetchGitRepositoryLinkCommitListPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<FetchGitRepositoryLinkCommitListPage> createPageAsync(
+        @Nullable
+            PageContext<
+                FetchGitRepositoryLinkCommitListRequest,
+                FetchGitRepositoryLinkCommitListResponse,
+                SCMCommit>
+            context,
+        ApiFuture<FetchGitRepositoryLinkCommitListResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class FetchGitRepositoryLinkCommitListFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          FetchGitRepositoryLinkCommitListRequest,
+          FetchGitRepositoryLinkCommitListResponse,
+          SCMCommit,
+          FetchGitRepositoryLinkCommitListPage,
+          FetchGitRepositoryLinkCommitListFixedSizeCollection> {
+
+    private FetchGitRepositoryLinkCommitListFixedSizeCollection(
+        @Nullable List<FetchGitRepositoryLinkCommitListPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static FetchGitRepositoryLinkCommitListFixedSizeCollection createEmptyCollection() {
+      return new FetchGitRepositoryLinkCommitListFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected FetchGitRepositoryLinkCommitListFixedSizeCollection createCollection(
+        @Nullable List<FetchGitRepositoryLinkCommitListPage> pages, int collectionSize) {
+      return new FetchGitRepositoryLinkCommitListFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class FetchGitRepositoryLinkPullRequestListPagedResponse
+      extends AbstractPagedListResponse<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListResponse,
+          PullRequest,
+          FetchGitRepositoryLinkPullRequestListPage,
+          FetchGitRepositoryLinkPullRequestListFixedSizeCollection> {
+
+    public static ApiFuture<FetchGitRepositoryLinkPullRequestListPagedResponse> createAsync(
+        PageContext<
+                FetchGitRepositoryLinkPullRequestListRequest,
+                FetchGitRepositoryLinkPullRequestListResponse,
+                PullRequest>
+            context,
+        ApiFuture<FetchGitRepositoryLinkPullRequestListResponse> futureResponse) {
+      ApiFuture<FetchGitRepositoryLinkPullRequestListPage> futurePage =
+          FetchGitRepositoryLinkPullRequestListPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new FetchGitRepositoryLinkPullRequestListPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private FetchGitRepositoryLinkPullRequestListPagedResponse(
+        FetchGitRepositoryLinkPullRequestListPage page) {
+      super(page, FetchGitRepositoryLinkPullRequestListFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class FetchGitRepositoryLinkPullRequestListPage
+      extends AbstractPage<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListResponse,
+          PullRequest,
+          FetchGitRepositoryLinkPullRequestListPage> {
+
+    private FetchGitRepositoryLinkPullRequestListPage(
+        @Nullable
+            PageContext<
+                FetchGitRepositoryLinkPullRequestListRequest,
+                FetchGitRepositoryLinkPullRequestListResponse,
+                PullRequest>
+            context,
+        @Nullable FetchGitRepositoryLinkPullRequestListResponse response) {
+      super(context, response);
+    }
+
+    private static FetchGitRepositoryLinkPullRequestListPage createEmptyPage() {
+      return new FetchGitRepositoryLinkPullRequestListPage(null, null);
+    }
+
+    @Override
+    protected FetchGitRepositoryLinkPullRequestListPage createPage(
+        @Nullable
+            PageContext<
+                FetchGitRepositoryLinkPullRequestListRequest,
+                FetchGitRepositoryLinkPullRequestListResponse,
+                PullRequest>
+            context,
+        @Nullable FetchGitRepositoryLinkPullRequestListResponse response) {
+      return new FetchGitRepositoryLinkPullRequestListPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<FetchGitRepositoryLinkPullRequestListPage> createPageAsync(
+        @Nullable
+            PageContext<
+                FetchGitRepositoryLinkPullRequestListRequest,
+                FetchGitRepositoryLinkPullRequestListResponse,
+                PullRequest>
+            context,
+        ApiFuture<FetchGitRepositoryLinkPullRequestListResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class FetchGitRepositoryLinkPullRequestListFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListResponse,
+          PullRequest,
+          FetchGitRepositoryLinkPullRequestListPage,
+          FetchGitRepositoryLinkPullRequestListFixedSizeCollection> {
+
+    private FetchGitRepositoryLinkPullRequestListFixedSizeCollection(
+        @Nullable List<FetchGitRepositoryLinkPullRequestListPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static FetchGitRepositoryLinkPullRequestListFixedSizeCollection
+        createEmptyCollection() {
+      return new FetchGitRepositoryLinkPullRequestListFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected FetchGitRepositoryLinkPullRequestListFixedSizeCollection createCollection(
+        @Nullable List<FetchGitRepositoryLinkPullRequestListPage> pages, int collectionSize) {
+      return new FetchGitRepositoryLinkPullRequestListFixedSizeCollection(pages, collectionSize);
     }
   }
 

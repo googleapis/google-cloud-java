@@ -52,6 +52,14 @@ public final class ServingConfigProto extends com.google.protobuf.GeneratedFile 
       internal_static_google_cloud_discoveryengine_v1_ServingConfig_GenericConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_ServingConfig_GenericConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AnswerGenerationSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AnswerGenerationSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_AnswerGenerationSpec_UserDefinedClassifierSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_AnswerGenerationSpec_UserDefinedClassifierSpec_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -66,7 +74,7 @@ public final class ServingConfigProto extends com.google.protobuf.GeneratedFile 
           + "gine.v1\032\037google/api/field_behavior.proto"
           + "\032\031google/api/resource.proto\032,google/clou"
           + "d/discoveryengine/v1/common.proto\0324google/cloud/discoveryengine/v1/search_servic"
-          + "e.proto\032\037google/protobuf/timestamp.proto\"\200\014\n\r"
+          + "e.proto\032\037google/protobuf/timestamp.proto\"\335\014\n\r"
           + "ServingConfig\022R\n"
           + "\014media_config\030\007 \001(\013"
           + "2:.google.cloud.discoveryengine.v1.ServingConfig.MediaConfigH\000\022V\n"
@@ -91,7 +99,9 @@ public final class ServingConfigProto extends com.google.protobuf.GeneratedFile 
           + "\026dissociate_control_ids\030\021 \003(\t\022\037\n"
           + "\027replacement_control_ids\030\022 \003(\t\022\032\n"
           + "\022ignore_control_ids\030\023 \003(\t\022\033\n"
-          + "\023promote_control_ids\030\032 \003(\t\032\370\001\n"
+          + "\023promote_control_ids\030\032 \003(\t\022[\n"
+          + "\026answer_generation_spec\030\033 \001"
+          + "(\01325.google.cloud.discoveryengine.v1.AnswerGenerationSpecB\004\342A\001\001\032\370\001\n"
           + "\013MediaConfig\022.\n"
           + "$content_watched_percentage_threshold\030\002 \001(\002H\000\022+\n"
           + "!content_watched_seconds_threshold\030\005 \001(\002H\000\022\033\n"
@@ -100,20 +110,32 @@ public final class ServingConfigProto extends com.google.protobuf.GeneratedFile 
           + "\035content_freshness_cutoff_days\030\004 \001(\005B\030\n"
           + "\026demote_content_watched\032n\n\r"
           + "GenericConfig\022]\n"
-          + "\023content_search_spec\030\001 \001(\0132@.google.clo"
-          + "ud.discoveryengine.v1.SearchRequest.ContentSearchSpec:\200\003\352A\374\002\n"
-          + ",discoveryengine.googleapis.com/ServingConfig\022_projects/{pr"
-          + "oject}/locations/{location}/dataStores/{data_store}/servingConfigs/{serving_conf"
-          + "ig}\022xprojects/{project}/locations/{location}/collections/{collection}/dataStores"
-          + "/{data_store}/servingConfigs/{serving_config}\022qprojects/{project}/locations/{loc"
-          + "ation}/collections/{collection}/engines/"
-          + "{engine}/servingConfigs/{serving_config}B\021\n"
-          + "\017vertical_configB\205\002\n"
-          + "#com.google.cloud.discoveryengine.v1B\022ServingConfigProtoP"
-          + "\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;discoveryenginepb"
-          + "\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud.Discov"
-          + "eryEngine.V1\312\002\037Google\\Cloud\\DiscoveryEng"
-          + "ine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
+          + "\023content_search_spec\030\001 \001(\013"
+          + "2@.google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec:\200\003\352A\374\002\n"
+          + ",discoveryengine.googleapis.com/ServingConfig\022"
+          + "_projects/{project}/locations/{location}/dataStores/{data_store}/servingConfigs/"
+          + "{serving_config}\022xprojects/{project}/locations/{location}/collections/{collectio"
+          + "n}/dataStores/{data_store}/servingConfigs/{serving_config}\022qprojects/{project}/l"
+          + "ocations/{location}/collections/{collect"
+          + "ion}/engines/{engine}/servingConfigs/{serving_config}B\021\n"
+          + "\017vertical_config\"\203\003\n"
+          + "\024AnswerGenerationSpec\022{\n"
+          + "\034user_defined_classifier_spec\030\001 \001(\0132O.google.cloud.discovery"
+          + "engine.v1.AnswerGenerationSpec.UserDefinedClassifierSpecB\004\342A\001\001\032\355\001\n"
+          + "\031UserDefinedClassifierSpec\022,\n"
+          + "\036enable_user_defined_classifier\030\001 \001(\010B\004\342A\001\001\022\026\n"
+          + "\010preamble\030\002 \001(\tB\004\342A\001\001\022\026\n"
+          + "\010model_id\030\003 \001(\tB\004\342A\001\001\022\031\n"
+          + "\013task_marker\030\004 \001(\tB\004\342A\001\001\022\023\n"
+          + "\005top_p\030\005 \001(\001B\004\342A\001\001\022\023\n"
+          + "\005top_k\030\006 \001(\003B\004\342A\001\001\022\031\n"
+          + "\013temperature\030\007 \001(\001B\004\342A\001\001\022\022\n"
+          + "\004seed\030\010 \001(\005B\004\342A\001\001B\205\002\n"
+          + "#com.google.cloud.discoveryengine.v1B\022ServingConfigPro"
+          + "toP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;discoveryengin"
+          + "epb\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud.Dis"
+          + "coveryEngine.V1\312\002\037Google\\Cloud\\Discovery"
+          + "Engine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -150,6 +172,7 @@ public final class ServingConfigProto extends com.google.protobuf.GeneratedFile 
               "ReplacementControlIds",
               "IgnoreControlIds",
               "PromoteControlIds",
+              "AnswerGenerationSpec",
               "VerticalConfig",
             });
     internal_static_google_cloud_discoveryengine_v1_ServingConfig_MediaConfig_descriptor =
@@ -172,6 +195,30 @@ public final class ServingConfigProto extends com.google.protobuf.GeneratedFile 
             internal_static_google_cloud_discoveryengine_v1_ServingConfig_GenericConfig_descriptor,
             new java.lang.String[] {
               "ContentSearchSpec",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AnswerGenerationSpec_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_cloud_discoveryengine_v1_AnswerGenerationSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AnswerGenerationSpec_descriptor,
+            new java.lang.String[] {
+              "UserDefinedClassifierSpec",
+            });
+    internal_static_google_cloud_discoveryengine_v1_AnswerGenerationSpec_UserDefinedClassifierSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_AnswerGenerationSpec_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_AnswerGenerationSpec_UserDefinedClassifierSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_AnswerGenerationSpec_UserDefinedClassifierSpec_descriptor,
+            new java.lang.String[] {
+              "EnableUserDefinedClassifier",
+              "Preamble",
+              "ModelId",
+              "TaskMarker",
+              "TopP",
+              "TopK",
+              "Temperature",
+              "Seed",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

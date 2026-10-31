@@ -156,6 +156,32 @@ public interface IdentityMappingEntryOrBuilder
    */
   com.google.protobuf.ByteString getExternalIdentityBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the external identity.
+   * </pre>
+   *
+   * <code>string external_identity_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The externalIdentityName.
+   */
+  java.lang.String getExternalIdentityName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the external identity.
+   * </pre>
+   *
+   * <code>string external_identity_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for externalIdentityName.
+   */
+  com.google.protobuf.ByteString getExternalIdentityNameBytes();
+
   com.google.cloud.discoveryengine.v1.IdentityMappingEntry.IdentityProviderIdCase
       getIdentityProviderIdCase();
 }

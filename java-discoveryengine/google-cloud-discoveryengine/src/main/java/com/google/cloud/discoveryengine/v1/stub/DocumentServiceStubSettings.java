@@ -160,7 +160,11 @@ import org.jspecify.annotations.Nullable;
 public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
   private final UnaryCallSettings<GetDocumentRequest, Document> getDocumentSettings;
   private final PagedCallSettings<
@@ -453,7 +457,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
           "retry_policy_1_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "retry_policy_2_codes",
+          "retry_policy_3_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -484,7 +488,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
               .setMaxRpcTimeoutDuration(Duration.ofMillis(300000L))
               .setTotalTimeoutDuration(Duration.ofMillis(300000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
+      definitions.put("retry_policy_3_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -597,8 +601,8 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
 
       builder
           .importDocumentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
 
       builder
           .purgeDocumentsSettings()
@@ -615,8 +619,8 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
           .setInitialCallSettings(
               UnaryCallSettings
                   .<ImportDocumentsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(ImportDocumentsResponse.class))

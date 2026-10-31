@@ -30,7 +30,7 @@ public interface AssistAnswerOrBuilder
    *
    *
    * <pre>
-   * Immutable. Resource name of the `AssistAnswer`.
+   * Immutable. Identifier. Resource name of the `AssistAnswer`.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/assistAnswers/{assist_answer}`
    *
@@ -38,7 +38,9 @@ public interface AssistAnswerOrBuilder
    * characters.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The name.
    */
@@ -48,7 +50,7 @@ public interface AssistAnswerOrBuilder
    *
    *
    * <pre>
-   * Immutable. Resource name of the `AssistAnswer`.
+   * Immutable. Identifier. Resource name of the `AssistAnswer`.
    * Format:
    * `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/assistAnswers/{assist_answer}`
    *
@@ -56,7 +58,9 @@ public interface AssistAnswerOrBuilder
    * characters.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = IDENTIFIER];
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -87,6 +91,104 @@ public interface AssistAnswerOrBuilder
    * @return The state.
    */
   com.google.cloud.discoveryengine.v1.AssistAnswer.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Maps an internal connector agent name (the machine identifier
+   * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+   * connector's human-readable display name. Populated at serving time for
+   * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+   * tool-call chip) can show the connector name instead of its internal
+   * identifier. Empty when there are no such connectors.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getConnectorDisplayNamesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Maps an internal connector agent name (the machine identifier
+   * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+   * connector's human-readable display name. Populated at serving time for
+   * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+   * tool-call chip) can show the connector name instead of its internal
+   * identifier. Empty when there are no such connectors.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean containsConnectorDisplayNames(java.lang.String key);
+
+  /** Use {@link #getConnectorDisplayNamesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getConnectorDisplayNames();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Maps an internal connector agent name (the machine identifier
+   * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+   * connector's human-readable display name. Populated at serving time for
+   * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+   * tool-call chip) can show the connector name instead of its internal
+   * identifier. Empty when there are no such connectors.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getConnectorDisplayNamesMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Maps an internal connector agent name (the machine identifier
+   * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+   * connector's human-readable display name. Populated at serving time for
+   * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+   * tool-call chip) can show the connector name instead of its internal
+   * identifier. Empty when there are no such connectors.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getConnectorDisplayNamesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Maps an internal connector agent name (the machine identifier
+   * embedded in tool names, e.g. `custom_mcp_&lt;fingerprint&gt;_agent`) to the
+   * connector's human-readable display name. Populated at serving time for
+   * custom MCP / agent gateway connectors so user-facing surfaces (e.g. the
+   * tool-call chip) can show the connector name instead of its internal
+   * identifier. Empty when there are no such connectors.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, string&gt; connector_display_names = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.lang.String getConnectorDisplayNamesOrThrow(java.lang.String key);
 
   /**
    *
@@ -222,4 +324,55 @@ public interface AssistAnswerOrBuilder
    * @return The enum numeric value on the wire of assistSkippedReasons at the given index.
    */
   int getAssistSkippedReasonsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field contains information about the various policy checks'
+   * results like the banned phrases or the Model Armor checks. This field is
+   * populated only if the assist call was skipped due to a policy violation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customerPolicyEnforcementResult field is set.
+   */
+  boolean hasCustomerPolicyEnforcementResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field contains information about the various policy checks'
+   * results like the banned phrases or the Model Armor checks. This field is
+   * populated only if the assist call was skipped due to a policy violation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customerPolicyEnforcementResult.
+   */
+  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult
+      getCustomerPolicyEnforcementResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field contains information about the various policy checks'
+   * results like the banned phrases or the Model Armor checks. This field is
+   * populated only if the assist call was skipped due to a policy violation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResult customer_policy_enforcement_result = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.AssistAnswer.CustomerPolicyEnforcementResultOrBuilder
+      getCustomerPolicyEnforcementResultOrBuilder();
 }

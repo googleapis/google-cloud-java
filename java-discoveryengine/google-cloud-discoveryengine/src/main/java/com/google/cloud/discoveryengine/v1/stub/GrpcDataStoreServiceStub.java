@@ -35,6 +35,9 @@ import com.google.cloud.discoveryengine.v1.GetDataStoreRequest;
 import com.google.cloud.discoveryengine.v1.ListDataStoresRequest;
 import com.google.cloud.discoveryengine.v1.ListDataStoresResponse;
 import com.google.cloud.discoveryengine.v1.UpdateDataStoreRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -109,6 +112,24 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
+      MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.discoveryengine.v1.DataStoreService/GetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
+      MethodDescriptor.<SetIamPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.discoveryengine.v1.DataStoreService/SetIamPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
   private final UnaryCallable<CreateDataStoreRequest, Operation> createDataStoreCallable;
   private final OperationCallable<CreateDataStoreRequest, DataStore, CreateDataStoreMetadata>
       createDataStoreOperationCallable;
@@ -120,6 +141,8 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
   private final OperationCallable<DeleteDataStoreRequest, Empty, DeleteDataStoreMetadata>
       deleteDataStoreOperationCallable;
   private final UnaryCallable<UpdateDataStoreRequest, DataStore> updateDataStoreCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -220,6 +243,28 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
+        GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
+    GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
+        GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("resource", String.valueOf(request.getResource()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getResource())
+            .build();
 
     this.createDataStoreCallable =
         callableFactory.createUnaryCallable(
@@ -251,6 +296,12 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
     this.updateDataStoreCallable =
         callableFactory.createUnaryCallable(
             updateDataStoreTransportSettings, settings.updateDataStoreSettings(), clientContext);
+    this.getIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
+    this.setIamPolicyCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyTransportSettings, settings.setIamPolicySettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -301,6 +352,16 @@ public class GrpcDataStoreServiceStub extends DataStoreServiceStub {
   @Override
   public UnaryCallable<UpdateDataStoreRequest, DataStore> updateDataStoreCallable() {
     return updateDataStoreCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
   }
 
   @Override

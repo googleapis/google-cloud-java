@@ -19,6 +19,8 @@ package com.google.cloud.discoveryengine.v1.stub;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.AdvancedCompleteQueryRequest;
+import com.google.cloud.discoveryengine.v1.AdvancedCompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1.CompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsMetadata;
@@ -60,6 +62,11 @@ public abstract class CompletionServiceStub implements BackgroundResource {
 
   public UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable() {
     throw new UnsupportedOperationException("Not implemented: completeQueryCallable()");
+  }
+
+  public UnaryCallable<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: advancedCompleteQueryCallable()");
   }
 
   public OperationCallable<

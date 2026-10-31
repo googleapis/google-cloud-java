@@ -105,7 +105,9 @@ public interface ListSessionsRequestOrBuilder
    *
    * <pre>
    * A comma-separated list of fields to filter by, in EBNF grammar.
+   *
    * The supported fields are:
+   *
    * * `user_pseudo_id`
    * * `state`
    * * `display_name`
@@ -114,13 +116,18 @@ public interface ListSessionsRequestOrBuilder
    * * `labels`
    * * `create_time`
    * * `update_time`
+   * * `collaborative_project`
    *
    * Examples:
-   * "user_pseudo_id = some_id"
-   * "display_name = &#92;"some_name&#92;""
-   * "starred = true"
-   * "is_pinned=true AND (NOT labels:hidden)"
-   * "create_time &gt; &#92;"1970-01-01T12:00:00Z&#92;""
+   *
+   * * `user_pseudo_id = some_id`
+   * * `display_name = "some_name"`
+   * * `starred = true`
+   * * `is_pinned=true AND (NOT labels:hidden)`
+   * * `create_time &gt; "1970-01-01T12:00:00Z"`
+   * * `collaborative_project =
+   * "projects/123/locations/global/collections/default_collection/engines/"
+   * "default_engine/collaborative_projects/cp1"`
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -134,7 +141,9 @@ public interface ListSessionsRequestOrBuilder
    *
    * <pre>
    * A comma-separated list of fields to filter by, in EBNF grammar.
+   *
    * The supported fields are:
+   *
    * * `user_pseudo_id`
    * * `state`
    * * `display_name`
@@ -143,13 +152,18 @@ public interface ListSessionsRequestOrBuilder
    * * `labels`
    * * `create_time`
    * * `update_time`
+   * * `collaborative_project`
    *
    * Examples:
-   * "user_pseudo_id = some_id"
-   * "display_name = &#92;"some_name&#92;""
-   * "starred = true"
-   * "is_pinned=true AND (NOT labels:hidden)"
-   * "create_time &gt; &#92;"1970-01-01T12:00:00Z&#92;""
+   *
+   * * `user_pseudo_id = some_id`
+   * * `display_name = "some_name"`
+   * * `starred = true`
+   * * `is_pinned=true AND (NOT labels:hidden)`
+   * * `create_time &gt; "1970-01-01T12:00:00Z"`
+   * * `collaborative_project =
+   * "projects/123/locations/global/collections/default_collection/engines/"
+   * "default_engine/collaborative_projects/cp1"`
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -164,18 +178,20 @@ public interface ListSessionsRequestOrBuilder
    * <pre>
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
+   *
    * Supported fields:
    *
    * * `update_time`
    * * `create_time`
    * * `session_name`
    * * `is_pinned`
+   * * `display_name`
    *
    * Example:
    *
-   * * "update_time desc"
-   * * "create_time"
-   * * "is_pinned desc,update_time desc": list sessions by is_pinned first, then
+   * * `update_time desc`
+   * * `create_time`
+   * * `is_pinned desc,update_time desc`: list sessions by is_pinned first, then
    * by update_time.
    * </pre>
    *
@@ -191,18 +207,20 @@ public interface ListSessionsRequestOrBuilder
    * <pre>
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
+   *
    * Supported fields:
    *
    * * `update_time`
    * * `create_time`
    * * `session_name`
    * * `is_pinned`
+   * * `display_name`
    *
    * Example:
    *
-   * * "update_time desc"
-   * * "create_time"
-   * * "is_pinned desc,update_time desc": list sessions by is_pinned first, then
+   * * `update_time desc`
+   * * `create_time`
+   * * `is_pinned desc,update_time desc`: list sessions by is_pinned first, then
    * by update_time.
    * </pre>
    *

@@ -16,6 +16,8 @@
 
 package com.google.cloud.discoveryengine.v1;
 
+import static com.google.cloud.discoveryengine.v1.AssistantServiceClient.ListAssistantsPagedResponse;
+
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,10 +27,12 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.discoveryengine.v1.stub.AssistantServiceStubSettings;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -53,7 +57,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of streamAssist:
+ * of createAssistant:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -64,10 +68,10 @@ import org.jspecify.annotations.Nullable;
  * AssistantServiceSettings.Builder assistantServiceSettingsBuilder =
  *     AssistantServiceSettings.newBuilder();
  * assistantServiceSettingsBuilder
- *     .streamAssistSettings()
+ *     .createAssistantSettings()
  *     .setRetrySettings(
  *         assistantServiceSettingsBuilder
- *             .streamAssistSettings()
+ *             .createAssistantSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -94,6 +98,33 @@ public class AssistantServiceSettings extends ClientSettings<AssistantServiceSet
   public ServerStreamingCallSettings<StreamAssistRequest, StreamAssistResponse>
       streamAssistSettings() {
     return ((AssistantServiceStubSettings) getStubSettings()).streamAssistSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAssistant. */
+  public UnaryCallSettings<CreateAssistantRequest, Assistant> createAssistantSettings() {
+    return ((AssistantServiceStubSettings) getStubSettings()).createAssistantSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAssistant. */
+  public UnaryCallSettings<DeleteAssistantRequest, Empty> deleteAssistantSettings() {
+    return ((AssistantServiceStubSettings) getStubSettings()).deleteAssistantSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAssistant. */
+  public UnaryCallSettings<UpdateAssistantRequest, Assistant> updateAssistantSettings() {
+    return ((AssistantServiceStubSettings) getStubSettings()).updateAssistantSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAssistant. */
+  public UnaryCallSettings<GetAssistantRequest, Assistant> getAssistantSettings() {
+    return ((AssistantServiceStubSettings) getStubSettings()).getAssistantSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAssistants. */
+  public PagedCallSettings<
+          ListAssistantsRequest, ListAssistantsResponse, ListAssistantsPagedResponse>
+      listAssistantsSettings() {
+    return ((AssistantServiceStubSettings) getStubSettings()).listAssistantsSettings();
   }
 
   public static final AssistantServiceSettings create(AssistantServiceStubSettings stub)
@@ -212,6 +243,33 @@ public class AssistantServiceSettings extends ClientSettings<AssistantServiceSet
     public ServerStreamingCallSettings.Builder<StreamAssistRequest, StreamAssistResponse>
         streamAssistSettings() {
       return getStubSettingsBuilder().streamAssistSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAssistant. */
+    public UnaryCallSettings.Builder<CreateAssistantRequest, Assistant> createAssistantSettings() {
+      return getStubSettingsBuilder().createAssistantSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAssistant. */
+    public UnaryCallSettings.Builder<DeleteAssistantRequest, Empty> deleteAssistantSettings() {
+      return getStubSettingsBuilder().deleteAssistantSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAssistant. */
+    public UnaryCallSettings.Builder<UpdateAssistantRequest, Assistant> updateAssistantSettings() {
+      return getStubSettingsBuilder().updateAssistantSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAssistant. */
+    public UnaryCallSettings.Builder<GetAssistantRequest, Assistant> getAssistantSettings() {
+      return getStubSettingsBuilder().getAssistantSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAssistants. */
+    public PagedCallSettings.Builder<
+            ListAssistantsRequest, ListAssistantsResponse, ListAssistantsPagedResponse>
+        listAssistantsSettings() {
+      return getStubSettingsBuilder().listAssistantsSettings();
     }
 
     @Override
