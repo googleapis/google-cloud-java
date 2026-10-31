@@ -384,6 +384,10 @@ public class Publisher implements PublisherInterface {
       }
 
       batchesToSend = messagesBatch.add(outstandingPublish);
+      // Counted while messagesBatchLock is held, so that "in a MessagesBatch" and "counted" are
+      // one state: the failure callback decrements for what it cancels out of a MessagesBatch.
+      // Lock ordering is messagesBatchLock -> Waiter monitor here and nowhere the reverse.
+      messagesWaiter.incrementPendingCount(1);
       if (!batchesToSend.isEmpty() && messagesBatch.isEmpty()) {
         messagesBatches.remove(orderingKey);
       }
@@ -401,8 +405,6 @@ public class Publisher implements PublisherInterface {
     } finally {
       messagesBatchLock.unlock();
     }
-
-    messagesWaiter.incrementPendingCount(1);
 
     // For messages without ordering keys, it is okay to send batches without holding
     // messagesBatchLock.
@@ -647,6 +649,9 @@ public class Publisher implements PublisherInterface {
 
           @Override
           public void onFailure(Throwable t) {
+            // Cancelled below without ever becoming part of an OutstandingBatch, so nothing
+            // else will decrement for them.
+            int cancelledMessagesCount = 0;
             try {
               if (outstandingBatch.orderingKey != null && !outstandingBatch.orderingKey.isEmpty()) {
                 messagesBatchLock.lock();
@@ -657,6 +662,7 @@ public class Publisher implements PublisherInterface {
                       outstanding.publishResult.setException(
                           SequentialExecutorService.CallbackExecutor.CANCELLATION_EXCEPTION);
                     }
+                    cancelledMessagesCount = messagesBatch.getMessagesCount();
                     messagesBatches.remove(outstandingBatch.orderingKey);
                   }
                 } finally {
@@ -665,7 +671,8 @@ public class Publisher implements PublisherInterface {
               }
               outstandingBatch.onFailure(t);
             } finally {
-              messagesWaiter.incrementPendingCount(-outstandingBatch.size());
+              messagesWaiter.incrementPendingCount(
+                  -(outstandingBatch.size() + cancelledMessagesCount));
             }
           }
         };
