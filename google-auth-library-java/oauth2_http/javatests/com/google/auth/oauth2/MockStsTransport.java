@@ -71,6 +71,7 @@ public final class MockStsTransport extends MockHttpTransport {
           + "I0Q9ZWIR1oqJXFnDFxHuwX4SEGAEQARj2hIWLCiAB";
 
   private final Queue<IOException> responseErrorSequence = new ArrayDeque<>();
+  private final Queue<LowLevelHttpResponse> responseSequence = new ArrayDeque<>();
   private final Queue<List<String>> scopeSequence = new ArrayDeque<>();
   private final Queue<String> refreshTokenSequence = new ArrayDeque<>();
 
@@ -82,6 +83,10 @@ public final class MockStsTransport extends MockHttpTransport {
 
   public void addResponseErrorSequence(IOException... errors) {
     Collections.addAll(responseErrorSequence, errors);
+  }
+
+  public void addResponseSequence(LowLevelHttpResponse... responses) {
+    Collections.addAll(responseSequence, responses);
   }
 
   public void addRefreshTokenSequence(String... refreshTokens) {
@@ -107,6 +112,9 @@ public final class MockStsTransport extends MockHttpTransport {
 
             if (!responseErrorSequence.isEmpty()) {
               throw responseErrorSequence.poll();
+            }
+            if (!responseSequence.isEmpty()) {
+              return responseSequence.poll();
             }
 
             GenericJson response = new GenericJson();

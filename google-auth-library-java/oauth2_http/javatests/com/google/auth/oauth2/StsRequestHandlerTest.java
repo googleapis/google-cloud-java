@@ -36,7 +36,9 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.client.util.GenericData;
 import com.google.auth.TestUtils;
 import com.google.common.base.Joiner;
@@ -172,10 +174,11 @@ final class StsRequestHandlerTest {
                 TOKEN_URL, stsTokenExchangeRequest, transport.createRequestFactory())
             .build();
 
-    IOException error =
-        TestUtils.buildHttpResponseException(
-            "invalidRequest", /* errorDescription= */ null, /* errorUri= */ null);
-    transport.addResponseErrorSequence(error, error, error, error);
+    transport.addResponseSequence(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(HttpStatusCodes.STATUS_CODE_BAD_REQUEST)
+            .setContentType("application/json")
+            .setContent("{\"error\":\"invalidRequest\"}"));
 
     OAuthException e = assertThrows(OAuthException.class, requestHandler::exchangeToken);
 
@@ -194,9 +197,13 @@ final class StsRequestHandlerTest {
                 TOKEN_URL, stsTokenExchangeRequest, transport.createRequestFactory())
             .build();
 
-    IOException error =
-        TestUtils.buildHttpResponseException("invalidRequest", "errorDescription", "errorUri");
-    transport.addResponseErrorSequence(error, error, error, error);
+    transport.addResponseSequence(
+        new MockLowLevelHttpResponse()
+            .setStatusCode(HttpStatusCodes.STATUS_CODE_BAD_REQUEST)
+            .setContentType("application/json")
+            .setContent(
+                "{\"error\":\"invalidRequest\",\"error_description\":\"errorDescription\","
+                    + "\"error_uri\":\"errorUri\"}"));
 
     OAuthException e = assertThrows(OAuthException.class, requestHandler::exchangeToken);
 

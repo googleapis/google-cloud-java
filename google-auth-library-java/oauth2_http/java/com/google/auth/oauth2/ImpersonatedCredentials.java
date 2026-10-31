@@ -35,7 +35,6 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpBackOffIOExceptionHandler;
 import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
@@ -44,7 +43,6 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
-import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.client.util.GenericData;
 import com.google.api.core.ObsoleteApi;
 import com.google.auth.CredentialTypeForMetrics;
@@ -810,14 +808,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       request.setUnsuccessfulResponseHandler(null);
     }
     request.setParser(parser);
-    request.setNumberOfRetries(OAuth2Utils.DEFAULT_NUMBER_OF_RETRIES);
-    ExponentialBackOff backoff =
-        new ExponentialBackOff.Builder()
-            .setInitialIntervalMillis(OAuth2Utils.INITIAL_RETRY_INTERVAL_MILLIS)
-            .setRandomizationFactor(OAuth2Utils.RETRY_RANDOMIZATION_FACTOR)
-            .setMultiplier(OAuth2Utils.RETRY_MULTIPLIER)
-            .build();
-    request.setIOExceptionHandler(new HttpBackOffIOExceptionHandler(backoff));
+    OAuth2Utils.setDefaultRetrySettings(request);
     MetricsUtils.setMetricsHeader(
         request,
         MetricsUtils.getGoogleCredentialsMetricsHeader(

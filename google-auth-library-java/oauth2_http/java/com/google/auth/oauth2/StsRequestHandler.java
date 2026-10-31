@@ -32,7 +32,6 @@
 package com.google.auth.oauth2;
 
 import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpBackOffIOExceptionHandler;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
@@ -42,7 +41,6 @@ import com.google.api.client.http.UrlEncodedContent;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.JsonParser;
-import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.client.util.GenericData;
 import com.google.common.base.Joiner;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
@@ -115,14 +113,7 @@ public final class StsRequestHandler {
     // is used instead to mask those tokens.
     httpRequest.setLoggingEnabled(false);
     httpRequest.setParser(new JsonObjectParser(OAuth2Utils.JSON_FACTORY));
-    httpRequest.setNumberOfRetries(OAuth2Utils.DEFAULT_NUMBER_OF_RETRIES);
-    ExponentialBackOff backoff =
-        new ExponentialBackOff.Builder()
-            .setInitialIntervalMillis(OAuth2Utils.INITIAL_RETRY_INTERVAL_MILLIS)
-            .setRandomizationFactor(OAuth2Utils.RETRY_RANDOMIZATION_FACTOR)
-            .setMultiplier(OAuth2Utils.RETRY_MULTIPLIER)
-            .build();
-    httpRequest.setIOExceptionHandler(new HttpBackOffIOExceptionHandler(backoff));
+    OAuth2Utils.setDefaultRetrySettings(httpRequest);
     if (headers != null) {
       httpRequest.setHeaders(headers);
     }
