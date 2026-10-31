@@ -31,6 +31,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.OutOfRangeException;
 import com.google.cloud.storage.ITObjectReadSessionFakeTest.FakeStorage;
+import com.google.cloud.storage.ReadProjectionConfigs.BaseConfig;
 import com.google.cloud.storage.it.ChecksummedTestContent;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
@@ -192,6 +193,37 @@ public final class ITFastOpenFakeTest {
 
     assertThat(requestsReceived)
         .containsExactly(OPEN_WITH_READ_OF_10_TO_20, readOf20To30)
+        .inOrder();
+  }
+
+  @Test
+  public void readAs_withAWrappedFastOpenConfig_isServedFromTheFastOpenRead() throws Exception {
+    BidiReadObjectRequest secondReadOf10To20 = read(2, 10, 10);
+    FakeStorage server =
+        fakeServer(
+            ImmutableMap.of(
+                OPEN_WITH_READ_OF_10_TO_20, metadataAndBytes(1, 10, 10),
+                secondReadOf10To20, bytes(2, 10, 10)));
+    WrappedConfig wrapped = new WrappedConfig(READ_10_TO_20);
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      try (ObjectReadSession session =
+          dataClient.readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20)).get(5, SECONDS)) {
+        ApiFuture<byte[]> fastOpenFuture = session.readAs(wrapped);
+        assertThat(wrapped.claimed).containsExactly(fastOpenFuture);
+        byte[] fastOpen = fastOpenFuture.get(2, SECONDS);
+        byte[] second = session.readAs(wrapped).get(2, SECONDS);
+        assertThat(wrapped.claimed).containsExactly(fastOpenFuture);
+        assertThat(xxd(fastOpen)).isEqualTo(xxd(slice(10, 10)));
+        assertThat(xxd(second)).isEqualTo(xxd(slice(10, 10)));
+      }
+    }
+
+    assertThat(requestsReceived)
+        .containsExactly(OPEN_WITH_READ_OF_10_TO_20, secondReadOf10To20)
         .inOrder();
   }
 
@@ -453,5 +485,35 @@ public final class ITFastOpenFakeTest {
 
   private static byte[] slice(int offset, int length) {
     return Arrays.copyOfRange(ALL_OBJECT_BYTES, offset, offset + length);
+  }
+
+  /** Wraps a config the way tracing does, and records each fast open hit. */
+  private static final class WrappedConfig extends ReadProjectionConfig<ApiFuture<byte[]>> {
+    private final ReadAsFutureBytes delegate;
+    private final List<ApiFuture<byte[]>> claimed = new ArrayList<>();
+
+    private WrappedConfig(ReadAsFutureBytes delegate) {
+      this.delegate = delegate;
+    }
+
+    @Override
+    BaseConfig<ApiFuture<byte[]>, ?> cast() {
+      return delegate.cast();
+    }
+
+    @Override
+    ProjectionType getType() {
+      return delegate.getType();
+    }
+
+    @Override
+    ReadProjectionConfig<ApiFuture<byte[]>> unwrap() {
+      return delegate;
+    }
+
+    @Override
+    void onFastOpenReadClaimed(ApiFuture<byte[]> projection) {
+      claimed.add(projection);
+    }
   }
 }

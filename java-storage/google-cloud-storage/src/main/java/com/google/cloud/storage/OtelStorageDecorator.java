@@ -19,6 +19,7 @@ package com.google.cloud.storage;
 import static java.util.Objects.requireNonNull;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.paging.Page;
@@ -1890,6 +1891,36 @@ final class OtelStorageDecorator implements Storage {
     @Override
     public ProjectionType getType() {
       return delegate.getType();
+    }
+
+    @Override
+    ReadProjectionConfig<Projection> unwrap() {
+      return delegate.unwrap();
+    }
+
+    @Override
+    void onFastOpenReadClaimed(Projection projection) {
+      if (!(projection instanceof ApiFuture)) {
+        parentSpan.end();
+        return;
+      }
+      // the fast open read may still be in progress or may fail, so end the span when it's done
+      ApiFutures.addCallback(
+          (ApiFuture<?>) projection,
+          new ApiFutureCallback<Object>() {
+            @Override
+            public void onFailure(Throwable t) {
+              parentSpan.recordException(t);
+              parentSpan.setStatus(StatusCode.ERROR, t.getClass().getSimpleName());
+              parentSpan.end();
+            }
+
+            @Override
+            public void onSuccess(Object result) {
+              parentSpan.end();
+            }
+          },
+          MoreExecutors.directExecutor());
     }
 
     @Override
