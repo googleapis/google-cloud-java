@@ -50,6 +50,7 @@ import com.google.storage.v2.ReadRangeError;
 import io.grpc.Metadata;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
+import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
@@ -60,6 +61,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
@@ -77,6 +79,10 @@ public final class ITFastOpenFakeTest {
           .build();
   private static final GrpcCallContext CTX = GrpcCallContext.createDefault();
   private static final BlobId BLOB_ID = BlobId.of("b", "o");
+  private static final AttributeKey<Boolean> FAST_OPEN =
+      AttributeKey.booleanKey("gcs.bidi.fast_open");
+  private static final AttributeKey<String> CACHE_STATUS =
+      AttributeKey.stringKey("gcs.bidi.cache_status");
 
   private static final BidiReadObjectRequest OPEN =
       BidiReadObjectRequest.newBuilder()
@@ -511,6 +517,48 @@ public final class ITFastOpenFakeTest {
   }
 
   @Test
+  public void blobReadSession_withTracing_recordsFastOpenAndCacheStatus() throws Exception {
+    FakeStorage server =
+        fakeServer(
+            ImmutableMap.of(
+                OPEN_WITH_READ_OF_10_TO_20,
+                metadataAndBytes(1, 10, 10),
+                read(2, 20, 10),
+                bytes(2, 20, 10)));
+    TestExporter exporter = new TestExporter();
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = tracedStorage(fakeServer, exporter)) {
+      try (BlobReadSession session =
+          storage.blobReadSession(BLOB_ID, READ_10_TO_20).get(5, SECONDS)) {
+        session.readAs(READ_10_TO_20).get(2, SECONDS);
+        session.readAs(READ_20_TO_30).get(2, SECONDS);
+      }
+    }
+
+    assertThat(attributeOf(exporter, "blobReadSession", FAST_OPEN)).containsExactly(true);
+    assertThat(attributeOf(exporter, "blobReadSession/readAs", CACHE_STATUS))
+        .containsExactly("HIT", "MISS");
+  }
+
+  @Test
+  public void blobReadSession_withTracing_withoutFastOpen_recordsNoCacheStatus() throws Exception {
+    FakeStorage server =
+        fakeServer(ImmutableMap.of(OPEN, metadataOnly(), read(1, 10, 10), bytes(1, 10, 10)));
+    TestExporter exporter = new TestExporter();
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = tracedStorage(fakeServer, exporter)) {
+      try (BlobReadSession session = storage.blobReadSession(BLOB_ID).get(5, SECONDS)) {
+        session.readAs(READ_10_TO_20).get(2, SECONDS);
+      }
+    }
+
+    assertThat(attributeOf(exporter, "blobReadSession", FAST_OPEN)).containsExactly(false);
+    assertThat(attributeOf(exporter, "blobReadSession/readAs", CACHE_STATUS)).isEmpty();
+  }
+
+  @Test
   public void blobReadSession_withANullFastOpenConfig_isAPlainOpen() throws Exception {
     FakeStorage server = fakeServer(ImmutableMap.of(OPEN, metadataOnly()));
 
@@ -661,6 +709,30 @@ public final class ITFastOpenFakeTest {
 
   private static byte[] slice(int offset, int length) {
     return Arrays.copyOfRange(ALL_OBJECT_BYTES, offset, offset + length);
+  }
+
+  private static Storage tracedStorage(FakeServer fakeServer, TestExporter exporter) {
+    OpenTelemetrySdk otel =
+        OpenTelemetrySdk.builder()
+            .setTracerProvider(
+                SdkTracerProvider.builder()
+                    .addSpanProcessor(SimpleSpanProcessor.create(exporter))
+                    .build())
+            .build();
+    return fakeServer.getGrpcStorageOptions().toBuilder()
+        .setOpenTelemetry(otel)
+        .build()
+        .getService();
+  }
+
+  /** The non-null values of {@code key} on the ended spans named {@code spanName}. */
+  private static <T> List<T> attributeOf(
+      TestExporter exporter, String spanName, AttributeKey<T> key) {
+    return exporter.getExportedSpans().stream()
+        .filter(s -> s.getName().equals("com.google.cloud.storage.Storage/" + spanName))
+        .map(s -> s.getAttributes().get(key))
+        .filter(Objects::nonNull)
+        .collect(toList());
   }
 
   /** Wraps a config the way tracing does, and records each fast open hit. */
