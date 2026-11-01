@@ -1446,9 +1446,10 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
     }
   }
 
+  @SuppressWarnings("FutureReturnValueIgnored")
   static void rollbackBestEffort(TransactionContextImpl txn, Throwable commitError) {
     try {
-      ApiFuture<Empty> unused = txn.rollbackAsync();
+      txn.rollbackAsync();
     } catch (RuntimeException rollbackError) {
       commitError.addSuppressed(rollbackError);
     }

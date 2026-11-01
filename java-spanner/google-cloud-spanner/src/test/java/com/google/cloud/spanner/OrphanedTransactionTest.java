@@ -150,12 +150,9 @@ public class OrphanedTransactionTest extends AbstractMockServerTest {
     }
   }
 
-  private void assertRollbackRequestReceived() throws InterruptedException {
-    long deadline = System.currentTimeMillis() + 200L;
-    while (mockSpanner.countRequestsOfType(RollbackRequest.class) == 0
-        && System.currentTimeMillis() < deadline) {
-      Thread.sleep(10L);
-    }
+  private static void assertRollbackRequestReceived() throws Exception {
+    // A best-effort rollback is asynchronous; wait up to 5s for it to be received.
+    mockSpanner.waitForRequestsToContain(RollbackRequest.class, 5000L);
     assertEquals(
         "Expected RollbackRequest after Commit DEADLINE_EXCEEDED",
         1,
@@ -252,6 +249,42 @@ public class OrphanedTransactionTest extends AbstractMockServerTest {
             SpannerExceptionFactory.asSpannerException(e.getCause()).getErrorCode());
       }
       assertRollbackRequestReceived();
+    } finally {
+      mockSpanner.removeAllExecutionTimes();
+    }
+  }
+
+  @Test
+  public void testTransactionRunnerCommitDeterministicErrorDoesNotSendRollback() throws Exception {
+    mockSpanner.clearRequests();
+    mockSpanner.setCommitExecutionTime(
+        SimulatedExecutionTime.ofException(
+            Status.FAILED_PRECONDITION
+                .withDescription("Deterministic commit failure")
+                .asRuntimeException()));
+    try {
+      try (Spanner spanner = createSpanner()) {
+        DatabaseClient client =
+            spanner.getDatabaseClient(
+                DatabaseId.of("fake-project", "fake-instance", "fake-database"));
+        SpannerException e =
+            assertThrows(
+                SpannerException.class,
+                () ->
+                    client
+                        .readWriteTransaction()
+                        .run(
+                            transaction -> {
+                              transaction.buffer(
+                                  Mutation.newInsertBuilder("FOO").set("BAR").to("VALUE").build());
+                              return null;
+                            }));
+        assertEquals(ErrorCode.FAILED_PRECONDITION, e.getErrorCode());
+      }
+      assertEquals(
+          "Expected no RollbackRequest after deterministic commit failure",
+          0,
+          mockSpanner.countRequestsOfType(RollbackRequest.class));
     } finally {
       mockSpanner.removeAllExecutionTimes();
     }
