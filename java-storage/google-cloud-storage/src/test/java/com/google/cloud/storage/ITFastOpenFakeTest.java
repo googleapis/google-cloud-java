@@ -426,6 +426,58 @@ public final class ITFastOpenFakeTest {
   }
 
   @Test
+  public void readSession_with100FastOpenConfigs_sendsThemAllInTheOpen() throws Exception {
+    List<ReadProjectionConfig<?>> configs = new ArrayList<>();
+    BidiReadObjectRequest.Builder openWith100Reads = OPEN.toBuilder();
+    for (int i = 0; i < 100; i++) {
+      configs.add(ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(i, 1)));
+      openWith100Reads.addReadRanges(getReadRange(i + 1, i, 1));
+    }
+    FakeStorage server = fakeServer(ImmutableMap.of(openWith100Reads.build(), metadataOnly()));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      dataClient.readSession(OPEN, CTX, configs).get(5, SECONDS).close();
+    }
+
+    assertThat(requestsReceived).containsExactly(openWith100Reads.build());
+  }
+
+  @Test
+  public void readSession_withTheSameRangeAsBytesAndByteString_sendsAndServesBoth()
+      throws Exception {
+    ReadAsFutureByteString byteString10To20 =
+        ReadProjectionConfigs.asFutureByteString().withRangeSpec(RangeSpec.of(10, 10));
+    BidiReadObjectRequest openWithTheRangeTwice =
+        OPEN_WITH_READ_OF_10_TO_20.toBuilder().addReadRanges(getReadRange(2, 10, 10)).build();
+    BidiReadObjectResponse both =
+        metadataAndBytes(1, 10, 10).toBuilder()
+            .addObjectDataRanges(bytes(2, 10, 10).getObjectDataRanges(0))
+            .build();
+    FakeStorage server = fakeServer(ImmutableMap.of(openWithTheRangeTwice, both));
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      StorageDataClient dataClient = maybeGetStorageDataClient(storage);
+
+      try (ObjectReadSession session =
+          dataClient
+              .readSession(OPEN, CTX, ImmutableList.of(READ_10_TO_20, byteString10To20))
+              .get(5, SECONDS)) {
+        assertThat(xxd(session.readAs(READ_10_TO_20).get(2, SECONDS)))
+            .isEqualTo(xxd(slice(10, 10)));
+        try (DisposableByteString second = session.readAs(byteString10To20).get(2, SECONDS)) {
+          assertThat(xxd(second.byteString().toByteArray())).isEqualTo(xxd(slice(10, 10)));
+        }
+      }
+    }
+
+    assertThat(requestsReceived).containsExactly(openWithTheRangeTwice);
+  }
+
+  @Test
   public void readSession_withMoreThan100FastOpenConfigs_isRejected() throws Exception {
     List<ReadProjectionConfig<?>> configs = new ArrayList<>();
     for (int i = 0; i < 101; i++) {
