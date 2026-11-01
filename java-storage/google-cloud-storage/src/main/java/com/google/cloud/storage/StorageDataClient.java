@@ -30,6 +30,7 @@ import com.google.storage.v2.BidiReadObjectRequest;
 import com.google.storage.v2.BidiReadObjectResponse;
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
@@ -37,6 +38,9 @@ import java.util.concurrent.TimeUnit;
 
 @InternalApi
 final class StorageDataClient implements AutoCloseable {
+
+  // the most read ranges BidiReadObjectRequest allows in one message
+  private static final int MAX_FAST_OPEN_READS = 100;
 
   final ScheduledExecutorService executor;
   private final Duration terminationAwaitDuration;
@@ -71,7 +75,7 @@ final class StorageDataClient implements AutoCloseable {
    *
    * @param fastOpenConfigs the reads to send with the open, for example {@code
    *     ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(0, 1024))}; empty to only
-   *     open the session
+   *     open the session. At most 100, no two equal, and {@code asChannel()} only on its own.
    */
   ApiFuture<ObjectReadSession> readSession(
       BidiReadObjectRequest req,
@@ -80,10 +84,24 @@ final class StorageDataClient implements AutoCloseable {
     checkArgument(
         req.getReadRangesList().isEmpty(),
         "ranges included in the initial request are not supported");
-    checkArgument(fastOpenConfigs.size() <= 1, "at most one fast open read is supported");
+    checkArgument(
+        fastOpenConfigs.size() <= MAX_FAST_OPEN_READS,
+        "at most %s fast open reads are supported, but got %s",
+        MAX_FAST_OPEN_READS,
+        fastOpenConfigs.size());
     checkArgument(
         fastOpenConfigs.stream().allMatch(c -> c.getType() == ProjectionType.STREAM_READ),
         "a fast open read must be asFutureBytes(), asFutureByteString() or asChannel(), but was %s",
+        fastOpenConfigs);
+    checkArgument(
+        new HashSet<>(fastOpenConfigs).size() == fastOpenConfigs.size(),
+        "the same fast open read must not be given twice, but was %s",
+        fastOpenConfigs);
+    // a channel read can't share the stream with other reads
+    checkArgument(
+        fastOpenConfigs.size() == 1
+            || fastOpenConfigs.stream().noneMatch(c -> c instanceof ReadAsChannel),
+        "asChannel() must be the only fast open read, but was %s",
         fastOpenConfigs);
     ObjectReadSessionState state = new ObjectReadSessionState(ctx, req);
 
