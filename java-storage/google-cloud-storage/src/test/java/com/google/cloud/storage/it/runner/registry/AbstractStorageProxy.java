@@ -500,9 +500,11 @@ abstract class AbstractStorageProxy implements Storage {
   }
 
   @Override
-  public <Projection> ApiFuture<BlobReadSession> blobReadSession(
-      BlobId id, ReadProjectionConfig<Projection> fastOpenConfig, BlobSourceOption... options) {
-    return delegate.blobReadSession(id, fastOpenConfig, options);
+  public ApiFuture<BlobReadSession> blobReadSession(
+      BlobId id,
+      List<? extends ReadProjectionConfig<?>> fastOpenConfigs,
+      BlobSourceOption... options) {
+    return delegate.blobReadSession(id, fastOpenConfigs, options);
   }
 
   @Override
