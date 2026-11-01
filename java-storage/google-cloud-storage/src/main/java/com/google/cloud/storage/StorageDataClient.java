@@ -23,14 +23,11 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.cloud.storage.GrpcUtils.ZeroCopyBidiStreamingCallable;
-import com.google.cloud.storage.ObjectReadSessionState.OpenArguments;
 import com.google.cloud.storage.ReadProjectionConfig.ProjectionType;
 import com.google.cloud.storage.RetryContext.RetryContextProvider;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.storage.v2.BidiReadObjectRequest;
 import com.google.storage.v2.BidiReadObjectResponse;
-import java.io.IOException;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.List;
@@ -117,46 +114,6 @@ final class StorageDataClient implements AutoCloseable {
     return objectReadSessionFuture;
   }
 
-  <Projection> ApiFuture<FastOpenObjectReadSession<Projection>> fastOpenReadSession(
-      BidiReadObjectRequest openRequest,
-      GrpcCallContext ctx,
-      ReadProjectionConfig<Projection> config) {
-    checkArgument(
-        openRequest.getReadRangesList().isEmpty(),
-        "ranges included in the initial request are not supported");
-    checkArgument(
-        config.getType() == ProjectionType.STREAM_READ,
-        "unsupported ReadProjectionConfig: %s",
-        config.getClass().getName());
-    ObjectReadSessionState state = new ObjectReadSessionState(ctx, openRequest);
-
-    ZeroCopyBidiStreamingCallable<BidiReadObjectRequest, BidiReadObjectResponse> callable =
-        getCallable();
-    ObjectReadSessionStream stream =
-        ObjectReadSessionStream.create(executor, callable, state, retryContextProvider.create());
-
-    long readId = state.newReadId();
-    ObjectReadSessionStreamRead<Projection> read =
-        config.cast().newRead(readId, retryContextProvider.create());
-    state.putOutstandingRead(readId, read);
-
-    ApiFuture<FastOpenObjectReadSession<Projection>> objectReadSessionFuture =
-        ApiFutures.transform(
-            stream,
-            nowOpen ->
-                new FastOpenObjectReadSession<>(
-                    new ObjectReadSessionImpl(
-                        executor, callable, stream, state, retryContextProvider, ImmutableMap.of()),
-                    read,
-                    stream),
-            executor);
-    OpenArguments openArguments = state.getOpenArguments();
-    BidiReadObjectRequest req = openArguments.getReq();
-    stream.send(req);
-    read.setOnCloseCallback(stream);
-    return objectReadSessionFuture;
-  }
-
   @SuppressWarnings("ResultOfMethodCallIgnored")
   @Override
   public void close() throws Exception {
@@ -181,59 +138,5 @@ final class StorageDataClient implements AutoCloseable {
       IOAutoCloseable onClose) {
     return new StorageDataClient(
         executor, terminationAwaitDuration, read, retryContextProvider, onClose);
-  }
-
-  @FunctionalInterface
-  interface Borrowable {
-    void borrow();
-  }
-
-  static final class FastOpenObjectReadSession<Projection> implements IOAutoCloseable {
-    private final ObjectReadSession session;
-    private final ObjectReadSessionStreamRead<Projection> read;
-    private final Borrowable borrowable;
-    private boolean sessionLeased;
-
-    private FastOpenObjectReadSession(
-        ObjectReadSession session,
-        ObjectReadSessionStreamRead<Projection> read,
-        Borrowable borrowable) {
-      this.session = session;
-      this.read = read;
-      this.borrowable = borrowable;
-      this.sessionLeased = false;
-    }
-
-    ObjectReadSession getSession() {
-      if (!sessionLeased) {
-        sessionLeased = true;
-        borrowable.borrow();
-      }
-      return session;
-    }
-
-    ObjectReadSessionStreamRead<Projection> getRead() {
-      return read;
-    }
-
-    Projection getProjection() {
-      return read.project();
-    }
-
-    @Override
-    public void close() throws IOException {
-      //noinspection EmptyTryBlock
-      try (IOAutoCloseable ignore1 = session;
-          IOAutoCloseable ignore2 = read) {
-        // use try-with to ensure full cleanup
-      }
-    }
-
-    public static <Projection> FastOpenObjectReadSession<Projection> of(
-        ObjectReadSession session,
-        ObjectReadSessionStreamRead<Projection> read,
-        Borrowable borrowable) {
-      return new FastOpenObjectReadSession<>(session, read, borrowable);
-    }
   }
 }
