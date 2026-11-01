@@ -30,11 +30,11 @@ public interface CompletionInfoOrBuilder
    *
    *
    * <pre>
-   * End user selected
+   * Optional. End user selected
    * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1.CompleteQueryResponse.QuerySuggestion.suggestion].
    * </pre>
    *
-   * <code>string selected_suggestion = 1;</code>
+   * <code>string selected_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The selectedSuggestion.
    */
@@ -44,11 +44,11 @@ public interface CompletionInfoOrBuilder
    *
    *
    * <pre>
-   * End user selected
+   * Optional. End user selected
    * [CompleteQueryResponse.QuerySuggestion.suggestion][google.cloud.discoveryengine.v1.CompleteQueryResponse.QuerySuggestion.suggestion].
    * </pre>
    *
-   * <code>string selected_suggestion = 1;</code>
+   * <code>string selected_suggestion = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for selectedSuggestion.
    */

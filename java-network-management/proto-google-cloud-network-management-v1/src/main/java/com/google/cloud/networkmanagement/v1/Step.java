@@ -288,6 +288,16 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Initial state: packet originating from a Datastream Private Connection.
+     * </pre>
+     *
+     * <code>START_FROM_DATASTREAM_PRIVATE_CONNECTION = 49;</code>
+     */
+    START_FROM_DATASTREAM_PRIVATE_CONNECTION(49),
+    /**
+     *
+     *
+     * <pre>
      * Config checking state: verify ingress firewall rule.
      * </pre>
      *
@@ -833,6 +843,17 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Initial state: packet originating from a Datastream Private Connection.
+     * </pre>
+     *
+     * <code>START_FROM_DATASTREAM_PRIVATE_CONNECTION = 49;</code>
+     */
+    public static final int START_FROM_DATASTREAM_PRIVATE_CONNECTION_VALUE = 49;
+
+    /**
+     *
+     *
+     * <pre>
      * Config checking state: verify ingress firewall rule.
      * </pre>
      *
@@ -1231,6 +1252,8 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           return START_FROM_SERVERLESS_NEG;
         case 48:
           return START_FROM_DMS_PRIVATE_CONNECTION;
+        case 49:
+          return START_FROM_DATASTREAM_PRIVATE_CONNECTION;
         case 4:
           return APPLY_INGRESS_FIREWALL_RULE;
         case 5:
@@ -1392,6 +1415,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
     SERVERLESS_NEG(29),
     NGFW_PACKET_INSPECTION(42),
     DMS_PRIVATE_CONNECTION(43),
+    DATASTREAM_PRIVATE_CONNECTION(44),
     STEPINFO_NOT_SET(0);
     private final int value;
 
@@ -1487,6 +1511,8 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           return NGFW_PACKET_INSPECTION;
         case 43:
           return DMS_PRIVATE_CONNECTION;
+        case 44:
+          return DATASTREAM_PRIVATE_CONNECTION;
         case 0:
           return STEPINFO_NOT_SET;
         default:
@@ -2637,7 +2663,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=318
+   *     google/cloud/networkmanagement/v1/trace.proto;l=321
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Override
@@ -2659,7 +2685,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=318
+   *     google/cloud/networkmanagement/v1/trace.proto;l=321
    * @return The loadBalancer.
    */
   @java.lang.Override
@@ -3824,6 +3850,68 @@ public final class Step extends com.google.protobuf.GeneratedMessage
     return com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
   }
 
+  public static final int DATASTREAM_PRIVATE_CONNECTION_FIELD_NUMBER = 44;
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Datastream Private Connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+   * </code>
+   *
+   * @return Whether the datastreamPrivateConnection field is set.
+   */
+  @java.lang.Override
+  public boolean hasDatastreamPrivateConnection() {
+    return stepInfoCase_ == 44;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Datastream Private Connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+   * </code>
+   *
+   * @return The datastreamPrivateConnection.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.PrivateConnectionInfo
+      getDatastreamPrivateConnection() {
+    if (stepInfoCase_ == 44) {
+      return (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Datastream Private Connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder
+      getDatastreamPrivateConnectionOrBuilder() {
+    if (stepInfoCase_ == 44) {
+      return (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_;
+    }
+    return com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3973,6 +4061,10 @@ public final class Step extends com.google.protobuf.GeneratedMessage
     if (stepInfoCase_ == 43) {
       output.writeMessage(
           43, (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_);
+    }
+    if (stepInfoCase_ == 44) {
+      output.writeMessage(
+          44, (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_);
     }
     if (stepInfoCase_ == 45) {
       output.writeMessage(45, (com.google.cloud.networkmanagement.v1.CloudRunJobInfo) stepInfo_);
@@ -4184,6 +4276,11 @@ public final class Step extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               43, (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_);
     }
+    if (stepInfoCase_ == 44) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              44, (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_);
+    }
     if (stepInfoCase_ == 45) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -4326,6 +4423,10 @@ public final class Step extends com.google.protobuf.GeneratedMessage
         break;
       case 43:
         if (!getDmsPrivateConnection().equals(other.getDmsPrivateConnection())) return false;
+        break;
+      case 44:
+        if (!getDatastreamPrivateConnection().equals(other.getDatastreamPrivateConnection()))
+          return false;
         break;
       case 0:
       default:
@@ -4501,6 +4602,10 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       case 43:
         hash = (37 * hash) + DMS_PRIVATE_CONNECTION_FIELD_NUMBER;
         hash = (53 * hash) + getDmsPrivateConnection().hashCode();
+        break;
+      case 44:
+        hash = (37 * hash) + DATASTREAM_PRIVATE_CONNECTION_FIELD_NUMBER;
+        hash = (53 * hash) + getDatastreamPrivateConnection().hashCode();
         break;
       case 0:
       default:
@@ -4765,6 +4870,9 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       if (dmsPrivateConnectionBuilder_ != null) {
         dmsPrivateConnectionBuilder_.clear();
       }
+      if (datastreamPrivateConnectionBuilder_ != null) {
+        datastreamPrivateConnectionBuilder_.clear();
+      }
       stepInfoCase_ = 0;
       stepInfo_ = null;
       return this;
@@ -4941,6 +5049,9 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       }
       if (stepInfoCase_ == 43 && dmsPrivateConnectionBuilder_ != null) {
         result.stepInfo_ = dmsPrivateConnectionBuilder_.build();
+      }
+      if (stepInfoCase_ == 44 && datastreamPrivateConnectionBuilder_ != null) {
+        result.stepInfo_ = datastreamPrivateConnectionBuilder_.build();
       }
     }
 
@@ -5161,6 +5272,11 @@ public final class Step extends com.google.protobuf.GeneratedMessage
         case DMS_PRIVATE_CONNECTION:
           {
             mergeDmsPrivateConnection(other.getDmsPrivateConnection());
+            break;
+          }
+        case DATASTREAM_PRIVATE_CONNECTION:
+          {
+            mergeDatastreamPrivateConnection(other.getDatastreamPrivateConnection());
             break;
           }
         case STEPINFO_NOT_SET:
@@ -5474,6 +5590,14 @@ public final class Step extends com.google.protobuf.GeneratedMessage
                 stepInfoCase_ = 43;
                 break;
               } // case 346
+            case 354:
+              {
+                input.readMessage(
+                    internalGetDatastreamPrivateConnectionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                stepInfoCase_ = 44;
+                break;
+              } // case 354
             case 362:
               {
                 input.readMessage(
@@ -9754,7 +9878,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=318
+     *     google/cloud/networkmanagement/v1/trace.proto;l=321
      * @return Whether the loadBalancer field is set.
      */
     @java.lang.Override
@@ -9776,7 +9900,7 @@ public final class Step extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=318
+     *     google/cloud/networkmanagement/v1/trace.proto;l=321
      * @return The loadBalancer.
      */
     @java.lang.Override
@@ -14558,6 +14682,250 @@ public final class Step extends com.google.protobuf.GeneratedMessage
       stepInfoCase_ = 43;
       onChanged();
       return dmsPrivateConnectionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkmanagement.v1.PrivateConnectionInfo,
+            com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.Builder,
+            com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder>
+        datastreamPrivateConnectionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Datastream Private Connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+     * </code>
+     *
+     * @return Whether the datastreamPrivateConnection field is set.
+     */
+    @java.lang.Override
+    public boolean hasDatastreamPrivateConnection() {
+      return stepInfoCase_ == 44;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Datastream Private Connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+     * </code>
+     *
+     * @return The datastreamPrivateConnection.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.PrivateConnectionInfo
+        getDatastreamPrivateConnection() {
+      if (datastreamPrivateConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 44) {
+          return (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
+      } else {
+        if (stepInfoCase_ == 44) {
+          return datastreamPrivateConnectionBuilder_.getMessage();
+        }
+        return com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Datastream Private Connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+     * </code>
+     */
+    public Builder setDatastreamPrivateConnection(
+        com.google.cloud.networkmanagement.v1.PrivateConnectionInfo value) {
+      if (datastreamPrivateConnectionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stepInfo_ = value;
+        onChanged();
+      } else {
+        datastreamPrivateConnectionBuilder_.setMessage(value);
+      }
+      stepInfoCase_ = 44;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Datastream Private Connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+     * </code>
+     */
+    public Builder setDatastreamPrivateConnection(
+        com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.Builder builderForValue) {
+      if (datastreamPrivateConnectionBuilder_ == null) {
+        stepInfo_ = builderForValue.build();
+        onChanged();
+      } else {
+        datastreamPrivateConnectionBuilder_.setMessage(builderForValue.build());
+      }
+      stepInfoCase_ = 44;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Datastream Private Connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+     * </code>
+     */
+    public Builder mergeDatastreamPrivateConnection(
+        com.google.cloud.networkmanagement.v1.PrivateConnectionInfo value) {
+      if (datastreamPrivateConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 44
+            && stepInfo_
+                != com.google.cloud.networkmanagement.v1.PrivateConnectionInfo
+                    .getDefaultInstance()) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.newBuilder(
+                      (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stepInfo_ = value;
+        }
+        onChanged();
+      } else {
+        if (stepInfoCase_ == 44) {
+          datastreamPrivateConnectionBuilder_.mergeFrom(value);
+        } else {
+          datastreamPrivateConnectionBuilder_.setMessage(value);
+        }
+      }
+      stepInfoCase_ = 44;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Datastream Private Connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+     * </code>
+     */
+    public Builder clearDatastreamPrivateConnection() {
+      if (datastreamPrivateConnectionBuilder_ == null) {
+        if (stepInfoCase_ == 44) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+          onChanged();
+        }
+      } else {
+        if (stepInfoCase_ == 44) {
+          stepInfoCase_ = 0;
+          stepInfo_ = null;
+        }
+        datastreamPrivateConnectionBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Datastream Private Connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.Builder
+        getDatastreamPrivateConnectionBuilder() {
+      return internalGetDatastreamPrivateConnectionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Datastream Private Connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder
+        getDatastreamPrivateConnectionOrBuilder() {
+      if ((stepInfoCase_ == 44) && (datastreamPrivateConnectionBuilder_ != null)) {
+        return datastreamPrivateConnectionBuilder_.getMessageOrBuilder();
+      } else {
+        if (stepInfoCase_ == 44) {
+          return (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_;
+        }
+        return com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Display information of a Datastream Private Connection.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.networkmanagement.v1.PrivateConnectionInfo,
+            com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.Builder,
+            com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder>
+        internalGetDatastreamPrivateConnectionFieldBuilder() {
+      if (datastreamPrivateConnectionBuilder_ == null) {
+        if (!(stepInfoCase_ == 44)) {
+          stepInfo_ =
+              com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.getDefaultInstance();
+        }
+        datastreamPrivateConnectionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.networkmanagement.v1.PrivateConnectionInfo,
+                com.google.cloud.networkmanagement.v1.PrivateConnectionInfo.Builder,
+                com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder>(
+                (com.google.cloud.networkmanagement.v1.PrivateConnectionInfo) stepInfo_,
+                getParentForChildren(),
+                isClean());
+        stepInfo_ = null;
+      }
+      stepInfoCase_ = 44;
+      onChanged();
+      return datastreamPrivateConnectionBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.networkmanagement.v1.Step)

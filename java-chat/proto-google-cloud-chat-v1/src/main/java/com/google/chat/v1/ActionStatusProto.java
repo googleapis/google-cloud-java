@@ -54,19 +54,21 @@ public final class ActionStatusProto extends com.google.protobuf.GeneratedFile {
   static {
     java.lang.String[] descriptorData = {
       "\n\"google/chat/v1/action_status.proto\022\016go"
-          + "ogle.chat.v1\032\025google/rpc/code.proto\"R\n\014A"
-          + "ctionStatus\022%\n\013status_code\030\001 \001(\0162\020.googl"
-          + "e.rpc.Code\022\033\n\023user_facing_message\030\002 \001(\tB"
-          + "\252\001\n\022com.google.chat.v1B\021ActionStatusProt"
-          + "oP\001Z,cloud.google.com/go/chat/apiv1/chat"
-          + "pb;chatpb\242\002\013DYNAPIProto\252\002\023Google.Apps.Ch"
-          + "at.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google::Ap"
-          + "ps::Chat::V1b\006proto3"
+          + "ogle.chat.v1\032\037google/api/field_behavior."
+          + "proto\032\025google/rpc/code.proto\"R\n\014ActionSt"
+          + "atus\022%\n\013status_code\030\001 \001(\0162\020.google.rpc.C"
+          + "ode\022\033\n\023user_facing_message\030\002 \001(\tB\252\001\n\022com"
+          + ".google.chat.v1B\021ActionStatusProtoP\001Z,cl"
+          + "oud.google.com/go/chat/apiv1/chatpb;chat"
+          + "pb\242\002\013DYNAPIProto\252\002\023Google.Apps.Chat.V1\312\002"
+          + "\023Google\\Apps\\Chat\\V1\352\002\026Google::Apps::Cha"
+          + "t::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.rpc.CodeProto.getDescriptor(),
             });
     internal_static_google_chat_v1_ActionStatus_descriptor = getDescriptor().getMessageType(0);
@@ -77,6 +79,7 @@ public final class ActionStatusProto extends com.google.protobuf.GeneratedFile {
               "StatusCode", "UserFacingMessage",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.rpc.CodeProto.getDescriptor();
   }
 
