@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.cloud.spanner.AbstractResultSet.CloseableIterator;
+import com.google.cloud.spanner.AsyncResultSet.StreamMessageListener;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
@@ -36,14 +37,16 @@ import com.google.spanner.v1.PartialResultSet;
 import io.grpc.Context;
 import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
-import java.util.LinkedList;
+import java.util.ArrayDeque;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Wraps an iterator over partial result sets, supporting resuming RPCs on error. This class keeps
@@ -68,21 +71,48 @@ import javax.annotation.Nullable;
  * so a configured maxAttempts of N bounds the total number of RPC attempts without progress by N*N,
  * not by N. The total timeout is measured in wall-clock time from the first failure of the sequence
  * and therefore spans both layers.
+ *
+ * <p><strong>Threading Contract:</strong> This iterator follows a single-consumer model.
+ * Invocations of {@link #hasNext()}, {@link #next()}, {@link #computeNext()}, {@link
+ * #isDataAvailable()}, and {@link #canPollWithoutErrorOrBlocking()} must be serialized by the
+ * caller on a single thread. Concurrency is supported for {@link #close(String)} and listener
+ * registration, but simultaneous consumption or polling from multiple threads is not supported.
+ * Invoking {@link #close(String)} while the consumer thread is blocked in {@link #next()} cancels
+ * the underlying stream and causes {@link #computeNext()} to return end-of-data rather than
+ * propagating the resulting {@code CANCELLED} stream error.
  */
+@NullMarked
 @VisibleForTesting
 abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet>
     implements CloseableIterator<PartialResultSet> {
   private final ErrorHandler errorHandler;
-  private AsyncResultSet.StreamMessageListener streamMessageListener;
+  @Nullable private volatile StreamMessageListener streamMessageListener;
   private final RetrySettings streamingRetrySettings;
   private final Set<Code> retryableCodes;
   private static final Logger logger = Logger.getLogger(ResumableStreamIterator.class.getName());
-  private BackOff backOff;
-  private final LinkedList<PartialResultSet> buffer = new LinkedList<>();
+  @Nullable private BackOff backOff;
+  private final ArrayDeque<PartialResultSet> buffer = new ArrayDeque<>();
   private final int maxBufferSize;
   private final ISpan span;
   private final TraceWrapper tracer;
-  private CloseableIterator<PartialResultSet> stream;
+
+  /** Guards state transitions between {@link #stream} and {@link #closed}. */
+  private final Object streamLock = new Object();
+
+  /** Indicates whether this iterator has been closed. */
+  private volatile boolean closed;
+
+  @Nullable private String closeMessage;
+  private volatile boolean withBeginTransaction;
+  private volatile boolean lastStatement;
+
+  /** Ensures the tracing span is finalized at most once. */
+  private final AtomicBoolean spanEnded = new AtomicBoolean(false);
+
+  @Nullable private volatile CloseableIterator<PartialResultSet> stream;
+  @Nullable private CloseableIterator<PartialResultSet> inFlightStream;
+  @Nullable private volatile Throwable startFailure;
+  private boolean startingStream;
 
   /**
    * The number of consecutive failed attempts without any progress on the stream. Reset to zero
@@ -97,8 +127,8 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
    */
   private long retrySequenceStartNanos = -1L;
 
-  private ByteString resumeToken;
-  private boolean finished;
+  @Nullable private volatile ByteString resumeToken;
+  private volatile boolean finished;
   private final XGoogSpannerRequestId requestId;
 
   /**
@@ -106,7 +136,7 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
    * reached the maximum buffer size without seeing a restart token; in this case, we will drain the
    * buffer and remain in this state until we see a new restart token.
    */
-  private boolean safeToRetry = true;
+  private volatile boolean safeToRetry = true;
 
   protected ResumableStreamIterator(
       int maxBufferSize,
@@ -253,9 +283,16 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     }
   }
 
+  /**
+   * Starts a new underlying gRPC stream. Implementations SHOULD invoke {@link
+   * #setStream(CloseableIterator)} with the created stream iterator before initiating the network
+   * RPC so that in-flight RPCs can be cancelled immediately if {@link #close(String)} is invoked
+   * before {@code startStream()} returns. Streams that are not registered early are registered
+   * (and, if this iterator was closed in the meantime, closed) as soon as this method returns.
+   */
   abstract CloseableIterator<PartialResultSet> startStream(
       @Nullable ByteString resumeToken,
-      AsyncResultSet.StreamMessageListener streamMessageListener,
+      @Nullable StreamMessageListener streamMessageListener,
       XGoogSpannerRequestId requestId);
 
   /**
@@ -268,104 +305,159 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
 
   @Override
   public void close(@Nullable String message) {
-    if (stream != null) {
-      stream.close(message);
-      span.end();
-      stream = null;
+    // Closing while another thread is blocked in next() makes computeNext() return end-of-data
+    // (via its closed checks) instead of surfacing the CANCELLED error reported by the cancelled
+    // underlying stream.
+    CloseableIterator<PartialResultSet> streamToClose = null;
+    synchronized (streamLock) {
+      if (!closed) {
+        closed = true;
+        closeMessage = message;
+        streamToClose = this.stream != null ? this.stream : this.inFlightStream;
+        // Leave inFlightStream set until startGrpcStreaming() finishes so the post-startStream()
+        // setStream(streamIterator) check sees inFlightStream == streamToRegister and does not
+        // close streamIterator a second time.
+        this.stream = null;
+        streamLock.notifyAll();
+      }
     }
+    synchronized (buffer) {
+      buffer.clear();
+    }
+    // Perform stream teardown outside the lock to prevent deadlocks with external callbacks.
+    if (streamToClose != null) {
+      streamToClose.close(message);
+    }
+    endSpanOnce();
+  }
+
+  @VisibleForTesting
+  boolean isClosed() {
+    return closed;
   }
 
   @Override
   public boolean isWithBeginTransaction() {
-    return stream != null && stream.isWithBeginTransaction();
+    CloseableIterator<PartialResultSet> currentInFlightStream;
+    boolean fallbackWithBeginTransaction;
+    synchronized (streamLock) {
+      currentInFlightStream = this.inFlightStream;
+      fallbackWithBeginTransaction = this.withBeginTransaction;
+    }
+    // A subclass that registers its stream early calls setStream(consumer) before
+    // consumer.setCall(call, true) sets withBeginTransaction on the underlying stream. Querying
+    // currentInFlightStream live ensures callers observe true as soon as setCall() runs during an
+    // in-flight startStream().
+    return currentInFlightStream != null
+        ? currentInFlightStream.isWithBeginTransaction()
+        : fallbackWithBeginTransaction;
   }
 
   @Override
   public boolean isLastStatement() {
-    return stream != null && stream.isLastStatement();
+    return this.lastStatement;
   }
 
   @Override
   @InternalApi
-  public boolean initiateStreaming(AsyncResultSet.StreamMessageListener streamMessageListener) {
-    this.streamMessageListener = streamMessageListener;
+  public boolean initiateStreaming(StreamMessageListener streamMessageListener) {
+    synchronized (streamLock) {
+      if (closed) {
+        return false;
+      }
+      this.streamMessageListener = streamMessageListener;
+    }
     startGrpcStreaming();
     return true;
   }
 
   @Override
+  public boolean canPollWithoutErrorOrBlocking() {
+    synchronized (buffer) {
+      if (closed) {
+        return false;
+      }
+      if (isBufferFlushableLocked() || finished) {
+        return true;
+      }
+    }
+    drainAvailableFromStream(this.stream);
+    synchronized (buffer) {
+      return !closed && (isBufferFlushableLocked() || finished);
+    }
+  }
+
+  @Override
+  public boolean isDataAvailable() {
+    // If closed, return true to unblock any waiting async consumer so it can observe EOF/closure
+    // instead of hanging indefinitely.
+    // This loop is bounded: an iteration only loops when currentStream has a non-error chunk or EOF
+    // ready to poll, and the next iteration's canPollWithoutErrorOrBlocking() call drains that into
+    // buffer until either buffer becomes flushable (at most maxBufferSize + 1 chunks) or
+    // currentStream has nothing more that is immediately available.
+    while (true) {
+      if (closed || canPollWithoutErrorOrBlocking()) {
+        return true;
+      }
+      CloseableIterator<PartialResultSet> currentStream = this.stream;
+      if (currentStream == null || !currentStream.isDataAvailable()) {
+        return closed || startFailure != null;
+      }
+      if (!currentStream.canPollWithoutErrorOrBlocking()) {
+        return true;
+      }
+    }
+  }
+
+  @Override
+  @Nullable
   protected PartialResultSet computeNext() {
     int numAttemptsOnOtherChannel = 0;
     Context context = Context.current();
-    while (true) {
+    while (!closed) {
       // Eagerly start stream before consuming any buffered items.
       startGrpcStreaming();
       // Buffer contains items up to a resume token or has reached capacity: flush.
-      if (!buffer.isEmpty()
-          && (finished || !safeToRetry || !buffer.getLast().getResumeToken().isEmpty())) {
-        return buffer.pop();
+      PartialResultSet buffered = pollBufferedChunk();
+      if (buffered != null) {
+        return buffered;
+      }
+      if (finished) {
+        break;
+      }
+      // Snapshot the volatile stream reference to guard against concurrent close() nulling the
+      // field between check and dereference.
+      CloseableIterator<PartialResultSet> currentStream = this.stream;
+      if (currentStream == null) {
+        break;
       }
       try {
-        if (stream.hasNext()) {
-          PartialResultSet next = stream.next();
-          boolean hasResumeToken = !next.getResumeToken().isEmpty();
-          if (hasResumeToken) {
-            // Only a resume token that differs from the last seen token is progress: a stream
-            // that repeatedly returns the token that was used to resume it has not moved past it.
-            if (!next.getResumeToken().equals(resumeToken)) {
-              // The stream made progress, so reset the budget for consecutive failed attempts.
-              attempts = 0;
-              backOff = null;
-              retrySequenceStartNanos = -1L;
-            }
-            resumeToken = next.getResumeToken();
-            safeToRetry = true;
-          }
-          // If the buffer is empty and this chunk has a resume token or we cannot resume safely
-          // anyway, we can yield it immediately rather than placing it in the buffer to be
-          // returned on the next iteration.
-          if ((hasResumeToken || !safeToRetry) && buffer.isEmpty()) {
-            return next;
-          }
-          buffer.add(next);
-          if (buffer.size() > maxBufferSize && buffer.getLast().getResumeToken().isEmpty()) {
-            // We need to flush without a restart token.  Errors encountered until we see
-            // such a token will fail the read.
-            safeToRetry = false;
-          }
-        } else {
-          finished = true;
-          if (buffer.isEmpty()) {
-            endOfData();
-            return null;
-          }
-        }
+        readNextFromStreamIntoBuffer(currentStream);
       } catch (SpannerException spannerException) {
         if (safeToRetry && isRetryable(spannerException)) {
-          handleRetryableException(context, spannerException);
-
-          continue;
-        }
-        // Check if we should retry the request on a different gRPC channel.
-        if (resumeToken == null && buffer.isEmpty()) {
-          Throwable translated = errorHandler.translateException(spannerException);
-          if (translated instanceof RetryOnDifferentGrpcChannelException) {
-            if (++numAttemptsOnOtherChannel < errorHandler.getMaxAttempts()
-                && prepareIteratorForRetryOnDifferentGrpcChannel()) {
-              stream = null;
-              continue;
-            }
+          try {
+            handleRetryableException(context, spannerException);
+            continue;
+          } catch (Throwable throwable) {
+            span.setStatus(throwable);
+            endSpanOnce();
+            throw throwable;
           }
         }
-        span.addAnnotation("Stream broken. Not safe to retry", spannerException);
-        span.setStatus(spannerException);
+        // Check if we should retry the request on a different gRPC channel.
+        if (shouldRetryOnDifferentChannel(spannerException, ++numAttemptsOnOtherChannel)) {
+          resetStream();
+          continue;
+        }
+        recordFailure(spannerException);
         throw spannerException;
-      } catch (RuntimeException e) {
-        span.addAnnotation("Stream broken. Not safe to retry", e);
-        span.setStatus(e);
-        throw e;
+      } catch (RuntimeException | Error throwable) {
+        recordFailure(throwable);
+        throw throwable;
       }
     }
+    endOfData();
+    return null;
   }
 
   /** Monotonic time source, overridable for deterministic retry-budget tests. */
@@ -385,7 +477,6 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
           "Stream broken. Not retrying because the maximum number of attempts has been"
               + " exhausted",
           spannerException);
-      span.setStatus(spannerException);
       throw spannerException;
     }
     // Determine the retry delay: either the delay that the server included in the error, or
@@ -403,7 +494,6 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
       span.addAnnotation(
           "Stream broken. Not retrying because the total timeout has been exhausted",
           spannerException);
-      span.setStatus(spannerException);
       throw spannerException;
     }
     return delayMillis;
@@ -413,19 +503,50 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     long delayMillis = checkRetryBudgetAndGetDelay(spannerException);
     span.addAnnotation("Stream broken. Safe to retry", spannerException);
     logger.log(Level.FINE, "Retryable exception, will sleep and retry", spannerException);
-    // Truncate any items in the buffer before the last retry token.
-    while (!buffer.isEmpty() && buffer.getLast().getResumeToken().isEmpty()) {
-      buffer.removeLast();
+    // Discard any uncommitted chunks in the buffer (they will be replayed from resumeToken).
+    synchronized (buffer) {
+      buffer.clear();
     }
-    assert buffer.isEmpty() || buffer.getLast().getResumeToken().equals(resumeToken);
-    stream = null;
-    try (IScope s = tracer.withSpan(span)) {
+    resetStream();
+    try (IScope scope = tracer.withSpan(span)) {
       backoffSleep(context, delayMillis);
     }
   }
 
+  /**
+   * Lazily starts the underlying gRPC stream if streaming has not already been initiated and the
+   * iterator has not been closed. Concurrent callers (for example, when {@link
+   * #initiateStreaming(StreamMessageListener)} triggers an asynchronous {@code onStreamMessage}
+   * callback before {@code startGrpcStreaming()} returns) wait for the in-flight startup to finish
+   * rather than starting a second stream or consuming an uninitialized stream.
+   */
   private void startGrpcStreaming() {
-    if (stream == null) {
+    // Fast path: lock-free check when stream is already running.
+    if (stream != null) {
+      return;
+    }
+    synchronized (streamLock) {
+      while (startingStream && !closed) {
+        try {
+          streamLock.wait();
+        } catch (InterruptedException interruptedException) {
+          Thread.currentThread().interrupt();
+          throw newSpannerExceptionForCancellation(Context.current(), interruptedException);
+        }
+      }
+      if (stream != null || closed) {
+        return;
+      }
+      if (startFailure instanceof Error) {
+        throw (Error) startFailure;
+      }
+      if (startFailure != null) {
+        throw (RuntimeException) startFailure;
+      }
+      startingStream = true;
+    }
+    CloseableIterator<PartialResultSet> streamIterator;
+    try {
       span.addAnnotation(
           "Starting/Resuming stream",
           "ResumeToken",
@@ -433,15 +554,213 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
       try (IScope scope = tracer.withSpan(span)) {
         // When start a new stream set the Span as current to make the gRPC Span a child of
         // this Span.
-        stream = checkNotNull(startStream(resumeToken, streamMessageListener, requestId));
-        stream.requestPrefetchChunks();
+        streamIterator = checkNotNull(startStream(resumeToken, streamMessageListener, requestId));
+        if (setStream(streamIterator)) {
+          streamIterator.requestPrefetchChunks();
+        }
       }
+    } catch (RuntimeException | Error throwable) {
+      resetStreamOnFailure(throwable);
+      recordFailure(throwable);
+      throw throwable;
     }
+    publishStartedStream(streamIterator);
   }
 
   boolean isRetryable(SpannerException spannerException) {
     return spannerException.isRetryable()
         || retryableCodes.contains(
             GrpcStatusCode.of(spannerException.getErrorCode().getGrpcStatusCode()).getCode());
+  }
+
+  /**
+   * Registers the in-flight stream early during {@code startStream()} setup so that in-flight RPCs
+   * can be cancelled immediately if {@link #close(String)} is invoked before {@code startStream()}
+   * returns, without publishing the stream to consumers before it is fully initialized.
+   *
+   * @return {@code true} if the stream was attached, or {@code false} if this iterator was already
+   *     closed
+   */
+  boolean setStream(CloseableIterator<PartialResultSet> streamToRegister) {
+    boolean streamWithBeginTransaction = streamToRegister.isWithBeginTransaction();
+    boolean streamLastStatement = streamToRegister.isLastStatement();
+    boolean isClosed;
+    String messageToClose;
+    synchronized (streamLock) {
+      this.withBeginTransaction = streamWithBeginTransaction;
+      this.lastStatement = streamLastStatement;
+      // Only the single thread that set startingStream = true in startGrpcStreaming() calls
+      // setStream(), at most once early inside startStream() and once immediately after
+      // startStream() returns with the same instance. inFlightStream is always cleared before
+      // startingStream is reset to false, so inFlightStream is either null or streamToRegister.
+      if (this.inFlightStream == streamToRegister) {
+        return !this.closed;
+      }
+      isClosed = this.closed;
+      messageToClose = this.closeMessage;
+      this.inFlightStream = streamToRegister;
+    }
+    // If closed concurrently during acquisition, tear down the stream out-of-lock to avoid leaks.
+    if (isClosed) {
+      streamToRegister.close(messageToClose);
+    }
+    return !isClosed;
+  }
+
+  private void publishStartedStream(CloseableIterator<PartialResultSet> streamIterator) {
+    synchronized (streamLock) {
+      if (!this.closed) {
+        this.stream = streamIterator;
+      }
+      this.inFlightStream = null;
+      this.startingStream = false;
+      streamLock.notifyAll();
+    }
+  }
+
+  /**
+   * Resets the active stream reference during retries or channel failovers. Only called after
+   * {@link #startGrpcStreaming()} has already succeeded ({@code startFailure == null}) and a stream
+   * error is later encountered while reading from the published {@link #stream}.
+   */
+  private void resetStream() {
+    synchronized (streamLock) {
+      this.stream = null;
+    }
+  }
+
+  private void resetStreamOnFailure(Throwable throwable) {
+    CloseableIterator<PartialResultSet> failedStream = null;
+    synchronized (streamLock) {
+      if (this.inFlightStream != null) {
+        // Refresh withBeginTransaction (a non-blocking field read on the stream iterator) before
+        // clearing inFlightStream and calling notifyAll(). A subclass that registers its stream
+        // early calls setStream(consumer) before consumer.setCall(call, true), and any follower
+        // thread woken by notifyAll() must immediately observe the updated flag via
+        // isWithBeginTransaction().
+        this.withBeginTransaction = this.inFlightStream.isWithBeginTransaction();
+        if (!this.closed) {
+          failedStream = this.inFlightStream;
+        }
+      }
+      this.inFlightStream = null;
+      this.startingStream = false;
+      this.startFailure = throwable;
+      streamLock.notifyAll();
+    }
+    if (failedStream != null) {
+      failedStream.close(throwable.getMessage());
+    }
+  }
+
+  /** Ensures the tracing span opened in the constructor is ended exactly once. */
+  private void endSpanOnce() {
+    if (spanEnded.compareAndSet(false, true)) {
+      span.end();
+    }
+  }
+
+  private boolean isBufferFlushableLocked() {
+    return !buffer.isEmpty()
+        && (finished || !safeToRetry || !buffer.getLast().getResumeToken().isEmpty());
+  }
+
+  private void bufferChunkLocked(PartialResultSet next) {
+    boolean hasResumeToken = !next.getResumeToken().isEmpty();
+    if (hasResumeToken) {
+      // Only a resume token that differs from the last seen token is progress: a stream
+      // that repeatedly returns the token that was used to resume it has not moved past it.
+      if (!next.getResumeToken().equals(resumeToken)) {
+        // The stream made progress, so reset the budget for consecutive failed attempts.
+        attempts = 0;
+        backOff = null;
+        retrySequenceStartNanos = -1L;
+      }
+      resumeToken = next.getResumeToken();
+      safeToRetry = true;
+    }
+    buffer.add(next);
+    if (buffer.size() > maxBufferSize && !hasResumeToken) {
+      // We need to flush without a restart token. Errors encountered until we see
+      // such a token will fail the read.
+      safeToRetry = false;
+    }
+  }
+
+  /**
+   * Non-blockingly drains available non-error chunks from {@code currentStream} into {@link
+   * #buffer} until {@link #buffer} becomes flushable (for example, a resume token is seen or {@link
+   * #maxBufferSize} is exceeded) or the stream reaches EOF.
+   */
+  private void drainAvailableFromStream(
+      @Nullable CloseableIterator<PartialResultSet> currentStream) {
+    if (currentStream == null) {
+      return;
+    }
+    // Under the single-consumer contract, canPollWithoutErrorOrBlocking() returning true guarantees
+    // that the next item in currentStream is a non-error PartialResultSet or EOF, so
+    // readNextFromStreamIntoBuffer(currentStream) will not block or throw a stream error unless
+    // close() is invoked concurrently while reading (which readNextFromStreamIntoBuffer handles).
+    while (currentStream.canPollWithoutErrorOrBlocking()) {
+      if (readNextFromStreamIntoBuffer(currentStream)) {
+        return;
+      }
+    }
+  }
+
+  private boolean readNextFromStreamIntoBuffer(CloseableIterator<PartialResultSet> currentStream) {
+    try {
+      if (currentStream.hasNext()) {
+        PartialResultSet next = currentStream.next();
+        synchronized (buffer) {
+          if (closed) {
+            return true;
+          }
+          bufferChunkLocked(next);
+          return isBufferFlushableLocked();
+        }
+      } else {
+        synchronized (buffer) {
+          finished = true;
+        }
+        return true;
+      }
+    } catch (SpannerException spannerException) {
+      if (closed) {
+        return true;
+      }
+      throw spannerException;
+    }
+  }
+
+  @Nullable
+  private PartialResultSet pollBufferedChunk() {
+    synchronized (buffer) {
+      if (isBufferFlushableLocked()) {
+        return buffer.pop();
+      }
+    }
+    return null;
+  }
+
+  private boolean shouldRetryOnDifferentChannel(
+      SpannerException spannerException, int numAttemptsOnOtherChannel) {
+    boolean canRetry;
+    synchronized (buffer) {
+      canRetry = resumeToken == null && buffer.isEmpty();
+    }
+    if (canRetry) {
+      Throwable translated = errorHandler.translateException(spannerException);
+      return translated instanceof RetryOnDifferentGrpcChannelException
+          && numAttemptsOnOtherChannel < errorHandler.getMaxAttempts()
+          && prepareIteratorForRetryOnDifferentGrpcChannel();
+    }
+    return false;
+  }
+
+  private void recordFailure(Throwable throwable) {
+    span.addAnnotation("Stream broken. Not safe to retry", throwable);
+    span.setStatus(throwable);
+    endSpanOnce();
   }
 }

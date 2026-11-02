@@ -26,8 +26,11 @@ import com.google.bigtable.v2.ClientConfiguration;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
 import com.google.bigtable.v2.OpenSessionResponse;
 import com.google.bigtable.v2.PeerInfo;
+import com.google.bigtable.v2.SessionClientConfiguration;
+import com.google.bigtable.v2.SessionDiversionConfiguration;
 import com.google.bigtable.v2.SessionRequest;
 import com.google.bigtable.v2.SessionResponse;
+import com.google.bigtable.v2.SessionScopeDiversionConfiguration;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
@@ -254,8 +257,12 @@ public class SessionDeadlineTest {
       responseObserver.onNext(
           ClientConfiguration.newBuilder()
               .setSessionConfiguration(
-                  com.google.bigtable.v2.SessionClientConfiguration.newBuilder()
-                      .setSessionLoad(1)
+                  SessionClientConfiguration.newBuilder()
+                      .setSessionDiversionConfiguration(
+                          SessionDiversionConfiguration.newBuilder()
+                              .setGlobalDiversion(
+                                  SessionScopeDiversionConfiguration.newBuilder()
+                                      .setSessionLoad(1)))
                       .build())
               .build());
       responseObserver.onCompleted();
