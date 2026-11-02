@@ -81,7 +81,8 @@ public class ITTimestampTimeZoneTest extends ITBase {
           + " STRUCT(TIMESTAMP '2025-01-01 12:34:56.123 UTC' AS ts) AS ts_struct,"
           // REST API sends these as scientific notation ("1.0E-6", "-1.0E-6").
           + " TIMESTAMP '1970-01-01 00:00:00.000001 UTC' AS ts_post_epoch,"
-          + " TIMESTAMP '1969-12-31 23:59:59.999999 UTC' AS ts_pre_epoch";
+          + " TIMESTAMP '1969-12-31 23:59:59.999999 UTC' AS ts_pre_epoch,"
+          + " TIMESTAMP '9999-12-31 23:59:59.999999 UTC' AS ts_max";
 
   // Same coercion as an INSERT into a TIMESTAMP column, for TIMESTAMP and STRING parameters.
   private static final String PROBE_TIMESTAMP = "SELECT UNIX_MILLIS(CAST(? AS TIMESTAMP))";
@@ -364,7 +365,12 @@ public class ITTimestampTimeZoneTest extends ITBase {
               assertEquals(
                   Instant.parse("1969-12-31T23:59:59.999999Z"),
                   rs.getTimestamp("ts_pre_epoch").toInstant(),
-                  label(zone, "getTimestamp just before the epoch")));
+                  label(zone, "getTimestamp just before the epoch")),
+          () ->
+              assertEquals(
+                  Instant.parse("9999-12-31T23:59:59.999999Z"),
+                  rs.getTimestamp("ts_max").toInstant(),
+                  label(zone, "getTimestamp at the maximum TIMESTAMP")));
     }
   }
 
@@ -614,7 +620,12 @@ public class ITTimestampTimeZoneTest extends ITBase {
               assertEquals(
                   "1969-12-31 23:59:59.999999",
                   rs.getString("ts_pre_epoch"),
-                  label(zone, "getString just before the epoch")));
+                  label(zone, "getString just before the epoch")),
+          () ->
+              assertEquals(
+                  "9999-12-31 23:59:59.999999",
+                  rs.getString("ts_max"),
+                  label(zone, "getString at the maximum TIMESTAMP")));
     }
   }
 

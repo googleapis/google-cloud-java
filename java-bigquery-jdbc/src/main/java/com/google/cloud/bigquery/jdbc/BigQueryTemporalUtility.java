@@ -439,10 +439,12 @@ final class BigQueryTemporalUtility {
       throws BigQueryJdbcException {
     Object start;
     Object end;
+    boolean int64Timestamps = false;
     if (value instanceof FieldValue) {
       Range range = ((FieldValue) value).getRangeValue();
       start = range.getStart().isNull() ? null : range.getStart().getStringValue();
       end = range.getEnd().isNull() ? null : range.getEnd().getStringValue();
+      int64Timestamps = Boolean.TRUE.equals(((FieldValue) value).getUseInt64Timestamps());
     } else if (value instanceof Map) {
       start = ((Map<?, ?>) value).get("start");
       end = ((Map<?, ?>) value).get("end");
@@ -450,6 +452,10 @@ final class BigQueryTemporalUtility {
       return value == null ? null : value.toString();
     }
     StandardSQLTypeName elementType = getRangeElementType(field, start != null ? start : end);
+    if (int64Timestamps && elementType == StandardSQLTypeName.TIMESTAMP) {
+      start = start == null ? null : Long.valueOf((String) start);
+      end = end == null ? null : Long.valueOf((String) end);
+    }
     return "["
         + formatRangeBound(start, elementType, enableTimestampPicos)
         + ", "

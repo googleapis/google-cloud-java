@@ -829,7 +829,7 @@ final class BigQueryTypeRegistry {
       if (fv.isNull()) {
         return null;
       }
-      input = fv.getValue();
+      input = unwrap(fv, bqType);
     }
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
@@ -860,7 +860,7 @@ final class BigQueryTypeRegistry {
       if (fv.isNull()) {
         return null;
       }
-      input = fv.getValue();
+      input = unwrap(fv, bqType);
     }
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
@@ -883,6 +883,20 @@ final class BigQueryTypeRegistry {
               "Failed to coerce value '%s' from BigQuery %s to %s",
               input, bqType, targetClass.getName()),
           e);
+    }
+  }
+
+  /** Returns int64-encoded TIMESTAMP values as epoch micros, as the Arrow path delivers them. */
+  private static Object unwrap(FieldValue fv, StandardSQLTypeName bqType)
+      throws BigQueryJdbcException {
+    if (bqType != StandardSQLTypeName.TIMESTAMP
+        || !Boolean.TRUE.equals(fv.getUseInt64Timestamps())) {
+      return fv.getValue();
+    }
+    try {
+      return Long.valueOf(fv.getStringValue());
+    } catch (NumberFormatException e) {
+      throw new BigQueryJdbcException("Invalid int64 TIMESTAMP value: " + fv.getValue(), e);
     }
   }
 

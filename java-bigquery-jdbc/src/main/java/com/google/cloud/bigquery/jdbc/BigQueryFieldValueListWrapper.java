@@ -70,11 +70,13 @@ class BigQueryFieldValueListWrapper {
     boolean[] isComplex = new boolean[size];
     for (int i = 0; i < size; i++) {
       Field field = fieldList.get(i);
+      // TIMESTAMP keeps its FieldValue so int64-encoded values stay identifiable.
       isComplex[i] =
           isArray(field)
               || isStruct(field)
               || (field.getType() != null
-                  && field.getType().getStandardType() == StandardSQLTypeName.RANGE);
+                  && (field.getType().getStandardType() == StandardSQLTypeName.RANGE
+                      || field.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP));
     }
     return isComplex;
   }
