@@ -680,9 +680,9 @@ public class RequestIdMockServerTest {
         ImmutableList.of(
             XGoogSpannerRequestId.of(getClientId(), -1, 1, 1),
             // The CreateSession RPC from the initialization of the second client is included in
-            // the requests that we see. This request does not include a channel hint, hence the
-            // zero value for the channel number in the request ID.
-            XGoogSpannerRequestId.of(otherClientId, 0, 1, 1),
+            // the requests that we see. Its request ID carries the channel that grpc-gcp selected
+            // for the affinity-key path.
+            XGoogSpannerRequestId.of(otherClientId, -1, 1, 1),
             XGoogSpannerRequestId.of(otherClientId, -1, 2, 1),
             XGoogSpannerRequestId.of(getClientId(), -1, 2, 1)),
         actual);

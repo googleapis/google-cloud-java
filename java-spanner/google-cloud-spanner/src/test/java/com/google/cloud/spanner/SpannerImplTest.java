@@ -21,6 +21,9 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -39,12 +42,14 @@ import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryOptions;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -124,6 +129,75 @@ public class SpannerImplTest {
 
     assertThat(databaseClient1).isSameInstanceAs(databaseClient);
     verify(spannerOptions).initializeBuiltInMetrics(db);
+  }
+
+  @Test
+  public void invalidatedDatabaseClientUnregistersItsChannelPrimeSessionSource() {
+    DatabaseId db = DatabaseId.of("projects/p1/instances/i1/databases/d1");
+    Mockito.when(spannerOptions.getTransportOptions())
+        .thenReturn(GrpcTransportOptions.newBuilder().build());
+    Mockito.when(spannerOptions.getSessionPoolOptions())
+        .thenReturn(SessionPoolOptions.newBuilder().setMinSessions(0).build());
+    AtomicBoolean valid = new AtomicBoolean(true);
+    SpannerImpl spanner =
+        new SpannerImpl(rpc, spannerOptions) {
+          @Override
+          DatabaseClientImpl createDatabaseClient(
+              String clientId,
+              MultiplexedSessionDatabaseClient multiplexedSessionClient,
+              Attributes databaseAttributes) {
+            return new DatabaseClientImpl(
+                clientId, multiplexedSessionClient, tracer, databaseAttributes) {
+              @Override
+              boolean isValid() {
+                return valid.get();
+              }
+            };
+          }
+        };
+    try {
+      DatabaseClient first = spanner.getDatabaseClient(db);
+      ArgumentCaptor<SpannerRpc.ChannelPrimeSessionSource> sources =
+          ArgumentCaptor.forClass(SpannerRpc.ChannelPrimeSessionSource.class);
+      verify(rpc).registerChannelPrimeSessionSource(sources.capture());
+      SpannerRpc.ChannelPrimeSessionSource firstSource = sources.getValue();
+      verify(rpc, never()).unregisterChannelPrimeSessionSource(firstSource);
+
+      valid.set(false);
+      DatabaseClient second = spanner.getDatabaseClient(db);
+
+      assertThat(second).isNotSameInstanceAs(first);
+      verify(rpc).unregisterChannelPrimeSessionSource(firstSource);
+      verify(rpc, times(2)).registerChannelPrimeSessionSource(sources.capture());
+      SpannerRpc.ChannelPrimeSessionSource secondSource = sources.getValue();
+      assertThat(secondSource).isNotSameInstanceAs(firstSource);
+      verify(rpc, never()).unregisterChannelPrimeSessionSource(secondSource);
+    } finally {
+      spanner.close();
+    }
+  }
+
+  @Test
+  public void closeUnregistersChannelPrimeSessionSourceOfEveryDatabaseClient() {
+    DatabaseId db1 = DatabaseId.of("projects/p1/instances/i1/databases/d1");
+    DatabaseId db2 = DatabaseId.of("projects/p1/instances/i1/databases/d2");
+    Mockito.when(spannerOptions.getTransportOptions())
+        .thenReturn(GrpcTransportOptions.newBuilder().build());
+    Mockito.when(spannerOptions.getSessionPoolOptions())
+        .thenReturn(SessionPoolOptions.newBuilder().setMinSessions(0).build());
+    SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
+    spanner.getDatabaseClient(db1);
+    spanner.getDatabaseClient(db2);
+    ArgumentCaptor<SpannerRpc.ChannelPrimeSessionSource> sources =
+        ArgumentCaptor.forClass(SpannerRpc.ChannelPrimeSessionSource.class);
+    verify(rpc, times(2)).registerChannelPrimeSessionSource(sources.capture());
+    verify(rpc, never()).unregisterChannelPrimeSessionSource(any());
+
+    spanner.close();
+
+    verify(rpc).unregisterChannelPrimeSessionSource(sources.getAllValues().get(0));
+    verify(rpc).unregisterChannelPrimeSessionSource(sources.getAllValues().get(1));
+    verify(rpc, times(2)).unregisterChannelPrimeSessionSource(any());
   }
 
   @Test
