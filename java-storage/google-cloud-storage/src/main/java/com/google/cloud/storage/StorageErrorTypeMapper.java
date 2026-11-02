@@ -84,13 +84,6 @@ final class StorageErrorTypeMapper {
     return status.getCode().name();
   }
 
-  private static String mapGaxStatusCode(StatusCode.@Nullable Code code) {
-    if (code == null || code == StatusCode.Code.UNKNOWN) {
-      return STATUS_UNKNOWN;
-    }
-    return code.name();
-  }
-
   static String mapHttpResponseCode(int statusCode) {
     if (statusCode >= 200 && statusCode < 300) {
       return STATUS_OK;
@@ -236,6 +229,13 @@ final class StorageErrorTypeMapper {
     }
 
     return STATUS_UNKNOWN;
+  }
+
+  private static String mapGaxStatusCode(StatusCode.@Nullable Code code) {
+    if (code == null || code == StatusCode.Code.UNKNOWN) {
+      return STATUS_UNKNOWN;
+    }
+    return code.name();
   }
 
   private static @Nullable String mapSpecificClientCause(Throwable t, boolean includeAuth) {
