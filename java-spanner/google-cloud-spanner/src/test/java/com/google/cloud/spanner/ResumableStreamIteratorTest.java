@@ -791,7 +791,7 @@ public class ResumableStreamIteratorTest {
     initWithLimit(512);
     GrpcStreamIterator grpcStream = new GrpcStreamIterator(false, 4, false);
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
-    grpcStream.setCall(call, false);
+    grpcStream.setCall(call);
     Mockito.when(starter.startStream(null, null)).thenReturn(grpcStream);
     resumableStreamIterator.initiateStreaming(null);
 
@@ -817,7 +817,7 @@ public class ResumableStreamIteratorTest {
     initWithLimit(512);
     GrpcStreamIterator grpcStream = new GrpcStreamIterator(false, 4, false);
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
-    grpcStream.setCall(call, false);
+    grpcStream.setCall(call);
     when(starter.startStream(null, null)).thenReturn(grpcStream);
     resumableStreamIterator.initiateStreaming(null);
 
@@ -837,7 +837,7 @@ public class ResumableStreamIteratorTest {
     initWithLimit(512);
     GrpcStreamIterator grpcStream = new GrpcStreamIterator(false, 4, false);
     SpannerRpc.StreamingCall call = Mockito.mock(SpannerRpc.StreamingCall.class);
-    grpcStream.setCall(call, false);
+    grpcStream.setCall(call);
     Mockito.when(starter.startStream(null, null)).thenReturn(grpcStream);
     resumableStreamIterator.initiateStreaming(null);
 
@@ -912,7 +912,7 @@ public class ResumableStreamIteratorTest {
             /* lastStatement= */ false,
             /* prefetchChunks= */ 4,
             /* cancelQueryWhenClientIsClosed= */ false);
-    grpcStream.setCall(mock(SpannerRpc.StreamingCall.class), false);
+    grpcStream.setCall(mock(SpannerRpc.StreamingCall.class));
     when(starter.startStream(null, null)).thenReturn(grpcStream);
     resumableStreamIterator.initiateStreaming(null);
 
@@ -941,8 +941,8 @@ public class ResumableStreamIteratorTest {
   public void closeDuringStartStreamClosesStreamAndPreventsResurrection() {
     initWithLimit(10);
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
-    GrpcStreamIterator grpcStream = new GrpcStreamIterator(true, 4, false);
-    grpcStream.setCall(call, true);
+    GrpcStreamIterator grpcStream = new GrpcStreamIterator(true, 4, false, true);
+    grpcStream.setCall(call);
     when(starter.startStream(null, null))
         .thenAnswer(
             invocation -> {
@@ -963,7 +963,7 @@ public class ResumableStreamIteratorTest {
     initWithLimit(10);
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     GrpcStreamIterator grpcStream = new GrpcStreamIterator(false, 4, false);
-    grpcStream.setCall(call, false);
+    grpcStream.setCall(call);
     when(starter.startStream(null, null)).thenReturn(grpcStream);
     resumableStreamIterator.initiateStreaming(null);
     grpcStream.consumer().onPartialResultSet(resultSet(ByteString.copyFromUtf8("r1"), "a"));
@@ -1022,8 +1022,8 @@ public class ResumableStreamIteratorTest {
     assertFalse(resumableStreamIterator.isLastStatement());
 
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
-    GrpcStreamIterator grpcStream = new GrpcStreamIterator(true, 4, false);
-    grpcStream.setCall(call, true);
+    GrpcStreamIterator grpcStream = new GrpcStreamIterator(true, 4, false, true);
+    grpcStream.setCall(call);
     when(starter.startStream(null, null)).thenReturn(grpcStream);
 
     Transaction expectedTransaction =
@@ -1062,7 +1062,7 @@ public class ResumableStreamIteratorTest {
     initWithLimit(10);
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     GrpcStreamIterator grpcStream = new GrpcStreamIterator(false, 4, false);
-    grpcStream.setCall(call, false);
+    grpcStream.setCall(call);
     when(starter.startStream(null, null)).thenReturn(grpcStream);
 
     resumableStreamIterator.initiateStreaming(null);
@@ -1082,7 +1082,7 @@ public class ResumableStreamIteratorTest {
               if (listener != null) {
                 grpcStream.registerListener(listener);
               }
-              grpcStream.setCall(call, false);
+              grpcStream.setCall(call);
               grpcStream
                   .consumer()
                   .onPartialResultSet(
@@ -1144,11 +1144,11 @@ public class ResumableStreamIteratorTest {
     initWithLimit(10);
     GrpcStreamIterator grpcStream1 = new GrpcStreamIterator(false, 4, false);
     SpannerRpc.StreamingCall call1 = mock(SpannerRpc.StreamingCall.class);
-    grpcStream1.setCall(call1, false);
+    grpcStream1.setCall(call1);
 
     GrpcStreamIterator grpcStream2 = new GrpcStreamIterator(false, 4, false);
     SpannerRpc.StreamingCall call2 = mock(SpannerRpc.StreamingCall.class);
-    grpcStream2.setCall(call2, false);
+    grpcStream2.setCall(call2);
 
     when(starter.startStream(null, null)).thenReturn(grpcStream1);
     when(starter.startStream(ByteString.copyFromUtf8("r1"), null)).thenReturn(grpcStream2);
@@ -1188,7 +1188,7 @@ public class ResumableStreamIteratorTest {
     initWithLimit(512);
     GrpcStreamIterator grpcStream = new GrpcStreamIterator(false, 4, false);
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
-    grpcStream.setCall(call, false);
+    grpcStream.setCall(call);
     when(starter.startStream(null, null)).thenReturn(grpcStream);
     resumableStreamIterator.initiateStreaming(null);
 
@@ -1414,12 +1414,15 @@ public class ResumableStreamIteratorTest {
             startCount.incrementAndGet();
             GrpcStreamIterator grpcStream =
                 new GrpcStreamIterator(
-                    /* lastStatement= */ true, 10, /* cancelQueryWhenClientIsClosed= */ false);
+                    /* lastStatement= */ true,
+                    10,
+                    /* cancelQueryWhenClientIsClosed= */ false,
+                    /* withBeginTransaction= */ true);
             if (streamMessageListener != null) {
               grpcStream.registerListener(streamMessageListener);
             }
             setStream(grpcStream);
-            grpcStream.setCall(call, /* withBeginTransaction= */ true);
+            grpcStream.setCall(call);
             throw new RuntimeException("start failure");
           }
         };
@@ -1467,7 +1470,7 @@ public class ResumableStreamIteratorTest {
     initWithLimit(1);
     GrpcStreamIterator grpcStream = new GrpcStreamIterator(false, 4, false);
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
-    grpcStream.setCall(call, false);
+    grpcStream.setCall(call);
     when(starter.startStream(null, null)).thenReturn(grpcStream);
     resumableStreamIterator.initiateStreaming(null);
 
@@ -1529,7 +1532,7 @@ public class ResumableStreamIteratorTest {
                     /* lastStatement= */ false, 10, /* cancelQueryWhenClientIsClosed= */ false);
             setStream(stream);
             close("closing before setCall");
-            stream.setCall(call, false);
+            stream.setCall(call);
             return stream;
           }
         };
@@ -1550,9 +1553,12 @@ public class ResumableStreamIteratorTest {
               XGoogSpannerRequestId requestId) {
             GrpcStreamIterator stream =
                 new GrpcStreamIterator(
-                    /* lastStatement= */ true, 10, /* cancelQueryWhenClientIsClosed= */ false);
+                    /* lastStatement= */ true,
+                    10,
+                    /* cancelQueryWhenClientIsClosed= */ false,
+                    /* withBeginTransaction= */ true);
             setStream(stream);
-            stream.setCall(call, /* withBeginTransaction= */ true);
+            stream.setCall(call);
             return stream;
           }
         };
@@ -1581,7 +1587,7 @@ public class ResumableStreamIteratorTest {
                 new GrpcStreamIterator(
                     /* lastStatement= */ false, 10, /* cancelQueryWhenClientIsClosed= */ false);
             setStream(stream);
-            stream.setCall(call, false);
+            stream.setCall(call);
             PartialResultSet.Builder builder =
                 PartialResultSet.newBuilder()
                     .setResumeToken(ByteString.copyFromUtf8("r1"))
@@ -1618,7 +1624,7 @@ public class ResumableStreamIteratorTest {
                   new GrpcStreamIterator(
                       /* lastStatement= */ false, 10, /* cancelQueryWhenClientIsClosed= */ false);
               setStream(stream);
-              stream.setCall(call, false);
+              stream.setCall(call);
               PartialResultSet firstChunk =
                   PartialResultSet.newBuilder()
                       .setResumeToken(ByteString.copyFromUtf8("r1"))
@@ -1657,7 +1663,7 @@ public class ResumableStreamIteratorTest {
     initWithLimit(10);
     GrpcStreamIterator grpcStream = new GrpcStreamIterator(false, 4, false);
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
-    grpcStream.setCall(call, false);
+    grpcStream.setCall(call);
     when(starter.startStream(null, null)).thenReturn(grpcStream);
     resumableStreamIterator.initiateStreaming(null);
     grpcStream.consumer().onPartialResultSet(resultSet(null, "bufferedBeforeClose"));
@@ -1695,7 +1701,7 @@ public class ResumableStreamIteratorTest {
               XGoogSpannerRequestId requestId) {
             GrpcStreamIterator stream = new GrpcStreamIterator(false, 10, false);
             setStream(stream);
-            stream.setCall(call, false);
+            stream.setCall(call);
             stream.consumer().onPartialResultSet(resultSet(null, "chunkAfterClose"));
             return stream;
           }
@@ -1838,7 +1844,7 @@ public class ResumableStreamIteratorTest {
                     })
                 .when(call)
                 .cancel(Mockito.any());
-            stream.setCall(call, false);
+            stream.setCall(call);
             return stream;
           }
         };
@@ -1883,7 +1889,7 @@ public class ResumableStreamIteratorTest {
               XGoogSpannerRequestId requestId) {
             close("closing");
             setStream(stream);
-            stream.setCall(call, false);
+            stream.setCall(call);
             return stream;
           }
         };
@@ -1922,11 +1928,11 @@ public class ResumableStreamIteratorTest {
                   .consumer()
                   .onError(new RetryableException(errorCodeParameter, "transient failure"));
               // setCall() flushes pending messages and invokes streamMessageListener synchronously.
-              stream.setCall(call, false);
+              stream.setCall(call);
               Uninterruptibles.awaitUninterruptibly(
                   allowFirstStartStreamToReturn, 5, TimeUnit.SECONDS);
             } else {
-              stream.setCall(call, false);
+              stream.setCall(call);
               stream
                   .consumer()
                   .onPartialResultSet(
@@ -2041,7 +2047,7 @@ public class ResumableStreamIteratorTest {
             startStreamEntered.countDown();
             Uninterruptibles.awaitUninterruptibly(allowStartStreamToFinish, 5, TimeUnit.SECONDS);
             GrpcStreamIterator stream = new GrpcStreamIterator(false, 10, false);
-            stream.setCall(mock(SpannerRpc.StreamingCall.class), false);
+            stream.setCall(mock(SpannerRpc.StreamingCall.class));
             stream.consumer().onCompleted();
             return stream;
           }
@@ -2151,8 +2157,11 @@ public class ResumableStreamIteratorTest {
             startCount.incrementAndGet();
             GrpcStreamIterator stream =
                 new GrpcStreamIterator(
-                    /* lastStatement= */ true, 10, /* cancelQueryWhenClientIsClosed= */ false);
-            stream.setCall(call, /* withBeginTransaction= */ true);
+                    /* lastStatement= */ true,
+                    10,
+                    /* cancelQueryWhenClientIsClosed= */ false,
+                    /* withBeginTransaction= */ true);
+            stream.setCall(call);
             return stream;
           }
         };
@@ -2187,7 +2196,7 @@ public class ResumableStreamIteratorTest {
                 new GrpcStreamIterator(
                     /* lastStatement= */ false, 10, /* cancelQueryWhenClientIsClosed= */ false);
             setStream(stream);
-            stream.setCall(call, /* withBeginTransaction= */ false);
+            stream.setCall(call);
             close("closed before startStream threw");
             throw new RuntimeException("startStream threw after close");
           }
@@ -2265,7 +2274,7 @@ public class ResumableStreamIteratorTest {
             return super.isDataAvailable();
           }
         };
-    racingStream.setCall(call, false);
+    racingStream.setCall(call);
 
     when(starter.startStream(null, null)).thenReturn(racingStream);
     resumableStreamIterator.initiateStreaming(null);
@@ -2300,7 +2309,7 @@ public class ResumableStreamIteratorTest {
             return super.canPollWithoutErrorOrBlocking();
           }
         };
-    racingStream.setCall(call, false);
+    racingStream.setCall(call);
 
     when(starter.startStream(null, null)).thenReturn(racingStream);
     resumableStreamIterator.initiateStreaming(null);
@@ -2453,12 +2462,15 @@ public class ResumableStreamIteratorTest {
             startCount.incrementAndGet();
             GrpcStreamIterator stream =
                 new GrpcStreamIterator(
-                    /* lastStatement= */ true, 10, /* cancelQueryWhenClientIsClosed= */ false);
+                    /* lastStatement= */ true,
+                    10,
+                    /* cancelQueryWhenClientIsClosed= */ false,
+                    /* withBeginTransaction= */ true);
             if (streamMessageListener != null) {
               stream.registerListener(streamMessageListener);
             }
             setStream(stream);
-            stream.setCall(call, /* withBeginTransaction= */ true);
+            stream.setCall(call);
             consumerWaitingLatch.countDown();
             Uninterruptibles.awaitUninterruptibly(
                 allowStartStreamToThrowError, 5, TimeUnit.SECONDS);
@@ -2531,16 +2543,18 @@ public class ResumableStreamIteratorTest {
               XGoogSpannerRequestId requestId) {
             GrpcStreamIterator stream =
                 new GrpcStreamIterator(
-                    /* lastStatement= */ true, 10, /* cancelQueryWhenClientIsClosed= */ false) {
+                    /* lastStatement= */ true,
+                    10,
+                    /* cancelQueryWhenClientIsClosed= */ false,
+                    /* withBeginTransaction= */ true) {
                   @Override
                   public void close(@Nullable String message) {
                     streamCloseCount.incrementAndGet();
                     super.close(message);
                   }
                 };
-            // Register the stream early before stream.setCall(...) sets withBeginTransaction.
             setStream(stream);
-            stream.setCall(call, /* withBeginTransaction= */ true);
+            stream.setCall(call);
             setCallCompleted.countDown();
             Uninterruptibles.awaitUninterruptibly(allowStartStreamToReturn, 5, TimeUnit.SECONDS);
             return stream;
@@ -2585,7 +2599,7 @@ public class ResumableStreamIteratorTest {
     initWithLimit(10);
     SpannerRpc.StreamingCall call = mock(SpannerRpc.StreamingCall.class);
     GrpcStreamIterator grpcStream = new GrpcStreamIterator(false, 10, false);
-    grpcStream.setCall(call, false);
+    grpcStream.setCall(call);
     when(starter.startStream(null, null)).thenReturn(grpcStream);
     resumableStreamIterator.initiateStreaming(null);
 
@@ -2631,16 +2645,16 @@ public class ResumableStreamIteratorTest {
             startCount.incrementAndGet();
             GrpcStreamIterator stream =
                 new GrpcStreamIterator(
-                    /* lastStatement= */ true, 10, /* cancelQueryWhenClientIsClosed= */ false);
+                    /* lastStatement= */ true,
+                    10,
+                    /* cancelQueryWhenClientIsClosed= */ false,
+                    /* withBeginTransaction= */ true);
             if (streamMessageListener != null) {
               stream.registerListener(streamMessageListener);
             }
-            // Register the stream early before stream.setCall(call, withBeginTransaction) sets
-            // withBeginTransaction = true.
             setStream(stream);
-            assertFalse(stream.isWithBeginTransaction());
-            stream.setCall(call, /* withBeginTransaction= */ true);
             assertTrue(stream.isWithBeginTransaction());
+            stream.setCall(call);
             stream.requestPrefetchChunks();
             return stream;
           }
@@ -2702,8 +2716,11 @@ public class ResumableStreamIteratorTest {
               XGoogSpannerRequestId requestId) {
             GrpcStreamIterator stream =
                 new GrpcStreamIterator(
-                    /* lastStatement= */ true, 10, /* cancelQueryWhenClientIsClosed= */ false);
-            stream.setCall(call, /* withBeginTransaction= */ true);
+                    /* lastStatement= */ true,
+                    10,
+                    /* cancelQueryWhenClientIsClosed= */ false,
+                    /* withBeginTransaction= */ true);
+            stream.setCall(call);
             stream
                 .consumer()
                 .onError(new RetryableException(errorCodeParameter, "transient error"));
@@ -2768,8 +2785,8 @@ public class ResumableStreamIteratorTest {
               @Nullable StreamMessageListener streamMessageListener,
               XGoogSpannerRequestId requestId) {
             startCount.incrementAndGet();
-            GrpcStreamIterator stream = new GrpcStreamIterator(true, 10, false);
-            stream.setCall(call, true);
+            GrpcStreamIterator stream = new GrpcStreamIterator(true, 10, false, true);
+            stream.setCall(call);
             return stream;
           }
         };
@@ -2800,12 +2817,12 @@ public class ResumableStreamIteratorTest {
               @Nullable StreamMessageListener streamMessageListener,
               XGoogSpannerRequestId requestId) {
             int attempt = streamStartCount.incrementAndGet();
-            GrpcStreamIterator stream = new GrpcStreamIterator(true, 10, false);
+            GrpcStreamIterator stream = new GrpcStreamIterator(true, 10, false, true);
             if (streamMessageListener != null) {
               stream.registerListener(streamMessageListener);
             }
             setStream(stream);
-            stream.setCall(call, true);
+            stream.setCall(call);
             if (attempt == 1) {
               stream
                   .consumer()
@@ -2902,7 +2919,7 @@ public class ResumableStreamIteratorTest {
                 XGoogSpannerRequestId requestId) {
               GrpcStreamIterator stream = new GrpcStreamIterator(false, 10, false);
               setStream(stream);
-              stream.setCall(call, false);
+              stream.setCall(call);
               stream.consumer().onPartialResultSet(resultSet(null, "chunk1"));
               return stream;
             }
