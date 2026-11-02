@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import io.grpc.CallOptions;
+import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.AttributeKey;
@@ -296,18 +297,27 @@ final class StorageMetricsContext {
       return fromContext;
     }
     Throwable curr = e;
-    while (curr != null && curr.getCause() != curr) {
+    while (curr != null) {
       if (curr instanceof StatusRuntimeException) {
-        return ((StatusRuntimeException) curr).getStatus().getCode().name();
+        Status status = ((StatusRuntimeException) curr).getStatus();
+        if (status != null && status.getCode() != null) {
+          return status.getCode().name();
+        }
       }
       if (curr instanceof StatusException) {
-        return ((StatusException) curr).getStatus().getCode().name();
+        Status status = ((StatusException) curr).getStatus();
+        if (status != null && status.getCode() != null) {
+          return status.getCode().name();
+        }
       }
       if (curr instanceof ApiException) {
         StatusCode statusCode = ((ApiException) curr).getStatusCode();
         if (statusCode != null && statusCode.getCode() != null) {
           return statusCode.getCode().name();
         }
+      }
+      if (curr.getCause() == curr) {
+        break;
       }
       curr = curr.getCause();
     }
@@ -320,7 +330,7 @@ final class StorageMetricsContext {
       return fromContext;
     }
     Throwable curr = e;
-    while (curr != null && curr.getCause() != curr) {
+    while (curr != null) {
       if (curr instanceof StorageException) {
         int code = ((StorageException) curr).getCode();
         if (code > 0) {
@@ -332,6 +342,9 @@ final class StorageMetricsContext {
         if (code > 0) {
           return Integer.toString(code);
         }
+      }
+      if (curr.getCause() == curr) {
+        break;
       }
       curr = curr.getCause();
     }
