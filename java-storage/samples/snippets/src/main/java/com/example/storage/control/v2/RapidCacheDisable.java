@@ -44,15 +44,17 @@ public final class RapidCacheDisable {
       DisableRapidCacheRequest request =
           DisableRapidCacheRequest.newBuilder().setName(rapidCacheName).build();
 
-      // Disabling a Rapid Cache starts a long-running operation (LRO). The cache moves to the
-      // "disabled" state within seconds, but the operation only completes once the cache has been
-      // fully removed, which can take more than 30 minutes. This sample does not wait for the
-      // operation to complete; use RapidCacheGet to check the cache state.
+      // Start a long-running operation (LRO).
       OperationFuture<RapidCache, DisableRapidCacheMetadata> operation =
           storageControl.disableRapidCacheAsync(request);
 
-      System.out.printf("Disabling Rapid Cache: %s%n", rapidCacheName);
-      System.out.printf("Operation: %s%n", operation.getName());
+      // Await the LRO's completion. The cache moves to the "disabled" state within seconds, but
+      // the operation only completes once the cache has been fully removed, which can take longer
+      // than the client's default polling timeout. If the wait times out, the cache is already
+      // disabled; use RapidCacheGet to check its state.
+      RapidCache disabledRapidCache = operation.get();
+      System.out.printf("Disabled Rapid Cache: %s%n", disabledRapidCache.getName());
+      System.out.printf("State: %s%n", disabledRapidCache.getState());
     }
   }
 }

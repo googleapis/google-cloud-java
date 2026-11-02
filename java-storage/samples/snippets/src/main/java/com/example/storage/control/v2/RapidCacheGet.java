@@ -45,6 +45,7 @@ public final class RapidCacheGet {
 
       System.out.printf("Got Rapid Cache: %s%n", rapidCache.getName());
       System.out.printf("Zone: %s%n", rapidCache.getZone());
+      System.out.printf("Cache type: %s%n", rapidCache.getCacheType());
       System.out.printf("State: %s%n", rapidCache.getState());
     }
   }

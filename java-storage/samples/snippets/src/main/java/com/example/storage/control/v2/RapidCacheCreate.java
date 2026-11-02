@@ -19,10 +19,12 @@ package com.example.storage.control.v2;
 // [START storage_control_create_rapid_cache]
 
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.protobuf.Duration;
 import com.google.storage.control.v2.BucketName;
 import com.google.storage.control.v2.CreateRapidCacheMetadata;
 import com.google.storage.control.v2.CreateRapidCacheRequest;
 import com.google.storage.control.v2.RapidCache;
+import com.google.storage.control.v2.RapidCacheName;
 import com.google.storage.control.v2.StorageControlClient;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -42,7 +44,14 @@ public final class RapidCacheCreate {
 
       // Rapid Cache Ultra requires a regional bucket with hierarchical namespace enabled.
       RapidCache rapidCache =
-          RapidCache.newBuilder().setZone(zoneName).setCacheType("rapid-cache-ultra").build();
+          RapidCache.newBuilder()
+              // The Rapid Cache ID must be the same as the zone.
+              .setName(RapidCacheName.format("_", bucketName, zoneName))
+              .setZone(zoneName)
+              .setCacheType("rapid-cache-ultra")
+              // How long a cache entry can live (between 1 hour and 7 days). 86400s = 24 hours.
+              .setTtl(Duration.newBuilder().setSeconds(86400).build())
+              .build();
 
       CreateRapidCacheRequest request =
           CreateRapidCacheRequest.newBuilder()
@@ -58,6 +67,8 @@ public final class RapidCacheCreate {
       // Await the LRO's completion.
       RapidCache createdRapidCache = operation.get();
       System.out.printf("Created Rapid Cache: %s%n", createdRapidCache.getName());
+      System.out.printf("Cache type: %s%n", createdRapidCache.getCacheType());
+      System.out.printf("State: %s%n", createdRapidCache.getState());
     }
   }
 }

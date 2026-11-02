@@ -29,17 +29,27 @@ import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
 import com.google.storage.control.v2.RapidCacheName;
+import com.google.storage.control.v2.StorageControlClient;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 public final class ITRapidCacheTest extends TestBase {
 
-  private static final String CREATED_PREFIX = "Created Rapid Cache: ";
-  // Poll for up to 2 minutes for the cache to reach the "disabled" state.
-  private static final int DISABLE_POLL_ATTEMPTS = 12;
-  private static final long DISABLE_POLL_INTERVAL_SECONDS = 10;
+  private static final String CACHE_TYPE = "rapid-cache-ultra";
+  // Wait for the bucket metadata to propagate before creating the Rapid Cache.
+  private static final long BUCKET_PROPAGATION_SECONDS = 20;
+  // The disable operation only completes once the cache has been fully removed, which can take
+  // more than an hour. The cache moves to the "disabled" state within seconds, so the test bounds
+  // the wait and then checks the state instead.
+  private static final long DISABLE_TIMEOUT_MINUTES = 10;
   // Bucket deletion is rejected while the Rapid Cache is still being removed.
   private static final long BUCKET_DELETE_TIMEOUT_SECONDS = 120;
   private static final long BUCKET_DELETE_INTERVAL_SECONDS = 15;
@@ -52,10 +62,13 @@ public final class ITRapidCacheTest extends TestBase {
               Strings.emptyToNull(System.getenv("RAPID_CACHE_ZONE")), "us-central1-a"));
 
   private String bucketName;
+  // The Rapid Cache ID must be the same as the zone.
+  private final String cacheId = ZONE.getZone();
+  private boolean cacheDisabled;
   private int outputOffset;
 
   @Before
-  public void setUp() {
+  public void setUp() throws InterruptedException {
     assumeTrue(
         "RapidCache sample tests skipped in CI due to very long operation times.",
         Strings.isNullOrEmpty(System.getenv("JOB_TYPE")));
@@ -71,12 +84,16 @@ public final class ITRapidCacheTest extends TestBase {
             .setHierarchicalNamespace(HierarchicalNamespace.newBuilder().setEnabled(true).build())
             .build());
     bucketName = name;
+    TimeUnit.SECONDS.sleep(BUCKET_PROPAGATION_SECONDS);
   }
 
   @After
   public void tearDown() throws InterruptedException {
     if (bucketName == null) {
       return;
+    }
+    if (!cacheDisabled) {
+      disableQuietly();
     }
     // Best-effort cleanup. A bucket with a Rapid Cache cannot be deleted until the cache has been
     // fully removed, which can take a long time after it is disabled. Any leftover bucket is
@@ -98,66 +115,79 @@ public final class ITRapidCacheTest extends TestBase {
 
   @Test
   public void createGetListUpdateDisable() throws Exception {
+    String cacheName = RapidCacheName.format("_", bucketName, cacheId);
+
     // Test create Rapid Cache
     RapidCacheCreate.rapidCacheCreate(bucketName, ZONE.getZone());
     String out = newOutput();
-    assertThat(out).contains(CREATED_PREFIX);
-    String cacheName =
-        out.substring(out.indexOf(CREATED_PREFIX) + CREATED_PREFIX.length()).trim().split("\\s")[0];
-    String cacheId = RapidCacheName.parse(cacheName).getRapidCache();
-    assertThat(cacheId).isNotEmpty();
+    assertThat(out).contains("Created Rapid Cache: " + cacheName);
+    assertThat(out).contains("Cache type: " + CACHE_TYPE);
 
-    Throwable failure = null;
+    // Test get Rapid Cache
+    RapidCacheGet.rapidCacheGet(bucketName, cacheId);
+    out = newOutput();
+    assertThat(out).contains("Got Rapid Cache: " + cacheName);
+    assertThat(out).contains("Zone: " + ZONE.getZone());
+    assertThat(out).contains("Cache type: " + CACHE_TYPE);
+    assertThat(out).contains("State: running");
+
+    // Test list Rapid Caches
+    RapidCacheList.rapidCacheList(bucketName);
+    assertThat(newOutput()).contains(cacheName);
+
+    // Test update Rapid Cache
+    RapidCacheUpdate.rapidCacheUpdate(bucketName, cacheId, 172800);
+    out = newOutput();
+    assertThat(out).contains("Updated Rapid Cache: " + cacheName);
+    assertThat(out).contains("TTL: 172800 seconds");
+
+    // Test disable Rapid Cache. The sample waits for the operation to complete, so run it with a
+    // bounded wait.
+    ExecutorService executor = Executors.newSingleThreadExecutor();
     try {
-      // Test get Rapid Cache
-      RapidCacheGet.rapidCacheGet(bucketName, cacheId);
-      out = newOutput();
-      assertThat(out).contains(cacheName);
-      assertThat(out).contains("Zone: " + ZONE.getZone());
-      assertThat(out).contains("State: ");
-
-      // Test list Rapid Caches
-      RapidCacheList.rapidCacheList(bucketName);
-      assertThat(newOutput()).contains(cacheName);
-
-      // Test update Rapid Cache
-      RapidCacheUpdate.rapidCacheUpdate(bucketName, cacheId, 172800);
-      out = newOutput();
-      assertThat(out).contains("Updated Rapid Cache: " + cacheName);
-      assertThat(out).contains("TTL: 172800 seconds");
-    } catch (Throwable t) {
-      failure = t;
-      throw t;
-    } finally {
-      // Disable the Rapid Cache. This also cleans up the cache so that the bucket can be deleted
-      // once the cache has been fully removed.
-      newOutput();
+      Future<?> disable =
+          executor.submit(
+              () -> {
+                RapidCacheDisable.rapidCacheDisable(bucketName, cacheId);
+                return null;
+              });
       try {
-        RapidCacheDisable.rapidCacheDisable(bucketName, cacheId);
-      } catch (Exception e) {
-        if (failure == null) {
+        disable.get(DISABLE_TIMEOUT_MINUTES, TimeUnit.MINUTES);
+        cacheDisabled = true;
+        assertThat(newOutput()).contains("Disabled Rapid Cache: " + cacheName);
+      } catch (TimeoutException | ExecutionException e) {
+        // A TimeoutException means our wait expired. A CancellationException means the client
+        // stopped polling the operation (the default LRO polling timeout is 5 minutes). In both
+        // cases the operation is still running on the server, and the cache must already be in
+        // the "disabled" state. Any other error fails the test.
+        if (e instanceof ExecutionException && !(e.getCause() instanceof CancellationException)) {
           throw e;
         }
-        // Keep the original test failure as the primary error.
-        failure.addSuppressed(e);
+        // Cancelling the local wait does not cancel the operation on the server.
+        disable.cancel(true);
+        cacheDisabled = true;
+        newOutput();
+        RapidCacheGet.rapidCacheGet(bucketName, cacheId);
+        assertThat(newOutput()).contains("State: disabled");
       }
+    } finally {
+      executor.shutdownNow();
     }
+  }
 
-    // Test disable Rapid Cache
-    String disableOut = newOutput();
-    assertThat(disableOut).contains("Disabling Rapid Cache: " + cacheName);
-    assertThat(disableOut).contains("Operation: ");
-
-    // The cache moves to the "disabled" state shortly after the request.
-    for (int i = 0; i < DISABLE_POLL_ATTEMPTS; i++) {
-      RapidCacheGet.rapidCacheGet(bucketName, cacheId);
-      out = newOutput();
-      if (out.contains("State: disabled")) {
-        break;
-      }
-      TimeUnit.SECONDS.sleep(DISABLE_POLL_INTERVAL_SECONDS);
+  /**
+   * Used in teardown: starts disabling the Rapid Cache without waiting for the operation, ignoring
+   * errors (for example, if the cache was never created).
+   */
+  private void disableQuietly() {
+    try (StorageControlClient storageControl = StorageControlClient.create()) {
+      storageControl
+          .disableRapidCacheAsync(RapidCacheName.format("_", bucketName, cacheId))
+          .getInitialFuture()
+          .get(1, TimeUnit.MINUTES);
+    } catch (Exception e) {
+      System.err.printf("Failed to disable Rapid Cache in bucket %s: %s%n", bucketName, e);
     }
-    assertThat(out).contains("State: disabled");
   }
 
   /** Returns the output captured since the previous call. */
