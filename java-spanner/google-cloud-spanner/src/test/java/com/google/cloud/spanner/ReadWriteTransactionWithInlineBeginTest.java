@@ -1181,11 +1181,10 @@ public class ReadWriteTransactionWithInlineBeginTest {
     CountDownLatch consumerFinishedNextLatch = new CountDownLatch(1);
     // Counted down when the initial prefetch request is issued on the call. This only happens after
     // startStream() has returned and the stream has been registered with the result set iterator,
-    // which guarantees that a subsequent close() cancels the call from the closing thread. Waiting
-    // only for the ExecuteSqlRequest to reach the server is not sufficient, as close() could then
-    // run before the stream is registered, in which case the call is cancelled later on the
-    // consumer thread itself, which would block in cancel() below waiting for itself.
+    // which guarantees that a subsequent close() cancels the call from the closing thread rather
+    // than running before stream registration.
     CountDownLatch streamRegisteredLatch = new CountDownLatch(1);
+    AtomicReference<Thread> consumerThread = new AtomicReference<>();
     SpannerOptions options =
         createSpannerOptionsWithStreamInterceptors(
             (invocation, delegate) -> {
@@ -1199,10 +1198,14 @@ public class ReadWriteTransactionWithInlineBeginTest {
                 @Override
                 public void cancel(String message) {
                   delegateCall.cancel(message);
-                  try {
-                    assertTrue(consumerFinishedNextLatch.await(5, TimeUnit.SECONDS));
-                  } catch (InterruptedException interruptedException) {
-                    Thread.currentThread().interrupt();
+                  // Only wait if called from an external thread (e.g. resultSet.close()),
+                  // not if cancel() is invoked by the consumer thread itself.
+                  if (Thread.currentThread() != consumerThread.get()) {
+                    try {
+                      assertTrue(consumerFinishedNextLatch.await(5, TimeUnit.SECONDS));
+                    } catch (InterruptedException interruptedException) {
+                      Thread.currentThread().interrupt();
+                    }
                   }
                 }
 
@@ -1232,6 +1235,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
                             Future<?> nextFuture =
                                 executor.submit(
                                     () -> {
+                                      consumerThread.set(Thread.currentThread());
                                       try {
                                         resultSet.next();
                                       } finally {
