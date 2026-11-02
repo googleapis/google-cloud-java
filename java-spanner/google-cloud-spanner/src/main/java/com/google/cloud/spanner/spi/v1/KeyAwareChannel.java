@@ -121,13 +121,6 @@ final class KeyAwareChannel extends ManagedChannel {
   // Bound and age out entries in case application code abandons a transaction
   // without sending Commit/Rollback or otherwise clearing affinity.
   private final Cache<ByteString, String> transactionAffinities;
-  // Tracks the IDs of Partitioned DML transactions. Requests for these transactions must never
-  // carry a routing hint, as Spanner would then try to execute them on the fastpath, which only
-  // supports reads and queries and rejects Partitioned DML transactions with
-  // "PartitionedDml Transactions may only be used to execute DML statements".
-  // Partitioned DML transactions are never committed or rolled back, so entries age out in the
-  // same way as abandoned read-write transaction affinities.
-  private final Cache<ByteString, Boolean> partitionedDmlTransactions;
   private final EndpointOverloadCooldownTracker endpointOverloadCooldowns;
 
   private KeyAwareChannel(
@@ -165,8 +158,7 @@ final class KeyAwareChannel extends ManagedChannel {
     this.lifecycleManager =
         (endpointCacheFactory == null) ? new EndpointLifecycleManager(endpointCache) : null;
     this.endpointOverloadCooldowns = endpointOverloadCooldowns;
-    this.transactionAffinities = newTransactionCache(transactionAffinityTicker);
-    this.partitionedDmlTransactions = newTransactionCache(transactionAffinityTicker);
+    this.transactionAffinities = newTransactionAffinities(transactionAffinityTicker);
   }
 
   static KeyAwareChannel create(
@@ -209,7 +201,7 @@ final class KeyAwareChannel extends ManagedChannel {
         transactionAffinityTicker);
   }
 
-  private static <V> Cache<ByteString, V> newTransactionCache(Ticker ticker) {
+  private static Cache<ByteString, String> newTransactionAffinities(Ticker ticker) {
     return CacheBuilder.newBuilder()
         .maximumSize(MAX_TRACKED_TRANSACTION_AFFINITIES)
         .expireAfterAccess(TRANSACTION_AFFINITY_TTL_MINUTES, TimeUnit.MINUTES)
@@ -335,6 +327,10 @@ final class KeyAwareChannel extends ManagedChannel {
     return authority;
   }
 
+  ManagedChannel defaultChannel() {
+    return defaultChannel;
+  }
+
   @Override
   public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
       MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
@@ -401,21 +397,6 @@ final class KeyAwareChannel extends ManagedChannel {
       return;
     }
     transactionAffinities.invalidate(transactionId);
-    partitionedDmlTransactions.invalidate(transactionId);
-  }
-
-  private void recordPartitionedDmlTransaction(ByteString transactionId) {
-    if (transactionId == null || transactionId.isEmpty()) {
-      return;
-    }
-    partitionedDmlTransactions.put(transactionId, Boolean.TRUE);
-  }
-
-  private boolean isPartitionedDmlTransaction(ByteString transactionId) {
-    if (transactionId == null || transactionId.isEmpty()) {
-      return false;
-    }
-    return partitionedDmlTransactions.getIfPresent(transactionId) != null;
   }
 
   private void recordEndpointCooldown(
@@ -760,7 +741,6 @@ final class KeyAwareChannel extends ManagedChannel {
     @Nullable private io.grpc.Status cancelledStatus;
     @Nullable private Metadata cancelledTrailers;
     private boolean shouldRecordTransactionAffinity;
-    private boolean beginsPartitionedDmlTransaction;
     private boolean genericRequest;
     private boolean reroutedToDefault;
     private boolean responseMessageReceived;
@@ -857,14 +837,14 @@ final class KeyAwareChannel extends ManagedChannel {
           if (finder != null && reqBuilder.hasMutationKey()) {
             endpoint = finder.findServerAndFillRoutingHint(reqBuilder, excludedEndpoints);
           }
-          if (reqBuilder.hasOptions() && reqBuilder.getOptions().hasReadOnly()) {
+          if (reqBuilder.hasOptions()
+              && (reqBuilder.getOptions().hasReadOnly()
+                  || reqBuilder.getOptions().hasPartitionedDml())) {
             shouldRecordTransactionAffinity = false;
           } else {
             shouldRecordTransactionAffinity = true;
             allowDefaultAffinity = true;
           }
-          beginsPartitionedDmlTransaction =
-              reqBuilder.hasOptions() && reqBuilder.getOptions().hasPartitionedDml();
           message = (RequestT) reqBuilder.build();
         } else if (message instanceof CommitRequest) {
           CommitRequest request = (CommitRequest) message;
@@ -1154,19 +1134,14 @@ final class KeyAwareChannel extends ManagedChannel {
       parentChannel.recordAffinity(transactionId, selectedEndpoint, allowDefaultAffinity);
     }
 
-    void maybeRecordPartitionedDmlTransaction(ByteString transactionId) {
-      if (beginsPartitionedDmlTransaction) {
-        parentChannel.recordPartitionedDmlTransaction(transactionId);
-      }
-    }
-
     void maybeClearAffinity() {
       parentChannel.clearAffinity(transactionIdToClear);
     }
 
     private void maybeTrackReadWriteBegin(TransactionSelector selector) {
       if (selector.getSelectorCase() == TransactionSelector.SelectorCase.BEGIN
-          && !selector.getBegin().hasReadOnly()) {
+          && !selector.getBegin().hasReadOnly()
+          && !selector.getBegin().hasPartitionedDml()) {
         shouldRecordTransactionAffinity = true;
         allowDefaultAffinity = true;
       }
@@ -1216,14 +1191,6 @@ final class KeyAwareChannel extends ManagedChannel {
         finder = parentChannel.getOrCreateChannelFinder(databaseId);
       }
       boolean preferLeader = preferLeader(reqBuilder.getTransaction());
-      if (parentChannel.isPartitionedDmlTransaction(transactionId)) {
-        // Never attach a routing hint to a Partitioned DML request. A routing hint makes Spanner
-        // try to execute the statement on the fastpath, which does not support Partitioned DML
-        // and fails with "PartitionedDml Transactions may only be used to execute DML
-        // statements". Route the request to the transaction's affinity endpoint (or the default
-        // endpoint) without a routing hint instead.
-        return new RoutingDecision(finder, endpoint, databaseId, 0L, preferLeader);
-      }
       if (databaseId != null && endpoint == null) {
         // Transaction IDs only pin routing when a read-write affinity entry exists. Otherwise route
         // by this request's routing hint without leader bias, as read-only transaction IDs can run
@@ -1345,9 +1312,6 @@ final class KeyAwareChannel extends ManagedChannel {
       }
       if (transactionId != null && call.shouldRecordTransactionAffinity) {
         call.maybeRecordAffinity(transactionId);
-      }
-      if (transactionId != null) {
-        call.maybeRecordPartitionedDmlTransaction(transactionId);
       }
       super.onMessage(message);
     }
