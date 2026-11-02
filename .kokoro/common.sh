@@ -458,6 +458,10 @@ function run_integration_tests() {
     -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -DskipUnitTests=true \
     -Dmaven.wagon.http.retryHandler.count=5 \
+        -Daether.connector.http.retryHandler.count=5 \
+        -Daether.connector.requestTimeout=120000 \
+        -Daether.connector.http.retryHandler.count=5 \
+        -Daether.connector.requestTimeout=120000 \
     -T 1C
 
   RETURN_CODE=$?
@@ -544,6 +548,10 @@ function install_modules() {
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -DskipTests=true \
+        -Daether.connector.http.retryHandler.count=5 \
+        -Daether.connector.requestTimeout=120000 \
+        -Daether.connector.http.retryHandler.count=5 \
+        -Daether.connector.requestTimeout=120000 \
         -Dmaven.javadoc.skip=true \
         -Dgcloud.download.skip=true \
         -T 1C
@@ -623,6 +631,10 @@ function install_modules() {
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -DskipTests=true \
+        -Daether.connector.http.retryHandler.count=5 \
+        -Daether.connector.requestTimeout=120000 \
+        -Daether.connector.http.retryHandler.count=5 \
+        -Daether.connector.requestTimeout=120000 \
         -Dmaven.javadoc.skip=true \
         -Dgcloud.download.skip=true \
         -T 1C
@@ -723,5 +735,5 @@ function install_repo_modules {
   fi
   echo "Installing this repo's modules to local maven."
   mvn -q -B -ntp install ${projects_arg} \
-    -Dcheckstyle.skip -Dfmt.skip -DskipTests -T 1C
+    -Dcheckstyle.skip -Dfmt.skip -DskipTests -Daether.connector.http.retryHandler.count=5 -Daether.connector.requestTimeout=120000 -T 1C
 }
