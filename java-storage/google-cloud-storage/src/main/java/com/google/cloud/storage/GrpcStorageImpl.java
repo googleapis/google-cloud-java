@@ -143,6 +143,7 @@ import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
+import org.checkerframework.checker.nullness.qual.NonNull;
 import org.jspecify.annotations.Nullable;
 
 final class GrpcStorageImpl extends BaseService<StorageOptions>
@@ -253,7 +254,12 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   public Blob create(
       BlobInfo blobInfo, byte[] content, int offset, int length, BlobTargetOption... options) {
     Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
-    return internalDirectUpload(blobInfo, opts, ByteBuffer.wrap(content, offset, length))
+    return internalDirectUpload(
+            blobInfo,
+            opts,
+            ByteBuffer.wrap(content, offset, length),
+            StorageClientMetrics.createContext(
+                getOptions().getStorageClientMetrics(), "WriteObject"))
         .asBlob(this);
   }
 
@@ -520,7 +526,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
                 new TransformingPageDecorator<>(
                     resp.getPage(),
                     syntaxDecoders.bucket.andThen(opts.clearBucketFields()),
-                    retrier,
+                    retrier.withMetricsContext(
+                        StorageClientMetrics.createMultiStepContext(
+                            getOptions().getStorageClientMetrics(), "ListBuckets")),
                     retryAlgorithmManager.getFor(request)),
             metricsContext);
       } catch (Exception e) {
@@ -528,7 +536,12 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       }
     } else {
       try {
-        com.google.storage.v2.ListBucketsResponse response = listBuckets(grpcCallContext, request);
+        com.google.storage.v2.ListBucketsResponse response =
+            listBuckets(
+                grpcCallContext,
+                request,
+                StorageClientMetrics.createContext(
+                    getOptions().getStorageClientMetrics(), "ListBuckets"));
         return new ListBucketsWithPartialSuccessPage(grpcCallContext, request, response, opts);
       } catch (Exception e) {
         throw StorageException.coalesce(e);
@@ -632,19 +645,24 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     StorageMetricsContext metricsContext =
         StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "DeleteBucket");
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
-    return Boolean.TRUE.equals(
-        retrier.run(
-            retryAlgorithmManager.getFor(req),
-            () -> {
-              try {
+    try {
+      return Boolean.TRUE.equals(
+          retrier.run(
+              retryAlgorithmManager.getFor(req),
+              () -> {
                 storageClient.deleteBucketCallable().call(req, merge);
                 return true;
-              } catch (NotFoundException e) {
-                return false;
-              }
-            },
-            Decoder.identity(),
-            metricsContext));
+              },
+              Decoder.identity(),
+              metricsContext));
+    } catch (NotFoundException e) {
+      return false;
+    } catch (StorageException e) {
+      if (e.getCode() == 404 || e.getCause() instanceof NotFoundException) {
+        return false;
+      }
+      throw e;
+    }
   }
 
   @Override
@@ -654,31 +672,22 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
 
   @Override
   public boolean delete(BlobId blob, BlobSourceOption... options) {
-    Opts<ObjectSourceOpt> opts = Opts.unwrap(options).resolveFrom(blob).prepend(defaultOpts);
-    GrpcCallContext grpcCallContext =
-        opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
-    DeleteObjectRequest.Builder builder =
-        DeleteObjectRequest.newBuilder()
-            .setBucket(bucketNameCodec.encode(blob.getBucket()))
-            .setObject(blob.getName());
-    ifNonNull(blob.getGeneration(), builder::setGeneration);
-    DeleteObjectRequest req = opts.deleteObjectsRequest().apply(builder).build();
-    StorageMetricsContext metricsContext =
-        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "DeleteObject");
-    GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
-    return Boolean.TRUE.equals(
-        retrier.run(
-            retryAlgorithmManager.getFor(req),
-            () -> {
-              try {
-                storageClient.deleteObjectCallable().call(req, merge);
-                return true;
-              } catch (NotFoundException e) {
-                return false;
-              }
-            },
-            Decoder.identity(),
-            metricsContext));
+    Opts<ObjectSourceOpt> opts = Opts.unwrap(options);
+    try {
+      internalObjectDelete(
+          blob,
+          opts,
+          StorageClientMetrics.createContext(
+              getOptions().getStorageClientMetrics(), "DeleteObject"));
+      return true;
+    } catch (NotFoundException e) {
+      return false;
+    } catch (StorageException e) {
+      if (e.getCode() == 404 || e.getCause() instanceof NotFoundException) {
+        return false;
+      }
+      throw e;
+    }
   }
 
   @Override
@@ -688,6 +697,11 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
 
   @Override
   public Void internalObjectDelete(BlobId id, Opts<ObjectSourceOpt> opts) {
+    return internalObjectDelete(id, opts, null);
+  }
+
+  private Void internalObjectDelete(
+      BlobId id, Opts<ObjectSourceOpt> opts, @Nullable StorageMetricsContext metricsContext) {
     Opts<ObjectSourceOpt> finalOpts = opts.resolveFrom(id).prepend(defaultOpts);
     GrpcCallContext grpcCallContext =
         finalOpts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
@@ -697,17 +711,11 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
             .setObject(id.getName());
     ifNonNull(id.getGeneration(), builder::setGeneration);
     DeleteObjectRequest req = finalOpts.deleteObjectsRequest().apply(builder).build();
-    StorageMetricsContext metricsContext =
-        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "DeleteObject");
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     return retrier.run(
         retryAlgorithmManager.getFor(req),
         () -> {
-          try {
-            storageClient.deleteObjectCallable().call(req, merge);
-          } catch (NotFoundException e) {
-            // Non-existent object is treated as non-failure matching delete(Bucket)
-          }
+          storageClient.deleteObjectCallable().call(req, merge);
           return null;
         },
         Decoder.identity(),
@@ -977,6 +985,14 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   @Override
   public BlobInfo internalDirectUpload(
       BlobInfo blobInfo, Opts<ObjectTargetOpt> opts, ByteBuffer buf) {
+    return internalDirectUpload(blobInfo, opts, buf, null);
+  }
+
+  private BlobInfo internalDirectUpload(
+      BlobInfo blobInfo,
+      Opts<ObjectTargetOpt> opts,
+      ByteBuffer buf,
+      @Nullable StorageMetricsContext metricsContext) {
     requireNonNull(blobInfo, "blobInfo must be non null");
     requireNonNull(buf, "content must be non null");
     Opts<ObjectTargetOpt> optsWithDefaults = opts.prepend(defaultOpts);
@@ -984,8 +1000,6 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
         optsWithDefaults.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
     WriteObjectRequest req = getWriteObjectRequest(blobInfo, optsWithDefaults);
     Hasher hasher = opts.getHasher();
-    StorageMetricsContext metricsContext =
-        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "WriteObject");
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     RewindableContent content = RewindableContent.of(buf);
     return retrier.run(
@@ -1183,12 +1197,13 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       return !first.isPresent();
     } catch (NotFoundException e) {
       // HttpStorageRpc returns false if the bucket doesn't exist :(
+      error = e;
       return false;
     } catch (StorageException se) {
+      error = se;
       if (se.getCode() == 404) {
         return false;
       } else {
-        error = se;
         throw se;
       }
     } catch (Exception e) {
@@ -1352,12 +1367,13 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       return !first.isPresent();
     } catch (NotFoundException e) {
       // HttpStorageRpc returns false if the bucket doesn't exist :(
+      error = e;
       return false;
     } catch (StorageException se) {
+      error = se;
       if (se.getCode() == 404) {
         return false;
       } else {
-        error = se;
         throw se;
       }
     } catch (Exception e) {
@@ -1499,12 +1515,13 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       return !first.isPresent();
     } catch (NotFoundException e) {
       // HttpStorageRpc returns false if the bucket doesn't exist :(
+      error = e;
       return false;
     } catch (StorageException se) {
+      error = se;
       if (se.getCode() == 404) {
         return false;
       } else {
-        error = se;
         throw se;
       }
     } catch (Exception e) {
@@ -1873,7 +1890,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
           req.toBuilder().setPageToken(resp.getNextPageToken()).build();
       try {
         StorageMetricsContext metricsContext =
-            StorageClientMetrics.createContext(
+            StorageClientMetrics.createMultiStepContext(
                 getOptions().getStorageClientMetrics(), "ListObjects");
         GrpcCallContext merge = Utils.merge(ctx, Retrying.newCallContext(metricsContext));
         ListObjectsResponse nextPageResp =
@@ -1958,7 +1975,12 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       ListBucketsRequest nextPageReq =
           req.toBuilder().setPageToken(resp.getNextPageToken()).build();
       try {
-        com.google.storage.v2.ListBucketsResponse nextPageResp = listBuckets(ctx, nextPageReq);
+        com.google.storage.v2.ListBucketsResponse nextPageResp =
+            listBuckets(
+                ctx,
+                nextPageReq,
+                StorageClientMetrics.createMultiStepContext(
+                    getOptions().getStorageClientMetrics(), "ListBuckets"));
         return new ListBucketsWithPartialSuccessPage(ctx, nextPageReq, nextPageResp, opts);
       } catch (Exception e) {
         throw StorageException.coalesce(e);
@@ -2028,10 +2050,17 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       return page.getNextPageToken();
     }
 
+    @SuppressWarnings({"Convert2MethodRef"})
     @Override
     public Page<ModelT> getNextPage() {
-      return new TransformingPageDecorator<>(
-          page.getNextPage(), translator, retrier, resultRetryAlgorithm);
+      if (!hasNextPage()) {
+        return null;
+      }
+      Callable<PageT> c = () -> page.getNextPage();
+      PageT nextPage = retrier.run(resultRetryAlgorithm, c, Decoder.identity());
+      return nextPage == null
+          ? null
+          : new TransformingPageDecorator<>(nextPage, translator, retrier, resultRetryAlgorithm);
     }
 
     @SuppressWarnings({"Convert2MethodRef"})
@@ -2251,9 +2280,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   }
 
   private com.google.storage.v2.ListBucketsResponse listBuckets(
-      GrpcCallContext grpcCallContext, ListBucketsRequest request) {
-    StorageMetricsContext metricsContext =
-        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "ListBuckets");
+      GrpcCallContext grpcCallContext,
+      ListBucketsRequest request,
+      @Nullable StorageMetricsContext metricsContext) {
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     return retrier.run(
         retryAlgorithmManager.getFor(request),
@@ -2427,9 +2456,15 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
         activeContext);
   }
 
-  @Nullable
+  @NonNull
   @Override
   public BlobInfo internalObjectGet(BlobId blobId, Opts<ObjectSourceOpt> opts) {
+    return internalObjectGet(blobId, opts, null);
+  }
+
+  @NonNull
+  private BlobInfo internalObjectGet(
+      BlobId blobId, Opts<ObjectSourceOpt> opts, @Nullable StorageMetricsContext metricsContext) {
     Opts<ObjectSourceOpt> finalOpts = opts.prepend(defaultOpts).prepend(ALL_BLOB_FIELDS);
     GrpcCallContext grpcCallContext =
         finalOpts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
@@ -2439,23 +2474,12 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
             .setObject(blobId.getName());
     ifNonNull(blobId.getGeneration(), builder::setGeneration);
     GetObjectRequest req = finalOpts.getObjectsRequest().apply(builder).build();
-    StorageMetricsContext metricsContext =
-        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "GetObject");
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     //noinspection DataFlowIssue
     return retrier.run(
         retryAlgorithmManager.getFor(req),
-        () -> {
-          try {
-            return storageClient.getObjectCallable().call(req, merge);
-          } catch (NotFoundException e) {
-            return null;
-          }
-        },
+        () -> storageClient.getObjectCallable().call(req, merge),
         resp -> {
-          if (resp == null) {
-            return null;
-          }
           BlobInfo tmp = codecs.blobInfo().decode(resp);
           return finalOpts.clearBlobFields().decode(tmp);
         },
@@ -2466,10 +2490,14 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   private Blob internalBlobGet(BlobId blob, Opts<ObjectSourceOpt> unwrap) {
     Opts<ObjectSourceOpt> opts = unwrap.resolveFrom(blob);
     try {
-      BlobInfo blobInfo = internalObjectGet(blob, opts);
-      return blobInfo != null ? blobInfo.asBlob(this) : null;
+      return internalObjectGet(
+              blob,
+              opts,
+              StorageClientMetrics.createContext(
+                  getOptions().getStorageClientMetrics(), "GetObject"))
+          .asBlob(this);
     } catch (StorageException e) {
-      if (e.getCause() instanceof NotFoundException) {
+      if (e.getCode() == 404 || e.getCause() instanceof NotFoundException) {
         return null;
       } else {
         throw e;
@@ -2490,17 +2518,20 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     StorageMetricsContext metricsContext =
         StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "GetBucket");
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
-    return retrier.run(
-        retryAlgorithmManager.getFor(req),
-        () -> {
-          try {
-            return storageClient.getBucketCallable().call(req, merge);
-          } catch (NotFoundException e) {
-            return null;
-          }
-        },
-        syntaxDecoders.bucket.andThen(opts.clearBucketFields()),
-        metricsContext);
+    try {
+      return retrier.run(
+          retryAlgorithmManager.getFor(req),
+          () -> storageClient.getBucketCallable().call(req, merge),
+          syntaxDecoders.bucket.andThen(opts.clearBucketFields()),
+          metricsContext);
+    } catch (StorageException e) {
+      if (e.getCode() == 404 || e.getCause() instanceof NotFoundException) {
+        return null;
+      }
+      throw e;
+    } catch (NotFoundException e) {
+      return null;
+    }
   }
 
   private ZeroCopyServerStreamingCallable<ReadObjectRequest, ReadObjectResponse> readObjectCallable(

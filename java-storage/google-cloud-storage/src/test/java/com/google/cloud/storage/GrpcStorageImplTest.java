@@ -23,29 +23,42 @@ import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_C
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_NOT_FOUND;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_OK;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcStatusCode;
+import com.google.api.gax.paging.Page;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Retrying.Retrier;
+import com.google.cloud.storage.Storage.BucketListOption;
 import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.cloud.storage.Storage.MoveBlobRequest;
 import com.google.cloud.storage.UnifiedOpts.Opts;
+import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Empty;
 import com.google.storage.v2.Bucket;
 import com.google.storage.v2.CreateBucketRequest;
+import com.google.storage.v2.DeleteBucketRequest;
 import com.google.storage.v2.DeleteObjectRequest;
+import com.google.storage.v2.GetBucketRequest;
 import com.google.storage.v2.GetObjectRequest;
+import com.google.storage.v2.ListBucketsRequest;
+import com.google.storage.v2.ListBucketsResponse;
+import com.google.storage.v2.ListObjectsRequest;
+import com.google.storage.v2.ListObjectsResponse;
 import com.google.storage.v2.MoveObjectRequest;
 import com.google.storage.v2.Object;
 import com.google.storage.v2.RestoreObjectRequest;
 import com.google.storage.v2.RewriteObjectRequest;
 import com.google.storage.v2.RewriteResponse;
 import com.google.storage.v2.StorageClient;
+import com.google.storage.v2.StorageClient.ListBucketsPage;
+import com.google.storage.v2.StorageClient.ListBucketsPagedResponse;
 import com.google.storage.v2.UpdateObjectRequest;
 import io.grpc.Status;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
@@ -55,6 +68,7 @@ import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.Collection;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public final class GrpcStorageImplTest {
 
@@ -187,7 +201,7 @@ public final class GrpcStorageImplTest {
 
   @Test
   @SuppressWarnings("unchecked")
-  public void deleteBlob_onNonExistentObject_returnsFalseWithErrorTypeOk() {
+  public void deleteBlob_onNonExistentObject_returnsFalseWithErrorTypeNotFound() {
     UnaryCallable<DeleteObjectRequest, Empty> deleteObjectCallable = TestStorageStub.mockCallable();
     storageStub.deleteObjectCallable = deleteObjectCallable;
     when(deleteObjectCallable.call(any(DeleteObjectRequest.class), any(GrpcCallContext.class)))
@@ -198,9 +212,193 @@ public final class GrpcStorageImplTest {
     boolean deleted = grpcStorage.delete(BlobId.of(BUCKET_NAME, "non-existent"));
     assertThat(deleted).isFalse();
 
-    // Verify operations metric records STATUS_OK and not NOT_FOUND
-    assertOperationCount("DeleteObject", STATUS_OK, 1L);
-    assertOperationCount("DeleteObject", STATUS_NOT_FOUND, 0L);
+    // Verify operations metric records STATUS_NOT_FOUND and not STATUS_OK
+    assertOperationCount("DeleteObject", STATUS_NOT_FOUND, 1L);
+    assertOperationCount("DeleteObject", STATUS_OK, 0L);
+  }
+
+  @Test
+  public void deleteBucket_onNonExistentBucket_returnsFalseWithErrorTypeNotFound() {
+    UnaryCallable<DeleteBucketRequest, Empty> deleteBucketCallable = TestStorageStub.mockCallable();
+    storageStub.deleteBucketCallable = deleteBucketCallable;
+    when(deleteBucketCallable.call(any(DeleteBucketRequest.class), any(GrpcCallContext.class)))
+        .thenThrow(
+            new NotFoundException(
+                "Not Found", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false));
+
+    boolean deleted = grpcStorage.delete(BUCKET_NAME);
+    assertThat(deleted).isFalse();
+
+    assertOperationCount("DeleteBucket", STATUS_NOT_FOUND, 1L);
+    assertOperationCount("DeleteBucket", STATUS_OK, 0L);
+  }
+
+  @Test
+  public void getBucketAndBlob_onNonExistent_returnsNullWithErrorTypeNotFound() {
+    UnaryCallable<GetBucketRequest, Bucket> getBucketCallable = TestStorageStub.mockCallable();
+    storageStub.getBucketCallable = getBucketCallable;
+    when(getBucketCallable.call(any(GetBucketRequest.class), any(GrpcCallContext.class)))
+        .thenThrow(
+            new NotFoundException(
+                "Not Found", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false));
+
+    assertThat(grpcStorage.get(BUCKET_NAME)).isNull();
+    assertOperationCount("GetBucket", STATUS_NOT_FOUND, 1L);
+    assertOperationCount("GetBucket", STATUS_OK, 0L);
+
+    UnaryCallable<GetObjectRequest, Object> getObjectCallable = TestStorageStub.mockCallable();
+    storageStub.getObjectCallable = getObjectCallable;
+    when(getObjectCallable.call(any(GetObjectRequest.class), any(GrpcCallContext.class)))
+        .thenThrow(
+            new NotFoundException(
+                "Not Found", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false));
+
+    assertThat(grpcStorage.get(BlobId.of(BUCKET_NAME, "non-existent"))).isNull();
+    assertOperationCount("GetObject", STATUS_NOT_FOUND, 1L);
+    assertOperationCount("GetObject", STATUS_OK, 0L);
+  }
+
+  @Test
+  public void deleteAclAndDefaultAcl_onNonExistent_returnsFalseWithErrorTypeNotFound() {
+    UnaryCallable<GetBucketRequest, Bucket> getBucketCallable = TestStorageStub.mockCallable();
+    storageStub.getBucketCallable = getBucketCallable;
+    when(getBucketCallable.call(any(GetBucketRequest.class), any(GrpcCallContext.class)))
+        .thenThrow(
+            new NotFoundException(
+                "Not Found", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false));
+
+    UnaryCallable<GetObjectRequest, Object> getObjectCallable = TestStorageStub.mockCallable();
+    storageStub.getObjectCallable = getObjectCallable;
+    when(getObjectCallable.call(any(GetObjectRequest.class), any(GrpcCallContext.class)))
+        .thenThrow(
+            new NotFoundException(
+                "Not Found", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false));
+
+    User entity = User.ofAllAuthenticatedUsers();
+    assertThat(grpcStorage.deleteAcl(BUCKET_NAME, entity)).isFalse();
+    assertOperationCount("DeleteBucketACL", STATUS_NOT_FOUND, 1L);
+    assertOperationCount("DeleteBucketACL", STATUS_OK, 0L);
+
+    assertThat(grpcStorage.deleteDefaultAcl(BUCKET_NAME, entity)).isFalse();
+    assertOperationCount("DeleteDefaultObjectACL", STATUS_NOT_FOUND, 1L);
+    assertOperationCount("DeleteDefaultObjectACL", STATUS_OK, 0L);
+
+    assertThat(grpcStorage.deleteAcl(BlobId.of(BUCKET_NAME, BLOB_NAME), entity)).isFalse();
+    assertOperationCount("DeleteObjectACL", STATUS_NOT_FOUND, 1L);
+    assertOperationCount("DeleteObjectACL", STATUS_OK, 0L);
+  }
+
+  @Test
+  public void pcuSubOperations_doNotEmitTopLevelOperations_andInternalObjectGetThrowsOn404() {
+    UnaryCallable<GetObjectRequest, Object> getObjectCallable = TestStorageStub.mockCallable();
+    storageStub.getObjectCallable = getObjectCallable;
+    when(getObjectCallable.call(any(GetObjectRequest.class), any(GrpcCallContext.class)))
+        .thenReturn(
+            Object.newBuilder()
+                .setBucket("projects/_/buckets/" + BUCKET_NAME)
+                .setName(BLOB_NAME)
+                .build())
+        .thenThrow(
+            new NotFoundException(
+                "Not Found", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false));
+
+    UnaryCallable<DeleteObjectRequest, Empty> deleteObjectCallable = TestStorageStub.mockCallable();
+    storageStub.deleteObjectCallable = deleteObjectCallable;
+    when(deleteObjectCallable.call(any(DeleteObjectRequest.class), any(GrpcCallContext.class)))
+        .thenReturn(Empty.getDefaultInstance());
+
+    BlobId blobId = BlobId.of(BUCKET_NAME, BLOB_NAME);
+    BlobInfo info = grpcStorage.internalObjectGet(blobId, Opts.empty());
+    assertThat(info).isNotNull();
+    grpcStorage.internalObjectDelete(blobId, Opts.empty());
+
+    assertOperationCount("GetObject", STATUS_OK, 0L);
+    assertOperationCount("DeleteObject", STATUS_OK, 0L);
+
+    // Verify internalObjectGet throws on 404 rather than returning null
+    assertThrows(StorageException.class, () -> grpcStorage.internalObjectGet(blobId, Opts.empty()));
+    assertOperationCount("GetObject", STATUS_NOT_FOUND, 0L);
+  }
+
+  @Test
+  @SuppressWarnings("unchecked")
+  public void listBucketsAndObjects_paginationRecordsSingleOperationAndMultipleAttempts() {
+    // 1. list(BucketListOption...) via TransformingPageDecorator (getNextPage & iterateAll)
+    UnaryCallable<ListBucketsRequest, ListBucketsPagedResponse> listBucketsPagedCallable =
+        TestStorageStub.mockCallable();
+    storageStub.listBucketsPagedCallable = listBucketsPagedCallable;
+
+    ListBucketsPagedResponse pagedResp =
+        Mockito.mock(ListBucketsPagedResponse.class, Mockito.withSettings().withoutAnnotations());
+    ListBucketsPage page1 =
+        Mockito.mock(ListBucketsPage.class, Mockito.withSettings().withoutAnnotations());
+    ListBucketsPage page2 =
+        Mockito.mock(ListBucketsPage.class, Mockito.withSettings().withoutAnnotations());
+    Bucket bucketProto1 = Bucket.newBuilder().setName("projects/_/buckets/b1").build();
+    Bucket bucketProto2 = Bucket.newBuilder().setName("projects/_/buckets/b2").build();
+
+    when(pagedResp.getPage()).thenReturn(page1);
+    when(page1.hasNextPage()).thenReturn(true);
+    when(page1.getNextPage()).thenReturn(page2);
+    when(page1.getValues()).thenReturn(ImmutableList.of(bucketProto1));
+    when(page2.hasNextPage()).thenReturn(false);
+    when(page2.getValues()).thenReturn(ImmutableList.of(bucketProto2));
+    when(listBucketsPagedCallable.call(any(ListBucketsRequest.class), any(GrpcCallContext.class)))
+        .thenReturn(pagedResp);
+
+    Page<com.google.cloud.storage.Bucket> firstBucketPage = grpcStorage.list();
+    Page<com.google.cloud.storage.Bucket> secondBucketPage = firstBucketPage.getNextPage();
+    assertThat(secondBucketPage).isNotNull();
+    assertOperationCount("ListBuckets", STATUS_OK, 1L);
+    assertAttemptCount("ListBuckets", 2L);
+
+    // IterateAll also records attempt via bound retrier without incrementing operations
+    ImmutableList<com.google.cloud.storage.Bucket> allBuckets =
+        ImmutableList.copyOf(firstBucketPage.iterateAll());
+    assertThat(allBuckets).hasSize(2);
+    assertOperationCount("ListBuckets", STATUS_OK, 1L);
+    assertAttemptCount("ListBuckets", 3L);
+
+    // 2. list(BucketListOption.returnPartialSuccess(true)) via ListBucketsWithPartialSuccessPage
+    UnaryCallable<ListBucketsRequest, ListBucketsResponse> listBucketsCallable =
+        TestStorageStub.mockCallable();
+    storageStub.listBucketsCallable = listBucketsCallable;
+    when(listBucketsCallable.call(any(ListBucketsRequest.class), any(GrpcCallContext.class)))
+        .thenReturn(
+            ListBucketsResponse.newBuilder()
+                .addBuckets(bucketProto1)
+                .setNextPageToken("token-2")
+                .build(),
+            ListBucketsResponse.newBuilder().addBuckets(bucketProto2).build());
+
+    Page<com.google.cloud.storage.Bucket> partialPage1 =
+        grpcStorage.list(BucketListOption.returnPartialSuccess(true));
+    Page<com.google.cloud.storage.Bucket> partialPage2 = partialPage1.getNextPage();
+    assertThat(partialPage2).isNotNull();
+    assertOperationCount("ListBuckets", STATUS_OK, 2L);
+    assertAttemptCount("ListBuckets", 5L);
+
+    // 3. list(String bucket, BlobListOption...) via ListObjectsWithSyntheticDirectoriesPage
+    UnaryCallable<ListObjectsRequest, ListObjectsResponse> listObjectsCallable =
+        TestStorageStub.mockCallable();
+    storageStub.listObjectsCallable = listObjectsCallable;
+    Object obj1 =
+        Object.newBuilder().setBucket("projects/_/buckets/" + BUCKET_NAME).setName("o1").build();
+    Object obj2 =
+        Object.newBuilder().setBucket("projects/_/buckets/" + BUCKET_NAME).setName("o2").build();
+    when(listObjectsCallable.call(any(ListObjectsRequest.class), any(GrpcCallContext.class)))
+        .thenReturn(
+            ListObjectsResponse.newBuilder()
+                .addObjects(obj1)
+                .setNextPageToken("obj-token-2")
+                .build(),
+            ListObjectsResponse.newBuilder().addObjects(obj2).build());
+
+    Page<Blob> firstObjectPage = grpcStorage.list(BUCKET_NAME);
+    Page<Blob> secondObjectPage = firstObjectPage.getNextPage();
+    assertThat(secondObjectPage).isNotNull();
+    assertOperationCount("ListObjects", STATUS_OK, 1L);
+    assertAttemptCount("ListObjects", 2L);
   }
 
   @Test

@@ -20,13 +20,20 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
 import com.google.storage.v2.Bucket;
 import com.google.storage.v2.CreateBucketRequest;
+import com.google.storage.v2.DeleteBucketRequest;
 import com.google.storage.v2.DeleteObjectRequest;
+import com.google.storage.v2.GetBucketRequest;
 import com.google.storage.v2.GetObjectRequest;
+import com.google.storage.v2.ListBucketsRequest;
+import com.google.storage.v2.ListBucketsResponse;
+import com.google.storage.v2.ListObjectsRequest;
+import com.google.storage.v2.ListObjectsResponse;
 import com.google.storage.v2.MoveObjectRequest;
 import com.google.storage.v2.Object;
 import com.google.storage.v2.RestoreObjectRequest;
 import com.google.storage.v2.RewriteObjectRequest;
 import com.google.storage.v2.RewriteResponse;
+import com.google.storage.v2.StorageClient.ListBucketsPagedResponse;
 import com.google.storage.v2.UpdateObjectRequest;
 import com.google.storage.v2.stub.StorageStub;
 import java.util.concurrent.TimeUnit;
@@ -34,12 +41,17 @@ import org.mockito.Mockito;
 
 class TestStorageStub extends StorageStub {
   UnaryCallable<CreateBucketRequest, Bucket> createBucketCallable;
+  UnaryCallable<GetBucketRequest, Bucket> getBucketCallable;
+  UnaryCallable<DeleteBucketRequest, Empty> deleteBucketCallable;
+  UnaryCallable<ListBucketsRequest, ListBucketsResponse> listBucketsCallable;
+  UnaryCallable<ListBucketsRequest, ListBucketsPagedResponse> listBucketsPagedCallable;
   UnaryCallable<GetObjectRequest, Object> getObjectCallable;
   UnaryCallable<DeleteObjectRequest, Empty> deleteObjectCallable;
   UnaryCallable<UpdateObjectRequest, Object> updateObjectCallable;
   UnaryCallable<RestoreObjectRequest, Object> restoreObjectCallable;
   UnaryCallable<MoveObjectRequest, Object> moveObjectCallable;
   UnaryCallable<RewriteObjectRequest, RewriteResponse> rewriteObjectCallable;
+  UnaryCallable<ListObjectsRequest, ListObjectsResponse> listObjectsCallable;
 
   @SuppressWarnings("unchecked")
   static <ReqT, RespT> UnaryCallable<ReqT, RespT> mockCallable() {
@@ -49,6 +61,26 @@ class TestStorageStub extends StorageStub {
   @Override
   public UnaryCallable<CreateBucketRequest, Bucket> createBucketCallable() {
     return createBucketCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetBucketRequest, Bucket> getBucketCallable() {
+    return getBucketCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteBucketRequest, Empty> deleteBucketCallable() {
+    return deleteBucketCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBucketsRequest, ListBucketsResponse> listBucketsCallable() {
+    return listBucketsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBucketsRequest, ListBucketsPagedResponse> listBucketsPagedCallable() {
+    return listBucketsPagedCallable;
   }
 
   @Override
@@ -79,6 +111,11 @@ class TestStorageStub extends StorageStub {
   @Override
   public UnaryCallable<RewriteObjectRequest, RewriteResponse> rewriteObjectCallable() {
     return rewriteObjectCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListObjectsRequest, ListObjectsResponse> listObjectsCallable() {
+    return listObjectsCallable;
   }
 
   @Override
