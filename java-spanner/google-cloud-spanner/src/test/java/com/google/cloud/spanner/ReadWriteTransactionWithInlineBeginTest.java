@@ -1179,6 +1179,13 @@ public class ReadWriteTransactionWithInlineBeginTest {
     //    closed, so onError does not overwrite transactionIdFuture with a simulated ABORTED before
     //    onDone(true) sets FAILED_PRECONDITION.
     CountDownLatch consumerFinishedNextLatch = new CountDownLatch(1);
+    // Counted down when the initial prefetch request is issued on the call. This only happens after
+    // startStream() has returned and the stream has been registered with the result set iterator,
+    // which guarantees that a subsequent close() cancels the call from the closing thread. Waiting
+    // only for the ExecuteSqlRequest to reach the server is not sufficient, as close() could then
+    // run before the stream is registered, in which case the call is cancelled later on the
+    // consumer thread itself, which would block in cancel() below waiting for itself.
+    CountDownLatch streamRegisteredLatch = new CountDownLatch(1);
     SpannerOptions options =
         createSpannerOptionsWithStreamInterceptors(
             (invocation, delegate) -> {
@@ -1202,6 +1209,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
                 @Override
                 public void request(int numMessages) {
                   delegateCall.request(numMessages);
+                  streamRegisteredLatch.countDown();
                 }
               };
             },
@@ -1230,11 +1238,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
                                         consumerFinishedNextLatch.countDown();
                                       }
                                     });
-                            try {
-                              mockSpanner.waitForRequestsToContain(ExecuteSqlRequest.class, 5000);
-                            } catch (Exception exceptionFromWait) {
-                              throw new RuntimeException(exceptionFromWait);
-                            }
+                            assertTrue(streamRegisteredLatch.await(5, TimeUnit.SECONDS));
                             resultSet.close();
                             mockSpanner.unfreeze();
                             ExecutionException consumerExecutionException =
