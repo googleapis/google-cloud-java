@@ -71,8 +71,6 @@ case ${JOB_TYPE} in
         -Dmaven.wagon.http.retryHandler.count=5 \
         -Daether.connector.http.retryHandler.count=5 \
         -Daether.connector.requestTimeout=120000 \
-        -Daether.connector.http.retryHandler.count=5 \
-        -Daether.connector.requestTimeout=120000 \
         "${EXCLUDE_PROJECTS_OPTS[@]}" \
         -T 1C
     RETURN_CODE=$?
@@ -101,13 +99,7 @@ case ${JOB_TYPE} in
           -Dmaven.wagon.http.retryHandler.count=5 \
         -Daether.connector.http.retryHandler.count=5 \
         -Daether.connector.requestTimeout=120000 \
-        -Daether.connector.http.retryHandler.count=5 \
-        -Daether.connector.requestTimeout=120000 \
           -DskipTests=true \
-        -Daether.connector.http.retryHandler.count=5 \
-        -Daether.connector.requestTimeout=120000 \
-        -Daether.connector.http.retryHandler.count=5 \
-        -Daether.connector.requestTimeout=120000 \
           --also-make \
           -T 1C
     fi
@@ -174,8 +166,6 @@ case ${JOB_TYPE} in
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -DskipUnitTests=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        -Daether.connector.http.retryHandler.count=5 \
-        -Daether.connector.requestTimeout=120000 \
         -Daether.connector.http.retryHandler.count=5 \
         -Daether.connector.requestTimeout=120000 \
         ${SUREFIRE_JVM_OPT}
