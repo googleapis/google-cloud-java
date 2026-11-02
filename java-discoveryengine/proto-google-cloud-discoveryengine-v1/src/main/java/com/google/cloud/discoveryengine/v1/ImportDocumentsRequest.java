@@ -109,6 +109,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Calculates diff and replaces the entire document dataset. Existing
      * documents may be deleted if they are not present in the source location.
+     * When using this mode, there won't be any downtime on the dataset
+     * targeted. Any document that should remain unchanged or that should be
+     * updated will continue serving while the operation is running.
      * </pre>
      *
      * <code>FULL = 2;</code>
@@ -155,6 +158,9 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Calculates diff and replaces the entire document dataset. Existing
      * documents may be deleted if they are not present in the source location.
+     * When using this mode, there won't be any downtime on the dataset
+     * targeted. Any document that should remain unchanged or that should be
+     * updated will continue serving while the operation is running.
      * </pre>
      *
      * <code>FULL = 2;</code>
@@ -2211,7 +2217,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
    * * [SpannerSource][google.cloud.discoveryengine.v1.SpannerSource].
    * * [CloudSqlSource][google.cloud.discoveryengine.v1.CloudSqlSource].
-   * * [FirestoreSource][google.cloud.discoveryengine.v1.FirestoreSource].
    * * [BigtableSource][google.cloud.discoveryengine.v1.BigtableSource].
    * </pre>
    *
@@ -2268,7 +2273,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
    * * [SpannerSource][google.cloud.discoveryengine.v1.SpannerSource].
    * * [CloudSqlSource][google.cloud.discoveryengine.v1.CloudSqlSource].
-   * * [FirestoreSource][google.cloud.discoveryengine.v1.FirestoreSource].
    * * [BigtableSource][google.cloud.discoveryengine.v1.BigtableSource].
    * </pre>
    *
@@ -5944,7 +5948,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
      * * [SpannerSource][google.cloud.discoveryengine.v1.SpannerSource].
      * * [CloudSqlSource][google.cloud.discoveryengine.v1.CloudSqlSource].
-     * * [FirestoreSource][google.cloud.discoveryengine.v1.FirestoreSource].
      * * [BigtableSource][google.cloud.discoveryengine.v1.BigtableSource].
      * </pre>
      *
@@ -6000,7 +6003,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
      * * [SpannerSource][google.cloud.discoveryengine.v1.SpannerSource].
      * * [CloudSqlSource][google.cloud.discoveryengine.v1.CloudSqlSource].
-     * * [FirestoreSource][google.cloud.discoveryengine.v1.FirestoreSource].
      * * [BigtableSource][google.cloud.discoveryengine.v1.BigtableSource].
      * </pre>
      *
@@ -6056,7 +6058,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
      * * [SpannerSource][google.cloud.discoveryengine.v1.SpannerSource].
      * * [CloudSqlSource][google.cloud.discoveryengine.v1.CloudSqlSource].
-     * * [FirestoreSource][google.cloud.discoveryengine.v1.FirestoreSource].
      * * [BigtableSource][google.cloud.discoveryengine.v1.BigtableSource].
      * </pre>
      *
@@ -6111,7 +6112,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
      * * [SpannerSource][google.cloud.discoveryengine.v1.SpannerSource].
      * * [CloudSqlSource][google.cloud.discoveryengine.v1.CloudSqlSource].
-     * * [FirestoreSource][google.cloud.discoveryengine.v1.FirestoreSource].
      * * [BigtableSource][google.cloud.discoveryengine.v1.BigtableSource].
      * </pre>
      *
@@ -6162,7 +6162,6 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
      * * [SpannerSource][google.cloud.discoveryengine.v1.SpannerSource].
      * * [CloudSqlSource][google.cloud.discoveryengine.v1.CloudSqlSource].
-     * * [FirestoreSource][google.cloud.discoveryengine.v1.FirestoreSource].
      * * [BigtableSource][google.cloud.discoveryengine.v1.BigtableSource].
      * </pre>
      *
