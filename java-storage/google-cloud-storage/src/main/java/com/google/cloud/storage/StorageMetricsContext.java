@@ -18,10 +18,14 @@ package com.google.cloud.storage;
 
 import static java.util.Objects.requireNonNull;
 
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.StatusCode;
 import io.grpc.CallOptions;
+import io.grpc.StatusException;
+import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
@@ -152,23 +156,11 @@ final class StorageMetricsContext {
         clientMethod = operationName;
       }
 
-      AttributesBuilder opAttrBuilder = Attributes.builder();
-      opAttrBuilder.putAll(metrics.getClientAttributes());
-      baseAttributes.forEach(
-          (key, val) -> {
-            if (!key.equals(StorageClientMetrics.KEY_RPC_METHOD)
-                && !key.equals(StorageClientMetrics.KEY_NETWORK_PATH)
-                && !key.equals(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)
-                && !key.equals(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)) {
-              @SuppressWarnings("unchecked")
-              AttributeKey<Object> objKey = (AttributeKey<Object>) key;
-              opAttrBuilder.put(objKey, val);
-            }
-          });
-      opAttrBuilder.put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, operationName);
-      opAttrBuilder.put(StorageClientMetrics.KEY_GCP_CLIENT_METHOD, clientMethod);
-      opAttrBuilder.put(StorageClientMetrics.KEY_ERROR_TYPE, terminalErrorType);
-      Attributes operationAttributes = opAttrBuilder.build();
+      Attributes operationAttributes =
+          buildAttemptBaseAttributes(metrics).toBuilder()
+              .put(StorageClientMetrics.KEY_GCP_CLIENT_METHOD, clientMethod)
+              .put(StorageClientMetrics.KEY_ERROR_TYPE, terminalErrorType)
+              .build();
 
       if (metrics.getOperations() != null) {
         metrics.getOperations().add(1, operationAttributes);
@@ -248,13 +240,13 @@ final class StorageMetricsContext {
           String rpcStatus = extractRpcStatusCode(e);
           builder.put(
               StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE,
-              rpcStatus != null ? rpcStatus : "");
+              rpcStatus != null ? rpcStatus : StorageErrorTypeMapper.STATUS_UNKNOWN);
           builder.put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, "");
         } else if ("http".equals(rpcSystemName)) {
           String httpStatus = extractHttpStatusCode(e);
           builder.put(
               StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
-              httpStatus != null ? httpStatus : "");
+              httpStatus != null ? httpStatus : "0");
           builder.put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "");
         } else {
           String rpcStatus = extractRpcStatusCode(e);
@@ -277,6 +269,7 @@ final class StorageMetricsContext {
     baseAttributes.forEach(
         (key, val) -> {
           if (!key.equals(StorageClientMetrics.KEY_RPC_METHOD)
+              && !key.equals(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)
               && !key.equals(StorageClientMetrics.KEY_NETWORK_PATH)
               && !key.equals(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)
               && !key.equals(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)) {
@@ -304,14 +297,17 @@ final class StorageMetricsContext {
     }
     Throwable curr = e;
     while (curr != null && curr.getCause() != curr) {
-      if (curr instanceof io.grpc.StatusRuntimeException) {
-        return ((io.grpc.StatusRuntimeException) curr).getStatus().getCode().name();
+      if (curr instanceof StatusRuntimeException) {
+        return ((StatusRuntimeException) curr).getStatus().getCode().name();
       }
-      if (curr instanceof io.grpc.StatusException) {
-        return ((io.grpc.StatusException) curr).getStatus().getCode().name();
+      if (curr instanceof StatusException) {
+        return ((StatusException) curr).getStatus().getCode().name();
       }
       if (curr instanceof ApiException) {
-        return ((ApiException) curr).getStatusCode().getCode().name();
+        StatusCode statusCode = ((ApiException) curr).getStatusCode();
+        if (statusCode != null && statusCode.getCode() != null) {
+          return statusCode.getCode().name();
+        }
       }
       curr = curr.getCause();
     }
@@ -331,8 +327,8 @@ final class StorageMetricsContext {
           return Integer.toString(code);
         }
       }
-      if (curr instanceof com.google.api.client.http.HttpResponseException) {
-        int code = ((com.google.api.client.http.HttpResponseException) curr).getStatusCode();
+      if (curr instanceof HttpResponseException) {
+        int code = ((HttpResponseException) curr).getStatusCode();
         if (code > 0) {
           return Integer.toString(code);
         }

@@ -25,6 +25,7 @@ import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.StatusCode;
 import io.grpc.CallOptions;
 import io.grpc.Status;
 import io.grpc.StatusException;
@@ -596,6 +597,108 @@ public final class StorageMetricsContextTest {
         getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
     assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+  }
+
+  @Test
+  public void gcpClientMethod_excludedFromAttemptAndErrorMetrics_includedInOperationMetrics() {
+    Attributes base =
+        Attributes.of(
+            StorageClientMetrics.KEY_RPC_SYSTEM_NAME,
+            "grpc",
+            StorageClientMetrics.KEY_GCP_CLIENT_METHOD,
+            "Storage.get");
+    StorageMetricsContext context = StorageMetricsContext.create("GetObject", base);
+    context.recordAttemptFailure(metrics, Status.UNAVAILABLE.asRuntimeException());
+    context.recordAttemptSuccess(metrics);
+    context.recordOperation(metrics, null);
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+
+    MetricData attemptsMetric =
+        findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(attemptsMetric).isNotNull();
+    for (LongPointData point : attemptsMetric.getLongSumData().getPoints()) {
+      assertThat(point.getAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isNull();
+    }
+
+    LongPointData errorPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isNull();
+
+    LongPointData opPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
+    assertThat(opPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD))
+        .isEqualTo("Storage.get");
+
+    MetricData durationMetric =
+        findMetric(collected, StorageClientMetrics.METRIC_GCP_CLIENT_REQUEST_DURATION);
+    assertThat(durationMetric).isNotNull();
+    HistogramPointData durationPoint =
+        durationMetric.getHistogramData().getPoints().iterator().next();
+    assertThat(durationPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD))
+        .isEqualTo("Storage.get");
+  }
+
+  @Test
+  public void recordAttemptFailure_withoutStatusCode_usesTransportDefaultFallbacks() {
+    Attributes grpcBase = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc");
+    StorageMetricsContext grpcContext = StorageMetricsContext.create("GetObject", grpcBase);
+    grpcContext.recordAttemptFailure(metrics, new RuntimeException("connection reset"));
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    LongPointData grpcAttemptPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(
+            grpcAttemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_UNKNOWN);
+    assertThat(
+            grpcAttemptPoint
+                .getAttributes()
+                .get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
+        .isEqualTo("");
+
+    resetMetrics();
+    Attributes httpBase = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http");
+    StorageMetricsContext httpContext = StorageMetricsContext.create("GetObject", httpBase);
+    httpContext.recordAttemptFailure(metrics, new RuntimeException("connection reset"));
+
+    collected = reader.collectAllMetrics();
+    LongPointData httpAttemptPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(
+            httpAttemptPoint
+                .getAttributes()
+                .get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
+        .isEqualTo("0");
+    assertThat(
+            httpAttemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+        .isEqualTo("");
+  }
+
+  @Test
+  public void recordAttemptFailure_apiExceptionWithNullStatusCode_fallsBackToUnknown() {
+    Attributes grpcBase = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc");
+    StorageMetricsContext grpcContext = StorageMetricsContext.create("GetObject", grpcBase);
+    StatusCode nullCodeStatus =
+        new StatusCode() {
+          @Override
+          public @Nullable Code getCode() {
+            return null;
+          }
+
+          @Override
+          public @Nullable Object getTransportCode() {
+            return null;
+          }
+        };
+    ApiException nullStatusApiEx = new ApiException("null code", null, nullCodeStatus, false);
+    grpcContext.recordAttemptFailure(metrics, nullStatusApiEx);
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    LongPointData attemptPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(attemptPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_UNKNOWN);
   }
 
   private static @Nullable MetricData findMetric(
