@@ -356,7 +356,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
 
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForObjectsRestore(obj, optionsMap);
 
-    return run(
+    return runNullable(
         "RestoreObject",
         algorithm,
         () -> storageRpc.restore(obj, optionsMap),
@@ -684,11 +684,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     ImmutableMap<StorageRpc.Option, ?> optionsMap = Opts.unwrap(options).getRpcOptions();
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForBucketsDelete(bucketPb, optionsMap);
-    return run(
-        "DeleteBucket",
-        algorithm,
-        () -> storageRpc.delete(bucketPb, optionsMap),
-        Decoder.identity());
+    return runBoolean("DeleteBucket", algorithm, () -> storageRpc.delete(bucketPb, optionsMap));
   }
 
   @Override
@@ -703,11 +699,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
         Opts.unwrap(options).resolveFrom(blob).getRpcOptions();
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsDelete(storageObject, optionsMap);
-    return run(
-        "DeleteObject",
-        algorithm,
-        () -> storageRpc.delete(storageObject, optionsMap),
-        Decoder.identity());
+    return runBoolean(
+        "DeleteObject", algorithm, () -> storageRpc.delete(storageObject, optionsMap));
   }
 
   @Override
@@ -1414,7 +1407,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     String pb = codecs.entity().encode(entity);
     ImmutableMap<StorageRpc.Option, ?> optionsMap = Opts.unwrap(options).getRpcOptions();
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForBucketAclGet(pb, optionsMap);
-    return run(
+    return runNullable(
         "GetBucketACL",
         algorithm,
         () -> storageRpc.getAcl(bucket, pb, optionsMap),
@@ -1432,11 +1425,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     final String pb = codecs.entity().encode(entity);
     ImmutableMap<StorageRpc.Option, ?> optionsMap = Opts.unwrap(options).getRpcOptions();
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForBucketAclDelete(pb, optionsMap);
-    return run(
-        "DeleteBucketACL",
-        algorithm,
-        () -> storageRpc.deleteAcl(bucket, pb, optionsMap),
-        Decoder.identity());
+    return runBoolean(
+        "DeleteBucketACL", algorithm, () -> storageRpc.deleteAcl(bucket, pb, optionsMap));
   }
 
   @Override
@@ -1506,7 +1496,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   public Acl getDefaultAcl(final String bucket, final Entity entity) {
     String pb = codecs.entity().encode(entity);
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForDefaultObjectAclGet(pb);
-    return run(
+    return runNullable(
         "GetDefaultObjectACL",
         algorithm,
         () -> storageRpc.getDefaultAcl(bucket, pb),
@@ -1517,11 +1507,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   public boolean deleteDefaultAcl(final String bucket, final Entity entity) {
     String pb = codecs.entity().encode(entity);
     ResultRetryAlgorithm<?> algorithm = retryAlgorithmManager.getForDefaultObjectAclDelete(pb);
-    return run(
-        "DeleteDefaultObjectACL",
-        algorithm,
-        () -> storageRpc.deleteDefaultAcl(bucket, pb),
-        Decoder.identity());
+    return runBoolean(
+        "DeleteDefaultObjectACL", algorithm, () -> storageRpc.deleteDefaultAcl(bucket, pb));
   }
 
   @Override
@@ -1569,7 +1556,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     String pb = codecs.entity().encode(entity);
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectAclGet(bucket, name, generation, pb);
-    return run(
+    return runNullable(
         "GetObjectACL",
         algorithm,
         () -> storageRpc.getAcl(bucket, name, generation, pb),
@@ -1584,11 +1571,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     String pb = codecs.entity().encode(entity);
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectAclDelete(bucket, name, generation, pb);
-    return run(
-        "DeleteObjectACL",
-        algorithm,
-        () -> storageRpc.deleteAcl(bucket, name, generation, pb),
-        Decoder.identity());
+    return runBoolean(
+        "DeleteObjectACL", algorithm, () -> storageRpc.deleteAcl(bucket, name, generation, pb));
   }
 
   @Override
@@ -1823,6 +1807,47 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
         StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), operationName));
   }
 
+  private <T, U> U runNullable(
+      String operationName, ResultRetryAlgorithm<?> algorithm, Callable<T> c, Decoder<T, U> f) {
+    StorageClientMetrics metrics = getOptions().getStorageClientMetrics();
+    StorageMetricsContext metricsContext =
+        StorageClientMetrics.createMultiStepContext(metrics, operationName);
+    try {
+      U result = retrier.run(algorithm, c, f, metricsContext);
+      if (metricsContext != null) {
+        metricsContext.recordOperation(
+            metrics, result == null ? new StorageException(404, "Not Found") : null);
+      }
+      return result;
+    } catch (Throwable t) {
+      if (metricsContext != null) {
+        metricsContext.recordOperation(metrics, t);
+      }
+      throw t;
+    }
+  }
+
+  private boolean runBoolean(
+      String operationName, ResultRetryAlgorithm<?> algorithm, Callable<Boolean> c) {
+    StorageClientMetrics metrics = getOptions().getStorageClientMetrics();
+    StorageMetricsContext metricsContext =
+        StorageClientMetrics.createMultiStepContext(metrics, operationName);
+    try {
+      Boolean result = retrier.run(algorithm, c, Decoder.identity(), metricsContext);
+      boolean deleted = Boolean.TRUE.equals(result);
+      if (metricsContext != null) {
+        metricsContext.recordOperation(
+            metrics, deleted ? null : new StorageException(404, "Not Found"));
+      }
+      return deleted;
+    } catch (Throwable t) {
+      if (metricsContext != null) {
+        metricsContext.recordOperation(metrics, t);
+      }
+      throw t;
+    }
+  }
+
   @Override
   public Notification createNotification(
       final String bucket, final NotificationInfo notificationInfo) {
@@ -1841,7 +1866,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   public Notification getNotification(final String bucket, final String notificationId) {
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForNotificationGet(bucket, notificationId);
-    return run(
+    return runNullable(
         "GetNotification",
         algorithm,
         () -> storageRpc.getNotification(bucket, notificationId),
@@ -1867,11 +1892,10 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   public boolean deleteNotification(final String bucket, final String notificationId) {
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForNotificationDelete(bucket, notificationId);
-    return run(
+    return runBoolean(
         "DeleteNotification",
         algorithm,
-        () -> storageRpc.deleteNotification(bucket, notificationId),
-        Decoder.identity());
+        () -> storageRpc.deleteNotification(bucket, notificationId));
   }
 
   @Override
@@ -1883,7 +1907,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     StorageObject storedObject = codecs.blobId().encode(blob);
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsGet(storedObject, optionsMap);
-    return run(
+    return runNullable(
         "GetObject",
         algorithm,
         () -> storageRpc.get(storedObject, optionsMap),
@@ -1898,7 +1922,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
         codecs.bucketInfo().encode(BucketInfo.of(bucket));
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForBucketsGet(bucketPb, optionsMap);
-    return run(
+    return runNullable(
         "GetBucket",
         algorithm,
         () -> storageRpc.get(bucketPb, optionsMap),

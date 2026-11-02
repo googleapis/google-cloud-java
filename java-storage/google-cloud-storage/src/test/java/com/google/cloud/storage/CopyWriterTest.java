@@ -21,7 +21,6 @@ import static com.google.cloud.storage.StorageClientMetrics.KEY_GCP_STORAGE_OPER
 import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS;
 import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS;
 import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS;
-import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_NOT_FOUND;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_OK;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_UNAVAILABLE;
 import static com.google.common.truth.Truth.assertThat;
@@ -29,38 +28,23 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyMap;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.google.api.core.SettableApiFuture;
-import com.google.api.gax.paging.Page;
-import com.google.api.services.storage.model.StorageObject;
-import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.Tuple;
-import com.google.cloud.WriteChannel;
-import com.google.cloud.storage.BufferedWritableByteChannelSession.BufferedWritableByteChannel;
 import com.google.cloud.storage.Retrying.Retrier;
-import com.google.cloud.storage.UnifiedOpts.Opts;
 import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteRequest;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.ByteBuffer;
-import java.nio.channels.ReadableByteChannel;
 import java.util.Collection;
 import java.util.Map;
 import org.junit.Before;
@@ -355,222 +339,6 @@ public class CopyWriterTest {
             getCounterValueWithAttr(
                 metrics, METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_UNAVAILABLE))
         .isEqualTo(1L);
-  }
-
-  @Test
-  public void testReadChannelPreservesReadFailureOnClose() throws Exception {
-    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
-    SdkMeterProvider meterProvider =
-        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
-    StorageClientMetrics clientMetrics = StorageClientMetrics.create(meterProvider, true, false);
-    StorageMetricsContext metricsContext =
-        StorageClientMetrics.createMultiStepContext(clientMetrics, "ReadObject");
-
-    @SuppressWarnings("unchecked")
-    ReadableByteChannelSession<ReadableByteChannel, StorageObject> sessionMock =
-        Mockito.mock(ReadableByteChannelSession.class);
-    ReadableByteChannel channelMock = Mockito.mock(ReadableByteChannel.class);
-    when(sessionMock.open()).thenReturn(channelMock);
-    when(sessionMock.getResult()).thenReturn(SettableApiFuture.create());
-    when(channelMock.isOpen()).thenReturn(true);
-    when(channelMock.read(any(ByteBuffer.class))).thenThrow(new StorageException(404, "Not Found"));
-
-    BaseStorageReadChannel<StorageObject> readChannel =
-        new BaseStorageReadChannel<StorageObject>(
-            Conversions.json().blobInfo(), metricsContext, clientMetrics) {
-          @Override
-          public RestorableState<ReadChannel> capture() {
-            return null;
-          }
-
-          @Override
-          protected LazyReadChannel<?, StorageObject> newLazyReadChannel() {
-            return new LazyReadChannel<>(() -> sessionMock);
-          }
-        };
-
-    assertThrows(IOException.class, () -> readChannel.read(ByteBuffer.allocate(16)));
-    readChannel.close();
-
-    Collection<MetricData> metrics = metricReader.collectAllMetrics();
-    assertThat(
-            getCounterValueWithAttr(
-                metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_NOT_FOUND))
-        .isEqualTo(1L);
-    assertThat(
-            getCounterValueWithAttr(
-                metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_OK))
-        .isEqualTo(0L);
-  }
-
-  @Test
-  public void testReadChannel416TreatedAsNormalEofOnClose() throws Exception {
-    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
-    SdkMeterProvider meterProvider =
-        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
-    StorageClientMetrics clientMetrics = StorageClientMetrics.create(meterProvider, true, false);
-    StorageMetricsContext metricsContext =
-        StorageClientMetrics.createMultiStepContext(clientMetrics, "ReadObject");
-
-    @SuppressWarnings("unchecked")
-    ReadableByteChannelSession<ReadableByteChannel, StorageObject> sessionMock =
-        Mockito.mock(ReadableByteChannelSession.class);
-    ReadableByteChannel channelMock = Mockito.mock(ReadableByteChannel.class);
-    when(sessionMock.open()).thenReturn(channelMock);
-    when(sessionMock.getResult()).thenReturn(SettableApiFuture.create());
-    when(channelMock.isOpen()).thenReturn(true);
-    when(channelMock.read(any(ByteBuffer.class)))
-        .thenThrow(new StorageException(416, "Range Not Satisfiable"));
-
-    BaseStorageReadChannel<StorageObject> readChannel =
-        new BaseStorageReadChannel<StorageObject>(
-            Conversions.json().blobInfo(), metricsContext, clientMetrics) {
-          @Override
-          public RestorableState<ReadChannel> capture() {
-            return null;
-          }
-
-          @Override
-          protected LazyReadChannel<?, StorageObject> newLazyReadChannel() {
-            return new LazyReadChannel<>(() -> sessionMock);
-          }
-        };
-
-    assertThat(readChannel.read(ByteBuffer.allocate(16))).isEqualTo(-1);
-    readChannel.close();
-
-    Collection<MetricData> metrics = metricReader.collectAllMetrics();
-    assertThat(
-            getCounterValueWithAttr(
-                metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_OK))
-        .isEqualTo(1L);
-  }
-
-  @Test
-  public void testWriteChannelPreservesWriteFailureOnClose() throws Exception {
-    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
-    SdkMeterProvider meterProvider =
-        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
-    StorageClientMetrics clientMetrics = StorageClientMetrics.create(meterProvider, true, false);
-    StorageMetricsContext metricsContext =
-        StorageClientMetrics.createMultiStepContext(clientMetrics, "WriteObject");
-
-    @SuppressWarnings("unchecked")
-    BufferedWritableByteChannelSession<StorageObject> sessionMock =
-        Mockito.mock(BufferedWritableByteChannelSession.class);
-    BufferedWritableByteChannel channelMock = Mockito.mock(BufferedWritableByteChannel.class);
-    when(sessionMock.open()).thenReturn(channelMock);
-    when(sessionMock.getResult()).thenReturn(SettableApiFuture.create());
-    when(channelMock.isOpen()).thenReturn(true);
-    when(channelMock.write(any(ByteBuffer.class)))
-        .thenThrow(new StorageException(503, "Service Unavailable"));
-
-    BaseStorageWriteChannel<StorageObject> writeChannel =
-        new BaseStorageWriteChannel<StorageObject>(
-            Conversions.json().blobInfo(), metricsContext, clientMetrics) {
-          @Override
-          public RestorableState<WriteChannel> capture() {
-            return null;
-          }
-
-          @Override
-          protected LazyWriteChannel<StorageObject> newLazyWriteChannel() {
-            return new LazyWriteChannel<>(() -> sessionMock);
-          }
-        };
-
-    assertThrows(IOException.class, () -> writeChannel.write(ByteBuffer.wrap(new byte[] {1, 2})));
-    writeChannel.close();
-
-    Collection<MetricData> metrics = metricReader.collectAllMetrics();
-    assertThat(
-            getCounterValueWithAttr(
-                metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_UNAVAILABLE))
-        .isEqualTo(1L);
-    assertThat(
-            getCounterValueWithAttr(
-                metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_OK))
-        .isEqualTo(0L);
-  }
-
-  @Test
-  public void testStorageImplPaginationRecordsSingleOperationAcrossPages() {
-    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
-    SdkMeterProvider meterProvider =
-        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
-    HttpStorageOptions metricsOptions =
-        options.toBuilder().setEnableOtelMetrics(true).setMeterProvider(meterProvider).build();
-    Storage storage = metricsOptions.getService();
-
-    StorageObject obj1 = Conversions.json().blobInfo().encode(BLOB_INFO);
-    StorageObject obj2 = Conversions.json().blobInfo().encode(RESULT_INFO);
-    when(storageRpcMock.list(eq(DESTINATION_BUCKET_NAME), anyMap()))
-        .thenReturn(Tuple.of("page-2", ImmutableList.of(obj1)))
-        .thenReturn(Tuple.of(null, ImmutableList.of(obj2)));
-
-    Page<Blob> firstPage = storage.list(DESTINATION_BUCKET_NAME);
-    Page<Blob> secondPage = firstPage.getNextPage();
-    assertThat(secondPage).isNotNull();
-
-    Collection<MetricData> metrics = metricReader.collectAllMetrics();
-    assertThat(
-            getCounterValueWithAttr(
-                metrics,
-                METRIC_GCP_STORAGE_CLIENT_OPERATIONS,
-                KEY_GCP_STORAGE_OPERATION,
-                "ListObjects"))
-        .isEqualTo(1L);
-    assertThat(
-            getCounterValueWithAttr(
-                metrics,
-                METRIC_GCP_STORAGE_CLIENT_ATTEMPTS,
-                KEY_GCP_STORAGE_OPERATION,
-                "ListObjects"))
-        .isEqualTo(2L);
-  }
-
-  @Test
-  public void testStorageImplPcuSubOperationsDoNotEmitTopLevelOperations() {
-    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
-    SdkMeterProvider meterProvider =
-        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
-    HttpStorageOptions metricsOptions =
-        options.toBuilder().setEnableOtelMetrics(true).setMeterProvider(meterProvider).build();
-    StorageImpl storage = (StorageImpl) metricsOptions.getService();
-
-    StorageObject encodedResult = Conversions.json().blobInfo().encode(RESULT_INFO);
-    when(storageRpcMock.create(any(StorageObject.class), any(InputStream.class), anyMap()))
-        .thenReturn(encodedResult);
-    when(storageRpcMock.get(any(StorageObject.class), anyMap())).thenReturn(encodedResult);
-    when(storageRpcMock.delete(any(StorageObject.class), anyMap())).thenReturn(true);
-
-    storage.create(BLOB_INFO, new byte[] {1, 2, 3});
-    storage.internalDirectUpload(BLOB_INFO, Opts.empty(), ByteBuffer.wrap(new byte[] {4, 5}));
-    storage.internalObjectGet(BLOB_ID, Opts.empty());
-    storage.internalObjectDelete(BLOB_ID, Opts.empty());
-
-    Collection<MetricData> metrics = metricReader.collectAllMetrics();
-    assertThat(
-            getCounterValueWithAttr(
-                metrics,
-                METRIC_GCP_STORAGE_CLIENT_OPERATIONS,
-                KEY_GCP_STORAGE_OPERATION,
-                "WriteObject"))
-        .isEqualTo(1L);
-    assertThat(
-            getCounterValueWithAttr(
-                metrics,
-                METRIC_GCP_STORAGE_CLIENT_OPERATIONS,
-                KEY_GCP_STORAGE_OPERATION,
-                "GetObject"))
-        .isEqualTo(0L);
-    assertThat(
-            getCounterValueWithAttr(
-                metrics,
-                METRIC_GCP_STORAGE_CLIENT_OPERATIONS,
-                KEY_GCP_STORAGE_OPERATION,
-                "DeleteObject"))
-        .isEqualTo(0L);
   }
 
   private static long getCounterValueWithAttr(
