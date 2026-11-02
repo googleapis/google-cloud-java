@@ -109,6 +109,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   private static String graphTablesRegionSqlContent;
   private static final String GET_GRAPH_TABLES_DATASET_SQL =
       "DatabaseMetaData_GetGraphTables_Dataset.sql";
+  private static final String GET_GRAPH_COLUMNS_SQL = "DatabaseMetaData_GetGraphColumns.sql";
+  private static String graphColumnsSqlContent;
+  static final String MEASURE_EXPRESSION_KIND = "MEASURE";
+  static final String MEASURE_REMARKS_PREFIX = "MEASURE: ";
   private static String graphTablesDatasetSqlContent;
   // Declared package-private for testing.
   static final String GOOGLE_SQL_QUOTED_IDENTIFIER = "`";
@@ -1228,25 +1232,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String procedureName,
       String columnName,
       int ordinalPosition) {
-
-    ColumnTypeInfo defaultStringTypeInfo =
-        new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null);
     try {
-      String typeKind = argumentDataType.getTypeKind();
-      if (typeKind != null && !typeKind.isEmpty()) {
-        if ("ARRAY".equalsIgnoreCase(typeKind)) {
-          return new ColumnTypeInfo(Types.ARRAY, "ARRAY", null, null, null);
-        }
-        StandardSQLTypeName determinedType = StandardSQLTypeName.valueOf(typeKind.toUpperCase());
-        return getColumnTypeInfoForSqlType(determinedType);
-      }
+      return getColumnTypeInfoForTypeKind(
+          argumentDataType != null ? argumentDataType.getTypeKind() : null);
     } catch (Exception e) {
       LOG.warning(
           "Proc: %s, Arg: %s (Pos %d) - Caught an unexpected Exception during type"
               + " determination. Defaulting type to STRING. Error: %s",
           procedureName, columnName, ordinalPosition, e.getMessage());
+      return getColumnTypeInfoForSqlType(null);
     }
-    return defaultStringTypeInfo;
   }
 
   Comparator<FieldValueList> defineGetProcedureColumnsComparator(FieldList resultSchemaFields) {
@@ -1484,10 +1479,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   boolean shouldSkipGraphTables(String tableNamePattern, Set<String> requestedTypes) {
-    if (this.connection == null || !this.connection.isEnableGraphMetadata()) {
+    if (requestedTypes != null && !requestedTypes.contains(GRAPH_TABLE_TYPE)) {
       return true;
     }
-    if (requestedTypes != null && !requestedTypes.contains(GRAPH_TABLE_TYPE)) {
+    return shouldSkipGraphColumns(tableNamePattern);
+  }
+
+  boolean shouldSkipGraphColumns(String tableNamePattern) {
+    if (this.connection == null || !this.connection.isEnableGraphMetadata()) {
       return true;
     }
     if (tableNamePattern != null
@@ -1705,19 +1704,32 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             () -> {
               final List<FieldValueList> collectedResults =
                   Collections.synchronizedList(new ArrayList<>());
-              processTargetTablesConcurrently(
-                  targetDatasets,
+              boolean isExactGraphTableName =
+                  tableNamePattern != null
+                      && !needsListing(tableNamePattern)
+                      && tableNamePattern.contains(".");
+              if (!isExactGraphTableName) {
+                processTargetTablesConcurrently(
+                    targetDatasets,
+                    tableNamePattern,
+                    true,
+                    false,
+                    true,
+                    collectedResults,
+                    resultSchemaFields,
+                    (bqTable, results, fields) -> {
+                      processTableColumns(bqTable, columnNameRegex, results, fields);
+                    },
+                    TableOption.fields(
+                        TableField.TABLE_REFERENCE, TableField.TYPE, TableField.SCHEMA));
+              }
+              appendGraphColumnRows(
+                  effectiveCatalog,
+                  effectiveSchemaPattern,
                   tableNamePattern,
-                  true,
-                  false,
-                  true,
+                  columnNamePattern,
                   collectedResults,
-                  resultSchemaFields,
-                  (bqTable, results, fields) -> {
-                    processTableColumns(bqTable, columnNameRegex, results, fields);
-                  },
-                  TableOption.fields(
-                      TableField.TABLE_REFERENCE, TableField.TYPE, TableField.SCHEMA));
+                  resultSchemaFields);
 
               Comparator<FieldValueList> comparator =
                   defineGetColumnsComparator(resultSchemaFields);
@@ -1796,7 +1808,120 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
-  private Schema defineGetColumnsSchema() {
+  void appendGraphColumnRows(
+      String effectiveCatalog,
+      String effectiveSchemaPattern,
+      String tableNamePattern,
+      String columnNamePattern,
+      List<FieldValueList> collectedResults,
+      FieldList resultSchemaFields)
+      throws SQLException {
+    if (shouldSkipGraphColumns(tableNamePattern)) {
+      return;
+    }
+    List<String> targetCatalogs =
+        effectiveCatalog != null
+            ? Collections.singletonList(effectiveCatalog)
+            : getAccessibleCatalogNames();
+    boolean isExactDataset =
+        effectiveSchemaPattern != null && !needsListing(effectiveSchemaPattern);
+    String effectiveSchemaLike = (effectiveSchemaPattern == null) ? "%" : effectiveSchemaPattern;
+    String effectiveTableLike = (tableNamePattern == null) ? "%" : tableNamePattern;
+    String effectiveColumnLike = (columnNamePattern == null) ? "%" : columnNamePattern;
+    for (String project : targetCatalogs) {
+      String scope = isExactDataset ? effectiveSchemaPattern : resolveGraphRegion();
+      String formattedSql =
+          replaceSqlParameters(
+              getGraphColumnsSqlContent(), quoteIdentifier(project), quoteIdentifier(scope));
+      try (PreparedStatement statement = this.connection.prepareStatement(formattedSql)) {
+        statement.setString(1, effectiveSchemaLike);
+        statement.setString(2, effectiveTableLike);
+        statement.setString(3, effectiveColumnLike);
+        try (ResultSet rs = statement.executeQuery()) {
+          while (rs.next()) {
+            String cat = rs.getString("cat");
+            String sch = rs.getString("sch");
+            String tbl = rs.getString("tbl");
+            String col = rs.getString("col");
+            String typeKind = rs.getString("type_kind");
+            String expression = rs.getString("expression");
+            String expressionKind = rs.getString("expression_kind");
+            String description = rs.getString("description");
+            int ordinal = rs.getInt("ordinal");
+            List<FieldValue> values =
+                createGraphColumnRow(
+                    cat, sch, tbl, col, typeKind, expression, expressionKind, description, ordinal);
+            collectedResults.add(FieldValueList.of(values, resultSchemaFields));
+          }
+        }
+      } catch (SQLException e) {
+        if (e.getMessage() != null && e.getMessage().contains("Not found")) {
+          LOG.info(
+              "Dataset or project not found while querying PROPERTY_GRAPHS for columns in project"
+                  + " '%s'. Skipping.",
+              project);
+        } else {
+          throw e;
+        }
+      }
+    }
+  }
+
+  List<FieldValue> createGraphColumnRow(
+      String catalog,
+      String schemaName,
+      String tableName,
+      String columnName,
+      String typeKind,
+      @Nullable String expression,
+      @Nullable String expressionKind,
+      @Nullable String description,
+      int ordinalPosition) {
+    ColumnTypeInfo typeInfo = getColumnTypeInfoForTypeKind(typeKind);
+
+    boolean isMeasure = MEASURE_EXPRESSION_KIND.equalsIgnoreCase(expressionKind);
+    boolean isComputedExpression =
+        expression != null && !expression.isEmpty() && !expression.equalsIgnoreCase(columnName);
+    String isGeneratedColumn = (isMeasure || isComputedExpression) ? "YES" : "NO";
+
+    String remarks;
+    if (isMeasure) {
+      String measurePrefix = MEASURE_REMARKS_PREFIX + (expression != null ? expression : "");
+      remarks =
+          (description == null || description.isEmpty())
+              ? measurePrefix
+              : measurePrefix + " - " + description;
+    } else {
+      remarks = description;
+    }
+
+    return buildColumnRowValues(
+        catalog,
+        schemaName,
+        tableName,
+        columnName,
+        typeInfo,
+        DatabaseMetaData.columnNullableUnknown,
+        remarks,
+        ordinalPosition,
+        "",
+        isGeneratedColumn);
+  }
+
+  ColumnTypeInfo getColumnTypeInfoForTypeKind(@Nullable String typeKind) {
+    if (typeKind == null || typeKind.isEmpty()) {
+      return getColumnTypeInfoForSqlType(null);
+    }
+    try {
+      return getColumnTypeInfoForSqlType(
+          StandardSQLTypeName.valueOf(typeKind.toUpperCase(Locale.US)));
+    } catch (IllegalArgumentException e) {
+      LOG.warning("Unknown BigQuery typeKind '%s' in graph metadata. Mapping to STRING.", typeKind);
+      return getColumnTypeInfoForSqlType(null);
+    }
+  }
+
+  Schema defineGetColumnsSchema() {
     List<Field> fields = new ArrayList<>(24);
     fields.add(
         Field.newBuilder("TABLE_CAT", StandardSQLTypeName.STRING)
@@ -1899,14 +2024,51 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   List<FieldValue> createColumnRow(
       String catalog, String schemaName, String tableName, Field field, int ordinalPosition) {
-    List<FieldValue> values = new ArrayList<>(24);
     Field.Mode mode = (field.getMode() == null) ? Field.Mode.NULLABLE : field.getMode();
     ColumnTypeInfo typeInfo = mapBigQueryTypeToJdbc(field);
+    int nullable =
+        (mode == Field.Mode.REQUIRED)
+            ? DatabaseMetaData.columnNoNulls
+            : DatabaseMetaData.columnNullable;
+    String isNullable = "";
+    switch (mode) {
+      case REQUIRED:
+        isNullable = "NO";
+        break;
+      case NULLABLE:
+      case REPEATED:
+        isNullable = "YES";
+        break;
+    }
+    return buildColumnRowValues(
+        catalog,
+        schemaName,
+        tableName,
+        field.getName(),
+        typeInfo,
+        nullable,
+        field.getDescription(),
+        ordinalPosition,
+        isNullable,
+        "NO");
+  }
 
+  private List<FieldValue> buildColumnRowValues(
+      String catalog,
+      String schemaName,
+      String tableName,
+      String columnName,
+      ColumnTypeInfo typeInfo,
+      int nullable,
+      @Nullable String remarks,
+      int ordinalPosition,
+      String isNullable,
+      String isGeneratedColumn) {
+    List<FieldValue> values = new ArrayList<>(24);
     values.add(createStringFieldValue(catalog)); // 1. TABLE_CAT
     values.add(createStringFieldValue(schemaName)); // 2. TABLE_SCHEM
     values.add(createStringFieldValue(tableName)); // 3. TABLE_NAME
-    values.add(createStringFieldValue(field.getName())); // 4. COLUMN_NAME
+    values.add(createStringFieldValue(columnName)); // 4. COLUMN_NAME
     values.add(createLongFieldValue((long) typeInfo.jdbcType)); // 5. DATA_TYPE
     values.add(createStringFieldValue(typeInfo.typeName)); // 6. TYPE_NAME
     values.add(
@@ -1925,35 +2087,20 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             typeInfo.numPrecRadix == null
                 ? null
                 : typeInfo.numPrecRadix.longValue())); // 10. NUM_PREC_RADIX
-    int nullable =
-        (mode == Field.Mode.REQUIRED)
-            ? DatabaseMetaData.columnNoNulls
-            : DatabaseMetaData.columnNullable;
     values.add(createLongFieldValue((long) nullable)); // 11. NULLABLE
-    values.add(createStringFieldValue(field.getDescription())); // 12. REMARKS
+    values.add(createStringFieldValue(remarks)); // 12. REMARKS
     values.add(createNullFieldValue()); // 13. COLUMN_DEF
     values.add(createNullFieldValue()); // 14. SQL_DATA_TYPE
     values.add(createNullFieldValue()); // 15. SQL_DATETIME_SUB
     values.add(createNullFieldValue()); // 16. CHAR_OCTET_LENGTH
     values.add(createLongFieldValue((long) ordinalPosition)); // 17. ORDINAL_POSITION
-    String isNullable = "";
-    switch (mode) {
-      case REQUIRED:
-        isNullable = "NO";
-        break;
-      case NULLABLE:
-      case REPEATED:
-        isNullable = "YES";
-        break;
-    }
     values.add(createStringFieldValue(isNullable)); // 18. IS_NULLABLE
     values.add(createNullFieldValue()); // 19. SCOPE_CATALOG
     values.add(createNullFieldValue()); // 20. SCOPE_SCHEMA
     values.add(createNullFieldValue()); // 21. SCOPE_TABLE
     values.add(createNullFieldValue()); // 22. SOURCE_DATA_TYPE
     values.add(createStringFieldValue("NO")); // 23. IS_AUTOINCREMENT
-    values.add(createStringFieldValue("NO")); // 24. IS_GENERATEDCOLUMN
-
+    values.add(createStringFieldValue(isGeneratedColumn)); // 24. IS_GENERATEDCOLUMN
     return values;
   }
 
@@ -5015,6 +5162,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       graphTablesRegionSqlContent = readSqlFromFile(GET_GRAPH_TABLES_REGION_SQL);
     }
     return graphTablesRegionSqlContent;
+  }
+
+  private static synchronized String getGraphColumnsSqlContent() {
+    if (graphColumnsSqlContent == null) {
+      graphColumnsSqlContent = readSqlFromFile(GET_GRAPH_COLUMNS_SQL);
+    }
+    return graphColumnsSqlContent;
   }
 
   static String readSqlFromFile(String filename) {
