@@ -82,6 +82,49 @@ public final class StorageErrorTypeMapperTest {
   }
 
   @Test
+  public void mapGrpcStatus_withCausesAndServerChecksumDescriptions() {
+    assertThat(
+            StorageErrorTypeMapper.mapGrpcStatus(
+                Status.UNAVAILABLE.withCause(new UnknownHostException("storage.googleapis.com"))))
+        .isEqualTo("DNS_FAILURE");
+    assertThat(
+            StorageErrorTypeMapper.mapGrpcStatus(
+                Status.UNAVAILABLE.withCause(new SSLHandshakeException("TLS failed"))))
+        .isEqualTo("TLS_FAILURE");
+    assertThat(
+            StorageErrorTypeMapper.mapGrpcStatus(
+                Status.UNAVAILABLE.withCause(new ConnectException("Connection refused"))))
+        .isEqualTo("CONNECTION_ERROR");
+    assertThat(
+            StorageErrorTypeMapper.mapGrpcStatus(
+                Status.DEADLINE_EXCEEDED.withCause(new SocketTimeoutException("Read timed out"))))
+        .isEqualTo("TIMEOUT");
+    assertThat(
+            StorageErrorTypeMapper.mapGrpcStatus(
+                Status.UNAUTHENTICATED.withCause(new GoogleAuthException("Token refresh failed"))))
+        .isEqualTo("AUTHENTICATION_ERROR");
+
+    assertThat(
+            StorageErrorTypeMapper.mapGrpcStatus(
+                Status.INVALID_ARGUMENT.withDescription(
+                    "Object crc32c mismatch: expected 123, got 456")))
+        .isEqualTo("CHECKSUM_MISMATCH");
+    assertThat(
+            StorageErrorTypeMapper.mapGrpcStatus(
+                Status.DATA_LOSS.withDescription("Uploaded md5 does not match expected value")))
+        .isEqualTo("CHECKSUM_MISMATCH");
+    assertThat(
+            StorageErrorTypeMapper.mapGrpcStatus(
+                Status.INVALID_ARGUMENT.withDescription("Invalid crc32c header format")))
+        .isEqualTo("INVALID_ARGUMENT");
+    assertThat(
+            StorageErrorTypeMapper.mapGrpcStatus(
+                Status.NOT_FOUND.withDescription(
+                    "Provided CRC32C \"abc=\" doesn't match calculated CRC32C \"def=\"")))
+        .isEqualTo("NOT_FOUND");
+  }
+
+  @Test
   public void mapHttpResponseCode_standardCodesMappedCorrectly() {
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(200)).isEqualTo("OK");
     assertThat(StorageErrorTypeMapper.mapHttpResponseCode(201)).isEqualTo("OK");
@@ -326,6 +369,30 @@ public final class StorageErrorTypeMapperTest {
         new StorageException(400, "Invalid crc32c header format");
     assertThat(StorageErrorTypeMapper.mapThrowable(seHttp400UnrelatedCrc32c))
         .isEqualTo("INVALID_ARGUMENT");
+
+    StorageException seHttp404WithCrc32cMatchWords =
+        new StorageException(
+            404, "Object with crc32c that doesn't match expected pattern was not found");
+    assertThat(StorageErrorTypeMapper.mapThrowable(seHttp404WithCrc32cMatchWords))
+        .isEqualTo("NOT_FOUND");
+
+    HttpResponseException hreHttp404WithMd5MatchWords =
+        new HttpResponseException.Builder(404, "Not Found", new HttpHeaders())
+            .setMessage("Object with md5 match metadata not found")
+            .build();
+    assertThat(StorageErrorTypeMapper.mapThrowable(hreHttp404WithMd5MatchWords))
+        .isEqualTo("NOT_FOUND");
+
+    StorageException seHttp412WithCrc32cMatchWords =
+        new StorageException(412, "Precondition failed: crc32c match condition not met");
+    assertThat(StorageErrorTypeMapper.mapThrowable(seHttp412WithCrc32cMatchWords))
+        .isEqualTo("FAILED_PRECONDITION");
+
+    StatusRuntimeException sreNotFoundWithCrc32cMatchWords =
+        new StatusRuntimeException(
+            Status.NOT_FOUND.withDescription("Object crc32c mismatch not found"));
+    assertThat(StorageErrorTypeMapper.mapThrowable(sreNotFoundWithCrc32cMatchWords))
+        .isEqualTo("NOT_FOUND");
   }
 
   @Test

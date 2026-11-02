@@ -65,7 +65,20 @@ final class StorageErrorTypeMapper {
   static final String STATUS_CHECKSUM_MISMATCH = "CHECKSUM_MISMATCH";
 
   static String mapGrpcStatus(@Nullable Status status) {
-    if (status == null || status.getCode() == Status.Code.UNKNOWN) {
+    if (status == null) {
+      return STATUS_UNKNOWN;
+    }
+    Throwable cause = status.getCause();
+    if (cause != null && hasSpecificClientCause(cause, /* includeAuth= */ true)) {
+      String mappedCause = mapKnownCause(null, cause);
+      if (mappedCause != null) {
+        return mappedCause;
+      }
+    }
+    if (isServerChecksumGrpcStatus(status)) {
+      return STATUS_CHECKSUM_MISMATCH;
+    }
+    if (status.getCode() == Status.Code.UNKNOWN) {
       return STATUS_UNKNOWN;
     }
     return status.getCode().name();
@@ -184,17 +197,9 @@ final class StorageErrorTypeMapper {
 
     if (t instanceof StorageException) {
       StorageException se = (StorageException) t;
-      Throwable cause = se.getCause();
-      if (cause != null
-          && cause != se
-          && (cause instanceof ApiException
-              || cause instanceof StatusRuntimeException
-              || cause instanceof StatusException
-              || hasSpecificClientCause(cause, /* includeAuth= */ true))) {
-        String mappedCause = mapKnownCause(se, cause);
-        if (mappedCause != null) {
-          return mappedCause;
-        }
+      String mappedCause = mapKnownCause(se, se.getCause());
+      if (mappedCause != null) {
+        return mappedCause;
       }
       if (se.getCode() > 0) {
         return mapHttpResponseCode(se.getCode());
@@ -282,13 +287,58 @@ final class StorageErrorTypeMapper {
     String message = t.getMessage();
     if (message != null) {
       String lower = Ascii.toLowerCase(message);
-      if (lower.contains("mismatch checksum")
-          || lower.contains("checksum mismatch")
-          || ((lower.contains("crc32c") || lower.contains("md5")) && lower.contains("match"))) {
+      if (lower.contains("mismatch checksum") || lower.contains("checksum mismatch")) {
         return true;
       }
     }
+    return isServerChecksumError(t);
+  }
+
+  private static boolean isServerChecksumError(Throwable t) {
+    if (t instanceof StatusRuntimeException) {
+      return isServerChecksumGrpcStatus(((StatusRuntimeException) t).getStatus());
+    }
+    if (t instanceof StatusException) {
+      return isServerChecksumGrpcStatus(((StatusException) t).getStatus());
+    }
+    if (t instanceof ApiException) {
+      StatusCode statusCode = ((ApiException) t).getStatusCode();
+      StatusCode.Code code = statusCode != null ? statusCode.getCode() : null;
+      return (code == StatusCode.Code.INVALID_ARGUMENT || code == StatusCode.Code.DATA_LOSS)
+          && hasServerChecksumMismatchMessage(t.getMessage());
+    }
+    if (t instanceof HttpResponseException) {
+      return ((HttpResponseException) t).getStatusCode() == 400
+          && hasServerChecksumMismatchMessage(t.getMessage());
+    }
+    if (t instanceof StorageException) {
+      StorageException se = (StorageException) t;
+      Throwable cause = se.getCause();
+      if (cause instanceof ApiException
+          || cause instanceof StatusRuntimeException
+          || cause instanceof StatusException) {
+        return isServerChecksumError(cause);
+      }
+      return se.getCode() == 400 && hasServerChecksumMismatchMessage(se.getMessage());
+    }
     return false;
+  }
+
+  private static boolean isServerChecksumGrpcStatus(@Nullable Status status) {
+    if (status == null) {
+      return false;
+    }
+    Status.Code code = status.getCode();
+    return (code == Status.Code.INVALID_ARGUMENT || code == Status.Code.DATA_LOSS)
+        && hasServerChecksumMismatchMessage(status.getDescription());
+  }
+
+  private static boolean hasServerChecksumMismatchMessage(@Nullable String message) {
+    if (message == null) {
+      return false;
+    }
+    String lower = Ascii.toLowerCase(message);
+    return (lower.contains("crc32c") || lower.contains("md5")) && lower.contains("match");
   }
 
   private static boolean isAuthException(Throwable t) {
