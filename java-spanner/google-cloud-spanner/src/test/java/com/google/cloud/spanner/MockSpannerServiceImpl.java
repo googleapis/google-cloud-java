@@ -1840,7 +1840,10 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
               .setTransaction(
                   ignoreInlineBeginRequest.get()
                       ? Transaction.getDefaultInstance()
-                      : Transaction.newBuilder().setId(transactionId).build())
+                      : (transactionSelector.hasBegin()
+                          ? transactions.getOrDefault(
+                              transactionId, Transaction.newBuilder().setId(transactionId).build())
+                          : Transaction.newBuilder().setId(transactionId).build()))
               .build();
     }
     resultSet = resultSet.toBuilder().setMetadata(metadata).build();
