@@ -453,8 +453,12 @@ final class BigQueryTemporalUtility {
     }
     StandardSQLTypeName elementType = getRangeElementType(field, start != null ? start : end);
     if (int64Timestamps && elementType == StandardSQLTypeName.TIMESTAMP) {
-      start = start == null ? null : Long.valueOf((String) start);
-      end = end == null ? null : Long.valueOf((String) end);
+      try {
+        start = start == null ? null : Long.valueOf((String) start);
+        end = end == null ? null : Long.valueOf((String) end);
+      } catch (NumberFormatException e) {
+        throw new BigQueryJdbcException("Invalid RANGE bound: " + value, e);
+      }
     }
     return "["
         + formatRangeBound(start, elementType, enableTimestampPicos)
