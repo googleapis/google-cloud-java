@@ -108,8 +108,7 @@ public class GrpcResultSetTest {
 
           @Override
           public void request(int numMessages) {}
-        },
-        false);
+        });
     consumer = stream.consumer();
     resultSet = new GrpcResultSet(stream, new NoOpListener());
   }

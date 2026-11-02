@@ -382,7 +382,7 @@ public interface EvaluationResultOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1055
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1065
    * @return Whether the error field is set.
    */
   @java.lang.Deprecated
@@ -401,7 +401,7 @@ public interface EvaluationResultOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1055
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1065
    * @return The error.
    */
   @java.lang.Deprecated
@@ -742,6 +742,84 @@ public interface EvaluationResultOrBuilder
    * @return The goldenRunMethod.
    */
   com.google.cloud.ces.v1beta.GoldenRunMethod getGoldenRunMethod();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root span of the evaluation execution, which includes
+   * information about each step of the evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the rootSpan field is set.
+   */
+  boolean hasRootSpan();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root span of the evaluation execution, which includes
+   * information about each step of the evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The rootSpan.
+   */
+  com.google.cloud.ces.v1beta.Span getRootSpan();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The root span of the evaluation execution, which includes
+   * information about each step of the evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.Span root_span = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.SpanOrBuilder getRootSpanOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The outcome metadata of the evaluation. Only populated if
+   * execution_state is COMPLETE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata outcome_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for outcomeMetadata.
+   */
+  int getOutcomeMetadataValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The outcome metadata of the evaluation. Only populated if
+   * execution_state is COMPLETE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata outcome_metadata = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The outcomeMetadata.
+   */
+  com.google.cloud.ces.v1beta.EvaluationResult.OutcomeMetadata getOutcomeMetadata();
 
   com.google.cloud.ces.v1beta.EvaluationResult.ResultCase getResultCase();
 }

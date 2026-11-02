@@ -1139,4 +1139,21 @@
     <className>com/google/cloud/spanner/XGoogSpannerRequestId</className>
     <field>REQUEST_ID</field>
   </difference>
+  <!-- ChannelFinder is @InternalApi: findServer and fillRoutingHint(CommitRequest.Builder) were
+       renamed to findServerAndFillRoutingHint. -->
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/spanner/spi/v1/ChannelFinder</className>
+    <method>com.google.cloud.spanner.spi.v1.ChannelEndpoint fillRoutingHint(com.google.spanner.v1.CommitRequest$Builder)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/spanner/spi/v1/ChannelFinder</className>
+    <method>com.google.cloud.spanner.spi.v1.ChannelEndpoint fillRoutingHint(com.google.spanner.v1.CommitRequest$Builder, java.util.function.Predicate)</method>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/spanner/spi/v1/ChannelFinder</className>
+    <method>* findServer(*)</method>
+  </difference>
 </differences>

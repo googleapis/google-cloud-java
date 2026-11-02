@@ -26,19 +26,17 @@ import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.core.ExecutorProvider;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.spanner.AbstractResultSet.CloseableIterator;
 import com.google.cloud.spanner.AsyncResultSet.CallbackResponse;
 import com.google.cloud.spanner.AsyncResultSet.ReadyCallback;
+import com.google.cloud.spanner.AsyncResultSet.StreamMessageListener;
 import com.google.cloud.spanner.Options.QueryOption;
 import com.google.cloud.spanner.Options.ReadOption;
 import com.google.cloud.spanner.SessionClient.SessionOption;
 import com.google.cloud.spanner.SessionImpl.SessionTransaction;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Supplier;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.spanner.v1.DirectedReadOptions;
@@ -54,11 +52,10 @@ import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionSelector;
 import io.opentelemetry.api.common.Attributes;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Abstract base class for all {@link ReadContext}s + concrete implementations of read-only {@link
@@ -170,7 +167,7 @@ abstract class AbstractReadContext
   TraceWrapper tracer;
   private final int defaultPrefetchChunks;
   private final QueryOptions defaultQueryOptions;
-  private final DirectedReadOptions defaultDirectedReadOptions;
+  final DirectedReadOptions defaultDirectedReadOptions;
   private final DecodeMode defaultDecodeMode;
   private final Clock clock;
   private volatile String cachedRequestTag;
@@ -393,25 +390,25 @@ abstract class AbstractReadContext
 
   ExecuteSqlRequest.Builder getExecuteSqlRequestBuilder(
       Statement statement, QueryMode queryMode, Options options, boolean withTransactionSelector) {
+    return getExecuteSqlRequest(
+            statement, queryMode, options, /* partitionToken= */ null, withTransactionSelector)
+        .getBuilder();
+  }
+
+  private ReadOrQueryRequest.Query getExecuteSqlRequest(
+      Statement statement,
+      QueryMode queryMode,
+      Options options,
+      @Nullable ByteString partitionToken,
+      boolean withTransactionSelector) {
     ExecuteSqlRequest.Builder builder =
-        ExecuteSqlRequest.newBuilder()
-            .setSql(statement.getSql())
-            .setQueryMode(queryMode)
-            .setSession(session.getName());
+        ExecuteSqlRequest.newBuilder().setSql(statement.getSql()).setQueryMode(queryMode);
     addParameters(builder, statement.getParameters());
     if (withTransactionSelector) {
       TransactionSelector selector = getTransactionSelector();
       if (selector != null) {
         builder.setTransaction(selector);
       }
-    }
-    if (options.hasDataBoostEnabled()) {
-      builder.setDataBoostEnabled(options.dataBoostEnabled());
-    }
-    if (options.hasDirectedReadOptions()) {
-      builder.setDirectedReadOptions(options.directedReadOptions());
-    } else if (defaultDirectedReadOptions != null) {
-      builder.setDirectedReadOptions(defaultDirectedReadOptions);
     }
     if (!isReadOnly()) {
       builder.setSeqno(getSeqNo());
@@ -420,8 +417,7 @@ abstract class AbstractReadContext
       builder.setLastStatement(options.isLastStatement());
     }
     builder.setQueryOptions(buildQueryOptions(statement.getQueryOptions()));
-    builder.setRequestOptions(buildRequestOptions(options));
-    return builder;
+    return ReadOrQueryRequest.forQuery(this, builder, statement, options, partitionToken);
   }
 
   static void addParameters(ExecuteSqlRequest.Builder builder, Map<String, Value> stmtParameters) {
@@ -472,84 +468,79 @@ abstract class AbstractReadContext
     return builder;
   }
 
-  @FunctionalInterface
-  private interface StreamStarter {
-    StreamCallResult start(
-        @Nullable ByteString resumeToken,
-        XGoogSpannerRequestId requestId,
-        SpannerRpc.ResultStreamConsumer consumer);
-  }
-
-  private static final class StreamCallResult {
-    final SpannerRpc.StreamingCall call;
-    final boolean withBeginTransaction;
-
-    StreamCallResult(SpannerRpc.StreamingCall call, boolean withBeginTransaction) {
-      this.call = call;
-      this.withBeginTransaction = withBeginTransaction;
-    }
-  }
-
-  @FunctionalInterface
-  private interface StreamCall {
-    SpannerRpc.StreamingCall execute(
-        SpannerRpc.ResultStreamConsumer consumer, XGoogSpannerRequestId requestId);
-  }
-
-  private StreamCallResult executeCall(
-      boolean withBeginTransaction,
-      SpannerRpc.ResultStreamConsumer consumer,
-      XGoogSpannerRequestId requestId,
-      StreamCall call) {
-    try {
-      return new StreamCallResult(call.execute(consumer, requestId), withBeginTransaction);
-    } catch (RuntimeException | Error t) {
-      onStartFailed(withBeginTransaction, t);
-      throw t;
-    }
-  }
-
-  @Nullable
-  private TransactionSelector prepareTransactionSelector(
-      @Nullable ByteString resumeToken, boolean hasTransaction) {
-    if (resumeToken != null || !hasTransaction) {
-      return getTransactionSelector();
-    }
-    return null;
-  }
-
   private ResultSet createStreamingResultSet(
-      String operationName,
-      Attributes attributes,
-      RetrySettings retrySettings,
-      Set<Code> retryableCodes,
-      Options options,
-      Supplier<GrpcStreamIterator> streamSupplier,
-      StreamStarter streamStarter) {
+      ReadOrQueryRequest request, Attributes attributes, Options options) {
+    final int prefetchChunks =
+        options.hasPrefetchChunks() ? options.prefetchChunks() : this.defaultPrefetchChunks;
+    final boolean lastStatement = options.hasLastStatement() && options.isLastStatement();
     ResumableStreamIterator stream =
         new ResumableStreamIterator(
             MAX_BUFFERED_CHUNKS,
-            operationName,
-            span,
-            tracer,
+            request.getOperationName(),
+            this.span,
+            this.tracer,
             attributes,
-            session.getErrorHandler(),
-            retrySettings,
-            retryableCodes,
-            session.getRequestIdCreator()) {
+            this.session.getErrorHandler(),
+            request.getRetrySettings(this.rpc),
+            request.getRetryableCodes(this.rpc),
+            this.session.getRequestIdCreator()) {
+          private volatile boolean closed;
+
           @Override
           CloseableIterator<PartialResultSet> startStream(
               @Nullable ByteString resumeToken,
-              AsyncResultSet.StreamMessageListener streamListener,
+              @Nullable StreamMessageListener streamListener,
               XGoogSpannerRequestId requestId) {
-            GrpcStreamIterator stream = streamSupplier.get();
+            if (resumeToken != null) {
+              request.setResumeToken(resumeToken);
+            }
+            // 1. When starting the stream for the first time (resumeToken == null and
+            //    !request.hasTransaction()), look up and set the TransactionSelector.
+            //    If the stream is retried before receiving a resumeToken (resumeToken == null)
+            //    and already has a TransactionSelector, we reuse the existing selector. In
+            //    particular, if the initial request included an inlined BeginTransaction, the
+            //    retry must still send BeginTransaction, and calling getTransactionSelector()
+            //    again before the transaction ID has been received would block waiting on its
+            //    own transactionIdFuture.
+            // 2. When resuming a stream after receiving a resumeToken (resumeToken != null),
+            //    the TransactionSelector only changes if the initial request included an
+            //    inlined BeginTransaction (request.isWithBeginTransaction()): receiving a
+            //    resumeToken means the first response chunk (and its Transaction metadata) has
+            //    already been processed, so we replace the BeginTransaction selector with the
+            //    transaction ID selector for the resumed stream.
+            if ((resumeToken == null && !request.hasTransaction())
+                || (resumeToken != null && request.isWithBeginTransaction())) {
+              TransactionSelector selector = getTransactionSelector();
+              if (selector != null) {
+                request.setTransaction(selector);
+              }
+            }
+            boolean withBeginTransaction = request.isWithBeginTransaction();
+            GrpcStreamIterator stream =
+                new GrpcStreamIterator(
+                    request.getStatement(),
+                    lastStatement,
+                    prefetchChunks,
+                    cancelQueryWhenClientIsClosed,
+                    withBeginTransaction);
             if (streamListener != null) {
               stream.registerListener(streamListener);
             }
-            StreamCallResult result =
-                streamStarter.start(resumeToken, requestId, stream.consumer());
+            SpannerRpc.StreamingCall call;
+            try {
+              call =
+                  request.start(
+                      rpc,
+                      stream.consumer(),
+                      getTransactionChannelHint(),
+                      requestId,
+                      isRouteToLeader());
+            } catch (Throwable throwable) {
+              onStartFailed(withBeginTransaction, lastStatement, throwable);
+              throw throwable;
+            }
             session.markUsed(clock.instant());
-            stream.setCall(result.call, result.withBeginTransaction);
+            stream.setCall(call);
             return stream;
           }
 
@@ -557,9 +548,28 @@ abstract class AbstractReadContext
           boolean prepareIteratorForRetryOnDifferentGrpcChannel() {
             return AbstractReadContext.this.prepareRetryOnDifferentGrpcChannel();
           }
+
+          @Override
+          public void close(@Nullable String message) {
+            // Mark closed before super.close() cancels the underlying gRPC call so that a consumer
+            // thread woken by the cancellation never reports an inlined-begin failure for a closed
+            // result set.
+            this.closed = true;
+            super.close(message);
+          }
+
+          @Override
+          public boolean isWithBeginTransaction() {
+            return !this.closed && request.isWithBeginTransaction();
+          }
+
+          @Override
+          public boolean isLastStatement() {
+            return lastStatement;
+          }
         };
     return new GrpcResultSet(
-        stream, this, options.hasDecodeMode() ? options.decodeMode() : defaultDecodeMode);
+        stream, this, options.hasDecodeMode() ? options.decodeMode() : this.defaultDecodeMode);
   }
 
   ResultSet executeQueryInternalWithOptions(
@@ -568,47 +578,11 @@ abstract class AbstractReadContext
       final Options options,
       final ByteString partitionToken) {
     beforeReadOrQuery();
-    final int prefetchChunks =
-        options.hasPrefetchChunks() ? options.prefetchChunks() : defaultPrefetchChunks;
-    final ExecuteSqlRequest.Builder request =
-        getExecuteSqlRequestBuilder(
-            statement, queryMode, options, /* withTransactionSelector= */ false);
-    if (partitionToken != null) {
-      request.setPartitionToken(partitionToken);
-    }
     return createStreamingResultSet(
-        SpannerImpl.QUERY,
-        tracer.createStatementAttributes(statement, options),
-        rpc.getExecuteQueryRetrySettings(),
-        rpc.getExecuteQueryRetryableCodes(),
-        options,
-        () ->
-            new GrpcStreamIterator(
-                statement,
-                request.getLastStatement(),
-                prefetchChunks,
-                cancelQueryWhenClientIsClosed),
-        (resumeToken, requestId, consumer) -> {
-          if (resumeToken != null) {
-            request.setResumeToken(resumeToken);
-          }
-          TransactionSelector selector =
-              prepareTransactionSelector(resumeToken, request.hasTransaction());
-          if (selector != null) {
-            request.setTransaction(selector);
-          }
-          return executeCall(
-              request.getTransaction().hasBegin(),
-              consumer,
-              requestId,
-              (streamConsumer, reqId) ->
-                  rpc.executeQuery(
-                      request.build(),
-                      streamConsumer,
-                      getTransactionChannelHint(),
-                      reqId,
-                      isRouteToLeader()));
-        });
+        getExecuteSqlRequest(
+            statement, queryMode, options, partitionToken, /* withTransactionSelector= */ false),
+        this.tracer.createStatementAttributes(statement, options),
+        options);
   }
 
   static Map<SpannerRpc.Option, ?> getChannelHintOptions(
@@ -694,8 +668,7 @@ abstract class AbstractReadContext
    * Returns the transaction tag for this {@link AbstractReadContext} or <code>null</code> if this
    * {@link AbstractReadContext} does not have a transaction tag.
    */
-  @Nullable
-  String getTransactionTag() {
+  @Nullable String getTransactionTag() {
     return null;
   }
 
@@ -715,7 +688,7 @@ abstract class AbstractReadContext
     this.session.onReadDone();
   }
 
-  void onStartFailed(boolean withBeginTransaction, Throwable t) {}
+  void onStartFailed(boolean withBeginTransaction, boolean lastStatement, Throwable throwable) {}
 
   /**
    * For transactions other than read-write, the MultiplexedSessionPrecommitToken will not be
@@ -744,31 +717,16 @@ abstract class AbstractReadContext
       ByteString partitionToken) {
     beforeReadOrQuery();
     final ReadRequest.Builder builder =
-        ReadRequest.newBuilder()
-            .setSession(session.getName())
-            .setTable(checkNotNull(table))
-            .addAllColumns(columns);
+        ReadRequest.newBuilder().setTable(checkNotNull(table)).addAllColumns(columns);
     if (readOptions.hasLimit()) {
       builder.setLimit(readOptions.limit());
     }
-
     keys.appendToProto(builder.getKeySetBuilder());
     if (index != null) {
       builder.setIndex(index);
     }
-    if (partitionToken != null) {
-      builder.setPartitionToken(partitionToken);
-    }
-    if (readOptions.hasDataBoostEnabled()) {
-      builder.setDataBoostEnabled(readOptions.dataBoostEnabled());
-    }
     if (readOptions.hasOrderBy()) {
       builder.setOrderBy(readOptions.orderBy());
-    }
-    if (readOptions.hasDirectedReadOptions()) {
-      builder.setDirectedReadOptions(readOptions.directedReadOptions());
-    } else if (defaultDirectedReadOptions != null) {
-      builder.setDirectedReadOptions(defaultDirectedReadOptions);
     }
     if (readOptions.hasLockHint()) {
       if (isReadOnly()) {
@@ -779,39 +737,10 @@ abstract class AbstractReadContext
         builder.setLockHint(readOptions.lockHint());
       }
     }
-    builder.setRequestOptions(buildRequestOptions(readOptions));
-    final int prefetchChunks =
-        readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
-    final boolean lastStatement =
-        readOptions.hasLastStatement() ? readOptions.isLastStatement() : false;
     return createStreamingResultSet(
-        SpannerImpl.READ,
-        tracer.createTableAttributes(table, readOptions),
-        rpc.getReadRetrySettings(),
-        rpc.getReadRetryableCodes(),
-        readOptions,
-        () -> new GrpcStreamIterator(lastStatement, prefetchChunks, cancelQueryWhenClientIsClosed),
-        (resumeToken, requestId, consumer) -> {
-          if (resumeToken != null) {
-            builder.setResumeToken(resumeToken);
-          }
-          TransactionSelector selector =
-              prepareTransactionSelector(resumeToken, builder.hasTransaction());
-          if (selector != null) {
-            builder.setTransaction(selector);
-          }
-          return executeCall(
-              builder.getTransaction().hasBegin(),
-              consumer,
-              requestId,
-              (streamConsumer, reqId) ->
-                  rpc.read(
-                      builder.build(),
-                      streamConsumer,
-                      getTransactionChannelHint(),
-                      reqId,
-                      isRouteToLeader()));
-        });
+        ReadOrQueryRequest.forRead(this, builder, readOptions, partitionToken),
+        this.tracer.createTableAttributes(table, readOptions),
+        readOptions);
   }
 
   private Struct consumeSingleRow(ResultSet resultSet) {

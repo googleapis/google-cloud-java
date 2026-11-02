@@ -48,6 +48,7 @@ import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import com.google.cloud.bigtable.testproxy.CloudBigtableV2TestProxyGrpc.CloudBigtableV2TestProxyImplBase;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.util.Durations;
@@ -395,6 +396,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
             resultBuilder.setStatus(com.google.rpc.Status.getDefaultInstance()).build());
       } else {
         logger.info(String.format("readRow() did not find row: %s", request.getRowKey()));
+        responseObserver.onNext(
+            // Note that the default instance == OK
+            RowResult.newBuilder().setStatus(com.google.rpc.Status.getDefaultInstance()).build());
       }
     } catch (ApiException e) {
       responseObserver.onNext(RowResult.newBuilder().setStatus(convertStatus(e)).build());
@@ -640,6 +644,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
         logger.info(
             String.format(
                 "readModifyWriteRow() did not find row: %s", request.getRequest().getRowKey()));
+        responseObserver.onNext(
+            // Note that the default instance == OK
+            RowResult.newBuilder().setStatus(com.google.rpc.Status.getDefaultInstance()).build());
       }
     } catch (ApiException e) {
       responseObserver.onNext(RowResult.newBuilder().setStatus(convertStatus(e)).build());
@@ -815,7 +822,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
         OAuth2Credentials.create(new AccessToken(accessToken, null)));
   }
 
-  private final ConcurrentHashMap<String, CbtClient> idClientMap;
+  @VisibleForTesting final ConcurrentHashMap<String, CbtClient> idClientMap;
 
   private static final Pattern tablePattern =
       Pattern.compile("projects/([^/]+)/instances/([^/]+)/tables/([^/]+)");

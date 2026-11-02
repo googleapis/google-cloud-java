@@ -16,8 +16,8 @@ version: v0.50.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: 14a161a98ef045be80c12ab69d924504a756f109
-    sha256: ce3cee2da77fbdff0e269bc520dc61e8b32efcdec7628b39b9e474a02bc951f6
+    commit: ff625463db4983f3811d549fd4cd97e64180dc4e
+    sha256: 5599f10f5e52ddbc1358ad534e96a52d42358792d453a1b7bcfa9f7d31f85e92
   showcase:
     commit: 5158967e8a41c751b15776142d190428ddb7e99f
     sha256: a31271ff2cdeb7cce91e93a4d58a66dcaaac574c51cc14bd74577ab1eafd3ccd
@@ -1499,6 +1499,14 @@ libraries:
       released_version: 1.98.0
       name_pretty_override: Google Cloud Deploy
       product_documentation_override: https://cloud.google.com/deploy/docs
+  - name: designcenter
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/designcenter/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
+            - path: google/iam/v1/iam_policy.proto
   - name: developerconnect
     version: 0.57.0
     apis:

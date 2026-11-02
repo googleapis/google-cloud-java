@@ -105,7 +105,7 @@ class HttpJsonResumableUploadClientTest {
     ResumableUploadSession session = client.startUploadCallable().call(request);
 
     assertThat(session.getUploadUrl()).isEqualTo(TEST_UPLOAD_URL);
-    assertThat(session.getChunkGranularity()).isEqualTo(262144L);
+    assertThat(session.getChunkGranularity()).isEqualTo(262144);
   }
 
   @Test
@@ -123,7 +123,7 @@ class HttpJsonResumableUploadClientTest {
 
     assertThat(session.getUploadUrl())
         .isEqualTo("https://test.googleapis.com/upload/session/case-insensitive");
-    assertThat(session.getChunkGranularity()).isEqualTo(524288L);
+    assertThat(session.getChunkGranularity()).isEqualTo(524288);
   }
 
   @Test
