@@ -402,6 +402,37 @@ public final class GrpcStorageImplTest {
   }
 
   @Test
+  public void updateBucketAndBlob_withNoModifiedFields_recordsUpdateOperationMetrics() {
+    UnaryCallable<GetBucketRequest, Bucket> getBucketCallable = TestStorageStub.mockCallable();
+    storageStub.getBucketCallable = getBucketCallable;
+    when(getBucketCallable.call(any(GetBucketRequest.class), any(GrpcCallContext.class)))
+        .thenReturn(Bucket.newBuilder().setName("projects/_/buckets/" + BUCKET_NAME).build());
+
+    UnaryCallable<GetObjectRequest, Object> getObjectCallable = TestStorageStub.mockCallable();
+    storageStub.getObjectCallable = getObjectCallable;
+    when(getObjectCallable.call(any(GetObjectRequest.class), any(GrpcCallContext.class)))
+        .thenReturn(
+            Object.newBuilder()
+                .setBucket("projects/_/buckets/" + BUCKET_NAME)
+                .setName(BLOB_NAME)
+                .build());
+
+    BucketInfo unmodifiedBucket = BucketInfo.of(BUCKET_NAME);
+    assertThat(unmodifiedBucket.getModifiedFields()).isEmpty();
+    com.google.cloud.storage.Bucket updatedBucket = grpcStorage.update(unmodifiedBucket);
+    assertThat(updatedBucket).isNotNull();
+    assertOperationCount("UpdateBucket", STATUS_OK, 1L);
+    assertOperationCount("GetBucket", STATUS_OK, 0L);
+
+    BlobInfo unmodifiedBlob = BlobInfo.newBuilder(BUCKET_NAME, BLOB_NAME).build();
+    assertThat(unmodifiedBlob.getModifiedFields()).isEmpty();
+    Blob updatedBlob = grpcStorage.update(unmodifiedBlob);
+    assertThat(updatedBlob).isNotNull();
+    assertOperationCount("UpdateObject", STATUS_OK, 1L);
+    assertOperationCount("GetObject", STATUS_OK, 0L);
+  }
+
+  @Test
   @SuppressWarnings("unchecked")
   public void copy_propagatesMultiContextToRetrierWithAlg() {
     UnaryCallable<RewriteObjectRequest, RewriteResponse> rewriteObjectCallable =

@@ -575,7 +575,8 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   public Bucket update(BucketInfo bucketInfo, BucketTargetOption... options) {
     Opts<BucketTargetOpt> unwrap = Opts.unwrap(options);
     if (bucketInfo.getModifiedFields().isEmpty()) {
-      return internalBucketGet(bucketInfo.getName(), unwrap.constrainTo(BucketSourceOpt.class));
+      return internalBucketGet(
+          "UpdateBucket", bucketInfo.getName(), unwrap.constrainTo(BucketSourceOpt.class));
     }
     Opts<BucketTargetOpt> opts = unwrap.resolveFrom(bucketInfo).prepend(defaultOpts);
     GrpcCallContext grpcCallContext =
@@ -604,7 +605,8 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   public Blob update(BlobInfo blobInfo, BlobTargetOption... options) {
     Opts<ObjectTargetOpt> unwrap = Opts.unwrap(options);
     if (blobInfo.getModifiedFields().isEmpty()) {
-      return internalBlobGet(blobInfo.getBlobId(), unwrap.constrainTo(ObjectSourceOpt.class));
+      return internalBlobGet(
+          "UpdateObject", blobInfo.getBlobId(), unwrap.constrainTo(ObjectSourceOpt.class));
     }
     Opts<ObjectTargetOpt> opts = unwrap.resolveFrom(blobInfo).prepend(defaultOpts);
     GrpcCallContext grpcCallContext =
@@ -2488,13 +2490,18 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
 
   @Nullable
   private Blob internalBlobGet(BlobId blob, Opts<ObjectSourceOpt> unwrap) {
+    return internalBlobGet("GetObject", blob, unwrap);
+  }
+
+  @Nullable
+  private Blob internalBlobGet(String operationName, BlobId blob, Opts<ObjectSourceOpt> unwrap) {
     Opts<ObjectSourceOpt> opts = unwrap.resolveFrom(blob);
     try {
       return internalObjectGet(
               blob,
               opts,
               StorageClientMetrics.createContext(
-                  getOptions().getStorageClientMetrics(), "GetObject"))
+                  getOptions().getStorageClientMetrics(), operationName))
           .asBlob(this);
     } catch (StorageException e) {
       if (e.getCode() == 404 || e.getCause() instanceof NotFoundException) {
@@ -2509,6 +2516,12 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
 
   @Nullable
   private Bucket internalBucketGet(String bucket, Opts<BucketSourceOpt> unwrap) {
+    return internalBucketGet("GetBucket", bucket, unwrap);
+  }
+
+  @Nullable
+  private Bucket internalBucketGet(
+      String operationName, String bucket, Opts<BucketSourceOpt> unwrap) {
     Opts<BucketSourceOpt> opts = unwrap.prepend(defaultOpts).prepend(ALL_BUCKET_FIELDS);
     GrpcCallContext grpcCallContext =
         opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
@@ -2516,7 +2529,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
         GetBucketRequest.newBuilder().setName(bucketNameCodec.encode(bucket));
     GetBucketRequest req = opts.getBucketsRequest().apply(builder).build();
     StorageMetricsContext metricsContext =
-        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "GetBucket");
+        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), operationName);
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     try {
       return retrier.run(
