@@ -458,8 +458,7 @@ function run_integration_tests() {
     -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
     -DskipUnitTests=true \
     -Dmaven.wagon.http.retryHandler.count=5 \
-
-        -Daether.connector.http.retryHandler.count=5 \
+    -Daether.connector.http.retryHandler.count=5 \
         -Daether.connector.requestTimeout=120000 \
     -T 1C
 
@@ -728,8 +727,7 @@ function install_repo_modules {
   mvn -q -B -ntp install ${projects_arg} \
     -Dcheckstyle.skip \
     -Dfmt.skip \
-
-        -Daether.connector.http.retryHandler.count=5 \
+    -Daether.connector.http.retryHandler.count=5 \
         -Daether.connector.requestTimeout=120000 \
     -DskipTests \
     -T 1C
