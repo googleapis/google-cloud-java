@@ -1183,6 +1183,11 @@ public class ReadWriteTransactionWithInlineBeginTest {
     //    closed, so onError does not overwrite transactionIdFuture with a simulated ABORTED before
     //    onDone(true) sets FAILED_PRECONDITION.
     CountDownLatch consumerFinishedNextLatch = new CountDownLatch(1);
+    // Counted down when the initial prefetch request is issued on the call. This only happens after
+    // startStream() has returned and the stream has been registered with the result set iterator,
+    // which guarantees that a subsequent close() cancels the call from the closing thread rather
+    // than running before stream registration.
+    CountDownLatch streamRegisteredLatch = new CountDownLatch(1);
     AtomicReference<Thread> consumerThread = new AtomicReference<>();
     SpannerOptions options =
         createSpannerOptionsWithStreamInterceptors(
@@ -1197,6 +1202,8 @@ public class ReadWriteTransactionWithInlineBeginTest {
                 @Override
                 public void cancel(String message) {
                   delegateCall.cancel(message);
+                  // Only wait if called from an external thread (e.g. resultSet.close()),
+                  // not if cancel() is invoked by the consumer thread itself.
                   if (Thread.currentThread() != consumerThread.get()) {
                     try {
                       assertTrue(consumerFinishedNextLatch.await(5, TimeUnit.SECONDS));
@@ -1209,6 +1216,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
                 @Override
                 public void request(int numMessages) {
                   delegateCall.request(numMessages);
+                  streamRegisteredLatch.countDown();
                 }
               };
             },
@@ -1238,11 +1246,7 @@ public class ReadWriteTransactionWithInlineBeginTest {
                                         consumerFinishedNextLatch.countDown();
                                       }
                                     });
-                            try {
-                              mockSpanner.waitForRequestsToContain(ExecuteSqlRequest.class, 5000);
-                            } catch (Exception exceptionFromWait) {
-                              throw new RuntimeException(exceptionFromWait);
-                            }
+                            assertTrue(streamRegisteredLatch.await(5, TimeUnit.SECONDS));
                             resultSet.close();
                             mockSpanner.unfreeze();
                             ExecutionException consumerExecutionException =
