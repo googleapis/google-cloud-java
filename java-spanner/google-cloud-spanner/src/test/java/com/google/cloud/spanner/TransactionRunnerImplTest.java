@@ -322,6 +322,107 @@ public class TransactionRunnerImplTest {
     assertEquals(1, numCalls.get());
     verify(txn, never()).ensureTxn();
     verify(txn, times(1)).commit();
+    verify(txn, never()).rollback();
+    verify(txn, never()).rollbackAsync();
+  }
+
+  @Test
+  public void commitFailsWithDeadlineExceededRollsBack() {
+    final SpannerException error =
+        SpannerExceptionFactory.newSpannerException(
+            ErrorCode.DEADLINE_EXCEEDED, "commit deadline exceeded");
+    doThrow(error).when(txn).commit();
+    final AtomicInteger numCalls = new AtomicInteger(0);
+    SpannerException e =
+        assertThrows(
+            SpannerException.class,
+            () -> transactionRunner.run(transaction -> numCalls.incrementAndGet()));
+    assertEquals(ErrorCode.DEADLINE_EXCEEDED, e.getErrorCode());
+    assertEquals(1, numCalls.get());
+    verify(txn, times(1)).commit();
+    verify(txn, times(1)).rollbackAsync();
+  }
+
+  @Test
+  public void commitFailsWithCancelledRollsBack() {
+    final SpannerException error =
+        SpannerExceptionFactory.newSpannerException(ErrorCode.CANCELLED, "commit cancelled");
+    doThrow(error).when(txn).commit();
+    final AtomicInteger numCalls = new AtomicInteger(0);
+    SpannerException e =
+        assertThrows(
+            SpannerException.class,
+            () -> transactionRunner.run(transaction -> numCalls.incrementAndGet()));
+    assertEquals(ErrorCode.CANCELLED, e.getErrorCode());
+    assertEquals(1, numCalls.get());
+    verify(txn, times(1)).commit();
+    verify(txn, times(1)).rollbackAsync();
+  }
+
+  @Test
+  public void commitFailsWithUnavailableRollsBack() {
+    final SpannerException error =
+        SpannerExceptionFactory.newSpannerException(ErrorCode.UNAVAILABLE, "commit unavailable");
+    doThrow(error).when(txn).commit();
+    final AtomicInteger numCalls = new AtomicInteger(0);
+    SpannerException e =
+        assertThrows(
+            SpannerException.class,
+            () -> transactionRunner.run(transaction -> numCalls.incrementAndGet()));
+    assertEquals(ErrorCode.UNAVAILABLE, e.getErrorCode());
+    assertEquals(1, numCalls.get());
+    verify(txn, times(1)).commit();
+    verify(txn, times(1)).rollbackAsync();
+  }
+
+  @Test
+  public void commitFailsWithResourceExhaustedWithRetryInfoRollsBack() {
+    final SpannerException error = resourceExhaustedWithRetryInfo();
+    doThrow(error).when(txn).commit();
+    final AtomicInteger numCalls = new AtomicInteger(0);
+    SpannerException e =
+        assertThrows(
+            SpannerException.class,
+            () -> transactionRunner.run(transaction -> numCalls.incrementAndGet()));
+    assertEquals(ErrorCode.RESOURCE_EXHAUSTED, e.getErrorCode());
+    assertEquals(1, numCalls.get());
+    verify(txn, times(1)).commit();
+    verify(txn, times(1)).rollbackAsync();
+  }
+
+  @Test
+  public void commitFailsWithResourceExhaustedWithoutRetryInfoDoesNotRollBack() {
+    final SpannerException error =
+        SpannerExceptionFactory.newSpannerException(
+            ErrorCode.RESOURCE_EXHAUSTED, "mutation limit exceeded");
+    doThrow(error).when(txn).commit();
+    final AtomicInteger numCalls = new AtomicInteger(0);
+    SpannerException e =
+        assertThrows(
+            SpannerException.class,
+            () -> transactionRunner.run(transaction -> numCalls.incrementAndGet()));
+    assertEquals(ErrorCode.RESOURCE_EXHAUSTED, e.getErrorCode());
+    assertEquals(1, numCalls.get());
+    verify(txn, times(1)).commit();
+    verify(txn, never()).rollback();
+    verify(txn, never()).rollbackAsync();
+  }
+
+  @Test
+  public void commitFailsWithDeadlineExceededWhenRollbackThrowsPreservesOriginalException() {
+    final SpannerException commitError =
+        SpannerExceptionFactory.newSpannerException(
+            ErrorCode.DEADLINE_EXCEEDED, "commit deadline exceeded");
+    final RuntimeException rollbackError = new RuntimeException("rollback failed");
+    doThrow(commitError).when(txn).commit();
+    doThrow(rollbackError).when(txn).rollbackAsync();
+    SpannerException e =
+        assertThrows(SpannerException.class, () -> transactionRunner.run(transaction -> 1));
+    assertEquals(ErrorCode.DEADLINE_EXCEEDED, e.getErrorCode());
+    assertEquals(1, e.getSuppressed().length);
+    assertEquals(rollbackError, e.getSuppressed()[0]);
+    verify(txn, times(1)).commit();
+    verify(txn, times(1)).rollbackAsync();
   }
 
   @Test
@@ -465,7 +566,15 @@ public class TransactionRunnerImplTest {
         ErrorCode.ABORTED, "test", new StatusRuntimeException(status, createRetryTrailers()));
   }
 
-  private Metadata createRetryTrailers() {
+  static SpannerException resourceExhaustedWithRetryInfo() {
+    Status status = Status.fromCodeValue(Status.Code.RESOURCE_EXHAUSTED.value());
+    return SpannerExceptionFactory.newSpannerException(
+        ErrorCode.RESOURCE_EXHAUSTED,
+        "test",
+        new StatusRuntimeException(status, createRetryTrailers()));
+  }
+
+  private static Metadata createRetryTrailers() {
     Metadata.Key<RetryInfo> key = ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
     Metadata trailers = new Metadata();
     RetryInfo retryInfo =
