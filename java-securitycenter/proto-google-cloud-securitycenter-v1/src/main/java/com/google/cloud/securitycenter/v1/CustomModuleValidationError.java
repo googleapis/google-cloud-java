@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/securitycenter/v1/event_threat_detection_custom_module_validation_errors.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.securitycenter.v1;
 
@@ -42,9 +42,9 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "CustomModuleValidationError");
   }
 
@@ -59,6 +59,12 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.securitycenter.v1.EventThreatDetectionCustomModuleValidationErrorsProto
+        .internal_static_google_cloud_securitycenter_v1_CustomModuleValidationError_descriptor;
+  }
+
+  @java.lang.Override
+  public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
     return com.google.cloud.securitycenter.v1.EventThreatDetectionCustomModuleValidationErrorsProto
         .internal_static_google_cloud_securitycenter_v1_CustomModuleValidationError_descriptor;
   }
@@ -241,6 +247,14 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
         : start_;
   }
 
+  private void writeStartField(com.google.protobuf.CodedOutputStream output)
+      throws java.io.IOException {
+    com.google.cloud.securitycenter.v1.Position tmp = getStart();
+    output.writeUInt32NoTag(26);
+    output.writeUInt32NoTag(tmp.getSerializedSize());
+    tmp.writeTo(output);
+  }
+
   public static final int END_FIELD_NUMBER = 4;
   private com.google.cloud.securitycenter.v1.Position end_;
 
@@ -296,6 +310,14 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
     return end_ == null ? com.google.cloud.securitycenter.v1.Position.getDefaultInstance() : end_;
   }
 
+  private void writeEndField(com.google.protobuf.CodedOutputStream output)
+      throws java.io.IOException {
+    com.google.cloud.securitycenter.v1.Position tmp = getEnd();
+    output.writeUInt32NoTag(34);
+    output.writeUInt32NoTag(tmp.getSerializedSize());
+    tmp.writeTo(output);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -317,20 +339,16 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       com.google.protobuf.GeneratedMessage.writeString(output, 2, fieldPath_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(3, getStart());
+      writeStartField(output);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(4, getEnd());
+      writeEndField(output);
     }
     getUnknownFields().writeTo(output);
   }
 
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
+  private int computeSerializedSize_0() {
+    int size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, description_);
     }
@@ -343,6 +361,16 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getEnd());
     }
+    return size;
+  }
+
+  @java.lang.Override
+  public int getSerializedSize() {
+    int size = memoizedSize;
+    if (size != -1) return size;
+
+    size = 0;
+    size += computeSerializedSize_0();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -588,29 +616,31 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
       com.google.cloud.securitycenter.v1.CustomModuleValidationError result =
           new com.google.cloud.securitycenter.v1.CustomModuleValidationError(this);
       if (bitField0_ != 0) {
-        buildPartial0(result);
+        buildPartial_autosplit_0(result);
       }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(
+    private void buildPartial_autosplit_0(
         com.google.cloud.securitycenter.v1.CustomModuleValidationError result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.description_ = description_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.fieldPath_ = fieldPath_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000001) != 0)) {
         result.start_ = startBuilder_ == null ? start_ : startBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.end_ = endBuilder_ == null ? end_ : endBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.description_ = description_;
+        ;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.fieldPath_ = fieldPath_;
+        ;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -631,12 +661,12 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
         return this;
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getFieldPath().isEmpty()) {
         fieldPath_ = other.fieldPath_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasStart()) {
@@ -660,9 +690,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      java.util.Objects.requireNonNull(extensionRegistry);
       try {
         boolean done = false;
         while (!done) {
@@ -674,25 +702,23 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
             case 10:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 fieldPath_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
-                input.readMessage(internalGetStartFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                parseStartField(input, extensionRegistry);
                 break;
               } // case 26
             case 34:
               {
-                input.readMessage(internalGetEndFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                parseEndField(input, extensionRegistry);
                 break;
               } // case 34
             default:
@@ -775,11 +801,9 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setDescription(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       description_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -797,7 +821,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -815,12 +839,10 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -889,11 +911,9 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setFieldPath(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       fieldPath_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -912,7 +932,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      */
     public Builder clearFieldPath() {
       fieldPath_ = getDefaultInstance().getFieldPath();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -931,12 +951,10 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      * @return This builder for chaining.
      */
     public Builder setFieldPathBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       fieldPath_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -962,7 +980,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      * @return Whether the start field is set.
      */
     public boolean hasStart() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
 
     /**
@@ -1001,14 +1019,12 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      */
     public Builder setStart(com.google.cloud.securitycenter.v1.Position value) {
       if (startBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+        java.util.Objects.requireNonNull(value);
         start_ = value;
       } else {
         startBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1025,14 +1041,8 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      * <code>optional .google.cloud.securitycenter.v1.Position start = 3;</code>
      */
     public Builder setStart(com.google.cloud.securitycenter.v1.Position.Builder builderForValue) {
-      if (startBuilder_ == null) {
-        start_ = builderForValue.build();
-      } else {
-        startBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
+      java.util.Objects.requireNonNull(builderForValue);
+      return setStart(builderForValue.build());
     }
 
     /**
@@ -1048,7 +1058,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      */
     public Builder mergeStart(com.google.cloud.securitycenter.v1.Position value) {
       if (startBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000001) != 0)
             && start_ != null
             && start_ != com.google.cloud.securitycenter.v1.Position.getDefaultInstance()) {
           getStartBuilder().mergeFrom(value);
@@ -1059,7 +1069,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
         startBuilder_.mergeFrom(value);
       }
       if (start_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -1077,7 +1087,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      * <code>optional .google.cloud.securitycenter.v1.Position start = 3;</code>
      */
     public Builder clearStart() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       start_ = null;
       if (startBuilder_ != null) {
         startBuilder_.dispose();
@@ -1099,7 +1109,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      * <code>optional .google.cloud.securitycenter.v1.Position start = 3;</code>
      */
     public com.google.cloud.securitycenter.v1.Position.Builder getStartBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000001;
       onChanged();
       return internalGetStartFieldBuilder().getBuilder();
     }
@@ -1150,7 +1160,24 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
                 getStart(), getParentForChildren(), isClean());
         start_ = null;
       }
+      bitField0_ |= 0x00000001;
       return startBuilder_;
+    }
+
+    private void parseStartField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      final int oldLimit = input.pushLimitBeforeMessage();
+      if (start_ != null || startBuilder_ != null) {
+        internalGetStartFieldBuilder().getBuilder().mergeFrom(input, extensionRegistry);
+      } else {
+        start_ =
+            com.google.cloud.securitycenter.v1.Position.parser()
+                .parsePartialFrom(input, extensionRegistry);
+      }
+      input.popLimitAfterMessage(oldLimit);
+      bitField0_ |= 0x00000001;
     }
 
     private com.google.cloud.securitycenter.v1.Position end_;
@@ -1174,7 +1201,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      * @return Whether the end field is set.
      */
     public boolean hasEnd() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -1213,14 +1240,12 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      */
     public Builder setEnd(com.google.cloud.securitycenter.v1.Position value) {
       if (endBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+        java.util.Objects.requireNonNull(value);
         end_ = value;
       } else {
         endBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1237,14 +1262,8 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      * <code>optional .google.cloud.securitycenter.v1.Position end = 4;</code>
      */
     public Builder setEnd(com.google.cloud.securitycenter.v1.Position.Builder builderForValue) {
-      if (endBuilder_ == null) {
-        end_ = builderForValue.build();
-      } else {
-        endBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
+      java.util.Objects.requireNonNull(builderForValue);
+      return setEnd(builderForValue.build());
     }
 
     /**
@@ -1260,7 +1279,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      */
     public Builder mergeEnd(com.google.cloud.securitycenter.v1.Position value) {
       if (endBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && end_ != null
             && end_ != com.google.cloud.securitycenter.v1.Position.getDefaultInstance()) {
           getEndBuilder().mergeFrom(value);
@@ -1271,7 +1290,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
         endBuilder_.mergeFrom(value);
       }
       if (end_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -1289,7 +1308,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      * <code>optional .google.cloud.securitycenter.v1.Position end = 4;</code>
      */
     public Builder clearEnd() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000002);
       end_ = null;
       if (endBuilder_ != null) {
         endBuilder_.dispose();
@@ -1311,7 +1330,7 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
      * <code>optional .google.cloud.securitycenter.v1.Position end = 4;</code>
      */
     public com.google.cloud.securitycenter.v1.Position.Builder getEndBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000002;
       onChanged();
       return internalGetEndFieldBuilder().getBuilder();
     }
@@ -1362,7 +1381,24 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
                 getEnd(), getParentForChildren(), isClean());
         end_ = null;
       }
+      bitField0_ |= 0x00000002;
       return endBuilder_;
+    }
+
+    private void parseEndField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      final int oldLimit = input.pushLimitBeforeMessage();
+      if (end_ != null || endBuilder_ != null) {
+        internalGetEndFieldBuilder().getBuilder().mergeFrom(input, extensionRegistry);
+      } else {
+        end_ =
+            com.google.cloud.securitycenter.v1.Position.parser()
+                .parsePartialFrom(input, extensionRegistry);
+      }
+      input.popLimitAfterMessage(oldLimit);
+      bitField0_ |= 0x00000002;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1.CustomModuleValidationError)
@@ -1391,13 +1427,8 @@ public final class CustomModuleValidationError extends com.google.protobuf.Gener
           Builder builder = newBuilder();
           try {
             builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
+          } catch (java.lang.Exception e) {
+            wrapAndThrowParseException(e, builder);
           }
           return builder.buildPartial();
         }

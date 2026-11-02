@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/export_evaluated_data_items_config.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
@@ -29,9 +29,9 @@ public final class ExportEvaluatedDataItemsConfigProto extends com.google.protob
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "ExportEvaluatedDataItemsConfigProto");
   }
 
@@ -50,31 +50,39 @@ public final class ExportEvaluatedDataItemsConfigProto extends com.google.protob
     return descriptor;
   }
 
-  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+  private static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+  public static final class InternalDescriptors {
+    public static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+    static {
+      java.lang.String[] descriptorData = {
+        "\nagoogle/cloud/aiplatform/v1/schema/trai"
+            + "ningjob/definition/export_evaluated_data"
+            + "_items_config.proto\0228google.cloud.aiplat"
+            + "form.v1.schema.trainingjob.definition\"c\n"
+            + "\036ExportEvaluatedDataItemsConfig\022 \n\030desti"
+            + "nation_bigquery_uri\030\001 \001(\t\022\037\n\027override_ex"
+            + "isting_table\030\002 \001(\010B\372\002\n<com.google.cloud."
+            + "aiplatform.v1.schema.trainingjob.definit"
+            + "ionB#ExportEvaluatedDataItemsConfigProto"
+            + "P\001Z\\cloud.google.com/go/aiplatform/apiv1"
+            + "/schema/trainingjob/definition/definitio"
+            + "npb;definitionpb\252\0028Google.Cloud.AIPlatfo"
+            + "rm.V1.Schema.TrainingJob.Definition\312\0028Go"
+            + "ogle\\Cloud\\AIPlatform\\V1\\Schema\\Training"
+            + "Job\\Definition\352\002>Google::Cloud::AIPlatfo"
+            + "rm::V1::Schema::TrainingJob::Definitionb"
+            + "\006proto3"
+      };
+      descriptor =
+          com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+              descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    }
+  }
 
   static {
-    java.lang.String[] descriptorData = {
-      "\nagoogle/cloud/aiplatform/v1/schema/trai"
-          + "ningjob/definition/export_evaluated_data"
-          + "_items_config.proto\0228google.cloud.aiplat"
-          + "form.v1.schema.trainingjob.definition\"c\n"
-          + "\036ExportEvaluatedDataItemsConfig\022 \n\030desti"
-          + "nation_bigquery_uri\030\001 \001(\t\022\037\n\027override_ex"
-          + "isting_table\030\002 \001(\010B\372\002\n<com.google.cloud."
-          + "aiplatform.v1.schema.trainingjob.definit"
-          + "ionB#ExportEvaluatedDataItemsConfigProto"
-          + "P\001Z\\cloud.google.com/go/aiplatform/apiv1"
-          + "/schema/trainingjob/definition/definitio"
-          + "npb;definitionpb\252\0028Google.Cloud.AIPlatfo"
-          + "rm.V1.Schema.TrainingJob.Definition\312\0028Go"
-          + "ogle\\Cloud\\AIPlatform\\V1\\Schema\\Training"
-          + "Job\\Definition\352\002>Google::Cloud::AIPlatfo"
-          + "rm::V1::Schema::TrainingJob::Definitionb"
-          + "\006proto3"
-    };
-    descriptor =
-        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    descriptor = ExportEvaluatedDataItemsConfigProto.InternalDescriptors.descriptor;
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_ExportEvaluatedDataItemsConfig_descriptor =
         getDescriptor().getMessageType(0);
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_ExportEvaluatedDataItemsConfig_fieldAccessorTable =

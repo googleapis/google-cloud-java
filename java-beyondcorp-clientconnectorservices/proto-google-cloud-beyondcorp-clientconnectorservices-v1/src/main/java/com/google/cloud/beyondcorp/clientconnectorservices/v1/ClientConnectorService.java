@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
@@ -41,9 +41,9 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "ClientConnectorService");
   }
 
@@ -59,6 +59,13 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.beyondcorp.clientconnectorservices.v1
+        .ClientConnectorServicesServiceProto
+        .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ClientConnectorService_descriptor;
+  }
+
+  @java.lang.Override
+  public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
     return com.google.cloud.beyondcorp.clientconnectorservices.v1
         .ClientConnectorServicesServiceProto
         .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ClientConnectorService_descriptor;
@@ -166,9 +173,9 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
           com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
           /* major= */ 4,
-          /* minor= */ 33,
-          /* patch= */ 6,
-          /* suffix= */ "",
+          /* minor= */ 37,
+          /* patch= */ 0,
+          /* suffix= */ "-rc1",
           "State");
     }
 
@@ -310,7 +317,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
-      return getDescriptor().getValues().get(ordinal());
+      return getDescriptor().getValue(ordinal());
     }
 
     public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
@@ -320,8 +327,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
           .getDescriptor()
-          .getEnumTypes()
-          .get(0);
+          .getEnumType(0);
     }
 
     private static final State[] VALUES = values();
@@ -422,9 +428,9 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
           com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
           /* major= */ 4,
-          /* minor= */ 33,
-          /* patch= */ 6,
-          /* suffix= */ "",
+          /* minor= */ 37,
+          /* patch= */ 0,
+          /* suffix= */ "-rc1",
           "Ingress");
     }
 
@@ -436,6 +442,13 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     private Ingress() {}
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.beyondcorp.clientconnectorservices.v1
+          .ClientConnectorServicesServiceProto
+          .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ClientConnectorService_Ingress_descriptor;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.beyondcorp.clientconnectorservices.v1
           .ClientConnectorServicesServiceProto
           .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ClientConnectorService_Ingress_descriptor;
@@ -590,9 +603,9 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
             com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
             /* major= */ 4,
-            /* minor= */ 33,
-            /* patch= */ 6,
-            /* suffix= */ "",
+            /* minor= */ 37,
+            /* patch= */ 0,
+            /* suffix= */ "-rc1",
             "Config");
       }
 
@@ -603,10 +616,20 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
 
       private Config() {
         transportProtocol_ = 0;
-        destinationRoutes_ = java.util.Collections.emptyList();
+        destinationRoutes_ =
+            emptyList(
+                com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
+                    .Ingress.Config.DestinationRoute.class);
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.beyondcorp.clientconnectorservices.v1
+            .ClientConnectorServicesServiceProto
+            .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ClientConnectorService_Ingress_Config_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
         return com.google.cloud.beyondcorp.clientconnectorservices.v1
             .ClientConnectorServicesServiceProto
             .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ClientConnectorService_Ingress_Config_descriptor;
@@ -663,9 +686,9 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
               com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
               /* major= */ 4,
-              /* minor= */ 33,
-              /* patch= */ 6,
-              /* suffix= */ "",
+              /* minor= */ 37,
+              /* patch= */ 0,
+              /* suffix= */ "-rc1",
               "TransportProtocol");
         }
 
@@ -742,7 +765,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             throw new java.lang.IllegalStateException(
                 "Can't get the descriptor of an unrecognized enum value.");
           }
-          return getDescriptor().getValues().get(ordinal());
+          return getDescriptor().getValue(ordinal());
         }
 
         public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
@@ -752,8 +775,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
           return com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
               .Ingress.Config.getDescriptor()
-              .getEnumTypes()
-              .get(0);
+              .getEnumType(0);
         }
 
         private static final TransportProtocol[] VALUES = values();
@@ -863,9 +885,9 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
               com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
               /* major= */ 4,
-              /* minor= */ 33,
-              /* patch= */ 6,
-              /* suffix= */ "",
+              /* minor= */ 37,
+              /* patch= */ 0,
+              /* suffix= */ "-rc1",
               "DestinationRoute");
         }
 
@@ -886,6 +908,13 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         }
 
         @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.beyondcorp.clientconnectorservices.v1
+              .ClientConnectorServicesServiceProto
+              .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ClientConnectorService_Ingress_Config_DestinationRoute_descriptor;
+        }
+
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return com.google.cloud.beyondcorp.clientconnectorservices.v1
@@ -898,6 +927,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                       .Ingress.Config.DestinationRoute.Builder.class);
         }
 
+        private int bitField0_;
         public static final int ADDRESS_FIELD_NUMBER = 1;
 
         @SuppressWarnings("serial")
@@ -1032,18 +1062,24 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           getUnknownFields().writeTo(output);
         }
 
-        @java.lang.Override
-        public int getSerializedSize() {
-          int size = memoizedSize;
-          if (size != -1) return size;
-
-          size = 0;
+        private int computeSerializedSize_0() {
+          int size = 0;
           if (!com.google.protobuf.GeneratedMessage.isStringEmpty(address_)) {
             size += com.google.protobuf.GeneratedMessage.computeStringSize(1, address_);
           }
           if (!com.google.protobuf.GeneratedMessage.isStringEmpty(netmask_)) {
             size += com.google.protobuf.GeneratedMessage.computeStringSize(2, netmask_);
           }
+          return size;
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          size += computeSerializedSize_0();
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
           return size;
@@ -1302,23 +1338,27 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     new com.google.cloud.beyondcorp.clientconnectorservices.v1
                         .ClientConnectorService.Ingress.Config.DestinationRoute(this);
             if (bitField0_ != 0) {
-              buildPartial0(result);
+              buildPartial_autosplit_0(result);
             }
             onBuilt();
             return result;
           }
 
-          private void buildPartial0(
+          private void buildPartial_autosplit_0(
               com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                       .Config.DestinationRoute
                   result) {
             int from_bitField0_ = bitField0_;
+            int to_bitField0_ = 0;
             if (((from_bitField0_ & 0x00000001) != 0)) {
               result.address_ = address_;
+              ;
             }
             if (((from_bitField0_ & 0x00000002) != 0)) {
               result.netmask_ = netmask_;
+              ;
             }
+            result.bitField0_ |= to_bitField0_;
           }
 
           @java.lang.Override
@@ -1369,9 +1409,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            if (extensionRegistry == null) {
-              throw new java.lang.NullPointerException();
-            }
+            java.util.Objects.requireNonNull(extensionRegistry);
             try {
               boolean done = false;
               while (!done) {
@@ -1475,9 +1513,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
            * @return This builder for chaining.
            */
           public Builder setAddress(java.lang.String value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
+            java.util.Objects.requireNonNull(value);
             address_ = value;
             bitField0_ |= 0x00000001;
             onChanged();
@@ -1517,9 +1553,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
            * @return This builder for chaining.
            */
           public Builder setAddressBytes(com.google.protobuf.ByteString value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
+            java.util.Objects.requireNonNull(value);
             checkByteStringIsUtf8(value);
             address_ = value;
             bitField0_ |= 0x00000001;
@@ -1591,9 +1625,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
            * @return This builder for chaining.
            */
           public Builder setNetmask(java.lang.String value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
+            java.util.Objects.requireNonNull(value);
             netmask_ = value;
             bitField0_ |= 0x00000002;
             onChanged();
@@ -1633,9 +1665,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
            * @return This builder for chaining.
            */
           public Builder setNetmaskBytes(com.google.protobuf.ByteString value) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
+            java.util.Objects.requireNonNull(value);
             checkByteStringIsUtf8(value);
             netmask_ = value;
             bitField0_ |= 0x00000002;
@@ -1673,14 +1703,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 Builder builder = newBuilder();
                 try {
                   builder.mergeFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                  throw e.setUnfinishedMessage(builder.buildPartial());
-                } catch (com.google.protobuf.UninitializedMessageException e) {
-                  throw e.asInvalidProtocolBufferException()
-                      .setUnfinishedMessage(builder.buildPartial());
-                } catch (java.io.IOException e) {
-                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.lang.Exception e) {
+                  wrapAndThrowParseException(e, builder);
                 }
                 return builder.buildPartial();
               }
@@ -1703,6 +1727,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         }
       }
 
+      private int bitField0_;
       public static final int TRANSPORT_PROTOCOL_FIELD_NUMBER = 1;
       private int transportProtocol_ = 0;
 
@@ -1755,12 +1780,13 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       }
 
       public static final int DESTINATION_ROUTES_FIELD_NUMBER = 2;
-
-      @SuppressWarnings("serial")
-      private java.util.List<
+      private com.google.protobuf.Internal.ProtobufList<
               com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                   .Config.DestinationRoute>
-          destinationRoutes_;
+          destinationRoutes_ =
+              emptyList(
+                  com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
+                      .Ingress.Config.DestinationRoute.class);
 
       /**
        *
@@ -1853,6 +1879,18 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         return destinationRoutes_.get(index);
       }
 
+      private void writeDestinationRoutesField(com.google.protobuf.CodedOutputStream output)
+          throws java.io.IOException {
+        for (int i = 0; i < destinationRoutes_.size(); i++) {
+          com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
+                  .Config.DestinationRoute
+              tmp = destinationRoutes_.get(i);
+          output.writeUInt32NoTag(18);
+          output.writeUInt32NoTag(tmp.getSerializedSize());
+          tmp.writeTo(output);
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -1873,10 +1911,29 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 .getNumber()) {
           output.writeEnum(1, transportProtocol_);
         }
-        for (int i = 0; i < destinationRoutes_.size(); i++) {
-          output.writeMessage(2, destinationRoutes_.get(i));
-        }
+        writeDestinationRoutesField(output);
         getUnknownFields().writeTo(output);
+      }
+
+      private int computeSerializedSize_0() {
+        int size = 0;
+        if (transportProtocol_
+            != com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
+                .Config.TransportProtocol.TRANSPORT_PROTOCOL_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, transportProtocol_);
+        }
+
+        {
+          final int count = destinationRoutes_.size();
+          for (int i = 0; i < count; i++) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSizeNoTag(
+                    destinationRoutes_.get(i));
+          }
+          size += 1 * count;
+        }
+        return size;
       }
 
       @java.lang.Override
@@ -1885,17 +1942,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         if (size != -1) return size;
 
         size = 0;
-        if (transportProtocol_
-            != com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
-                .Config.TransportProtocol.TRANSPORT_PROTOCOL_UNSPECIFIED
-                .getNumber()) {
-          size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, transportProtocol_);
-        }
-        for (int i = 0; i < destinationRoutes_.size(); i++) {
-          size +=
-              com.google.protobuf.CodedOutputStream.computeMessageSize(
-                  2, destinationRoutes_.get(i));
-        }
+        size += computeSerializedSize_0();
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -2111,12 +2158,16 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           bitField0_ = 0;
           transportProtocol_ = 0;
           if (destinationRoutesBuilder_ == null) {
-            destinationRoutes_ = java.util.Collections.emptyList();
+            destinationRoutes_ =
+                emptyList(
+                    com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
+                        .Ingress.Config.DestinationRoute.class);
           } else {
             destinationRoutes_ = null;
             destinationRoutesBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000002);
+          ;
           return this;
         }
 
@@ -2157,37 +2208,32 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               result =
                   new com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                       .Ingress.Config(this);
-          buildPartialRepeatedFields(result);
           if (bitField0_ != 0) {
-            buildPartial0(result);
+            buildPartial_autosplit_0(result);
           }
           onBuilt();
           return result;
         }
 
-        private void buildPartialRepeatedFields(
-            com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
-                    .Config
-                result) {
-          if (destinationRoutesBuilder_ == null) {
-            if (((bitField0_ & 0x00000002) != 0)) {
-              destinationRoutes_ = java.util.Collections.unmodifiableList(destinationRoutes_);
-              bitField0_ = (bitField0_ & ~0x00000002);
-            }
-            result.destinationRoutes_ = destinationRoutes_;
-          } else {
-            result.destinationRoutes_ = destinationRoutesBuilder_.build();
-          }
-        }
-
-        private void buildPartial0(
+        private void buildPartial_autosplit_0(
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                     .Config
                 result) {
           int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.transportProtocol_ = transportProtocol_;
+            ;
           }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            if (destinationRoutesBuilder_ == null) {
+              destinationRoutes_.makeImmutable();
+              result.destinationRoutes_ = destinationRoutes_;
+            } else {
+              result.destinationRoutes_ = destinationRoutesBuilder_.buildProtobufList();
+            }
+          }
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -2220,7 +2266,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             if (!other.destinationRoutes_.isEmpty()) {
               if (destinationRoutes_.isEmpty()) {
                 destinationRoutes_ = other.destinationRoutes_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ |= 0x00000002;
               } else {
                 ensureDestinationRoutesIsMutable();
                 destinationRoutes_.addAll(other.destinationRoutes_);
@@ -2233,14 +2279,16 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 destinationRoutesBuilder_.dispose();
                 destinationRoutesBuilder_ = null;
                 destinationRoutes_ = other.destinationRoutes_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ |= 0x00000002;
                 destinationRoutesBuilder_ =
                     com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                         ? internalGetDestinationRoutesFieldBuilder()
                         : null;
               } else {
                 destinationRoutesBuilder_.addAllMessages(other.destinationRoutes_);
+                bitField0_ |= 0x00000002;
               }
+              onChanged();
             }
           }
           this.mergeUnknownFields(other.getUnknownFields());
@@ -2258,9 +2306,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          java.util.Objects.requireNonNull(extensionRegistry);
           try {
             boolean done = false;
             while (!done) {
@@ -2277,19 +2323,21 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                   } // case 8
                 case 18:
                   {
+                    final int oldLimit = input.pushLimitBeforeMessage();
                     com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                             .Ingress.Config.DestinationRoute
                         m =
-                            input.readMessage(
-                                com.google.cloud.beyondcorp.clientconnectorservices.v1
-                                    .ClientConnectorService.Ingress.Config.DestinationRoute
-                                    .parser(),
-                                extensionRegistry);
+                            com.google.cloud.beyondcorp.clientconnectorservices.v1
+                                .ClientConnectorService.Ingress.Config.DestinationRoute.parser()
+                                .parsePartialFrom(input, extensionRegistry);
+                    input.popLimitAfterMessage(oldLimit);
                     if (destinationRoutesBuilder_ == null) {
                       ensureDestinationRoutesIsMutable();
                       destinationRoutes_.add(m);
                     } else {
                       destinationRoutesBuilder_.addMessage(m);
+                      bitField0_ |= 0x00000002;
+                      onChanged();
                     }
                     break;
                   } // case 18
@@ -2397,15 +2445,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
          * </code>
          *
          * @param value The transportProtocol to set.
+         * @throws IllegalArgumentException if UNRECOGNIZED is provided.
          * @return This builder for chaining.
          */
         public Builder setTransportProtocol(
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                     .Config.TransportProtocol
                 value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
+          java.util.Objects.requireNonNull(value);
           bitField0_ |= 0x00000001;
           transportProtocol_ = value.getNumber();
           onChanged();
@@ -2433,19 +2480,19 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           return this;
         }
 
-        private java.util.List<
+        private com.google.protobuf.Internal.ProtobufList<
                 com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                     .Ingress.Config.DestinationRoute>
-            destinationRoutes_ = java.util.Collections.emptyList();
+            destinationRoutes_ =
+                emptyList(
+                    com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
+                        .Ingress.Config.DestinationRoute.class);
 
         private void ensureDestinationRoutesIsMutable() {
-          if (!((bitField0_ & 0x00000002) != 0)) {
-            destinationRoutes_ =
-                new java.util.ArrayList<
-                    com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
-                        .Ingress.Config.DestinationRoute>(destinationRoutes_);
-            bitField0_ |= 0x00000002;
+          if (!destinationRoutes_.isModifiable()) {
+            destinationRoutes_ = makeMutableCopy(destinationRoutes_);
           }
+          bitField0_ |= 0x00000002;
         }
 
         private com.google.protobuf.RepeatedFieldBuilder<
@@ -2473,7 +2520,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     .Ingress.Config.DestinationRoute>
             getDestinationRoutesList() {
           if (destinationRoutesBuilder_ == null) {
-            return java.util.Collections.unmodifiableList(destinationRoutes_);
+            destinationRoutes_.makeImmutable();
+            return destinationRoutes_;
           } else {
             return destinationRoutesBuilder_.getMessageList();
           }
@@ -2536,14 +2584,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     .Config.DestinationRoute
                 value) {
           if (destinationRoutesBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
+            java.util.Objects.requireNonNull(value);
             ensureDestinationRoutesIsMutable();
             destinationRoutes_.set(index, value);
             onChanged();
           } else {
             destinationRoutesBuilder_.setMessage(index, value);
+            bitField0_ |= 0x00000002;
+            onChanged();
           }
           return this;
         }
@@ -2564,14 +2612,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                     .Config.DestinationRoute.Builder
                 builderForValue) {
-          if (destinationRoutesBuilder_ == null) {
-            ensureDestinationRoutesIsMutable();
-            destinationRoutes_.set(index, builderForValue.build());
-            onChanged();
-          } else {
-            destinationRoutesBuilder_.setMessage(index, builderForValue.build());
-          }
-          return this;
+          java.util.Objects.requireNonNull(builderForValue);
+          return setDestinationRoutes(index, builderForValue.build());
         }
 
         /**
@@ -2590,14 +2632,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     .Config.DestinationRoute
                 value) {
           if (destinationRoutesBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
+            java.util.Objects.requireNonNull(value);
             ensureDestinationRoutesIsMutable();
             destinationRoutes_.add(value);
             onChanged();
           } else {
             destinationRoutesBuilder_.addMessage(value);
+            bitField0_ |= 0x00000002;
+            onChanged();
           }
           return this;
         }
@@ -2619,14 +2661,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     .Config.DestinationRoute
                 value) {
           if (destinationRoutesBuilder_ == null) {
-            if (value == null) {
-              throw new NullPointerException();
-            }
+            java.util.Objects.requireNonNull(value);
             ensureDestinationRoutesIsMutable();
             destinationRoutes_.add(index, value);
             onChanged();
           } else {
             destinationRoutesBuilder_.addMessage(index, value);
+            bitField0_ |= 0x00000002;
+            onChanged();
           }
           return this;
         }
@@ -2646,14 +2688,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                     .Config.DestinationRoute.Builder
                 builderForValue) {
-          if (destinationRoutesBuilder_ == null) {
-            ensureDestinationRoutesIsMutable();
-            destinationRoutes_.add(builderForValue.build());
-            onChanged();
-          } else {
-            destinationRoutesBuilder_.addMessage(builderForValue.build());
-          }
-          return this;
+          java.util.Objects.requireNonNull(builderForValue);
+          return addDestinationRoutes(builderForValue.build());
         }
 
         /**
@@ -2672,14 +2708,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                     .Config.DestinationRoute.Builder
                 builderForValue) {
-          if (destinationRoutesBuilder_ == null) {
-            ensureDestinationRoutesIsMutable();
-            destinationRoutes_.add(index, builderForValue.build());
-            onChanged();
-          } else {
-            destinationRoutesBuilder_.addMessage(index, builderForValue.build());
-          }
-          return this;
+          java.util.Objects.requireNonNull(builderForValue);
+          return addDestinationRoutes(index, builderForValue.build());
         }
 
         /**
@@ -2700,12 +2730,16 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                             .ClientConnectorService.Ingress.Config.DestinationRoute>
                 values) {
           if (destinationRoutesBuilder_ == null) {
-            ensureDestinationRoutesIsMutable();
-            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, destinationRoutes_);
-            onChanged();
+            destinationRoutes_ =
+                com.google.protobuf.Internal.ProtobufList.concatenate(destinationRoutes_, values);
           } else {
             destinationRoutesBuilder_.addAllMessages(values);
           }
+          if (getDestinationRoutesCount() > 0) {
+            bitField0_ |= 0x00000002;
+            ;
+          }
+          onChanged();
           return this;
         }
 
@@ -2722,12 +2756,15 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
          */
         public Builder clearDestinationRoutes() {
           if (destinationRoutesBuilder_ == null) {
-            destinationRoutes_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
-            onChanged();
+            destinationRoutes_ =
+                emptyList(
+                    com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
+                        .Ingress.Config.DestinationRoute.class);
           } else {
             destinationRoutesBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
           return this;
         }
 
@@ -2746,10 +2783,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           if (destinationRoutesBuilder_ == null) {
             ensureDestinationRoutesIsMutable();
             destinationRoutes_.remove(index);
-            onChanged();
           } else {
             destinationRoutesBuilder_.remove(index);
           }
+          if (getDestinationRoutesCount() == 0) {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            ;
+          }
+          onChanged();
           return this;
         }
 
@@ -2810,7 +2851,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           if (destinationRoutesBuilder_ != null) {
             return destinationRoutesBuilder_.getMessageOrBuilderList();
           } else {
-            return java.util.Collections.unmodifiableList(destinationRoutes_);
+            destinationRoutes_.makeImmutable();
+            return destinationRoutes_;
           }
         }
 
@@ -2828,6 +2870,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         public com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                 .Config.DestinationRoute.Builder
             addDestinationRoutesBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
           return internalGetDestinationRoutesFieldBuilder()
               .addBuilder(
                   com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -2848,6 +2892,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         public com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                 .Config.DestinationRoute.Builder
             addDestinationRoutesBuilder(int index) {
+          bitField0_ |= 0x00000002;
+          onChanged();
           return internalGetDestinationRoutesFieldBuilder()
               .addBuilder(
                   index,
@@ -2891,11 +2937,13 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                         .Ingress.Config.DestinationRouteOrBuilder>(
                     destinationRoutes_,
-                    ((bitField0_ & 0x00000002) != 0),
+                    destinationRoutes_.isModifiable(),
                     getParentForChildren(),
                     isClean());
             destinationRoutes_ = null;
           }
+          bitField0_ |= 0x00000002;
+          onChanged();
           return destinationRoutesBuilder_;
         }
 
@@ -2929,14 +2977,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               Builder builder = newBuilder();
               try {
                 builder.mergeFrom(input, extensionRegistry);
-              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(builder.buildPartial());
-              } catch (com.google.protobuf.UninitializedMessageException e) {
-                throw e.asInvalidProtocolBufferException()
-                    .setUnfinishedMessage(builder.buildPartial());
-              } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.lang.Exception e) {
+                wrapAndThrowParseException(e, builder);
               }
               return builder.buildPartial();
             }
@@ -2959,6 +3001,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       }
     }
 
+    private int bitField0_;
     private int ingressConfigCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -3076,6 +3119,18 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           .Config.getDefaultInstance();
     }
 
+    private void writeConfigField(com.google.protobuf.CodedOutputStream output)
+        throws java.io.IOException {
+      com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress.Config
+          tmp =
+              (com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
+                      .Config)
+                  ingressConfig_;
+      output.writeUInt32NoTag(10);
+      output.writeUInt32NoTag(tmp.getSerializedSize());
+      tmp.writeTo(output);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3091,21 +3146,13 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (ingressConfigCase_ == 1) {
-        output.writeMessage(
-            1,
-            (com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
-                    .Config)
-                ingressConfig_);
+        writeConfigField(output);
       }
       getUnknownFields().writeTo(output);
     }
 
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
+    private int computeSerializedSize_0() {
+      int size = 0;
       if (ingressConfigCase_ == 1) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -3114,6 +3161,16 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                         .Ingress.Config)
                     ingressConfig_);
       }
+      return size;
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += computeSerializedSize_0();
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3333,6 +3390,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         }
         ingressConfigCase_ = 0;
         ingressConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -3369,27 +3427,23 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 new com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                     .Ingress(this);
         if (bitField0_ != 0) {
-          buildPartial0(result);
+          buildPartial_autosplit_0(result);
         }
-        buildPartialOneofs(result);
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(
+      private void buildPartial_autosplit_0(
           com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
               result) {
         int from_bitField0_ = bitField0_;
-      }
-
-      private void buildPartialOneofs(
-          com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
-              result) {
-        result.ingressConfigCase_ = ingressConfigCase_;
-        result.ingressConfig_ = this.ingressConfig_;
-        if (ingressConfigCase_ == 1 && configBuilder_ != null) {
-          result.ingressConfig_ = configBuilder_.build();
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ingressConfig_ = configBuilder_ == null ? ingressConfig_ : configBuilder_.build();
+          result.ingressConfigCase_ = 1;
+          ;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -3439,9 +3493,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        java.util.Objects.requireNonNull(extensionRegistry);
         try {
           boolean done = false;
           while (!done) {
@@ -3452,9 +3504,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 break;
               case 10:
                 {
-                  input.readMessage(
-                      internalGetConfigFieldBuilder().getBuilder(), extensionRegistry);
-                  ingressConfigCase_ = 1;
+                  parseConfig(input, extensionRegistry);
                   break;
                 } // case 10
               default:
@@ -3482,10 +3532,15 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       }
 
       public Builder clearIngressConfig() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         ingressConfigCase_ = 0;
         ingressConfig_ = null;
         onChanged();
         return this;
+      }
+
+      private void clearIngressConfigHasBits() {
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
 
       private int bitField0_;
@@ -3567,15 +3622,21 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                   .Config
               value) {
         if (configBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
+          java.util.Objects.requireNonNull(value);
           ingressConfig_ = value;
           onChanged();
         } else {
           configBuilder_.setMessage(value);
         }
-        ingressConfigCase_ = 1;
+        switch (ingressConfigCase_) {
+          default:
+            clearIngressConfigHasBits(); // fallthrough
+          case 0:
+            ingressConfigCase_ = 1;
+            bitField0_ |= 0x00000001; // fallthrough
+          case 1:
+            break;
+        }
         return this;
       }
 
@@ -3594,14 +3655,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                   .Config.Builder
               builderForValue) {
-        if (configBuilder_ == null) {
-          ingressConfig_ = builderForValue.build();
-          onChanged();
-        } else {
-          configBuilder_.setMessage(builderForValue.build());
-        }
-        ingressConfigCase_ = 1;
-        return this;
+        java.util.Objects.requireNonNull(builderForValue);
+        return setConfig(builderForValue.build());
       }
 
       /**
@@ -3643,7 +3698,15 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             configBuilder_.setMessage(value);
           }
         }
-        ingressConfigCase_ = 1;
+        switch (ingressConfigCase_) {
+          default:
+            clearIngressConfigHasBits(); // fallthrough
+          case 0:
+            ingressConfigCase_ = 1;
+            bitField0_ |= 0x00000001; // fallthrough
+          case 1:
+            break;
+        }
         return this;
       }
 
@@ -3662,12 +3725,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         if (configBuilder_ == null) {
           if (ingressConfigCase_ == 1) {
             ingressConfigCase_ = 0;
+            bitField0_ = (bitField0_ & ~0x00000001);
             ingressConfig_ = null;
             onChanged();
           }
         } else {
           if (ingressConfigCase_ == 1) {
             ingressConfigCase_ = 0;
+            bitField0_ = (bitField0_ & ~0x00000001);
             ingressConfig_ = null;
           }
           configBuilder_.clear();
@@ -3760,9 +3825,33 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                   isClean());
           ingressConfig_ = null;
         }
-        ingressConfigCase_ = 1;
+        switch (ingressConfigCase_) {
+          default:
+            clearIngressConfigHasBits(); // fallthrough
+          case 0:
+            ingressConfigCase_ = 1;
+            bitField0_ |= 0x00000001; // fallthrough
+          case 1:
+            break;
+        }
         onChanged();
         return configBuilder_;
+      }
+
+      private void parseConfig(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        input.readMessage(internalGetConfigFieldBuilder().getBuilder(), extensionRegistry);
+        switch (ingressConfigCase_) {
+          default:
+            clearIngressConfigHasBits(); // fallthrough
+          case 0:
+            ingressConfigCase_ = 1;
+            bitField0_ |= 0x00000001; // fallthrough
+          case 1:
+            break;
+        }
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress)
@@ -3795,14 +3884,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             Builder builder = newBuilder();
             try {
               builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.lang.Exception e) {
+              wrapAndThrowParseException(e, builder);
             }
             return builder.buildPartial();
           }
@@ -3900,9 +3983,9 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
           com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
           /* major= */ 4,
-          /* minor= */ 33,
-          /* patch= */ 6,
-          /* suffix= */ "",
+          /* minor= */ 37,
+          /* patch= */ 0,
+          /* suffix= */ "-rc1",
           "Egress");
     }
 
@@ -3914,6 +3997,13 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     private Egress() {}
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.beyondcorp.clientconnectorservices.v1
+          .ClientConnectorServicesServiceProto
+          .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ClientConnectorService_Egress_descriptor;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.beyondcorp.clientconnectorservices.v1
           .ClientConnectorServicesServiceProto
           .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ClientConnectorService_Egress_descriptor;
@@ -3984,9 +4074,9 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
             com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
             /* major= */ 4,
-            /* minor= */ 33,
-            /* patch= */ 6,
-            /* suffix= */ "",
+            /* minor= */ 37,
+            /* patch= */ 0,
+            /* suffix= */ "-rc1",
             "PeeredVpc");
       }
 
@@ -4006,6 +4096,13 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       }
 
       @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.beyondcorp.clientconnectorservices.v1
+            .ClientConnectorServicesServiceProto
+            .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ClientConnectorService_Egress_PeeredVpc_descriptor;
+      }
+
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return com.google.cloud.beyondcorp.clientconnectorservices.v1
@@ -4018,6 +4115,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     .PeeredVpc.Builder.class);
       }
 
+      private int bitField0_;
       public static final int NETWORK_VPC_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
@@ -4091,15 +4189,21 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         getUnknownFields().writeTo(output);
       }
 
+      private int computeSerializedSize_0() {
+        int size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(networkVpc_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, networkVpc_);
+        }
+        return size;
+      }
+
       @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
-        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(networkVpc_)) {
-          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, networkVpc_);
-        }
+        size += computeSerializedSize_0();
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -4351,20 +4455,23 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                   new com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                       .Egress.PeeredVpc(this);
           if (bitField0_ != 0) {
-            buildPartial0(result);
+            buildPartial_autosplit_0(result);
           }
           onBuilt();
           return result;
         }
 
-        private void buildPartial0(
+        private void buildPartial_autosplit_0(
             com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
                     .PeeredVpc
                 result) {
           int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
           if (((from_bitField0_ & 0x00000001) != 0)) {
             result.networkVpc_ = networkVpc_;
+            ;
           }
+          result.bitField0_ |= to_bitField0_;
         }
 
         @java.lang.Override
@@ -4410,9 +4517,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          if (extensionRegistry == null) {
-            throw new java.lang.NullPointerException();
-          }
+          java.util.Objects.requireNonNull(extensionRegistry);
           try {
             boolean done = false;
             while (!done) {
@@ -4507,9 +4612,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
          * @return This builder for chaining.
          */
         public Builder setNetworkVpc(java.lang.String value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
+          java.util.Objects.requireNonNull(value);
           networkVpc_ = value;
           bitField0_ |= 0x00000001;
           onChanged();
@@ -4547,9 +4650,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
          * @return This builder for chaining.
          */
         public Builder setNetworkVpcBytes(com.google.protobuf.ByteString value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
+          java.util.Objects.requireNonNull(value);
           checkByteStringIsUtf8(value);
           networkVpc_ = value;
           bitField0_ |= 0x00000001;
@@ -4587,14 +4688,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               Builder builder = newBuilder();
               try {
                 builder.mergeFrom(input, extensionRegistry);
-              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                throw e.setUnfinishedMessage(builder.buildPartial());
-              } catch (com.google.protobuf.UninitializedMessageException e) {
-                throw e.asInvalidProtocolBufferException()
-                    .setUnfinishedMessage(builder.buildPartial());
-              } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.lang.Exception e) {
+                wrapAndThrowParseException(e, builder);
               }
               return builder.buildPartial();
             }
@@ -4617,6 +4712,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       }
     }
 
+    private int bitField0_;
     private int destinationTypeCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -4734,6 +4830,18 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           .PeeredVpc.getDefaultInstance();
     }
 
+    private void writePeeredVpcField(com.google.protobuf.CodedOutputStream output)
+        throws java.io.IOException {
+      com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress.PeeredVpc
+          tmp =
+              (com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
+                      .PeeredVpc)
+                  destinationType_;
+      output.writeUInt32NoTag(10);
+      output.writeUInt32NoTag(tmp.getSerializedSize());
+      tmp.writeTo(output);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4749,21 +4857,13 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (destinationTypeCase_ == 1) {
-        output.writeMessage(
-            1,
-            (com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
-                    .PeeredVpc)
-                destinationType_);
+        writePeeredVpcField(output);
       }
       getUnknownFields().writeTo(output);
     }
 
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
+    private int computeSerializedSize_0() {
+      int size = 0;
       if (destinationTypeCase_ == 1) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -4772,6 +4872,16 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                         .Egress.PeeredVpc)
                     destinationType_);
       }
+      return size;
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += computeSerializedSize_0();
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4990,6 +5100,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         }
         destinationTypeCase_ = 0;
         destinationType_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -5026,27 +5137,24 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 new com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
                     .Egress(this);
         if (bitField0_ != 0) {
-          buildPartial0(result);
+          buildPartial_autosplit_0(result);
         }
-        buildPartialOneofs(result);
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(
+      private void buildPartial_autosplit_0(
           com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
               result) {
         int from_bitField0_ = bitField0_;
-      }
-
-      private void buildPartialOneofs(
-          com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
-              result) {
-        result.destinationTypeCase_ = destinationTypeCase_;
-        result.destinationType_ = this.destinationType_;
-        if (destinationTypeCase_ == 1 && peeredVpcBuilder_ != null) {
-          result.destinationType_ = peeredVpcBuilder_.build();
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.destinationType_ =
+              peeredVpcBuilder_ == null ? destinationType_ : peeredVpcBuilder_.build();
+          result.destinationTypeCase_ = 1;
+          ;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -5095,9 +5203,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
+        java.util.Objects.requireNonNull(extensionRegistry);
         try {
           boolean done = false;
           while (!done) {
@@ -5108,9 +5214,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 break;
               case 10:
                 {
-                  input.readMessage(
-                      internalGetPeeredVpcFieldBuilder().getBuilder(), extensionRegistry);
-                  destinationTypeCase_ = 1;
+                  parsePeeredVpc(input, extensionRegistry);
                   break;
                 } // case 10
               default:
@@ -5138,10 +5242,15 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       }
 
       public Builder clearDestinationType() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         destinationTypeCase_ = 0;
         destinationType_ = null;
         onChanged();
         return this;
+      }
+
+      private void clearDestinationTypeHasBits() {
+        bitField0_ = (bitField0_ & ~0x00000001);
       }
 
       private int bitField0_;
@@ -5223,15 +5332,21 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                   .PeeredVpc
               value) {
         if (peeredVpcBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
+          java.util.Objects.requireNonNull(value);
           destinationType_ = value;
           onChanged();
         } else {
           peeredVpcBuilder_.setMessage(value);
         }
-        destinationTypeCase_ = 1;
+        switch (destinationTypeCase_) {
+          default:
+            clearDestinationTypeHasBits(); // fallthrough
+          case 0:
+            destinationTypeCase_ = 1;
+            bitField0_ |= 0x00000001; // fallthrough
+          case 1:
+            break;
+        }
         return this;
       }
 
@@ -5250,14 +5365,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
                   .PeeredVpc.Builder
               builderForValue) {
-        if (peeredVpcBuilder_ == null) {
-          destinationType_ = builderForValue.build();
-          onChanged();
-        } else {
-          peeredVpcBuilder_.setMessage(builderForValue.build());
-        }
-        destinationTypeCase_ = 1;
-        return this;
+        java.util.Objects.requireNonNull(builderForValue);
+        return setPeeredVpc(builderForValue.build());
       }
 
       /**
@@ -5299,7 +5408,15 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             peeredVpcBuilder_.setMessage(value);
           }
         }
-        destinationTypeCase_ = 1;
+        switch (destinationTypeCase_) {
+          default:
+            clearDestinationTypeHasBits(); // fallthrough
+          case 0:
+            destinationTypeCase_ = 1;
+            bitField0_ |= 0x00000001; // fallthrough
+          case 1:
+            break;
+        }
         return this;
       }
 
@@ -5318,12 +5435,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         if (peeredVpcBuilder_ == null) {
           if (destinationTypeCase_ == 1) {
             destinationTypeCase_ = 0;
+            bitField0_ = (bitField0_ & ~0x00000001);
             destinationType_ = null;
             onChanged();
           }
         } else {
           if (destinationTypeCase_ == 1) {
             destinationTypeCase_ = 0;
+            bitField0_ = (bitField0_ & ~0x00000001);
             destinationType_ = null;
           }
           peeredVpcBuilder_.clear();
@@ -5416,9 +5535,33 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                   isClean());
           destinationType_ = null;
         }
-        destinationTypeCase_ = 1;
+        switch (destinationTypeCase_) {
+          default:
+            clearDestinationTypeHasBits(); // fallthrough
+          case 0:
+            destinationTypeCase_ = 1;
+            bitField0_ |= 0x00000001; // fallthrough
+          case 1:
+            break;
+        }
         onChanged();
         return peeredVpcBuilder_;
+      }
+
+      private void parsePeeredVpc(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        input.readMessage(internalGetPeeredVpcFieldBuilder().getBuilder(), extensionRegistry);
+        switch (destinationTypeCase_) {
+          default:
+            clearDestinationTypeHasBits(); // fallthrough
+          case 0:
+            destinationTypeCase_ = 1;
+            bitField0_ |= 0x00000001; // fallthrough
+          case 1:
+            break;
+        }
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress)
@@ -5451,14 +5594,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             Builder builder = newBuilder();
             try {
               builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.lang.Exception e) {
+              wrapAndThrowParseException(e, builder);
             }
             return builder.buildPartial();
           }
@@ -5586,6 +5723,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  private void writeCreateTimeField(com.google.protobuf.CodedOutputStream output)
+      throws java.io.IOException {
+    com.google.protobuf.Timestamp tmp = getCreateTime();
+    output.writeUInt32NoTag(18);
+    output.writeUInt32NoTag(tmp.getSerializedSize());
+    tmp.writeTo(output);
+  }
+
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
 
@@ -5636,6 +5781,14 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+  }
+
+  private void writeUpdateTimeField(com.google.protobuf.CodedOutputStream output)
+      throws java.io.IOException {
+    com.google.protobuf.Timestamp tmp = getUpdateTime();
+    output.writeUInt32NoTag(26);
+    output.writeUInt32NoTag(tmp.getSerializedSize());
+    tmp.writeTo(output);
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 4;
@@ -5764,6 +5917,15 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         : ingress_;
   }
 
+  private void writeIngressField(com.google.protobuf.CodedOutputStream output)
+      throws java.io.IOException {
+    com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress tmp =
+        getIngress();
+    output.writeUInt32NoTag(50);
+    output.writeUInt32NoTag(tmp.getSerializedSize());
+    tmp.writeTo(output);
+  }
+
   public static final int EGRESS_FIELD_NUMBER = 7;
   private com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
       egress_;
@@ -5827,6 +5989,15 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         ? com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
             .getDefaultInstance()
         : egress_;
+  }
+
+  private void writeEgressField(com.google.protobuf.CodedOutputStream output)
+      throws java.io.IOException {
+    com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress tmp =
+        getEgress();
+    output.writeUInt32NoTag(58);
+    output.writeUInt32NoTag(tmp.getSerializedSize());
+    tmp.writeTo(output);
   }
 
   public static final int STATE_FIELD_NUMBER = 8;
@@ -5893,19 +6064,19 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(2, getCreateTime());
+      writeCreateTimeField(output);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(3, getUpdateTime());
+      writeUpdateTimeField(output);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, displayName_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(6, getIngress());
+      writeIngressField(output);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeMessage(7, getEgress());
+      writeEgressField(output);
     }
     if (state_
         != com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.State
@@ -5916,12 +6087,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     getUnknownFields().writeTo(output);
   }
 
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
+  private int computeSerializedSize_0() {
+    int size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
@@ -5946,6 +6113,16 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, state_);
     }
+    return size;
+  }
+
+  @java.lang.Override
+  public int getSerializedSize() {
+    int size = memoizedSize;
+    if (size != -1) return size;
+
+    size = 0;
+    size += computeSerializedSize_0();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6234,40 +6411,43 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService result =
           new com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService(this);
       if (bitField0_ != 0) {
-        buildPartial0(result);
+        buildPartial_autosplit_0(result);
       }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(
+    private void buildPartial_autosplit_0(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.name_ = name_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000001) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.displayName_ = displayName_;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.ingress_ = ingressBuilder_ == null ? ingress_ : ingressBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.egress_ = egressBuilder_ == null ? egress_ : egressBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.name_ = name_;
+        ;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.displayName_ = displayName_;
+        ;
+      }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.state_ = state_;
+        ;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -6292,7 +6472,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
               .getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -6303,7 +6483,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.hasIngress()) {
@@ -6330,9 +6510,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      java.util.Objects.requireNonNull(extensionRegistry);
       try {
         boolean done = false;
         while (!done) {
@@ -6344,39 +6522,33 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
               {
-                input.readMessage(
-                    internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                parseCreateTimeField(input, extensionRegistry);
                 break;
               } // case 18
             case 26:
               {
-                input.readMessage(
-                    internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                parseUpdateTimeField(input, extensionRegistry);
                 break;
               } // case 26
             case 34:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 50:
               {
-                input.readMessage(internalGetIngressFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                parseIngressField(input, extensionRegistry);
                 break;
               } // case 50
             case 58:
               {
-                input.readMessage(internalGetEgressFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                parseEgressField(input, extensionRegistry);
                 break;
               } // case 58
             case 64:
@@ -6465,11 +6637,9 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -6487,7 +6657,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -6505,12 +6675,10 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -6536,7 +6704,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
 
     /**
@@ -6575,14 +6743,12 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+        java.util.Objects.requireNonNull(value);
         createTime_ = value;
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -6599,14 +6765,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (createTimeBuilder_ == null) {
-        createTime_ = builderForValue.build();
-      } else {
-        createTimeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
+      java.util.Objects.requireNonNull(builderForValue);
+      return setCreateTime(builderForValue.build());
     }
 
     /**
@@ -6622,7 +6782,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000001) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -6633,7 +6793,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -6651,7 +6811,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -6673,7 +6833,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -6724,7 +6884,23 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
+      bitField0_ |= 0x00000001;
       return createTimeBuilder_;
+    }
+
+    private void parseCreateTimeField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      final int oldLimit = input.pushLimitBeforeMessage();
+      if (createTime_ != null || createTimeBuilder_ != null) {
+        internalGetCreateTimeFieldBuilder().getBuilder().mergeFrom(input, extensionRegistry);
+      } else {
+        createTime_ =
+            com.google.protobuf.Timestamp.parser().parsePartialFrom(input, extensionRegistry);
+      }
+      input.popLimitAfterMessage(oldLimit);
+      bitField0_ |= 0x00000001;
     }
 
     private com.google.protobuf.Timestamp updateTime_;
@@ -6748,7 +6924,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -6787,14 +6963,12 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+        java.util.Objects.requireNonNull(value);
         updateTime_ = value;
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -6811,14 +6985,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (updateTimeBuilder_ == null) {
-        updateTime_ = builderForValue.build();
-      } else {
-        updateTimeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
+      java.util.Objects.requireNonNull(builderForValue);
+      return setUpdateTime(builderForValue.build());
     }
 
     /**
@@ -6834,7 +7002,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -6845,7 +7013,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -6863,7 +7031,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -6885,7 +7053,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -6936,7 +7104,23 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                 getUpdateTime(), getParentForChildren(), isClean());
         updateTime_ = null;
       }
+      bitField0_ |= 0x00000002;
       return updateTimeBuilder_;
+    }
+
+    private void parseUpdateTimeField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      final int oldLimit = input.pushLimitBeforeMessage();
+      if (updateTime_ != null || updateTimeBuilder_ != null) {
+        internalGetUpdateTimeFieldBuilder().getBuilder().mergeFrom(input, extensionRegistry);
+      } else {
+        updateTime_ =
+            com.google.protobuf.Timestamp.parser().parsePartialFrom(input, extensionRegistry);
+      }
+      input.popLimitAfterMessage(oldLimit);
+      bitField0_ |= 0x00000002;
     }
 
     private java.lang.Object displayName_ = "";
@@ -7012,11 +7196,9 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setDisplayName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       displayName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7038,7 +7220,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -7060,12 +7242,10 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * @return This builder for chaining.
      */
     public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -7094,7 +7274,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * @return Whether the ingress field is set.
      */
     public boolean hasIngress() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -7137,14 +7317,12 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
             value) {
       if (ingressBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+        java.util.Objects.requireNonNull(value);
         ingress_ = value;
       } else {
         ingressBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -7164,14 +7342,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
                 .Builder
             builderForValue) {
-      if (ingressBuilder_ == null) {
-        ingress_ = builderForValue.build();
-      } else {
-        ingressBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
+      java.util.Objects.requireNonNull(builderForValue);
+      return setIngress(builderForValue.build());
     }
 
     /**
@@ -7189,7 +7361,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
             value) {
       if (ingressBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && ingress_ != null
             && ingress_
                 != com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -7202,7 +7374,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         ingressBuilder_.mergeFrom(value);
       }
       if (ingress_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -7220,7 +7392,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearIngress() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       ingress_ = null;
       if (ingressBuilder_ != null) {
         ingressBuilder_.dispose();
@@ -7244,7 +7416,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     public com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
             .Builder
         getIngressBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000004;
       onChanged();
       return internalGetIngressFieldBuilder().getBuilder();
     }
@@ -7302,7 +7474,25 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     .IngressOrBuilder>(getIngress(), getParentForChildren(), isClean());
         ingress_ = null;
       }
+      bitField0_ |= 0x00000004;
       return ingressBuilder_;
+    }
+
+    private void parseIngressField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      final int oldLimit = input.pushLimitBeforeMessage();
+      if (ingress_ != null || ingressBuilder_ != null) {
+        internalGetIngressFieldBuilder().getBuilder().mergeFrom(input, extensionRegistry);
+      } else {
+        ingress_ =
+            com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Ingress
+                .parser()
+                .parsePartialFrom(input, extensionRegistry);
+      }
+      input.popLimitAfterMessage(oldLimit);
+      bitField0_ |= 0x00000004;
     }
 
     private com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
@@ -7329,7 +7519,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * @return Whether the egress field is set.
      */
     public boolean hasEgress() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -7372,14 +7562,12 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
             value) {
       if (egressBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+        java.util.Objects.requireNonNull(value);
         egress_ = value;
       } else {
         egressBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -7398,14 +7586,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     public Builder setEgress(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress.Builder
             builderForValue) {
-      if (egressBuilder_ == null) {
-        egress_ = builderForValue.build();
-      } else {
-        egressBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000020;
-      onChanged();
-      return this;
+      java.util.Objects.requireNonNull(builderForValue);
+      return setEgress(builderForValue.build());
     }
 
     /**
@@ -7423,7 +7605,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
             value) {
       if (egressBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && egress_ != null
             && egress_
                 != com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -7436,7 +7618,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
         egressBuilder_.mergeFrom(value);
       }
       if (egress_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -7454,7 +7636,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearEgress() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000008);
       egress_ = null;
       if (egressBuilder_ != null) {
         egressBuilder_.dispose();
@@ -7478,7 +7660,7 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
     public com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
             .Builder
         getEgressBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetEgressFieldBuilder().getBuilder();
     }
@@ -7536,7 +7718,25 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
                     .EgressOrBuilder>(getEgress(), getParentForChildren(), isClean());
         egress_ = null;
       }
+      bitField0_ |= 0x00000008;
       return egressBuilder_;
+    }
+
+    private void parseEgressField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      final int oldLimit = input.pushLimitBeforeMessage();
+      if (egress_ != null || egressBuilder_ != null) {
+        internalGetEgressFieldBuilder().getBuilder().mergeFrom(input, extensionRegistry);
+      } else {
+        egress_ =
+            com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Egress
+                .parser()
+                .parsePartialFrom(input, extensionRegistry);
+      }
+      input.popLimitAfterMessage(oldLimit);
+      bitField0_ |= 0x00000008;
     }
 
     private int state_ = 0;
@@ -7617,13 +7817,12 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
      * </code>
      *
      * @param value The state to set.
+     * @throws IllegalArgumentException if UNRECOGNIZED is provided.
      * @return This builder for chaining.
      */
     public Builder setState(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.State value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       bitField0_ |= 0x00000040;
       state_ = value.getNumber();
       onChanged();
@@ -7677,13 +7876,8 @@ public final class ClientConnectorService extends com.google.protobuf.GeneratedM
           Builder builder = newBuilder();
           try {
             builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
+          } catch (java.lang.Exception e) {
+            wrapAndThrowParseException(e, builder);
           }
           return builder.buildPartial();
         }

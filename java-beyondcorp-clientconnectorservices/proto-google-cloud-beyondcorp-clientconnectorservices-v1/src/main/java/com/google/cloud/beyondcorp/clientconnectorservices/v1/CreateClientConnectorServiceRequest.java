@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
@@ -42,9 +42,9 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "CreateClientConnectorServiceRequest");
   }
 
@@ -61,6 +61,13 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.beyondcorp.clientconnectorservices.v1
+        .ClientConnectorServicesServiceProto
+        .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_CreateClientConnectorServiceRequest_descriptor;
+  }
+
+  @java.lang.Override
+  public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
     return com.google.cloud.beyondcorp.clientconnectorservices.v1
         .ClientConnectorServicesServiceProto
         .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_CreateClientConnectorServiceRequest_descriptor;
@@ -266,6 +273,15 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
         : clientConnectorService_;
   }
 
+  private void writeClientConnectorServiceField(com.google.protobuf.CodedOutputStream output)
+      throws java.io.IOException {
+    com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService tmp =
+        getClientConnectorService();
+    output.writeUInt32NoTag(26);
+    output.writeUInt32NoTag(tmp.getSerializedSize());
+    tmp.writeTo(output);
+  }
+
   public static final int REQUEST_ID_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -384,7 +400,7 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
       com.google.protobuf.GeneratedMessage.writeString(output, 2, clientConnectorServiceId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(3, getClientConnectorService());
+      writeClientConnectorServiceField(output);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, requestId_);
@@ -395,12 +411,8 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
     getUnknownFields().writeTo(output);
   }
 
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
+  private int computeSerializedSize_0() {
+    int size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, parent_);
     }
@@ -417,6 +429,16 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
     if (validateOnly_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, validateOnly_);
     }
+    return size;
+  }
+
+  @java.lang.Override
+  public int getSerializedSize() {
+    int size = memoizedSize;
+    if (size != -1) return size;
+
+    size = 0;
+    size += computeSerializedSize_0();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -694,32 +716,35 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
               new com.google.cloud.beyondcorp.clientconnectorservices.v1
                   .CreateClientConnectorServiceRequest(this);
       if (bitField0_ != 0) {
-        buildPartial0(result);
+        buildPartial_autosplit_0(result);
       }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(
+    private void buildPartial_autosplit_0(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.CreateClientConnectorServiceRequest
             result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.parent_ = parent_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.clientConnectorServiceId_ = clientConnectorServiceId_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000001) != 0)) {
         result.clientConnectorService_ =
             clientConnectorServiceBuilder_ == null
                 ? clientConnectorService_
                 : clientConnectorServiceBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.parent_ = parent_;
+        ;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.clientConnectorServiceId_ = clientConnectorServiceId_;
+        ;
+      }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.requestId_ = requestId_;
+        ;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.validateOnly_ = validateOnly_;
@@ -751,12 +776,12 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
               .CreateClientConnectorServiceRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getClientConnectorServiceId().isEmpty()) {
         clientConnectorServiceId_ = other.clientConnectorServiceId_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasClientConnectorService()) {
@@ -785,9 +810,7 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      java.util.Objects.requireNonNull(extensionRegistry);
       try {
         boolean done = false;
         while (!done) {
@@ -799,21 +822,18 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
             case 10:
               {
                 parent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 10
             case 18:
               {
                 clientConnectorServiceId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 26:
               {
-                input.readMessage(
-                    internalGetClientConnectorServiceFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
+                parseClientConnectorServiceField(input, extensionRegistry);
                 break;
               } // case 26
             case 34:
@@ -914,11 +934,9 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
      * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       parent_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -938,7 +956,7 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
      */
     public Builder clearParent() {
       parent_ = getDefaultInstance().getParent();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -958,12 +976,10 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
      * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       parent_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1050,11 +1066,9 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
      * @return This builder for chaining.
      */
     public Builder setClientConnectorServiceId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       clientConnectorServiceId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1079,7 +1093,7 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
      */
     public Builder clearClientConnectorServiceId() {
       clientConnectorServiceId_ = getDefaultInstance().getClientConnectorServiceId();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1104,12 +1118,10 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
      * @return This builder for chaining.
      */
     public Builder setClientConnectorServiceIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       clientConnectorServiceId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1136,7 +1148,7 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
      * @return Whether the clientConnectorService field is set.
      */
     public boolean hasClientConnectorService() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
 
     /**
@@ -1178,14 +1190,12 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
     public Builder setClientConnectorService(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService value) {
       if (clientConnectorServiceBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+        java.util.Objects.requireNonNull(value);
         clientConnectorService_ = value;
       } else {
         clientConnectorServiceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -1204,14 +1214,8 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
     public Builder setClientConnectorService(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Builder
             builderForValue) {
-      if (clientConnectorServiceBuilder_ == null) {
-        clientConnectorService_ = builderForValue.build();
-      } else {
-        clientConnectorServiceBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
+      java.util.Objects.requireNonNull(builderForValue);
+      return setClientConnectorService(builderForValue.build());
     }
 
     /**
@@ -1228,7 +1232,7 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
     public Builder mergeClientConnectorService(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService value) {
       if (clientConnectorServiceBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000001) != 0)
             && clientConnectorService_ != null
             && clientConnectorService_
                 != com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService
@@ -1241,7 +1245,7 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
         clientConnectorServiceBuilder_.mergeFrom(value);
       }
       if (clientConnectorService_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -1259,7 +1263,7 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
      * </code>
      */
     public Builder clearClientConnectorService() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000001);
       clientConnectorService_ = null;
       if (clientConnectorServiceBuilder_ != null) {
         clientConnectorServiceBuilder_.dispose();
@@ -1282,7 +1286,7 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
      */
     public com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.Builder
         getClientConnectorServiceBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000001;
       onChanged();
       return internalGetClientConnectorServiceFieldBuilder().getBuilder();
     }
@@ -1337,7 +1341,26 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
                 getClientConnectorService(), getParentForChildren(), isClean());
         clientConnectorService_ = null;
       }
+      bitField0_ |= 0x00000001;
       return clientConnectorServiceBuilder_;
+    }
+
+    private void parseClientConnectorServiceField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      final int oldLimit = input.pushLimitBeforeMessage();
+      if (clientConnectorService_ != null || clientConnectorServiceBuilder_ != null) {
+        internalGetClientConnectorServiceFieldBuilder()
+            .getBuilder()
+            .mergeFrom(input, extensionRegistry);
+      } else {
+        clientConnectorService_ =
+            com.google.cloud.beyondcorp.clientconnectorservices.v1.ClientConnectorService.parser()
+                .parsePartialFrom(input, extensionRegistry);
+      }
+      input.popLimitAfterMessage(oldLimit);
+      bitField0_ |= 0x00000001;
     }
 
     private java.lang.Object requestId_ = "";
@@ -1437,9 +1460,7 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
      * @return This builder for chaining.
      */
     public Builder setRequestId(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       requestId_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
@@ -1501,9 +1522,7 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
      * @return This builder for chaining.
      */
     public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       requestId_ = value;
       bitField0_ |= 0x00000008;
@@ -1600,13 +1619,8 @@ public final class CreateClientConnectorServiceRequest extends com.google.protob
           Builder builder = newBuilder();
           try {
             builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
+          } catch (java.lang.Exception e) {
+            wrapAndThrowParseException(e, builder);
           }
           return builder.buildPartial();
         }

@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_video_object_tracking.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
@@ -29,9 +29,9 @@ public final class AutoMLVideoObjectTrackingProto extends com.google.protobuf.Ge
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "AutoMLVideoObjectTrackingProto");
   }
 
@@ -54,41 +54,49 @@ public final class AutoMLVideoObjectTrackingProto extends com.google.protobuf.Ge
     return descriptor;
   }
 
-  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+  private static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+  public static final class InternalDescriptors {
+    public static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+    static {
+      java.lang.String[] descriptorData = {
+        "\n`google/cloud/aiplatform/v1beta1/schema"
+            + "/trainingjob/definition/automl_video_obj"
+            + "ect_tracking.proto\022=google.cloud.aiplatf"
+            + "orm.v1beta1.schema.trainingjob.definitio"
+            + "n\"\213\001\n\031AutoMlVideoObjectTracking\022n\n\006input"
+            + "s\030\001 \001(\0132^.google.cloud.aiplatform.v1beta"
+            + "1.schema.trainingjob.definition.AutoMlVi"
+            + "deoObjectTrackingInputs\"\352\002\n\037AutoMlVideoO"
+            + "bjectTrackingInputs\022|\n\nmodel_type\030\001 \001(\0162"
+            + "h.google.cloud.aiplatform.v1beta1.schema"
+            + ".trainingjob.definition.AutoMlVideoObjec"
+            + "tTrackingInputs.ModelType\"\310\001\n\tModelType\022"
+            + "\032\n\026MODEL_TYPE_UNSPECIFIED\020\000\022\t\n\005CLOUD\020\001\022\026"
+            + "\n\022MOBILE_VERSATILE_1\020\002\022\034\n\030MOBILE_CORAL_V"
+            + "ERSATILE_1\020\003\022\036\n\032MOBILE_CORAL_LOW_LATENCY"
+            + "_1\020\004\022\035\n\031MOBILE_JETSON_VERSATILE_1\020\005\022\037\n\033M"
+            + "OBILE_JETSON_LOW_LATENCY_1\020\006B\216\003\nAcom.goo"
+            + "gle.cloud.aiplatform.v1beta1.schema.trai"
+            + "ningjob.definitionB\036AutoMLVideoObjectTra"
+            + "ckingProtoP\001Zacloud.google.com/go/aiplat"
+            + "form/apiv1beta1/schema/trainingjob/defin"
+            + "ition/definitionpb;definitionpb\252\002=Google"
+            + ".Cloud.AIPlatform.V1Beta1.Schema.Trainin"
+            + "gJob.Definition\312\002=Google\\Cloud\\AIPlatfor"
+            + "m\\V1beta1\\Schema\\TrainingJob\\Definition\352"
+            + "\002CGoogle::Cloud::AIPlatform::V1beta1::Sc"
+            + "hema::TrainingJob::Definitionb\006proto3"
+      };
+      descriptor =
+          com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+              descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    }
+  }
 
   static {
-    java.lang.String[] descriptorData = {
-      "\n`google/cloud/aiplatform/v1beta1/schema"
-          + "/trainingjob/definition/automl_video_obj"
-          + "ect_tracking.proto\022=google.cloud.aiplatf"
-          + "orm.v1beta1.schema.trainingjob.definitio"
-          + "n\"\213\001\n\031AutoMlVideoObjectTracking\022n\n\006input"
-          + "s\030\001 \001(\0132^.google.cloud.aiplatform.v1beta"
-          + "1.schema.trainingjob.definition.AutoMlVi"
-          + "deoObjectTrackingInputs\"\352\002\n\037AutoMlVideoO"
-          + "bjectTrackingInputs\022|\n\nmodel_type\030\001 \001(\0162"
-          + "h.google.cloud.aiplatform.v1beta1.schema"
-          + ".trainingjob.definition.AutoMlVideoObjec"
-          + "tTrackingInputs.ModelType\"\310\001\n\tModelType\022"
-          + "\032\n\026MODEL_TYPE_UNSPECIFIED\020\000\022\t\n\005CLOUD\020\001\022\026"
-          + "\n\022MOBILE_VERSATILE_1\020\002\022\034\n\030MOBILE_CORAL_V"
-          + "ERSATILE_1\020\003\022\036\n\032MOBILE_CORAL_LOW_LATENCY"
-          + "_1\020\004\022\035\n\031MOBILE_JETSON_VERSATILE_1\020\005\022\037\n\033M"
-          + "OBILE_JETSON_LOW_LATENCY_1\020\006B\216\003\nAcom.goo"
-          + "gle.cloud.aiplatform.v1beta1.schema.trai"
-          + "ningjob.definitionB\036AutoMLVideoObjectTra"
-          + "ckingProtoP\001Zacloud.google.com/go/aiplat"
-          + "form/apiv1beta1/schema/trainingjob/defin"
-          + "ition/definitionpb;definitionpb\252\002=Google"
-          + ".Cloud.AIPlatform.V1Beta1.Schema.Trainin"
-          + "gJob.Definition\312\002=Google\\Cloud\\AIPlatfor"
-          + "m\\V1beta1\\Schema\\TrainingJob\\Definition\352"
-          + "\002CGoogle::Cloud::AIPlatform::V1beta1::Sc"
-          + "hema::TrainingJob::Definitionb\006proto3"
-    };
-    descriptor =
-        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    descriptor = AutoMLVideoObjectTrackingProto.InternalDescriptors.descriptor;
     internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlVideoObjectTracking_descriptor =
         getDescriptor().getMessageType(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlVideoObjectTracking_fieldAccessorTable =

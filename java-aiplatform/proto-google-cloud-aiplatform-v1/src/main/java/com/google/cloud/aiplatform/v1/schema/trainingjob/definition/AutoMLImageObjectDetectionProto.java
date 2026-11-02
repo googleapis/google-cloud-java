@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_image_object_detection.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
@@ -29,9 +29,9 @@ public final class AutoMLImageObjectDetectionProto extends com.google.protobuf.G
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "AutoMLImageObjectDetectionProto");
   }
 
@@ -58,52 +58,60 @@ public final class AutoMLImageObjectDetectionProto extends com.google.protobuf.G
     return descriptor;
   }
 
-  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+  private static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+  public static final class InternalDescriptors {
+    public static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+    static {
+      java.lang.String[] descriptorData = {
+        "\n\\google/cloud/aiplatform/v1/schema/trai"
+            + "ningjob/definition/automl_image_object_d"
+            + "etection.proto\0228google.cloud.aiplatform."
+            + "v1.schema.trainingjob.definition\"\370\001\n\032Aut"
+            + "oMlImageObjectDetection\022j\n\006inputs\030\001 \001(\0132"
+            + "Z.google.cloud.aiplatform.v1.schema.trai"
+            + "ningjob.definition.AutoMlImageObjectDete"
+            + "ctionInputs\022n\n\010metadata\030\002 \001(\0132\\.google.c"
+            + "loud.aiplatform.v1.schema.trainingjob.de"
+            + "finition.AutoMlImageObjectDetectionMetad"
+            + "ata\"\222\003\n AutoMlImageObjectDetectionInputs"
+            + "\022x\n\nmodel_type\030\001 \001(\0162d.google.cloud.aipl"
+            + "atform.v1.schema.trainingjob.definition."
+            + "AutoMlImageObjectDetectionInputs.ModelTy"
+            + "pe\022\037\n\027budget_milli_node_hours\030\002 \001(\003\022\036\n\026d"
+            + "isable_early_stopping\030\003 \001(\010\"\262\001\n\tModelTyp"
+            + "e\022\032\n\026MODEL_TYPE_UNSPECIFIED\020\000\022\031\n\025CLOUD_H"
+            + "IGH_ACCURACY_1\020\001\022\027\n\023CLOUD_LOW_LATENCY_1\020"
+            + "\002\022\033\n\027MOBILE_TF_LOW_LATENCY_1\020\003\022\031\n\025MOBILE"
+            + "_TF_VERSATILE_1\020\004\022\035\n\031MOBILE_TF_HIGH_ACCU"
+            + "RACY_1\020\005\"\300\002\n\"AutoMlImageObjectDetectionM"
+            + "etadata\022\035\n\025cost_milli_node_hours\030\001 \001(\003\022\221"
+            + "\001\n\026successful_stop_reason\030\002 \001(\0162q.google"
+            + ".cloud.aiplatform.v1.schema.trainingjob."
+            + "definition.AutoMlImageObjectDetectionMet"
+            + "adata.SuccessfulStopReason\"g\n\024Successful"
+            + "StopReason\022&\n\"SUCCESSFUL_STOP_REASON_UNS"
+            + "PECIFIED\020\000\022\022\n\016BUDGET_REACHED\020\001\022\023\n\017MODEL_"
+            + "CONVERGED\020\002B\366\002\n<com.google.cloud.aiplatf"
+            + "orm.v1.schema.trainingjob.definitionB\037Au"
+            + "toMLImageObjectDetectionProtoP\001Z\\cloud.g"
+            + "oogle.com/go/aiplatform/apiv1/schema/tra"
+            + "iningjob/definition/definitionpb;definit"
+            + "ionpb\252\0028Google.Cloud.AIPlatform.V1.Schem"
+            + "a.TrainingJob.Definition\312\0028Google\\Cloud\\"
+            + "AIPlatform\\V1\\Schema\\TrainingJob\\Definit"
+            + "ion\352\002>Google::Cloud::AIPlatform::V1::Sch"
+            + "ema::TrainingJob::Definitionb\006proto3"
+      };
+      descriptor =
+          com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+              descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    }
+  }
 
   static {
-    java.lang.String[] descriptorData = {
-      "\n\\google/cloud/aiplatform/v1/schema/trai"
-          + "ningjob/definition/automl_image_object_d"
-          + "etection.proto\0228google.cloud.aiplatform."
-          + "v1.schema.trainingjob.definition\"\370\001\n\032Aut"
-          + "oMlImageObjectDetection\022j\n\006inputs\030\001 \001(\0132"
-          + "Z.google.cloud.aiplatform.v1.schema.trai"
-          + "ningjob.definition.AutoMlImageObjectDete"
-          + "ctionInputs\022n\n\010metadata\030\002 \001(\0132\\.google.c"
-          + "loud.aiplatform.v1.schema.trainingjob.de"
-          + "finition.AutoMlImageObjectDetectionMetad"
-          + "ata\"\222\003\n AutoMlImageObjectDetectionInputs"
-          + "\022x\n\nmodel_type\030\001 \001(\0162d.google.cloud.aipl"
-          + "atform.v1.schema.trainingjob.definition."
-          + "AutoMlImageObjectDetectionInputs.ModelTy"
-          + "pe\022\037\n\027budget_milli_node_hours\030\002 \001(\003\022\036\n\026d"
-          + "isable_early_stopping\030\003 \001(\010\"\262\001\n\tModelTyp"
-          + "e\022\032\n\026MODEL_TYPE_UNSPECIFIED\020\000\022\031\n\025CLOUD_H"
-          + "IGH_ACCURACY_1\020\001\022\027\n\023CLOUD_LOW_LATENCY_1\020"
-          + "\002\022\033\n\027MOBILE_TF_LOW_LATENCY_1\020\003\022\031\n\025MOBILE"
-          + "_TF_VERSATILE_1\020\004\022\035\n\031MOBILE_TF_HIGH_ACCU"
-          + "RACY_1\020\005\"\300\002\n\"AutoMlImageObjectDetectionM"
-          + "etadata\022\035\n\025cost_milli_node_hours\030\001 \001(\003\022\221"
-          + "\001\n\026successful_stop_reason\030\002 \001(\0162q.google"
-          + ".cloud.aiplatform.v1.schema.trainingjob."
-          + "definition.AutoMlImageObjectDetectionMet"
-          + "adata.SuccessfulStopReason\"g\n\024Successful"
-          + "StopReason\022&\n\"SUCCESSFUL_STOP_REASON_UNS"
-          + "PECIFIED\020\000\022\022\n\016BUDGET_REACHED\020\001\022\023\n\017MODEL_"
-          + "CONVERGED\020\002B\366\002\n<com.google.cloud.aiplatf"
-          + "orm.v1.schema.trainingjob.definitionB\037Au"
-          + "toMLImageObjectDetectionProtoP\001Z\\cloud.g"
-          + "oogle.com/go/aiplatform/apiv1/schema/tra"
-          + "iningjob/definition/definitionpb;definit"
-          + "ionpb\252\0028Google.Cloud.AIPlatform.V1.Schem"
-          + "a.TrainingJob.Definition\312\0028Google\\Cloud\\"
-          + "AIPlatform\\V1\\Schema\\TrainingJob\\Definit"
-          + "ion\352\002>Google::Cloud::AIPlatform::V1::Sch"
-          + "ema::TrainingJob::Definitionb\006proto3"
-    };
-    descriptor =
-        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    descriptor = AutoMLImageObjectDetectionProto.InternalDescriptors.descriptor;
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlImageObjectDetection_descriptor =
         getDescriptor().getMessageType(0);
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlImageObjectDetection_fieldAccessorTable =

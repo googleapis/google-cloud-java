@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/securitycenter/v1/event_threat_detection_custom_module_validation_errors.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.securitycenter.v1;
 
@@ -30,9 +30,9 @@ public final class EventThreatDetectionCustomModuleValidationErrorsProto
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "EventThreatDetectionCustomModuleValidationErrorsProto");
   }
 
@@ -59,34 +59,43 @@ public final class EventThreatDetectionCustomModuleValidationErrorsProto
     return descriptor;
   }
 
-  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+  private static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+  public static final class InternalDescriptors {
+    public static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+    static {
+      java.lang.String[] descriptorData = {
+        "\n[google/cloud/securitycenter/v1/event_t"
+            + "hreat_detection_custom_module_validation"
+            + "_errors.proto\022\036google.cloud.securitycent"
+            + "er.v1\"k\n\034CustomModuleValidationErrors\022K\n"
+            + "\006errors\030\001 \003(\0132;.google.cloud.securitycen"
+            + "ter.v1.CustomModuleValidationError\"\322\001\n\033C"
+            + "ustomModuleValidationError\022\023\n\013descriptio"
+            + "n\030\001 \001(\t\022\022\n\nfield_path\030\002 \001(\t\022<\n\005start\030\003 \001"
+            + "(\0132(.google.cloud.securitycenter.v1.Posi"
+            + "tionH\000\210\001\001\022:\n\003end\030\004 \001(\0132(.google.cloud.se"
+            + "curitycenter.v1.PositionH\001\210\001\001B\010\n\006_startB"
+            + "\006\n\004_end\"6\n\010Position\022\023\n\013line_number\030\001 \001(\005"
+            + "\022\025\n\rcolumn_number\030\002 \001(\005B\217\002\n\"com.google.c"
+            + "loud.securitycenter.v1B5EventThreatDetec"
+            + "tionCustomModuleValidationErrorsProtoP\001Z"
+            + "Jcloud.google.com/go/securitycenter/apiv"
+            + "1/securitycenterpb;securitycenterpb\252\002\036Go"
+            + "ogle.Cloud.SecurityCenter.V1\312\002\036Google\\Cl"
+            + "oud\\SecurityCenter\\V1\352\002!Google::Cloud::S"
+            + "ecurityCenter::V1b\006proto3"
+      };
+      descriptor =
+          com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+              descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    }
+  }
 
   static {
-    java.lang.String[] descriptorData = {
-      "\n[google/cloud/securitycenter/v1/event_t"
-          + "hreat_detection_custom_module_validation"
-          + "_errors.proto\022\036google.cloud.securitycent"
-          + "er.v1\"k\n\034CustomModuleValidationErrors\022K\n"
-          + "\006errors\030\001 \003(\0132;.google.cloud.securitycen"
-          + "ter.v1.CustomModuleValidationError\"\322\001\n\033C"
-          + "ustomModuleValidationError\022\023\n\013descriptio"
-          + "n\030\001 \001(\t\022\022\n\nfield_path\030\002 \001(\t\022<\n\005start\030\003 \001"
-          + "(\0132(.google.cloud.securitycenter.v1.Posi"
-          + "tionH\000\210\001\001\022:\n\003end\030\004 \001(\0132(.google.cloud.se"
-          + "curitycenter.v1.PositionH\001\210\001\001B\010\n\006_startB"
-          + "\006\n\004_end\"6\n\010Position\022\023\n\013line_number\030\001 \001(\005"
-          + "\022\025\n\rcolumn_number\030\002 \001(\005B\217\002\n\"com.google.c"
-          + "loud.securitycenter.v1B5EventThreatDetec"
-          + "tionCustomModuleValidationErrorsProtoP\001Z"
-          + "Jcloud.google.com/go/securitycenter/apiv"
-          + "1/securitycenterpb;securitycenterpb\252\002\036Go"
-          + "ogle.Cloud.SecurityCenter.V1\312\002\036Google\\Cl"
-          + "oud\\SecurityCenter\\V1\352\002!Google::Cloud::S"
-          + "ecurityCenter::V1b\006proto3"
-    };
     descriptor =
-        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+        EventThreatDetectionCustomModuleValidationErrorsProto.InternalDescriptors.descriptor;
     internal_static_google_cloud_securitycenter_v1_CustomModuleValidationErrors_descriptor =
         getDescriptor().getMessageType(0);
     internal_static_google_cloud_securitycenter_v1_CustomModuleValidationErrors_fieldAccessorTable =

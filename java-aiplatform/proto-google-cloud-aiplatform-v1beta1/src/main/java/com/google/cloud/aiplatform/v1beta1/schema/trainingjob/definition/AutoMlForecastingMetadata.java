@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_time_series_forecasting.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
@@ -42,9 +42,9 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "AutoMlForecastingMetadata");
   }
 
@@ -61,6 +61,12 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
   }
 
   @java.lang.Override
+  public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMLForecastingProto
+        .internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlForecastingMetadata_descriptor;
+  }
+
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMLForecastingProto
@@ -72,6 +78,7 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
                 .AutoMlForecastingMetadata.Builder.class);
   }
 
+  private int bitField0_;
   public static final int TRAIN_COST_MILLI_NODE_HOURS_FIELD_NUMBER = 1;
   private long trainCostMilliNodeHours_ = 0L;
 
@@ -113,15 +120,21 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
     getUnknownFields().writeTo(output);
   }
 
+  private int computeSerializedSize_0() {
+    int size = 0;
+    if (trainCostMilliNodeHours_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, trainCostMilliNodeHours_);
+    }
+    return size;
+  }
+
   @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    if (trainCostMilliNodeHours_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, trainCostMilliNodeHours_);
-    }
+    size += computeSerializedSize_0();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -365,19 +378,21 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
               new com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlForecastingMetadata(this);
       if (bitField0_ != 0) {
-        buildPartial0(result);
+        buildPartial_autosplit_0(result);
       }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(
+    private void buildPartial_autosplit_0(
         com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlForecastingMetadata
             result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.trainCostMilliNodeHours_ = trainCostMilliNodeHours_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -420,9 +435,7 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      java.util.Objects.requireNonNull(extensionRegistry);
       try {
         boolean done = false;
         while (!done) {
@@ -548,13 +561,8 @@ public final class AutoMlForecastingMetadata extends com.google.protobuf.Generat
           Builder builder = newBuilder();
           try {
             builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
+          } catch (java.lang.Exception e) {
+            wrapAndThrowParseException(e, builder);
           }
           return builder.buildPartial();
         }

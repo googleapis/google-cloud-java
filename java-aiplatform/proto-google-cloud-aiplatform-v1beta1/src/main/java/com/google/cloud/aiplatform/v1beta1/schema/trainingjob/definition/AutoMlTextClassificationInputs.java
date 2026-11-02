@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_classification.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
@@ -36,9 +36,9 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "AutoMlTextClassificationInputs");
   }
 
@@ -50,6 +50,13 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
   private AutoMlTextClassificationInputs() {}
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
+        .AutoMLTextClassificationProto
+        .internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlTextClassificationInputs_descriptor;
+  }
+
+  @java.lang.Override
+  public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
     return com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
         .AutoMLTextClassificationProto
         .internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlTextClassificationInputs_descriptor;
@@ -68,6 +75,7 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
                 .AutoMlTextClassificationInputs.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MULTI_LABEL_FIELD_NUMBER = 1;
   private boolean multiLabel_ = false;
 
@@ -101,15 +109,21 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
     getUnknownFields().writeTo(output);
   }
 
+  private int computeSerializedSize_0() {
+    int size = 0;
+    if (multiLabel_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, multiLabel_);
+    }
+    return size;
+  }
+
   @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    if (multiLabel_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, multiLabel_);
-    }
+    size += computeSerializedSize_0();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -350,20 +364,22 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
               new com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                   .AutoMlTextClassificationInputs(this);
       if (bitField0_ != 0) {
-        buildPartial0(result);
+        buildPartial_autosplit_0(result);
       }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(
+    private void buildPartial_autosplit_0(
         com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition
                 .AutoMlTextClassificationInputs
             result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.multiLabel_ = multiLabel_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -407,9 +423,7 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      java.util.Objects.requireNonNull(extensionRegistry);
       try {
         boolean done = false;
         while (!done) {
@@ -511,13 +525,8 @@ public final class AutoMlTextClassificationInputs extends com.google.protobuf.Ge
           Builder builder = newBuilder();
           try {
             builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
+          } catch (java.lang.Exception e) {
+            wrapAndThrowParseException(e, builder);
           }
           return builder.buildPartial();
         }

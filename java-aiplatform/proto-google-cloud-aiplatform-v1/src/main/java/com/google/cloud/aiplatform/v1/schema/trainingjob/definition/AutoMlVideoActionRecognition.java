@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_video_action_recognition.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
@@ -43,9 +43,9 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "AutoMlVideoActionRecognition");
   }
 
@@ -57,6 +57,13 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
   private AutoMlVideoActionRecognition() {}
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+        .AutoMLVideoActionRecognitionProto
+        .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlVideoActionRecognition_descriptor;
+  }
+
+  @java.lang.Override
+  public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
     return com.google.cloud.aiplatform.v1.schema.trainingjob.definition
         .AutoMLVideoActionRecognitionProto
         .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlVideoActionRecognition_descriptor;
@@ -143,6 +150,15 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
         : inputs_;
   }
 
+  private void writeInputsField(com.google.protobuf.CodedOutputStream output)
+      throws java.io.IOException {
+    com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs
+        tmp = getInputs();
+    output.writeUInt32NoTag(10);
+    output.writeUInt32NoTag(tmp.getSerializedSize());
+    tmp.writeTo(output);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -158,9 +174,17 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getInputs());
+      writeInputsField(output);
     }
     getUnknownFields().writeTo(output);
+  }
+
+  private int computeSerializedSize_0() {
+    int size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInputs());
+    }
+    return size;
   }
 
   @java.lang.Override
@@ -169,9 +193,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInputs());
-    }
+    size += computeSerializedSize_0();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -431,13 +453,13 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
               new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                   .AutoMlVideoActionRecognition(this);
       if (bitField0_ != 0) {
-        buildPartial0(result);
+        buildPartial_autosplit_0(result);
       }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(
+    private void buildPartial_autosplit_0(
         com.google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognition
             result) {
       int from_bitField0_ = bitField0_;
@@ -489,9 +511,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      java.util.Objects.requireNonNull(extensionRegistry);
       try {
         boolean done = false;
         while (!done) {
@@ -502,8 +522,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
               break;
             case 10:
               {
-                input.readMessage(internalGetInputsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                parseInputsField(input, extensionRegistry);
                 break;
               } // case 10
             default:
@@ -596,9 +615,7 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
                 .AutoMlVideoActionRecognitionInputs
             value) {
       if (inputsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+        java.util.Objects.requireNonNull(value);
         inputs_ = value;
       } else {
         inputsBuilder_.setMessage(value);
@@ -623,14 +640,8 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
         com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                 .AutoMlVideoActionRecognitionInputs.Builder
             builderForValue) {
-      if (inputsBuilder_ == null) {
-        inputs_ = builderForValue.build();
-      } else {
-        inputsBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
+      java.util.Objects.requireNonNull(builderForValue);
+      return setInputs(builderForValue.build());
     }
 
     /**
@@ -764,7 +775,25 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
                 getInputs(), getParentForChildren(), isClean());
         inputs_ = null;
       }
+      bitField0_ |= 0x00000001;
       return inputsBuilder_;
+    }
+
+    private void parseInputsField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      final int oldLimit = input.pushLimitBeforeMessage();
+      if (inputs_ != null || inputsBuilder_ != null) {
+        internalGetInputsFieldBuilder().getBuilder().mergeFrom(input, extensionRegistry);
+      } else {
+        inputs_ =
+            com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+                .AutoMlVideoActionRecognitionInputs.parser()
+                .parsePartialFrom(input, extensionRegistry);
+      }
+      input.popLimitAfterMessage(oldLimit);
+      bitField0_ |= 0x00000001;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlVideoActionRecognition)
@@ -797,13 +826,8 @@ public final class AutoMlVideoActionRecognition extends com.google.protobuf.Gene
           Builder builder = newBuilder();
           try {
             builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
+          } catch (java.lang.Exception e) {
+            wrapAndThrowParseException(e, builder);
           }
           return builder.buildPartial();
         }

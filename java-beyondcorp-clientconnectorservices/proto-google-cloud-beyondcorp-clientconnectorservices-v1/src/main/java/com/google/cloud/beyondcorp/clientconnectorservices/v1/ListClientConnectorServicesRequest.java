@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
@@ -42,9 +42,9 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "ListClientConnectorServicesRequest");
   }
 
@@ -68,6 +68,13 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
   }
 
   @java.lang.Override
+  public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+    return com.google.cloud.beyondcorp.clientconnectorservices.v1
+        .ClientConnectorServicesServiceProto
+        .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ListClientConnectorServicesRequest_descriptor;
+  }
+
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.beyondcorp.clientconnectorservices.v1
@@ -80,6 +87,7 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
                 .ListClientConnectorServicesRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -348,12 +356,8 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
     getUnknownFields().writeTo(output);
   }
 
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
+  private int computeSerializedSize_0() {
+    int size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(parent_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, parent_);
     }
@@ -369,6 +373,16 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(orderBy_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, orderBy_);
     }
+    return size;
+  }
+
+  @java.lang.Override
+  public int getSerializedSize() {
+    int size = memoizedSize;
+    if (size != -1) return size;
+
+    size = 0;
+    size += computeSerializedSize_0();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -625,31 +639,37 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
               new com.google.cloud.beyondcorp.clientconnectorservices.v1
                   .ListClientConnectorServicesRequest(this);
       if (bitField0_ != 0) {
-        buildPartial0(result);
+        buildPartial_autosplit_0(result);
       }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(
+    private void buildPartial_autosplit_0(
         com.google.cloud.beyondcorp.clientconnectorservices.v1.ListClientConnectorServicesRequest
             result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.parent_ = parent_;
+        ;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.pageSize_ = pageSize_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.pageToken_ = pageToken_;
+        ;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.filter_ = filter_;
+        ;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.orderBy_ = orderBy_;
+        ;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -712,9 +732,7 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      java.util.Objects.requireNonNull(extensionRegistry);
       try {
         boolean done = false;
         while (!done) {
@@ -839,9 +857,7 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setParent(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       parent_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
@@ -883,9 +899,7 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setParentBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       parent_ = value;
       bitField0_ |= 0x00000001;
@@ -1013,9 +1027,7 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setPageToken(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       pageToken_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
@@ -1053,9 +1065,7 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       pageToken_ = value;
       bitField0_ |= 0x00000004;
@@ -1124,9 +1134,7 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setFilter(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       filter_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
@@ -1164,9 +1172,7 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setFilterBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       filter_ = value;
       bitField0_ |= 0x00000008;
@@ -1235,9 +1241,7 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setOrderBy(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       orderBy_ = value;
       bitField0_ |= 0x00000010;
       onChanged();
@@ -1275,9 +1279,7 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
      * @return This builder for chaining.
      */
     public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       orderBy_ = value;
       bitField0_ |= 0x00000010;
@@ -1315,13 +1317,8 @@ public final class ListClientConnectorServicesRequest extends com.google.protobu
           Builder builder = newBuilder();
           try {
             builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
+          } catch (java.lang.Exception e) {
+            wrapAndThrowParseException(e, builder);
           }
           return builder.buildPartial();
         }
