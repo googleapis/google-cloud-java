@@ -1882,7 +1882,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       int ordinalPosition) {
     ColumnTypeInfo typeInfo = getColumnTypeInfoForTypeKind(typeKind);
 
-    boolean isMeasure = MEASURE_EXPRESSION_KIND.equalsIgnoreCase(expressionKind);
+    boolean isMeasure = MEASURE_EXPRESSION_KIND.equals(expressionKind);
     boolean isComputedExpression =
         expression != null && !expression.isEmpty() && !expression.equalsIgnoreCase(columnName);
     String isGeneratedColumn = (isMeasure || isComputedExpression) ? "YES" : "NO";
@@ -1916,8 +1916,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return getColumnTypeInfoForSqlType(null);
     }
     try {
-      return getColumnTypeInfoForSqlType(
-          StandardSQLTypeName.valueOf(typeKind.toUpperCase(Locale.US)));
+      return getColumnTypeInfoForSqlType(StandardSQLTypeName.valueOf(typeKind));
     } catch (IllegalArgumentException e) {
       LOG.warning("Unknown BigQuery typeKind '%s' in graph metadata. Mapping to STRING.", typeKind);
       return getColumnTypeInfoForSqlType(null);
