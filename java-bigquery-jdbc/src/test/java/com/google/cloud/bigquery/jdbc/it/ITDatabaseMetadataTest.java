@@ -823,7 +823,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   @Tag("disable_tpc")
-  @Tag("advanced)
+  @Tag("advanced")
   public void testDatabaseMetadataGetTables_PropertyGraph() throws SQLException {
     String nodeTable = "GRAPH_NODE_TABLE_" + randomNumber;
     String edgeTable = "GRAPH_EDGE_TABLE_" + randomNumber;
@@ -860,13 +860,7 @@ public class ITDatabaseMetadataTest extends ITBase {
       DatabaseMetaData metaData = conn.getMetaData();
 
       // 1. Verify getTableTypes() includes "GRAPH TABLE"
-      Set<String> tableTypes = new HashSet<>();
-      try (ResultSet rsTypes = metaData.getTableTypes()) {
-        while (rsTypes.next()) {
-          tableTypes.add(rsTypes.getString("TABLE_TYPE"));
-        }
-      }
-      Assertions.assertTrue(tableTypes.contains("GRAPH TABLE"));
+      verifyTableTypes(metaData, Arrays.asList("EXTERNAL", "GRAPH TABLE", "TABLE", "VIEW"));
 
       // 2. Verify getTables() with wildcard pattern returns both node and edge elements
       Set<String> graphTables = new HashSet<>();
