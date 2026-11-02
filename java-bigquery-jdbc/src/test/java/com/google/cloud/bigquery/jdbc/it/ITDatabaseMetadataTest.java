@@ -823,6 +823,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   @Tag("disable_tpc")
+  @Tag("advanced)
   public void testDatabaseMetadataGetTables_PropertyGraph() throws SQLException {
     String nodeTable = "GRAPH_NODE_TABLE_" + randomNumber;
     String edgeTable = "GRAPH_EDGE_TABLE_" + randomNumber;
