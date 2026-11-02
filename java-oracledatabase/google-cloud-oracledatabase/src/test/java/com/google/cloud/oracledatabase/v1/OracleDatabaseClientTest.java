@@ -43,6 +43,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGolden
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbDnsZonesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
@@ -789,6 +790,9 @@ public class OracleDatabaseClientTest {
             .setBackupOdbSubnet(
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
             .setExascaleDbStorageVault(
                 ExascaleDbStorageVaultName.of(
@@ -854,6 +858,9 @@ public class OracleDatabaseClientTest {
             .setBackupOdbSubnet(
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
                     .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
             .setExascaleDbStorageVault(
                 ExascaleDbStorageVaultName.of(
@@ -916,6 +923,9 @@ public class OracleDatabaseClientTest {
                     .toString())
             .setBackupOdbSubnet(
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
                     .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
             .setExascaleDbStorageVault(
@@ -995,6 +1005,9 @@ public class OracleDatabaseClientTest {
                     .toString())
             .setBackupOdbSubnet(
                 OdbSubnetName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_SUBNET]")
+                    .toString())
+            .setOdbDnsZone(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
                     .toString())
             .setIdentityConnector(IdentityConnector.newBuilder().build())
             .setExascaleDbStorageVault(
@@ -4710,6 +4723,384 @@ public class OracleDatabaseClientTest {
     try {
       String name = "name3373707";
       client.deleteOdbSubnetAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listOdbDnsZonesTest() throws Exception {
+    OdbDnsZone responsesElement = OdbDnsZone.newBuilder().build();
+    ListOdbDnsZonesResponse expectedResponse =
+        ListOdbDnsZonesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOdbDnsZones(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+
+    ListOdbDnsZonesPagedResponse pagedListResponse = client.listOdbDnsZones(parent);
+
+    List<OdbDnsZone> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOdbDnsZonesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListOdbDnsZonesRequest actualRequest = ((ListOdbDnsZonesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listOdbDnsZonesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+      client.listOdbDnsZones(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listOdbDnsZonesTest2() throws Exception {
+    OdbDnsZone responsesElement = OdbDnsZone.newBuilder().build();
+    ListOdbDnsZonesResponse expectedResponse =
+        ListOdbDnsZonesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllOdbDnsZones(Arrays.asList(responsesElement))
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListOdbDnsZonesPagedResponse pagedListResponse = client.listOdbDnsZones(parent);
+
+    List<OdbDnsZone> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getOdbDnsZonesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListOdbDnsZonesRequest actualRequest = ((ListOdbDnsZonesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listOdbDnsZonesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listOdbDnsZones(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getOdbDnsZoneTest() throws Exception {
+    OdbDnsZone expectedResponse =
+        OdbDnsZone.newBuilder()
+            .setName(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setDomain("domain-1326197564")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    OdbDnsZoneName name =
+        OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]");
+
+    OdbDnsZone actualResponse = client.getOdbDnsZone(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetOdbDnsZoneRequest actualRequest = ((GetOdbDnsZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getOdbDnsZoneExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      OdbDnsZoneName name =
+          OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]");
+      client.getOdbDnsZone(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getOdbDnsZoneTest2() throws Exception {
+    OdbDnsZone expectedResponse =
+        OdbDnsZone.newBuilder()
+            .setName(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setDomain("domain-1326197564")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockOracleDatabase.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    OdbDnsZone actualResponse = client.getOdbDnsZone(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetOdbDnsZoneRequest actualRequest = ((GetOdbDnsZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getOdbDnsZoneExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getOdbDnsZone(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createOdbDnsZoneTest() throws Exception {
+    OdbDnsZone expectedResponse =
+        OdbDnsZone.newBuilder()
+            .setName(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setDomain("domain-1326197564")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createOdbDnsZoneTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+    OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+    String odbDnsZoneId = "odbDnsZoneId1807291843";
+
+    OdbDnsZone actualResponse =
+        client.createOdbDnsZoneAsync(parent, odbDnsZone, odbDnsZoneId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateOdbDnsZoneRequest actualRequest = ((CreateOdbDnsZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(odbDnsZone, actualRequest.getOdbDnsZone());
+    Assert.assertEquals(odbDnsZoneId, actualRequest.getOdbDnsZoneId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createOdbDnsZoneExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      OdbNetworkName parent = OdbNetworkName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]");
+      OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+      String odbDnsZoneId = "odbDnsZoneId1807291843";
+      client.createOdbDnsZoneAsync(parent, odbDnsZone, odbDnsZoneId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createOdbDnsZoneTest2() throws Exception {
+    OdbDnsZone expectedResponse =
+        OdbDnsZone.newBuilder()
+            .setName(
+                OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]")
+                    .toString())
+            .setDomain("domain-1326197564")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createOdbDnsZoneTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+    String odbDnsZoneId = "odbDnsZoneId1807291843";
+
+    OdbDnsZone actualResponse =
+        client.createOdbDnsZoneAsync(parent, odbDnsZone, odbDnsZoneId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateOdbDnsZoneRequest actualRequest = ((CreateOdbDnsZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(odbDnsZone, actualRequest.getOdbDnsZone());
+    Assert.assertEquals(odbDnsZoneId, actualRequest.getOdbDnsZoneId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createOdbDnsZoneExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      OdbDnsZone odbDnsZone = OdbDnsZone.newBuilder().build();
+      String odbDnsZoneId = "odbDnsZoneId1807291843";
+      client.createOdbDnsZoneAsync(parent, odbDnsZone, odbDnsZoneId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteOdbDnsZoneTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteOdbDnsZoneTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    OdbDnsZoneName name =
+        OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]");
+
+    client.deleteOdbDnsZoneAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteOdbDnsZoneRequest actualRequest = ((DeleteOdbDnsZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteOdbDnsZoneExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      OdbDnsZoneName name =
+          OdbDnsZoneName.of("[PROJECT]", "[LOCATION]", "[ODB_NETWORK]", "[ODB_DNS_ZONE]");
+      client.deleteOdbDnsZoneAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteOdbDnsZoneTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteOdbDnsZoneTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockOracleDatabase.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteOdbDnsZoneAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockOracleDatabase.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteOdbDnsZoneRequest actualRequest = ((DeleteOdbDnsZoneRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteOdbDnsZoneExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockOracleDatabase.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteOdbDnsZoneAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

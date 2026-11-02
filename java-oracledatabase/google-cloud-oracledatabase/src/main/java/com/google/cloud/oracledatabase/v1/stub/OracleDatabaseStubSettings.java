@@ -43,6 +43,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGolden
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbDnsZonesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
@@ -99,6 +100,7 @@ import com.google.cloud.oracledatabase.v1.CreateExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.CreateGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.CreateOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.Database;
@@ -118,6 +120,7 @@ import com.google.cloud.oracledatabase.v1.DeleteExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.DeleteGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.Entitlement;
@@ -137,6 +140,7 @@ import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentRequest;
+import com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
@@ -200,6 +204,8 @@ import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsRequest;
 import com.google.cloud.oracledatabase.v1.ListGoldengateDeploymentsResponse;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsRequest;
 import com.google.cloud.oracledatabase.v1.ListMinorVersionsResponse;
+import com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest;
+import com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse;
 import com.google.cloud.oracledatabase.v1.ListOdbNetworksRequest;
 import com.google.cloud.oracledatabase.v1.ListOdbNetworksResponse;
 import com.google.cloud.oracledatabase.v1.ListOdbSubnetsRequest;
@@ -207,6 +213,7 @@ import com.google.cloud.oracledatabase.v1.ListOdbSubnetsResponse;
 import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesRequest;
 import com.google.cloud.oracledatabase.v1.ListPluggableDatabasesResponse;
 import com.google.cloud.oracledatabase.v1.MinorVersion;
+import com.google.cloud.oracledatabase.v1.OdbDnsZone;
 import com.google.cloud.oracledatabase.v1.OdbNetwork;
 import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
@@ -474,6 +481,16 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final UnaryCallSettings<DeleteOdbSubnetRequest, Operation> deleteOdbSubnetSettings;
   private final OperationCallSettings<DeleteOdbSubnetRequest, Empty, OperationMetadata>
       deleteOdbSubnetOperationSettings;
+  private final PagedCallSettings<
+          ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>
+      listOdbDnsZonesSettings;
+  private final UnaryCallSettings<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneSettings;
+  private final UnaryCallSettings<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneSettings;
+  private final OperationCallSettings<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      createOdbDnsZoneOperationSettings;
+  private final UnaryCallSettings<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneSettings;
+  private final OperationCallSettings<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+      deleteOdbDnsZoneOperationSettings;
   private final PagedCallSettings<
           ListExadbVmClustersRequest, ListExadbVmClustersResponse, ListExadbVmClustersPagedResponse>
       listExadbVmClustersSettings;
@@ -1191,6 +1208,43 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             @Override
             public Iterable<OdbSubnet> extractResources(ListOdbSubnetsResponse payload) {
               return payload.getOdbSubnetsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone>
+      LIST_ODB_DNS_ZONES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListOdbDnsZonesRequest injectToken(
+                ListOdbDnsZonesRequest payload, String token) {
+              return ListOdbDnsZonesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListOdbDnsZonesRequest injectPageSize(
+                ListOdbDnsZonesRequest payload, int pageSize) {
+              return ListOdbDnsZonesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListOdbDnsZonesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListOdbDnsZonesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<OdbDnsZone> extractResources(ListOdbDnsZonesResponse payload) {
+              return payload.getOdbDnsZonesList();
             }
           };
 
@@ -2195,6 +2249,23 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           };
 
   private static final PagedListResponseFactory<
+          ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>
+      LIST_ODB_DNS_ZONES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>() {
+            @Override
+            public ApiFuture<ListOdbDnsZonesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse> callable,
+                ListOdbDnsZonesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListOdbDnsZonesResponse> futureResponse) {
+              PageContext<ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, OdbDnsZone> pageContext =
+                  PageContext.create(callable, LIST_ODB_DNS_ZONES_PAGE_STR_DESC, request, context);
+              return ListOdbDnsZonesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListExadbVmClustersRequest, ListExadbVmClustersResponse, ListExadbVmClustersPagedResponse>
       LIST_EXADB_VM_CLUSTERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -3013,6 +3084,40 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return deleteOdbSubnetOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listOdbDnsZones. */
+  public PagedCallSettings<
+          ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>
+      listOdbDnsZonesSettings() {
+    return listOdbDnsZonesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getOdbDnsZone. */
+  public UnaryCallSettings<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneSettings() {
+    return getOdbDnsZoneSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createOdbDnsZone. */
+  public UnaryCallSettings<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneSettings() {
+    return createOdbDnsZoneSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createOdbDnsZone. */
+  public OperationCallSettings<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      createOdbDnsZoneOperationSettings() {
+    return createOdbDnsZoneOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbDnsZone. */
+  public UnaryCallSettings<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneSettings() {
+    return deleteOdbDnsZoneSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbDnsZone. */
+  public OperationCallSettings<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+      deleteOdbDnsZoneOperationSettings() {
+    return deleteOdbDnsZoneOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listExadbVmClusters. */
   public PagedCallSettings<
           ListExadbVmClustersRequest, ListExadbVmClustersResponse, ListExadbVmClustersPagedResponse>
@@ -3604,6 +3709,12 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     createOdbSubnetOperationSettings = settingsBuilder.createOdbSubnetOperationSettings().build();
     deleteOdbSubnetSettings = settingsBuilder.deleteOdbSubnetSettings().build();
     deleteOdbSubnetOperationSettings = settingsBuilder.deleteOdbSubnetOperationSettings().build();
+    listOdbDnsZonesSettings = settingsBuilder.listOdbDnsZonesSettings().build();
+    getOdbDnsZoneSettings = settingsBuilder.getOdbDnsZoneSettings().build();
+    createOdbDnsZoneSettings = settingsBuilder.createOdbDnsZoneSettings().build();
+    createOdbDnsZoneOperationSettings = settingsBuilder.createOdbDnsZoneOperationSettings().build();
+    deleteOdbDnsZoneSettings = settingsBuilder.deleteOdbDnsZoneSettings().build();
+    deleteOdbDnsZoneOperationSettings = settingsBuilder.deleteOdbDnsZoneOperationSettings().build();
     listExadbVmClustersSettings = settingsBuilder.listExadbVmClustersSettings().build();
     getExadbVmClusterSettings = settingsBuilder.getExadbVmClusterSettings().build();
     createExadbVmClusterSettings = settingsBuilder.createExadbVmClusterSettings().build();
@@ -3873,6 +3984,19 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
         deleteOdbSubnetSettings;
     private final OperationCallSettings.Builder<DeleteOdbSubnetRequest, Empty, OperationMetadata>
         deleteOdbSubnetOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>
+        listOdbDnsZonesSettings;
+    private final UnaryCallSettings.Builder<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneSettings;
+    private final UnaryCallSettings.Builder<CreateOdbDnsZoneRequest, Operation>
+        createOdbDnsZoneSettings;
+    private final OperationCallSettings.Builder<
+            CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+        createOdbDnsZoneOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteOdbDnsZoneRequest, Operation>
+        deleteOdbDnsZoneSettings;
+    private final OperationCallSettings.Builder<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+        deleteOdbDnsZoneOperationSettings;
     private final PagedCallSettings.Builder<
             ListExadbVmClustersRequest,
             ListExadbVmClustersResponse,
@@ -4164,6 +4288,12 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       createOdbSubnetOperationSettings = OperationCallSettings.newBuilder();
       deleteOdbSubnetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOdbSubnetOperationSettings = OperationCallSettings.newBuilder();
+      listOdbDnsZonesSettings = PagedCallSettings.newBuilder(LIST_ODB_DNS_ZONES_PAGE_STR_FACT);
+      getOdbDnsZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createOdbDnsZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createOdbDnsZoneOperationSettings = OperationCallSettings.newBuilder();
+      deleteOdbDnsZoneSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteOdbDnsZoneOperationSettings = OperationCallSettings.newBuilder();
       listExadbVmClustersSettings =
           PagedCallSettings.newBuilder(LIST_EXADB_VM_CLUSTERS_PAGE_STR_FACT);
       getExadbVmClusterSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -4279,6 +4409,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               getOdbSubnetSettings,
               createOdbSubnetSettings,
               deleteOdbSubnetSettings,
+              listOdbDnsZonesSettings,
+              getOdbDnsZoneSettings,
+              createOdbDnsZoneSettings,
+              deleteOdbDnsZoneSettings,
               listExadbVmClustersSettings,
               getExadbVmClusterSettings,
               createExadbVmClusterSettings,
@@ -4411,6 +4545,12 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       createOdbSubnetOperationSettings = settings.createOdbSubnetOperationSettings.toBuilder();
       deleteOdbSubnetSettings = settings.deleteOdbSubnetSettings.toBuilder();
       deleteOdbSubnetOperationSettings = settings.deleteOdbSubnetOperationSettings.toBuilder();
+      listOdbDnsZonesSettings = settings.listOdbDnsZonesSettings.toBuilder();
+      getOdbDnsZoneSettings = settings.getOdbDnsZoneSettings.toBuilder();
+      createOdbDnsZoneSettings = settings.createOdbDnsZoneSettings.toBuilder();
+      createOdbDnsZoneOperationSettings = settings.createOdbDnsZoneOperationSettings.toBuilder();
+      deleteOdbDnsZoneSettings = settings.deleteOdbDnsZoneSettings.toBuilder();
+      deleteOdbDnsZoneOperationSettings = settings.deleteOdbDnsZoneOperationSettings.toBuilder();
       listExadbVmClustersSettings = settings.listExadbVmClustersSettings.toBuilder();
       getExadbVmClusterSettings = settings.getExadbVmClusterSettings.toBuilder();
       createExadbVmClusterSettings = settings.createExadbVmClusterSettings.toBuilder();
@@ -4540,6 +4680,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               getOdbSubnetSettings,
               createOdbSubnetSettings,
               deleteOdbSubnetSettings,
+              listOdbDnsZonesSettings,
+              getOdbDnsZoneSettings,
+              createOdbDnsZoneSettings,
+              deleteOdbDnsZoneSettings,
               listExadbVmClustersSettings,
               getExadbVmClusterSettings,
               createExadbVmClusterSettings,
@@ -4806,6 +4950,26 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
 
       builder
           .deleteOdbSubnetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listOdbDnsZonesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getOdbDnsZoneSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createOdbDnsZoneSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteOdbDnsZoneSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -5466,6 +5630,54 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteOdbSubnetRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createOdbDnsZoneOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateOdbDnsZoneRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(OdbDnsZone.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteOdbDnsZoneOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteOdbDnsZoneRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -6301,6 +6513,42 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     public OperationCallSettings.Builder<DeleteOdbSubnetRequest, Empty, OperationMetadata>
         deleteOdbSubnetOperationSettings() {
       return deleteOdbSubnetOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listOdbDnsZones. */
+    public PagedCallSettings.Builder<
+            ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>
+        listOdbDnsZonesSettings() {
+      return listOdbDnsZonesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getOdbDnsZone. */
+    public UnaryCallSettings.Builder<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneSettings() {
+      return getOdbDnsZoneSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbDnsZone. */
+    public UnaryCallSettings.Builder<CreateOdbDnsZoneRequest, Operation>
+        createOdbDnsZoneSettings() {
+      return createOdbDnsZoneSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbDnsZone. */
+    public OperationCallSettings.Builder<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+        createOdbDnsZoneOperationSettings() {
+      return createOdbDnsZoneOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbDnsZone. */
+    public UnaryCallSettings.Builder<DeleteOdbDnsZoneRequest, Operation>
+        deleteOdbDnsZoneSettings() {
+      return deleteOdbDnsZoneSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbDnsZone. */
+    public OperationCallSettings.Builder<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+        deleteOdbDnsZoneOperationSettings() {
+      return deleteOdbDnsZoneOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listExadbVmClusters. */

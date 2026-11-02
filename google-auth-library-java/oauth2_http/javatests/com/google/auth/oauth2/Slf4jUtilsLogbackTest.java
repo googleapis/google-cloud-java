@@ -32,6 +32,8 @@
 package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -43,6 +45,7 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.UrlEncodedContent;
 import com.google.api.client.util.GenericData;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
@@ -195,6 +198,49 @@ class Slf4jUtilsLogbackTest {
         assertTrue(isValidJson((String) kvp.value));
       }
     }
+    testAppender.stop();
+  }
+
+  @Test
+  void testLogRequest_masksActorTokenAndSubjectToken() throws IOException {
+    testEnvironmentProvider.setEnv(LoggingUtils.GOOGLE_SDK_JAVA_LOGGING, "true");
+    LoggingUtils.setEnvironmentProvider(testEnvironmentProvider);
+
+    TestAppender testAppender = setupTestLogger();
+
+    GenericData tokenRequest = new GenericData();
+    tokenRequest.set("grant_type", "urn:ietf:params:oauth:grant-type:token-exchange");
+    tokenRequest.set("subject_token", "raw_secret_subject_token");
+    tokenRequest.set("actor_token", "raw_secret_actor_token");
+    UrlEncodedContent content = new UrlEncodedContent(tokenRequest);
+
+    MockHttpTransportFactory mockHttpTransportFactory = new MockHttpTransportFactory();
+    HttpRequestFactory requestFactory = mockHttpTransportFactory.create().createRequestFactory();
+    HttpRequest request =
+        requestFactory.buildPostRequest(new GenericUrl(OAuth2Utils.TOKEN_SERVER_URI), content);
+
+    LoggerProvider loggerProvider = mock(LoggerProvider.class, withSettings().withoutAnnotations());
+    when(loggerProvider.getLogger()).thenReturn(LOGGER);
+    LoggingUtils.logRequest(request, loggerProvider, "STS Token Exchange");
+
+    assertEquals(1, testAppender.events.size());
+    String payloadJson = null;
+    for (KeyValuePair kvp : testAppender.events.get(0).getKeyValuePairs()) {
+      if ("request.payload".equals(kvp.key)) {
+        payloadJson = (String) kvp.value;
+      }
+    }
+    assertNotNull(payloadJson);
+    JsonObject payload = JsonParser.parseString(payloadJson).getAsJsonObject();
+
+    // Verify that raw secrets are never logged in plaintext
+    assertNotEquals("raw_secret_subject_token", payload.get("subject_token").getAsString());
+    assertNotEquals("raw_secret_actor_token", payload.get("actor_token").getAsString());
+
+    // Verify that masked values are 64-char SHA-256 hex hashes
+    assertEquals(64, payload.get("subject_token").getAsString().length());
+    assertEquals(64, payload.get("actor_token").getAsString().length());
+
     testAppender.stop();
   }
 

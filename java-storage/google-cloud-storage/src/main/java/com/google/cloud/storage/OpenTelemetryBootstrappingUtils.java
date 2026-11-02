@@ -274,7 +274,8 @@ final class OpenTelemetryBootstrappingUtils {
         "grpc/client/attempt/duration",
         "grpc-java",
         "s",
-        "A view of grpc/client/attempt/duration with histogram boundaries more appropriate for Google Cloud Storage RPCs");
+        "A view of grpc/client/attempt/duration with histogram boundaries more appropriate for"
+            + " Google Cloud Storage RPCs");
     addHistogramView(
         providerBuilder,
         sizeHistogramBoundaries(),
@@ -282,7 +283,8 @@ final class OpenTelemetryBootstrappingUtils {
         "grpc/client/attempt/rcvd_total_compressed_message_size",
         "grpc-java",
         "By",
-        "A view of grpc/client/attempt/rcvd_total_compressed_message_size with histogram boundaries more appropriate for Google Cloud Storage RPCs");
+        "A view of grpc/client/attempt/rcvd_total_compressed_message_size with histogram boundaries"
+            + " more appropriate for Google Cloud Storage RPCs");
     addHistogramView(
         providerBuilder,
         sizeHistogramBoundaries(),
@@ -290,7 +292,8 @@ final class OpenTelemetryBootstrappingUtils {
         "grpc/client/attempt/sent_total_compressed_message_size",
         "grpc-java",
         "By",
-        "A view of grpc/client/attempt/sent_total_compressed_message_size with histogram boundaries more appropriate for Google Cloud Storage RPCs");
+        "A view of grpc/client/attempt/sent_total_compressed_message_size with histogram boundaries"
+            + " more appropriate for Google Cloud Storage RPCs");
 
     return buildMeterProvider(
         cloudMonitoringExporter,

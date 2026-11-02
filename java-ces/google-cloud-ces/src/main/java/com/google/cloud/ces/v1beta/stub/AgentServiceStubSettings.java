@@ -132,6 +132,7 @@ import com.google.cloud.ces.v1beta.Tool;
 import com.google.cloud.ces.v1beta.Toolset;
 import com.google.cloud.ces.v1beta.UpdateAgentRequest;
 import com.google.cloud.ces.v1beta.UpdateAppRequest;
+import com.google.cloud.ces.v1beta.UpdateAppVersionRequest;
 import com.google.cloud.ces.v1beta.UpdateDeploymentRequest;
 import com.google.cloud.ces.v1beta.UpdateExampleRequest;
 import com.google.cloud.ces.v1beta.UpdateGuardrailRequest;
@@ -318,6 +319,7 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
       listAppVersionsSettings;
   private final UnaryCallSettings<GetAppVersionRequest, AppVersion> getAppVersionSettings;
   private final UnaryCallSettings<CreateAppVersionRequest, AppVersion> createAppVersionSettings;
+  private final UnaryCallSettings<UpdateAppVersionRequest, AppVersion> updateAppVersionSettings;
   private final UnaryCallSettings<DeleteAppVersionRequest, Empty> deleteAppVersionSettings;
   private final UnaryCallSettings<RestoreAppVersionRequest, Operation> restoreAppVersionSettings;
   private final OperationCallSettings<
@@ -1192,6 +1194,11 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
     return createAppVersionSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateAppVersion. */
+  public UnaryCallSettings<UpdateAppVersionRequest, AppVersion> updateAppVersionSettings() {
+    return updateAppVersionSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteAppVersion. */
   public UnaryCallSettings<DeleteAppVersionRequest, Empty> deleteAppVersionSettings() {
     return deleteAppVersionSettings;
@@ -1409,6 +1416,7 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
     listAppVersionsSettings = settingsBuilder.listAppVersionsSettings().build();
     getAppVersionSettings = settingsBuilder.getAppVersionSettings().build();
     createAppVersionSettings = settingsBuilder.createAppVersionSettings().build();
+    updateAppVersionSettings = settingsBuilder.updateAppVersionSettings().build();
     deleteAppVersionSettings = settingsBuilder.deleteAppVersionSettings().build();
     restoreAppVersionSettings = settingsBuilder.restoreAppVersionSettings().build();
     restoreAppVersionOperationSettings =
@@ -1522,6 +1530,8 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
     private final UnaryCallSettings.Builder<GetAppVersionRequest, AppVersion> getAppVersionSettings;
     private final UnaryCallSettings.Builder<CreateAppVersionRequest, AppVersion>
         createAppVersionSettings;
+    private final UnaryCallSettings.Builder<UpdateAppVersionRequest, AppVersion>
+        updateAppVersionSettings;
     private final UnaryCallSettings.Builder<DeleteAppVersionRequest, Empty>
         deleteAppVersionSettings;
     private final UnaryCallSettings.Builder<RestoreAppVersionRequest, Operation>
@@ -1635,6 +1645,7 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
       listAppVersionsSettings = PagedCallSettings.newBuilder(LIST_APP_VERSIONS_PAGE_STR_FACT);
       getAppVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAppVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAppVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteAppVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restoreAppVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restoreAppVersionOperationSettings = OperationCallSettings.newBuilder();
@@ -1693,6 +1704,7 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
               listAppVersionsSettings,
               getAppVersionSettings,
               createAppVersionSettings,
+              updateAppVersionSettings,
               deleteAppVersionSettings,
               restoreAppVersionSettings,
               generateAppResourceSettings,
@@ -1758,6 +1770,7 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
       listAppVersionsSettings = settings.listAppVersionsSettings.toBuilder();
       getAppVersionSettings = settings.getAppVersionSettings.toBuilder();
       createAppVersionSettings = settings.createAppVersionSettings.toBuilder();
+      updateAppVersionSettings = settings.updateAppVersionSettings.toBuilder();
       deleteAppVersionSettings = settings.deleteAppVersionSettings.toBuilder();
       restoreAppVersionSettings = settings.restoreAppVersionSettings.toBuilder();
       restoreAppVersionOperationSettings = settings.restoreAppVersionOperationSettings.toBuilder();
@@ -1817,6 +1830,7 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
               listAppVersionsSettings,
               getAppVersionSettings,
               createAppVersionSettings,
+              updateAppVersionSettings,
               deleteAppVersionSettings,
               restoreAppVersionSettings,
               generateAppResourceSettings,
@@ -2078,6 +2092,11 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
 
       builder
           .createAppVersionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAppVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2583,6 +2602,12 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
     public UnaryCallSettings.Builder<CreateAppVersionRequest, AppVersion>
         createAppVersionSettings() {
       return createAppVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAppVersion. */
+    public UnaryCallSettings.Builder<UpdateAppVersionRequest, AppVersion>
+        updateAppVersionSettings() {
+      return updateAppVersionSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteAppVersion. */

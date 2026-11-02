@@ -1124,3 +1124,8 @@ google-cloud-observability-bom:0.0.0:0.1.0-SNAPSHOT
 proto-google-cloud-observability-v1:0.0.0:0.1.0-SNAPSHOT
 grpc-google-cloud-observability-v1:0.0.0:0.1.0-SNAPSHOT
 google-cloud-observability:0.0.0:0.1.0-SNAPSHOT
+google-cloud-designcenter-parent:0.0.0:0.1.0-SNAPSHOT
+google-cloud-designcenter-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-cloud-designcenter-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-designcenter-v1:0.0.0:0.1.0-SNAPSHOT
+google-cloud-designcenter:0.0.0:0.1.0-SNAPSHOT

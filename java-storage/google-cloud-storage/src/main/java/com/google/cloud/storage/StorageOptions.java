@@ -283,7 +283,8 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     if (!hasCustomOtelOrMeterProvider && this.metricInterval != null) {
       checkArgument(
           this.metricInterval.compareTo(Duration.ofSeconds(60)) >= 0,
-          "Metric export interval cannot be less than 60 seconds when using Cloud Monitoring exporter");
+          "Metric export interval cannot be less than 60 seconds when using Cloud Monitoring"
+              + " exporter");
     }
   }
 
@@ -307,7 +308,8 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
     in.defaultReadObject();
     if (this.customMeterProviderConfigured || this.meterProvider != null) {
       LOGGER.warning(
-          "Custom MeterProvider is transient and cannot be serialized across workers; falling back to default provider.");
+          "Custom MeterProvider is transient and cannot be serialized across workers; falling back"
+              + " to default provider.");
     }
   }
 

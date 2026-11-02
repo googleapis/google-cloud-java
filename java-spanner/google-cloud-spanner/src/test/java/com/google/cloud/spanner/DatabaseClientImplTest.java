@@ -29,6 +29,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
@@ -115,6 +116,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -2376,7 +2378,8 @@ public class DatabaseClientImplTest {
                           .setOptimizerStatisticsPackage("custom-package")
                           .build())
                   .build(),
-              Options.directedRead(DIRECTED_READ_OPTIONS1));
+              Options.directedRead(DIRECTED_READ_OPTIONS1),
+              Options.dataBoostEnabled(true));
       try (ResultSet rs = transaction.execute(partitions.get(0))) {
         // Just iterate over the results to execute the query.
         consumeResults(rs);
@@ -2395,6 +2398,8 @@ public class DatabaseClientImplTest {
       assertThat(executeSqlRequest.getQueryOptions().getOptimizerStatisticsPackage())
           .isEqualTo("custom-package");
       assertThat(executeSqlRequest.getDirectedReadOptions()).isEqualTo(DIRECTED_READ_OPTIONS1);
+      assertTrue(executeSqlRequest.getDataBoostEnabled());
+      assertEquals(partitions.get(0).getPartitionToken(), executeSqlRequest.getPartitionToken());
     }
   }
 
@@ -2445,6 +2450,8 @@ public class DatabaseClientImplTest {
       assertThat(executeSqlRequest.getQueryOptions().getOptimizerStatisticsPackage())
           .isEqualTo("custom-package");
       assertThat(executeSqlRequest.getDirectedReadOptions()).isEqualTo(DIRECTED_READ_OPTIONS2);
+      assertFalse(executeSqlRequest.getDataBoostEnabled());
+      assertEquals(partitions.get(0).getPartitionToken(), executeSqlRequest.getPartitionToken());
     }
   }
 
@@ -2472,7 +2479,8 @@ public class DatabaseClientImplTest {
               "FOO",
               KeySet.all(),
               Lists.newArrayList("1"),
-              Options.directedRead(DIRECTED_READ_OPTIONS1));
+              Options.directedRead(DIRECTED_READ_OPTIONS1),
+              Options.dataBoostEnabled(true));
       try (ResultSet rs = transaction.execute(partitions.get(0))) {
         // Just iterate over the results to execute the query.
         consumeResults(rs);
@@ -2487,6 +2495,8 @@ public class DatabaseClientImplTest {
       assertThat(requests.get(requests.size() - 1)).isInstanceOf(ReadRequest.class);
       ReadRequest readRequest = (ReadRequest) requests.get(requests.size() - 1);
       assertThat(readRequest.getDirectedReadOptions()).isEqualTo(DIRECTED_READ_OPTIONS1);
+      assertTrue(readRequest.getDataBoostEnabled());
+      assertEquals(partitions.get(0).getPartitionToken(), readRequest.getPartitionToken());
     }
   }
 
@@ -2530,6 +2540,8 @@ public class DatabaseClientImplTest {
       assertThat(requests.get(requests.size() - 1)).isInstanceOf(ReadRequest.class);
       ReadRequest readRequest = (ReadRequest) requests.get(requests.size() - 1);
       assertThat(readRequest.getDirectedReadOptions()).isEqualTo(DIRECTED_READ_OPTIONS2);
+      assertFalse(readRequest.getDataBoostEnabled());
+      assertEquals(partitions.get(0).getPartitionToken(), readRequest.getPartitionToken());
     }
   }
 
@@ -3142,6 +3154,122 @@ public class DatabaseClientImplTest {
               .getMessage()
               .contains(
                   "NOT_FOUND: Database not found: Database with id invalid-database not found"));
+    }
+  }
+
+  @Test
+  public void testGetDialect_RecoversAfterTransientCreateSessionFailure() throws Exception {
+    mockSpanner.putStatementResult(StatementResult.detectDialectResult(Dialect.POSTGRESQL));
+    mockSpanner.setCreateSessionExecutionTime(
+        SimulatedExecutionTime.ofException(
+            Status.DEADLINE_EXCEEDED
+                .withDescription("Simulated transient outage on createSession call #1")
+                .asRuntimeException()));
+    mockSpanner.freeze();
+    try {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of(TEST_PROJECT, TEST_INSTANCE, TEST_DATABASE));
+      AtomicReference<Throwable> firstCallError = new AtomicReference<>();
+      Thread firstCaller =
+          new Thread(
+              () -> {
+                try {
+                  client.getDialect();
+                } catch (Throwable t) {
+                  firstCallError.set(t);
+                }
+              });
+      firstCaller.start();
+      // Wait (up to 10s) until firstCaller is blocked waiting on the initial multiplexed session.
+      Stopwatch watch = Stopwatch.createStarted();
+      while (firstCaller.getState() != Thread.State.WAITING
+          && firstCaller.getState() != Thread.State.TIMED_WAITING
+          && firstCaller.getState() != Thread.State.TERMINATED
+          && watch.elapsed(TimeUnit.SECONDS) < 10) {
+        Thread.yield();
+      }
+      mockSpanner.unfreeze();
+      firstCaller.join(10_000L);
+      assertFalse(firstCaller.isAlive());
+
+      assertThat(firstCallError.get()).isInstanceOf(SpannerException.class);
+      SpannerException firstException = (SpannerException) firstCallError.get();
+      assertEquals(ErrorCode.DEADLINE_EXCEEDED, firstException.getErrorCode());
+
+      // Wait for the retry CreateSession request to reach the server so multiplexedSessionReference
+      // has been updated to the new session future.
+      mockSpanner.waitForRequestsToContain(
+          message -> message instanceof CreateSessionRequest, 10_000L);
+      try (ResultSet rs = client.singleUse().executeQuery(SELECT1)) {
+        assertTrue(rs.next());
+      }
+
+      assertEquals(Dialect.POSTGRESQL, client.getDialect());
+      assertEquals(Dialect.POSTGRESQL, client.getDialect());
+      assertEquals(
+          Statement.newBuilder("select id from test where b=$1").bind("p1").to(true).build(),
+          client
+              .getStatementFactory()
+              .withUnnamedParameters("select id from test where b=?", true));
+    } finally {
+      mockSpanner.unfreeze();
+      mockSpanner.putStatementResult(
+          StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));
+    }
+  }
+
+  @Test
+  public void testGetDialectAndStatementFactory_RecoverAfterTransientQueryFailure() {
+    mockSpanner.putStatementResult(
+        StatementResult.exception(
+            MultiplexedSessionDatabaseClient.DETERMINE_DIALECT_STATEMENT,
+            Status.DEADLINE_EXCEEDED
+                .withDescription("Transient dialect query timeout")
+                .asRuntimeException()));
+    try {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of(TEST_PROJECT, TEST_INSTANCE, TEST_DATABASE));
+
+      SpannerException dialectException = assertThrows(SpannerException.class, client::getDialect);
+      assertEquals(ErrorCode.DEADLINE_EXCEEDED, dialectException.getErrorCode());
+
+      SpannerException factoryException =
+          assertThrows(SpannerException.class, client::getStatementFactory);
+      assertEquals(ErrorCode.DEADLINE_EXCEEDED, factoryException.getErrorCode());
+
+      mockSpanner.putStatementResult(StatementResult.detectDialectResult(Dialect.POSTGRESQL));
+
+      assertEquals(Dialect.POSTGRESQL, client.getDialect());
+      assertEquals(
+          Statement.newBuilder("select id from test where b=$1").bind("p1").to(true).build(),
+          client
+              .getStatementFactory()
+              .withUnnamedParameters("select id from test where b=?", true));
+    } finally {
+      mockSpanner.putStatementResult(
+          StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));
+    }
+  }
+
+  @Test
+  public void testGetDialect_CachesNonRetryableQueryFailure() {
+    mockSpanner.putStatementResult(
+        StatementResult.exception(
+            MultiplexedSessionDatabaseClient.DETERMINE_DIALECT_STATEMENT,
+            Status.PERMISSION_DENIED
+                .withDescription("Permission denied on information_schema")
+                .asRuntimeException()));
+    try {
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of(TEST_PROJECT, TEST_INSTANCE, "non-retryable-db"));
+
+      SpannerException e1 = assertThrows(SpannerException.class, client::getDialect);
+      assertEquals(ErrorCode.PERMISSION_DENIED, e1.getErrorCode());
+      SpannerException e2 = assertThrows(SpannerException.class, client::getDialect);
+      assertSame(e1, e2);
+    } finally {
+      mockSpanner.putStatementResult(
+          StatementResult.detectDialectResult(Dialect.GOOGLE_STANDARD_SQL));
     }
   }
 

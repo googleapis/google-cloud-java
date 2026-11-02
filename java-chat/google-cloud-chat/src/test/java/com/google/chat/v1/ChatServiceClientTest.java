@@ -3838,4 +3838,48 @@ public class ChatServiceClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void replaceMessageCardsTest() throws Exception {
+    ReplaceMessageCardsResponse expectedResponse = ReplaceMessageCardsResponse.newBuilder().build();
+    mockChatService.addResponse(expectedResponse);
+
+    ReplaceMessageCardsRequest request =
+        ReplaceMessageCardsRequest.newBuilder()
+            .setName(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+            .addAllCardsV2(new ArrayList<CardWithId>())
+            .build();
+
+    ReplaceMessageCardsResponse actualResponse = client.replaceMessageCards(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ReplaceMessageCardsRequest actualRequest = ((ReplaceMessageCardsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getCardsV2List(), actualRequest.getCardsV2List());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void replaceMessageCardsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      ReplaceMessageCardsRequest request =
+          ReplaceMessageCardsRequest.newBuilder()
+              .setName(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+              .addAllCardsV2(new ArrayList<CardWithId>())
+              .build();
+      client.replaceMessageCards(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

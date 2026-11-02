@@ -48,7 +48,7 @@ class BigQueryFieldValueListWrapper {
 
   // This flag marks the end of the stream for the ResultSet
   private boolean isLast = false;
-  private final Exception exception;
+  private final Throwable exception;
 
   static BigQueryFieldValueListWrapper ofEndOfStream(FieldList fieldList) {
     return new BigQueryFieldValueListWrapper(fieldList, null, null, null, true, null);
@@ -106,7 +106,7 @@ class BigQueryFieldValueListWrapper {
         fieldList, null, arrayFieldValueList, null, isLastFlag, null);
   }
 
-  static BigQueryFieldValueListWrapper ofError(Exception exception) {
+  static BigQueryFieldValueListWrapper ofError(Throwable exception) {
     return new BigQueryFieldValueListWrapper(null, null, null, null, true, exception);
   }
 
@@ -116,7 +116,7 @@ class BigQueryFieldValueListWrapper {
       List<FieldValue> arrayFieldValueList,
       Object[] rowValues,
       boolean isLast,
-      Exception exception) {
+      Throwable exception) {
     this.fieldList = fieldList;
     this.fieldValueList = fieldValueList;
     this.arrayFieldValueList = arrayFieldValueList;
@@ -165,7 +165,7 @@ class BigQueryFieldValueListWrapper {
     return this.isLast;
   }
 
-  Exception getException() {
+  Throwable getException() {
     return this.exception;
   }
 }
