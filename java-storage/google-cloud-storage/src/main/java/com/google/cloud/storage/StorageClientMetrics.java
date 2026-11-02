@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage;
 
+import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
@@ -25,11 +26,13 @@ import io.opentelemetry.api.metrics.LongHistogram;
 import io.opentelemetry.api.metrics.LongUpDownCounter;
 import io.opentelemetry.api.metrics.Meter;
 import io.opentelemetry.api.metrics.MeterProvider;
-import java.util.UUID;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import java.util.logging.Logger;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Package-private instrument registry for OpenTelemetry client metrics. */
-final class StorageClientMetrics {
+final class StorageClientMetrics implements AutoCloseable {
+  private static final Logger LOGGER = Logger.getLogger(StorageClientMetrics.class.getName());
   static final String METER_NAME = "com.google.cloud.storage";
 
   // Standard client attribute keys and values
@@ -39,8 +42,6 @@ final class StorageClientMetrics {
       AttributeKey.stringKey("gcp.client.service");
   static final AttributeKey<String> KEY_GCP_CLIENT_ARTIFACT =
       AttributeKey.stringKey("gcp.client.artifact");
-  static final AttributeKey<String> KEY_GCP_CLIENT_INSTANCE_ID =
-      AttributeKey.stringKey("gcp.client.instance_id");
 
   static final AttributeKey<String> KEY_GCP_STORAGE_OPERATION =
       AttributeKey.stringKey("gcp.storage.operation");
@@ -68,11 +69,6 @@ final class StorageClientMetrics {
 
   static final String NETWORK_IO_DIRECTION_RECEIVE = "receive";
   static final String NETWORK_IO_DIRECTION_TRANSMIT = "transmit";
-
-  static final String ATTRIBUTE_GCP_CLIENT_VERSION = "gcp.client.version";
-  static final String ATTRIBUTE_GCP_CLIENT_SERVICE = "gcp.client.service";
-  static final String ATTRIBUTE_GCP_CLIENT_ARTIFACT = "gcp.client.artifact";
-  static final String ATTRIBUTE_GCP_CLIENT_INSTANCE_ID = "gcp.client.instance_id";
 
   static final String SERVICE_STORAGE = "storage";
   static final String ARTIFACT_STORAGE = "com.google.cloud:google-cloud-storage";
@@ -103,6 +99,87 @@ final class StorageClientMetrics {
   static final String METRIC_GCP_STORAGE_CLIENT_AUTH_CREDENTIAL_REFRESH_DURATION =
       "gcp.storage.client.auth.credential_refresh.duration";
 
+  @Nullable
+  static StorageClientMetrics fromOptions(StorageOptions options) {
+    if (!options.isEnableOtelMetrics()) {
+      return null;
+    }
+    MeterProvider mp = options.getMeterProvider();
+    if (mp == null && options.isCustomOpenTelemetryConfigured()) {
+      OpenTelemetry otel = options.getOpenTelemetry();
+      if (otel != null) {
+        mp = otel.getMeterProvider();
+      }
+    }
+    SdkMeterProvider ownedMeterProvider = null;
+    if (mp == null) {
+      ownedMeterProvider =
+          OpenTelemetryBootstrappingUtils.createDefaultClientMeterProvider(
+              options.getHost(),
+              options.getProjectId(),
+              options.getUniverseDomain(),
+              options.getMetricInterval(),
+              options instanceof GrpcStorageOptions ? "grpc" : "json");
+      mp = ownedMeterProvider;
+    }
+    if (mp == null) {
+      return null;
+    }
+    Meter meter =
+        mp.meterBuilder(METER_NAME).setInstrumentationVersion(StorageOptions.version()).build();
+    Attributes clientAttributes =
+        Attributes.builder()
+            .put(KEY_GCP_CLIENT_SERVICE, SERVICE_STORAGE)
+            .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+            .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
+            .build();
+    AttributesBuilder baseBuilder =
+        clientAttributes.toBuilder()
+            .put(KEY_RPC_SYSTEM_NAME, options instanceof GrpcStorageOptions ? "grpc" : "http");
+    String serverAddress = OpenTelemetryBootstrappingUtils.extractServerAddress(options.getHost());
+    if (serverAddress != null && !serverAddress.isEmpty()) {
+      baseBuilder.put(KEY_SERVER_ADDRESS, serverAddress);
+    }
+    return new StorageClientMetrics(
+        meter,
+        clientAttributes,
+        baseBuilder.build(),
+        ownedMeterProvider,
+        /* enableOtelMetrics= */ true,
+        options.isEnableOtelDebugMetrics());
+  }
+
+  static StorageClientMetrics create(
+      MeterProvider meterProvider, boolean enableOtelMetrics, boolean enableOtelDebugMetrics) {
+    return create(
+        meterProvider, (SdkMeterProvider) null, enableOtelMetrics, enableOtelDebugMetrics);
+  }
+
+  static StorageClientMetrics create(
+      MeterProvider meterProvider,
+      @Nullable SdkMeterProvider ownedMeterProvider,
+      boolean enableOtelMetrics,
+      boolean enableOtelDebugMetrics) {
+    Meter meter =
+        meterProvider
+            .meterBuilder(METER_NAME)
+            .setInstrumentationVersion(StorageOptions.version())
+            .build();
+    Attributes clientAttributes =
+        Attributes.builder()
+            .put(KEY_GCP_CLIENT_SERVICE, SERVICE_STORAGE)
+            .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
+            .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
+            .build();
+    return new StorageClientMetrics(
+        meter,
+        clientAttributes,
+        clientAttributes,
+        ownedMeterProvider,
+        enableOtelMetrics,
+        enableOtelDebugMetrics);
+  }
+
   @Nullable private final DoubleHistogram rpcClientCallDuration;
   @Nullable private final DoubleHistogram httpClientRequestDuration;
   @Nullable private final DoubleHistogram gcpClientRequestDuration;
@@ -121,53 +198,19 @@ final class StorageClientMetrics {
   @Nullable private final DoubleHistogram credentialRefreshDuration;
 
   private final Attributes clientAttributes;
+  private final Attributes baseAttributes;
+  @Nullable private final SdkMeterProvider ownedMeterProvider;
 
-  static StorageClientMetrics create(
-      MeterProvider meterProvider, boolean enableOtelMetrics, boolean enableOtelDebugMetrics) {
-    return create(
-        meterProvider, UUID.randomUUID().toString(), enableOtelMetrics, enableOtelDebugMetrics);
-  }
-
-  static StorageClientMetrics create(
-      MeterProvider meterProvider,
-      String instanceId,
-      boolean enableOtelMetrics,
-      boolean enableOtelDebugMetrics) {
-    Meter meter =
-        meterProvider
-            .meterBuilder(METER_NAME)
-            .setInstrumentationVersion(StorageOptions.version())
-            .build();
-    Attributes clientAttributes =
-        Attributes.builder()
-            .put(KEY_GCP_CLIENT_SERVICE, SERVICE_STORAGE)
-            .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
-            .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
-            .put(KEY_GCP_CLIENT_INSTANCE_ID, instanceId)
-            .build();
-    return new StorageClientMetrics(
-        meter, clientAttributes, enableOtelMetrics, enableOtelDebugMetrics);
-  }
-
-  StorageClientMetrics(Meter meter, boolean enableOtelMetrics, boolean enableOtelDebugMetrics) {
-    this(
-        meter,
-        Attributes.builder()
-            .put(KEY_GCP_CLIENT_SERVICE, SERVICE_STORAGE)
-            .put(KEY_GCP_CLIENT_VERSION, StorageOptions.version())
-            .put(KEY_GCP_CLIENT_ARTIFACT, ARTIFACT_STORAGE)
-            .put(KEY_GCP_CLIENT_INSTANCE_ID, UUID.randomUUID().toString())
-            .build(),
-        enableOtelMetrics,
-        enableOtelDebugMetrics);
-  }
-
-  StorageClientMetrics(
+  private StorageClientMetrics(
       Meter meter,
       Attributes clientAttributes,
+      Attributes baseAttributes,
+      @Nullable SdkMeterProvider ownedMeterProvider,
       boolean enableOtelMetrics,
       boolean enableOtelDebugMetrics) {
     this.clientAttributes = clientAttributes;
+    this.baseAttributes = baseAttributes;
+    this.ownedMeterProvider = ownedMeterProvider;
 
     if (enableOtelMetrics) {
       this.rpcClientCallDuration =
@@ -395,5 +438,36 @@ final class StorageClientMetrics {
 
   @Nullable DoubleHistogram getCredentialRefreshDuration() {
     return credentialRefreshDuration;
+  }
+
+  StorageMetricsContext createContext(String operationName) {
+    return StorageMetricsContext.create(operationName, baseAttributes);
+  }
+
+  StorageMetricsContext createMultiStepContext(String operationName) {
+    return StorageMetricsContext.createForMultiStep(operationName, baseAttributes);
+  }
+
+  @Nullable
+  static StorageMetricsContext createContext(
+      @Nullable StorageClientMetrics metrics, String operationName) {
+    return metrics != null ? metrics.createContext(operationName) : null;
+  }
+
+  @Nullable
+  static StorageMetricsContext createMultiStepContext(
+      @Nullable StorageClientMetrics metrics, String operationName) {
+    return metrics != null ? metrics.createMultiStepContext(operationName) : null;
+  }
+
+  @Override
+  public void close() {
+    if (ownedMeterProvider != null) {
+      try {
+        ownedMeterProvider.close();
+      } catch (Exception e) {
+        LOGGER.warning("Failed to close storageClientMetrics: " + e.getMessage());
+      }
+    }
   }
 }
