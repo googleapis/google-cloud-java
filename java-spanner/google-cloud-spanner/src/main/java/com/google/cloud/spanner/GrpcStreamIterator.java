@@ -86,7 +86,7 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
   private boolean callCleared;
   private boolean closed;
   @Nullable private String closeMessage;
-  private final boolean withBeginTransaction;
+  private volatile boolean withBeginTransaction;
   private final boolean lastStatement;
   @Nullable private volatile Timeout streamWaitTimeout;
   @Nullable private volatile SpannerException error;
@@ -154,6 +154,14 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
         onStreamMessage(pending);
       }
     }
+  }
+
+  @VisibleForTesting
+  void setCall(SpannerRpc.StreamingCall call, boolean withBeginTransaction) {
+    synchronized (this) {
+      this.withBeginTransaction = withBeginTransaction;
+    }
+    setCall(call);
   }
 
   void setCall(SpannerRpc.StreamingCall call) {
