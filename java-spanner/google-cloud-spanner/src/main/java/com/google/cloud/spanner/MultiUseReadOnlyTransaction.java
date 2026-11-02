@@ -483,7 +483,7 @@ class MultiUseReadOnlyTransaction extends AbstractReadContext implements ReadOnl
   }
 
   @Override
-  void onStartFailed(boolean withBeginTransaction, Throwable throwable) {
+  void onStartFailed(boolean withBeginTransaction, boolean lastStatement, Throwable throwable) {
     if (withBeginTransaction) {
       failTransactionIdFuture(throwable);
     }
