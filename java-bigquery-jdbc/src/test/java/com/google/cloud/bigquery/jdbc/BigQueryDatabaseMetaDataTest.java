@@ -726,6 +726,8 @@ public class BigQueryDatabaseMetaDataTest {
     // Add rows in unsorted order (based on TYPE, CAT, SCHEM, NAME)
     results.add(createTableRow("cat_a", "sch_z", "table_1", "TABLE", schemaFields));
     results.add(createTableRow("cat_b", "sch_a", "view_1", "VIEW", schemaFields));
+    results.add(
+        createTableRow("cat_a", "sch_a", "RetailGraph.Product", "GRAPH TABLE", schemaFields));
     results.add(createTableRow("cat_a", "sch_c", "table_2", "TABLE", schemaFields));
     results.add(createTableRow(null, "sch_b", "table_0", "TABLE", schemaFields));
     results.add(createTableRow("cat_a", "sch_z", "table_0", "TABLE", schemaFields));
@@ -734,44 +736,51 @@ public class BigQueryDatabaseMetaDataTest {
     Comparator<FieldValueList> comparator = dbMetadata.defineGetTablesComparator(schemaFields);
     dbMetadata.sortResults(results, comparator, "getTables", dbMetadata.LOG);
 
-    // Expected order: TABLEs first, then VIEWs. Within type, sort by CAT, SCHEM, NAME
-    assertEquals(6, results.size());
+    // Expected order: GRAPH TABLE first, then TABLEs, then VIEWs. Within type, sort by CAT, SCHEM,
+    // NAME
+    assertEquals(7, results.size());
 
-    // 1. Null cat, sch_b, table_0, TABLE
-    assertTrue(results.get(0).get("TABLE_CAT").isNull(), "Row 0 TABLE_CAT should be null");
-    assertEquals("sch_b", results.get(0).get("TABLE_SCHEM").getStringValue());
-    assertEquals("table_0", results.get(0).get("TABLE_NAME").getStringValue());
-    assertEquals("TABLE", results.get(0).get("TABLE_TYPE").getStringValue());
+    // 1. cat_a, sch_a, RetailGraph.Product, GRAPH TABLE
+    assertEquals("cat_a", results.get(0).get("TABLE_CAT").getStringValue());
+    assertEquals("sch_a", results.get(0).get("TABLE_SCHEM").getStringValue());
+    assertEquals("RetailGraph.Product", results.get(0).get("TABLE_NAME").getStringValue());
+    assertEquals("GRAPH TABLE", results.get(0).get("TABLE_TYPE").getStringValue());
 
-    // 2. cat_a, sch_c, table_2, TABLE
-    assertEquals("cat_a", results.get(1).get("TABLE_CAT").getStringValue());
-    assertEquals("sch_c", results.get(1).get("TABLE_SCHEM").getStringValue());
-    assertEquals("table_2", results.get(1).get("TABLE_NAME").getStringValue());
+    // 2. Null cat, sch_b, table_0, TABLE
+    assertTrue(results.get(1).get("TABLE_CAT").isNull(), "Row 1 TABLE_CAT should be null");
+    assertEquals("sch_b", results.get(1).get("TABLE_SCHEM").getStringValue());
+    assertEquals("table_0", results.get(1).get("TABLE_NAME").getStringValue());
     assertEquals("TABLE", results.get(1).get("TABLE_TYPE").getStringValue());
 
-    // 3. cat_a, sch_z, table_0, TABLE
+    // 3. cat_a, sch_c, table_2, TABLE
     assertEquals("cat_a", results.get(2).get("TABLE_CAT").getStringValue());
-    assertEquals("sch_z", results.get(2).get("TABLE_SCHEM").getStringValue());
-    assertEquals("table_0", results.get(2).get("TABLE_NAME").getStringValue());
+    assertEquals("sch_c", results.get(2).get("TABLE_SCHEM").getStringValue());
+    assertEquals("table_2", results.get(2).get("TABLE_NAME").getStringValue());
     assertEquals("TABLE", results.get(2).get("TABLE_TYPE").getStringValue());
 
-    // 4. cat_a, sch_z, table_1, TABLE
+    // 4. cat_a, sch_z, table_0, TABLE
     assertEquals("cat_a", results.get(3).get("TABLE_CAT").getStringValue());
     assertEquals("sch_z", results.get(3).get("TABLE_SCHEM").getStringValue());
-    assertEquals("table_1", results.get(3).get("TABLE_NAME").getStringValue());
+    assertEquals("table_0", results.get(3).get("TABLE_NAME").getStringValue());
     assertEquals("TABLE", results.get(3).get("TABLE_TYPE").getStringValue());
 
-    // 5. cat_a, null, view_0, VIEW
+    // 5. cat_a, sch_z, table_1, TABLE
     assertEquals("cat_a", results.get(4).get("TABLE_CAT").getStringValue());
-    assertTrue(results.get(4).get("TABLE_SCHEM").isNull(), "Row 4 TABLE_SCHEM should be null");
-    assertEquals("view_0", results.get(4).get("TABLE_NAME").getStringValue());
-    assertEquals("VIEW", results.get(4).get("TABLE_TYPE").getStringValue());
+    assertEquals("sch_z", results.get(4).get("TABLE_SCHEM").getStringValue());
+    assertEquals("table_1", results.get(4).get("TABLE_NAME").getStringValue());
+    assertEquals("TABLE", results.get(4).get("TABLE_TYPE").getStringValue());
 
-    // 6. cat_b, sch_a, view_1, VIEW
-    assertEquals("cat_b", results.get(5).get("TABLE_CAT").getStringValue());
-    assertEquals("sch_a", results.get(5).get("TABLE_SCHEM").getStringValue());
-    assertEquals("view_1", results.get(5).get("TABLE_NAME").getStringValue());
+    // 6. cat_a, null, view_0, VIEW
+    assertEquals("cat_a", results.get(5).get("TABLE_CAT").getStringValue());
+    assertTrue(results.get(5).get("TABLE_SCHEM").isNull(), "Row 5 TABLE_SCHEM should be null");
+    assertEquals("view_0", results.get(5).get("TABLE_NAME").getStringValue());
     assertEquals("VIEW", results.get(5).get("TABLE_TYPE").getStringValue());
+
+    // 7. cat_b, sch_a, view_1, VIEW
+    assertEquals("cat_b", results.get(6).get("TABLE_CAT").getStringValue());
+    assertEquals("sch_a", results.get(6).get("TABLE_SCHEM").getStringValue());
+    assertEquals("view_1", results.get(6).get("TABLE_NAME").getStringValue());
+    assertEquals("VIEW", results.get(6).get("TABLE_TYPE").getStringValue());
   }
 
   @Test
@@ -3950,6 +3959,81 @@ public class BigQueryDatabaseMetaDataTest {
             schemaFields);
     assertEquals("Total line amount", computedRow.get("REMARKS").getStringValue());
     assertEquals("YES", computedRow.get("IS_GENERATEDCOLUMN").getStringValue());
+  }
+
+  public void testShouldSkipGraphTables() {
+    Set<String> tableOnly = Collections.singleton("TABLE");
+    Set<String> graphIncluded = new HashSet<>(Arrays.asList("TABLE", "GRAPH TABLE"));
+
+    // Disabled connection property -> always skip
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(false);
+    assertTrue(dbMetadata.shouldSkipGraphTables(null, null));
+    assertTrue(dbMetadata.shouldSkipGraphTables("%", graphIncluded));
+    assertTrue(dbMetadata.shouldSkipGraphTables("RetailGraph.Product", graphIncluded));
+
+    // Enabled connection property
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
+    // Requested types exclude GRAPH TABLE -> skip
+    assertTrue(dbMetadata.shouldSkipGraphTables("%", tableOnly));
+    // Plain table names without '%' or '.' (including snake_case with '_') -> skip
+    assertTrue(dbMetadata.shouldSkipGraphTables("my_normal_table", null));
+    assertTrue(dbMetadata.shouldSkipGraphTables("plain_table", graphIncluded));
+
+    // Wildcard '%', null pattern, or dot-qualified graph table names -> do not skip
+    assertFalse(dbMetadata.shouldSkipGraphTables(null, null));
+    assertFalse(dbMetadata.shouldSkipGraphTables("%", null));
+    assertFalse(dbMetadata.shouldSkipGraphTables("RetailGraph.Product", null));
+    assertFalse(dbMetadata.shouldSkipGraphTables("Graph_.Person", graphIncluded));
+    assertFalse(dbMetadata.shouldSkipGraphTables("my_graph.%", graphIncluded));
+  }
+
+  @Test
+  public void testResolveGraphRegion() throws SQLException {
+    when(bigQueryConnection.getLocation()).thenReturn(null);
+    assertEquals("region-us", dbMetadata.resolveGraphRegion());
+
+    when(bigQueryConnection.getLocation()).thenReturn("   ");
+    assertEquals("region-us", dbMetadata.resolveGraphRegion());
+
+    when(bigQueryConnection.getLocation()).thenReturn("US");
+    assertEquals("region-us", dbMetadata.resolveGraphRegion());
+
+    when(bigQueryConnection.getLocation()).thenReturn("us-central1");
+    assertEquals("region-us-central1", dbMetadata.resolveGraphRegion());
+
+    when(bigQueryConnection.getLocation()).thenReturn("region-eu");
+    assertEquals("region-eu", dbMetadata.resolveGraphRegion());
+  }
+
+  @Test
+  public void testQuoteIdentifier() throws SQLException {
+    assertEquals("`my-project_1`", BigQueryDatabaseMetaData.quoteIdentifier("my-project_1"));
+    assertEquals("`my_dataset`", BigQueryDatabaseMetaData.quoteIdentifier("my_dataset"));
+    assertEquals("`region-us`", BigQueryDatabaseMetaData.quoteIdentifier("region-us"));
+
+    assertThrows(BigQueryJdbcException.class, () -> BigQueryDatabaseMetaData.quoteIdentifier(null));
+    assertThrows(BigQueryJdbcException.class, () -> BigQueryDatabaseMetaData.quoteIdentifier(""));
+    assertThrows(
+        BigQueryJdbcException.class, () -> BigQueryDatabaseMetaData.quoteIdentifier("bad`id"));
+    assertThrows(
+        BigQueryJdbcException.class, () -> BigQueryDatabaseMetaData.quoteIdentifier("drop;table"));
+  }
+
+  @Test
+  public void testGraphTablesSqlContent() throws SQLException {
+    String datasetSql =
+        dbMetadata.replaceSqlParameters(
+            BigQueryDatabaseMetaData.getGraphTablesDatasetSqlContent(),
+            BigQueryDatabaseMetaData.quoteIdentifier("my-project"),
+            BigQueryDatabaseMetaData.quoteIdentifier("my_dataset"));
+    assertThat(datasetSql).contains("`my-project`.`my_dataset`.INFORMATION_SCHEMA.PROPERTY_GRAPHS");
+
+    String regionSql =
+        dbMetadata.replaceSqlParameters(
+            BigQueryDatabaseMetaData.getGraphTablesRegionSqlContent(),
+            BigQueryDatabaseMetaData.quoteIdentifier("my-project"),
+            BigQueryDatabaseMetaData.quoteIdentifier("region-us"));
+    assertThat(regionSql).contains("`my-project`.`region-us`.INFORMATION_SCHEMA.PROPERTY_GRAPHS");
   }
 
   @FunctionalInterface

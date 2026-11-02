@@ -1325,7 +1325,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                       && requestedTypes.contains(GRAPH_TABLE_TYPE);
               boolean isExactGraphTableName =
                   tableNamePattern != null
-                      && !needsListing(tableNamePattern)
+                      && !tableNamePattern.contains("%")
                       && tableNamePattern.contains(".");
               if (!isExactGraphTableName && !onlyGraphTablesRequested) {
                 processTargetTablesConcurrently(
@@ -1470,7 +1470,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             Comparator.nullsFirst(String::compareTo));
   }
 
-  private static String quoteIdentifier(String identifier) throws SQLException {
+  static String quoteIdentifier(String identifier) throws SQLException {
     if (identifier == null || !VALID_IDENTIFIER_PATTERN.matcher(identifier).matches()) {
       throw new BigQueryJdbcException(
           String.format("Invalid BigQuery identifier: '%s'", identifier));
@@ -1490,17 +1490,18 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return true;
     }
     if (tableNamePattern != null
-        && !needsListing(tableNamePattern)
+        && !tableNamePattern.contains("%")
         && !tableNamePattern.contains(".")) {
       return true;
     }
     return false;
   }
 
-  private String resolveGraphRegion() throws SQLException {
+  String resolveGraphRegion() throws SQLException {
     String location = this.connection != null ? this.connection.getLocation() : null;
     if (location == null || location.trim().isEmpty()) {
       location = DEFAULT_GRAPH_REGION;
+      LOG.info(String.format("Deafulting to Graph Location %s", DEFAULT_GRAPH_REGION));
     }
     String normalized = location.trim().toLowerCase(Locale.US);
     return normalized.startsWith("region-") ? normalized : "region-" + normalized;
@@ -1518,12 +1519,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return;
     }
 
+    LOG.info("Appending Graph table rows");
+
     List<String> targetCatalogs =
         effectiveCatalog != null
             ? Collections.singletonList(effectiveCatalog)
             : getAccessibleCatalogNames();
     boolean isExactDataset =
-        effectiveSchemaPattern != null && !needsListing(effectiveSchemaPattern);
+        effectiveSchemaPattern != null && !effectiveSchemaPattern.contains("%");
     String effectiveTablePattern = (tableNamePattern == null) ? "%" : tableNamePattern;
 
     for (String project : targetCatalogs) {
@@ -1706,7 +1709,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                   Collections.synchronizedList(new ArrayList<>());
               boolean isExactGraphTableName =
                   tableNamePattern != null
-                      && !needsListing(tableNamePattern)
+                      && !tableNamePattern.contains("%")
                       && tableNamePattern.contains(".");
               if (!isExactGraphTableName) {
                 processTargetTablesConcurrently(
@@ -1824,7 +1827,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             ? Collections.singletonList(effectiveCatalog)
             : getAccessibleCatalogNames();
     boolean isExactDataset =
-        effectiveSchemaPattern != null && !needsListing(effectiveSchemaPattern);
+        effectiveSchemaPattern != null && !effectiveSchemaPattern.contains("%");
     String effectiveSchemaLike = (effectiveSchemaPattern == null) ? "%" : effectiveSchemaPattern;
     String effectiveTableLike = (tableNamePattern == null) ? "%" : tableNamePattern;
     String effectiveColumnLike = (columnNamePattern == null) ? "%" : columnNamePattern;
@@ -5150,14 +5153,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return exportedKeysSqlContent;
   }
 
-  private static synchronized String getGraphTablesDatasetSqlContent() {
+  static synchronized String getGraphTablesDatasetSqlContent() {
     if (graphTablesDatasetSqlContent == null) {
       graphTablesDatasetSqlContent = readSqlFromFile(GET_GRAPH_TABLES_DATASET_SQL);
     }
     return graphTablesDatasetSqlContent;
   }
 
-  private static synchronized String getGraphTablesRegionSqlContent() {
+  static synchronized String getGraphTablesRegionSqlContent() {
     if (graphTablesRegionSqlContent == null) {
       graphTablesRegionSqlContent = readSqlFromFile(GET_GRAPH_TABLES_REGION_SQL);
     }
