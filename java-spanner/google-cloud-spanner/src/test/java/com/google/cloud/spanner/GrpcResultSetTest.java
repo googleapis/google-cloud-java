@@ -52,7 +52,6 @@ import com.google.spanner.v1.QueryPlan;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.ResultSetStats;
 import com.google.spanner.v1.Transaction;
-import io.opencensus.trace.BlankSpan;
 import io.opencensus.trace.Tracing;
 import io.opentelemetry.api.OpenTelemetry;
 import java.math.BigDecimal;
@@ -1486,12 +1485,17 @@ public class GrpcResultSetTest {
     CountDownLatch startStreamEntered = new CountDownLatch(1);
     CountDownLatch allowStartStreamToComplete = new CountDownLatch(1);
 
+    // The active tracing framework is JVM-global state that other test classes may have set.
+    // Create the parent span through the TraceWrapper, so its type always matches the active
+    // tracing framework.
+    TraceWrapper tracer =
+        new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false);
     ResumableStreamIterator resumableStreamIterator =
         new ResumableStreamIterator(
             10,
             "",
-            new OpenCensusSpan(BlankSpan.INSTANCE),
-            new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
+            tracer.getBlankSpan(),
+            tracer,
             DefaultErrorHandler.INSTANCE,
             RetrySettings.newBuilder().build(),
             Collections.emptySet(),
