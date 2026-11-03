@@ -74,7 +74,20 @@ import javax.annotation.concurrent.GuardedBy;
 public class ClientConfigurationManager implements AutoCloseable {
   private static final Logger logger = Logger.getLogger(ClientConfigurationManager.class.getName());
 
+  /**
+   * System property providing a textproto {@link ClientConfiguration} to use locally instead of
+   * polling the server. Used as-is by default, or merged on top of {@link #loadDefault()} when
+   * {@link #OVERRIDE_USE_DEFAULT_SYS_PROP_KEY} is {@code true}.
+   */
   public static final String OVERRIDE_SYS_PROP_KEY = "bigtable.internal.client-config-override";
+
+  /**
+   * Boolean system property that, when {@code true}, uses {@link #loadDefault()} as the base for
+   * {@link #OVERRIDE_SYS_PROP_KEY}. Ignored when {@link #OVERRIDE_SYS_PROP_KEY} is not set.
+   */
+  public static final String OVERRIDE_USE_DEFAULT_SYS_PROP_KEY =
+      "bigtable.internal.client-config-override-use-default";
+
   public static final String DISABLE_DIRECT_ACCESS_FALLBACK_ENV_VAR =
       "CBT_DISABLE_DIRECT_ACCESS_FALLBACK";
   public static final String DISABLE_DIRECT_ACCESS_FALLBACK_SYS_PROP_KEY =
@@ -125,6 +138,7 @@ public class ClientConfigurationManager implements AutoCloseable {
   private final ChannelProvider channelProvider;
 
   @GuardedBy("this")
+  @Nullable
   private ManagedChannel channel;
 
   private final DebugTagTracer debugTagTracer;
@@ -173,12 +187,18 @@ public class ClientConfigurationManager implements AutoCloseable {
       ScheduledExecutorService executor)
       throws IOException {
     this.defaultConfig = loadDefault();
+    boolean overrideUseDefault =
+        Boolean.parseBoolean(sysProps.getProperty(OVERRIDE_USE_DEFAULT_SYS_PROP_KEY));
     this.overrideConfig =
         Optional.ofNullable(sysProps.getProperty(OVERRIDE_SYS_PROP_KEY))
             .map(
                 str -> {
                   try {
-                    return TextFormat.parse(str, ClientConfiguration.class);
+                    ClientConfiguration parsed = TextFormat.parse(str, ClientConfiguration.class);
+                    if (overrideUseDefault) {
+                      return defaultConfig.toBuilder().mergeFrom(parsed).build();
+                    }
+                    return parsed;
                   } catch (Exception e) {
                     throw new RuntimeException(
                         "Failed to parse bigtable.internal.client-config-override", e);
@@ -200,7 +220,7 @@ public class ClientConfigurationManager implements AutoCloseable {
                       .printToString(overrideConfig.get()));
     }
     featureFlags = channelProvider.updateFeatureFlags(featureFlags);
-    this.clientConfiguration = normalizeConfig(defaultConfig);
+    this.clientConfiguration = normalizeConfig(overrideConfig.orElse(defaultConfig));
 
     this.metadata =
         Util.composeMetadata(
@@ -215,7 +235,8 @@ public class ClientConfigurationManager implements AutoCloseable {
             .build();
 
     this.channelProvider = channelProvider;
-    this.channel = channelProvider.newChannelBuilder().build();
+    this.channel =
+        overrideConfig.isPresent() ? null : channelProvider.newChannelBuilder().build();
     this.debugTagTracer = tracer;
     this.executor = executor;
   }
@@ -239,6 +260,11 @@ public class ClientConfigurationManager implements AutoCloseable {
    * back to unary if it fails.
    */
   public CompletableFuture<ClientConfiguration> start() {
+    if (overrideConfig.isPresent()) {
+      ClientConfiguration cfg = getClientConfiguration();
+      logger.log(Level.CONFIG, "Using local override config: {0}", cfg);
+      return CompletableFuture.completedFuture(cfg);
+    }
     CompletableFuture<ClientConfiguration> f = startPolling();
     @SuppressWarnings("UnusedVariable")
     CompletableFuture<ClientConfiguration> ignored =
@@ -261,7 +287,9 @@ public class ClientConfigurationManager implements AutoCloseable {
     if (nextPoll != null) {
       nextPoll.cancel(true);
     }
-    channel.shutdown();
+    if (channel != null) {
+      channel.shutdown();
+    }
   }
 
   /** Gets the client configuration. */
@@ -398,9 +426,6 @@ public class ClientConfigurationManager implements AutoCloseable {
             .setDebugTagLevel(defaultConfig.getTelemetryConfiguration().getDebugTagLevel());
     }
 
-    // Inject overrides
-    overrideConfig.ifPresent(builder::mergeFrom);
-
     if (disableDirectPathFallback
         && builder
             .getSessionConfiguration()
@@ -413,9 +438,7 @@ public class ClientConfigurationManager implements AutoCloseable {
           .setDirectAccessOnly(DirectAccessOnly.getDefaultInstance());
     }
 
-    // When sessions are disabled make sure to clear out the config. Read from the builder, not
-    // cfg, so that a diversion config supplied via the override sys-prop is honoured even when
-    // the server-returned config disables sessions.
+    // When sessions are disabled make sure to clear out the config.
     if (!divertsAnyTrafficToSessions(builder.getSessionConfiguration())) {
       builder.clearSessionConfiguration();
       return builder.build();
