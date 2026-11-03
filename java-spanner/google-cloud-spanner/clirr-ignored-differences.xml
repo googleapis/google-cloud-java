@@ -1156,4 +1156,10 @@
     <className>com/google/cloud/spanner/spi/v1/ChannelFinder</className>
     <method>* findServer(*)</method>
   </difference>
+  <!-- Database default isolation level -->
+  <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/cloud/spanner/DatabaseClient</className>
+    <method>com.google.spanner.v1.TransactionOptions$IsolationLevel getDatabaseDefaultIsolationLevel()</method>
+  </difference>
 </differences>
