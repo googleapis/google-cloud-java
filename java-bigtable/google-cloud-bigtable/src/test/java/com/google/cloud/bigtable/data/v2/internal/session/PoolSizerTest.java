@@ -65,6 +65,12 @@ class PoolSizerTest {
 
     assertThat(sizer.getScaleDelta()).isEqualTo(0);
     assertThat(sizer.handleNewCall()).isFalse();
+    assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isFalse();
+    assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isFalse();
+
+    // After onSessionClosing / onSessionClosed decrements expectedCapacity below MIN_IDLE_SESSIONS:
+    stats.getTestHelper().setReadyCount(MIN_IDLE_SESSIONS - 1);
+    stats.getTestHelper().setExpectedCapacity(MIN_IDLE_SESSIONS - 1);
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isTrue();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isTrue();
   }
@@ -146,6 +152,12 @@ class PoolSizerTest {
     assertThat(sizer.getScaleDelta()).isEqualTo(0);
     // Remain steady in band
     assertThat(sizer.handleNewCall()).isFalse();
+    assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isFalse();
+    assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isFalse();
+
+    // After onSessionClosing / onSessionClosed decrements expectedCapacity below MIN_IDLE_SESSIONS:
+    stats.getTestHelper().setStartingCount(MIN_IDLE_SESSIONS - 1);
+    stats.getTestHelper().setExpectedCapacity(MIN_IDLE_SESSIONS - 1);
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isTrue();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isTrue();
   }
@@ -212,5 +224,29 @@ class PoolSizerTest {
     // + 6 for idle headroom (50% of 11)
     // = 17 sessions needed, but we only have 15
     assertThat(sizer.getScaleDelta()).isEqualTo(2);
+  }
+
+  @Test
+  void testEmptyConfig() {
+    PoolStats stats = new PoolStats();
+    AtomicInteger pendingCount = new AtomicInteger(5);
+    PoolSizer sizer =
+        new PoolSizer(
+            stats,
+            pendingCount::get,
+            SessionClientConfiguration.SessionPoolConfiguration.getDefaultInstance());
+
+    // Even with pending RPCs and in-use sessions, pendingVRpcsPerSession == 0 must not divide by 0
+    // or overflow int.
+    assertThat(sizer.getScaleDelta()).isEqualTo(0);
+    assertThat(sizer.handleNewCall()).isFalse();
+    assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isFalse();
+    assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isFalse();
+
+    stats.getTestHelper().setInUseCount(2);
+    stats.getTestHelper().setExpectedCapacity(2);
+    assertThat(sizer.getScaleDelta()).isEqualTo(0);
+    assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isFalse();
+    assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isFalse();
   }
 }
