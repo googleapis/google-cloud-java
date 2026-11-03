@@ -1812,9 +1812,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     String effectiveColumnLike = (columnNamePattern == null) ? "%" : columnNamePattern;
     for (String project : targetCatalogs) {
       String scope = isExactDataset ? effectiveSchemaPattern : resolveGraphRegion();
-      String formattedSql =
-          replaceSqlParameters(
-              getGraphColumnsSqlContent(), project, scope);
+      String formattedSql = replaceSqlParameters(getGraphColumnsSqlContent(), project, scope);
       try (PreparedStatement statement = this.connection.prepareStatement(formattedSql)) {
         statement.setString(1, effectiveSchemaLike);
         statement.setString(2, effectiveTableLike);
@@ -1826,13 +1824,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             String tbl = rs.getString("tbl"); // TABLE_NAME (<graph>.<element>)
             String col = rs.getString("col"); // COLUMN_NAME (property name)
             String typeKind =
-                rs.getString(
-                    "type_kind"); // DATA_TYPE, TYPE_NAME, COLUMN_SIZE, DECIMAL_DIGITS,
-                                  // NUM_PREC_RADIX
+                rs.getString("type_kind"); // DATA_TYPE, TYPE_NAME, COLUMN_SIZE, DECIMAL_DIGITS,
+            // NUM_PREC_RADIX
             String expression =
                 rs.getString("expression"); // REMARKS (for measures) & IS_GENERATEDCOLUMN
             String expressionKind =
-                rs.getString("expression_kind"); // REMARKS ("MEASURE: " prefix) & IS_GENERATEDCOLUMN
+                rs.getString(
+                    "expression_kind"); // REMARKS ("MEASURE: " prefix) & IS_GENERATEDCOLUMN
             String description = rs.getString("description"); // REMARKS (property description)
             int ordinal = rs.getInt("ordinal"); // ORDINAL_POSITION (1-based index)
             List<FieldValue> values =
