@@ -55,8 +55,12 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     if (delegate != null) {
       delegate.initialize(request);
     }
-    if (metrics == null
-        || (metrics.getHttpClientRequestDuration() == null && metrics.getTtfb() == null)) {
+    if (metrics == null) {
+      return;
+    }
+    boolean recordDuration = metrics.getHttpClientRequestDuration() != null;
+    boolean recordTtfb = metrics.getTtfb() != null;
+    if (!recordDuration && !recordTtfb) {
       return;
     }
 
@@ -87,7 +91,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
             int statusCode = response.getStatusCode();
             String serverAddress = resolveServerAddress(request.getUrl(), defaultServerAddress);
 
-            if (metrics.getHttpClientRequestDuration() != null) {
+            if (recordDuration) {
               String method =
                   request.getRequestMethod() != null ? request.getRequestMethod() : "UNKNOWN";
               String urlTemplate = extractUrlTemplate(request.getUrl());
@@ -115,12 +119,18 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
                   .record(durationSeconds, attrBuilder.build(), Context.current());
             }
 
-            if (metrics.getTtfb() != null && statusCode < 400 && isMediaDownloadRequest(request)) {
+            // Evaluate isMediaDownloadRequest(request) at response time rather than in
+            // initialize(HttpRequest), because callers such as MediaHttpDownloader may append
+            // query parameters (e.g. alt=media) to request.getUrl() after buildGetRequest().
+            if (recordTtfb
+                && statusCode >= 200
+                && statusCode < 300
+                && isMediaDownloadRequest(request)) {
               AttributesBuilder ttfbAttrs =
                   metrics
                       .clientAttributesBuilder()
                       .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
-                      .put(StorageClientMetrics.KEY_RPC_METHOD, "ReadObject")
+                      .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "ReadObject")
                       .put(
                           StorageClientMetrics.KEY_NETWORK_PATH,
                           StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
@@ -132,39 +142,40 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
           }
         });
 
-    request.setIOExceptionHandler(
-        (req, supportsRetry) -> {
-          if (recorded.compareAndSet(false, true)
-              && metrics.getHttpClientRequestDuration() != null) {
-            double durationSeconds =
-                Math.max(0.0, (clock.nanoTime() - startTimeNanos.get()) / 1_000_000_000.0);
-            String method = req.getRequestMethod() != null ? req.getRequestMethod() : "UNKNOWN";
-            String urlTemplate = extractUrlTemplate(req.getUrl());
-            String serverAddress = resolveServerAddress(req.getUrl(), defaultServerAddress);
+    if (recordDuration) {
+      request.setIOExceptionHandler(
+          (req, supportsRetry) -> {
+            if (recorded.compareAndSet(false, true)) {
+              double durationSeconds =
+                  Math.max(0.0, (clock.nanoTime() - startTimeNanos.get()) / 1_000_000_000.0);
+              String method = req.getRequestMethod() != null ? req.getRequestMethod() : "UNKNOWN";
+              String urlTemplate = extractUrlTemplate(req.getUrl());
+              String serverAddress = resolveServerAddress(req.getUrl(), defaultServerAddress);
 
-            AttributesBuilder attrBuilder =
-                metrics
-                    .clientAttributesBuilder()
-                    .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, method)
-                    .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 0L)
-                    .put(
-                        StorageClientMetrics.KEY_NETWORK_PATH,
-                        StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
-                    .put(StorageClientMetrics.KEY_URL_TEMPLATE, urlTemplate)
-                    .put(
-                        StorageClientMetrics.KEY_SERVER_ADDRESS,
-                        serverAddress != null ? serverAddress : "")
-                    .put(
-                        StorageClientMetrics.KEY_ERROR_TYPE,
-                        StorageErrorTypeMapper.STATUS_CONNECTIVITY);
+              AttributesBuilder attrBuilder =
+                  metrics
+                      .clientAttributesBuilder()
+                      .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, method)
+                      .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 0L)
+                      .put(
+                          StorageClientMetrics.KEY_NETWORK_PATH,
+                          StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+                      .put(StorageClientMetrics.KEY_URL_TEMPLATE, urlTemplate)
+                      .put(
+                          StorageClientMetrics.KEY_SERVER_ADDRESS,
+                          serverAddress != null ? serverAddress : "")
+                      .put(
+                          StorageClientMetrics.KEY_ERROR_TYPE,
+                          StorageErrorTypeMapper.STATUS_CONNECTIVITY);
 
-            metrics
-                .getHttpClientRequestDuration()
-                .record(durationSeconds, attrBuilder.build(), Context.current());
-          }
-          return existingIoHandler != null
-              && existingIoHandler.handleIOException(req, supportsRetry);
-        });
+              metrics
+                  .getHttpClientRequestDuration()
+                  .record(durationSeconds, attrBuilder.build(), Context.current());
+            }
+            return existingIoHandler != null
+                && existingIoHandler.handleIOException(req, supportsRetry);
+          });
+    }
   }
 
   static String resolveServerAddress(

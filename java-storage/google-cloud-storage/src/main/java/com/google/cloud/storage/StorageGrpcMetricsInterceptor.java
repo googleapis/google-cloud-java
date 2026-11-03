@@ -53,13 +53,18 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
       MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
-    if (metrics == null
-        || (metrics.getRpcClientCallDuration() == null && metrics.getTtfb() == null)) {
+    if (metrics == null) {
       return next.newCall(method, callOptions);
     }
 
     String shortMethod = extractShortMethodName(method.getFullMethodName());
     boolean isReadMethod = "ReadObject".equals(shortMethod) || "BidiReadObject".equals(shortMethod);
+    boolean recordDuration = metrics.getRpcClientCallDuration() != null;
+    boolean recordTtfb = isReadMethod && metrics.getTtfb() != null;
+    if (!recordDuration && !recordTtfb) {
+      return next.newCall(method, callOptions);
+    }
+
     String initialServerAddress =
         StorageOptions.extractServerAddress(
             defaultEndpoint != null ? defaultEndpoint : next.authority());
@@ -70,6 +75,10 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
     StorageMetricsContext metricsCtx = StorageMetricsContext.from(callOptions);
     Context otelContext = metricsCtx != null ? metricsCtx.getOtelContext() : Context.current();
+    String operationName =
+        (metricsCtx != null && metricsCtx.getOperationName() != null)
+            ? metricsCtx.getOperationName()
+            : "ReadObject";
 
     return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
       @Override
@@ -82,9 +91,9 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
               @Override
               public void onMessage(RespT message) {
-                if (isReadMethod
-                    && metrics.getTtfb() != null
-                    && ttfbRecorded.compareAndSet(false, true)) {
+                // The first response message from the server (including metadata-only
+                // responses for 0-byte objects) marks Time To First Byte (TTFB).
+                if (recordTtfb && ttfbRecorded.compareAndSet(false, true)) {
                   double ttfbSeconds =
                       Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
                   String networkPath = detectNetworkPath(getAttributes(), defaultEndpoint);
@@ -92,7 +101,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                       metrics
                           .clientAttributesBuilder()
                           .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-                          .put(StorageClientMetrics.KEY_RPC_METHOD, shortMethod)
+                          .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, operationName)
                           .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
                           .put(
                               StorageClientMetrics.KEY_SERVER_ADDRESS,
@@ -105,8 +114,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
               @Override
               public void onClose(Status status, Metadata trailers) {
                 try {
-                  if (callRecorded.compareAndSet(false, true)
-                      && metrics.getRpcClientCallDuration() != null) {
+                  if (recordDuration && callRecorded.compareAndSet(false, true)) {
                     double durationSeconds =
                         Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
                     String networkPath = detectNetworkPath(getAttributes(), defaultEndpoint);

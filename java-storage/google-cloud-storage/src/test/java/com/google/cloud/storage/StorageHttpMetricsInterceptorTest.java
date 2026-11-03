@@ -412,14 +412,91 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(ttfbData).isNotNull();
     assertThat(ttfbData.getHistogramData().getPoints()).hasSize(1);
     HistogramPointData ttfbPoint = ttfbData.getHistogramData().getPoints().iterator().next();
+    assertThat(ttfbPoint.getCount()).isEqualTo(1L);
     assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.25);
     Attributes attrs = ttfbPoint.getAttributes();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
-    assertThat(attrs.get(StorageClientMetrics.KEY_RPC_METHOD)).isEqualTo("ReadObject");
+    assertThat(attrs.get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION)).isEqualTo("ReadObject");
     assertThat(attrs.get(StorageClientMetrics.KEY_NETWORK_PATH))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
     assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
+  }
+
+  @Test
+  public void initialize_mediaDownloadNon2xxResponse_doesNotRecordTtfb() throws IOException {
+    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
+    StorageHttpMetricsInterceptor interceptor =
+        new StorageHttpMetricsInterceptor(null, metrics, clock, "https://storage.googleapis.com");
+
+    for (int statusCode : new int[] {304, 404}) {
+      MockLowLevelHttpResponse lowLevelResponse = new MockLowLevelHttpResponse();
+      lowLevelResponse.setStatusCode(statusCode);
+      HttpTransport transport =
+          new MockHttpTransport.Builder().setLowLevelHttpResponse(lowLevelResponse).build();
+
+      HttpRequest request =
+          transport
+              .createRequestFactory(interceptor)
+              .buildGetRequest(
+                  new GenericUrl(
+                      "https://storage.googleapis.com/download/storage/v1/b/my-b/o/my-obj?alt=media"));
+      request.setThrowExceptionOnExecuteError(false);
+      request.execute();
+    }
+
+    Collection<MetricData> metricData = reader.collectAllMetrics();
+    MetricData ttfbData =
+        metricData.stream()
+            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB))
+            .findFirst()
+            .orElse(null);
+    assertThat(ttfbData).isNull();
+  }
+
+  @Test
+  public void initialize_altMediaAddedAfterBuildGetRequest_recordsTtfb() throws IOException {
+    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
+    StorageHttpMetricsInterceptor interceptor =
+        new StorageHttpMetricsInterceptor(null, metrics, clock, "https://storage.googleapis.com");
+
+    MockLowLevelHttpResponse lowLevelResponse = new MockLowLevelHttpResponse();
+    lowLevelResponse.setStatusCode(200);
+    HttpTransport transport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                clock.advanceNanos(120_000_000L);
+                return lowLevelResponse;
+              }
+            };
+          }
+        };
+
+    HttpRequest request =
+        transport
+            .createRequestFactory(interceptor)
+            .buildGetRequest(
+                new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b/o/my-obj"));
+    request.getUrl().put("alt", "media");
+    request.execute();
+
+    Collection<MetricData> metricData = reader.collectAllMetrics();
+    MetricData ttfbData =
+        metricData.stream()
+            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(ttfbData).isNotNull();
+    HistogramPointData ttfbPoint = ttfbData.getHistogramData().getPoints().iterator().next();
+    assertThat(ttfbPoint.getCount()).isEqualTo(1L);
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.12);
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+        .isEqualTo("ReadObject");
   }
 
   @Test

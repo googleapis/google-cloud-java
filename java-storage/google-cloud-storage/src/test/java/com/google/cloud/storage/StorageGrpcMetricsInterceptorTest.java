@@ -50,6 +50,14 @@ public final class StorageGrpcMetricsInterceptorTest {
           .setResponseMarshaller(new NoopMarshaller())
           .build();
 
+  private static final MethodDescriptor<Void, Void> BIDI_READ_OBJECT_METHOD =
+      MethodDescriptor.<Void, Void>newBuilder()
+          .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+          .setFullMethodName("google.storage.v2.Storage/BidiReadObject")
+          .setRequestMarshaller(new NoopMarshaller())
+          .setResponseMarshaller(new NoopMarshaller())
+          .build();
+
   private static final MethodDescriptor<Void, Void> WRITE_OBJECT_METHOD =
       MethodDescriptor.<Void, Void>newBuilder()
           .setType(MethodDescriptor.MethodType.CLIENT_STREAMING)
@@ -221,6 +229,13 @@ public final class StorageGrpcMetricsInterceptorTest {
         .isEqualTo("NOT_FOUND");
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
+
+    MetricData ttfbData =
+        metricData.stream()
+            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB))
+            .findFirst()
+            .orElse(null);
+    assertThat(ttfbData).isNull();
   }
 
   @Test
@@ -253,11 +268,16 @@ public final class StorageGrpcMetricsInterceptorTest {
     assertThat(ttfbData).isNotNull();
     assertThat(ttfbData.getHistogramData().getPoints()).hasSize(1);
     HistogramPointData ttfbPoint = ttfbData.getHistogramData().getPoints().iterator().next();
+    assertThat(ttfbPoint.getCount()).isEqualTo(1L);
     assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.2);
     assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
         .isEqualTo("grpc");
-    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_METHOD))
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
         .isEqualTo("ReadObject");
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_UNKNOWN);
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
 
     MetricData durationData =
         metricData.stream()
@@ -268,6 +288,49 @@ public final class StorageGrpcMetricsInterceptorTest {
     HistogramPointData durationPoint =
         durationData.getHistogramData().getPoints().iterator().next();
     assertThat(durationPoint.getSum()).isWithin(1e-6).of(0.5);
+  }
+
+  @Test
+  public void interceptCall_bidiReadObject_recordsTtfbOnFirstMessageWithUnifiedOperation()
+      throws Exception {
+    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
+    StorageGrpcMetricsInterceptor interceptor =
+        new StorageGrpcMetricsInterceptor(metrics, clock, "google-c2p:///storage.googleapis.com");
+
+    TestClientCall<Void, Void> testCall = new TestClientCall<>(io.grpc.Attributes.EMPTY);
+    TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
+
+    ClientCall<Void, Void> call =
+        interceptor.interceptCall(BIDI_READ_OBJECT_METHOD, CallOptions.DEFAULT, testChannel);
+    call.start(new TestListener<>(), new Metadata());
+
+    clock.advanceNanos(150_000_000L); // 0.15s
+    testCall.deliverMessage(null);
+
+    clock.advanceNanos(250_000_000L); // 0.25s more (total 0.4s)
+    testCall.deliverMessage(null);
+    testCall.close(Status.OK, new Metadata());
+
+    Collection<MetricData> metricData = reader.collectAllMetrics();
+    MetricData ttfbData =
+        metricData.stream()
+            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_TTFB))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(ttfbData).isNotNull();
+    assertThat(ttfbData.getHistogramData().getPoints()).hasSize(1);
+    HistogramPointData ttfbPoint = ttfbData.getHistogramData().getPoints().iterator().next();
+    assertThat(ttfbPoint.getCount()).isEqualTo(1L);
+    assertThat(ttfbPoint.getSum()).isWithin(1e-6).of(0.15);
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
+        .isEqualTo("grpc");
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+        .isEqualTo("ReadObject");
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+    assertThat(ttfbPoint.getAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
   }
 
   @Test
