@@ -1843,7 +1843,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     String effectiveTableLike = (tableNamePattern == null) ? "%" : tableNamePattern;
     String effectiveColumnLike = (columnNamePattern == null) ? "%" : columnNamePattern;
     for (String project : targetCatalogs) {
+      validateCatalogIdentifier(project);
       String scope = isExactDataset ? effectiveSchemaPattern : resolveGraphRegion();
+
+      if (isExactDataset) {
+        validateSchemaIdentifier(scope);
+      } else {
+        validateRegionScopeIdentifier(scope);
+      }
+
       String formattedSql = replaceSqlParameters(getGraphColumnsSqlContent(), project, scope);
       try (PreparedStatement statement = this.connection.prepareStatement(formattedSql)) {
         statement.setString(1, effectiveSchemaLike);

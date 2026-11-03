@@ -991,7 +991,7 @@ public class ITDatabaseMetadataTest extends ITBase {
       try (ResultSet rs = metaData.getColumns(PROJECT_ID, DATASET, graphName + ".Tag", "%")) {
         Assertions.assertFalse(rs.next());
       }
-    } 
+    }
   }
 
   @Test
