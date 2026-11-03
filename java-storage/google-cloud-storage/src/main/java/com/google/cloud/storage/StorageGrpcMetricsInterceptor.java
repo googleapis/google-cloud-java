@@ -34,20 +34,23 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import org.jspecify.annotations.Nullable;
 
 /** gRPC client interceptor that records call metrics such as rpc.client.call.duration. */
 final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
   private final StorageClientMetrics metrics;
   private final ApiClock clock;
-  @Nullable private final String defaultEndpoint;
+  @Nullable private final String defaultServerAddress;
+  private final boolean isDirectPathEndpoint;
 
   StorageGrpcMetricsInterceptor(
       StorageClientMetrics metrics, ApiClock clock, @Nullable String defaultEndpoint) {
     this.metrics = metrics;
     this.clock = clock;
-    this.defaultEndpoint = defaultEndpoint;
+    this.defaultServerAddress = StorageOptions.extractServerAddress(defaultEndpoint);
+    this.isDirectPathEndpoint =
+        defaultEndpoint != null && defaultEndpoint.trim().startsWith("google-c2p:///");
   }
 
   @Override
@@ -58,13 +61,11 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
     }
 
     String shortMethod = extractShortMethodName(method.getFullMethodName());
-    String initialServerAddress =
-        StorageOptions.extractServerAddress(
-            defaultEndpoint != null ? defaultEndpoint : next.authority());
-    final String serverAddress =
-        initialServerAddress != null
-            ? initialServerAddress
+    String resolvedServerAddress =
+        defaultServerAddress != null
+            ? defaultServerAddress
             : StorageOptions.extractServerAddress(next.authority());
+    final String serverAddress = resolvedServerAddress != null ? resolvedServerAddress : "";
 
     StorageMetricsContext metricsCtx = StorageMetricsContext.from(callOptions);
     Context otelContext = metricsCtx != null ? metricsCtx.getOtelContext() : Context.current();
@@ -84,23 +85,25 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                       && metrics.getRpcClientCallDuration() != null) {
                     double durationSeconds =
                         Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
-                    String networkPath = detectNetworkPath(getAttributes(), defaultEndpoint);
+                    String networkPath = detectNetworkPath(getAttributes(), isDirectPathEndpoint);
+                    String statusCode =
+                        status != null && status.getCode() != null
+                            ? status.getCode().name()
+                            : StorageErrorTypeMapper.STATUS_UNKNOWN;
+                    String errorType =
+                        status != null && !status.isOk() && status.getCause() != null
+                            ? StorageErrorTypeMapper.mapThrowable(status.asRuntimeException())
+                            : StorageErrorTypeMapper.mapGrpcStatus(status);
 
                     AttributesBuilder attrBuilder =
                         metrics
                             .clientAttributesBuilder()
                             .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
                             .put(StorageClientMetrics.KEY_RPC_METHOD, shortMethod)
-                            .put(
-                                StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE,
-                                status.getCode().name())
+                            .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, statusCode)
                             .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
-                            .put(
-                                StorageClientMetrics.KEY_SERVER_ADDRESS,
-                                serverAddress != null ? serverAddress : "")
-                            .put(
-                                StorageClientMetrics.KEY_ERROR_TYPE,
-                                StorageErrorTypeMapper.mapGrpcStatus(status));
+                            .put(StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress)
+                            .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType);
 
                     metrics
                         .getRpcClientCallDuration()
@@ -128,7 +131,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
   }
 
   static String detectNetworkPath(
-      @Nullable Attributes callAttributes, @Nullable String defaultEndpoint) {
+      @Nullable Attributes callAttributes, boolean isDirectPathEndpoint) {
     SocketAddress remoteAddr =
         callAttributes != null ? callAttributes.get(Grpc.TRANSPORT_ATTR_REMOTE_ADDR) : null;
     if (remoteAddr instanceof InetSocketAddress) {
@@ -139,7 +142,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
             : StorageClientMetrics.NETWORK_PATH_CLOUDPATH;
       }
     }
-    if (defaultEndpoint != null && defaultEndpoint.trim().startsWith("google-c2p:///")) {
+    if (isDirectPathEndpoint) {
       return StorageClientMetrics.NETWORK_PATH_DIRECTPATH;
     }
     return StorageClientMetrics.NETWORK_PATH_UNKNOWN;

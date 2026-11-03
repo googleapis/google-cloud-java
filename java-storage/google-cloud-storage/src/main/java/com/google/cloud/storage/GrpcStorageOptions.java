@@ -336,15 +336,22 @@ public final class GrpcStorageOptions extends StorageOptions
       StorageGrpcMetricsInterceptor metricsInterceptor =
           new StorageGrpcMetricsInterceptor(clientMetrics, getClock(), endpoint);
       GrpcInterceptorProvider combinedProvider =
-          NoopGrpcInterceptorProvider.INSTANCE.equals(grpcInterceptorProvider)
+          grpcInterceptorProvider == null
+                  || NoopGrpcInterceptorProvider.INSTANCE.equals(grpcInterceptorProvider)
               ? () -> ImmutableList.of(metricsInterceptor)
-              : () ->
-                  ImmutableList.<ClientInterceptor>builder()
-                      .addAll(grpcInterceptorProvider.getInterceptors())
-                      .add(metricsInterceptor)
-                      .build();
+              : () -> {
+                List<ClientInterceptor> existing = grpcInterceptorProvider.getInterceptors();
+                if (existing == null || existing.isEmpty()) {
+                  return ImmutableList.of(metricsInterceptor);
+                }
+                return ImmutableList.<ClientInterceptor>builder()
+                    .addAll(existing)
+                    .add(metricsInterceptor)
+                    .build();
+              };
       channelProviderBuilder.setInterceptorProvider(combinedProvider);
-    } else if (!NoopGrpcInterceptorProvider.INSTANCE.equals(grpcInterceptorProvider)) {
+    } else if (grpcInterceptorProvider != null
+        && !NoopGrpcInterceptorProvider.INSTANCE.equals(grpcInterceptorProvider)) {
       channelProviderBuilder.setInterceptorProvider(grpcInterceptorProvider);
     }
 
