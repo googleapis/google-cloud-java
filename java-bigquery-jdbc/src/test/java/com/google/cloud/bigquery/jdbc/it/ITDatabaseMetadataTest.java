@@ -882,6 +882,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   @Tag("disable_tpc")
+  @Tag("advanced")
   public void testDatabaseMetadataGetColumns_PropertyGraph() throws SQLException {
     String nodeTable = "GRAPH_COL_NODE_TABLE_" + randomNumber;
     String edgeTable = "GRAPH_COL_EDGE_TABLE_" + randomNumber;
@@ -990,18 +991,7 @@ public class ITDatabaseMetadataTest extends ITBase {
       try (ResultSet rs = metaData.getColumns(PROJECT_ID, DATASET, graphName + ".Tag", "%")) {
         Assertions.assertFalse(rs.next());
       }
-    } finally {
-      try (Connection cleanupConn = DriverManager.getConnection(ITBase.connectionUrl);
-          Statement cleanupStmt = cleanupConn.createStatement()) {
-        cleanupStmt.execute(
-            String.format(
-                "DROP PROPERTY GRAPH IF EXISTS `%s.%s.%s`", PROJECT_ID, DATASET, graphName));
-        cleanupStmt.execute(
-            String.format("DROP TABLE IF EXISTS `%s.%s.%s`", PROJECT_ID, DATASET, edgeTable));
-        cleanupStmt.execute(
-            String.format("DROP TABLE IF EXISTS `%s.%s.%s`", PROJECT_ID, DATASET, nodeTable));
-      }
-    }
+    } 
   }
 
   @Test
