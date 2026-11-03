@@ -67,23 +67,41 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
 /**
- * ClientConfiguration controls how the data client should behave. For example, it controls how much
- * of the traffic should go through jetstream vs unary. It also controls how frequent the client
- * should poll for a new configuration and how long the configuration is valid for.
+ * Manages the {@link ClientConfiguration} that controls how the data client behaves (for example,
+ * how much traffic is routed through sessions vs unary RPCs, how frequently to poll for a new
+ * configuration, and how long a configuration remains valid).
+ *
+ * <p><b>Configuration Resolution:</b>
+ *
+ * <ul>
+ *   <li><b>Default behavior:</b> The client starts up with the built-in default configuration
+ *       ({@link #loadDefault()}) and then overwrites it with the configuration fetched from the
+ *       server.
+ *   <li><b>System property override ({@link #OVERRIDE_SYS_PROP_KEY}):</b> If set, the server
+ *       configuration is completely ignored (server polling is skipped) and the parsed override
+ *       textproto is used instead.
+ *   <li><b>Default-backed override ({@link #OVERRIDE_USE_DEFAULT_SYS_PROP_KEY}):</b> Provided for
+ *       ergonomics (primarily for testing and probing) so callers do not have to specify the full
+ *       {@link ClientConfiguration} in {@link #OVERRIDE_SYS_PROP_KEY}. When {@code true}, the
+ *       override textproto is merged on top of {@link #loadDefault()} so probers and tests only
+ *       need to specify the fields they care about.
+ * </ul>
  */
 public class ClientConfigurationManager implements AutoCloseable {
   private static final Logger logger = Logger.getLogger(ClientConfigurationManager.class.getName());
 
   /**
-   * System property providing a textproto {@link ClientConfiguration} to use locally instead of
-   * polling the server. Used as-is by default, or merged on top of {@link #loadDefault()} when
-   * {@link #OVERRIDE_USE_DEFAULT_SYS_PROP_KEY} is {@code true}.
+   * System property providing a textproto {@link ClientConfiguration} to use locally. When set, the
+   * server configuration is ignored. Used as-is by default, or merged on top of {@link
+   * #loadDefault()} when {@link #OVERRIDE_USE_DEFAULT_SYS_PROP_KEY} is {@code true}.
    */
   public static final String OVERRIDE_SYS_PROP_KEY = "bigtable.internal.client-config-override";
 
   /**
-   * Boolean system property that, when {@code true}, uses {@link #loadDefault()} as the base for
-   * {@link #OVERRIDE_SYS_PROP_KEY}. Ignored when {@link #OVERRIDE_SYS_PROP_KEY} is not set.
+   * Boolean system property for ergonomics in testing and probing that, when {@code true}, merges
+   * {@link #OVERRIDE_SYS_PROP_KEY} on top of {@link #loadDefault()} so callers only need to specify
+   * the fields they care about rather than the full configuration. Ignored when {@link
+   * #OVERRIDE_SYS_PROP_KEY} is not set.
    */
   public static final String OVERRIDE_USE_DEFAULT_SYS_PROP_KEY =
       "bigtable.internal.client-config-override-use-default";
