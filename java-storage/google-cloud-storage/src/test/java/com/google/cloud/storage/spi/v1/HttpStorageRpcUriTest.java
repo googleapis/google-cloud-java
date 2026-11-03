@@ -50,6 +50,21 @@ public final class HttpStorageRpcUriTest {
   }
 
   @Test
+  public void customHostWithProxyPath_preservesRootUrlAndDefaultServicePath() {
+    StorageOptions options =
+        StorageOptions.http()
+            .setCredentials(NoCredentials.getInstance())
+            .setProjectId("test-project")
+            .setHost("https://proxy.example.com/gcs/")
+            .build();
+    HttpStorageRpc rpc = (HttpStorageRpc) options.getRpc();
+    assertThat(rpc.getStorage().getRootUrl()).isEqualTo("https://proxy.example.com/gcs/");
+    assertThat(rpc.getStorage().getServicePath()).isEqualTo("storage/v1/");
+    assertThat(rpc.getStorage().getBaseUrl())
+        .isEqualTo("https://proxy.example.com/gcs/storage/v1/");
+  }
+
+  @Test
   public void customHostWithSubpath_splitsRootUrlAndServicePath() {
     StorageOptions options =
         StorageOptions.http()
@@ -62,6 +77,9 @@ public final class HttpStorageRpcUriTest {
     assertThat(rpc.getStorage().getRootUrl())
         .isEqualTo("https://storage-preprod-test-unified.googleusercontent.com/");
     assertThat(rpc.getStorage().getServicePath()).isEqualTo("storage/v1_preprod/");
+    assertThat(rpc.getStorage().getBaseUrl())
+        .isEqualTo(
+            "https://storage-preprod-test-unified.googleusercontent.com/storage/v1_preprod/");
   }
 
   @Test

@@ -104,6 +104,7 @@ import java.io.OutputStream;
 import java.math.BigInteger;
 import java.net.FileNameMap;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -163,20 +164,21 @@ public class HttpStorageRpc implements StorageRpc {
     Storage.Builder storageBuilder =
         new Storage.Builder(transport, jsonFactory, initializer)
             .setApplicationName(applicationName);
-    if (host != null) {
-      URI uri = URI.create(host);
+    try {
+      URI uri = new URI(host);
       String path = uri.getRawPath();
-      if (path != null && !path.isEmpty() && !"/".equals(path)) {
-        String rootUrl = host.substring(0, host.indexOf(path));
-        String servicePath = path.startsWith("/") ? path.substring(1) : path;
-        if (!servicePath.endsWith("/")) {
-          servicePath += "/";
-        }
-        storageBuilder.setRootUrl(rootUrl);
-        storageBuilder.setServicePath(servicePath);
+      int servicePathIdx = path != null ? path.indexOf("/storage/v1") : -1;
+      if (servicePathIdx >= 0) {
+        String rootPath = path.substring(0, servicePathIdx + 1);
+        String rootUrl =
+            new URI(uri.getScheme(), uri.getAuthority(), rootPath, null, null).toString();
+        String servicePath = path.substring(servicePathIdx + 1);
+        storageBuilder.setRootUrl(rootUrl).setServicePath(servicePath);
       } else {
         storageBuilder.setRootUrl(host);
       }
+    } catch (URISyntaxException e) {
+      storageBuilder.setRootUrl(host);
     }
     storage = storageBuilder.build();
   }
