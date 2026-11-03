@@ -141,7 +141,7 @@ public class QueryRequestInfoTest {
           .setReservation(RESERVATION)
           .build();
   QueryRequestInfo REQUEST_INFO =
-      new QueryRequestInfo(QUERY_JOB_CONFIGURATION, DataFormatOptions.newBuilder().build());
+      new QueryRequestInfo(QUERY_JOB_CONFIGURATION, DataFormatOptions.DEFAULT_INSTANCE);
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_SUPPORTED =
       QueryJobConfiguration.newBuilder(QUERY)
           .setUseQueryCache(USE_QUERY_CACHE)
@@ -157,13 +157,12 @@ public class QueryRequestInfoTest {
           .setReservation(RESERVATION)
           .build();
   QueryRequestInfo REQUEST_INFO_SUPPORTED =
-      new QueryRequestInfo(
-          QUERY_JOB_CONFIGURATION_SUPPORTED, DataFormatOptions.newBuilder().build());
+      new QueryRequestInfo(QUERY_JOB_CONFIGURATION_SUPPORTED, DataFormatOptions.DEFAULT_INSTANCE);
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_WITH_TIMEOUT =
       QUERY_JOB_CONFIGURATION_SUPPORTED.toBuilder().setJobTimeoutMs(TIMEOUT).build();
   QueryRequestInfo REQUEST_INFO_WITH_TIMEOUT =
       new QueryRequestInfo(
-          QUERY_JOB_CONFIGURATION_WITH_TIMEOUT, DataFormatOptions.newBuilder().build());
+          QUERY_JOB_CONFIGURATION_WITH_TIMEOUT, DataFormatOptions.DEFAULT_INSTANCE);
 
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED =
       QUERY_JOB_CONFIGURATION_SUPPORTED.toBuilder()
@@ -171,7 +170,7 @@ public class QueryRequestInfoTest {
           .build();
   QueryRequestInfo REQUEST_INFO_REQUIRED_SUPPORTED =
       new QueryRequestInfo(
-          QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED, DataFormatOptions.newBuilder().build());
+          QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED, DataFormatOptions.DEFAULT_INSTANCE);
 
   @Test
   public void testIsFastQuerySupported() {
@@ -192,26 +191,25 @@ public class QueryRequestInfoTest {
   @Test
   public void equalTo() {
     compareQueryRequestInfo(
-        new QueryRequestInfo(
-            QUERY_JOB_CONFIGURATION_SUPPORTED, DataFormatOptions.newBuilder().build()),
+        new QueryRequestInfo(QUERY_JOB_CONFIGURATION_SUPPORTED, DataFormatOptions.DEFAULT_INSTANCE),
         REQUEST_INFO_SUPPORTED);
     compareQueryRequestInfo(
-        new QueryRequestInfo(QUERY_JOB_CONFIGURATION, DataFormatOptions.newBuilder().build()),
+        new QueryRequestInfo(QUERY_JOB_CONFIGURATION, DataFormatOptions.DEFAULT_INSTANCE),
         REQUEST_INFO);
     compareQueryRequestInfo(
         new QueryRequestInfo(
-            QUERY_JOB_CONFIGURATION_WITH_TIMEOUT, DataFormatOptions.newBuilder().build()),
+            QUERY_JOB_CONFIGURATION_WITH_TIMEOUT, DataFormatOptions.DEFAULT_INSTANCE),
         REQUEST_INFO_WITH_TIMEOUT);
     compareQueryRequestInfo(
         new QueryRequestInfo(
-            QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED, DataFormatOptions.newBuilder().build()),
+            QUERY_JOB_CONFIGURATION_REQUIRED_SUPPORTED, DataFormatOptions.DEFAULT_INSTANCE),
         REQUEST_INFO_REQUIRED_SUPPORTED);
   }
 
   @Test
   public void testInt64Timestamp() {
     QueryRequestInfo requestInfo =
-        new QueryRequestInfo(QUERY_JOB_CONFIGURATION, DataFormatOptions.newBuilder().build());
+        new QueryRequestInfo(QUERY_JOB_CONFIGURATION, DataFormatOptions.DEFAULT_INSTANCE);
     QueryRequest requestPb = requestInfo.toPb();
     assertFalse(requestPb.getFormatOptions().getUseInt64Timestamp());
 

@@ -1424,6 +1424,14 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .tabledata()
             .list(projectId, datasetId, tableId)
             .setPrettyPrint(false)
+            .setFormatOptionsUseInt64Timestamp(
+                this.options.getDataFormatOptions() != null
+                    ? this.options.getDataFormatOptions().useInt64Timestamp()
+                    : null)
+            .setFormatOptionsTimestampOutputFormat(
+                this.options.getDataFormatOptions() != null
+                    ? this.options.getDataFormatOptions().timestampFormatOptions().toString()
+                    : null)
             .setMaxResults(Option.MAX_RESULTS.getLong(options))
             .setPageToken(Option.PAGE_TOKEN.getString(options))
             .setStartIndex(
@@ -1827,6 +1835,14 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .jobs()
             .getQueryResults(projectId, jobId)
             .setPrettyPrint(false)
+            .setFormatOptionsUseInt64Timestamp(
+                this.options.getDataFormatOptions() != null
+                    ? this.options.getDataFormatOptions().useInt64Timestamp()
+                    : null)
+            .setFormatOptionsTimestampOutputFormat(
+                this.options.getDataFormatOptions() != null
+                    ? this.options.getDataFormatOptions().timestampFormatOptions().toString()
+                    : null)
             .setLocation(location)
             .setMaxResults(Option.MAX_RESULTS.getLong(options))
             .setPageToken(Option.PAGE_TOKEN.getString(options))
