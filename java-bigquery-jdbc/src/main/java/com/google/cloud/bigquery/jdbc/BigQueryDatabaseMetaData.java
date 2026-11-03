@@ -104,12 +104,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   private static final int DEFAULT_QUEUE_CAPACITY = 5000;
   private static final String GET_EXPORTED_KEYS_SQL = "DatabaseMetaData_GetExportedKeys.sql";
   private static String exportedKeysSqlContent;
-  private static final String GET_GRAPH_TABLES_REGION_SQL =
-      "DatabaseMetaData_GetGraphTables_Region.sql";
-  private static String graphTablesRegionSqlContent;
-  private static final String GET_GRAPH_TABLES_DATASET_SQL =
-      "DatabaseMetaData_GetGraphTables_Dataset.sql";
-  private static String graphTablesDatasetSqlContent;
+  private static final String GET_GRAPH_TABLES_SQL = "DatabaseMetaData_GetGraphTables.sql";
+  private static String graphTablesSqlContent;
   // Declared package-private for testing.
   static final String GOOGLE_SQL_QUOTED_IDENTIFIER = "`";
   // Does not include SQL:2003 Keywords as per JDBC spec.
@@ -153,7 +149,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   };
   static final String GRAPH_TABLE_TYPE = "GRAPH TABLE";
   private static final String DEFAULT_GRAPH_REGION = "us";
-  private static final Pattern VALID_IDENTIFIER_PATTERN = Pattern.compile("^[A-Za-z0-9_\\-:.]+$");
 
   String URL;
   BigQueryConnection connection;
@@ -1331,6 +1326,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               boolean isExactGraphTableName =
                   tableNamePattern != null
                       && !tableNamePattern.contains("%")
+                      // If table name has a dot it is expected to be a graph table name.
                       && tableNamePattern.contains(".");
               if (!isExactGraphTableName && !onlyGraphTablesRequested) {
                 processTargetTablesConcurrently(
@@ -1475,14 +1471,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             Comparator.nullsFirst(String::compareTo));
   }
 
-  static String quoteIdentifier(String identifier) throws SQLException {
-    if (identifier == null || !VALID_IDENTIFIER_PATTERN.matcher(identifier).matches()) {
-      throw new BigQueryJdbcException(
-          String.format("Invalid BigQuery identifier: '%s'", identifier));
-    }
-    return GOOGLE_SQL_QUOTED_IDENTIFIER + identifier + GOOGLE_SQL_QUOTED_IDENTIFIER;
-  }
-
   boolean shouldSkipGraphTables(String tableNamePattern, Set<String> requestedTypes) {
     if (this.connection == null || !this.connection.isEnableGraphMetadata()) {
       return true;
@@ -1527,32 +1515,20 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             ? Collections.singletonList(effectiveCatalog)
             : getAccessibleCatalogNames();
     boolean isExactDataset =
-        effectiveSchemaPattern != null && !needsListing(effectiveSchemaPattern);
+        effectiveSchemaPattern != null && !effectiveSchemaPattern.contains("%");
     String effectiveTablePattern = (tableNamePattern == null) ? "%" : tableNamePattern;
 
     for (String project : targetCatalogs) {
-      String formattedSql;
-      if (isExactDataset) {
-        formattedSql =
-            replaceSqlParameters(
-                getGraphTablesDatasetSqlContent(),
-                quoteIdentifier(project),
-                quoteIdentifier(effectiveSchemaPattern));
-      } else {
-        formattedSql =
-            replaceSqlParameters(
-                getGraphTablesRegionSqlContent(),
-                quoteIdentifier(project),
-                quoteIdentifier(resolveGraphRegion()));
-      }
+
+      String formattedSql =
+          replaceSqlParameters(
+              getGraphTablesSqlContent(),
+              project,
+              isExactDataset ? effectiveSchemaPattern : resolveGraphRegion());
 
       try (PreparedStatement statement = this.connection.prepareStatement(formattedSql)) {
-        if (isExactDataset) {
-          statement.setString(1, effectiveTablePattern);
-        } else {
-          statement.setString(1, effectiveSchemaPattern == null ? "%" : effectiveSchemaPattern);
-          statement.setString(2, effectiveTablePattern);
-        }
+        statement.setString(1, effectiveSchemaPattern == null ? "%" : effectiveSchemaPattern);
+        statement.setString(2, effectiveTablePattern);
 
         try (ResultSet rs = statement.executeQuery()) {
           while (rs.next()) {
@@ -1563,16 +1539,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             String remarks = sourceTable != null ? "Source: " + sourceTable : null;
 
             List<FieldValue> values = new ArrayList<>(resultSchemaResults.size());
-            values.add(createStringFieldValue(tableCat));
-            values.add(createStringFieldValue(tableSchem));
-            values.add(createStringFieldValue(tableName));
-            values.add(createStringFieldValue(GRAPH_TABLE_TYPE));
-            values.add(createStringFieldValue(remarks));
-            values.add(createNullFieldValue());
-            values.add(createNullFieldValue());
-            values.add(createNullFieldValue());
-            values.add(createNullFieldValue());
-            values.add(createNullFieldValue());
+            values.add(createStringFieldValue(tableCat)); // 1. TABLE_CAT
+            values.add(createStringFieldValue(tableSchem)); // 2. TABLE_SCHEM
+            values.add(createStringFieldValue(tableName)); // 3. TABLE_NAME
+            values.add(createStringFieldValue(GRAPH_TABLE_TYPE)); // 4. TABLE_TYPE
+            values.add(createStringFieldValue(remarks)); // 5. REMARKS
+            values.add(createNullFieldValue()); // 6. TYPE_CAT (always null)
+            values.add(createNullFieldValue()); // 7. TYPE_SCHEM (always null)
+            values.add(createNullFieldValue()); // 8. TYPE_NAME (always null)
+            values.add(createNullFieldValue()); // 9. SELF_REFERENCING_COL_NAME (always null)
+            values.add(createNullFieldValue()); // 10. REF_GENERATION (always null)
             collectedResults.add(FieldValueList.of(values, resultSchemaResults));
           }
         }
@@ -5006,18 +4982,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return exportedKeysSqlContent;
   }
 
-  static synchronized String getGraphTablesDatasetSqlContent() {
-    if (graphTablesDatasetSqlContent == null) {
-      graphTablesDatasetSqlContent = readSqlFromFile(GET_GRAPH_TABLES_DATASET_SQL);
+  static synchronized String getGraphTablesSqlContent() {
+    if (graphTablesSqlContent == null) {
+      graphTablesSqlContent = readSqlFromFile(GET_GRAPH_TABLES_SQL);
     }
-    return graphTablesDatasetSqlContent;
-  }
-
-  static synchronized String getGraphTablesRegionSqlContent() {
-    if (graphTablesRegionSqlContent == null) {
-      graphTablesRegionSqlContent = readSqlFromFile(GET_GRAPH_TABLES_REGION_SQL);
-    }
-    return graphTablesRegionSqlContent;
+    return graphTablesSqlContent;
   }
 
   static String readSqlFromFile(String filename) {
