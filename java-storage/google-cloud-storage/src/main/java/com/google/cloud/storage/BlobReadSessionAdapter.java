@@ -18,16 +18,29 @@ package com.google.cloud.storage;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.cloud.storage.StorageDataClient.FastOpenObjectReadSession;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
+import java.util.Objects;
 
 final class BlobReadSessionAdapter implements BlobReadSession {
 
   @VisibleForTesting final ObjectReadSession session;
+  private ObjectReadSessionStreamRead<?> fastOpenRead;
+  private final ReadProjectionConfig<?> fastOpenConfig;
 
   BlobReadSessionAdapter(ObjectReadSession session) {
+    this(session, null, null);
+  }
+
+  private BlobReadSessionAdapter(
+      ObjectReadSession session,
+      ObjectReadSessionStreamRead<?> fastOpenRead,
+      ReadProjectionConfig<?> fastOpenConfig) {
     this.session = session;
+    this.fastOpenRead = fastOpenRead;
+    this.fastOpenConfig = fastOpenConfig;
   }
 
   @Override
@@ -40,6 +53,17 @@ final class BlobReadSessionAdapter implements BlobReadSession {
   @SuppressWarnings({"rawtypes", "unchecked"})
   @Override
   public <Projection> Projection readAs(ReadProjectionConfig<Projection> config) {
+    synchronized (this) {
+      if (fastOpenRead != null && Objects.equals(config, fastOpenConfig)) {
+        Projection projection = (Projection) fastOpenRead.project();
+        fastOpenRead = null;
+        if (projection instanceof ApiFuture) {
+          ApiFuture apiFuture = (ApiFuture) projection;
+          return (Projection) StorageException.coalesceAsync(apiFuture);
+        }
+        return projection;
+      }
+    }
     Projection projection = session.readAs(config);
     if (projection instanceof ApiFuture) {
       ApiFuture apiFuture = (ApiFuture) projection;
@@ -57,6 +81,16 @@ final class BlobReadSessionAdapter implements BlobReadSession {
     return ApiFutures.transform(
         StorageException.coalesceAsync(session),
         BlobReadSessionAdapter::new,
+        MoreExecutors.directExecutor());
+  }
+
+  static <Projection> ApiFuture<BlobReadSession> wrap(
+      ApiFuture<FastOpenObjectReadSession<Projection>> session,
+      ReadProjectionConfig<Projection> config) {
+    return ApiFutures.transform(
+        StorageException.coalesceAsync(session),
+        fastOpen ->
+            new BlobReadSessionAdapter(fastOpen.getSession(), fastOpen.getRead(), config),
         MoreExecutors.directExecutor());
   }
 }
