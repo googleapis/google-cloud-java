@@ -47,6 +47,8 @@ import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableReference;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.DataFormatOptions;
+import com.google.cloud.bigquery.DataFormatOptions.TimestampFormatOptions;
 import com.google.cloud.bigquery.telemetry.BigQueryTelemetryTracer;
 import com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer;
 import io.opentelemetry.api.common.AttributeKey;
@@ -1565,7 +1567,35 @@ public class HttpBigQueryRpcTest {
       verifyRequest(
           "GET",
           "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID + "/data");
+      assertThat(lastRequestUrl).doesNotContain("formatOptions");
       verifyNoSpans();
+    }
+
+    @Test
+    public void testListTableDataWithDataFormatOptions() throws Exception {
+      setMockResponse("{\"kind\":\"bigquery#tableDataList\",\"rows\":[]}");
+
+      BigQueryOptions customOptions =
+          BigQueryOptions.newBuilder()
+              .setProjectId(PROJECT_ID)
+              .setCredentials(NoCredentials.getInstance())
+              .setTransportOptions(
+                  BigQueryOptions.getDefaultHttpTransportOptions().toBuilder()
+                      .setHttpTransportFactory(() -> mockTransport)
+                      .build())
+              .setDataFormatOptions(
+                  DataFormatOptions.newBuilder()
+                      .useInt64Timestamp(true)
+                      .timestampFormatOptions(TimestampFormatOptions.ISO8601_STRING)
+                      .build())
+              .build();
+      HttpBigQueryRpc customRpc = new HttpBigQueryRpc(customOptions);
+
+      customRpc.listTableDataSkipExceptionTranslation(
+          PROJECT_ID, DATASET_ID, TABLE_ID, new HashMap<>());
+
+      assertThat(lastRequestUrl).contains("formatOptions.useInt64Timestamp=true");
+      assertThat(lastRequestUrl).contains("formatOptions.timestampOutputFormat=ISO8601_STRING");
     }
 
     @Test
