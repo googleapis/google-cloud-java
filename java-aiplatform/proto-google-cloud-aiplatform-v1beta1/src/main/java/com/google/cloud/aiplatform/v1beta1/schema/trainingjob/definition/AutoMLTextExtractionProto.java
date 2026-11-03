@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/automl_text_extraction.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
@@ -29,9 +29,9 @@ public final class AutoMLTextExtractionProto extends com.google.protobuf.Generat
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "AutoMLTextExtractionProto");
   }
 
@@ -54,33 +54,41 @@ public final class AutoMLTextExtractionProto extends com.google.protobuf.Generat
     return descriptor;
   }
 
-  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+  private static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+  public static final class InternalDescriptors {
+    public static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+    static {
+      java.lang.String[] descriptorData = {
+        "\nZgoogle/cloud/aiplatform/v1beta1/schema"
+            + "/trainingjob/definition/automl_text_extr"
+            + "action.proto\022=google.cloud.aiplatform.v1"
+            + "beta1.schema.trainingjob.definition\"\201\001\n\024"
+            + "AutoMlTextExtraction\022i\n\006inputs\030\001 \001(\0132Y.g"
+            + "oogle.cloud.aiplatform.v1beta1.schema.tr"
+            + "ainingjob.definition.AutoMlTextExtractio"
+            + "nInputs\"\034\n\032AutoMlTextExtractionInputsB\211\003"
+            + "\nAcom.google.cloud.aiplatform.v1beta1.sc"
+            + "hema.trainingjob.definitionB\031AutoMLTextE"
+            + "xtractionProtoP\001Zacloud.google.com/go/ai"
+            + "platform/apiv1beta1/schema/trainingjob/d"
+            + "efinition/definitionpb;definitionpb\252\002=Go"
+            + "ogle.Cloud.AIPlatform.V1Beta1.Schema.Tra"
+            + "iningJob.Definition\312\002=Google\\Cloud\\AIPla"
+            + "tform\\V1beta1\\Schema\\TrainingJob\\Definit"
+            + "ion\352\002CGoogle::Cloud::AIPlatform::V1beta1"
+            + "::Schema::TrainingJob::Definitionb\006proto"
+            + "3"
+      };
+      descriptor =
+          com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+              descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    }
+  }
 
   static {
-    java.lang.String[] descriptorData = {
-      "\nZgoogle/cloud/aiplatform/v1beta1/schema"
-          + "/trainingjob/definition/automl_text_extr"
-          + "action.proto\022=google.cloud.aiplatform.v1"
-          + "beta1.schema.trainingjob.definition\"\201\001\n\024"
-          + "AutoMlTextExtraction\022i\n\006inputs\030\001 \001(\0132Y.g"
-          + "oogle.cloud.aiplatform.v1beta1.schema.tr"
-          + "ainingjob.definition.AutoMlTextExtractio"
-          + "nInputs\"\034\n\032AutoMlTextExtractionInputsB\211\003"
-          + "\nAcom.google.cloud.aiplatform.v1beta1.sc"
-          + "hema.trainingjob.definitionB\031AutoMLTextE"
-          + "xtractionProtoP\001Zacloud.google.com/go/ai"
-          + "platform/apiv1beta1/schema/trainingjob/d"
-          + "efinition/definitionpb;definitionpb\252\002=Go"
-          + "ogle.Cloud.AIPlatform.V1Beta1.Schema.Tra"
-          + "iningJob.Definition\312\002=Google\\Cloud\\AIPla"
-          + "tform\\V1beta1\\Schema\\TrainingJob\\Definit"
-          + "ion\352\002CGoogle::Cloud::AIPlatform::V1beta1"
-          + "::Schema::TrainingJob::Definitionb\006proto"
-          + "3"
-    };
-    descriptor =
-        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    descriptor = AutoMLTextExtractionProto.InternalDescriptors.descriptor;
     internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlTextExtraction_descriptor =
         getDescriptor().getMessageType(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_AutoMlTextExtraction_fieldAccessorTable =

@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/beyondcorp/clientconnectorservices/v1/client_connector_services_service.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.beyondcorp.clientconnectorservices.v1;
 
@@ -43,9 +43,9 @@ public final class ClientConnectorServiceOperationMetadata
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "ClientConnectorServiceOperationMetadata");
   }
 
@@ -63,6 +63,13 @@ public final class ClientConnectorServiceOperationMetadata
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.beyondcorp.clientconnectorservices.v1
+        .ClientConnectorServicesServiceProto
+        .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ClientConnectorServiceOperationMetadata_descriptor;
+  }
+
+  @java.lang.Override
+  public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
     return com.google.cloud.beyondcorp.clientconnectorservices.v1
         .ClientConnectorServicesServiceProto
         .internal_static_google_cloud_beyondcorp_clientconnectorservices_v1_ClientConnectorServiceOperationMetadata_descriptor;
@@ -134,6 +141,14 @@ public final class ClientConnectorServiceOperationMetadata
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
+  private void writeCreateTimeField(com.google.protobuf.CodedOutputStream output)
+      throws java.io.IOException {
+    com.google.protobuf.Timestamp tmp = getCreateTime();
+    output.writeUInt32NoTag(10);
+    output.writeUInt32NoTag(tmp.getSerializedSize());
+    tmp.writeTo(output);
+  }
+
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
 
@@ -184,6 +199,14 @@ public final class ClientConnectorServiceOperationMetadata
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+  }
+
+  private void writeEndTimeField(com.google.protobuf.CodedOutputStream output)
+      throws java.io.IOException {
+    com.google.protobuf.Timestamp tmp = getEndTime();
+    output.writeUInt32NoTag(18);
+    output.writeUInt32NoTag(tmp.getSerializedSize());
+    tmp.writeTo(output);
   }
 
   public static final int TARGET_FIELD_NUMBER = 3;
@@ -436,10 +459,10 @@ public final class ClientConnectorServiceOperationMetadata
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getCreateTime());
+      writeCreateTimeField(output);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(2, getEndTime());
+      writeEndTimeField(output);
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(target_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, target_);
@@ -459,12 +482,8 @@ public final class ClientConnectorServiceOperationMetadata
     getUnknownFields().writeTo(output);
   }
 
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
+  private int computeSerializedSize_0() {
+    int size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCreateTime());
     }
@@ -486,6 +505,16 @@ public final class ClientConnectorServiceOperationMetadata
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(apiVersion_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(7, apiVersion_);
     }
+    return size;
+  }
+
+  @java.lang.Override
+  public int getSerializedSize() {
+    int size = memoizedSize;
+    if (size != -1) return size;
+
+    size = 0;
+    size += computeSerializedSize_0();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -781,13 +810,13 @@ public final class ClientConnectorServiceOperationMetadata
               new com.google.cloud.beyondcorp.clientconnectorservices.v1
                   .ClientConnectorServiceOperationMetadata(this);
       if (bitField0_ != 0) {
-        buildPartial0(result);
+        buildPartial_autosplit_0(result);
       }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(
+    private void buildPartial_autosplit_0(
         com.google.cloud.beyondcorp.clientconnectorservices.v1
                 .ClientConnectorServiceOperationMetadata
             result) {
@@ -803,18 +832,22 @@ public final class ClientConnectorServiceOperationMetadata
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.target_ = target_;
+        ;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.verb_ = verb_;
+        ;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.statusMessage_ = statusMessage_;
+        ;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.requestedCancellation_ = requestedCancellation_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.apiVersion_ = apiVersion_;
+        ;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -886,9 +919,7 @@ public final class ClientConnectorServiceOperationMetadata
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      java.util.Objects.requireNonNull(extensionRegistry);
       try {
         boolean done = false;
         while (!done) {
@@ -899,15 +930,12 @@ public final class ClientConnectorServiceOperationMetadata
               break;
             case 10:
               {
-                input.readMessage(
-                    internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                parseCreateTimeField(input, extensionRegistry);
                 break;
               } // case 10
             case 18:
               {
-                input.readMessage(internalGetEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                parseEndTimeField(input, extensionRegistry);
                 break;
               } // case 18
             case 26:
@@ -1019,9 +1047,7 @@ public final class ClientConnectorServiceOperationMetadata
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+        java.util.Objects.requireNonNull(value);
         createTime_ = value;
       } else {
         createTimeBuilder_.setMessage(value);
@@ -1043,14 +1069,8 @@ public final class ClientConnectorServiceOperationMetadata
      * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (createTimeBuilder_ == null) {
-        createTime_ = builderForValue.build();
-      } else {
-        createTimeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
+      java.util.Objects.requireNonNull(builderForValue);
+      return setCreateTime(builderForValue.build());
     }
 
     /**
@@ -1168,7 +1188,23 @@ public final class ClientConnectorServiceOperationMetadata
                 getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
+      bitField0_ |= 0x00000001;
       return createTimeBuilder_;
+    }
+
+    private void parseCreateTimeField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      final int oldLimit = input.pushLimitBeforeMessage();
+      if (createTime_ != null || createTimeBuilder_ != null) {
+        internalGetCreateTimeFieldBuilder().getBuilder().mergeFrom(input, extensionRegistry);
+      } else {
+        createTime_ =
+            com.google.protobuf.Timestamp.parser().parsePartialFrom(input, extensionRegistry);
+      }
+      input.popLimitAfterMessage(oldLimit);
+      bitField0_ |= 0x00000001;
     }
 
     private com.google.protobuf.Timestamp endTime_;
@@ -1226,9 +1262,7 @@ public final class ClientConnectorServiceOperationMetadata
      */
     public Builder setEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
+        java.util.Objects.requireNonNull(value);
         endTime_ = value;
       } else {
         endTimeBuilder_.setMessage(value);
@@ -1249,14 +1283,8 @@ public final class ClientConnectorServiceOperationMetadata
      * </code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (endTimeBuilder_ == null) {
-        endTime_ = builderForValue.build();
-      } else {
-        endTimeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
+      java.util.Objects.requireNonNull(builderForValue);
+      return setEndTime(builderForValue.build());
     }
 
     /**
@@ -1367,7 +1395,23 @@ public final class ClientConnectorServiceOperationMetadata
                 getEndTime(), getParentForChildren(), isClean());
         endTime_ = null;
       }
+      bitField0_ |= 0x00000002;
       return endTimeBuilder_;
+    }
+
+    private void parseEndTimeField(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      final int oldLimit = input.pushLimitBeforeMessage();
+      if (endTime_ != null || endTimeBuilder_ != null) {
+        internalGetEndTimeFieldBuilder().getBuilder().mergeFrom(input, extensionRegistry);
+      } else {
+        endTime_ =
+            com.google.protobuf.Timestamp.parser().parsePartialFrom(input, extensionRegistry);
+      }
+      input.popLimitAfterMessage(oldLimit);
+      bitField0_ |= 0x00000002;
     }
 
     private java.lang.Object target_ = "";
@@ -1431,9 +1475,7 @@ public final class ClientConnectorServiceOperationMetadata
      * @return This builder for chaining.
      */
     public Builder setTarget(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       target_ = value;
       bitField0_ |= 0x00000004;
       onChanged();
@@ -1471,9 +1513,7 @@ public final class ClientConnectorServiceOperationMetadata
      * @return This builder for chaining.
      */
     public Builder setTargetBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       target_ = value;
       bitField0_ |= 0x00000004;
@@ -1542,9 +1582,7 @@ public final class ClientConnectorServiceOperationMetadata
      * @return This builder for chaining.
      */
     public Builder setVerb(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       verb_ = value;
       bitField0_ |= 0x00000008;
       onChanged();
@@ -1582,9 +1620,7 @@ public final class ClientConnectorServiceOperationMetadata
      * @return This builder for chaining.
      */
     public Builder setVerbBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       verb_ = value;
       bitField0_ |= 0x00000008;
@@ -1653,9 +1689,7 @@ public final class ClientConnectorServiceOperationMetadata
      * @return This builder for chaining.
      */
     public Builder setStatusMessage(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       statusMessage_ = value;
       bitField0_ |= 0x00000010;
       onChanged();
@@ -1693,9 +1727,7 @@ public final class ClientConnectorServiceOperationMetadata
      * @return This builder for chaining.
      */
     public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       statusMessage_ = value;
       bitField0_ |= 0x00000010;
@@ -1832,9 +1864,7 @@ public final class ClientConnectorServiceOperationMetadata
      * @return This builder for chaining.
      */
     public Builder setApiVersion(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       apiVersion_ = value;
       bitField0_ |= 0x00000040;
       onChanged();
@@ -1872,9 +1902,7 @@ public final class ClientConnectorServiceOperationMetadata
      * @return This builder for chaining.
      */
     public Builder setApiVersionBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       checkByteStringIsUtf8(value);
       apiVersion_ = value;
       bitField0_ |= 0x00000040;
@@ -1912,13 +1940,8 @@ public final class ClientConnectorServiceOperationMetadata
           Builder builder = newBuilder();
           try {
             builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
+          } catch (java.lang.Exception e) {
+            wrapAndThrowParseException(e, builder);
           }
           return builder.buildPartial();
         }

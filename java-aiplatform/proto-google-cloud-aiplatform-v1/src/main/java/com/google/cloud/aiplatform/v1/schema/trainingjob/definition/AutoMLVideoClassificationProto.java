@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_video_classification.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
@@ -29,9 +29,9 @@ public final class AutoMLVideoClassificationProto extends com.google.protobuf.Ge
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "AutoMLVideoClassificationProto");
   }
 
@@ -54,38 +54,46 @@ public final class AutoMLVideoClassificationProto extends com.google.protobuf.Ge
     return descriptor;
   }
 
-  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+  private static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+  public static final class InternalDescriptors {
+    public static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+    static {
+      java.lang.String[] descriptorData = {
+        "\nZgoogle/cloud/aiplatform/v1/schema/trai"
+            + "ningjob/definition/automl_video_classifi"
+            + "cation.proto\0228google.cloud.aiplatform.v1"
+            + ".schema.trainingjob.definition\"\206\001\n\031AutoM"
+            + "lVideoClassification\022i\n\006inputs\030\001 \001(\0132Y.g"
+            + "oogle.cloud.aiplatform.v1.schema.trainin"
+            + "gjob.definition.AutoMlVideoClassificatio"
+            + "nInputs\"\205\002\n\037AutoMlVideoClassificationInp"
+            + "uts\022w\n\nmodel_type\030\001 \001(\0162c.google.cloud.a"
+            + "iplatform.v1.schema.trainingjob.definiti"
+            + "on.AutoMlVideoClassificationInputs.Model"
+            + "Type\"i\n\tModelType\022\032\n\026MODEL_TYPE_UNSPECIF"
+            + "IED\020\000\022\t\n\005CLOUD\020\001\022\026\n\022MOBILE_VERSATILE_1\020\002"
+            + "\022\035\n\031MOBILE_JETSON_VERSATILE_1\020\003B\365\002\n<com."
+            + "google.cloud.aiplatform.v1.schema.traini"
+            + "ngjob.definitionB\036AutoMLVideoClassificat"
+            + "ionProtoP\001Z\\cloud.google.com/go/aiplatfo"
+            + "rm/apiv1/schema/trainingjob/definition/d"
+            + "efinitionpb;definitionpb\252\0028Google.Cloud."
+            + "AIPlatform.V1.Schema.TrainingJob.Definit"
+            + "ion\312\0028Google\\Cloud\\AIPlatform\\V1\\Schema\\"
+            + "TrainingJob\\Definition\352\002>Google::Cloud::"
+            + "AIPlatform::V1::Schema::TrainingJob::Def"
+            + "initionb\006proto3"
+      };
+      descriptor =
+          com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+              descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    }
+  }
 
   static {
-    java.lang.String[] descriptorData = {
-      "\nZgoogle/cloud/aiplatform/v1/schema/trai"
-          + "ningjob/definition/automl_video_classifi"
-          + "cation.proto\0228google.cloud.aiplatform.v1"
-          + ".schema.trainingjob.definition\"\206\001\n\031AutoM"
-          + "lVideoClassification\022i\n\006inputs\030\001 \001(\0132Y.g"
-          + "oogle.cloud.aiplatform.v1.schema.trainin"
-          + "gjob.definition.AutoMlVideoClassificatio"
-          + "nInputs\"\205\002\n\037AutoMlVideoClassificationInp"
-          + "uts\022w\n\nmodel_type\030\001 \001(\0162c.google.cloud.a"
-          + "iplatform.v1.schema.trainingjob.definiti"
-          + "on.AutoMlVideoClassificationInputs.Model"
-          + "Type\"i\n\tModelType\022\032\n\026MODEL_TYPE_UNSPECIF"
-          + "IED\020\000\022\t\n\005CLOUD\020\001\022\026\n\022MOBILE_VERSATILE_1\020\002"
-          + "\022\035\n\031MOBILE_JETSON_VERSATILE_1\020\003B\365\002\n<com."
-          + "google.cloud.aiplatform.v1.schema.traini"
-          + "ngjob.definitionB\036AutoMLVideoClassificat"
-          + "ionProtoP\001Z\\cloud.google.com/go/aiplatfo"
-          + "rm/apiv1/schema/trainingjob/definition/d"
-          + "efinitionpb;definitionpb\252\0028Google.Cloud."
-          + "AIPlatform.V1.Schema.TrainingJob.Definit"
-          + "ion\312\0028Google\\Cloud\\AIPlatform\\V1\\Schema\\"
-          + "TrainingJob\\Definition\352\002>Google::Cloud::"
-          + "AIPlatform::V1::Schema::TrainingJob::Def"
-          + "initionb\006proto3"
-    };
-    descriptor =
-        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    descriptor = AutoMLVideoClassificationProto.InternalDescriptors.descriptor;
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlVideoClassification_descriptor =
         getDescriptor().getMessageType(0);
     internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlVideoClassification_fieldAccessorTable =

@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1/schema/trainingjob/definition/automl_image_object_detection.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.aiplatform.v1.schema.trainingjob.definition;
 
@@ -36,9 +36,9 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "AutoMlImageObjectDetectionInputs");
   }
 
@@ -53,6 +53,13 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.aiplatform.v1.schema.trainingjob.definition
+        .AutoMLImageObjectDetectionProto
+        .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlImageObjectDetectionInputs_descriptor;
+  }
+
+  @java.lang.Override
+  public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
     return com.google.cloud.aiplatform.v1.schema.trainingjob.definition
         .AutoMLImageObjectDetectionProto
         .internal_static_google_cloud_aiplatform_v1_schema_trainingjob_definition_AutoMlImageObjectDetectionInputs_descriptor;
@@ -157,9 +164,9 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
           com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
           /* major= */ 4,
-          /* minor= */ 33,
-          /* patch= */ 6,
-          /* suffix= */ "",
+          /* minor= */ 37,
+          /* patch= */ 0,
+          /* suffix= */ "-rc1",
           "ModelType");
     }
 
@@ -300,7 +307,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
         throw new java.lang.IllegalStateException(
             "Can't get the descriptor of an unrecognized enum value.");
       }
-      return getDescriptor().getValues().get(ordinal());
+      return getDescriptor().getValue(ordinal());
     }
 
     public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
@@ -310,8 +317,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.aiplatform.v1.schema.trainingjob.definition
           .AutoMlImageObjectDetectionInputs.getDescriptor()
-          .getEnumTypes()
-          .get(0);
+          .getEnumType(0);
     }
 
     private static final ModelType[] VALUES = values();
@@ -335,6 +341,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs.ModelType)
   }
 
+  private int bitField0_;
   public static final int MODEL_TYPE_FIELD_NUMBER = 1;
   private int modelType_ = 0;
 
@@ -456,12 +463,8 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     getUnknownFields().writeTo(output);
   }
 
-  @java.lang.Override
-  public int getSerializedSize() {
-    int size = memoizedSize;
-    if (size != -1) return size;
-
-    size = 0;
+  private int computeSerializedSize_0() {
+    int size = 0;
     if (modelType_
         != com.google.cloud.aiplatform.v1.schema.trainingjob.definition
             .AutoMlImageObjectDetectionInputs.ModelType.MODEL_TYPE_UNSPECIFIED
@@ -474,6 +477,16 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
     if (disableEarlyStopping_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, disableEarlyStopping_);
     }
+    return size;
+  }
+
+  @java.lang.Override
+  public int getSerializedSize() {
+    int size = memoizedSize;
+    if (size != -1) return size;
+
+    size = 0;
+    size += computeSerializedSize_0();
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -719,19 +732,21 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
               new com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                   .AutoMlImageObjectDetectionInputs(this);
       if (bitField0_ != 0) {
-        buildPartial0(result);
+        buildPartial_autosplit_0(result);
       }
       onBuilt();
       return result;
     }
 
-    private void buildPartial0(
+    private void buildPartial_autosplit_0(
         com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                 .AutoMlImageObjectDetectionInputs
             result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.modelType_ = modelType_;
+        ;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.budgetMilliNodeHours_ = budgetMilliNodeHours_;
@@ -739,6 +754,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.disableEarlyStopping_ = disableEarlyStopping_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -788,9 +804,7 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
+      java.util.Objects.requireNonNull(extensionRegistry);
       try {
         boolean done = false;
         while (!done) {
@@ -893,15 +907,14 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
      * </code>
      *
      * @param value The modelType to set.
+     * @throws IllegalArgumentException if UNRECOGNIZED is provided.
      * @return This builder for chaining.
      */
     public Builder setModelType(
         com.google.cloud.aiplatform.v1.schema.trainingjob.definition
                 .AutoMlImageObjectDetectionInputs.ModelType
             value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
+      java.util.Objects.requireNonNull(value);
       bitField0_ |= 0x00000001;
       modelType_ = value.getNumber();
       onChanged();
@@ -1115,13 +1128,8 @@ public final class AutoMlImageObjectDetectionInputs extends com.google.protobuf.
           Builder builder = newBuilder();
           try {
             builder.mergeFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            throw e.setUnfinishedMessage(builder.buildPartial());
-          } catch (com.google.protobuf.UninitializedMessageException e) {
-            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-          } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                .setUnfinishedMessage(builder.buildPartial());
+          } catch (java.lang.Exception e) {
+            wrapAndThrowParseException(e, builder);
           }
           return builder.buildPartial();
         }

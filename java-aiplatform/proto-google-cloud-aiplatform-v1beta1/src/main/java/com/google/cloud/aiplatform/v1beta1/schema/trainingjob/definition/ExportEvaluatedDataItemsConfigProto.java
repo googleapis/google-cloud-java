@@ -17,7 +17,7 @@
 // NO CHECKED-IN PROTOBUF GENCODE
 // source:
 // google/cloud/aiplatform/v1beta1/schema/trainingjob/definition/export_evaluated_data_items_config.proto
-// Protobuf Java Version: 4.33.6
+// Protobuf Java Version: 4.37.0-rc1
 
 package com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition;
 
@@ -29,9 +29,9 @@ public final class ExportEvaluatedDataItemsConfigProto extends com.google.protob
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
         com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
         /* major= */ 4,
-        /* minor= */ 33,
-        /* patch= */ 6,
-        /* suffix= */ "",
+        /* minor= */ 37,
+        /* patch= */ 0,
+        /* suffix= */ "-rc1",
         "ExportEvaluatedDataItemsConfigProto");
   }
 
@@ -50,32 +50,40 @@ public final class ExportEvaluatedDataItemsConfigProto extends com.google.protob
     return descriptor;
   }
 
-  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+  private static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+  public static final class InternalDescriptors {
+    public static final com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
+    static {
+      java.lang.String[] descriptorData = {
+        "\nfgoogle/cloud/aiplatform/v1beta1/schema"
+            + "/trainingjob/definition/export_evaluated"
+            + "_data_items_config.proto\022=google.cloud.a"
+            + "iplatform.v1beta1.schema.trainingjob.def"
+            + "inition\"c\n\036ExportEvaluatedDataItemsConfi"
+            + "g\022 \n\030destination_bigquery_uri\030\001 \001(\t\022\037\n\027o"
+            + "verride_existing_table\030\002 \001(\010B\223\003\nAcom.goo"
+            + "gle.cloud.aiplatform.v1beta1.schema.trai"
+            + "ningjob.definitionB#ExportEvaluatedDataI"
+            + "temsConfigProtoP\001Zacloud.google.com/go/a"
+            + "iplatform/apiv1beta1/schema/trainingjob/"
+            + "definition/definitionpb;definitionpb\252\002=G"
+            + "oogle.Cloud.AIPlatform.V1Beta1.Schema.Tr"
+            + "ainingJob.Definition\312\002=Google\\Cloud\\AIPl"
+            + "atform\\V1beta1\\Schema\\TrainingJob\\Defini"
+            + "tion\352\002CGoogle::Cloud::AIPlatform::V1beta"
+            + "1::Schema::TrainingJob::Definitionb\006prot"
+            + "o3"
+      };
+      descriptor =
+          com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+              descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    }
+  }
 
   static {
-    java.lang.String[] descriptorData = {
-      "\nfgoogle/cloud/aiplatform/v1beta1/schema"
-          + "/trainingjob/definition/export_evaluated"
-          + "_data_items_config.proto\022=google.cloud.a"
-          + "iplatform.v1beta1.schema.trainingjob.def"
-          + "inition\"c\n\036ExportEvaluatedDataItemsConfi"
-          + "g\022 \n\030destination_bigquery_uri\030\001 \001(\t\022\037\n\027o"
-          + "verride_existing_table\030\002 \001(\010B\223\003\nAcom.goo"
-          + "gle.cloud.aiplatform.v1beta1.schema.trai"
-          + "ningjob.definitionB#ExportEvaluatedDataI"
-          + "temsConfigProtoP\001Zacloud.google.com/go/a"
-          + "iplatform/apiv1beta1/schema/trainingjob/"
-          + "definition/definitionpb;definitionpb\252\002=G"
-          + "oogle.Cloud.AIPlatform.V1Beta1.Schema.Tr"
-          + "ainingJob.Definition\312\002=Google\\Cloud\\AIPl"
-          + "atform\\V1beta1\\Schema\\TrainingJob\\Defini"
-          + "tion\352\002CGoogle::Cloud::AIPlatform::V1beta"
-          + "1::Schema::TrainingJob::Definitionb\006prot"
-          + "o3"
-    };
-    descriptor =
-        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+    descriptor = ExportEvaluatedDataItemsConfigProto.InternalDescriptors.descriptor;
     internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_ExportEvaluatedDataItemsConfig_descriptor =
         getDescriptor().getMessageType(0);
     internal_static_google_cloud_aiplatform_v1beta1_schema_trainingjob_definition_ExportEvaluatedDataItemsConfig_fieldAccessorTable =
