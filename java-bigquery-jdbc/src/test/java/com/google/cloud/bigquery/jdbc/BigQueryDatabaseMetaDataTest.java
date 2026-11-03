@@ -726,12 +726,12 @@ public class BigQueryDatabaseMetaDataTest {
     // Add rows in unsorted order (based on TYPE, CAT, SCHEM, NAME)
     results.add(createTableRow("cat_a", "sch_z", "table_1", "TABLE", schemaFields));
     results.add(createTableRow("cat_b", "sch_a", "view_1", "VIEW", schemaFields));
-    results.add(
-        createTableRow("cat_a", "sch_a", "RetailGraph.Product", "GRAPH TABLE", schemaFields));
     results.add(createTableRow("cat_a", "sch_c", "table_2", "TABLE", schemaFields));
     results.add(createTableRow(null, "sch_b", "table_0", "TABLE", schemaFields));
     results.add(createTableRow("cat_a", "sch_z", "table_0", "TABLE", schemaFields));
     results.add(createTableRow("cat_a", null, "view_0", "VIEW", schemaFields));
+    results.add(
+        createTableRow("cat_a", "sch_a", "RetailGraph.Product", "GRAPH TABLE", schemaFields));
 
     Comparator<FieldValueList> comparator = dbMetadata.defineGetTablesComparator(schemaFields);
     dbMetadata.sortResults(results, comparator, "getTables", dbMetadata.LOG);
@@ -4006,34 +4006,16 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testQuoteIdentifier() throws SQLException {
-    assertEquals("`my-project_1`", BigQueryDatabaseMetaData.quoteIdentifier("my-project_1"));
-    assertEquals("`my_dataset`", BigQueryDatabaseMetaData.quoteIdentifier("my_dataset"));
-    assertEquals("`region-us`", BigQueryDatabaseMetaData.quoteIdentifier("region-us"));
-
-    assertThrows(BigQueryJdbcException.class, () -> BigQueryDatabaseMetaData.quoteIdentifier(null));
-    assertThrows(BigQueryJdbcException.class, () -> BigQueryDatabaseMetaData.quoteIdentifier(""));
-    assertThrows(
-        BigQueryJdbcException.class, () -> BigQueryDatabaseMetaData.quoteIdentifier("bad`id"));
-    assertThrows(
-        BigQueryJdbcException.class, () -> BigQueryDatabaseMetaData.quoteIdentifier("drop;table"));
-  }
-
-  @Test
   public void testGraphTablesSqlContent() throws SQLException {
     String datasetSql =
         dbMetadata.replaceSqlParameters(
-            BigQueryDatabaseMetaData.getGraphTablesDatasetSqlContent(),
-            BigQueryDatabaseMetaData.quoteIdentifier("my-project"),
-            BigQueryDatabaseMetaData.quoteIdentifier("my_dataset"));
-    assertThat(datasetSql).contains("`my-project`.`my_dataset`.INFORMATION_SCHEMA.PROPERTY_GRAPHS");
+            BigQueryDatabaseMetaData.getGraphTablesSqlContent(), "my-project", "my_dataset");
+    assertThat(datasetSql).contains("`my-project.my_dataset.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
 
     String regionSql =
         dbMetadata.replaceSqlParameters(
-            BigQueryDatabaseMetaData.getGraphTablesRegionSqlContent(),
-            BigQueryDatabaseMetaData.quoteIdentifier("my-project"),
-            BigQueryDatabaseMetaData.quoteIdentifier("region-us"));
-    assertThat(regionSql).contains("`my-project`.`region-us`.INFORMATION_SCHEMA.PROPERTY_GRAPHS");
+            BigQueryDatabaseMetaData.getGraphTablesSqlContent(), "my-project", "region-us");
+    assertThat(regionSql).contains("`my-project.region-us.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
   }
 
   @FunctionalInterface

@@ -22,8 +22,9 @@ SELECT
     JSON_VALUE(t, '$.dataSourceTable.projectId'), '.',
     JSON_VALUE(t, '$.dataSourceTable.datasetId'), '.',
     JSON_VALUE(t, '$.dataSourceTable.tableId')) AS SOURCE_TABLE
-FROM %1$s.%2$s.INFORMATION_SCHEMA.PROPERTY_GRAPHS,
+FROM `%1$s.%2$s.INFORMATION_SCHEMA.PROPERTY_GRAPHS`,
 UNNEST(ARRAY_CONCAT(
   IFNULL(JSON_QUERY_ARRAY(property_graph_metadata_json, '$.nodeTables'), []),
   IFNULL(JSON_QUERY_ARRAY(property_graph_metadata_json, '$.edgeTables'), []))) AS t
-WHERE LOWER(CONCAT(property_graph_name, '.', JSON_VALUE(t, '$.name'))) LIKE LOWER(?)
+WHERE LOWER(property_graph_schema) LIKE LOWER(?)
+  AND LOWER(CONCAT(property_graph_name, '.', JSON_VALUE(t, '$.name'))) LIKE LOWER(?)

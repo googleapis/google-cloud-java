@@ -877,17 +877,6 @@ public class ITDatabaseMetadataTest extends ITBase {
       Assertions.assertTrue(graphTables.contains(graphName + ".Person"));
       Assertions.assertTrue(graphTables.contains(graphName + ".Knows"));
       Assertions.assertEquals(2, graphTables.size());
-    } finally {
-      try (Connection cleanupConn = DriverManager.getConnection(ITBase.connectionUrl);
-          Statement cleanupStmt = cleanupConn.createStatement()) {
-        cleanupStmt.execute(
-            String.format(
-                "DROP PROPERTY GRAPH IF EXISTS `%s.%s.%s`", PROJECT_ID, DATASET, graphName));
-        cleanupStmt.execute(
-            String.format("DROP TABLE IF EXISTS `%s.%s.%s`", PROJECT_ID, DATASET, edgeTable));
-        cleanupStmt.execute(
-            String.format("DROP TABLE IF EXISTS `%s.%s.%s`", PROJECT_ID, DATASET, nodeTable));
-      }
     }
   }
 

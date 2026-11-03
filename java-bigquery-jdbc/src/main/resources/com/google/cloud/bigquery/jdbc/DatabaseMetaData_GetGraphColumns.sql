@@ -25,7 +25,7 @@ WITH props AS (
     JSON_VALUE(p, '$.expressionKind') AS expression_kind,
     JSON_VALUE(p, '$.info.description') AS description,
     (lp_off * 100000) + p_off AS first_seen
-  FROM %1$s.%2$s.INFORMATION_SCHEMA.PROPERTY_GRAPHS,
+  FROM `%1$s.%2$s.INFORMATION_SCHEMA.PROPERTY_GRAPHS`,
     UNNEST([STRUCT(JSON_QUERY_ARRAY(property_graph_metadata_json, '$.nodeTables') AS arr),
             STRUCT(JSON_QUERY_ARRAY(property_graph_metadata_json, '$.edgeTables') AS arr)]) k,
     UNNEST(k.arr) t,
