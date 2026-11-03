@@ -10,6 +10,12 @@
         "grpc": {
           "libraryClient": "BackupDRClient",
           "rpcs": {
+            "CreateAutoProtectionPolicy": {
+              "methods": ["createAutoProtectionPolicyAsync", "createAutoProtectionPolicyAsync", "createAutoProtectionPolicyAsync", "createAutoProtectionPolicyOperationCallable", "createAutoProtectionPolicyCallable"]
+            },
+            "CreateAutoProtectionPolicyBinding": {
+              "methods": ["createAutoProtectionPolicyBindingAsync", "createAutoProtectionPolicyBindingAsync", "createAutoProtectionPolicyBindingAsync", "createAutoProtectionPolicyBindingOperationCallable", "createAutoProtectionPolicyBindingCallable"]
+            },
             "CreateBackupPlan": {
               "methods": ["createBackupPlanAsync", "createBackupPlanAsync", "createBackupPlanAsync", "createBackupPlanOperationCallable", "createBackupPlanCallable"]
             },
@@ -21,6 +27,9 @@
             },
             "CreateManagementServer": {
               "methods": ["createManagementServerAsync", "createManagementServerAsync", "createManagementServerAsync", "createManagementServerOperationCallable", "createManagementServerCallable"]
+            },
+            "DeleteAutoProtectionPolicy": {
+              "methods": ["deleteAutoProtectionPolicyAsync", "deleteAutoProtectionPolicyAsync", "deleteAutoProtectionPolicyAsync", "deleteAutoProtectionPolicyOperationCallable", "deleteAutoProtectionPolicyCallable"]
             },
             "DeleteBackup": {
               "methods": ["deleteBackupAsync", "deleteBackupAsync", "deleteBackupAsync", "deleteBackupOperationCallable", "deleteBackupCallable"]
@@ -48,6 +57,12 @@
             },
             "FetchUsableBackupVaults": {
               "methods": ["fetchUsableBackupVaults", "fetchUsableBackupVaults", "fetchUsableBackupVaults", "fetchUsableBackupVaultsPagedCallable", "fetchUsableBackupVaultsCallable"]
+            },
+            "GetAutoProtectionPolicy": {
+              "methods": ["getAutoProtectionPolicy", "getAutoProtectionPolicy", "getAutoProtectionPolicy", "getAutoProtectionPolicyCallable"]
+            },
+            "GetAutoProtectionPolicyBinding": {
+              "methods": ["getAutoProtectionPolicyBinding", "getAutoProtectionPolicyBinding", "getAutoProtectionPolicyBinding", "getAutoProtectionPolicyBindingCallable"]
             },
             "GetBackup": {
               "methods": ["getBackup", "getBackup", "getBackup", "getBackupCallable"]
@@ -82,6 +97,18 @@
             "InitializeService": {
               "methods": ["initializeServiceAsync", "initializeServiceOperationCallable", "initializeServiceCallable"]
             },
+            "InitiateDeleteAutoProtectionPolicyBinding": {
+              "methods": ["initiateDeleteAutoProtectionPolicyBindingAsync", "initiateDeleteAutoProtectionPolicyBindingAsync", "initiateDeleteAutoProtectionPolicyBindingAsync", "initiateDeleteAutoProtectionPolicyBindingOperationCallable", "initiateDeleteAutoProtectionPolicyBindingCallable"]
+            },
+            "ListAppliedAutoProtectionPolicies": {
+              "methods": ["listAppliedAutoProtectionPolicies", "listAppliedAutoProtectionPolicies", "listAppliedAutoProtectionPolicies", "listAppliedAutoProtectionPoliciesPagedCallable", "listAppliedAutoProtectionPoliciesCallable"]
+            },
+            "ListAutoProtectionPolicies": {
+              "methods": ["listAutoProtectionPolicies", "listAutoProtectionPolicies", "listAutoProtectionPolicies", "listAutoProtectionPoliciesPagedCallable", "listAutoProtectionPoliciesCallable"]
+            },
+            "ListAutoProtectionPolicyBindings": {
+              "methods": ["listAutoProtectionPolicyBindings", "listAutoProtectionPolicyBindings", "listAutoProtectionPolicyBindings", "listAutoProtectionPolicyBindingsPagedCallable", "listAutoProtectionPolicyBindingsCallable"]
+            },
             "ListBackupPlanAssociations": {
               "methods": ["listBackupPlanAssociations", "listBackupPlanAssociations", "listBackupPlanAssociations", "listBackupPlanAssociationsPagedCallable", "listBackupPlanAssociationsCallable"]
             },
@@ -96,6 +123,9 @@
             },
             "ListBackups": {
               "methods": ["listBackups", "listBackups", "listBackups", "listBackupsPagedCallable", "listBackupsCallable"]
+            },
+            "ListBindingMatchingResources": {
+              "methods": ["listBindingMatchingResources", "listBindingMatchingResources", "listBindingMatchingResources", "listBindingMatchingResourcesPagedCallable", "listBindingMatchingResourcesCallable"]
             },
             "ListDataSourceReferences": {
               "methods": ["listDataSourceReferences", "listDataSourceReferences", "listDataSourceReferences", "listDataSourceReferencesPagedCallable", "listDataSourceReferencesCallable"]
@@ -120,6 +150,9 @@
             },
             "TriggerBackup": {
               "methods": ["triggerBackupAsync", "triggerBackupAsync", "triggerBackupAsync", "triggerBackupOperationCallable", "triggerBackupCallable"]
+            },
+            "UpdateAutoProtectionPolicy": {
+              "methods": ["updateAutoProtectionPolicyAsync", "updateAutoProtectionPolicyAsync", "updateAutoProtectionPolicyOperationCallable", "updateAutoProtectionPolicyCallable"]
             },
             "UpdateBackup": {
               "methods": ["updateBackupAsync", "updateBackupAsync", "updateBackupOperationCallable", "updateBackupCallable"]

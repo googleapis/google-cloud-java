@@ -20,11 +20,15 @@ import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssocia
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupsForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAppliedAutoProtectionPoliciesPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAutoProtectionPoliciesPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAutoProtectionPolicyBindingsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevisionsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBindingMatchingResourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourceReferencesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
@@ -61,17 +65,24 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.backupdr.v1.AppliedAutoProtectionPolicy;
+import com.google.cloud.backupdr.v1.AutoProtectionPolicy;
+import com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding;
 import com.google.cloud.backupdr.v1.Backup;
 import com.google.cloud.backupdr.v1.BackupPlan;
 import com.google.cloud.backupdr.v1.BackupPlanAssociation;
 import com.google.cloud.backupdr.v1.BackupPlanRevision;
 import com.google.cloud.backupdr.v1.BackupVault;
+import com.google.cloud.backupdr.v1.BindingMatchingResource;
+import com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest;
+import com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest;
 import com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.CreateBackupPlanRequest;
 import com.google.cloud.backupdr.v1.CreateBackupVaultRequest;
 import com.google.cloud.backupdr.v1.CreateManagementServerRequest;
 import com.google.cloud.backupdr.v1.DataSource;
 import com.google.cloud.backupdr.v1.DataSourceReference;
+import com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupPlanRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupRequest;
@@ -85,6 +96,8 @@ import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequ
 import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsResponse;
+import com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest;
+import com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest;
@@ -95,6 +108,13 @@ import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
 import com.google.cloud.backupdr.v1.InitializeServiceRequest;
 import com.google.cloud.backupdr.v1.InitializeServiceResponse;
+import com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest;
+import com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest;
+import com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse;
+import com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest;
+import com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse;
+import com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest;
+import com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest;
@@ -105,6 +125,8 @@ import com.google.cloud.backupdr.v1.ListBackupVaultsRequest;
 import com.google.cloud.backupdr.v1.ListBackupVaultsResponse;
 import com.google.cloud.backupdr.v1.ListBackupsRequest;
 import com.google.cloud.backupdr.v1.ListBackupsResponse;
+import com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest;
+import com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse;
 import com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest;
 import com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse;
 import com.google.cloud.backupdr.v1.ListDataSourcesRequest;
@@ -116,6 +138,7 @@ import com.google.cloud.backupdr.v1.OperationMetadata;
 import com.google.cloud.backupdr.v1.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1.RestoreBackupResponse;
 import com.google.cloud.backupdr.v1.TriggerBackupRequest;
+import com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupPlanRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupRequest;
@@ -350,6 +373,57 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
   private final OperationCallSettings<
           InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
       initializeServiceOperationSettings;
+  private final UnaryCallSettings<CreateAutoProtectionPolicyRequest, Operation>
+      createAutoProtectionPolicySettings;
+  private final OperationCallSettings<
+          CreateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyOperationSettings;
+  private final PagedCallSettings<
+          ListAutoProtectionPoliciesRequest,
+          ListAutoProtectionPoliciesResponse,
+          ListAutoProtectionPoliciesPagedResponse>
+      listAutoProtectionPoliciesSettings;
+  private final UnaryCallSettings<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>
+      getAutoProtectionPolicySettings;
+  private final UnaryCallSettings<UpdateAutoProtectionPolicyRequest, Operation>
+      updateAutoProtectionPolicySettings;
+  private final OperationCallSettings<
+          UpdateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      updateAutoProtectionPolicyOperationSettings;
+  private final UnaryCallSettings<DeleteAutoProtectionPolicyRequest, Operation>
+      deleteAutoProtectionPolicySettings;
+  private final OperationCallSettings<DeleteAutoProtectionPolicyRequest, Empty, OperationMetadata>
+      deleteAutoProtectionPolicyOperationSettings;
+  private final UnaryCallSettings<CreateAutoProtectionPolicyBindingRequest, Operation>
+      createAutoProtectionPolicyBindingSettings;
+  private final OperationCallSettings<
+          CreateAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingOperationSettings;
+  private final UnaryCallSettings<
+          GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>
+      getAutoProtectionPolicyBindingSettings;
+  private final PagedCallSettings<
+          ListAutoProtectionPolicyBindingsRequest,
+          ListAutoProtectionPolicyBindingsResponse,
+          ListAutoProtectionPolicyBindingsPagedResponse>
+      listAutoProtectionPolicyBindingsSettings;
+  private final PagedCallSettings<
+          ListAppliedAutoProtectionPoliciesRequest,
+          ListAppliedAutoProtectionPoliciesResponse,
+          ListAppliedAutoProtectionPoliciesPagedResponse>
+      listAppliedAutoProtectionPoliciesSettings;
+  private final UnaryCallSettings<InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>
+      initiateDeleteAutoProtectionPolicyBindingSettings;
+  private final OperationCallSettings<
+          InitiateDeleteAutoProtectionPolicyBindingRequest,
+          AutoProtectionPolicyBinding,
+          OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingOperationSettings;
+  private final PagedCallSettings<
+          ListBindingMatchingResourcesRequest,
+          ListBindingMatchingResourcesResponse,
+          ListBindingMatchingResourcesPagedResponse>
+      listBindingMatchingResourcesSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -859,6 +933,194 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<
+          ListAutoProtectionPoliciesRequest,
+          ListAutoProtectionPoliciesResponse,
+          AutoProtectionPolicy>
+      LIST_AUTO_PROTECTION_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAutoProtectionPoliciesRequest,
+              ListAutoProtectionPoliciesResponse,
+              AutoProtectionPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAutoProtectionPoliciesRequest injectToken(
+                ListAutoProtectionPoliciesRequest payload, String token) {
+              return ListAutoProtectionPoliciesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListAutoProtectionPoliciesRequest injectPageSize(
+                ListAutoProtectionPoliciesRequest payload, int pageSize) {
+              return ListAutoProtectionPoliciesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAutoProtectionPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAutoProtectionPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AutoProtectionPolicy> extractResources(
+                ListAutoProtectionPoliciesResponse payload) {
+              return payload.getAutoProtectionPoliciesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAutoProtectionPolicyBindingsRequest,
+          ListAutoProtectionPolicyBindingsResponse,
+          AutoProtectionPolicyBinding>
+      LIST_AUTO_PROTECTION_POLICY_BINDINGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAutoProtectionPolicyBindingsRequest,
+              ListAutoProtectionPolicyBindingsResponse,
+              AutoProtectionPolicyBinding>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAutoProtectionPolicyBindingsRequest injectToken(
+                ListAutoProtectionPolicyBindingsRequest payload, String token) {
+              return ListAutoProtectionPolicyBindingsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListAutoProtectionPolicyBindingsRequest injectPageSize(
+                ListAutoProtectionPolicyBindingsRequest payload, int pageSize) {
+              return ListAutoProtectionPolicyBindingsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAutoProtectionPolicyBindingsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAutoProtectionPolicyBindingsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AutoProtectionPolicyBinding> extractResources(
+                ListAutoProtectionPolicyBindingsResponse payload) {
+              return payload.getAutoProtectionPolicyBindingsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListAppliedAutoProtectionPoliciesRequest,
+          ListAppliedAutoProtectionPoliciesResponse,
+          AppliedAutoProtectionPolicy>
+      LIST_APPLIED_AUTO_PROTECTION_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAppliedAutoProtectionPoliciesRequest,
+              ListAppliedAutoProtectionPoliciesResponse,
+              AppliedAutoProtectionPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAppliedAutoProtectionPoliciesRequest injectToken(
+                ListAppliedAutoProtectionPoliciesRequest payload, String token) {
+              return ListAppliedAutoProtectionPoliciesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListAppliedAutoProtectionPoliciesRequest injectPageSize(
+                ListAppliedAutoProtectionPoliciesRequest payload, int pageSize) {
+              return ListAppliedAutoProtectionPoliciesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAppliedAutoProtectionPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAppliedAutoProtectionPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AppliedAutoProtectionPolicy> extractResources(
+                ListAppliedAutoProtectionPoliciesResponse payload) {
+              return payload.getAppliedAutoProtectionPoliciesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBindingMatchingResourcesRequest,
+          ListBindingMatchingResourcesResponse,
+          BindingMatchingResource>
+      LIST_BINDING_MATCHING_RESOURCES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBindingMatchingResourcesRequest,
+              ListBindingMatchingResourcesResponse,
+              BindingMatchingResource>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBindingMatchingResourcesRequest injectToken(
+                ListBindingMatchingResourcesRequest payload, String token) {
+              return ListBindingMatchingResourcesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListBindingMatchingResourcesRequest injectPageSize(
+                ListBindingMatchingResourcesRequest payload, int pageSize) {
+              return ListBindingMatchingResourcesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBindingMatchingResourcesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBindingMatchingResourcesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BindingMatchingResource> extractResources(
+                ListBindingMatchingResourcesResponse payload) {
+              return payload.getMatchingResourcesList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -1190,6 +1452,132 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
                           request,
                           context);
               return FetchDataSourceReferencesForResourceTypePagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAutoProtectionPoliciesRequest,
+          ListAutoProtectionPoliciesResponse,
+          ListAutoProtectionPoliciesPagedResponse>
+      LIST_AUTO_PROTECTION_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAutoProtectionPoliciesRequest,
+              ListAutoProtectionPoliciesResponse,
+              ListAutoProtectionPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAutoProtectionPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesResponse>
+                    callable,
+                ListAutoProtectionPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAutoProtectionPoliciesResponse> futureResponse) {
+              PageContext<
+                      ListAutoProtectionPoliciesRequest,
+                      ListAutoProtectionPoliciesResponse,
+                      AutoProtectionPolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_AUTO_PROTECTION_POLICIES_PAGE_STR_DESC, request, context);
+              return ListAutoProtectionPoliciesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAutoProtectionPolicyBindingsRequest,
+          ListAutoProtectionPolicyBindingsResponse,
+          ListAutoProtectionPolicyBindingsPagedResponse>
+      LIST_AUTO_PROTECTION_POLICY_BINDINGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAutoProtectionPolicyBindingsRequest,
+              ListAutoProtectionPolicyBindingsResponse,
+              ListAutoProtectionPolicyBindingsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAutoProtectionPolicyBindingsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListAutoProtectionPolicyBindingsRequest,
+                        ListAutoProtectionPolicyBindingsResponse>
+                    callable,
+                ListAutoProtectionPolicyBindingsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAutoProtectionPolicyBindingsResponse> futureResponse) {
+              PageContext<
+                      ListAutoProtectionPolicyBindingsRequest,
+                      ListAutoProtectionPolicyBindingsResponse,
+                      AutoProtectionPolicyBinding>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_AUTO_PROTECTION_POLICY_BINDINGS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListAutoProtectionPolicyBindingsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAppliedAutoProtectionPoliciesRequest,
+          ListAppliedAutoProtectionPoliciesResponse,
+          ListAppliedAutoProtectionPoliciesPagedResponse>
+      LIST_APPLIED_AUTO_PROTECTION_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAppliedAutoProtectionPoliciesRequest,
+              ListAppliedAutoProtectionPoliciesResponse,
+              ListAppliedAutoProtectionPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListAppliedAutoProtectionPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListAppliedAutoProtectionPoliciesRequest,
+                        ListAppliedAutoProtectionPoliciesResponse>
+                    callable,
+                ListAppliedAutoProtectionPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAppliedAutoProtectionPoliciesResponse> futureResponse) {
+              PageContext<
+                      ListAppliedAutoProtectionPoliciesRequest,
+                      ListAppliedAutoProtectionPoliciesResponse,
+                      AppliedAutoProtectionPolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_APPLIED_AUTO_PROTECTION_POLICIES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListAppliedAutoProtectionPoliciesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBindingMatchingResourcesRequest,
+          ListBindingMatchingResourcesResponse,
+          ListBindingMatchingResourcesPagedResponse>
+      LIST_BINDING_MATCHING_RESOURCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBindingMatchingResourcesRequest,
+              ListBindingMatchingResourcesResponse,
+              ListBindingMatchingResourcesPagedResponse>() {
+            @Override
+            public ApiFuture<ListBindingMatchingResourcesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesResponse>
+                    callable,
+                ListBindingMatchingResourcesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBindingMatchingResourcesResponse> futureResponse) {
+              PageContext<
+                      ListBindingMatchingResourcesRequest,
+                      ListBindingMatchingResourcesResponse,
+                      BindingMatchingResource>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_BINDING_MATCHING_RESOURCES_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListBindingMatchingResourcesPagedResponse.createAsync(
                   pageContext, futureResponse);
             }
           };
@@ -1555,6 +1943,126 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     return initializeServiceOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to createAutoProtectionPolicy. */
+  public UnaryCallSettings<CreateAutoProtectionPolicyRequest, Operation>
+      createAutoProtectionPolicySettings() {
+    return createAutoProtectionPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAutoProtectionPolicy. */
+  public OperationCallSettings<
+          CreateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyOperationSettings() {
+    return createAutoProtectionPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAutoProtectionPolicies. */
+  public PagedCallSettings<
+          ListAutoProtectionPoliciesRequest,
+          ListAutoProtectionPoliciesResponse,
+          ListAutoProtectionPoliciesPagedResponse>
+      listAutoProtectionPoliciesSettings() {
+    return listAutoProtectionPoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAutoProtectionPolicy. */
+  public UnaryCallSettings<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>
+      getAutoProtectionPolicySettings() {
+    return getAutoProtectionPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAutoProtectionPolicy. */
+  public UnaryCallSettings<UpdateAutoProtectionPolicyRequest, Operation>
+      updateAutoProtectionPolicySettings() {
+    return updateAutoProtectionPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAutoProtectionPolicy. */
+  public OperationCallSettings<
+          UpdateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      updateAutoProtectionPolicyOperationSettings() {
+    return updateAutoProtectionPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAutoProtectionPolicy. */
+  public UnaryCallSettings<DeleteAutoProtectionPolicyRequest, Operation>
+      deleteAutoProtectionPolicySettings() {
+    return deleteAutoProtectionPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAutoProtectionPolicy. */
+  public OperationCallSettings<DeleteAutoProtectionPolicyRequest, Empty, OperationMetadata>
+      deleteAutoProtectionPolicyOperationSettings() {
+    return deleteAutoProtectionPolicyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAutoProtectionPolicyBinding. */
+  public UnaryCallSettings<CreateAutoProtectionPolicyBindingRequest, Operation>
+      createAutoProtectionPolicyBindingSettings() {
+    return createAutoProtectionPolicyBindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAutoProtectionPolicyBinding. */
+  public OperationCallSettings<
+          CreateAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingOperationSettings() {
+    return createAutoProtectionPolicyBindingOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAutoProtectionPolicyBinding. */
+  public UnaryCallSettings<GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>
+      getAutoProtectionPolicyBindingSettings() {
+    return getAutoProtectionPolicyBindingSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAutoProtectionPolicyBindings. */
+  public PagedCallSettings<
+          ListAutoProtectionPolicyBindingsRequest,
+          ListAutoProtectionPolicyBindingsResponse,
+          ListAutoProtectionPolicyBindingsPagedResponse>
+      listAutoProtectionPolicyBindingsSettings() {
+    return listAutoProtectionPolicyBindingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAppliedAutoProtectionPolicies. */
+  public PagedCallSettings<
+          ListAppliedAutoProtectionPoliciesRequest,
+          ListAppliedAutoProtectionPoliciesResponse,
+          ListAppliedAutoProtectionPoliciesPagedResponse>
+      listAppliedAutoProtectionPoliciesSettings() {
+    return listAppliedAutoProtectionPoliciesSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * initiateDeleteAutoProtectionPolicyBinding.
+   */
+  public UnaryCallSettings<InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>
+      initiateDeleteAutoProtectionPolicyBindingSettings() {
+    return initiateDeleteAutoProtectionPolicyBindingSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * initiateDeleteAutoProtectionPolicyBinding.
+   */
+  public OperationCallSettings<
+          InitiateDeleteAutoProtectionPolicyBindingRequest,
+          AutoProtectionPolicyBinding,
+          OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingOperationSettings() {
+    return initiateDeleteAutoProtectionPolicyBindingOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBindingMatchingResources. */
+  public PagedCallSettings<
+          ListBindingMatchingResourcesRequest,
+          ListBindingMatchingResourcesResponse,
+          ListBindingMatchingResourcesPagedResponse>
+      listBindingMatchingResourcesSettings() {
+    return listBindingMatchingResourcesSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1761,6 +2269,37 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     initializeServiceSettings = settingsBuilder.initializeServiceSettings().build();
     initializeServiceOperationSettings =
         settingsBuilder.initializeServiceOperationSettings().build();
+    createAutoProtectionPolicySettings =
+        settingsBuilder.createAutoProtectionPolicySettings().build();
+    createAutoProtectionPolicyOperationSettings =
+        settingsBuilder.createAutoProtectionPolicyOperationSettings().build();
+    listAutoProtectionPoliciesSettings =
+        settingsBuilder.listAutoProtectionPoliciesSettings().build();
+    getAutoProtectionPolicySettings = settingsBuilder.getAutoProtectionPolicySettings().build();
+    updateAutoProtectionPolicySettings =
+        settingsBuilder.updateAutoProtectionPolicySettings().build();
+    updateAutoProtectionPolicyOperationSettings =
+        settingsBuilder.updateAutoProtectionPolicyOperationSettings().build();
+    deleteAutoProtectionPolicySettings =
+        settingsBuilder.deleteAutoProtectionPolicySettings().build();
+    deleteAutoProtectionPolicyOperationSettings =
+        settingsBuilder.deleteAutoProtectionPolicyOperationSettings().build();
+    createAutoProtectionPolicyBindingSettings =
+        settingsBuilder.createAutoProtectionPolicyBindingSettings().build();
+    createAutoProtectionPolicyBindingOperationSettings =
+        settingsBuilder.createAutoProtectionPolicyBindingOperationSettings().build();
+    getAutoProtectionPolicyBindingSettings =
+        settingsBuilder.getAutoProtectionPolicyBindingSettings().build();
+    listAutoProtectionPolicyBindingsSettings =
+        settingsBuilder.listAutoProtectionPolicyBindingsSettings().build();
+    listAppliedAutoProtectionPoliciesSettings =
+        settingsBuilder.listAppliedAutoProtectionPoliciesSettings().build();
+    initiateDeleteAutoProtectionPolicyBindingSettings =
+        settingsBuilder.initiateDeleteAutoProtectionPolicyBindingSettings().build();
+    initiateDeleteAutoProtectionPolicyBindingOperationSettings =
+        settingsBuilder.initiateDeleteAutoProtectionPolicyBindingOperationSettings().build();
+    listBindingMatchingResourcesSettings =
+        settingsBuilder.listBindingMatchingResourcesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -1922,6 +2461,61 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
     private final OperationCallSettings.Builder<
             InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
         initializeServiceOperationSettings;
+    private final UnaryCallSettings.Builder<CreateAutoProtectionPolicyRequest, Operation>
+        createAutoProtectionPolicySettings;
+    private final OperationCallSettings.Builder<
+            CreateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+        createAutoProtectionPolicyOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListAutoProtectionPoliciesRequest,
+            ListAutoProtectionPoliciesResponse,
+            ListAutoProtectionPoliciesPagedResponse>
+        listAutoProtectionPoliciesSettings;
+    private final UnaryCallSettings.Builder<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>
+        getAutoProtectionPolicySettings;
+    private final UnaryCallSettings.Builder<UpdateAutoProtectionPolicyRequest, Operation>
+        updateAutoProtectionPolicySettings;
+    private final OperationCallSettings.Builder<
+            UpdateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+        updateAutoProtectionPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteAutoProtectionPolicyRequest, Operation>
+        deleteAutoProtectionPolicySettings;
+    private final OperationCallSettings.Builder<
+            DeleteAutoProtectionPolicyRequest, Empty, OperationMetadata>
+        deleteAutoProtectionPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<CreateAutoProtectionPolicyBindingRequest, Operation>
+        createAutoProtectionPolicyBindingSettings;
+    private final OperationCallSettings.Builder<
+            CreateAutoProtectionPolicyBindingRequest,
+            AutoProtectionPolicyBinding,
+            OperationMetadata>
+        createAutoProtectionPolicyBindingOperationSettings;
+    private final UnaryCallSettings.Builder<
+            GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>
+        getAutoProtectionPolicyBindingSettings;
+    private final PagedCallSettings.Builder<
+            ListAutoProtectionPolicyBindingsRequest,
+            ListAutoProtectionPolicyBindingsResponse,
+            ListAutoProtectionPolicyBindingsPagedResponse>
+        listAutoProtectionPolicyBindingsSettings;
+    private final PagedCallSettings.Builder<
+            ListAppliedAutoProtectionPoliciesRequest,
+            ListAppliedAutoProtectionPoliciesResponse,
+            ListAppliedAutoProtectionPoliciesPagedResponse>
+        listAppliedAutoProtectionPoliciesSettings;
+    private final UnaryCallSettings.Builder<
+            InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>
+        initiateDeleteAutoProtectionPolicyBindingSettings;
+    private final OperationCallSettings.Builder<
+            InitiateDeleteAutoProtectionPolicyBindingRequest,
+            AutoProtectionPolicyBinding,
+            OperationMetadata>
+        initiateDeleteAutoProtectionPolicyBindingOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListBindingMatchingResourcesRequest,
+            ListBindingMatchingResourcesResponse,
+            ListBindingMatchingResourcesPagedResponse>
+        listBindingMatchingResourcesSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -2045,6 +2639,28 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               FETCH_DATA_SOURCE_REFERENCES_FOR_RESOURCE_TYPE_PAGE_STR_FACT);
       initializeServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       initializeServiceOperationSettings = OperationCallSettings.newBuilder();
+      createAutoProtectionPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAutoProtectionPolicyOperationSettings = OperationCallSettings.newBuilder();
+      listAutoProtectionPoliciesSettings =
+          PagedCallSettings.newBuilder(LIST_AUTO_PROTECTION_POLICIES_PAGE_STR_FACT);
+      getAutoProtectionPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAutoProtectionPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAutoProtectionPolicyOperationSettings = OperationCallSettings.newBuilder();
+      deleteAutoProtectionPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAutoProtectionPolicyOperationSettings = OperationCallSettings.newBuilder();
+      createAutoProtectionPolicyBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAutoProtectionPolicyBindingOperationSettings = OperationCallSettings.newBuilder();
+      getAutoProtectionPolicyBindingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listAutoProtectionPolicyBindingsSettings =
+          PagedCallSettings.newBuilder(LIST_AUTO_PROTECTION_POLICY_BINDINGS_PAGE_STR_FACT);
+      listAppliedAutoProtectionPoliciesSettings =
+          PagedCallSettings.newBuilder(LIST_APPLIED_AUTO_PROTECTION_POLICIES_PAGE_STR_FACT);
+      initiateDeleteAutoProtectionPolicyBindingSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      initiateDeleteAutoProtectionPolicyBindingOperationSettings =
+          OperationCallSettings.newBuilder();
+      listBindingMatchingResourcesSettings =
+          PagedCallSettings.newBuilder(LIST_BINDING_MATCHING_RESOURCES_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2090,6 +2706,17 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               listDataSourceReferencesSettings,
               fetchDataSourceReferencesForResourceTypeSettings,
               initializeServiceSettings,
+              createAutoProtectionPolicySettings,
+              listAutoProtectionPoliciesSettings,
+              getAutoProtectionPolicySettings,
+              updateAutoProtectionPolicySettings,
+              deleteAutoProtectionPolicySettings,
+              createAutoProtectionPolicyBindingSettings,
+              getAutoProtectionPolicyBindingSettings,
+              listAutoProtectionPolicyBindingsSettings,
+              listAppliedAutoProtectionPoliciesSettings,
+              initiateDeleteAutoProtectionPolicyBindingSettings,
+              listBindingMatchingResourcesSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -2166,6 +2793,33 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
           settings.fetchDataSourceReferencesForResourceTypeSettings.toBuilder();
       initializeServiceSettings = settings.initializeServiceSettings.toBuilder();
       initializeServiceOperationSettings = settings.initializeServiceOperationSettings.toBuilder();
+      createAutoProtectionPolicySettings = settings.createAutoProtectionPolicySettings.toBuilder();
+      createAutoProtectionPolicyOperationSettings =
+          settings.createAutoProtectionPolicyOperationSettings.toBuilder();
+      listAutoProtectionPoliciesSettings = settings.listAutoProtectionPoliciesSettings.toBuilder();
+      getAutoProtectionPolicySettings = settings.getAutoProtectionPolicySettings.toBuilder();
+      updateAutoProtectionPolicySettings = settings.updateAutoProtectionPolicySettings.toBuilder();
+      updateAutoProtectionPolicyOperationSettings =
+          settings.updateAutoProtectionPolicyOperationSettings.toBuilder();
+      deleteAutoProtectionPolicySettings = settings.deleteAutoProtectionPolicySettings.toBuilder();
+      deleteAutoProtectionPolicyOperationSettings =
+          settings.deleteAutoProtectionPolicyOperationSettings.toBuilder();
+      createAutoProtectionPolicyBindingSettings =
+          settings.createAutoProtectionPolicyBindingSettings.toBuilder();
+      createAutoProtectionPolicyBindingOperationSettings =
+          settings.createAutoProtectionPolicyBindingOperationSettings.toBuilder();
+      getAutoProtectionPolicyBindingSettings =
+          settings.getAutoProtectionPolicyBindingSettings.toBuilder();
+      listAutoProtectionPolicyBindingsSettings =
+          settings.listAutoProtectionPolicyBindingsSettings.toBuilder();
+      listAppliedAutoProtectionPoliciesSettings =
+          settings.listAppliedAutoProtectionPoliciesSettings.toBuilder();
+      initiateDeleteAutoProtectionPolicyBindingSettings =
+          settings.initiateDeleteAutoProtectionPolicyBindingSettings.toBuilder();
+      initiateDeleteAutoProtectionPolicyBindingOperationSettings =
+          settings.initiateDeleteAutoProtectionPolicyBindingOperationSettings.toBuilder();
+      listBindingMatchingResourcesSettings =
+          settings.listBindingMatchingResourcesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -2211,6 +2865,17 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
               listDataSourceReferencesSettings,
               fetchDataSourceReferencesForResourceTypeSettings,
               initializeServiceSettings,
+              createAutoProtectionPolicySettings,
+              listAutoProtectionPoliciesSettings,
+              getAutoProtectionPolicySettings,
+              updateAutoProtectionPolicySettings,
+              deleteAutoProtectionPolicySettings,
+              createAutoProtectionPolicyBindingSettings,
+              getAutoProtectionPolicyBindingSettings,
+              listAutoProtectionPolicyBindingsSettings,
+              listAppliedAutoProtectionPoliciesSettings,
+              initiateDeleteAutoProtectionPolicyBindingSettings,
+              listBindingMatchingResourcesSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -2425,6 +3090,61 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
 
       builder
           .initializeServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createAutoProtectionPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listAutoProtectionPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAutoProtectionPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAutoProtectionPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteAutoProtectionPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .createAutoProtectionPolicyBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getAutoProtectionPolicyBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAutoProtectionPolicyBindingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listAppliedAutoProtectionPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .initiateDeleteAutoProtectionPolicyBindingSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listBindingMatchingResourcesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2865,6 +3585,133 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createAutoProtectionPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateAutoProtectionPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AutoProtectionPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateAutoProtectionPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAutoProtectionPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AutoProtectionPolicy.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteAutoProtectionPolicyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteAutoProtectionPolicyRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createAutoProtectionPolicyBindingOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateAutoProtectionPolicyBindingRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  AutoProtectionPolicyBinding.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .initiateDeleteAutoProtectionPolicyBindingOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InitiateDeleteAutoProtectionPolicyBindingRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  AutoProtectionPolicyBinding.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -3238,6 +4085,130 @@ public class BackupDRStubSettings extends StubSettings<BackupDRStubSettings> {
             InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
         initializeServiceOperationSettings() {
       return initializeServiceOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAutoProtectionPolicy. */
+    public UnaryCallSettings.Builder<CreateAutoProtectionPolicyRequest, Operation>
+        createAutoProtectionPolicySettings() {
+      return createAutoProtectionPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAutoProtectionPolicy. */
+    public OperationCallSettings.Builder<
+            CreateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+        createAutoProtectionPolicyOperationSettings() {
+      return createAutoProtectionPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAutoProtectionPolicies. */
+    public PagedCallSettings.Builder<
+            ListAutoProtectionPoliciesRequest,
+            ListAutoProtectionPoliciesResponse,
+            ListAutoProtectionPoliciesPagedResponse>
+        listAutoProtectionPoliciesSettings() {
+      return listAutoProtectionPoliciesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAutoProtectionPolicy. */
+    public UnaryCallSettings.Builder<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>
+        getAutoProtectionPolicySettings() {
+      return getAutoProtectionPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutoProtectionPolicy. */
+    public UnaryCallSettings.Builder<UpdateAutoProtectionPolicyRequest, Operation>
+        updateAutoProtectionPolicySettings() {
+      return updateAutoProtectionPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutoProtectionPolicy. */
+    public OperationCallSettings.Builder<
+            UpdateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+        updateAutoProtectionPolicyOperationSettings() {
+      return updateAutoProtectionPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAutoProtectionPolicy. */
+    public UnaryCallSettings.Builder<DeleteAutoProtectionPolicyRequest, Operation>
+        deleteAutoProtectionPolicySettings() {
+      return deleteAutoProtectionPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAutoProtectionPolicy. */
+    public OperationCallSettings.Builder<
+            DeleteAutoProtectionPolicyRequest, Empty, OperationMetadata>
+        deleteAutoProtectionPolicyOperationSettings() {
+      return deleteAutoProtectionPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAutoProtectionPolicyBinding. */
+    public UnaryCallSettings.Builder<CreateAutoProtectionPolicyBindingRequest, Operation>
+        createAutoProtectionPolicyBindingSettings() {
+      return createAutoProtectionPolicyBindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAutoProtectionPolicyBinding. */
+    public OperationCallSettings.Builder<
+            CreateAutoProtectionPolicyBindingRequest,
+            AutoProtectionPolicyBinding,
+            OperationMetadata>
+        createAutoProtectionPolicyBindingOperationSettings() {
+      return createAutoProtectionPolicyBindingOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAutoProtectionPolicyBinding. */
+    public UnaryCallSettings.Builder<
+            GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>
+        getAutoProtectionPolicyBindingSettings() {
+      return getAutoProtectionPolicyBindingSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAutoProtectionPolicyBindings. */
+    public PagedCallSettings.Builder<
+            ListAutoProtectionPolicyBindingsRequest,
+            ListAutoProtectionPolicyBindingsResponse,
+            ListAutoProtectionPolicyBindingsPagedResponse>
+        listAutoProtectionPolicyBindingsSettings() {
+      return listAutoProtectionPolicyBindingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAppliedAutoProtectionPolicies. */
+    public PagedCallSettings.Builder<
+            ListAppliedAutoProtectionPoliciesRequest,
+            ListAppliedAutoProtectionPoliciesResponse,
+            ListAppliedAutoProtectionPoliciesPagedResponse>
+        listAppliedAutoProtectionPoliciesSettings() {
+      return listAppliedAutoProtectionPoliciesSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * initiateDeleteAutoProtectionPolicyBinding.
+     */
+    public UnaryCallSettings.Builder<InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>
+        initiateDeleteAutoProtectionPolicyBindingSettings() {
+      return initiateDeleteAutoProtectionPolicyBindingSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * initiateDeleteAutoProtectionPolicyBinding.
+     */
+    public OperationCallSettings.Builder<
+            InitiateDeleteAutoProtectionPolicyBindingRequest,
+            AutoProtectionPolicyBinding,
+            OperationMetadata>
+        initiateDeleteAutoProtectionPolicyBindingOperationSettings() {
+      return initiateDeleteAutoProtectionPolicyBindingOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBindingMatchingResources. */
+    public PagedCallSettings.Builder<
+            ListBindingMatchingResourcesRequest,
+            ListBindingMatchingResourcesResponse,
+            ListBindingMatchingResourcesPagedResponse>
+        listBindingMatchingResourcesSettings() {
+      return listBindingMatchingResourcesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

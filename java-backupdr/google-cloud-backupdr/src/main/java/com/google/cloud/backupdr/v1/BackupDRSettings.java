@@ -20,11 +20,15 @@ import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssocia
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupsForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAppliedAutoProtectionPoliciesPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAutoProtectionPoliciesPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAutoProtectionPolicyBindingsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevisionsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBindingMatchingResourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourceReferencesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
@@ -486,6 +490,129 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
           InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
       initializeServiceOperationSettings() {
     return ((BackupDRStubSettings) getStubSettings()).initializeServiceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAutoProtectionPolicy. */
+  public UnaryCallSettings<CreateAutoProtectionPolicyRequest, Operation>
+      createAutoProtectionPolicySettings() {
+    return ((BackupDRStubSettings) getStubSettings()).createAutoProtectionPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAutoProtectionPolicy. */
+  public OperationCallSettings<
+          CreateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).createAutoProtectionPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAutoProtectionPolicies. */
+  public PagedCallSettings<
+          ListAutoProtectionPoliciesRequest,
+          ListAutoProtectionPoliciesResponse,
+          ListAutoProtectionPoliciesPagedResponse>
+      listAutoProtectionPoliciesSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).listAutoProtectionPoliciesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAutoProtectionPolicy. */
+  public UnaryCallSettings<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>
+      getAutoProtectionPolicySettings() {
+    return ((BackupDRStubSettings) getStubSettings()).getAutoProtectionPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAutoProtectionPolicy. */
+  public UnaryCallSettings<UpdateAutoProtectionPolicyRequest, Operation>
+      updateAutoProtectionPolicySettings() {
+    return ((BackupDRStubSettings) getStubSettings()).updateAutoProtectionPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAutoProtectionPolicy. */
+  public OperationCallSettings<
+          UpdateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      updateAutoProtectionPolicyOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).updateAutoProtectionPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAutoProtectionPolicy. */
+  public UnaryCallSettings<DeleteAutoProtectionPolicyRequest, Operation>
+      deleteAutoProtectionPolicySettings() {
+    return ((BackupDRStubSettings) getStubSettings()).deleteAutoProtectionPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteAutoProtectionPolicy. */
+  public OperationCallSettings<DeleteAutoProtectionPolicyRequest, Empty, OperationMetadata>
+      deleteAutoProtectionPolicyOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).deleteAutoProtectionPolicyOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAutoProtectionPolicyBinding. */
+  public UnaryCallSettings<CreateAutoProtectionPolicyBindingRequest, Operation>
+      createAutoProtectionPolicyBindingSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).createAutoProtectionPolicyBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createAutoProtectionPolicyBinding. */
+  public OperationCallSettings<
+          CreateAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .createAutoProtectionPolicyBindingOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAutoProtectionPolicyBinding. */
+  public UnaryCallSettings<GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>
+      getAutoProtectionPolicyBindingSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).getAutoProtectionPolicyBindingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAutoProtectionPolicyBindings. */
+  public PagedCallSettings<
+          ListAutoProtectionPolicyBindingsRequest,
+          ListAutoProtectionPolicyBindingsResponse,
+          ListAutoProtectionPolicyBindingsPagedResponse>
+      listAutoProtectionPolicyBindingsSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).listAutoProtectionPolicyBindingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listAppliedAutoProtectionPolicies. */
+  public PagedCallSettings<
+          ListAppliedAutoProtectionPoliciesRequest,
+          ListAppliedAutoProtectionPoliciesResponse,
+          ListAppliedAutoProtectionPoliciesPagedResponse>
+      listAppliedAutoProtectionPoliciesSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).listAppliedAutoProtectionPoliciesSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * initiateDeleteAutoProtectionPolicyBinding.
+   */
+  public UnaryCallSettings<InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>
+      initiateDeleteAutoProtectionPolicyBindingSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .initiateDeleteAutoProtectionPolicyBindingSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * initiateDeleteAutoProtectionPolicyBinding.
+   */
+  public OperationCallSettings<
+          InitiateDeleteAutoProtectionPolicyBindingRequest,
+          AutoProtectionPolicyBinding,
+          OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingOperationSettings() {
+    return ((BackupDRStubSettings) getStubSettings())
+        .initiateDeleteAutoProtectionPolicyBindingOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBindingMatchingResources. */
+  public PagedCallSettings<
+          ListBindingMatchingResourcesRequest,
+          ListBindingMatchingResourcesResponse,
+          ListBindingMatchingResourcesPagedResponse>
+      listBindingMatchingResourcesSettings() {
+    return ((BackupDRStubSettings) getStubSettings()).listBindingMatchingResourcesSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -981,6 +1108,130 @@ public class BackupDRSettings extends ClientSettings<BackupDRSettings> {
             InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
         initializeServiceOperationSettings() {
       return getStubSettingsBuilder().initializeServiceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAutoProtectionPolicy. */
+    public UnaryCallSettings.Builder<CreateAutoProtectionPolicyRequest, Operation>
+        createAutoProtectionPolicySettings() {
+      return getStubSettingsBuilder().createAutoProtectionPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAutoProtectionPolicy. */
+    public OperationCallSettings.Builder<
+            CreateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+        createAutoProtectionPolicyOperationSettings() {
+      return getStubSettingsBuilder().createAutoProtectionPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAutoProtectionPolicies. */
+    public PagedCallSettings.Builder<
+            ListAutoProtectionPoliciesRequest,
+            ListAutoProtectionPoliciesResponse,
+            ListAutoProtectionPoliciesPagedResponse>
+        listAutoProtectionPoliciesSettings() {
+      return getStubSettingsBuilder().listAutoProtectionPoliciesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAutoProtectionPolicy. */
+    public UnaryCallSettings.Builder<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>
+        getAutoProtectionPolicySettings() {
+      return getStubSettingsBuilder().getAutoProtectionPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutoProtectionPolicy. */
+    public UnaryCallSettings.Builder<UpdateAutoProtectionPolicyRequest, Operation>
+        updateAutoProtectionPolicySettings() {
+      return getStubSettingsBuilder().updateAutoProtectionPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAutoProtectionPolicy. */
+    public OperationCallSettings.Builder<
+            UpdateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+        updateAutoProtectionPolicyOperationSettings() {
+      return getStubSettingsBuilder().updateAutoProtectionPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAutoProtectionPolicy. */
+    public UnaryCallSettings.Builder<DeleteAutoProtectionPolicyRequest, Operation>
+        deleteAutoProtectionPolicySettings() {
+      return getStubSettingsBuilder().deleteAutoProtectionPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAutoProtectionPolicy. */
+    public OperationCallSettings.Builder<
+            DeleteAutoProtectionPolicyRequest, Empty, OperationMetadata>
+        deleteAutoProtectionPolicyOperationSettings() {
+      return getStubSettingsBuilder().deleteAutoProtectionPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAutoProtectionPolicyBinding. */
+    public UnaryCallSettings.Builder<CreateAutoProtectionPolicyBindingRequest, Operation>
+        createAutoProtectionPolicyBindingSettings() {
+      return getStubSettingsBuilder().createAutoProtectionPolicyBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createAutoProtectionPolicyBinding. */
+    public OperationCallSettings.Builder<
+            CreateAutoProtectionPolicyBindingRequest,
+            AutoProtectionPolicyBinding,
+            OperationMetadata>
+        createAutoProtectionPolicyBindingOperationSettings() {
+      return getStubSettingsBuilder().createAutoProtectionPolicyBindingOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAutoProtectionPolicyBinding. */
+    public UnaryCallSettings.Builder<
+            GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>
+        getAutoProtectionPolicyBindingSettings() {
+      return getStubSettingsBuilder().getAutoProtectionPolicyBindingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAutoProtectionPolicyBindings. */
+    public PagedCallSettings.Builder<
+            ListAutoProtectionPolicyBindingsRequest,
+            ListAutoProtectionPolicyBindingsResponse,
+            ListAutoProtectionPolicyBindingsPagedResponse>
+        listAutoProtectionPolicyBindingsSettings() {
+      return getStubSettingsBuilder().listAutoProtectionPolicyBindingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listAppliedAutoProtectionPolicies. */
+    public PagedCallSettings.Builder<
+            ListAppliedAutoProtectionPoliciesRequest,
+            ListAppliedAutoProtectionPoliciesResponse,
+            ListAppliedAutoProtectionPoliciesPagedResponse>
+        listAppliedAutoProtectionPoliciesSettings() {
+      return getStubSettingsBuilder().listAppliedAutoProtectionPoliciesSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * initiateDeleteAutoProtectionPolicyBinding.
+     */
+    public UnaryCallSettings.Builder<InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>
+        initiateDeleteAutoProtectionPolicyBindingSettings() {
+      return getStubSettingsBuilder().initiateDeleteAutoProtectionPolicyBindingSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * initiateDeleteAutoProtectionPolicyBinding.
+     */
+    public OperationCallSettings.Builder<
+            InitiateDeleteAutoProtectionPolicyBindingRequest,
+            AutoProtectionPolicyBinding,
+            OperationMetadata>
+        initiateDeleteAutoProtectionPolicyBindingOperationSettings() {
+      return getStubSettingsBuilder().initiateDeleteAutoProtectionPolicyBindingOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBindingMatchingResources. */
+    public PagedCallSettings.Builder<
+            ListBindingMatchingResourcesRequest,
+            ListBindingMatchingResourcesResponse,
+            ListBindingMatchingResourcesPagedResponse>
+        listBindingMatchingResourcesSettings() {
+      return getStubSettingsBuilder().listBindingMatchingResourcesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -35,6 +35,103 @@ public final class ServingConfigServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.CreateServingConfigRequest,
+          com.google.cloud.discoveryengine.v1.ServingConfig>
+      getCreateServingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateServingConfig",
+      requestType = com.google.cloud.discoveryengine.v1.CreateServingConfigRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1.ServingConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.CreateServingConfigRequest,
+          com.google.cloud.discoveryengine.v1.ServingConfig>
+      getCreateServingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.CreateServingConfigRequest,
+            com.google.cloud.discoveryengine.v1.ServingConfig>
+        getCreateServingConfigMethod;
+    if ((getCreateServingConfigMethod = ServingConfigServiceGrpc.getCreateServingConfigMethod)
+        == null) {
+      synchronized (ServingConfigServiceGrpc.class) {
+        if ((getCreateServingConfigMethod = ServingConfigServiceGrpc.getCreateServingConfigMethod)
+            == null) {
+          ServingConfigServiceGrpc.getCreateServingConfigMethod =
+              getCreateServingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.CreateServingConfigRequest,
+                          com.google.cloud.discoveryengine.v1.ServingConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateServingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.CreateServingConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.ServingConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ServingConfigServiceMethodDescriptorSupplier("CreateServingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getCreateServingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest, com.google.protobuf.Empty>
+      getDeleteServingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteServingConfig",
+      requestType = com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest, com.google.protobuf.Empty>
+      getDeleteServingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest,
+            com.google.protobuf.Empty>
+        getDeleteServingConfigMethod;
+    if ((getDeleteServingConfigMethod = ServingConfigServiceGrpc.getDeleteServingConfigMethod)
+        == null) {
+      synchronized (ServingConfigServiceGrpc.class) {
+        if ((getDeleteServingConfigMethod = ServingConfigServiceGrpc.getDeleteServingConfigMethod)
+            == null) {
+          ServingConfigServiceGrpc.getDeleteServingConfigMethod =
+              getDeleteServingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteServingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ServingConfigServiceMethodDescriptorSupplier("DeleteServingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteServingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.discoveryengine.v1.UpdateServingConfigRequest,
           com.google.cloud.discoveryengine.v1.ServingConfig>
       getUpdateServingConfigMethod;
@@ -82,6 +179,103 @@ public final class ServingConfigServiceGrpc {
       }
     }
     return getUpdateServingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.GetServingConfigRequest,
+          com.google.cloud.discoveryengine.v1.ServingConfig>
+      getGetServingConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetServingConfig",
+      requestType = com.google.cloud.discoveryengine.v1.GetServingConfigRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1.ServingConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.GetServingConfigRequest,
+          com.google.cloud.discoveryengine.v1.ServingConfig>
+      getGetServingConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.GetServingConfigRequest,
+            com.google.cloud.discoveryengine.v1.ServingConfig>
+        getGetServingConfigMethod;
+    if ((getGetServingConfigMethod = ServingConfigServiceGrpc.getGetServingConfigMethod) == null) {
+      synchronized (ServingConfigServiceGrpc.class) {
+        if ((getGetServingConfigMethod = ServingConfigServiceGrpc.getGetServingConfigMethod)
+            == null) {
+          ServingConfigServiceGrpc.getGetServingConfigMethod =
+              getGetServingConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.GetServingConfigRequest,
+                          com.google.cloud.discoveryengine.v1.ServingConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetServingConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.GetServingConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.ServingConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ServingConfigServiceMethodDescriptorSupplier("GetServingConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetServingConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.ListServingConfigsRequest,
+          com.google.cloud.discoveryengine.v1.ListServingConfigsResponse>
+      getListServingConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListServingConfigs",
+      requestType = com.google.cloud.discoveryengine.v1.ListServingConfigsRequest.class,
+      responseType = com.google.cloud.discoveryengine.v1.ListServingConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.discoveryengine.v1.ListServingConfigsRequest,
+          com.google.cloud.discoveryengine.v1.ListServingConfigsResponse>
+      getListServingConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.discoveryengine.v1.ListServingConfigsRequest,
+            com.google.cloud.discoveryengine.v1.ListServingConfigsResponse>
+        getListServingConfigsMethod;
+    if ((getListServingConfigsMethod = ServingConfigServiceGrpc.getListServingConfigsMethod)
+        == null) {
+      synchronized (ServingConfigServiceGrpc.class) {
+        if ((getListServingConfigsMethod = ServingConfigServiceGrpc.getListServingConfigsMethod)
+            == null) {
+          ServingConfigServiceGrpc.getListServingConfigsMethod =
+              getListServingConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.discoveryengine.v1.ListServingConfigsRequest,
+                          com.google.cloud.discoveryengine.v1.ListServingConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListServingConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.ListServingConfigsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.discoveryengine.v1.ListServingConfigsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ServingConfigServiceMethodDescriptorSupplier("ListServingConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListServingConfigsMethod;
   }
 
   /** Creates a new async stub that supports all call types for the service */
@@ -152,6 +346,42 @@ public final class ServingConfigServiceGrpc {
      *
      *
      * <pre>
+     * Creates a ServingConfig.
+     * Note: The Google Cloud console works only with the default serving config.
+     * Additional ServingConfigs can be created and managed only via the API.
+     * A maximum of 100
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig]s are allowed
+     * in an [Engine][google.cloud.discoveryengine.v1.Engine], otherwise a
+     * RESOURCE_EXHAUSTED error is returned.
+     * </pre>
+     */
+    default void createServingConfig(
+        com.google.cloud.discoveryengine.v1.CreateServingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.ServingConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateServingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ServingConfig.
+     * Returns a NOT_FOUND error if the ServingConfig does not exist.
+     * </pre>
+     */
+    default void deleteServingConfig(
+        com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteServingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a ServingConfig.
      * Returns a NOT_FOUND error if the ServingConfig does not exist.
      * </pre>
@@ -162,6 +392,37 @@ public final class ServingConfigServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateServingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ServingConfig.
+     * Returns a NotFound error if the ServingConfig does not exist.
+     * </pre>
+     */
+    default void getServingConfig(
+        com.google.cloud.discoveryengine.v1.GetServingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.ServingConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetServingConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ServingConfigs linked to this dataStore.
+     * </pre>
+     */
+    default void listServingConfigs(
+        com.google.cloud.discoveryengine.v1.ListServingConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.ListServingConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListServingConfigsMethod(), responseObserver);
     }
   }
 
@@ -206,6 +467,46 @@ public final class ServingConfigServiceGrpc {
      *
      *
      * <pre>
+     * Creates a ServingConfig.
+     * Note: The Google Cloud console works only with the default serving config.
+     * Additional ServingConfigs can be created and managed only via the API.
+     * A maximum of 100
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig]s are allowed
+     * in an [Engine][google.cloud.discoveryengine.v1.Engine], otherwise a
+     * RESOURCE_EXHAUSTED error is returned.
+     * </pre>
+     */
+    public void createServingConfig(
+        com.google.cloud.discoveryengine.v1.CreateServingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.ServingConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateServingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ServingConfig.
+     * Returns a NOT_FOUND error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public void deleteServingConfig(
+        com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteServingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a ServingConfig.
      * Returns a NOT_FOUND error if the ServingConfig does not exist.
      * </pre>
@@ -216,6 +517,41 @@ public final class ServingConfigServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateServingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ServingConfig.
+     * Returns a NotFound error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public void getServingConfig(
+        com.google.cloud.discoveryengine.v1.GetServingConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.ServingConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetServingConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ServingConfigs linked to this dataStore.
+     * </pre>
+     */
+    public void listServingConfigs(
+        com.google.cloud.discoveryengine.v1.ListServingConfigsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.ListServingConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListServingConfigsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -246,6 +582,41 @@ public final class ServingConfigServiceGrpc {
      *
      *
      * <pre>
+     * Creates a ServingConfig.
+     * Note: The Google Cloud console works only with the default serving config.
+     * Additional ServingConfigs can be created and managed only via the API.
+     * A maximum of 100
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig]s are allowed
+     * in an [Engine][google.cloud.discoveryengine.v1.Engine], otherwise a
+     * RESOURCE_EXHAUSTED error is returned.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ServingConfig createServingConfig(
+        com.google.cloud.discoveryengine.v1.CreateServingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ServingConfig.
+     * Returns a NOT_FOUND error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteServingConfig(
+        com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a ServingConfig.
      * Returns a NOT_FOUND error if the ServingConfig does not exist.
      * </pre>
@@ -255,6 +626,35 @@ public final class ServingConfigServiceGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ServingConfig.
+     * Returns a NotFound error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ServingConfig getServingConfig(
+        com.google.cloud.discoveryengine.v1.GetServingConfigRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ServingConfigs linked to this dataStore.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ListServingConfigsResponse listServingConfigs(
+        com.google.cloud.discoveryengine.v1.ListServingConfigsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListServingConfigsMethod(), getCallOptions(), request);
     }
   }
 
@@ -283,6 +683,39 @@ public final class ServingConfigServiceGrpc {
      *
      *
      * <pre>
+     * Creates a ServingConfig.
+     * Note: The Google Cloud console works only with the default serving config.
+     * Additional ServingConfigs can be created and managed only via the API.
+     * A maximum of 100
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig]s are allowed
+     * in an [Engine][google.cloud.discoveryengine.v1.Engine], otherwise a
+     * RESOURCE_EXHAUSTED error is returned.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ServingConfig createServingConfig(
+        com.google.cloud.discoveryengine.v1.CreateServingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ServingConfig.
+     * Returns a NOT_FOUND error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteServingConfig(
+        com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a ServingConfig.
      * Returns a NOT_FOUND error if the ServingConfig does not exist.
      * </pre>
@@ -291,6 +724,33 @@ public final class ServingConfigServiceGrpc {
         com.google.cloud.discoveryengine.v1.UpdateServingConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ServingConfig.
+     * Returns a NotFound error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ServingConfig getServingConfig(
+        com.google.cloud.discoveryengine.v1.GetServingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServingConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ServingConfigs linked to this dataStore.
+     * </pre>
+     */
+    public com.google.cloud.discoveryengine.v1.ListServingConfigsResponse listServingConfigs(
+        com.google.cloud.discoveryengine.v1.ListServingConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServingConfigsMethod(), getCallOptions(), request);
     }
   }
 
@@ -319,6 +779,42 @@ public final class ServingConfigServiceGrpc {
      *
      *
      * <pre>
+     * Creates a ServingConfig.
+     * Note: The Google Cloud console works only with the default serving config.
+     * Additional ServingConfigs can be created and managed only via the API.
+     * A maximum of 100
+     * [ServingConfig][google.cloud.discoveryengine.v1.ServingConfig]s are allowed
+     * in an [Engine][google.cloud.discoveryengine.v1.Engine], otherwise a
+     * RESOURCE_EXHAUSTED error is returned.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1.ServingConfig>
+        createServingConfig(
+            com.google.cloud.discoveryengine.v1.CreateServingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateServingConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a ServingConfig.
+     * Returns a NOT_FOUND error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteServingConfig(
+            com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteServingConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a ServingConfig.
      * Returns a NOT_FOUND error if the ServingConfig does not exist.
      * </pre>
@@ -330,9 +826,42 @@ public final class ServingConfigServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateServingConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a ServingConfig.
+     * Returns a NotFound error if the ServingConfig does not exist.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1.ServingConfig>
+        getServingConfig(com.google.cloud.discoveryengine.v1.GetServingConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetServingConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all ServingConfigs linked to this dataStore.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.discoveryengine.v1.ListServingConfigsResponse>
+        listServingConfigs(com.google.cloud.discoveryengine.v1.ListServingConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListServingConfigsMethod(), getCallOptions()), request);
+    }
   }
 
-  private static final int METHODID_UPDATE_SERVING_CONFIG = 0;
+  private static final int METHODID_CREATE_SERVING_CONFIG = 0;
+  private static final int METHODID_DELETE_SERVING_CONFIG = 1;
+  private static final int METHODID_UPDATE_SERVING_CONFIG = 2;
+  private static final int METHODID_GET_SERVING_CONFIG = 3;
+  private static final int METHODID_LIST_SERVING_CONFIGS = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -351,10 +880,34 @@ public final class ServingConfigServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_CREATE_SERVING_CONFIG:
+          serviceImpl.createServingConfig(
+              (com.google.cloud.discoveryengine.v1.CreateServingConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.ServingConfig>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_SERVING_CONFIG:
+          serviceImpl.deleteServingConfig(
+              (com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         case METHODID_UPDATE_SERVING_CONFIG:
           serviceImpl.updateServingConfig(
               (com.google.cloud.discoveryengine.v1.UpdateServingConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.ServingConfig>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SERVING_CONFIG:
+          serviceImpl.getServingConfig(
+              (com.google.cloud.discoveryengine.v1.GetServingConfigRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.discoveryengine.v1.ServingConfig>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SERVING_CONFIGS:
+          serviceImpl.listServingConfigs(
+              (com.google.cloud.discoveryengine.v1.ListServingConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.discoveryengine.v1.ListServingConfigsResponse>)
                   responseObserver);
           break;
         default:
@@ -376,12 +929,39 @@ public final class ServingConfigServiceGrpc {
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
         .addMethod(
+            getCreateServingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.CreateServingConfigRequest,
+                    com.google.cloud.discoveryengine.v1.ServingConfig>(
+                    service, METHODID_CREATE_SERVING_CONFIG)))
+        .addMethod(
+            getDeleteServingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_SERVING_CONFIG)))
+        .addMethod(
             getUpdateServingConfigMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.cloud.discoveryengine.v1.UpdateServingConfigRequest,
                     com.google.cloud.discoveryengine.v1.ServingConfig>(
                     service, METHODID_UPDATE_SERVING_CONFIG)))
+        .addMethod(
+            getGetServingConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.GetServingConfigRequest,
+                    com.google.cloud.discoveryengine.v1.ServingConfig>(
+                    service, METHODID_GET_SERVING_CONFIG)))
+        .addMethod(
+            getListServingConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.discoveryengine.v1.ListServingConfigsRequest,
+                    com.google.cloud.discoveryengine.v1.ListServingConfigsResponse>(
+                    service, METHODID_LIST_SERVING_CONFIGS)))
         .build();
   }
 
@@ -433,7 +1013,11 @@ public final class ServingConfigServiceGrpc {
               result =
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new ServingConfigServiceFileDescriptorSupplier())
+                      .addMethod(getCreateServingConfigMethod())
+                      .addMethod(getDeleteServingConfigMethod())
                       .addMethod(getUpdateServingConfigMethod())
+                      .addMethod(getGetServingConfigMethod())
+                      .addMethod(getListServingConfigsMethod())
                       .build();
         }
       }

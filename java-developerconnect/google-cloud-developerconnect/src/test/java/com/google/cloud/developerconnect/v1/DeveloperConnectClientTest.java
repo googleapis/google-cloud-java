@@ -17,6 +17,8 @@
 package com.google.cloud.developerconnect.v1;
 
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRefsPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRepositoryLinkCommitListPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRepositoryLinkPullRequestListPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchLinkableGitRepositoriesPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListAccountConnectorsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListConnectionsPagedResponse;
@@ -1158,6 +1160,116 @@ public class DeveloperConnectClientTest {
   }
 
   @Test
+  public void openGitRepositoryLinkPullRequestTest() throws Exception {
+    PullRequest expectedResponse =
+        PullRequest.newBuilder()
+            .setId("id3355")
+            .setTitle("title110371416")
+            .setBody("body3029410")
+            .setHeadRef("headRef795289235")
+            .setBaseRef("baseRef-332628990")
+            .setAuthor("author-1406328437")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMergeTime(Timestamp.newBuilder().build())
+            .setCloseTime(Timestamp.newBuilder().build())
+            .setDeclineTime(Timestamp.newBuilder().build())
+            .setHtmlUrl("htmlUrl1236050372")
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    GitRepositoryLinkName name =
+        GitRepositoryLinkName.of(
+            "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+    PullRequest pullRequest = PullRequest.newBuilder().build();
+
+    PullRequest actualResponse = client.openGitRepositoryLinkPullRequest(name, pullRequest);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    OpenGitRepositoryLinkPullRequestRequest actualRequest =
+        ((OpenGitRepositoryLinkPullRequestRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(pullRequest, actualRequest.getPullRequest());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void openGitRepositoryLinkPullRequestExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      GitRepositoryLinkName name =
+          GitRepositoryLinkName.of(
+              "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+      PullRequest pullRequest = PullRequest.newBuilder().build();
+      client.openGitRepositoryLinkPullRequest(name, pullRequest);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void openGitRepositoryLinkPullRequestTest2() throws Exception {
+    PullRequest expectedResponse =
+        PullRequest.newBuilder()
+            .setId("id3355")
+            .setTitle("title110371416")
+            .setBody("body3029410")
+            .setHeadRef("headRef795289235")
+            .setBaseRef("baseRef-332628990")
+            .setAuthor("author-1406328437")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMergeTime(Timestamp.newBuilder().build())
+            .setCloseTime(Timestamp.newBuilder().build())
+            .setDeclineTime(Timestamp.newBuilder().build())
+            .setHtmlUrl("htmlUrl1236050372")
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    PullRequest pullRequest = PullRequest.newBuilder().build();
+
+    PullRequest actualResponse = client.openGitRepositoryLinkPullRequest(name, pullRequest);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    OpenGitRepositoryLinkPullRequestRequest actualRequest =
+        ((OpenGitRepositoryLinkPullRequestRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(pullRequest, actualRequest.getPullRequest());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void openGitRepositoryLinkPullRequestExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      String name = "name3373707";
+      PullRequest pullRequest = PullRequest.newBuilder().build();
+      client.openGitRepositoryLinkPullRequest(name, pullRequest);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void fetchLinkableGitRepositoriesTest() throws Exception {
     LinkableGitRepository responsesElement = LinkableGitRepository.newBuilder().build();
     FetchLinkableGitRepositoriesResponse expectedResponse =
@@ -1419,6 +1531,924 @@ public class DeveloperConnectClientTest {
       String gitRepositoryLink = "gitRepositoryLink1752665814";
       FetchGitRefsRequest.RefType refType = FetchGitRefsRequest.RefType.forNumber(0);
       client.fetchGitRefs(gitRepositoryLink, refType);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void diffGitRepositoryLinkCommitTest() throws Exception {
+    DiffGitRepositoryLinkCommitResponse expectedResponse =
+        DiffGitRepositoryLinkCommitResponse.newBuilder()
+            .addAllFiles(new ArrayList<FileDiff>())
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    GitRepositoryLinkName name =
+        GitRepositoryLinkName.of(
+            "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+    String baseSha = "baseSha-332627941";
+    String headSha = "headSha795290284";
+
+    DiffGitRepositoryLinkCommitResponse actualResponse =
+        client.diffGitRepositoryLinkCommit(name, baseSha, headSha);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DiffGitRepositoryLinkCommitRequest actualRequest =
+        ((DiffGitRepositoryLinkCommitRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(baseSha, actualRequest.getBaseSha());
+    Assert.assertEquals(headSha, actualRequest.getHeadSha());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void diffGitRepositoryLinkCommitExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      GitRepositoryLinkName name =
+          GitRepositoryLinkName.of(
+              "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+      String baseSha = "baseSha-332627941";
+      String headSha = "headSha795290284";
+      client.diffGitRepositoryLinkCommit(name, baseSha, headSha);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void diffGitRepositoryLinkCommitTest2() throws Exception {
+    DiffGitRepositoryLinkCommitResponse expectedResponse =
+        DiffGitRepositoryLinkCommitResponse.newBuilder()
+            .addAllFiles(new ArrayList<FileDiff>())
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String baseSha = "baseSha-332627941";
+    String headSha = "headSha795290284";
+
+    DiffGitRepositoryLinkCommitResponse actualResponse =
+        client.diffGitRepositoryLinkCommit(name, baseSha, headSha);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DiffGitRepositoryLinkCommitRequest actualRequest =
+        ((DiffGitRepositoryLinkCommitRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(baseSha, actualRequest.getBaseSha());
+    Assert.assertEquals(headSha, actualRequest.getHeadSha());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void diffGitRepositoryLinkCommitExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String baseSha = "baseSha-332627941";
+      String headSha = "headSha795290284";
+      client.diffGitRepositoryLinkCommit(name, baseSha, headSha);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkCommitTest() throws Exception {
+    FetchGitRepositoryLinkCommitResponse expectedResponse =
+        FetchGitRepositoryLinkCommitResponse.newBuilder()
+            .setCommit(SCMCommit.newBuilder().build())
+            .addAllFiles(new ArrayList<FileDiff>())
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    GitRepositoryLinkName name =
+        GitRepositoryLinkName.of(
+            "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+    String commitSha = "commitSha-1491174411";
+
+    FetchGitRepositoryLinkCommitResponse actualResponse =
+        client.fetchGitRepositoryLinkCommit(name, commitSha);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchGitRepositoryLinkCommitRequest actualRequest =
+        ((FetchGitRepositoryLinkCommitRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(commitSha, actualRequest.getCommitSha());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkCommitExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      GitRepositoryLinkName name =
+          GitRepositoryLinkName.of(
+              "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+      String commitSha = "commitSha-1491174411";
+      client.fetchGitRepositoryLinkCommit(name, commitSha);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkCommitTest2() throws Exception {
+    FetchGitRepositoryLinkCommitResponse expectedResponse =
+        FetchGitRepositoryLinkCommitResponse.newBuilder()
+            .setCommit(SCMCommit.newBuilder().build())
+            .addAllFiles(new ArrayList<FileDiff>())
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String commitSha = "commitSha-1491174411";
+
+    FetchGitRepositoryLinkCommitResponse actualResponse =
+        client.fetchGitRepositoryLinkCommit(name, commitSha);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchGitRepositoryLinkCommitRequest actualRequest =
+        ((FetchGitRepositoryLinkCommitRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(commitSha, actualRequest.getCommitSha());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkCommitExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String commitSha = "commitSha-1491174411";
+      client.fetchGitRepositoryLinkCommit(name, commitSha);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkCommitListTest() throws Exception {
+    SCMCommit responsesElement = SCMCommit.newBuilder().build();
+    FetchGitRepositoryLinkCommitListResponse expectedResponse =
+        FetchGitRepositoryLinkCommitListResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCommits(Arrays.asList(responsesElement))
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    GitRepositoryLinkName name =
+        GitRepositoryLinkName.of(
+            "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+    String ref = "ref112787";
+
+    FetchGitRepositoryLinkCommitListPagedResponse pagedListResponse =
+        client.fetchGitRepositoryLinkCommitList(name, ref);
+
+    List<SCMCommit> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCommitsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchGitRepositoryLinkCommitListRequest actualRequest =
+        ((FetchGitRepositoryLinkCommitListRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(ref, actualRequest.getRef());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkCommitListExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      GitRepositoryLinkName name =
+          GitRepositoryLinkName.of(
+              "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+      String ref = "ref112787";
+      client.fetchGitRepositoryLinkCommitList(name, ref);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkCommitListTest2() throws Exception {
+    SCMCommit responsesElement = SCMCommit.newBuilder().build();
+    FetchGitRepositoryLinkCommitListResponse expectedResponse =
+        FetchGitRepositoryLinkCommitListResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCommits(Arrays.asList(responsesElement))
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String ref = "ref112787";
+
+    FetchGitRepositoryLinkCommitListPagedResponse pagedListResponse =
+        client.fetchGitRepositoryLinkCommitList(name, ref);
+
+    List<SCMCommit> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCommitsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchGitRepositoryLinkCommitListRequest actualRequest =
+        ((FetchGitRepositoryLinkCommitListRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(ref, actualRequest.getRef());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkCommitListExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String ref = "ref112787";
+      client.fetchGitRepositoryLinkCommitList(name, ref);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkFileBlameTest() throws Exception {
+    FetchGitRepositoryLinkFileBlameResponse expectedResponse =
+        FetchGitRepositoryLinkFileBlameResponse.newBuilder()
+            .addAllRanges(new ArrayList<BlameRange>())
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    GitRepositoryLinkName name =
+        GitRepositoryLinkName.of(
+            "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+    String ref = "ref112787";
+    String path = "path3433509";
+
+    FetchGitRepositoryLinkFileBlameResponse actualResponse =
+        client.fetchGitRepositoryLinkFileBlame(name, ref, path);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchGitRepositoryLinkFileBlameRequest actualRequest =
+        ((FetchGitRepositoryLinkFileBlameRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(ref, actualRequest.getRef());
+    Assert.assertEquals(path, actualRequest.getPath());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkFileBlameExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      GitRepositoryLinkName name =
+          GitRepositoryLinkName.of(
+              "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+      String ref = "ref112787";
+      String path = "path3433509";
+      client.fetchGitRepositoryLinkFileBlame(name, ref, path);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkFileBlameTest2() throws Exception {
+    FetchGitRepositoryLinkFileBlameResponse expectedResponse =
+        FetchGitRepositoryLinkFileBlameResponse.newBuilder()
+            .addAllRanges(new ArrayList<BlameRange>())
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String ref = "ref112787";
+    String path = "path3433509";
+
+    FetchGitRepositoryLinkFileBlameResponse actualResponse =
+        client.fetchGitRepositoryLinkFileBlame(name, ref, path);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchGitRepositoryLinkFileBlameRequest actualRequest =
+        ((FetchGitRepositoryLinkFileBlameRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(ref, actualRequest.getRef());
+    Assert.assertEquals(path, actualRequest.getPath());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkFileBlameExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String ref = "ref112787";
+      String path = "path3433509";
+      client.fetchGitRepositoryLinkFileBlame(name, ref, path);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkPullRequestTest() throws Exception {
+    PullRequest expectedResponse =
+        PullRequest.newBuilder()
+            .setId("id3355")
+            .setTitle("title110371416")
+            .setBody("body3029410")
+            .setHeadRef("headRef795289235")
+            .setBaseRef("baseRef-332628990")
+            .setAuthor("author-1406328437")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMergeTime(Timestamp.newBuilder().build())
+            .setCloseTime(Timestamp.newBuilder().build())
+            .setDeclineTime(Timestamp.newBuilder().build())
+            .setHtmlUrl("htmlUrl1236050372")
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    GitRepositoryLinkName name =
+        GitRepositoryLinkName.of(
+            "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+    String pullRequestId = "pullRequestId1573471045";
+
+    PullRequest actualResponse = client.fetchGitRepositoryLinkPullRequest(name, pullRequestId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchGitRepositoryLinkPullRequestRequest actualRequest =
+        ((FetchGitRepositoryLinkPullRequestRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(pullRequestId, actualRequest.getPullRequestId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkPullRequestExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      GitRepositoryLinkName name =
+          GitRepositoryLinkName.of(
+              "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+      String pullRequestId = "pullRequestId1573471045";
+      client.fetchGitRepositoryLinkPullRequest(name, pullRequestId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkPullRequestTest2() throws Exception {
+    PullRequest expectedResponse =
+        PullRequest.newBuilder()
+            .setId("id3355")
+            .setTitle("title110371416")
+            .setBody("body3029410")
+            .setHeadRef("headRef795289235")
+            .setBaseRef("baseRef-332628990")
+            .setAuthor("author-1406328437")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMergeTime(Timestamp.newBuilder().build())
+            .setCloseTime(Timestamp.newBuilder().build())
+            .setDeclineTime(Timestamp.newBuilder().build())
+            .setHtmlUrl("htmlUrl1236050372")
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String pullRequestId = "pullRequestId1573471045";
+
+    PullRequest actualResponse = client.fetchGitRepositoryLinkPullRequest(name, pullRequestId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchGitRepositoryLinkPullRequestRequest actualRequest =
+        ((FetchGitRepositoryLinkPullRequestRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(pullRequestId, actualRequest.getPullRequestId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkPullRequestExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String pullRequestId = "pullRequestId1573471045";
+      client.fetchGitRepositoryLinkPullRequest(name, pullRequestId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addGitRepositoryLinkPullRequestCommentTest() throws Exception {
+    PullRequestComment expectedResponse =
+        PullRequestComment.newBuilder()
+            .setId("id3355")
+            .setBody("body3029410")
+            .setAuthor("author-1406328437")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    GitRepositoryLinkName name =
+        GitRepositoryLinkName.of(
+            "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+    String pullRequestId = "pullRequestId1573471045";
+    PullRequestComment comment = PullRequestComment.newBuilder().build();
+
+    PullRequestComment actualResponse =
+        client.addGitRepositoryLinkPullRequestComment(name, pullRequestId, comment);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddGitRepositoryLinkPullRequestCommentRequest actualRequest =
+        ((AddGitRepositoryLinkPullRequestCommentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(pullRequestId, actualRequest.getPullRequestId());
+    Assert.assertEquals(comment, actualRequest.getComment());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addGitRepositoryLinkPullRequestCommentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      GitRepositoryLinkName name =
+          GitRepositoryLinkName.of(
+              "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+      String pullRequestId = "pullRequestId1573471045";
+      PullRequestComment comment = PullRequestComment.newBuilder().build();
+      client.addGitRepositoryLinkPullRequestComment(name, pullRequestId, comment);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addGitRepositoryLinkPullRequestCommentTest2() throws Exception {
+    PullRequestComment expectedResponse =
+        PullRequestComment.newBuilder()
+            .setId("id3355")
+            .setBody("body3029410")
+            .setAuthor("author-1406328437")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String pullRequestId = "pullRequestId1573471045";
+    PullRequestComment comment = PullRequestComment.newBuilder().build();
+
+    PullRequestComment actualResponse =
+        client.addGitRepositoryLinkPullRequestComment(name, pullRequestId, comment);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddGitRepositoryLinkPullRequestCommentRequest actualRequest =
+        ((AddGitRepositoryLinkPullRequestCommentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(pullRequestId, actualRequest.getPullRequestId());
+    Assert.assertEquals(comment, actualRequest.getComment());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addGitRepositoryLinkPullRequestCommentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String pullRequestId = "pullRequestId1573471045";
+      PullRequestComment comment = PullRequestComment.newBuilder().build();
+      client.addGitRepositoryLinkPullRequestComment(name, pullRequestId, comment);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addGitRepositoryLinkPullRequestReviewCommentTest() throws Exception {
+    PullRequestReviewComment expectedResponse =
+        PullRequestReviewComment.newBuilder()
+            .setId("id3355")
+            .setBody("body3029410")
+            .setPath("path3433509")
+            .setFirstLine(-161037277)
+            .setLastLine(2013070333)
+            .setAuthor("author-1406328437")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCommitId("commitId-602292046")
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    GitRepositoryLinkName name =
+        GitRepositoryLinkName.of(
+            "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+    String pullRequestId = "pullRequestId1573471045";
+    PullRequestReviewComment comment = PullRequestReviewComment.newBuilder().build();
+
+    PullRequestReviewComment actualResponse =
+        client.addGitRepositoryLinkPullRequestReviewComment(name, pullRequestId, comment);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddGitRepositoryLinkPullRequestReviewCommentRequest actualRequest =
+        ((AddGitRepositoryLinkPullRequestReviewCommentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(pullRequestId, actualRequest.getPullRequestId());
+    Assert.assertEquals(comment, actualRequest.getComment());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addGitRepositoryLinkPullRequestReviewCommentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      GitRepositoryLinkName name =
+          GitRepositoryLinkName.of(
+              "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+      String pullRequestId = "pullRequestId1573471045";
+      PullRequestReviewComment comment = PullRequestReviewComment.newBuilder().build();
+      client.addGitRepositoryLinkPullRequestReviewComment(name, pullRequestId, comment);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addGitRepositoryLinkPullRequestReviewCommentTest2() throws Exception {
+    PullRequestReviewComment expectedResponse =
+        PullRequestReviewComment.newBuilder()
+            .setId("id3355")
+            .setBody("body3029410")
+            .setPath("path3433509")
+            .setFirstLine(-161037277)
+            .setLastLine(2013070333)
+            .setAuthor("author-1406328437")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setCommitId("commitId-602292046")
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String pullRequestId = "pullRequestId1573471045";
+    PullRequestReviewComment comment = PullRequestReviewComment.newBuilder().build();
+
+    PullRequestReviewComment actualResponse =
+        client.addGitRepositoryLinkPullRequestReviewComment(name, pullRequestId, comment);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AddGitRepositoryLinkPullRequestReviewCommentRequest actualRequest =
+        ((AddGitRepositoryLinkPullRequestReviewCommentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(pullRequestId, actualRequest.getPullRequestId());
+    Assert.assertEquals(comment, actualRequest.getComment());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void addGitRepositoryLinkPullRequestReviewCommentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String pullRequestId = "pullRequestId1573471045";
+      PullRequestReviewComment comment = PullRequestReviewComment.newBuilder().build();
+      client.addGitRepositoryLinkPullRequestReviewComment(name, pullRequestId, comment);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void modifyGitRepositoryLinkPullRequestTest() throws Exception {
+    PullRequest expectedResponse =
+        PullRequest.newBuilder()
+            .setId("id3355")
+            .setTitle("title110371416")
+            .setBody("body3029410")
+            .setHeadRef("headRef795289235")
+            .setBaseRef("baseRef-332628990")
+            .setAuthor("author-1406328437")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMergeTime(Timestamp.newBuilder().build())
+            .setCloseTime(Timestamp.newBuilder().build())
+            .setDeclineTime(Timestamp.newBuilder().build())
+            .setHtmlUrl("htmlUrl1236050372")
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    GitRepositoryLinkName name =
+        GitRepositoryLinkName.of(
+            "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+    String pullRequestId = "pullRequestId1573471045";
+
+    PullRequest actualResponse = client.modifyGitRepositoryLinkPullRequest(name, pullRequestId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ModifyGitRepositoryLinkPullRequestRequest actualRequest =
+        ((ModifyGitRepositoryLinkPullRequestRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(pullRequestId, actualRequest.getPullRequestId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void modifyGitRepositoryLinkPullRequestExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      GitRepositoryLinkName name =
+          GitRepositoryLinkName.of(
+              "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+      String pullRequestId = "pullRequestId1573471045";
+      client.modifyGitRepositoryLinkPullRequest(name, pullRequestId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void modifyGitRepositoryLinkPullRequestTest2() throws Exception {
+    PullRequest expectedResponse =
+        PullRequest.newBuilder()
+            .setId("id3355")
+            .setTitle("title110371416")
+            .setBody("body3029410")
+            .setHeadRef("headRef795289235")
+            .setBaseRef("baseRef-332628990")
+            .setAuthor("author-1406328437")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMergeTime(Timestamp.newBuilder().build())
+            .setCloseTime(Timestamp.newBuilder().build())
+            .setDeclineTime(Timestamp.newBuilder().build())
+            .setHtmlUrl("htmlUrl1236050372")
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String pullRequestId = "pullRequestId1573471045";
+
+    PullRequest actualResponse = client.modifyGitRepositoryLinkPullRequest(name, pullRequestId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ModifyGitRepositoryLinkPullRequestRequest actualRequest =
+        ((ModifyGitRepositoryLinkPullRequestRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(pullRequestId, actualRequest.getPullRequestId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void modifyGitRepositoryLinkPullRequestExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String pullRequestId = "pullRequestId1573471045";
+      client.modifyGitRepositoryLinkPullRequest(name, pullRequestId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkPullRequestListTest() throws Exception {
+    PullRequest responsesElement = PullRequest.newBuilder().build();
+    FetchGitRepositoryLinkPullRequestListResponse expectedResponse =
+        FetchGitRepositoryLinkPullRequestListResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPullRequests(Arrays.asList(responsesElement))
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    GitRepositoryLinkName name =
+        GitRepositoryLinkName.of(
+            "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+
+    FetchGitRepositoryLinkPullRequestListPagedResponse pagedListResponse =
+        client.fetchGitRepositoryLinkPullRequestList(name);
+
+    List<PullRequest> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPullRequestsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchGitRepositoryLinkPullRequestListRequest actualRequest =
+        ((FetchGitRepositoryLinkPullRequestListRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkPullRequestListExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      GitRepositoryLinkName name =
+          GitRepositoryLinkName.of(
+              "[PROJECT]", "[LOCATION]", "[CONNECTION]", "[GIT_REPOSITORY_LINK]");
+      client.fetchGitRepositoryLinkPullRequestList(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkPullRequestListTest2() throws Exception {
+    PullRequest responsesElement = PullRequest.newBuilder().build();
+    FetchGitRepositoryLinkPullRequestListResponse expectedResponse =
+        FetchGitRepositoryLinkPullRequestListResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllPullRequests(Arrays.asList(responsesElement))
+            .build();
+    mockDeveloperConnect.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    FetchGitRepositoryLinkPullRequestListPagedResponse pagedListResponse =
+        client.fetchGitRepositoryLinkPullRequestList(name);
+
+    List<PullRequest> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getPullRequestsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDeveloperConnect.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchGitRepositoryLinkPullRequestListRequest actualRequest =
+        ((FetchGitRepositoryLinkPullRequestListRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchGitRepositoryLinkPullRequestListExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDeveloperConnect.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.fetchGitRepositoryLinkPullRequestList(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

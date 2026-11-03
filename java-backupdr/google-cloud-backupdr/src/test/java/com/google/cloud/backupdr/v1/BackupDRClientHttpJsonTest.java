@@ -20,11 +20,15 @@ import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssocia
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupsForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAppliedAutoProtectionPoliciesPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAutoProtectionPoliciesPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAutoProtectionPolicyBindingsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevisionsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBindingMatchingResourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourceReferencesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
@@ -2957,6 +2961,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3027,6 +3035,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3097,6 +3109,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3120,6 +3136,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3166,6 +3186,10 @@ public class BackupDRClientHttpJsonTest {
               .setDataSource("dataSource1272470629")
               .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
               .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+              .setAutoProtectionPolicyBinding(
+                  AutoProtectionPolicyBindingName.of(
+                          "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                      .toString())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupPlanAssociationAsync(backupPlanAssociation, updateMask).get();
@@ -3190,6 +3214,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3247,6 +3275,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3606,6 +3638,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3670,6 +3706,10 @@ public class BackupDRClientHttpJsonTest {
             .setDataSource("dataSource1272470629")
             .setBackupPlanRevisionId("backupPlanRevisionId-222788415")
             .setBackupPlanRevisionName("backupPlanRevisionName648847537")
+            .setAutoProtectionPolicyBinding(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4097,6 +4137,1260 @@ public class BackupDRClientHttpJsonTest {
       client.initializeServiceAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createAutoProtectionPolicyTest() throws Exception {
+    AutoProtectionPolicy expectedResponse =
+        AutoProtectionPolicy.newBuilder()
+            .setName(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+            .setCriteria(Criteria.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBindingSummary(BindingSummary.newBuilder().build())
+            .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAutoProtectionPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+    String autoProtectionPolicyId = "autoProtectionPolicyId1759243253";
+
+    AutoProtectionPolicy actualResponse =
+        client
+            .createAutoProtectionPolicyAsync(parent, autoProtectionPolicy, autoProtectionPolicyId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAutoProtectionPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+      String autoProtectionPolicyId = "autoProtectionPolicyId1759243253";
+      client
+          .createAutoProtectionPolicyAsync(parent, autoProtectionPolicy, autoProtectionPolicyId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createAutoProtectionPolicyTest2() throws Exception {
+    AutoProtectionPolicy expectedResponse =
+        AutoProtectionPolicy.newBuilder()
+            .setName(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+            .setCriteria(Criteria.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBindingSummary(BindingSummary.newBuilder().build())
+            .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAutoProtectionPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+    String autoProtectionPolicyId = "autoProtectionPolicyId1759243253";
+
+    AutoProtectionPolicy actualResponse =
+        client
+            .createAutoProtectionPolicyAsync(parent, autoProtectionPolicy, autoProtectionPolicyId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAutoProtectionPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+      String autoProtectionPolicyId = "autoProtectionPolicyId1759243253";
+      client
+          .createAutoProtectionPolicyAsync(parent, autoProtectionPolicy, autoProtectionPolicyId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listAutoProtectionPoliciesTest() throws Exception {
+    AutoProtectionPolicy responsesElement = AutoProtectionPolicy.newBuilder().build();
+    ListAutoProtectionPoliciesResponse expectedResponse =
+        ListAutoProtectionPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAutoProtectionPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAutoProtectionPoliciesPagedResponse pagedListResponse =
+        client.listAutoProtectionPolicies(parent);
+
+    List<AutoProtectionPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAutoProtectionPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAutoProtectionPoliciesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAutoProtectionPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAutoProtectionPoliciesTest2() throws Exception {
+    AutoProtectionPolicy responsesElement = AutoProtectionPolicy.newBuilder().build();
+    ListAutoProtectionPoliciesResponse expectedResponse =
+        ListAutoProtectionPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAutoProtectionPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListAutoProtectionPoliciesPagedResponse pagedListResponse =
+        client.listAutoProtectionPolicies(parent);
+
+    List<AutoProtectionPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAutoProtectionPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAutoProtectionPoliciesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listAutoProtectionPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutoProtectionPolicyTest() throws Exception {
+    AutoProtectionPolicy expectedResponse =
+        AutoProtectionPolicy.newBuilder()
+            .setName(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+            .setCriteria(Criteria.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBindingSummary(BindingSummary.newBuilder().build())
+            .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AutoProtectionPolicyName name =
+        AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+
+    AutoProtectionPolicy actualResponse = client.getAutoProtectionPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAutoProtectionPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyName name =
+          AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+      client.getAutoProtectionPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutoProtectionPolicyTest2() throws Exception {
+    AutoProtectionPolicy expectedResponse =
+        AutoProtectionPolicy.newBuilder()
+            .setName(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+            .setCriteria(Criteria.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBindingSummary(BindingSummary.newBuilder().build())
+            .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6984/locations/location-6984/autoProtectionPolicies/autoProtectionPolicie-6984";
+
+    AutoProtectionPolicy actualResponse = client.getAutoProtectionPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAutoProtectionPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6984/locations/location-6984/autoProtectionPolicies/autoProtectionPolicie-6984";
+      client.getAutoProtectionPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAutoProtectionPolicyTest() throws Exception {
+    AutoProtectionPolicy expectedResponse =
+        AutoProtectionPolicy.newBuilder()
+            .setName(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+            .setCriteria(Criteria.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBindingSummary(BindingSummary.newBuilder().build())
+            .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAutoProtectionPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutoProtectionPolicy autoProtectionPolicy =
+        AutoProtectionPolicy.newBuilder()
+            .setName(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+            .setCriteria(Criteria.newBuilder().build())
+            .setEtag("etag3123477")
+            .setBindingSummary(BindingSummary.newBuilder().build())
+            .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AutoProtectionPolicy actualResponse =
+        client.updateAutoProtectionPolicyAsync(autoProtectionPolicy, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAutoProtectionPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicy autoProtectionPolicy =
+          AutoProtectionPolicy.newBuilder()
+              .setName(
+                  AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                      .toString())
+              .setDescription("description-1724546052")
+              .addAllBackupPlanDetails(new ArrayList<BackupPlanDetail>())
+              .setCriteria(Criteria.newBuilder().build())
+              .setEtag("etag3123477")
+              .setBindingSummary(BindingSummary.newBuilder().build())
+              .setPolicyEvaluationSummary(PolicyEvaluationSummary.newBuilder().build())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAutoProtectionPolicyAsync(autoProtectionPolicy, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAutoProtectionPolicyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAutoProtectionPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutoProtectionPolicyName name =
+        AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+
+    client.deleteAutoProtectionPolicyAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAutoProtectionPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyName name =
+          AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+      client.deleteAutoProtectionPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAutoProtectionPolicyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAutoProtectionPolicyTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-6984/locations/location-6984/autoProtectionPolicies/autoProtectionPolicie-6984";
+
+    client.deleteAutoProtectionPolicyAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAutoProtectionPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6984/locations/location-6984/autoProtectionPolicies/autoProtectionPolicie-6984";
+      client.deleteAutoProtectionPolicyAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createAutoProtectionPolicyBindingTest() throws Exception {
+    AutoProtectionPolicyBinding expectedResponse =
+        AutoProtectionPolicyBinding.newBuilder()
+            .setName(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setScope(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setBindingEvaluationSummary(BindingEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAutoProtectionPolicyBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutoProtectionPolicyName parent =
+        AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+    AutoProtectionPolicyBinding autoProtectionPolicyBinding =
+        AutoProtectionPolicyBinding.newBuilder().build();
+    String autoProtectionPolicyBindingId = "autoProtectionPolicyBindingId2122957414";
+
+    AutoProtectionPolicyBinding actualResponse =
+        client
+            .createAutoProtectionPolicyBindingAsync(
+                parent, autoProtectionPolicyBinding, autoProtectionPolicyBindingId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAutoProtectionPolicyBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyName parent =
+          AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+      AutoProtectionPolicyBinding autoProtectionPolicyBinding =
+          AutoProtectionPolicyBinding.newBuilder().build();
+      String autoProtectionPolicyBindingId = "autoProtectionPolicyBindingId2122957414";
+      client
+          .createAutoProtectionPolicyBindingAsync(
+              parent, autoProtectionPolicyBinding, autoProtectionPolicyBindingId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createAutoProtectionPolicyBindingTest2() throws Exception {
+    AutoProtectionPolicyBinding expectedResponse =
+        AutoProtectionPolicyBinding.newBuilder()
+            .setName(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setScope(
+                AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+                    .toString())
+            .setBindingEvaluationSummary(BindingEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAutoProtectionPolicyBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent =
+        "projects/project-3065/locations/location-3065/autoProtectionPolicies/autoProtectionPolicie-3065";
+    AutoProtectionPolicyBinding autoProtectionPolicyBinding =
+        AutoProtectionPolicyBinding.newBuilder().build();
+    String autoProtectionPolicyBindingId = "autoProtectionPolicyBindingId2122957414";
+
+    AutoProtectionPolicyBinding actualResponse =
+        client
+            .createAutoProtectionPolicyBindingAsync(
+                parent, autoProtectionPolicyBinding, autoProtectionPolicyBindingId)
+            .get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createAutoProtectionPolicyBindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-3065/locations/location-3065/autoProtectionPolicies/autoProtectionPolicie-3065";
+      AutoProtectionPolicyBinding autoProtectionPolicyBinding =
+          AutoProtectionPolicyBinding.newBuilder().build();
+      String autoProtectionPolicyBindingId = "autoProtectionPolicyBindingId2122957414";
+      client
+          .createAutoProtectionPolicyBindingAsync(
+              parent, autoProtectionPolicyBinding, autoProtectionPolicyBindingId)
+          .get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getAutoProtectionPolicyBindingTest() throws Exception {
+    AutoProtectionPolicyBinding expectedResponse =
+        AutoProtectionPolicyBinding.newBuilder()
+            .setName(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setScope(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setBindingEvaluationSummary(BindingEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AutoProtectionPolicyBindingName name =
+        AutoProtectionPolicyBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+
+    AutoProtectionPolicyBinding actualResponse = client.getAutoProtectionPolicyBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAutoProtectionPolicyBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyBindingName name =
+          AutoProtectionPolicyBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+      client.getAutoProtectionPolicyBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAutoProtectionPolicyBindingTest2() throws Exception {
+    AutoProtectionPolicyBinding expectedResponse =
+        AutoProtectionPolicyBinding.newBuilder()
+            .setName(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setScope(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setBindingEvaluationSummary(BindingEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9760/locations/location-9760/autoProtectionPolicies/autoProtectionPolicie-9760/bindings/binding-9760";
+
+    AutoProtectionPolicyBinding actualResponse = client.getAutoProtectionPolicyBinding(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAutoProtectionPolicyBindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9760/locations/location-9760/autoProtectionPolicies/autoProtectionPolicie-9760/bindings/binding-9760";
+      client.getAutoProtectionPolicyBinding(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAutoProtectionPolicyBindingsTest() throws Exception {
+    AutoProtectionPolicyBinding responsesElement = AutoProtectionPolicyBinding.newBuilder().build();
+    ListAutoProtectionPolicyBindingsResponse expectedResponse =
+        ListAutoProtectionPolicyBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAutoProtectionPolicyBindings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AutoProtectionPolicyName parent =
+        AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+
+    ListAutoProtectionPolicyBindingsPagedResponse pagedListResponse =
+        client.listAutoProtectionPolicyBindings(parent);
+
+    List<AutoProtectionPolicyBinding> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getAutoProtectionPolicyBindingsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAutoProtectionPolicyBindingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyName parent =
+          AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+      client.listAutoProtectionPolicyBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAutoProtectionPolicyBindingsTest2() throws Exception {
+    AutoProtectionPolicyBinding responsesElement = AutoProtectionPolicyBinding.newBuilder().build();
+    ListAutoProtectionPolicyBindingsResponse expectedResponse =
+        ListAutoProtectionPolicyBindingsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAutoProtectionPolicyBindings(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-3065/locations/location-3065/autoProtectionPolicies/autoProtectionPolicie-3065";
+
+    ListAutoProtectionPolicyBindingsPagedResponse pagedListResponse =
+        client.listAutoProtectionPolicyBindings(parent);
+
+    List<AutoProtectionPolicyBinding> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getAutoProtectionPolicyBindingsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAutoProtectionPolicyBindingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-3065/locations/location-3065/autoProtectionPolicies/autoProtectionPolicie-3065";
+      client.listAutoProtectionPolicyBindings(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAppliedAutoProtectionPoliciesTest() throws Exception {
+    AppliedAutoProtectionPolicy responsesElement = AppliedAutoProtectionPolicy.newBuilder().build();
+    ListAppliedAutoProtectionPoliciesResponse expectedResponse =
+        ListAppliedAutoProtectionPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAppliedAutoProtectionPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAppliedAutoProtectionPoliciesPagedResponse pagedListResponse =
+        client.listAppliedAutoProtectionPolicies(parent);
+
+    List<AppliedAutoProtectionPolicy> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getAppliedAutoProtectionPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAppliedAutoProtectionPoliciesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAppliedAutoProtectionPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAppliedAutoProtectionPoliciesTest2() throws Exception {
+    AppliedAutoProtectionPolicy responsesElement = AppliedAutoProtectionPolicy.newBuilder().build();
+    ListAppliedAutoProtectionPoliciesResponse expectedResponse =
+        ListAppliedAutoProtectionPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAppliedAutoProtectionPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListAppliedAutoProtectionPoliciesPagedResponse pagedListResponse =
+        client.listAppliedAutoProtectionPolicies(parent);
+
+    List<AppliedAutoProtectionPolicy> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getAppliedAutoProtectionPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAppliedAutoProtectionPoliciesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listAppliedAutoProtectionPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void initiateDeleteAutoProtectionPolicyBindingTest() throws Exception {
+    AutoProtectionPolicyBinding expectedResponse =
+        AutoProtectionPolicyBinding.newBuilder()
+            .setName(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setScope(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setBindingEvaluationSummary(BindingEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("initiateDeleteAutoProtectionPolicyBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AutoProtectionPolicyBindingName name =
+        AutoProtectionPolicyBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+
+    AutoProtectionPolicyBinding actualResponse =
+        client.initiateDeleteAutoProtectionPolicyBindingAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void initiateDeleteAutoProtectionPolicyBindingExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyBindingName name =
+          AutoProtectionPolicyBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+      client.initiateDeleteAutoProtectionPolicyBindingAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void initiateDeleteAutoProtectionPolicyBindingTest2() throws Exception {
+    AutoProtectionPolicyBinding expectedResponse =
+        AutoProtectionPolicyBinding.newBuilder()
+            .setName(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setDescription("description-1724546052")
+            .setScope(
+                AutoProtectionPolicyBindingName.of(
+                        "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+                    .toString())
+            .setBindingEvaluationSummary(BindingEvaluationSummary.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("initiateDeleteAutoProtectionPolicyBindingTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-9760/locations/location-9760/autoProtectionPolicies/autoProtectionPolicie-9760/bindings/binding-9760";
+
+    AutoProtectionPolicyBinding actualResponse =
+        client.initiateDeleteAutoProtectionPolicyBindingAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void initiateDeleteAutoProtectionPolicyBindingExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9760/locations/location-9760/autoProtectionPolicies/autoProtectionPolicie-9760/bindings/binding-9760";
+      client.initiateDeleteAutoProtectionPolicyBindingAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listBindingMatchingResourcesTest() throws Exception {
+    BindingMatchingResource responsesElement = BindingMatchingResource.newBuilder().build();
+    ListBindingMatchingResourcesResponse expectedResponse =
+        ListBindingMatchingResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMatchingResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AutoProtectionPolicyBindingName parent =
+        AutoProtectionPolicyBindingName.of(
+            "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+
+    ListBindingMatchingResourcesPagedResponse pagedListResponse =
+        client.listBindingMatchingResources(parent);
+
+    List<BindingMatchingResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMatchingResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBindingMatchingResourcesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AutoProtectionPolicyBindingName parent =
+          AutoProtectionPolicyBindingName.of(
+              "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+      client.listBindingMatchingResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBindingMatchingResourcesTest2() throws Exception {
+    BindingMatchingResource responsesElement = BindingMatchingResource.newBuilder().build();
+    ListBindingMatchingResourcesResponse expectedResponse =
+        ListBindingMatchingResourcesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllMatchingResources(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-5871/locations/location-5871/autoProtectionPolicies/autoProtectionPolicie-5871/bindings/binding-5871";
+
+    ListBindingMatchingResourcesPagedResponse pagedListResponse =
+        client.listBindingMatchingResources(parent);
+
+    List<BindingMatchingResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getMatchingResourcesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBindingMatchingResourcesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-5871/locations/location-5871/autoProtectionPolicies/autoProtectionPolicie-5871/bindings/binding-5871";
+      client.listBindingMatchingResources(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

@@ -1759,6 +1759,567 @@ public final class BackupDRGrpc {
     return getInitializeServiceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest,
+          com.google.longrunning.Operation>
+      getCreateAutoProtectionPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAutoProtectionPolicy",
+      requestType = com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest,
+          com.google.longrunning.Operation>
+      getCreateAutoProtectionPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest,
+            com.google.longrunning.Operation>
+        getCreateAutoProtectionPolicyMethod;
+    if ((getCreateAutoProtectionPolicyMethod = BackupDRGrpc.getCreateAutoProtectionPolicyMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getCreateAutoProtectionPolicyMethod = BackupDRGrpc.getCreateAutoProtectionPolicyMethod)
+            == null) {
+          BackupDRGrpc.getCreateAutoProtectionPolicyMethod =
+              getCreateAutoProtectionPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateAutoProtectionPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("CreateAutoProtectionPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAutoProtectionPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest,
+          com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse>
+      getListAutoProtectionPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAutoProtectionPolicies",
+      requestType = com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest.class,
+      responseType = com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest,
+          com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse>
+      getListAutoProtectionPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest,
+            com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse>
+        getListAutoProtectionPoliciesMethod;
+    if ((getListAutoProtectionPoliciesMethod = BackupDRGrpc.getListAutoProtectionPoliciesMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getListAutoProtectionPoliciesMethod = BackupDRGrpc.getListAutoProtectionPoliciesMethod)
+            == null) {
+          BackupDRGrpc.getListAutoProtectionPoliciesMethod =
+              getListAutoProtectionPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest,
+                          com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAutoProtectionPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("ListAutoProtectionPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getListAutoProtectionPoliciesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest,
+          com.google.cloud.backupdr.v1.AutoProtectionPolicy>
+      getGetAutoProtectionPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAutoProtectionPolicy",
+      requestType = com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest.class,
+      responseType = com.google.cloud.backupdr.v1.AutoProtectionPolicy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest,
+          com.google.cloud.backupdr.v1.AutoProtectionPolicy>
+      getGetAutoProtectionPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest,
+            com.google.cloud.backupdr.v1.AutoProtectionPolicy>
+        getGetAutoProtectionPolicyMethod;
+    if ((getGetAutoProtectionPolicyMethod = BackupDRGrpc.getGetAutoProtectionPolicyMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getGetAutoProtectionPolicyMethod = BackupDRGrpc.getGetAutoProtectionPolicyMethod)
+            == null) {
+          BackupDRGrpc.getGetAutoProtectionPolicyMethod =
+              getGetAutoProtectionPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest,
+                          com.google.cloud.backupdr.v1.AutoProtectionPolicy>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAutoProtectionPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.AutoProtectionPolicy
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("GetAutoProtectionPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getGetAutoProtectionPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest,
+          com.google.longrunning.Operation>
+      getUpdateAutoProtectionPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAutoProtectionPolicy",
+      requestType = com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest,
+          com.google.longrunning.Operation>
+      getUpdateAutoProtectionPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest,
+            com.google.longrunning.Operation>
+        getUpdateAutoProtectionPolicyMethod;
+    if ((getUpdateAutoProtectionPolicyMethod = BackupDRGrpc.getUpdateAutoProtectionPolicyMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getUpdateAutoProtectionPolicyMethod = BackupDRGrpc.getUpdateAutoProtectionPolicyMethod)
+            == null) {
+          BackupDRGrpc.getUpdateAutoProtectionPolicyMethod =
+              getUpdateAutoProtectionPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateAutoProtectionPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("UpdateAutoProtectionPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAutoProtectionPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest,
+          com.google.longrunning.Operation>
+      getDeleteAutoProtectionPolicyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAutoProtectionPolicy",
+      requestType = com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest,
+          com.google.longrunning.Operation>
+      getDeleteAutoProtectionPolicyMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest,
+            com.google.longrunning.Operation>
+        getDeleteAutoProtectionPolicyMethod;
+    if ((getDeleteAutoProtectionPolicyMethod = BackupDRGrpc.getDeleteAutoProtectionPolicyMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getDeleteAutoProtectionPolicyMethod = BackupDRGrpc.getDeleteAutoProtectionPolicyMethod)
+            == null) {
+          BackupDRGrpc.getDeleteAutoProtectionPolicyMethod =
+              getDeleteAutoProtectionPolicyMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteAutoProtectionPolicy"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("DeleteAutoProtectionPolicy"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteAutoProtectionPolicyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest,
+          com.google.longrunning.Operation>
+      getCreateAutoProtectionPolicyBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAutoProtectionPolicyBinding",
+      requestType = com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest,
+          com.google.longrunning.Operation>
+      getCreateAutoProtectionPolicyBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest,
+            com.google.longrunning.Operation>
+        getCreateAutoProtectionPolicyBindingMethod;
+    if ((getCreateAutoProtectionPolicyBindingMethod =
+            BackupDRGrpc.getCreateAutoProtectionPolicyBindingMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getCreateAutoProtectionPolicyBindingMethod =
+                BackupDRGrpc.getCreateAutoProtectionPolicyBindingMethod)
+            == null) {
+          BackupDRGrpc.getCreateAutoProtectionPolicyBindingMethod =
+              getCreateAutoProtectionPolicyBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateAutoProtectionPolicyBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("CreateAutoProtectionPolicyBinding"))
+                      .build();
+        }
+      }
+    }
+    return getCreateAutoProtectionPolicyBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest,
+          com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding>
+      getGetAutoProtectionPolicyBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAutoProtectionPolicyBinding",
+      requestType = com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest.class,
+      responseType = com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest,
+          com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding>
+      getGetAutoProtectionPolicyBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest,
+            com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding>
+        getGetAutoProtectionPolicyBindingMethod;
+    if ((getGetAutoProtectionPolicyBindingMethod =
+            BackupDRGrpc.getGetAutoProtectionPolicyBindingMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getGetAutoProtectionPolicyBindingMethod =
+                BackupDRGrpc.getGetAutoProtectionPolicyBindingMethod)
+            == null) {
+          BackupDRGrpc.getGetAutoProtectionPolicyBindingMethod =
+              getGetAutoProtectionPolicyBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest,
+                          com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAutoProtectionPolicyBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("GetAutoProtectionPolicyBinding"))
+                      .build();
+        }
+      }
+    }
+    return getGetAutoProtectionPolicyBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest,
+          com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse>
+      getListAutoProtectionPolicyBindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAutoProtectionPolicyBindings",
+      requestType = com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest.class,
+      responseType = com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest,
+          com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse>
+      getListAutoProtectionPolicyBindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest,
+            com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse>
+        getListAutoProtectionPolicyBindingsMethod;
+    if ((getListAutoProtectionPolicyBindingsMethod =
+            BackupDRGrpc.getListAutoProtectionPolicyBindingsMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getListAutoProtectionPolicyBindingsMethod =
+                BackupDRGrpc.getListAutoProtectionPolicyBindingsMethod)
+            == null) {
+          BackupDRGrpc.getListAutoProtectionPolicyBindingsMethod =
+              getListAutoProtectionPolicyBindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest,
+                          com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAutoProtectionPolicyBindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("ListAutoProtectionPolicyBindings"))
+                      .build();
+        }
+      }
+    }
+    return getListAutoProtectionPolicyBindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest,
+          com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse>
+      getListAppliedAutoProtectionPoliciesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAppliedAutoProtectionPolicies",
+      requestType = com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest.class,
+      responseType = com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest,
+          com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse>
+      getListAppliedAutoProtectionPoliciesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest,
+            com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse>
+        getListAppliedAutoProtectionPoliciesMethod;
+    if ((getListAppliedAutoProtectionPoliciesMethod =
+            BackupDRGrpc.getListAppliedAutoProtectionPoliciesMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getListAppliedAutoProtectionPoliciesMethod =
+                BackupDRGrpc.getListAppliedAutoProtectionPoliciesMethod)
+            == null) {
+          BackupDRGrpc.getListAppliedAutoProtectionPoliciesMethod =
+              getListAppliedAutoProtectionPoliciesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest,
+                          com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListAppliedAutoProtectionPolicies"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("ListAppliedAutoProtectionPolicies"))
+                      .build();
+        }
+      }
+    }
+    return getListAppliedAutoProtectionPoliciesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest,
+          com.google.longrunning.Operation>
+      getInitiateDeleteAutoProtectionPolicyBindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "InitiateDeleteAutoProtectionPolicyBinding",
+      requestType =
+          com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest,
+          com.google.longrunning.Operation>
+      getInitiateDeleteAutoProtectionPolicyBindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest,
+            com.google.longrunning.Operation>
+        getInitiateDeleteAutoProtectionPolicyBindingMethod;
+    if ((getInitiateDeleteAutoProtectionPolicyBindingMethod =
+            BackupDRGrpc.getInitiateDeleteAutoProtectionPolicyBindingMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getInitiateDeleteAutoProtectionPolicyBindingMethod =
+                BackupDRGrpc.getInitiateDeleteAutoProtectionPolicyBindingMethod)
+            == null) {
+          BackupDRGrpc.getInitiateDeleteAutoProtectionPolicyBindingMethod =
+              getInitiateDeleteAutoProtectionPolicyBindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1
+                              .InitiateDeleteAutoProtectionPolicyBindingRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "InitiateDeleteAutoProtectionPolicyBinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1
+                                  .InitiateDeleteAutoProtectionPolicyBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier(
+                              "InitiateDeleteAutoProtectionPolicyBinding"))
+                      .build();
+        }
+      }
+    }
+    return getInitiateDeleteAutoProtectionPolicyBindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest,
+          com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse>
+      getListBindingMatchingResourcesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListBindingMatchingResources",
+      requestType = com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest.class,
+      responseType = com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest,
+          com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse>
+      getListBindingMatchingResourcesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest,
+            com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse>
+        getListBindingMatchingResourcesMethod;
+    if ((getListBindingMatchingResourcesMethod = BackupDRGrpc.getListBindingMatchingResourcesMethod)
+        == null) {
+      synchronized (BackupDRGrpc.class) {
+        if ((getListBindingMatchingResourcesMethod =
+                BackupDRGrpc.getListBindingMatchingResourcesMethod)
+            == null) {
+          BackupDRGrpc.getListBindingMatchingResourcesMethod =
+              getListBindingMatchingResourcesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest,
+                          com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListBindingMatchingResources"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BackupDRMethodDescriptorSupplier("ListBindingMatchingResources"))
+                      .build();
+        }
+      }
+    }
+    return getListBindingMatchingResourcesMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BackupDRStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BackupDRStub> factory =
@@ -2357,6 +2918,171 @@ public final class BackupDRGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getInitializeServiceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AutoProtectionPolicy in a given project and location.
+     * </pre>
+     */
+    default void createAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAutoProtectionPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AutoProtectionPolicies for a given project and location.
+     * </pre>
+     */
+    default void listAutoProtectionPolicies(
+        com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAutoProtectionPoliciesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AutoProtectionPolicy.
+     * </pre>
+     */
+    default void getAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.AutoProtectionPolicy>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAutoProtectionPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AutoProtectionPolicy.
+     * </pre>
+     */
+    default void updateAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAutoProtectionPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AutoProtectionPolicy.
+     * </pre>
+     */
+    default void deleteAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteAutoProtectionPolicyMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AutoProtectionPolicyBinding in a given project and
+     * location.
+     * </pre>
+     */
+    default void createAutoProtectionPolicyBinding(
+        com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateAutoProtectionPolicyBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the auto protection policy binding read from the CCFE tables.
+     * </pre>
+     */
+    default void getAutoProtectionPolicyBinding(
+        com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetAutoProtectionPolicyBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the auto protection policy bindings read from the CCFE tables.
+     * </pre>
+     */
+    default void listAutoProtectionPolicyBindings(
+        com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAutoProtectionPolicyBindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AppliedAutoProtectionPolicies in a given project and location.
+     * </pre>
+     */
+    default void listAppliedAutoProtectionPolicies(
+        com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListAppliedAutoProtectionPoliciesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * InitiateDeleteAutoProtectionPolicyBinding initiates delete for
+     * AutoProtectionPolicy Binding
+     * </pre>
+     */
+    default void initiateDeleteAutoProtectionPolicyBinding(
+        com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getInitiateDeleteAutoProtectionPolicyBindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+     * </pre>
+     */
+    default void listBindingMatchingResources(
+        com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListBindingMatchingResourcesMethod(), responseObserver);
     }
   }
 
@@ -3004,6 +3730,194 @@ public final class BackupDRGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AutoProtectionPolicy in a given project and location.
+     * </pre>
+     */
+    public void createAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAutoProtectionPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AutoProtectionPolicies for a given project and location.
+     * </pre>
+     */
+    public void listAutoProtectionPolicies(
+        com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAutoProtectionPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AutoProtectionPolicy.
+     * </pre>
+     */
+    public void getAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.AutoProtectionPolicy>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAutoProtectionPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AutoProtectionPolicy.
+     * </pre>
+     */
+    public void updateAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAutoProtectionPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AutoProtectionPolicy.
+     * </pre>
+     */
+    public void deleteAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAutoProtectionPolicyMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AutoProtectionPolicyBinding in a given project and
+     * location.
+     * </pre>
+     */
+    public void createAutoProtectionPolicyBinding(
+        com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAutoProtectionPolicyBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the auto protection policy binding read from the CCFE tables.
+     * </pre>
+     */
+    public void getAutoProtectionPolicyBinding(
+        com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAutoProtectionPolicyBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the auto protection policy bindings read from the CCFE tables.
+     * </pre>
+     */
+    public void listAutoProtectionPolicyBindings(
+        com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAutoProtectionPolicyBindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AppliedAutoProtectionPolicies in a given project and location.
+     * </pre>
+     */
+    public void listAppliedAutoProtectionPolicies(
+        com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAppliedAutoProtectionPoliciesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * InitiateDeleteAutoProtectionPolicyBinding initiates delete for
+     * AutoProtectionPolicy Binding
+     * </pre>
+     */
+    public void initiateDeleteAutoProtectionPolicyBinding(
+        com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getInitiateDeleteAutoProtectionPolicyBindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+     * </pre>
+     */
+    public void listBindingMatchingResources(
+        com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListBindingMatchingResourcesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3545,6 +4459,169 @@ public final class BackupDRGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getInitializeServiceMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AutoProtectionPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAutoProtectionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AutoProtectionPolicies for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse
+        listAutoProtectionPolicies(
+            com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAutoProtectionPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AutoProtectionPolicy.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.AutoProtectionPolicy getAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAutoProtectionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AutoProtectionPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAutoProtectionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AutoProtectionPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteAutoProtectionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AutoProtectionPolicyBinding in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAutoProtectionPolicyBinding(
+        com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateAutoProtectionPolicyBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the auto protection policy binding read from the CCFE tables.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding getAutoProtectionPolicyBinding(
+        com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetAutoProtectionPolicyBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the auto protection policy bindings read from the CCFE tables.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse
+        listAutoProtectionPolicyBindings(
+            com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAutoProtectionPolicyBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AppliedAutoProtectionPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse
+        listAppliedAutoProtectionPolicies(
+            com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListAppliedAutoProtectionPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * InitiateDeleteAutoProtectionPolicyBinding initiates delete for
+     * AutoProtectionPolicy Binding
+     * </pre>
+     */
+    public com.google.longrunning.Operation initiateDeleteAutoProtectionPolicyBinding(
+        com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getInitiateDeleteAutoProtectionPolicyBindingMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse
+        listBindingMatchingResources(
+            com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListBindingMatchingResourcesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -4057,6 +5134,158 @@ public final class BackupDRGrpc {
         com.google.cloud.backupdr.v1.InitializeServiceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getInitializeServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AutoProtectionPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAutoProtectionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AutoProtectionPolicies for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse
+        listAutoProtectionPolicies(
+            com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAutoProtectionPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AutoProtectionPolicy.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.AutoProtectionPolicy getAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAutoProtectionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AutoProtectionPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAutoProtectionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AutoProtectionPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAutoProtectionPolicy(
+        com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAutoProtectionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AutoProtectionPolicyBinding in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAutoProtectionPolicyBinding(
+        com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAutoProtectionPolicyBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the auto protection policy binding read from the CCFE tables.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding getAutoProtectionPolicyBinding(
+        com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAutoProtectionPolicyBindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the auto protection policy bindings read from the CCFE tables.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse
+        listAutoProtectionPolicyBindings(
+            com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAutoProtectionPolicyBindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AppliedAutoProtectionPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse
+        listAppliedAutoProtectionPolicies(
+            com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAppliedAutoProtectionPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * InitiateDeleteAutoProtectionPolicyBinding initiates delete for
+     * AutoProtectionPolicy Binding
+     * </pre>
+     */
+    public com.google.longrunning.Operation initiateDeleteAutoProtectionPolicyBinding(
+        com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getInitiateDeleteAutoProtectionPolicyBindingMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+     * </pre>
+     */
+    public com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse
+        listBindingMatchingResources(
+            com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBindingMatchingResourcesMethod(), getCallOptions(), request);
     }
   }
 
@@ -4595,6 +5824,174 @@ public final class BackupDRGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getInitializeServiceMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AutoProtectionPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createAutoProtectionPolicy(
+            com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAutoProtectionPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AutoProtectionPolicies for a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse>
+        listAutoProtectionPolicies(
+            com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAutoProtectionPoliciesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AutoProtectionPolicy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.AutoProtectionPolicy>
+        getAutoProtectionPolicy(
+            com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAutoProtectionPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single AutoProtectionPolicy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateAutoProtectionPolicy(
+            com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAutoProtectionPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AutoProtectionPolicy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteAutoProtectionPolicy(
+            com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAutoProtectionPolicyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AutoProtectionPolicyBinding in a given project and
+     * location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createAutoProtectionPolicyBinding(
+            com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAutoProtectionPolicyBindingMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the auto protection policy binding read from the CCFE tables.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding>
+        getAutoProtectionPolicyBinding(
+            com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAutoProtectionPolicyBindingMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the auto protection policy bindings read from the CCFE tables.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse>
+        listAutoProtectionPolicyBindings(
+            com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAutoProtectionPolicyBindingsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AppliedAutoProtectionPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse>
+        listAppliedAutoProtectionPolicies(
+            com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAppliedAutoProtectionPoliciesMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * InitiateDeleteAutoProtectionPolicyBinding initiates delete for
+     * AutoProtectionPolicy Binding
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        initiateDeleteAutoProtectionPolicyBinding(
+            com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getInitiateDeleteAutoProtectionPolicyBindingMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse>
+        listBindingMatchingResources(
+            com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListBindingMatchingResourcesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_MANAGEMENT_SERVERS = 0;
@@ -4634,6 +6031,17 @@ public final class BackupDRGrpc {
   private static final int METHODID_LIST_DATA_SOURCE_REFERENCES = 34;
   private static final int METHODID_FETCH_DATA_SOURCE_REFERENCES_FOR_RESOURCE_TYPE = 35;
   private static final int METHODID_INITIALIZE_SERVICE = 36;
+  private static final int METHODID_CREATE_AUTO_PROTECTION_POLICY = 37;
+  private static final int METHODID_LIST_AUTO_PROTECTION_POLICIES = 38;
+  private static final int METHODID_GET_AUTO_PROTECTION_POLICY = 39;
+  private static final int METHODID_UPDATE_AUTO_PROTECTION_POLICY = 40;
+  private static final int METHODID_DELETE_AUTO_PROTECTION_POLICY = 41;
+  private static final int METHODID_CREATE_AUTO_PROTECTION_POLICY_BINDING = 42;
+  private static final int METHODID_GET_AUTO_PROTECTION_POLICY_BINDING = 43;
+  private static final int METHODID_LIST_AUTO_PROTECTION_POLICY_BINDINGS = 44;
+  private static final int METHODID_LIST_APPLIED_AUTO_PROTECTION_POLICIES = 45;
+  private static final int METHODID_INITIATE_DELETE_AUTO_PROTECTION_POLICY_BINDING = 46;
+  private static final int METHODID_LIST_BINDING_MATCHING_RESOURCES = 47;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4867,6 +6275,73 @@ public final class BackupDRGrpc {
           serviceImpl.initializeService(
               (com.google.cloud.backupdr.v1.InitializeServiceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_AUTO_PROTECTION_POLICY:
+          serviceImpl.createAutoProtectionPolicy(
+              (com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_AUTO_PROTECTION_POLICIES:
+          serviceImpl.listAutoProtectionPolicies(
+              (com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AUTO_PROTECTION_POLICY:
+          serviceImpl.getAutoProtectionPolicy(
+              (com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.backupdr.v1.AutoProtectionPolicy>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_AUTO_PROTECTION_POLICY:
+          serviceImpl.updateAutoProtectionPolicy(
+              (com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_AUTO_PROTECTION_POLICY:
+          serviceImpl.deleteAutoProtectionPolicy(
+              (com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_AUTO_PROTECTION_POLICY_BINDING:
+          serviceImpl.createAutoProtectionPolicyBinding(
+              (com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_AUTO_PROTECTION_POLICY_BINDING:
+          serviceImpl.getAutoProtectionPolicyBinding(
+              (com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_AUTO_PROTECTION_POLICY_BINDINGS:
+          serviceImpl.listAutoProtectionPolicyBindings(
+              (com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_APPLIED_AUTO_PROTECTION_POLICIES:
+          serviceImpl.listAppliedAutoProtectionPolicies(
+              (com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_INITIATE_DELETE_AUTO_PROTECTION_POLICY_BINDING:
+          serviceImpl.initiateDeleteAutoProtectionPolicyBinding(
+              (com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_BINDING_MATCHING_RESOURCES:
+          serviceImpl.listBindingMatchingResources(
+              (com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -5128,6 +6603,83 @@ public final class BackupDRGrpc {
                 new MethodHandlers<
                     com.google.cloud.backupdr.v1.InitializeServiceRequest,
                     com.google.longrunning.Operation>(service, METHODID_INITIALIZE_SERVICE)))
+        .addMethod(
+            getCreateAutoProtectionPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_AUTO_PROTECTION_POLICY)))
+        .addMethod(
+            getListAutoProtectionPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest,
+                    com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse>(
+                    service, METHODID_LIST_AUTO_PROTECTION_POLICIES)))
+        .addMethod(
+            getGetAutoProtectionPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest,
+                    com.google.cloud.backupdr.v1.AutoProtectionPolicy>(
+                    service, METHODID_GET_AUTO_PROTECTION_POLICY)))
+        .addMethod(
+            getUpdateAutoProtectionPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_UPDATE_AUTO_PROTECTION_POLICY)))
+        .addMethod(
+            getDeleteAutoProtectionPolicyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DELETE_AUTO_PROTECTION_POLICY)))
+        .addMethod(
+            getCreateAutoProtectionPolicyBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_CREATE_AUTO_PROTECTION_POLICY_BINDING)))
+        .addMethod(
+            getGetAutoProtectionPolicyBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest,
+                    com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding>(
+                    service, METHODID_GET_AUTO_PROTECTION_POLICY_BINDING)))
+        .addMethod(
+            getListAutoProtectionPolicyBindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest,
+                    com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse>(
+                    service, METHODID_LIST_AUTO_PROTECTION_POLICY_BINDINGS)))
+        .addMethod(
+            getListAppliedAutoProtectionPoliciesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest,
+                    com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse>(
+                    service, METHODID_LIST_APPLIED_AUTO_PROTECTION_POLICIES)))
+        .addMethod(
+            getInitiateDeleteAutoProtectionPolicyBindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_INITIATE_DELETE_AUTO_PROTECTION_POLICY_BINDING)))
+        .addMethod(
+            getListBindingMatchingResourcesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest,
+                    com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse>(
+                    service, METHODID_LIST_BINDING_MATCHING_RESOURCES)))
         .build();
   }
 
@@ -5214,6 +6766,17 @@ public final class BackupDRGrpc {
                       .addMethod(getListDataSourceReferencesMethod())
                       .addMethod(getFetchDataSourceReferencesForResourceTypeMethod())
                       .addMethod(getInitializeServiceMethod())
+                      .addMethod(getCreateAutoProtectionPolicyMethod())
+                      .addMethod(getListAutoProtectionPoliciesMethod())
+                      .addMethod(getGetAutoProtectionPolicyMethod())
+                      .addMethod(getUpdateAutoProtectionPolicyMethod())
+                      .addMethod(getDeleteAutoProtectionPolicyMethod())
+                      .addMethod(getCreateAutoProtectionPolicyBindingMethod())
+                      .addMethod(getGetAutoProtectionPolicyBindingMethod())
+                      .addMethod(getListAutoProtectionPolicyBindingsMethod())
+                      .addMethod(getListAppliedAutoProtectionPoliciesMethod())
+                      .addMethod(getInitiateDeleteAutoProtectionPolicyBindingMethod())
+                      .addMethod(getListBindingMatchingResourcesMethod())
                       .build();
         }
       }

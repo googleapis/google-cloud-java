@@ -859,4 +859,254 @@ public class MockBackupDRImpl extends BackupDRImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createAutoProtectionPolicy(
+      CreateAutoProtectionPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAutoProtectionPolicy, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAutoProtectionPolicies(
+      ListAutoProtectionPoliciesRequest request,
+      StreamObserver<ListAutoProtectionPoliciesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAutoProtectionPoliciesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAutoProtectionPoliciesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAutoProtectionPolicies, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAutoProtectionPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAutoProtectionPolicy(
+      GetAutoProtectionPolicyRequest request,
+      StreamObserver<AutoProtectionPolicy> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AutoProtectionPolicy) {
+      requests.add(request);
+      responseObserver.onNext(((AutoProtectionPolicy) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAutoProtectionPolicy, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AutoProtectionPolicy.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAutoProtectionPolicy(
+      UpdateAutoProtectionPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAutoProtectionPolicy, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAutoProtectionPolicy(
+      DeleteAutoProtectionPolicyRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAutoProtectionPolicy, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAutoProtectionPolicyBinding(
+      CreateAutoProtectionPolicyBindingRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAutoProtectionPolicyBinding,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAutoProtectionPolicyBinding(
+      GetAutoProtectionPolicyBindingRequest request,
+      StreamObserver<AutoProtectionPolicyBinding> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AutoProtectionPolicyBinding) {
+      requests.add(request);
+      responseObserver.onNext(((AutoProtectionPolicyBinding) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAutoProtectionPolicyBinding,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AutoProtectionPolicyBinding.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAutoProtectionPolicyBindings(
+      ListAutoProtectionPolicyBindingsRequest request,
+      StreamObserver<ListAutoProtectionPolicyBindingsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAutoProtectionPolicyBindingsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAutoProtectionPolicyBindingsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAutoProtectionPolicyBindings,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAutoProtectionPolicyBindingsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listAppliedAutoProtectionPolicies(
+      ListAppliedAutoProtectionPoliciesRequest request,
+      StreamObserver<ListAppliedAutoProtectionPoliciesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAppliedAutoProtectionPoliciesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAppliedAutoProtectionPoliciesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAppliedAutoProtectionPolicies,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAppliedAutoProtectionPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void initiateDeleteAutoProtectionPolicyBinding(
+      InitiateDeleteAutoProtectionPolicyBindingRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method"
+                      + " InitiateDeleteAutoProtectionPolicyBinding, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listBindingMatchingResources(
+      ListBindingMatchingResourcesRequest request,
+      StreamObserver<ListBindingMatchingResourcesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListBindingMatchingResourcesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListBindingMatchingResourcesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBindingMatchingResources, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListBindingMatchingResourcesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

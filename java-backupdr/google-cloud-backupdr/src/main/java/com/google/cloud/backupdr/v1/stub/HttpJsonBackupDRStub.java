@@ -20,11 +20,15 @@ import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupPlanAssocia
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchBackupsForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchDataSourceReferencesForResourceTypePagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.FetchUsableBackupVaultsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAppliedAutoProtectionPoliciesPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAutoProtectionPoliciesPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListAutoProtectionPolicyBindingsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanAssociationsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlanRevisionsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupPlansPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupVaultsPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListBackupsPagedResponse;
+import static com.google.cloud.backupdr.v1.BackupDRClient.ListBindingMatchingResourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourceReferencesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListDataSourcesPagedResponse;
 import static com.google.cloud.backupdr.v1.BackupDRClient.ListLocationsPagedResponse;
@@ -46,17 +50,22 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.backupdr.v1.AutoProtectionPolicy;
+import com.google.cloud.backupdr.v1.AutoProtectionPolicyBinding;
 import com.google.cloud.backupdr.v1.Backup;
 import com.google.cloud.backupdr.v1.BackupPlan;
 import com.google.cloud.backupdr.v1.BackupPlanAssociation;
 import com.google.cloud.backupdr.v1.BackupPlanRevision;
 import com.google.cloud.backupdr.v1.BackupVault;
+import com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyBindingRequest;
+import com.google.cloud.backupdr.v1.CreateAutoProtectionPolicyRequest;
 import com.google.cloud.backupdr.v1.CreateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.CreateBackupPlanRequest;
 import com.google.cloud.backupdr.v1.CreateBackupVaultRequest;
 import com.google.cloud.backupdr.v1.CreateManagementServerRequest;
 import com.google.cloud.backupdr.v1.DataSource;
 import com.google.cloud.backupdr.v1.DataSourceReference;
+import com.google.cloud.backupdr.v1.DeleteAutoProtectionPolicyRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupPlanRequest;
 import com.google.cloud.backupdr.v1.DeleteBackupRequest;
@@ -70,6 +79,8 @@ import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeRequ
 import com.google.cloud.backupdr.v1.FetchDataSourceReferencesForResourceTypeResponse;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsRequest;
 import com.google.cloud.backupdr.v1.FetchUsableBackupVaultsResponse;
+import com.google.cloud.backupdr.v1.GetAutoProtectionPolicyBindingRequest;
+import com.google.cloud.backupdr.v1.GetAutoProtectionPolicyRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanRequest;
 import com.google.cloud.backupdr.v1.GetBackupPlanRevisionRequest;
@@ -80,6 +91,13 @@ import com.google.cloud.backupdr.v1.GetDataSourceRequest;
 import com.google.cloud.backupdr.v1.GetManagementServerRequest;
 import com.google.cloud.backupdr.v1.InitializeServiceRequest;
 import com.google.cloud.backupdr.v1.InitializeServiceResponse;
+import com.google.cloud.backupdr.v1.InitiateDeleteAutoProtectionPolicyBindingRequest;
+import com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesRequest;
+import com.google.cloud.backupdr.v1.ListAppliedAutoProtectionPoliciesResponse;
+import com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesRequest;
+import com.google.cloud.backupdr.v1.ListAutoProtectionPoliciesResponse;
+import com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsRequest;
+import com.google.cloud.backupdr.v1.ListAutoProtectionPolicyBindingsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsRequest;
 import com.google.cloud.backupdr.v1.ListBackupPlanAssociationsResponse;
 import com.google.cloud.backupdr.v1.ListBackupPlanRevisionsRequest;
@@ -90,6 +108,8 @@ import com.google.cloud.backupdr.v1.ListBackupVaultsRequest;
 import com.google.cloud.backupdr.v1.ListBackupVaultsResponse;
 import com.google.cloud.backupdr.v1.ListBackupsRequest;
 import com.google.cloud.backupdr.v1.ListBackupsResponse;
+import com.google.cloud.backupdr.v1.ListBindingMatchingResourcesRequest;
+import com.google.cloud.backupdr.v1.ListBindingMatchingResourcesResponse;
 import com.google.cloud.backupdr.v1.ListDataSourceReferencesRequest;
 import com.google.cloud.backupdr.v1.ListDataSourceReferencesResponse;
 import com.google.cloud.backupdr.v1.ListDataSourcesRequest;
@@ -101,6 +121,7 @@ import com.google.cloud.backupdr.v1.OperationMetadata;
 import com.google.cloud.backupdr.v1.RestoreBackupRequest;
 import com.google.cloud.backupdr.v1.RestoreBackupResponse;
 import com.google.cloud.backupdr.v1.TriggerBackupRequest;
+import com.google.cloud.backupdr.v1.UpdateAutoProtectionPolicyRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupPlanAssociationRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupPlanRequest;
 import com.google.cloud.backupdr.v1.UpdateBackupRequest;
@@ -140,11 +161,13 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
           .add(ManagementServer.getDescriptor())
+          .add(AutoProtectionPolicy.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .add(Empty.getDescriptor())
           .add(BackupVault.getDescriptor())
           .add(InitializeServiceResponse.getDescriptor())
           .add(Backup.getDescriptor())
+          .add(AutoProtectionPolicyBinding.getDescriptor())
           .add(DataSource.getDescriptor())
           .add(BackupPlan.getDescriptor())
           .add(RestoreBackupResponse.getDescriptor())
@@ -1429,6 +1452,10 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteBackupPlanAssociationRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "autoProtectionPolicyBinding",
+                                request.getAutoProtectionPolicyBinding());
                             serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -1646,6 +1673,473 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
               .setOperationSnapshotFactory(
                   (InitializeServiceRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAutoProtectionPolicyRequest, Operation>
+      createAutoProtectionPolicyMethodDescriptor =
+          ApiMethodDescriptor.<CreateAutoProtectionPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/CreateAutoProtectionPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateAutoProtectionPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/autoProtectionPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAutoProtectionPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAutoProtectionPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "autoProtectionPolicyId",
+                                request.getAutoProtectionPolicyId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "autoProtectionPolicy",
+                                      request.getAutoProtectionPolicy(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateAutoProtectionPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesResponse>
+      listAutoProtectionPoliciesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesResponse>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/ListAutoProtectionPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAutoProtectionPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/autoProtectionPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAutoProtectionPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAutoProtectionPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAutoProtectionPoliciesResponse>newBuilder()
+                      .setDefaultInstance(ListAutoProtectionPoliciesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>
+      getAutoProtectionPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/GetAutoProtectionPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAutoProtectionPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/autoProtectionPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutoProtectionPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutoProtectionPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AutoProtectionPolicy>newBuilder()
+                      .setDefaultInstance(AutoProtectionPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateAutoProtectionPolicyRequest, Operation>
+      updateAutoProtectionPolicyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateAutoProtectionPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/UpdateAutoProtectionPolicy")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateAutoProtectionPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{autoProtectionPolicy.name=projects/*/locations/*/autoProtectionPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAutoProtectionPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "autoProtectionPolicy.name",
+                                request.getAutoProtectionPolicy().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateAutoProtectionPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "autoProtectionPolicy",
+                                      request.getAutoProtectionPolicy(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateAutoProtectionPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteAutoProtectionPolicyRequest, Operation>
+      deleteAutoProtectionPolicyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteAutoProtectionPolicyRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/DeleteAutoProtectionPolicy")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteAutoProtectionPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/autoProtectionPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAutoProtectionPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteAutoProtectionPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteAutoProtectionPolicyRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<CreateAutoProtectionPolicyBindingRequest, Operation>
+      createAutoProtectionPolicyBindingMethodDescriptor =
+          ApiMethodDescriptor.<CreateAutoProtectionPolicyBindingRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1.BackupDR/CreateAutoProtectionPolicyBinding")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<CreateAutoProtectionPolicyBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/autoProtectionPolicies/*}/bindings",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAutoProtectionPolicyBindingRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateAutoProtectionPolicyBindingRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "autoProtectionPolicyBindingId",
+                                request.getAutoProtectionPolicyBindingId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "autoProtectionPolicyBinding",
+                                      request.getAutoProtectionPolicyBinding(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CreateAutoProtectionPolicyBindingRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>
+      getAutoProtectionPolicyBindingMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/GetAutoProtectionPolicyBinding")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetAutoProtectionPolicyBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/autoProtectionPolicies/*/bindings/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutoProtectionPolicyBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetAutoProtectionPolicyBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<AutoProtectionPolicyBinding>newBuilder()
+                      .setDefaultInstance(AutoProtectionPolicyBinding.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListAutoProtectionPolicyBindingsRequest, ListAutoProtectionPolicyBindingsResponse>
+      listAutoProtectionPolicyBindingsMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListAutoProtectionPolicyBindingsRequest, ListAutoProtectionPolicyBindingsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1.BackupDR/ListAutoProtectionPolicyBindings")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListAutoProtectionPolicyBindingsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/autoProtectionPolicies/*}/bindings",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAutoProtectionPolicyBindingsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAutoProtectionPolicyBindingsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAutoProtectionPolicyBindingsResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListAutoProtectionPolicyBindingsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListAppliedAutoProtectionPoliciesRequest, ListAppliedAutoProtectionPoliciesResponse>
+      listAppliedAutoProtectionPoliciesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListAppliedAutoProtectionPoliciesRequest, ListAppliedAutoProtectionPoliciesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1.BackupDR/ListAppliedAutoProtectionPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<ListAppliedAutoProtectionPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*}/appliedAutoProtectionPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAppliedAutoProtectionPoliciesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListAppliedAutoProtectionPoliciesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListAppliedAutoProtectionPoliciesResponse>newBuilder()
+                      .setDefaultInstance(
+                          ListAppliedAutoProtectionPoliciesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>
+      initiateDeleteAutoProtectionPolicyBindingMethodDescriptor =
+          ApiMethodDescriptor
+              .<InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.backupdr.v1.BackupDR/InitiateDeleteAutoProtectionPolicyBinding")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<InitiateDeleteAutoProtectionPolicyBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/autoProtectionPolicies/*/bindings/*}:initiateDelete",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<InitiateDeleteAutoProtectionPolicyBindingRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<InitiateDeleteAutoProtectionPolicyBindingRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (InitiateDeleteAutoProtectionPolicyBindingRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<
+          ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesResponse>
+      listBindingMatchingResourcesMethodDescriptor =
+          ApiMethodDescriptor
+              .<ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesResponse>
+                  newBuilder()
+              .setFullMethodName("google.cloud.backupdr.v1.BackupDR/ListBindingMatchingResources")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListBindingMatchingResourcesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/autoProtectionPolicies/*/bindings/*}/matchingResources",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBindingMatchingResourcesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListBindingMatchingResourcesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "orderBy", request.getOrderBy());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListBindingMatchingResourcesResponse>newBuilder()
+                      .setDefaultInstance(ListBindingMatchingResourcesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
               .build();
 
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -1955,6 +2449,59 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   private final OperationCallable<
           InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
       initializeServiceOperationCallable;
+  private final UnaryCallable<CreateAutoProtectionPolicyRequest, Operation>
+      createAutoProtectionPolicyCallable;
+  private final OperationCallable<
+          CreateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyOperationCallable;
+  private final UnaryCallable<ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesResponse>
+      listAutoProtectionPoliciesCallable;
+  private final UnaryCallable<
+          ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesPagedResponse>
+      listAutoProtectionPoliciesPagedCallable;
+  private final UnaryCallable<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>
+      getAutoProtectionPolicyCallable;
+  private final UnaryCallable<UpdateAutoProtectionPolicyRequest, Operation>
+      updateAutoProtectionPolicyCallable;
+  private final OperationCallable<
+          UpdateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      updateAutoProtectionPolicyOperationCallable;
+  private final UnaryCallable<DeleteAutoProtectionPolicyRequest, Operation>
+      deleteAutoProtectionPolicyCallable;
+  private final OperationCallable<DeleteAutoProtectionPolicyRequest, Empty, OperationMetadata>
+      deleteAutoProtectionPolicyOperationCallable;
+  private final UnaryCallable<CreateAutoProtectionPolicyBindingRequest, Operation>
+      createAutoProtectionPolicyBindingCallable;
+  private final OperationCallable<
+          CreateAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingOperationCallable;
+  private final UnaryCallable<GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>
+      getAutoProtectionPolicyBindingCallable;
+  private final UnaryCallable<
+          ListAutoProtectionPolicyBindingsRequest, ListAutoProtectionPolicyBindingsResponse>
+      listAutoProtectionPolicyBindingsCallable;
+  private final UnaryCallable<
+          ListAutoProtectionPolicyBindingsRequest, ListAutoProtectionPolicyBindingsPagedResponse>
+      listAutoProtectionPolicyBindingsPagedCallable;
+  private final UnaryCallable<
+          ListAppliedAutoProtectionPoliciesRequest, ListAppliedAutoProtectionPoliciesResponse>
+      listAppliedAutoProtectionPoliciesCallable;
+  private final UnaryCallable<
+          ListAppliedAutoProtectionPoliciesRequest, ListAppliedAutoProtectionPoliciesPagedResponse>
+      listAppliedAutoProtectionPoliciesPagedCallable;
+  private final UnaryCallable<InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>
+      initiateDeleteAutoProtectionPolicyBindingCallable;
+  private final OperationCallable<
+          InitiateDeleteAutoProtectionPolicyBindingRequest,
+          AutoProtectionPolicyBinding,
+          OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingOperationCallable;
+  private final UnaryCallable<
+          ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesResponse>
+      listBindingMatchingResourcesCallable;
+  private final UnaryCallable<
+          ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesPagedResponse>
+      listBindingMatchingResourcesPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -2514,6 +3061,162 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateAutoProtectionPolicyRequest, Operation>
+        createAutoProtectionPolicyTransportSettings =
+            HttpJsonCallSettings.<CreateAutoProtectionPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(createAutoProtectionPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesResponse>
+        listAutoProtectionPoliciesTransportSettings =
+            HttpJsonCallSettings
+                .<ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listAutoProtectionPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>
+        getAutoProtectionPolicyTransportSettings =
+            HttpJsonCallSettings.<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>newBuilder()
+                .setMethodDescriptor(getAutoProtectionPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<UpdateAutoProtectionPolicyRequest, Operation>
+        updateAutoProtectionPolicyTransportSettings =
+            HttpJsonCallSettings.<UpdateAutoProtectionPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateAutoProtectionPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "auto_protection_policy.name",
+                          String.valueOf(request.getAutoProtectionPolicy().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteAutoProtectionPolicyRequest, Operation>
+        deleteAutoProtectionPolicyTransportSettings =
+            HttpJsonCallSettings.<DeleteAutoProtectionPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteAutoProtectionPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<CreateAutoProtectionPolicyBindingRequest, Operation>
+        createAutoProtectionPolicyBindingTransportSettings =
+            HttpJsonCallSettings.<CreateAutoProtectionPolicyBindingRequest, Operation>newBuilder()
+                .setMethodDescriptor(createAutoProtectionPolicyBindingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>
+        getAutoProtectionPolicyBindingTransportSettings =
+            HttpJsonCallSettings
+                .<GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>newBuilder()
+                .setMethodDescriptor(getAutoProtectionPolicyBindingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<
+            ListAutoProtectionPolicyBindingsRequest, ListAutoProtectionPolicyBindingsResponse>
+        listAutoProtectionPolicyBindingsTransportSettings =
+            HttpJsonCallSettings
+                .<ListAutoProtectionPolicyBindingsRequest, ListAutoProtectionPolicyBindingsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listAutoProtectionPolicyBindingsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            ListAppliedAutoProtectionPoliciesRequest, ListAppliedAutoProtectionPoliciesResponse>
+        listAppliedAutoProtectionPoliciesTransportSettings =
+            HttpJsonCallSettings
+                .<ListAppliedAutoProtectionPoliciesRequest,
+                    ListAppliedAutoProtectionPoliciesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listAppliedAutoProtectionPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>
+        initiateDeleteAutoProtectionPolicyBindingTransportSettings =
+            HttpJsonCallSettings
+                .<InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>newBuilder()
+                .setMethodDescriptor(initiateDeleteAutoProtectionPolicyBindingMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesResponse>
+        listBindingMatchingResourcesTransportSettings =
+            HttpJsonCallSettings
+                .<ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesResponse>
+                    newBuilder()
+                .setMethodDescriptor(listBindingMatchingResourcesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -2882,6 +3585,111 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
             settings.initializeServiceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.createAutoProtectionPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createAutoProtectionPolicyTransportSettings,
+            settings.createAutoProtectionPolicySettings(),
+            clientContext);
+    this.createAutoProtectionPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            createAutoProtectionPolicyTransportSettings,
+            settings.createAutoProtectionPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listAutoProtectionPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listAutoProtectionPoliciesTransportSettings,
+            settings.listAutoProtectionPoliciesSettings(),
+            clientContext);
+    this.listAutoProtectionPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAutoProtectionPoliciesTransportSettings,
+            settings.listAutoProtectionPoliciesSettings(),
+            clientContext);
+    this.getAutoProtectionPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getAutoProtectionPolicyTransportSettings,
+            settings.getAutoProtectionPolicySettings(),
+            clientContext);
+    this.updateAutoProtectionPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateAutoProtectionPolicyTransportSettings,
+            settings.updateAutoProtectionPolicySettings(),
+            clientContext);
+    this.updateAutoProtectionPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAutoProtectionPolicyTransportSettings,
+            settings.updateAutoProtectionPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.deleteAutoProtectionPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteAutoProtectionPolicyTransportSettings,
+            settings.deleteAutoProtectionPolicySettings(),
+            clientContext);
+    this.deleteAutoProtectionPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAutoProtectionPolicyTransportSettings,
+            settings.deleteAutoProtectionPolicyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.createAutoProtectionPolicyBindingCallable =
+        callableFactory.createUnaryCallable(
+            createAutoProtectionPolicyBindingTransportSettings,
+            settings.createAutoProtectionPolicyBindingSettings(),
+            clientContext);
+    this.createAutoProtectionPolicyBindingOperationCallable =
+        callableFactory.createOperationCallable(
+            createAutoProtectionPolicyBindingTransportSettings,
+            settings.createAutoProtectionPolicyBindingOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.getAutoProtectionPolicyBindingCallable =
+        callableFactory.createUnaryCallable(
+            getAutoProtectionPolicyBindingTransportSettings,
+            settings.getAutoProtectionPolicyBindingSettings(),
+            clientContext);
+    this.listAutoProtectionPolicyBindingsCallable =
+        callableFactory.createUnaryCallable(
+            listAutoProtectionPolicyBindingsTransportSettings,
+            settings.listAutoProtectionPolicyBindingsSettings(),
+            clientContext);
+    this.listAutoProtectionPolicyBindingsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAutoProtectionPolicyBindingsTransportSettings,
+            settings.listAutoProtectionPolicyBindingsSettings(),
+            clientContext);
+    this.listAppliedAutoProtectionPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listAppliedAutoProtectionPoliciesTransportSettings,
+            settings.listAppliedAutoProtectionPoliciesSettings(),
+            clientContext);
+    this.listAppliedAutoProtectionPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listAppliedAutoProtectionPoliciesTransportSettings,
+            settings.listAppliedAutoProtectionPoliciesSettings(),
+            clientContext);
+    this.initiateDeleteAutoProtectionPolicyBindingCallable =
+        callableFactory.createUnaryCallable(
+            initiateDeleteAutoProtectionPolicyBindingTransportSettings,
+            settings.initiateDeleteAutoProtectionPolicyBindingSettings(),
+            clientContext);
+    this.initiateDeleteAutoProtectionPolicyBindingOperationCallable =
+        callableFactory.createOperationCallable(
+            initiateDeleteAutoProtectionPolicyBindingTransportSettings,
+            settings.initiateDeleteAutoProtectionPolicyBindingOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.listBindingMatchingResourcesCallable =
+        callableFactory.createUnaryCallable(
+            listBindingMatchingResourcesTransportSettings,
+            settings.listBindingMatchingResourcesSettings(),
+            clientContext);
+    this.listBindingMatchingResourcesPagedCallable =
+        callableFactory.createPagedCallable(
+            listBindingMatchingResourcesTransportSettings,
+            settings.listBindingMatchingResourcesSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -2947,6 +3755,17 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
     methodDescriptors.add(listDataSourceReferencesMethodDescriptor);
     methodDescriptors.add(fetchDataSourceReferencesForResourceTypeMethodDescriptor);
     methodDescriptors.add(initializeServiceMethodDescriptor);
+    methodDescriptors.add(createAutoProtectionPolicyMethodDescriptor);
+    methodDescriptors.add(listAutoProtectionPoliciesMethodDescriptor);
+    methodDescriptors.add(getAutoProtectionPolicyMethodDescriptor);
+    methodDescriptors.add(updateAutoProtectionPolicyMethodDescriptor);
+    methodDescriptors.add(deleteAutoProtectionPolicyMethodDescriptor);
+    methodDescriptors.add(createAutoProtectionPolicyBindingMethodDescriptor);
+    methodDescriptors.add(getAutoProtectionPolicyBindingMethodDescriptor);
+    methodDescriptors.add(listAutoProtectionPolicyBindingsMethodDescriptor);
+    methodDescriptors.add(listAppliedAutoProtectionPoliciesMethodDescriptor);
+    methodDescriptors.add(initiateDeleteAutoProtectionPolicyBindingMethodDescriptor);
+    methodDescriptors.add(listBindingMatchingResourcesMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -3340,6 +4159,137 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
   public OperationCallable<InitializeServiceRequest, InitializeServiceResponse, OperationMetadata>
       initializeServiceOperationCallable() {
     return initializeServiceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAutoProtectionPolicyRequest, Operation>
+      createAutoProtectionPolicyCallable() {
+    return createAutoProtectionPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyOperationCallable() {
+    return createAutoProtectionPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesResponse>
+      listAutoProtectionPoliciesCallable() {
+    return listAutoProtectionPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesPagedResponse>
+      listAutoProtectionPoliciesPagedCallable() {
+    return listAutoProtectionPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>
+      getAutoProtectionPolicyCallable() {
+    return getAutoProtectionPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAutoProtectionPolicyRequest, Operation>
+      updateAutoProtectionPolicyCallable() {
+    return updateAutoProtectionPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      updateAutoProtectionPolicyOperationCallable() {
+    return updateAutoProtectionPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAutoProtectionPolicyRequest, Operation>
+      deleteAutoProtectionPolicyCallable() {
+    return deleteAutoProtectionPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAutoProtectionPolicyRequest, Empty, OperationMetadata>
+      deleteAutoProtectionPolicyOperationCallable() {
+    return deleteAutoProtectionPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAutoProtectionPolicyBindingRequest, Operation>
+      createAutoProtectionPolicyBindingCallable() {
+    return createAutoProtectionPolicyBindingCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CreateAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingOperationCallable() {
+    return createAutoProtectionPolicyBindingOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>
+      getAutoProtectionPolicyBindingCallable() {
+    return getAutoProtectionPolicyBindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListAutoProtectionPolicyBindingsRequest, ListAutoProtectionPolicyBindingsResponse>
+      listAutoProtectionPolicyBindingsCallable() {
+    return listAutoProtectionPolicyBindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListAutoProtectionPolicyBindingsRequest, ListAutoProtectionPolicyBindingsPagedResponse>
+      listAutoProtectionPolicyBindingsPagedCallable() {
+    return listAutoProtectionPolicyBindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListAppliedAutoProtectionPoliciesRequest, ListAppliedAutoProtectionPoliciesResponse>
+      listAppliedAutoProtectionPoliciesCallable() {
+    return listAppliedAutoProtectionPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListAppliedAutoProtectionPoliciesRequest, ListAppliedAutoProtectionPoliciesPagedResponse>
+      listAppliedAutoProtectionPoliciesPagedCallable() {
+    return listAppliedAutoProtectionPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>
+      initiateDeleteAutoProtectionPolicyBindingCallable() {
+    return initiateDeleteAutoProtectionPolicyBindingCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          InitiateDeleteAutoProtectionPolicyBindingRequest,
+          AutoProtectionPolicyBinding,
+          OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingOperationCallable() {
+    return initiateDeleteAutoProtectionPolicyBindingOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesResponse>
+      listBindingMatchingResourcesCallable() {
+    return listBindingMatchingResourcesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesPagedResponse>
+      listBindingMatchingResourcesPagedCallable() {
+    return listBindingMatchingResourcesPagedCallable;
   }
 
   @Override

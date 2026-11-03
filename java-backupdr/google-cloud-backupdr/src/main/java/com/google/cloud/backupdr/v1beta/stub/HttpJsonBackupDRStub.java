@@ -1709,6 +1709,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                                 fields,
                                 "autoProtectionPolicyId",
                                 request.getAutoProtectionPolicyId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1829,6 +1830,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateAutoProtectionPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -1874,6 +1876,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                             ProtoRestSerializer<DeleteAutoProtectionPolicyRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "etag", request.getEtag());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -1917,6 +1920,7 @@ public class HttpJsonBackupDRStub extends BackupDRStub {
                                 fields,
                                 "autoProtectionPolicyBindingId",
                                 request.getAutoProtectionPolicyBindingId());
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

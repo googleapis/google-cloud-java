@@ -803,6 +803,223 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateAutoProtectionPolicy</td>
+ *      <td><p> Creates a new AutoProtectionPolicy in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAutoProtectionPolicyAsync(CreateAutoProtectionPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createAutoProtectionPolicyAsync(LocationName parent, AutoProtectionPolicy autoProtectionPolicy, String autoProtectionPolicyId)
+ *           <li><p> createAutoProtectionPolicyAsync(String parent, AutoProtectionPolicy autoProtectionPolicy, String autoProtectionPolicyId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAutoProtectionPolicyOperationCallable()
+ *           <li><p> createAutoProtectionPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAutoProtectionPolicies</td>
+ *      <td><p> Lists AutoProtectionPolicies for a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAutoProtectionPolicies(ListAutoProtectionPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAutoProtectionPolicies(LocationName parent)
+ *           <li><p> listAutoProtectionPolicies(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAutoProtectionPoliciesPagedCallable()
+ *           <li><p> listAutoProtectionPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAutoProtectionPolicy</td>
+ *      <td><p> Gets details of a single AutoProtectionPolicy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAutoProtectionPolicy(GetAutoProtectionPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAutoProtectionPolicy(AutoProtectionPolicyName name)
+ *           <li><p> getAutoProtectionPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAutoProtectionPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAutoProtectionPolicy</td>
+ *      <td><p> Updates the parameters of a single AutoProtectionPolicy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAutoProtectionPolicyAsync(UpdateAutoProtectionPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateAutoProtectionPolicyAsync(AutoProtectionPolicy autoProtectionPolicy, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAutoProtectionPolicyOperationCallable()
+ *           <li><p> updateAutoProtectionPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteAutoProtectionPolicy</td>
+ *      <td><p> Deletes a single AutoProtectionPolicy.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteAutoProtectionPolicyAsync(DeleteAutoProtectionPolicyRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteAutoProtectionPolicyAsync(AutoProtectionPolicyName name)
+ *           <li><p> deleteAutoProtectionPolicyAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteAutoProtectionPolicyOperationCallable()
+ *           <li><p> deleteAutoProtectionPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateAutoProtectionPolicyBinding</td>
+ *      <td><p> Creates a new AutoProtectionPolicyBinding in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createAutoProtectionPolicyBindingAsync(CreateAutoProtectionPolicyBindingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createAutoProtectionPolicyBindingAsync(AutoProtectionPolicyName parent, AutoProtectionPolicyBinding autoProtectionPolicyBinding, String autoProtectionPolicyBindingId)
+ *           <li><p> createAutoProtectionPolicyBindingAsync(String parent, AutoProtectionPolicyBinding autoProtectionPolicyBinding, String autoProtectionPolicyBindingId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createAutoProtectionPolicyBindingOperationCallable()
+ *           <li><p> createAutoProtectionPolicyBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetAutoProtectionPolicyBinding</td>
+ *      <td><p> Returns the auto protection policy binding read from the CCFE tables.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAutoProtectionPolicyBinding(GetAutoProtectionPolicyBindingRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAutoProtectionPolicyBinding(AutoProtectionPolicyBindingName name)
+ *           <li><p> getAutoProtectionPolicyBinding(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAutoProtectionPolicyBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAutoProtectionPolicyBindings</td>
+ *      <td><p> Returns the auto protection policy bindings read from the CCFE tables.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAutoProtectionPolicyBindings(ListAutoProtectionPolicyBindingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAutoProtectionPolicyBindings(AutoProtectionPolicyName parent)
+ *           <li><p> listAutoProtectionPolicyBindings(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAutoProtectionPolicyBindingsPagedCallable()
+ *           <li><p> listAutoProtectionPolicyBindingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListAppliedAutoProtectionPolicies</td>
+ *      <td><p> Lists AppliedAutoProtectionPolicies in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listAppliedAutoProtectionPolicies(ListAppliedAutoProtectionPoliciesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listAppliedAutoProtectionPolicies(LocationName parent)
+ *           <li><p> listAppliedAutoProtectionPolicies(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listAppliedAutoProtectionPoliciesPagedCallable()
+ *           <li><p> listAppliedAutoProtectionPoliciesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> InitiateDeleteAutoProtectionPolicyBinding</td>
+ *      <td><p> InitiateDeleteAutoProtectionPolicyBinding initiates delete for AutoProtectionPolicy Binding</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> initiateDeleteAutoProtectionPolicyBindingAsync(InitiateDeleteAutoProtectionPolicyBindingRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> initiateDeleteAutoProtectionPolicyBindingAsync(AutoProtectionPolicyBindingName name)
+ *           <li><p> initiateDeleteAutoProtectionPolicyBindingAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> initiateDeleteAutoProtectionPolicyBindingOperationCallable()
+ *           <li><p> initiateDeleteAutoProtectionPolicyBindingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListBindingMatchingResources</td>
+ *      <td><p> Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listBindingMatchingResources(ListBindingMatchingResourcesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listBindingMatchingResources(AutoProtectionPolicyBindingName parent)
+ *           <li><p> listBindingMatchingResources(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listBindingMatchingResourcesPagedCallable()
+ *           <li><p> listBindingMatchingResourcesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -5925,6 +6142,10 @@ public class BackupDRClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[BACKUP_PLAN_ASSOCIATION]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setAutoProtectionPolicyBinding(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
    *           .build();
    *   backupDRClient.deleteBackupPlanAssociationAsync(request).get();
    * }
@@ -5958,6 +6179,10 @@ public class BackupDRClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[BACKUP_PLAN_ASSOCIATION]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setAutoProtectionPolicyBinding(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       backupDRClient.deleteBackupPlanAssociationOperationCallable().futureCall(request);
@@ -5991,6 +6216,10 @@ public class BackupDRClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[BACKUP_PLAN_ASSOCIATION]")
    *                   .toString())
    *           .setRequestId("requestId693933066")
+   *           .setAutoProtectionPolicyBinding(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Operation> future =
    *       backupDRClient.deleteBackupPlanAssociationCallable().futureCall(request);
@@ -6763,6 +6992,1873 @@ public class BackupDRClient implements BackgroundResource {
    */
   public final UnaryCallable<InitializeServiceRequest, Operation> initializeServiceCallable() {
     return stub.initializeServiceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+   *   String autoProtectionPolicyId = "autoProtectionPolicyId1759243253";
+   *   AutoProtectionPolicy response =
+   *       backupDRClient
+   *           .createAutoProtectionPolicyAsync(parent, autoProtectionPolicy, autoProtectionPolicyId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this policy will be created. Format:
+   *     projects/{project}/locations/{location}
+   * @param autoProtectionPolicy Required. The AutoProtectionPolicy resource to create.
+   * @param autoProtectionPolicyId Required. The ID to use for the policy. This will become the
+   *     final component of the policy's resource name.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyAsync(
+          @Nullable LocationName parent,
+          AutoProtectionPolicy autoProtectionPolicy,
+          String autoProtectionPolicyId) {
+    CreateAutoProtectionPolicyRequest request =
+        CreateAutoProtectionPolicyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAutoProtectionPolicy(autoProtectionPolicy)
+            .setAutoProtectionPolicyId(autoProtectionPolicyId)
+            .build();
+    return createAutoProtectionPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+   *   String autoProtectionPolicyId = "autoProtectionPolicyId1759243253";
+   *   AutoProtectionPolicy response =
+   *       backupDRClient
+   *           .createAutoProtectionPolicyAsync(parent, autoProtectionPolicy, autoProtectionPolicyId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this policy will be created. Format:
+   *     projects/{project}/locations/{location}
+   * @param autoProtectionPolicy Required. The AutoProtectionPolicy resource to create.
+   * @param autoProtectionPolicyId Required. The ID to use for the policy. This will become the
+   *     final component of the policy's resource name.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyAsync(
+          String parent, AutoProtectionPolicy autoProtectionPolicy, String autoProtectionPolicyId) {
+    CreateAutoProtectionPolicyRequest request =
+        CreateAutoProtectionPolicyRequest.newBuilder()
+            .setParent(parent)
+            .setAutoProtectionPolicy(autoProtectionPolicy)
+            .setAutoProtectionPolicyId(autoProtectionPolicyId)
+            .build();
+    return createAutoProtectionPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateAutoProtectionPolicyRequest request =
+   *       CreateAutoProtectionPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAutoProtectionPolicyId("autoProtectionPolicyId1759243253")
+   *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AutoProtectionPolicy response = backupDRClient.createAutoProtectionPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyAsync(CreateAutoProtectionPolicyRequest request) {
+    return createAutoProtectionPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateAutoProtectionPolicyRequest request =
+   *       CreateAutoProtectionPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAutoProtectionPolicyId("autoProtectionPolicyId1759243253")
+   *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AutoProtectionPolicy, OperationMetadata> future =
+   *       backupDRClient.createAutoProtectionPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AutoProtectionPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      createAutoProtectionPolicyOperationCallable() {
+    return stub.createAutoProtectionPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicy in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateAutoProtectionPolicyRequest request =
+   *       CreateAutoProtectionPolicyRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setAutoProtectionPolicyId("autoProtectionPolicyId1759243253")
+   *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.createAutoProtectionPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAutoProtectionPolicyRequest, Operation>
+      createAutoProtectionPolicyCallable() {
+    return stub.createAutoProtectionPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutoProtectionPolicies for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (AutoProtectionPolicy element :
+   *       backupDRClient.listAutoProtectionPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve the list of policies.
+   *     Format: projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoProtectionPoliciesPagedResponse listAutoProtectionPolicies(
+      @Nullable LocationName parent) {
+    ListAutoProtectionPoliciesRequest request =
+        ListAutoProtectionPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAutoProtectionPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutoProtectionPolicies for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (AutoProtectionPolicy element :
+   *       backupDRClient.listAutoProtectionPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve the list of policies.
+   *     Format: projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoProtectionPoliciesPagedResponse listAutoProtectionPolicies(String parent) {
+    ListAutoProtectionPoliciesRequest request =
+        ListAutoProtectionPoliciesRequest.newBuilder().setParent(parent).build();
+    return listAutoProtectionPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutoProtectionPolicies for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAutoProtectionPoliciesRequest request =
+   *       ListAutoProtectionPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (AutoProtectionPolicy element :
+   *       backupDRClient.listAutoProtectionPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoProtectionPoliciesPagedResponse listAutoProtectionPolicies(
+      ListAutoProtectionPoliciesRequest request) {
+    return listAutoProtectionPoliciesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutoProtectionPolicies for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAutoProtectionPoliciesRequest request =
+   *       ListAutoProtectionPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<AutoProtectionPolicy> future =
+   *       backupDRClient.listAutoProtectionPoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AutoProtectionPolicy element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesPagedResponse>
+      listAutoProtectionPoliciesPagedCallable() {
+    return stub.listAutoProtectionPoliciesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AutoProtectionPolicies for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAutoProtectionPoliciesRequest request =
+   *       ListAutoProtectionPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAutoProtectionPoliciesResponse response =
+   *         backupDRClient.listAutoProtectionPoliciesCallable().call(request);
+   *     for (AutoProtectionPolicy element : response.getAutoProtectionPoliciesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListAutoProtectionPoliciesRequest, ListAutoProtectionPoliciesResponse>
+      listAutoProtectionPoliciesCallable() {
+    return stub.listAutoProtectionPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyName name =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+   *   AutoProtectionPolicy response = backupDRClient.getAutoProtectionPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to retrieve. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoProtectionPolicy getAutoProtectionPolicy(
+      @Nullable AutoProtectionPolicyName name) {
+    GetAutoProtectionPolicyRequest request =
+        GetAutoProtectionPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAutoProtectionPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *           .toString();
+   *   AutoProtectionPolicy response = backupDRClient.getAutoProtectionPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to retrieve. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoProtectionPolicy getAutoProtectionPolicy(String name) {
+    GetAutoProtectionPolicyRequest request =
+        GetAutoProtectionPolicyRequest.newBuilder().setName(name).build();
+    return getAutoProtectionPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetAutoProtectionPolicyRequest request =
+   *       GetAutoProtectionPolicyRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .build();
+   *   AutoProtectionPolicy response = backupDRClient.getAutoProtectionPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoProtectionPolicy getAutoProtectionPolicy(
+      GetAutoProtectionPolicyRequest request) {
+    return getAutoProtectionPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetAutoProtectionPolicyRequest request =
+   *       GetAutoProtectionPolicyRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AutoProtectionPolicy> future =
+   *       backupDRClient.getAutoProtectionPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   AutoProtectionPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAutoProtectionPolicyRequest, AutoProtectionPolicy>
+      getAutoProtectionPolicyCallable() {
+    return stub.getAutoProtectionPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicy autoProtectionPolicy = AutoProtectionPolicy.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AutoProtectionPolicy response =
+   *       backupDRClient.updateAutoProtectionPolicyAsync(autoProtectionPolicy, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param autoProtectionPolicy Required. The policy to update.
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
+   *     AutoProtectionPolicy resource by the update. The fields specified in the update_mask are
+   *     relative to the resource, not the full request. A field will be overwritten if it is in the
+   *     mask. If the user does not provide a mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicy, OperationMetadata>
+      updateAutoProtectionPolicyAsync(
+          AutoProtectionPolicy autoProtectionPolicy, FieldMask updateMask) {
+    UpdateAutoProtectionPolicyRequest request =
+        UpdateAutoProtectionPolicyRequest.newBuilder()
+            .setAutoProtectionPolicy(autoProtectionPolicy)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAutoProtectionPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   UpdateAutoProtectionPolicyRequest request =
+   *       UpdateAutoProtectionPolicyRequest.newBuilder()
+   *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AutoProtectionPolicy response = backupDRClient.updateAutoProtectionPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicy, OperationMetadata>
+      updateAutoProtectionPolicyAsync(UpdateAutoProtectionPolicyRequest request) {
+    return updateAutoProtectionPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   UpdateAutoProtectionPolicyRequest request =
+   *       UpdateAutoProtectionPolicyRequest.newBuilder()
+   *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AutoProtectionPolicy, OperationMetadata> future =
+   *       backupDRClient.updateAutoProtectionPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AutoProtectionPolicy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          UpdateAutoProtectionPolicyRequest, AutoProtectionPolicy, OperationMetadata>
+      updateAutoProtectionPolicyOperationCallable() {
+    return stub.updateAutoProtectionPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   UpdateAutoProtectionPolicyRequest request =
+   *       UpdateAutoProtectionPolicyRequest.newBuilder()
+   *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.updateAutoProtectionPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAutoProtectionPolicyRequest, Operation>
+      updateAutoProtectionPolicyCallable() {
+    return stub.updateAutoProtectionPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyName name =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+   *   backupDRClient.deleteAutoProtectionPolicyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to delete. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAutoProtectionPolicyAsync(
+      @Nullable AutoProtectionPolicyName name) {
+    DeleteAutoProtectionPolicyRequest request =
+        DeleteAutoProtectionPolicyRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteAutoProtectionPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *           .toString();
+   *   backupDRClient.deleteAutoProtectionPolicyAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to delete. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAutoProtectionPolicyAsync(
+      String name) {
+    DeleteAutoProtectionPolicyRequest request =
+        DeleteAutoProtectionPolicyRequest.newBuilder().setName(name).build();
+    return deleteAutoProtectionPolicyAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteAutoProtectionPolicyRequest request =
+   *       DeleteAutoProtectionPolicyRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   backupDRClient.deleteAutoProtectionPolicyAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteAutoProtectionPolicyAsync(
+      DeleteAutoProtectionPolicyRequest request) {
+    return deleteAutoProtectionPolicyOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteAutoProtectionPolicyRequest request =
+   *       DeleteAutoProtectionPolicyRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       backupDRClient.deleteAutoProtectionPolicyOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteAutoProtectionPolicyRequest, Empty, OperationMetadata>
+      deleteAutoProtectionPolicyOperationCallable() {
+    return stub.deleteAutoProtectionPolicyOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single AutoProtectionPolicy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   DeleteAutoProtectionPolicyRequest request =
+   *       DeleteAutoProtectionPolicyRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.deleteAutoProtectionPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteAutoProtectionPolicyRequest, Operation>
+      deleteAutoProtectionPolicyCallable() {
+    return stub.deleteAutoProtectionPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicyBinding in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyName parent =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+   *   AutoProtectionPolicyBinding autoProtectionPolicyBinding =
+   *       AutoProtectionPolicyBinding.newBuilder().build();
+   *   String autoProtectionPolicyBindingId = "autoProtectionPolicyBindingId2122957414";
+   *   AutoProtectionPolicyBinding response =
+   *       backupDRClient
+   *           .createAutoProtectionPolicyBindingAsync(
+   *               parent, autoProtectionPolicyBinding, autoProtectionPolicyBindingId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this binding will be created. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}
+   * @param autoProtectionPolicyBinding Required. The AutoProtectionPolicyBinding resource to
+   *     create.
+   * @param autoProtectionPolicyBindingId Required. The ID to use for the binding. This will become
+   *     the final component of the binding's resource name.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingAsync(
+          @Nullable AutoProtectionPolicyName parent,
+          AutoProtectionPolicyBinding autoProtectionPolicyBinding,
+          String autoProtectionPolicyBindingId) {
+    CreateAutoProtectionPolicyBindingRequest request =
+        CreateAutoProtectionPolicyBindingRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setAutoProtectionPolicyBinding(autoProtectionPolicyBinding)
+            .setAutoProtectionPolicyBindingId(autoProtectionPolicyBindingId)
+            .build();
+    return createAutoProtectionPolicyBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicyBinding in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *           .toString();
+   *   AutoProtectionPolicyBinding autoProtectionPolicyBinding =
+   *       AutoProtectionPolicyBinding.newBuilder().build();
+   *   String autoProtectionPolicyBindingId = "autoProtectionPolicyBindingId2122957414";
+   *   AutoProtectionPolicyBinding response =
+   *       backupDRClient
+   *           .createAutoProtectionPolicyBindingAsync(
+   *               parent, autoProtectionPolicyBinding, autoProtectionPolicyBindingId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this binding will be created. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}
+   * @param autoProtectionPolicyBinding Required. The AutoProtectionPolicyBinding resource to
+   *     create.
+   * @param autoProtectionPolicyBindingId Required. The ID to use for the binding. This will become
+   *     the final component of the binding's resource name.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingAsync(
+          String parent,
+          AutoProtectionPolicyBinding autoProtectionPolicyBinding,
+          String autoProtectionPolicyBindingId) {
+    CreateAutoProtectionPolicyBindingRequest request =
+        CreateAutoProtectionPolicyBindingRequest.newBuilder()
+            .setParent(parent)
+            .setAutoProtectionPolicyBinding(autoProtectionPolicyBinding)
+            .setAutoProtectionPolicyBindingId(autoProtectionPolicyBindingId)
+            .build();
+    return createAutoProtectionPolicyBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicyBinding in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateAutoProtectionPolicyBindingRequest request =
+   *       CreateAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setAutoProtectionPolicyBindingId("autoProtectionPolicyBindingId2122957414")
+   *           .setAutoProtectionPolicyBinding(AutoProtectionPolicyBinding.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AutoProtectionPolicyBinding response =
+   *       backupDRClient.createAutoProtectionPolicyBindingAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingAsync(CreateAutoProtectionPolicyBindingRequest request) {
+    return createAutoProtectionPolicyBindingOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicyBinding in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateAutoProtectionPolicyBindingRequest request =
+   *       CreateAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setAutoProtectionPolicyBindingId("autoProtectionPolicyBindingId2122957414")
+   *           .setAutoProtectionPolicyBinding(AutoProtectionPolicyBinding.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AutoProtectionPolicyBinding, OperationMetadata> future =
+   *       backupDRClient.createAutoProtectionPolicyBindingOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AutoProtectionPolicyBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding, OperationMetadata>
+      createAutoProtectionPolicyBindingOperationCallable() {
+    return stub.createAutoProtectionPolicyBindingOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new AutoProtectionPolicyBinding in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   CreateAutoProtectionPolicyBindingRequest request =
+   *       CreateAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setAutoProtectionPolicyBindingId("autoProtectionPolicyBindingId2122957414")
+   *           .setAutoProtectionPolicyBinding(AutoProtectionPolicyBinding.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.createAutoProtectionPolicyBindingCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateAutoProtectionPolicyBindingRequest, Operation>
+      createAutoProtectionPolicyBindingCallable() {
+    return stub.createAutoProtectionPolicyBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy binding read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyBindingName name =
+   *       AutoProtectionPolicyBindingName.of(
+   *           "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+   *   AutoProtectionPolicyBinding response = backupDRClient.getAutoProtectionPolicyBinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the binding to retrieve. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoProtectionPolicyBinding getAutoProtectionPolicyBinding(
+      @Nullable AutoProtectionPolicyBindingName name) {
+    GetAutoProtectionPolicyBindingRequest request =
+        GetAutoProtectionPolicyBindingRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAutoProtectionPolicyBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy binding read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       AutoProtectionPolicyBindingName.of(
+   *               "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *           .toString();
+   *   AutoProtectionPolicyBinding response = backupDRClient.getAutoProtectionPolicyBinding(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the binding to retrieve. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoProtectionPolicyBinding getAutoProtectionPolicyBinding(String name) {
+    GetAutoProtectionPolicyBindingRequest request =
+        GetAutoProtectionPolicyBindingRequest.newBuilder().setName(name).build();
+    return getAutoProtectionPolicyBinding(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy binding read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetAutoProtectionPolicyBindingRequest request =
+   *       GetAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .build();
+   *   AutoProtectionPolicyBinding response = backupDRClient.getAutoProtectionPolicyBinding(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AutoProtectionPolicyBinding getAutoProtectionPolicyBinding(
+      GetAutoProtectionPolicyBindingRequest request) {
+    return getAutoProtectionPolicyBindingCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy binding read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   GetAutoProtectionPolicyBindingRequest request =
+   *       GetAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<AutoProtectionPolicyBinding> future =
+   *       backupDRClient.getAutoProtectionPolicyBindingCallable().futureCall(request);
+   *   // Do something.
+   *   AutoProtectionPolicyBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAutoProtectionPolicyBindingRequest, AutoProtectionPolicyBinding>
+      getAutoProtectionPolicyBindingCallable() {
+    return stub.getAutoProtectionPolicyBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy bindings read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyName parent =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]");
+   *   for (AutoProtectionPolicyBinding element :
+   *       backupDRClient.listAutoProtectionPolicyBindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve the list of policies.
+   *     Format: projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoProtectionPolicyBindingsPagedResponse listAutoProtectionPolicyBindings(
+      @Nullable AutoProtectionPolicyName parent) {
+    ListAutoProtectionPolicyBindingsRequest request =
+        ListAutoProtectionPolicyBindingsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAutoProtectionPolicyBindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy bindings read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent =
+   *       AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *           .toString();
+   *   for (AutoProtectionPolicyBinding element :
+   *       backupDRClient.listAutoProtectionPolicyBindings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve the list of policies.
+   *     Format: projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoProtectionPolicyBindingsPagedResponse listAutoProtectionPolicyBindings(
+      String parent) {
+    ListAutoProtectionPolicyBindingsRequest request =
+        ListAutoProtectionPolicyBindingsRequest.newBuilder().setParent(parent).build();
+    return listAutoProtectionPolicyBindings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy bindings read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAutoProtectionPolicyBindingsRequest request =
+   *       ListAutoProtectionPolicyBindingsRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (AutoProtectionPolicyBinding element :
+   *       backupDRClient.listAutoProtectionPolicyBindings(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAutoProtectionPolicyBindingsPagedResponse listAutoProtectionPolicyBindings(
+      ListAutoProtectionPolicyBindingsRequest request) {
+    return listAutoProtectionPolicyBindingsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy bindings read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAutoProtectionPolicyBindingsRequest request =
+   *       ListAutoProtectionPolicyBindingsRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<AutoProtectionPolicyBinding> future =
+   *       backupDRClient.listAutoProtectionPolicyBindingsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AutoProtectionPolicyBinding element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAutoProtectionPolicyBindingsRequest, ListAutoProtectionPolicyBindingsPagedResponse>
+      listAutoProtectionPolicyBindingsPagedCallable() {
+    return stub.listAutoProtectionPolicyBindingsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the auto protection policy bindings read from the CCFE tables.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAutoProtectionPolicyBindingsRequest request =
+   *       ListAutoProtectionPolicyBindingsRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAutoProtectionPolicyBindingsResponse response =
+   *         backupDRClient.listAutoProtectionPolicyBindingsCallable().call(request);
+   *     for (AutoProtectionPolicyBinding element : response.getAutoProtectionPolicyBindingsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAutoProtectionPolicyBindingsRequest, ListAutoProtectionPolicyBindingsResponse>
+      listAutoProtectionPolicyBindingsCallable() {
+    return stub.listAutoProtectionPolicyBindingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AppliedAutoProtectionPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (AppliedAutoProtectionPolicy element :
+   *       backupDRClient.listAppliedAutoProtectionPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve the list of applied
+   *     policies. Format: projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAppliedAutoProtectionPoliciesPagedResponse listAppliedAutoProtectionPolicies(
+      @Nullable LocationName parent) {
+    ListAppliedAutoProtectionPoliciesRequest request =
+        ListAppliedAutoProtectionPoliciesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listAppliedAutoProtectionPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AppliedAutoProtectionPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (AppliedAutoProtectionPolicy element :
+   *       backupDRClient.listAppliedAutoProtectionPolicies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project and location for which to retrieve the list of applied
+   *     policies. Format: projects/{project}/locations/{location}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAppliedAutoProtectionPoliciesPagedResponse listAppliedAutoProtectionPolicies(
+      String parent) {
+    ListAppliedAutoProtectionPoliciesRequest request =
+        ListAppliedAutoProtectionPoliciesRequest.newBuilder().setParent(parent).build();
+    return listAppliedAutoProtectionPolicies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AppliedAutoProtectionPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAppliedAutoProtectionPoliciesRequest request =
+   *       ListAppliedAutoProtectionPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (AppliedAutoProtectionPolicy element :
+   *       backupDRClient.listAppliedAutoProtectionPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListAppliedAutoProtectionPoliciesPagedResponse listAppliedAutoProtectionPolicies(
+      ListAppliedAutoProtectionPoliciesRequest request) {
+    return listAppliedAutoProtectionPoliciesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AppliedAutoProtectionPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAppliedAutoProtectionPoliciesRequest request =
+   *       ListAppliedAutoProtectionPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<AppliedAutoProtectionPolicy> future =
+   *       backupDRClient.listAppliedAutoProtectionPoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AppliedAutoProtectionPolicy element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAppliedAutoProtectionPoliciesRequest, ListAppliedAutoProtectionPoliciesPagedResponse>
+      listAppliedAutoProtectionPoliciesPagedCallable() {
+    return stub.listAppliedAutoProtectionPoliciesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists AppliedAutoProtectionPolicies in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListAppliedAutoProtectionPoliciesRequest request =
+   *       ListAppliedAutoProtectionPoliciesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListAppliedAutoProtectionPoliciesResponse response =
+   *         backupDRClient.listAppliedAutoProtectionPoliciesCallable().call(request);
+   *     for (AppliedAutoProtectionPolicy element :
+   *         response.getAppliedAutoProtectionPoliciesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListAppliedAutoProtectionPoliciesRequest, ListAppliedAutoProtectionPoliciesResponse>
+      listAppliedAutoProtectionPoliciesCallable() {
+    return stub.listAppliedAutoProtectionPoliciesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * InitiateDeleteAutoProtectionPolicyBinding initiates delete for AutoProtectionPolicy Binding
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyBindingName name =
+   *       AutoProtectionPolicyBindingName.of(
+   *           "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+   *   AutoProtectionPolicyBinding response =
+   *       backupDRClient.initiateDeleteAutoProtectionPolicyBindingAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the binding to delete. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingAsync(
+          @Nullable AutoProtectionPolicyBindingName name) {
+    InitiateDeleteAutoProtectionPolicyBindingRequest request =
+        InitiateDeleteAutoProtectionPolicyBindingRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return initiateDeleteAutoProtectionPolicyBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * InitiateDeleteAutoProtectionPolicyBinding initiates delete for AutoProtectionPolicy Binding
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String name =
+   *       AutoProtectionPolicyBindingName.of(
+   *               "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *           .toString();
+   *   AutoProtectionPolicyBinding response =
+   *       backupDRClient.initiateDeleteAutoProtectionPolicyBindingAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the binding to delete. Format:
+   *     projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingAsync(String name) {
+    InitiateDeleteAutoProtectionPolicyBindingRequest request =
+        InitiateDeleteAutoProtectionPolicyBindingRequest.newBuilder().setName(name).build();
+    return initiateDeleteAutoProtectionPolicyBindingAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * InitiateDeleteAutoProtectionPolicyBinding initiates delete for AutoProtectionPolicy Binding
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   InitiateDeleteAutoProtectionPolicyBindingRequest request =
+   *       InitiateDeleteAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AutoProtectionPolicyBinding response =
+   *       backupDRClient.initiateDeleteAutoProtectionPolicyBindingAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingAsync(
+          InitiateDeleteAutoProtectionPolicyBindingRequest request) {
+    return initiateDeleteAutoProtectionPolicyBindingOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * InitiateDeleteAutoProtectionPolicyBinding initiates delete for AutoProtectionPolicy Binding
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   InitiateDeleteAutoProtectionPolicyBindingRequest request =
+   *       InitiateDeleteAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AutoProtectionPolicyBinding, OperationMetadata> future =
+   *       backupDRClient
+   *           .initiateDeleteAutoProtectionPolicyBindingOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   AutoProtectionPolicyBinding response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          InitiateDeleteAutoProtectionPolicyBindingRequest,
+          AutoProtectionPolicyBinding,
+          OperationMetadata>
+      initiateDeleteAutoProtectionPolicyBindingOperationCallable() {
+    return stub.initiateDeleteAutoProtectionPolicyBindingOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * InitiateDeleteAutoProtectionPolicyBinding initiates delete for AutoProtectionPolicy Binding
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   InitiateDeleteAutoProtectionPolicyBindingRequest request =
+   *       InitiateDeleteAutoProtectionPolicyBindingRequest.newBuilder()
+   *           .setName(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       backupDRClient.initiateDeleteAutoProtectionPolicyBindingCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<InitiateDeleteAutoProtectionPolicyBindingRequest, Operation>
+      initiateDeleteAutoProtectionPolicyBindingCallable() {
+    return stub.initiateDeleteAutoProtectionPolicyBindingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   AutoProtectionPolicyBindingName parent =
+   *       AutoProtectionPolicyBindingName.of(
+   *           "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]");
+   *   for (BindingMatchingResource element :
+   *       backupDRClient.listBindingMatchingResources(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project, location, auto protection policy and binding for which to
+   *     retrieve `BindingMatchingResources` information. Format:
+   *     `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`.
+   *     In Google Cloud Backup and DR, locations map to Google Cloud regions, for example
+   *     &#42;&#42;us-central1&#42;&#42;.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBindingMatchingResourcesPagedResponse listBindingMatchingResources(
+      @Nullable AutoProtectionPolicyBindingName parent) {
+    ListBindingMatchingResourcesRequest request =
+        ListBindingMatchingResourcesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listBindingMatchingResources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   String parent =
+   *       AutoProtectionPolicyBindingName.of(
+   *               "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *           .toString();
+   *   for (BindingMatchingResource element :
+   *       backupDRClient.listBindingMatchingResources(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The project, location, auto protection policy and binding for which to
+   *     retrieve `BindingMatchingResources` information. Format:
+   *     `projects/{project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}/bindings/{binding}`.
+   *     In Google Cloud Backup and DR, locations map to Google Cloud regions, for example
+   *     &#42;&#42;us-central1&#42;&#42;.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBindingMatchingResourcesPagedResponse listBindingMatchingResources(
+      String parent) {
+    ListBindingMatchingResourcesRequest request =
+        ListBindingMatchingResourcesRequest.newBuilder().setParent(parent).build();
+    return listBindingMatchingResources(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListBindingMatchingResourcesRequest request =
+   *       ListBindingMatchingResourcesRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (BindingMatchingResource element :
+   *       backupDRClient.listBindingMatchingResources(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListBindingMatchingResourcesPagedResponse listBindingMatchingResources(
+      ListBindingMatchingResourcesRequest request) {
+    return listBindingMatchingResourcesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListBindingMatchingResourcesRequest request =
+   *       ListBindingMatchingResourcesRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<BindingMatchingResource> future =
+   *       backupDRClient.listBindingMatchingResourcesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BindingMatchingResource element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesPagedResponse>
+      listBindingMatchingResourcesPagedCallable() {
+    return stub.listBindingMatchingResourcesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists Binding Matching Resources for a given AutoProtectionPolicyBinding.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (BackupDRClient backupDRClient = BackupDRClient.create()) {
+   *   ListBindingMatchingResourcesRequest request =
+   *       ListBindingMatchingResourcesRequest.newBuilder()
+   *           .setParent(
+   *               AutoProtectionPolicyBindingName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListBindingMatchingResourcesResponse response =
+   *         backupDRClient.listBindingMatchingResourcesCallable().call(request);
+   *     for (BindingMatchingResource element : response.getMatchingResourcesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListBindingMatchingResourcesRequest, ListBindingMatchingResourcesResponse>
+      listBindingMatchingResourcesCallable() {
+    return stub.listBindingMatchingResourcesCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -8226,6 +10322,407 @@ public class BackupDRClient implements BackgroundResource {
     protected FetchDataSourceReferencesForResourceTypeFixedSizeCollection createCollection(
         @Nullable List<FetchDataSourceReferencesForResourceTypePage> pages, int collectionSize) {
       return new FetchDataSourceReferencesForResourceTypeFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAutoProtectionPoliciesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAutoProtectionPoliciesRequest,
+          ListAutoProtectionPoliciesResponse,
+          AutoProtectionPolicy,
+          ListAutoProtectionPoliciesPage,
+          ListAutoProtectionPoliciesFixedSizeCollection> {
+
+    public static ApiFuture<ListAutoProtectionPoliciesPagedResponse> createAsync(
+        PageContext<
+                ListAutoProtectionPoliciesRequest,
+                ListAutoProtectionPoliciesResponse,
+                AutoProtectionPolicy>
+            context,
+        ApiFuture<ListAutoProtectionPoliciesResponse> futureResponse) {
+      ApiFuture<ListAutoProtectionPoliciesPage> futurePage =
+          ListAutoProtectionPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAutoProtectionPoliciesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAutoProtectionPoliciesPagedResponse(ListAutoProtectionPoliciesPage page) {
+      super(page, ListAutoProtectionPoliciesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAutoProtectionPoliciesPage
+      extends AbstractPage<
+          ListAutoProtectionPoliciesRequest,
+          ListAutoProtectionPoliciesResponse,
+          AutoProtectionPolicy,
+          ListAutoProtectionPoliciesPage> {
+
+    private ListAutoProtectionPoliciesPage(
+        @Nullable
+            PageContext<
+                ListAutoProtectionPoliciesRequest,
+                ListAutoProtectionPoliciesResponse,
+                AutoProtectionPolicy>
+            context,
+        @Nullable ListAutoProtectionPoliciesResponse response) {
+      super(context, response);
+    }
+
+    private static ListAutoProtectionPoliciesPage createEmptyPage() {
+      return new ListAutoProtectionPoliciesPage(null, null);
+    }
+
+    @Override
+    protected ListAutoProtectionPoliciesPage createPage(
+        @Nullable
+            PageContext<
+                ListAutoProtectionPoliciesRequest,
+                ListAutoProtectionPoliciesResponse,
+                AutoProtectionPolicy>
+            context,
+        @Nullable ListAutoProtectionPoliciesResponse response) {
+      return new ListAutoProtectionPoliciesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAutoProtectionPoliciesPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListAutoProtectionPoliciesRequest,
+                ListAutoProtectionPoliciesResponse,
+                AutoProtectionPolicy>
+            context,
+        ApiFuture<ListAutoProtectionPoliciesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAutoProtectionPoliciesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAutoProtectionPoliciesRequest,
+          ListAutoProtectionPoliciesResponse,
+          AutoProtectionPolicy,
+          ListAutoProtectionPoliciesPage,
+          ListAutoProtectionPoliciesFixedSizeCollection> {
+
+    private ListAutoProtectionPoliciesFixedSizeCollection(
+        @Nullable List<ListAutoProtectionPoliciesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAutoProtectionPoliciesFixedSizeCollection createEmptyCollection() {
+      return new ListAutoProtectionPoliciesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAutoProtectionPoliciesFixedSizeCollection createCollection(
+        @Nullable List<ListAutoProtectionPoliciesPage> pages, int collectionSize) {
+      return new ListAutoProtectionPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAutoProtectionPolicyBindingsPagedResponse
+      extends AbstractPagedListResponse<
+          ListAutoProtectionPolicyBindingsRequest,
+          ListAutoProtectionPolicyBindingsResponse,
+          AutoProtectionPolicyBinding,
+          ListAutoProtectionPolicyBindingsPage,
+          ListAutoProtectionPolicyBindingsFixedSizeCollection> {
+
+    public static ApiFuture<ListAutoProtectionPolicyBindingsPagedResponse> createAsync(
+        PageContext<
+                ListAutoProtectionPolicyBindingsRequest,
+                ListAutoProtectionPolicyBindingsResponse,
+                AutoProtectionPolicyBinding>
+            context,
+        ApiFuture<ListAutoProtectionPolicyBindingsResponse> futureResponse) {
+      ApiFuture<ListAutoProtectionPolicyBindingsPage> futurePage =
+          ListAutoProtectionPolicyBindingsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAutoProtectionPolicyBindingsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAutoProtectionPolicyBindingsPagedResponse(
+        ListAutoProtectionPolicyBindingsPage page) {
+      super(page, ListAutoProtectionPolicyBindingsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAutoProtectionPolicyBindingsPage
+      extends AbstractPage<
+          ListAutoProtectionPolicyBindingsRequest,
+          ListAutoProtectionPolicyBindingsResponse,
+          AutoProtectionPolicyBinding,
+          ListAutoProtectionPolicyBindingsPage> {
+
+    private ListAutoProtectionPolicyBindingsPage(
+        @Nullable
+            PageContext<
+                ListAutoProtectionPolicyBindingsRequest,
+                ListAutoProtectionPolicyBindingsResponse,
+                AutoProtectionPolicyBinding>
+            context,
+        @Nullable ListAutoProtectionPolicyBindingsResponse response) {
+      super(context, response);
+    }
+
+    private static ListAutoProtectionPolicyBindingsPage createEmptyPage() {
+      return new ListAutoProtectionPolicyBindingsPage(null, null);
+    }
+
+    @Override
+    protected ListAutoProtectionPolicyBindingsPage createPage(
+        @Nullable
+            PageContext<
+                ListAutoProtectionPolicyBindingsRequest,
+                ListAutoProtectionPolicyBindingsResponse,
+                AutoProtectionPolicyBinding>
+            context,
+        @Nullable ListAutoProtectionPolicyBindingsResponse response) {
+      return new ListAutoProtectionPolicyBindingsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAutoProtectionPolicyBindingsPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListAutoProtectionPolicyBindingsRequest,
+                ListAutoProtectionPolicyBindingsResponse,
+                AutoProtectionPolicyBinding>
+            context,
+        ApiFuture<ListAutoProtectionPolicyBindingsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAutoProtectionPolicyBindingsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAutoProtectionPolicyBindingsRequest,
+          ListAutoProtectionPolicyBindingsResponse,
+          AutoProtectionPolicyBinding,
+          ListAutoProtectionPolicyBindingsPage,
+          ListAutoProtectionPolicyBindingsFixedSizeCollection> {
+
+    private ListAutoProtectionPolicyBindingsFixedSizeCollection(
+        @Nullable List<ListAutoProtectionPolicyBindingsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAutoProtectionPolicyBindingsFixedSizeCollection createEmptyCollection() {
+      return new ListAutoProtectionPolicyBindingsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAutoProtectionPolicyBindingsFixedSizeCollection createCollection(
+        @Nullable List<ListAutoProtectionPolicyBindingsPage> pages, int collectionSize) {
+      return new ListAutoProtectionPolicyBindingsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListAppliedAutoProtectionPoliciesPagedResponse
+      extends AbstractPagedListResponse<
+          ListAppliedAutoProtectionPoliciesRequest,
+          ListAppliedAutoProtectionPoliciesResponse,
+          AppliedAutoProtectionPolicy,
+          ListAppliedAutoProtectionPoliciesPage,
+          ListAppliedAutoProtectionPoliciesFixedSizeCollection> {
+
+    public static ApiFuture<ListAppliedAutoProtectionPoliciesPagedResponse> createAsync(
+        PageContext<
+                ListAppliedAutoProtectionPoliciesRequest,
+                ListAppliedAutoProtectionPoliciesResponse,
+                AppliedAutoProtectionPolicy>
+            context,
+        ApiFuture<ListAppliedAutoProtectionPoliciesResponse> futureResponse) {
+      ApiFuture<ListAppliedAutoProtectionPoliciesPage> futurePage =
+          ListAppliedAutoProtectionPoliciesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListAppliedAutoProtectionPoliciesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListAppliedAutoProtectionPoliciesPagedResponse(
+        ListAppliedAutoProtectionPoliciesPage page) {
+      super(page, ListAppliedAutoProtectionPoliciesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListAppliedAutoProtectionPoliciesPage
+      extends AbstractPage<
+          ListAppliedAutoProtectionPoliciesRequest,
+          ListAppliedAutoProtectionPoliciesResponse,
+          AppliedAutoProtectionPolicy,
+          ListAppliedAutoProtectionPoliciesPage> {
+
+    private ListAppliedAutoProtectionPoliciesPage(
+        @Nullable
+            PageContext<
+                ListAppliedAutoProtectionPoliciesRequest,
+                ListAppliedAutoProtectionPoliciesResponse,
+                AppliedAutoProtectionPolicy>
+            context,
+        @Nullable ListAppliedAutoProtectionPoliciesResponse response) {
+      super(context, response);
+    }
+
+    private static ListAppliedAutoProtectionPoliciesPage createEmptyPage() {
+      return new ListAppliedAutoProtectionPoliciesPage(null, null);
+    }
+
+    @Override
+    protected ListAppliedAutoProtectionPoliciesPage createPage(
+        @Nullable
+            PageContext<
+                ListAppliedAutoProtectionPoliciesRequest,
+                ListAppliedAutoProtectionPoliciesResponse,
+                AppliedAutoProtectionPolicy>
+            context,
+        @Nullable ListAppliedAutoProtectionPoliciesResponse response) {
+      return new ListAppliedAutoProtectionPoliciesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListAppliedAutoProtectionPoliciesPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListAppliedAutoProtectionPoliciesRequest,
+                ListAppliedAutoProtectionPoliciesResponse,
+                AppliedAutoProtectionPolicy>
+            context,
+        ApiFuture<ListAppliedAutoProtectionPoliciesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListAppliedAutoProtectionPoliciesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListAppliedAutoProtectionPoliciesRequest,
+          ListAppliedAutoProtectionPoliciesResponse,
+          AppliedAutoProtectionPolicy,
+          ListAppliedAutoProtectionPoliciesPage,
+          ListAppliedAutoProtectionPoliciesFixedSizeCollection> {
+
+    private ListAppliedAutoProtectionPoliciesFixedSizeCollection(
+        @Nullable List<ListAppliedAutoProtectionPoliciesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListAppliedAutoProtectionPoliciesFixedSizeCollection createEmptyCollection() {
+      return new ListAppliedAutoProtectionPoliciesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListAppliedAutoProtectionPoliciesFixedSizeCollection createCollection(
+        @Nullable List<ListAppliedAutoProtectionPoliciesPage> pages, int collectionSize) {
+      return new ListAppliedAutoProtectionPoliciesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListBindingMatchingResourcesPagedResponse
+      extends AbstractPagedListResponse<
+          ListBindingMatchingResourcesRequest,
+          ListBindingMatchingResourcesResponse,
+          BindingMatchingResource,
+          ListBindingMatchingResourcesPage,
+          ListBindingMatchingResourcesFixedSizeCollection> {
+
+    public static ApiFuture<ListBindingMatchingResourcesPagedResponse> createAsync(
+        PageContext<
+                ListBindingMatchingResourcesRequest,
+                ListBindingMatchingResourcesResponse,
+                BindingMatchingResource>
+            context,
+        ApiFuture<ListBindingMatchingResourcesResponse> futureResponse) {
+      ApiFuture<ListBindingMatchingResourcesPage> futurePage =
+          ListBindingMatchingResourcesPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListBindingMatchingResourcesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListBindingMatchingResourcesPagedResponse(ListBindingMatchingResourcesPage page) {
+      super(page, ListBindingMatchingResourcesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListBindingMatchingResourcesPage
+      extends AbstractPage<
+          ListBindingMatchingResourcesRequest,
+          ListBindingMatchingResourcesResponse,
+          BindingMatchingResource,
+          ListBindingMatchingResourcesPage> {
+
+    private ListBindingMatchingResourcesPage(
+        @Nullable
+            PageContext<
+                ListBindingMatchingResourcesRequest,
+                ListBindingMatchingResourcesResponse,
+                BindingMatchingResource>
+            context,
+        @Nullable ListBindingMatchingResourcesResponse response) {
+      super(context, response);
+    }
+
+    private static ListBindingMatchingResourcesPage createEmptyPage() {
+      return new ListBindingMatchingResourcesPage(null, null);
+    }
+
+    @Override
+    protected ListBindingMatchingResourcesPage createPage(
+        @Nullable
+            PageContext<
+                ListBindingMatchingResourcesRequest,
+                ListBindingMatchingResourcesResponse,
+                BindingMatchingResource>
+            context,
+        @Nullable ListBindingMatchingResourcesResponse response) {
+      return new ListBindingMatchingResourcesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListBindingMatchingResourcesPage> createPageAsync(
+        @Nullable
+            PageContext<
+                ListBindingMatchingResourcesRequest,
+                ListBindingMatchingResourcesResponse,
+                BindingMatchingResource>
+            context,
+        ApiFuture<ListBindingMatchingResourcesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListBindingMatchingResourcesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListBindingMatchingResourcesRequest,
+          ListBindingMatchingResourcesResponse,
+          BindingMatchingResource,
+          ListBindingMatchingResourcesPage,
+          ListBindingMatchingResourcesFixedSizeCollection> {
+
+    private ListBindingMatchingResourcesFixedSizeCollection(
+        @Nullable List<ListBindingMatchingResourcesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListBindingMatchingResourcesFixedSizeCollection createEmptyCollection() {
+      return new ListBindingMatchingResourcesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListBindingMatchingResourcesFixedSizeCollection createCollection(
+        @Nullable List<ListBindingMatchingResourcesPage> pages, int collectionSize) {
+      return new ListBindingMatchingResourcesFixedSizeCollection(pages, collectionSize);
     }
   }
 

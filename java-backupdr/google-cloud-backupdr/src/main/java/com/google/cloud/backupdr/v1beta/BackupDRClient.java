@@ -7094,6 +7094,8 @@ public class BackupDRClient implements BackgroundResource {
    * @param autoProtectionPolicy Required. The AutoProtectionPolicy resource to create.
    * @param autoProtectionPolicyId Required. The ID to use for the policy. This will become the
    *     final component of the policy's resource name.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AutoProtectionPolicy, OperationMetadata>
@@ -7138,6 +7140,8 @@ public class BackupDRClient implements BackgroundResource {
    * @param autoProtectionPolicy Required. The AutoProtectionPolicy resource to create.
    * @param autoProtectionPolicyId Required. The ID to use for the policy. This will become the
    *     final component of the policy's resource name.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AutoProtectionPolicy, OperationMetadata>
@@ -7170,6 +7174,7 @@ public class BackupDRClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setAutoProtectionPolicyId("autoProtectionPolicyId1759243253")
    *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   AutoProtectionPolicy response = backupDRClient.createAutoProtectionPolicyAsync(request).get();
    * }
@@ -7201,6 +7206,7 @@ public class BackupDRClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setAutoProtectionPolicyId("autoProtectionPolicyId1759243253")
    *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<AutoProtectionPolicy, OperationMetadata> future =
    *       backupDRClient.createAutoProtectionPolicyOperationCallable().futureCall(request);
@@ -7233,6 +7239,7 @@ public class BackupDRClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setAutoProtectionPolicyId("autoProtectionPolicyId1759243253")
    *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
    *       backupDRClient.createAutoProtectionPolicyCallable().futureCall(request);
@@ -7570,7 +7577,7 @@ public class BackupDRClient implements BackgroundResource {
    * }</pre>
    *
    * @param autoProtectionPolicy Required. The policy to update.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
    *     AutoProtectionPolicy resource by the update. The fields specified in the update_mask are
    *     relative to the resource, not the full request. A field will be overwritten if it is in the
    *     mask. If the user does not provide a mask then all fields will be overwritten.
@@ -7604,6 +7611,7 @@ public class BackupDRClient implements BackgroundResource {
    *       UpdateAutoProtectionPolicyRequest.newBuilder()
    *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   AutoProtectionPolicy response = backupDRClient.updateAutoProtectionPolicyAsync(request).get();
    * }
@@ -7634,6 +7642,7 @@ public class BackupDRClient implements BackgroundResource {
    *       UpdateAutoProtectionPolicyRequest.newBuilder()
    *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<AutoProtectionPolicy, OperationMetadata> future =
    *       backupDRClient.updateAutoProtectionPolicyOperationCallable().futureCall(request);
@@ -7665,6 +7674,7 @@ public class BackupDRClient implements BackgroundResource {
    *       UpdateAutoProtectionPolicyRequest.newBuilder()
    *           .setAutoProtectionPolicy(AutoProtectionPolicy.newBuilder().build())
    *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
    *       backupDRClient.updateAutoProtectionPolicyCallable().futureCall(request);
@@ -7760,6 +7770,7 @@ public class BackupDRClient implements BackgroundResource {
    *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
    *                   .toString())
    *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   backupDRClient.deleteAutoProtectionPolicyAsync(request).get();
    * }
@@ -7792,6 +7803,7 @@ public class BackupDRClient implements BackgroundResource {
    *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
    *                   .toString())
    *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       backupDRClient.deleteAutoProtectionPolicyOperationCallable().futureCall(request);
@@ -7824,6 +7836,7 @@ public class BackupDRClient implements BackgroundResource {
    *               AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
    *                   .toString())
    *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
    *       backupDRClient.deleteAutoProtectionPolicyCallable().futureCall(request);
@@ -7869,6 +7882,8 @@ public class BackupDRClient implements BackgroundResource {
    *     create.
    * @param autoProtectionPolicyBindingId Required. The ID to use for the binding. This will become
    *     the final component of the binding's resource name.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
@@ -7918,6 +7933,8 @@ public class BackupDRClient implements BackgroundResource {
    *     create.
    * @param autoProtectionPolicyBindingId Required. The ID to use for the binding. This will become
    *     the final component of the binding's resource name.
+   *     <p>This value must start with a lowercase letter followed by up to 62 lowercase letters,
+   *     numbers, or hyphens, and cannot end with a hyphen.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AutoProtectionPolicyBinding, OperationMetadata>
@@ -7954,6 +7971,7 @@ public class BackupDRClient implements BackgroundResource {
    *                   .toString())
    *           .setAutoProtectionPolicyBindingId("autoProtectionPolicyBindingId2122957414")
    *           .setAutoProtectionPolicyBinding(AutoProtectionPolicyBinding.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   AutoProtectionPolicyBinding response =
    *       backupDRClient.createAutoProtectionPolicyBindingAsync(request).get();
@@ -7988,6 +8006,7 @@ public class BackupDRClient implements BackgroundResource {
    *                   .toString())
    *           .setAutoProtectionPolicyBindingId("autoProtectionPolicyBindingId2122957414")
    *           .setAutoProtectionPolicyBinding(AutoProtectionPolicyBinding.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<AutoProtectionPolicyBinding, OperationMetadata> future =
    *       backupDRClient.createAutoProtectionPolicyBindingOperationCallable().futureCall(request);
@@ -8022,6 +8041,7 @@ public class BackupDRClient implements BackgroundResource {
    *                   .toString())
    *           .setAutoProtectionPolicyBindingId("autoProtectionPolicyBindingId2122957414")
    *           .setAutoProtectionPolicyBinding(AutoProtectionPolicyBinding.newBuilder().build())
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
    *       backupDRClient.createAutoProtectionPolicyBindingCallable().futureCall(request);
@@ -8622,6 +8642,8 @@ public class BackupDRClient implements BackgroundResource {
    *               AutoProtectionPolicyBindingName.of(
    *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
    *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   AutoProtectionPolicyBinding response =
    *       backupDRClient.initiateDeleteAutoProtectionPolicyBindingAsync(request).get();
@@ -8656,6 +8678,8 @@ public class BackupDRClient implements BackgroundResource {
    *               AutoProtectionPolicyBindingName.of(
    *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
    *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   OperationFuture<AutoProtectionPolicyBinding, OperationMetadata> future =
    *       backupDRClient
@@ -8693,6 +8717,8 @@ public class BackupDRClient implements BackgroundResource {
    *               AutoProtectionPolicyBindingName.of(
    *                       "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
    *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Operation> future =
    *       backupDRClient.initiateDeleteAutoProtectionPolicyBindingCallable().futureCall(request);
