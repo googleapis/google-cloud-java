@@ -1326,7 +1326,6 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               boolean isExactGraphTableName =
                   tableNamePattern != null
                       && !tableNamePattern.contains("%")
-                      // If table name has a dot it is expected to be a graph table name.
                       && tableNamePattern.contains(".");
               if (!isExactGraphTableName && !onlyGraphTablesRequested) {
                 processTargetTablesConcurrently(
@@ -1480,6 +1479,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
     if (tableNamePattern != null
         && !tableNamePattern.contains("%")
+        // If table name has a dot it is expected to be a graph table name.
         && !tableNamePattern.contains(".")) {
       return true;
     }
