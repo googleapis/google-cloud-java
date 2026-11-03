@@ -20,6 +20,7 @@ import static java.util.Objects.requireNonNull;
 
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.common.collect.ImmutableSet;
 import io.grpc.CallOptions;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
@@ -43,6 +44,18 @@ final class StorageMetricsContext {
   static final ApiCallContext.Key<StorageMetricsContext> API_CALL_CONTEXT_KEY =
       ApiCallContext.Key.create("storage-metrics-context");
   static final String HTTP_REQUEST_PROPERTY_KEY = "com.google.cloud.storage.StorageMetricsContext";
+
+  private static final ImmutableSet<AttributeKey<?>> BODY_SIZE_EXCLUDED_KEYS =
+      ImmutableSet.of(
+          StorageClientMetrics.KEY_NETWORK_PATH,
+          StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE,
+          StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE,
+          StorageClientMetrics.KEY_HTTP_REQUEST_METHOD,
+          StorageClientMetrics.KEY_URL_TEMPLATE,
+          StorageClientMetrics.KEY_ERROR_TYPE,
+          StorageClientMetrics.KEY_GCP_STORAGE_OPERATION,
+          StorageClientMetrics.KEY_GCP_CLIENT_METHOD,
+          StorageClientMetrics.KEY_RPC_METHOD);
 
   private final String operationName;
   private final long startTimeNanos;
@@ -187,25 +200,26 @@ final class StorageMetricsContext {
       if ("WriteObject".equals(operationName)
           && reqBytes > 0
           && metrics.getRequestBodySize() != null) {
-        AttributesBuilder bodyAttrBuilder = Attributes.builder();
-        bodyAttrBuilder.putAll(metrics.getClientAttributes());
-        baseAttributes.forEach(
-            (key, val) -> {
-              if (!key.equals(StorageClientMetrics.KEY_NETWORK_PATH)
-                  && !key.equals(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)
-                  && !key.equals(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)
-                  && !key.equals(StorageClientMetrics.KEY_ERROR_TYPE)
-                  && !key.equals(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION)
-                  && !key.equals(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)) {
-                @SuppressWarnings("unchecked")
-                AttributeKey<Object> objKey = (AttributeKey<Object>) key;
-                bodyAttrBuilder.put(objKey, val);
-              }
-            });
-        bodyAttrBuilder.put(StorageClientMetrics.KEY_RPC_METHOD, operationName);
-        metrics.getRequestBodySize().record(reqBytes, bodyAttrBuilder.build(), otelContext);
+        metrics
+            .getRequestBodySize()
+            .record(reqBytes, buildBodySizeAttributes(metrics), otelContext);
       }
     }
+  }
+
+  private Attributes buildBodySizeAttributes(StorageClientMetrics metrics) {
+    AttributesBuilder bodyAttrBuilder = Attributes.builder();
+    bodyAttrBuilder.putAll(metrics.getClientAttributes());
+    baseAttributes.forEach(
+        (key, val) -> {
+          if (!BODY_SIZE_EXCLUDED_KEYS.contains(key)) {
+            @SuppressWarnings("unchecked")
+            AttributeKey<Object> objKey = (AttributeKey<Object>) key;
+            bodyAttrBuilder.put(objKey, val);
+          }
+        });
+    bodyAttrBuilder.put(StorageClientMetrics.KEY_RPC_METHOD, operationName);
+    return bodyAttrBuilder.build();
   }
 
   void recordAttemptSuccess(@Nullable StorageClientMetrics metrics) {

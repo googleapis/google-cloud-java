@@ -18,31 +18,76 @@ package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpResponseException;
+import com.google.api.client.http.LowLevelHttpRequest;
+import com.google.api.client.http.LowLevelHttpResponse;
+import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.testing.http.MockHttpTransport;
+import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.services.storage.model.StorageObject;
+import com.google.cloud.NoCredentials;
+import com.google.cloud.RestorableState;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.BufferedWritableByteChannelSession.BufferedWritableByteChannel;
+import com.google.cloud.storage.Conversions.Decoder;
+import com.google.cloud.storage.UnifiedOpts.Opts;
+import com.google.cloud.storage.spi.StorageRpcFactory;
+import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.common.io.ByteStreams;
+import com.google.storage.v2.StartResumableWriteRequest;
+import com.google.storage.v2.StartResumableWriteResponse;
+import com.google.storage.v2.StorageGrpc;
+import com.google.storage.v2.WriteObjectRequest;
+import com.google.storage.v2.WriteObjectResponse;
 import io.grpc.CallOptions;
+import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
+import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
+import io.grpc.stub.StreamObserver;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.InetSocketAddress;
+import java.nio.ByteBuffer;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import org.checkerframework.checker.nullness.qual.Nullable;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TemporaryFolder;
 
 public final class StorageMetricsContextTest {
+
+  @Rule public final TemporaryFolder tempFolder = new TemporaryFolder();
 
   @Test
   public void create_initializesDefaultState() {
@@ -569,35 +614,28 @@ public final class StorageMetricsContextTest {
     return metric.getLongSumData().getPoints().iterator().next();
   }
 
+  private static HistogramPointData getSingleHistogramPoint(
+      Collection<MetricData> metrics, String metricName) {
+    MetricData metric = findMetric(metrics, metricName);
+    assertThat(metric).isNotNull();
+    assertThat(metric.getHistogramData().getPoints()).hasSize(1);
+    return metric.getHistogramData().getPoints().iterator().next();
+  }
+
   @Test
   public void recordOperation_recordsRequestBodySize_whenWriteObjectAndBytesGreaterThanZero() {
-    io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader reader =
-        io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader.create();
-    io.opentelemetry.sdk.metrics.SdkMeterProvider provider =
-        io.opentelemetry.sdk.metrics.SdkMeterProvider.builder()
-            .registerMetricReader(reader)
-            .build();
+    InMemoryMetricReader reader = InMemoryMetricReader.create();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
 
     StorageMetricsContext context = StorageMetricsContext.create("WriteObject");
     context.setRequestBytes(2048L);
     context.recordOperation(metrics, null);
 
-    java.util.Collection<io.opentelemetry.sdk.metrics.data.MetricData> collected =
-        reader.collectAllMetrics();
-    io.opentelemetry.sdk.metrics.data.MetricData bodySizeData =
-        collected.stream()
-            .filter(
-                m ->
-                    m.getName()
-                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE))
-            .findFirst()
-            .orElse(null);
-
-    assertThat(bodySizeData).isNotNull();
-    assertThat(bodySizeData.getHistogramData().getPoints()).hasSize(1);
-    io.opentelemetry.sdk.metrics.data.HistogramPointData point =
-        bodySizeData.getHistogramData().getPoints().iterator().next();
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
     assertThat(point.getCount()).isEqualTo(1L);
     assertThat(point.getSum()).isEqualTo(2048.0);
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_RPC_METHOD))
@@ -605,58 +643,398 @@ public final class StorageMetricsContextTest {
   }
 
   @Test
-  public void recordOperation_doesNotRecordRequestBodySize_whenBytesIsZero() {
-    io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader reader =
-        io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader.create();
-    io.opentelemetry.sdk.metrics.SdkMeterProvider provider =
-        io.opentelemetry.sdk.metrics.SdkMeterProvider.builder()
-            .registerMetricReader(reader)
+  public void recordOperation_requestBodySize_excludesAttemptAndHttpOnlyAttributes() {
+    InMemoryMetricReader reader = InMemoryMetricReader.create();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
+
+    Attributes base =
+        Attributes.builder()
+            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
+            .put(StorageClientMetrics.KEY_SERVER_ADDRESS, "storage.googleapis.com")
+            .put(StorageClientMetrics.KEY_SERVER_PORT, 443L)
+            .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, "POST")
+            .put(StorageClientMetrics.KEY_URL_TEMPLATE, "/upload/storage/v1/b/{bucket}/o")
+            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 200L)
+            .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, "OK")
+            .put(StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+            .put(StorageClientMetrics.KEY_ERROR_TYPE, "OK")
+            .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, "WriteObject")
+            .put(StorageClientMetrics.KEY_GCP_CLIENT_METHOD, "Storage.create")
+            .put(StorageClientMetrics.KEY_RPC_METHOD, "google.storage.v2.Storage/WriteObject")
             .build();
+    StorageMetricsContext context = StorageMetricsContext.create("WriteObject", base);
+    context.setRequestBytes(512L);
+    context.recordOperation(metrics, null);
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
+    Attributes recordedAttrs = point.getAttributes();
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_RPC_METHOD)).isEqualTo("WriteObject");
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_SERVER_PORT)).isEqualTo(443L);
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD)).isNull();
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_URL_TEMPLATE)).isNull();
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isNull();
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)).isNull();
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_NETWORK_PATH)).isNull();
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isNull();
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION)).isNull();
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isNull();
+  }
+
+  @Test
+  public void recordOperation_doesNotRecordRequestBodySize_whenBytesIsZero() {
+    InMemoryMetricReader reader = InMemoryMetricReader.create();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
 
     StorageMetricsContext context = StorageMetricsContext.create("WriteObject");
     context.setRequestBytes(0L);
     context.recordOperation(metrics, null);
 
-    java.util.Collection<io.opentelemetry.sdk.metrics.data.MetricData> collected =
-        reader.collectAllMetrics();
-    io.opentelemetry.sdk.metrics.data.MetricData bodySizeData =
-        collected.stream()
-            .filter(
-                m ->
-                    m.getName()
-                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE))
-            .findFirst()
-            .orElse(null);
-
-    assertThat(bodySizeData).isNull();
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    assertThat(
+            findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE))
+        .isNull();
   }
 
   @Test
   public void recordOperation_doesNotRecordRequestBodySize_whenNotWriteObject() {
-    io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader reader =
-        io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader.create();
-    io.opentelemetry.sdk.metrics.SdkMeterProvider provider =
-        io.opentelemetry.sdk.metrics.SdkMeterProvider.builder()
-            .registerMetricReader(reader)
-            .build();
+    InMemoryMetricReader reader = InMemoryMetricReader.create();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
     StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
 
     StorageMetricsContext context = StorageMetricsContext.create("ReadObject");
     context.setRequestBytes(2048L);
     context.recordOperation(metrics, null);
 
-    java.util.Collection<io.opentelemetry.sdk.metrics.data.MetricData> collected =
-        reader.collectAllMetrics();
-    io.opentelemetry.sdk.metrics.data.MetricData bodySizeData =
-        collected.stream()
-            .filter(
-                m ->
-                    m.getName()
-                        .equals(StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE))
-            .findFirst()
-            .orElse(null);
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    assertThat(
+            findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE))
+        .isNull();
+  }
 
-    assertThat(bodySizeData).isNull();
+  @Test
+  public void baseStorageWriteChannel_recordsRequestBodySizeOnClose_afterMultipleWrites()
+      throws IOException {
+    InMemoryMetricReader reader = InMemoryMetricReader.create();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
+    StorageMetricsContext context = StorageMetricsContext.createForMultiStep("WriteObject");
+
+    BaseStorageWriteChannel<BlobInfo> channel = createTestWriteChannel(context, metrics, false);
+    channel.write(ByteBuffer.wrap(new byte[128]));
+    channel.write(ByteBuffer.wrap(new byte[384]));
+    channel.close();
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(1L);
+    assertThat(point.getSum()).isEqualTo(512.0);
+    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_RPC_METHOD))
+        .isEqualTo("WriteObject");
+  }
+
+  @Test
+  public void baseStorageWriteChannel_doesNotRecordRequestBodySize_whenZeroBytesWritten()
+      throws IOException {
+    InMemoryMetricReader reader = InMemoryMetricReader.create();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
+    StorageMetricsContext context = StorageMetricsContext.createForMultiStep("WriteObject");
+
+    BaseStorageWriteChannel<BlobInfo> channel = createTestWriteChannel(context, metrics, false);
+    channel.close();
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    assertThat(
+            findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE))
+        .isNull();
+    LongPointData opPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
+    assertThat(opPoint.getValue()).isEqualTo(1L);
+  }
+
+  @Test
+  public void baseStorageWriteChannel_recordsRequestBodySizeEvenWhenCloseFails()
+      throws IOException {
+    InMemoryMetricReader reader = InMemoryMetricReader.create();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    StorageClientMetrics metrics = StorageClientMetrics.create(provider, true, false);
+    StorageMetricsContext context = StorageMetricsContext.createForMultiStep("WriteObject");
+
+    BaseStorageWriteChannel<BlobInfo> channel = createTestWriteChannel(context, metrics, true);
+    channel.write(ByteBuffer.wrap(new byte[256]));
+    assertThrows(StorageException.class, channel::close);
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
+    assertThat(point.getSum()).isEqualTo(256.0);
+  }
+
+  @Test
+  @SuppressWarnings("deprecation")
+  public void storageImpl_writeMethods_recordRequestBodySize_andPcuHookSuppresses()
+      throws Exception {
+    InMemoryMetricReader reader = InMemoryMetricReader.create();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+
+    StorageRpcFactory rpcFactoryMock = mock(StorageRpcFactory.class);
+    StorageRpc storageRpcMock = mock(StorageRpc.class);
+    when(rpcFactoryMock.create(any(StorageOptions.class))).thenReturn(storageRpcMock);
+    when(storageRpcMock.create(any(StorageObject.class), any(InputStream.class), any()))
+        .thenAnswer(
+            inv -> {
+              InputStream in = inv.getArgument(1);
+              ByteStreams.exhaust(in);
+              return new StorageObject().setBucket("b").setName("n");
+            });
+    when(storageRpcMock.open(any(StorageObject.class), any()))
+        .thenReturn("http://localhost/upload-session-1");
+
+    MockHttpTransport mockTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest(url) {
+              @Override
+              public LowLevelHttpResponse execute() {
+                long uploadedLen = getContentLength();
+                String json =
+                    String.format(
+                        Locale.US,
+                        "{\"bucket\":\"b\",\"name\":\"n\",\"size\":\"%d\"}",
+                        uploadedLen);
+                return new MockLowLevelHttpResponse()
+                    .setStatusCode(200)
+                    .setContentType("application/json; charset=UTF-8")
+                    .addHeader("content-type", "application/json; charset=UTF-8")
+                    .setContent(json);
+              }
+            };
+          }
+        };
+    com.google.api.services.storage.Storage apiary =
+        new com.google.api.services.storage.Storage(
+            mockTransport, GsonFactory.getDefaultInstance(), null);
+    when(storageRpcMock.getStorage()).thenReturn(apiary);
+
+    HttpStorageOptions options =
+        HttpStorageOptions.newBuilder()
+            .setProjectId("test-proj")
+            .setCredentials(NoCredentials.getInstance())
+            .setServiceRpcFactory(rpcFactoryMock)
+            .setRetrySettings(ServiceOptions.getNoRetrySettings())
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(provider)
+            .build();
+    StorageImpl storage = (StorageImpl) options.getService();
+    BlobInfo blobInfo = BlobInfo.newBuilder("b", "n").build();
+
+    // 1. create(BlobInfo, byte[]) -> 100 bytes
+    storage.create(blobInfo, new byte[100]);
+    // 2. create(BlobInfo, InputStream) -> 200 bytes
+    storage.create(blobInfo, new ByteArrayInputStream(new byte[200]));
+    // 3. createFrom(BlobInfo, Path) -> 300 bytes
+    Path file1 = tempFolder.newFile("f1.bin").toPath();
+    Files.write(file1, new byte[300]);
+    storage.createFrom(blobInfo, file1);
+    // 4. internalCreateFrom(Path, BlobInfo, Opts) -> 400 bytes
+    Path file2 = tempFolder.newFile("f2.bin").toPath();
+    Files.write(file2, new byte[400]);
+    storage.internalCreateFrom(file2, blobInfo, Opts.empty());
+    // 5. 3-arg internalDirectUpload (PCU part upload hook) -> must NOT record request.body.size
+    storage.internalDirectUpload(blobInfo, Opts.empty(), ByteBuffer.wrap(new byte[999]));
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    HistogramPointData point =
+        getSingleHistogramPoint(
+            collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
+    assertThat(point.getCount()).isEqualTo(4L);
+    assertThat(point.getSum()).isEqualTo(1000.0);
+  }
+
+  @Test
+  public void grpcStorageImpl_writeMethods_recordRequestBodySize_andPcuHookSuppresses()
+      throws Exception {
+    InMemoryMetricReader reader = InMemoryMetricReader.create();
+    SdkMeterProvider provider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+
+    StorageGrpc.StorageImplBase service =
+        new StorageGrpc.StorageImplBase() {
+          @Override
+          public void startResumableWrite(
+              StartResumableWriteRequest request,
+              StreamObserver<StartResumableWriteResponse> responseObserver) {
+            responseObserver.onNext(
+                StartResumableWriteResponse.newBuilder().setUploadId("upload-1").build());
+            responseObserver.onCompleted();
+          }
+
+          @Override
+          public StreamObserver<WriteObjectRequest> writeObject(
+              StreamObserver<WriteObjectResponse> responseObserver) {
+            return new StreamObserver<WriteObjectRequest>() {
+              long totalSize = 0;
+
+              @Override
+              public void onNext(WriteObjectRequest value) {
+                totalSize += value.getChecksummedData().getContent().size();
+              }
+
+              @Override
+              public void onError(Throwable t) {}
+
+              @Override
+              public void onCompleted() {
+                responseObserver.onNext(
+                    WriteObjectResponse.newBuilder()
+                        .setResource(
+                            com.google.storage.v2.Object.newBuilder()
+                                .setBucket("projects/_/buckets/b")
+                                .setName("n")
+                                .setSize(totalSize)
+                                .build())
+                        .build());
+                responseObserver.onCompleted();
+              }
+            };
+          }
+        };
+
+    Server server =
+        NettyServerBuilder.forAddress(new InetSocketAddress("127.0.0.1", 0))
+            .addService(service)
+            .build()
+            .start();
+    try {
+      String endpoint = String.format(Locale.US, "http://127.0.0.1:%d", server.getPort());
+      GrpcStorageOptions options =
+          StorageOptions.grpc()
+              .setHost(endpoint)
+              .setProjectId("test-proj")
+              .setCredentials(NoCredentials.getInstance())
+              .setEnableGrpcClientMetrics(false)
+              .setAttemptDirectPath(false)
+              .setRetrySettings(ServiceOptions.getNoRetrySettings())
+              .setEnableOtelMetrics(true)
+              .setMeterProvider(provider)
+              .build();
+      try (GrpcStorageImpl storage = (GrpcStorageImpl) options.getService()) {
+        BlobInfo blobInfo = BlobInfo.newBuilder("b", "n").build();
+
+        // 1. create(BlobInfo, byte[]) -> 120 bytes
+        storage.create(blobInfo, new byte[120]);
+        // 2. create(BlobInfo, InputStream) -> 230 bytes
+        storage.create(blobInfo, new ByteArrayInputStream(new byte[230]));
+        // 3. createFrom(BlobInfo, InputStream) -> 340 bytes
+        storage.createFrom(blobInfo, new ByteArrayInputStream(new byte[340]));
+        // 4. createFrom(BlobInfo, Path) / internalCreateFrom -> 410 bytes
+        Path file = tempFolder.newFile("grpc.bin").toPath();
+        Files.write(file, new byte[410]);
+        storage.createFrom(blobInfo, file);
+        // 5. writer(BlobInfo) -> 500 bytes
+        try (WriteChannel writer = storage.writer(blobInfo)) {
+          writer.write(ByteBuffer.wrap(new byte[500]));
+        }
+        // 6. 3-arg internalDirectUpload (PCU hook) -> must NOT record request.body.size
+        storage.internalDirectUpload(blobInfo, Opts.empty(), ByteBuffer.wrap(new byte[777]));
+
+        // 7. internalCreateFrom with nonexistent Path -> throws NoSuchFileException inside try
+        // block and still records the failed WriteObject operation metric
+        Path missingPath = tempFolder.getRoot().toPath().resolve("does-not-exist.bin");
+        assertThrows(
+            NoSuchFileException.class,
+            () -> storage.internalCreateFrom(missingPath, blobInfo, Opts.empty()));
+
+        Collection<MetricData> collected = reader.collectAllMetrics();
+        HistogramPointData bodyPoint =
+            getSingleHistogramPoint(
+                collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
+        assertThat(bodyPoint.getCount()).isEqualTo(5L);
+        assertThat(bodyPoint.getSum()).isEqualTo(1600.0);
+
+        MetricData opsMetric =
+            findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
+        assertThat(opsMetric).isNotNull();
+        long totalOps =
+            opsMetric.getLongSumData().getPoints().stream()
+                .mapToLong(LongPointData::getValue)
+                .sum();
+        // 5 successful WriteObject ops + 1 failed internalCreateFrom(missingPath) op = 6 ops
+        assertThat(totalOps).isEqualTo(6L);
+      }
+    } finally {
+      server.shutdownNow().awaitTermination(5, TimeUnit.SECONDS);
+    }
+  }
+
+  private static BaseStorageWriteChannel<BlobInfo> createTestWriteChannel(
+      StorageMetricsContext context, StorageClientMetrics metrics, boolean failOnClose) {
+    BlobInfo resultBlob = BlobInfo.newBuilder("b", "n").build();
+    BufferedWritableByteChannel bufferedChannel =
+        new BufferedWritableByteChannel() {
+          private boolean open = true;
+
+          @Override
+          public void flush() {}
+
+          @Override
+          public int write(ByteBuffer src) {
+            int remaining = src.remaining();
+            src.position(src.limit());
+            return remaining;
+          }
+
+          @Override
+          public boolean isOpen() {
+            return open;
+          }
+
+          @Override
+          public void close() throws IOException {
+            open = false;
+            if (failOnClose) {
+              throw new IOException("simulated close failure");
+            }
+          }
+        };
+    BufferedWritableByteChannelSession<BlobInfo> session =
+        new BufferedWritableByteChannelSession<BlobInfo>() {
+          @Override
+          public ApiFuture<BufferedWritableByteChannel> openAsync() {
+            return ApiFutures.immediateFuture(bufferedChannel);
+          }
+
+          @Override
+          public BufferedWritableByteChannel open() {
+            return bufferedChannel;
+          }
+
+          @Override
+          public ApiFuture<BlobInfo> getResult() {
+            return ApiFutures.immediateFuture(resultBlob);
+          }
+        };
+    return new BaseStorageWriteChannel<BlobInfo>(Decoder.identity(), context, metrics) {
+      @Override
+      public RestorableState<WriteChannel> capture() {
+        return null;
+      }
+
+      @Override
+      protected LazyWriteChannel<BlobInfo> newLazyWriteChannel() {
+        return new LazyWriteChannel<>(() -> session);
+      }
+    };
   }
 }

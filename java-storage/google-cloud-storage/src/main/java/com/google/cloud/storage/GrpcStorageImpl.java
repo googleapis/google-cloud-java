@@ -253,7 +253,11 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   public Blob create(
       BlobInfo blobInfo, byte[] content, int offset, int length, BlobTargetOption... options) {
     Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
-    return internalDirectUpload(blobInfo, opts, ByteBuffer.wrap(content, offset, length))
+    return internalDirectUpload(
+            blobInfo,
+            opts,
+            ByteBuffer.wrap(content, offset, length),
+            getOptions().createMetricsContext("WriteObject"))
         .asBlob(this);
   }
 
@@ -318,11 +322,11 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     }
 
     StorageMetricsContext multiContext = getOptions().createMultiStepMetricsContext("WriteObject");
-    if (multiContext != null) {
-      multiContext.setRequestBytes(Files.size(path));
-    }
     Throwable error = null;
     try {
+      if (multiContext != null) {
+        multiContext.setRequestBytes(Files.size(path));
+      }
       GrpcCallContext grpcCallContext =
           opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
       WriteObjectRequest req = getWriteObjectRequest(info, opts);
@@ -939,6 +943,14 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   @Override
   public BlobInfo internalDirectUpload(
       BlobInfo blobInfo, Opts<ObjectTargetOpt> opts, ByteBuffer buf) {
+    return internalDirectUpload(blobInfo, opts, buf, null);
+  }
+
+  private BlobInfo internalDirectUpload(
+      BlobInfo blobInfo,
+      Opts<ObjectTargetOpt> opts,
+      ByteBuffer buf,
+      @Nullable StorageMetricsContext metricsContext) {
     requireNonNull(blobInfo, "blobInfo must be non null");
     requireNonNull(buf, "content must be non null");
     Opts<ObjectTargetOpt> optsWithDefaults = opts.prepend(defaultOpts);
@@ -946,7 +958,6 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
         optsWithDefaults.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
     WriteObjectRequest req = getWriteObjectRequest(blobInfo, optsWithDefaults);
     Hasher hasher = opts.getHasher();
-    StorageMetricsContext metricsContext = getOptions().createMetricsContext("WriteObject");
     int totalBytes = buf.remaining();
     if (metricsContext != null) {
       metricsContext.setRequestBytes(totalBytes);
