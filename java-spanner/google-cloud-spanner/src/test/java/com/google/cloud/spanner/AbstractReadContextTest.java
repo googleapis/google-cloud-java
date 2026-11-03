@@ -757,7 +757,8 @@ public class AbstractReadContextTest {
               transactionIdFuture.setException(
                   SpannerExceptionFactory.newSpannerException(
                       ErrorCode.FAILED_PRECONDITION,
-                      "Read-only transaction was closed before the transaction ID was returned by Cloud Spanner"));
+                      "Read-only transaction was closed before the transaction ID was returned by"
+                          + " Cloud Spanner"));
             }
             super.onDone(withBeginTransaction);
           }
