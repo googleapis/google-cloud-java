@@ -3856,9 +3856,14 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
     assertTrue(dbMetadata.shouldSkipGraphColumns("plainTableWithoutDot"));
     assertFalse(dbMetadata.shouldSkipGraphColumns("RetailGraph.Product"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("Retail_Graph.Product"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("Retail_Graph.Product_Node"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("RetailGraph.Product_Node"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("Retail%.Product_Node"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("RetailGraph.Product%"));
     assertFalse(dbMetadata.shouldSkipGraphColumns("%"));
     assertFalse(dbMetadata.shouldSkipGraphColumns("Retail%"));
-    assertFalse(dbMetadata.shouldSkipGraphColumns("Graph_Node"));
+    assertTrue(dbMetadata.shouldSkipGraphColumns("Graph_Node"));
     assertFalse(dbMetadata.shouldSkipGraphColumns(null));
   }
 
