@@ -52,6 +52,11 @@ function retry_with_backoff {
   shift 2
   command=("$@")
 
+  # Add defensive timeouts to Maven commands to prevent Kokoro VM timeouts (10800s hang)
+  if [[ "${command[*]}" == *"mvn "* ]]; then
+    export MAVEN_OPTS="${MAVEN_OPTS} -Daether.connector.requestTimeout=300000 -Daether.connector.connectTimeout=30000 -Dmaven.wagon.http.retryHandler.class=standard -Dmaven.wagon.http.retryHandler.count=3 -Dmaven.wagon.httpconnectionManager.ttlSeconds=120"
+  fi
+
   # store current flag state
   flags=$-
 
