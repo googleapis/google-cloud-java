@@ -20,21 +20,30 @@ import static com.google.common.testing.SerializableTester.reserialize;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.ErrorHandler.DefaultErrorHandler;
 import com.google.cloud.spanner.SingerProto.Genre;
 import com.google.cloud.spanner.SingerProto.SingerInfo;
+import com.google.cloud.spanner.XGoogSpannerRequestId.NoopRequestIdCreator;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.base.Function;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.ByteString;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryMode;
 import com.google.spanner.v1.MultiplexedSessionPrecommitToken;
@@ -43,6 +52,9 @@ import com.google.spanner.v1.QueryPlan;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.ResultSetStats;
 import com.google.spanner.v1.Transaction;
+import io.opencensus.trace.BlankSpan;
+import io.opencensus.trace.Tracing;
+import io.opentelemetry.api.OpenTelemetry;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
@@ -53,8 +65,17 @@ import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.Nullable;
 import org.junit.Before;
 import org.junit.Test;
@@ -64,6 +85,16 @@ import org.junit.runners.JUnit4;
 /** Unit tests for {@link GrpcResultSet}. */
 @RunWith(JUnit4.class)
 public class GrpcResultSetTest {
+
+  @org.junit.BeforeClass
+  public static void beforeClass() {
+    SpannerOptions.resetActiveTracingFramework();
+  }
+
+  @org.junit.BeforeClass
+  public static void beforeClass() {
+    SpannerOptions.resetActiveTracingFramework();
+  }
 
   private GrpcResultSet resultSet;
   private SpannerRpc.ResultStreamConsumer consumer;
@@ -105,8 +136,7 @@ public class GrpcResultSetTest {
 
           @Override
           public void request(int numMessages) {}
-        },
-        false);
+        });
     consumer = stream.consumer();
     resultSet = new GrpcResultSet(stream, new NoOpListener());
   }
@@ -1301,5 +1331,554 @@ public class GrpcResultSetTest {
     GrpcResultSet resultSet = new GrpcResultSet(iterator, listener);
     resultSet.close();
     assertTrue(listenerReceivedWithBeginTransaction.get());
+  }
+
+  @Test
+  public void testIsDataAvailable() {
+    assertFalse(resultSet.isDataAvailable());
+
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.string()))))
+            .addValues(Value.string("val1").toProto())
+            .addValues(Value.string("val2").toProto())
+            .build());
+
+    assertTrue(resultSet.isDataAvailable());
+    assertTrue(resultSet.next());
+    assertEquals("val1", resultSet.getString(0));
+
+    assertTrue(resultSet.isDataAvailable());
+    assertTrue(resultSet.next());
+    assertEquals("val2", resultSet.getString(0));
+
+    assertFalse(resultSet.isDataAvailable());
+    consumer.onCompleted();
+    assertTrue(resultSet.isDataAvailable());
+    assertFalse(resultSet.next());
+  }
+
+  @Test
+  public void testIsDataAvailableWhenClosed() {
+    assertFalse(resultSet.isDataAvailable());
+    resultSet.close();
+    assertTrue(resultSet.isDataAvailable());
+    assertThrows(SpannerException.class, resultSet::next);
+  }
+
+  @Test
+  public void testIsDataAvailableWhenClosedMidStream() {
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.string()))))
+            .addValues(Value.string("val1").toProto())
+            .build());
+
+    assertTrue(resultSet.isDataAvailable());
+    assertTrue(resultSet.next());
+    assertEquals("val1", resultSet.getString(0));
+
+    // Mid-stream with no further chunks buffered yet
+    assertFalse(resultSet.isDataAvailable());
+    resultSet.close();
+
+    // After close, isDataAvailable returns true and next() returns false immediately
+    assertTrue(resultSet.isDataAvailable());
+    assertFalse(resultSet.next());
+    assertThrows(IllegalStateException.class, () -> resultSet.getString(0));
+  }
+
+  @Test
+  public void testInitiateStreamingDelegation() {
+    @SuppressWarnings("unchecked")
+    AbstractResultSet.CloseableIterator<PartialResultSet> mockStream =
+        mock(AbstractResultSet.CloseableIterator.class);
+    AsyncResultSet.StreamMessageListener listener =
+        mock(AsyncResultSet.StreamMessageListener.class);
+    when(mockStream.initiateStreaming(listener)).thenReturn(true);
+
+    try (GrpcResultSet streamingResultSet = new GrpcResultSet(mockStream, new NoOpListener())) {
+      assertTrue(streamingResultSet.initiateStreaming(listener));
+      verify(mockStream).initiateStreaming(listener);
+    }
+
+    assertFalse(resultSet.initiateStreaming(listener));
+  }
+
+  @Test(timeout = 10_000)
+  public void closeRaceCompletesTransactionIdFuture() throws Exception {
+    SettableApiFuture<ByteString> transactionIdFuture = SettableApiFuture.create();
+    CountDownLatch preCloseCheckReturnedFalse = new CountDownLatch(1);
+    CountDownLatch attachAttempted = new CountDownLatch(1);
+    AtomicReference<Thread> closerThread = new AtomicReference<>();
+
+    AbstractResultSet.Listener listener =
+        new NoOpListener() {
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            if (withBeginTransaction) {
+              transactionIdFuture.setException(
+                  SpannerExceptionFactory.newSpannerException(
+                      ErrorCode.FAILED_PRECONDITION,
+                      AbstractReadContext.RESULT_SET_CLOSED_BEFORE_ID_RETURNED_MESSAGE));
+            }
+          }
+        };
+
+    AtomicBoolean closed = new AtomicBoolean();
+    AtomicBoolean attached = new AtomicBoolean();
+
+    AbstractResultSet.CloseableIterator<PartialResultSet> iterator =
+        new AbstractResultSet.CloseableIterator<PartialResultSet>() {
+          @Override
+          public void close(@Nullable String message) {
+            if (Thread.currentThread() == closerThread.get()) {
+              preCloseCheckReturnedFalse.countDown();
+              Uninterruptibles.awaitUninterruptibly(attachAttempted, 5, TimeUnit.SECONDS);
+            }
+            closed.set(true);
+          }
+
+          @Override
+          public boolean isWithBeginTransaction() {
+            return attached.get();
+          }
+
+          @Override
+          public boolean isLastStatement() {
+            return false;
+          }
+
+          @Override
+          public boolean hasNext() {
+            return false;
+          }
+
+          @Override
+          public PartialResultSet next() {
+            throw new NoSuchElementException();
+          }
+        };
+
+    try (GrpcResultSet resultSet = new GrpcResultSet(iterator, listener)) {
+      Thread closer = new Thread(resultSet::close, "closer");
+      closerThread.set(closer);
+      closer.start();
+      assertTrue(preCloseCheckReturnedFalse.await(5, TimeUnit.SECONDS));
+
+      // After the initial pre-close isWithBeginTransaction() returned false and before
+      // iterator.close() finishes, simulate a concurrent thread attaching a stream with
+      // withBeginTransaction=true.
+      attached.set(true);
+      attachAttempted.countDown();
+      closer.join(5_000);
+    }
+
+    assertTrue(closed.get());
+    assertTrue(
+        "transactionIdFuture was never completed when closed raced with stream attachment",
+        transactionIdFuture.isDone());
+  }
+
+  @Test(timeout = 10_000)
+  public void closeWhileStreamIsStartingInvokesOnDoneSynchronously() throws Exception {
+    AtomicInteger onDoneCalls = new AtomicInteger();
+    AtomicBoolean observedWithBeginTransaction = new AtomicBoolean();
+    AbstractResultSet.Listener listener =
+        new NoOpListener() {
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            observedWithBeginTransaction.set(withBeginTransaction);
+            onDoneCalls.incrementAndGet();
+          }
+        };
+
+    CountDownLatch startStreamEntered = new CountDownLatch(1);
+    CountDownLatch allowStartStreamToComplete = new CountDownLatch(1);
+
+    ResumableStreamIterator resumableStreamIterator =
+        new ResumableStreamIterator(
+            10,
+            "",
+            new OpenCensusSpan(BlankSpan.INSTANCE),
+            new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false),
+            DefaultErrorHandler.INSTANCE,
+            RetrySettings.newBuilder().build(),
+            Collections.emptySet(),
+            NoopRequestIdCreator.INSTANCE) {
+          @Override
+          AbstractResultSet.CloseableIterator<PartialResultSet> startStream(
+              @Nullable ByteString resumeToken,
+              @Nullable AsyncResultSet.StreamMessageListener streamListener,
+              XGoogSpannerRequestId requestId) {
+            AbstractResultSet.CloseableIterator<PartialResultSet> stream =
+                mock(AbstractResultSet.CloseableIterator.class);
+            when(stream.isWithBeginTransaction()).thenReturn(true);
+            setStream(stream);
+            startStreamEntered.countDown();
+            Uninterruptibles.awaitUninterruptibly(allowStartStreamToComplete, 5, TimeUnit.SECONDS);
+            return stream;
+          }
+        };
+
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try (GrpcResultSet resultSet = new GrpcResultSet(resumableStreamIterator, listener)) {
+      Future<?> streamInitFuture = executor.submit(resultSet::next);
+      assertTrue(startStreamEntered.await(5, TimeUnit.SECONDS));
+
+      // Close while startStream is in progress.
+      // onDone() must be invoked synchronously during close() with the correct withBeginTransaction
+      // value.
+      resultSet.close();
+      assertEquals(1, onDoneCalls.get());
+      assertTrue(observedWithBeginTransaction.get());
+
+      // Allow startStream to finish.
+      allowStartStreamToComplete.countDown();
+      assertThrows(Exception.class, streamInitFuture::get);
+
+      // onDone() was not invoked a second time.
+      assertEquals(1, onDoneCalls.get());
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test(timeout = 10_000)
+  public void concurrentCloseDuringYieldErrorDoesNotInvokeOnDoneBeforeOnErrorCompletes()
+      throws Exception {
+    CountDownLatch onErrorEntered = new CountDownLatch(1);
+    CountDownLatch allowOnErrorToFinish = new CountDownLatch(1);
+    SettableApiFuture<ByteString> transactionIdFuture = SettableApiFuture.create();
+    List<String> callbackOrder = Collections.synchronizedList(new ArrayList<>());
+    AtomicInteger onDoneCalls = new AtomicInteger();
+
+    AbstractResultSet.Listener listener =
+        new NoOpListener() {
+          @Override
+          public SpannerException onError(
+              SpannerException exception, boolean withBeginTransaction, boolean lastStatement) {
+            onErrorEntered.countDown();
+            Uninterruptibles.awaitUninterruptibly(allowOnErrorToFinish, 5, TimeUnit.SECONDS);
+            callbackOrder.add("onError");
+            if (withBeginTransaction && !transactionIdFuture.isDone()) {
+              transactionIdFuture.setException(exception);
+            }
+            return exception;
+          }
+
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            callbackOrder.add("onDone");
+            onDoneCalls.incrementAndGet();
+            if (withBeginTransaction && !transactionIdFuture.isDone()) {
+              transactionIdFuture.setException(
+                  SpannerExceptionFactory.newSpannerException(
+                      ErrorCode.FAILED_PRECONDITION,
+                      AbstractReadContext.RESULT_SET_CLOSED_BEFORE_ID_RETURNED_MESSAGE));
+            }
+          }
+        };
+
+    AbstractResultSet.CloseableIterator<PartialResultSet> failingIterator =
+        new AbstractResultSet.CloseableIterator<PartialResultSet>() {
+          @Override
+          public void close(@Nullable String message) {}
+
+          @Override
+          public boolean isWithBeginTransaction() {
+            return true;
+          }
+
+          @Override
+          public boolean isLastStatement() {
+            return false;
+          }
+
+          @Override
+          public boolean hasNext() {
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INVALID_ARGUMENT, "invalid sql");
+          }
+
+          @Override
+          public PartialResultSet next() {
+            throw new NoSuchElementException();
+          }
+        };
+
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try (GrpcResultSet resultSet = new GrpcResultSet(failingIterator, listener)) {
+      Future<?> nextFuture = executor.submit(resultSet::next);
+      assertTrue(onErrorEntered.await(5, TimeUnit.SECONDS));
+
+      // Concurrent close() while yieldError() is inside listener.onError().
+      // close() must not invoke listener.onDone() before listener.onError() completes.
+      resultSet.close();
+      assertEquals(0, onDoneCalls.get());
+
+      allowOnErrorToFinish.countDown();
+      ExecutionException nextException =
+          assertThrows(ExecutionException.class, () -> nextFuture.get(5, TimeUnit.SECONDS));
+      assertTrue(nextException.getCause() instanceof SpannerException);
+      assertEquals(
+          ErrorCode.INVALID_ARGUMENT, ((SpannerException) nextException.getCause()).getErrorCode());
+
+      assertEquals(Arrays.asList("onError", "onDone"), callbackOrder);
+      assertEquals(1, onDoneCalls.get());
+
+      ExecutionException futureException =
+          assertThrows(
+              ExecutionException.class, () -> transactionIdFuture.get(5, TimeUnit.SECONDS));
+      assertTrue(futureException.getCause() instanceof SpannerException);
+      assertEquals(
+          ErrorCode.INVALID_ARGUMENT,
+          ((SpannerException) futureException.getCause()).getErrorCode());
+
+      // Subsequent next() on another thread observes the volatile error.
+      SpannerException repeatedException = assertThrows(SpannerException.class, resultSet::next);
+      assertEquals(ErrorCode.INVALID_ARGUMENT, repeatedException.getErrorCode());
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test(timeout = 10_000)
+  public void initiateStreamingFailureFailsInlinedBeginTransactionAndPreventsSecondRpcOnNext()
+      throws Exception {
+    SettableApiFuture<ByteString> transactionIdFuture = SettableApiFuture.create();
+    AtomicInteger onErrorCalls = new AtomicInteger();
+    AtomicInteger onDoneCalls = new AtomicInteger();
+    AtomicBoolean onErrorObservedWithBeginTransaction = new AtomicBoolean();
+
+    AbstractResultSet.Listener listener =
+        new NoOpListener() {
+          @Override
+          public SpannerException onError(
+              SpannerException exception, boolean withBeginTransaction, boolean lastStatement) {
+            onErrorCalls.incrementAndGet();
+            onErrorObservedWithBeginTransaction.set(withBeginTransaction);
+            if (withBeginTransaction && !transactionIdFuture.isDone()) {
+              transactionIdFuture.setException(exception);
+            }
+            return exception;
+          }
+
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            onDoneCalls.incrementAndGet();
+          }
+        };
+
+    AtomicInteger initiateStreamingCalls = new AtomicInteger();
+    AtomicInteger hasNextCalls = new AtomicInteger();
+    AbstractResultSet.CloseableIterator<PartialResultSet> failingIterator =
+        new AbstractResultSet.CloseableIterator<PartialResultSet>() {
+          @Override
+          public void close(@Nullable String message) {}
+
+          @Override
+          public boolean isWithBeginTransaction() {
+            return true;
+          }
+
+          @Override
+          public boolean isLastStatement() {
+            return false;
+          }
+
+          @Override
+          public boolean initiateStreaming(
+              AsyncResultSet.StreamMessageListener streamMessageListener) {
+            initiateStreamingCalls.incrementAndGet();
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.UNAVAILABLE, "stream startup failed");
+          }
+
+          @Override
+          public boolean hasNext() {
+            hasNextCalls.incrementAndGet();
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.UNAVAILABLE, "stream startup failed");
+          }
+
+          @Override
+          public PartialResultSet next() {
+            throw new NoSuchElementException();
+          }
+        };
+
+    try (GrpcResultSet resultSet = new GrpcResultSet(failingIterator, listener)) {
+      SpannerException initiateException =
+          assertThrows(
+              SpannerException.class,
+              () -> resultSet.initiateStreaming(mock(AsyncResultSet.StreamMessageListener.class)));
+      assertEquals(ErrorCode.UNAVAILABLE, initiateException.getErrorCode());
+      assertEquals(1, initiateStreamingCalls.get());
+      assertEquals(0, onErrorCalls.get());
+      assertEquals(0, onDoneCalls.get());
+
+      // Calling next() on the failed result set calls yieldError, notifying listener
+      SpannerException nextException = assertThrows(SpannerException.class, resultSet::next);
+      assertEquals(ErrorCode.UNAVAILABLE, nextException.getErrorCode());
+      assertEquals(1, hasNextCalls.get());
+      assertEquals(1, onErrorCalls.get());
+      assertTrue(onErrorObservedWithBeginTransaction.get());
+      assertEquals(1, onDoneCalls.get());
+
+      // Subsequent next() immediately rethrows the cached error without invoking hasNext() again
+      SpannerException cachedException = assertThrows(SpannerException.class, resultSet::next);
+      assertSame(nextException, cachedException);
+      assertEquals(1, hasNextCalls.get());
+
+      // onDone() was not called a second time
+      assertEquals(1, onDoneCalls.get());
+    }
+  }
+
+  @Test(timeout = 10_000)
+  public void yieldErrorDoesNotInvokeOnErrorOrOnDoneTwiceWhenAlreadyClosed() {
+    AtomicInteger onErrorCalls = new AtomicInteger();
+    AtomicInteger onDoneCalls = new AtomicInteger();
+    AbstractResultSet.Listener listener =
+        new NoOpListener() {
+          @Override
+          public SpannerException onError(
+              SpannerException exception, boolean withBeginTransaction, boolean lastStatement) {
+            onErrorCalls.incrementAndGet();
+            return exception;
+          }
+
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            onDoneCalls.incrementAndGet();
+          }
+        };
+
+    AbstractResultSet.CloseableIterator<PartialResultSet> failingIterator =
+        new AbstractResultSet.CloseableIterator<PartialResultSet>() {
+          @Override
+          public void close(@Nullable String message) {}
+
+          @Override
+          public boolean isWithBeginTransaction() {
+            return false;
+          }
+
+          @Override
+          public boolean isLastStatement() {
+            return false;
+          }
+
+          @Override
+          public boolean hasNext() {
+            throw SpannerExceptionFactory.newSpannerException(ErrorCode.INTERNAL, "first error");
+          }
+
+          @Override
+          public PartialResultSet next() {
+            throw new NoSuchElementException();
+          }
+        };
+
+    try (GrpcResultSet resultSet = new GrpcResultSet(failingIterator, listener)) {
+      assertThrows(SpannerException.class, resultSet::next);
+      assertEquals(1, onErrorCalls.get());
+      assertEquals(1, onDoneCalls.get());
+
+      // Subsequent next() returns the cached error and does NOT call onError or onDone again
+      assertThrows(SpannerException.class, resultSet::next);
+      assertEquals(1, onErrorCalls.get());
+      assertEquals(1, onDoneCalls.get());
+
+      // Explicit close() does not invoke onDone() again
+      resultSet.close();
+      assertEquals(1, onDoneCalls.get());
+    }
+  }
+
+  @Test
+  public void errorOccurringWhileClosedCachesErrorAndSubsequentNextCallsThrow() {
+    AtomicInteger onErrorCalls = new AtomicInteger();
+    AtomicInteger onDoneCalls = new AtomicInteger();
+    AbstractResultSet.Listener listener =
+        new NoOpListener() {
+          @Override
+          public SpannerException onError(
+              SpannerException e, boolean withBeginTransaction, boolean lastStatement) {
+            onErrorCalls.incrementAndGet();
+            return e;
+          }
+
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            onDoneCalls.incrementAndGet();
+          }
+        };
+
+    List<PartialResultSet> results =
+        ImmutableList.of(
+            PartialResultSet.newBuilder()
+                .setMetadata(makeMetadata(Type.struct(Type.StructField.of("col", Type.string()))))
+                .addValues(com.google.protobuf.Value.newBuilder().setStringValue("val1").build())
+                .build());
+
+    AtomicReference<GrpcResultSet> resultSetRef = new AtomicReference<>();
+    AbstractResultSet.CloseableIterator<PartialResultSet> iterator =
+        new AbstractResultSet.CloseableIterator<PartialResultSet>() {
+          private int index = 0;
+
+          @Override
+          public void close(@Nullable String message) {}
+
+          @Override
+          public boolean isWithBeginTransaction() {
+            return false;
+          }
+
+          @Override
+          public boolean isLastStatement() {
+            return false;
+          }
+
+          @Override
+          public boolean hasNext() {
+            if (index == 0) {
+              return true;
+            }
+            // Simulate a concurrent close() happening just before yieldError handles the failure
+            resultSetRef.get().close();
+            throw SpannerExceptionFactory.newSpannerException(
+                ErrorCode.UNAVAILABLE, "Stream unavailable");
+          }
+
+          @Override
+          public PartialResultSet next() {
+            if (index < results.size()) {
+              return results.get(index++);
+            }
+            throw new NoSuchElementException();
+          }
+        };
+
+    GrpcResultSet testResultSet = new GrpcResultSet(iterator, listener);
+    resultSetRef.set(testResultSet);
+
+    // First next() consumes the first row successfully
+    assertTrue(testResultSet.next());
+    assertEquals("val1", testResultSet.getString("col"));
+
+    // Next next() call encounters error while close() was triggered
+    SpannerException firstException = assertThrows(SpannerException.class, testResultSet::next);
+    assertEquals(ErrorCode.UNAVAILABLE, firstException.getErrorCode());
+    // onError was skipped because onDone was already dispatched during close()
+    assertEquals(0, onErrorCalls.get());
+    assertEquals(1, onDoneCalls.get());
+
+    // Subsequent next() calls continue to throw the cached error rather than returning false
+    SpannerException secondException = assertThrows(SpannerException.class, testResultSet::next);
+    assertSame(firstException, secondException);
+    assertEquals(0, onErrorCalls.get());
+    assertEquals(1, onDoneCalls.get());
   }
 }
