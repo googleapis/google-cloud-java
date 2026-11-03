@@ -337,7 +337,7 @@ public class ITAppendableUploadFakeTest {
             .setPersistedSize(3)
             .build();
 
-    // 5. Third write of "GHI".
+    // 4. Third write of "GHI".
     BidiWriteObjectRequest req_ghi = BidiUploadTestUtils.withFlushAndStateLookup(ghi);
     BidiWriteObjectResponse res_ghi_success =
         BidiWriteObjectResponse.newBuilder()
@@ -345,7 +345,7 @@ public class ITAppendableUploadFakeTest {
             .setPersistedSize(9)
             .build();
 
-    // 6. Reconnect to routingToken2
+    // 5. Reconnect to routingToken2
     BidiWriteObjectRequest reconnect_token2 =
         BidiWriteObjectRequest.newBuilder()
             .setAppendObjectSpec(
@@ -364,12 +364,12 @@ public class ITAppendableUploadFakeTest {
             .setPersistedSize(6)
             .build();
 
-    // 8. Fourth write of "J" (finalize/finish write)
+    // 6. Fourth write of "J" (finalize/finish write)
     BidiWriteObjectRequest req_j_finish = j_finish;
     BidiWriteObjectResponse res_j_final =
         resource_10.toBuilder().setWriteHandle(writeHandle3).build();
 
-    // 9. Reconnect to routingToken3
+    // 7. Reconnect to routingToken3
     BidiWriteObjectRequest reconnect_token3 =
         BidiWriteObjectRequest.newBuilder()
             .setAppendObjectSpec(
@@ -383,7 +383,7 @@ public class ITAppendableUploadFakeTest {
             .setStateLookup(true)
             .build();
 
-    // 10. Reconnect to routingToken4
+    // 8. Reconnect to routingToken4
     BidiWriteObjectRequest reconnect_token4 =
         BidiWriteObjectRequest.newBuilder()
             .setAppendObjectSpec(
@@ -397,7 +397,7 @@ public class ITAppendableUploadFakeTest {
             .setStateLookup(true)
             .build();
 
-    // 11. Reconnect to routingToken5
+    // 9. Reconnect to routingToken5
     BidiWriteObjectRequest reconnect_token5 =
         BidiWriteObjectRequest.newBuilder()
             .setAppendObjectSpec(

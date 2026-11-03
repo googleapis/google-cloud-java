@@ -14,27 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.cloud.storage.it;
+package com.google.cloud.storage;
 
+import static com.google.cloud.storage.TestUtils.xxd;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.rpc.OutOfRangeException;
-import com.google.cloud.storage.AsyncSessionClosedException;
-import com.google.cloud.storage.BlobAppendableUpload;
 import com.google.cloud.storage.BlobAppendableUpload.AppendableUploadWriteableByteChannel;
-import com.google.cloud.storage.BlobAppendableUploadConfig;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.BlobReadSession;
-import com.google.cloud.storage.BucketInfo;
-import com.google.cloud.storage.RangeSpec;
-import com.google.cloud.storage.ReadProjectionConfigs;
-import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobWriteOption;
-import com.google.cloud.storage.StorageClass;
-import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.ZeroCopySupport.DisposableByteString;
 import com.google.cloud.storage.it.runner.StorageITRunner;
@@ -44,12 +33,12 @@ import com.google.cloud.storage.it.runner.annotations.Inject;
 import com.google.cloud.storage.it.runner.annotations.LocationType;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -58,12 +47,11 @@ import org.junit.runner.RunWith;
     backends = {Backend.PROD},
     transports = {Transport.GRPC},
     locations = {LocationType.REGIONAL_RAPID})
+@Ignore("TODO: Enable tests once RCU is available in prod")
 public final class ITRcuBidiReadTest {
 
   @Inject public Storage storage;
   @Inject public BucketInfo bucket;
-  @Inject public Backend backend;
-  @Inject public Transport transport;
 
   private static boolean initialized = false;
   private static Storage staticStorage;
@@ -82,21 +70,13 @@ public final class ITRcuBidiReadTest {
     if (initialized) {
       return;
     }
-    initialized = true;
     staticStorage = storage;
 
     // Generate test data
-    closeTestData = new byte[5 * 1024 * 1024];
-    new Random().nextBytes(closeTestData);
-
-    zeroCopyTestData = new byte[1024 * 1024];
-    new Random().nextBytes(zeroCopyTestData);
-
-    multipleRangeTestData = new byte[2 * 1024 * 1024];
-    new Random().nextBytes(multipleRangeTestData);
-
-    outOfRangeTestData = new byte[100 * 1024];
-    new Random().nextBytes(outOfRangeTestData);
+    closeTestData = DataGenerator.base64Characters().genBytes(5 * 1024 * 1024);
+    zeroCopyTestData = DataGenerator.base64Characters().genBytes(1024 * 1024);
+    multipleRangeTestData = DataGenerator.base64Characters().genBytes(2 * 1024 * 1024);
+    outOfRangeTestData = DataGenerator.base64Characters().genBytes(100 * 1024);
 
     closeTestBlobId = BlobId.of(bucket.getName(), "test-bidi-read-close-" + UUID.randomUUID());
     zeroCopyTestBlobId = BlobId.of(bucket.getName(), "test-bidi-zero-copy-" + UUID.randomUUID());
@@ -109,6 +89,7 @@ public final class ITRcuBidiReadTest {
     createObjectForWarming(zeroCopyTestBlobId, zeroCopyTestData);
     createObjectForWarming(multipleRangeTestBlobId, multipleRangeTestData);
     createObjectForWarming(outOfRangeTestBlobId, outOfRangeTestData);
+    initialized = true;
   }
 
   private void createObjectForWarming(BlobId blobId, byte[] data) throws Exception {
@@ -183,21 +164,21 @@ public final class ITRcuBidiReadTest {
       try (DisposableByteString d1 = f1.get(10, TimeUnit.SECONDS)) {
         assertThat(d1).isNotNull();
         byte[] expected = Arrays.copyOfRange(zeroCopyTestData, 0, 1000);
-        assertThat(d1.byteString().toByteArray()).isEqualTo(expected);
+        assertThat(xxd(d1.byteString().toByteArray())).isEqualTo(xxd(expected));
       }
 
       // Resolve and verify Range 2
       try (DisposableByteString d2 = f2.get(10, TimeUnit.SECONDS)) {
         assertThat(d2).isNotNull();
         byte[] expected = Arrays.copyOfRange(zeroCopyTestData, 50000, 50000 + 250000);
-        assertThat(d2.byteString().toByteArray()).isEqualTo(expected);
+        assertThat(xxd(d2.byteString().toByteArray())).isEqualTo(xxd(expected));
       }
 
       // Resolve and verify Range 3
       try (DisposableByteString d3 = f3.get(10, TimeUnit.SECONDS)) {
         assertThat(d3).isNotNull();
         byte[] expected = Arrays.copyOfRange(zeroCopyTestData, 800000, 800000 + 10000);
-        assertThat(d3.byteString().toByteArray()).isEqualTo(expected);
+        assertThat(xxd(d3.byteString().toByteArray())).isEqualTo(xxd(expected));
       }
     }
   }
@@ -225,26 +206,27 @@ public final class ITRcuBidiReadTest {
 
       // Resolve and verify Range 1
       byte[] b1 = f1.get(10, TimeUnit.SECONDS);
-      assertThat(b1).isEqualTo(Arrays.copyOfRange(multipleRangeTestData, 0, rangeSize));
+      assertThat(xxd(b1)).isEqualTo(xxd(Arrays.copyOfRange(multipleRangeTestData, 0, rangeSize)));
 
       // Resolve and verify Range 2
       byte[] b2 = f2.get(10, TimeUnit.SECONDS);
-      assertThat(b2).isEqualTo(Arrays.copyOfRange(multipleRangeTestData, rangeSize, 2 * rangeSize));
+      assertThat(xxd(b2))
+          .isEqualTo(xxd(Arrays.copyOfRange(multipleRangeTestData, rangeSize, 2 * rangeSize)));
 
       // Resolve and verify Range 3
       byte[] b3 = f3.get(10, TimeUnit.SECONDS);
-      assertThat(b3)
-          .isEqualTo(Arrays.copyOfRange(multipleRangeTestData, 2 * rangeSize, 3 * rangeSize));
+      assertThat(xxd(b3))
+          .isEqualTo(xxd(Arrays.copyOfRange(multipleRangeTestData, 2 * rangeSize, 3 * rangeSize)));
 
       // Resolve and verify Range 4
       byte[] b4 = f4.get(10, TimeUnit.SECONDS);
-      assertThat(b4)
-          .isEqualTo(Arrays.copyOfRange(multipleRangeTestData, 3 * rangeSize, 4 * rangeSize));
+      assertThat(xxd(b4))
+          .isEqualTo(xxd(Arrays.copyOfRange(multipleRangeTestData, 3 * rangeSize, 4 * rangeSize)));
     }
   }
 
   @Test
-  public void readFromBucketThatDoesNotExistShouldRaiseStorageExceptionWith404() throws Exception {
+  public void readFromBucketThatDoesNotExistShouldRaiseStorageException() throws Exception {
     String nonExistentBucketName = "java-storage-non-existent-bucket-" + UUID.randomUUID();
     BlobId blobId = BlobId.of(nonExistentBucketName, "someobject");
 
@@ -267,7 +249,7 @@ public final class ITRcuBidiReadTest {
           session.readAs(
               ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(0, 1000)));
       byte[] bytes = fValid.get(10, TimeUnit.SECONDS);
-      assertThat(bytes).isEqualTo(Arrays.copyOfRange(outOfRangeTestData, 0, 1000));
+      assertThat(xxd(bytes)).isEqualTo(xxd(Arrays.copyOfRange(outOfRangeTestData, 0, 1000)));
 
       // Start an out-of-bounds range read (offset > size)
       ApiFuture<byte[]> fOutOfRange =
