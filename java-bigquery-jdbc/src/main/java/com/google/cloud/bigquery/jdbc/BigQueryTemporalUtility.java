@@ -392,6 +392,28 @@ final class BigQueryTemporalUtility {
     return UTC_TIMESTAMP_TO_STRING_FORMATTER.format(ts.toInstant());
   }
 
+  static boolean isCivilTemporalType(StandardSQLTypeName type) {
+    return type == StandardSQLTypeName.DATE
+        || type == StandardSQLTypeName.TIME
+        || type == StandardSQLTypeName.DATETIME;
+  }
+
+  /**
+   * Formats a raw civil temporal value ({@code DATE}, {@code TIME}, or {@code DATETIME}) as a
+   * string for complex types ({@code ARRAY} and {@code STRUCT}) without boxing through {@code
+   * java.sql} types.
+   */
+  static String formatCivilTemporalElement(StandardSQLTypeName type, Object rawValue)
+      throws BigQueryJdbcException {
+    if (type == StandardSQLTypeName.DATETIME) {
+      LocalDateTime ldt =
+          BigQueryTypeRegistry.convert(
+              rawValue, StandardSQLTypeName.DATETIME, LocalDateTime.class, null);
+      return ldt == null ? null : UTC_TIMESTAMP_TO_STRING_FORMATTER.format(ldt);
+    }
+    return BigQueryTypeRegistry.convert(rawValue, type, String.class, null);
+  }
+
   /**
    * Formats a timestamp value (which may be a {@link Long} epoch microsecond, an ISO-8601 string, a
    * {@link java.sql.Timestamp}, or an epoch decimal string) into a standard UTC JDBC timestamp

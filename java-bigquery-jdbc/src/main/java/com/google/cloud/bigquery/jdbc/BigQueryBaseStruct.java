@@ -117,23 +117,21 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
 
   private static void appendJsonValue(StringBuilder sb, Field field, Object value, Object rawValue)
       throws SQLException {
+    StandardSQLTypeName type = field.getType().getStandardType();
     if (value == null) {
       sb.append("null");
-    } else if (field.getType().getStandardType() == StandardSQLTypeName.JSON) {
+    } else if (type == StandardSQLTypeName.JSON) {
       sb.append(value);
     } else if (value instanceof String || value instanceof Text) {
       String stringValue = value.toString().replace("\"", "\\\"");
       sb.append("\"").append(stringValue).append("\"");
-    } else if (value instanceof Timestamp
-        && field.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP) {
+    } else if (value instanceof Timestamp && type == StandardSQLTypeName.TIMESTAMP) {
       sb.append("\"")
           .append(BigQueryTemporalUtility.formatTimestampToUtcString((Timestamp) value))
           .append("\"");
-    } else if (value instanceof Time
-        && field.getType().getStandardType() == StandardSQLTypeName.TIME) {
+    } else if (BigQueryTemporalUtility.isCivilTemporalType(type)) {
       sb.append("\"")
-          .append(
-              BigQueryTypeRegistry.convert(rawValue, StandardSQLTypeName.TIME, String.class, null))
+          .append(BigQueryTemporalUtility.formatCivilTemporalElement(type, rawValue))
           .append("\"");
     } else if (value instanceof Timestamp || value instanceof Date || value instanceof Time) {
       sb.append("\"").append(value).append("\"");
