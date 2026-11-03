@@ -149,6 +149,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   };
   static final String GRAPH_TABLE_TYPE = "GRAPH TABLE";
   private static final String DEFAULT_GRAPH_REGION = "us";
+  // Google Cloud project IDs: letters, digits, hyphens, and optional domain prefix (e.g.
+  // domain.com:proj-1)
+  private static final Pattern VALID_CATALOG_PATTERN =
+      Pattern.compile("^[A-Za-z0-9][A-Za-z0-9:._-]*$");
+  // BigQuery dataset IDs: letters, digits, and underscores only
+  private static final Pattern VALID_SCHEMA_PATTERN = Pattern.compile("^[A-Za-z0-9_]+$");
+  // BigQuery region qualifier for regional INFORMATION_SCHEMA queries (e.g. region-us,
+  // region-us-central1)
+  private static final Pattern VALID_REGION_SCOPE_PATTERN =
+      Pattern.compile("^region-[A-Za-z0-9-]+$");
 
   String URL;
   BigQueryConnection connection;
@@ -1470,6 +1480,27 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             Comparator.nullsFirst(String::compareTo));
   }
 
+  static void validateCatalogIdentifier(String catalog) throws SQLException {
+    if (catalog == null || !VALID_CATALOG_PATTERN.matcher(catalog).matches()) {
+      throw new BigQueryJdbcException(
+          String.format("Invalid catalog (project ID) identifier: '%s'", catalog));
+    }
+  }
+
+  static void validateSchemaIdentifier(String schema) throws SQLException {
+    if (schema == null || !VALID_SCHEMA_PATTERN.matcher(schema).matches()) {
+      throw new BigQueryJdbcException(
+          String.format("Invalid schema (dataset ID) identifier: '%s'", schema));
+    }
+  }
+
+  static void validateRegionScopeIdentifier(String regionScope) throws SQLException {
+    if (regionScope == null || !VALID_REGION_SCOPE_PATTERN.matcher(regionScope).matches()) {
+      throw new BigQueryJdbcException(
+          String.format("Invalid region scope identifier: '%s'", regionScope));
+    }
+  }
+
   boolean shouldSkipGraphTables(String tableNamePattern, Set<String> requestedTypes) {
     if (this.connection == null || !this.connection.isEnableGraphMetadata()) {
       return true;
@@ -1517,14 +1548,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     boolean isExactDataset =
         effectiveSchemaPattern != null && !effectiveSchemaPattern.contains("%");
     String effectiveTablePattern = (tableNamePattern == null) ? "%" : tableNamePattern;
-
+    String scope = isExactDataset ? effectiveSchemaPattern : resolveGraphRegion();
+    if (isExactDataset) {
+      validateSchemaIdentifier(scope);
+    } else {
+      validateRegionScopeIdentifier(scope);
+    }
     for (String project : targetCatalogs) {
-
-      String formattedSql =
-          replaceSqlParameters(
-              getGraphTablesSqlContent(),
-              project,
-              isExactDataset ? effectiveSchemaPattern : resolveGraphRegion());
+      validateCatalogIdentifier(project);
+      String formattedSql = replaceSqlParameters(getGraphTablesSqlContent(), project, scope);
 
       try (PreparedStatement statement = this.connection.prepareStatement(formattedSql)) {
         statement.setString(1, effectiveSchemaPattern == null ? "%" : effectiveSchemaPattern);
@@ -2324,6 +2356,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return BigQueryJsonResultSet.of(resultSchema, -1, queue, null);
     }
 
+    validateCatalogIdentifier(catalog);
+    validateSchemaIdentifier(schema);
     String sql = getExportedKeysSqlContent();
     String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
     PreparedStatement stmt = this.connection.prepareStatement(formattedSql);
