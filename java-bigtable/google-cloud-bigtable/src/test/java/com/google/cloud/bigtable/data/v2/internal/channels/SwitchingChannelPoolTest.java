@@ -155,8 +155,9 @@ class SwitchingChannelPoolTest {
     SessionStream disabledAgainStream =
         pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT);
     disabledAgainStream.start(secondListener, new Metadata());
-    verify(secondListener).onClose(statusCaptor.capture(), any(Metadata.class));
-    assertThat(statusCaptor.getValue().getCode()).isEqualTo(Status.Code.UNAVAILABLE);
+    ArgumentCaptor<Status> secondStatusCaptor = ArgumentCaptor.forClass(Status.class);
+    verify(secondListener).onClose(secondStatusCaptor.capture(), any(Metadata.class));
+    assertThat(secondStatusCaptor.getValue().getCode()).isEqualTo(Status.Code.UNAVAILABLE);
 
     pool.close();
   }
