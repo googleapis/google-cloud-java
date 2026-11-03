@@ -45,6 +45,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 
+import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.NanoClock;
 import com.google.api.gax.retrying.FailingCallable.CustomException;
@@ -101,6 +102,10 @@ public abstract class AbstractRetryingExecutorTest {
 
   protected abstract RetryAlgorithm<String> getAlgorithm(
       RetrySettings retrySettings, int apocalypseCountDown, RuntimeException apocalypseException);
+
+  protected ApiClock getClock() {
+    return NanoClock.getDefaultClock();
+  }
 
   protected <T> void busyWaitForInitialResult(RetryingFuture<T> future, java.time.Duration timeout)
       throws TimeoutException {
@@ -356,7 +361,7 @@ public abstract class AbstractRetryingExecutorTest {
                 useContextRetrySettings
                     ? withCustomRetrySettings ? FAILING_RETRY_SETTINGS : FAST_RETRY_SETTINGS
                     : retrySettings,
-                NanoClock.getDefaultClock()));
+                getClock()));
 
     RetryingExecutorWithContext<String> executor = getExecutor(retryAlgorithm);
     FailingCallable callable = new FailingCallable(6, "request", "FAILURE", tracer);

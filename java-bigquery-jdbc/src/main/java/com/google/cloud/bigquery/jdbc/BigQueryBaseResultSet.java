@@ -52,6 +52,7 @@ import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.List;
@@ -310,10 +311,18 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     return getObject(columnIndex);
   }
 
+  abstract Object getObjectInternal(int columnIndex) throws SQLException;
+
   @Override
   public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
     LOG.finestTrace("getObject");
     try {
+      if (type == LocalTime.class || type == String.class) {
+        StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+        if (bqType == StandardSQLTypeName.TIME) {
+          return BigQueryTypeRegistry.convert(getObjectInternal(columnIndex), bqType, type, null);
+        }
+      }
       Object value = getObject(columnIndex);
       if (value == null) {
         return null;

@@ -26,6 +26,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
+import com.google.common.net.HostAndPort;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.opentelemetry.GrpcOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
@@ -207,6 +208,119 @@ final class OpenTelemetryBootstrappingUtils {
       }
     }
     return metricServiceEndpoint + ":" + endpoint.split(":")[1];
+  }
+
+  @Nullable
+  private static HostAndPort parseHostAndPort(@Nullable String host) {
+    if (host == null || host.trim().isEmpty()) {
+      return null;
+    }
+    String s = host.trim();
+    if (s.startsWith("google-c2p:///")) {
+      s = s.substring("google-c2p:///".length());
+    } else if (s.startsWith("https://")) {
+      s = s.substring("https://".length());
+    } else if (s.startsWith("http://")) {
+      s = s.substring("http://".length());
+    }
+    int slashIdx = s.indexOf('/');
+    if (slashIdx >= 0) {
+      s = s.substring(0, slashIdx);
+    }
+    if (s.isEmpty()) {
+      return null;
+    }
+    return HostAndPort.fromString(s);
+  }
+
+  static String formatStorageEndpoint(@Nullable String host) {
+    HostAndPort parsed = parseHostAndPort(host);
+    if (parsed == null) {
+      return "storage.googleapis.com:443";
+    }
+    return parsed.withDefaultPort(443).toString();
+  }
+
+  @Nullable
+  static String extractServerAddress(@Nullable String host) {
+    HostAndPort parsed = parseHostAndPort(host);
+    return parsed != null ? parsed.getHost() : null;
+  }
+
+  @Nullable
+  static SdkMeterProvider createDefaultClientMeterProvider(
+      @Nullable String host,
+      @Nullable String configuredProjectId,
+      @Nullable String universeDomain,
+      @Nullable Duration metricInterval,
+      String api) {
+    try {
+      GCPResourceProvider resourceProvider = new GCPResourceProvider();
+      Attributes detectedAttributes = resourceProvider.getAttributes();
+      return createDefaultClientMeterProvider(
+          host, configuredProjectId, universeDomain, metricInterval, api, detectedAttributes);
+    } catch (Exception e) {
+      log.warning("Failed to create default client MeterProvider: " + e.getMessage());
+      return null;
+    }
+  }
+
+  @VisibleForTesting
+  @Nullable
+  static SdkMeterProvider createDefaultClientMeterProvider(
+      @Nullable String host,
+      @Nullable String configuredProjectId,
+      @Nullable String universeDomain,
+      @Nullable Duration metricInterval,
+      String api,
+      Attributes detectedAttributes) {
+    try {
+      @Nullable String detectedProjectId =
+          detectedAttributes.get(AttributeKey.stringKey("cloud.account.id"));
+      if (detectedProjectId != null && detectedProjectId.trim().isEmpty()) {
+        detectedProjectId = null;
+      }
+      @Nullable String cleanConfiguredProjectId =
+          (configuredProjectId != null && !configuredProjectId.trim().isEmpty())
+              ? configuredProjectId.trim()
+              : null;
+      if (cleanConfiguredProjectId == null && detectedProjectId == null) {
+        log.warning(
+            "Unable to determine the Project ID in order to report metrics. No storage client"
+                + " metrics will be reported.");
+        return null;
+      }
+      String projectIdToUse =
+          detectedProjectId != null ? detectedProjectId : cleanConfiguredProjectId;
+      if (!projectIdToUse.equals(cleanConfiguredProjectId)) {
+        log.warning(
+            "The Project ID configured for storage client metrics is "
+                + projectIdToUse
+                + ", but the Project ID of the storage client is "
+                + cleanConfiguredProjectId
+                + ". Make sure that the service account in use has the required metric writing"
+                + " role (roles/monitoring.metricWriter) in the project "
+                + projectIdToUse
+                + ", or metrics will not be written.");
+      }
+      Attributes attributesToUse =
+          Attributes.builder()
+              .putAll(detectedAttributes)
+              .put(AttributeKey.stringKey("cloud.account.id"), projectIdToUse)
+              .build();
+      String formattedEndpoint = formatStorageEndpoint(host);
+      String metricServiceEndpoint = getCloudMonitoringEndpoint(formattedEndpoint, universeDomain);
+      return createClientMeterProvider(
+          metricServiceEndpoint,
+          projectIdToUse,
+          attributesToUse,
+          metricInterval,
+          /* shouldSuppressExceptions= */ true,
+          api);
+    } catch (Exception e) {
+      log.warning("Failed to create default client MeterProvider: " + e.getMessage());
+      return null;
+    }
   }
 
   static final ImmutableList<String> CLIENT_LATENCY_HISTOGRAMS =

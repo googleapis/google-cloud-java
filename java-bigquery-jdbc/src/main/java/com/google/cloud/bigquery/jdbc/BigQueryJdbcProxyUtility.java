@@ -24,6 +24,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.httpjson.HttpJsonConscryptUtils;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.http.HttpTransportOptions;
 import io.grpc.HttpConnectProxiedSocketAddress;
@@ -177,7 +178,8 @@ final class BigQueryJdbcProxyUtility {
         proxyProperties.containsKey(BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME)
             || sslTrustStorePath != null;
 
-    HttpTransportOptions.Builder httpTransportOptionsBuilder = HttpTransportOptions.newBuilder();
+    HttpTransportOptions.Builder httpTransportOptionsBuilder =
+        BigQueryOptions.getDefaultHttpTransportOptions().toBuilder();
     if (hasProxyOrSsl) {
       httpTransportOptionsBuilder.setHttpTransportFactory(
           getHttpTransportFactory(

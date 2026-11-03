@@ -48,7 +48,8 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
       StorageClientMetrics metrics, ApiClock clock, @Nullable String defaultEndpoint) {
     this.metrics = metrics;
     this.clock = clock;
-    this.defaultServerAddress = StorageOptions.extractServerAddress(defaultEndpoint);
+    this.defaultServerAddress =
+        OpenTelemetryBootstrappingUtils.extractServerAddress(defaultEndpoint);
     this.isDirectPathEndpoint =
         defaultEndpoint != null && defaultEndpoint.trim().startsWith("google-c2p:///");
   }
@@ -64,7 +65,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
     String resolvedServerAddress =
         defaultServerAddress != null
             ? defaultServerAddress
-            : StorageOptions.extractServerAddress(next.authority());
+            : OpenTelemetryBootstrappingUtils.extractServerAddress(next.authority());
     final String serverAddress = resolvedServerAddress != null ? resolvedServerAddress : "";
 
     StorageMetricsContext metricsCtx = StorageMetricsContext.from(callOptions);
