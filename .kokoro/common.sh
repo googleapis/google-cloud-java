@@ -56,7 +56,13 @@ function retry_with_backoff {
   local mvn_regex='(^|/)mvnw?$'
   if [[ "${command[0]:-}" =~ $mvn_regex ]]; then
     if [[ "${MAVEN_OPTS:-}" != *"-Daether.connector.requestTimeout"* ]]; then
-      export MAVEN_OPTS="${MAVEN_OPTS:+"$MAVEN_OPTS "}-Daether.connector.requestTimeout=300000 -Daether.connector.connectTimeout=30000 -Dmaven.wagon.rto=300000 -Dmaven.wagon.connectionTimeout=30000 -Dmaven.wagon.http.retryHandler.class=standard -Dmaven.wagon.http.retryHandler.count=3 -Dmaven.wagon.httpconnectionManager.ttlSeconds=120"
+      local -x MAVEN_OPTS="${MAVEN_OPTS:+"$MAVEN_OPTS "}-Daether.connector.requestTimeout=300000"
+      MAVEN_OPTS+=" -Daether.connector.connectTimeout=30000"
+      MAVEN_OPTS+=" -Dmaven.wagon.rto=300000"
+      MAVEN_OPTS+=" -Dmaven.wagon.connectionTimeout=30000"
+      MAVEN_OPTS+=" -Dmaven.wagon.http.retryHandler.class=standard"
+      MAVEN_OPTS+=" -Dmaven.wagon.http.retryHandler.count=3"
+      MAVEN_OPTS+=" -Dmaven.wagon.httpconnectionManager.ttlSeconds=120"
     fi
   fi
 
