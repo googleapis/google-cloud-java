@@ -48,6 +48,10 @@ import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ReadRequest;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status;
+import io.opencensus.trace.Tracing;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.trace.Span;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -1088,5 +1092,250 @@ public class AsyncReadOnlyTransactionTest extends AbstractAsyncTransactionTest {
     ApiFuture<Void> closeFuture = transaction.closeAsync();
     closeFuture.get(10, TimeUnit.SECONDS);
     assertTrue(closeFuture.isDone());
+  }
+
+  private static ISpan createCloseOnStartStreamSpan(
+      AtomicReference<AutoCloseable> closeableReference) {
+    return new OpenTelemetrySpan(Span.getInvalid()) {
+      @Override
+      public void addAnnotation(String message, String key, String value) {
+        if ("Starting/Resuming stream".equals(message)) {
+          AutoCloseable closeable = closeableReference.getAndSet(null);
+          if (closeable != null) {
+            try {
+              closeable.close();
+            } catch (Exception exception) {
+              throw new RuntimeException(exception);
+            }
+          }
+        }
+      }
+    };
+  }
+
+  private static TraceWrapper createCloseOnStartStreamTracer(
+      AtomicReference<AutoCloseable> closeableReference) {
+    return new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer("test"), false) {
+      @Override
+      ISpan spanBuilderWithExplicitParent(
+          String spanName, ISpan parentSpan, Attributes attributes) {
+        return createCloseOnStartStreamSpan(closeableReference);
+      }
+
+      @Override
+      IScope withSpan(ISpan span) {
+        return () -> {};
+      }
+    };
+  }
+
+  @Test(timeout = 10000)
+  public void cancelInlinedBeginQueryBeforeSetStreamFailsWaitingQueryAndCompletesCloseAsync()
+      throws Exception {
+    try (ResultSet resultSet = client().singleUse().executeQuery(READ_ONE_KEY_VALUE_STATEMENT)) {
+      while (resultSet.next()) {}
+    }
+    mockSpanner.clearRequests();
+
+    ReadOnlyTransaction transaction =
+        client()
+            .readOnlyTransaction(
+                TimestampBound.strong(),
+                Options.beginTransactionOption(Options.BeginTransactionOption.INLINE));
+
+    AtomicReference<AutoCloseable> resultSetReference = new AtomicReference<>();
+    ((AbstractReadContext) transaction).tracer = createCloseOnStartStreamTracer(resultSetReference);
+
+    // Close the result set after startGrpcStreaming passes its initial closed check but before
+    // startStream calls setStream(stream), exercising !setStream(stream) and onDone(true).
+    try (AsyncResultSetImpl resultSet =
+        (AsyncResultSetImpl) transaction.executeQueryAsync(READ_ONE_KEY_VALUE_STATEMENT)) {
+      resultSetReference.set(resultSet);
+      resultSet.initiateStreaming(resultSet);
+    }
+
+    // A subsequent query on the same transaction must fail immediately with FAILED_PRECONDITION
+    // rather than hanging for 60s waiting on transactionIdFuture.
+    try (ResultSet secondResultSet = transaction.executeQuery(READ_ONE_KEY_VALUE_STATEMENT)) {
+      SpannerException exception = assertThrows(SpannerException.class, secondResultSet::next);
+      assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+    }
+
+    ApiFuture<Void> closeFuture = transaction.closeAsync();
+    closeFuture.get(10, TimeUnit.SECONDS);
+    assertTrue(closeFuture.isDone());
+  }
+
+  @Test(timeout = 10000)
+  public void cancelInlinedBeginReadBeforeSetStreamFailsWaitingReadAndCompletesCloseAsync()
+      throws Exception {
+    try (ResultSet resultSet = client().singleUse().executeQuery(READ_ONE_KEY_VALUE_STATEMENT)) {
+      while (resultSet.next()) {}
+    }
+    mockSpanner.clearRequests();
+
+    ReadOnlyTransaction transaction =
+        client()
+            .readOnlyTransaction(
+                TimestampBound.strong(),
+                Options.beginTransactionOption(Options.BeginTransactionOption.INLINE));
+
+    AtomicReference<AutoCloseable> resultSetReference = new AtomicReference<>();
+    ((AbstractReadContext) transaction).tracer = createCloseOnStartStreamTracer(resultSetReference);
+
+    try (AsyncResultSetImpl resultSet =
+        (AsyncResultSetImpl)
+            transaction.readAsync("TestTable", KeySet.all(), Collections.singletonList("Value"))) {
+      resultSetReference.set(resultSet);
+      resultSet.initiateStreaming(resultSet);
+    }
+
+    try (ResultSet secondResultSet =
+        transaction.read("TestTable", KeySet.all(), Collections.singletonList("Value"))) {
+      SpannerException exception = assertThrows(SpannerException.class, secondResultSet::next);
+      assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+    }
+
+    ApiFuture<Void> closeFuture = transaction.closeAsync();
+    closeFuture.get(10, TimeUnit.SECONDS);
+    assertTrue(closeFuture.isDone());
+  }
+
+  @Test(timeout = 10000)
+  public void readWriteTransactionInlinedBeginClosedBeforeSetStreamFailsWaitingQuery() {
+    try (ResultSet resultSet = client().singleUse().executeQuery(READ_ONE_KEY_VALUE_STATEMENT)) {
+      while (resultSet.next()) {}
+    }
+    mockSpanner.clearRequests();
+
+    SpannerException commitException =
+        assertThrows(
+            SpannerException.class,
+            () ->
+                client()
+                    .readWriteTransaction()
+                    .run(
+                        transaction -> {
+                          AtomicReference<AutoCloseable> resultSetReference =
+                              new AtomicReference<>();
+                          ((AbstractReadContext) transaction).tracer =
+                              createCloseOnStartStreamTracer(resultSetReference);
+
+                          try (ResultSet resultSet =
+                              transaction.executeQuery(READ_ONE_KEY_VALUE_STATEMENT)) {
+                            resultSetReference.set(resultSet);
+                            StreamingUtil.initiateStreaming(resultSet, (chunk, full) -> {});
+                          }
+
+                          try (ResultSet secondResultSet =
+                              transaction.executeQuery(READ_ONE_KEY_VALUE_STATEMENT)) {
+                            SpannerException exception =
+                                assertThrows(SpannerException.class, secondResultSet::next);
+                            assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+                          }
+                          return null;
+                        }));
+    assertEquals(ErrorCode.FAILED_PRECONDITION, commitException.getErrorCode());
+  }
+
+  @Test(timeout = 10000)
+  public void
+      inlinedBeginStartFailureWithRuntimeExceptionRacingWithCloseFailsWaitingQueryWithSpannerException()
+          throws Exception {
+    AtomicBoolean failNextStreamingQuery = new AtomicBoolean(false);
+    String endpoint = address.getHostString() + ":" + server.getPort();
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId(TEST_PROJECT)
+            .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+            .setHost("http://" + endpoint)
+            .setCredentials(NoCredentials.getInstance())
+            .setServiceRpcFactory(
+                spannerOptions -> {
+                  SpannerRpc delegate = new GapicSpannerRpc(spannerOptions);
+                  SpannerRpc spannerRpc =
+                      mock(SpannerRpc.class, AdditionalAnswers.delegatesTo(delegate));
+                  doAnswer(
+                          invocation -> {
+                            if (failNextStreamingQuery.compareAndSet(true, false)) {
+                              throw new IllegalStateException("unexpected runtime start failure");
+                            }
+                            Map<SpannerRpc.Option, ?> rpcOptions = invocation.getArgument(2);
+                            return delegate.executeQuery(
+                                invocation.getArgument(0),
+                                invocation.getArgument(1),
+                                rpcOptions,
+                                invocation.getArgument(3),
+                                invocation.getArgument(4));
+                          })
+                      .when(spannerRpc)
+                      .executeQuery(
+                          any(ExecuteSqlRequest.class),
+                          any(SpannerRpc.ResultStreamConsumer.class),
+                          any(),
+                          any(XGoogSpannerRequestId.class),
+                          anyBoolean());
+                  return spannerRpc;
+                })
+            .build();
+
+    try (Spanner customSpanner = options.getService()) {
+      DatabaseClient customClient =
+          customSpanner.getDatabaseClient(
+              DatabaseId.of(TEST_PROJECT, TEST_INSTANCE, TEST_DATABASE));
+      try (ResultSet warmupResultSet =
+          customClient.singleUse().executeQuery(READ_ONE_KEY_VALUE_STATEMENT)) {
+        while (warmupResultSet.next()) {}
+      }
+      failNextStreamingQuery.set(true);
+      ReadOnlyTransaction transaction =
+          customClient.readOnlyTransaction(
+              TimestampBound.strong(),
+              Options.beginTransactionOption(Options.BeginTransactionOption.INLINE));
+
+      AtomicReference<AutoCloseable> resultSetReference = new AtomicReference<>();
+      ((AbstractReadContext) transaction).tracer =
+          new TraceWrapper(Tracing.getTracer(), OpenTelemetry.noop().getTracer("test"), false) {
+            @Override
+            ISpan spanBuilderWithExplicitParent(
+                String spanName, ISpan parentSpan, Attributes attributes) {
+              return new OpenTelemetrySpan(Span.getInvalid()) {
+                @Override
+                public void addAnnotation(String message, Throwable throwable) {
+                  if ("Stream broken. Not safe to retry".equals(message)) {
+                    AutoCloseable closeable = resultSetReference.getAndSet(null);
+                    if (closeable != null) {
+                      try {
+                        closeable.close();
+                      } catch (Exception exception) {
+                        throw new RuntimeException(exception);
+                      }
+                    }
+                  }
+                }
+              };
+            }
+
+            @Override
+            IScope withSpan(ISpan span) {
+              return () -> {};
+            }
+          };
+
+      try (ResultSet firstResultSet = transaction.executeQuery(READ_ONE_KEY_VALUE_STATEMENT)) {
+        resultSetReference.set(firstResultSet);
+        assertThrows(SpannerException.class, firstResultSet::next);
+      }
+
+      try (ResultSet secondResultSet = transaction.executeQuery(READ_ONE_KEY_VALUE_STATEMENT)) {
+        SpannerException exception = assertThrows(SpannerException.class, secondResultSet::next);
+        assertEquals(ErrorCode.UNKNOWN, exception.getErrorCode());
+        assertTrue(exception.getMessage().contains("unexpected runtime start failure"));
+      }
+
+      ApiFuture<Void> closeFuture = transaction.closeAsync();
+      closeFuture.get(10, TimeUnit.SECONDS);
+      assertTrue(closeFuture.isDone());
+    }
   }
 }

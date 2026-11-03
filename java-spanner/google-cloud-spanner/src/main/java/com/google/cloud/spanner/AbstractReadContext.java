@@ -189,6 +189,9 @@ abstract class AbstractReadContext
   protected static final String NO_TRANSACTION_RETURNED_MSG =
       "The statement did not return a transaction even though one was requested";
 
+  protected static final String RESULT_SET_CLOSED_BEFORE_ID_RETURNED_MESSAGE =
+      "ResultSet was closed before a transaction id was returned";
+
   AbstractReadContext(Builder<?, ?> builder) {
     this.session = builder.session;
     this.cancelQueryWhenClientIsClosed = builder.cancelQueryWhenClientIsClosed;
@@ -526,6 +529,18 @@ abstract class AbstractReadContext
             if (streamListener != null) {
               stream.registerListener(streamListener);
             }
+            // setStream() returns false if this ResumableStreamIterator was already closed
+            // concurrently (e.g., via resultSet.close() or transaction.close()). In that case,
+            // setStream() has already invoked stream.close() out-of-lock to prevent leaks. We skip
+            // issuing the RPC call (avoiding unnecessary network I/O) and fail any inlined-begin
+            // future via onClosedBeforeStreamStarted(). We still return the (now closed) stream
+            // instance because startStream() requires a non-null return value to satisfy
+            // checkNotNull() in ResumableStreamIterator.startGrpcStreaming(), which then cleanly
+            // completes stream teardown and wakes any threads waiting on streamLock.
+            if (!setStream(stream)) {
+              onClosedBeforeStreamStarted(withBeginTransaction);
+              return stream;
+            }
             SpannerRpc.StreamingCall call;
             try {
               call =
@@ -689,6 +704,8 @@ abstract class AbstractReadContext
   }
 
   void onStartFailed(boolean withBeginTransaction, boolean lastStatement, Throwable throwable) {}
+
+  void onClosedBeforeStreamStarted(boolean withBeginTransaction) {}
 
   /**
    * For transactions other than read-write, the MultiplexedSessionPrecommitToken will not be

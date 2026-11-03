@@ -904,9 +904,13 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         // Context was done (closed) before a transaction id was returned.
         this.transactionIdFuture.setException(
             SpannerExceptionFactory.newSpannerException(
-                ErrorCode.FAILED_PRECONDITION,
-                "ResultSet was closed before a transaction id was returned"));
+                ErrorCode.FAILED_PRECONDITION, RESULT_SET_CLOSED_BEFORE_ID_RETURNED_MESSAGE));
       }
+    }
+
+    @Override
+    void onClosedBeforeStreamStarted(boolean withBeginTransaction) {
+      onDone(withBeginTransaction);
     }
 
     @Override

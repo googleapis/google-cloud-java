@@ -119,6 +119,20 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
         /* withBeginTransaction= */ false);
   }
 
+  @VisibleForTesting
+  GrpcStreamIterator(
+      boolean lastStatement,
+      int prefetchChunks,
+      boolean cancelQueryWhenClientIsClosed,
+      boolean withBeginTransaction) {
+    this(
+        /* statement= */ null,
+        lastStatement,
+        prefetchChunks,
+        cancelQueryWhenClientIsClosed,
+        withBeginTransaction);
+  }
+
   GrpcStreamIterator(
       Statement statement,
       boolean lastStatement,
@@ -158,9 +172,7 @@ class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
 
   @VisibleForTesting
   void setCall(SpannerRpc.StreamingCall call, boolean withBeginTransaction) {
-    synchronized (this) {
-      this.withBeginTransaction = withBeginTransaction;
-    }
+    this.withBeginTransaction = withBeginTransaction;
     setCall(call);
   }
 

@@ -344,10 +344,9 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
       currentInFlightStream = this.inFlightStream;
       fallbackWithBeginTransaction = this.withBeginTransaction;
     }
-    // A subclass that registers its stream early calls setStream(consumer) before
-    // consumer.setCall(call, true) sets withBeginTransaction on the underlying stream. Querying
-    // currentInFlightStream live ensures callers observe true as soon as setCall() runs during an
-    // in-flight startStream().
+    // A subclass that registers its stream early calls setStream(consumer) during stream
+    // initialization. Querying currentInFlightStream live ensures callers observe
+    // withBeginTransaction as soon as the stream is created during an in-flight startStream().
     return currentInFlightStream != null
         ? currentInFlightStream.isWithBeginTransaction()
         : fallbackWithBeginTransaction;
@@ -634,10 +633,8 @@ abstract class ResumableStreamIterator extends AbstractIterator<PartialResultSet
     synchronized (streamLock) {
       if (this.inFlightStream != null) {
         // Refresh withBeginTransaction (a non-blocking field read on the stream iterator) before
-        // clearing inFlightStream and calling notifyAll(). A subclass that registers its stream
-        // early calls setStream(consumer) before consumer.setCall(call, true), and any follower
-        // thread woken by notifyAll() must immediately observe the updated flag via
-        // isWithBeginTransaction().
+        // clearing inFlightStream and calling notifyAll(). Any follower thread woken by notifyAll()
+        // must immediately observe the updated flag via isWithBeginTransaction().
         this.withBeginTransaction = this.inFlightStream.isWithBeginTransaction();
         if (!this.closed) {
           failedStream = this.inFlightStream;
