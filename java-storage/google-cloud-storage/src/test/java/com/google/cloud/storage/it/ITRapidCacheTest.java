@@ -39,12 +39,14 @@ import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -53,6 +55,7 @@ import org.junit.Test;
  * <p>RapidCache requires a regional bucket with Hierarchical Namespace (HNS) enabled. The cache ID
  * is required by the backend to match the zone name where it is provisioned (e.g. europe-west1-c).
  */
+@Ignore("TODO: Enable tests once RCU is available in prod")
 public class ITRapidCacheTest {
 
   private static final Logger LOGGER = Logger.getLogger(ITRapidCacheTest.class.getName());
@@ -166,7 +169,7 @@ public class ITRapidCacheTest {
     assertThat(sharedCache.getName()).isEqualTo(cacheName);
     assertThat(sharedCache.getZone()).isEqualTo(cacheId);
     assertThat(sharedCache.getCacheType()).isEqualTo("rapid-cache-ultra");
-    assertThat(sharedCache.getState().toLowerCase()).isAnyOf("running", "active");
+    assertThat(sharedCache.getState().toLowerCase(Locale.ROOT)).isAnyOf("running", "active");
     assertThat(sharedCache.getTtl().getSeconds()).isEqualTo(86400);
   }
 
@@ -200,7 +203,7 @@ public class ITRapidCacheTest {
     assertThat(retrieved.getName()).isEqualTo(cacheName);
     assertThat(retrieved.getZone()).isEqualTo(cacheId);
     assertThat(retrieved.getCacheType()).isEqualTo("rapid-cache-ultra");
-    assertThat(retrieved.getState().toLowerCase()).isAnyOf("running", "active");
+    assertThat(retrieved.getState().toLowerCase(Locale.ROOT)).isAnyOf("running", "active");
   }
 
   @Test
@@ -265,7 +268,7 @@ public class ITRapidCacheTest {
         assertThat(disabled).isNotNull();
         assertThat(disabled.getName())
             .startsWith(String.format("projects/_/buckets/%s/rapidCaches/", isolatedBucket));
-        assertThat(disabled.getState().toLowerCase())
+        assertThat(disabled.getState().toLowerCase(Locale.ROOT))
             .isAnyOf("disabled", "anywhere-cache-state-unspecified");
       } catch (Exception e) {
         if (isUnimplemented(e)) {
