@@ -23,25 +23,29 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpResponseInterceptor;
 import com.google.api.core.ApiClock;
-import io.opentelemetry.api.common.AttributesBuilder;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.context.Context;
+import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * HTTP request initializer that records HTTP client metrics such as http.client.request.duration.
  */
+@NullMarked
 final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
 
   @Nullable private final HttpRequestInitializer delegate;
-  private final StorageClientMetrics metrics;
+  @Nullable private final StorageClientMetrics metrics;
   private final ApiClock clock;
   @Nullable private final String defaultServerAddress;
 
   StorageHttpMetricsInterceptor(
       @Nullable HttpRequestInitializer delegate,
-      StorageClientMetrics metrics,
+      @Nullable StorageClientMetrics metrics,
       ApiClock clock,
       @Nullable String host) {
     this.delegate = delegate;
@@ -51,11 +55,15 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
   }
 
   @Override
-  public void initialize(HttpRequest request) throws java.io.IOException {
+  public void initialize(HttpRequest request) throws IOException {
     if (delegate != null) {
       delegate.initialize(request);
     }
-    if (metrics == null || metrics.getHttpClientRequestDuration() == null) {
+    if (metrics == null) {
+      return;
+    }
+    DoubleHistogram durationHistogram = metrics.getHttpClientRequestDuration();
+    if (durationHistogram == null) {
       return;
     }
 
@@ -63,8 +71,8 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     HttpResponseInterceptor existingResp = request.getResponseInterceptor();
     HttpIOExceptionHandler existingIoHandler = request.getIOExceptionHandler();
 
-    AtomicLong startTimeNanos = new AtomicLong(clock.nanoTime());
-    AtomicBoolean recorded = new AtomicBoolean(false);
+    AtomicLong startTimeNanos = new AtomicLong();
+    AtomicBoolean recorded = new AtomicBoolean(true);
 
     request.setInterceptor(
         req -> {
@@ -80,79 +88,80 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
           if (existingResp != null) {
             existingResp.interceptResponse(response);
           }
-          if (recorded.compareAndSet(false, true)
-              && metrics.getHttpClientRequestDuration() != null) {
-            double durationSeconds =
-                Math.max(0.0, (clock.nanoTime() - startTimeNanos.get()) / 1_000_000_000.0);
+          if (recorded.compareAndSet(false, true)) {
             int statusCode = response.getStatusCode();
-            String method =
-                request.getRequestMethod() != null ? request.getRequestMethod() : "UNKNOWN";
-            String urlTemplate = extractUrlTemplate(request.getUrl());
-            String serverAddress = resolveServerAddress(request.getUrl(), defaultServerAddress);
-
-            AttributesBuilder attrBuilder =
-                metrics
-                    .clientAttributesBuilder()
-                    .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, method)
-                    .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, (long) statusCode)
-                    .put(
-                        StorageClientMetrics.KEY_NETWORK_PATH,
-                        StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
-                    .put(StorageClientMetrics.KEY_URL_TEMPLATE, urlTemplate)
-                    .put(
-                        StorageClientMetrics.KEY_SERVER_ADDRESS,
-                        serverAddress != null ? serverAddress : "")
-                    .put(
-                        StorageClientMetrics.KEY_ERROR_TYPE,
-                        statusCode >= 400
-                            ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
-                            : StorageErrorTypeMapper.STATUS_OK);
-
-            metrics
-                .getHttpClientRequestDuration()
-                .record(durationSeconds, attrBuilder.build(), Context.current());
+            String errorType =
+                statusCode >= 400
+                    ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
+                    : StorageErrorTypeMapper.STATUS_OK;
+            recordDuration(durationHistogram, request, startTimeNanos.get(), statusCode, errorType);
           }
         });
 
+    // HttpIOExceptionHandler does not receive the thrown IOException instance from
+    // google-http-client, so transport-level IOExceptions default to STATUS_CONNECTIVITY here
+    // (specific subtypes like TIMEOUT, DNS_FAILURE, and TLS_FAILURE are mapped in Retrying).
     request.setIOExceptionHandler(
         (req, supportsRetry) -> {
-          if (recorded.compareAndSet(false, true)
-              && metrics.getHttpClientRequestDuration() != null) {
-            double durationSeconds =
-                Math.max(0.0, (clock.nanoTime() - startTimeNanos.get()) / 1_000_000_000.0);
-            String method = req.getRequestMethod() != null ? req.getRequestMethod() : "UNKNOWN";
-            String urlTemplate = extractUrlTemplate(req.getUrl());
-            String serverAddress = resolveServerAddress(req.getUrl(), defaultServerAddress);
-
-            AttributesBuilder attrBuilder =
-                metrics
-                    .clientAttributesBuilder()
-                    .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, method)
-                    .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 0L)
-                    .put(
-                        StorageClientMetrics.KEY_NETWORK_PATH,
-                        StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
-                    .put(StorageClientMetrics.KEY_URL_TEMPLATE, urlTemplate)
-                    .put(
-                        StorageClientMetrics.KEY_SERVER_ADDRESS,
-                        serverAddress != null ? serverAddress : "")
-                    .put(
-                        StorageClientMetrics.KEY_ERROR_TYPE,
-                        StorageErrorTypeMapper.STATUS_CONNECTIVITY);
-
-            metrics
-                .getHttpClientRequestDuration()
-                .record(durationSeconds, attrBuilder.build(), Context.current());
+          if (recorded.compareAndSet(false, true)) {
+            recordDuration(
+                durationHistogram,
+                req,
+                startTimeNanos.get(),
+                0L,
+                StorageErrorTypeMapper.STATUS_CONNECTIVITY);
           }
           return existingIoHandler != null
               && existingIoHandler.handleIOException(req, supportsRetry);
         });
   }
 
+  private void recordDuration(
+      DoubleHistogram durationHistogram,
+      HttpRequest request,
+      long startNanos,
+      long statusCode,
+      String errorType) {
+    if (metrics == null) {
+      return;
+    }
+    double durationSeconds = Math.max(0.0, (clock.nanoTime() - startNanos) / 1_000_000_000.0);
+    String method = request.getRequestMethod() != null ? request.getRequestMethod() : "UNKNOWN";
+    String urlTemplate = extractUrlTemplate(request.getUrl());
+    String serverAddress = resolveServerAddress(request.getUrl(), defaultServerAddress);
+
+    Attributes attributes =
+        metrics
+            .clientAttributesBuilder()
+            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
+            .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, method)
+            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, statusCode)
+            .put(StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+            .put(StorageClientMetrics.KEY_URL_TEMPLATE, urlTemplate)
+            .put(
+                StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress != null ? serverAddress : "")
+            .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
+            .build();
+
+    durationHistogram.record(durationSeconds, attributes, Context.current());
+  }
+
+  @Nullable
   static String resolveServerAddress(
       @Nullable GenericUrl url, @Nullable String defaultServerAddress) {
     String host = url != null ? url.getHost() : null;
-    return (host != null && !host.isEmpty()) ? host : defaultServerAddress;
+    if (host == null || host.isEmpty()) {
+      return defaultServerAddress;
+    }
+    if (host.endsWith(".storage.googleapis.com") && !host.equals("storage.googleapis.com")) {
+      return "storage.googleapis.com";
+    }
+    if (defaultServerAddress != null
+        && !defaultServerAddress.isEmpty()
+        && host.endsWith("." + defaultServerAddress)) {
+      return defaultServerAddress;
+    }
+    return host;
   }
 
   static String extractUrlTemplate(@Nullable GenericUrl url) {
@@ -165,6 +174,12 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     String path = url.getRawPath();
     if (path == null || path.isEmpty()) {
       return "/";
+    }
+    String host = url.getHost();
+    if (host != null
+        && host.endsWith(".storage.googleapis.com")
+        && !host.equals("storage.googleapis.com")) {
+      return "/".equals(path) ? "/" : "/{object}";
     }
     if (path.length() > 1 && path.endsWith("/")) {
       path = path.substring(0, path.length() - 1);
@@ -182,39 +197,73 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
       String rest = path.substring("/storage/v1/".length());
       String[] segments = rest.split("/");
       if (segments.length >= 2 && "b".equals(segments[0])) {
-        segments[1] = "{bucket}";
-        if (segments.length >= 4 && "o".equals(segments[2])) {
-          segments[3] = "{object}";
-          if (segments.length >= 6) {
-            if ("acl".equals(segments[4])) {
-              segments[5] = "{entity}";
-            } else if ("copyTo".equals(segments[4]) || "rewriteTo".equals(segments[4])) {
-              if (segments.length >= 7 && "b".equals(segments[5])) {
-                segments[6] = "{destinationBucket}";
-              }
-              if (segments.length >= 9 && "o".equals(segments[7])) {
-                segments[8] = "{destinationObject}";
-              }
-            } else if ("moveTo".equals(segments[4])
-                && "o".equals(segments[5])
-                && segments.length >= 7) {
-              segments[6] = "{destinationObject}";
-            }
-          }
-        } else if (segments.length >= 4) {
-          if ("acl".equals(segments[2]) || "defaultObjectAcl".equals(segments[2])) {
-            segments[3] = "{entity}";
-          } else if ("notifications".equals(segments[2])) {
-            segments[3] = "{notification}";
-          }
+        if (segments.length == 2) {
+          return "/storage/v1/b/{bucket}";
         }
+        if ("o".equals(segments[2])) {
+          if (segments.length == 3) {
+            return "/storage/v1/b/{bucket}/o";
+          }
+          if (segments.length == 4) {
+            return "/storage/v1/b/{bucket}/o/{object}";
+          }
+          String action = segments[4];
+          if (segments.length == 5
+              && ("compose".equals(action)
+                  || "restore".equals(action)
+                  || "watchAll".equals(action))) {
+            return "/storage/v1/b/{bucket}/o/{object}/" + action;
+          }
+          if ("acl".equals(action)) {
+            return segments.length == 5
+                ? "/storage/v1/b/{bucket}/o/{object}/acl"
+                : "/storage/v1/b/{bucket}/o/{object}/acl/{entity}";
+          }
+          if (("copyTo".equals(action) || "rewriteTo".equals(action))
+              && segments.length >= 8
+              && "b".equals(segments[5])
+              && "o".equals(segments[7])) {
+            return "/storage/v1/b/{bucket}/o/{object}/"
+                + action
+                + "/b/{destinationBucket}/o/{destinationObject}";
+          }
+          if ("moveTo".equals(action) && segments.length >= 7 && "o".equals(segments[5])) {
+            return "/storage/v1/b/{bucket}/o/{object}/moveTo/o/{destinationObject}";
+          }
+          return "/storage/v1/b/{bucket}/o/{object}";
+        }
+        String subResource = segments[2];
+        if ("acl".equals(subResource) || "defaultObjectAcl".equals(subResource)) {
+          return segments.length == 3
+              ? "/storage/v1/b/{bucket}/" + subResource
+              : "/storage/v1/b/{bucket}/" + subResource + "/{entity}";
+        }
+        if ("notifications".equals(subResource) || "notificationConfigs".equals(subResource)) {
+          return segments.length == 3
+              ? "/storage/v1/b/{bucket}/" + subResource
+              : "/storage/v1/b/{bucket}/" + subResource + "/{notification}";
+        }
+        if (segments.length == 3) {
+          return "/storage/v1/b/{bucket}/" + subResource;
+        }
+        if (segments.length == 4
+            && "iam".equals(subResource)
+            && "testPermissions".equals(segments[3])) {
+          return "/storage/v1/b/{bucket}/iam/testPermissions";
+        }
+        return "/storage/v1/b/{bucket}";
       } else if (segments.length >= 2 && "projects".equals(segments[0])) {
-        segments[1] = "{project}";
-        if (segments.length >= 4 && "hmacKeys".equals(segments[2])) {
-          segments[3] = "{accessId}";
+        if (segments.length >= 3 && "hmacKeys".equals(segments[2])) {
+          return segments.length == 3
+              ? "/storage/v1/projects/{project}/hmacKeys"
+              : "/storage/v1/projects/{project}/hmacKeys/{accessId}";
         }
+        if (segments.length >= 3 && "serviceAccount".equals(segments[2])) {
+          return "/storage/v1/projects/{project}/serviceAccount";
+        }
+        return "/storage/v1/projects/{project}";
       }
-      return "/storage/v1/" + String.join("/", segments);
+      return "/storage/v1";
     }
     String trimmed = path.startsWith("/") ? path.substring(1) : path;
     if (trimmed.isEmpty()) {
