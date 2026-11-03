@@ -923,10 +923,24 @@ public final class ParallelCompositeUploadWritableByteChannelTest {
         () -> assertThat(result.getName()).isEqualTo(info.getName()),
         // 3 direct uploads + 2 intermediate composes
         () -> assertThat(partTargets).hasSize(5),
-        () -> assertThat(partTargets.stream().allMatch(p -> p.getRetention() == null)).isTrue(),
-        () -> assertThat(partTargets.stream().allMatch(p -> p.getTemporaryHold() == null)).isTrue(),
         () ->
-            assertThat(partTargets.stream().allMatch(p -> p.getEventBasedHold() == null)).isTrue(),
+            assertThat(
+                    partTargets.stream()
+                        .filter(p -> p.getRetention() != null)
+                        .collect(ImmutableList.toImmutableList()))
+                .isEmpty(),
+        () ->
+            assertThat(
+                    partTargets.stream()
+                        .filter(p -> p.getTemporaryHold() != null)
+                        .collect(ImmutableList.toImmutableList()))
+                .isEmpty(),
+        () ->
+            assertThat(
+                    partTargets.stream()
+                        .filter(p -> p.getEventBasedHold() != null)
+                        .collect(ImmutableList.toImmutableList()))
+                .isEmpty(),
         () -> assertThat(finalTarget.get().getRetention()).isEqualTo(retention),
         () -> assertThat(finalTarget.get().getTemporaryHold()).isTrue(),
         () -> assertThat(finalTarget.get().getEventBasedHold()).isTrue());
