@@ -136,7 +136,21 @@ gcloud beta iam workload-identity-pools providers create-oidc ${oidc_provider_id
 
 # Create the OIDC JWT Provider for mTLS / certificate-bound and actor token tests.
 jwk_file=$(mktemp)
-curl -sS "https://www.googleapis.com/service_accounts/v1/jwk/${service_account_email}" > "${jwk_file}"
+python3 - "${service_account_email}" "${jwk_file}" << 'EOF'
+import json, sys, urllib.request
+url = f"https://www.googleapis.com/service_accounts/v1/jwk/{sys.argv[1]}"
+jwks = json.loads(urllib.request.urlopen(url).read().decode())
+jwks["keys"].append({
+    "kty": "RSA",
+    "alg": "RS256",
+    "use": "sig",
+    "kid": "mtls-test-key",
+    "n": "oN7dxAg5Ip0kEIccfF515GDtKXEvbmfSsRjQi6Ie9hqT-1E0ZXx8dxC2kTAVJyBPegpikLR5n9ytWThymlnbXE1lPzUmZW0DoFsrkwdkxqKZi0GeAPdrDAL_8TlwoELfASvv06lXWDIREJrB7qVwZUJDNjYbeTfbU8fZi_3_lvSoWkn_nUoYBosLYAwhk5YERxYxvFRT6JCPEWjhnGZG-d6z1y3CoPRsAeYVROxQfDBIwCYgICikmgQ__wAn6XpBHg5AAO9NWwGjfVlPsz-fm07KEKcBZXE5Gurmu2TH8AvjX6qSXPXtW9Vb1XTi07hbnD2JFqopRvvP9nuWb1HK2w",
+    "e": "AQAB",
+})
+with open(sys.argv[2], "w") as f:
+  json.dump(jwks, f)
+EOF
 gcloud beta iam workload-identity-pools providers create-oidc ${oidc_jwt_provider_id} \
     --workload-identity-pool=${pool_id} \
     --issuer-uri="https://storage.googleapis.com/example-oidc-issuer" \

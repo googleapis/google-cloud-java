@@ -60,6 +60,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.security.MessageDigest;
@@ -98,10 +100,11 @@ final class ITWorkloadIdentityFederationTest {
       "https://storage.googleapis.com/example-oidc-issuer";
   private static final String DEFAULT_MTLS_CERT_CONFIG_PATH =
       "testresources/mtls/certificate_config.json";
+  private static final String DEFAULT_MTLS_TEST_KEY_PATH = "testresources/mtls/test_key.pem";
+  private static final String OIDC_JWT_STATIC_KEY_ID = "mtls-test-key";
 
   private String clientEmail;
   private String clientId;
-  private String privateKeyId;
   private PrivateKey privateKey;
 
   @BeforeEach
@@ -109,8 +112,10 @@ final class ITWorkloadIdentityFederationTest {
     GenericJson keys = getServiceAccountKeyFileAsJson();
     clientEmail = (String) keys.get("client_email");
     clientId = (String) keys.get("client_id");
-    privateKeyId = (String) keys.get("private_key_id");
-    privateKey = OAuth2Utils.privateKeyFromPkcs8((String) keys.get("private_key"));
+    String testKeyPem =
+        new String(
+            Files.readAllBytes(Paths.get(DEFAULT_MTLS_TEST_KEY_PATH)), StandardCharsets.UTF_8);
+    privateKey = OAuth2Utils.privateKeyFromPkcs8(testKeyPem);
   }
 
   /**
@@ -651,7 +656,7 @@ final class ITWorkloadIdentityFederationTest {
     JsonWebSignature.Header header = new JsonWebSignature.Header();
     header.setAlgorithm("RS256");
     header.setType("JWT");
-    header.setKeyId(privateKeyId);
+    header.setKeyId(OIDC_JWT_STATIC_KEY_ID);
 
     long nowSeconds = Instant.now().getEpochSecond();
     JsonWebToken.Payload payload = new JsonWebToken.Payload();
@@ -676,7 +681,7 @@ final class ITWorkloadIdentityFederationTest {
       return JsonWebSignature.signUsingRsaSha256(
           privateKey, OAuth2Utils.JSON_FACTORY, header, payload);
     } catch (GeneralSecurityException e) {
-      throw new IOException("Error signing OIDC JWT with service account private key.", e);
+      throw new IOException("Error signing OIDC JWT with test private key.", e);
     }
   }
 
