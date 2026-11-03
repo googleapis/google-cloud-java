@@ -16,14 +16,15 @@
 
 WITH props AS (
   SELECT
-    property_graph_catalog AS cat, property_graph_schema AS sch,
-    CONCAT(property_graph_name, '.', JSON_VALUE(t, '$.name')) AS tbl,
-    JSON_VALUE(p, '$.name') AS col,
-    JSON_VALUE(p, '$.dataType.typeKind') AS type_kind,
-    TO_JSON_STRING(JSON_QUERY(p, '$.dataType')) AS data_type_json,
-    JSON_VALUE(p, '$.expression') AS expression,
-    JSON_VALUE(p, '$.expressionKind') AS expression_kind,
-    JSON_VALUE(p, '$.info.description') AS description,
+    property_graph_catalog AS TABLE_CAT,
+    property_graph_schema AS TABLE_SCHEM,
+    CONCAT(property_graph_name, '.', JSON_VALUE(t, '$.name')) AS TABLE_NAME,
+    JSON_VALUE(p, '$.name') AS COLUMN_NAME,
+    JSON_VALUE(p, '$.dataType.typeKind') AS TYPE_KIND,
+    TO_JSON_STRING(JSON_QUERY(p, '$.dataType')) AS DATA_TYPE_JSON,
+    JSON_VALUE(p, '$.expression') AS EXPRESSION,
+    JSON_VALUE(p, '$.expressionKind') AS EXPRESSION_KIND,
+    JSON_VALUE(p, '$.info.description') AS DESCRIPTION,
     (lp_off * 100000) + p_off AS first_seen
   FROM `%1$s.%2$s.INFORMATION_SCHEMA.PROPERTY_GRAPHS`,
     UNNEST([STRUCT(JSON_QUERY_ARRAY(property_graph_metadata_json, '$.nodeTables') AS arr),
@@ -35,12 +36,16 @@ WITH props AS (
     AND LOWER(CONCAT(property_graph_name, '.', JSON_VALUE(t, '$.name'))) LIKE LOWER(?)
     AND LOWER(JSON_VALUE(p, '$.name')) LIKE LOWER(?)
 )
-SELECT cat, sch, tbl, col,
-  ANY_VALUE(type_kind HAVING MIN first_seen) AS type_kind,
-  ANY_VALUE(data_type_json HAVING MIN first_seen) AS data_type_json,
-  ANY_VALUE(expression HAVING MIN first_seen) AS expression,
-  ANY_VALUE(expression_kind HAVING MIN first_seen) AS expression_kind,
-  ANY_VALUE(description HAVING MIN first_seen) AS description,
-  ROW_NUMBER() OVER (PARTITION BY cat, sch, tbl ORDER BY MIN(first_seen)) AS ordinal
+SELECT
+  TABLE_CAT,
+  TABLE_SCHEM,
+  TABLE_NAME,
+  COLUMN_NAME,
+  ANY_VALUE(TYPE_KIND HAVING MIN first_seen) AS TYPE_KIND,
+  ANY_VALUE(DATA_TYPE_JSON HAVING MIN first_seen) AS DATA_TYPE_JSON,
+  ANY_VALUE(EXPRESSION HAVING MIN first_seen) AS EXPRESSION,
+  ANY_VALUE(EXPRESSION_KIND HAVING MIN first_seen) AS EXPRESSION_KIND,
+  ANY_VALUE(DESCRIPTION HAVING MIN first_seen) AS DESCRIPTION,
+  ROW_NUMBER() OVER (PARTITION BY TABLE_CAT, TABLE_SCHEM, TABLE_NAME ORDER BY MIN(first_seen)) AS ORDINAL_POSITION
 FROM props
-GROUP BY cat, sch, tbl, col
+GROUP BY TABLE_CAT, TABLE_SCHEM, TABLE_NAME, COLUMN_NAME

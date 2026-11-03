@@ -3966,6 +3966,7 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals("YES", computedRow.get("IS_GENERATEDCOLUMN").getStringValue());
   }
 
+  @Test
   public void testShouldSkipGraphTables() {
     Set<String> tableOnly = Collections.singleton("TABLE");
     Set<String> graphIncluded = new HashSet<>(Arrays.asList("TABLE", "GRAPH TABLE"));

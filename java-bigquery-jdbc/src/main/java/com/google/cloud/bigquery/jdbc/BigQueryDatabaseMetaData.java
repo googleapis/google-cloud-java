@@ -1819,23 +1819,31 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         statement.setString(3, effectiveColumnLike);
         try (ResultSet rs = statement.executeQuery()) {
           while (rs.next()) {
-            String cat = rs.getString("cat"); // TABLE_CAT (property_graph_catalog)
-            String sch = rs.getString("sch"); // TABLE_SCHEM (property_graph_schema)
-            String tbl = rs.getString("tbl"); // TABLE_NAME (<graph>.<element>)
-            String col = rs.getString("col"); // COLUMN_NAME (property name)
+            String tableCat = rs.getString("TABLE_CAT");
+            String tableSchem = rs.getString("TABLE_SCHEM");
+            String tableName = rs.getString("TABLE_NAME");
+            String columnName = rs.getString("COLUMN_NAME");
             String typeKind =
-                rs.getString("type_kind"); // DATA_TYPE, TYPE_NAME, COLUMN_SIZE, DECIMAL_DIGITS,
+                rs.getString("TYPE_KIND"); // DATA_TYPE, TYPE_NAME, COLUMN_SIZE, DECIMAL_DIGITS,
             // NUM_PREC_RADIX
             String expression =
-                rs.getString("expression"); // REMARKS (for measures) & IS_GENERATEDCOLUMN
+                rs.getString("EXPRESSION"); // REMARKS (for measures) & IS_GENERATEDCOLUMN
             String expressionKind =
                 rs.getString(
-                    "expression_kind"); // REMARKS ("MEASURE: " prefix) & IS_GENERATEDCOLUMN
-            String description = rs.getString("description"); // REMARKS (property description)
-            int ordinal = rs.getInt("ordinal"); // ORDINAL_POSITION (1-based index)
+                    "EXPRESSION_KIND"); // REMARKS ("MEASURE: " prefix) & IS_GENERATEDCOLUMN
+            String description = rs.getString("DESCRIPTION"); // REMARKS (property description)
+            int ordinalPosition = rs.getInt("ORDINAL_POSITION");
             List<FieldValue> values =
                 createGraphColumnRow(
-                    cat, sch, tbl, col, typeKind, expression, expressionKind, description, ordinal);
+                    tableCat,
+                    tableSchem,
+                    tableName,
+                    columnName,
+                    typeKind,
+                    expression,
+                    expressionKind,
+                    description,
+                    ordinalPosition);
             collectedResults.add(FieldValueList.of(values, resultSchemaFields));
           }
         }
