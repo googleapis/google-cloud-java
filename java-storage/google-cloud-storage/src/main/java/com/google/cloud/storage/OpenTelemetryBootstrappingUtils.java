@@ -32,6 +32,7 @@ import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.api.internal.StringUtils;
+import io.opentelemetry.api.metrics.MeterProvider;
 import io.opentelemetry.contrib.gcp.resource.GCPResourceProvider;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.common.CompletableResultCode;
@@ -100,6 +101,17 @@ final class OpenTelemetryBootstrappingUtils {
       @Nullable String projectId,
       String universeDomain,
       boolean shouldSuppressExceptions) {
+    return bootstrapGrpcMetrics(
+            channelConfigurator, endpoint, projectId, universeDomain, shouldSuppressExceptions)
+        .getChannelConfigurator();
+  }
+
+  static GrpcMetricsBootstrapResult bootstrapGrpcMetrics(
+      @Nullable ChannelConfigurator channelConfigurator,
+      String endpoint,
+      @Nullable String projectId,
+      String universeDomain,
+      boolean shouldSuppressExceptions) {
     GCPResourceProvider resourceProvider = new GCPResourceProvider();
     Attributes detectedAttributes = resourceProvider.getAttributes();
 
@@ -109,7 +121,9 @@ final class OpenTelemetryBootstrappingUtils {
       log.warning(
           "Unable to determine the Project ID in order to report metrics. No gRPC client metrics"
               + " will be reported.");
-      return channelConfigurator != null ? channelConfigurator : ChannelConfigurator.identity();
+      ChannelConfigurator fallback =
+          channelConfigurator != null ? channelConfigurator : ChannelConfigurator.identity();
+      return new GrpcMetricsBootstrapResult(fallback, null);
     }
 
     String projectIdToUse = detectedProjectId == null ? projectId : detectedProjectId;
@@ -143,7 +157,26 @@ final class OpenTelemetryBootstrappingUtils {
           grpcOpenTelemetry.configureChannelBuilder(b);
           return b;
         };
-    return otelConfigurator.andThen(channelConfigurator);
+    return new GrpcMetricsBootstrapResult(otelConfigurator.andThen(channelConfigurator), provider);
+  }
+
+  static final class GrpcMetricsBootstrapResult {
+    private final ChannelConfigurator channelConfigurator;
+    @Nullable private final MeterProvider meterProvider;
+
+    GrpcMetricsBootstrapResult(
+        ChannelConfigurator channelConfigurator, @Nullable MeterProvider meterProvider) {
+      this.channelConfigurator = channelConfigurator;
+      this.meterProvider = meterProvider;
+    }
+
+    ChannelConfigurator getChannelConfigurator() {
+      return channelConfigurator;
+    }
+
+    @Nullable MeterProvider getMeterProvider() {
+      return meterProvider;
+    }
   }
 
   @SuppressWarnings("rawtypes") // ManagedChannelBuilder
@@ -183,13 +216,30 @@ final class OpenTelemetryBootstrappingUtils {
   }
 
   @VisibleForTesting
-  static String getCloudMonitoringEndpoint(String endpoint, String universeDomain) {
+  static String getCloudMonitoringEndpoint(String endpoint, @Nullable String universeDomain) {
     String metricServiceEndpoint = "monitoring.googleapis.com";
+    String host = GrpcChannelTelemetry.c2pTargetHost(endpoint);
+    int port = 443;
+    if (host.isEmpty()) {
+      int colon = endpoint.lastIndexOf(':');
+      if (colon >= 0) {
+        host = endpoint.substring(0, colon);
+        try {
+          port = Integer.parseInt(endpoint.substring(colon + 1));
+        } catch (NumberFormatException ignored) {
+          port = 443;
+        }
+      } else {
+        host = endpoint;
+      }
+    }
 
-    // use contains instead of equals because endpoint has a port in it
-    if (universeDomain != null && endpoint.contains("storage." + universeDomain)) {
+    if (universeDomain != null
+        && (host.equals("storage." + universeDomain)
+            || host.equals("storage-direct." + universeDomain))) {
       metricServiceEndpoint = "monitoring." + universeDomain;
-    } else if (!endpoint.contains("storage.googleapis.com")) {
+    } else if (!host.equals("storage.googleapis.com")
+        && !GrpcChannelTelemetry.isDirectPathInterconnectHost(host)) {
       String canonicalEndpoint = "storage.googleapis.com";
       String privateEndpoint = "private.googleapis.com";
       String restrictedEndpoint = "restricted.googleapis.com";
@@ -198,15 +248,16 @@ final class OpenTelemetryBootstrappingUtils {
         privateEndpoint = "private." + universeDomain;
         restrictedEndpoint = "restricted." + universeDomain;
       }
+      final String resolvedHost = host;
       String match =
           ImmutableList.of(canonicalEndpoint, privateEndpoint, restrictedEndpoint).stream()
-              .filter(s -> endpoint.contains(s) || endpoint.contains("google-c2p:///" + s))
+              .filter(s -> resolvedHost.contains(s) || endpoint.contains("google-c2p:///" + s))
               .collect(Collectors.joining());
       if (!StringUtils.isNullOrEmpty(match)) {
         metricServiceEndpoint = match;
       }
     }
-    return metricServiceEndpoint + ":" + endpoint.split(":")[1];
+    return metricServiceEndpoint + ":" + port;
   }
 
   static final ImmutableList<String> CLIENT_LATENCY_HISTOGRAMS =
@@ -294,6 +345,7 @@ final class OpenTelemetryBootstrappingUtils {
         "By",
         "A view of grpc/client/attempt/sent_total_compressed_message_size with histogram boundaries"
             + " more appropriate for Google Cloud Storage RPCs");
+    registerGrpcChannelViews(providerBuilder);
 
     return buildMeterProvider(
         cloudMonitoringExporter,
@@ -446,6 +498,19 @@ final class OpenTelemetryBootstrappingUtils {
         .setResource(Resource.create(attributesBuilder.build()));
 
     return providerBuilder.build();
+  }
+
+  @VisibleForTesting
+  static SdkMeterProviderBuilder registerGrpcChannelViews(SdkMeterProviderBuilder providerBuilder) {
+    addHistogramView(
+        providerBuilder,
+        latencyHistogramBoundaries(),
+        GrpcChannelTelemetry.CHANNEL_CREATION_LATENCY_INSTRUMENT,
+        GrpcChannelTelemetry.CHANNEL_CREATION_LATENCY_VIEW_NAME,
+        GrpcChannelTelemetry.STORAGE_METER_NAME,
+        GrpcChannelTelemetry.CHANNEL_CREATION_LATENCY_UNIT,
+        GrpcChannelTelemetry.CHANNEL_CREATION_LATENCY_DESCRIPTION);
+    return providerBuilder;
   }
 
   @VisibleForTesting

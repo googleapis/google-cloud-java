@@ -215,4 +215,28 @@ public final class OpenTelemetryBootstrappingUtilsTest {
       assertThat(provider.toString()).contains("host.id=\"test-host-123\"");
     }
   }
+
+  @Test
+  public void testGetCloudMonitoringEndpoint() {
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "storage.googleapis.com:443", null))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "storage-direct.googleapis.com:443", null))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "storage-preprod-direct.sandbox.googleapis.com:443", null))
+        .isEqualTo("monitoring.googleapis.com:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "storage-direct.apis-tpclp.goog:443", "apis-tpclp.goog"))
+        .isEqualTo("monitoring.apis-tpclp.goog:443");
+    assertThat(
+            OpenTelemetryBootstrappingUtils.getCloudMonitoringEndpoint(
+                "google-c2p:///storage-direct.googleapis.com?force-xds", null))
+        .isEqualTo("monitoring.googleapis.com:443");
+  }
 }
