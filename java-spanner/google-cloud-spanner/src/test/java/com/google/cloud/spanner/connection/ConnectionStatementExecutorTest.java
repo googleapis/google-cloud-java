@@ -16,9 +16,16 @@
 
 package com.google.cloud.spanner.connection;
 
+import static com.google.spanner.v1.TransactionOptions.IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED;
+import static com.google.spanner.v1.TransactionOptions.IsolationLevel.REPEATABLE_READ;
+import static com.google.spanner.v1.TransactionOptions.IsolationLevel.SERIALIZABLE;
+import static com.google.spanner.v1.TransactionOptions.IsolationLevel.UNRECOGNIZED;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
@@ -27,10 +34,15 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.Dialect;
+import com.google.cloud.spanner.ErrorCode;
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.TimestampBound;
 import com.google.cloud.spanner.connection.PgTransactionMode.AccessMode;
 import com.google.cloud.spanner.connection.PgTransactionMode.IsolationLevel;
+import com.google.spanner.v1.TransactionOptions;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.junit.Before;
@@ -276,5 +288,65 @@ public class ConnectionStatementExecutorTest {
   public void testStatementGetProtoDescriptorsFilePath() {
     subject.statementShowProtoDescriptorsFilePath();
     verify(connection).getProtoDescriptorsFilePath();
+  }
+
+  @Test
+  public void testStatementShowTransactionIsolationLevel() {
+    when(connection.getDefaultIsolationLevel()).thenReturn(REPEATABLE_READ);
+    assertEquals(name(REPEATABLE_READ), value(subject.statementShowTransactionIsolationLevel()));
+    assertEquals(name(REPEATABLE_READ), value(subject.statementShowDefaultTransactionIsolation()));
+
+    when(connection.isInTransaction()).thenReturn(true);
+    when(connection.getTransactionIsolationLevel()).thenReturn(SERIALIZABLE);
+    assertEquals(name(SERIALIZABLE), value(subject.statementShowTransactionIsolationLevel()));
+    assertEquals(name(REPEATABLE_READ), value(subject.statementShowDefaultTransactionIsolation()));
+  }
+
+  @Test
+  public void testStatementShowIsolationLevelUsesDatabaseDefault() {
+    when(connection.getDefaultIsolationLevel()).thenReturn(ISOLATION_LEVEL_UNSPECIFIED);
+    mockDatabaseDefaultIsolationLevel(REPEATABLE_READ);
+    assertEquals(name(REPEATABLE_READ), value(subject.statementShowTransactionIsolationLevel()));
+    assertEquals(name(REPEATABLE_READ), value(subject.statementShowDefaultTransactionIsolation()));
+  }
+
+  @Test
+  public void testStatementShowIsolationLevelFallsBackToSerializable() {
+    when(connection.getDefaultIsolationLevel()).thenReturn(ISOLATION_LEVEL_UNSPECIFIED);
+    mockDatabaseDefaultIsolationLevel(ISOLATION_LEVEL_UNSPECIFIED);
+    assertEquals(name(SERIALIZABLE), value(subject.statementShowTransactionIsolationLevel()));
+    assertEquals(name(SERIALIZABLE), value(subject.statementShowDefaultTransactionIsolation()));
+  }
+
+  @Test
+  public void testStatementShowIsolationLevelWithUnrecognizedDatabaseDefault() {
+    when(connection.getDefaultIsolationLevel()).thenReturn(ISOLATION_LEVEL_UNSPECIFIED);
+    mockDatabaseDefaultIsolationLevel(UNRECOGNIZED);
+    SpannerException exception =
+        assertThrows(SpannerException.class, subject::statementShowTransactionIsolationLevel);
+    assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+    exception =
+        assertThrows(SpannerException.class, subject::statementShowDefaultTransactionIsolation);
+    assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+  }
+
+  private void mockDatabaseDefaultIsolationLevel(TransactionOptions.IsolationLevel isolationLevel) {
+    DatabaseClient databaseClient = mock(DatabaseClient.class);
+    when(databaseClient.getDatabaseDefaultIsolationLevel()).thenReturn(isolationLevel);
+    when(connection.getDatabaseClient()).thenReturn(databaseClient);
+  }
+
+  private String name(TransactionOptions.IsolationLevel isolationLevel) {
+    if (dialect == Dialect.POSTGRESQL) {
+      return isolationLevel == SERIALIZABLE ? "serializable" : "repeatable read";
+    }
+    return isolationLevel.name();
+  }
+
+  private static String value(StatementResult result) {
+    try (ResultSet resultSet = result.getResultSet()) {
+      assertTrue(resultSet.next());
+      return resultSet.getString(0);
+    }
   }
 }
