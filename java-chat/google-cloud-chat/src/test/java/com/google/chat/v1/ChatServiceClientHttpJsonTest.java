@@ -121,6 +121,7 @@ public class ChatServiceClientHttpJsonTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -196,6 +197,7 @@ public class ChatServiceClientHttpJsonTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -563,6 +565,7 @@ public class ChatServiceClientHttpJsonTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -634,6 +637,7 @@ public class ChatServiceClientHttpJsonTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -705,6 +709,7 @@ public class ChatServiceClientHttpJsonTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -738,6 +743,7 @@ public class ChatServiceClientHttpJsonTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -797,6 +803,7 @@ public class ChatServiceClientHttpJsonTest {
               .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
               .addAllAttachedGifs(new ArrayList<AttachedGif>())
               .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+              .setElements(Elements.newBuilder().build())
               .setMarkupSyntax(MarkupSyntax.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();

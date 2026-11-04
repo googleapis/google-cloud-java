@@ -522,6 +522,16 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Packet was dropped inside Datastream Private Connection.
+     * </pre>
+     *
+     * <code>DROPPED_INSIDE_DATASTREAM_PRIVATE_CONNECTION = 115;</code>
+     */
+    DROPPED_INSIDE_DATASTREAM_PRIVATE_CONNECTION(115),
+    /**
+     *
+     *
+     * <pre>
      * Packet was dropped because there is no peering between the originating
      * network and the Google Managed Services Network.
      * </pre>
@@ -1756,6 +1766,17 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Packet was dropped inside Datastream Private Connection.
+     * </pre>
+     *
+     * <code>DROPPED_INSIDE_DATASTREAM_PRIVATE_CONNECTION = 115;</code>
+     */
+    public static final int DROPPED_INSIDE_DATASTREAM_PRIVATE_CONNECTION_VALUE = 115;
+
+    /**
+     *
+     *
+     * <pre>
      * Packet was dropped because there is no peering between the originating
      * network and the Google Managed Services Network.
      * </pre>
@@ -2673,6 +2694,8 @@ public final class DropInfo extends com.google.protobuf.GeneratedMessage
           return DROPPED_INSIDE_CLOUD_SQL_SERVICE;
         case 114:
           return DROPPED_INSIDE_DMS_PRIVATE_CONNECTION;
+        case 115:
+          return DROPPED_INSIDE_DATASTREAM_PRIVATE_CONNECTION;
         case 20:
           return GOOGLE_MANAGED_SERVICE_NO_PEERING;
         case 38:

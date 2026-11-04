@@ -81,6 +81,29 @@ public class MockUserLicenseServiceImpl extends UserLicenseServiceImplBase {
   }
 
   @Override
+  public void listLicenseConfigsUsageStats(
+      ListLicenseConfigsUsageStatsRequest request,
+      StreamObserver<ListLicenseConfigsUsageStatsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListLicenseConfigsUsageStatsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListLicenseConfigsUsageStatsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListLicenseConfigsUsageStats, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListLicenseConfigsUsageStatsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void batchUpdateUserLicenses(
       BatchUpdateUserLicensesRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();
