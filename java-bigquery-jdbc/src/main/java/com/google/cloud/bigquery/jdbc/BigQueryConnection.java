@@ -164,7 +164,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.OAUTH_SA_EMAIL_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME,
-              BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME)
+              BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_DIAGNOSTIC_TELEMETRY_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_GRAPH_METADATA_PROPERTY_NAME)
           .build();
   private HeaderProvider headerProvider;
   BigQueryReadClient bigQueryReadClient = null;
