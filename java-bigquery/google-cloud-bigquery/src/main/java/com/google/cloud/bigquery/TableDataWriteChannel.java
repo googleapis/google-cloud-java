@@ -81,7 +81,8 @@ public class TableDataWriteChannel
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
-              getOptions().getOpenTelemetryTracer());
+              getOptions().getOpenTelemetryTracer(),
+              getOptions().getApiTracerFactory());
       job = jobPb != null ? Job.fromPb(getOptions().getService(), jobPb) : null;
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -130,7 +131,8 @@ public class TableDataWriteChannel
           options.getClock(),
           EMPTY_RETRY_CONFIG,
           options.isOpenTelemetryTracingEnabled(),
-          options.getOpenTelemetryTracer());
+          options.getOpenTelemetryTracer(),
+          options.getApiTracerFactory());
     } catch (BigQueryRetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     } finally {
