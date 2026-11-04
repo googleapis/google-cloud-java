@@ -35,6 +35,7 @@ import com.example.storage.object.CopyDeleteObject;
 import com.example.storage.object.CopyObject;
 import com.example.storage.object.CopyOldVersionOfObject;
 import com.example.storage.object.DeleteObject;
+import com.example.storage.object.DeleteObjectContexts;
 import com.example.storage.object.DeleteOldVersionOfObject;
 import com.example.storage.object.DownloadEncryptedObject;
 import com.example.storage.object.DownloadObject;
@@ -683,6 +684,28 @@ public class ITObjectSnippets extends TestBase {
 
     Blob updatedBlob = storage.get(bucket.getName(), blobName);
     assertThat(updatedBlob.getContexts().getCustom().get(key).getValue()).isEqualTo(value);
+  }
+
+  @Test
+  public void testDeleteObjectContexts() throws Exception {
+    String blobName = generator.randomObjectName();
+    String key = "test-key-delete";
+    String value = "test-value-delete";
+
+    storage.create(info(blobName), CONTENT, BlobTargetOption.doesNotExist());
+
+    SetObjectContexts.setObjectContexts(
+        GOOGLE_CLOUD_PROJECT, bucket.getName(), blobName, key, value);
+    Blob blobWithContexts = storage.get(bucket.getName(), blobName);
+    assertThat(blobWithContexts.getContexts().getCustom()).containsKey(key);
+
+    DeleteObjectContexts.deleteObjectContexts(GOOGLE_CLOUD_PROJECT, bucket.getName(), blobName);
+    String deleteOutput = stdOut.getCapturedOutputAsUtf8String();
+    assertThat(deleteOutput).contains("Deleted all custom contexts for object " + blobName);
+
+    Blob updatedBlob = storage.get(bucket.getName(), blobName);
+    ObjectContexts contexts = updatedBlob.getContexts();
+    assertTrue(contexts == null || contexts.getCustom().isEmpty());
   }
 
   @Test
