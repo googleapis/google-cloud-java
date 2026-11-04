@@ -57,7 +57,7 @@ function retry_with_backoff {
 
   # allow a failures to continue
   set +e
-  IFS=$' \t\n'
+  local IFS=$' \t\n'
   "${command[@]}"
   exit_code=$?
 
@@ -596,7 +596,7 @@ function install_modules() {
     # Join dependencies into comma-delimited string without subshell:
     local IFS=,
     always_install_deps="${always_install_deps_list[*]}"
-    IFS=$' \t\n'
+    local IFS=$' \t\n'
     printf "with always_install_deps:\n%s\n" "$all_submodules,$always_install_deps"
 
     # When working with a maven multi-module project containing other multi-module projects,
