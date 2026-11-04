@@ -797,8 +797,8 @@ class ConnectionImplTest {
 
   @Test
   void testCreateQueryRequestAndJobWithEmptyParameters() throws BigQuerySQLException, IOException {
-    List<Parameter> emptyParameters = new ArrayList<>();
-    Map<String, String> emptyLabels = new HashMap<>();
+    List<Parameter> emptyParameters = Collections.emptyList();
+    Map<String, String> emptyLabels = Collections.emptyMap();
     QueryRequest request =
         connection.createQueryRequest(connectionSettings, SQL_QUERY, emptyParameters, emptyLabels);
     assertNull(request.getQueryParameters());
