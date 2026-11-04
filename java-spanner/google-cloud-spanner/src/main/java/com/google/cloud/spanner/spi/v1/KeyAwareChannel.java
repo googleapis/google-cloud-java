@@ -327,6 +327,10 @@ final class KeyAwareChannel extends ManagedChannel {
     return authority;
   }
 
+  ManagedChannel defaultChannel() {
+    return defaultChannel;
+  }
+
   @Override
   public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(
       MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
@@ -833,7 +837,9 @@ final class KeyAwareChannel extends ManagedChannel {
           if (finder != null && reqBuilder.hasMutationKey()) {
             endpoint = finder.findServerAndFillRoutingHint(reqBuilder, excludedEndpoints);
           }
-          if (reqBuilder.hasOptions() && reqBuilder.getOptions().hasReadOnly()) {
+          if (reqBuilder.hasOptions()
+              && (reqBuilder.getOptions().hasReadOnly()
+                  || reqBuilder.getOptions().hasPartitionedDml())) {
             shouldRecordTransactionAffinity = false;
           } else {
             shouldRecordTransactionAffinity = true;
@@ -1134,7 +1140,8 @@ final class KeyAwareChannel extends ManagedChannel {
 
     private void maybeTrackReadWriteBegin(TransactionSelector selector) {
       if (selector.getSelectorCase() == TransactionSelector.SelectorCase.BEGIN
-          && !selector.getBegin().hasReadOnly()) {
+          && !selector.getBegin().hasReadOnly()
+          && !selector.getBegin().hasPartitionedDml()) {
         shouldRecordTransactionAffinity = true;
         allowDefaultAffinity = true;
       }
