@@ -877,6 +877,46 @@ public class ITDatabaseMetadataTest extends ITBase {
       Assertions.assertTrue(graphTables.contains(graphName + ".Person"));
       Assertions.assertTrue(graphTables.contains(graphName + ".Knows"));
       Assertions.assertEquals(2, graphTables.size());
+
+      // 3. Verify getPrimaryKeys() for graph elements (exact names, dataset-scoped and
+      // region-scoped)
+      // 3a. Single-column key on the node element
+      try (ResultSet rs = metaData.getPrimaryKeys(PROJECT_ID, DATASET, graphName + ".Person")) {
+        Assertions.assertTrue(rs.next());
+        Assertions.assertEquals(PROJECT_ID, rs.getString("TABLE_CAT"));
+        Assertions.assertEquals(DATASET, rs.getString("TABLE_SCHEM"));
+        Assertions.assertEquals(graphName + ".Person", rs.getString("TABLE_NAME"));
+        Assertions.assertEquals("id", rs.getString("COLUMN_NAME"));
+        Assertions.assertEquals(1, rs.getShort("KEY_SEQ"));
+        Assertions.assertNull(rs.getString("PK_NAME"));
+        Assertions.assertFalse(rs.next());
+      }
+
+      // 3b. Composite key on the edge element — rows arrive sorted by COLUMN_NAME
+      //     (defineGetPrimaryKeysComparator), so "dst_id" precedes "id".
+      try (ResultSet rs = metaData.getPrimaryKeys(PROJECT_ID, DATASET, graphName + ".Knows")) {
+        Assertions.assertTrue(rs.next());
+        Assertions.assertEquals("dst_id", rs.getString("COLUMN_NAME"));
+        Assertions.assertEquals(2, rs.getShort("KEY_SEQ"));
+        Assertions.assertTrue(rs.next());
+        Assertions.assertEquals("id", rs.getString("COLUMN_NAME"));
+        Assertions.assertEquals(1, rs.getShort("KEY_SEQ"));
+        Assertions.assertFalse(rs.next());
+      }
+
+      // 3c. schema == null -> region-scoped INFORMATION_SCHEMA path; same rows expected
+      try (ResultSet rs = metaData.getPrimaryKeys(PROJECT_ID, null, graphName + ".Person")) {
+        Assertions.assertTrue(rs.next());
+        Assertions.assertEquals(DATASET, rs.getString("TABLE_SCHEM"));
+        Assertions.assertEquals("id", rs.getString("COLUMN_NAME"));
+        Assertions.assertFalse(rs.next());
+      }
+
+      // 3d. Unknown element -> no rows (exact match, no wildcard expansion)
+      try (ResultSet rs =
+          metaData.getPrimaryKeys(PROJECT_ID, DATASET, graphName + ".DoesNotExist")) {
+        Assertions.assertFalse(rs.next());
+      }
     }
   }
 
