@@ -189,6 +189,55 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessage
     return card_ == null ? com.google.apps.card.v1.Card.getDefaultInstance() : card_;
   }
 
+  public static final int OWNER_USER_FIELD_NUMBER = 3;
+  private com.google.chat.v1.User ownerUser_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The app that owns the card.
+   * </pre>
+   *
+   * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the ownerUser field is set.
+   */
+  @java.lang.Override
+  public boolean hasOwnerUser() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The app that owns the card.
+   * </pre>
+   *
+   * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The ownerUser.
+   */
+  @java.lang.Override
+  public com.google.chat.v1.User getOwnerUser() {
+    return ownerUser_ == null ? com.google.chat.v1.User.getDefaultInstance() : ownerUser_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The app that owns the card.
+   * </pre>
+   *
+   * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.chat.v1.UserOrBuilder getOwnerUserOrBuilder() {
+    return ownerUser_ == null ? com.google.chat.v1.User.getDefaultInstance() : ownerUser_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -209,6 +258,9 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getCard());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getOwnerUser());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -223,6 +275,9 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCard());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getOwnerUser());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -244,6 +299,10 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessage
     if (hasCard()) {
       if (!getCard().equals(other.getCard())) return false;
     }
+    if (hasOwnerUser() != other.hasOwnerUser()) return false;
+    if (hasOwnerUser()) {
+      if (!getOwnerUser().equals(other.getOwnerUser())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -260,6 +319,10 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessage
     if (hasCard()) {
       hash = (37 * hash) + CARD_FIELD_NUMBER;
       hash = (53 * hash) + getCard().hashCode();
+    }
+    if (hasOwnerUser()) {
+      hash = (37 * hash) + OWNER_USER_FIELD_NUMBER;
+      hash = (53 * hash) + getOwnerUser().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -416,6 +479,7 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCardFieldBuilder();
+        internalGetOwnerUserFieldBuilder();
       }
     }
 
@@ -428,6 +492,11 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessage
       if (cardBuilder_ != null) {
         cardBuilder_.dispose();
         cardBuilder_ = null;
+      }
+      ownerUser_ = null;
+      if (ownerUserBuilder_ != null) {
+        ownerUserBuilder_.dispose();
+        ownerUserBuilder_ = null;
       }
       return this;
     }
@@ -471,6 +540,10 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessage
         result.card_ = cardBuilder_ == null ? card_ : cardBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.ownerUser_ = ownerUserBuilder_ == null ? ownerUser_ : ownerUserBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -493,6 +566,9 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasCard()) {
         mergeCard(other.getCard());
+      }
+      if (other.hasOwnerUser()) {
+        mergeOwnerUser(other.getOwnerUser());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -532,6 +608,13 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetOwnerUserFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -855,6 +938,205 @@ public final class CardWithId extends com.google.protobuf.GeneratedMessage
         card_ = null;
       }
       return cardBuilder_;
+    }
+
+    private com.google.chat.v1.User ownerUser_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.chat.v1.User,
+            com.google.chat.v1.User.Builder,
+            com.google.chat.v1.UserOrBuilder>
+        ownerUserBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The app that owns the card.
+     * </pre>
+     *
+     * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the ownerUser field is set.
+     */
+    public boolean hasOwnerUser() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The app that owns the card.
+     * </pre>
+     *
+     * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The ownerUser.
+     */
+    public com.google.chat.v1.User getOwnerUser() {
+      if (ownerUserBuilder_ == null) {
+        return ownerUser_ == null ? com.google.chat.v1.User.getDefaultInstance() : ownerUser_;
+      } else {
+        return ownerUserBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The app that owns the card.
+     * </pre>
+     *
+     * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setOwnerUser(com.google.chat.v1.User value) {
+      if (ownerUserBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ownerUser_ = value;
+      } else {
+        ownerUserBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The app that owns the card.
+     * </pre>
+     *
+     * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setOwnerUser(com.google.chat.v1.User.Builder builderForValue) {
+      if (ownerUserBuilder_ == null) {
+        ownerUser_ = builderForValue.build();
+      } else {
+        ownerUserBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The app that owns the card.
+     * </pre>
+     *
+     * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeOwnerUser(com.google.chat.v1.User value) {
+      if (ownerUserBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && ownerUser_ != null
+            && ownerUser_ != com.google.chat.v1.User.getDefaultInstance()) {
+          getOwnerUserBuilder().mergeFrom(value);
+        } else {
+          ownerUser_ = value;
+        }
+      } else {
+        ownerUserBuilder_.mergeFrom(value);
+      }
+      if (ownerUser_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The app that owns the card.
+     * </pre>
+     *
+     * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearOwnerUser() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ownerUser_ = null;
+      if (ownerUserBuilder_ != null) {
+        ownerUserBuilder_.dispose();
+        ownerUserBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The app that owns the card.
+     * </pre>
+     *
+     * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.chat.v1.User.Builder getOwnerUserBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetOwnerUserFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The app that owns the card.
+     * </pre>
+     *
+     * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.chat.v1.UserOrBuilder getOwnerUserOrBuilder() {
+      if (ownerUserBuilder_ != null) {
+        return ownerUserBuilder_.getMessageOrBuilder();
+      } else {
+        return ownerUser_ == null ? com.google.chat.v1.User.getDefaultInstance() : ownerUser_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The app that owns the card.
+     * </pre>
+     *
+     * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.chat.v1.User,
+            com.google.chat.v1.User.Builder,
+            com.google.chat.v1.UserOrBuilder>
+        internalGetOwnerUserFieldBuilder() {
+      if (ownerUserBuilder_ == null) {
+        ownerUserBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.chat.v1.User,
+                com.google.chat.v1.User.Builder,
+                com.google.chat.v1.UserOrBuilder>(
+                getOwnerUser(), getParentForChildren(), isClean());
+        ownerUser_ = null;
+      }
+      return ownerUserBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.chat.v1.CardWithId)

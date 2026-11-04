@@ -222,6 +222,19 @@ public class BigQueryTypeRegistryTest {
             BigQueryTypeRegistry.convert(
                 epochMicros, StandardSQLTypeName.TIMESTAMP, Instant.class, null))
         .isEqualTo(microsInstant);
+
+    // Local views before 1582 follow java.time.
+    Instant yearOne = Instant.parse("0001-01-01T00:00:00Z");
+    long yearOneMicros = yearOne.getEpochSecond() * 1_000_000L;
+    ZonedDateTime yearOneLocal = yearOne.atZone(ZoneId.of(zone));
+    assertThat(
+            BigQueryTypeRegistry.convert(
+                yearOneMicros, StandardSQLTypeName.TIMESTAMP, LocalDateTime.class, null))
+        .isEqualTo(yearOneLocal.toLocalDateTime());
+    assertThat(
+            BigQueryTypeRegistry.convert(
+                yearOneMicros, StandardSQLTypeName.TIMESTAMP, LocalDate.class, null))
+        .isEqualTo(yearOneLocal.toLocalDate());
   }
 
   @Test

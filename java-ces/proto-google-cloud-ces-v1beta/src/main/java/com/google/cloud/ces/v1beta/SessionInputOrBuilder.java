@@ -360,5 +360,69 @@ public interface SessionInputOrBuilder
    */
   boolean getWillContinue();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the conversation may be recorded and logged from here on.
+   *
+   * Use this when the app, rather than the agent, decides what may be kept:
+   * for example when the end user has to consent to being recorded before
+   * anything about the call can be stored.
+   *
+   * The value stays in effect until the client sends a different one, so it
+   * only needs to be sent when the answer changes. Whatever is in effect when
+   * a turn completes decides that turn, both whether its audio reaches the
+   * recording bucket and whether its transcript reaches conversation history,
+   * BigQuery and Cloud Logging. It covers the agent's side of the turn as well
+   * as the end user's.
+   *
+   * Turns that complete before the client first sends this are recorded
+   * according to the app's logging settings, as though the field did not
+   * exist.
+   *
+   * If more than one input in the same request sets it, the last one wins.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.SessionInput.RecordingControl recording_control = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for recordingControl.
+   */
+  int getRecordingControlValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the conversation may be recorded and logged from here on.
+   *
+   * Use this when the app, rather than the agent, decides what may be kept:
+   * for example when the end user has to consent to being recorded before
+   * anything about the call can be stored.
+   *
+   * The value stays in effect until the client sends a different one, so it
+   * only needs to be sent when the answer changes. Whatever is in effect when
+   * a turn completes decides that turn, both whether its audio reaches the
+   * recording bucket and whether its transcript reaches conversation history,
+   * BigQuery and Cloud Logging. It covers the agent's side of the turn as well
+   * as the end user's.
+   *
+   * Turns that complete before the client first sends this are recorded
+   * according to the app's logging settings, as though the field did not
+   * exist.
+   *
+   * If more than one input in the same request sets it, the last one wins.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.SessionInput.RecordingControl recording_control = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The recordingControl.
+   */
+  com.google.cloud.ces.v1beta.SessionInput.RecordingControl getRecordingControl();
+
   com.google.cloud.ces.v1beta.SessionInput.InputTypeCase getInputTypeCase();
 }

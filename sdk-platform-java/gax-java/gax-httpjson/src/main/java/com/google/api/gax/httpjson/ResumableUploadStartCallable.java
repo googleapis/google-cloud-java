@@ -108,7 +108,7 @@ class ResumableUploadStartCallable<RequestT>
   /** A listener that parses HTTP response headers to produce a {@link ResumableUploadSession}. */
   private static class StartUploadResponseListener extends HttpJsonClientCall.Listener<String> {
     private final ResumableUploadHttpJsonFuture<ResumableUploadSession> future;
-    private long chunkGranularity = 1L;
+    private int chunkGranularity = 1;
     @Nullable private String uploadUrl;
     @Nullable private Throwable headerParsingException;
 
@@ -132,7 +132,7 @@ class ResumableUploadStartCallable<RequestT>
       }
 
       try {
-        long parsed = Long.parseLong(granularityStr);
+        int parsed = Integer.parseInt(granularityStr);
         if (parsed <= 0) {
           this.headerParsingException =
               ApiExceptionFactory.createException(

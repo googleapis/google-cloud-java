@@ -669,6 +669,28 @@ public class BigQueryJsonResultSetTest {
   }
 
   @Test
+  public void testInt64Timestamps() throws SQLException {
+    Field rangeField =
+        Field.newBuilder("rangeTs", StandardSQLTypeName.RANGE)
+            .setRangeElementType(FieldElementType.newBuilder().setType("TIMESTAMP").build())
+            .build();
+    FieldList fields = FieldList.of(Field.of("ts", StandardSQLTypeName.TIMESTAMP), rangeField);
+    FieldValueList row =
+        FieldValueList.of(
+            ImmutableList.of(
+                FieldValue.of(Attribute.PRIMITIVE, "253402300799999999", true),
+                FieldValue.of(Attribute.RANGE, Range.of("[-1, 253402300799999999)"), true)),
+            fields);
+    BigQueryJsonResultSet rs = createJsonResultSet(fields, row, false);
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString("ts")).isEqualTo("9999-12-31 23:59:59.999999");
+    assertThat(rs.getTimestamp("ts").toInstant())
+        .isEqualTo(Instant.parse("9999-12-31T23:59:59.999999Z"));
+    assertThat(rs.getString("rangeTs"))
+        .isEqualTo("[1969-12-31 23:59:59.999999, 9999-12-31 23:59:59.999999)");
+  }
+
+  @Test
   public void testRangeTimestampPicosDisabled() throws SQLException {
     Field rangeField =
         Field.newBuilder("rangeTs", StandardSQLTypeName.RANGE)
@@ -681,7 +703,7 @@ public class BigQueryJsonResultSetTest {
     BigQueryJsonResultSet rs = createJsonResultSet(fields, row, false);
     assertThat(rs.next()).isTrue();
     assertThat(rs.getString("rangeTs"))
-        .isEqualTo("[1680174859.123456789123, 1680174860.123456789123)");
+        .isEqualTo("[2023-03-30 11:14:19.123456, 2023-03-30 11:14:20.123456)");
   }
 
   @Test
