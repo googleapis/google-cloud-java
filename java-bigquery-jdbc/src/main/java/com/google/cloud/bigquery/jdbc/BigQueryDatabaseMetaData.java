@@ -2322,18 +2322,21 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
 
     final FieldList resultSchemaFields = resultSchema.getFields();
-    List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema, false);
 
+    // A dot can only appear in a graph element name ("<graph>.<element>");
+    // Route accordingly — no pattern checks,
+    // because getPrimaryKeys takes exact names.
+    boolean isGraphTableName = table.contains(".");
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
         fetchAndPopulateQueue(
             () -> {
               final List<FieldValueList> collectedResults =
                   Collections.synchronizedList(new ArrayList<>());
-              // A dot can only appear in a graph element name ("<graph>.<element>");
-              // Route accordingly — no pattern checks,
-              // because getPrimaryKeys takes exact names.
-              boolean isGraphTableName = table.contains(".");
+
               if (!isGraphTableName) {
+
+                // Only the REST path needs the dataset list (datasets.list when schema is null).
+                List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema, false);
                 processTargetTablesConcurrently(
                     targetDatasets,
                     table,
@@ -2427,6 +2430,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     // Scope of the INFORMATION_SCHEMA path:
     //   schema given -> `<project>.<schema>.INFORMATION_SCHEMA.PROPERTY_GRAPHS`
     //   schema null  -> `<project>.region-<loc>.INFORMATION_SCHEMA.PROPERTY_GRAPHS`
+    //
+    //  Unlike the REST path (datasets.list, region-agnostic), the null-schema case covers a
+    // single region: the connection Location, else DEFAULT_GRAPH_REGION. Graphs elsewhere
+    // are not returned unless Location is set or the dataset is passed as schema.
     String scope;
     if (schema != null) {
       validateSchemaIdentifier(schema);

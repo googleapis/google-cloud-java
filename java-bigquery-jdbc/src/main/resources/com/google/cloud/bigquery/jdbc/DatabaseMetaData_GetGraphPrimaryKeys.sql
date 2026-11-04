@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
- SELECT
+SELECT
   property_graph_catalog AS TABLE_CAT,
   property_graph_schema AS TABLE_SCHEM,
   CONCAT(property_graph_name, '.', JSON_VALUE(t, '$.name')) AS TABLE_NAME,
@@ -27,4 +27,3 @@ UNNEST(ARRAY_CONCAT(
   IFNULL(JSON_QUERY_ARRAY(property_graph_metadata_json, '$.edgeTables'), []))) AS t,
 UNNEST(JSON_QUERY_ARRAY(t, '$.keyColumns')) AS kc WITH OFFSET kc_off
 WHERE CONCAT(property_graph_name, '.', JSON_VALUE(t, '$.name')) = ?
-ORDER BY COLUMN_NAME
