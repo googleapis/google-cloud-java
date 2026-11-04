@@ -976,6 +976,8 @@ public class ITDatabaseMetadataTest extends ITBase {
       }
 
       // 2. Edge element with a calculated property filtered by columnNamePattern
+      //    ORDINAL_POSITION must be the property's index in the element table (3rd of
+      //    id, dst_id, double_weight), not its index among the filtered results (1).
       try (ResultSet rs =
           metaData.getColumns(PROJECT_ID, DATASET, graphName + ".Knows", "double_weight")) {
         Assertions.assertTrue(rs.next());
@@ -984,6 +986,18 @@ public class ITDatabaseMetadataTest extends ITBase {
         Assertions.assertEquals(Types.BIGINT, rs.getInt("DATA_TYPE"));
         Assertions.assertEquals("INT64", rs.getString("TYPE_NAME"));
         Assertions.assertEquals("YES", rs.getString("IS_GENERATEDCOLUMN"));
+        Assertions.assertEquals(3, rs.getInt("ORDINAL_POSITION"));
+        Assertions.assertFalse(rs.next());
+      }
+
+      // 2b. Wildcard sub-pattern: positions must still reflect the full element table.
+      try (ResultSet rs = metaData.getColumns(PROJECT_ID, DATASET, graphName + ".Knows", "d%")) {
+        Assertions.assertTrue(rs.next());
+        Assertions.assertEquals("dst_id", rs.getString("COLUMN_NAME"));
+        Assertions.assertEquals(2, rs.getInt("ORDINAL_POSITION"));
+        Assertions.assertTrue(rs.next());
+        Assertions.assertEquals("double_weight", rs.getString("COLUMN_NAME"));
+        Assertions.assertEquals(3, rs.getInt("ORDINAL_POSITION"));
         Assertions.assertFalse(rs.next());
       }
 
