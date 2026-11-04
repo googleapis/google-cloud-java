@@ -5,6 +5,428 @@
       "changes": [
         {
           "type": "fix",
+          "sha": "a993026ba27f460189e0181b2b75aff17eec616d",
+          "message": "graduate pipeline search from preview to GA",
+          "issues": [
+            "14741"
+          ],
+          "scope": "firestore"
+        }
+      ],
+      "version": "1.95.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-firestore",
+      "id": "e8d40efd-4110-40b0-b356-ffb65022d941",
+      "createTime": "2026-11-02T22:54:11.372Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "624f28e6b3a1d8f34dcea029c340686ddb1c53d8",
+          "message": "add observability",
+          "issues": [
+            "14722"
+          ],
+          "scope": "google/cloud/observability/v1"
+        }
+      ],
+      "version": "1.95.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-observability",
+      "id": "68b476c1-3c3a-4f14-83a9-44fa336794e1",
+      "createTime": "2026-11-02T22:54:11.187Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "2108b8eced0469a0a58035183c57a347009f31f6",
+          "message": "format RANGE bounds consistently across REST and Arrow",
+          "issues": [
+            "14807"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "3dc394f97626e919b22cd03a2f61a602331fbc59",
+          "message": "preserve pre-1582 and pre-standard-time DATE/DATETIME digits",
+          "issues": [
+            "14787"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "4c6a7e3911f08d12b1cbc89f84431860289f9d9e",
+          "message": "populate `ResultSetMetaData` on empty `DatabaseMetaData` resultsets",
+          "issues": [
+            "14809"
+          ],
+          "scope": "jdbc"
+        },
+        {
+          "type": "feat",
+          "sha": "f01245a4333bb4d2f79ee2c3d170bd196a041aaf",
+          "message": "expose BigQueryResultSetMetadata and getField(int)",
+          "issues": [
+            "14761"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "7d4b921b3aaa89f93d1fbff900a0d7f247d88926",
+          "message": "expand handling to OOM errors",
+          "issues": [
+            "14759"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "c3e4a5b3d056008b1c2d0e2fd5c9acc7e8b2badb",
+          "message": "fix naive fallback of parameter count",
+          "issues": [
+            "14779"
+          ],
+          "scope": "bigquery-jdbc"
+        },
+        {
+          "type": "fix",
+          "sha": "71a31b138d1ea2aa642ea661c9f97042899fe2d4",
+          "message": "parse scientific-notation epoch TIMESTAMPs",
+          "issues": [
+            "14777"
+          ],
+          "scope": "bigquery-jdbc"
+        }
+      ],
+      "version": "1.95.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery-jdbc",
+      "id": "15f35bb0-2b5f-439e-ae5b-637fe5568713",
+      "createTime": "2026-11-02T22:54:11.007Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "01d27dcf704f2861cf939e183c20b79919bf12ca",
+          "message": "add designcenter",
+          "issues": [
+            "14823"
+          ],
+          "scope": "google/cloud/designcenter/v1"
+        }
+      ],
+      "version": "1.95.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-designcenter",
+      "id": "2e3b8854-3a72-4a94-8664-f7d21f56f270",
+      "createTime": "2026-11-02T22:54:10.838Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "61aa22fc1a38d4392e9d1df464903cb533374615",
+          "message": "validate CRC32C on HTTP downloads that were not decompressed",
+          "issues": [
+            "14805"
+          ],
+          "scope": "storage"
+        },
+        {
+          "type": "feat",
+          "sha": "ad0eb94e12beb367ad33d90e5a9b72f0f8b23756",
+          "message": "add support for DirectPath over Interconnect",
+          "issues": [
+            "14006"
+          ],
+          "scope": "storage"
+        },
+        {
+          "type": "fix",
+          "sha": "3c03034cf46187024f91792c12b4e812a7799738",
+          "message": "preserve HTTP status for XML multipart upload errors so retries work",
+          "issues": [
+            "14804"
+          ],
+          "scope": "storage"
+        },
+        {
+          "type": "fix",
+          "sha": "43a67a06fb4f4a1dc754ff882d2bf7a3e4546ead",
+          "message": "send destination on gRPC copy when target BlobInfo is provided",
+          "issues": [
+            "14784"
+          ],
+          "scope": "storage"
+        },
+        {
+          "type": "feat",
+          "sha": "7c29e489ff7716ef76e53c25f5ea1b58bddcdd13",
+          "message": "OpenTelemetry client metrics configuration and options",
+          "issues": [
+            "14484"
+          ],
+          "scope": "storage"
+        },
+        {
+          "type": "feat",
+          "sha": "cb2b726884850cd76c9ec43ae8009e82e0a685f3",
+          "message": "add bucket IP filtering samples and tests",
+          "issues": [
+            "14328"
+          ],
+          "scope": "storage"
+        },
+        {
+          "type": "feat",
+          "sha": "60233b70ca2dbb31da7acd13f23c7d5314b9d263",
+          "message": "OpenTelemetry client metrics instrument registry and views",
+          "issues": [
+            "14398"
+          ],
+          "scope": "storage"
+        }
+      ],
+      "version": "1.95.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-storage",
+      "id": "88d7eec7-34f1-43c4-a538-b939fb3f227e",
+      "createTime": "2026-11-02T22:54:10.674Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "9b9e2a5bca98bca5972185e75bb7d15b79d78a30",
+          "message": "make publish hedging robust to clock jumps, queue errors, and shutdown",
+          "issues": [
+            "14860"
+          ],
+          "scope": "pubsub"
+        }
+      ],
+      "version": "1.95.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-pubsub",
+      "id": "5d548a42-21fc-4135-ab29-2b21f940a037",
+      "createTime": "2026-11-02T22:54:10.512Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "dcb29b01aa5e4dcaa4bdca9dd433402559b4cbc1",
+          "message": "support certificate-bound OAuth2 tokens and mTLS rotation for Workload Identity Federation",
+          "issues": [
+            "14781"
+          ],
+          "scope": "oauth2"
+        },
+        {
+          "type": "fix",
+          "sha": "0bae26845d21edcb5e384695b27edbc2f8284325",
+          "message": "align mTLS transport and bound token certificate startup polling and well-known discovery",
+          "issues": [
+            "14748"
+          ],
+          "scope": "auth"
+        }
+      ],
+      "version": "1.95.0",
+      "language": "JAVA",
+      "artifactName": "com.google.auth:google-auth-library",
+      "id": "e56afdaf-917b-4141-ac16-591a556d3c18",
+      "createTime": "2026-11-02T22:54:10.345Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "323a8f72ae35953022baf146f10c706441c9a9a8",
+          "message": "cancel queries promptly on close and synchronize error handling",
+          "issues": [
+            "14887"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "fix",
+          "sha": "b9d1b95cfefa4b322811e85585d7693363355359",
+          "message": "trigger best-effort rollback on indeterminate commit failures",
+          "issues": [
+            "14831"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "fix",
+          "sha": "cfe728e8118a98c9e54aa4080ecc5705202bc562",
+          "message": "restore setCall overload for stream test compatibility",
+          "issues": [
+            "14885"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "fix",
+          "sha": "4edefc527a742a9d61ba3c78acf4cf8c9f227ce8",
+          "message": "synchronize stream lifecycle and retry buffering in ResumableStreamIterator",
+          "issues": [
+            "14770"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "fix",
+          "sha": "54e0585f4bd423f6acff3713f8ff9e1ddff5ad59",
+          "message": "attach routing hints to read-write transaction requests",
+          "issues": [
+            "14786"
+          ],
+          "scope": "spanner"
+        },
+        {
+          "type": "fix",
+          "sha": "6a9ac76d47b8e4c26fef3996d9a25dd72b3ea882",
+          "message": "do not cache retryable errors in AbstractLazyInitializer",
+          "issues": [
+            "14752"
+          ],
+          "scope": "spanner"
+        }
+      ],
+      "version": "1.95.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-spanner",
+      "id": "8812deb5-dfdf-4eb4-8a9a-e18449d37574",
+      "createTime": "2026-11-02T22:54:10.163Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "1bc507f80adc6b85af4761420f5408cb6acb15f7",
+          "message": "reject empty split points in RowSetUtil and clarify QueryPaginator Javadoc",
+          "issues": [
+            "14811"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "a65363840a06969570700955a7886e7bf1f343ec",
+          "message": "add user agent to session path",
+          "issues": [
+            "14835"
+          ]
+        },
+        {
+          "type": "fix",
+          "sha": "95ead459480137a07d5b62ad75ff9978ecb8099a",
+          "message": "remove legacy PollingConfiguration migration in ClientConfigurationManager",
+          "issues": [
+            "14822"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "cecd09e27d3511de8def4983a94cf7823a248af3",
+          "message": "respect query limit smaller than pageSize and avoid mutating Query in QueryPaginator",
+          "issues": [
+            "14821"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "1d2fb9a698f0c3eae14f8c0d06afea2440d5aca0",
+          "message": "Fix empty RowResult semantics in TestProxy.",
+          "issues": [
+            "14810"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "docs",
+          "sha": "91d60e05e5c81d47288c53f55e25961169c2b3c5",
+          "message": "document that skipped large rows count towards row limit",
+          "issues": [
+            "14801"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "1b1c6a72fb29dd7a8e04b6ddb2e402603ad6ac90",
+          "message": "avoid mutating Query in-place in createPointReadCallable",
+          "issues": [
+            "14797"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "fe9232bb7fa3debbafe067e453a156a5dd8fbd2a",
+          "message": "include reversed in Query equals, hashCode, and toString",
+          "issues": [
+            "14799"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "cfa7949755b23c7e86acb798d87ff6a11a426d7f",
+          "message": "pass cell value size to RowBuilder.startCell in RowBuilderShim",
+          "issues": [
+            "14800"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "a04e24c1beb3558a6c7f93aab6293beb0c4428c9",
+          "message": "check remaining deadline on client-initiated retries in RetryingVRpc",
+          "issues": [
+            "14796"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "d821bd3e81aacea3b8aeb7adf471b88e47cb3764",
+          "message": "check isOk and getRejected first in RetryingVRpc.shouldRetry",
+          "issues": [
+            "14795"
+          ],
+          "scope": "bigtable"
+        },
+        {
+          "type": "fix",
+          "sha": "00f7bea135eb77de710e71c97ae5be3a2829886d",
+          "message": "resolve session diversion through a single shared rule",
+          "issues": [
+            "14738"
+          ],
+          "scope": "bigtable"
+        }
+      ],
+      "version": "1.95.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigtable",
+      "id": "2d1bcc01-6d1d-46e7-8c59-ccfab691c25f",
+      "createTime": "2026-11-02T22:54:09.966Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
           "sha": "fb73ed5a38987e936671b16d628c19a37567ee66",
           "message": "update emulator zip checksum for 2.3.1",
           "issues": [
@@ -373136,5 +373558,5 @@
       "createTime": "2026-02-25T17:30:12.355Z"
     }
   ],
-  "updateTime": "2026-10-22T22:24:27.284Z"
+  "updateTime": "2026-11-02T22:54:11.372Z"
 }
