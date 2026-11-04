@@ -27,11 +27,14 @@ import com.google.cloud.storage.ObjectReadSessionState.OpenArguments;
 import com.google.cloud.storage.ReadProjectionConfig.ProjectionType;
 import com.google.cloud.storage.RetryContext.RetryContextProvider;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.storage.v2.BidiReadObjectRequest;
 import com.google.storage.v2.BidiReadObjectResponse;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
@@ -66,6 +69,9 @@ final class StorageDataClient implements AutoCloseable {
    * Open a new {@link ObjectReadSession} using fast open: the ranges in {@code fastOpenConfigs} are
    * sent in the same request that opens the session, saving a round trip before the first bytes.
    *
+   * <p>The first {@code readAs} with a config equal to one of these is given that fast open read
+   * instead of sending a new one.
+   *
    * @param fastOpenConfigs the reads to send with the open, for example {@code
    *     ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(0, 1024))}; empty to only
    *     open the session
@@ -77,6 +83,7 @@ final class StorageDataClient implements AutoCloseable {
     checkArgument(
         req.getReadRangesList().isEmpty(),
         "ranges included in the initial request are not supported");
+    checkArgument(fastOpenConfigs.size() <= 1, "at most one fast open read is supported");
     ObjectReadSessionState state = new ObjectReadSessionState(ctx, req);
 
     ZeroCopyBidiStreamingCallable<BidiReadObjectRequest, BidiReadObjectResponse> callable =
@@ -86,18 +93,21 @@ final class StorageDataClient implements AutoCloseable {
 
     // Add each fast open read to the session state. The open request below is built from the
     // state, so these reads are sent as part of the open.
+    Map<ReadProjectionConfig<?>, ObjectReadSessionStreamRead<?>> fastOpenReads = new HashMap<>();
     for (ReadProjectionConfig<?> config : fastOpenConfigs) {
       long readId = state.newReadId();
       ObjectReadSessionStreamRead<?> read =
           config.cast().newRead(readId, retryContextProvider.create());
       state.putOutstandingRead(readId, read);
+      fastOpenReads.put(config, read);
     }
 
     ApiFuture<ObjectReadSession> objectReadSessionFuture =
         ApiFutures.transform(
             stream,
             nowOpen ->
-                new ObjectReadSessionImpl(executor, callable, stream, state, retryContextProvider),
+                new ObjectReadSessionImpl(
+                    executor, callable, stream, state, retryContextProvider, fastOpenReads),
             executor);
     stream.send(state.getOpenArguments().getReq());
     return objectReadSessionFuture;
@@ -132,7 +142,7 @@ final class StorageDataClient implements AutoCloseable {
             nowOpen ->
                 new FastOpenObjectReadSession<>(
                     new ObjectReadSessionImpl(
-                        executor, callable, stream, state, retryContextProvider),
+                        executor, callable, stream, state, retryContextProvider, ImmutableMap.of()),
                     read,
                     stream),
             executor);

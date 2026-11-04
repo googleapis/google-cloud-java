@@ -56,7 +56,7 @@ abstract class BaseObjectReadSessionStreamRead<Projection>
   protected final RangeSpec rangeSpec;
   protected final RetryContext retryContext;
   protected final AtomicLong readOffset;
-  protected boolean closed;
+  protected volatile boolean closed;
   protected boolean tombstoned;
   protected IOAutoCloseable onCloseCallback;
 
@@ -328,8 +328,10 @@ abstract class BaseObjectReadSessionStreamRead<Projection>
       try {
         offer(new SmuggledFailure(t));
         failFuture.set(null);
-      } catch (InterruptedIOException e) {
-        Thread.currentThread().interrupt();
+      } catch (IOException e) {
+        if (e instanceof InterruptedIOException) {
+          Thread.currentThread().interrupt();
+        }
         failFuture.setException(e);
       }
       return failFuture;
@@ -433,9 +435,13 @@ abstract class BaseObjectReadSessionStreamRead<Projection>
       return read;
     }
 
-    private void offer(Closeable offer) throws InterruptedIOException {
+    private void offer(Closeable offer) throws IOException {
       try {
         queue.put(offer);
+        if (closed) {
+          // the reader closed while we waited, nobody will take this anymore
+          drainQueue();
+        }
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
         InterruptedIOException ioe = new InterruptedIOException();
@@ -449,7 +455,14 @@ abstract class BaseObjectReadSessionStreamRead<Projection>
       if (leftovers != null) {
         leftovers.ref.close();
       }
-      GrpcUtils.closeAll(queue);
+      drainQueue();
+    }
+
+    /** Remove and close everything in the queue, freeing space for a producer waiting to add. */
+    private void drainQueue() throws IOException {
+      List<Closeable> drained = new ArrayList<>();
+      queue.drainTo(drained);
+      GrpcUtils.closeAll(drained);
     }
 
     /**
