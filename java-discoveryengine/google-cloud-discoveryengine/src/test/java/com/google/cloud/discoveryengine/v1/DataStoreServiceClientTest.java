@@ -26,10 +26,17 @@ import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -113,9 +120,14 @@ public class DataStoreServiceClientTest {
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .setIdentityMappingStore(
                 IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
                     .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
+            .setDataProtectionPolicy(DataProtectionPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -187,9 +199,14 @@ public class DataStoreServiceClientTest {
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .setIdentityMappingStore(
                 IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
                     .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
+            .setDataProtectionPolicy(DataProtectionPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -261,9 +278,14 @@ public class DataStoreServiceClientTest {
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .setIdentityMappingStore(
                 IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
                     .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
+            .setDataProtectionPolicy(DataProtectionPolicy.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -323,9 +345,14 @@ public class DataStoreServiceClientTest {
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .setIdentityMappingStore(
                 IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
                     .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
+            .setDataProtectionPolicy(DataProtectionPolicy.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -557,9 +584,14 @@ public class DataStoreServiceClientTest {
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .setIdentityMappingStore(
                 IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
                     .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
+            .setDataProtectionPolicy(DataProtectionPolicy.newBuilder().build())
             .build();
     mockDataStoreService.addResponse(expectedResponse);
 
@@ -590,6 +622,184 @@ public class DataStoreServiceClientTest {
       DataStore dataStore = DataStore.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataStore(dataStore, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockDataStoreService.addResponse(expectedResponse);
+
+    ResourceName resource =
+        DataStoreName.ofProjectLocationCollectionDataStoreName(
+            "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]");
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataStoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resource.toString(), actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataStoreService.addException(exception);
+
+    try {
+      ResourceName resource =
+          DataStoreName.ofProjectLocationCollectionDataStoreName(
+              "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]");
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockDataStoreService.addResponse(expectedResponse);
+
+    String resource = "resource-341064690";
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataStoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIamPolicyRequest actualRequest = ((GetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resource, actualRequest.getResource());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataStoreService.addException(exception);
+
+    try {
+      String resource = "resource-341064690";
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockDataStoreService.addResponse(expectedResponse);
+
+    ResourceName resource =
+        DataStoreName.ofProjectLocationCollectionDataStoreName(
+            "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]");
+    Policy policy = Policy.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicy(resource, policy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataStoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resource.toString(), actualRequest.getResource());
+    Assert.assertEquals(policy, actualRequest.getPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataStoreService.addException(exception);
+
+    try {
+      ResourceName resource =
+          DataStoreName.ofProjectLocationCollectionDataStoreName(
+              "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]");
+      Policy policy = Policy.newBuilder().build();
+      client.setIamPolicy(resource, policy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockDataStoreService.addResponse(expectedResponse);
+
+    String resource = "resource-341064690";
+    Policy policy = Policy.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicy(resource, policy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataStoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SetIamPolicyRequest actualRequest = ((SetIamPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(resource, actualRequest.getResource());
+    Assert.assertEquals(policy, actualRequest.getPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataStoreService.addException(exception);
+
+    try {
+      String resource = "resource-341064690";
+      Policy policy = Policy.newBuilder().build();
+      client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -124,6 +124,7 @@ public class ChatServiceClientTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockChatService.addResponse(expectedResponse);
@@ -195,6 +196,7 @@ public class ChatServiceClientTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockChatService.addResponse(expectedResponse);
@@ -522,6 +524,7 @@ public class ChatServiceClientTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockChatService.addResponse(expectedResponse);
@@ -587,6 +590,7 @@ public class ChatServiceClientTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockChatService.addResponse(expectedResponse);
@@ -652,6 +656,7 @@ public class ChatServiceClientTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockChatService.addResponse(expectedResponse);

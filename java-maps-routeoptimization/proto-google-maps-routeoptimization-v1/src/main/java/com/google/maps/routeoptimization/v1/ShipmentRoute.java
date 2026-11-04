@@ -532,6 +532,42 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
      * @return The injectedSolutionLocationToken.
      */
     int getInjectedSolutionLocationToken();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the type of the visit.
+     * Overrides the
+     * [Visit.is_pickup][google.maps.routeoptimization.v1.ShipmentRoute.Visit.is_pickup]
+     * field.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType visit_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for visitType.
+     */
+    int getVisitTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the type of the visit.
+     * Overrides the
+     * [Visit.is_pickup][google.maps.routeoptimization.v1.ShipmentRoute.Visit.is_pickup]
+     * field.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType visit_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The visitType.
+     */
+    com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType getVisitType();
   }
 
   /**
@@ -568,6 +604,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
     private Visit() {
       shipmentLabel_ = "";
       visitLabel_ = "";
+      visitType_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -595,6 +632,179 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
           .ensureFieldAccessorsInitialized(
               com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.class,
               com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the visit is a pickup, a delivery, or a visit to a
+     * [Stop][google.maps.routeoptimization.v1.Stop]. Visits to a stop are used
+     * only when multimodal optimization is enabled.
+     * </pre>
+     *
+     * Protobuf enum {@code google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType}
+     */
+    public enum VisitType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified visit type.
+       * </pre>
+       *
+       * <code>VISIT_TYPE_UNSPECIFIED = 0;</code>
+       */
+      VISIT_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Visit corresponds to a shipment pickup.
+       * </pre>
+       *
+       * <code>PICKUP_SHIPMENT = 1;</code>
+       */
+      PICKUP_SHIPMENT(1),
+      /**
+       *
+       *
+       * <pre>
+       * Visit corresponds to a shipment delivery.
+       * </pre>
+       *
+       * <code>DELIVER_SHIPMENT = 2;</code>
+       */
+      DELIVER_SHIPMENT(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "VisitType");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Unspecified visit type.
+       * </pre>
+       *
+       * <code>VISIT_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int VISIT_TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Visit corresponds to a shipment pickup.
+       * </pre>
+       *
+       * <code>PICKUP_SHIPMENT = 1;</code>
+       */
+      public static final int PICKUP_SHIPMENT_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Visit corresponds to a shipment delivery.
+       * </pre>
+       *
+       * <code>DELIVER_SHIPMENT = 2;</code>
+       */
+      public static final int DELIVER_SHIPMENT_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static VisitType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static VisitType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return VISIT_TYPE_UNSPECIFIED;
+          case 1:
+            return PICKUP_SHIPMENT;
+          case 2:
+            return DELIVER_SHIPMENT;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<VisitType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<VisitType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<VisitType>() {
+            public VisitType findValueByNumber(int number) {
+              return VisitType.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final VisitType[] VALUES = values();
+
+      public static VisitType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private VisitType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType)
     }
 
     private int bitField0_;
@@ -1115,6 +1325,55 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
       return injectedSolutionLocationToken_;
     }
 
+    public static final int VISIT_TYPE_FIELD_NUMBER = 14;
+    private int visitType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the type of the visit.
+     * Overrides the
+     * [Visit.is_pickup][google.maps.routeoptimization.v1.ShipmentRoute.Visit.is_pickup]
+     * field.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType visit_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for visitType.
+     */
+    @java.lang.Override
+    public int getVisitTypeValue() {
+      return visitType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies the type of the visit.
+     * Overrides the
+     * [Visit.is_pickup][google.maps.routeoptimization.v1.ShipmentRoute.Visit.is_pickup]
+     * field.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType visit_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The visitType.
+     */
+    @java.lang.Override
+    public com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType getVisitType() {
+      com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType result =
+          com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType.forNumber(visitType_);
+      return result == null
+          ? com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1154,6 +1413,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
           output, internalGetLoadDemands(), LoadDemandsDefaultEntryHolder.defaultEntry, 11);
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeInt32(13, injectedSolutionLocationToken_);
+      }
+      if (visitType_
+          != com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType
+              .VISIT_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(14, visitType_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1202,6 +1467,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.CodedOutputStream.computeInt32Size(
                 13, injectedSolutionLocationToken_);
       }
+      if (visitType_
+          != com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType
+              .VISIT_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, visitType_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1238,6 +1509,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
         if (getInjectedSolutionLocationToken() != other.getInjectedSolutionLocationToken())
           return false;
       }
+      if (visitType_ != other.visitType_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1275,6 +1547,8 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + INJECTED_SOLUTION_LOCATION_TOKEN_FIELD_NUMBER;
         hash = (53 * hash) + getInjectedSolutionLocationToken();
       }
+      hash = (37 * hash) + VISIT_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + visitType_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1466,6 +1740,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
         shipmentLabel_ = "";
         visitLabel_ = "";
         injectedSolutionLocationToken_ = 0;
+        visitType_ = 0;
         return this;
       }
 
@@ -1534,6 +1809,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
           result.injectedSolutionLocationToken_ = injectedSolutionLocationToken_;
           to_bitField0_ |= 0x00000004;
         }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.visitType_ = visitType_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1579,6 +1857,9 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasInjectedSolutionLocationToken()) {
           setInjectedSolutionLocationToken(other.getInjectedSolutionLocationToken());
+        }
+        if (other.visitType_ != 0) {
+          setVisitTypeValue(other.getVisitTypeValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1670,6 +1951,12 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000100;
                   break;
                 } // case 104
+              case 112:
+                {
+                  visitType_ = input.readEnum();
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 112
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3033,6 +3320,130 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessage
       public Builder clearInjectedSolutionLocationToken() {
         bitField0_ = (bitField0_ & ~0x00000100);
         injectedSolutionLocationToken_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int visitType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the type of the visit.
+       * Overrides the
+       * [Visit.is_pickup][google.maps.routeoptimization.v1.ShipmentRoute.Visit.is_pickup]
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType visit_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for visitType.
+       */
+      @java.lang.Override
+      public int getVisitTypeValue() {
+        return visitType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the type of the visit.
+       * Overrides the
+       * [Visit.is_pickup][google.maps.routeoptimization.v1.ShipmentRoute.Visit.is_pickup]
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType visit_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for visitType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVisitTypeValue(int value) {
+        visitType_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the type of the visit.
+       * Overrides the
+       * [Visit.is_pickup][google.maps.routeoptimization.v1.ShipmentRoute.Visit.is_pickup]
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType visit_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The visitType.
+       */
+      @java.lang.Override
+      public com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType getVisitType() {
+        com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType result =
+            com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType.forNumber(
+                visitType_);
+        return result == null
+            ? com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the type of the visit.
+       * Overrides the
+       * [Visit.is_pickup][google.maps.routeoptimization.v1.ShipmentRoute.Visit.is_pickup]
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType visit_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The visitType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVisitType(
+          com.google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000200;
+        visitType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies the type of the visit.
+       * Overrides the
+       * [Visit.is_pickup][google.maps.routeoptimization.v1.ShipmentRoute.Visit.is_pickup]
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.maps.routeoptimization.v1.ShipmentRoute.Visit.VisitType visit_type = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearVisitType() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        visitType_ = 0;
         onChanged();
         return this;
       }
