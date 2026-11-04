@@ -794,4 +794,25 @@ class ConnectionImplTest {
     assertTrue(connectionSpy.getPageCacheSize(100000000, QUERY_SCHEMA) <= 20);
     verify(connectionSpy, times(2)).getPageCacheSize(any(Integer.class), any(Schema.class));
   }
+
+  @Test
+  void testCreateQueryRequestAndJobWithEmptyParameters() throws BigQuerySQLException, IOException {
+    List<Parameter> emptyParameters = new ArrayList<>();
+    Map<String, String> emptyLabels = new HashMap<>();
+    QueryRequest request =
+        connection.createQueryRequest(connectionSettings, SQL_QUERY, emptyParameters, emptyLabels);
+    assertEquals(null, request.getQueryParameters());
+
+    com.google.api.services.bigquery.model.Job jobResponseMock =
+        new com.google.api.services.bigquery.model.Job()
+            .setJobReference(QUERY_JOB.toPb())
+            .setId(JOB)
+            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"));
+    when(bigqueryRpcMock.createJobForQuerySkipExceptionTranslation(
+            any(com.google.api.services.bigquery.model.Job.class)))
+        .thenReturn(jobResponseMock);
+    com.google.api.services.bigquery.model.Job createdJob =
+        connection.createQueryJob(SQL_QUERY, connectionSettings, emptyParameters, emptyLabels);
+    assertEquals(JOB, createdJob.getId());
+  }
 }
