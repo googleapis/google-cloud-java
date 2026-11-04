@@ -277,10 +277,9 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
     }
 
     try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
-      assertEquals(
-          DataFormatOptions.TimestampFormatOptions.TIMESTAMP_OUTPUT_FORMAT_UNSPECIFIED,
-          connection.getBigQuery().getOptions().getDataFormatOptions().timestampFormatOptions(),
-          "Default connections must not alter the timestamp wire format");
+      assertTrue(
+          connection.getBigQuery().getOptions().getDataFormatOptions().useInt64Timestamp(),
+          "Default connections must request lossless int64 timestamps");
     }
   }
 
