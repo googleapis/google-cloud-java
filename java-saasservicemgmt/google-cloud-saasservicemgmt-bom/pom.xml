@@ -31,8 +31,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-saasservicemgmt-v1</artifactId>
+        <version>0.31.0</version><!-- {x-version-update:grpc-google-cloud-saasservicemgmt-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-saasservicemgmt-v1beta1</artifactId>
         <version>0.31.0</version><!-- {x-version-update:grpc-google-cloud-saasservicemgmt-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-saasservicemgmt-v1</artifactId>
+        <version>0.31.0</version><!-- {x-version-update:proto-google-cloud-saasservicemgmt-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

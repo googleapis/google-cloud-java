@@ -1129,3 +1129,5 @@ google-cloud-designcenter-bom:0.1.0:0.1.0
 proto-google-cloud-designcenter-v1:0.1.0:0.1.0
 grpc-google-cloud-designcenter-v1:0.1.0:0.1.0
 google-cloud-designcenter:0.1.0:0.1.0
+proto-google-cloud-saasservicemgmt-v1:0.31.0:0.31.0
+grpc-google-cloud-saasservicemgmt-v1:0.31.0:0.31.0
