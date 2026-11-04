@@ -3352,11 +3352,14 @@ public class BigQueryDatabaseMetaDataTest {
     }
 
     ColumnTypeInfo metadataTypeInfo = dbMetadata.mapBigQueryTypeToJdbc(field);
+    ColumnTypeInfo graphTypeInfo = dbMetadata.getColumnTypeInfoForTypeKind(type.name());
     Integer resultSetType = BigQueryTypeRegistry.toJdbcType(type);
 
     assertNotNull(resultSetType, "ResultSet mapping should exist for " + type);
     assertEquals(
         metadataTypeInfo.jdbcType, (int) resultSetType, "Type mapping mismatch for " + type);
+    assertEquals(metadataTypeInfo.jdbcType, graphTypeInfo.jdbcType);
+    assertEquals(metadataTypeInfo.typeName, graphTypeInfo.typeName);
   }
 
   @Test
@@ -3842,6 +3845,125 @@ public class BigQueryDatabaseMetaDataTest {
               "EXTERNAL", "GRAPH TABLE", "MATERIALIZED VIEW", "SNAPSHOT", "TABLE", "VIEW")
           .inOrder();
     }
+  }
+
+  @Test
+  public void testShouldSkipGraphColumns() {
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(false);
+    assertTrue(dbMetadata.shouldSkipGraphColumns("%"));
+    assertTrue(dbMetadata.shouldSkipGraphColumns("RetailGraph.Product"));
+
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
+    assertTrue(dbMetadata.shouldSkipGraphColumns("plainTableWithoutDot"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("RetailGraph.Product"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("Retail_Graph.Product"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("Retail_Graph.Product_Node"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("RetailGraph.Product_Node"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("Retail%.Product_Node"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("RetailGraph.Product%"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("%"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("Retail%"));
+    assertTrue(dbMetadata.shouldSkipGraphColumns("Graph_Node"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns(null));
+  }
+
+  @Test
+  public void testCreateGraphColumnRow_StandardProperty() {
+    FieldList schemaFields = dbMetadata.defineGetColumnsSchema().getFields();
+
+    FieldValueList propRow =
+        FieldValueList.of(
+            dbMetadata.createGraphColumnRow(
+                "test-project",
+                "my_dataset",
+                "RetailGraph.Product",
+                "list_price",
+                "NUMERIC",
+                "list_price",
+                "COLUMN",
+                "List price in USD",
+                1),
+            schemaFields);
+
+    assertEquals("test-project", propRow.get("TABLE_CAT").getStringValue());
+    assertEquals("my_dataset", propRow.get("TABLE_SCHEM").getStringValue());
+    assertEquals("RetailGraph.Product", propRow.get("TABLE_NAME").getStringValue());
+    assertEquals("list_price", propRow.get("COLUMN_NAME").getStringValue());
+    assertEquals(Types.NUMERIC, propRow.get("DATA_TYPE").getLongValue());
+    assertEquals("NUMERIC", propRow.get("TYPE_NAME").getStringValue());
+    assertEquals(38L, propRow.get("COLUMN_SIZE").getLongValue());
+    assertTrue(propRow.get("BUFFER_LENGTH").isNull());
+    assertEquals(9L, propRow.get("DECIMAL_DIGITS").getLongValue());
+    assertEquals(10L, propRow.get("NUM_PREC_RADIX").getLongValue());
+    assertEquals(DatabaseMetaData.columnNullableUnknown, propRow.get("NULLABLE").getLongValue());
+    assertEquals("List price in USD", propRow.get("REMARKS").getStringValue());
+    assertTrue(propRow.get("COLUMN_DEF").isNull());
+    assertEquals(1L, propRow.get("ORDINAL_POSITION").getLongValue());
+    assertEquals("", propRow.get("IS_NULLABLE").getStringValue());
+    assertEquals("NO", propRow.get("IS_AUTOINCREMENT").getStringValue());
+    assertEquals("NO", propRow.get("IS_GENERATEDCOLUMN").getStringValue());
+  }
+
+  @Test
+  public void testCreateGraphColumnRow_MeasureAndComputedProperty() {
+    FieldList schemaFields = dbMetadata.defineGetColumnsSchema().getFields();
+
+    // Measure without description
+    FieldValueList measureRow =
+        FieldValueList.of(
+            dbMetadata.createGraphColumnRow(
+                "test-project",
+                "my_dataset",
+                "RetailGraph.Product",
+                "avg_list_price",
+                "NUMERIC",
+                "AVG(list_price)",
+                "MEASURE",
+                null,
+                2),
+            schemaFields);
+    assertEquals(Types.NUMERIC, measureRow.get("DATA_TYPE").getLongValue());
+    assertEquals("NUMERIC", measureRow.get("TYPE_NAME").getStringValue());
+    assertEquals(38L, measureRow.get("COLUMN_SIZE").getLongValue());
+    assertEquals(9L, measureRow.get("DECIMAL_DIGITS").getLongValue());
+    assertEquals("MEASURE: AVG(list_price)", measureRow.get("REMARKS").getStringValue());
+    assertEquals("YES", measureRow.get("IS_GENERATEDCOLUMN").getStringValue());
+
+    // Measure with description
+    FieldValueList measureWithDescRow =
+        FieldValueList.of(
+            dbMetadata.createGraphColumnRow(
+                "test-project",
+                "my_dataset",
+                "RetailGraph.Product",
+                "avg_list_price",
+                "NUMERIC",
+                "AVG(list_price)",
+                "MEASURE",
+                "Average list price",
+                3),
+            schemaFields);
+    assertEquals(
+        "MEASURE: AVG(list_price) - Average list price",
+        measureWithDescRow.get("REMARKS").getStringValue());
+    assertEquals("YES", measureWithDescRow.get("IS_GENERATEDCOLUMN").getStringValue());
+
+    // Computed property (non-measure, expression differs from column name)
+    FieldValueList computedRow =
+        FieldValueList.of(
+            dbMetadata.createGraphColumnRow(
+                "test-project",
+                "my_dataset",
+                "RetailGraph.Sale",
+                "line_total",
+                "NUMERIC",
+                "quantity * unit_price",
+                "EXPRESSION",
+                "Total line amount",
+                4),
+            schemaFields);
+    assertEquals("Total line amount", computedRow.get("REMARKS").getStringValue());
+    assertEquals("YES", computedRow.get("IS_GENERATEDCOLUMN").getStringValue());
   }
 
   @Test
