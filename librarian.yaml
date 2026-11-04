@@ -5141,6 +5141,10 @@ libraries:
   - name: saasservicemgmt
     version: 0.31.0
     apis:
+      - path: google/cloud/saasplatform/saasservicemgmt/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
       - path: google/cloud/saasplatform/saasservicemgmt/v1beta1
         java:
           additional_protos:
