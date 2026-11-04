@@ -4009,6 +4009,9 @@ public class BigQueryDatabaseMetaDataTest {
 
     when(bigQueryConnection.getLocation()).thenReturn("region-eu");
     assertEquals("region-eu", dbMetadata.resolveGraphRegion());
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> BigQueryDatabaseMetaData.validateRegionScopeIdentifier("region-US"));
   }
 
   @Test
@@ -4022,6 +4025,24 @@ public class BigQueryDatabaseMetaDataTest {
         dbMetadata.replaceSqlParameters(
             BigQueryDatabaseMetaData.getGraphTablesSqlContent(), "my-project", "region-us");
     assertThat(regionSql).contains("`my-project.region-us.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
+  }
+
+  @Test
+  public void testGraphPrimaryKeysSqlContent() throws SQLException {
+    String datasetSql =
+        dbMetadata.replaceSqlParameters(
+            BigQueryDatabaseMetaData.getGraphPrimaryKeysSqlContent(), "my-project", "my_dataset");
+    assertThat(datasetSql).contains("`my-project.my_dataset.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
+
+    String regionSql =
+        dbMetadata.replaceSqlParameters(
+            BigQueryDatabaseMetaData.getGraphPrimaryKeysSqlContent(), "my-project", "region-us");
+    assertThat(regionSql).contains("`my-project.region-us.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
+
+    // getPrimaryKeys takes exact names: no LIKE, one bound parameter, key columns + 1-based seq.
+    assertThat(regionSql).doesNotContain("LIKE");
+    assertThat(regionSql).contains("'$.keyColumns'");
+    assertThat(regionSql).contains("kc_off + 1 AS KEY_SEQ");
   }
 
   @FunctionalInterface

@@ -108,6 +108,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   private static String graphTablesSqlContent;
   private static final String GET_GRAPH_COLUMNS_SQL = "DatabaseMetaData_GetGraphColumns.sql";
   private static String graphColumnsSqlContent;
+  private static final String GET_GRAPH_PRIMARY_KEYS_SQL =
+      "DatabaseMetaData_GetGraphPrimaryKeys.sql";
+  private static String graphPrimaryKeysSqlContent;
   static final String MEASURE_EXPRESSION_KIND = "MEASURE";
   static final String MEASURE_REMARKS_PREFIX = "MEASURE: ";
   // Declared package-private for testing.
@@ -161,8 +164,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   private static final Pattern VALID_SCHEMA_PATTERN = Pattern.compile("^[A-Za-z0-9_]+$");
   // BigQuery region qualifier for regional INFORMATION_SCHEMA queries (e.g. region-us,
   // region-us-central1)
-  private static final Pattern VALID_REGION_SCOPE_PATTERN =
-      Pattern.compile("^region-[A-Za-z0-9-]+$");
+  private static final Pattern VALID_REGION_SCOPE_PATTERN = Pattern.compile("^region-[a-z0-9-]+$");
 
   String URL;
   BigQueryConnection connection;
@@ -2320,25 +2322,37 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
 
     final FieldList resultSchemaFields = resultSchema.getFields();
-    List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema, false);
 
+    // A dot can only appear in a graph element name ("<graph>.<element>");
+    // Route accordingly — no pattern checks,
+    // because getPrimaryKeys takes exact names.
+    boolean isGraphTableName = table.contains(".");
     BlockingQueue<BigQueryFieldValueListWrapper> queue =
         fetchAndPopulateQueue(
             () -> {
               final List<FieldValueList> collectedResults =
                   Collections.synchronizedList(new ArrayList<>());
-              processTargetTablesConcurrently(
-                  targetDatasets,
-                  table,
-                  false,
-                  true,
-                  true,
-                  collectedResults,
-                  resultSchemaFields,
-                  (bqTable, results, fields) -> {
-                    TableConstraints constraints = bqTable.getTableConstraints();
-                    processPrimaryKey(constraints, bqTable.getTableId(), results, fields);
-                  });
+
+              if (!isGraphTableName) {
+
+                // Only the REST path needs the dataset list (datasets.list when schema is null).
+                List<DatasetId> targetDatasets = getTargetDatasets(catalog, schema, false);
+                processTargetTablesConcurrently(
+                    targetDatasets,
+                    table,
+                    false,
+                    true,
+                    true,
+                    collectedResults,
+                    resultSchemaFields,
+                    (bqTable, results, fields) -> {
+                      TableConstraints constraints = bqTable.getTableConstraints();
+                      processPrimaryKey(constraints, bqTable.getTableId(), results, fields);
+                    });
+              } else if (this.connection.isEnableGraphMetadata()) {
+                appendGraphPrimaryKeys(
+                    catalog, schema, table, collectedResults, resultSchemaFields);
+              }
 
               Comparator<FieldValueList> comparator =
                   defineGetPrimaryKeysComparator(resultSchemaFields);
@@ -2398,6 +2412,74 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       row.add(createLongFieldValue((long) (i + 1))); // 5. KEY_SEQ
       row.add(createNullFieldValue()); // 6. PK_NAME
       collectedResults.add(FieldValueList.of(row, resultSchemaFields));
+    }
+  }
+
+  private void appendGraphPrimaryKeys(
+      String catalog,
+      String schema,
+      String table,
+      List<FieldValueList> collectedResults,
+      FieldList resultSchemaFields)
+      throws SQLException {
+    // getPrimaryKeys takes exact identifiers, never LIKE patterns. The only "wide"
+    // input JDBC permits is null, which means "all".
+    List<String> targetCatalogs =
+        catalog != null ? Collections.singletonList(catalog) : getAccessibleCatalogNames();
+
+    // Scope of the INFORMATION_SCHEMA path:
+    //   schema given -> `<project>.<schema>.INFORMATION_SCHEMA.PROPERTY_GRAPHS`
+    //   schema null  -> `<project>.region-<loc>.INFORMATION_SCHEMA.PROPERTY_GRAPHS`
+    //
+    //  Unlike the REST path (datasets.list, region-agnostic), the null-schema case covers a
+    // single region: the connection Location, else DEFAULT_GRAPH_REGION. Graphs elsewhere
+    // are not returned unless Location is set or the dataset is passed as schema.
+    String scope;
+    if (schema != null) {
+      validateSchemaIdentifier(schema);
+      scope = schema;
+    } else {
+      scope = resolveGraphRegion();
+      validateRegionScopeIdentifier(scope);
+    }
+
+    for (String project : targetCatalogs) {
+      validateCatalogIdentifier(project);
+      String formattedSql = replaceSqlParameters(getGraphPrimaryKeysSqlContent(), project, scope);
+
+      try (PreparedStatement statement = this.connection.prepareStatement(formattedSql)) {
+        statement.setString(1, table); // exact "<graph>.<element>"
+        try (ResultSet rs = statement.executeQuery()) {
+          while (rs.next()) {
+            List<FieldValue> row = new ArrayList<>(6);
+            row.add(
+                createStringFieldValue(
+                    rs.getString("TABLE_CAT"))); // 1. TABLE_CAT   <- property_graph_catalog
+            row.add(
+                createStringFieldValue(
+                    rs.getString("TABLE_SCHEM"))); // 2. TABLE_SCHEM <- property_graph_schema
+            row.add(
+                createStringFieldValue(
+                    rs.getString("TABLE_NAME"))); // 3. TABLE_NAME  <- "<graph>.<element>"
+            row.add(
+                createStringFieldValue(
+                    rs.getString("COLUMN_NAME"))); // 4. COLUMN_NAME <- keyColumns[i]
+            row.add(createLongFieldValue(rs.getLong("KEY_SEQ"))); // 5. KEY_SEQ     <- kc_off + 1
+            row.add(createNullFieldValue()); // 6. PK_NAME     (always null)
+            collectedResults.add(FieldValueList.of(row, resultSchemaFields));
+          }
+        }
+      } catch (SQLException e) {
+        // Same "Not found" tolerance as appendGraphTableRows / appendGraphColumnRows.
+        if (e.getMessage() != null && e.getMessage().contains("Not found")) {
+          LOG.info(
+              "Dataset or project not found while querying PROPERTY_GRAPHS for primary keys in"
+                  + " project '%s'. Skipping.",
+              project);
+        } else {
+          throw e;
+        }
+      }
     }
   }
 
@@ -5191,11 +5273,18 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     return graphTablesSqlContent;
   }
 
-  private static synchronized String getGraphColumnsSqlContent() {
+  static synchronized String getGraphColumnsSqlContent() {
     if (graphColumnsSqlContent == null) {
       graphColumnsSqlContent = readSqlFromFile(GET_GRAPH_COLUMNS_SQL);
     }
     return graphColumnsSqlContent;
+  }
+
+  static synchronized String getGraphPrimaryKeysSqlContent() {
+    if (graphPrimaryKeysSqlContent == null) {
+      graphPrimaryKeysSqlContent = readSqlFromFile(GET_GRAPH_PRIMARY_KEYS_SQL);
+    }
+    return graphPrimaryKeysSqlContent;
   }
 
   static String readSqlFromFile(String filename) {
