@@ -801,7 +801,7 @@ class ConnectionImplTest {
     Map<String, String> emptyLabels = new HashMap<>();
     QueryRequest request =
         connection.createQueryRequest(connectionSettings, SQL_QUERY, emptyParameters, emptyLabels);
-    assertEquals(null, request.getQueryParameters());
+    assertNull(request.getQueryParameters());
 
     com.google.api.services.bigquery.model.Job jobResponseMock =
         new com.google.api.services.bigquery.model.Job()
