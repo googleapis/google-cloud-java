@@ -308,8 +308,8 @@ public class AggregateFunction {
   /**
    * Applies a window frame to this aggregate, turning it into a window function.
    *
-   * <p>Use this to give a single accumulator its own framing, independent of the frame declared on
-   * the enclosing {@code addWindowFields} stage.
+   * <p>Evaluates this aggregate function over the given window frame. Can only be used when the
+   * enclosing {@code addWindowFields} stage does not specify a window frame.
    *
    * <p>Only {@code documents} or {@code range} window frames are supported on individual
    * accumulators (using {@link WindowSpec#documents} or {@link WindowSpec#range}). Other window

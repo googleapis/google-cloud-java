@@ -768,33 +768,6 @@ public class AddWindowFieldsProtoTest {
         .isEqualTo(map(pair("total", fn("sum", fieldRef("salesPrice")))));
   }
 
-  @Test
-  public void supportsOverOnARankingWindowFunction() {
-    assertThat(
-            fieldsArg(
-                basePipeline()
-                    .addWindowFields(
-                        new WindowSpec().sort(field("date").ascending()),
-                        WindowFunction.rank()
-                            .over(
-                                new WindowSpec()
-                                    .documents(WindowBound.UNBOUNDED, WindowBound.CURRENT))
-                            .as("r"))))
-        .isEqualTo(
-            map(
-                pair(
-                    "r",
-                    fn(
-                        "over",
-                        fn("rank"),
-                        map(
-                            pair(
-                                "documents",
-                                map(
-                                    pair("preceding", str("unbounded")),
-                                    pair("following", str("current")))))))));
-  }
-
   // The SDK does not reject `partition`/`sort` in `over()`. They are encoded into the same window
   // spec map as the frame, and the backend responds with
   // `Window frame has unexpected fields: [partition]`. Leaving this to the backend means
@@ -988,7 +961,7 @@ public class AddWindowFieldsProtoTest {
   }
 
   @Test
-  public void validatesExpressionsInDocumentsAndRangeFrameBoundsAndUnit() {
+  public void validatesExpressionsInDocumentsAndRangeFrameBounds() {
     Expression invalidExpr = constant(new BigDecimal("1.5"));
     FirestoreException docError =
         assertThrows(
@@ -1012,7 +985,7 @@ public class AddWindowFieldsProtoTest {
                         .addWindowFields(
                             new WindowSpec()
                                 .sort(field("date").ascending())
-                                .range(1, WindowBound.CURRENT, invalidExpr),
+                                .range(invalidExpr, WindowBound.CURRENT),
                             countAll().as("c"))));
     assertThat(rangeError).hasMessageThat().contains("Cannot convert");
   }

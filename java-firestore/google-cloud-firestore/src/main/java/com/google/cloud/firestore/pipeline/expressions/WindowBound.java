@@ -34,11 +34,11 @@ import java.util.Objects;
  * current document's position (ties are not included, equivalent to a numeric offset of {@code 0}).
  * In a {@link WindowSpec#range range} frame, {@link #CURRENT} is peer-inclusive (like SQL {@code
  * CURRENT ROW} in {@code RANGE} mode): it includes all documents whose sort value(s) tie with the
- * current document (also semantically equivalent to a numeric offset of {@code 0}, though {@link
- * #CURRENT} is encoded on the wire as {@code "current"} rather than {@code 0}). Given documents
- * with sort values {@code [10, 10, 20]} and {@code range(UNBOUNDED, CURRENT)}, the frame for either
- * {@code 10} document includes both {@code 10} documents (2 documents), and for {@code 20} includes
- * all 3 documents.
+ * current document (equivalent to a numeric offset of {@code 0}, but also allowed with multiple or
+ * non-numeric sort keys; {@link #CURRENT} is encoded on the wire as {@code "current"} rather than
+ * {@code 0}). Given documents with sort values {@code [10, 10, 20]} and {@code range(UNBOUNDED,
+ * CURRENT)}, the frame for either {@code 10} document includes both {@code 10} documents (2
+ * documents), and for {@code 20} includes all 3 documents.
  */
 public final class WindowBound {
   private final String protoString;

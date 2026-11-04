@@ -27,6 +27,7 @@ import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.FirestoreException;
 import com.google.cloud.firestore.LocalFirestoreHelper;
+import com.google.cloud.firestore.Pipeline;
 import com.google.cloud.firestore.PipelineResult;
 import com.google.cloud.firestore.pipeline.expressions.AggregateFunction;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
@@ -398,6 +399,199 @@ public class ITPipelineWindowTest extends ITBaseTest {
   }
 
   // -----------------------------------------------------------------------------------------
+  // Window frame API behavior
+  // -----------------------------------------------------------------------------------------
+
+  /**
+   * Executes {@code pipeline} and asserts that it fails with an error message containing {@code
+   * expectedMessage}.
+   */
+  private static void expectRejected(Pipeline pipeline, String expectedMessage) {
+    ExecutionException exception =
+        assertThrows(ExecutionException.class, () -> pipeline.execute().get());
+    assertThat(exception).hasMessageThat().contains(expectedMessage);
+  }
+
+  @Test
+  public void testWindowFieldsRejectsDynamicExpressionBounds() throws Exception {
+    CollectionReference salesCol = windowTestCollection();
+    for (Expression preceding : Arrays.asList(field("quantity"), field("quantity").add(1))) {
+      expectRejected(
+          firestore
+              .pipeline()
+              .collection(salesCol)
+              .addWindowFields(
+                  new WindowSpec()
+                      .sort(ascending("salesPrice"))
+                      .documents(preceding, WindowBound.CURRENT),
+                  AggregateFunction.count("quantity").as("windowCount")),
+          "Dynamic boundary expressions in window frames are not supported yet");
+    }
+  }
+
+  @Test
+  public void testWindowFieldsRejectsAccumulatorLevelFramingWhenTheStageSpecifiesAFrame()
+      throws Exception {
+    expectRejected(
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec()
+                    .sort(ascending("salesPrice"))
+                    .range(WindowBound.UNBOUNDED, WindowBound.CURRENT),
+                AggregateFunction.count("quantity")
+                    .over(new WindowSpec().documents(1, 1))
+                    .as("windowCount")),
+        "Cannot specify window framing on individual aggregations when stage-level window framing"
+            + " is already specified");
+  }
+
+  @Test
+  public void testWindowFieldsUsesThePeerInclusiveDefaultFrameForAccumulatorsWithoutOver()
+      throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().sort(ascending("salesPrice")),
+                AggregateFunction.count("quantity")
+                    .over(new WindowSpec().range(WindowBound.CURRENT, WindowBound.CURRENT))
+                    .as("framed"),
+                AggregateFunction.count("quantity").as("unframed"))
+            .sort(ascending("date"))
+            .select("salesPrice", "framed", "unframed")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("salesPrice", 12L), entry("framed", 1L), entry("unframed", 1L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("framed", 2L), entry("unframed", 3L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("framed", 2L), entry("unframed", 3L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("framed", 2L), entry("unframed", 5L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("framed", 2L), entry("unframed", 5L))));
+  }
+
+  @Test
+  public void testWindowFieldsRejectsAFractionalDocumentsOffset() throws Exception {
+    expectRejected(
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().sort(ascending("salesPrice")).documents(1.5, 0),
+                AggregateFunction.sum("salesPrice").as("total")),
+        "Documents window frame offset must be a 32-bit integer");
+  }
+
+  @Test
+  public void testWindowFieldsRejectsAFractionalTimeRangeOffset() throws Exception {
+    expectRejected(
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().sort(ascending("date")).range(1.5, WindowBound.CURRENT, "day"),
+                AggregateFunction.sum("salesPrice").as("total")),
+        "Time range window frame offset must be an integer");
+  }
+
+  @Test
+  public void testWindowFieldsTreatsCurrentAsPeerInclusiveForNonNumericAndMultipleSortKeys()
+      throws Exception {
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec()
+                    .sort(ascending("product"))
+                    .range(WindowBound.CURRENT, WindowBound.CURRENT),
+                AggregateFunction.count("quantity").as("sameProductCount"))
+            .addWindowFields(
+                new WindowSpec()
+                    .sort(ascending("product"), ascending("region"))
+                    .range(WindowBound.CURRENT, WindowBound.CURRENT),
+                AggregateFunction.count("quantity").as("sameProductRegionCount"))
+            .sort(ascending("date"))
+            .select("sameProductCount", "sameProductRegionCount")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("sameProductCount", 2L), entry("sameProductRegionCount", 1L)),
+            mapOfEntries(entry("sameProductCount", 2L), entry("sameProductRegionCount", 1L)),
+            mapOfEntries(entry("sameProductCount", 3L), entry("sameProductRegionCount", 2L)),
+            mapOfEntries(entry("sameProductCount", 3L), entry("sameProductRegionCount", 1L)),
+            mapOfEntries(entry("sameProductCount", 3L), entry("sameProductRegionCount", 2L))));
+  }
+
+  @Test
+  public void testWindowFieldsRejectsNumericRangeOffsetsWithANonNumericSortKey() throws Exception {
+    // Unlike CURRENT, a numeric offset (even 0) requires numeric sort values.
+    CollectionReference salesCol = windowTestCollection();
+    for (WindowSpec window :
+        Arrays.asList(
+            new WindowSpec().sort(ascending("product")).range(1, WindowBound.CURRENT),
+            new WindowSpec().sort(ascending("product")).range(0, 0))) {
+      expectRejected(
+          firestore
+              .pipeline()
+              .collection(salesCol)
+              .addWindowFields(window, AggregateFunction.count("quantity").as("windowCount")),
+          "Range windows require all sortBy values to be numbers");
+    }
+  }
+
+  @Test
+  public void testWindowFieldsRejectsNumericRangeOffsetsWithMultipleSortKeys() throws Exception {
+    CollectionReference salesCol = windowTestCollection();
+    for (WindowSpec window :
+        Arrays.asList(
+            new WindowSpec()
+                .sort(ascending("salesPrice"), ascending("quantity"))
+                .range(1, WindowBound.CURRENT),
+            new WindowSpec().sort(ascending("salesPrice"), ascending("quantity")).range(0, 0))) {
+      expectRejected(
+          firestore
+              .pipeline()
+              .collection(salesCol)
+              .addWindowFields(window, AggregateFunction.count("quantity").as("windowCount")),
+          "requires exactly 1 sort ordering, but 2 were specified");
+    }
+  }
+
+  @Test
+  public void testWindowFieldsRejectsARangeFrameWhoseLowerBoundIsAfterItsUpperBound()
+      throws Exception {
+    expectRejected(
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().sort(ascending("salesPrice")).range(-2, 1),
+                AggregateFunction.count("quantity").as("windowCount")),
+        "lower bound must be less than or equal to upper bound");
+  }
+
+  @Test
+  public void testWindowFieldsRejectsATimeUnitWithANumericSortKey() throws Exception {
+    expectRejected(
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().sort(ascending("salesPrice")).range(1, WindowBound.CURRENT, "day"),
+                AggregateFunction.count("quantity").as("windowCount")),
+        "Time range windows require all sortBy values to be dates");
+  }
+
+  // -----------------------------------------------------------------------------------------
   // Comprehensive window function tests (count)
   //
   // Skipped by default on CI and local runs because the backend already tests window function
@@ -541,28 +735,28 @@ public class ITPipelineWindowTest extends ITBaseTest {
   public void testWindowFieldsRunningCountWithTheDefaultFrame() throws Exception {
     assumeComprehensiveTestsEnabled();
     // The implicit default frame when `sort` is specified is `range(UNBOUNDED, CURRENT)`.
-    // `quantity` is 1..5 in the same order as `date`, and has no ties, so the running count is
-    // unambiguous.
+    // The default `CURRENT` bound is peer-inclusive, so documents with tied `salesPrice` values
+    // share the same running count.
     List<PipelineResult> results =
         firestore
             .pipeline()
             .collection(windowTestCollection())
             .addWindowFields(
-                new WindowSpec().sort(ascending("quantity")),
+                new WindowSpec().sort(ascending("salesPrice")),
                 AggregateFunction.count("quantity").as("runningCount"))
             .sort(ascending("date"))
-            .select("product", "runningCount")
+            .select("salesPrice", "runningCount")
             .execute()
             .get()
             .getResults();
     expectResults(
         results,
         Arrays.asList(
-            mapOfEntries(entry("product", "phone"), entry("runningCount", 1L)),
-            mapOfEntries(entry("product", "phone"), entry("runningCount", 2L)),
-            mapOfEntries(entry("product", "tablet"), entry("runningCount", 3L)),
-            mapOfEntries(entry("product", "tablet"), entry("runningCount", 4L)),
-            mapOfEntries(entry("product", "tablet"), entry("runningCount", 5L))));
+            mapOfEntries(entry("salesPrice", 12L), entry("runningCount", 1L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("runningCount", 3L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("runningCount", 3L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("runningCount", 5L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("runningCount", 5L))));
   }
 
   @Test
@@ -1246,59 +1440,6 @@ public class ITPipelineWindowTest extends ITBaseTest {
   // --- error handling ----------------------------------------------------------------------------
 
   @Test
-  public void testWindowFieldsRejectsMixingStageAndAccumulatorFraming() throws Exception {
-    assumeComprehensiveTestsEnabled();
-    CollectionReference salesCol = windowTestCollection();
-    assertThrows(
-        ExecutionException.class,
-        () ->
-            firestore
-                .pipeline()
-                .collection(salesCol)
-                .addWindowFields(
-                    new WindowSpec()
-                        .sort(ascending("date"))
-                        .documents(WindowBound.UNBOUNDED, WindowBound.CURRENT),
-                    AggregateFunction.count("quantity")
-                        .over(
-                            new WindowSpec()
-                                .documents(WindowBound.UNBOUNDED, WindowBound.UNBOUNDED))
-                        .as("windowCount"))
-                .execute()
-                .get());
-  }
-
-  @Test
-  public void
-      testWindowFieldsEvaluatesAccumulatorsWithoutOverUsingTheDefaultFrameWhenOthersUseOver()
-          throws Exception {
-    assumeComprehensiveTestsEnabled();
-    List<PipelineResult> results =
-        firestore
-            .pipeline()
-            .collection(windowTestCollection())
-            .addWindowFields(
-                new WindowSpec().sort(ascending("date")),
-                AggregateFunction.count("quantity")
-                    .over(new WindowSpec().documents(0, 0))
-                    .as("framed"),
-                AggregateFunction.count("quantity").as("unframed"))
-            .sort(ascending("date"))
-            .select("product", "framed", "unframed")
-            .execute()
-            .get()
-            .getResults();
-    expectResults(
-        results,
-        Arrays.asList(
-            mapOfEntries(entry("product", "phone"), entry("framed", 1L), entry("unframed", 1L)),
-            mapOfEntries(entry("product", "phone"), entry("framed", 1L), entry("unframed", 2L)),
-            mapOfEntries(entry("product", "tablet"), entry("framed", 1L), entry("unframed", 3L)),
-            mapOfEntries(entry("product", "tablet"), entry("framed", 1L), entry("unframed", 4L)),
-            mapOfEntries(entry("product", "tablet"), entry("framed", 1L), entry("unframed", 5L))));
-  }
-
-  @Test
   public void testWindowFieldsRejectsAPartitionSuppliedToAnAccumulatorLevelOver() throws Exception {
     assumeComprehensiveTestsEnabled();
     CollectionReference salesCol = windowTestCollection();
@@ -1767,6 +1908,33 @@ public class ITPipelineWindowTest extends ITBaseTest {
             mapOfEntries(entry("salesPrice", 12L), entry("nearbyTotal", 12L)),
             mapOfEntries(entry("salesPrice", 30L), entry("nearbyTotal", 72L)),
             mapOfEntries(entry("salesPrice", 30L), entry("nearbyTotal", 72L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("nearbyTotal", 120L)),
+            mapOfEntries(entry("salesPrice", 60L), entry("nearbyTotal", 120L))));
+  }
+
+  @Test
+  public void testWindowFieldsComputesAValueBasedRangeWindowWithADescendingSort() throws Exception {
+    assumeComprehensiveTestsEnabled();
+    // With a descending sort, `preceding` refers to larger values, so the frame is
+    // [value, value + 20].
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(windowTestCollection())
+            .addWindowFields(
+                new WindowSpec().range(20, 0).sort(descending("salesPrice")),
+                AggregateFunction.sum("salesPrice").as("nearbyTotal"))
+            .sort(ascending("date"))
+            .select("salesPrice", "nearbyTotal")
+            .execute()
+            .get()
+            .getResults();
+    expectResults(
+        results,
+        Arrays.asList(
+            mapOfEntries(entry("salesPrice", 12L), entry("nearbyTotal", 72L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("nearbyTotal", 60L)),
+            mapOfEntries(entry("salesPrice", 30L), entry("nearbyTotal", 60L)),
             mapOfEntries(entry("salesPrice", 60L), entry("nearbyTotal", 120L)),
             mapOfEntries(entry("salesPrice", 60L), entry("nearbyTotal", 120L))));
   }
