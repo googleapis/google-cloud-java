@@ -203,7 +203,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
           sb.append(
               array[i] == null
                   ? "null"
-                  : BigQueryTemporalUtility.formatCivilTemporalElement(type, getRawElement(i)));
+                  : BigQueryTypeRegistry.formatCivilTemporalElement(type, getRawElement(i)));
         }
         sb.append("]");
         return sb.toString();

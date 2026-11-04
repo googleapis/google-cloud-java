@@ -312,9 +312,11 @@ final class BigQueryTypeRegistry {
           if (val instanceof LocalDateTime) {
             localDateTime = (LocalDateTime) val;
           } else if (val instanceof Timestamp) {
-            localDateTime = ((Timestamp) val).toLocalDateTime();
+            localDateTime = BigQueryTemporalUtility.unboxDateTime((Timestamp) val, zone);
           } else if (val instanceof java.util.Date) {
-            localDateTime = new Timestamp(((java.util.Date) val).getTime()).toLocalDateTime();
+            localDateTime =
+                BigQueryTemporalUtility.unboxDateTime(
+                    new Timestamp(((java.util.Date) val).getTime()), zone);
           } else if (val instanceof String) {
             String isoString =
                 BigQueryTemporalUtility.truncateFractionalSeconds(
@@ -881,6 +883,23 @@ final class BigQueryTypeRegistry {
               input, bqType, targetClass.getName()),
           e);
     }
+  }
+
+  /**
+   * Formats a raw civil temporal value ({@code DATE}, {@code TIME}, or {@code DATETIME}) as a
+   * string for complex types ({@code ARRAY} and {@code STRUCT}) without boxing through {@code
+   * java.sql} types.
+   */
+  static String formatCivilTemporalElement(StandardSQLTypeName type, Object rawValue)
+      throws BigQueryJdbcException {
+    if (type == StandardSQLTypeName.DATETIME) {
+      LocalDateTime ldt =
+          convert(rawValue, StandardSQLTypeName.DATETIME, LocalDateTime.class, null);
+      return ldt == null
+          ? null
+          : BigQueryTemporalUtility.UTC_TIMESTAMP_TO_STRING_FORMATTER.format(ldt);
+    }
+    return convert(rawValue, type, String.class, null);
   }
 
   /** Returns int64-encoded TIMESTAMP values as epoch micros, as the Arrow path delivers them. */

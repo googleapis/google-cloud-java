@@ -131,7 +131,7 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
           .append("\"");
     } else if (BigQueryTemporalUtility.isCivilTemporalType(type)) {
       sb.append("\"")
-          .append(BigQueryTemporalUtility.formatCivilTemporalElement(type, rawValue))
+          .append(BigQueryTypeRegistry.formatCivilTemporalElement(type, rawValue))
           .append("\"");
     } else if (value instanceof Timestamp || value instanceof Date || value instanceof Time) {
       sb.append("\"").append(value).append("\"");
