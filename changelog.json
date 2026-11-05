@@ -5,6 +5,60 @@
       "changes": [
         {
           "type": "fix",
+          "sha": "cfea223b9ea23e94ee1015946bcd24e83b7483ce",
+          "message": "handle empty queryParameters list in ConnectionImpl",
+          "issues": [
+            "14917"
+          ],
+          "scope": "bigquery"
+        }
+      ],
+      "version": "1.96.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery",
+      "id": "6cfb5f51-1e04-4830-b6d3-288a9018a8b7",
+      "createTime": "2026-11-05T19:27:35.007Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "53bbde091641baa6530cda83afbf1309485b8b2b",
+          "message": "preserve civil digits for DATETIME/DATE",
+          "issues": [
+            "14910"
+          ],
+          "scope": "bigquery-jdbc"
+        }
+      ],
+      "version": "1.96.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquery-jdbc",
+      "id": "89dbda7a-8f9b-479f-8de9-212346561e75",
+      "createTime": "2026-11-05T19:27:34.849Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "9f4a76acfb576048729c2f35a768531eba1dad5c",
+          "message": "allow non-default service accounts for session DirectAccess",
+          "issues": [
+            "14926"
+          ],
+          "scope": "bigtable"
+        }
+      ],
+      "version": "1.96.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigtable",
+      "id": "39cef517-8eda-4767-a80a-470084784dab",
+      "createTime": "2026-11-05T19:27:34.662Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
           "sha": "a993026ba27f460189e0181b2b75aff17eec616d",
           "message": "graduate pipeline search from preview to GA",
           "issues": [
@@ -373558,5 +373612,5 @@
       "createTime": "2026-02-25T17:30:12.355Z"
     }
   ],
-  "updateTime": "2026-11-02T22:54:11.372Z"
+  "updateTime": "2026-11-05T19:27:35.007Z"
 }
