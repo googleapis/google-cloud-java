@@ -38,7 +38,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 import javax.annotation.Nullable;
@@ -313,38 +312,11 @@ class MultiUseReadOnlyTransaction extends AbstractReadContext implements ReadOnl
     } finally {
       txnLock.unlock();
     }
-    // Make sure that we decrement the counter exactly once, either
-    // when the query is actually executed, or when the result set is closed,
-    // or if something goes wrong when creating the result set.
-    final AtomicBoolean decremented = new AtomicBoolean(false);
     try {
       return new AsyncResultSetImpl(
-          executorProvider,
-          () -> {
-            try {
-              return resultSetSupplier.get();
-            } finally {
-              if (decremented.compareAndSet(false, true)) {
-                decrementPendingStartsAndSignal();
-              }
-            }
-          },
-          bufferRows) {
-        @Override
-        public void close() {
-          try {
-            super.close();
-          } finally {
-            if (!isUsed() && decremented.compareAndSet(false, true)) {
-              decrementPendingStartsAndSignal();
-            }
-          }
-        }
-      };
+          executorProvider, resultSetSupplier, bufferRows, this::decrementPendingStartsAndSignal);
     } catch (Throwable throwable) {
-      if (decremented.compareAndSet(false, true)) {
-        decrementPendingStartsAndSignal();
-      }
+      decrementPendingStartsAndSignal();
       throw throwable;
     }
   }
