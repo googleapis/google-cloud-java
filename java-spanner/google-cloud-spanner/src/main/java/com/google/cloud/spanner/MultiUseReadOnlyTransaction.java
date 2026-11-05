@@ -474,19 +474,30 @@ class MultiUseReadOnlyTransaction extends AbstractReadContext implements ReadOnl
   @Override
   public void onDone(boolean withBeginTransaction) {
     if (withBeginTransaction) {
-      failTransactionIdFuture(
-          SpannerExceptionFactory.newSpannerException(
-              ErrorCode.FAILED_PRECONDITION,
-              "ResultSet was closed before a read-only transaction id was returned"));
+      failTransactionIdFutureIfClosedBeforeIdReturned();
     }
     super.onDone(withBeginTransaction);
   }
 
   @Override
-  void onStartFailed(boolean withBeginTransaction, Throwable throwable) {
+  void onStartFailed(boolean withBeginTransaction, boolean lastStatement, Throwable throwable) {
     if (withBeginTransaction) {
-      failTransactionIdFuture(throwable);
+      failTransactionIdFuture(SpannerExceptionFactory.asSpannerException(throwable));
     }
+  }
+
+  @Override
+  void onClosedBeforeStreamStarted(boolean withBeginTransaction) {
+    if (withBeginTransaction) {
+      failTransactionIdFutureIfClosedBeforeIdReturned();
+    }
+  }
+
+  private void failTransactionIdFutureIfClosedBeforeIdReturned() {
+    failTransactionIdFuture(
+        SpannerExceptionFactory.newSpannerException(
+            ErrorCode.FAILED_PRECONDITION,
+            "ResultSet was closed before a read-only transaction id was returned"));
   }
 
   private void failTransactionIdFuture(Throwable throwable) {

@@ -74,6 +74,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -98,6 +99,11 @@ public class SessionImplTest {
   public static void setupOpenTelemetry() {
     SpannerOptions.resetActiveTracingFramework();
     SpannerOptions.enableOpenTelemetryTraces();
+  }
+
+  @AfterClass
+  public static void resetOpenTelemetry() {
+    SpannerOptions.resetActiveTracingFramework();
   }
 
   @SuppressWarnings("unchecked")

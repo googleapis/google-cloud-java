@@ -56,6 +56,7 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
     parent_ = "";
     pageToken_ = "";
     filter_ = "";
+    orderBy_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -82,7 +83,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The parent [UserStore][] resource name, format:
+   * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+   * resource name, format:
    * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
    * </pre>
    *
@@ -109,7 +111,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The parent [UserStore][] resource name, format:
+   * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+   * resource name, format:
    * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
    * </pre>
    *
@@ -140,8 +143,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Optional. Requested page size. Server may return fewer items than
-   * requested. If unspecified, defaults to 10. The maximum value is 50; values
-   * above 50 will be coerced to 50.
+   * requested. If unspecified, defaults to 100. The maximum value is 1000;
+   * values above 1000 will be coerced to 1000.
    *
    * If this field is negative, an INVALID_ARGUMENT error is returned.
    * </pre>
@@ -230,7 +233,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
    * Supported fields:
    *
    * * `license_assignment_state`
-   *
+   * * `user_principal`
+   * *
    * Examples:
    *
    * * `license_assignment_state = ASSIGNED` to list assigned user licenses.
@@ -239,6 +243,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
    * who attempted login but no license assigned.
    * * `license_assignment_state != NO_LICENSE_ATTEMPTED_LOGIN` to filter
    * out users who attempted login but no license assigned.
+   * * `user_principal = user1&#64;example.com` to list user license for
+   * `user1&#64;example.com`.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -267,7 +273,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
    * Supported fields:
    *
    * * `license_assignment_state`
-   *
+   * * `user_principal`
+   * *
    * Examples:
    *
    * * `license_assignment_state = ASSIGNED` to list assigned user licenses.
@@ -276,6 +283,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
    * who attempted login but no license assigned.
    * * `license_assignment_state != NO_LICENSE_ATTEMPTED_LOGIN` to filter
    * out users who attempted login but no license assigned.
+   * * `user_principal = user1&#64;example.com` to list user license for
+   * `user1&#64;example.com`.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -289,6 +298,89 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       filter_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORDER_BY_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object orderBy_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order in which the
+   * [UserLicense][google.cloud.discoveryengine.v1.UserLicense]s are listed. The
+   * value must be a comma-separated list of fields. Default sorting order is
+   * ascending. To specify descending order for a field, append a " desc"
+   * suffix. Redundant space characters in the syntax are insignificant.
+   *
+   * Supported fields (only `user_principal` is supported for now):
+   *
+   * * `user_principal`
+   *
+   * If not set, the default ordering is by `user_principal`.
+   *
+   * Examples:
+   *
+   * * `user_principal` to order by `user_principal` in ascending order.
+   * * `user_principal desc` to order by `user_principal` in descending order.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  @java.lang.Override
+  public java.lang.String getOrderBy() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      orderBy_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The order in which the
+   * [UserLicense][google.cloud.discoveryengine.v1.UserLicense]s are listed. The
+   * value must be a comma-separated list of fields. Default sorting order is
+   * ascending. To specify descending order for a field, append a " desc"
+   * suffix. Redundant space characters in the syntax are insignificant.
+   *
+   * Supported fields (only `user_principal` is supported for now):
+   *
+   * * `user_principal`
+   *
+   * If not set, the default ordering is by `user_principal`.
+   *
+   * Examples:
+   *
+   * * `user_principal` to order by `user_principal` in ascending order.
+   * * `user_principal desc` to order by `user_principal` in descending order.
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOrderByBytes() {
+    java.lang.Object ref = orderBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      orderBy_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -321,6 +413,9 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 4, filter_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(orderBy_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, orderBy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -342,6 +437,9 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(4, filter_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(orderBy_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, orderBy_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -362,6 +460,7 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (!getOrderBy().equals(other.getOrderBy())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -381,6 +480,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getOrderBy().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -527,6 +628,7 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
       pageSize_ = 0;
       pageToken_ = "";
       filter_ = "";
+      orderBy_ = "";
       return this;
     }
 
@@ -575,6 +677,9 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.filter_ = filter_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.orderBy_ = orderBy_;
+      }
     }
 
     @java.lang.Override
@@ -606,6 +711,11 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
       if (!other.getFilter().isEmpty()) {
         filter_ = other.filter_;
         bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getOrderBy().isEmpty()) {
+        orderBy_ = other.orderBy_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -658,6 +768,12 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                orderBy_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -683,7 +799,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent [UserStore][] resource name, format:
+     * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+     * resource name, format:
      * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
      * </pre>
      *
@@ -709,7 +826,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent [UserStore][] resource name, format:
+     * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+     * resource name, format:
      * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
      * </pre>
      *
@@ -735,7 +853,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent [UserStore][] resource name, format:
+     * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+     * resource name, format:
      * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
      * </pre>
      *
@@ -760,7 +879,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent [UserStore][] resource name, format:
+     * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+     * resource name, format:
      * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
      * </pre>
      *
@@ -781,7 +901,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent [UserStore][] resource name, format:
+     * Required. The parent [UserStore][google.cloud.discoveryengine.v1.UserStore]
+     * resource name, format:
      * `projects/{project}/locations/{location}/userStores/{user_store_id}`.
      * </pre>
      *
@@ -810,8 +931,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional. Requested page size. Server may return fewer items than
-     * requested. If unspecified, defaults to 10. The maximum value is 50; values
-     * above 50 will be coerced to 50.
+     * requested. If unspecified, defaults to 100. The maximum value is 1000;
+     * values above 1000 will be coerced to 1000.
      *
      * If this field is negative, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -830,8 +951,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional. Requested page size. Server may return fewer items than
-     * requested. If unspecified, defaults to 10. The maximum value is 50; values
-     * above 50 will be coerced to 50.
+     * requested. If unspecified, defaults to 100. The maximum value is 1000;
+     * values above 1000 will be coerced to 1000.
      *
      * If this field is negative, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -854,8 +975,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Optional. Requested page size. Server may return fewer items than
-     * requested. If unspecified, defaults to 10. The maximum value is 50; values
-     * above 50 will be coerced to 50.
+     * requested. If unspecified, defaults to 100. The maximum value is 1000;
+     * values above 1000 will be coerced to 1000.
      *
      * If this field is negative, an INVALID_ARGUMENT error is returned.
      * </pre>
@@ -1013,7 +1134,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      * Supported fields:
      *
      * * `license_assignment_state`
-     *
+     * * `user_principal`
+     * *
      * Examples:
      *
      * * `license_assignment_state = ASSIGNED` to list assigned user licenses.
@@ -1022,6 +1144,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      * who attempted login but no license assigned.
      * * `license_assignment_state != NO_LICENSE_ATTEMPTED_LOGIN` to filter
      * out users who attempted login but no license assigned.
+     * * `user_principal = user1&#64;example.com` to list user license for
+     * `user1&#64;example.com`.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1049,7 +1173,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      * Supported fields:
      *
      * * `license_assignment_state`
-     *
+     * * `user_principal`
+     * *
      * Examples:
      *
      * * `license_assignment_state = ASSIGNED` to list assigned user licenses.
@@ -1058,6 +1183,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      * who attempted login but no license assigned.
      * * `license_assignment_state != NO_LICENSE_ATTEMPTED_LOGIN` to filter
      * out users who attempted login but no license assigned.
+     * * `user_principal = user1&#64;example.com` to list user license for
+     * `user1&#64;example.com`.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1085,7 +1212,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      * Supported fields:
      *
      * * `license_assignment_state`
-     *
+     * * `user_principal`
+     * *
      * Examples:
      *
      * * `license_assignment_state = ASSIGNED` to list assigned user licenses.
@@ -1094,6 +1222,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      * who attempted login but no license assigned.
      * * `license_assignment_state != NO_LICENSE_ATTEMPTED_LOGIN` to filter
      * out users who attempted login but no license assigned.
+     * * `user_principal = user1&#64;example.com` to list user license for
+     * `user1&#64;example.com`.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1120,7 +1250,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      * Supported fields:
      *
      * * `license_assignment_state`
-     *
+     * * `user_principal`
+     * *
      * Examples:
      *
      * * `license_assignment_state = ASSIGNED` to list assigned user licenses.
@@ -1129,6 +1260,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      * who attempted login but no license assigned.
      * * `license_assignment_state != NO_LICENSE_ATTEMPTED_LOGIN` to filter
      * out users who attempted login but no license assigned.
+     * * `user_principal = user1&#64;example.com` to list user license for
+     * `user1&#64;example.com`.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1151,7 +1284,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      * Supported fields:
      *
      * * `license_assignment_state`
-     *
+     * * `user_principal`
+     * *
      * Examples:
      *
      * * `license_assignment_state = ASSIGNED` to list assigned user licenses.
@@ -1160,6 +1294,8 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
      * who attempted login but no license assigned.
      * * `license_assignment_state != NO_LICENSE_ATTEMPTED_LOGIN` to filter
      * out users who attempted login but no license assigned.
+     * * `user_principal = user1&#64;example.com` to list user license for
+     * `user1&#64;example.com`.
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1174,6 +1310,192 @@ public final class ListUserLicensesRequest extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       filter_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object orderBy_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order in which the
+     * [UserLicense][google.cloud.discoveryengine.v1.UserLicense]s are listed. The
+     * value must be a comma-separated list of fields. Default sorting order is
+     * ascending. To specify descending order for a field, append a " desc"
+     * suffix. Redundant space characters in the syntax are insignificant.
+     *
+     * Supported fields (only `user_principal` is supported for now):
+     *
+     * * `user_principal`
+     *
+     * If not set, the default ordering is by `user_principal`.
+     *
+     * Examples:
+     *
+     * * `user_principal` to order by `user_principal` in ascending order.
+     * * `user_principal desc` to order by `user_principal` in descending order.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The orderBy.
+     */
+    public java.lang.String getOrderBy() {
+      java.lang.Object ref = orderBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        orderBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order in which the
+     * [UserLicense][google.cloud.discoveryengine.v1.UserLicense]s are listed. The
+     * value must be a comma-separated list of fields. Default sorting order is
+     * ascending. To specify descending order for a field, append a " desc"
+     * suffix. Redundant space characters in the syntax are insignificant.
+     *
+     * Supported fields (only `user_principal` is supported for now):
+     *
+     * * `user_principal`
+     *
+     * If not set, the default ordering is by `user_principal`.
+     *
+     * Examples:
+     *
+     * * `user_principal` to order by `user_principal` in ascending order.
+     * * `user_principal desc` to order by `user_principal` in descending order.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for orderBy.
+     */
+    public com.google.protobuf.ByteString getOrderByBytes() {
+      java.lang.Object ref = orderBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        orderBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order in which the
+     * [UserLicense][google.cloud.discoveryengine.v1.UserLicense]s are listed. The
+     * value must be a comma-separated list of fields. Default sorting order is
+     * ascending. To specify descending order for a field, append a " desc"
+     * suffix. Redundant space characters in the syntax are insignificant.
+     *
+     * Supported fields (only `user_principal` is supported for now):
+     *
+     * * `user_principal`
+     *
+     * If not set, the default ordering is by `user_principal`.
+     *
+     * Examples:
+     *
+     * * `user_principal` to order by `user_principal` in ascending order.
+     * * `user_principal desc` to order by `user_principal` in descending order.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderBy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      orderBy_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order in which the
+     * [UserLicense][google.cloud.discoveryengine.v1.UserLicense]s are listed. The
+     * value must be a comma-separated list of fields. Default sorting order is
+     * ascending. To specify descending order for a field, append a " desc"
+     * suffix. Redundant space characters in the syntax are insignificant.
+     *
+     * Supported fields (only `user_principal` is supported for now):
+     *
+     * * `user_principal`
+     *
+     * If not set, the default ordering is by `user_principal`.
+     *
+     * Examples:
+     *
+     * * `user_principal` to order by `user_principal` in ascending order.
+     * * `user_principal desc` to order by `user_principal` in descending order.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOrderBy() {
+      orderBy_ = getDefaultInstance().getOrderBy();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The order in which the
+     * [UserLicense][google.cloud.discoveryengine.v1.UserLicense]s are listed. The
+     * value must be a comma-separated list of fields. Default sorting order is
+     * ascending. To specify descending order for a field, append a " desc"
+     * suffix. Redundant space characters in the syntax are insignificant.
+     *
+     * Supported fields (only `user_principal` is supported for now):
+     *
+     * * `user_principal`
+     *
+     * If not set, the default ordering is by `user_principal`.
+     *
+     * Examples:
+     *
+     * * `user_principal` to order by `user_principal` in ascending order.
+     * * `user_principal desc` to order by `user_principal` in descending order.
+     * </pre>
+     *
+     * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for orderBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      orderBy_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

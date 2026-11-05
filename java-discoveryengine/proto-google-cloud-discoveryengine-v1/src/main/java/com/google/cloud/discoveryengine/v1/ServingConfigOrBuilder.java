@@ -1117,5 +1117,49 @@ public interface ServingConfigOrBuilder
    */
   com.google.protobuf.ByteString getPromoteControlIdsBytes(int index);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for answer generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the answerGenerationSpec field is set.
+   */
+  boolean hasAnswerGenerationSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for answer generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The answerGenerationSpec.
+   */
+  com.google.cloud.discoveryengine.v1.AnswerGenerationSpec getAnswerGenerationSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for answer generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.AnswerGenerationSpecOrBuilder
+      getAnswerGenerationSpecOrBuilder();
+
   com.google.cloud.discoveryengine.v1.ServingConfig.VerticalConfigCase getVerticalConfigCase();
 }

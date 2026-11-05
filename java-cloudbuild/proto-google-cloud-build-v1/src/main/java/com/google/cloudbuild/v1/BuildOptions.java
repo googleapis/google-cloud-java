@@ -121,6 +121,17 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>VERIFIED = 1;</code>
      */
     VERIFIED(1),
+    /**
+     *
+     *
+     * <pre>
+     * Build verification is best effort. If provenance generation fails, the
+     * build will still succeed.
+     * </pre>
+     *
+     * <code>BEST_EFFORT = 3;</code>
+     */
+    BEST_EFFORT(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -156,6 +167,18 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      */
     public static final int VERIFIED_VALUE = 1;
 
+    /**
+     *
+     *
+     * <pre>
+     * Build verification is best effort. If provenance generation fails, the
+     * build will still succeed.
+     * </pre>
+     *
+     * <code>BEST_EFFORT = 3;</code>
+     */
+    public static final int BEST_EFFORT_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -184,6 +207,8 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
           return NOT_VERIFIED;
         case 1:
           return VERIFIED;
+        case 3:
+          return BEST_EFFORT;
         default:
           return null;
       }
@@ -1108,11 +1133,13 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Bucket is located in a Google-owned project and is not regionalized.
+     * Deprecated: Use `REGIONAL_USER_OWNED_BUCKET` instead. Bucket is located
+     * in a Google-owned project and is not regionalized.
      * </pre>
      *
-     * <code>LEGACY_BUCKET = 2;</code>
+     * <code>LEGACY_BUCKET = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     LEGACY_BUCKET(2),
     UNRECOGNIZED(-1),
     ;
@@ -1155,12 +1182,13 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Bucket is located in a Google-owned project and is not regionalized.
+     * Deprecated: Use `REGIONAL_USER_OWNED_BUCKET` instead. Bucket is located
+     * in a Google-owned project and is not regionalized.
      * </pre>
      *
-     * <code>LEGACY_BUCKET = 2;</code>
+     * <code>LEGACY_BUCKET = 2 [deprecated = true];</code>
      */
-    public static final int LEGACY_BUCKET_VALUE = 2;
+    @java.lang.Deprecated public static final int LEGACY_BUCKET_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -2725,7 +2753,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2594
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2599
    * @return The workerPool.
    */
   @java.lang.Override
@@ -2752,7 +2780,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2594
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2599
    * @return The bytes for workerPool.
    */
   @java.lang.Override
@@ -5070,7 +5098,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2594
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2599
      * @return The workerPool.
      */
     @java.lang.Deprecated
@@ -5096,7 +5124,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2594
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2599
      * @return The bytes for workerPool.
      */
     @java.lang.Deprecated
@@ -5122,7 +5150,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2594
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2599
      * @param value The workerPool to set.
      * @return This builder for chaining.
      */
@@ -5147,7 +5175,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2594
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2599
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5168,7 +5196,7 @@ public final class BuildOptions extends com.google.protobuf.GeneratedMessage
      * <code>string worker_pool = 7 [deprecated = true];</code>
      *
      * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2594
+     *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2599
      * @param value The bytes for workerPool to set.
      * @return This builder for chaining.
      */

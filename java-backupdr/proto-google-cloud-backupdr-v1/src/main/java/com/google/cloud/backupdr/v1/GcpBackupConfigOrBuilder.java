@@ -211,4 +211,40 @@ public interface GcpBackupConfigOrBuilder
    * @return The bytes for backupPlanRevisionId.
    */
   com.google.protobuf.ByteString getBackupPlanRevisionIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the `AutoProtectionPolicyBinding` that
+   * manages this datasource, if any.
+   * Format:
+   * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+   * </pre>
+   *
+   * <code>
+   * string auto_protection_policy_binding = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The autoProtectionPolicyBinding.
+   */
+  java.lang.String getAutoProtectionPolicyBinding();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the `AutoProtectionPolicyBinding` that
+   * manages this datasource, if any.
+   * Format:
+   * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+   * </pre>
+   *
+   * <code>
+   * string auto_protection_policy_binding = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for autoProtectionPolicyBinding.
+   */
+  com.google.protobuf.ByteString getAutoProtectionPolicyBindingBytes();
 }

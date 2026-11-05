@@ -390,6 +390,12 @@ public interface SearchRequestOrBuilder
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
+   *
+   * On an engine with multiple data stores, this field is optional. If it's
+   * empty, all of the engine's data stores are searched (blended search).
+   * Unless it specifies exactly one data store, some request fields, such as
+   * `order_by` and `query_expansion_spec`, aren't supported and return an
+   * `INVALID_ARGUMENT` error.
    * </pre>
    *
    * <code>
@@ -410,6 +416,12 @@ public interface SearchRequestOrBuilder
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
+   *
+   * On an engine with multiple data stores, this field is optional. If it's
+   * empty, all of the engine's data stores are searched (blended search).
+   * Unless it specifies exactly one data store, some request fields, such as
+   * `order_by` and `query_expansion_spec`, aren't supported and return an
+   * `INVALID_ARGUMENT` error.
    * </pre>
    *
    * <code>
@@ -429,6 +441,12 @@ public interface SearchRequestOrBuilder
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
+   *
+   * On an engine with multiple data stores, this field is optional. If it's
+   * empty, all of the engine's data stores are searched (blended search).
+   * Unless it specifies exactly one data store, some request fields, such as
+   * `order_by` and `query_expansion_spec`, aren't supported and return an
+   * `INVALID_ARGUMENT` error.
    * </pre>
    *
    * <code>
@@ -448,6 +466,12 @@ public interface SearchRequestOrBuilder
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
+   *
+   * On an engine with multiple data stores, this field is optional. If it's
+   * empty, all of the engine's data stores are searched (blended search).
+   * Unless it specifies exactly one data store, some request fields, such as
+   * `order_by` and `query_expansion_spec`, aren't supported and return an
+   * `INVALID_ARGUMENT` error.
    * </pre>
    *
    * <code>
@@ -468,6 +492,12 @@ public interface SearchRequestOrBuilder
    * stores. For engines with a single data store, the specs directly under
    * [SearchRequest][google.cloud.discoveryengine.v1.SearchRequest] should be
    * used.
+   *
+   * On an engine with multiple data stores, this field is optional. If it's
+   * empty, all of the engine's data stores are searched (blended search).
+   * Unless it specifies exactly one data store, some request fields, such as
+   * `order_by` and `query_expansion_spec`, aren't supported and return an
+   * `INVALID_ARGUMENT` error.
    * </pre>
    *
    * <code>

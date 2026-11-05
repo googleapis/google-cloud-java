@@ -900,6 +900,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -958,6 +959,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1100,6 +1102,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1116,6 +1119,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1158,6 +1162,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
               .setStartTime(Timestamp.newBuilder().build())
               .setEndTime(Timestamp.newBuilder().build())
               .setIsPinned(true)
+              .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSession(session, updateMask);
@@ -1182,6 +1187,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1240,6 +1246,7 @@ public class ConversationalSearchServiceClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setIsPinned(true)
+            .setPendingAsyncAssistOperationId("pendingAsyncAssistOperationId1460582932")
             .build();
     mockService.addResponse(expectedResponse);
 
