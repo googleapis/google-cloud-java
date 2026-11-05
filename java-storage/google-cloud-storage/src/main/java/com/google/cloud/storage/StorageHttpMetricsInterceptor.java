@@ -23,9 +23,7 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpResponseInterceptor;
 import com.google.api.core.ApiClock;
-import io.opentelemetry.api.common.Attributes;
-import io.opentelemetry.api.metrics.DoubleHistogram;
-import io.opentelemetry.context.Context;
+import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
@@ -38,6 +36,9 @@ import org.jspecify.annotations.Nullable;
  */
 @NullMarked
 final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
+
+  private static final ImmutableSet<String> OBJECT_SUB_RESOURCES =
+      ImmutableSet.of("acl", "compose", "restore", "watchAll");
 
   @Nullable private final HttpRequestInitializer delegate;
   @Nullable private final StorageClientMetrics metrics;
@@ -60,11 +61,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     if (delegate != null) {
       delegate.initialize(request);
     }
-    if (metrics == null) {
-      return;
-    }
-    DoubleHistogram durationHistogram = metrics.getHttpClientRequestDuration();
-    if (durationHistogram == null) {
+    if (metrics == null || metrics.getHttpClientRequestDuration() == null) {
       return;
     }
 
@@ -95,12 +92,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
                 statusCode >= 400
                     ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
                     : StorageErrorTypeMapper.STATUS_OK;
-            recordDuration(
-                durationHistogram,
-                request,
-                startTimeNanos.get(),
-                String.valueOf(statusCode),
-                errorType);
+            recordDuration(request, startTimeNanos.get(), String.valueOf(statusCode), errorType);
           }
         });
 
@@ -111,11 +103,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
         (req, supportsRetry) -> {
           if (recorded.compareAndSet(false, true)) {
             recordDuration(
-                durationHistogram,
-                req,
-                startTimeNanos.get(),
-                "0",
-                StorageErrorTypeMapper.STATUS_CONNECTIVITY);
+                req, startTimeNanos.get(), "0", StorageErrorTypeMapper.STATUS_CONNECTIVITY);
           }
           return existingIoHandler != null
               && existingIoHandler.handleIOException(req, supportsRetry);
@@ -123,11 +111,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
   }
 
   private void recordDuration(
-      DoubleHistogram durationHistogram,
-      HttpRequest request,
-      long startNanos,
-      String statusCode,
-      String errorType) {
+      HttpRequest request, long startNanos, String statusCode, String errorType) {
     if (metrics == null) {
       return;
     }
@@ -136,20 +120,8 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     String urlTemplate = extractUrlTemplate(request.getUrl());
     String serverAddress = resolveServerAddress(request.getUrl(), defaultServerAddress);
 
-    Attributes attributes =
-        metrics
-            .clientAttributesBuilder()
-            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
-            .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, method)
-            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, statusCode)
-            .put(StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
-            .put(StorageClientMetrics.KEY_URL_TEMPLATE, urlTemplate)
-            .put(
-                StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress != null ? serverAddress : "")
-            .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
-            .build();
-
-    durationHistogram.record(durationSeconds, attributes, Context.current());
+    StorageMetricsContext.recordHttpRequestDuration(
+        metrics, durationSeconds, method, statusCode, urlTemplate, serverAddress, errorType);
   }
 
   @Nullable
@@ -200,76 +172,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
       return "/batch/storage/v1";
     }
     if (path.startsWith("/storage/v1/")) {
-      String rest = path.substring("/storage/v1/".length());
-      String[] segments = rest.split("/");
-      if (segments.length >= 2 && "b".equals(segments[0])) {
-        if (segments.length == 2) {
-          return "/storage/v1/b/{bucket}";
-        }
-        if ("o".equals(segments[2])) {
-          if (segments.length == 3) {
-            return "/storage/v1/b/{bucket}/o";
-          }
-          if (segments.length == 4) {
-            return "/storage/v1/b/{bucket}/o/{object}";
-          }
-          String action = segments[4];
-          if (segments.length == 5
-              && ("compose".equals(action)
-                  || "restore".equals(action)
-                  || "watchAll".equals(action))) {
-            return "/storage/v1/b/{bucket}/o/{object}/" + action;
-          }
-          if ("acl".equals(action)) {
-            return segments.length == 5
-                ? "/storage/v1/b/{bucket}/o/{object}/acl"
-                : "/storage/v1/b/{bucket}/o/{object}/acl/{entity}";
-          }
-          if (("copyTo".equals(action) || "rewriteTo".equals(action))
-              && segments.length >= 8
-              && "b".equals(segments[5])
-              && "o".equals(segments[7])) {
-            return "/storage/v1/b/{bucket}/o/{object}/"
-                + action
-                + "/b/{destinationBucket}/o/{destinationObject}";
-          }
-          if ("moveTo".equals(action) && segments.length >= 7 && "o".equals(segments[5])) {
-            return "/storage/v1/b/{bucket}/o/{object}/moveTo/o/{destinationObject}";
-          }
-          return "/storage/v1/b/{bucket}/o/{object}";
-        }
-        String subResource = segments[2];
-        if ("acl".equals(subResource) || "defaultObjectAcl".equals(subResource)) {
-          return segments.length == 3
-              ? "/storage/v1/b/{bucket}/" + subResource
-              : "/storage/v1/b/{bucket}/" + subResource + "/{entity}";
-        }
-        if ("notifications".equals(subResource) || "notificationConfigs".equals(subResource)) {
-          return segments.length == 3
-              ? "/storage/v1/b/{bucket}/" + subResource
-              : "/storage/v1/b/{bucket}/" + subResource + "/{notification}";
-        }
-        if (segments.length == 3) {
-          return "/storage/v1/b/{bucket}/" + subResource;
-        }
-        if (segments.length == 4
-            && "iam".equals(subResource)
-            && "testPermissions".equals(segments[3])) {
-          return "/storage/v1/b/{bucket}/iam/testPermissions";
-        }
-        return "/storage/v1/b/{bucket}";
-      } else if (segments.length >= 2 && "projects".equals(segments[0])) {
-        if (segments.length >= 3 && "hmacKeys".equals(segments[2])) {
-          return segments.length == 3
-              ? "/storage/v1/projects/{project}/hmacKeys"
-              : "/storage/v1/projects/{project}/hmacKeys/{accessId}";
-        }
-        if (segments.length >= 3 && "serviceAccount".equals(segments[2])) {
-          return "/storage/v1/projects/{project}/serviceAccount";
-        }
-        return "/storage/v1/projects/{project}";
-      }
-      return "/storage/v1";
+      return extractV1UrlTemplate(path.substring("/storage/v1/".length()));
     }
     String trimmed = path.startsWith("/") ? path.substring(1) : path;
     if (trimmed.isEmpty()) {
@@ -277,5 +180,60 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     }
     String[] parts = trimmed.split("/", 2);
     return parts.length == 1 ? "/{bucket}" : "/{bucket}/{object}";
+  }
+
+  private static String extractV1UrlTemplate(String rest) {
+    String[] segments = rest.split("/");
+    if (segments.length >= 2 && "b".equals(segments[0])) {
+      segments[1] = "{bucket}";
+      if (segments.length >= 3 && "o".equals(segments[2])) {
+        return extractObjectUrlTemplate(segments);
+      }
+      if (segments.length >= 4) {
+        if ("acl".equals(segments[2]) || "defaultObjectAcl".equals(segments[2])) {
+          segments[3] = "{entity}";
+        } else if ("notifications".equals(segments[2])
+            || "notificationConfigs".equals(segments[2])) {
+          segments[3] = "{notification}";
+        }
+      }
+      return "/storage/v1/" + String.join("/", segments);
+    }
+    if (segments.length >= 2 && "projects".equals(segments[0])) {
+      segments[1] = "{project}";
+      if (segments.length >= 4 && "hmacKeys".equals(segments[2])) {
+        segments[3] = "{accessId}";
+      }
+      return "/storage/v1/" + String.join("/", segments);
+    }
+    return "/storage/v1";
+  }
+
+  private static String extractObjectUrlTemplate(String[] segments) {
+    if (segments.length == 3) {
+      return "/storage/v1/b/{bucket}/o";
+    }
+    if (segments.length == 4) {
+      return "/storage/v1/b/{bucket}/o/{object}";
+    }
+    String action = segments[4];
+    if (segments.length == 5 && OBJECT_SUB_RESOURCES.contains(action)) {
+      return "/storage/v1/b/{bucket}/o/{object}/" + action;
+    }
+    if ("acl".equals(action)) {
+      return "/storage/v1/b/{bucket}/o/{object}/acl/{entity}";
+    }
+    if (("copyTo".equals(action) || "rewriteTo".equals(action))
+        && segments.length >= 8
+        && "b".equals(segments[5])
+        && "o".equals(segments[7])) {
+      return "/storage/v1/b/{bucket}/o/{object}/"
+          + action
+          + "/b/{destinationBucket}/o/{destinationObject}";
+    }
+    if ("moveTo".equals(action) && segments.length >= 7 && "o".equals(segments[5])) {
+      return "/storage/v1/b/{bucket}/o/{object}/moveTo/o/{destinationObject}";
+    }
+    return "/storage/v1/b/{bucket}/o/{object}";
   }
 }
