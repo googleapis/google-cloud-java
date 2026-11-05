@@ -44,11 +44,25 @@
     <module>release-note-generation</module>
     <module>libraries-release-data</module>
     <module>tests</module>
-    <module>tests/dependency-convergence</module>
+    <!-- tests/dependency-convergence is not in the reactor. It depends on every artifact of the
+         latest libraries-bom, so a release resolves the whole release train it just published.
+         Under Airlock-only resolution that fails until Airlock imports every new 1P artifact
+         (b/568717591). CI runs it on its own: .kokoro/dashboard.sh (dependency-convergence-check). -->
     <module>tests/validate-bom</module>
   </modules>
 
   <build>
+    <pluginManagement>
+      <plugins>
+        <!-- Pin surefire. Without a pin, Maven uses its default binding (2.17 on Maven 3.9.12), which
+             pulls classworlds:1.1 and classworlds:1.1-alpha-2. Those are not in Airlock (b/568717591). -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.5.3</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <plugin>
         <!-- This root pom.xml is not referenced by the BOMs and no need to

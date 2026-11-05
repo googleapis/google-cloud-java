@@ -27,7 +27,7 @@ org.conscrypt:conscrypt-openjdk-uber,conscrypt=2.7.0
 # These dependencies are declared: https://github.com/googleapis/google-cloud-java/blob/main/sdk-platform-java/java-shared-dependencies/first-party-dependencies/pom.xml
 com.google.cloud:grpc-gcp,grpc-gcp=1.16.0
 com.google.oauth-client:google-oauth-client,google.oauth-client=1.39.0
-com.google.api-client:google-api-client,google.api-client=2.9.1
+com.google.api-client:google-api-client,google.api-client=2.9.2
 
 # 3P Shared-Deps
 # These dependencies are declared: https://github.com/googleapis/google-cloud-java/blob/main/sdk-platform-java/java-shared-dependencies/third-party-dependencies/pom.xml

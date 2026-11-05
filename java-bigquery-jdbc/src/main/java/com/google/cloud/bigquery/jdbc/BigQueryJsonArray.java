@@ -112,8 +112,8 @@ class BigQueryJsonArray extends BigQueryBaseArray {
   @Override
   Object getCoercedValue(int index) throws SQLException {
     LOG.finestTrace("getCoercedValue");
-    FieldValue fieldValue = this.values.get(index);
-    if (fieldValue == null || fieldValue.isNull()) {
+    FieldValue fieldValue = getRawElement(index);
+    if (fieldValue == null) {
       return null;
     }
     if (this.arrayOfStruct) {
@@ -130,5 +130,11 @@ class BigQueryJsonArray extends BigQueryBaseArray {
       return BigQueryJsonResultSet.formatRangeTimestamp(fieldValue);
     }
     return BigQueryTypeRegistry.convert(fieldValue, this.schema.getType().getStandardType(), null);
+  }
+
+  @Override
+  FieldValue getRawElement(int index) {
+    FieldValue fieldValue = this.values.get(index);
+    return (fieldValue == null || fieldValue.isNull()) ? null : fieldValue;
   }
 }

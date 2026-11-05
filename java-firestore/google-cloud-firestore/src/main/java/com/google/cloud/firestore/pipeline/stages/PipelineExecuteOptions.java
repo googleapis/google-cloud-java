@@ -17,18 +17,24 @@
 package com.google.cloud.firestore.pipeline.stages;
 
 public final class PipelineExecuteOptions extends AbstractOptions<PipelineExecuteOptions> {
+  private final boolean atomic;
 
   public PipelineExecuteOptions() {
-    super(InternalOptions.EMPTY);
+    this(InternalOptions.EMPTY, false);
   }
 
   PipelineExecuteOptions(InternalOptions options) {
+    this(options, false);
+  }
+
+  PipelineExecuteOptions(InternalOptions options, boolean atomic) {
     super(options);
+    this.atomic = atomic;
   }
 
   @Override
   PipelineExecuteOptions self(InternalOptions options) {
-    return new PipelineExecuteOptions(options);
+    return new PipelineExecuteOptions(options, this.atomic);
   }
 
   public PipelineExecuteOptions withExplainOptions(ExplainOptions options) {
@@ -37,5 +43,29 @@ public final class PipelineExecuteOptions extends AbstractOptions<PipelineExecut
 
   public PipelineExecuteOptions withIndexMode(String indexMode) {
     return with("index_mode", indexMode);
+  }
+
+  /**
+   * Sets whether the pipeline is executed atomically.
+   *
+   * <p>When {@code true}, the pipeline runs in a single read-write transaction that is committed
+   * automatically after the pipeline has executed, so either all of its writes (from {@code
+   * insert}, {@code upsert}, {@code update} and {@code delete} stages) are applied or none are. The
+   * default is {@code false}.
+   *
+   * @param atomic Whether to execute the pipeline atomically.
+   * @return A new {@code PipelineExecuteOptions} with the atomic setting applied.
+   */
+  public PipelineExecuteOptions withAtomic(boolean atomic) {
+    return new PipelineExecuteOptions(this.options, atomic);
+  }
+
+  /**
+   * Returns whether the pipeline is executed atomically. The default is {@code false}.
+   *
+   * @see #withAtomic(boolean)
+   */
+  public boolean isAtomic() {
+    return this.atomic;
   }
 }

@@ -23,40 +23,50 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpResponseInterceptor;
 import com.google.api.core.ApiClock;
-import io.opentelemetry.api.common.AttributesBuilder;
-import io.opentelemetry.context.Context;
+import com.google.common.collect.ImmutableSet;
+import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
- * HTTP request initializer that records HTTP client metrics such as http.client.request.duration.
+ * {@link HttpRequestInitializer} that instruments outgoing HTTP requests to record OpenTelemetry
+ * client metrics.
  */
+@NullMarked
 final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
 
+  private static final ImmutableSet<String> OBJECT_SUB_RESOURCES =
+      ImmutableSet.of("acl", "compose", "restore", "watchAll");
+
   @Nullable private final HttpRequestInitializer delegate;
-  private final StorageClientMetrics metrics;
+  @Nullable private final StorageClientMetrics metrics;
   private final ApiClock clock;
   @Nullable private final String defaultServerAddress;
 
   StorageHttpMetricsInterceptor(
       @Nullable HttpRequestInitializer delegate,
-      StorageClientMetrics metrics,
+      @Nullable StorageClientMetrics metrics,
       ApiClock clock,
       @Nullable String host) {
     this.delegate = delegate;
     this.metrics = metrics;
     this.clock = clock;
-    this.defaultServerAddress = StorageOptions.extractServerAddress(host);
+    this.defaultServerAddress = OpenTelemetryBootstrappingUtils.extractServerAddress(host);
   }
 
   @Override
-  public void initialize(HttpRequest request) throws java.io.IOException {
+  public void initialize(HttpRequest request) throws IOException {
     if (delegate != null) {
       delegate.initialize(request);
     }
-    if (metrics == null
-        || (metrics.getHttpClientRequestDuration() == null && metrics.getTtfb() == null)) {
+    if (metrics == null) {
+      return;
+    }
+    boolean recordDuration = metrics.getHttpClientRequestDuration() != null;
+    boolean recordTtfb = metrics.getTtfb() != null;
+    if (!recordDuration && !recordTtfb) {
       return;
     }
 
@@ -64,8 +74,8 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     HttpResponseInterceptor existingResp = request.getResponseInterceptor();
     HttpIOExceptionHandler existingIoHandler = request.getIOExceptionHandler();
 
-    AtomicLong startTimeNanos = new AtomicLong(clock.nanoTime());
-    AtomicBoolean recorded = new AtomicBoolean(false);
+    AtomicLong startTimeNanos = new AtomicLong();
+    AtomicBoolean recorded = new AtomicBoolean(true);
 
     request.setInterceptor(
         req -> {
@@ -82,95 +92,81 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
             existingResp.interceptResponse(response);
           }
           if (recorded.compareAndSet(false, true)) {
-            double durationSeconds =
-                Math.max(0.0, (clock.nanoTime() - startTimeNanos.get()) / 1_000_000_000.0);
             int statusCode = response.getStatusCode();
-            String serverAddress = resolveServerAddress(request.getUrl(), defaultServerAddress);
-
-            if (metrics.getHttpClientRequestDuration() != null) {
-              String method =
-                  request.getRequestMethod() != null ? request.getRequestMethod() : "UNKNOWN";
-              String urlTemplate = extractUrlTemplate(request.getUrl());
-
-              AttributesBuilder attrBuilder =
-                  metrics
-                      .clientAttributesBuilder()
-                      .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, method)
-                      .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, (long) statusCode)
-                      .put(
-                          StorageClientMetrics.KEY_NETWORK_PATH,
-                          StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
-                      .put(StorageClientMetrics.KEY_URL_TEMPLATE, urlTemplate)
-                      .put(
-                          StorageClientMetrics.KEY_SERVER_ADDRESS,
-                          serverAddress != null ? serverAddress : "")
-                      .put(
-                          StorageClientMetrics.KEY_ERROR_TYPE,
-                          statusCode >= 400
-                              ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
-                              : StorageErrorTypeMapper.STATUS_OK);
-
-              metrics
-                  .getHttpClientRequestDuration()
-                  .record(durationSeconds, attrBuilder.build(), Context.current());
+            long startNanos = startTimeNanos.get();
+            if (recordDuration) {
+              String errorType =
+                  statusCode >= 400
+                      ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
+                      : StorageErrorTypeMapper.STATUS_OK;
+              recordDuration(request, startNanos, String.valueOf(statusCode), errorType);
             }
-
-            if (metrics.getTtfb() != null && statusCode < 400 && isMediaDownloadRequest(request)) {
-              AttributesBuilder ttfbAttrs =
-                  metrics
-                      .clientAttributesBuilder()
-                      .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
-                      .put(StorageClientMetrics.KEY_RPC_METHOD, "ReadObject")
-                      .put(
-                          StorageClientMetrics.KEY_NETWORK_PATH,
-                          StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
-                      .put(
-                          StorageClientMetrics.KEY_SERVER_ADDRESS,
-                          serverAddress != null ? serverAddress : "");
-              metrics.getTtfb().record(durationSeconds, ttfbAttrs.build(), Context.current());
+            // Evaluate isMediaDownloadRequest(request) at response time rather than in
+            // initialize(HttpRequest), because callers such as MediaHttpDownloader may append
+            // query parameters (e.g. alt=media) to request.getUrl() after buildGetRequest().
+            if (recordTtfb
+                && statusCode >= 200
+                && statusCode < 300
+                && isMediaDownloadRequest(request)) {
+              double ttfbSeconds = Math.max(0.0, (clock.nanoTime() - startNanos) / 1_000_000_000.0);
+              String serverAddress = resolveServerAddress(request.getUrl(), defaultServerAddress);
+              StorageMetricsContext.recordTtfb(
+                  metrics,
+                  null,
+                  ttfbSeconds,
+                  "http",
+                  StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
+                  serverAddress);
             }
           }
         });
 
-    request.setIOExceptionHandler(
-        (req, supportsRetry) -> {
-          if (recorded.compareAndSet(false, true)
-              && metrics.getHttpClientRequestDuration() != null) {
-            double durationSeconds =
-                Math.max(0.0, (clock.nanoTime() - startTimeNanos.get()) / 1_000_000_000.0);
-            String method = req.getRequestMethod() != null ? req.getRequestMethod() : "UNKNOWN";
-            String urlTemplate = extractUrlTemplate(req.getUrl());
-            String serverAddress = resolveServerAddress(req.getUrl(), defaultServerAddress);
-
-            AttributesBuilder attrBuilder =
-                metrics
-                    .clientAttributesBuilder()
-                    .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, method)
-                    .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, 0L)
-                    .put(
-                        StorageClientMetrics.KEY_NETWORK_PATH,
-                        StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
-                    .put(StorageClientMetrics.KEY_URL_TEMPLATE, urlTemplate)
-                    .put(
-                        StorageClientMetrics.KEY_SERVER_ADDRESS,
-                        serverAddress != null ? serverAddress : "")
-                    .put(
-                        StorageClientMetrics.KEY_ERROR_TYPE,
-                        StorageErrorTypeMapper.STATUS_CONNECTIVITY);
-
-            metrics
-                .getHttpClientRequestDuration()
-                .record(durationSeconds, attrBuilder.build(), Context.current());
-          }
-          return existingIoHandler != null
-              && existingIoHandler.handleIOException(req, supportsRetry);
-        });
+    if (recordDuration) {
+      // HttpIOExceptionHandler does not receive the thrown IOException instance from
+      // google-http-client, so transport-level IOExceptions default to STATUS_CONNECTIVITY here
+      // (specific subtypes like TIMEOUT, DNS_FAILURE, and TLS_FAILURE are mapped in Retrying).
+      request.setIOExceptionHandler(
+          (req, supportsRetry) -> {
+            if (recorded.compareAndSet(false, true)) {
+              recordDuration(
+                  req, startTimeNanos.get(), "0", StorageErrorTypeMapper.STATUS_CONNECTIVITY);
+            }
+            return existingIoHandler != null
+                && existingIoHandler.handleIOException(req, supportsRetry);
+          });
+    }
   }
 
+  private void recordDuration(
+      HttpRequest request, long startNanos, String statusCode, String errorType) {
+    if (metrics == null) {
+      return;
+    }
+    double durationSeconds = Math.max(0.0, (clock.nanoTime() - startNanos) / 1_000_000_000.0);
+    String method = request.getRequestMethod() != null ? request.getRequestMethod() : "UNKNOWN";
+    String urlTemplate = extractUrlTemplate(request.getUrl());
+    String serverAddress = resolveServerAddress(request.getUrl(), defaultServerAddress);
+
+    StorageMetricsContext.recordHttpRequestDuration(
+        metrics, durationSeconds, method, statusCode, urlTemplate, serverAddress, errorType);
+  }
+
+  @Nullable
   static String resolveServerAddress(
       @Nullable GenericUrl url, @Nullable String defaultServerAddress) {
     String host = url != null ? url.getHost() : null;
-    return (host != null && !host.isEmpty()) ? host : defaultServerAddress;
+    if (host == null || host.isEmpty()) {
+      return defaultServerAddress;
+    }
+    if (host.endsWith(".storage.googleapis.com") && !host.equals("storage.googleapis.com")) {
+      return "storage.googleapis.com";
+    }
+    if (defaultServerAddress != null
+        && !defaultServerAddress.isEmpty()
+        && host.endsWith("." + defaultServerAddress)) {
+      return defaultServerAddress;
+    }
+    return host;
   }
 
   static String extractUrlTemplate(@Nullable GenericUrl url) {
@@ -183,6 +179,12 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     String path = url.getRawPath();
     if (path == null || path.isEmpty()) {
       return "/";
+    }
+    String host = url.getHost();
+    if (host != null
+        && host.endsWith(".storage.googleapis.com")
+        && !host.equals("storage.googleapis.com")) {
+      return "/".equals(path) ? "/" : "/{object}";
     }
     if (path.length() > 1 && path.endsWith("/")) {
       path = path.substring(0, path.length() - 1);
@@ -197,42 +199,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
       return "/batch/storage/v1";
     }
     if (path.startsWith("/storage/v1/")) {
-      String rest = path.substring("/storage/v1/".length());
-      String[] segments = rest.split("/");
-      if (segments.length >= 2 && "b".equals(segments[0])) {
-        segments[1] = "{bucket}";
-        if (segments.length >= 4 && "o".equals(segments[2])) {
-          segments[3] = "{object}";
-          if (segments.length >= 6) {
-            if ("acl".equals(segments[4])) {
-              segments[5] = "{entity}";
-            } else if ("copyTo".equals(segments[4]) || "rewriteTo".equals(segments[4])) {
-              if (segments.length >= 7 && "b".equals(segments[5])) {
-                segments[6] = "{destinationBucket}";
-              }
-              if (segments.length >= 9 && "o".equals(segments[7])) {
-                segments[8] = "{destinationObject}";
-              }
-            } else if ("moveTo".equals(segments[4])
-                && "o".equals(segments[5])
-                && segments.length >= 7) {
-              segments[6] = "{destinationObject}";
-            }
-          }
-        } else if (segments.length >= 4) {
-          if ("acl".equals(segments[2]) || "defaultObjectAcl".equals(segments[2])) {
-            segments[3] = "{entity}";
-          } else if ("notifications".equals(segments[2])) {
-            segments[3] = "{notification}";
-          }
-        }
-      } else if (segments.length >= 2 && "projects".equals(segments[0])) {
-        segments[1] = "{project}";
-        if (segments.length >= 4 && "hmacKeys".equals(segments[2])) {
-          segments[3] = "{accessId}";
-        }
-      }
-      return "/storage/v1/" + String.join("/", segments);
+      return extractV1UrlTemplate(path.substring("/storage/v1/".length()));
     }
     String trimmed = path.startsWith("/") ? path.substring(1) : path;
     if (trimmed.isEmpty()) {
@@ -253,5 +220,60 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     String path = url.getRawPath();
     return (path != null && path.startsWith("/download/storage/v1/"))
         || "media".equals(url.getFirst("alt"));
+  }
+
+  private static String extractV1UrlTemplate(String rest) {
+    String[] segments = rest.split("/");
+    if (segments.length >= 2 && "b".equals(segments[0])) {
+      segments[1] = "{bucket}";
+      if (segments.length >= 3 && "o".equals(segments[2])) {
+        return extractObjectUrlTemplate(segments);
+      }
+      if (segments.length >= 4) {
+        if ("acl".equals(segments[2]) || "defaultObjectAcl".equals(segments[2])) {
+          segments[3] = "{entity}";
+        } else if ("notifications".equals(segments[2])
+            || "notificationConfigs".equals(segments[2])) {
+          segments[3] = "{notification}";
+        }
+      }
+      return "/storage/v1/" + String.join("/", segments);
+    }
+    if (segments.length >= 2 && "projects".equals(segments[0])) {
+      segments[1] = "{project}";
+      if (segments.length >= 4 && "hmacKeys".equals(segments[2])) {
+        segments[3] = "{accessId}";
+      }
+      return "/storage/v1/" + String.join("/", segments);
+    }
+    return "/storage/v1";
+  }
+
+  private static String extractObjectUrlTemplate(String[] segments) {
+    if (segments.length == 3) {
+      return "/storage/v1/b/{bucket}/o";
+    }
+    if (segments.length == 4) {
+      return "/storage/v1/b/{bucket}/o/{object}";
+    }
+    String action = segments[4];
+    if (segments.length == 5 && OBJECT_SUB_RESOURCES.contains(action)) {
+      return "/storage/v1/b/{bucket}/o/{object}/" + action;
+    }
+    if ("acl".equals(action)) {
+      return "/storage/v1/b/{bucket}/o/{object}/acl/{entity}";
+    }
+    if (("copyTo".equals(action) || "rewriteTo".equals(action))
+        && segments.length >= 8
+        && "b".equals(segments[5])
+        && "o".equals(segments[7])) {
+      return "/storage/v1/b/{bucket}/o/{object}/"
+          + action
+          + "/b/{destinationBucket}/o/{destinationObject}";
+    }
+    if ("moveTo".equals(action) && segments.length >= 7 && "o".equals(segments[5])) {
+      return "/storage/v1/b/{bucket}/o/{object}/moveTo/o/{destinationObject}";
+    }
+    return "/storage/v1/b/{bucket}/o/{object}";
   }
 }

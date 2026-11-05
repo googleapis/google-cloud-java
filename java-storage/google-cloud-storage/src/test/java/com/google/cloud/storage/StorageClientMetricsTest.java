@@ -364,6 +364,53 @@ public final class StorageClientMetricsTest {
     assertThat(reader.shutdownCalled.get()).isFalse();
   }
 
+  @Test
+  public void createContext_populatesRpcSystemNameAndServerAddress() {
+    SdkMeterProvider meterProvider = SdkMeterProvider.builder().build();
+
+    HttpStorageOptions httpOptions =
+        StorageOptions.http()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(meterProvider)
+            .setHost("https://storage.googleapis.com")
+            .build();
+    StorageClientMetrics httpMetrics = httpOptions.getStorageClientMetrics();
+    assertThat(httpMetrics).isNotNull();
+    StorageMetricsContext httpContext = httpMetrics.createContext("GetObject");
+    assertThat(httpContext).isNotNull();
+    assertThat(httpContext.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
+        .isEqualTo("http");
+    assertThat(httpContext.getBaseAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
+    assertThat(httpContext.shouldRecordOperationOnRetrierExit()).isTrue();
+
+    StorageMetricsContext httpMultiStep =
+        StorageClientMetrics.createMultiStepContext(httpMetrics, "WriteObject");
+    assertThat(httpMultiStep).isNotNull();
+    assertThat(httpMultiStep.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
+        .isEqualTo("http");
+    assertThat(httpMultiStep.shouldRecordOperationOnRetrierExit()).isFalse();
+
+    GrpcStorageOptions grpcOptions =
+        StorageOptions.grpc()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(meterProvider)
+            .setHost("google-c2p:///storage.googleapis.com")
+            .build();
+    StorageClientMetrics grpcMetrics = grpcOptions.getStorageClientMetrics();
+    assertThat(grpcMetrics).isNotNull();
+    StorageMetricsContext grpcContext =
+        StorageClientMetrics.createContext(grpcMetrics, "GetObject");
+    assertThat(grpcContext).isNotNull();
+    assertThat(grpcContext.getBaseAttributes().get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME))
+        .isEqualTo("grpc");
+    assertThat(grpcContext.getBaseAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
+        .isEqualTo("storage.googleapis.com");
+
+    assertThat(StorageClientMetrics.createContext(null, "GetObject")).isNull();
+    assertThat(StorageClientMetrics.createMultiStepContext(null, "WriteObject")).isNull();
+  }
+
   static final class TestMetricReader implements MetricReader {
     private final MetricReader delegate = InMemoryMetricReader.create();
     final AtomicBoolean shutdownCalled = new AtomicBoolean(false);

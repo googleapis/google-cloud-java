@@ -38,8 +38,10 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
-import com.google.api.core.NanoClock;
+import com.google.api.gax.core.FakeApiClock;
+import com.google.api.gax.core.RecordingScheduler;
 import com.google.api.gax.retrying.FailingCallable.CustomException;
 import com.google.api.gax.rpc.testing.FakeCallContext;
 import java.time.Duration;
@@ -51,6 +53,8 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -58,10 +62,31 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
 
   // Number of test runs, essential for multithreaded tests.
   private static final int EXECUTIONS_COUNT = 5;
+  private FakeApiClock fakeClock;
+  private RecordingScheduler recordingScheduler;
+
+  @BeforeEach
+  void setUp() {
+    // ExponentialRetryAlgorithm and ExponentialPollAlgorithm only compute relative elapsed time
+    // deltas against firstAttemptStartTimeNanos (clock.nanoTime() - firstAttemptStartTimeNanos)
+    // and never treat 0L as a special sentinel value.
+    fakeClock = new FakeApiClock(0L);
+    recordingScheduler = RecordingScheduler.create(fakeClock);
+  }
+
+  @AfterEach
+  void tearDown() {
+    recordingScheduler.shutdownNow();
+  }
+
+  @Override
+  protected ApiClock getClock() {
+    return fakeClock;
+  }
 
   @Override
   protected RetryingExecutorWithContext<String> getExecutor(RetryAlgorithm<String> retryAlgorithm) {
-    return getRetryingExecutor(retryAlgorithm, scheduledExecutorService);
+    return getRetryingExecutor(retryAlgorithm, recordingScheduler);
   }
 
   @Override
@@ -69,7 +94,7 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
       RetrySettings retrySettings, int apocalypseCountDown, RuntimeException apocalypseException) {
     return new RetryAlgorithm<>(
         new TestResultRetryAlgorithm<String>(apocalypseCountDown, apocalypseException),
-        new ExponentialRetryAlgorithm(retrySettings, NanoClock.getDefaultClock()));
+        new ExponentialRetryAlgorithm(retrySettings, fakeClock));
   }
 
   private RetryingExecutorWithContext<String> getRetryingExecutor(
@@ -145,7 +170,7 @@ class ScheduledRetryingExecutorTest extends AbstractRetryingExecutorTest {
       FailingCallable callable = new FailingCallable(15, "request", "SUCCESS", tracer);
 
       RetryingExecutorWithContext<String> executor =
-          getRetryingExecutor(getAlgorithm(retrySettings, 0, null), scheduledExecutorService);
+          getRetryingExecutor(getAlgorithm(retrySettings, 0, null), recordingScheduler);
       RetryingFuture<String> future =
           executor.createFuture(
               callable,

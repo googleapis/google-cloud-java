@@ -38,7 +38,8 @@ import java.util.logging.Level;
 import javax.annotation.concurrent.GuardedBy;
 
 class BigQueryJdbcBulkInsertWriter {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryJdbcBulkInsertWriter.class.getName());
   private JsonStreamWriter jsonStreamWriter;
   private final Phaser openRequestCount = new Phaser(1);
   private final Object streamLock = new Object();

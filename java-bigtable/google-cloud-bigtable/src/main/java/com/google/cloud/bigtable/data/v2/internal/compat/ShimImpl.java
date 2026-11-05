@@ -29,6 +29,9 @@ import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
 import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.PeerInfo.TransportType;
+import com.google.bigtable.v2.Row;
+import com.google.bigtable.v2.SessionReadModifyWriteRowResponse;
+import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ConfiguredChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.Client;
@@ -47,6 +50,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DirectPathCompatibleTracer;
 import com.google.cloud.bigtable.data.v2.internal.dp.DirectAccessInvestigator;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
+import com.google.cloud.bigtable.data.v2.internal.util.SessionScope;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
@@ -69,6 +73,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -81,6 +86,19 @@ public class ShimImpl implements Shim {
   private static final Logger logger = Logger.getLogger(ShimImpl.class.getName());
 
   private static final Duration DA_CHECK_TIMEOUT = Duration.ofSeconds(5);
+
+  // A ReadRow on a missing key legitimately has no row, and the classic path surfaces that as a
+  // null Row.
+  @VisibleForTesting
+  static final Function<SessionReadRowResponse, Row> READ_ROW_EXTRACTOR =
+      r -> r.hasRow() ? r.getRow() : null;
+
+  // ReadModifyWriteRow always mutates and so always yields a row. The classic path builds a Row
+  // from the (possibly unset) response row rather than returning null, so extract unconditionally
+  // to keep both paths non-null.
+  @VisibleForTesting
+  static final Function<SessionReadModifyWriteRowResponse, Row> READ_MODIFY_WRITE_ROW_EXTRACTOR =
+      SessionReadModifyWriteRowResponse::getRow;
 
   private final ClientConfigurationManager configManager;
   private final Resource<ClientConfigurationManager> configManagerResource;
@@ -374,30 +392,34 @@ public class ShimImpl implements Shim {
     return new DivertingUnaryCallable<>(
         configManager,
         classic,
-        new RowBuilderShim<>(readRowShim, rowAdapter, r -> r.hasRow() ? r.getRow() : null),
+        new RowBuilderShim<>(readRowShim, rowAdapter, READ_ROW_EXTRACTOR),
         Util.extractTimeout(settings),
-        debugTagTracer);
+        debugTagTracer,
+        SessionScope.READ_ROW);
   }
 
   @Override
   public UnaryCallable<RowMutation, Void> decorateMutateRow(
       UnaryCallable<RowMutation, Void> classic, UnaryCallSettings<?, ?> settings) {
     return new DivertingUnaryCallable<>(
-        configManager, classic, mutateRowShim, Util.extractTimeout(settings), debugTagTracer);
+        configManager,
+        classic,
+        mutateRowShim,
+        Util.extractTimeout(settings),
+        debugTagTracer,
+        SessionScope.MUTATE_ROW);
   }
 
   @Override
   public UnaryCallable<ConditionalRowMutation, Boolean> decorateCheckAndMutateRow(
       UnaryCallable<ConditionalRowMutation, Boolean> classic, UnaryCallSettings<?, ?> settings) {
-    if (!WipFeatures.CHECK_AND_MUTATE_ROW_ENABLED) {
-      return classic;
-    }
     return new DivertingUnaryCallable<>(
         configManager,
         classic,
         checkAndMutateRowShim,
         Util.extractTimeout(settings),
-        debugTagTracer);
+        debugTagTracer,
+        SessionScope.CHECK_AND_MUTATE_ROW);
   }
 
   @Override
@@ -405,15 +427,12 @@ public class ShimImpl implements Shim {
       UnaryCallable<ReadModifyWriteRow, RowT> classic,
       RowAdapter<RowT> rowAdapter,
       UnaryCallSettings<?, ?> settings) {
-    if (!WipFeatures.READ_MODIFY_WRITE_ROW_ENABLED) {
-      return classic;
-    }
     return new DivertingUnaryCallable<>(
         configManager,
         classic,
-        new RowBuilderShim<>(
-            readModifyWriteRowShim, rowAdapter, r -> r.hasRow() ? r.getRow() : null),
+        new RowBuilderShim<>(readModifyWriteRowShim, rowAdapter, READ_MODIFY_WRITE_ROW_EXTRACTOR),
         Util.extractTimeout(settings),
-        debugTagTracer);
+        debugTagTracer,
+        SessionScope.READ_MODIFY_WRITE_ROW);
   }
 }
