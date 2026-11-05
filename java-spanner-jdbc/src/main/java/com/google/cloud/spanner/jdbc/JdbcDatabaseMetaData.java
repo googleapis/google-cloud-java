@@ -30,6 +30,8 @@ import com.google.cloud.spanner.Type.StructField;
 import com.google.cloud.spanner.connection.Connection.InternalMetadataQuery;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableSet;
+import com.google.rpc.Code;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -672,8 +674,20 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
   }
 
   @Override
-  public int getDefaultTransactionIsolation() {
-    return Connection.TRANSACTION_SERIALIZABLE;
+  public int getDefaultTransactionIsolation() throws SQLException {
+    try {
+      IsolationLevel isolationLevel =
+          connection.getDatabaseClient().getDatabaseDefaultIsolationLevel();
+      if (isolationLevel == IsolationLevel.UNRECOGNIZED) {
+        throw JdbcSqlExceptionFactory.of(
+            "The default isolation level of the database is not supported by this version of the"
+                + " client.",
+            Code.FAILED_PRECONDITION);
+      }
+      return IsolationLevelConverter.convertToJdbc(isolationLevel);
+    } catch (SpannerException e) {
+      throw JdbcSqlExceptionFactory.of(e);
+    }
   }
 
   @Override
