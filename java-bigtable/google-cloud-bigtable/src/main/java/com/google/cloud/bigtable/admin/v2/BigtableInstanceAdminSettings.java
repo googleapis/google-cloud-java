@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.admin.v2;
 
 import static com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings.BIGTABLE_EMULATOR_HOST_ENV_VAR;
 
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.ChannelPoolSettings;
@@ -33,7 +34,10 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
- * Settings class to configure an instance of {@link BigtableInstanceAdminClient}.
+ * This class is obsolete. For the recommended proto-based approach, please see {@link
+ * com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminSettings}.
+ *
+ * <p>Settings class to configure an instance of {@link BigtableInstanceAdminClient}.
  *
  * <p>It must be configured with a project ID and can be used to change default RPC settings.
  *
@@ -52,6 +56,7 @@ import javax.annotation.Nullable;
  * BigtableInstanceAdminSettings settings = settingsBuilder.build();
  * }</pre>
  */
+@ObsoleteApi("Use BaseBigtableInstanceAdminSettings instead.")
 public final class BigtableInstanceAdminSettings {
   private static final Logger LOGGER =
       Logger.getLogger(BigtableInstanceAdminSettings.class.getName());
