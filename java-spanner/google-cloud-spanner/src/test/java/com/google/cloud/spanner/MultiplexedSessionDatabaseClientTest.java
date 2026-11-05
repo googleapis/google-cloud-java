@@ -291,11 +291,16 @@ public class MultiplexedSessionDatabaseClientTest {
     try {
       assertNotNull(initialConsumer.get());
 
-      ApiFuture<SessionReference> initialFuture = client.getMultiplexedSessionFuture();
+      AtomicReference<ApiFuture<SessionReference>> currentReference =
+          client.getMultiplexedSessionReference();
+      ApiFuture<SessionReference> initialFuture = currentReference.get();
+      // A transaction that waits for the initial attempt is woken up as soon as that attempt fails.
+      // At that moment, a new transaction must already see the pending retry instead of the failed
+      // initial attempt, as it would otherwise fail with the (retryable) error of that attempt.
       AtomicReference<ApiFuture<SessionReference>> futureSeenByNewTransaction =
           new AtomicReference<>();
       initialFuture.addListener(
-          () -> futureSeenByNewTransaction.set(client.getMultiplexedSessionFuture()),
+          () -> futureSeenByNewTransaction.set(currentReference.get()),
           MoreExecutors.directExecutor());
 
       initialConsumer
