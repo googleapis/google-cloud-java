@@ -21,7 +21,6 @@ import static com.google.cloud.firestore.telemetry.TraceUtil.ATTRIBUTE_KEY_DOC_C
 import static com.google.cloud.firestore.telemetry.TraceUtil.ATTRIBUTE_KEY_IS_TRANSACTIONAL;
 
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.core.SettableApiFuture;
@@ -47,6 +46,7 @@ import com.google.cloud.firestore.pipeline.stages.Delete;
 import com.google.cloud.firestore.pipeline.stages.Distinct;
 import com.google.cloud.firestore.pipeline.stages.FindNearest;
 import com.google.cloud.firestore.pipeline.stages.FindNearestOptions;
+import com.google.cloud.firestore.pipeline.stages.Insert;
 import com.google.cloud.firestore.pipeline.stages.Limit;
 import com.google.cloud.firestore.pipeline.stages.Offset;
 import com.google.cloud.firestore.pipeline.stages.PipelineExecuteOptions;
@@ -63,6 +63,7 @@ import com.google.cloud.firestore.pipeline.stages.Union;
 import com.google.cloud.firestore.pipeline.stages.Unnest;
 import com.google.cloud.firestore.pipeline.stages.UnnestOptions;
 import com.google.cloud.firestore.pipeline.stages.Update;
+import com.google.cloud.firestore.pipeline.stages.Upsert;
 import com.google.cloud.firestore.pipeline.stages.Where;
 import com.google.cloud.firestore.telemetry.MetricsUtil.MetricsContext;
 import com.google.cloud.firestore.telemetry.TelemetryConstants;
@@ -76,6 +77,7 @@ import com.google.firestore.v1.Document;
 import com.google.firestore.v1.ExecutePipelineRequest;
 import com.google.firestore.v1.ExecutePipelineResponse;
 import com.google.firestore.v1.StructuredPipeline;
+import com.google.firestore.v1.TransactionOptions;
 import com.google.firestore.v1.Value;
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
@@ -232,7 +234,6 @@ public final class Pipeline {
    * @param searchStage An object that specifies how search is performed.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline search(Search searchStage) {
     return append(searchStage);
   }
@@ -1198,6 +1199,9 @@ public final class Pipeline {
   /**
    * Performs a delete operation on documents from previous stages.
    *
+   * <p>Each document produced by the previous stages is deleted from the database. The result
+   * contains a single document with a {@code documents_modified} field.
+   *
    * <p>Example:
    *
    * <pre>{@code
@@ -1212,7 +1216,6 @@ public final class Pipeline {
    *
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline delete() {
     return append(new Delete());
   }
@@ -1220,8 +1223,13 @@ public final class Pipeline {
   /**
    * Performs an update operation using documents from previous stages.
    *
-   * <p>This method updates the documents in place based on the data flowing through the pipeline.
-   * To specify transformations, use {@link #update(Selectable...)}.
+   * <p>This method updates existing documents based on the data flowing through the pipeline. To
+   * specify transformations, use {@link #update(Selectable...)}.
+   *
+   * <p>Each document is written to the path given by its {@code __name__} field. The stored
+   * document is replaced by the pipeline document, so fields removed by earlier stages (for
+   * example, with {@link #removeFields(String, String...)}) are also removed from the stored
+   * document. This stage does not create documents: target documents that don't exist are skipped.
    *
    * <p>Example 1: Update a collection's schema by adding a new field and removing an old one.
    *
@@ -1235,7 +1243,7 @@ public final class Pipeline {
    *     .get();
    * }</pre>
    *
-   * <p>Example 2: Update documents in place with data from literals.
+   * <p>Example 2: Update documents with data from literals.
    *
    * <pre>{@code
    * Map<String, Object> updateData = new HashMap<>();
@@ -1251,7 +1259,6 @@ public final class Pipeline {
    *
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline update() {
     return append(new Update());
   }
@@ -1275,7 +1282,6 @@ public final class Pipeline {
    * @param transformedFields The transformations to apply.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline update(Selectable... transformedFields) {
     return append(new Update().withTransformedFields(transformedFields));
   }
@@ -1301,14 +1307,104 @@ public final class Pipeline {
    * @param update The {@code Update} stage to append.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline update(Update update) {
     return append(update);
   }
 
   /**
-   * Performs an insert operation using documents from previous stages. Adds a generic stage to the
-   * pipeline.
+   * Inserts each document produced by the previous stages at its own path, given by its {@code
+   * __name__} field.
+   *
+   * <p>This is equivalent to {@code insert(new Insert())}. A document without a {@code __name__}
+   * field fails with {@code INVALID_ARGUMENT}.
+   *
+   * <p>The insert fails with {@code ALREADY_EXISTS} if a target document already exists.
+   *
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
+  public Pipeline insert() {
+    return append(new Insert());
+  }
+
+  /**
+   * Inserts each document produced by the previous stages as a new document, using a configured
+   * {@link Insert} stage.
+   *
+   * <p>The insert fails with {@code ALREADY_EXISTS} if a target document already exists. See {@link
+   * Insert} for how the target path of each document is determined.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * Map<String, Object> book = new HashMap<>();
+   * book.put("title", "Dune");
+   *
+   * firestore.pipeline()
+   *     .literals(book)
+   *     .insert(new Insert().withCollection("books"))
+   *     .execute(new PipelineExecuteOptions().withAtomic(true))
+   *     .get();
+   * }</pre>
+   *
+   * @param insert The {@code Insert} stage to append.
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
+  public Pipeline insert(Insert insert) {
+    return append(insert);
+  }
+
+  /**
+   * Writes each document produced by the previous stages, using a configured {@link Upsert} stage.
+   * The target document is created if it doesn't exist and replaced if it does; stored fields are
+   * not merged.
+   *
+   * <p>See {@link Upsert} for how the target path of each document is determined.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * firestore.pipeline()
+   *     .collection("books")
+   *     .where(field("title").equal("Dune"))
+   *     .upsert(new Upsert().withCollection("archive"))
+   *     .execute()
+   *     .get();
+   * }</pre>
+   *
+   * @param upsert The {@code Upsert} stage to append.
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
+  public Pipeline upsert(Upsert upsert) {
+    return append(upsert);
+  }
+
+  /**
+   * Writes each document produced by the previous stages to the path given by its {@code __name__}
+   * field, after adding the given fields. The document is created if it doesn't exist and replaced
+   * if it does; stored fields are not merged. A document without a {@code __name__} field fails
+   * with {@code INVALID_ARGUMENT}.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * firestore.pipeline()
+   *     .collection("books")
+   *     .where(field("rating").greaterThan(4))
+   *     .upsert(constant("Featured").as("status"))
+   *     .execute()
+   *     .get();
+   * }</pre>
+   *
+   * @param additionalFields Fields to add to each input document before it is written. A field with
+   *     the same name as an existing input field overwrites that field.
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
+  public Pipeline upsert(Selectable... additionalFields) {
+    return append(new Upsert(additionalFields));
+  }
+
+  /**
+   * Adds a generic stage to the pipeline.
    *
    * <p>This method provides a flexible way to extend the pipeline's functionality by adding custom
    * stages. Each generic stage is defined by a unique `name` and a set of `params` that control its
@@ -1509,31 +1605,50 @@ public final class Pipeline {
     }
   }
 
-  void executeInternal(
+  ExecutePipelineRequest toExecutePipelineRequest(
       @Nonnull PipelineExecuteOptions options,
       @Nullable final ByteString transactionId,
-      @Nullable com.google.protobuf.Timestamp readTime,
-      PipelineResultObserver observer,
-      MetricsContext metricsContext) {
+      @Nullable com.google.protobuf.Timestamp readTime) {
+    java.util.Map<String, com.google.firestore.v1.Value> optionsMap =
+        new java.util.HashMap<>(StageUtils.toMap(options));
+    optionsMap.remove("atomic");
+
     ExecutePipelineRequest.Builder request =
         ExecutePipelineRequest.newBuilder()
-            .setDatabase(rpcContext.getDatabaseName())
+            .setDatabase(rpcContext != null ? rpcContext.getDatabaseName() : "")
             .setStructuredPipeline(
                 StructuredPipeline.newBuilder()
                     .setPipeline(toProto())
-                    .putAllOptions(StageUtils.toMap(options))
+                    .putAllOptions(optionsMap)
                     .build());
 
     if (transactionId != null) {
       request.setTransaction(transactionId);
+    } else if (options.isAtomic()) {
+      request.setNewTransaction(
+          TransactionOptions.newBuilder()
+              .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance())
+              .build());
+      request.setAutoCommitTransaction(true);
     }
 
     if (readTime != null) {
       request.setReadTime(readTime);
     }
 
+    return request.build();
+  }
+
+  void executeInternal(
+      @Nonnull PipelineExecuteOptions options,
+      @Nullable final ByteString transactionId,
+      @Nullable com.google.protobuf.Timestamp readTime,
+      PipelineResultObserver observer,
+      MetricsContext metricsContext) {
+    ExecutePipelineRequest request = toExecutePipelineRequest(options, transactionId, readTime);
+
     pipelineInternalStream(
-        request.build(),
+        request,
         new PipelineResultObserver() {
           @Override
           public void onCompleted() {

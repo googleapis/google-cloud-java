@@ -20,7 +20,6 @@ import static com.google.cloud.firestore.PipelineUtils.encodeValue;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.documentMatches;
 import static com.google.cloud.firestore.pipeline.expressions.Expression.field;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.PipelineUtils;
 import com.google.cloud.firestore.pipeline.expressions.BooleanExpression;
@@ -48,14 +47,12 @@ import java.util.stream.Collectors;
  * );
  * }</pre>
  */
-@BetaApi
 public final class Search extends Stage {
 
   /**
    * Specifies if the `matches` and `snippet` expressions will enhance the user provided query to
    * perform matching of synonyms, misspellings, lemmatization, stemming.
    */
-  @BetaApi
   @InternalApi
   static final class QueryEnhancement {
     final String protoString;

@@ -234,7 +234,7 @@ public final class StorageHttpMetricsInterceptorTest {
     Attributes attrs = point.getAttributes();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
     assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD)).isEqualTo("GET");
-    assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo(200L);
+    assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo("200");
     assertThat(attrs.get(StorageClientMetrics.KEY_NETWORK_PATH))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
     assertThat(attrs.get(StorageClientMetrics.KEY_URL_TEMPLATE))
@@ -275,7 +275,7 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(point.getSum()).isWithin(1e-6).of(0.12);
     Attributes attrs = point.getAttributes();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
-    assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo(308L);
+    assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo("308");
     assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isEqualTo("OK");
     assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
@@ -310,7 +310,7 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(point.getSum()).isWithin(1e-6).of(0.08);
     Attributes attrs = point.getAttributes();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
-    assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo(404L);
+    assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo("404");
     assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isEqualTo("NOT_FOUND");
     assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
@@ -345,7 +345,7 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(point.getSum()).isWithin(1e-6).of(0.40);
     Attributes attrs = point.getAttributes();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
-    assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo(503L);
+    assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo("503");
     assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isEqualTo("UNAVAILABLE");
     assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
@@ -392,7 +392,7 @@ public final class StorageHttpMetricsInterceptorTest {
     Attributes attrs = point.getAttributes();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
     assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isEqualTo("CONNECTIVITY");
-    assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo(0L);
+    assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo("0");
     assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
   }

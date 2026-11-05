@@ -33,7 +33,8 @@ import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
- * HTTP request initializer that records HTTP client metrics such as http.client.request.duration.
+ * {@link HttpRequestInitializer} that instruments outgoing HTTP requests to record OpenTelemetry
+ * client metrics.
  */
 @NullMarked
 final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
@@ -51,7 +52,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     this.delegate = delegate;
     this.metrics = metrics;
     this.clock = clock;
-    this.defaultServerAddress = StorageOptions.extractServerAddress(host);
+    this.defaultServerAddress = OpenTelemetryBootstrappingUtils.extractServerAddress(host);
   }
 
   @Override
@@ -94,7 +95,12 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
                 statusCode >= 400
                     ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
                     : StorageErrorTypeMapper.STATUS_OK;
-            recordDuration(durationHistogram, request, startTimeNanos.get(), statusCode, errorType);
+            recordDuration(
+                durationHistogram,
+                request,
+                startTimeNanos.get(),
+                String.valueOf(statusCode),
+                errorType);
           }
         });
 
@@ -108,7 +114,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
                 durationHistogram,
                 req,
                 startTimeNanos.get(),
-                0L,
+                "0",
                 StorageErrorTypeMapper.STATUS_CONNECTIVITY);
           }
           return existingIoHandler != null
@@ -120,7 +126,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
       DoubleHistogram durationHistogram,
       HttpRequest request,
       long startNanos,
-      long statusCode,
+      String statusCode,
       String errorType) {
     if (metrics == null) {
       return;

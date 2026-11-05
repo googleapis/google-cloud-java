@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore.pipeline.stages;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.firestore.v1.Value;
 import java.util.ArrayList;
@@ -27,7 +26,6 @@ public final class Delete extends Stage {
     super("delete", options);
   }
 
-  @BetaApi
   public Delete() {
     this(InternalOptions.EMPTY);
   }

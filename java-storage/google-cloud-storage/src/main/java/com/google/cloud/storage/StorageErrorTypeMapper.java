@@ -53,12 +53,10 @@ final class StorageErrorTypeMapper {
   static final String STATUS_PERMISSION_DENIED = "PERMISSION_DENIED";
   static final String STATUS_RESOURCE_EXHAUSTED = "RESOURCE_EXHAUSTED";
   static final String STATUS_FAILED_PRECONDITION = "FAILED_PRECONDITION";
-  static final String STATUS_ABORTED = "ABORTED";
   static final String STATUS_OUT_OF_RANGE = "OUT_OF_RANGE";
   static final String STATUS_UNIMPLEMENTED = "UNIMPLEMENTED";
   static final String STATUS_INTERNAL = "INTERNAL";
   static final String STATUS_UNAVAILABLE = "UNAVAILABLE";
-  static final String STATUS_DATA_LOSS = "DATA_LOSS";
   static final String STATUS_UNAUTHENTICATED = "UNAUTHENTICATED";
 
   static final String STATUS_TIMEOUT = "TIMEOUT";
@@ -73,46 +71,23 @@ final class StorageErrorTypeMapper {
   private StorageErrorTypeMapper() {}
 
   static String mapGrpcStatus(@Nullable Status status) {
-    if (status == null) {
+    if (status == null || status.getCode() == Status.Code.UNKNOWN) {
       return STATUS_UNKNOWN;
     }
-    switch (status.getCode()) {
-      case OK:
-        return STATUS_OK;
-      case CANCELLED:
-        return STATUS_CANCELLED;
-      case DEADLINE_EXCEEDED:
-        return STATUS_TIMEOUT;
-      case INVALID_ARGUMENT:
-        return STATUS_INVALID_ARGUMENT;
-      case NOT_FOUND:
-        return STATUS_NOT_FOUND;
-      case ALREADY_EXISTS:
-        return STATUS_ALREADY_EXISTS;
-      case PERMISSION_DENIED:
-        return STATUS_PERMISSION_DENIED;
-      case RESOURCE_EXHAUSTED:
-        return STATUS_RESOURCE_EXHAUSTED;
-      case FAILED_PRECONDITION:
-        return STATUS_FAILED_PRECONDITION;
-      case ABORTED:
-        return STATUS_ABORTED;
-      case OUT_OF_RANGE:
-        return STATUS_OUT_OF_RANGE;
-      case UNIMPLEMENTED:
-        return STATUS_UNIMPLEMENTED;
-      case INTERNAL:
-        return STATUS_INTERNAL;
-      case UNAVAILABLE:
-        return STATUS_UNAVAILABLE;
-      case DATA_LOSS:
-        return STATUS_DATA_LOSS;
-      case UNAUTHENTICATED:
-        return STATUS_UNAUTHENTICATED;
-      case UNKNOWN:
-      default:
-        return STATUS_UNKNOWN;
+    if (status.getCode() == Status.Code.DEADLINE_EXCEEDED) {
+      return STATUS_TIMEOUT;
     }
+    return status.getCode().name();
+  }
+
+  private static String mapGaxStatusCode(StatusCode.@Nullable Code code) {
+    if (code == null || code == StatusCode.Code.UNKNOWN) {
+      return STATUS_UNKNOWN;
+    }
+    if (code == StatusCode.Code.DEADLINE_EXCEEDED) {
+      return STATUS_TIMEOUT;
+    }
+    return code.name();
   }
 
   static String mapHttpResponseCode(int statusCode) {
@@ -190,7 +165,10 @@ final class StorageErrorTypeMapper {
       return mapGrpcStatus(((StatusException) t).getStatus());
     }
 
-    if (t instanceof WatchdogTimeoutException || t instanceof DeadlineExceededException) {
+    if (t instanceof WatchdogTimeoutException
+        || t instanceof DeadlineExceededException
+        || t instanceof SocketTimeoutException
+        || t instanceof TimeoutException) {
       return STATUS_TIMEOUT;
     }
 
@@ -239,10 +217,6 @@ final class StorageErrorTypeMapper {
         }
       }
       return STATUS_AUTHENTICATION_ERROR;
-    }
-
-    if (t instanceof SocketTimeoutException || t instanceof TimeoutException) {
-      return STATUS_TIMEOUT;
     }
 
     if (t instanceof UnknownHostException) {
@@ -335,45 +309,5 @@ final class StorageErrorTypeMapper {
         || simpleName.equals("OAuth2Exception")
         || simpleName.equals("AuthenticationException")
         || className.contains("GoogleAuthException");
-  }
-
-  private static String mapGaxStatusCode(StatusCode.Code code) {
-    switch (code) {
-      case OK:
-        return STATUS_OK;
-      case CANCELLED:
-        return STATUS_CANCELLED;
-      case DEADLINE_EXCEEDED:
-        return STATUS_TIMEOUT;
-      case INVALID_ARGUMENT:
-        return STATUS_INVALID_ARGUMENT;
-      case NOT_FOUND:
-        return STATUS_NOT_FOUND;
-      case ALREADY_EXISTS:
-        return STATUS_ALREADY_EXISTS;
-      case PERMISSION_DENIED:
-        return STATUS_PERMISSION_DENIED;
-      case RESOURCE_EXHAUSTED:
-        return STATUS_RESOURCE_EXHAUSTED;
-      case FAILED_PRECONDITION:
-        return STATUS_FAILED_PRECONDITION;
-      case ABORTED:
-        return STATUS_ABORTED;
-      case OUT_OF_RANGE:
-        return STATUS_OUT_OF_RANGE;
-      case UNIMPLEMENTED:
-        return STATUS_UNIMPLEMENTED;
-      case INTERNAL:
-        return STATUS_INTERNAL;
-      case UNAVAILABLE:
-        return STATUS_UNAVAILABLE;
-      case DATA_LOSS:
-        return STATUS_DATA_LOSS;
-      case UNAUTHENTICATED:
-        return STATUS_UNAUTHENTICATED;
-      case UNKNOWN:
-      default:
-        return STATUS_UNKNOWN;
-    }
   }
 }

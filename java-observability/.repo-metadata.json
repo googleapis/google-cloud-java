@@ -1,0 +1,15 @@
+{
+  "api_shortname": "observability",
+  "name_pretty": "Observability",
+  "product_documentation": "https://cloud.google.com/stackdriver/",
+  "api_description": "Provides functionality for configuring the observability scope, which\ncontrols the log, metric, and trace data that you can view.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-observability/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc+rest",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-observability",
+  "distribution_name": "com.google.cloud:google-cloud-observability",
+  "api_id": "observability.googleapis.com",
+  "library_type": "GAPIC_AUTO"
+}
