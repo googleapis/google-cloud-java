@@ -18,6 +18,7 @@ package com.google.cloud.storage;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.NoCredentials;
@@ -395,6 +396,16 @@ public abstract class StorageOptions extends ServiceOptions<Storage, StorageOpti
         storageClientMetrics = null;
       }
     }
+  }
+
+  @InternalApi
+  @Nullable
+  public HttpRequestInitializer decorateWithMetrics(@Nullable HttpRequestInitializer initializer) {
+    StorageClientMetrics metrics = getStorageClientMetrics();
+    if (metrics == null) {
+      return initializer;
+    }
+    return new StorageHttpMetricsInterceptor(initializer, metrics, getClock(), getHost());
   }
 
   /**

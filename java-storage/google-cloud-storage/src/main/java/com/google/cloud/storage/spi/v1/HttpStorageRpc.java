@@ -157,7 +157,9 @@ public class HttpStorageRpc implements StorageRpc {
     CensusHttpModule censusHttpModule = new CensusHttpModule(tracer, IS_RECORD_EVENTS);
     initializer = censusHttpModule.getHttpRequestInitializer(initializer);
     initializer = new InvocationIdInitializer(initializer, applicationName, tm);
-    batchRequestInitializer = censusHttpModule.getHttpRequestInitializer(null);
+    initializer = options.decorateWithMetrics(initializer);
+    batchRequestInitializer =
+        options.decorateWithMetrics(censusHttpModule.getHttpRequestInitializer(null));
     storage =
         new Storage.Builder(transport, jsonFactory, initializer)
             .setRootUrl(options.getHost())
@@ -262,7 +264,7 @@ public class HttpStorageRpc implements StorageRpc {
         StorageObject storageObject, RpcBatch.Callback<Void> callback, Map<Option, ?> options) {
       try {
         if (currentBatchSize == MAX_BATCH_SIZE) {
-          batches.add(storage.batch());
+          batches.add(storage.batch(batchRequestInitializer));
           currentBatchSize = 0;
         }
         Delete call = deleteCall(storageObject, options);
@@ -281,7 +283,7 @@ public class HttpStorageRpc implements StorageRpc {
         Map<Option, ?> options) {
       try {
         if (currentBatchSize == MAX_BATCH_SIZE) {
-          batches.add(storage.batch());
+          batches.add(storage.batch(batchRequestInitializer));
           currentBatchSize = 0;
         }
         Patch call = patchCall(storageObject, options);
@@ -300,7 +302,7 @@ public class HttpStorageRpc implements StorageRpc {
         Map<Option, ?> options) {
       try {
         if (currentBatchSize == MAX_BATCH_SIZE) {
-          batches.add(storage.batch());
+          batches.add(storage.batch(batchRequestInitializer));
           currentBatchSize = 0;
         }
         Get call = getCall(storageObject, options);

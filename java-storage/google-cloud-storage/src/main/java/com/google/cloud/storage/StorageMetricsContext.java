@@ -295,6 +295,32 @@ final class StorageMetricsContext {
     metrics.getRpcClientCallDuration().record(durationSeconds, attributes, otelContext);
   }
 
+  static void recordHttpRequestDuration(
+      @Nullable StorageClientMetrics metrics,
+      double durationSeconds,
+      String httpMethod,
+      String statusCode,
+      String urlTemplate,
+      @Nullable String serverAddress,
+      String errorType) {
+    if (metrics == null || metrics.getHttpClientRequestDuration() == null) {
+      return;
+    }
+    Attributes attributes =
+        metrics
+            .clientAttributesBuilder()
+            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http")
+            .put(StorageClientMetrics.KEY_HTTP_REQUEST_METHOD, httpMethod)
+            .put(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE, statusCode)
+            .put(StorageClientMetrics.KEY_NETWORK_PATH, StorageClientMetrics.NETWORK_PATH_CLOUDPATH)
+            .put(StorageClientMetrics.KEY_URL_TEMPLATE, urlTemplate)
+            .put(
+                StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress != null ? serverAddress : "")
+            .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
+            .build();
+    metrics.getHttpClientRequestDuration().record(durationSeconds, attributes, Context.current());
+  }
+
   private Attributes buildAttemptBaseAttributes(StorageClientMetrics metrics) {
     AttributesBuilder baseBuilder = Attributes.builder();
     baseBuilder.putAll(metrics.getClientAttributes());
