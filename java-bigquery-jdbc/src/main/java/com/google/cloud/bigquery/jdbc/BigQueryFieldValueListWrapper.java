@@ -58,7 +58,7 @@ class BigQueryFieldValueListWrapper {
       FieldList fieldList, FieldValueList fieldValueList, boolean[] isComplexColumn) {
     boolean[] flags =
         isComplexColumn != null ? isComplexColumn : createComplexColumnFlags(fieldList);
-    Object[] rowValues = unpackRow(fieldValueList, flags);
+    Object[] rowValues = unpackRow(fieldList, fieldValueList, flags);
     return new BigQueryFieldValueListWrapper(fieldList, null, null, rowValues, false, null);
   }
 
@@ -70,16 +70,13 @@ class BigQueryFieldValueListWrapper {
     boolean[] isComplex = new boolean[size];
     for (int i = 0; i < size; i++) {
       Field field = fieldList.get(i);
-      isComplex[i] =
-          isArray(field)
-              || isStruct(field)
-              || (field.getType() != null
-                  && field.getType().getStandardType() == StandardSQLTypeName.RANGE);
+      isComplex[i] = isArray(field) || isStruct(field);
     }
     return isComplex;
   }
 
-  static Object[] unpackRow(FieldValueList fieldValueList, boolean[] isComplexColumn) {
+  static Object[] unpackRow(
+      FieldList fieldList, FieldValueList fieldValueList, boolean[] isComplexColumn) {
     if (fieldValueList == null) {
       return null;
     }
@@ -90,13 +87,24 @@ class BigQueryFieldValueListWrapper {
       if (fv == null || fv.isNull()) {
         row[i] = null;
       } else if ((i < isComplexColumn.length && isComplexColumn[i])
-          || fv.getAttribute() != Attribute.PRIMITIVE) {
+          || fv.getAttribute() != Attribute.PRIMITIVE
+          || keepsFieldValue(fieldList, i)) {
         row[i] = fv;
       } else {
         row[i] = fv.getStringValue();
       }
     }
     return row;
+  }
+
+  /** RANGE and TIMESTAMP are read from their FieldValue, e.g. to detect int64 encoding. */
+  private static boolean keepsFieldValue(FieldList fieldList, int index) {
+    if (fieldList == null || index >= fieldList.size()) {
+      return false;
+    }
+    Field field = fieldList.get(index);
+    StandardSQLTypeName type = field.getType() == null ? null : field.getType().getStandardType();
+    return type == StandardSQLTypeName.RANGE || type == StandardSQLTypeName.TIMESTAMP;
   }
 
   static BigQueryFieldValueListWrapper getNestedFieldValueListWrapper(

@@ -34,6 +34,7 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
+import java.util.Arrays;
 import java.util.TimeZone;
 import java.util.stream.Stream;
 import org.apache.arrow.vector.PeriodDuration;
@@ -304,5 +305,24 @@ public class BigQueryTypeRegistryTest {
     Time sqlTime = (Time) BigQueryTypeRegistry.convert(timeStr, StandardSQLTypeName.TIME, null);
     assertThat(sqlTime.getClass()).isEqualTo(Time.class);
     assertThat(sqlTime.toString()).isEqualTo("14:30:00");
+  }
+
+  @ParameterizedTest(name = "JVM zone {0}")
+  @MethodSource("jvmZones")
+  public void testDatetimeReadCoercionsPreserveCivilDigits(String zone) throws Exception {
+    TimeZone.setDefault(TimeZone.getTimeZone(zone));
+    LocalDateTime gapLdt = LocalDateTime.of(2025, 3, 9, 2, 30, 0);
+    ZoneId utc = ZoneId.of("UTC");
+
+    for (Object raw : Arrays.asList("2025-03-09 02:30:00", gapLdt)) {
+      assertThat(BigQueryTypeRegistry.convert(raw, StandardSQLTypeName.DATETIME, Date.class, null))
+          .isEqualTo(Date.valueOf(gapLdt.toLocalDate()));
+      assertThat(BigQueryTypeRegistry.convert(raw, StandardSQLTypeName.DATETIME, Time.class, null))
+          .isEqualTo(Time.valueOf(gapLdt.toLocalTime()));
+      assertThat(
+              BigQueryTypeRegistry.convert(raw, StandardSQLTypeName.DATETIME, Time.class, utc)
+                  .getTime())
+          .isEqualTo(Duration.ofHours(2).plusMinutes(30).toMillis());
+    }
   }
 }

@@ -31,7 +31,6 @@ import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
 import com.google.bigtable.v2.LoadBalancingOptions;
 import com.google.bigtable.v2.LoadBalancingOptions.LeastInFlight;
-import com.google.bigtable.v2.LoadBalancingOptions.PeakEwma;
 import com.google.bigtable.v2.SessionClientConfiguration;
 import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration.DirectAccessWithFallback;
 import com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration;
@@ -294,55 +293,6 @@ class ClientConfigurationManagerTest {
         .isEqualTo(
             manager.getDefaultConfig().getSessionConfiguration().getSessionPoolConfiguration());
     assertThat(manager.areSessionsRequired()).isTrue();
-  }
-
-  @Deprecated
-  @Test
-  void testMigrateSessionPool() throws ExecutionException, InterruptedException {
-    ClientConfiguration defaultConfig = manager.getDefaultConfig();
-
-    // Override LoadBalancingOptions
-    LoadBalancingOptions loadBalancingOptions =
-        LoadBalancingOptions.newBuilder()
-            .setPeakEwma(PeakEwma.newBuilder().setRandomSubsetSize(0))
-            .build();
-
-    ClientConfiguration.Builder legacyBuilder = defaultConfig.toBuilder();
-
-    // Enable sessions
-    legacyBuilder
-        .getSessionConfigurationBuilder()
-        .setSessionDiversionConfiguration(
-            SessionDiversionConfiguration.newBuilder()
-                .setGlobalDiversion(
-                    SessionScopeDiversionConfiguration.newBuilder().setSessionLoad(0.1f)));
-
-    // Now patch default config to be a legacy config
-    // During migration, LoadBalancingOptions are a toplevel config, so clear out the
-    // SessionPoolConfiguration and set the toplevel option
-    legacyBuilder
-        .getSessionConfigurationBuilder()
-        .setLoadBalancingOptions(loadBalancingOptions)
-        .clearSessionPoolConfiguration()
-        .clearChannelConfiguration();
-    ClientConfiguration legacyCfg = legacyBuilder.build();
-
-    service.config.set(legacyCfg);
-    // Fetch initial config
-    ClientConfiguration resolvedConfig = manager.start().get();
-
-    // Make sure that SessionPoolConfiguration got patched with SessionPool & ChannelPool configs
-    // And ensure that the toplevel LoadBalancingOptions got migrated
-    ClientConfiguration.Builder expectedConfig = legacyCfg.toBuilder();
-    expectedConfig
-        .getSessionConfigurationBuilder()
-        .clearLoadBalancingOptions()
-        .setSessionPoolConfiguration(
-            defaultConfig.getSessionConfiguration().getSessionPoolConfiguration().toBuilder()
-                .setLoadBalancingOptions(loadBalancingOptions))
-        .setChannelConfiguration(defaultConfig.getSessionConfiguration().getChannelConfiguration());
-
-    assertThat(resolvedConfig).isEqualTo(expectedConfig.build());
   }
 
   @Test

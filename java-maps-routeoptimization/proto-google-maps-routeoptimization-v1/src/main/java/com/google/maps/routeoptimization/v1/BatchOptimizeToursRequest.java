@@ -1449,10 +1449,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
    * Required. Target project and location to make a call.
    *
    * Format:
-   * * `projects/{project-id}`
-   * * `projects/{project-id}/locations/{location-id}`
    *
-   * If no location is specified, a region will be chosen automatically.
+   * * `projects/{project-id}`
+   * * `projects/{project-id}/locations/-`
+   *
+   * Regional `{location-id}` values are not supported.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1479,10 +1480,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
    * Required. Target project and location to make a call.
    *
    * Format:
-   * * `projects/{project-id}`
-   * * `projects/{project-id}/locations/{location-id}`
    *
-   * If no location is specified, a region will be chosen automatically.
+   * * `projects/{project-id}`
+   * * `projects/{project-id}/locations/-`
+   *
+   * Regional `{location-id}` values are not supported.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2003,10 +2005,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      * Required. Target project and location to make a call.
      *
      * Format:
-     * * `projects/{project-id}`
-     * * `projects/{project-id}/locations/{location-id}`
      *
-     * If no location is specified, a region will be chosen automatically.
+     * * `projects/{project-id}`
+     * * `projects/{project-id}/locations/-`
+     *
+     * Regional `{location-id}` values are not supported.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2032,10 +2035,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      * Required. Target project and location to make a call.
      *
      * Format:
-     * * `projects/{project-id}`
-     * * `projects/{project-id}/locations/{location-id}`
      *
-     * If no location is specified, a region will be chosen automatically.
+     * * `projects/{project-id}`
+     * * `projects/{project-id}/locations/-`
+     *
+     * Regional `{location-id}` values are not supported.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2061,10 +2065,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      * Required. Target project and location to make a call.
      *
      * Format:
-     * * `projects/{project-id}`
-     * * `projects/{project-id}/locations/{location-id}`
      *
-     * If no location is specified, a region will be chosen automatically.
+     * * `projects/{project-id}`
+     * * `projects/{project-id}/locations/-`
+     *
+     * Regional `{location-id}` values are not supported.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2089,10 +2094,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      * Required. Target project and location to make a call.
      *
      * Format:
-     * * `projects/{project-id}`
-     * * `projects/{project-id}/locations/{location-id}`
      *
-     * If no location is specified, a region will be chosen automatically.
+     * * `projects/{project-id}`
+     * * `projects/{project-id}/locations/-`
+     *
+     * Regional `{location-id}` values are not supported.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2113,10 +2119,11 @@ public final class BatchOptimizeToursRequest extends com.google.protobuf.Generat
      * Required. Target project and location to make a call.
      *
      * Format:
-     * * `projects/{project-id}`
-     * * `projects/{project-id}/locations/{location-id}`
      *
-     * If no location is specified, a region will be chosen automatically.
+     * * `projects/{project-id}`
+     * * `projects/{project-id}/locations/-`
+     *
+     * Regional `{location-id}` values are not supported.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

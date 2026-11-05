@@ -72,6 +72,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
   private com.google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1_;
 
   /**
+   *
+   *
+   * <pre>
+   * Cipher algorithms for IKE phase 1.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
    *
    * @return Whether the phase1 field is set.
@@ -82,6 +88,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Cipher algorithms for IKE phase 1.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
    *
    * @return The phase1.
@@ -93,7 +105,15 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
         : phase1_;
   }
 
-  /** <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Cipher algorithms for IKE phase 1.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.VpnTunnelPhase1AlgorithmsOrBuilder getPhase1OrBuilder() {
     return phase1_ == null
@@ -105,6 +125,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
   private com.google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2_;
 
   /**
+   *
+   *
+   * <pre>
+   * Cipher algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
    *
    * @return Whether the phase2 field is set.
@@ -115,6 +141,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Cipher algorithms for IKE phase 2.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
    *
    * @return The phase2.
@@ -126,7 +158,15 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
         : phase2_;
   }
 
-  /** <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Cipher algorithms for IKE phase 2.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.VpnTunnelPhase2AlgorithmsOrBuilder getPhase2OrBuilder() {
     return phase2_ == null
@@ -503,6 +543,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
         phase1Builder_;
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 1.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
      *
      * @return Whether the phase1 field is set.
@@ -512,6 +558,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 1.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
      *
      * @return The phase1.
@@ -527,6 +579,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 1.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
      */
     public Builder setPhase1(com.google.cloud.compute.v1.VpnTunnelPhase1Algorithms value) {
@@ -544,6 +602,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 1.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
      */
     public Builder setPhase1(
@@ -559,6 +623,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 1.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
      */
     public Builder mergePhase1(com.google.cloud.compute.v1.VpnTunnelPhase1Algorithms value) {
@@ -582,6 +652,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 1.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
      */
     public Builder clearPhase1() {
@@ -596,6 +672,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 1.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
      */
     public com.google.cloud.compute.v1.VpnTunnelPhase1Algorithms.Builder getPhase1Builder() {
@@ -605,6 +687,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 1.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
      */
     public com.google.cloud.compute.v1.VpnTunnelPhase1AlgorithmsOrBuilder getPhase1OrBuilder() {
@@ -618,6 +706,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 1.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase1Algorithms phase1 = 84289046;</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -645,6 +739,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
         phase2Builder_;
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
      *
      * @return Whether the phase2 field is set.
@@ -654,6 +754,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
      *
      * @return The phase2.
@@ -669,6 +775,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
      */
     public Builder setPhase2(com.google.cloud.compute.v1.VpnTunnelPhase2Algorithms value) {
@@ -686,6 +798,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
      */
     public Builder setPhase2(
@@ -701,6 +819,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
      */
     public Builder mergePhase2(com.google.cloud.compute.v1.VpnTunnelPhase2Algorithms value) {
@@ -724,6 +848,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
      */
     public Builder clearPhase2() {
@@ -738,6 +868,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
      */
     public com.google.cloud.compute.v1.VpnTunnelPhase2Algorithms.Builder getPhase2Builder() {
@@ -747,6 +883,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
      */
     public com.google.cloud.compute.v1.VpnTunnelPhase2AlgorithmsOrBuilder getPhase2OrBuilder() {
@@ -760,6 +902,12 @@ public final class VpnTunnelCipherSuite extends com.google.protobuf.GeneratedMes
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Cipher algorithms for IKE phase 2.
+     * </pre>
+     *
      * <code>optional .google.cloud.compute.v1.VpnTunnelPhase2Algorithms phase2 = 84289047;</code>
      */
     private com.google.protobuf.SingleFieldBuilder<

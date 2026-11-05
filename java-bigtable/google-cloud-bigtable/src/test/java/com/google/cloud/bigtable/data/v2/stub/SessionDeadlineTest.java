@@ -26,12 +26,12 @@ import com.google.bigtable.v2.ClientConfiguration;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
 import com.google.bigtable.v2.OpenSessionResponse;
 import com.google.bigtable.v2.PeerInfo;
-import com.google.bigtable.v2.SessionClientConfiguration;
 import com.google.bigtable.v2.SessionDiversionConfiguration;
 import com.google.bigtable.v2.SessionRequest;
 import com.google.bigtable.v2.SessionResponse;
 import com.google.bigtable.v2.SessionScopeDiversionConfiguration;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
+import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
@@ -254,17 +254,20 @@ public class SessionDeadlineTest {
     public void getClientConfiguration(
         GetClientConfigurationRequest request,
         StreamObserver<ClientConfiguration> responseObserver) {
-      responseObserver.onNext(
-          ClientConfiguration.newBuilder()
-              .setSessionConfiguration(
-                  SessionClientConfiguration.newBuilder()
-                      .setSessionDiversionConfiguration(
-                          SessionDiversionConfiguration.newBuilder()
-                              .setGlobalDiversion(
-                                  SessionScopeDiversionConfiguration.newBuilder()
-                                      .setSessionLoad(1)))
-                      .build())
-              .build());
+      ClientConfiguration.Builder builder;
+      try {
+        builder = ClientConfigurationManager.loadDefault().toBuilder();
+      } catch (IOException e) {
+        responseObserver.onError(e);
+        return;
+      }
+      builder
+          .getSessionConfigurationBuilder()
+          .setSessionDiversionConfiguration(
+              SessionDiversionConfiguration.newBuilder()
+                  .setGlobalDiversion(
+                      SessionScopeDiversionConfiguration.newBuilder().setSessionLoad(1)));
+      responseObserver.onNext(builder.build());
       responseObserver.onCompleted();
     }
 

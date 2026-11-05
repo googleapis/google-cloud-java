@@ -158,7 +158,8 @@ abstract class AbstractResultSet<R> extends AbstractStructReader implements Resu
 
     /**
      * @param streamMessageListener A class object which implements StreamMessageListener
-     * @return true if streaming is supported by the iterator, otherwise false
+     * @return true if streaming is supported by the iterator, otherwise false. Also returns false
+     *     if the iterator has already been closed, in which case no stream is started.
      */
     default boolean initiateStreaming(AsyncResultSet.StreamMessageListener streamMessageListener) {
       return false;
@@ -170,6 +171,15 @@ abstract class AbstractResultSet<R> extends AbstractStructReader implements Resu
     /**
      * Returns true if data (a chunk, row, EOF, or error) is available to read immediately without
      * blocking the calling thread on network I/O.
+     *
+     * <p><strong>Single-Consumer Threading Contract:</strong> This method drains underlying stream
+     * state into internal buffers and MUST only be called by the designated consuming thread. It
+     * must NEVER be invoked concurrently with {@link #hasNext()} or {@link #next()}.
+     *
+     * <p><strong>Note on Pending Retryable Errors:</strong> If a retryable stream error is pending,
+     * this method returns {@code true} so the consumer is prompted to call {@link #next()} to
+     * handle backoff and reconnect. In that specific scenario, the subsequent call to {@link
+     * #next()} may block for backoff sleep and stream re-establishment.
      */
     default boolean isDataAvailable() {
       return true;
@@ -179,6 +189,10 @@ abstract class AbstractResultSet<R> extends AbstractStructReader implements Resu
      * Returns true if the iterator can be polled immediately (via {@link #hasNext()} or {@link
      * #next()}) to yield a chunk or EOF without blocking on network I/O and without throwing a
      * stream error.
+     *
+     * <p><strong>Single-Consumer Threading Contract:</strong> This method drains underlying stream
+     * state and MUST only be called by the designated consuming thread. It must NEVER be invoked
+     * concurrently with {@link #hasNext()} or {@link #next()}.
      */
     default boolean canPollWithoutErrorOrBlocking() {
       return false;
