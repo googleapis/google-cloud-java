@@ -330,20 +330,24 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
             // this attempt have received the error, wait for the retry instead of failing with
             // the error of this attempt.
             if (remainingAttempts > 1
-                && !isClientClosed()
                 && RETRYABLE_ERROR_CODES.contains(spannerException.getErrorCode())) {
               final SettableApiFuture<SessionReference> future = SettableApiFuture.create();
-              if (MultiplexedSessionDatabaseClient.this.multiplexedSessionReference.compareAndSet(
-                  sessionReferenceFuture, future)) {
-                // Set the exception to trigger an error for all waiters of this attempt.
-                sessionReferenceFuture.setException(t);
+              boolean replaced = MultiplexedSessionDatabaseClient.this.multiplexedSessionReference.compareAndSet(
+                  sessionReferenceFuture, future);
+              // Set the exception to trigger an error for all waiters of this attempt.
+              sessionReferenceFuture.setException(t);
+              if (replaced) {
+                if (isClientClosed()) {
+                  future.setException(newClosedException());
+                  return;
+                }
                 try {
                   asyncCreateMultiplexedSession(future, remainingAttempts - 1);
                 } catch (Throwable e) {
                   future.setException(e);
                 }
-                return;
               }
+              return;
             }
             // Set the exception to trigger an error for all waiters.
             sessionReferenceFuture.setException(t);
@@ -450,6 +454,10 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
         releaseChannelUsage = true;
       }
     }
+    ApiFuture<SessionReference> future = this.multiplexedSessionReference.get();
+    if (future instanceof SettableApiFuture) {
+      ((SettableApiFuture<SessionReference>) future).setException(newClosedException());
+    }
     if (releaseChannelUsage) {
       // The multiplexed session is no longer maintained, so this client must no longer be asked
       // for a session when priming dynamic channel pool channels.
@@ -464,6 +472,11 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
         }
       }
     }
+  }
+
+  @VisibleForTesting
+  AtomicReference<ApiFuture<SessionReference>> getMultiplexedSessionReference() {
+    return this.multiplexedSessionReference;
   }
 
   @VisibleForTesting
