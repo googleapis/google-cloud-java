@@ -166,7 +166,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any additional [user
-   * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+   * properties](https://support.google.com/analytics/answer/9355671)
    * for the user associated with this event.
    * </pre>
    *
@@ -185,7 +185,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any additional [user
-   * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+   * properties](https://support.google.com/analytics/answer/9355671)
    * for the user associated with this event.
    * </pre>
    *
@@ -204,7 +204,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any additional [user
-   * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+   * properties](https://support.google.com/analytics/answer/9355671)
    * for the user associated with this event.
    * </pre>
    *
@@ -222,7 +222,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any additional [user
-   * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+   * properties](https://support.google.com/analytics/answer/9355671)
    * for the user associated with this event.
    * </pre>
    *
@@ -240,7 +240,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. A bucket of any additional [user
-   * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+   * properties](https://support.google.com/analytics/answer/9355671)
    * for the user associated with this event.
    * </pre>
    *
@@ -901,7 +901,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -923,7 +923,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -944,7 +944,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -965,7 +965,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -993,7 +993,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1018,7 +1018,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1045,7 +1045,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1073,7 +1073,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1098,7 +1098,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1123,7 +1123,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1148,7 +1148,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1172,7 +1172,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1196,7 +1196,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1214,7 +1214,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1236,7 +1236,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1258,7 +1258,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1276,7 +1276,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *
@@ -1295,7 +1295,7 @@ public final class UserProperties extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. A bucket of any additional [user
-     * properties](https://developers.google.com/analytics/devguides/collection/protocol/ga4/user-properties)
+     * properties](https://support.google.com/analytics/answer/9355671)
      * for the user associated with this event.
      * </pre>
      *

@@ -57,6 +57,7 @@ public final class NewOnDemandInstancesConfig extends com.google.protobuf.Genera
   private NewOnDemandInstancesConfig() {
     zone_ = "";
     machineType_ = "";
+    networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -196,6 +197,86 @@ public final class NewOnDemandInstancesConfig extends com.google.protobuf.Genera
     }
   }
 
+  public static final int NETWORK_TAGS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList networkTags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return A list containing the networkTags.
+   */
+  public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
+    return networkTags_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The count of networkTags.
+   */
+  public int getNetworkTagsCount() {
+    return networkTags_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The networkTags at the given index.
+   */
+  public java.lang.String getNetworkTags(int index) {
+    return networkTags_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. A list of network tags to attach to the VM instances.
+   * A maximum of 64 network tags are allowed.
+   * </pre>
+   *
+   * <code>
+   * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the networkTags at the given index.
+   */
+  public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
+    return networkTags_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -216,6 +297,9 @@ public final class NewOnDemandInstancesConfig extends com.google.protobuf.Genera
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(machineType_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, machineType_);
     }
+    for (int i = 0; i < networkTags_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, networkTags_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -230,6 +314,14 @@ public final class NewOnDemandInstancesConfig extends com.google.protobuf.Genera
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(machineType_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, machineType_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < networkTags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(networkTags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getNetworkTagsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -249,6 +341,7 @@ public final class NewOnDemandInstancesConfig extends com.google.protobuf.Genera
 
     if (!getZone().equals(other.getZone())) return false;
     if (!getMachineType().equals(other.getMachineType())) return false;
+    if (!getNetworkTagsList().equals(other.getNetworkTagsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -264,6 +357,10 @@ public final class NewOnDemandInstancesConfig extends com.google.protobuf.Genera
     hash = (53 * hash) + getZone().hashCode();
     hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getMachineType().hashCode();
+    if (getNetworkTagsCount() > 0) {
+      hash = (37 * hash) + NETWORK_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkTagsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -412,6 +509,7 @@ public final class NewOnDemandInstancesConfig extends com.google.protobuf.Genera
       bitField0_ = 0;
       zone_ = "";
       machineType_ = "";
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -458,6 +556,10 @@ public final class NewOnDemandInstancesConfig extends com.google.protobuf.Genera
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.machineType_ = machineType_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        networkTags_.makeImmutable();
+        result.networkTags_ = networkTags_;
+      }
     }
 
     @java.lang.Override
@@ -484,6 +586,16 @@ public final class NewOnDemandInstancesConfig extends com.google.protobuf.Genera
       if (!other.getMachineType().isEmpty()) {
         machineType_ = other.machineType_;
         bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.networkTags_.isEmpty()) {
+        if (networkTags_.isEmpty()) {
+          networkTags_ = other.networkTags_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureNetworkTagsIsMutable();
+          networkTags_.addAll(other.networkTags_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -524,6 +636,13 @@ public final class NewOnDemandInstancesConfig extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureNetworkTagsIsMutable();
+                networkTags_.add(s);
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -801,6 +920,216 @@ public final class NewOnDemandInstancesConfig extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       machineType_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList networkTags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureNetworkTagsIsMutable() {
+      if (!networkTags_.isModifiable()) {
+        networkTags_ = new com.google.protobuf.LazyStringArrayList(networkTags_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return A list containing the networkTags.
+     */
+    public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
+      networkTags_.makeImmutable();
+      return networkTags_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The count of networkTags.
+     */
+    public int getNetworkTagsCount() {
+      return networkTags_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The networkTags at the given index.
+     */
+    public java.lang.String getNetworkTags(int index) {
+      return networkTags_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the networkTags at the given index.
+     */
+    public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
+      return networkTags_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The networkTags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNetworkTagsIsMutable();
+      networkTags_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNetworkTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureNetworkTagsIsMutable();
+      networkTags_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param values The networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllNetworkTags(java.lang.Iterable<java.lang.String> values) {
+      ensureNetworkTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkTags_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetworkTags() {
+      networkTags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. A list of network tags to attach to the VM instances.
+     * A maximum of 64 network tags are allowed.
+     * </pre>
+     *
+     * <code>
+     * repeated string network_tags = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes of the networkTags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addNetworkTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureNetworkTagsIsMutable();
+      networkTags_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
