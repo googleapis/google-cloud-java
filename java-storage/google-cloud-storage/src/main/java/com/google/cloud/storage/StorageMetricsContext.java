@@ -268,6 +268,33 @@ final class StorageMetricsContext {
     }
   }
 
+  static void recordRpcCallDuration(
+      @Nullable StorageClientMetrics metrics,
+      @Nullable StorageMetricsContext metricsContext,
+      double durationSeconds,
+      String shortMethod,
+      String statusCode,
+      String networkPath,
+      String serverAddress,
+      String errorType) {
+    if (metrics == null || metrics.getRpcClientCallDuration() == null) {
+      return;
+    }
+    Context otelContext =
+        metricsContext != null ? metricsContext.getOtelContext() : Context.current();
+    Attributes attributes =
+        metrics
+            .clientAttributesBuilder()
+            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
+            .put(StorageClientMetrics.KEY_RPC_METHOD, shortMethod)
+            .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, statusCode)
+            .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
+            .put(StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress)
+            .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType)
+            .build();
+    metrics.getRpcClientCallDuration().record(durationSeconds, attributes, otelContext);
+  }
+
   private Attributes buildAttemptBaseAttributes(StorageClientMetrics metrics) {
     AttributesBuilder baseBuilder = Attributes.builder();
     baseBuilder.putAll(metrics.getClientAttributes());
