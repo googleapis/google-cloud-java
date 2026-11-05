@@ -56,6 +56,8 @@ public final class InitiateDeleteAutoProtectionPolicyBindingRequest
 
   private InitiateDeleteAutoProtectionPolicyBindingRequest() {
     name_ = "";
+    etag_ = "";
+    requestId_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -135,6 +137,132 @@ public final class InitiateDeleteAutoProtectionPolicyBindingRequest
     }
   }
 
+  public static final int ETAG_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object etag_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The current etag of the AutoProtectionPolicyBinding.
+   * If an etag is provided and does not match the current etag of the
+   * binding, deletion will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The current etag of the AutoProtectionPolicyBinding.
+   * If an etag is provided and does not match the current etag of the
+   * binding, deletion will be blocked and an ABORTED error will be returned.
+   * </pre>
+   *
+   * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REQUEST_ID_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional request ID to identify requests. Specify a unique
+   * request ID so that if you must retry your request, the server will know to
+   * ignore the request if it has already been completed. The server will
+   * guarantee that for at least 60 minutes since the first request.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>
+   * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The requestId.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional request ID to identify requests. Specify a unique
+   * request ID so that if you must retry your request, the server will know to
+   * ignore the request if it has already been completed. The server will
+   * guarantee that for at least 60 minutes since the first request.
+   *
+   * The request ID must be a valid UUID with the exception that zero UUID is
+   * not supported (00000000-0000-0000-0000-000000000000).
+   * </pre>
+   *
+   * <code>
+   * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+   * </code>
+   *
+   * @return The bytes for requestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -152,6 +280,12 @@ public final class InitiateDeleteAutoProtectionPolicyBindingRequest
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, etag_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, requestId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -163,6 +297,12 @@ public final class InitiateDeleteAutoProtectionPolicyBindingRequest
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(etag_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, etag_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(requestId_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, requestId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -183,6 +323,8 @@ public final class InitiateDeleteAutoProtectionPolicyBindingRequest
         (com.google.cloud.backupdr.v1beta.InitiateDeleteAutoProtectionPolicyBindingRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getEtag().equals(other.getEtag())) return false;
+    if (!getRequestId().equals(other.getRequestId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -196,6 +338,10 @@ public final class InitiateDeleteAutoProtectionPolicyBindingRequest
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -348,6 +494,8 @@ public final class InitiateDeleteAutoProtectionPolicyBindingRequest
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      etag_ = "";
+      requestId_ = "";
       return this;
     }
 
@@ -394,6 +542,12 @@ public final class InitiateDeleteAutoProtectionPolicyBindingRequest
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestId_ = requestId_;
+      }
     }
 
     @java.lang.Override
@@ -418,6 +572,16 @@ public final class InitiateDeleteAutoProtectionPolicyBindingRequest
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -452,6 +616,18 @@ public final class InitiateDeleteAutoProtectionPolicyBindingRequest
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                etag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                requestId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -598,6 +774,278 @@ public final class InitiateDeleteAutoProtectionPolicyBindingRequest
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object etag_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current etag of the AutoProtectionPolicyBinding.
+     * If an etag is provided and does not match the current etag of the
+     * binding, deletion will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current etag of the AutoProtectionPolicyBinding.
+     * If an etag is provided and does not match the current etag of the
+     * binding, deletion will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current etag of the AutoProtectionPolicyBinding.
+     * If an etag is provided and does not match the current etag of the
+     * binding, deletion will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      etag_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current etag of the AutoProtectionPolicyBinding.
+     * If an etag is provided and does not match the current etag of the
+     * binding, deletion will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+      etag_ = getDefaultInstance().getEtag();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The current etag of the AutoProtectionPolicyBinding.
+     * If an etag is provided and does not match the current etag of the
+     * binding, deletion will be blocked and an ABORTED error will be returned.
+     * </pre>
+     *
+     * <code>string etag = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      etag_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The requestId.
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return The bytes for requestId.
+     */
+    public com.google.protobuf.ByteString getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      requestId_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestId() {
+      requestId_ = getDefaultInstance().getRequestId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional request ID to identify requests. Specify a unique
+     * request ID so that if you must retry your request, the server will know to
+     * ignore the request if it has already been completed. The server will
+     * guarantee that for at least 60 minutes since the first request.
+     *
+     * The request ID must be a valid UUID with the exception that zero UUID is
+     * not supported (00000000-0000-0000-0000-000000000000).
+     * </pre>
+     *
+     * <code>
+     * string request_id = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_info) = { ... }
+     * </code>
+     *
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      requestId_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

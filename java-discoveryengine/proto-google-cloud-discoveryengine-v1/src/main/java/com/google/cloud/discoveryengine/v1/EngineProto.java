@@ -81,9 +81,29 @@ public final class EngineProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_Engine_CommonConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Engine_KnowledgeGraphConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Engine_KnowledgeGraphConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Engine_KnowledgeGraphConfig_FeatureConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Engine_KnowledgeGraphConfig_FeatureConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_Engine_ChatEngineMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_Engine_ChatEngineMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Engine_FeaturesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Engine_FeaturesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Engine_ModelConfigsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Engine_ModelConfigsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Engine_ConnectorTenantInfoEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Engine_ConnectorTenantInfoEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -97,17 +117,19 @@ public final class EngineProto extends com.google.protobuf.GeneratedFile {
           + ",google/cloud/discoveryengine/v1/engine"
           + ".proto\022\037google.cloud.discoveryengine.v1\032"
           + "\037google/api/field_behavior.proto\032\031google"
-          + "/api/resource.proto\032,google/cloud/discov"
-          + "eryengine/v1/common.proto\032\037google/protobuf/timestamp.proto\"\356\024\n"
+          + "/api/resource.proto\032;google/cloud/discoveryengine/v1/agent_gateway_setting.proto"
+          + "\0329google/cloud/discoveryengine/v1/cmek_config_service.proto\032,google/cloud/discov"
+          + "eryengine/v1/common.proto\032-google/cloud/"
+          + "discoveryengine/v1/logging.proto\032\037google/protobuf/timestamp.proto\"\233(\n"
           + "\006Engine\022V\n"
-          + "\022chat_engine_config\030\013"
-          + " \001(\01328.google.cloud.discoveryengine.v1.Engine.ChatEngineConfigH\000\022Z\n"
+          + "\022chat_engine_config\030\013 \001(\01328.google.cloud."
+          + "discoveryengine.v1.Engine.ChatEngineConfigH\000\022Z\n"
           + "\024search_engine_config\030\r"
           + " \001(\0132:.google.cloud.discoveryengine.v1.Engine.SearchEngineConfigH\000\022u\n"
-          + "\"media_recommendation_engine_config\030\016 \001(\0132G.google.cloud.discoveryen"
-          + "gine.v1.Engine.MediaRecommendationEngineConfigH\000\022`\n"
-          + "\024chat_engine_metadata\030\014 \001(\0132:"
-          + ".google.cloud.discoveryengine.v1.Engine.ChatEngineMetadataB\004\342A\001\003H\001\022\023\n"
+          + "\"media_recommendation_engine_config\030\016 \001(\0132G.google.cloud.disc"
+          + "overyengine.v1.Engine.MediaRecommendationEngineConfigH\000\022`\n"
+          + "\024chat_engine_metadata\030\014"
+          + " \001(\0132:.google.cloud.discoveryengine.v1.Engine.ChatEngineMetadataB\004\342A\001\003H\001\022\023\n"
           + "\004name\030\001 \001(\tB\005\342A\002\005\010\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\002\0225\n"
           + "\013create_time\030\003"
@@ -115,35 +137,62 @@ public final class EngineProto extends com.google.protobuf.GeneratedFile {
           + "\013update_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022\034\n"
           + "\016data_store_ids\030\005 \003(\tB\004\342A\001\001\022J\n\r"
-          + "solution_type\030\006 \001(\0162-"
-          + ".google.cloud.discoveryengine.v1.SolutionTypeB\004\342A\001\002\022R\n"
-          + "\021industry_vertical\030\020 \001(\01621"
-          + ".google.cloud.discoveryengine.v1.IndustryVerticalB\004\342A\001\001\022K\n\r"
-          + "common_config\030\017 \001(\01324"
-          + ".google.cloud.discoveryengine.v1.Engine.CommonConfig\022\037\n"
-          + "\021disable_analytics\030\032 \001(\010B\004\342A\001\001\032\234\001\n"
+          + "solution_type\030\006"
+          + " \001(\0162-.google.cloud.discoveryengine.v1.SolutionTypeB\004\342A\001\002\022R\n"
+          + "\021industry_vertical\030\020"
+          + " \001(\01621.google.cloud.discoveryengine.v1.IndustryVerticalB\004\342A\001\001\022K\n\r"
+          + "common_config\030\017"
+          + " \001(\01324.google.cloud.discoveryengine.v1.Engine.CommonConfig\022b\n"
+          + "\026knowledge_graph_config\030\027 \001(\0132<.google.cloud.discoveryengi"
+          + "ne.v1.Engine.KnowledgeGraphConfigB\004\342A\001\001\022H\n"
+          + "\010app_type\030\030"
+          + " \001(\0162/.google.cloud.discoveryengine.v1.Engine.AppTypeB\005\342A\002\001\005\022\037\n"
+          + "\021disable_analytics\030\032 \001(\010B\004\342A\001\001\022M\n"
+          + "\016session_config\030\035"
+          + " \001(\0132..google.cloud.discoveryengine.v1.SessionConfigB\005\342A\002\001\007\022M\n"
+          + "\010features\030\036 "
+          + "\003(\01325.google.cloud.discoveryengine.v1.Engine.FeaturesEntryB\004\342A\001\001\022F\n"
+          + "\013cmek_config\030 "
+          + " \001(\0132+.google.cloud.discoveryengine.v1.CmekConfigB\004\342A\001\003\022p\n"
+          + "\035configurable_billing_approach\030$ \001(\0162C.google.cloud.discovery"
+          + "engine.v1.Engine.ConfigurableBillingApproachB\004\342A\001\001\022V\n\r"
+          + "model_configs\030% \003(\01329.goog"
+          + "le.cloud.discoveryengine.v1.Engine.ModelConfigsEntryB\004\342A\001\001\022X\n"
+          + "\024observability_config\030\'"
+          + " \001(\01324.google.cloud.discoveryengine.v1.ObservabilityConfigB\004\342A\001\001\022e\n"
+          + "\025connector_tenant_info\030* \003(\0132@.google.cloud.disco"
+          + "veryengine.v1.Engine.ConnectorTenantInfoEntryB\004\342A\001\001\022Y\n"
+          + "\025agent_gateway_setting\030+ \001"
+          + "(\01324.google.cloud.discoveryengine.v1.AgentGatewaySettingB\004\342A\001\001\022n\n"
+          + "\034marketplace_agent_visibility\030, \001(\0162B.google.cloud.disc"
+          + "overyengine.v1.Engine.MarketplaceAgentVisibilityB\004\342A\001\001\022(\n"
+          + "\032procurement_contact_emails\030- \003(\tB\004\342A\001\001\022\'\n"
+          + "\031associated_agent_registry\0302 \001(\tB\004\342A\001\003\032\371\001\n"
           + "\022SearchEngineConfig\022@\n"
-          + "\013search_tier\030\001 \001(\0162+.google.cloud.discoveryengine.v1.SearchTier\022D\n"
-          + "\016search_add_ons\030\002 \003(\0162,"
-          + ".google.cloud.discoveryengine.v1.SearchAddOn\032\272\010\n"
+          + "\013search_tier\030\001 \001(\0162+.google.cloud.discoveryengine.v1.SearchTier\022[\n"
+          + "\032required_subscription_tier\030\003 \001(\01621.google.cloud.di"
+          + "scoveryengine.v1.SubscriptionTierB\004\342A\001\001\022D\n"
+          + "\016search_add_ons\030\002"
+          + " \003(\0162,.google.cloud.discoveryengine.v1.SearchAddOn\032\272\010\n"
           + "\037MediaRecommendationEngineConfig\022\022\n"
           + "\004type\030\001 \001(\tB\004\342A\001\002\022\036\n"
           + "\026optimization_objective\030\002 \001(\t\022\212\001\n"
-          + "\035optimization_objective_config\030\003 \001(\0132c.google.cloud.discoveryeng"
-          + "ine.v1.Engine.MediaRecommendationEngineConfig.OptimizationObjectiveConfig\022m\n"
-          + "\016training_state\030\004 \001(\0162U.google.cloud.discove"
-          + "ryengine.v1.Engine.MediaRecommendationEngineConfig.TrainingState\022\202\001\n"
-          + "\026engine_features_config\030\005 \001(\0132\\.google.cloud.discove"
-          + "ryengine.v1.Engine.MediaRecommendationEngineConfig.EngineFeaturesConfigB\004\342A\001\001\032a\n"
+          + "\035optimization_objective_config\030\003 \001(\0132c."
+          + "google.cloud.discoveryengine.v1.Engine.M"
+          + "ediaRecommendationEngineConfig.OptimizationObjectiveConfig\022m\n"
+          + "\016training_state\030\004 \001(\0162U.google.cloud.discoveryengine.v1.Eng"
+          + "ine.MediaRecommendationEngineConfig.TrainingState\022\202\001\n"
+          + "\026engine_features_config\030\005 \001(\0132\\.google.cloud.discoveryengine.v1.Eng"
+          + "ine.MediaRecommendationEngineConfig.EngineFeaturesConfigB\004\342A\001\001\032a\n"
           + "\033OptimizationObjectiveConfig\022\032\n"
           + "\014target_field\030\001 \001(\tB\004\342A\001\002\022&\n"
           + "\030target_field_value_float\030\002 \001(\002B\004\342A\001\002\032\277\002\n"
           + "\024EngineFeaturesConfig\022\214\001\n"
-          + "\032recommended_for_you_config\030\001 \001(\0132f"
-          + ".google.cloud.discoveryengine.v1.Engine."
-          + "MediaRecommendationEngineConfig.RecommendedForYouFeatureConfigH\000\022\177\n"
-          + "\023most_popular_config\030\002 \001(\0132`.google.cloud.discoveryen"
-          + "gine.v1.Engine.MediaRecommendationEngineConfig.MostPopularFeatureConfigH\000B\027\n"
+          + "\032recommended_for_you_config\030\001 \001(\0132f.google.cloud.d"
+          + "iscoveryengine.v1.Engine.MediaRecommenda"
+          + "tionEngineConfig.RecommendedForYouFeatureConfigH\000\022\177\n"
+          + "\023most_popular_config\030\002 \001(\0132`.google.cloud.discoveryengine.v1.Engine."
+          + "MediaRecommendationEngineConfig.MostPopularFeatureConfigH\000B\027\n"
           + "\025type_dedicated_config\032<\n"
           + "\036RecommendedForYouFeatureConfig\022\032\n"
           + "\022context_event_type\030\001 \001(\t\0324\n"
@@ -154,8 +203,8 @@ public final class EngineProto extends com.google.protobuf.GeneratedFile {
           + "\006PAUSED\020\001\022\014\n"
           + "\010TRAINING\020\002\032\266\002\n"
           + "\020ChatEngineConfig\022k\n"
-          + "\025agent_creation_config\030\001 \001(\0132L.google.cloud.dis"
-          + "coveryengine.v1.Engine.ChatEngineConfig.AgentCreationConfig\022 \n"
+          + "\025agent_creation_config\030\001 \001(\0132L.google.cloud.discoveryengine.v1"
+          + ".Engine.ChatEngineConfig.AgentCreationConfig\022 \n"
           + "\030dialogflow_agent_to_link\030\002 \001(\t\022 \n"
           + "\022allow_cross_region\030\003 \001(\010B\004\342A\001\001\032q\n"
           + "\023AgentCreationConfig\022\020\n"
@@ -164,19 +213,62 @@ public final class EngineProto extends com.google.protobuf.GeneratedFile {
           + "\ttime_zone\030\003 \001(\tB\004\342A\001\002\022\020\n"
           + "\010location\030\004 \001(\t\032$\n"
           + "\014CommonConfig\022\024\n"
-          + "\014company_name\030\001 \001(\t\032.\n"
+          + "\014company_name\030\001 \001(\t\032\330\003\n"
+          + "\024KnowledgeGraphConfig\022$\n"
+          + "\034enable_cloud_knowledge_graph\030\001 \001(\010\022#\n"
+          + "\033cloud_knowledge_graph_types\030\002 \003(\t\022&\n"
+          + "\036enable_private_knowledge_graph\030\003 \001(\010\022%\n"
+          + "\035private_knowledge_graph_types\030\004 \003(\t\022h\n"
+          + "\016feature_config\030\005 \001(\0132J.google.cl"
+          + "oud.discoveryengine.v1.Engine.KnowledgeGraphConfig.FeatureConfigB\004\342A\001\001\032\273\001\n\r"
+          + "FeatureConfig\022.\n"
+          + "&disable_private_kg_query_understanding\030\001 \001(\010\022%\n"
+          + "\035disable_private_kg_enrichment\030\002 \001(\010\022(\n"
+          + " disable_private_kg_auto_complete\030\003 \001(\010\022)\n"
+          + "!disable_private_kg_query_ui_chips\030\004 \001(\010\032.\n"
           + "\022ChatEngineMetadata\022\030\n"
-          + "\020dialogflow_agent\030\001 \001(\t:}\352Az\n"
-          + "%discoveryengine.googleapis.com/Engine\022Qprojects/{project}/locatio"
-          + "ns/{location}/collections/{collection}/engines/{engine}B\017\n\r"
+          + "\020dialogflow_agent\030\001 \001(\t\032e\n\r"
+          + "FeaturesEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022C\n"
+          + "\005value\030\002 \001(\01624.goog"
+          + "le.cloud.discoveryengine.v1.Engine.FeatureState:\0028\001\032g\n"
+          + "\021ModelConfigsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022A\n"
+          + "\005value\030\002"
+          + " \001(\01622.google.cloud.discoveryengine.v1.Engine.ModelState:\0028\001\032:\n"
+          + "\030ConnectorTenantInfoEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\":\n"
+          + "\007AppType\022\030\n"
+          + "\024APP_TYPE_UNSPECIFIED\020\000\022\025\n"
+          + "\021APP_TYPE_INTRANET\020\001\"Z\n"
+          + "\014FeatureState\022\035\n"
+          + "\031FEATURE_STATE_UNSPECIFIED\020\000\022\024\n"
+          + "\020FEATURE_STATE_ON\020\001\022\025\n"
+          + "\021FEATURE_STATE_OFF\020\002\"w\n"
+          + "\033ConfigurableBillingApproach\022-\n"
+          + ")CONFIGURABLE_BILLING_APPROACH_UNSPECIFIED\020\000\022)\n"
+          + "%CONFIGURABLE_BILLING_APPROACH_ENABLED\020\001\"P\n\n"
+          + "ModelState\022\033\n"
+          + "\027MODEL_STATE_UNSPECIFIED\020\000\022\021\n\r"
+          + "MODEL_ENABLED\020\001\022\022\n"
+          + "\016MODEL_DISABLED\020\002\"\306\001\n"
+          + "\032MarketplaceAgentVisibility\022,\n"
+          + "(MARKETPLACE_AGENT_VISIBILITY_UNSPECIFIED\020\000\022\036\n"
+          + "\032SHOW_AVAILABLE_AGENTS_ONLY\020\001\022\"\n"
+          + "\036SHOW_AGENTS_ALREADY_INTEGRATED\020\002\022!\n"
+          + "\035SHOW_AGENTS_ALREADY_PURCHASED\020\003\022\023\n"
+          + "\017SHOW_ALL_AGENTS\020\004:}\352Az\n"
+          + "%discoveryengine.googleapis.com/Engine\022Qprojects/{project}/loc"
+          + "ations/{location}/collections/{collection}/engines/{engine}B\017\n\r"
           + "engine_configB\021\n"
           + "\017engine_metadataB\376\001\n"
-          + "#com.google.cloud.discoveryengine.v1B\013EngineProtoP\001ZMcloud.google"
-          + ".com/go/discoveryengine/apiv1/discoverye"
-          + "nginepb;discoveryenginepb\242\002\017DISCOVERYENG"
-          + "INE\252\002\037Google.Cloud.DiscoveryEngine.V1\312\002\037"
-          + "Google\\Cloud\\DiscoveryEngine\\V1\352\002\"Google"
-          + "::Cloud::DiscoveryEngine::V1b\006proto3"
+          + "#com.google.cloud.discoveryengine.v1B\013EngineProtoP\001ZMcloud.go"
+          + "ogle.com/go/discoveryengine/apiv1/discov"
+          + "eryenginepb;discoveryenginepb\242\002\017DISCOVER"
+          + "YENGINE\252\002\037Google.Cloud.DiscoveryEngine.V"
+          + "1\312\002\037Google\\Cloud\\DiscoveryEngine\\V1\352\002\"Go"
+          + "ogle::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -184,7 +276,10 @@ public final class EngineProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1.AgentGatewaySettingProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1.CmekConfigServiceProto.getDescriptor(),
               com.google.cloud.discoveryengine.v1.CommonProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1.LoggingProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1_Engine_descriptor =
@@ -205,7 +300,20 @@ public final class EngineProto extends com.google.protobuf.GeneratedFile {
               "SolutionType",
               "IndustryVertical",
               "CommonConfig",
+              "KnowledgeGraphConfig",
+              "AppType",
               "DisableAnalytics",
+              "SessionConfig",
+              "Features",
+              "CmekConfig",
+              "ConfigurableBillingApproach",
+              "ModelConfigs",
+              "ObservabilityConfig",
+              "ConnectorTenantInfo",
+              "AgentGatewaySetting",
+              "MarketplaceAgentVisibility",
+              "ProcurementContactEmails",
+              "AssociatedAgentRegistry",
               "EngineConfig",
               "EngineMetadata",
             });
@@ -215,7 +323,7 @@ public final class EngineProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_Engine_SearchEngineConfig_descriptor,
             new java.lang.String[] {
-              "SearchTier", "SearchAddOns",
+              "SearchTier", "RequiredSubscriptionTier", "SearchAddOns",
             });
     internal_static_google_cloud_discoveryengine_v1_Engine_MediaRecommendationEngineConfig_descriptor =
         internal_static_google_cloud_discoveryengine_v1_Engine_descriptor.getNestedType(1);
@@ -290,18 +398,69 @@ public final class EngineProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "CompanyName",
             });
-    internal_static_google_cloud_discoveryengine_v1_Engine_ChatEngineMetadata_descriptor =
+    internal_static_google_cloud_discoveryengine_v1_Engine_KnowledgeGraphConfig_descriptor =
         internal_static_google_cloud_discoveryengine_v1_Engine_descriptor.getNestedType(4);
+    internal_static_google_cloud_discoveryengine_v1_Engine_KnowledgeGraphConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Engine_KnowledgeGraphConfig_descriptor,
+            new java.lang.String[] {
+              "EnableCloudKnowledgeGraph",
+              "CloudKnowledgeGraphTypes",
+              "EnablePrivateKnowledgeGraph",
+              "PrivateKnowledgeGraphTypes",
+              "FeatureConfig",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Engine_KnowledgeGraphConfig_FeatureConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Engine_KnowledgeGraphConfig_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_Engine_KnowledgeGraphConfig_FeatureConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Engine_KnowledgeGraphConfig_FeatureConfig_descriptor,
+            new java.lang.String[] {
+              "DisablePrivateKgQueryUnderstanding",
+              "DisablePrivateKgEnrichment",
+              "DisablePrivateKgAutoComplete",
+              "DisablePrivateKgQueryUiChips",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Engine_ChatEngineMetadata_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Engine_descriptor.getNestedType(5);
     internal_static_google_cloud_discoveryengine_v1_Engine_ChatEngineMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_Engine_ChatEngineMetadata_descriptor,
             new java.lang.String[] {
               "DialogflowAgent",
             });
+    internal_static_google_cloud_discoveryengine_v1_Engine_FeaturesEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Engine_descriptor.getNestedType(6);
+    internal_static_google_cloud_discoveryengine_v1_Engine_FeaturesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Engine_FeaturesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Engine_ModelConfigsEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Engine_descriptor.getNestedType(7);
+    internal_static_google_cloud_discoveryengine_v1_Engine_ModelConfigsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Engine_ModelConfigsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Engine_ConnectorTenantInfoEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Engine_descriptor.getNestedType(8);
+    internal_static_google_cloud_discoveryengine_v1_Engine_ConnectorTenantInfoEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Engine_ConnectorTenantInfoEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1.AgentGatewaySettingProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1.CmekConfigServiceProto.getDescriptor();
     com.google.cloud.discoveryengine.v1.CommonProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1.LoggingProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

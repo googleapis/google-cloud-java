@@ -936,6 +936,90 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
+  public void listOdbDnsZones(
+      ListOdbDnsZonesRequest request, StreamObserver<ListOdbDnsZonesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListOdbDnsZonesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListOdbDnsZonesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListOdbDnsZones, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListOdbDnsZonesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getOdbDnsZone(
+      GetOdbDnsZoneRequest request, StreamObserver<OdbDnsZone> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof OdbDnsZone) {
+      requests.add(request);
+      responseObserver.onNext(((OdbDnsZone) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetOdbDnsZone, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  OdbDnsZone.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createOdbDnsZone(
+      CreateOdbDnsZoneRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateOdbDnsZone, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteOdbDnsZone(
+      DeleteOdbDnsZoneRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteOdbDnsZone, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listExadbVmClusters(
       ListExadbVmClustersRequest request,
       StreamObserver<ListExadbVmClustersResponse> responseObserver) {

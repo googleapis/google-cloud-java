@@ -62,7 +62,7 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
           + "roto\022\027google.cloud.ces.v1beta\032\037google/ap"
           + "i/field_behavior.proto\032\031google/api/resou"
           + "rce.proto\032$google/cloud/ces/v1beta/common.proto\032%google/cloud/ces/v1beta/example"
-          + ".proto\032\037google/protobuf/timestamp.proto\"\317\n\n"
+          + ".proto\032\037google/protobuf/timestamp.proto\"\362\n\n"
           + "\014Conversation\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\0224\n\n"
           + "start_time\030\003 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0222\n"
@@ -84,11 +84,14 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
           + " \001(\tB&\342A\001\003\372A\037\n"
           + "\035ces.googleapis.com/AppVersion\022\033\n\r"
           + "language_code\030\016 \001(\tB\004\342A\001\003\0226\n"
-          + "\010messages\030\002 \003(\0132 .google.cloud.ces.v1beta.MessageB\002\030\001\032x\n"
+          + "\010messages\030\002 \003(\0132"
+          + " .google.cloud.ces.v1beta.MessageB\002\030\001\032\232\001\n"
           + "\004Turn\0228\n"
           + "\010messages\030\001 \003(\0132"
           + " .google.cloud.ces.v1beta.MessageB\004\342A\001\001\0226\n"
-          + "\troot_span\030\002 \001(\0132\035.google.cloud.ces.v1beta.SpanB\004\342A\001\001\"P\n"
+          + "\troot_span\030\002 \001(\0132\035.google.cloud.ces.v1beta.SpanB\004\342A\001\001\022"
+          + " \n"
+          + "\022user_intended_text\030\003 \001(\tB\004\342A\001\001\"P\n"
           + "\013ChannelType\022\034\n"
           + "\030CHANNEL_TYPE_UNSPECIFIED\020\000\022\010\n"
           + "\004TEXT\020\001\022\t\n"
@@ -109,11 +112,11 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
           + "\017INPUT_TYPE_BLOB\020\004\022\034\n"
           + "\030INPUT_TYPE_TOOL_RESPONSE\020\005\022\030\n"
           + "\024INPUT_TYPE_VARIABLES\020\006:\223\001\352A\217\001\n"
-          + "\037ces.googleapis.com/Conversation\022Oprojects/{project}/location"
-          + "s/{location}/apps/{app}/conversations/{conversation}*\r"
+          + "\037ces.googleapis.com/Conversation\022Oprojects/{project}/locations/{lo"
+          + "cation}/apps/{app}/conversations/{conversation}*\r"
           + "conversations2\014conversationBa\n"
-          + "\033com.google.cloud.ces.v1betaB\021ConversationProtoP\001Z-cloud.google.com/go/ces/a"
-          + "piv1beta/cespb;cespbb\006proto3"
+          + "\033com.google.cloud.ces.v1betaB\021Conversatio"
+          + "nProtoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -151,7 +154,7 @@ public final class ConversationProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_Conversation_Turn_descriptor,
             new java.lang.String[] {
-              "Messages", "RootSpan",
+              "Messages", "RootSpan", "UserIntendedText",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

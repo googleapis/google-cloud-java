@@ -1,0 +1,90 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.observability.v1",
+  "libraryPackage": "com.google.cloud.observability.v1",
+  "services": {
+    "Observability": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ObservabilityClient",
+          "rpcs": {
+            "CreateBucket": {
+              "methods": ["createBucketAsync", "createBucketAsync", "createBucketAsync", "createBucketOperationCallable", "createBucketCallable"]
+            },
+            "CreateLink": {
+              "methods": ["createLinkAsync", "createLinkAsync", "createLinkAsync", "createLinkOperationCallable", "createLinkCallable"]
+            },
+            "CreateTraceScope": {
+              "methods": ["createTraceScope", "createTraceScope", "createTraceScope", "createTraceScopeCallable"]
+            },
+            "DeleteLink": {
+              "methods": ["deleteLinkAsync", "deleteLinkAsync", "deleteLinkAsync", "deleteLinkOperationCallable", "deleteLinkCallable"]
+            },
+            "DeleteTraceScope": {
+              "methods": ["deleteTraceScope", "deleteTraceScope", "deleteTraceScope", "deleteTraceScopeCallable"]
+            },
+            "GetBucket": {
+              "methods": ["getBucket", "getBucket", "getBucket", "getBucketCallable"]
+            },
+            "GetDataset": {
+              "methods": ["getDataset", "getDataset", "getDataset", "getDatasetCallable"]
+            },
+            "GetLink": {
+              "methods": ["getLink", "getLink", "getLink", "getLinkCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetScope": {
+              "methods": ["getScope", "getScope", "getScope", "getScopeCallable"]
+            },
+            "GetSettings": {
+              "methods": ["getSettings", "getSettings", "getSettings", "getSettingsCallable"]
+            },
+            "GetTraceScope": {
+              "methods": ["getTraceScope", "getTraceScope", "getTraceScope", "getTraceScopeCallable"]
+            },
+            "GetView": {
+              "methods": ["getView", "getView", "getView", "getViewCallable"]
+            },
+            "ListBuckets": {
+              "methods": ["listBuckets", "listBuckets", "listBuckets", "listBucketsPagedCallable", "listBucketsCallable"]
+            },
+            "ListDatasets": {
+              "methods": ["listDatasets", "listDatasets", "listDatasets", "listDatasetsPagedCallable", "listDatasetsCallable"]
+            },
+            "ListLinks": {
+              "methods": ["listLinks", "listLinks", "listLinks", "listLinksPagedCallable", "listLinksCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListTraceScopes": {
+              "methods": ["listTraceScopes", "listTraceScopes", "listTraceScopes", "listTraceScopesPagedCallable", "listTraceScopesCallable"]
+            },
+            "ListViews": {
+              "methods": ["listViews", "listViews", "listViews", "listViewsPagedCallable", "listViewsCallable"]
+            },
+            "UpdateBucket": {
+              "methods": ["updateBucketAsync", "updateBucketAsync", "updateBucketOperationCallable", "updateBucketCallable"]
+            },
+            "UpdateLink": {
+              "methods": ["updateLinkAsync", "updateLinkAsync", "updateLinkOperationCallable", "updateLinkCallable"]
+            },
+            "UpdateScope": {
+              "methods": ["updateScope", "updateScope", "updateScopeCallable"]
+            },
+            "UpdateSettings": {
+              "methods": ["updateSettingsAsync", "updateSettingsAsync", "updateSettingsOperationCallable", "updateSettingsCallable"]
+            },
+            "UpdateTraceScope": {
+              "methods": ["updateTraceScope", "updateTraceScope", "updateTraceScopeCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

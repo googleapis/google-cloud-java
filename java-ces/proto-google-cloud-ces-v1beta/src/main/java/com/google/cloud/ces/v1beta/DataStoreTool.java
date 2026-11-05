@@ -12517,6 +12517,623 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface SnippetsConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether snippets are enabled.
+     * </pre>
+     *
+     * <code>bool enable_snippets = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableSnippets.
+     */
+    boolean getEnableSnippets();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Number of snippets to return per query.
+     * If unset, returns all snippets from the service by default.
+     * </pre>
+     *
+     * <code>int32 max_snippets = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxSnippets.
+     */
+    int getMaxSnippets();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Snippets configuration.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig}
+   */
+  public static final class SnippetsConfig extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig)
+      SnippetsConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "SnippetsConfig");
+    }
+
+    // Use SnippetsConfig.newBuilder() to construct.
+    private SnippetsConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SnippetsConfig() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.ces.v1beta.DataStoreToolProto
+          .internal_static_google_cloud_ces_v1beta_DataStoreTool_SnippetsConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.ces.v1beta.DataStoreToolProto
+          .internal_static_google_cloud_ces_v1beta_DataStoreTool_SnippetsConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.class,
+              com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.Builder.class);
+    }
+
+    public static final int ENABLE_SNIPPETS_FIELD_NUMBER = 1;
+    private boolean enableSnippets_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether snippets are enabled.
+     * </pre>
+     *
+     * <code>bool enable_snippets = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableSnippets.
+     */
+    @java.lang.Override
+    public boolean getEnableSnippets() {
+      return enableSnippets_;
+    }
+
+    public static final int MAX_SNIPPETS_FIELD_NUMBER = 2;
+    private int maxSnippets_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Number of snippets to return per query.
+     * If unset, returns all snippets from the service by default.
+     * </pre>
+     *
+     * <code>int32 max_snippets = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxSnippets.
+     */
+    @java.lang.Override
+    public int getMaxSnippets() {
+      return maxSnippets_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enableSnippets_ != false) {
+        output.writeBool(1, enableSnippets_);
+      }
+      if (maxSnippets_ != 0) {
+        output.writeInt32(2, maxSnippets_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enableSnippets_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enableSnippets_);
+      }
+      if (maxSnippets_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxSnippets_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig other =
+          (com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig) obj;
+
+      if (getEnableSnippets() != other.getEnableSnippets()) return false;
+      if (getMaxSnippets() != other.getMaxSnippets()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLE_SNIPPETS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableSnippets());
+      hash = (37 * hash) + MAX_SNIPPETS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxSnippets();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Snippets configuration.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig)
+        com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.ces.v1beta.DataStoreToolProto
+            .internal_static_google_cloud_ces_v1beta_DataStoreTool_SnippetsConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.ces.v1beta.DataStoreToolProto
+            .internal_static_google_cloud_ces_v1beta_DataStoreTool_SnippetsConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.class,
+                com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enableSnippets_ = false;
+        maxSnippets_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.ces.v1beta.DataStoreToolProto
+            .internal_static_google_cloud_ces_v1beta_DataStoreTool_SnippetsConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig getDefaultInstanceForType() {
+        return com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig build() {
+        com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig buildPartial() {
+        com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig result =
+            new com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enableSnippets_ = enableSnippets_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxSnippets_ = maxSnippets_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig) {
+          return mergeFrom((com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig other) {
+        if (other == com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.getDefaultInstance())
+          return this;
+        if (other.getEnableSnippets() != false) {
+          setEnableSnippets(other.getEnableSnippets());
+        }
+        if (other.getMaxSnippets() != 0) {
+          setMaxSnippets(other.getMaxSnippets());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enableSnippets_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  maxSnippets_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enableSnippets_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether snippets are enabled.
+       * </pre>
+       *
+       * <code>bool enable_snippets = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableSnippets.
+       */
+      @java.lang.Override
+      public boolean getEnableSnippets() {
+        return enableSnippets_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether snippets are enabled.
+       * </pre>
+       *
+       * <code>bool enable_snippets = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableSnippets to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableSnippets(boolean value) {
+
+        enableSnippets_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether snippets are enabled.
+       * </pre>
+       *
+       * <code>bool enable_snippets = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableSnippets() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enableSnippets_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int maxSnippets_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Number of snippets to return per query.
+       * If unset, returns all snippets from the service by default.
+       * </pre>
+       *
+       * <code>int32 max_snippets = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The maxSnippets.
+       */
+      @java.lang.Override
+      public int getMaxSnippets() {
+        return maxSnippets_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Number of snippets to return per query.
+       * If unset, returns all snippets from the service by default.
+       * </pre>
+       *
+       * <code>int32 max_snippets = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The maxSnippets to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxSnippets(int value) {
+
+        maxSnippets_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Number of snippets to return per query.
+       * If unset, returns all snippets from the service by default.
+       * </pre>
+       *
+       * <code>int32 max_snippets = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxSnippets() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxSnippets_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig)
+    private static final com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig();
+    }
+
+    public static com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SnippetsConfig> PARSER =
+        new com.google.protobuf.AbstractParser<SnippetsConfig>() {
+          @java.lang.Override
+          public SnippetsConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SnippetsConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SnippetsConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ModalityConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.ces.v1beta.DataStoreTool.ModalityConfig)
@@ -12682,6 +13299,49 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.ces.v1beta.DataStoreTool.GroundingConfigOrBuilder
         getGroundingConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The snippets configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the snippetsConfig field is set.
+     */
+    boolean hasSnippetsConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The snippets configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The snippetsConfig.
+     */
+    com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig getSnippetsConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The snippets configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfigOrBuilder getSnippetsConfigOrBuilder();
   }
 
   /**
@@ -13130,6 +13790,66 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
           : groundingConfig_;
     }
 
+    public static final int SNIPPETS_CONFIG_FIELD_NUMBER = 5;
+    private com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippetsConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The snippets configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the snippetsConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSnippetsConfig() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The snippets configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The snippetsConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig getSnippetsConfig() {
+      return snippetsConfig_ == null
+          ? com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.getDefaultInstance()
+          : snippetsConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The snippets configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfigOrBuilder
+        getSnippetsConfigOrBuilder() {
+      return snippetsConfig_ == null
+          ? com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.getDefaultInstance()
+          : snippetsConfig_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -13159,6 +13879,9 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(4, getGroundingConfig());
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(5, getSnippetsConfig());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -13183,6 +13906,9 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getGroundingConfig());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getSnippetsConfig());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -13213,6 +13939,10 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
       if (hasGroundingConfig()) {
         if (!getGroundingConfig().equals(other.getGroundingConfig())) return false;
       }
+      if (hasSnippetsConfig() != other.hasSnippetsConfig()) return false;
+      if (hasSnippetsConfig()) {
+        if (!getSnippetsConfig().equals(other.getSnippetsConfig())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -13237,6 +13967,10 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
       if (hasGroundingConfig()) {
         hash = (37 * hash) + GROUNDING_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getGroundingConfig().hashCode();
+      }
+      if (hasSnippetsConfig()) {
+        hash = (37 * hash) + SNIPPETS_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getSnippetsConfig().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -13384,6 +14118,7 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
           internalGetRewriterConfigFieldBuilder();
           internalGetSummarizationConfigFieldBuilder();
           internalGetGroundingConfigFieldBuilder();
+          internalGetSnippetsConfigFieldBuilder();
         }
       }
 
@@ -13406,6 +14141,11 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
         if (groundingConfigBuilder_ != null) {
           groundingConfigBuilder_.dispose();
           groundingConfigBuilder_ = null;
+        }
+        snippetsConfig_ = null;
+        if (snippetsConfigBuilder_ != null) {
+          snippetsConfigBuilder_.dispose();
+          snippetsConfigBuilder_ = null;
         }
         return this;
       }
@@ -13464,6 +14204,11 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
               groundingConfigBuilder_ == null ? groundingConfig_ : groundingConfigBuilder_.build();
           to_bitField0_ |= 0x00000004;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.snippetsConfig_ =
+              snippetsConfigBuilder_ == null ? snippetsConfig_ : snippetsConfigBuilder_.build();
+          to_bitField0_ |= 0x00000008;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -13491,6 +14236,9 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasGroundingConfig()) {
           mergeGroundingConfig(other.getGroundingConfig());
+        }
+        if (other.hasSnippetsConfig()) {
+          mergeSnippetsConfig(other.getSnippetsConfig());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -13545,6 +14293,13 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      internalGetSnippetsConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -14330,6 +15085,225 @@ public final class DataStoreTool extends com.google.protobuf.GeneratedMessage
           groundingConfig_ = null;
         }
         return groundingConfigBuilder_;
+      }
+
+      private com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippetsConfig_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig,
+              com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.Builder,
+              com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfigOrBuilder>
+          snippetsConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The snippets configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the snippetsConfig field is set.
+       */
+      public boolean hasSnippetsConfig() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The snippets configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The snippetsConfig.
+       */
+      public com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig getSnippetsConfig() {
+        if (snippetsConfigBuilder_ == null) {
+          return snippetsConfig_ == null
+              ? com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.getDefaultInstance()
+              : snippetsConfig_;
+        } else {
+          return snippetsConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The snippets configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSnippetsConfig(
+          com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig value) {
+        if (snippetsConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          snippetsConfig_ = value;
+        } else {
+          snippetsConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The snippets configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setSnippetsConfig(
+          com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.Builder builderForValue) {
+        if (snippetsConfigBuilder_ == null) {
+          snippetsConfig_ = builderForValue.build();
+        } else {
+          snippetsConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The snippets configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeSnippetsConfig(
+          com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig value) {
+        if (snippetsConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && snippetsConfig_ != null
+              && snippetsConfig_
+                  != com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig
+                      .getDefaultInstance()) {
+            getSnippetsConfigBuilder().mergeFrom(value);
+          } else {
+            snippetsConfig_ = value;
+          }
+        } else {
+          snippetsConfigBuilder_.mergeFrom(value);
+        }
+        if (snippetsConfig_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The snippets configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearSnippetsConfig() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        snippetsConfig_ = null;
+        if (snippetsConfigBuilder_ != null) {
+          snippetsConfigBuilder_.dispose();
+          snippetsConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The snippets configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.Builder
+          getSnippetsConfigBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return internalGetSnippetsConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The snippets configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfigOrBuilder
+          getSnippetsConfigOrBuilder() {
+        if (snippetsConfigBuilder_ != null) {
+          return snippetsConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return snippetsConfig_ == null
+              ? com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.getDefaultInstance()
+              : snippetsConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The snippets configuration.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig snippets_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig,
+              com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.Builder,
+              com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfigOrBuilder>
+          internalGetSnippetsConfigFieldBuilder() {
+        if (snippetsConfigBuilder_ == null) {
+          snippetsConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig,
+                  com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfig.Builder,
+                  com.google.cloud.ces.v1beta.DataStoreTool.SnippetsConfigOrBuilder>(
+                  getSnippetsConfig(), getParentForChildren(), isClean());
+          snippetsConfig_ = null;
+        }
+        return snippetsConfigBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.DataStoreTool.ModalityConfig)

@@ -17,6 +17,8 @@
 package com.google.cloud.developerconnect.v1.stub;
 
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRefsPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRepositoryLinkCommitListPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRepositoryLinkPullRequestListPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchLinkableGitRepositoriesPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListAccountConnectorsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListConnectionsPagedResponse;
@@ -33,6 +35,8 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.developerconnect.v1.AccountConnector;
+import com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest;
+import com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestReviewCommentRequest;
 import com.google.cloud.developerconnect.v1.Connection;
 import com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.CreateConnectionRequest;
@@ -42,12 +46,23 @@ import com.google.cloud.developerconnect.v1.DeleteConnectionRequest;
 import com.google.cloud.developerconnect.v1.DeleteGitRepositoryLinkRequest;
 import com.google.cloud.developerconnect.v1.DeleteSelfRequest;
 import com.google.cloud.developerconnect.v1.DeleteUserRequest;
+import com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest;
+import com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse;
 import com.google.cloud.developerconnect.v1.FetchAccessTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchAccessTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsRequest;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse;
 import com.google.cloud.developerconnect.v1.FetchGitRefsRequest;
 import com.google.cloud.developerconnect.v1.FetchGitRefsResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest;
 import com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesRequest;
 import com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesResponse;
 import com.google.cloud.developerconnect.v1.FetchReadTokenRequest;
@@ -69,7 +84,12 @@ import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksRequest;
 import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse;
 import com.google.cloud.developerconnect.v1.ListUsersRequest;
 import com.google.cloud.developerconnect.v1.ListUsersResponse;
+import com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest;
+import com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
+import com.google.cloud.developerconnect.v1.PullRequest;
+import com.google.cloud.developerconnect.v1.PullRequestComment;
+import com.google.cloud.developerconnect.v1.PullRequestReviewComment;
 import com.google.cloud.developerconnect.v1.StartOAuthRequest;
 import com.google.cloud.developerconnect.v1.StartOAuthResponse;
 import com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest;
@@ -234,6 +254,19 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<OpenGitRepositoryLinkPullRequestRequest, PullRequest>
+      openGitRepositoryLinkPullRequestMethodDescriptor =
+          MethodDescriptor.<OpenGitRepositoryLinkPullRequestRequest, PullRequest>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/OpenGitRepositoryLinkPullRequest")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      OpenGitRepositoryLinkPullRequestRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PullRequest.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<
           FetchLinkableGitRepositoriesRequest, FetchLinkableGitRepositoriesResponse>
       fetchLinkableGitRepositoriesMethodDescriptor =
@@ -273,6 +306,151 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(ProtoUtils.marshaller(FetchGitRefsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchGitRefsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+      diffGitRepositoryLinkCommitMethodDescriptor =
+          MethodDescriptor
+              .<DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/DiffGitRepositoryLinkCommit")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DiffGitRepositoryLinkCommitRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DiffGitRepositoryLinkCommitResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+      fetchGitRepositoryLinkCommitMethodDescriptor =
+          MethodDescriptor
+              .<FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/FetchGitRepositoryLinkCommit")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchGitRepositoryLinkCommitRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchGitRepositoryLinkCommitResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+      fetchGitRepositoryLinkCommitListMethodDescriptor =
+          MethodDescriptor
+              .<FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/FetchGitRepositoryLinkCommitList")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchGitRepositoryLinkCommitListRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchGitRepositoryLinkCommitListResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+      fetchGitRepositoryLinkFileBlameMethodDescriptor =
+          MethodDescriptor
+              .<FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/FetchGitRepositoryLinkFileBlame")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchGitRepositoryLinkFileBlameRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchGitRepositoryLinkFileBlameResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<FetchGitRepositoryLinkPullRequestRequest, PullRequest>
+      fetchGitRepositoryLinkPullRequestMethodDescriptor =
+          MethodDescriptor.<FetchGitRepositoryLinkPullRequestRequest, PullRequest>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/FetchGitRepositoryLinkPullRequest")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchGitRepositoryLinkPullRequestRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PullRequest.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>
+      addGitRepositoryLinkPullRequestCommentMethodDescriptor =
+          MethodDescriptor
+              .<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/AddGitRepositoryLinkPullRequestComment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      AddGitRepositoryLinkPullRequestCommentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PullRequestComment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+      addGitRepositoryLinkPullRequestReviewCommentMethodDescriptor =
+          MethodDescriptor
+              .<AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/AddGitRepositoryLinkPullRequestReviewComment")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      AddGitRepositoryLinkPullRequestReviewCommentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PullRequestReviewComment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>
+      modifyGitRepositoryLinkPullRequestMethodDescriptor =
+          MethodDescriptor.<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/ModifyGitRepositoryLinkPullRequest")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ModifyGitRepositoryLinkPullRequestRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(PullRequest.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListResponse>
+      fetchGitRepositoryLinkPullRequestListMethodDescriptor =
+          MethodDescriptor
+              .<FetchGitRepositoryLinkPullRequestListRequest,
+                  FetchGitRepositoryLinkPullRequestListResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/FetchGitRepositoryLinkPullRequestList")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchGitRepositoryLinkPullRequestListRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      FetchGitRepositoryLinkPullRequestListResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -461,6 +639,8 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
   private final UnaryCallable<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
       fetchReadWriteTokenCallable;
   private final UnaryCallable<FetchReadTokenRequest, FetchReadTokenResponse> fetchReadTokenCallable;
+  private final UnaryCallable<OpenGitRepositoryLinkPullRequestRequest, PullRequest>
+      openGitRepositoryLinkPullRequestCallable;
   private final UnaryCallable<
           FetchLinkableGitRepositoriesRequest, FetchLinkableGitRepositoriesResponse>
       fetchLinkableGitRepositoriesCallable;
@@ -472,6 +652,38 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
   private final UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable;
   private final UnaryCallable<FetchGitRefsRequest, FetchGitRefsPagedResponse>
       fetchGitRefsPagedCallable;
+  private final UnaryCallable<
+          DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+      diffGitRepositoryLinkCommitCallable;
+  private final UnaryCallable<
+          FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+      fetchGitRepositoryLinkCommitCallable;
+  private final UnaryCallable<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+      fetchGitRepositoryLinkCommitListCallable;
+  private final UnaryCallable<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListPagedResponse>
+      fetchGitRepositoryLinkCommitListPagedCallable;
+  private final UnaryCallable<
+          FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+      fetchGitRepositoryLinkFileBlameCallable;
+  private final UnaryCallable<FetchGitRepositoryLinkPullRequestRequest, PullRequest>
+      fetchGitRepositoryLinkPullRequestCallable;
+  private final UnaryCallable<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>
+      addGitRepositoryLinkPullRequestCommentCallable;
+  private final UnaryCallable<
+          AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+      addGitRepositoryLinkPullRequestReviewCommentCallable;
+  private final UnaryCallable<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>
+      modifyGitRepositoryLinkPullRequestCallable;
+  private final UnaryCallable<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListResponse>
+      fetchGitRepositoryLinkPullRequestListCallable;
+  private final UnaryCallable<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListPagedResponse>
+      fetchGitRepositoryLinkPullRequestListPagedCallable;
   private final UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
       listAccountConnectorsCallable;
   private final UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsPagedResponse>
@@ -684,6 +896,18 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                     })
                 .setResourceNameExtractor(request -> request.getGitRepositoryLink())
                 .build();
+    GrpcCallSettings<OpenGitRepositoryLinkPullRequestRequest, PullRequest>
+        openGitRepositoryLinkPullRequestTransportSettings =
+            GrpcCallSettings.<OpenGitRepositoryLinkPullRequestRequest, PullRequest>newBuilder()
+                .setMethodDescriptor(openGitRepositoryLinkPullRequestMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<FetchLinkableGitRepositoriesRequest, FetchLinkableGitRepositoriesResponse>
         fetchLinkableGitRepositoriesTransportSettings =
             GrpcCallSettings
@@ -723,6 +947,132 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                 })
             .setResourceNameExtractor(request -> request.getGitRepositoryLink())
             .build();
+    GrpcCallSettings<DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+        diffGitRepositoryLinkCommitTransportSettings =
+            GrpcCallSettings
+                .<DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+                    newBuilder()
+                .setMethodDescriptor(diffGitRepositoryLinkCommitMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+        fetchGitRepositoryLinkCommitTransportSettings =
+            GrpcCallSettings
+                .<FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchGitRepositoryLinkCommitMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+        fetchGitRepositoryLinkCommitListTransportSettings =
+            GrpcCallSettings
+                .<FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchGitRepositoryLinkCommitListMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+        fetchGitRepositoryLinkFileBlameTransportSettings =
+            GrpcCallSettings
+                .<FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchGitRepositoryLinkFileBlameMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<FetchGitRepositoryLinkPullRequestRequest, PullRequest>
+        fetchGitRepositoryLinkPullRequestTransportSettings =
+            GrpcCallSettings.<FetchGitRepositoryLinkPullRequestRequest, PullRequest>newBuilder()
+                .setMethodDescriptor(fetchGitRepositoryLinkPullRequestMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>
+        addGitRepositoryLinkPullRequestCommentTransportSettings =
+            GrpcCallSettings
+                .<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>newBuilder()
+                .setMethodDescriptor(addGitRepositoryLinkPullRequestCommentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+        addGitRepositoryLinkPullRequestReviewCommentTransportSettings =
+            GrpcCallSettings
+                .<AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+                    newBuilder()
+                .setMethodDescriptor(addGitRepositoryLinkPullRequestReviewCommentMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>
+        modifyGitRepositoryLinkPullRequestTransportSettings =
+            GrpcCallSettings.<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>newBuilder()
+                .setMethodDescriptor(modifyGitRepositoryLinkPullRequestMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            FetchGitRepositoryLinkPullRequestListRequest,
+            FetchGitRepositoryLinkPullRequestListResponse>
+        fetchGitRepositoryLinkPullRequestListTransportSettings =
+            GrpcCallSettings
+                .<FetchGitRepositoryLinkPullRequestListRequest,
+                    FetchGitRepositoryLinkPullRequestListResponse>
+                    newBuilder()
+                .setMethodDescriptor(fetchGitRepositoryLinkPullRequestListMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
         listAccountConnectorsTransportSettings =
             GrpcCallSettings
@@ -966,6 +1316,11 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
     this.fetchReadTokenCallable =
         callableFactory.createUnaryCallable(
             fetchReadTokenTransportSettings, settings.fetchReadTokenSettings(), clientContext);
+    this.openGitRepositoryLinkPullRequestCallable =
+        callableFactory.createUnaryCallable(
+            openGitRepositoryLinkPullRequestTransportSettings,
+            settings.openGitRepositoryLinkPullRequestSettings(),
+            clientContext);
     this.fetchLinkableGitRepositoriesCallable =
         callableFactory.createUnaryCallable(
             fetchLinkableGitRepositoriesTransportSettings,
@@ -987,6 +1342,61 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
     this.fetchGitRefsPagedCallable =
         callableFactory.createPagedCallable(
             fetchGitRefsTransportSettings, settings.fetchGitRefsSettings(), clientContext);
+    this.diffGitRepositoryLinkCommitCallable =
+        callableFactory.createUnaryCallable(
+            diffGitRepositoryLinkCommitTransportSettings,
+            settings.diffGitRepositoryLinkCommitSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkCommitCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRepositoryLinkCommitTransportSettings,
+            settings.fetchGitRepositoryLinkCommitSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkCommitListCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRepositoryLinkCommitListTransportSettings,
+            settings.fetchGitRepositoryLinkCommitListSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkCommitListPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchGitRepositoryLinkCommitListTransportSettings,
+            settings.fetchGitRepositoryLinkCommitListSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkFileBlameCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRepositoryLinkFileBlameTransportSettings,
+            settings.fetchGitRepositoryLinkFileBlameSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkPullRequestCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRepositoryLinkPullRequestTransportSettings,
+            settings.fetchGitRepositoryLinkPullRequestSettings(),
+            clientContext);
+    this.addGitRepositoryLinkPullRequestCommentCallable =
+        callableFactory.createUnaryCallable(
+            addGitRepositoryLinkPullRequestCommentTransportSettings,
+            settings.addGitRepositoryLinkPullRequestCommentSettings(),
+            clientContext);
+    this.addGitRepositoryLinkPullRequestReviewCommentCallable =
+        callableFactory.createUnaryCallable(
+            addGitRepositoryLinkPullRequestReviewCommentTransportSettings,
+            settings.addGitRepositoryLinkPullRequestReviewCommentSettings(),
+            clientContext);
+    this.modifyGitRepositoryLinkPullRequestCallable =
+        callableFactory.createUnaryCallable(
+            modifyGitRepositoryLinkPullRequestTransportSettings,
+            settings.modifyGitRepositoryLinkPullRequestSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkPullRequestListCallable =
+        callableFactory.createUnaryCallable(
+            fetchGitRepositoryLinkPullRequestListTransportSettings,
+            settings.fetchGitRepositoryLinkPullRequestListSettings(),
+            clientContext);
+    this.fetchGitRepositoryLinkPullRequestListPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchGitRepositoryLinkPullRequestListTransportSettings,
+            settings.fetchGitRepositoryLinkPullRequestListSettings(),
+            clientContext);
     this.listAccountConnectorsCallable =
         callableFactory.createUnaryCallable(
             listAccountConnectorsTransportSettings,
@@ -1192,6 +1602,12 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
   }
 
   @Override
+  public UnaryCallable<OpenGitRepositoryLinkPullRequestRequest, PullRequest>
+      openGitRepositoryLinkPullRequestCallable() {
+    return openGitRepositoryLinkPullRequestCallable;
+  }
+
+  @Override
   public UnaryCallable<FetchLinkableGitRepositoriesRequest, FetchLinkableGitRepositoriesResponse>
       fetchLinkableGitRepositoriesCallable() {
     return fetchLinkableGitRepositoriesCallable;
@@ -1218,6 +1634,80 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
   @Override
   public UnaryCallable<FetchGitRefsRequest, FetchGitRefsPagedResponse> fetchGitRefsPagedCallable() {
     return fetchGitRefsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+      diffGitRepositoryLinkCommitCallable() {
+    return diffGitRepositoryLinkCommitCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+      fetchGitRepositoryLinkCommitCallable() {
+    return fetchGitRepositoryLinkCommitCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+      fetchGitRepositoryLinkCommitListCallable() {
+    return fetchGitRepositoryLinkCommitListCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListPagedResponse>
+      fetchGitRepositoryLinkCommitListPagedCallable() {
+    return fetchGitRepositoryLinkCommitListPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+      fetchGitRepositoryLinkFileBlameCallable() {
+    return fetchGitRepositoryLinkFileBlameCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchGitRepositoryLinkPullRequestRequest, PullRequest>
+      fetchGitRepositoryLinkPullRequestCallable() {
+    return fetchGitRepositoryLinkPullRequestCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>
+      addGitRepositoryLinkPullRequestCommentCallable() {
+    return addGitRepositoryLinkPullRequestCommentCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+      addGitRepositoryLinkPullRequestReviewCommentCallable() {
+    return addGitRepositoryLinkPullRequestReviewCommentCallable;
+  }
+
+  @Override
+  public UnaryCallable<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>
+      modifyGitRepositoryLinkPullRequestCallable() {
+    return modifyGitRepositoryLinkPullRequestCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListResponse>
+      fetchGitRepositoryLinkPullRequestListCallable() {
+    return fetchGitRepositoryLinkPullRequestListCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListPagedResponse>
+      fetchGitRepositoryLinkPullRequestListPagedCallable() {
+    return fetchGitRepositoryLinkPullRequestListPagedCallable;
   }
 
   @Override

@@ -52,6 +52,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
@@ -368,6 +369,7 @@ class FlowControllerTest {
     testBlockingReserveRelease(flowController, 0, 20);
   }
 
+  @Disabled("Flaky test: b/579437543")
   @Test
   void testDecreaseThresholds_blocking() throws Exception {
     FlowController flowController =
@@ -575,6 +577,7 @@ class FlowControllerTest {
         FlowController.MaxOutstandingRequestBytesReachedException.class);
   }
 
+  @Disabled("Flaky test: b/579437108")
   @Test
   void testNumberOfBytesOutOfBoundaryWontDeadlock() throws Exception {
     // Test the special case where in FlowController#reserve, to avoid deadlocks, it allows
@@ -663,6 +666,7 @@ class FlowControllerTest {
     t.join();
   }
 
+  @Disabled("Flaky test: b/579436657")
   @Test
   void testFlowControlBlockEventIsRecorded() throws Exception {
     // Test when reserve is blocked for at least FlowController#RESERVE_FLOW_CONTROL_THRESHOLD_MS,

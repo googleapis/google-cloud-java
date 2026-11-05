@@ -227,6 +227,7 @@ public class AgentServiceClientTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -293,6 +294,7 @@ public class AgentServiceClientTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -359,6 +361,7 @@ public class AgentServiceClientTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -436,6 +439,7 @@ public class AgentServiceClientTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -513,6 +517,7 @@ public class AgentServiceClientTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -593,6 +598,7 @@ public class AgentServiceClientTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -673,6 +679,7 @@ public class AgentServiceClientTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -2298,6 +2305,7 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -2344,6 +2352,7 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -2754,6 +2763,7 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -2803,6 +2813,7 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -2852,6 +2863,7 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -2904,6 +2916,7 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -2956,6 +2969,7 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3656,6 +3670,8 @@ public class AgentServiceClientTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3705,6 +3721,8 @@ public class AgentServiceClientTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3754,6 +3772,8 @@ public class AgentServiceClientTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3806,6 +3826,8 @@ public class AgentServiceClientTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3858,6 +3880,8 @@ public class AgentServiceClientTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3913,6 +3937,8 @@ public class AgentServiceClientTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3968,6 +3994,8 @@ public class AgentServiceClientTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -4668,6 +4696,7 @@ public class AgentServiceClientTest {
             .setDescription("description-1724546052")
             .setCreator("creator1028554796")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setSnapshot(AppSnapshot.newBuilder().build())
             .setEtag("etag3123477")
             .build();
@@ -4712,6 +4741,7 @@ public class AgentServiceClientTest {
             .setDescription("description-1724546052")
             .setCreator("creator1028554796")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setSnapshot(AppSnapshot.newBuilder().build())
             .setEtag("etag3123477")
             .build();
@@ -4756,6 +4786,7 @@ public class AgentServiceClientTest {
             .setDescription("description-1724546052")
             .setCreator("creator1028554796")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setSnapshot(AppSnapshot.newBuilder().build())
             .setEtag("etag3123477")
             .build();
@@ -4803,6 +4834,7 @@ public class AgentServiceClientTest {
             .setDescription("description-1724546052")
             .setCreator("creator1028554796")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setSnapshot(AppSnapshot.newBuilder().build())
             .setEtag("etag3123477")
             .build();
@@ -4850,6 +4882,7 @@ public class AgentServiceClientTest {
             .setDescription("description-1724546052")
             .setCreator("creator1028554796")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setSnapshot(AppSnapshot.newBuilder().build())
             .setEtag("etag3123477")
             .build();
@@ -4900,6 +4933,7 @@ public class AgentServiceClientTest {
             .setDescription("description-1724546052")
             .setCreator("creator1028554796")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setSnapshot(AppSnapshot.newBuilder().build())
             .setEtag("etag3123477")
             .build();
@@ -4935,6 +4969,54 @@ public class AgentServiceClientTest {
       AppVersion appVersion = AppVersion.newBuilder().build();
       String appVersionId = "appVersionId303221490";
       client.createAppVersion(parent, appVersion, appVersionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAppVersionTest() throws Exception {
+    AppVersion expectedResponse =
+        AppVersion.newBuilder()
+            .setName(AppVersionName.of("[PROJECT]", "[LOCATION]", "[APP]", "[VERSION]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreator("creator1028554796")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSnapshot(AppSnapshot.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockAgentService.addResponse(expectedResponse);
+
+    AppVersion appVersion = AppVersion.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AppVersion actualResponse = client.updateAppVersion(appVersion, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAppVersionRequest actualRequest = ((UpdateAppVersionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(appVersion, actualRequest.getAppVersion());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAppVersionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentService.addException(exception);
+
+    try {
+      AppVersion appVersion = AppVersion.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAppVersion(appVersion, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -34,14 +34,11 @@ public interface EvaluationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @deprecated google.cloud.ces.v1beta.EvaluationConfig.input_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1503
    * @return Whether the inputAudioConfig field is set.
    */
-  @java.lang.Deprecated
   boolean hasInputAudioConfig();
 
   /**
@@ -52,14 +49,11 @@ public interface EvaluationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @deprecated google.cloud.ces.v1beta.EvaluationConfig.input_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1503
    * @return The inputAudioConfig.
    */
-  @java.lang.Deprecated
   com.google.cloud.ces.v1beta.InputAudioConfig getInputAudioConfig();
 
   /**
@@ -70,10 +64,9 @@ public interface EvaluationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.ces.v1beta.InputAudioConfig input_audio_config = 1 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  @java.lang.Deprecated
   com.google.cloud.ces.v1beta.InputAudioConfigOrBuilder getInputAudioConfigOrBuilder();
 
   /**
@@ -84,14 +77,11 @@ public interface EvaluationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @deprecated google.cloud.ces.v1beta.EvaluationConfig.output_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1507
    * @return Whether the outputAudioConfig field is set.
    */
-  @java.lang.Deprecated
   boolean hasOutputAudioConfig();
 
   /**
@@ -102,14 +92,11 @@ public interface EvaluationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
-   * @deprecated google.cloud.ces.v1beta.EvaluationConfig.output_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1507
    * @return The outputAudioConfig.
    */
-  @java.lang.Deprecated
   com.google.cloud.ces.v1beta.OutputAudioConfig getOutputAudioConfig();
 
   /**
@@ -120,10 +107,9 @@ public interface EvaluationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.ces.v1beta.OutputAudioConfig output_audio_config = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  @java.lang.Deprecated
   com.google.cloud.ces.v1beta.OutputAudioConfigOrBuilder getOutputAudioConfigOrBuilder();
 
   /**

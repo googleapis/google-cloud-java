@@ -341,7 +341,9 @@ public final class AppliedAutoProtectionPolicy extends com.google.protobuf.Gener
    * projects/{admin-project}/locations/{location}/autoProtectionPolicies/{policy_id}/autoProtectionPolicyBindings/{binding_id}.
    * </pre>
    *
-   * <code>string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The sourceBinding.
    */
@@ -367,7 +369,9 @@ public final class AppliedAutoProtectionPolicy extends com.google.protobuf.Gener
    * projects/{admin-project}/locations/{location}/autoProtectionPolicies/{policy_id}/autoProtectionPolicyBindings/{binding_id}.
    * </pre>
    *
-   * <code>string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for sourceBinding.
    */
@@ -1479,7 +1483,9 @@ public final class AppliedAutoProtectionPolicy extends com.google.protobuf.Gener
      * projects/{admin-project}/locations/{location}/autoProtectionPolicies/{policy_id}/autoProtectionPolicyBindings/{binding_id}.
      * </pre>
      *
-     * <code>string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The sourceBinding.
      */
@@ -1504,7 +1510,9 @@ public final class AppliedAutoProtectionPolicy extends com.google.protobuf.Gener
      * projects/{admin-project}/locations/{location}/autoProtectionPolicies/{policy_id}/autoProtectionPolicyBindings/{binding_id}.
      * </pre>
      *
-     * <code>string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for sourceBinding.
      */
@@ -1529,7 +1537,9 @@ public final class AppliedAutoProtectionPolicy extends com.google.protobuf.Gener
      * projects/{admin-project}/locations/{location}/autoProtectionPolicies/{policy_id}/autoProtectionPolicyBindings/{binding_id}.
      * </pre>
      *
-     * <code>string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The sourceBinding to set.
      * @return This builder for chaining.
@@ -1553,7 +1563,9 @@ public final class AppliedAutoProtectionPolicy extends com.google.protobuf.Gener
      * projects/{admin-project}/locations/{location}/autoProtectionPolicies/{policy_id}/autoProtectionPolicyBindings/{binding_id}.
      * </pre>
      *
-     * <code>string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1573,7 +1585,9 @@ public final class AppliedAutoProtectionPolicy extends com.google.protobuf.Gener
      * projects/{admin-project}/locations/{location}/autoProtectionPolicies/{policy_id}/autoProtectionPolicyBindings/{binding_id}.
      * </pre>
      *
-     * <code>string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string source_binding = 2 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for sourceBinding to set.
      * @return This builder for chaining.

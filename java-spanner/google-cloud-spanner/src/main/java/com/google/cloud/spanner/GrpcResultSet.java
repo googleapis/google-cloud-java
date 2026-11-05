@@ -28,7 +28,7 @@ import com.google.spanner.v1.ResultSetStats;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 @VisibleForTesting
 class GrpcResultSet extends AbstractResultSet<List<Object>>
@@ -39,9 +39,10 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
   private ResultSetMetadata metadata;
   private GrpcStruct currRow;
   private List<Object> rowData;
-  private SpannerException error;
+  private volatile SpannerException error;
   private ResultSetStats statistics;
-  private boolean closed;
+  private volatile boolean closed;
+  private boolean yieldingError;
 
   GrpcResultSet(CloseableIterator<PartialResultSet> iterator, Listener listener) {
     this(iterator, listener, DecodeMode.DIRECT);
@@ -75,8 +76,8 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
 
   @Override
   public boolean next() throws SpannerException {
-    if (error != null) {
-      throw asSpannerException(error);
+    if (this.error != null) {
+      throw this.error;
     }
     try {
       if (currRow == null) {
@@ -106,9 +107,9 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
         close();
       }
       return hasNext;
-    } catch (Throwable t) {
+    } catch (Throwable throwable) {
       throw yieldError(
-          asSpannerException(t),
+          asSpannerException(throwable),
           iterator.isWithBeginTransaction() && currRow == null,
           iterator.isLastStatement());
     }
@@ -133,16 +134,35 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
   }
 
   @Override
+  @InternalApi
+  public boolean isDataAvailable() {
+    // If the result set is already closed, return true so callers (such as async stream
+    // consumers or event loops) do not block or wait indefinitely expecting future data,
+    // and instead proceed immediately to observe EOF or fast-fail.
+    return closed || iterator.isDataAvailable();
+  }
+
+  @Override
   public void close() {
+    boolean shouldNotifyDone;
     synchronized (this) {
       if (closed) {
         return;
       }
       closed = true;
+      // If a thread is currently in yieldError() dispatching listener.onError(), defer calling
+      // listener.onDone() to yieldError() finally block so that onError() always completes before
+      // onDone() is invoked.
+      shouldNotifyDone = !yieldingError;
     }
     boolean withBeginTransaction = iterator.isWithBeginTransaction();
-    iterator.close("ResultSet closed");
-    listener.onDone(withBeginTransaction);
+    try {
+      iterator.close("ResultSet closed");
+    } finally {
+      if (shouldNotifyDone) {
+        listener.onDone(withBeginTransaction || iterator.isWithBeginTransaction());
+      }
+    }
   }
 
   @Override
@@ -152,9 +172,38 @@ class GrpcResultSet extends AbstractResultSet<List<Object>>
   }
 
   private SpannerException yieldError(
-      SpannerException e, boolean beginTransaction, boolean lastStatement) {
-    SpannerException toThrow = listener.onError(e, beginTransaction, lastStatement);
-    close();
-    throw toThrow;
+      SpannerException exception, boolean beginTransaction, boolean lastStatement) {
+    synchronized (this) {
+      if (this.error == null) {
+        this.error = exception;
+      }
+      if (this.closed || this.yieldingError) {
+        return this.error;
+      }
+      this.yieldingError = true;
+    }
+    try {
+      this.error = listener.onError(exception, beginTransaction, lastStatement);
+      throw this.error;
+    } finally {
+      boolean alreadyClosed;
+      synchronized (this) {
+        this.yieldingError = false;
+        alreadyClosed = this.closed;
+      }
+      // If close() was called concurrently while we were dispatching listener.onError(), close()
+      // intentionally skipped calling listener.onDone() to avoid racing with or completing before
+      // onError(). We ensure the underlying iterator is closed before invoking listener.onDone().
+      // Otherwise, if close() was not called yet, proceed with normal closure.
+      if (alreadyClosed) {
+        try {
+          iterator.close("ResultSet closed");
+        } finally {
+          listener.onDone(beginTransaction || iterator.isWithBeginTransaction());
+        }
+      } else {
+        close();
+      }
+    }
   }
 }

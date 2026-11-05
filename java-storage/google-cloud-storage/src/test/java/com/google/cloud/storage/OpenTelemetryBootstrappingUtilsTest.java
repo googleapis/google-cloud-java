@@ -17,11 +17,16 @@
 package com.google.cloud.storage;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assume.assumeFalse;
 import static org.mockito.Mockito.mock;
 
 import com.google.cloud.storage.OpenTelemetryBootstrappingUtils.ChannelConfigurator;
 import io.grpc.ManagedChannelBuilder;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
+import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.Test;
 
@@ -93,5 +98,121 @@ public final class OpenTelemetryBootstrappingUtilsTest {
   public void channelConfigurator_andThen_nullsafe() {
     ChannelConfigurator actual = ChannelConfigurator.identity().andThen(null);
     assertThat(actual).isSameInstanceAs(ChannelConfigurator.identity());
+  }
+
+  @Test
+  public void histogramBoundaries_areValidAndIncreasing() {
+    List<Double> latencyBoundaries = OpenTelemetryBootstrappingUtils.latencyHistogramBoundaries();
+    assertThat(latencyBoundaries).isNotEmpty();
+    assertThat(latencyBoundaries).isInStrictOrder();
+
+    List<Double> sizeBoundaries = OpenTelemetryBootstrappingUtils.sizeHistogramBoundaries();
+    assertThat(sizeBoundaries).isNotEmpty();
+    assertThat(sizeBoundaries).isInStrictOrder();
+
+    List<Long> sizeLongBoundaries = OpenTelemetryBootstrappingUtils.sizeHistogramLongBoundaries();
+    assertThat(sizeLongBoundaries).hasSize(sizeBoundaries.size());
+    assertThat(sizeLongBoundaries).isInStrictOrder();
+  }
+
+  @Test
+  public void registerClientViews_doesNotThrow() {
+    io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder builder =
+        io.opentelemetry.sdk.metrics.SdkMeterProvider.builder();
+    io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder returned =
+        OpenTelemetryBootstrappingUtils.registerClientViews(builder);
+    assertThat(returned).isSameInstanceAs(builder);
+  }
+
+  @Test
+  public void createClientMeterProvider_attachesApiAttribute() {
+    Attributes detectedAttributes = Attributes.empty();
+
+    try (SdkMeterProvider grpcProvider =
+        OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+            "monitoring.googleapis.com:443",
+            "test-project",
+            detectedAttributes,
+            Duration.ofSeconds(60),
+            true,
+            "grpc")) {
+      assertThat(grpcProvider.toString()).contains("api=\"grpc\"");
+      assertThat(grpcProvider.toString())
+          .doesNotContain("gcp.resource_type=\"storage.googleapis.com/Client\"");
+    }
+
+    try (SdkMeterProvider jsonProvider =
+        OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+            "monitoring.googleapis.com:443",
+            "test-project",
+            detectedAttributes,
+            Duration.ofSeconds(60),
+            true,
+            "json")) {
+      assertThat(jsonProvider.toString()).contains("api=\"json\"");
+      assertThat(jsonProvider.toString())
+          .doesNotContain("gcp.resource_type=\"storage.googleapis.com/Client\"");
+    }
+
+    assertThrows(
+        NullPointerException.class,
+        () ->
+            OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+                "monitoring.googleapis.com:443",
+                "test-project",
+                detectedAttributes,
+                Duration.ofSeconds(60),
+                true,
+                null));
+
+    try (SdkMeterProvider legacyProvider =
+        OpenTelemetryBootstrappingUtils.createMeterProvider(
+            "monitoring.googleapis.com:443", "test-project", detectedAttributes, true)) {
+      assertThat(legacyProvider.toString()).contains("api=\"grpc\"");
+      assertThat(legacyProvider.toString())
+          .contains("gcp.resource_type=\"storage.googleapis.com/Client\"");
+    }
+  }
+
+  @Test
+  public void createClientMeterProvider_customInstanceId_attachesInstanceIdAttribute() {
+    Attributes detectedAttributes = Attributes.empty();
+    String customInstanceId = "custom-instance-12345";
+
+    try (SdkMeterProvider provider =
+        OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+            "monitoring.googleapis.com:443",
+            "test-project",
+            customInstanceId,
+            detectedAttributes,
+            Duration.ofSeconds(60),
+            true,
+            "grpc")) {
+      assertThat(provider.toString()).contains("instance_id=\"" + customInstanceId + "\"");
+    }
+  }
+
+  @Test
+  public void createClientMeterProvider_preservesDetectedAttributes() {
+    Attributes detectedAttributes =
+        Attributes.builder()
+            .put("cloud.platform", "gcp_kubernetes_engine")
+            .put("cloud.availability_zone", "us-central1-a")
+            .put("host.id", "test-host-123")
+            .build();
+
+    try (SdkMeterProvider provider =
+        OpenTelemetryBootstrappingUtils.createClientMeterProvider(
+            "monitoring.googleapis.com:443",
+            "test-project",
+            "test-instance",
+            detectedAttributes,
+            Duration.ofSeconds(60),
+            true,
+            "grpc")) {
+      assertThat(provider.toString()).contains("cloud.platform=\"gcp_kubernetes_engine\"");
+      assertThat(provider.toString()).contains("cloud.availability_zone=\"us-central1-a\"");
+      assertThat(provider.toString()).contains("host.id=\"test-host-123\"");
+    }
   }
 }
