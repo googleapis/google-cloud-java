@@ -36,8 +36,7 @@ import org.apache.arrow.vector.util.Text;
 class BigQueryArrowStruct extends BigQueryBaseStruct {
 
   private final FieldList schema;
-
-  private final JsonStringHashMap<?, ?> values;
+  private final List<?> values;
 
   BigQueryArrowStruct(FieldList schema, JsonStringHashMap<?, ?> values) {
     this(schema, values, false, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class));
@@ -50,7 +49,7 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
       BigQueryJdbcResultSetLogger log) {
     super(enableTimestampPicos, log);
     this.schema = schema;
-    this.values = values;
+    this.values = values == null ? null : new ArrayList<>(values.values());
   }
 
   @Override
@@ -67,12 +66,10 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
     if (this.values == null) {
       return attributes;
     }
-    List<?> structValues = new ArrayList<>(this.values.values());
 
     for (int index = 0; index < size; index++) {
       Field currentSchema = this.schema.get(index);
-      Object currentValue = structValues.get(index);
-      Object coercedValue = getValue(currentSchema, currentValue);
+      Object coercedValue = getValue(currentSchema, getRawAttribute(index));
       Array.set(attributes, index, coercedValue);
     }
     return attributes;
@@ -80,9 +77,6 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
 
   private Object getValue(Field currentSchema, Object currentValue) throws SQLException {
     LOG.finestTrace("getValue");
-    if (currentValue instanceof Text) {
-      currentValue = currentValue.toString();
-    }
     if (isArray(currentSchema)) {
       return new BigQueryArrowArray(
           currentSchema,
@@ -106,5 +100,11 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
     }
     return BigQueryTypeRegistry.convert(
         currentValue, currentSchema.getType().getStandardType(), null);
+  }
+
+  @Override
+  Object getRawAttribute(int index) {
+    Object currentValue = this.values.get(index);
+    return (currentValue instanceof Text) ? currentValue.toString() : currentValue;
   }
 }

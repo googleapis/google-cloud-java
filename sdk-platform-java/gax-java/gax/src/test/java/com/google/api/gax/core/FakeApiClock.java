@@ -33,9 +33,21 @@ import com.google.api.core.ApiClock;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
+/**
+ * A thread-safe fake {@link ApiClock} implementation for unit tests whose time only advances when
+ * {@link #incrementNanoTime(long)} is explicitly called.
+ *
+ * <p>Use this clock in retry and polling tests to decouple timeout and backoff calculations from
+ * real wall-clock time on the test runner.
+ */
 public class FakeApiClock implements ApiClock {
   private final AtomicLong currentNanoTime;
 
+  /**
+   * Creates a fake clock initialized to the given nanosecond timestamp.
+   *
+   * @param initialNanoTime the starting value for {@link #nanoTime()}
+   */
   public FakeApiClock(long initialNanoTime) {
     currentNanoTime = new AtomicLong(initialNanoTime);
   }
@@ -50,6 +62,11 @@ public class FakeApiClock implements ApiClock {
     return TimeUnit.MILLISECONDS.convert(nanoTime(), TimeUnit.NANOSECONDS);
   }
 
+  /**
+   * Advances the clock's current time by {@code delta} nanoseconds.
+   *
+   * @param delta the number of nanoseconds to add to the current time
+   */
   public void incrementNanoTime(long delta) {
     currentNanoTime.getAndAdd(delta);
   }

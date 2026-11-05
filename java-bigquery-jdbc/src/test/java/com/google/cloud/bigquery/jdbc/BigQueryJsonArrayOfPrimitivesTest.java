@@ -458,4 +458,27 @@ public class BigQueryJsonArrayOfPrimitivesTest {
     assertThat(rs.getString(2)).isEqualTo("2023-03-30 11:14:19.123456");
     assertThat(rs.getObject(2)).isEqualTo(expectedTs);
   }
+
+  @Test
+  public void testJsonArrayTimePreservesMicroseconds() throws SQLException {
+    Tuple<Field, FieldValue> schemaAndValue =
+        arraySchemaAndValue(TIME, "14:30:00.123456", "23:59:59.999999", "01:00:00");
+    BigQueryJsonArray array = new BigQueryJsonArray(schemaAndValue.x(), schemaAndValue.y());
+
+    assertThat(array.toString()).isEqualTo("[14:30:00.123456, 23:59:59.999999, 01:00:00]");
+
+    try (ResultSet rs = array.getResultSet()) {
+      assertThat(rs.next()).isTrue();
+      assertThat(rs.getString(2)).isEqualTo("14:30:00.123456");
+      assertThat(rs.getObject(2, LocalTime.class)).isEqualTo(LocalTime.of(14, 30, 0, 123_456_000));
+
+      assertThat(rs.next()).isTrue();
+      assertThat(rs.getString(2)).isEqualTo("23:59:59.999999");
+      assertThat(rs.getObject(2, LocalTime.class)).isEqualTo(LocalTime.of(23, 59, 59, 999_999_000));
+
+      assertThat(rs.next()).isTrue();
+      assertThat(rs.getString(2)).isEqualTo("01:00:00");
+      assertThat(rs.getObject(2, LocalTime.class)).isEqualTo(LocalTime.of(1, 0, 0));
+    }
+  }
 }

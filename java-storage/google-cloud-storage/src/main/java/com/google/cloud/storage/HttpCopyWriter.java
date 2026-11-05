@@ -98,7 +98,8 @@ public class HttpCopyWriter extends CopyWriter {
         StorageMetricsContext chunkContext =
             metricsContext != null
                 ? metricsContext
-                : serviceOptions.createMetricsContext("RewriteObject");
+                : StorageClientMetrics.createContext(
+                    serviceOptions.getStorageClientMetrics(), "RewriteObject");
         RewriteResponse resp =
             retrier.run(
                 serviceOptions.getRetryAlgorithmManager().getForObjectsRewrite(rewriteRequest),

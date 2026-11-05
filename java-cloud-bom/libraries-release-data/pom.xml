@@ -13,7 +13,7 @@
         <dependency>
             <groupId>com.google.cloud.tools</groupId>
             <artifactId>dependencies</artifactId>
-            <version>1.5.15</version>
+            <version>1.5.16</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

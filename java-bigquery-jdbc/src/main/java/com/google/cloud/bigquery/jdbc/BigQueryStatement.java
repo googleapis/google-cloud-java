@@ -152,9 +152,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   static ReferenceQueue<BigQueryArrowResultSet> referenceQueueArrowRs = new ReferenceQueue<>();
   static ReferenceQueue<BigQueryJsonResultSet> referenceQueueJsonRs = new ReferenceQueue<>();
   static List<BigQueryResultSetFinalizers.ArrowResultSetFinalizer> arrowResultSetFinalizers =
-      new ArrayList<>();
+      Collections.synchronizedList(new ArrayList<>());
   static List<BigQueryResultSetFinalizers.JsonResultSetFinalizer> jsonResultSetFinalizers =
-      new ArrayList<>();
+      Collections.synchronizedList(new ArrayList<>());
 
   private static final ThreadFactory JDBC_THREAD_FACTORY =
       new BigQueryThreadFactory("BigQuery-Thread-");

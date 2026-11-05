@@ -57,6 +57,11 @@ final class BigQueryTemporalUtility {
           .appendFraction(ChronoField.NANO_OF_SECOND, 1, 9, false)
           .toFormatter()
           .withZone(ZoneOffset.UTC);
+  static final DateTimeFormatter TIME_FORMATTER =
+      new DateTimeFormatterBuilder()
+          .appendPattern("HH:mm:ss")
+          .appendFraction(ChronoField.NANO_OF_SECOND, 0, 9, true)
+          .toFormatter();
   static final String TIMESTAMP_PICOSECONDS_TYPE_NAME = "TIMESTAMP_PICOSECONDS";
 
   private BigQueryTemporalUtility() {}
