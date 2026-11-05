@@ -652,6 +652,33 @@ public class ConnectionAsyncApiAbortedTest extends AbstractMockServerTest {
   }
 
   @Test
+  public void testCloseAfterTransactionAborted_RollsBackCleanly() {
+    Statement update1 = Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=100");
+    mockSpanner.putStatementResult(StatementResult.update(update1, 100));
+
+    RetryCounter counter = new RetryCounter();
+    ConnectionImpl connectionImpl;
+    ReadWriteTransaction transaction;
+    try (Connection connection = createConnection(counter)) {
+      connectionImpl = (ConnectionImpl) connection;
+      get(connection.executeUpdateAsync(update1));
+      mockSpanner.putStatementResult(StatementResult.update(update1, 200));
+
+      mockSpanner.abortNextStatement();
+      ApiFuture<Long> insert = connection.executeUpdateAsync(INSERT_STATEMENT);
+      assertThrows(AbortedDueToConcurrentModificationException.class, () -> get(insert));
+      assertEquals(1, counter.retryCount);
+
+      transaction =
+          (ReadWriteTransaction) connectionImpl.getCurrentUnitOfWorkOrStartNewUnitOfWork();
+      assertEquals(UnitOfWorkState.ABORTED, transaction.getState());
+      // Exit without calling commit or rollback.
+    }
+    // Verify close() invoked rollback and transitioned transaction to ROLLED_BACK.
+    assertEquals(UnitOfWorkState.ROLLED_BACK, transaction.getState());
+  }
+
+  @Test
   public void testMultipleBlindUpdatesAborted_WithConcurrentModification() {
     Statement update1 = Statement.of("UPDATE FOO SET BAR=1 WHERE BAZ=100");
     mockSpanner.putStatementResult(StatementResult.update(update1, 100));
