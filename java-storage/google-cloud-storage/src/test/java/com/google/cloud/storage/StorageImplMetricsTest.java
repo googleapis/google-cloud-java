@@ -534,6 +534,45 @@ public class StorageImplMetricsTest {
         metrics, METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, "WriteObject", STATUS_OK, 1L);
   }
 
+  @Test
+  public void testUpdateUnmodifiedBucketAndBlobRecordsUpdateOperationName() {
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    HttpStorageOptions metricsOptions =
+        options.toBuilder().setEnableOtelMetrics(true).setMeterProvider(meterProvider).build();
+    Storage storage = metricsOptions.getService();
+
+    com.google.api.services.storage.model.Bucket bucketPb =
+        Conversions.json().bucketInfo().encode(BucketInfo.of(BUCKET_NAME));
+    StorageObject encodedBlob = Conversions.json().blobInfo().encode(RESULT_INFO);
+    when(storageRpcMock.get(any(com.google.api.services.storage.model.Bucket.class), anyMap()))
+        .thenReturn(bucketPb);
+    when(storageRpcMock.get(any(StorageObject.class), anyMap())).thenReturn(encodedBlob);
+
+    Bucket updatedBucket = storage.update(BucketInfo.of(BUCKET_NAME));
+    Blob updatedBlob = storage.update(BLOB_INFO);
+    assertThat(updatedBucket).isNotNull();
+    assertThat(updatedBlob).isNotNull();
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "UpdateBucket", STATUS_OK, 1L);
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, "UpdateBucket", STATUS_OK, 1L);
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "GetBucket", STATUS_OK, 0L);
+    assertMetricErrorType(metrics, METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, "GetBucket", STATUS_OK, 0L);
+
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "UpdateObject", STATUS_OK, 1L);
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, "UpdateObject", STATUS_OK, 1L);
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "GetObject", STATUS_OK, 0L);
+    assertMetricErrorType(metrics, METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, "GetObject", STATUS_OK, 0L);
+  }
+
   private static void assertMetricErrorType(
       Collection<MetricData> metrics,
       String metricName,

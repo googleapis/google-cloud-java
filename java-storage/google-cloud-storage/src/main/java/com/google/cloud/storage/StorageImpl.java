@@ -488,7 +488,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
         Opts.unwrap(options).resolveFrom(bucketInfo).getRpcOptions();
     ImmutableSet<NamedField> modifiedFields = bucketInfo.getModifiedFields();
     if (modifiedFields.isEmpty()) {
-      return internalBucketGet(bucketInfo.getName(), optionsMap);
+      return internalBucketGet(bucketInfo.getName(), optionsMap, "UpdateBucket");
     } else {
       com.google.api.services.storage.model.Bucket tmp = codecs.bucketInfo().encode(bucketInfo);
       com.google.api.services.storage.model.Bucket bucketPb =
@@ -545,7 +545,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     BlobInfo updated = opts.blobInfoMapper().apply(builder).build();
     boolean unmodifiedAfterOpts = updated.getModifiedFields().isEmpty();
     if (unmodifiedBeforeOpts && unmodifiedAfterOpts) {
-      return internalGetBlob(blobInfo.getBlobId(), optionsMap);
+      return internalGetBlob(blobInfo.getBlobId(), optionsMap, "UpdateObject");
     } else {
       StorageObject tmp = codecs.blobInfo().encode(updated);
       StorageObject pb = new StorageObject();
@@ -1865,11 +1865,16 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   }
 
   private Blob internalGetBlob(BlobId blob, Map<StorageRpc.Option, ?> optionsMap) {
+    return internalGetBlob(blob, optionsMap, "GetObject");
+  }
+
+  private Blob internalGetBlob(
+      BlobId blob, Map<StorageRpc.Option, ?> optionsMap, String operationName) {
     StorageObject storedObject = codecs.blobId().encode(blob);
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsGet(storedObject, optionsMap);
     return runNullable(
-        "GetObject",
+        operationName,
         algorithm,
         () -> storageRpc.get(storedObject, optionsMap),
         (x) -> {
@@ -1879,12 +1884,17 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   }
 
   private Bucket internalBucketGet(String bucket, Map<StorageRpc.Option, ?> optionsMap) {
+    return internalBucketGet(bucket, optionsMap, "GetBucket");
+  }
+
+  private Bucket internalBucketGet(
+      String bucket, Map<StorageRpc.Option, ?> optionsMap, String operationName) {
     com.google.api.services.storage.model.Bucket bucketPb =
         codecs.bucketInfo().encode(BucketInfo.of(bucket));
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForBucketsGet(bucketPb, optionsMap);
     return runNullable(
-        "GetBucket",
+        operationName,
         algorithm,
         () -> storageRpc.get(bucketPb, optionsMap),
         (b) -> Conversions.json().bucketInfo().decode(b).asBucket(this));
