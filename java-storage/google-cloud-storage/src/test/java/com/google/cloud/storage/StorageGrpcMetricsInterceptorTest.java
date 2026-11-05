@@ -90,7 +90,7 @@ public final class StorageGrpcMetricsInterceptorTest {
         .isTrue();
     assertThat(StorageGrpcMetricsInterceptor.isDirectPathIp(InetAddress.getByName("34.126.63.254")))
         .isTrue();
-    assertThat(StorageGrpcMetricsInterceptor.isDirectPathIp(InetAddress.getByName("34.126.64.1")))
+    assertThat(StorageGrpcMetricsInterceptor.isDirectPathIp(InetAddress.getByName("35.190.1.1")))
         .isFalse();
     assertThat(StorageGrpcMetricsInterceptor.isDirectPathIp(InetAddress.getByName("142.250.1.1")))
         .isFalse();
@@ -101,7 +101,7 @@ public final class StorageGrpcMetricsInterceptorTest {
         .isTrue();
     assertThat(
             StorageGrpcMetricsInterceptor.isDirectPathIp(
-                InetAddress.getByName("2001:4860:807f:ffff:ffff:ffff:ffff:ffff")))
+                InetAddress.getByName("2001:4860:8040:ffff:ffff:ffff:ffff:ffff")))
         .isTrue();
     assertThat(
             StorageGrpcMetricsInterceptor.isDirectPathIp(

@@ -42,6 +42,9 @@ import org.jspecify.annotations.Nullable;
  */
 final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
+  private static final String DP_IPV6_PREFIX = "2001:4860:8040";
+  private static final String DP_IPV4_PREFIX = "34.126";
+
   private final StorageClientMetrics metrics;
   private final ApiClock clock;
   @Nullable private final String defaultServerAddress;
@@ -153,18 +156,8 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
   }
 
   static boolean isDirectPathIp(InetAddress addr) {
-    byte[] b = addr.getAddress();
-    if (b.length == 4) {
-      return (b[0] & 0xFF) == 34 && (b[1] & 0xFF) == 126 && ((b[2] & 0xFF) & 0xC0) == 0;
-    }
-    if (b.length == 16) {
-      return (b[0] & 0xFF) == 0x20
-          && (b[1] & 0xFF) == 0x01
-          && (b[2] & 0xFF) == 0x48
-          && (b[3] & 0xFF) == 0x60
-          && (b[4] & 0xFF) == 0x80
-          && ((b[5] & 0xFF) & 0xC0) == 0x40;
-    }
-    return false;
+    String hostAddr = addr.getHostAddress();
+    return hostAddr != null
+        && (hostAddr.startsWith(DP_IPV4_PREFIX) || hostAddr.startsWith(DP_IPV6_PREFIX));
   }
 }
