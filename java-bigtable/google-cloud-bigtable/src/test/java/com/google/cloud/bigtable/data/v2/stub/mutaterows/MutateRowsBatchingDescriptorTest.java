@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.InternalException;
 import com.google.api.gax.rpc.UnavailableException;
+import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.MutateRowsException;
@@ -62,6 +63,34 @@ public class MutateRowsBatchingDescriptorTest {
 
     MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
     assertThat(underTest.countBytes(request)).isEqualTo(bytes);
+  }
+
+  @Test
+  public void createResourceTest() {
+    RowMutationEntry request =
+        RowMutationEntry.create(ROW_KEY)
+            .setCell(FAMILY, QUALIFIER, VALUE)
+            .setCell(FAMILY, QUALIFIER, "another-value")
+            .deleteFamily(FAMILY);
+    MutateRowsRequest.Entry proto = request.toProto();
+
+    MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
+    BatchResource resource = underTest.createResource(request);
+
+    assertThat(resource.getElementCount()).isEqualTo(1);
+    assertThat(resource.getByteCount()).isEqualTo(proto.getSerializedSize());
+    assertThat(((MutateRowsBatchResource) resource).getMutationCount())
+        .isEqualTo(proto.getMutationsCount());
+  }
+
+  @Test
+  public void createEmptyResourceTest() {
+    MutateRowsBatchingDescriptor underTest = new MutateRowsBatchingDescriptor();
+    BatchResource resource = underTest.createEmptyResource();
+
+    assertThat(resource.getElementCount()).isEqualTo(0);
+    assertThat(resource.getByteCount()).isEqualTo(0);
+    assertThat(((MutateRowsBatchResource) resource).getMutationCount()).isEqualTo(0);
   }
 
   @Test
