@@ -70,6 +70,56 @@ public final class StorageOptionsBuilderTest {
   }
 
   @Test
+  public void grpc_attemptDirectPathXdsOverInterconnect() throws Exception {
+    com.google.auth.Credentials mockCreds = com.google.cloud.NoCredentials.getInstance();
+    GrpcStorageOptions options =
+        GrpcStorageOptions.grpc()
+            .setCredentials(mockCreds)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .build();
+
+    GrpcStorageOptions rebuilt = options.toBuilder().build();
+    assertAll(
+        () -> assertThat(rebuilt).isEqualTo(options),
+        () -> assertThat(rebuilt.hashCode()).isEqualTo(options.hashCode()));
+
+    com.google.storage.v2.StorageSettings settings = options.getStorageSettings();
+    assertThat(settings.getEndpoint()).isEqualTo("storage.googleapis.com:443");
+
+    com.google.api.gax.rpc.TransportChannelProvider tcp = settings.getTransportChannelProvider();
+    assertThat(tcp).isInstanceOf(com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.class);
+    com.google.api.gax.grpc.InstantiatingGrpcChannelProvider provider =
+        (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider) tcp;
+
+    assertThat(provider.getEndpoint()).isEqualTo("storage.googleapis.com:443");
+    assertThat(provider.isDirectPathXdsEnabled()).isTrue();
+    if (Boolean.parseBoolean(System.getenv("GOOGLE_CLOUD_DISABLE_DIRECT_PATH"))) {
+      assertThat(provider.canUseDirectPath()).isFalse();
+    } else {
+      assertThat(provider.canUseDirectPath()).isTrue();
+    }
+  }
+
+  @Test
+  public void grpc_fallbackFromDirectPathXdsOverInterconnect_nonGduUniverse() throws Exception {
+    GrpcStorageOptions options =
+        GrpcStorageOptions.grpc()
+            .setHost("https://storage.my-universe.com")
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setCredentials(com.google.cloud.NoCredentials.getInstance())
+            .build();
+    com.google.storage.v2.StorageSettings settings = options.getStorageSettings();
+    assertThat(settings.getEndpoint()).isEqualTo("storage.my-universe.com:443");
+
+    com.google.api.gax.grpc.InstantiatingGrpcChannelProvider provider =
+        (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider)
+            settings.getTransportChannelProvider();
+    assertThat(provider.getEndpoint()).isEqualTo("storage.my-universe.com:443");
+    assertThat(provider.isDirectPathXdsEnabled()).isTrue();
+    assertThat(provider.canUseDirectPath()).isFalse();
+  }
+
+  @Test
   public void useJwtAccessWithScope_defaultsToFalse() {
     HttpStorageOptions httpOptions = HttpStorageOptions.http().build();
     GrpcStorageOptions grpcOptions = GrpcStorageOptions.grpc().build();

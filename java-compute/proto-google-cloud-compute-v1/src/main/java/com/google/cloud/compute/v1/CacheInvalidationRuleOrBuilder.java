@@ -129,7 +129,9 @@ public interface CacheInvalidationRuleOrBuilder
    *
    * <pre>
    * If set, this invalidation rule will only apply to requests with a Host
-   * header matching host.
+   * header matching host. This field also accepts wildcards (*) to replace the
+   * leftmost (or first) label of a hostname. For example, *.example.com will
+   * match www.example.com, but not sub1.dev.example.com.
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -143,7 +145,9 @@ public interface CacheInvalidationRuleOrBuilder
    *
    * <pre>
    * If set, this invalidation rule will only apply to requests with a Host
-   * header matching host.
+   * header matching host. This field also accepts wildcards (*) to replace the
+   * leftmost (or first) label of a hostname. For example, *.example.com will
+   * match www.example.com, but not sub1.dev.example.com.
    * </pre>
    *
    * <code>optional string host = 3208616;</code>
@@ -157,7 +161,9 @@ public interface CacheInvalidationRuleOrBuilder
    *
    * <pre>
    * If set, this invalidation rule will only apply to requests with a Host
-   * header matching host.
+   * header matching host. This field also accepts wildcards (*) to replace the
+   * leftmost (or first) label of a hostname. For example, *.example.com will
+   * match www.example.com, but not sub1.dev.example.com.
    * </pre>
    *
    * <code>optional string host = 3208616;</code>

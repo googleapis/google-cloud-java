@@ -44,6 +44,7 @@ public class AsyncCreateAutoProtectionPolicyBinding {
                       .toString())
               .setAutoProtectionPolicyBindingId("autoProtectionPolicyBindingId2122957414")
               .setAutoProtectionPolicyBinding(AutoProtectionPolicyBinding.newBuilder().build())
+              .setRequestId("requestId693933066")
               .build();
       ApiFuture<Operation> future =
           backupDRClient.createAutoProtectionPolicyBindingCallable().futureCall(request);
