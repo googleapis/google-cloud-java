@@ -36,7 +36,10 @@ import java.net.SocketAddress;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.jspecify.annotations.Nullable;
 
-/** gRPC client interceptor that records call metrics such as rpc.client.call.duration. */
+/**
+ * {@link ClientInterceptor} that instruments outgoing gRPC calls to record OpenTelemetry client
+ * metrics.
+ */
 final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
   private final StorageClientMetrics metrics;
