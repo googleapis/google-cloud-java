@@ -197,53 +197,60 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testResultSetLoggerTrace() {
     BigQueryJdbcResultSetLogger rsLogger =
-        new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class);
     TestHandler rsHandler = new TestHandler();
-    rsLogger.addHandler(rsHandler);
-    rsLogger.setLevel(Level.ALL);
+    rsLogger.delegate().addHandler(rsHandler);
+    rsLogger.delegate().setLevel(Level.ALL);
+    try {
 
-    rsLogger.finestTrace("customMethod", "Hello finest trace message");
+      rsLogger.finestTrace("customMethod", "Hello finest trace message");
 
-    List<LogRecord> records = rsHandler.getRecords();
-    assertEquals(1, records.size());
-    LogRecord record = records.get(0);
+      List<LogRecord> records = rsHandler.getRecords();
+      assertEquals(1, records.size());
+      LogRecord record = records.get(0);
 
-    assertEquals(Level.FINEST, record.getLevel());
-    assertEquals("customMethod", record.getSourceMethodName());
-    assertEquals(BigQueryBaseResultSet.class.getName(), record.getSourceClassName());
-    assertEquals("Hello finest trace message", record.getMessage());
+      assertEquals(Level.FINEST, record.getLevel());
+      assertEquals("customMethod", record.getSourceMethodName());
+      assertEquals(BigQueryBaseResultSet.class.getName(), record.getSourceClassName());
+      assertEquals("Hello finest trace message", record.getMessage());
+    } finally {
+      rsLogger.delegate().removeHandler(rsHandler);
+    }
   }
 
   @Test
   public void testResultSetLoggerStandardMethods() {
     BigQueryJdbcResultSetLogger rsLogger =
-        new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class);
     TestHandler rsHandler = new TestHandler();
-    rsLogger.addHandler(rsHandler);
-    rsLogger.setLevel(Level.ALL);
+    rsLogger.delegate().addHandler(rsHandler);
+    rsLogger.delegate().setLevel(Level.ALL);
+    try {
+      rsLogger.finest("Finest msg");
+      rsLogger.finer("Finer msg");
+      rsLogger.fine("Fine msg");
 
-    rsLogger.finest("Finest msg");
-    rsLogger.finer("Finer msg");
-    rsLogger.fine("Fine msg");
+      List<LogRecord> records = rsHandler.getRecords();
+      assertEquals(3, records.size());
 
-    List<LogRecord> records = rsHandler.getRecords();
-    assertEquals(3, records.size());
+      LogRecord r1 = records.get(0);
+      assertEquals(Level.FINEST, r1.getLevel());
+      assertEquals("unknown", r1.getSourceMethodName());
+      assertEquals(BigQueryBaseResultSet.class.getName(), r1.getSourceClassName());
+      assertEquals("Finest msg", r1.getMessage());
 
-    LogRecord r1 = records.get(0);
-    assertEquals(Level.FINEST, r1.getLevel());
-    assertEquals("unknown", r1.getSourceMethodName());
-    assertEquals(BigQueryBaseResultSet.class.getName(), r1.getSourceClassName());
-    assertEquals("Finest msg", r1.getMessage());
+      LogRecord r2 = records.get(1);
+      assertEquals(Level.FINER, r2.getLevel());
+      assertEquals("unknown", r2.getSourceMethodName());
+      assertEquals("Finer msg", r2.getMessage());
 
-    LogRecord r2 = records.get(1);
-    assertEquals(Level.FINER, r2.getLevel());
-    assertEquals("unknown", r2.getSourceMethodName());
-    assertEquals("Finer msg", r2.getMessage());
-
-    LogRecord r3 = records.get(2);
-    assertEquals(Level.FINE, r3.getLevel());
-    assertEquals("unknown", r3.getSourceMethodName());
-    assertEquals("Fine msg", r3.getMessage());
+      LogRecord r3 = records.get(2);
+      assertEquals(Level.FINE, r3.getLevel());
+      assertEquals("unknown", r3.getSourceMethodName());
+      assertEquals("Fine msg", r3.getMessage());
+    } finally {
+      rsLogger.delegate().removeHandler(rsHandler);
+    }
   }
 
   @Test
@@ -263,21 +270,24 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testResultSetLoggerSupplierMethods() {
     BigQueryJdbcResultSetLogger rsLogger =
-        new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class);
     TestHandler rsHandler = new TestHandler();
-    rsLogger.addHandler(rsHandler);
-    rsLogger.setLevel(Level.ALL);
+    rsLogger.delegate().addHandler(rsHandler);
+    rsLogger.delegate().setLevel(Level.ALL);
+    try {
+      rsLogger.finest(() -> "Lazy finest RS message");
 
-    rsLogger.finest(() -> "Lazy finest RS message");
+      List<LogRecord> records = rsHandler.getRecords();
+      assertEquals(1, records.size());
+      LogRecord record = records.get(0);
 
-    List<LogRecord> records = rsHandler.getRecords();
-    assertEquals(1, records.size());
-    LogRecord record = records.get(0);
-
-    assertEquals(Level.FINEST, record.getLevel());
-    assertEquals("unknown", record.getSourceMethodName());
-    assertEquals(BigQueryBaseResultSet.class.getName(), record.getSourceClassName());
-    assertEquals("Lazy finest RS message", record.getMessage());
+      assertEquals(Level.FINEST, record.getLevel());
+      assertEquals("unknown", record.getSourceMethodName());
+      assertEquals(BigQueryBaseResultSet.class.getName(), record.getSourceClassName());
+      assertEquals("Lazy finest RS message", record.getMessage());
+    } finally {
+      rsLogger.delegate().removeHandler(rsHandler);
+    }
   }
 
   @Test
@@ -298,60 +308,70 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testResultSetLoggerSupplierTraceMethods() {
     BigQueryJdbcResultSetLogger rsLogger =
-        new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class);
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class);
     TestHandler rsHandler = new TestHandler();
-    rsLogger.addHandler(rsHandler);
-    rsLogger.setLevel(Level.ALL);
+    rsLogger.delegate().addHandler(rsHandler);
+    rsLogger.delegate().setLevel(Level.ALL);
+    try {
+      rsLogger.finestTrace("customTraceMethod", () -> "Lazy finest RS trace message");
 
-    rsLogger.finestTrace("customTraceMethod", () -> "Lazy finest RS trace message");
+      List<LogRecord> records = rsHandler.getRecords();
+      assertEquals(1, records.size());
+      LogRecord record = records.get(0);
 
-    List<LogRecord> records = rsHandler.getRecords();
-    assertEquals(1, records.size());
-    LogRecord record = records.get(0);
-
-    assertEquals(Level.FINEST, record.getLevel());
-    assertEquals("customTraceMethod", record.getSourceMethodName());
-    assertEquals(BigQueryBaseResultSet.class.getName(), record.getSourceClassName());
-    assertEquals("Lazy finest RS trace message", record.getMessage());
+      assertEquals(Level.FINEST, record.getLevel());
+      assertEquals("customTraceMethod", record.getSourceMethodName());
+      assertEquals(BigQueryBaseResultSet.class.getName(), record.getSourceClassName());
+      assertEquals("Lazy finest RS trace message", record.getMessage());
+    } finally {
+      rsLogger.delegate().removeHandler(rsHandler);
+    }
   }
 
   @Test
   public void testResultSetLoggerCachingBehavior() {
-    // Global logger (connectionId is null) should be cached
+    // Global facades (no connection ID) are shared.
     BigQueryJdbcResultSetLogger globalLogger1 =
         BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class);
     BigQueryJdbcResultSetLogger globalLogger2 =
         BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class);
     assertSame(globalLogger1, globalLogger2);
-
-    // Connection-specific loggers should not be cached globally
+    // Connection-scoped facades are distinct lightweight objects, but they all forward to the
+    // single registered logger for the class — that is what prevents the registration leak.
     BigQueryJdbcResultSetLogger connLogger1 =
         BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, "conn-123");
     BigQueryJdbcResultSetLogger connLogger2 =
-        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, "conn-123");
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, "conn-456");
     assertNotSame(connLogger1, connLogger2);
+    assertSame(connLogger1.delegate(), connLogger2.delegate());
+    assertSame(globalLogger1.delegate(), connLogger1.delegate());
   }
 
   @Test
   public void testResultSetLoggerParameterPreservation() {
     BigQueryJdbcResultSetLogger rsLogger =
-        new BigQueryJdbcResultSetLogger(BigQueryBaseResultSet.class, "conn-123");
+        BigQueryJdbcResultSetLogger.getLogger(BigQueryBaseResultSet.class, "conn-123");
     TestHandler rsHandler = new TestHandler();
-    rsLogger.addHandler(rsHandler);
-    rsLogger.setLevel(Level.ALL);
+    rsLogger.delegate().addHandler(rsHandler);
+    rsLogger.delegate().setLevel(Level.ALL);
 
-    LogRecord record = new LogRecord(Level.INFO, "Processing job {0}");
-    record.setParameters(new Object[] {"job-999"});
-    rsLogger.log(record);
+    try {
 
-    List<LogRecord> records = rsHandler.getRecords();
-    assertEquals(1, records.size());
-    LogRecord loggedRecord = records.get(0);
+      LogRecord record = new LogRecord(Level.INFO, "Processing job {0}");
+      record.setParameters(new Object[] {"job-999"});
+      rsLogger.log(record);
 
-    Object[] params = loggedRecord.getParameters();
-    assertEquals(2, params.length);
-    assertEquals("conn-123", params[0]);
-    assertEquals("job-999", params[1]);
+      List<LogRecord> records = rsHandler.getRecords();
+      assertEquals(1, records.size());
+      LogRecord loggedRecord = records.get(0);
+
+      Object[] params = loggedRecord.getParameters();
+      assertEquals(2, params.length);
+      assertEquals("conn-123", params[0]);
+      assertEquals("job-999", params[1]);
+    } finally {
+      rsLogger.delegate().removeHandler(rsHandler);
+    }
   }
 
   private void assertConnectionIdPropagated(
@@ -360,7 +380,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
       String expectedMessage,
       Runnable action) {
     Level originalRootLevel = BigQueryJdbcRootLogger.getRootLogger().getLevel();
-    Level originalLoggerLevel = logger.getLevel();
+    Level originalLoggerLevel = logger.delegate().getLevel();
     Map<Handler, Level> originalHandlerLevels = new HashMap<>();
     for (Handler h : BigQueryJdbcRootLogger.getRootLogger().getHandlers()) {
       originalHandlerLevels.put(h, h.getLevel());
@@ -368,7 +388,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
     }
 
     BigQueryJdbcRootLogger.getRootLogger().setLevel(Level.ALL);
-    logger.setLevel(Level.ALL);
+    logger.delegate().setLevel(Level.ALL);
 
     try {
       capturedLogs.clear();
@@ -378,7 +398,7 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
       assertTrue(assertLogContains(expectedMessage));
     } finally {
       BigQueryJdbcRootLogger.getRootLogger().setLevel(originalRootLevel);
-      logger.setLevel(originalLoggerLevel);
+      logger.delegate().setLevel(originalLoggerLevel);
       for (Entry<Handler, Level> entry : originalHandlerLevels.entrySet()) {
         entry.getKey().setLevel(entry.getValue());
       }
@@ -616,6 +636,56 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
+  public void testCreatingPreparedAndCallableStatementsDoesNotRegisterChildLoggers()
+      throws Exception {
+    BigQueryConnection connection = mock(BigQueryConnection.class);
+    doReturn("leak-test-connection").when(connection).getConnectionId();
+    doReturn(BigQueryConnection.SessionState.empty()).when(connection).getSessionStateSnapshot();
+
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    // Warm up so that any one-time, class-level logger is registered before we measure.
+    new BigQueryPreparedStatement(connection, "SELECT 1");
+    new BigQueryCallableStatement(connection, "CALL my_proc()");
+    int childrenBefore = childLoggerCount(rootLogger);
+
+    for (int i = 0; i < OBJECT_COUNT; i++) {
+      new BigQueryPreparedStatement(connection, "SELECT 1");
+      new BigQueryCallableStatement(connection, "CALL my_proc()");
+    }
+
+    assertEquals(
+        childrenBefore,
+        childLoggerCount(rootLogger),
+        "Creating "
+            + OBJECT_COUNT
+            + " PreparedStatements and CallableStatements must not register additional child"
+            + " loggers on the driver root logger");
+  }
+
+  @Test
+  public void testCreatingParameterHandlersAndBulkInsertWritersDoesNotRegisterChildLoggers()
+      throws ReflectiveOperationException {
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    // Warm up so that any one-time, class-level logger is registered before we measure.
+    new BigQueryParameterHandler(1);
+    new BigQueryJdbcBulkInsertWriter();
+    int childrenBefore = childLoggerCount(rootLogger);
+
+    for (int i = 0; i < OBJECT_COUNT; i++) {
+      new BigQueryParameterHandler(1);
+      new BigQueryJdbcBulkInsertWriter();
+    }
+
+    assertEquals(
+        childrenBefore,
+        childLoggerCount(rootLogger),
+        "Creating "
+            + OBJECT_COUNT
+            + " ParameterHandlers and BulkInsertWriters must not register additional child loggers"
+            + " on the driver root logger");
+  }
+
+  @Test
   public void testCreatingDatabaseMetaDataDoesNotRegisterChildLoggers()
       throws ReflectiveOperationException {
     BigQueryConnection connection = mock(BigQueryConnection.class);
@@ -636,6 +706,28 @@ public class BigQueryJdbcCustomLoggerTest extends BigQueryJdbcLoggingBaseTest {
             + OBJECT_COUNT
             + " DatabaseMetaData objects must not register additional child loggers on the driver"
             + " root logger");
+  }
+
+  @Test
+  public void testConnectionScopedResultSetLoggersDoNotRegisterChildLoggers()
+      throws ReflectiveOperationException {
+    Logger rootLogger = BigQueryJdbcRootLogger.getRootLogger();
+    // Warm up so the per-class delegates (and their one-time registration) exist before measuring.
+    BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowResultSet.class, "warm-up")
+        .getArrowStructLogger()
+        .getArrowArrayLogger();
+    int childrenBefore = childLoggerCount(rootLogger);
+
+    for (int i = 0; i < OBJECT_COUNT; i++) {
+      BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowResultSet.class, "conn-" + i)
+          .getArrowStructLogger()
+          .getArrowArrayLogger();
+    }
+
+    assertEquals(
+        childrenBefore,
+        childLoggerCount(rootLogger),
+        "Connection-scoped result-set loggers must not register child loggers on the driver root");
   }
 
   /**

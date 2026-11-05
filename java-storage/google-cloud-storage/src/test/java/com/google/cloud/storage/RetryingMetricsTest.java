@@ -187,7 +187,7 @@ public final class RetryingMetricsTest {
     Retrier retrier = options.createRetrier();
     assertThat(retrier).isNotNull();
 
-    StorageMetricsContext ctx = options.createMetricsContext("GetObject");
+    StorageMetricsContext ctx = options.getStorageClientMetrics().createContext("GetObject");
     assertThat(retrier.run(Retrying.neverRetry(), () -> "options-success", Decoder.identity(), ctx))
         .isEqualTo("options-success");
     assertAttr(METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_OK, 1L);
@@ -220,7 +220,7 @@ public final class RetryingMetricsTest {
     Retrier retrier = options.createRetrier();
     assertThat(retrier).isNotNull();
 
-    StorageMetricsContext ctx = options.createMetricsContext("GetObject");
+    StorageMetricsContext ctx = options.getStorageClientMetrics().createContext("GetObject");
     String res =
         retrier.run(Retrying.neverRetry(), () -> "grpc-options-success", Decoder.identity(), ctx);
     assertThat(res).isEqualTo("grpc-options-success");

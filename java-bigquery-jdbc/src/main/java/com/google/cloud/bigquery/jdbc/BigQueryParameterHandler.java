@@ -38,7 +38,8 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 class BigQueryParameterHandler {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryParameterHandler.class.getName());
   private final int parametersArraySize;
   private final boolean enableTimestampPicos;
   final ArrayList<BigQueryJdbcParameter> parametersList;

@@ -264,7 +264,7 @@ public class HttpStorageRpc implements StorageRpc {
         StorageObject storageObject, RpcBatch.Callback<Void> callback, Map<Option, ?> options) {
       try {
         if (currentBatchSize == MAX_BATCH_SIZE) {
-          batches.add(storage.batch());
+          batches.add(storage.batch(batchRequestInitializer));
           currentBatchSize = 0;
         }
         Delete call = deleteCall(storageObject, options);
@@ -283,7 +283,7 @@ public class HttpStorageRpc implements StorageRpc {
         Map<Option, ?> options) {
       try {
         if (currentBatchSize == MAX_BATCH_SIZE) {
-          batches.add(storage.batch());
+          batches.add(storage.batch(batchRequestInitializer));
           currentBatchSize = 0;
         }
         Patch call = patchCall(storageObject, options);
@@ -302,7 +302,7 @@ public class HttpStorageRpc implements StorageRpc {
         Map<Option, ?> options) {
       try {
         if (currentBatchSize == MAX_BATCH_SIZE) {
-          batches.add(storage.batch());
+          batches.add(storage.batch(batchRequestInitializer));
           currentBatchSize = 0;
         }
         Get call = getCall(storageObject, options);

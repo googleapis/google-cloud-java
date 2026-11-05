@@ -28,26 +28,34 @@ import io.grpc.Grpc;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
-import io.opentelemetry.api.common.AttributesBuilder;
-import io.opentelemetry.context.Context;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.checkerframework.checker.nullness.qual.Nullable;
+import org.jspecify.annotations.Nullable;
 
-/** gRPC client interceptor that records call metrics such as rpc.client.call.duration. */
+/**
+ * {@link ClientInterceptor} that instruments outgoing gRPC calls to record OpenTelemetry client
+ * metrics.
+ */
 final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
+
+  private static final String DP_IPV6_PREFIX = "2001:4860:8040";
+  private static final String DP_IPV4_PREFIX = "34.126";
 
   private final StorageClientMetrics metrics;
   private final ApiClock clock;
-  @Nullable private final String defaultEndpoint;
+  @Nullable private final String defaultServerAddress;
+  private final boolean isDirectPathEndpoint;
 
   StorageGrpcMetricsInterceptor(
       StorageClientMetrics metrics, ApiClock clock, @Nullable String defaultEndpoint) {
     this.metrics = metrics;
     this.clock = clock;
-    this.defaultEndpoint = defaultEndpoint;
+    this.defaultServerAddress =
+        OpenTelemetryBootstrappingUtils.extractServerAddress(defaultEndpoint);
+    this.isDirectPathEndpoint =
+        defaultEndpoint != null && defaultEndpoint.trim().startsWith("google-c2p:///");
   }
 
   @Override
@@ -65,20 +73,13 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
       return next.newCall(method, callOptions);
     }
 
-    String initialServerAddress =
-        StorageOptions.extractServerAddress(
-            defaultEndpoint != null ? defaultEndpoint : next.authority());
-    final String serverAddress =
-        initialServerAddress != null
-            ? initialServerAddress
-            : StorageOptions.extractServerAddress(next.authority());
+    String resolvedServerAddress =
+        defaultServerAddress != null
+            ? defaultServerAddress
+            : OpenTelemetryBootstrappingUtils.extractServerAddress(next.authority());
+    final String serverAddress = resolvedServerAddress != null ? resolvedServerAddress : "";
 
     StorageMetricsContext metricsCtx = StorageMetricsContext.from(callOptions);
-    Context otelContext = metricsCtx != null ? metricsCtx.getOtelContext() : Context.current();
-    String operationName =
-        (metricsCtx != null && metricsCtx.getOperationName() != null)
-            ? metricsCtx.getOperationName()
-            : "ReadObject";
 
     return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
       @Override
@@ -96,17 +97,9 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                 if (recordTtfb && ttfbRecorded.compareAndSet(false, true)) {
                   double ttfbSeconds =
                       Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
-                  String networkPath = detectNetworkPath(getAttributes(), defaultEndpoint);
-                  AttributesBuilder ttfbAttrs =
-                      metrics
-                          .clientAttributesBuilder()
-                          .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-                          .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, operationName)
-                          .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
-                          .put(
-                              StorageClientMetrics.KEY_SERVER_ADDRESS,
-                              serverAddress != null ? serverAddress : "");
-                  metrics.getTtfb().record(ttfbSeconds, ttfbAttrs.build(), otelContext);
+                  String networkPath = detectNetworkPath(getAttributes(), isDirectPathEndpoint);
+                  StorageMetricsContext.recordTtfb(
+                      metrics, metricsCtx, ttfbSeconds, "grpc", networkPath, serverAddress);
                 }
                 super.onMessage(message);
               }
@@ -117,27 +110,25 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                   if (recordDuration && callRecorded.compareAndSet(false, true)) {
                     double durationSeconds =
                         Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
-                    String networkPath = detectNetworkPath(getAttributes(), defaultEndpoint);
+                    String networkPath = detectNetworkPath(getAttributes(), isDirectPathEndpoint);
+                    String statusCode =
+                        status != null && status.getCode() != null
+                            ? status.getCode().name()
+                            : StorageErrorTypeMapper.STATUS_UNKNOWN;
+                    String errorType =
+                        status != null && !status.isOk() && status.getCause() != null
+                            ? StorageErrorTypeMapper.mapThrowable(status.asRuntimeException())
+                            : StorageErrorTypeMapper.mapGrpcStatus(status);
 
-                    AttributesBuilder attrBuilder =
-                        metrics
-                            .clientAttributesBuilder()
-                            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-                            .put(StorageClientMetrics.KEY_RPC_METHOD, shortMethod)
-                            .put(
-                                StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE,
-                                status.getCode().name())
-                            .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
-                            .put(
-                                StorageClientMetrics.KEY_SERVER_ADDRESS,
-                                serverAddress != null ? serverAddress : "")
-                            .put(
-                                StorageClientMetrics.KEY_ERROR_TYPE,
-                                StorageErrorTypeMapper.mapGrpcStatus(status));
-
-                    metrics
-                        .getRpcClientCallDuration()
-                        .record(durationSeconds, attrBuilder.build(), otelContext);
+                    StorageMetricsContext.recordRpcCallDuration(
+                        metrics,
+                        metricsCtx,
+                        durationSeconds,
+                        shortMethod,
+                        statusCode,
+                        networkPath,
+                        serverAddress,
+                        errorType);
                   }
                 } finally {
                   super.onClose(status, trailers);
@@ -161,7 +152,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
   }
 
   static String detectNetworkPath(
-      @Nullable Attributes callAttributes, @Nullable String defaultEndpoint) {
+      @Nullable Attributes callAttributes, boolean isDirectPathEndpoint) {
     SocketAddress remoteAddr =
         callAttributes != null ? callAttributes.get(Grpc.TRANSPORT_ATTR_REMOTE_ADDR) : null;
     if (remoteAddr instanceof InetSocketAddress) {
@@ -172,25 +163,15 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
             : StorageClientMetrics.NETWORK_PATH_CLOUDPATH;
       }
     }
-    if (defaultEndpoint != null && defaultEndpoint.trim().startsWith("google-c2p:///")) {
+    if (isDirectPathEndpoint) {
       return StorageClientMetrics.NETWORK_PATH_DIRECTPATH;
     }
     return StorageClientMetrics.NETWORK_PATH_UNKNOWN;
   }
 
   static boolean isDirectPathIp(InetAddress addr) {
-    byte[] b = addr.getAddress();
-    if (b.length == 4) {
-      return (b[0] & 0xFF) == 34 && (b[1] & 0xFF) == 126 && ((b[2] & 0xFF) & 0xC0) == 0;
-    }
-    if (b.length == 16) {
-      return (b[0] & 0xFF) == 0x20
-          && (b[1] & 0xFF) == 0x01
-          && (b[2] & 0xFF) == 0x48
-          && (b[3] & 0xFF) == 0x60
-          && (b[4] & 0xFF) == 0x80
-          && ((b[5] & 0xFF) & 0xC0) == 0x40;
-    }
-    return false;
+    String hostAddr = addr.getHostAddress();
+    return hostAddr != null
+        && (hostAddr.startsWith(DP_IPV4_PREFIX) || hostAddr.startsWith(DP_IPV6_PREFIX));
   }
 }

@@ -25,6 +25,9 @@ jobs:
   update:
     runs-on: ubuntu-latest
     if: github.repository_owner == 'googleapis'
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
@@ -35,17 +38,24 @@ jobs:
         architecture: 'x64'
     - run: python3 -m pip install --require-hashes -r .github/requirements.txt
     - run: python3 generate-readme.py
-    - uses: googleapis/code-suggester@589b3ac11ac2575fd561afa45034907f301a375b # v4
+    - name: Commit and Create PR
       env:
-        ACCESS_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
-      with:
-        command: pr
-        upstream_owner: googleapis
-        upstream_repo: google-cloud-java
-        description: 'ran python3 generate-readme.py'
-        title: 'chore: regenerate client table in README'
-        message: 'chore: regenerate client table in README'
-        branch: update-readme
-        primary: main
-        force: true
-        git_dir: '.'
+        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
+      run: |
+        git add README.md
+        if git diff --cached --quiet; then
+          echo "No changes in README.md"
+          exit 0
+        fi
+        git config user.email "cloud-java-bot@google.com"
+        git config user.name "Cloud Java Bot"
+        git checkout -B update-readme
+        git commit -m "chore: regenerate client table in README"
+        git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git
+        git push -f origin update-readme
+        pr_num=$(gh pr list -s open -H update-readme --json number --jq '.[0].number // empty')
+        if [ -z "${pr_num}" ]; then
+          gh pr create --base main --head update-readme --title "chore: regenerate client table in README" --body "ran python3 generate-readme.py"
+        else
+          echo "Updated existing PR #${pr_num}"
+        fi
