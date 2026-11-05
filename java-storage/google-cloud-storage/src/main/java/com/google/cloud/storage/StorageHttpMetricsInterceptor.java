@@ -61,7 +61,12 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     if (delegate != null) {
       delegate.initialize(request);
     }
-    if (metrics == null || metrics.getHttpClientRequestDuration() == null) {
+    if (metrics == null) {
+      return;
+    }
+    boolean recordDuration = metrics.getHttpClientRequestDuration() != null;
+    boolean recordTtfb = metrics.getTtfb() != null;
+    if (!recordDuration && !recordTtfb) {
       return;
     }
 
@@ -88,26 +93,48 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
           }
           if (recorded.compareAndSet(false, true)) {
             int statusCode = response.getStatusCode();
-            String errorType =
-                statusCode >= 400
-                    ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
-                    : StorageErrorTypeMapper.STATUS_OK;
-            recordDuration(request, startTimeNanos.get(), String.valueOf(statusCode), errorType);
+            long startNanos = startTimeNanos.get();
+            if (recordDuration) {
+              String errorType =
+                  statusCode >= 400
+                      ? StorageErrorTypeMapper.mapHttpResponseCode(statusCode)
+                      : StorageErrorTypeMapper.STATUS_OK;
+              recordDuration(request, startNanos, String.valueOf(statusCode), errorType);
+            }
+            // Evaluate isMediaDownloadRequest(request) at response time rather than in
+            // initialize(HttpRequest), because callers such as MediaHttpDownloader may append
+            // query parameters (e.g. alt=media) to request.getUrl() after buildGetRequest().
+            if (recordTtfb
+                && statusCode >= 200
+                && statusCode < 300
+                && isMediaDownloadRequest(request)) {
+              double ttfbSeconds = Math.max(0.0, (clock.nanoTime() - startNanos) / 1_000_000_000.0);
+              String serverAddress = resolveServerAddress(request.getUrl(), defaultServerAddress);
+              StorageMetricsContext.recordTtfb(
+                  metrics,
+                  null,
+                  ttfbSeconds,
+                  "http",
+                  StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
+                  serverAddress);
+            }
           }
         });
 
-    // HttpIOExceptionHandler does not receive the thrown IOException instance from
-    // google-http-client, so transport-level IOExceptions default to STATUS_CONNECTIVITY here
-    // (specific subtypes like TIMEOUT, DNS_FAILURE, and TLS_FAILURE are mapped in Retrying).
-    request.setIOExceptionHandler(
-        (req, supportsRetry) -> {
-          if (recorded.compareAndSet(false, true)) {
-            recordDuration(
-                req, startTimeNanos.get(), "0", StorageErrorTypeMapper.STATUS_CONNECTIVITY);
-          }
-          return existingIoHandler != null
-              && existingIoHandler.handleIOException(req, supportsRetry);
-        });
+    if (recordDuration) {
+      // HttpIOExceptionHandler does not receive the thrown IOException instance from
+      // google-http-client, so transport-level IOExceptions default to STATUS_CONNECTIVITY here
+      // (specific subtypes like TIMEOUT, DNS_FAILURE, and TLS_FAILURE are mapped in Retrying).
+      request.setIOExceptionHandler(
+          (req, supportsRetry) -> {
+            if (recorded.compareAndSet(false, true)) {
+              recordDuration(
+                  req, startTimeNanos.get(), "0", StorageErrorTypeMapper.STATUS_CONNECTIVITY);
+            }
+            return existingIoHandler != null
+                && existingIoHandler.handleIOException(req, supportsRetry);
+          });
+    }
   }
 
   private void recordDuration(
@@ -180,6 +207,19 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     }
     String[] parts = trimmed.split("/", 2);
     return parts.length == 1 ? "/{bucket}" : "/{bucket}/{object}";
+  }
+
+  static boolean isMediaDownloadRequest(@Nullable HttpRequest request) {
+    if (request == null) {
+      return false;
+    }
+    if (!"GET".equalsIgnoreCase(request.getRequestMethod()) || request.getUrl() == null) {
+      return false;
+    }
+    GenericUrl url = request.getUrl();
+    String path = url.getRawPath();
+    return (path != null && path.startsWith("/download/storage/v1/"))
+        || "media".equals(url.getFirst("alt"));
   }
 
   private static String extractV1UrlTemplate(String rest) {

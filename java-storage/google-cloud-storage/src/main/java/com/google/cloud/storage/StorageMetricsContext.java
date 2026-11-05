@@ -321,6 +321,34 @@ final class StorageMetricsContext {
     metrics.getHttpClientRequestDuration().record(durationSeconds, attributes, Context.current());
   }
 
+  static void recordTtfb(
+      @Nullable StorageClientMetrics metrics,
+      @Nullable StorageMetricsContext metricsContext,
+      double ttfbSeconds,
+      String rpcSystemName,
+      String networkPath,
+      @Nullable String serverAddress) {
+    if (metrics == null || metrics.getTtfb() == null) {
+      return;
+    }
+    Context otelContext =
+        metricsContext != null ? metricsContext.getOtelContext() : Context.current();
+    String operationName =
+        metricsContext != null && metricsContext.getOperationName() != null
+            ? metricsContext.getOperationName()
+            : "ReadObject";
+    Attributes attributes =
+        metrics
+            .clientAttributesBuilder()
+            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, rpcSystemName)
+            .put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, operationName)
+            .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
+            .put(
+                StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress != null ? serverAddress : "")
+            .build();
+    metrics.getTtfb().record(ttfbSeconds, attributes, otelContext);
+  }
+
   private Attributes buildAttemptBaseAttributes(StorageClientMetrics metrics) {
     AttributesBuilder baseBuilder = Attributes.builder();
     baseBuilder.putAll(metrics.getClientAttributes());

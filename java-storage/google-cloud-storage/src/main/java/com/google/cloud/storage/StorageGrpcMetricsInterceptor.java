@@ -61,11 +61,18 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
       MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
-    if (metrics == null || metrics.getRpcClientCallDuration() == null) {
+    if (metrics == null) {
       return next.newCall(method, callOptions);
     }
 
     String shortMethod = extractShortMethodName(method.getFullMethodName());
+    boolean isReadMethod = "ReadObject".equals(shortMethod) || "BidiReadObject".equals(shortMethod);
+    boolean recordDuration = metrics.getRpcClientCallDuration() != null;
+    boolean recordTtfb = isReadMethod && metrics.getTtfb() != null;
+    if (!recordDuration && !recordTtfb) {
+      return next.newCall(method, callOptions);
+    }
+
     String resolvedServerAddress =
         defaultServerAddress != null
             ? defaultServerAddress
@@ -79,14 +86,28 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
       public void start(Listener<RespT> responseListener, Metadata headers) {
         long startTimeNanos = clock.nanoTime();
         AtomicBoolean callRecorded = new AtomicBoolean(false);
+        AtomicBoolean ttfbRecorded = new AtomicBoolean(false);
 
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
               @Override
+              public void onMessage(RespT message) {
+                // The first response message from the server (including metadata-only
+                // responses for 0-byte objects) marks Time To First Byte (TTFB).
+                if (recordTtfb && ttfbRecorded.compareAndSet(false, true)) {
+                  double ttfbSeconds =
+                      Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
+                  String networkPath = detectNetworkPath(getAttributes(), isDirectPathEndpoint);
+                  StorageMetricsContext.recordTtfb(
+                      metrics, metricsCtx, ttfbSeconds, "grpc", networkPath, serverAddress);
+                }
+                super.onMessage(message);
+              }
+
+              @Override
               public void onClose(Status status, Metadata trailers) {
                 try {
-                  if (callRecorded.compareAndSet(false, true)
-                      && metrics.getRpcClientCallDuration() != null) {
+                  if (recordDuration && callRecorded.compareAndSet(false, true)) {
                     double durationSeconds =
                         Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
                     String networkPath = detectNetworkPath(getAttributes(), isDirectPathEndpoint);
