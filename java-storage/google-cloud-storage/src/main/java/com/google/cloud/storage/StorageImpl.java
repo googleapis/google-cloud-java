@@ -64,6 +64,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.io.BaseEncoding;
+import com.google.common.io.CountingInputStream;
 import com.google.common.io.CountingOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -157,21 +158,38 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   @Override
   public Blob create(BlobInfo blobInfo, BlobTargetOption... options) {
     Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
-    return internalDirectUpload(blobInfo, opts, Buffers.allocate(0)).asBlob(this);
+    return internalDirectUpload(
+            blobInfo,
+            opts,
+            Buffers.allocate(0),
+            StorageClientMetrics.createContext(
+                getOptions().getStorageClientMetrics(), "WriteObject"))
+        .asBlob(this);
   }
 
   @Override
   public Blob create(BlobInfo blobInfo, byte[] content, BlobTargetOption... options) {
     content = firstNonNull(content, EMPTY_BYTE_ARRAY);
     Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
-    return internalDirectUpload(blobInfo, opts, ByteBuffer.wrap(content)).asBlob(this);
+    return internalDirectUpload(
+            blobInfo,
+            opts,
+            ByteBuffer.wrap(content),
+            StorageClientMetrics.createContext(
+                getOptions().getStorageClientMetrics(), "WriteObject"))
+        .asBlob(this);
   }
 
   @Override
   public Blob create(
       BlobInfo blobInfo, byte[] content, int offset, int length, BlobTargetOption... options) {
     Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
-    return internalDirectUpload(blobInfo, opts, ByteBuffer.wrap(content, offset, length))
+    return internalDirectUpload(
+            blobInfo,
+            opts,
+            ByteBuffer.wrap(content, offset, length),
+            StorageClientMetrics.createContext(
+                getOptions().getStorageClientMetrics(), "WriteObject"))
         .asBlob(this);
   }
 
@@ -185,12 +203,24 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     StorageObject blobPb = codecs.blobInfo().encode(updated);
     InputStream inputStreamParam =
         firstNonNull(content, new ByteArrayInputStream(EMPTY_BYTE_ARRAY));
+    StorageMetricsContext metricsContext =
+        StorageClientMetrics.createContext(getOptions().getStorageClientMetrics(), "WriteObject");
     // retries are not safe when the input is an InputStream, so we can't retry.
-    return run(
-        "WriteObject",
+    return retrier.run(
         Retrying.neverRetry(),
-        () -> storageRpc.create(blobPb, inputStreamParam, optionsMap),
-        (x) -> Conversions.json().blobInfo().decode(x).asBlob(this));
+        () -> {
+          if (metricsContext == null) {
+            return storageRpc.create(blobPb, inputStreamParam, optionsMap);
+          }
+          CountingInputStream countingStream = new CountingInputStream(inputStreamParam);
+          try {
+            return storageRpc.create(blobPb, countingStream, optionsMap);
+          } finally {
+            metricsContext.setRequestBytes(countingStream.getCount());
+          }
+        },
+        (x) -> Conversions.json().blobInfo().decode(x).asBlob(this),
+        metricsContext);
   }
 
   @Override
@@ -214,6 +244,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
             getOptions().getStorageClientMetrics(), "WriteObject");
     Throwable error = null;
     try {
+      if (multiContext != null) {
+        multiContext.setRequestBytes(size);
+      }
       Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
       final Map<StorageRpc.Option, ?> optionsMap = opts.getRpcOptions();
       BlobInfo.Builder builder = blobInfo.toBuilder().setMd5(null).setCrc32c(null);
@@ -1896,48 +1929,80 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     }
     long size = Files.size(path);
     if (size == 0L) {
-      return internalDirectUpload(info, opts, ByteBuffer.allocate(0));
+      return internalDirectUpload(
+          info,
+          opts,
+          ByteBuffer.allocate(0),
+          StorageClientMetrics.createContext(
+              getOptions().getStorageClientMetrics(), "WriteObject"));
     }
-    final Map<StorageRpc.Option, ?> optionsMap = opts.getRpcOptions();
-    BlobInfo.Builder builder = info.toBuilder().setMd5(null).setCrc32c(null);
-    BlobInfo updated = opts.blobInfoMapper().apply(builder).build();
-    StorageObject encode = codecs.blobInfo().encode(updated);
+    StorageMetricsContext multiContext =
+        StorageClientMetrics.createMultiStepContext(
+            getOptions().getStorageClientMetrics(), "WriteObject");
+    Throwable error = null;
+    try {
+      if (multiContext != null) {
+        multiContext.setRequestBytes(size);
+      }
+      final Map<StorageRpc.Option, ?> optionsMap = opts.getRpcOptions();
+      BlobInfo.Builder builder = info.toBuilder().setMd5(null).setCrc32c(null);
+      BlobInfo updated = opts.blobInfoMapper().apply(builder).build();
+      StorageObject encode = codecs.blobInfo().encode(updated);
 
-    Supplier<String> uploadIdSupplier =
-        ResumableMedia.startUploadForBlobInfo(
-            getOptions(),
-            updated,
-            optionsMap,
-            retrier.withAlg(retryAlgorithmManager.getForResumableUploadSessionCreate(optionsMap)));
-    JsonResumableWrite jsonResumableWrite =
-        JsonResumableWrite.of(
-            encode,
-            optionsMap,
-            uploadIdSupplier.get(),
-            0,
-            opts.getHasher(),
-            opts.getHasher().initialValue());
+      Supplier<String> uploadIdSupplier =
+          ResumableMedia.startUploadForBlobInfo(
+              getOptions(),
+              updated,
+              optionsMap,
+              retrier.withAlg(
+                  retryAlgorithmManager.getForResumableUploadSessionCreate(optionsMap),
+                  multiContext));
+      JsonResumableWrite jsonResumableWrite =
+          JsonResumableWrite.of(
+              encode,
+              optionsMap,
+              uploadIdSupplier.get(),
+              0,
+              opts.getHasher(),
+              opts.getHasher().initialValue());
 
-    JsonResumableSession session =
-        ResumableSession.json(
-            HttpClientContext.from(storageRpc),
-            retrier.withAlg(retryAlgorithmManager.idempotent()),
-            jsonResumableWrite);
-    HttpContentRange contentRange = HttpContentRange.of(ByteRangeSpec.explicit(0L, size), size);
-    ResumableOperationResult<StorageObject> put =
-        session.put(RewindableContent.of(path), contentRange);
-    // all exception translation is taken care of down in the JsonResumableSession
-    StorageObject object = put.getObject();
-    if (object == null) {
-      // if by some odd chance the put didn't get the StorageObject, query for it
-      ResumableOperationResult<StorageObject> query = session.query();
-      object = query.getObject();
+      JsonResumableSession session =
+          ResumableSession.json(
+              HttpClientContext.from(storageRpc),
+              retrier.withAlg(retryAlgorithmManager.idempotent(), multiContext),
+              jsonResumableWrite);
+      HttpContentRange contentRange = HttpContentRange.of(ByteRangeSpec.explicit(0L, size), size);
+      ResumableOperationResult<StorageObject> put =
+          session.put(RewindableContent.of(path), contentRange);
+      // all exception translation is taken care of down in the JsonResumableSession
+      StorageObject object = put.getObject();
+      if (object == null) {
+        // if by some odd chance the put didn't get the StorageObject, query for it
+        ResumableOperationResult<StorageObject> query = session.query();
+        object = query.getObject();
+      }
+      return codecs.blobInfo().decode(object);
+    } catch (Throwable t) {
+      error = t;
+      throw t;
+    } finally {
+      if (multiContext != null) {
+        multiContext.recordOperation(getOptions().getStorageClientMetrics(), error);
+      }
     }
-    return codecs.blobInfo().decode(object);
   }
 
   @Override
   public BlobInfo internalDirectUpload(BlobInfo info, Opts<ObjectTargetOpt> opts, ByteBuffer buf) {
+    return internalDirectUpload(info, opts, buf, null);
+  }
+
+  private BlobInfo internalDirectUpload(
+      BlobInfo info,
+      Opts<ObjectTargetOpt> opts,
+      ByteBuffer buf,
+      @Nullable StorageMetricsContext metricsContext) {
+    int totalBytes = buf.remaining();
     BlobInfo.Builder builder =
         opts.blobInfoMapper().apply(info.toBuilder().clearMd5().clearCrc32c());
     @Nullable Crc32cLengthKnown hash = opts.getHasher().hash(buf.duplicate());
@@ -1951,14 +2016,17 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsCreate(encoded, optionsMap);
     RewindableContent content = RewindableContent.of(buf);
-    return run(
-        "WriteObject",
+    if (metricsContext != null) {
+      metricsContext.setRequestBytes(totalBytes);
+    }
+    return retrier.run(
         algorithm,
         () -> {
           content.rewindTo(0);
           return storageRpc.create(encoded, new RewindableContentInputStream(content), optionsMap);
         },
-        Conversions.json().blobInfo());
+        Conversions.json().blobInfo(),
+        metricsContext);
   }
 
   /**

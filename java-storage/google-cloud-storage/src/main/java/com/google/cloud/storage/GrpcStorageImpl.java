@@ -291,7 +291,10 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
                   .build();
 
           try (UnbufferedWritableByteChannel c = session.open()) {
-            ByteStreams.copy(Channels.newChannel(inputStreamParam), c);
+            long copied = ByteStreams.copy(Channels.newChannel(inputStreamParam), c);
+            if (metricsContext != null) {
+              metricsContext.setRequestBytes(copied);
+            }
           }
           ApiFuture<WriteObjectResponse> responseApiFuture = session.getResult();
           return this.getBlob(responseApiFuture);
@@ -326,6 +329,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
             getOptions().getStorageClientMetrics(), "WriteObject");
     Throwable error = null;
     try {
+      if (multiContext != null) {
+        multiContext.setRequestBytes(Files.size(path));
+      }
       GrpcCallContext grpcCallContext =
           opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
       WriteObjectRequest req = getWriteObjectRequest(info, opts);
@@ -411,7 +417,10 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       ReadableByteChannel src =
           Channels.newChannel(firstNonNull(in, new ByteArrayInputStream(ZERO_BYTES)));
       try (BufferedWritableByteChannel dst = session.open()) {
-        ByteStreams.copy(src, dst);
+        long copied = ByteStreams.copy(src, dst);
+        if (multiContext != null) {
+          multiContext.setRequestBytes(copied);
+        }
       } catch (Exception e) {
         throw StorageException.coalesce(e);
       }
@@ -1002,6 +1011,10 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
         optsWithDefaults.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
     WriteObjectRequest req = getWriteObjectRequest(blobInfo, optsWithDefaults);
     Hasher hasher = opts.getHasher();
+    int totalBytes = buf.remaining();
+    if (metricsContext != null) {
+      metricsContext.setRequestBytes(totalBytes);
+    }
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     RewindableContent content = RewindableContent.of(buf);
     return retrier.run(
