@@ -32,7 +32,7 @@ import javax.annotation.Nullable;
 
 /**
  * This class is obsolete. For the recommended proto-based approach, please see {@link
- * com.google.cloud.bigtable.admin.v2.BaseBigtableTableAdminSettings}.
+ * BaseBigtableTableAdminSettings}.
  *
  * <p>Settings class to configure an instance of {@link BigtableTableAdminClient}.
  *
