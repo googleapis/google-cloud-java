@@ -28,8 +28,6 @@ import io.grpc.Grpc;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
-import io.opentelemetry.api.common.AttributesBuilder;
-import io.opentelemetry.context.Context;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
@@ -75,7 +73,6 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
     final String serverAddress = resolvedServerAddress != null ? resolvedServerAddress : "";
 
     StorageMetricsContext metricsCtx = StorageMetricsContext.from(callOptions);
-    Context otelContext = metricsCtx != null ? metricsCtx.getOtelContext() : Context.current();
 
     return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
       @Override
@@ -102,19 +99,15 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
                             ? StorageErrorTypeMapper.mapThrowable(status.asRuntimeException())
                             : StorageErrorTypeMapper.mapGrpcStatus(status);
 
-                    AttributesBuilder attrBuilder =
-                        metrics
-                            .clientAttributesBuilder()
-                            .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-                            .put(StorageClientMetrics.KEY_RPC_METHOD, shortMethod)
-                            .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, statusCode)
-                            .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
-                            .put(StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress)
-                            .put(StorageClientMetrics.KEY_ERROR_TYPE, errorType);
-
-                    metrics
-                        .getRpcClientCallDuration()
-                        .record(durationSeconds, attrBuilder.build(), otelContext);
+                    StorageMetricsContext.recordRpcCallDuration(
+                        metrics,
+                        metricsCtx,
+                        durationSeconds,
+                        shortMethod,
+                        statusCode,
+                        networkPath,
+                        serverAddress,
+                        errorType);
                   }
                 } finally {
                   super.onClose(status, trailers);
