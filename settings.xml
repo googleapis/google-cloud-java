@@ -18,7 +18,60 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
-  <!-- This file contains settings used by .kokoro/build.sh. These are global
-   configs used by almost every build script.
+  <!--
+    Why we use an active <profile> with <repositories> instead of <mirrors>:
+
+    1. Exclusive Proxy Limitation of <mirrors>:
+       In Maven, a <mirrorOf> tag acts as an exclusive 1:1 replacement/proxy for a repository.
+       If an artifact returns 404 from the mirror (e.g. due to replication lag for brand-new
+       releases published to Maven Central minutes ago), Maven treats Central as exhausted
+       and immediately fails the build without querying Central root.
+
+    2. Prioritized Search Chain with Automatic Fallback:
+       By declaring the Google Cloud Storage mirror inside an active <profile> as a <repository>
+       and <pluginRepository>, Maven prepends the GCS mirror to its search list ahead of the
+       built-in Super POM's 'central' repository:
+         1. Local cache & reactor (~/.m2/repository)
+         2. 'google-maven-central' (GCS CDN mirror, serving ~99% of requests without 429 rate limits)
+         3. 'central' (https://repo.maven.apache.org/maven2 - queried automatically if missing from GCS)
+
+    3. settings.xml Schema Requirement:
+       In Maven's settings.xml specification, <repositories> cannot be declared directly at
+       the root <settings> level and must reside within <profiles><profile>. The <activeProfiles>
+       block below ensures this profile is unconditionally active for every build.
   -->
+  <profiles>
+    <profile>
+      <id>google-maven-mirror</id>
+      <repositories>
+        <repository>
+          <id>google-maven-central</id>
+          <name>Google Maven Central Mirror</name>
+          <url>https://maven-central.storage-download.googleapis.com/maven2/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>google-maven-central</id>
+          <name>Google Maven Central Mirror</name>
+          <url>https://maven-central.storage-download.googleapis.com/maven2/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>google-maven-mirror</activeProfile>
+  </activeProfiles>
 </settings>

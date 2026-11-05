@@ -21,8 +21,7 @@ cd "${scriptDir}/../.." # git repo root
 source "$scriptDir/common.sh"
 
 # Use GCP Maven Mirror
-mkdir -p "${HOME}/.m2"
-cp settings.xml "${HOME}/.m2"
+setup_maven_mirror
 
 # Publish this repo's modules to local maven to make them available for downstream libraries
 mvn install --projects '!gapic-generator-java' \
