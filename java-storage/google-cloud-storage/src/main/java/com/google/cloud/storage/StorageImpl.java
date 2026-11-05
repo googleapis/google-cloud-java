@@ -26,6 +26,7 @@ import static java.util.concurrent.Executors.callable;
 import com.google.api.client.util.Data;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
@@ -219,65 +220,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
   @Override
   public Blob createFrom(BlobInfo blobInfo, Path path, int bufferSize, BlobWriteOption... options)
       throws IOException {
-    if (Files.isDirectory(path)) {
-      throw new StorageException(0, path + " is a directory");
-    }
-    long size = Files.size(path);
-    if (size == 0L) {
-      return create(blobInfo, null, options);
-    }
-    StorageMetricsContext multiContext =
-        StorageClientMetrics.createMultiStepContext(
-            getOptions().getStorageClientMetrics(), "WriteObject");
-    Throwable error = null;
-    try {
-      Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
-      final Map<StorageRpc.Option, ?> optionsMap = opts.getRpcOptions();
-      BlobInfo.Builder builder = blobInfo.toBuilder().setMd5(null).setCrc32c(null);
-      BlobInfo updated = opts.blobInfoMapper().apply(builder).build();
-      StorageObject encode = codecs.blobInfo().encode(updated);
-
-      Supplier<String> uploadIdSupplier =
-          ResumableMedia.startUploadForBlobInfo(
-              getOptions(),
-              updated,
-              optionsMap,
-              retrier.withAlg(
-                  retryAlgorithmManager.getForResumableUploadSessionCreate(optionsMap),
-                  multiContext));
-      JsonResumableWrite jsonResumableWrite =
-          JsonResumableWrite.of(
-              encode,
-              optionsMap,
-              uploadIdSupplier.get(),
-              0,
-              opts.getHasher(),
-              opts.getHasher().initialValue());
-
-      JsonResumableSession session =
-          ResumableSession.json(
-              HttpClientContext.from(storageRpc),
-              retrier.withAlg(retryAlgorithmManager.idempotent(), multiContext),
-              jsonResumableWrite);
-      HttpContentRange contentRange = HttpContentRange.of(ByteRangeSpec.explicit(0L, size), size);
-      ResumableOperationResult<StorageObject> put =
-          session.put(RewindableContent.of(path), contentRange);
-      // all exception translation is taken care of down in the JsonResumableSession
-      StorageObject object = put.getObject();
-      if (object == null) {
-        // if by some odd chance the put didn't get the StorageObject, query for it
-        ResumableOperationResult<@Nullable StorageObject> query = session.query();
-        object = query.getObject();
-      }
-      return codecs.blobInfo().decode(object).asBlob(this);
-    } catch (Throwable t) {
-      error = t;
-      throw t;
-    } finally {
-      if (multiContext != null) {
-        multiContext.recordOperation(getOptions().getStorageClientMetrics(), error);
-      }
-    }
+    Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
+    return internalCreateFrom(path, blobInfo, opts).asBlob(this);
   }
 
   @Override
@@ -777,10 +721,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
             }
             return writer;
           },
-          multiContext != null
-              ? multiContext
-              : StorageClientMetrics.createContext(
-                  getOptions().getStorageClientMetrics(), "RewriteObject"));
+          multiContext);
     } catch (Throwable t) {
       if (multiContext != null) {
         multiContext.recordOperation(getOptions().getStorageClientMetrics(), t);
@@ -910,12 +851,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     StorageMetricsContext metricsContext =
         StorageClientMetrics.createMultiStepContext(
             getOptions().getStorageClientMetrics(), "WriteObject");
-    Supplier<String> uploadIdSupplier =
-        ResumableMedia.startUploadForSignedUrl(
-            getOptions(),
-            signedURL,
-            retrier.withAlg(forResumableUploadSessionCreate, metricsContext));
     try {
+      Supplier<String> uploadIdSupplier =
+          ResumableMedia.startUploadForSignedUrl(
+              getOptions(),
+              signedURL,
+              retrier.withAlg(forResumableUploadSessionCreate, metricsContext));
       JsonResumableWrite jsonResumableWrite =
           JsonResumableWrite.of(signedUrlString, uploadIdSupplier.get(), 0);
       return new BlobWriteChannelV2(
@@ -1809,43 +1750,63 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
 
   private <T, U> U runNullable(
       String operationName, ResultRetryAlgorithm<?> algorithm, Callable<T> c, Decoder<T, U> f) {
-    StorageClientMetrics metrics = getOptions().getStorageClientMetrics();
-    StorageMetricsContext metricsContext =
-        StorageClientMetrics.createMultiStepContext(metrics, operationName);
+    StorageException notFound = new StorageException(404, "Not Found");
     try {
-      U result = retrier.run(algorithm, c, f, metricsContext);
-      if (metricsContext != null) {
-        metricsContext.recordOperation(
-            metrics, result == null ? new StorageException(404, "Not Found") : null);
+      return retrier.run(
+          nonRetryingOnNotFound(algorithm, notFound),
+          () -> {
+            T result = c.call();
+            if (result == null) {
+              throw notFound;
+            }
+            return result;
+          },
+          f,
+          StorageClientMetrics.createContext(
+              getOptions().getStorageClientMetrics(), operationName));
+    } catch (StorageException e) {
+      if (e == notFound) {
+        return null;
       }
-      return result;
-    } catch (Throwable t) {
-      if (metricsContext != null) {
-        metricsContext.recordOperation(metrics, t);
-      }
-      throw t;
+      throw e;
     }
   }
 
   private boolean runBoolean(
       String operationName, ResultRetryAlgorithm<?> algorithm, Callable<Boolean> c) {
-    StorageClientMetrics metrics = getOptions().getStorageClientMetrics();
-    StorageMetricsContext metricsContext =
-        StorageClientMetrics.createMultiStepContext(metrics, operationName);
+    StorageException notFound = new StorageException(404, "Not Found");
     try {
-      Boolean result = retrier.run(algorithm, c, Decoder.identity(), metricsContext);
-      boolean deleted = Boolean.TRUE.equals(result);
-      if (metricsContext != null) {
-        metricsContext.recordOperation(
-            metrics, deleted ? null : new StorageException(404, "Not Found"));
+      return Boolean.TRUE.equals(
+          retrier.run(
+              nonRetryingOnNotFound(algorithm, notFound),
+              () -> {
+                if (!Boolean.TRUE.equals(c.call())) {
+                  throw notFound;
+                }
+                return Boolean.TRUE;
+              },
+              Decoder.identity(),
+              StorageClientMetrics.createContext(
+                  getOptions().getStorageClientMetrics(), operationName)));
+    } catch (StorageException e) {
+      if (e == notFound) {
+        return false;
       }
-      return deleted;
-    } catch (Throwable t) {
-      if (metricsContext != null) {
-        metricsContext.recordOperation(metrics, t);
-      }
-      throw t;
+      throw e;
     }
+  }
+
+  private static ResultRetryAlgorithm<?> nonRetryingOnNotFound(
+      ResultRetryAlgorithm<?> delegate, StorageException notFound) {
+    return new BasicResultRetryAlgorithm<Object>() {
+      @Override
+      public boolean shouldRetry(Throwable previousThrowable, Object previousResponse) {
+        if (previousThrowable == notFound) {
+          return false;
+        }
+        return delegate.shouldRetry(previousThrowable, null);
+      }
+    };
   }
 
   @Override

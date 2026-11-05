@@ -19,10 +19,12 @@ package com.google.cloud.storage;
 import static com.google.cloud.storage.StorageClientMetrics.KEY_ERROR_TYPE;
 import static com.google.cloud.storage.StorageClientMetrics.KEY_GCP_STORAGE_OPERATION;
 import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS;
+import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS;
 import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_NOT_FOUND;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_OK;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_UNAVAILABLE;
+import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_UNKNOWN;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
@@ -30,10 +32,13 @@ import static org.mockito.ArgumentMatchers.anyMap;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.nullable;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
@@ -55,8 +60,11 @@ import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Collection;
 import org.junit.Before;
 import org.junit.Test;
@@ -311,7 +319,11 @@ public class StorageImplMetricsTest {
     SdkMeterProvider meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader).build();
     HttpStorageOptions metricsOptions =
-        options.toBuilder().setEnableOtelMetrics(true).setMeterProvider(meterProvider).build();
+        options.toBuilder()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(meterProvider)
+            .setRetrySettings(RetrySettings.newBuilder().setMaxAttempts(3).build())
+            .build();
     Storage storage = metricsOptions.getService();
 
     when(storageRpcMock.get(any(com.google.api.services.storage.model.Bucket.class), anyMap()))
@@ -332,17 +344,38 @@ public class StorageImplMetricsTest {
     assertThat(storage.getAcl(BLOB_ID, ACL_ENTITY)).isNull();
     assertThat(storage.getNotification(BUCKET_NAME, "notif-1")).isNull();
 
+    verify(storageRpcMock, times(1))
+        .get(any(com.google.api.services.storage.model.Bucket.class), anyMap());
+    verify(storageRpcMock, times(1)).get(any(StorageObject.class), anyMap());
+    verify(storageRpcMock, times(1)).restore(any(StorageObject.class), anyMap());
+    verify(storageRpcMock, times(1)).getAcl(anyString(), anyString(), anyMap());
+    verify(storageRpcMock, times(1)).getDefaultAcl(anyString(), anyString());
+    verify(storageRpcMock, times(1))
+        .getAcl(anyString(), anyString(), nullable(Long.class), anyString());
+    verify(storageRpcMock, times(1)).getNotification(anyString(), anyString());
+
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
-    assertOperationErrorType(metrics, "GetBucket", STATUS_NOT_FOUND, 1L);
-    assertOperationErrorType(metrics, "GetObject", STATUS_NOT_FOUND, 1L);
-    assertOperationErrorType(metrics, "RestoreObject", STATUS_NOT_FOUND, 1L);
-    assertOperationErrorType(metrics, "GetBucketACL", STATUS_NOT_FOUND, 1L);
-    assertOperationErrorType(metrics, "GetDefaultObjectACL", STATUS_NOT_FOUND, 1L);
-    assertOperationErrorType(metrics, "GetObjectACL", STATUS_NOT_FOUND, 1L);
-    assertOperationErrorType(metrics, "GetNotification", STATUS_NOT_FOUND, 1L);
+    for (String op :
+        ImmutableList.of(
+            "GetBucket",
+            "GetObject",
+            "RestoreObject",
+            "GetBucketACL",
+            "GetDefaultObjectACL",
+            "GetObjectACL",
+            "GetNotification")) {
+      assertMetricErrorType(
+          metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, op, STATUS_NOT_FOUND, 1L);
+      assertMetricErrorType(metrics, METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, op, STATUS_NOT_FOUND, 1L);
+      assertMetricErrorType(metrics, METRIC_GCP_STORAGE_CLIENT_ERRORS, op, STATUS_NOT_FOUND, 1L);
+    }
     assertThat(
             getCounterValueWithAttr(
                 metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_OK))
+        .isEqualTo(0L);
+    assertThat(
+            getCounterValueWithAttr(
+                metrics, METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, KEY_ERROR_TYPE, STATUS_OK))
         .isEqualTo(0L);
   }
 
@@ -352,7 +385,11 @@ public class StorageImplMetricsTest {
     SdkMeterProvider meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader).build();
     HttpStorageOptions metricsOptions =
-        options.toBuilder().setEnableOtelMetrics(true).setMeterProvider(meterProvider).build();
+        options.toBuilder()
+            .setEnableOtelMetrics(true)
+            .setMeterProvider(meterProvider)
+            .setRetrySettings(RetrySettings.newBuilder().setMaxAttempts(3).build())
+            .build();
     Storage storage = metricsOptions.getService();
 
     when(storageRpcMock.delete(any(com.google.api.services.storage.model.Bucket.class), anyMap()))
@@ -371,16 +408,36 @@ public class StorageImplMetricsTest {
     assertThat(storage.deleteAcl(BLOB_ID, ACL_ENTITY)).isFalse();
     assertThat(storage.deleteNotification(BUCKET_NAME, "notif-1")).isFalse();
 
+    verify(storageRpcMock, times(1))
+        .delete(any(com.google.api.services.storage.model.Bucket.class), anyMap());
+    verify(storageRpcMock, times(1)).delete(any(StorageObject.class), anyMap());
+    verify(storageRpcMock, times(1)).deleteAcl(anyString(), anyString(), anyMap());
+    verify(storageRpcMock, times(1)).deleteDefaultAcl(anyString(), anyString());
+    verify(storageRpcMock, times(1))
+        .deleteAcl(anyString(), anyString(), nullable(Long.class), anyString());
+    verify(storageRpcMock, times(1)).deleteNotification(anyString(), anyString());
+
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
-    assertOperationErrorType(metrics, "DeleteBucket", STATUS_NOT_FOUND, 1L);
-    assertOperationErrorType(metrics, "DeleteObject", STATUS_NOT_FOUND, 1L);
-    assertOperationErrorType(metrics, "DeleteBucketACL", STATUS_NOT_FOUND, 1L);
-    assertOperationErrorType(metrics, "DeleteDefaultObjectACL", STATUS_NOT_FOUND, 1L);
-    assertOperationErrorType(metrics, "DeleteObjectACL", STATUS_NOT_FOUND, 1L);
-    assertOperationErrorType(metrics, "DeleteNotification", STATUS_NOT_FOUND, 1L);
+    for (String op :
+        ImmutableList.of(
+            "DeleteBucket",
+            "DeleteObject",
+            "DeleteBucketACL",
+            "DeleteDefaultObjectACL",
+            "DeleteObjectACL",
+            "DeleteNotification")) {
+      assertMetricErrorType(
+          metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, op, STATUS_NOT_FOUND, 1L);
+      assertMetricErrorType(metrics, METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, op, STATUS_NOT_FOUND, 1L);
+      assertMetricErrorType(metrics, METRIC_GCP_STORAGE_CLIENT_ERRORS, op, STATUS_NOT_FOUND, 1L);
+    }
     assertThat(
             getCounterValueWithAttr(
                 metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, KEY_ERROR_TYPE, STATUS_OK))
+        .isEqualTo(0L);
+    assertThat(
+            getCounterValueWithAttr(
+                metrics, METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, KEY_ERROR_TYPE, STATUS_OK))
         .isEqualTo(0L);
   }
 
@@ -417,23 +474,75 @@ public class StorageImplMetricsTest {
     assertThrows(StorageException.class, () -> storage.delete(BLOB_ID));
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
-    assertOperationErrorType(metrics, "GetObject", STATUS_OK, 1L);
-    assertOperationErrorType(metrics, "GetObject", STATUS_UNAVAILABLE, 1L);
-    assertOperationErrorType(metrics, "DeleteObject", STATUS_OK, 1L);
-    assertOperationErrorType(metrics, "DeleteObject", STATUS_UNAVAILABLE, 1L);
-    assertOperationErrorType(metrics, "GetBucketACL", STATUS_OK, 1L);
-    assertOperationErrorType(metrics, "GetObjectACL", STATUS_OK, 1L);
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "GetObject", STATUS_OK, 1L);
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "GetObject", STATUS_UNAVAILABLE, 1L);
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "DeleteObject", STATUS_OK, 1L);
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "DeleteObject", STATUS_UNAVAILABLE, 1L);
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "GetBucketACL", STATUS_OK, 1L);
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "GetObjectACL", STATUS_OK, 1L);
   }
 
-  private static void assertOperationErrorType(
+  @Test
+  public void testWriterSignedUrlInvalidUrlRecordsFailedOperation() throws Exception {
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    HttpStorageOptions metricsOptions =
+        options.toBuilder().setEnableOtelMetrics(true).setMeterProvider(meterProvider).build();
+    Storage storage = metricsOptions.getService();
+
+    URL invalidSignedUrl = new URL("http://localhost:8080/not-a-valid-signed-url?invalid=query");
+    assertThrows(StorageException.class, () -> storage.writer(invalidSignedUrl));
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "WriteObject", STATUS_UNKNOWN, 1L);
+  }
+
+  @Test
+  public void testCreateFromPathDelegatesToInternalCreateFromAndRecordsOperation()
+      throws Exception {
+    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
+    SdkMeterProvider meterProvider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    HttpStorageOptions metricsOptions =
+        options.toBuilder().setEnableOtelMetrics(true).setMeterProvider(meterProvider).build();
+    Storage storage = metricsOptions.getService();
+
+    StorageObject encodedResult = Conversions.json().blobInfo().encode(RESULT_INFO);
+    when(storageRpcMock.create(any(StorageObject.class), any(InputStream.class), anyMap()))
+        .thenReturn(encodedResult);
+
+    Path emptyTempFile = Files.createTempFile("storage-metrics-empty-", ".tmp");
+    try {
+      Blob created = storage.createFrom(BLOB_INFO, emptyTempFile);
+      assertThat(created).isNotNull();
+    } finally {
+      Files.deleteIfExists(emptyTempFile);
+    }
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_OPERATIONS, "WriteObject", STATUS_OK, 1L);
+    assertMetricErrorType(
+        metrics, METRIC_GCP_STORAGE_CLIENT_ATTEMPTS, "WriteObject", STATUS_OK, 1L);
+  }
+
+  private static void assertMetricErrorType(
       Collection<MetricData> metrics,
+      String metricName,
       String operationName,
       String expectedErrorType,
       long expectedCount) {
     long actual = 0L;
     for (MetricData md : metrics) {
-      if (md.getName().equals(METRIC_GCP_STORAGE_CLIENT_OPERATIONS)
-          || md.getName().equals(METRIC_GCP_STORAGE_CLIENT_OPERATIONS.replace(".", "/"))) {
+      if (md.getName().equals(metricName) || md.getName().equals(metricName.replace(".", "/"))) {
         actual +=
             md.getLongSumData().getPoints().stream()
                 .filter(
