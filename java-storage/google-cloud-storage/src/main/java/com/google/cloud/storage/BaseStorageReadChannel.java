@@ -45,6 +45,7 @@ abstract class BaseStorageReadChannel<T> implements StorageReadChannel {
   protected final ReentrantLock lock;
   @Nullable private final StorageMetricsContext metricsContext;
   @Nullable private final StorageClientMetrics storageClientMetrics;
+  @Nullable private Throwable lastReadError;
 
   protected BaseStorageReadChannel(Decoder<T, BlobInfo> objectDecoder) {
     this(objectDecoder, null, null);
@@ -102,7 +103,8 @@ abstract class BaseStorageReadChannel<T> implements StorageReadChannel {
     } finally {
       try {
         if (metricsContext != null && storageClientMetrics != null) {
-          metricsContext.recordOperation(storageClientMetrics, error);
+          metricsContext.recordOperation(
+              storageClientMetrics, error != null ? error : lastReadError);
         }
       } finally {
         lock.unlock();
@@ -151,8 +153,12 @@ abstract class BaseStorageReadChannel<T> implements StorageReadChannel {
           return -1;
         }
         int read = tmp.read(dst);
+        lastReadError = null;
         if (read != -1) {
           byteRangeSpec = byteRangeSpec.withShiftBeginOffset(read);
+          if (read > 0 && metricsContext != null) {
+            metricsContext.addResponseBytes(read);
+          }
         }
         return read;
       } catch (StorageException e) {
@@ -163,12 +169,16 @@ abstract class BaseStorageReadChannel<T> implements StorageReadChannel {
           // be removed in the next major version.
           return -1;
         } else {
+          lastReadError = e;
           throw new IOException(e);
         }
       } catch (IOException e) {
+        lastReadError = e;
         throw e;
       } catch (Exception e) {
-        throw new IOException(StorageException.coalesce(e));
+        Throwable coalesced = StorageException.coalesce(e);
+        lastReadError = coalesced;
+        throw new IOException(coalesced);
       }
     } finally {
       lock.unlock();

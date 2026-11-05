@@ -197,6 +197,7 @@ final class StorageMetricsContext {
       }
 
       recordRequestBodySize(metrics);
+      recordResponseBodySize(metrics);
     }
   }
 
@@ -207,6 +208,18 @@ final class StorageMetricsContext {
     long reqBytes = requestBytes.get();
     if ("WriteObject".equals(operationName) && reqBytes > 0) {
       metrics.getRequestBodySize().record(reqBytes, buildBodySizeAttributes(metrics), otelContext);
+    }
+  }
+
+  void recordResponseBodySize(@Nullable StorageClientMetrics metrics) {
+    if (metrics == null || metrics.getResponseBodySize() == null) {
+      return;
+    }
+    long respBytes = responseBytes.get();
+    if ("ReadObject".equals(operationName) && respBytes > 0) {
+      metrics
+          .getResponseBodySize()
+          .record(respBytes, buildBodySizeAttributes(metrics), otelContext);
     }
   }
 
@@ -546,6 +559,10 @@ final class StorageMetricsContext {
 
   long addResponseBytes(long bytes) {
     return responseBytes.addAndGet(bytes);
+  }
+
+  void setResponseBytes(long bytes) {
+    responseBytes.set(bytes);
   }
 
   long getResponseBytes() {
