@@ -57,7 +57,7 @@ function retry_with_backoff {
 
   # allow a failures to continue
   set +e
-  IFS=$' \t\n'
+  local IFS=$' \t\n'
   "${command[@]}"
   exit_code=$?
 
