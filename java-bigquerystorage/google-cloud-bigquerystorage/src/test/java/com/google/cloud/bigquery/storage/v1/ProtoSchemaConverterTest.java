@@ -16,10 +16,17 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.cloud.bigquery.storage.test.Test.*;
+import com.google.protobuf.DescriptorProtos.DescriptorProto;
+import com.google.protobuf.DescriptorProtos.EnumDescriptorProto;
+import com.google.protobuf.DescriptorProtos.EnumValueDescriptorProto;
+import com.google.protobuf.DescriptorProtos.FieldDescriptorProto;
+import com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Label;
+import com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Type;
 import com.google.protobuf.DescriptorProtos.FileDescriptorProto;
 import com.google.protobuf.Descriptors;
 import org.junit.jupiter.api.Test;
@@ -168,6 +175,98 @@ public class ProtoSchemaConverterTest {
         "Recursive type is not"
             + " supported:com.google.cloud.bigquery.storage.test.RecursiveTypeTopMessage",
         e.getMessage());
+  }
+
+  @Test
+  void convertSharedEnums() throws Descriptors.DescriptorValidationException {
+    // Exercise sibling order, a deeper first reference, and root references in either order.
+    for (int layout = 0; layout < 5; layout++) {
+      EnumDescriptorProto sharedEnum =
+          EnumDescriptorProto.newBuilder()
+              .setName("Shared")
+              .addValue(EnumValueDescriptorProto.newBuilder().setName("ZERO").setNumber(0))
+              .addValue(EnumValueDescriptorProto.newBuilder().setName("ONE").setNumber(1))
+              .build();
+      FieldDescriptorProto enumField =
+          FieldDescriptorProto.newBuilder()
+              .setName("value")
+              .setNumber(1)
+              .setLabel(Label.LABEL_OPTIONAL)
+              .setType(Type.TYPE_ENUM)
+              .setTypeName(".Shared")
+              .build();
+      DescriptorProto first =
+          DescriptorProto.newBuilder()
+              .setName("First")
+              .addField(enumField)
+              .addField(enumField.toBuilder().setName("duplicate").setNumber(2))
+              .build();
+      DescriptorProto second = first.toBuilder().setName("Second").build();
+      FieldDescriptorProto firstField =
+          enumField.toBuilder()
+              .setName("first")
+              .setType(Type.TYPE_MESSAGE)
+              .setTypeName(layout == 2 ? ".Deep" : ".First")
+              .build();
+      FieldDescriptorProto secondField =
+          firstField.toBuilder().setName("second").setNumber(2).setTypeName(".Second").build();
+      DescriptorProto.Builder root = DescriptorProto.newBuilder().setName("Root");
+      FieldDescriptorProto rootEnumField = enumField.toBuilder().setNumber(3).build();
+      if (layout == 3) {
+        root.addField(rootEnumField);
+      }
+      root.addField(layout == 1 ? secondField : firstField);
+      root.addField(layout == 1 ? firstField : secondField);
+      if (layout == 4) {
+        root.addField(rootEnumField);
+      }
+      // Equal value names in distinct enums must remain isolated by their wrappers.
+      root.addField(enumField.toBuilder().setName("other").setNumber(4).setTypeName(".Other"));
+      FileDescriptorProto source =
+          FileDescriptorProto.newBuilder()
+              .setName("source.proto")
+              .addEnumType(sharedEnum)
+              .addEnumType(sharedEnum.toBuilder().setName("Other"))
+              .addMessageType(root)
+              .addMessageType(first)
+              .addMessageType(second)
+              .addMessageType(
+                  DescriptorProto.newBuilder()
+                      .setName("Deep")
+                      .addField(firstField.toBuilder().setTypeName(".First")))
+              .build();
+      Descriptors.Descriptor input =
+          Descriptors.FileDescriptor.buildFrom(source, new Descriptors.FileDescriptor[0])
+              .findMessageTypeByName("Root");
+      ProtoSchema converted = ProtoSchemaConverter.convert(input);
+      Descriptors.Descriptor result =
+          Descriptors.FileDescriptor.buildFrom(
+                  FileDescriptorProto.newBuilder()
+                      .setName("converted.proto")
+                      .addMessageType(converted.getProtoDescriptor())
+                      .build(),
+                  new Descriptors.FileDescriptor[0])
+              .findMessageTypeByName("Root");
+      Descriptors.EnumDescriptor resolved =
+          result.findNestedTypeByName("Shared_E").findEnumTypeByName("Shared");
+      assertEquals(sharedEnum.getValueList(), resolved.toProto().getValueList());
+      assertEquals(
+          2,
+          result.getNestedTypes().stream().filter(type -> !type.getEnumTypes().isEmpty()).count());
+      for (String childName : new String[] {"First", "Second"}) {
+        Descriptors.Descriptor child = result.findNestedTypeByName(childName);
+        assertEquals(0, child.getNestedTypes().size());
+        for (Descriptors.FieldDescriptor field : child.getFields()) {
+          assertSame(resolved, field.getEnumType());
+        }
+      }
+      if (layout >= 3) {
+        assertSame(resolved, result.findFieldByName("value").getEnumType());
+      }
+      Descriptors.EnumDescriptor other = result.findFieldByName("other").getEnumType();
+      assertSame(result.findNestedTypeByName("Other_E"), other.getContainingType());
+      assertEquals(sharedEnum.getValueList(), other.toProto().getValueList());
+    }
   }
 
   @Test
