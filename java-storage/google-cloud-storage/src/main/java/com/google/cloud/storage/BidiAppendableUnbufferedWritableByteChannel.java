@@ -97,13 +97,29 @@ final class BidiAppendableUnbufferedWritableByteChannel implements UnbufferedWri
       if (!writeCalledAtLeastOnce) {
         stream.flush();
       }
+      // DIAGNOSTIC ONLY
+      long loops = 0;
+      AppendableDiag.LOG.info(
+          "DIAG channel CLOSE begin writeOffset={} finalize={} expectedCrc32c={}",
+          writeOffset,
+          nextWriteShouldFinalize,
+          expectedCrc32c != null);
       if (nextWriteShouldFinalize) {
         //noinspection StatementWithEmptyBody
-        while (!stream.finishWrite(writeOffset, expectedCrc32c)) {}
+        while (!stream.finishWrite(writeOffset, expectedCrc32c)) {
+          loops++;
+        }
       } else {
         //noinspection StatementWithEmptyBody
-        while (!stream.closeStream(writeOffset)) {}
+        while (!stream.closeStream(writeOffset)) {
+          loops++;
+        }
       }
+      AppendableDiag.LOG.info(
+          "DIAG channel CLOSE enqueued {} after {} retry loop(s); waiting for ack of {}",
+          nextWriteShouldFinalize ? "finish_write" : "final flush",
+          loops,
+          writeOffset);
 
       awaitResultFuture();
     } finally {
@@ -122,8 +138,16 @@ final class BidiAppendableUnbufferedWritableByteChannel implements UnbufferedWri
   }
 
   void flush() throws InterruptedException {
+    // DIAGNOSTIC ONLY
+    long start = System.nanoTime();
+    AppendableDiag.LOG.info("DIAG channel FLUSH begin writeOffset={}", writeOffset);
     stream.flush();
     stream.awaitAckOf(writeOffset);
+    AppendableDiag.LOG.info(
+        "DIAG channel FLUSH end writeOffset={} waitedMs={} resultDone={}",
+        writeOffset,
+        TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start),
+        stream.getResultFuture().isDone());
   }
 
   private long internalWrite(ByteBuffer[] srcs, int srcsOffset, int srcsLength) throws IOException {
@@ -191,9 +215,19 @@ final class BidiAppendableUnbufferedWritableByteChannel implements UnbufferedWri
   }
 
   private void awaitResultFuture() throws IOException {
+    // DIAGNOSTIC ONLY
+    long start = System.nanoTime();
     try {
       stream.awaitAckOf(writeOffset);
+      AppendableDiag.LOG.info(
+          "DIAG channel ACK-WAIT end writeOffset={} waitedMs={} resultDone={}",
+          writeOffset,
+          TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start),
+          stream.getResultFuture().isDone());
       stream.getResultFuture().get(10_717, TimeUnit.MILLISECONDS);
+      AppendableDiag.LOG.info(
+          "DIAG channel RESULT OK totalMs={}",
+          TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start));
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
       InterruptedIOException ioe = new InterruptedIOException();
@@ -201,6 +235,10 @@ final class BidiAppendableUnbufferedWritableByteChannel implements UnbufferedWri
       writeThrewError = true;
       throw ioe;
     } catch (ExecutionException e) {
+      AppendableDiag.LOG.info(
+          "DIAG channel RESULT FAILED totalMs={} cause={}",
+          TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start),
+          AppendableDiag.err(e.getCause()));
       BaseServiceException coalesce = StorageException.coalesce(e.getCause());
       String message = coalesce.getMessage();
       String ioExceptionMessage = message;
@@ -215,6 +253,9 @@ final class BidiAppendableUnbufferedWritableByteChannel implements UnbufferedWri
       writeThrewError = true;
       throw ioException;
     } catch (TimeoutException e) {
+      AppendableDiag.LOG.info(
+          "DIAG channel RESULT TIMEOUT (ack arrived, result not set in 10.7s) totalMs={}",
+          TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - start));
       writeThrewError = true;
       throw new IOException(e);
     }
