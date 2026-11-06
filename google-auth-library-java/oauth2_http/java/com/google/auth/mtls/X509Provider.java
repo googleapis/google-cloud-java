@@ -41,6 +41,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InterruptedIOException;
 import java.io.SequenceInputStream;
 import java.security.KeyStore;
 import java.util.logging.Level;
@@ -245,9 +246,12 @@ public class X509Provider implements MtlsProvider {
             timeService.sleep(CERT_KEY_MATCH_RETRY_INTERVAL_MS);
           } catch (InterruptedException interrupted) {
             Thread.currentThread().interrupt();
-            throw new IOException(
-                "X509Provider: Interrupted while waiting for certificate and private key match.",
-                interrupted);
+            InterruptedIOException ioException =
+                new InterruptedIOException(
+                    "X509Provider: Interrupted while waiting for certificate and private key"
+                        + " match.");
+            ioException.initCause(interrupted);
+            throw ioException;
           }
         }
       }

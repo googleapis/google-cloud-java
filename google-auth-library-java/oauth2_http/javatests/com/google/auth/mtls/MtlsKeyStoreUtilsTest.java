@@ -70,6 +70,7 @@ class MtlsKeyStoreUtilsTest {
   static final String CHAIN_KEY_PATH = "testresources/mtls/test_chain_key.pem";
   private static final String SINGLE_CERT_PATH = "testresources/mtls/test_cert.pem";
   private static final String SINGLE_KEY_PATH = "testresources/mtls/test_key.pem";
+  private static final String DSA_CERT_PATH = "testresources/agent/agent_spiffe_dsa_cert.pem";
 
   @Test
   void createMtlsKeyStore_certificatesFirst_keepsFullChainInOrder() throws Exception {
@@ -401,6 +402,26 @@ class MtlsKeyStoreUtilsTest {
             () ->
                 MtlsKeyStoreUtils.createMtlsKeyStore(stream(read(CHAIN_CERT_PATH), otherEcKeyPem)));
     assertEquals("Certificate and private key do not match", e.getMessage());
+  }
+
+  @Test
+  void createMtlsKeyStore_nonRsaOrEcKeyPair_passesThroughLikeUpstream() throws Exception {
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("DSA");
+    kpg.initialize(1024);
+    KeyPair dsaKeyPair = kpg.generateKeyPair();
+    String dsaKeyPem = toPkcs8Pem(dsaKeyPair.getPrivate());
+
+    KeyStore keyStore =
+        MtlsKeyStoreUtils.createMtlsKeyStore(stream(read(DSA_CERT_PATH), dsaKeyPem));
+    KeyStore expected = SecurityUtils.createMtlsKeyStore(stream(read(DSA_CERT_PATH), dsaKeyPem));
+
+    String alias = onlyAlias(keyStore);
+    assertArrayEquals(
+        expected.getCertificate(alias).getEncoded(),
+        keyStore.getCertificateChain(alias)[0].getEncoded());
+    assertArrayEquals(
+        expected.getKey(alias, new char[] {}).getEncoded(),
+        keyStore.getKey(alias, new char[] {}).getEncoded());
   }
 
   static String toPkcs8Pem(PrivateKey privateKey) {

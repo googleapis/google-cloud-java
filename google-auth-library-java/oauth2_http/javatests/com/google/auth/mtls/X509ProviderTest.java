@@ -44,6 +44,7 @@ import com.google.auth.oauth2.TestPropertyProvider;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InterruptedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.GeneralSecurityException;
@@ -587,7 +588,8 @@ class X509ProviderTest {
     try {
       X509Provider testProvider = new X509Provider(config.toString());
 
-      IOException exception = assertThrows(IOException.class, testProvider::getKeyStore);
+      InterruptedIOException exception =
+          assertThrows(InterruptedIOException.class, testProvider::getKeyStore);
 
       assertTrue(Thread.currentThread().isInterrupted());
       assertEquals(
@@ -597,6 +599,39 @@ class X509ProviderTest {
     } finally {
       Thread.interrupted(); // Clear interrupt flag
       X509Provider.setTimeServiceForTesting(null);
+    }
+  }
+
+  @Test
+  void x509Provider_gkeCredentialBundleWithMismatchedKeyPair_throwsWithoutRetrying(
+      @TempDir Path tempDir) throws Exception {
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    kpg.initialize(1024);
+    KeyPair mismatchedRsaKeyPair = kpg.generateKeyPair();
+    Path mismatchedKeyFile = tempDir.resolve("mismatched_key.pem");
+    Files.write(
+        mismatchedKeyFile,
+        MtlsKeyStoreUtilsTest.toPkcs8Pem(mismatchedRsaKeyPair.getPrivate()).getBytes(UTF_8));
+
+    Path bundle =
+        writeGkeBundle(
+            tempDir, TEST_CERT_PATH, mismatchedKeyFile.toString(), /* keyFirst= */ false);
+    MtlsUtils.setGkeCredentialBundlePathForTesting(bundle.toString());
+    List<Long> sleeps = new ArrayList<>();
+    X509Provider.setTimeServiceForTesting(sleeps::add);
+    try {
+      X509Provider testProvider =
+          new X509Provider(new TestEnvironmentProvider(), noGcloudConfig(tempDir), null, true);
+
+      IOException exception = assertThrows(IOException.class, testProvider::getKeyStore);
+
+      assertNotNull(exception.getCause());
+      assertTrue(exception.getCause() instanceof GeneralSecurityException);
+      assertEquals("Certificate and private key do not match", exception.getCause().getMessage());
+      assertTrue(sleeps.isEmpty());
+    } finally {
+      X509Provider.setTimeServiceForTesting(null);
+      MtlsUtils.setGkeCredentialBundlePathForTesting(null);
     }
   }
 

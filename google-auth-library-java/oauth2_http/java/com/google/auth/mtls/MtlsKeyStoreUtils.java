@@ -40,9 +40,6 @@ import java.security.GeneralSecurityException;
 import java.security.KeyFactory;
 import java.security.KeyStore;
 import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.Signature;
-import java.security.SignatureException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
@@ -79,9 +76,6 @@ import org.jspecify.annotations.NullMarked;
 final class MtlsKeyStoreUtils {
 
   private static final Logger LOGGER = Logger.getLogger(MtlsKeyStoreUtils.class.getName());
-
-  private static final byte[] VERIFICATION_DATA =
-      "verification-data".getBytes(StandardCharsets.UTF_8);
 
   private MtlsKeyStoreUtils() {}
 
@@ -153,53 +147,16 @@ final class MtlsKeyStoreUtils {
       }
     }
     X509Certificate leaf = chain.get(0);
+    String keyAlgorithm = leaf.getPublicKey().getAlgorithm();
     PrivateKey key =
-        KeyFactory.getInstance(leaf.getPublicKey().getAlgorithm())
+        KeyFactory.getInstance("ECDSA".equals(keyAlgorithm) ? "EC" : keyAlgorithm)
             .generatePrivate(new PKCS8EncodedKeySpec(privateKey));
-    verifyKeyPair(leaf, key);
+    MtlsUtils.verifyKeyPair(leaf, key);
 
     KeyStore keyStore = KeyStore.getInstance("JKS");
     keyStore.load(null);
     keyStore.setKeyEntry("alias", key, new char[] {}, chain.toArray(new X509Certificate[0]));
     return keyStore;
-  }
-
-  /**
-   * Verifies that {@code privateKey} corresponds to the public key in {@code cert} by performing a
-   * test signature and verification.
-   */
-  private static void verifyKeyPair(X509Certificate cert, PrivateKey privateKey)
-      throws GeneralSecurityException {
-    PublicKey publicKey = cert.getPublicKey();
-    String keyAlgorithm = publicKey.getAlgorithm();
-    String sigAlg;
-    if ("RSA".equals(keyAlgorithm)) {
-      sigAlg = "SHA256withRSA";
-    } else if ("EC".equals(keyAlgorithm)) {
-      sigAlg = "SHA256withECDSA";
-    } else {
-      return;
-    }
-
-    Signature signer = Signature.getInstance(sigAlg);
-    signer.initSign(privateKey);
-    signer.update(VERIFICATION_DATA);
-    byte[] signature = signer.sign();
-
-    Signature verifier = Signature.getInstance(sigAlg);
-    verifier.initVerify(publicKey);
-    verifier.update(VERIFICATION_DATA);
-
-    boolean matches;
-    try {
-      matches = verifier.verify(signature);
-    } catch (SignatureException e) {
-      throw new GeneralSecurityException("Certificate and private key do not match", e);
-    }
-
-    if (!matches) {
-      throw new GeneralSecurityException("Certificate and private key do not match");
-    }
   }
 
   private static boolean containsCertificate(List<byte[]> certificates, byte[] candidate) {

@@ -42,12 +42,21 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.AccessDeniedException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.security.GeneralSecurityException;
+import java.security.KeyFactory;
 import java.security.MessageDigest;
+import java.security.PrivateKey;
+import java.security.PublicKey;
+import java.security.Signature;
+import java.security.SignatureException;
+import java.security.cert.X509Certificate;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.Locale;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -63,6 +72,9 @@ public class MtlsUtils {
   static final String CERTIFICATE_CONFIGURATION_ENV_VARIABLE = "GOOGLE_API_CERTIFICATE_CONFIG";
   static final String WELL_KNOWN_CERTIFICATE_CONFIG_FILE = "certificate_config.json";
   static final String CLOUDSDK_CONFIG_DIRECTORY = "gcloud";
+
+  private static final byte[] VERIFICATION_DATA =
+      "verification-data".getBytes(StandardCharsets.UTF_8);
 
   /**
    * Well-known directory where workload SPIFFE credentials and certificate configurations are
@@ -149,6 +161,62 @@ public class MtlsUtils {
   @VisibleForTesting
   static void setTimeServiceForTesting(@Nullable TimeService service) {
     timeService = service != null ? service : Thread::sleep;
+  }
+
+  /**
+   * Verifies that {@code privateKey} corresponds to the public key in {@code cert} by performing a
+   * test signature and verification ({@code SHA256withRSA} for RSA keys, {@code SHA256withECDSA}
+   * for EC/ECDSA keys).
+   *
+   * <p>Certificates with key algorithms other than RSA, EC, or ECDSA return without error so
+   * callers that accept any JCA key algorithm (such as {@link MtlsKeyStoreUtils}) pass through
+   * unchanged.
+   *
+   * @param cert the X.509 certificate whose public key is checked
+   * @param privateKey the private key to verify against {@code cert}
+   * @throws GeneralSecurityException if {@code privateKey} does not match {@code cert}'s public
+   *     key, or if signature initialization, signing, or verification fails
+   */
+  @InternalApi
+  public static void verifyKeyPair(X509Certificate cert, PrivateKey privateKey)
+      throws GeneralSecurityException {
+    PublicKey publicKey = cert.getPublicKey();
+    String keyAlgorithm = publicKey.getAlgorithm();
+    String sigAlg;
+    if ("RSA".equals(keyAlgorithm)) {
+      sigAlg = "SHA256withRSA";
+    } else if ("EC".equals(keyAlgorithm) || "ECDSA".equals(keyAlgorithm)) {
+      sigAlg = "SHA256withECDSA";
+    } else {
+      return;
+    }
+
+    if ("ECDSA".equals(keyAlgorithm) && publicKey.getEncoded() != null) {
+      // SunEC rejects keys whose algorithm is "ECDSA" rather than "EC"; normalize the key.
+      publicKey =
+          KeyFactory.getInstance("EC")
+              .generatePublic(new X509EncodedKeySpec(publicKey.getEncoded()));
+    }
+
+    Signature signer = Signature.getInstance(sigAlg);
+    signer.initSign(privateKey);
+    signer.update(VERIFICATION_DATA);
+    byte[] signature = signer.sign();
+
+    Signature verifier = Signature.getInstance(sigAlg);
+    verifier.initVerify(publicKey);
+    verifier.update(VERIFICATION_DATA);
+
+    boolean matches;
+    try {
+      matches = verifier.verify(signature);
+    } catch (SignatureException e) {
+      throw new GeneralSecurityException("Certificate and private key do not match", e);
+    }
+
+    if (!matches) {
+      throw new GeneralSecurityException("Certificate and private key do not match");
+    }
   }
 
   /**
