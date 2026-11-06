@@ -1522,7 +1522,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     String location = this.connection != null ? this.connection.getLocation() : null;
     if (location == null || location.trim().isEmpty()) {
       location = DEFAULT_GRAPH_REGION;
-      LOG.info(String.format("Deafulting to Graph Location %s", DEFAULT_GRAPH_REGION));
+      LOG.info(String.format("Defaulting to Graph Location %s", DEFAULT_GRAPH_REGION));
     }
     String normalized = location.trim().toLowerCase(Locale.US);
     return normalized.startsWith("region-") ? normalized : "region-" + normalized;
