@@ -31,23 +31,23 @@ import java.util.concurrent.ExecutionException;
 
 public final class RapidCacheCreate {
 
-  public static void rapidCacheCreate(String bucketName, String zoneName)
+  public static void rapidCacheCreate(String bucketName, String cacheId)
       throws InterruptedException, ExecutionException, IOException {
     // The ID of your GCS bucket
     // String bucketName = "your-unique-bucket-name";
 
-    // The zone in which to create the Rapid Cache. The zone must be in the same region as the
-    // bucket.
-    // String zoneName = "us-central1-a";
+    // The ID of the Rapid Cache. It must be the zone in which to create the cache, and the zone
+    // must be in the same region as the bucket.
+    // String cacheId = "us-central1-a";
 
     try (StorageControlClient storageControl = StorageControlClient.create()) {
 
       // Rapid Cache Ultra requires a regional bucket with hierarchical namespace enabled.
       RapidCache rapidCache =
           RapidCache.newBuilder()
-              // The Rapid Cache ID must be the same as the zone.
-              .setName(RapidCacheName.format("_", bucketName, zoneName))
-              .setZone(zoneName)
+              .setName(RapidCacheName.format("_", bucketName, cacheId))
+              // The Rapid Cache ID is the zone in which the cache is created.
+              .setZone(cacheId)
               .setCacheType("rapid-cache-ultra")
               // How long a cache entry can live (between 1 hour and 7 days). 86400s = 24 hours.
               .setTtl(Duration.newBuilder().setSeconds(86400).build())
