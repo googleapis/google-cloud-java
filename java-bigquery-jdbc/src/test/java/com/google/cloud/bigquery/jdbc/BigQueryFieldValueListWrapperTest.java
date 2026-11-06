@@ -182,7 +182,8 @@ public class BigQueryFieldValueListWrapperTest {
     long bytesBefore = threadBean.getThreadAllocatedBytes(threadId);
     Object[][] rowBuffers = new Object[rowCount][];
     for (int i = 0; i < rowCount; i++) {
-      rowBuffers[i] = BigQueryFieldValueListWrapper.unpackRow(sampleFvl, isComplexColumn);
+      rowBuffers[i] =
+          BigQueryFieldValueListWrapper.unpackRow(simpleFieldList, sampleFvl, isComplexColumn);
     }
     long allocatedBytes = threadBean.getThreadAllocatedBytes(threadId) - bytesBefore;
 

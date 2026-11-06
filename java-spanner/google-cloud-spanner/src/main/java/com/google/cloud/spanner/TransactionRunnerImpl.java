@@ -904,9 +904,13 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
         // Context was done (closed) before a transaction id was returned.
         this.transactionIdFuture.setException(
             SpannerExceptionFactory.newSpannerException(
-                ErrorCode.FAILED_PRECONDITION,
-                "ResultSet was closed before a transaction id was returned"));
+                ErrorCode.FAILED_PRECONDITION, RESULT_SET_CLOSED_BEFORE_ID_RETURNED_MESSAGE));
       }
+    }
+
+    @Override
+    void onClosedBeforeStreamStarted(boolean withBeginTransaction) {
+      onDone(withBeginTransaction);
     }
 
     @Override
@@ -1429,6 +1433,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
                 "Transaction Attempt Failed in Commit",
                 ImmutableMap.of(
                     "Attempt", attempt.longValue(), "Status", e.getErrorCode().toString()));
+            if (shouldRollbackOnCommitFailure(e)) {
+              rollbackBestEffort(txn, e);
+            }
             throw e;
           }
         };
@@ -1453,4 +1460,27 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
 
   @Override
   public void close() {}
+
+  static boolean shouldRollbackOnCommitFailure(Throwable t) {
+    SpannerException e = SpannerExceptionFactory.asSpannerException(t);
+    switch (e.getErrorCode()) {
+      case DEADLINE_EXCEEDED:
+      case CANCELLED:
+      case UNAVAILABLE:
+        return true;
+      case RESOURCE_EXHAUSTED:
+        return e.getRetryDelayInMillis() > -1L;
+      default:
+        return false;
+    }
+  }
+
+  @SuppressWarnings("FutureReturnValueIgnored")
+  static void rollbackBestEffort(TransactionContextImpl txn, Throwable commitError) {
+    try {
+      txn.rollbackAsync();
+    } catch (RuntimeException rollbackError) {
+      commitError.addSuppressed(rollbackError);
+    }
+  }
 }

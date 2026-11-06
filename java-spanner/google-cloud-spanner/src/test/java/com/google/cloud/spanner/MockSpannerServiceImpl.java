@@ -72,6 +72,7 @@ import com.google.spanner.v1.StructType;
 import com.google.spanner.v1.StructType.Field;
 import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionOptions;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import com.google.spanner.v1.TransactionOptions.ModeCase;
 import com.google.spanner.v1.TransactionOptions.ReadWrite;
 import com.google.spanner.v1.TransactionSelector;
@@ -94,6 +95,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Deque;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -319,8 +321,45 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
 
     /** Creates a result for the query that detects the dialect that is used for the database. */
     public static StatementResult detectDialectResult(Dialect resultDialect) {
-      return StatementResult.query(
-          MultiplexedSessionDatabaseClient.DETERMINE_DIALECT_STATEMENT,
+      return detectDialectResult(resultDialect, IsolationLevel.ISOLATION_LEVEL_UNSPECIFIED);
+    }
+
+    /**
+     * Creates a result for the query that detects the dialect and default transaction isolation
+     * level of the database. The isolation level is returned in the same format as Spanner. {@link
+     * IsolationLevel#ISOLATION_LEVEL_UNSPECIFIED} means that the database option has not been set.
+     */
+    public static StatementResult detectDialectResult(
+        Dialect resultDialect, IsolationLevel defaultIsolationLevel) {
+      Map<String, String> options = new LinkedHashMap<>();
+      options.put(DatabaseMetadata.DATABASE_DIALECT_OPTION, resultDialect.toString());
+      switch (defaultIsolationLevel) {
+        case ISOLATION_LEVEL_UNSPECIFIED:
+          break;
+        case SERIALIZABLE:
+          options.put(
+              DatabaseMetadata.DEFAULT_TRANSACTION_ISOLATION_OPTION,
+              DatabaseMetadata.SERIALIZABLE_VALUE);
+          break;
+        case REPEATABLE_READ:
+          options.put(
+              DatabaseMetadata.DEFAULT_TRANSACTION_ISOLATION_OPTION,
+              DatabaseMetadata.REPEATABLE_READ_VALUE);
+          break;
+        default:
+          throw new IllegalArgumentException(
+              "Unsupported isolation level: " + defaultIsolationLevel);
+      }
+      return detectDatabaseMetadataResult(options);
+    }
+
+    /**
+     * Creates a result for the query that reads the database options that are cached by the client.
+     * The result contains one row for each option in the given map. Options that are not in the map
+     * are treated as not set.
+     */
+    private static StatementResult detectDatabaseMetadataResult(Map<String, String> options) {
+      ResultSet.Builder builder =
           ResultSet.newBuilder()
               .setMetadata(
                   ResultSetMetadata.newBuilder()
@@ -328,19 +367,28 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
                           StructType.newBuilder()
                               .addFields(
                                   Field.newBuilder()
-                                      .setName("DIALECT")
+                                      .setName("option_name")
+                                      .setType(Type.newBuilder().setCode(TypeCode.STRING).build())
+                                      .build())
+                              .addFields(
+                                  Field.newBuilder()
+                                      .setName("option_value")
                                       .setType(Type.newBuilder().setCode(TypeCode.STRING).build())
                                       .build())
                               .build())
-                      .build())
-              .addRows(
-                  ListValue.newBuilder()
-                      .addValues(
-                          com.google.protobuf.Value.newBuilder()
-                              .setStringValue(resultDialect.toString())
-                              .build())
-                      .build())
-              .build());
+                      .build());
+      for (Entry<String, String> option : options.entrySet()) {
+        builder.addRows(
+            ListValue.newBuilder()
+                .addValues(
+                    com.google.protobuf.Value.newBuilder().setStringValue(option.getKey()).build())
+                .addValues(
+                    com.google.protobuf.Value.newBuilder()
+                        .setStringValue(option.getValue())
+                        .build())
+                .build());
+      }
+      return StatementResult.query(DatabaseMetadata.STATEMENT, builder.build());
     }
 
     private static class KeepLastElementDeque<E> extends LinkedList<E> {
@@ -610,10 +658,9 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   private double abortProbability = 0.0010D;
 
   /**
-   * Flip this switch to true if you want the {@link
-   * MultiplexedSessionDatabaseClient#DETERMINE_DIALECT_STATEMENT} statement to be included in the
-   * recorded requests on the mock server. It is ignored by default to prevent tests that do not
-   * expect this request to suddenly start failing.
+   * Flip this switch to true if you want the {@link DatabaseMetadata#STATEMENT} statement to be
+   * included in the recorded requests on the mock server. It is ignored by default to prevent tests
+   * that do not expect this request to suddenly start failing.
    */
   private boolean includeDetermineDialectStatementInRequests = false;
 
@@ -777,9 +824,8 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   }
 
   /**
-   * Set this to true if you want the {@link
-   * MultiplexedSessionDatabaseClient#DETERMINE_DIALECT_STATEMENT} statement to be included in the
-   * recorded requests on the mock server. It is ignored by default to prevent tests that do not
+   * Set this to true if you want the {@link DatabaseMetadata#STATEMENT} statement to be included in
+   * the recorded requests on the mock server. It is ignored by default to prevent tests that do not
    * expect this request to suddenly start failing.
    */
   public void setIncludeDetermineDialectStatementInRequests(boolean include) {
@@ -1283,9 +1329,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
   public void executeStreamingSql(
       ExecuteSqlRequest request, StreamObserver<PartialResultSet> responseObserver) {
     if (includeDetermineDialectStatementInRequests
-        || !request
-            .getSql()
-            .equals(MultiplexedSessionDatabaseClient.DETERMINE_DIALECT_STATEMENT.getSql())) {
+        || !request.getSql().equals(DatabaseMetadata.STATEMENT.getSql())) {
       maybeFreezeAndRecordRequest(request);
     }
     Preconditions.checkNotNull(request.getSession());

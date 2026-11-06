@@ -20,6 +20,8 @@ package com.google.cloud.auditmanager.v1.samples;
 import com.google.cloud.auditmanager.v1.AuditManagerClient;
 import com.google.cloud.auditmanager.v1.AuditReport;
 import com.google.cloud.auditmanager.v1.GenerateAuditReportRequest;
+import com.google.cloud.auditmanager.v1.ParameterOverrides;
+import java.util.HashMap;
 
 public class SyncGenerateAuditReport {
 
@@ -39,6 +41,7 @@ public class SyncGenerateAuditReport {
               .setScope("scope109264468")
               .setComplianceStandard("complianceStandard-1534269448")
               .setComplianceFramework("complianceFramework-1808314333")
+              .putAllParameterOverrides(new HashMap<String, ParameterOverrides>())
               .setValidateOnly(true)
               .build();
       AuditReport response = auditManagerClient.generateAuditReportAsync(request).get();

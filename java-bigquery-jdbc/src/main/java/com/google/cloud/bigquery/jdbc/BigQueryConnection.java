@@ -1390,15 +1390,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       bigQueryOptions.setRetrySettings(retry_settings_builder.build());
     }
 
-    // ISO8601_STRING is the only output format carrying the full 12-digit fraction
-    // ("YYYY-MM-DDTHH:MM:SS.FFFFFFFFFFFFZ"). The default FLOAT64 and the INT64 alternative both
-    // cap out at microseconds.
-    if (this.enableTimestampPicos) {
-      bigQueryOptions.setDataFormatOptions(
-          DataFormatOptions.newBuilder()
-              .timestampFormatOptions(DataFormatOptions.TimestampFormatOptions.ISO8601_STRING)
-              .build());
-    }
+    // Default FLOAT64 timestamps lose microseconds far from the epoch. ISO8601_STRING is the only
+    // format carrying picoseconds; BigQuery rejects it combined with useInt64Timestamp.
+    bigQueryOptions.setDataFormatOptions(
+        this.enableTimestampPicos
+            ? DataFormatOptions.newBuilder()
+                .timestampFormatOptions(DataFormatOptions.TimestampFormatOptions.ISO8601_STRING)
+                .build()
+            : DataFormatOptions.newBuilder().useInt64Timestamp(true).build());
 
     if (this.catalog != null) {
       bigQueryOptions.setProjectId(this.catalog);
