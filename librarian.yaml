@@ -5368,7 +5368,6 @@ libraries:
     version: 1.30.0
     apis:
       - path: google/shopping/merchant/accounts/v1
-      - path: google/shopping/merchant/accounts/v1beta
     java:
       api_id_override: merchantapi.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
@@ -5382,7 +5381,6 @@ libraries:
     version: 1.30.0
     apis:
       - path: google/shopping/merchant/conversions/v1
-      - path: google/shopping/merchant/conversions/v1beta
     java:
       api_id_override: shopping-merchant-conversions.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
@@ -5397,7 +5395,6 @@ libraries:
     version: 1.30.0
     apis:
       - path: google/shopping/merchant/datasources/v1
-      - path: google/shopping/merchant/datasources/v1beta
     java:
       api_id_override: merchantapi.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
@@ -5411,7 +5408,6 @@ libraries:
     version: 1.30.0
     apis:
       - path: google/shopping/merchant/inventories/v1
-      - path: google/shopping/merchant/inventories/v1beta
     java:
       api_description_override: Programmatically manage your Merchant Center accounts.
       artifact_id: google-shopping-merchant-inventories
@@ -5422,7 +5418,6 @@ libraries:
     version: 1.30.0
     apis:
       - path: google/shopping/merchant/issueresolution/v1
-      - path: google/shopping/merchant/issueresolution/v1beta
     java:
       api_id_override: merchantapi.googleapis.com
       api_description_override: Programatically manage your Merchant Issues
@@ -5436,7 +5431,6 @@ libraries:
     version: 1.30.0
     apis:
       - path: google/shopping/merchant/lfp/v1
-      - path: google/shopping/merchant/lfp/v1beta
     java:
       api_id_override: shopping-merchant-lfp.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
@@ -5459,7 +5453,6 @@ libraries:
     version: 1.30.0
     apis:
       - path: google/shopping/merchant/notifications/v1
-      - path: google/shopping/merchant/notifications/v1beta
     java:
       api_id_override: shopping-merchant-notifications.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
@@ -5474,7 +5467,6 @@ libraries:
     version: 1.30.0
     apis:
       - path: google/shopping/merchant/ordertracking/v1
-      - path: google/shopping/merchant/ordertracking/v1beta
     java:
       api_id_override: merchantapi.googleapis.com
       api_description_override: Programmatically manage your Merchant Center Accounts
@@ -5501,7 +5493,6 @@ libraries:
     version: 1.30.0
     apis:
       - path: google/shopping/merchant/products/v1
-      - path: google/shopping/merchant/products/v1beta
     java:
       api_id_override: merchantapi.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
@@ -5515,7 +5506,6 @@ libraries:
     version: 1.30.0
     apis:
       - path: google/shopping/merchant/promotions/v1
-      - path: google/shopping/merchant/promotions/v1beta
     java:
       api_id_override: merchantapi.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
@@ -5529,7 +5519,6 @@ libraries:
     version: 1.30.0
     apis:
       - path: google/shopping/merchant/quota/v1
-      - path: google/shopping/merchant/quota/v1beta
     java:
       api_id_override: shopping-merchant-quota.googleapis.com
       api_description_override: Programmatically manage your Merchant Center accounts.
@@ -5544,7 +5533,6 @@ libraries:
     version: 1.30.0
     apis:
       - path: google/shopping/merchant/reports/v1
-      - path: google/shopping/merchant/reports/v1beta
       - path: google/shopping/merchant/reports/v1alpha
     java:
       api_description_override: Programmatically manage your Merchant Center accounts.
@@ -5556,7 +5544,6 @@ libraries:
     version: 0.48.0
     apis:
       - path: google/shopping/merchant/reviews/v1
-      - path: google/shopping/merchant/reviews/v1beta
     java:
       api_description_override: Programmatically manage your Merchant Center Accounts.
       artifact_id: google-shopping-merchant-reviews

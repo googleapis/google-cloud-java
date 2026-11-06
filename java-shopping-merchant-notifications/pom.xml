@@ -42,16 +42,6 @@
         <artifactId>grpc-google-shopping-merchant-notifications-v1</artifactId>
         <version>1.30.0</version><!-- {x-version-update:grpc-google-shopping-merchant-notifications-v1:current} -->
       </dependency>
-      <dependency>
-        <groupId>com.google.shopping.api.grpc</groupId>
-        <artifactId>grpc-google-shopping-merchant-notifications-v1beta</artifactId>
-        <version>1.30.0</version><!-- {x-version-update:grpc-google-shopping-merchant-notifications-v1beta:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.shopping.api.grpc</groupId>
-        <artifactId>proto-google-shopping-merchant-notifications-v1beta</artifactId>
-        <version>1.30.0</version><!-- {x-version-update:proto-google-shopping-merchant-notifications-v1beta:current} -->
-      </dependency>
       <!-- {x-generated-dependencies-end} -->
 
     </dependencies>
@@ -60,9 +50,7 @@
   <modules>
     <!-- {x-generated-modules-start} -->
     <module>google-shopping-merchant-notifications</module>
-    <module>grpc-google-shopping-merchant-notifications-v1beta</module>
     <module>grpc-google-shopping-merchant-notifications-v1</module>
-    <module>proto-google-shopping-merchant-notifications-v1beta</module>
     <module>proto-google-shopping-merchant-notifications-v1</module>
     <!-- {x-generated-modules-end} -->
     <module>google-shopping-merchant-notifications-bom</module>
