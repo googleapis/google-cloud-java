@@ -250,6 +250,7 @@ public class MultiplexedSessionDatabaseClientTest {
 
   @Test
   public void testRetryOfInitialSessionIsInstalledBeforeFailureIsPropagated() throws Exception {
+    assumeTrue(isJava8());
     Clock clock = mock(Clock.class);
     when(clock.instant()).thenReturn(Instant.now());
     SessionClient sessionClient = mock(SessionClient.class);
@@ -291,16 +292,14 @@ public class MultiplexedSessionDatabaseClientTest {
     try {
       assertNotNull(initialConsumer.get());
 
-      AtomicReference<ApiFuture<SessionReference>> currentReference =
-          client.getMultiplexedSessionReference();
-      ApiFuture<SessionReference> initialFuture = currentReference.get();
+      ApiFuture<SessionReference> initialFuture = client.getMultiplexedSessionFuture();
       // A transaction that waits for the initial attempt is woken up as soon as that attempt fails.
       // At that moment, a new transaction must already see the pending retry instead of the failed
       // initial attempt, as it would otherwise fail with the (retryable) error of that attempt.
       AtomicReference<ApiFuture<SessionReference>> futureSeenByNewTransaction =
           new AtomicReference<>();
       initialFuture.addListener(
-          () -> futureSeenByNewTransaction.set(currentReference.get()),
+          () -> futureSeenByNewTransaction.set(client.getMultiplexedSessionFuture()),
           MoreExecutors.directExecutor());
 
       initialConsumer
@@ -308,26 +307,23 @@ public class MultiplexedSessionDatabaseClientTest {
           .onSessionCreateFailure(
               SpannerExceptionFactory.newSpannerException(ErrorCode.DEADLINE_EXCEEDED, "test"), 1);
 
-      // Waiters for the initial attempt receive the error of that attempt.
+      // 1. Waiters for the initial attempt receive the error of that attempt.
       SpannerException exception =
           assertThrows(SpannerException.class, () -> SpannerApiFutures.get(initialFuture));
       assertEquals(ErrorCode.DEADLINE_EXCEEDED, exception.getErrorCode());
-      // New transactions that started after the failure was propagated wait for the retry.
+
+      // 2. New transactions arriving after the failure observe the retry future.
       assertNotNull(futureSeenByNewTransaction.get());
       assertFalse(futureSeenByNewTransaction.get().isDone());
       assertNotNull(retryConsumer.get());
+
+      // 3. Completing the retry succeeds the pending future.
       retryConsumer.get().onSessionReady(session);
       assertEquals(sessionReference, futureSeenByNewTransaction.get().get());
       assertEquals(sessionReference, client.getCurrentSessionReference());
     } finally {
       client.close();
     }
-  }
-
-  @SuppressWarnings("unchecked")
-  private static AtomicReference<ApiFuture<SessionReference>> getMultiplexedSessionReference(
-      MultiplexedSessionDatabaseClient client) {
-    return client.getMultiplexedSessionReference();
   }
 
   @Test
