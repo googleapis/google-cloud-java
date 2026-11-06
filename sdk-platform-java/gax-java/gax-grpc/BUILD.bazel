@@ -37,6 +37,7 @@ _COMPILE_DEPS = [
 
 _TEST_COMPILE_DEPS = [
     "@org_junit_jupiter_junit_jupiter_api//jar",
+    "@org_junit_jupiter_junit_jupiter_params//jar",
     "@org_mockito_mockito_core//jar",
     "@org_mockito_mockito_junit_jupiter//jar",
     "@com_google_truth_truth//jar",

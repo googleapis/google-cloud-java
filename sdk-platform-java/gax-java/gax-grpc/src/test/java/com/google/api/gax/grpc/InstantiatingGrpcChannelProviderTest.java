@@ -36,13 +36,16 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.withSettings;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.HardBoundTokenTypes;
+import com.google.api.gax.grpc.testing.FakeMethodDescriptor;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannel;
@@ -53,6 +56,7 @@ import com.google.api.gax.rpc.mtls.CertificateBasedAccess;
 import com.google.api.gax.rpc.testing.FakeMtlsProvider;
 import com.google.auth.ApiKeyCredentials;
 import com.google.auth.Credentials;
+import com.google.auth.RequestMetadataCallback;
 import com.google.auth.http.AuthHttpConstants;
 import com.google.auth.mtls.CertificateSourceUnavailableException;
 import com.google.auth.mtls.MtlsProvider;
@@ -63,12 +67,19 @@ import com.google.auth.oauth2.SecureSessionAgentConfig;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.truth.Truth;
+import com.google.common.util.concurrent.MoreExecutors;
+import io.grpc.CallCredentials;
+import io.grpc.ChannelCredentials;
+import io.grpc.CompositeChannelCredentials;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import io.grpc.SecurityLevel;
 import io.grpc.TlsChannelCredentials;
 import io.grpc.alts.ComputeEngineChannelBuilder;
+import io.grpc.auth.MoreCallCredentials;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.security.GeneralSecurityException;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -90,6 +101,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
@@ -1053,8 +1066,9 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   }
 
   @Test
-  public void getTransportChannel_storageTarget_withInterconnectAndNullCredentials()
-      throws IOException, InterruptedException {
+  public void
+      getTransportChannel_storageTarget_withInterconnectAndNullCredentials_fallsBackToCloudPath()
+          throws IOException, InterruptedException {
     System.setProperty("os.name", "Not Linux");
     EnvironmentProvider envProvider =
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
@@ -1068,6 +1082,9 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
           return channelBuilder;
         };
 
+    // Interconnect accepts any service credentials but, like standard DirectPath, requires some:
+    // the channel credentials carry the call credentials, so without them the channel uses
+    // CloudPath.
     InstantiatingGrpcChannelProvider.Builder builder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setCertificateBasedAccess(certificateBasedAccess)
@@ -1087,12 +1104,146 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
                 .withHeaders(Collections.<String, String>emptyMap())
                 .withEndpoint("storage.googleapis.com:443");
 
+    Truth.assertThat(configuredProvider.isCredentialDirectPathCompatible()).isFalse();
+    Truth.assertThat(configuredProvider.canUseDirectPath()).isFalse();
+
     TransportChannel transportChannel = configuredProvider.getTransportChannel();
     transportChannel.shutdownNow();
     transportChannel.awaitTermination(5, TimeUnit.SECONDS);
 
-    Truth.assertThat(capturedTarget.get())
-        .contains("google-c2p:///storage-direct.googleapis.com?force-xds");
+    Truth.assertThat(capturedTarget.get()).isEqualTo("storage.googleapis.com:443");
+  }
+
+  private static final String INTERCONNECT_CREDENTIALS_REQUIRED_MESSAGE =
+      "DirectPath over Interconnect is misconfigured. Credentials are required; without them the"
+          + " channel falls back to CloudPath.";
+  private static final String INTERCONNECT_DIRECT_PATH_NOT_ENABLED_MESSAGE =
+      "DirectPath over Interconnect is misconfigured. The attemptDirectPathXdsOverInterconnect"
+          + " option or the "
+          + InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT
+          + " environment variable was set, but DirectPath is not enabled for this client. Please"
+          + " set the attemptDirectPath option as well, and make sure "
+          + InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH
+          + " is not set to true.";
+
+  /**
+   * Builds the provider's transport channel off GCE and returns the misconfiguration log records,
+   * at every level, that building it produced.
+   */
+  private FakeLogHandler logDirectPathMisconfigOffGce(
+      InstantiatingGrpcChannelProvider.Builder builder) throws Exception {
+    System.setProperty("os.name", "Not Linux");
+    FakeLogHandler logHandler = new FakeLogHandler();
+    InstantiatingGrpcChannelProvider.LOG.setLevel(Level.FINE);
+    InstantiatingGrpcChannelProvider.LOG.addHandler(logHandler);
+    try {
+      createAndCloseTransportChannel(
+          builder.setCertificateBasedAccess(certificateBasedAccess).build());
+    } finally {
+      InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
+    }
+    return logHandler;
+  }
+
+  private static EnvironmentProvider envProviderWithDirectPathEnabled() {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+    return envProvider;
+  }
+
+  @Test
+  void logDirectPathMisconfig_interconnectWithoutCredentials_warnsCredentialsRequired()
+      throws Exception {
+    FakeLogHandler logHandler =
+        logDirectPathMisconfigOffGce(
+            createChannelProviderBuilderForDirectPathLogTests()
+                .setAttemptDirectPath(true)
+                .setAttemptDirectPathXdsOverInterconnect(true)
+                .setEnvProvider(envProviderWithDirectPathEnabled()));
+
+    // Interconnect runs off GCE, so its misconfigurations are warnings there, unlike standard
+    // DirectPath's.
+    assertThat(logHandler.levelsOf(INTERCONNECT_CREDENTIALS_REQUIRED_MESSAGE))
+        .containsExactly(Level.WARNING);
+    // The standard DirectPath message would wrongly ask for ComputeEngineCredentials.
+    assertThat(logHandler.getAllMessages())
+        .doesNotContain(
+            "DirectPath is misconfigured. Please make sure the credential is an instance of "
+                + ComputeEngineCredentials.class.getName()
+                + " .");
+  }
+
+  @Test
+  void logDirectPathMisconfig_interconnectWithoutAttemptDirectPath_warns() throws Exception {
+    FakeLogHandler logHandler =
+        logDirectPathMisconfigOffGce(
+            createChannelProviderBuilderForDirectPathLogTests()
+                .setAttemptDirectPathXdsOverInterconnect(true)
+                .setEnvProvider(envProviderWithDirectPathEnabled()));
+
+    assertThat(logHandler.levelsOf(INTERCONNECT_DIRECT_PATH_NOT_ENABLED_MESSAGE))
+        .containsExactly(Level.WARNING);
+  }
+
+  @Test
+  void logDirectPathMisconfig_interconnectEnvVarWithoutAttemptDirectPath_warns() throws Exception {
+    EnvironmentProvider envProvider = envProviderWithDirectPathEnabled();
+    when(envProvider.getenv(
+            InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT))
+        .thenReturn("true");
+
+    FakeLogHandler logHandler =
+        logDirectPathMisconfigOffGce(
+            createChannelProviderBuilderForDirectPathLogTests().setEnvProvider(envProvider));
+
+    assertThat(logHandler.levelsOf(INTERCONNECT_DIRECT_PATH_NOT_ENABLED_MESSAGE))
+        .containsExactly(Level.WARNING);
+  }
+
+  @Test
+  void logDirectPathMisconfig_interconnectWithDirectPathKillSwitch_warns() throws Exception {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("true");
+
+    // Storage, Bigtable and Spanner also set the xDS option alongside attemptDirectPath.
+    FakeLogHandler logHandler =
+        logDirectPathMisconfigOffGce(
+            createChannelProviderBuilderForDirectPathLogTests()
+                .setAttemptDirectPath(true)
+                .setAttemptDirectPathXds()
+                .setAttemptDirectPathXdsOverInterconnect(true)
+                .setEnvProvider(envProvider));
+
+    // The kill switch disables DirectPath as a whole; the message names it as a possible cause.
+    assertThat(logHandler.levelsOf(INTERCONNECT_DIRECT_PATH_NOT_ENABLED_MESSAGE))
+        .containsExactly(Level.WARNING);
+    // The xDS message would wrongly report that attemptDirectPath was not set.
+    assertThat(logHandler.getAllMessages())
+        .doesNotContain(
+            "DirectPath is misconfigured. The DirectPath XDS option was set, but the"
+                + " attemptDirectPath option was not. Please set both the attemptDirectPath and"
+                + " attemptDirectPathXds options.");
+  }
+
+  @Test
+  void logDirectPathMisconfig_offGceWithoutInterconnect_logsAtFine() throws Exception {
+    // Standard DirectPath keeps its off-GCE level; only Interconnect misconfigurations warn.
+    FakeLogHandler logHandler =
+        logDirectPathMisconfigOffGce(
+            createChannelProviderBuilderForDirectPathLogTests()
+                .setAttemptDirectPathXds()
+                .setEnvProvider(envProviderWithDirectPathEnabled()));
+
+    assertThat(
+            logHandler.levelsOf(
+                "DirectPath is misconfigured. The DirectPath XDS option was set, but the"
+                    + " attemptDirectPath option was not. Please set both the attemptDirectPath and"
+                    + " attemptDirectPathXds options."))
+        .containsExactly(Level.FINE);
   }
 
   @Test
@@ -1516,6 +1667,21 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   }
 
   private static String extractTargetFromChannelBuilder(ManagedChannelBuilder<?> channelBuilder) {
+    Object target = extractDelegateField(channelBuilder, "target");
+    return target != null ? (String) target : channelBuilder.toString();
+  }
+
+  private static ChannelCredentials extractChannelCredentialsFromChannelBuilder(
+      ManagedChannelBuilder<?> channelBuilder) {
+    return (ChannelCredentials) extractDelegateField(channelBuilder, "channelCredentials");
+  }
+
+  /**
+   * Reads {@code fieldName} from the ManagedChannelImplBuilder that the Netty builder delegates to,
+   * or returns null when either the delegate or the field cannot be found.
+   */
+  private static @Nullable Object extractDelegateField(
+      ManagedChannelBuilder<?> channelBuilder, String fieldName) {
     try {
       Class<?> nettyBuilderClass = channelBuilder.getClass();
       java.lang.reflect.Field delegateField = null;
@@ -1534,23 +1700,23 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         delegateField.setAccessible(true);
         Object delegate = delegateField.get(channelBuilder);
         Class<?> delegateClass = delegate.getClass();
-        java.lang.reflect.Field targetField = null;
-        while (delegateClass != null && targetField == null) {
+        java.lang.reflect.Field field = null;
+        while (delegateClass != null && field == null) {
           try {
-            targetField = delegateClass.getDeclaredField("target");
+            field = delegateClass.getDeclaredField(fieldName);
           } catch (NoSuchFieldException e) {
             delegateClass = delegateClass.getSuperclass();
           }
         }
-        if (targetField != null) {
-          targetField.setAccessible(true);
-          return (String) targetField.get(delegate);
+        if (field != null) {
+          field.setAccessible(true);
+          return field.get(delegate);
         }
       }
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
-    return channelBuilder.toString();
+    return null;
   }
 
   @Test
@@ -1624,6 +1790,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
         .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
 
     InstantiatingGrpcChannelProvider provider =
         InstantiatingGrpcChannelProvider.newBuilder()
@@ -1633,6 +1800,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
             .setExecutor(mock(Executor.class))
             .setEndpoint(DEFAULT_ENDPOINT)
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setCredentials(credentials)
             .setEnvProvider(envProvider)
             .build();
 
@@ -1655,6 +1823,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
         .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
 
     InstantiatingGrpcChannelProvider provider =
         InstantiatingGrpcChannelProvider.newBuilder()
@@ -1664,6 +1833,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
             .setExecutor(mock(Executor.class))
             .setEndpoint("storage-direct.some-other-universe.com:443")
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setCredentials(credentials)
             .setEnvProvider(envProvider)
             .build();
 
@@ -1688,6 +1858,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
         .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
 
     InstantiatingGrpcChannelProvider provider =
         InstantiatingGrpcChannelProvider.newBuilder()
@@ -1697,6 +1868,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
             .setExecutor(mock(Executor.class))
             .setEndpoint("storage.googleapis.com:443")
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setCredentials(credentials)
             .setEnvProvider(envProvider)
             .build();
 
@@ -1720,6 +1892,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
         .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
 
     InstantiatingGrpcChannelProvider provider =
         InstantiatingGrpcChannelProvider.newBuilder()
@@ -1729,6 +1902,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
             .setExecutor(mock(Executor.class))
             .setEndpoint("storage-preprod.sandbox.googleapis.com:443")
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setCredentials(credentials)
             .setEnvProvider(envProvider)
             .build();
 
@@ -1753,6 +1927,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
         .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
 
     // Test with bigtable.googleapis.com:443 (rewritten to bigtable-direct)
     InstantiatingGrpcChannelProvider provider =
@@ -1763,6 +1938,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
             .setExecutor(mock(Executor.class))
             .setEndpoint("bigtable.googleapis.com:443")
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setCredentials(credentials)
             .setEnvProvider(envProvider)
             .build();
 
@@ -1786,6 +1962,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
             .setExecutor(mock(Executor.class))
             .setEndpoint("bigtable-direct.googleapis.com:443")
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setCredentials(credentials)
             .setEnvProvider(envProvider)
             .build();
 
@@ -1845,6 +2022,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
         .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(
             InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT))
         .thenReturn("true");
@@ -1853,6 +2031,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     InstantiatingGrpcChannelProvider.Builder unsetBuilder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setCredentials(credentials)
             .setAttemptDirectPath(true)
             .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
             .setExecutor(mock(Executor.class))
@@ -1880,6 +2059,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     InstantiatingGrpcChannelProvider.Builder falseBuilder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setCredentials(credentials)
             .setAttemptDirectPath(true)
             .setAttemptDirectPathXdsOverInterconnect(false)
             .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
@@ -1911,6 +2091,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
         .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(
             InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT))
         .thenReturn("false");
@@ -1918,6 +2099,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     InstantiatingGrpcChannelProvider.Builder builder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setCredentials(credentials)
             .setAttemptDirectPath(true)
             .setAttemptDirectPathXdsOverInterconnect(true)
             .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
@@ -1952,9 +2134,11 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     // Case 1: setAttemptDirectPath(false)
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
         .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
     InstantiatingGrpcChannelProvider.Builder disabledOptionBuilder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setCredentials(credentials)
             .setAttemptDirectPath(false)
             .setEndpoint("storage.googleapis.com:443")
             .setEnvProvider(envProvider);
@@ -1968,6 +2152,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     InstantiatingGrpcChannelProvider.Builder disabledEnvBuilder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setCredentials(credentials)
             .setAttemptDirectPath(true)
             .setEndpoint("storage.googleapis.com:443")
             .setEnvProvider(envProvider);
@@ -1983,6 +2168,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
         .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
 
     for (String envVal : new String[] {"", "   ", "invalid", "1", "0"}) {
       when(envProvider.getenv(
@@ -1992,6 +2178,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
       InstantiatingGrpcChannelProvider.Builder enabledBuilder =
           InstantiatingGrpcChannelProvider.newBuilder()
               .setCertificateBasedAccess(certificateBasedAccess)
+              .setCredentials(credentials)
               .setAttemptDirectPath(true)
               .setAttemptDirectPathXdsOverInterconnect(true)
               .setEndpoint("storage.googleapis.com:443")
@@ -2003,6 +2190,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
       InstantiatingGrpcChannelProvider.Builder disabledBuilder =
           InstantiatingGrpcChannelProvider.newBuilder()
               .setCertificateBasedAccess(certificateBasedAccess)
+              .setCredentials(credentials)
               .setAttemptDirectPath(true)
               .setAttemptDirectPathXdsOverInterconnect(false)
               .setEndpoint("storage.googleapis.com:443")
@@ -2011,6 +2199,269 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
           new InstantiatingGrpcChannelProvider(disabledBuilder, "not-gce-product-name");
       Truth.assertThat(disabledProvider.canUseDirectPath()).isFalse();
     }
+  }
+
+  /**
+   * Returns a builder for a DirectPath-enabled provider as configured off GCE, with the
+   * Interconnect environment variable set to {@code interconnectEnvValue} (unset when null).
+   */
+  private InstantiatingGrpcChannelProvider.Builder directPathProviderBuilder(
+      @Nullable Credentials credentials, @Nullable String interconnectEnvValue) {
+    System.setProperty("os.name", "Not Linux");
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+    when(envProvider.getenv(
+            InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT))
+        .thenReturn(interconnectEnvValue);
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setCertificateBasedAccess(certificateBasedAccess)
+        .setAttemptDirectPath(true)
+        .setCredentials(credentials)
+        .setEndpoint("storage.googleapis.com:443")
+        .setEnvProvider(envProvider)
+        .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()));
+  }
+
+  /** Returns an off-GCE provider with DirectPath over Interconnect enabled by builder option. */
+  private InstantiatingGrpcChannelProvider interconnectProvider(
+      @Nullable Credentials credentials, @Nullable String interconnectEnvValue) {
+    return new InstantiatingGrpcChannelProvider(
+        directPathProviderBuilder(credentials, interconnectEnvValue)
+            .setAttemptDirectPathXdsOverInterconnect(true),
+        "not-gce-product-name");
+  }
+
+  /**
+   * Returns the channel credentials wrapped by a DirectPath channel's {@link
+   * CompositeChannelCredentials}. GoogleDefaultChannelCredentials and the Interconnect credentials
+   * both attach the call credentials this way, so the inner type tells them apart.
+   */
+  private static ChannelCredentials innerChannelCredentials(ChannelCredentials channelCredentials) {
+    assertThat(channelCredentials).isInstanceOf(CompositeChannelCredentials.class);
+    return ((CompositeChannelCredentials) channelCredentials).getChannelCredentials();
+  }
+
+  private static CallCredentials callCredentialsOf(ChannelCredentials channelCredentials) {
+    assertThat(channelCredentials).isInstanceOf(CompositeChannelCredentials.class);
+    return ((CompositeChannelCredentials) channelCredentials).getCallCredentials();
+  }
+
+  /**
+   * Asserts that {@code callCredentials} fetches its request metadata from the mock {@code
+   * credentials} by applying it to a request and verifying the delegation. The ALTS hard-bound
+   * token credential is a copy of the same type, so only observing which instance is called tells
+   * which credential a channel carries.
+   */
+  private static void assertCallCredentialsDelegateTo(
+      CallCredentials callCredentials, Credentials credentials) throws IOException {
+    CallCredentials.RequestInfo requestInfo =
+        mock(CallCredentials.RequestInfo.class, withSettings().withoutAnnotations());
+    // GoogleCredentials subclasses are bearer tokens, which the wrapper only sends over a private
+    // channel; anything less fails the request before the delegation happens.
+    when(requestInfo.getSecurityLevel()).thenReturn(SecurityLevel.PRIVACY_AND_INTEGRITY);
+    when(requestInfo.getAuthority()).thenReturn("storage.googleapis.com");
+    when(requestInfo.getMethodDescriptor()).thenReturn(FakeMethodDescriptor.create());
+    CallCredentials.MetadataApplier applier =
+        mock(CallCredentials.MetadataApplier.class, withSettings().withoutAnnotations());
+
+    callCredentials.applyRequestMetadata(requestInfo, MoreExecutors.directExecutor(), applier);
+
+    verify(credentials)
+        .getRequestMetadata(
+            any(URI.class), any(Executor.class), any(RequestMetadataCallback.class));
+  }
+
+  @Test
+  void createDirectPathChannelCredentials_interconnect_usesTlsWithCallCredentials()
+      throws Exception {
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
+    InstantiatingGrpcChannelProvider provider =
+        interconnectProvider(credentials, /* interconnectEnvValue= */ null);
+
+    ChannelCredentials channelCredentials = provider.createDirectPathChannelCredentials();
+
+    assertThat(innerChannelCredentials(channelCredentials))
+        .isInstanceOf(TlsChannelCredentials.class);
+    // The call credentials stay on the channel credentials so the RLS control channel inherits
+    // them.
+    assertCallCredentialsDelegateTo(callCredentialsOf(channelCredentials), credentials);
+  }
+
+  // The builder option is unset; the variable is trimmed and matched case-insensitively.
+  @ParameterizedTest
+  @ValueSource(strings = {"true", "TRUE", " True "})
+  void createDirectPathChannelCredentials_interconnectEnvVar_usesTls(String envValue) {
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
+    InstantiatingGrpcChannelProvider provider =
+        new InstantiatingGrpcChannelProvider(
+            directPathProviderBuilder(credentials, envValue), "not-gce-product-name");
+
+    ChannelCredentials channelCredentials = provider.createDirectPathChannelCredentials();
+
+    assertThat(innerChannelCredentials(channelCredentials))
+        .isInstanceOf(TlsChannelCredentials.class);
+  }
+
+  @Test
+  void createDirectPathChannelCredentials_interconnectInvalidEnvVar_fallsBackToBuilderOption() {
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
+    InstantiatingGrpcChannelProvider enabledProvider = interconnectProvider(credentials, "yes");
+    InstantiatingGrpcChannelProvider disabledProvider =
+        new InstantiatingGrpcChannelProvider(
+            directPathProviderBuilder(credentials, "yes")
+                .setAttemptDirectPathXdsOverInterconnect(false),
+            "not-gce-product-name");
+
+    ChannelCredentials enabledCredentials = enabledProvider.createDirectPathChannelCredentials();
+    ChannelCredentials disabledCredentials = disabledProvider.createDirectPathChannelCredentials();
+
+    assertThat(innerChannelCredentials(enabledCredentials))
+        .isInstanceOf(TlsChannelCredentials.class);
+    assertThat(innerChannelCredentials(disabledCredentials))
+        .isNotInstanceOf(TlsChannelCredentials.class);
+  }
+
+  @Test
+  void createDirectPathChannelCredentials_interconnectEnvFalse_usesGoogleDefault() {
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
+    // The environment variable overrides the builder option, so this is standard DirectPath.
+    InstantiatingGrpcChannelProvider provider = interconnectProvider(credentials, "false");
+
+    ChannelCredentials channelCredentials = provider.createDirectPathChannelCredentials();
+
+    assertThat(innerChannelCredentials(channelCredentials))
+        .isNotInstanceOf(TlsChannelCredentials.class);
+  }
+
+  @Test
+  void createDirectPathChannelCredentials_interconnectIgnoresAltsCallCredentials()
+      throws Exception {
+    when(computeEngineCredentials.toBuilder()).thenReturn(ComputeEngineCredentials.newBuilder());
+    InstantiatingGrpcChannelProvider.Builder builder =
+        directPathProviderBuilder(computeEngineCredentials, /* interconnectEnvValue= */ null)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setAllowHardBoundTokenTypes(Collections.singletonList(HardBoundTokenTypes.ALTS));
+    assertThat(builder.isDirectPathBoundTokenEnabled()).isTrue();
+    // build() is what creates altsCallCredentials, from a copy of the credentials.
+    InstantiatingGrpcChannelProvider provider = builder.build();
+
+    ChannelCredentials channelCredentials = provider.createDirectPathChannelCredentials();
+
+    assertThat(innerChannelCredentials(channelCredentials))
+        .isInstanceOf(TlsChannelCredentials.class);
+    // Hard-bound tokens need an ALTS connection, so the channel carries the original credentials
+    // alone: neither the hard-bound copy nor GoogleDefaultChannelCredentials' pair of both.
+    assertCallCredentialsDelegateTo(
+        callCredentialsOf(channelCredentials), computeEngineCredentials);
+  }
+
+  @Test
+  void createDirectPathChannelCredentials_directPath_usesGoogleDefault() throws Exception {
+    when(computeEngineCredentials.toBuilder()).thenReturn(ComputeEngineCredentials.newBuilder());
+    InstantiatingGrpcChannelProvider withoutBoundTokens =
+        directPathProviderBuilder(computeEngineCredentials, /* interconnectEnvValue= */ null)
+            .build();
+    InstantiatingGrpcChannelProvider withBoundTokens =
+        directPathProviderBuilder(computeEngineCredentials, /* interconnectEnvValue= */ null)
+            .setAllowHardBoundTokenTypes(Collections.singletonList(HardBoundTokenTypes.ALTS))
+            .build();
+
+    ChannelCredentials withoutBoundTokensCredentials =
+        withoutBoundTokens.createDirectPathChannelCredentials();
+    ChannelCredentials withBoundTokensCredentials =
+        withBoundTokens.createDirectPathChannelCredentials();
+
+    // GoogleDefaultChannelCredentials wraps its own TLS/ALTS negotiator, not TlsChannelCredentials.
+    assertThat(innerChannelCredentials(withoutBoundTokensCredentials))
+        .isNotInstanceOf(TlsChannelCredentials.class);
+    assertCallCredentialsDelegateTo(
+        callCredentialsOf(withoutBoundTokensCredentials), computeEngineCredentials);
+    assertThat(innerChannelCredentials(withBoundTokensCredentials))
+        .isNotInstanceOf(TlsChannelCredentials.class);
+    // With ALTS hard-bound tokens, GoogleDefaultChannelCredentials pairs both call credentials in
+    // a CallCredentials type of its own.
+    assertThat(callCredentialsOf(withBoundTokensCredentials))
+        .isNotInstanceOf(MoreCallCredentials.from(computeEngineCredentials).getClass());
+  }
+
+  @Test
+  void createChannelBuilder_interconnectWithMtlsProvider_usesTlsWithoutClientCert()
+      throws Exception {
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
+    CertificateBasedAccess mtlsCertificateBasedAccess =
+        mock(CertificateBasedAccess.class, withSettings().withoutAnnotations());
+    when(mtlsCertificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    when(mtlsCertificateBasedAccess.getWorkloadCertPath()).thenReturn("/path/to/workload/cert.pem");
+    MtlsProvider mtlsProvider =
+        new FakeMtlsProvider(FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
+    InstantiatingGrpcChannelProvider provider =
+        new InstantiatingGrpcChannelProvider(
+            directPathProviderBuilder(credentials, /* interconnectEnvValue= */ null)
+                .setAttemptDirectPathXdsOverInterconnect(true)
+                .setCertificateBasedAccess(mtlsCertificateBasedAccess)
+                .setMtlsProvider(mtlsProvider),
+            "not-gce-product-name");
+
+    ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
+    ChannelCredentials inner =
+        innerChannelCredentials(extractChannelCredentialsFromChannelBuilder(channelBuilder));
+
+    // DirectPath channels never present the client certificate, Interconnect included; both
+    // accessors are null unless TlsChannelCredentials was built with a client identity.
+    assertThat(inner).isInstanceOf(TlsChannelCredentials.class);
+    assertThat(((TlsChannelCredentials) inner).getKeyManagers()).isNull();
+    assertThat(((TlsChannelCredentials) inner).getCertificateChain()).isNull();
+    // Consequently the pool does not track the workload certificate for rotation either.
+    TransportChannel transportChannel = provider.getTransportChannel();
+    try {
+      ChannelPool pool = (ChannelPool) ((GrpcTransportChannel) transportChannel).getChannel();
+      assertThat(pool.getWorkloadCertPath()).isNull();
+    } finally {
+      transportChannel.shutdownNow();
+    }
+  }
+
+  @Test
+  void createChannelBuilder_interconnectWithoutCredentials_usesCloudPathClientCert()
+      throws Exception {
+    CertificateBasedAccess mtlsCertificateBasedAccess =
+        mock(CertificateBasedAccess.class, withSettings().withoutAnnotations());
+    when(mtlsCertificateBasedAccess.useMtlsClientCertificate()).thenReturn(true);
+    MtlsProvider mtlsProvider =
+        new FakeMtlsProvider(FakeMtlsProvider.createTestMtlsKeyStore(), "", false);
+    InstantiatingGrpcChannelProvider provider =
+        new InstantiatingGrpcChannelProvider(
+            directPathProviderBuilder(/* credentials= */ null, /* interconnectEnvValue= */ null)
+                .setAttemptDirectPathXdsOverInterconnect(true)
+                .setCertificateBasedAccess(mtlsCertificateBasedAccess)
+                .setMtlsProvider(mtlsProvider),
+            "not-gce-product-name");
+
+    ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
+
+    // Without credentials the channel is CloudPath, which presents the client certificate.
+    assertThat(extractTargetFromChannelBuilder(channelBuilder))
+        .isEqualTo("storage.googleapis.com:443");
+    ChannelCredentials channelCredentials =
+        extractChannelCredentialsFromChannelBuilder(channelBuilder);
+    assertThat(channelCredentials).isInstanceOf(TlsChannelCredentials.class);
+    assertThat(((TlsChannelCredentials) channelCredentials).getKeyManagers()).isNotNull();
+  }
+
+  @Test
+  void createChannelBuilder_interconnect_usesTlsChannelCredentials() throws IOException {
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
+    InstantiatingGrpcChannelProvider provider =
+        interconnectProvider(credentials, /* interconnectEnvValue= */ null);
+
+    ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
+
+    assertThat(extractTargetFromChannelBuilder(channelBuilder))
+        .isEqualTo("google-c2p:///storage-direct.googleapis.com?force-xds");
+    assertThat(innerChannelCredentials(extractChannelCredentialsFromChannelBuilder(channelBuilder)))
+        .isInstanceOf(TlsChannelCredentials.class);
   }
 
   @Test
@@ -2164,6 +2615,13 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
     List<String> getAllMessages() {
       return records.stream().map(LogRecord::getMessage).collect(Collectors.toList());
+    }
+
+    List<Level> levelsOf(String message) {
+      return records.stream()
+          .filter(record -> record.getMessage().equals(message))
+          .map(LogRecord::getLevel)
+          .collect(Collectors.toList());
     }
   }
 
