@@ -982,6 +982,12 @@ abstract class BidiUploadState {
 
         if (response.hasWriteHandle()) {
           this.writeHandle = response.getWriteHandle();
+          if (!response.hasPersistedSize()
+              && !response.hasResource()
+              && state != State.TAKEOVER
+              && stateToReturnToAfterRetry != State.TAKEOVER) {
+            return null;
+          }
         }
 
         boolean incremental = !response.hasResource();
