@@ -136,7 +136,6 @@ public interface ListLineItemCreativeAssociationsRequestOrBuilder
    * * `manualCreativeRotationWeight`
    * * `name`
    * * `sequentialCreativeRotationIndex`
-   * * `sizes.canonicalName`
    * * `startTime`
    * * `status`
    * * `targetingDisplayName`
@@ -167,7 +166,6 @@ public interface ListLineItemCreativeAssociationsRequestOrBuilder
    * * `manualCreativeRotationWeight`
    * * `name`
    * * `sequentialCreativeRotationIndex`
-   * * `sizes.canonicalName`
    * * `startTime`
    * * `status`
    * * `targetingDisplayName`
