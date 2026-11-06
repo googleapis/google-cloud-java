@@ -23,11 +23,17 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
 
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import java.io.IOException;
 import java.sql.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
 
 public class BigQueryPooledConnectionTest {
   private BigQueryConnection bigQueryConnection;
@@ -172,5 +178,20 @@ public class BigQueryPooledConnectionTest {
     assertEquals(1, listner.getConnectionErrorCount());
 
     assertFalse(pooledConnection.isListenerPooled(listner));
+  }
+
+  @Test
+  public void testPooledGetMetaData_delegatesWithoutRecordingTelemetry() throws SQLException {
+    // The physical BigQueryConnection records DRIVER_FEATURE_METADATA_RETRIEVAL; the pooled
+    // wrapper must only delegate, otherwise every pooled call is counted twice.
+    BigQueryPooledConnection pooledConnection = new BigQueryPooledConnection(bigQueryConnection);
+    try (MockedStatic<TelemetryManager> telemetry = mockStatic(TelemetryManager.class)) {
+      pooledConnection.getConnection().getMetaData();
+      verify(bigQueryConnection).getMetaData();
+      telemetry.verify(
+          () ->
+              TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL),
+          never());
+    }
   }
 }

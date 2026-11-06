@@ -64,6 +64,8 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryStatement.JobIdWrapper;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
@@ -122,6 +124,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
+import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -1714,5 +1717,33 @@ public class BigQueryStatementTest {
       assertNotNull(thrown.getCause());
       assertTrue(thrown.getCause().getCause() instanceof OutOfMemoryError);
     }
+  }
+
+  @Test
+  public void testClose_doesNotRecordStatementCancelFeature() throws SQLException {
+    // close() cancels jobs as housekeeping; that must not count as a user-initiated cancel.
+    assertFeatureRecorded(
+        () -> bigQueryStatement.close(), DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL, 0);
+  }
+
+  @Test
+  public void testCancel_recordsStatementCancelFeatureOnce() throws SQLException {
+    assertFeatureRecorded(
+        () -> bigQueryStatement.cancel(), DriverFeature.DRIVER_FEATURE_STATEMENT_CANCEL, 1);
+  }
+
+  /** Runs {@code action} and asserts how many times {@code feature} was recorded by it. */
+  private static void assertFeatureRecorded(
+      SqlRunnable action, DriverFeature feature, int expectedCount) throws SQLException {
+    try (MockedStatic<TelemetryManager> telemetry = Mockito.mockStatic(TelemetryManager.class)) {
+      action.run();
+      telemetry.verify(
+          () -> TelemetryManager.recordFeatureUsage(feature), Mockito.times(expectedCount));
+    }
+  }
+
+  @FunctionalInterface
+  private interface SqlRunnable {
+    void run() throws SQLException;
   }
 }

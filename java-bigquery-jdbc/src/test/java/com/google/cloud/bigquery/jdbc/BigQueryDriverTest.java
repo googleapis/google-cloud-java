@@ -16,12 +16,23 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.CALLS_REAL_METHODS;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.times;
 
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.AuthenticationType;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.DriverFeature;
+import com.google.cloud.bigquery.jdbc.telemetry.v1.Status;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryManager;
 import com.google.cloud.bigquery.jdbc.telemetry.v1.TelemetryTestUtils;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import io.opentelemetry.api.OpenTelemetry;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
@@ -32,10 +43,18 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
 
 public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   static BigQueryDriver bigQueryDriver;
+
+  /** Token-auth URL that connects without network access; shared by the telemetry tests. */
+  private static final String VALID_TOKEN_URL =
+      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+          + "OAuthType=2;ProjectId=MyBigQueryProject;"
+          + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
+          + "OAuthClientSecret=redactedToken;";
 
   @BeforeEach
   @AfterEach
@@ -55,13 +74,7 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testValidURLDoesConnect() throws SQLException {
-    Connection connection =
-        bigQueryDriver.connect(
-            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-                + "OAuthType=2;ProjectId=MyBigQueryProject;"
-                + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
-                + "OAuthClientSecret=redactedToken;",
-            new Properties());
+    Connection connection = bigQueryDriver.connect(VALID_TOKEN_URL, new Properties());
     assertThat(connection.isClosed()).isFalse();
   }
 
@@ -199,13 +212,7 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testConnect_recordsSuccessfulConnectionTelemetry() throws SQLException {
-    Connection connection =
-        bigQueryDriver.connect(
-            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-                + "OAuthType=2;ProjectId=MyBigQueryProject;"
-                + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
-                + "OAuthClientSecret=redactedToken;",
-            new Properties());
+    Connection connection = bigQueryDriver.connect(VALID_TOKEN_URL, new Properties());
     assertThat(connection).isNotNull();
     assertThat(connection.isClosed()).isFalse();
     // Verify TelemetryManager is initialized and recorded the connection
@@ -227,14 +234,62 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testConnect_optOut_noTelemetryRecorded() throws SQLException {
     Connection connection =
-        bigQueryDriver.connect(
-            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-                + "OAuthType=2;ProjectId=MyBigQueryProject;"
-                + "OAuthAccessToken=redactedToken;OAuthClientId=redactedToken;"
-                + "OAuthClientSecret=redactedToken;EnableDiagnosticTelemetry=0;",
-            new Properties());
+        bigQueryDriver.connect(VALID_TOKEN_URL + "EnableDiagnosticTelemetry=0;", new Properties());
     assertThat(connection).isNotNull();
     // Since opt-out was requested, TelemetryManager should NOT be initialized
     assertThat(TelemetryManager.isInitialized()).isFalse();
+  }
+
+  @Test
+  public void testConnect_recordsMetadataRetrievalOnce() throws SQLException {
+    // connect() logs four DatabaseMetaData values; it must fetch the object once, not four times.
+    try (MockedStatic<TelemetryManager> telemetry =
+        mockStatic(TelemetryManager.class, CALLS_REAL_METHODS)) {
+      bigQueryDriver.connect(VALID_TOKEN_URL, new Properties());
+      telemetry.verify(
+          () ->
+              TelemetryManager.recordFeatureUsage(DriverFeature.DRIVER_FEATURE_METADATA_RETRIEVAL),
+          times(1));
+    }
+  }
+
+  @Test
+  public void testConnect_failedAttemptCarriesAuthType() {
+    // Service-account auth with no key material parses fine but fails while building the
+    // connection. The failed attempt must report the auth type, not
+    // AUTHENTICATION_TYPE_UNSPECIFIED.
+    try (MockedStatic<TelemetryManager> telemetry =
+        mockStatic(TelemetryManager.class, CALLS_REAL_METHODS)) {
+      Assertions.assertThrows(
+          Exception.class,
+          () ->
+              bigQueryDriver.connect(
+                  "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                      + "OAuthType=0;ProjectId=MyBigQueryProject;",
+                  new Properties()));
+      telemetry.verify(
+          () ->
+              TelemetryManager.recordConnectionAttempt(
+                  eq(Status.STATUS_ERROR),
+                  anyInt(),
+                  eq(AuthenticationType.AUTHENTICATION_TYPE_SERVICE_ACCOUNT)));
+    }
+  }
+
+  @Test
+  public void testConnect_ioExceptionThrowsInsteadOfReturningNull() {
+    // BigQueryJdbcRootLogger.setLevel is the only IOException source on the connect path. JDBC
+    // requires connect() to throw for an accepted URL that fails, not return null.
+    try (MockedStatic<BigQueryJdbcRootLogger> rootLogger =
+        mockStatic(BigQueryJdbcRootLogger.class)) {
+      rootLogger
+          .when(() -> BigQueryJdbcRootLogger.setLevel(any(), any()))
+          .thenThrow(new IOException("simulated log path failure"));
+      BigQueryJdbcException thrown =
+          Assertions.assertThrows(
+              BigQueryJdbcException.class,
+              () -> bigQueryDriver.connect(VALID_TOKEN_URL, new Properties()));
+      assertThat(thrown.getCause()).isInstanceOf(IOException.class);
+    }
   }
 }
