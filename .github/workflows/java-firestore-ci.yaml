@@ -29,6 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       library: ${{ steps.filter.outputs.library }}
+      otel_grpc: ${{ steps.filter.outputs.otel_grpc }}
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
@@ -39,6 +40,9 @@ jobs:
         filters: |
           library:
             - 'java-firestore/**'
+          otel_grpc:
+            - 'java-firestore/google-cloud-firestore/src/main/java/com/google/cloud/firestore/telemetry/**'
+            - 'sdk-platform-java/java-shared-dependencies/third-party-dependencies/pom.xml'
   units:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -60,6 +64,37 @@ jobs:
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
+  otel-grpc-compatibility:
+    needs: filter
+    if: ${{ needs.filter.outputs.otel_grpc == 'true' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # One release on each side of the createClientInterceptor rename.
+        otel-grpc-version: ['2.1.0-alpha', '2.25.0-alpha']
+    steps:
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
+      with:
+        distribution: temurin
+        java-version: 11
+        cache: maven
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: install
+    - run: |
+        mvn test -B -V -ntp \
+          -Dclirr.skip \
+          -Denforcer.skip \
+          -Dmaven.javadoc.skip \
+          -Dopentelemetry-grpc-instrumentation.version="${OTEL_GRPC_VERSION}" \
+          -T 1C
+      working-directory: java-firestore
+      env:
+        OTEL_GRPC_VERSION: ${{ matrix.otel-grpc-version }}
   units-java8:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
