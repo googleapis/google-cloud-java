@@ -216,6 +216,7 @@ public class GrpcIdentityStub extends IdentityStub {
     GrpcCallSettings<CreateUserRequest, User> createUserTransportSettings =
         GrpcCallSettings.<CreateUserRequest, User>newBuilder()
             .setMethodDescriptor(createUserMethodDescriptor)
+            .setJavaMethodName("createUser")
             .build();
     GrpcCallSettings<GetUserRequest, User> getUserTransportSettings =
         GrpcCallSettings.<GetUserRequest, User>newBuilder()
@@ -227,6 +228,7 @@ public class GrpcIdentityStub extends IdentityStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getUser")
             .build();
     GrpcCallSettings<UpdateUserRequest, User> updateUserTransportSettings =
         GrpcCallSettings.<UpdateUserRequest, User>newBuilder()
@@ -237,6 +239,7 @@ public class GrpcIdentityStub extends IdentityStub {
                   builder.add("user.name", String.valueOf(request.getUser().getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("updateUser")
             .build();
     GrpcCallSettings<DeleteUserRequest, Empty> deleteUserTransportSettings =
         GrpcCallSettings.<DeleteUserRequest, Empty>newBuilder()
@@ -248,10 +251,12 @@ public class GrpcIdentityStub extends IdentityStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("deleteUser")
             .build();
     GrpcCallSettings<ListUsersRequest, ListUsersResponse> listUsersTransportSettings =
         GrpcCallSettings.<ListUsersRequest, ListUsersResponse>newBuilder()
             .setMethodDescriptor(listUsersMethodDescriptor)
+            .setJavaMethodName("listUsers")
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -262,6 +267,7 @@ public class GrpcIdentityStub extends IdentityStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("listLocations")
             .build();
     GrpcCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
         GrpcCallSettings.<GetLocationRequest, Location>newBuilder()
@@ -272,6 +278,7 @@ public class GrpcIdentityStub extends IdentityStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setJavaMethodName("getLocation")
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -283,6 +290,7 @@ public class GrpcIdentityStub extends IdentityStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("setIamPolicy")
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -294,6 +302,7 @@ public class GrpcIdentityStub extends IdentityStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getResource())
+            .setJavaMethodName("getIamPolicy")
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -306,6 +315,7 @@ public class GrpcIdentityStub extends IdentityStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getResource())
+                .setJavaMethodName("testIamPermissions")
                 .build();
 
     this.createUserCallable =

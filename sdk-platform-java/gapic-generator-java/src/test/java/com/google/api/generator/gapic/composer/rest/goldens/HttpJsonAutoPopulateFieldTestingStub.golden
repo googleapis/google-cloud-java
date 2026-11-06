@@ -187,6 +187,7 @@ public class HttpJsonAutoPopulateFieldTestingStub extends AutoPopulateFieldTesti
                       }
                       return requestBuilder.build();
                     })
+                .setJavaMethodName("autoPopulateFieldTestingEcho")
                 .build();
     HttpJsonCallSettings<
             AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
@@ -196,6 +197,7 @@ public class HttpJsonAutoPopulateFieldTestingStub extends AutoPopulateFieldTesti
                     newBuilder()
                 .setMethodDescriptor(autoPopulateFieldTestingExpandMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setJavaMethodName("autoPopulateFieldTestingExpand")
                 .build();
 
     this.autoPopulateFieldTestingEchoCallable =

@@ -107,6 +107,7 @@ public class GrpcCallableNameTypeServiceStub extends CallableNameTypeServiceStub
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("getApiOperation")
             .build();
     GrpcCallSettings<GetApiOperationRequest, ApiOperation> apiPagedTransportSettings =
         GrpcCallSettings.<GetApiOperationRequest, ApiOperation>newBuilder()
@@ -118,6 +119,7 @@ public class GrpcCallableNameTypeServiceStub extends CallableNameTypeServiceStub
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("apiPaged")
             .build();
 
     this.getApiOperationCallable =

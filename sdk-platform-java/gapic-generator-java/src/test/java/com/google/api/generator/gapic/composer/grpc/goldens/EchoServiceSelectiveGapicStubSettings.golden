@@ -230,6 +230,11 @@ public class EchoServiceShouldGeneratePartialUsualStubSettings
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.selective.generate.v1beta1.EchoServiceShouldGeneratePartialUsualClient";
+  }
+
   /** Builder for EchoServiceShouldGeneratePartialUsualStubSettings. */
   public static class Builder
       extends StubSettings.Builder<EchoServiceShouldGeneratePartialUsualStubSettings, Builder> {

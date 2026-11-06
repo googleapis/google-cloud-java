@@ -171,6 +171,7 @@ public class GrpcAutoPopulateFieldTestingStub extends AutoPopulateFieldTestingSt
                       }
                       return requestBuilder.build();
                     })
+                .setJavaMethodName("autoPopulateFieldTestingEcho")
                 .build();
     GrpcCallSettings<AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
         autoPopulateFieldTestingExpandTransportSettings =
@@ -178,6 +179,7 @@ public class GrpcAutoPopulateFieldTestingStub extends AutoPopulateFieldTestingSt
                 .<AutoPopulateFieldTestingExpandRequest, AutoPopulateFieldTestingEchoResponse>
                     newBuilder()
                 .setMethodDescriptor(autoPopulateFieldTestingExpandMethodDescriptor)
+                .setJavaMethodName("autoPopulateFieldTestingExpand")
                 .build();
     GrpcCallSettings<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
         autoPopulateFieldTestingCollectTransportSettings =
@@ -185,6 +187,7 @@ public class GrpcAutoPopulateFieldTestingStub extends AutoPopulateFieldTestingSt
                 .<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
                     newBuilder()
                 .setMethodDescriptor(autoPopulateFieldTestingCollectMethodDescriptor)
+                .setJavaMethodName("autoPopulateFieldTestingCollect")
                 .build();
     GrpcCallSettings<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
         autoPopulateFieldTestingChatTransportSettings =
@@ -192,6 +195,7 @@ public class GrpcAutoPopulateFieldTestingStub extends AutoPopulateFieldTestingSt
                 .<AutoPopulateFieldTestingEchoRequest, AutoPopulateFieldTestingEchoResponse>
                     newBuilder()
                 .setMethodDescriptor(autoPopulateFieldTestingChatMethodDescriptor)
+                .setJavaMethodName("autoPopulateFieldTestingChat")
                 .build();
 
     this.autoPopulateFieldTestingEchoCallable =

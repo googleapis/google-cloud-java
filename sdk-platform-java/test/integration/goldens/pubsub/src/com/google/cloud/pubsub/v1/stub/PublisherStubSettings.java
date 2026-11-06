@@ -572,6 +572,11 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
     return LibraryMetadata.newBuilder().setVersion(Version.VERSION).build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.pubsub.v1.TopicAdminClient";
+  }
+
   /** Builder for PublisherStubSettings. */
   public static class Builder extends StubSettings.Builder<PublisherStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

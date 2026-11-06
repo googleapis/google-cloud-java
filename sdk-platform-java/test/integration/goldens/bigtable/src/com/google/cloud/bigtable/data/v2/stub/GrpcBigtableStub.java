@@ -225,6 +225,7 @@ public class GrpcBigtableStub extends BigtableStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getTableName())
+            .setJavaMethodName("readRows")
             .build();
     GrpcCallSettings<SampleRowKeysRequest, SampleRowKeysResponse> sampleRowKeysTransportSettings =
         GrpcCallSettings.<SampleRowKeysRequest, SampleRowKeysResponse>newBuilder()
@@ -239,6 +240,7 @@ public class GrpcBigtableStub extends BigtableStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getTableName())
+            .setJavaMethodName("sampleRowKeys")
             .build();
     GrpcCallSettings<MutateRowRequest, MutateRowResponse> mutateRowTransportSettings =
         GrpcCallSettings.<MutateRowRequest, MutateRowResponse>newBuilder()
@@ -252,6 +254,7 @@ public class GrpcBigtableStub extends BigtableStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getTableName())
+            .setJavaMethodName("mutateRow")
             .build();
     GrpcCallSettings<MutateRowsRequest, MutateRowsResponse> mutateRowsTransportSettings =
         GrpcCallSettings.<MutateRowsRequest, MutateRowsResponse>newBuilder()
@@ -265,6 +268,7 @@ public class GrpcBigtableStub extends BigtableStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getTableName())
+            .setJavaMethodName("mutateRows")
             .build();
     GrpcCallSettings<CheckAndMutateRowRequest, CheckAndMutateRowResponse>
         checkAndMutateRowTransportSettings =
@@ -284,6 +288,7 @@ public class GrpcBigtableStub extends BigtableStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getTableName())
+                .setJavaMethodName("checkAndMutateRow")
                 .build();
     GrpcCallSettings<PingAndWarmRequest, PingAndWarmResponse> pingAndWarmTransportSettings =
         GrpcCallSettings.<PingAndWarmRequest, PingAndWarmResponse>newBuilder()
@@ -297,6 +302,7 @@ public class GrpcBigtableStub extends BigtableStub {
                   return builder.build();
                 })
             .setResourceNameExtractor(request -> request.getName())
+            .setJavaMethodName("pingAndWarm")
             .build();
     GrpcCallSettings<ReadModifyWriteRowRequest, ReadModifyWriteRowResponse>
         readModifyWriteRowTransportSettings =
@@ -316,6 +322,7 @@ public class GrpcBigtableStub extends BigtableStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getTableName())
+                .setJavaMethodName("readModifyWriteRow")
                 .build();
 
     this.readRowsCallable =

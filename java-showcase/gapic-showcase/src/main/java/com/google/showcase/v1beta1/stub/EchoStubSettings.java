@@ -595,6 +595,11 @@ public class EchoStubSettings extends StubSettings<EchoStubSettings> {
         .build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.showcase.v1beta1.EchoClient";
+  }
+
   /** Builder for EchoStubSettings. */
   public static class Builder extends StubSettings.Builder<EchoStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

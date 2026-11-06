@@ -304,6 +304,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                       request.getAppProfileId(), "app_profile_id", EXAMPLE1_TEST_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setJavaMethodName("example1Test")
             .build();
     GrpcCallSettings<Request, Empty> example2TestTransportSettings =
         GrpcCallSettings.<Request, Empty>newBuilder()
@@ -315,6 +316,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                       request.getAppProfileId(), "routing_id", EXAMPLE2_TEST_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setJavaMethodName("example2Test")
             .build();
     GrpcCallSettings<Request, Empty> example3TestTransportSettings =
         GrpcCallSettings.<Request, Empty>newBuilder()
@@ -325,6 +327,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                   builder.add(request.getTableName(), "table_name", EXAMPLE3_TEST_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setJavaMethodName("example3Test")
             .build();
     GrpcCallSettings<Request, Empty> example3CTestTransportSettings =
         GrpcCallSettings.<Request, Empty>newBuilder()
@@ -338,6 +341,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                       request.getTableName(), "table_name", EXAMPLE3_C_TEST_1_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setJavaMethodName("example3CTest")
             .build();
     GrpcCallSettings<Request, Empty> example4TestTransportSettings =
         GrpcCallSettings.<Request, Empty>newBuilder()
@@ -348,6 +352,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                   builder.add(request.getTableName(), "routing_id", EXAMPLE4_TEST_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setJavaMethodName("example4Test")
             .build();
     GrpcCallSettings<Request, Empty> example5TestTransportSettings =
         GrpcCallSettings.<Request, Empty>newBuilder()
@@ -359,6 +364,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                   builder.add(request.getTableName(), "routing_id", EXAMPLE5_TEST_1_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setJavaMethodName("example5Test")
             .build();
     GrpcCallSettings<Request, Empty> example6TestTransportSettings =
         GrpcCallSettings.<Request, Empty>newBuilder()
@@ -370,6 +376,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                   builder.add(request.getTableName(), "instance_id", EXAMPLE6_TEST_1_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setJavaMethodName("example6Test")
             .build();
     GrpcCallSettings<Request, Empty> example7TestTransportSettings =
         GrpcCallSettings.<Request, Empty>newBuilder()
@@ -382,6 +389,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                       request.getAppProfileId(), "routing_id", EXAMPLE7_TEST_1_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setJavaMethodName("example7Test")
             .build();
     GrpcCallSettings<Request, Empty> example8TestTransportSettings =
         GrpcCallSettings.<Request, Empty>newBuilder()
@@ -395,6 +403,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                       request.getAppProfileId(), "routing_id", EXAMPLE8_TEST_2_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setJavaMethodName("example8Test")
             .build();
     GrpcCallSettings<Request, Empty> example9TestTransportSettings =
         GrpcCallSettings.<Request, Empty>newBuilder()
@@ -413,6 +422,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                       request.getAppProfileId(), "routing_id", EXAMPLE9_TEST_4_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setJavaMethodName("example9Test")
             .build();
     GrpcCallSettings<Request, Empty> backwardsCompatible1TestTransportSettings =
         GrpcCallSettings.<Request, Empty>newBuilder()
@@ -426,10 +436,12 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                       BACKWARDS_COMPATIBLE1_TEST_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setJavaMethodName("backwardsCompatible1Test")
             .build();
     GrpcCallSettings<Request, Empty> backwardsCompatible2TestTransportSettings =
         GrpcCallSettings.<Request, Empty>newBuilder()
             .setMethodDescriptor(backwardsCompatible2TestMethodDescriptor)
+            .setJavaMethodName("backwardsCompatible2Test")
             .build();
     GrpcCallSettings<Request, Empty> backwardsCompatible3TestTransportSettings =
         GrpcCallSettings.<Request, Empty>newBuilder()
@@ -440,6 +452,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                   builder.add("table_name", String.valueOf(request.getTableName()));
                   return builder.build();
                 })
+            .setJavaMethodName("backwardsCompatible3Test")
             .build();
     GrpcCallSettings<RequestWithNestedField, Empty> nestedFieldTestTransportSettings =
         GrpcCallSettings.<RequestWithNestedField, Empty>newBuilder()
@@ -456,6 +469,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                   }
                   return builder.build();
                 })
+            .setJavaMethodName("nestedFieldTest")
             .build();
     GrpcCallSettings<EnumRequest, EnumResponse> implicitRoutingHeaderWithEnumTestTransportSettings =
         GrpcCallSettings.<EnumRequest, EnumResponse>newBuilder()
@@ -467,6 +481,7 @@ public class GrpcExplicitDynamicRoutingHeaderTestingStub
                       "info.enum_test", String.valueOf(request.getInfo().getEnumTestValue()));
                   return builder.build();
                 })
+            .setJavaMethodName("implicitRoutingHeaderWithEnumTest")
             .build();
 
     this.example1TestCallable =

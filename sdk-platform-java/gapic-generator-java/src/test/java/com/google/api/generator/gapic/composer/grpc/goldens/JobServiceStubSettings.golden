@@ -266,6 +266,11 @@ public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings>
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.bigquery.v2.JobServiceClient";
+  }
+
   /** Builder for JobServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<JobServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;

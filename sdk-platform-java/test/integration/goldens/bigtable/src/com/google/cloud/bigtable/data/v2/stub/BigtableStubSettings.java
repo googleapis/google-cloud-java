@@ -267,6 +267,11 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
     return LibraryMetadata.newBuilder().build();
   }
 
+  @Override
+  protected String getJavaClientName() {
+    return "com.google.cloud.bigtable.data.v2.BaseBigtableDataClient";
+  }
+
   /** Builder for BigtableStubSettings. */
   public static class Builder extends StubSettings.Builder<BigtableStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
