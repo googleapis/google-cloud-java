@@ -688,6 +688,33 @@ class ClientConfigurationManagerTest {
     verify(mockExecutor, never()).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
   }
 
+  @Test
+  void expiredConfigResetNotifiesListenersWithNormalizedConfig() throws Exception {
+    ClientConfiguration.Builder initialBuilder = service.config.get().toBuilder();
+    initialBuilder.getPollingConfigurationBuilder().setValidityDuration(Durations.fromSeconds(-1));
+    service.config.set(initialBuilder.build());
+
+    ClientConfiguration initialConfig = manager.start().get();
+    assertThat(initialConfig.getSessionConfiguration()).isNotEqualToDefaultInstance();
+
+    ArgumentCaptor<Runnable> runnableCaptor = ArgumentCaptor.forClass(Runnable.class);
+    verify(mockExecutor, times(1)).schedule(runnableCaptor.capture(), anyLong(), any());
+
+    @SuppressWarnings("unchecked")
+    ConfigListener<SessionClientConfiguration> mockListener = Mockito.mock(ConfigListener.class);
+    manager.addListener(ClientConfiguration::getSessionConfiguration, mockListener);
+
+    // Fail all attempts of the next poll so handleFailedFetch resets to defaultConfig (which has
+    // session_load=0, but non-empty channel/session pool configs before normalization).
+    service.emptyResponses.set(10);
+    runnableCaptor.getValue().run();
+    outstandingRpcCounter.waitUntilRpcsDone();
+
+    assertThat(manager.getClientConfiguration().getSessionConfiguration())
+        .isEqualToDefaultInstance();
+    verify(mockListener, times(1)).onChange(eq(SessionClientConfiguration.getDefaultInstance()));
+  }
+
   static class FakeConfigService extends BigtableGrpc.BigtableImplBase {
     private final AtomicReference<ClientConfiguration> config = new AtomicReference<>();
 
