@@ -67,6 +67,8 @@
         <configuration>
           <systemPropertyVariables>
             <JDBC_TESTS>true</JDBC_TESTS>
+            <!-- Test-only: keeps integration runs from emitting driver usage telemetry. -->
+            <BIGQUERY_JDBC_TELEMETRY_ENABLED>false</BIGQUERY_JDBC_TELEMETRY_ENABLED>
           </systemPropertyVariables>
         </configuration>
         <dependencies>
