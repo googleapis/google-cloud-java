@@ -28,6 +28,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.Map;
 import javax.annotation.Nullable;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -709,6 +710,7 @@ public class ITQueryFindNearestTest extends ITBaseTest {
     assertThat(snapshot.getDocuments().get(1).get("docId")).isEqualTo(getUniqueDocId("3"));
   }
 
+  @Ignore("Flaky test: b/579437052")
   @Test
   public void queryWithDistanceResultFieldAndDistanceThreshold() throws Exception {
     CollectionReference collection =
