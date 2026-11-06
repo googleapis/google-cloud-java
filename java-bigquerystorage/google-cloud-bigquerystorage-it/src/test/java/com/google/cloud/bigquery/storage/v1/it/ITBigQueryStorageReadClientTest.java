@@ -976,6 +976,7 @@ class ITBigQueryStorageReadClientTest {
     }
   }
 
+  @Disabled("Flaky test: b/579436616")
   @Test
   void testSimpleReadAndResume() throws IOException {
     String table =
