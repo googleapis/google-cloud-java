@@ -30,6 +30,7 @@ import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.channels.Channels;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -53,12 +54,20 @@ import org.apache.arrow.vector.util.Text;
 
 /** {@link ResultSet} Implementation for Arrow datasource (Using Storage Read APIs) */
 class BigQueryArrowResultSet extends BigQueryBaseResultSet {
+  /** Pass as {@code totalRows} when the number of rows is not known up front. */
+  static final long UNKNOWN_TOTAL_ROWS = -1;
+
+  // Number of rows to return, or UNKNOWN_TOTAL_ROWS. When known, iteration stops once this many
+  // rows have been returned (this is also how Statement.setMaxRows is applied).
   private final long totalRows;
   // count of rows read by the current instance of ResultSet
   private long rowCount = 0;
   // IMP: This is a buffer of Arrow batches, the max size should be kept at min as
   // possible to avoid holding too much memory
   private final BlockingQueue<BigQueryArrowBatchWrapper> buffer;
+  // Item taken from the buffer by isLast()/isBeforeFirst() to look ahead when totalRows is
+  // unknown. next() consumes it before taking from the buffer again, so no row is skipped.
+  private BigQueryArrowBatchWrapper lookahead;
 
   // TODO(neenu): See if it makes sense to have the nested batch represented by
   // 'JsonStringArrayList' directly
@@ -111,12 +120,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     this.nestedRowIndex = fromIndex - 1;
     this.ownedTask = ownedTask;
     this.enableTimestampPicos = enableTimestampPicos;
-    if (!isNested && arrowSchema != null) {
-      try {
-        this.arrowDeserializer = new ArrowDeserializer(arrowSchema);
-      } catch (IOException ex) {
-        throw new BigQueryJdbcException("IOException during ArrowDeserializer creation", ex);
-      }
+    if (!isNested) {
+      initDeserializerIfNeeded(arrowSchema);
     }
   }
 
@@ -226,16 +231,14 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           // Clear vectorSchemaRoot before populating a new batch
           vectorSchemaRoot.clear();
         }
-        org.apache.arrow.vector.ipc.message.ArrowRecordBatch deserializedBatch =
+        // Read straight from the ByteString instead of copying it into a heap byte[] first.
+        try (org.apache.arrow.vector.ipc.message.ArrowRecordBatch deserializedBatch =
             MessageSerializer.deserializeRecordBatch(
-                new ReadChannel(
-                    new ByteArrayReadableSeekableByteChannel(
-                        batch.getSerializedRecordBatch().toByteArray())),
-                allocator);
-
-        vectorLoader.load(deserializedBatch);
-        // Release buffers from batch (they are still held in the vectors in root).
-        deserializedBatch.close();
+                new ReadChannel(Channels.newChannel(batch.getSerializedRecordBatch().newInput())),
+                allocator)) {
+          // The vectors keep their own references to the buffers after the batch is closed.
+          vectorLoader.load(deserializedBatch);
+        }
       } catch (RuntimeException | IOException ex) {
         throw new BigQueryJdbcException(ex);
       }
@@ -270,48 +273,25 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       return false;
     } else {
       /* Non nested */
-      if (this.hasReachedEnd || this.isLast()) {
+      if (this.afterLast || this.hasReachedEnd || reachedRowLimit()) {
         this.afterLast = true;
         return false;
       }
-      try {
-        if (this.currentBatchRowIndex == -1
-            || this.currentBatchRowIndex == (this.vectorSchemaRoot.getRowCount() - 1)) {
-          /* Start of iteration or we have exhausted the current batch */
-          // Advance the cursor. Potentially blocking operation.
-          try (Scope scope = makeOriginalContextCurrent()) {
-            BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
-            checkClosed();
-            if (batchWrapper.getException() != null) {
-              throw backgroundFetchError(batchWrapper.getException());
-            }
-            if (batchWrapper.isLast()) {
-              /* Marks the end of the records */
-              if (this.vectorSchemaRoot != null) {
-                // IMP: To avoid memory leak: clear vectorSchemaRoot as it still holds
-                // the last batch
-                this.vectorSchemaRoot.clear();
-              }
-              this.hasReachedEnd = true;
-              this.rowCount++;
-              return false;
-            }
-            // Valid batch, process it
-            ArrowRecordBatch arrowBatch = batchWrapper.getCurrentArrowBatch();
-            // Populates vectorSchemaRoot
-            this.arrowDeserializer.deserializeArrowBatch(arrowBatch);
-            // Pointing to the first row in this fresh batch
-            this.currentBatchRowIndex = 0;
-            this.rowCount++;
-            return true;
-          }
-        }
-        // There are rows left in the current batch.
-        else if (this.currentBatchRowIndex < this.vectorSchemaRoot.getRowCount()) {
+      try (Scope scope = makeOriginalContextCurrent()) {
+        if (hasMoreRowsInCurrentBatch()) {
           this.currentBatchRowIndex++;
           this.rowCount++;
           return true;
         }
+        // Start of iteration or the current batch is exhausted. Potentially blocking.
+        if (!loadNextBatch()) {
+          this.afterLast = true;
+          return false;
+        }
+        // Pointing to the first row in this fresh batch
+        this.currentBatchRowIndex = 0;
+        this.rowCount++;
+        return true;
       } catch (SQLException ex) {
         throw new BigQueryJdbcException(
             "Error occurred while advancing the cursor. This could happen when connection is closed while the next method is being called.",
@@ -323,7 +303,111 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
             ex);
       }
     }
-    return false;
+  }
+
+  /** True once a known row count (or row limit) has been returned. */
+  private boolean reachedRowLimit() {
+    return this.totalRows != UNKNOWN_TOTAL_ROWS && this.rowCount >= this.totalRows;
+  }
+
+  private boolean hasMoreRowsInCurrentBatch() {
+    return this.currentBatchRowIndex >= 0
+        && this.vectorSchemaRoot != null
+        && this.currentBatchRowIndex < this.vectorSchemaRoot.getRowCount() - 1;
+  }
+
+  private BigQueryArrowBatchWrapper takeNextFromBuffer() throws InterruptedException {
+    if (this.lookahead != null) {
+      BigQueryArrowBatchWrapper next = this.lookahead;
+      this.lookahead = null;
+      return next;
+    }
+    return this.buffer.take();
+  }
+
+  private void initDeserializerIfNeeded(ArrowSchema arrowSchema) throws SQLException {
+    if (arrowSchema == null || this.arrowDeserializer != null) {
+      return;
+    }
+    try {
+      this.arrowDeserializer = new ArrowDeserializer(arrowSchema);
+    } catch (IOException ex) {
+      throw new BigQueryJdbcException("IOException during ArrowDeserializer creation", ex);
+    }
+  }
+
+  /**
+   * Loads the next batch that has rows into the vectors. Skips messages without rows (schema-only
+   * messages and zero-row batches). Returns false at the end of the stream.
+   */
+  private boolean loadNextBatch() throws SQLException, InterruptedException {
+    while (true) {
+      BigQueryArrowBatchWrapper batchWrapper = takeNextFromBuffer();
+      checkClosed();
+      if (batchWrapper.getException() != null) {
+        throw backgroundFetchError(batchWrapper.getException());
+      }
+      if (batchWrapper.isLast()) {
+        /* Marks the end of the records */
+        if (this.vectorSchemaRoot != null) {
+          // IMP: To avoid memory leak: clear vectorSchemaRoot as it still holds the last batch
+          this.vectorSchemaRoot.clear();
+        }
+        this.hasReachedEnd = true;
+        return false;
+      }
+      initDeserializerIfNeeded(batchWrapper.getArrowSchema());
+      ArrowRecordBatch arrowBatch = batchWrapper.getCurrentArrowBatch();
+      if (arrowBatch == null) {
+        continue; // schema-only message
+      }
+      if (this.arrowDeserializer == null) {
+        throw new BigQueryJdbcException("Received an Arrow record batch before its schema.");
+      }
+      // Populates vectorSchemaRoot
+      this.arrowDeserializer.deserializeArrowBatch(arrowBatch);
+      if (this.vectorSchemaRoot.getRowCount() > 0) {
+        return true;
+      }
+      // A zero-row batch carries no row to position on: keep reading.
+    }
+  }
+
+  /**
+   * Whether another row exists after the current one, used when totalRows is unknown. May block
+   * while waiting for the next batch, which it keeps in {@code lookahead} for next().
+   */
+  private boolean hasMoreRows() throws SQLException {
+    if (hasMoreRowsInCurrentBatch()) {
+      return true;
+    }
+    if (this.hasReachedEnd) {
+      return false;
+    }
+    try (Scope scope = makeOriginalContextCurrent()) {
+      while (true) {
+        if (this.lookahead == null) {
+          this.lookahead = this.buffer.take();
+        }
+        checkClosed();
+        BigQueryArrowBatchWrapper next = this.lookahead;
+        if (next.getException() != null) {
+          return true; // next() surfaces the error
+        }
+        if (next.isLast()) {
+          return false;
+        }
+        if (next.getCurrentArrowBatch() != null && next.getRowCount() != 0) {
+          return true;
+        }
+        // No rows in this message: keep its schema (if any) and look further.
+        initDeserializerIfNeeded(next.getArrowSchema());
+        this.lookahead = null;
+      }
+    } catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+      throw new BigQueryJdbcException("Interrupted while checking for more rows.", ex);
+    }
   }
 
   @Override
@@ -356,6 +440,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         value = this.currentNestedBatch.getNestedRecords().get(this.nestedRowIndex);
       }
     } else {
+      if (this.afterLast || this.vectorSchemaRoot == null || this.currentBatchRowIndex < 0) {
+        throw new BigQueryJdbcException("The ResultSet is not positioned on a row.");
+      }
       // get the current column
       // SQL index to Java Index
       FieldVector currentColumn = this.vectorSchemaRoot.getVector(columnIndex - 1);
@@ -495,7 +582,14 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     if (this.isNested) {
       return this.nestedRowIndex < this.fromIndex;
     } else {
-      return this.rowCount == 0;
+      // Per JDBC, false when the result set contains no rows.
+      if (this.rowCount > 0 || this.afterLast) {
+        return false;
+      }
+      if (this.totalRows != UNKNOWN_TOTAL_ROWS) {
+        return this.totalRows > 0;
+      }
+      return hasMoreRows();
     }
   }
 
@@ -524,7 +618,13 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     if (this.isNested) {
       return this.nestedRowIndex == this.toIndexExclusive - 1;
     } else {
-      return this.rowCount == this.totalRows;
+      if (this.afterLast || this.rowCount == 0) {
+        return false;
+      }
+      if (this.totalRows != UNKNOWN_TOTAL_ROWS) {
+        return this.rowCount == this.totalRows;
+      }
+      return !hasMoreRows();
     }
   }
 }
