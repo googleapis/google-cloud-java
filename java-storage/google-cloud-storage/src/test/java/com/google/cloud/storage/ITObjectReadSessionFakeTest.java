@@ -43,6 +43,7 @@ import com.google.cloud.storage.OtelStorageDecorator.OtelDecoratingBlobReadSessi
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.StorageDataClient.FastOpenObjectReadSession;
 import com.google.cloud.storage.ZeroCopySupport.DisposableByteString;
+import com.google.cloud.storage.it.AssertRequestHeaders.FilteringPolicy;
 import com.google.cloud.storage.it.ChecksummedTestContent;
 import com.google.cloud.storage.it.GrpcPlainRequestLoggingInterceptor;
 import com.google.cloud.storage.it.GrpcRequestAuditing;
@@ -133,6 +134,12 @@ public final class ITObjectReadSessionFakeTest {
       Metadata.Key.of("x-goog-gcs-idempotency-token", Metadata.ASCII_STRING_MARSHALLER);
   private static final Metadata.Key<String> X_GOOG_USER_PROJECT =
       Metadata.Key.of("x-goog-user-project", Metadata.ASCII_STRING_MARSHALLER);
+  private static final Metadata.Key<String> X_GOOG_STORAGE_JAVA_FEATURES =
+      Metadata.Key.of(FeatureTracking.HEADER, Metadata.ASCII_STRING_MARSHALLER);
+
+  /** URL-safe base64 of a mask with only {@link TrackedFeature#MULTISTREAM_IN_MRD} set. */
+  private static final String MULTISTREAM_IN_MRD_HEADER_VALUE = "AAAAAQ==";
+
   private static final Correspondence<String, UUID> IS_UUID =
       Correspondence.transforming(UUID::fromString, "is a UUID");
 
@@ -1306,6 +1313,371 @@ public final class ITObjectReadSessionFakeTest {
               }
             });
       }
+    }
+  }
+
+  /**
+   * Validates that a session served by a single stream never reports {@code MULTISTREAM_IN_MRD}.
+   *
+   * <ol>
+   *   <li>Open blob descriptor (stream 1)
+   *   <li>read bytes 10-20 as a future, then bytes 20-30 as a future; both can share stream 1
+   *   <li>expect exactly one stream, and no request carried {@code x-goog-storage-java-features}
+   * </ol>
+   */
+  @Test
+  public void singleStreamSessionNeverSendsFeatureTrackingHeader() throws Exception {
+    ChecksummedTestContent content1 = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 10, 10);
+    ChecksummedTestContent content2 = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 20, 10);
+    BidiReadObjectRequest req2 = read(1, 10, 10);
+    BidiReadObjectResponse res2 =
+        BidiReadObjectResponse.newBuilder()
+            .addObjectDataRanges(
+                ObjectRangeData.newBuilder()
+                    .setChecksummedData(content1.asChecksummedData())
+                    .setReadRange(getReadRange(1, 10, content1))
+                    .setRangeEnd(true)
+                    .build())
+            .build();
+    BidiReadObjectRequest req3 = read(2, 20, 10);
+    BidiReadObjectResponse res3 =
+        BidiReadObjectResponse.newBuilder()
+            .addObjectDataRanges(
+                ObjectRangeData.newBuilder()
+                    .setChecksummedData(content2.asChecksummedData())
+                    .setReadRange(getReadRange(2, 20, content2))
+                    .setRangeEnd(true)
+                    .build())
+            .build();
+
+    AtomicInteger bidiReadObjectCount = new AtomicInteger();
+    StorageImplBase fakeStorage =
+        new StorageImplBase() {
+          @Override
+          public StreamObserver<BidiReadObjectRequest> bidiReadObject(
+              StreamObserver<BidiReadObjectResponse> respond) {
+            bidiReadObjectCount.getAndIncrement();
+            return new AbstractObserver(respond) {
+              @Override
+              public void onNext(BidiReadObjectRequest request) {
+                if (request.equals(REQ_OPEN)) {
+                  respond.onNext(RES_OPEN);
+                } else if (request.equals(req2)) {
+                  respond.onNext(res2);
+                } else if (request.equals(req3)) {
+                  respond.onNext(res3);
+                } else {
+                  respond.onError(TestUtils.apiException(Code.UNIMPLEMENTED, "Unexpected request"));
+                }
+              }
+            };
+          }
+        };
+
+    GrpcRequestAuditing requestAuditing = new GrpcRequestAuditing();
+    try (FakeServer fakeServer = FakeServer.of(fakeStorage);
+        Storage storage =
+            fakeServer.getGrpcStorageOptions().toBuilder()
+                .setRetrySettings(RetrySettings.newBuilder().setMaxAttempts(1).build())
+                .setGrpcInterceptorProvider(requestAuditing)
+                .build()
+                .getService()) {
+
+      BlobId id = BlobId.of("b", "o");
+      ApiFuture<BlobReadSession> futureObjectDescriptor = storage.blobReadSession(id);
+
+      byte[] bytes1;
+      byte[] bytes2;
+      try (BlobReadSession bd = futureObjectDescriptor.get(5, TimeUnit.SECONDS)) {
+        bytes1 =
+            bd.readAs(ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(10L, 10L)))
+                .get(3, TimeUnit.SECONDS);
+        bytes2 =
+            bd.readAs(ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(20L, 10L)))
+                .get(3, TimeUnit.SECONDS);
+      }
+
+      assertAll(
+          () -> assertThat(bidiReadObjectCount.get()).isEqualTo(1),
+          () -> requestAuditing.assertRequestHeader(X_GOOG_STORAGE_JAVA_FEATURES).isEmpty(),
+          () -> requestAuditing.assertRequestHeader(X_GOOG_REQUEST_PARAMS).isNotEmpty(),
+          () -> assertThat(xxd(bytes1)).isEqualTo(xxd(content1.getBytes())),
+          () -> assertThat(xxd(bytes2)).isEqualTo(xxd(content2.getBytes())));
+    }
+  }
+
+  /**
+   * Validates that only a transparently forked stream carries the feature tracking header.
+   *
+   * <ol>
+   *   <li>Open blob descriptor (stream 1, no feature header)
+   *   <li>start a channel read of bytes 10-20 (stream 1)
+   *   <li>while the channel read is outstanding, request bytes 10-20 as a future, which can not
+   *       share the stream and therefore forks a second stream (stream 2)
+   *   <li>expect stream 2 to carry {@code x-goog-storage-java-features} with the {@code
+   *       MULTISTREAM_IN_MRD} bit set, and stream 1 to not have carried it
+   * </ol>
+   */
+  @Test
+  public void forkedStreamCarriesFeatureTrackingHeader() throws Exception {
+    ChecksummedTestContent content = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 10, 20);
+    ChecksummedTestContent content1 = ChecksummedTestContent.of(content.getBytes(), 0, 10);
+    ChecksummedTestContent content2 = ChecksummedTestContent.of(content.getBytes(), 10, 10);
+    BidiReadObjectRequest req2 = read(1, 10, 20);
+    BidiReadObjectResponse res2_1 =
+        BidiReadObjectResponse.newBuilder()
+            .addObjectDataRanges(
+                ObjectRangeData.newBuilder()
+                    .setChecksummedData(content1.asChecksummedData())
+                    .setReadRange(getReadRange(1, 10, content1))
+                    .build())
+            .build();
+    BidiReadObjectResponse res2_2 =
+        BidiReadObjectResponse.newBuilder()
+            .addObjectDataRanges(
+                ObjectRangeData.newBuilder()
+                    .setChecksummedData(content2.asChecksummedData())
+                    .setReadRange(getReadRange(1, 20, content2))
+                    .setRangeEnd(true)
+                    .build())
+            .build();
+
+    BidiReadObjectRequest req3 =
+        read(2, 10, 20).toBuilder()
+            .setReadObjectSpec(
+                BidiReadObjectSpec.newBuilder()
+                    .setBucket(METADATA.getBucket())
+                    .setObject(METADATA.getName())
+                    .setGeneration(METADATA.getGeneration())
+                    .build())
+            .build();
+    BidiReadObjectResponse res3 =
+        BidiReadObjectResponse.newBuilder()
+            .addObjectDataRanges(
+                ObjectRangeData.newBuilder()
+                    .setChecksummedData(content.asChecksummedData())
+                    .setReadRange(getReadRange(2, 10, content))
+                    .setRangeEnd(true)
+                    .build())
+            .build();
+
+    AtomicInteger bidiReadObjectCount = new AtomicInteger();
+    CountDownLatch cdl = new CountDownLatch(1);
+
+    StorageImplBase fakeStorage =
+        new StorageImplBase() {
+          @Override
+          public StreamObserver<BidiReadObjectRequest> bidiReadObject(
+              StreamObserver<BidiReadObjectResponse> respond) {
+            bidiReadObjectCount.getAndIncrement();
+            return new AbstractObserver(respond) {
+              @Override
+              public void onNext(BidiReadObjectRequest request) {
+                if (request.equals(REQ_OPEN)) {
+                  respond.onNext(RES_OPEN);
+                } else if (request.equals(req2)) {
+                  respond.onNext(res2_1);
+                  try {
+                    cdl.await();
+                  } catch (InterruptedException e) {
+                    respond.onError(TestUtils.apiException(Code.UNIMPLEMENTED, e.getMessage()));
+                  }
+                  respond.onNext(res2_2);
+                  respond.onCompleted();
+                } else if (request.equals(req3)) {
+                  respond.onNext(res3);
+                  respond.onCompleted();
+                  cdl.countDown();
+                } else {
+                  respond.onError(TestUtils.apiException(Code.UNIMPLEMENTED, "Unexpected request"));
+                }
+              }
+            };
+          }
+        };
+
+    GrpcRequestAuditing requestAuditing = new GrpcRequestAuditing();
+    try (FakeServer fakeServer = FakeServer.of(fakeStorage);
+        Storage storage =
+            fakeServer.getGrpcStorageOptions().toBuilder()
+                .setRetrySettings(RetrySettings.newBuilder().setMaxAttempts(1).build())
+                .setGrpcInterceptorProvider(requestAuditing)
+                .build()
+                .getService()) {
+
+      BlobId id = BlobId.of("b", "o");
+      ApiFuture<BlobReadSession> futureObjectDescriptor = storage.blobReadSession(id);
+
+      ByteBuffer buf = ByteBuffer.allocate(50);
+      byte[] bytes;
+      try (BlobReadSession bd = futureObjectDescriptor.get(5, TimeUnit.SECONDS)) {
+        // only the initial stream has been opened so far, no feature header expected
+        requestAuditing.assertRequestHeader(X_GOOG_STORAGE_JAVA_FEATURES).isEmpty();
+        try (ScatteringByteChannel c =
+            bd.readAs(ReadProjectionConfigs.asChannel().withRangeSpec(RangeSpec.of(10L, 20L)))) {
+          buf.limit(5);
+          Buffers.fillFrom(buf, c);
+          buf.limit(buf.capacity());
+          ApiFuture<byte[]> future =
+              bd.readAs(
+                  ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(10L, 20L)));
+          bytes = future.get(3, TimeUnit.SECONDS);
+          Buffers.fillFrom(buf, c);
+        }
+      }
+
+      byte[] futureBytes = bytes;
+      assertAll(
+          () -> assertThat(bidiReadObjectCount.get()).isEqualTo(2),
+          () ->
+              // exactly one of the two streams (the forked one) carried the header
+              requestAuditing
+                  .assertRequestHeader(FeatureTracking.HEADER, FilteringPolicy.NO_FILTER)
+                  .containsExactly(MULTISTREAM_IN_MRD_HEADER_VALUE),
+          () -> assertThat(xxd(buf)).isEqualTo(xxd(content.getBytes())),
+          () -> assertThat(xxd(futureBytes)).isEqualTo(xxd(content.getBytes())));
+    }
+  }
+
+  /**
+   * Validates that once a session has forked, a retry re-open of the <em>original</em> stream also
+   * carries the feature tracking header.
+   *
+   * <ol>
+   *   <li>Open blob descriptor (stream 1, no feature header)
+   *   <li>start a channel read of bytes 10-30 (stream 1); the server delivers bytes 10-20 and then
+   *       holds the stream open
+   *   <li>while the channel read is outstanding, request bytes 10-30 as a future, which can not
+   *       share the stream and therefore forks a second stream (stream 2, with feature header)
+   *   <li>once stream 2 has completed, the server fails stream 1 with a retryable UNAVAILABLE
+   *   <li>expect the client to re-open stream 1 (stream 3) for the remaining bytes 20-30, carrying
+   *       the feature header, and the channel read to complete successfully
+   * </ol>
+   */
+  @Test
+  public void streamReopenedAfterForkCarriesFeatureTrackingHeader() throws Exception {
+    ChecksummedTestContent content = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 10, 20);
+    ChecksummedTestContent content1 = ChecksummedTestContent.of(content.getBytes(), 0, 10);
+    ChecksummedTestContent content2 = ChecksummedTestContent.of(content.getBytes(), 10, 10);
+    BidiReadObjectRequest req2 = read(1, 10, 20);
+    BidiReadObjectResponse res2 =
+        BidiReadObjectResponse.newBuilder()
+            .addObjectDataRanges(
+                ObjectRangeData.newBuilder()
+                    .setChecksummedData(content1.asChecksummedData())
+                    .setReadRange(getReadRange(1, 10, content1))
+                    .build())
+            .build();
+
+    BidiReadObjectSpec resolvedSpec =
+        BidiReadObjectSpec.newBuilder()
+            .setBucket(METADATA.getBucket())
+            .setObject(METADATA.getName())
+            .setGeneration(METADATA.getGeneration())
+            .build();
+    // forked stream: open + read id 2 in one request
+    BidiReadObjectRequest req3 =
+        read(2, 10, 20).toBuilder().setReadObjectSpec(resolvedSpec).build();
+    BidiReadObjectResponse res3 =
+        BidiReadObjectResponse.newBuilder()
+            .addObjectDataRanges(
+                ObjectRangeData.newBuilder()
+                    .setChecksummedData(content.asChecksummedData())
+                    .setReadRange(getReadRange(2, 10, content))
+                    .setRangeEnd(true)
+                    .build())
+            .build();
+    // re-open of the original stream: open + resume read id 1 from the current offset
+    BidiReadObjectRequest req4 =
+        read(1, 20, 10).toBuilder().setReadObjectSpec(resolvedSpec).build();
+    BidiReadObjectResponse res4 =
+        BidiReadObjectResponse.newBuilder()
+            .addObjectDataRanges(
+                ObjectRangeData.newBuilder()
+                    .setChecksummedData(content2.asChecksummedData())
+                    .setReadRange(getReadRange(1, 20, content2))
+                    .setRangeEnd(true)
+                    .build())
+            .build();
+
+    AtomicInteger bidiReadObjectCount = new AtomicInteger();
+    CountDownLatch forkedStreamDone = new CountDownLatch(1);
+
+    StorageImplBase fakeStorage =
+        new StorageImplBase() {
+          @Override
+          public StreamObserver<BidiReadObjectRequest> bidiReadObject(
+              StreamObserver<BidiReadObjectResponse> respond) {
+            bidiReadObjectCount.getAndIncrement();
+            return new AbstractObserver(respond) {
+              @Override
+              public void onNext(BidiReadObjectRequest request) {
+                if (request.equals(REQ_OPEN)) {
+                  respond.onNext(RES_OPEN);
+                } else if (request.equals(req2)) {
+                  respond.onNext(res2);
+                  try {
+                    forkedStreamDone.await();
+                  } catch (InterruptedException e) {
+                    respond.onError(TestUtils.apiException(Code.UNIMPLEMENTED, e.getMessage()));
+                    return;
+                  }
+                  respond.onError(Status.UNAVAILABLE.asRuntimeException());
+                } else if (request.equals(req3)) {
+                  respond.onNext(res3);
+                  respond.onCompleted();
+                  forkedStreamDone.countDown();
+                } else if (request.equals(req4)) {
+                  respond.onNext(res4);
+                  respond.onCompleted();
+                } else {
+                  respond.onError(TestUtils.apiException(Code.UNIMPLEMENTED, "Unexpected request"));
+                }
+              }
+            };
+          }
+        };
+
+    GrpcRequestAuditing requestAuditing = new GrpcRequestAuditing();
+    try (FakeServer fakeServer = FakeServer.of(fakeStorage);
+        Storage storage =
+            fakeServer.getGrpcStorageOptions().toBuilder()
+                .setRetrySettings(RetrySettings.newBuilder().setMaxAttempts(3).build())
+                .setGrpcInterceptorProvider(requestAuditing)
+                .build()
+                .getService()) {
+
+      BlobId id = BlobId.of("b", "o");
+      ApiFuture<BlobReadSession> futureObjectDescriptor = storage.blobReadSession(id);
+
+      ByteBuffer buf = ByteBuffer.allocate(50);
+      byte[] bytes;
+      try (BlobReadSession bd = futureObjectDescriptor.get(5, TimeUnit.SECONDS)) {
+        try (ScatteringByteChannel c =
+            bd.readAs(ReadProjectionConfigs.asChannel().withRangeSpec(RangeSpec.of(10L, 20L)))) {
+          buf.limit(5);
+          Buffers.fillFrom(buf, c);
+          buf.limit(buf.capacity());
+          ApiFuture<byte[]> future =
+              bd.readAs(
+                  ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(10L, 20L)));
+          bytes = future.get(3, TimeUnit.SECONDS);
+          Buffers.fillFrom(buf, c);
+        }
+      }
+
+      byte[] futureBytes = bytes;
+      assertAll(
+          () -> assertThat(bidiReadObjectCount.get()).isEqualTo(3),
+          () ->
+              // the forked stream and the re-opened original stream carried the header, the
+              // initial open did not
+              requestAuditing
+                  .assertRequestHeader(FeatureTracking.HEADER, FilteringPolicy.NO_FILTER)
+                  .containsExactly(
+                      MULTISTREAM_IN_MRD_HEADER_VALUE, MULTISTREAM_IN_MRD_HEADER_VALUE),
+          () -> assertThat(xxd(buf)).isEqualTo(xxd(content.getBytes())),
+          () -> assertThat(xxd(futureBytes)).isEqualTo(xxd(content.getBytes())));
     }
   }
 
