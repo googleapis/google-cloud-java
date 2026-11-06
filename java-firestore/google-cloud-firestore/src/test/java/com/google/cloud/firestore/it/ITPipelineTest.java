@@ -157,6 +157,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -2813,6 +2814,7 @@ public class ITPipelineTest extends ITBaseTest {
     assertThat(instanceEntries).contains(ImmutableMap.of("k", "y", "v", 20L));
   }
 
+  @Ignore("Flaky test: b/579437136")
   @Test
   public void testDataManipulationExpressions() throws Exception {
     List<PipelineResult> results =
