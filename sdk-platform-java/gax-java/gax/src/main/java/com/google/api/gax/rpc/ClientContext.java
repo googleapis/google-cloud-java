@@ -311,6 +311,7 @@ public abstract class ClientContext {
               .setServiceName(endpointContext.serviceName())
               .setLibraryMetadata(settings.getLibraryMetadata())
               .setUrlDomain(endpointContext.getUrlDomain())
+              .setJavaClientName(settings.getJavaClientName())
               .build();
       apiTracerFactory = apiTracerFactory.withContext(apiTracerContext);
     }
