@@ -50,20 +50,16 @@ public class ChannelPrimerTestRpc extends GapicSpannerRpc {
   /** Returns the session that the next priming attempt uses, or {@code null}. */
   @Nullable
   public String getPrimeSessionName() {
-    DynamicChannelPoolPrimer primer = getChannelPrimer();
-    return primer == null ? null : primer.getPrimeSessionName();
+    return getSessionRegistry().nextSessionName();
   }
 
   /** Returns currently available session names in source-preference order. */
   public List<String> getPrimeSessionNames() {
     List<String> names = new ArrayList<>();
-    DynamicChannelPoolPrimer primer = getChannelPrimer();
-    if (primer != null) {
-      for (ChannelPrimeSessionSource source : primer.getPrimeSessionSources()) {
-        String sessionName = source.getChannelPrimeSessionName();
-        if (sessionName != null) {
-          names.add(sessionName);
-        }
+    for (ChannelPrimeSessionSource source : getSessionRegistry().getSources()) {
+      String sessionName = source.getChannelPrimeSessionName();
+      if (sessionName != null) {
+        names.add(sessionName);
       }
     }
     return names;
@@ -87,8 +83,7 @@ public class ChannelPrimerTestRpc extends GapicSpannerRpc {
 
   /** Returns the number of registered prime-session sources. */
   public int getPrimeSessionSourceCount() {
-    DynamicChannelPoolPrimer primer = getChannelPrimer();
-    return primer == null ? 0 : primer.getPrimeSessionSources().size();
+    return getSessionRegistry().getSources().size();
   }
 
   @Override
