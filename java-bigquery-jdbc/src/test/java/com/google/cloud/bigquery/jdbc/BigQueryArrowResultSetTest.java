@@ -52,6 +52,7 @@ import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
@@ -302,6 +303,11 @@ public class BigQueryArrowResultSetTest {
             QUERY_SCHEMA, arrowSchema, 1, statement, bufferWithTwoRows, workerTask, null);
 
     assertThat(resultSetRowCount(bigQueryArrowResultSet2)).isEqualTo(1);
+    // ResultSet with 3 rows buffer and 2 total rows (e.g. Statement.setMaxRows(2)).
+    assertThat(
+            resultSetRowCount(
+                idResultSet(idArrowSchema(), 2, idWrapper(1, 2, 3), arrowBatchWrapperLast)))
+        .isEqualTo(2);
   }
 
   @Test
@@ -811,5 +817,131 @@ public class BigQueryArrowResultSetTest {
     } finally {
       TimeZone.setDefault(originalDefault);
     }
+  }
+
+  private static final Schema ID_SCHEMA = Schema.of(Field.of("id", StandardSQLTypeName.INT64));
+
+  private static VectorSchemaRoot idRoot(int... ids) {
+    IntVector idVector = new IntVector("id", new RootAllocator());
+    idVector.allocateNew(Math.max(ids.length, 1));
+    for (int i = 0; i < ids.length; i++) {
+      idVector.set(i, ids[i]);
+    }
+    idVector.setValueCount(ids.length);
+    VectorSchemaRoot root = new VectorSchemaRoot(ImmutableList.<FieldVector>of(idVector));
+    root.setRowCount(ids.length);
+    return root;
+  }
+
+  private static ArrowSchema idArrowSchema() throws IOException {
+    return ArrowSchema.newBuilder()
+        .setSerializedSchema(serializeSchema(idRoot().getSchema()))
+        .build();
+  }
+
+  private static BigQueryArrowBatchWrapper idWrapper(int... ids) throws IOException {
+    ArrowRecordBatch batch =
+        ArrowRecordBatch.newBuilder()
+            .setSerializedRecordBatch(serializeVectorSchemaRoot(idRoot(ids)))
+            .build();
+    return BigQueryArrowBatchWrapper.of(batch, null, ids.length);
+  }
+
+  private BigQueryArrowResultSet idResultSet(
+      ArrowSchema arrowSchema, long totalRows, BigQueryArrowBatchWrapper... items)
+      throws SQLException {
+    BlockingQueue<BigQueryArrowBatchWrapper> queue =
+        new LinkedBlockingDeque<>(Arrays.asList(items));
+    return BigQueryArrowResultSet.of(
+        ID_SCHEMA, arrowSchema, totalRows, statement, queue, mock(Future.class), null);
+  }
+
+  @Test
+  public void testUnknownTotalSkipsEmptyBatchesAndDetectsLastRow()
+      throws SQLException, IOException {
+    BigQueryArrowResultSet rs =
+        idResultSet(
+            idArrowSchema(),
+            BigQueryArrowResultSet.UNKNOWN_TOTAL_ROWS,
+            idWrapper(1, 2),
+            idWrapper(),
+            idWrapper(3),
+            arrowBatchWrapperLast);
+
+    assertThat(rs.isBeforeFirst()).isTrue();
+    List<Long> ids = new ArrayList<>();
+    List<Boolean> isLast = new ArrayList<>();
+    while (rs.next()) {
+      ids.add(rs.getLong(1));
+      isLast.add(rs.isLast());
+    }
+    assertThat(ids).containsExactly(1L, 2L, 3L).inOrder();
+    assertThat(isLast).containsExactly(false, false, true).inOrder();
+    assertThat(rs.isAfterLast()).isTrue();
+  }
+
+  @Test
+  public void testEmptyResultIsNotBeforeFirst() throws SQLException, IOException {
+    BigQueryArrowResultSet knownTotal = idResultSet(idArrowSchema(), 0, arrowBatchWrapperLast);
+    BigQueryArrowResultSet unknownTotal =
+        idResultSet(
+            idArrowSchema(),
+            BigQueryArrowResultSet.UNKNOWN_TOTAL_ROWS,
+            idWrapper(),
+            arrowBatchWrapperLast);
+
+    for (BigQueryArrowResultSet rs : ImmutableList.of(knownTotal, unknownTotal)) {
+      assertThat(rs.isBeforeFirst()).isFalse();
+      assertThat(rs.next()).isFalse();
+    }
+  }
+
+  @Test
+  public void testUnknownTotalErrorAfterRowsIsThrown() throws SQLException, IOException {
+    BigQueryArrowResultSet rs =
+        idResultSet(
+            idArrowSchema(),
+            BigQueryArrowResultSet.UNKNOWN_TOTAL_ROWS,
+            idWrapper(1),
+            BigQueryArrowBatchWrapper.ofError(new RuntimeException("stream failed")),
+            arrowBatchWrapperLast);
+
+    assertThat(rs.next()).isTrue();
+    // The look-ahead sees the error, so the current row is not reported as last.
+    assertThat(rs.isLast()).isFalse();
+    assertThrows(SQLException.class, rs::next);
+  }
+
+  @Test
+  public void testSchemaFromStreamMessage() throws SQLException, IOException {
+    BigQueryArrowResultSet rs =
+        idResultSet(
+            null,
+            BigQueryArrowResultSet.UNKNOWN_TOTAL_ROWS,
+            BigQueryArrowBatchWrapper.of(null, idArrowSchema(), 0),
+            idWrapper(7),
+            arrowBatchWrapperLast);
+
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getLong(1)).isEqualTo(7L);
+    assertThat(rs.next()).isFalse();
+  }
+
+  @Test
+  public void testBatchBeforeSchemaThrows() throws SQLException, IOException {
+    BigQueryArrowResultSet rs = idResultSet(null, 1, idWrapper(1), arrowBatchWrapperLast);
+
+    assertThrows(SQLException.class, rs::next);
+  }
+
+  @Test
+  public void testGetterWhenNotOnRowThrows() throws SQLException, IOException {
+    BigQueryArrowResultSet rs =
+        idResultSet(idArrowSchema(), 1, idWrapper(1), arrowBatchWrapperLast);
+
+    assertThrows(SQLException.class, () -> rs.getLong(1));
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.next()).isFalse();
+    assertThrows(SQLException.class, () -> rs.getLong(1));
   }
 }
