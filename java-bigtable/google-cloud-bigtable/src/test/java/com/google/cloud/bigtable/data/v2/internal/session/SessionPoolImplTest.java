@@ -34,6 +34,7 @@ import com.google.bigtable.v2.OpenFakeSessionRequest.Action;
 import com.google.bigtable.v2.OpenFakeSessionRequest.ActionList;
 import com.google.bigtable.v2.OpenFakeSessionRequest.StreamError;
 import com.google.bigtable.v2.OpenSessionRequest;
+import com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration;
 import com.google.bigtable.v2.SessionFakeScriptedRequest;
 import com.google.bigtable.v2.SessionFakeScriptedResponse;
 import com.google.bigtable.v2.SessionRefreshConfig;
@@ -1323,6 +1324,46 @@ public class SessionPoolImplTest {
     }
 
     assertPoolServesVRpc(sessionPool, "after an interrupted caller (pool must remain healthy)");
+  }
+
+  @Test
+  @SuppressWarnings({"unchecked", "GuardedBy"})
+  void configUpdateToEmptyClosesSessionsAndScalesBackUpWhenEnabled() throws Exception {
+    ArgumentCaptor<ClientConfigurationManager.ConfigListener<SessionPoolConfiguration>>
+        listenerCaptor =
+            ArgumentCaptor.forClass(ClientConfigurationManager.ConfigListener.class);
+    verify(configManager).addListener(any(), listenerCaptor.capture());
+    ClientConfigurationManager.ConfigListener<SessionPoolConfiguration> configListener =
+        listenerCaptor.getValue();
+
+    sessionPool.start(OpenFakeSessionRequest.getDefaultInstance(), new Metadata());
+    assertPoolServesVRpc(sessionPool, "initial started pool");
+    waitForOpenRequestCount(5, Duration.ofSeconds(5));
+    assertThat(sessionPool.hasSession()).isTrue();
+
+    // Update config to empty (session_load == 0 clears session_configuration).
+    configListener.onChange(SessionPoolConfiguration.getDefaultInstance());
+    assertThat(sessionPool.hasSession()).isFalse();
+
+    // Wait for all sessions to finish closing.
+    long deadline = System.currentTimeMillis() + 5000;
+    while (System.currentTimeMillis() < deadline
+        && !sessionPool.sessions.getAllSessions().isEmpty()) {
+      Thread.sleep(10);
+    }
+    assertThat(sessionPool.sessions.getAllSessions()).isEmpty();
+    assertThat(sessionPool.sessions.getStats().getExpectedCapacity()).isEqualTo(0);
+
+    // Re-enable SessionPoolConfiguration and verify pool scales back up.
+    SessionPoolConfiguration enabledConfig =
+        ClientConfigurationManager.loadDefault()
+            .getSessionConfiguration()
+            .getSessionPoolConfiguration();
+    configListener.onChange(enabledConfig);
+
+    waitForOpenRequestCount(10, Duration.ofSeconds(5));
+    assertPoolServesVRpc(sessionPool, "after re-enabling session pool configuration");
+    assertThat(sessionPool.hasSession()).isTrue();
   }
 
   private void waitForOpenRequestCount(int minCount, Duration timeout) throws InterruptedException {

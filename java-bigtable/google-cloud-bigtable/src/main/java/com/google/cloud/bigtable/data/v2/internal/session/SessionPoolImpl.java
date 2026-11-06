@@ -286,6 +286,28 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                 budget.updateConfig(newConfig);
                 poolSizer.updateConfig(newConfig);
                 picker.updateConfig(newConfig);
+                if (newConfig.equals(
+                    SessionClientConfiguration.SessionPoolConfiguration.getDefaultInstance())) {
+                  if (retryCreateSessionFuture != null) {
+                    retryCreateSessionFuture.cancel();
+                    retryCreateSessionFuture = null;
+                  }
+                  CloseSessionRequest closeReq =
+                      CloseSessionRequest.newBuilder()
+                          .setReason(CloseSessionReason.CLOSE_SESSION_REASON_DOWNSIZE)
+                          .setDescription("SessionPool configuration disabled")
+                          .build();
+                  for (SessionHandle handle : new ArrayList<>(sessions.getAllSessions())) {
+                    handle.onSessionClosing();
+                    handle.getSession().close(closeReq);
+                  }
+                } else if (poolState == PoolState.STARTED) {
+                  while (poolSizer.getScaleDelta() > 0) {
+                    if (!createSession(openParams)) {
+                      break;
+                    }
+                  }
+                }
               } finally {
                 poolLock.unlock();
               }
@@ -537,7 +559,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
 
   @GuardedBy("poolLock")
   private void maybeScheduleCreateSessionRetry() {
-    if (retryCreateSessionFuture != null) {
+    if (retryCreateSessionFuture != null || budget.getMaxConcurrentRequest() <= 0) {
       return;
     }
     // This interval could be 0 or negative if nextAvailableBudget is now. In which case

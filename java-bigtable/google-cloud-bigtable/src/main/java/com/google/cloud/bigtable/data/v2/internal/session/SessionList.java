@@ -256,8 +256,10 @@ class SessionList {
         poolStats.readyCount--;
       }
       // eagerly decrement expected count and make sure to avoid double counting in onSessionClosed
-      poolStats.expectedCapacity--;
-      inExpectedCount = false;
+      if (inExpectedCount) {
+        poolStats.expectedCapacity--;
+        inExpectedCount = false;
+      }
     }
 
     void onSessionClosed(SessionState prevState) {

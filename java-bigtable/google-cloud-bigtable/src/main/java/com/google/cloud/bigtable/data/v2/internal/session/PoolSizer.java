@@ -69,7 +69,10 @@ class PoolSizer {
   public int getScaleDelta() {
     // Assume each session handles 1 RPC at a time. This should be revisited if sessions get
     // support for multiplexing.
-    int effectivePending = (int) Math.ceil((float) pendingRpcs.getSize() / pendingVRpcsPerSession);
+    int effectivePending =
+        pendingVRpcsPerSession > 0
+            ? (int) Math.ceil((float) pendingRpcs.getSize() / pendingVRpcsPerSession)
+            : 0;
     int sessionsInUse = effectivePending + stats.getInUseCount();
     int unboundedDesiredIdleSessions = (int) Math.ceil(sessionsInUse * idlesSessionHeadRoom);
     int desiredIdleSessions =
@@ -91,13 +94,13 @@ class PoolSizer {
   /** Returns true if the session should be replaced */
   @CheckReturnValue
   public boolean handleGoAway(GoAwayResponse msg) {
-    return getScaleDelta() >= 0;
+    return getScaleDelta() > 0;
   }
 
   /** Returns true if the closed session should be replaced */
   @CheckReturnValue
   boolean handleSessionClose(Status statusProto) {
-    return getScaleDelta() >= 0;
+    return getScaleDelta() > 0;
   }
 
   /** Returns true if a new session should be added. */
