@@ -30,8 +30,11 @@
 package com.google.api.gax.rpc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.Duration;
 import org.junit.jupiter.api.Test;
@@ -39,16 +42,67 @@ import org.junit.jupiter.api.Test;
 public class ResumableUploadOptionsTest {
 
   @Test
+  public void testDefaultOptions() {
+    ResumableUploadOptions options = ResumableUploadOptions.newBuilder().build();
+
+    assertEquals(8 * 1024 * 1024, options.getChunkSize());
+    assertNull(options.getGlobalTimeout());
+    assertNull(options.getProgressListener());
+    assertNull(options.getTransferStallMinimumRate());
+    assertNull(options.getTransferStallTimeout());
+    assertFalse(options.isStallControlEnabled());
+  }
+
+  @Test
   public void testCustomOptionsAndToBuilder() {
     ResumableUploadOptions options =
         ResumableUploadOptions.newBuilder()
             .setChunkSize(16 * 1024 * 1024)
             .setGlobalTimeout(Duration.ofMinutes(15))
+            .setTransferStallMinimumRate(2.5)
+            .setTransferStallTimeout(Duration.ofSeconds(45))
             .build();
 
     assertEquals(16 * 1024 * 1024, options.getChunkSize());
     assertEquals(Duration.ofMinutes(15), options.getGlobalTimeout());
+    assertEquals(2.5, options.getTransferStallMinimumRate());
+    assertEquals(Duration.ofSeconds(45), options.getTransferStallTimeout());
+    assertTrue(options.isStallControlEnabled());
     assertEquals(options, options.toBuilder().build());
+  }
+
+  @Test
+  public void testPartialStallPair_stallControlDisabled() {
+    assertFalse(
+        ResumableUploadOptions.newBuilder()
+            .setTransferStallMinimumRate(10.0)
+            .build()
+            .isStallControlEnabled());
+    assertFalse(
+        ResumableUploadOptions.newBuilder()
+            .setTransferStallTimeout(Duration.ofSeconds(30))
+            .build()
+            .isStallControlEnabled());
+  }
+
+  @Test
+  public void testInvalidTransferStallOptions_throwsIllegalArgumentException() {
+    for (double invalidRate :
+        new double[] {0.0, -1.0, Double.NaN, Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY}) {
+      assertThrows(
+          IllegalArgumentException.class,
+          () ->
+              ResumableUploadOptions.newBuilder().setTransferStallMinimumRate(invalidRate).build());
+    }
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> ResumableUploadOptions.newBuilder().setTransferStallTimeout(Duration.ZERO).build());
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ResumableUploadOptions.newBuilder()
+                .setTransferStallTimeout(Duration.ofSeconds(-5))
+                .build());
   }
 
   @Test
@@ -137,5 +191,36 @@ public class ResumableUploadOptionsTest {
     ResumableUploadOptions merged = defaultOptions.merge(perRequestOptions);
 
     assertSame(defaultListener, merged.getProgressListener());
+  }
+
+  @Test
+  public void testMerge_stallControlClearsDefaultGlobalTimeoutUnlessExplicitOnOverride() {
+    ResumableUploadOptions defaults =
+        ResumableUploadOptions.newBuilder().setGlobalTimeout(Duration.ofSeconds(5)).build();
+    ResumableUploadOptions stallPair =
+        ResumableUploadOptions.newBuilder()
+            .setTransferStallMinimumRate(5.0)
+            .setTransferStallTimeout(Duration.ofSeconds(60))
+            .build();
+
+    // 1. Enabling stall control per-call clears the default globalTimeout.
+    ResumableUploadOptions mergedPerCall = defaults.merge(stallPair);
+    assertTrue(mergedPerCall.isStallControlEnabled());
+    assertNull(mergedPerCall.getGlobalTimeout());
+
+    // 2. Completing the stall pair across default + per-call also clears the default globalTimeout.
+    ResumableUploadOptions defaultWithRate =
+        defaults.toBuilder().setTransferStallMinimumRate(5.0).build();
+    ResumableUploadOptions perCallWithTimeout =
+        ResumableUploadOptions.newBuilder().setTransferStallTimeout(Duration.ofSeconds(60)).build();
+    ResumableUploadOptions mergedSplit = defaultWithRate.merge(perCallWithTimeout);
+    assertTrue(mergedSplit.isStallControlEnabled());
+    assertNull(mergedSplit.getGlobalTimeout());
+
+    // 3. Explicit per-call globalTimeout is preserved alongside stall control.
+    ResumableUploadOptions stallWithExplicitGlobal =
+        stallPair.toBuilder().setGlobalTimeout(Duration.ofMinutes(30)).build();
+    assertEquals(
+        Duration.ofMinutes(30), defaults.merge(stallWithExplicitGlobal).getGlobalTimeout());
   }
 }
