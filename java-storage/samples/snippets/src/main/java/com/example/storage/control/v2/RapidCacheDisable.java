@@ -50,8 +50,9 @@ public final class RapidCacheDisable {
 
       // Await the LRO's completion. The cache moves to the "disabled" state within seconds, but
       // the operation only completes once the cache has been fully removed, which can take longer
-      // than the client's default polling timeout. If the wait times out, the cache is already
-      // disabled; use RapidCacheGet to check its state.
+      // than the client's default polling timeout. If the wait times out, get() throws a
+      // CancellationException, but the cache is already disabled; use RapidCacheGet to check its
+      // state.
       RapidCache disabledRapidCache = operation.get();
       System.out.printf("Disabled Rapid Cache: %s%n", disabledRapidCache.getName());
       System.out.printf("State: %s%n", disabledRapidCache.getState());

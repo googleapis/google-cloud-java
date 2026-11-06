@@ -19,7 +19,6 @@ package com.example.storage.control.v2;
 // [START storage_control_create_rapid_cache]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.protobuf.Duration;
 import com.google.storage.control.v2.BucketName;
 import com.google.storage.control.v2.CreateRapidCacheMetadata;
 import com.google.storage.control.v2.CreateRapidCacheRequest;
@@ -49,8 +48,6 @@ public final class RapidCacheCreate {
               // The Rapid Cache ID is the zone in which the cache is created.
               .setZone(cacheId)
               .setCacheType("rapid-cache-ultra")
-              // How long a cache entry can live (between 1 hour and 7 days). 86400s = 24 hours.
-              .setTtl(Duration.newBuilder().setSeconds(86400).build())
               .build();
 
       CreateRapidCacheRequest request =
