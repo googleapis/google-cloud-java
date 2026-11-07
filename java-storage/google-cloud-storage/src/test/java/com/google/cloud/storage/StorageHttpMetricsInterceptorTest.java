@@ -77,6 +77,14 @@ public final class StorageHttpMetricsInterceptorTest {
         .isEqualTo("/batch/storage/v1");
     assertThat(
             StorageHttpMetricsInterceptor.extractUrlTemplate(
+                new GenericUrl("https://storage.googleapis.com/storage/v1/b")))
+        .isEqualTo("/storage/v1/b");
+    assertThat(
+            StorageHttpMetricsInterceptor.extractUrlTemplate(
+                new GenericUrl("https://storage.googleapis.com/storage/v1/b?project=my-proj")))
+        .isEqualTo("/storage/v1/b");
+    assertThat(
+            StorageHttpMetricsInterceptor.extractUrlTemplate(
                 new GenericUrl("https://storage.googleapis.com/storage/v1/b/my-b")))
         .isEqualTo("/storage/v1/b/{bucket}");
     assertThat(
@@ -391,7 +399,8 @@ public final class StorageHttpMetricsInterceptorTest {
     assertThat(point.getSum()).isWithin(1e-6).of(0.15);
     Attributes attrs = point.getAttributes();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
-    assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isEqualTo("CONNECTIVITY");
+    assertThat(attrs.get(StorageClientMetrics.KEY_ERROR_TYPE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
     assertThat(attrs.get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE)).isEqualTo("0");
     assertThat(attrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");

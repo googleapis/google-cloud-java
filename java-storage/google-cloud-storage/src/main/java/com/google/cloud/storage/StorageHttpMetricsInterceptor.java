@@ -97,13 +97,13 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
         });
 
     // HttpIOExceptionHandler does not receive the thrown IOException instance from
-    // google-http-client, so transport-level IOExceptions default to STATUS_CONNECTIVITY here
+    // google-http-client, so transport-level IOExceptions default to STATUS_CONNECTION_ERROR here
     // (specific subtypes like TIMEOUT, DNS_FAILURE, and TLS_FAILURE are mapped in Retrying).
     request.setIOExceptionHandler(
         (req, supportsRetry) -> {
           if (recorded.compareAndSet(false, true)) {
             recordDuration(
-                req, startTimeNanos.get(), "0", StorageErrorTypeMapper.STATUS_CONNECTIVITY);
+                req, startTimeNanos.get(), "0", StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
           }
           return existingIoHandler != null
               && existingIoHandler.handleIOException(req, supportsRetry);
@@ -183,6 +183,9 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
   }
 
   private static String extractV1UrlTemplate(String rest) {
+    if ("b".equals(rest)) {
+      return "/storage/v1/b";
+    }
     String[] segments = rest.split("/");
     if (segments.length >= 2 && "b".equals(segments[0])) {
       segments[1] = "{bucket}";
