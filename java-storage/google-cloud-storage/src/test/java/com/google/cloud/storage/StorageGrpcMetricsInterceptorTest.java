@@ -32,6 +32,14 @@ import io.grpc.Grpc;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import io.opentelemetry.api.metrics.DoubleHistogram;
+import io.opentelemetry.api.metrics.DoubleHistogramBuilder;
+import io.opentelemetry.api.metrics.Meter;
+import io.opentelemetry.api.metrics.MeterBuilder;
+import io.opentelemetry.api.metrics.MeterProvider;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.ContextKey;
+import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.HistogramPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
@@ -44,20 +52,42 @@ import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public final class StorageGrpcMetricsInterceptorTest {
 
   private static final MethodDescriptor<Void, Void> READ_OBJECT_METHOD =
-      MethodDescriptor.<Void, Void>newBuilder()
-          .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
-          .setFullMethodName("google.storage.v2.Storage/ReadObject")
-          .setRequestMarshaller(new NoopMarshaller())
-          .setResponseMarshaller(new NoopMarshaller())
-          .build();
+      createMethodDescriptor(
+          MethodDescriptor.MethodType.SERVER_STREAMING, "google.storage.v2.Storage/ReadObject");
+
+  private static final MethodDescriptor<Void, Void> WRITE_OBJECT_METHOD =
+      createMethodDescriptor(
+          MethodDescriptor.MethodType.CLIENT_STREAMING, "google.storage.v2.Storage/WriteObject");
+
+  private static final MethodDescriptor<Void, Void> GET_BUCKET_METHOD =
+      createMethodDescriptor(
+          MethodDescriptor.MethodType.UNARY, "google.storage.v2.Storage/GetBucket");
+
+  private static final MethodDescriptor<Void, Void> DELETE_OBJECT_METHOD =
+      createMethodDescriptor(
+          MethodDescriptor.MethodType.UNARY, "google.storage.v2.Storage/DeleteObject");
+
+  private static MethodDescriptor<Void, Void> createMethodDescriptor(
+      MethodDescriptor.MethodType type, String fullMethodName) {
+    return MethodDescriptor.<Void, Void>newBuilder()
+        .setType(type)
+        .setFullMethodName(fullMethodName)
+        .setRequestMarshaller(new NoopMarshaller())
+        .setResponseMarshaller(new NoopMarshaller())
+        .build();
+  }
 
   private InMemoryMetricReader reader;
   private SdkMeterProvider meterProvider;
@@ -71,17 +101,37 @@ public final class StorageGrpcMetricsInterceptorTest {
   }
 
   @Test
-  public void extractShortMethodName_variousInputs() {
+  public void interceptCall_recordsFullMethodNameAcrossOperations() {
+    StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
+    StorageGrpcMetricsInterceptor interceptor =
+        new StorageGrpcMetricsInterceptor(metrics, clock, "storage.googleapis.com");
+
+    for (MethodDescriptor<Void, Void> method :
+        ImmutableList.of(
+            READ_OBJECT_METHOD, WRITE_OBJECT_METHOD, GET_BUCKET_METHOD, DELETE_OBJECT_METHOD)) {
+      TestClientCall<Void, Void> testCall = new TestClientCall<>(Attributes.EMPTY);
+      TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
+      ClientCall<Void, Void> call =
+          interceptor.interceptCall(method, CallOptions.DEFAULT, testChannel);
+      call.start(new TestListener<>(), new Metadata());
+      testCall.close(Status.OK, new Metadata());
+    }
+
+    MetricData rpcDurationData =
+        reader.collectAllMetrics().stream()
+            .filter(m -> m.getName().equals(StorageClientMetrics.METRIC_RPC_CLIENT_CALL_DURATION))
+            .findFirst()
+            .orElse(null);
+
+    assertThat(rpcDurationData).isNotNull();
     assertThat(
-            StorageGrpcMetricsInterceptor.extractShortMethodName(
-                "google.storage.v2.Storage/ReadObject"))
-        .isEqualTo("ReadObject");
-    assertThat(StorageGrpcMetricsInterceptor.extractShortMethodName("ReadObject"))
-        .isEqualTo("ReadObject");
-    assertThat(StorageGrpcMetricsInterceptor.extractShortMethodName("a/b/c")).isEqualTo("c");
-    assertThat(StorageGrpcMetricsInterceptor.extractShortMethodName(null)).isEqualTo("UNKNOWN");
-    assertThat(StorageGrpcMetricsInterceptor.extractShortMethodName("")).isEqualTo("UNKNOWN");
-    assertThat(StorageGrpcMetricsInterceptor.extractShortMethodName("/")).isEqualTo("/");
+            rpcDurationData.getHistogramData().getPoints().stream()
+                .map(p -> p.getAttributes().get(StorageClientMetrics.KEY_RPC_METHOD)))
+        .containsExactly(
+            "google.storage.v2.Storage/ReadObject",
+            "google.storage.v2.Storage/WriteObject",
+            "google.storage.v2.Storage/GetBucket",
+            "google.storage.v2.Storage/DeleteObject");
   }
 
   @Test
@@ -90,6 +140,8 @@ public final class StorageGrpcMetricsInterceptorTest {
         .isTrue();
     assertThat(StorageGrpcMetricsInterceptor.isDirectPathIp(InetAddress.getByName("34.126.63.254")))
         .isTrue();
+    assertThat(StorageGrpcMetricsInterceptor.isDirectPathIp(InetAddress.getByName("34.126.64.1")))
+        .isFalse();
     assertThat(StorageGrpcMetricsInterceptor.isDirectPathIp(InetAddress.getByName("35.190.1.1")))
         .isFalse();
     assertThat(StorageGrpcMetricsInterceptor.isDirectPathIp(InetAddress.getByName("142.250.1.1")))
@@ -103,6 +155,14 @@ public final class StorageGrpcMetricsInterceptorTest {
             StorageGrpcMetricsInterceptor.isDirectPathIp(
                 InetAddress.getByName("2001:4860:8040:ffff:ffff:ffff:ffff:ffff")))
         .isTrue();
+    assertThat(
+            StorageGrpcMetricsInterceptor.isDirectPathIp(
+                InetAddress.getByName("2001:4860:8041::1")))
+        .isTrue();
+    assertThat(
+            StorageGrpcMetricsInterceptor.isDirectPathIp(
+                InetAddress.getByName("2001:4860:8044::1")))
+        .isFalse();
     assertThat(
             StorageGrpcMetricsInterceptor.isDirectPathIp(
                 InetAddress.getByName("2001:4860:8080:0000:0000:0000:0000:0001")))
@@ -121,7 +181,7 @@ public final class StorageGrpcMetricsInterceptorTest {
                 Grpc.TRANSPORT_ATTR_REMOTE_ADDR,
                 new InetSocketAddress(InetAddress.getByName("34.126.1.2"), 443))
             .build();
-    assertThat(StorageGrpcMetricsInterceptor.detectNetworkPath(directPathAttrs, false))
+    assertThat(StorageGrpcMetricsInterceptor.detectNetworkPath(directPathAttrs))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
 
     Attributes cloudPathAttrs =
@@ -130,12 +190,12 @@ public final class StorageGrpcMetricsInterceptorTest {
                 Grpc.TRANSPORT_ATTR_REMOTE_ADDR,
                 new InetSocketAddress(InetAddress.getByName("142.250.1.1"), 443))
             .build();
-    assertThat(StorageGrpcMetricsInterceptor.detectNetworkPath(cloudPathAttrs, false))
+    assertThat(StorageGrpcMetricsInterceptor.detectNetworkPath(cloudPathAttrs))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
 
-    assertThat(StorageGrpcMetricsInterceptor.detectNetworkPath(null, true))
-        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
-    assertThat(StorageGrpcMetricsInterceptor.detectNetworkPath(null, false))
+    assertThat(StorageGrpcMetricsInterceptor.detectNetworkPath(Attributes.EMPTY))
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_UNKNOWN);
+    assertThat(StorageGrpcMetricsInterceptor.detectNetworkPath(null))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_UNKNOWN);
   }
 
@@ -177,7 +237,8 @@ public final class StorageGrpcMetricsInterceptorTest {
 
     io.opentelemetry.api.common.Attributes attrs = point.getAttributes();
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("grpc");
-    assertThat(attrs.get(StorageClientMetrics.KEY_RPC_METHOD)).isEqualTo("ReadObject");
+    assertThat(attrs.get(StorageClientMetrics.KEY_RPC_METHOD))
+        .isEqualTo("google.storage.v2.Storage/ReadObject");
     assertThat(attrs.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)).isEqualTo("OK");
     assertThat(attrs.get(StorageClientMetrics.KEY_NETWORK_PATH))
         .isEqualTo(StorageClientMetrics.NETWORK_PATH_CLOUDPATH);
@@ -263,7 +324,7 @@ public final class StorageGrpcMetricsInterceptorTest {
   }
 
   @Test
-  public void interceptCall_directPathEndpoint_recordsDirectPathAndServerAddress() {
+  public void googleC2pEndpoint_setsUnknownWhenRemoteAddrAbsent() {
     StorageClientMetrics metrics = StorageClientMetrics.create(meterProvider, true, false);
     StorageGrpcMetricsInterceptor interceptor =
         new StorageGrpcMetricsInterceptor(
@@ -286,7 +347,7 @@ public final class StorageGrpcMetricsInterceptorTest {
     assertThat(rpcDurationData).isNotNull();
     HistogramPointData point = rpcDurationData.getHistogramData().getPoints().iterator().next();
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_NETWORK_PATH))
-        .isEqualTo(StorageClientMetrics.NETWORK_PATH_DIRECTPATH);
+        .isEqualTo(StorageClientMetrics.NETWORK_PATH_UNKNOWN);
     assertThat(point.getAttributes().get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
   }
@@ -373,6 +434,74 @@ public final class StorageGrpcMetricsInterceptorTest {
 
     assertThat(rpcDurationData).isNotNull();
     assertThat(rpcDurationData.getHistogramData().getPoints()).hasSize(1);
+  }
+
+  @Test
+  public void interceptCall_withoutStorageMetricsContext_asyncOnCloseUsesCallerContext()
+      throws Exception {
+    ContextKey<String> testKey = ContextKey.named("caller-trace-key");
+    Context callerContext = Context.root().with(testKey, "caller-trace-value");
+    Context callbackThreadContext = Context.root().with(testKey, "callback-thread-value");
+
+    AtomicReference<Context> recordedContext = new AtomicReference<>();
+    DoubleHistogram mockHistogram = Mockito.mock(DoubleHistogram.class);
+    Mockito.doAnswer(
+            invocation -> {
+              recordedContext.set(invocation.getArgument(2));
+              return null;
+            })
+        .when(mockHistogram)
+        .record(
+            Mockito.anyDouble(),
+            Mockito.any(io.opentelemetry.api.common.Attributes.class),
+            Mockito.any(Context.class));
+
+    DoubleHistogramBuilder mockHistBuilder =
+        Mockito.mock(DoubleHistogramBuilder.class, Mockito.RETURNS_SELF);
+    Mockito.when(mockHistBuilder.build()).thenReturn(mockHistogram);
+    Mockito.when(mockHistBuilder.ofLongs())
+        .thenReturn(
+            Mockito.mock(
+                io.opentelemetry.api.metrics.LongHistogramBuilder.class,
+                Mockito.RETURNS_DEEP_STUBS));
+
+    Meter mockMeter = Mockito.mock(Meter.class, Mockito.RETURNS_DEEP_STUBS);
+    Mockito.when(mockMeter.histogramBuilder(Mockito.anyString())).thenReturn(mockHistBuilder);
+
+    MeterBuilder mockMeterBuilder = Mockito.mock(MeterBuilder.class, Mockito.RETURNS_SELF);
+    Mockito.when(mockMeterBuilder.build()).thenReturn(mockMeter);
+
+    MeterProvider mockMeterProvider = Mockito.mock(MeterProvider.class);
+    Mockito.when(mockMeterProvider.meterBuilder(Mockito.anyString())).thenReturn(mockMeterBuilder);
+
+    StorageClientMetrics metrics = StorageClientMetrics.create(mockMeterProvider, true, false);
+    StorageGrpcMetricsInterceptor interceptor =
+        new StorageGrpcMetricsInterceptor(metrics, clock, "storage.googleapis.com");
+
+    TestClientCall<Void, Void> testCall = new TestClientCall<>(Attributes.EMPTY);
+    TestChannel testChannel = new TestChannel(testCall, "storage.googleapis.com");
+
+    final ClientCall<Void, Void> call;
+    try (Scope ignored = callerContext.makeCurrent()) {
+      call = interceptor.interceptCall(READ_OBJECT_METHOD, CallOptions.DEFAULT, testChannel);
+    }
+    call.start(new TestListener<>(), new Metadata());
+
+    CountDownLatch latch = new CountDownLatch(1);
+    Thread asyncCallbackThread =
+        new Thread(
+            () -> {
+              try (Scope ignored = callbackThreadContext.makeCurrent()) {
+                testCall.close(Status.OK, new Metadata());
+              } finally {
+                latch.countDown();
+              }
+            });
+    asyncCallbackThread.start();
+    assertThat(latch.await(5, TimeUnit.SECONDS)).isTrue();
+
+    assertThat(recordedContext.get()).isSameInstanceAs(callerContext);
+    assertThat(recordedContext.get().get(testKey)).isEqualTo("caller-trace-value");
   }
 
   @Test
