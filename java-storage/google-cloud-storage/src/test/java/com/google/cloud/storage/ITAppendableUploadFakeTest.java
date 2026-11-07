@@ -365,7 +365,6 @@ public class ITAppendableUploadFakeTest {
             .build();
 
     // 6. Fourth write of "J" (finalize/finish write)
-    BidiWriteObjectRequest req_j_finish = j_finish;
     BidiWriteObjectResponse res_j_final =
         resource_10.toBuilder().setWriteHandle(writeHandle3).build();
 
@@ -457,7 +456,7 @@ public class ITAppendableUploadFakeTest {
                 .put(reconnect_token1, respond -> respond.onNext(res_lookup_token1))
                 .put(req_ghi, ghiHandler)
                 .put(reconnect_token2, respond -> respond.onNext(res_lookup_token2))
-                .put(req_j_finish, jHandler)
+                .put(j_finish, jHandler)
                 .put(
                     reconnect_token3,
                     respond ->
