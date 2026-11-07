@@ -96,4 +96,36 @@ public final class HttpStorageRpcUriTest {
         .isEqualTo("https://storage-preprod-test-unified.googleusercontent.com/");
     assertThat(rpc.getStorage().getServicePath()).isEqualTo("storage/v1_preprod/");
   }
+
+  @Test
+  public void customHostWithMirrorPath_preservesRootUrlAndDefaultServicePath() {
+    StorageOptions options =
+        StorageOptions.http()
+            .setCredentials(NoCredentials.getInstance())
+            .setProjectId("test-project")
+            .setHost("https://proxy.example.com/storage/v1-mirror/")
+            .build();
+    HttpStorageRpc rpc = (HttpStorageRpc) options.getRpc();
+    assertThat(rpc.getStorage().getRootUrl())
+        .isEqualTo("https://proxy.example.com/storage/v1-mirror/");
+    assertThat(rpc.getStorage().getServicePath()).isEqualTo("storage/v1/");
+    assertThat(rpc.getStorage().getBaseUrl())
+        .isEqualTo("https://proxy.example.com/storage/v1-mirror/storage/v1/");
+  }
+
+  @Test
+  public void customHostWithV1BetaPath_preservesRootUrlAndDefaultServicePath() {
+    StorageOptions options =
+        StorageOptions.http()
+            .setCredentials(NoCredentials.getInstance())
+            .setProjectId("test-project")
+            .setHost("https://proxy.example.com/storage/v1beta/")
+            .build();
+    HttpStorageRpc rpc = (HttpStorageRpc) options.getRpc();
+    assertThat(rpc.getStorage().getRootUrl())
+        .isEqualTo("https://proxy.example.com/storage/v1beta/");
+    assertThat(rpc.getStorage().getServicePath()).isEqualTo("storage/v1/");
+    assertThat(rpc.getStorage().getBaseUrl())
+        .isEqualTo("https://proxy.example.com/storage/v1beta/storage/v1/");
+  }
 }

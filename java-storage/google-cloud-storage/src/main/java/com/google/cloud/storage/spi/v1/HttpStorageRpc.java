@@ -167,9 +167,12 @@ public class HttpStorageRpc implements StorageRpc {
     try {
       URI uri = new URI(host);
       String path = uri.getRawPath();
-      int servicePathIdx = path != null ? path.indexOf("/storage/v1") : -1;
-      if (servicePathIdx >= 0) {
-        String rootPath = path.substring(0, servicePathIdx + 1);
+      String normalizedPath =
+          path != null && path.endsWith("/") ? path.substring(0, path.length() - 1) : path;
+      String preprodServicePath = "/storage/v1_preprod";
+      if (normalizedPath != null && normalizedPath.endsWith(preprodServicePath)) {
+        int servicePathIdx = normalizedPath.length() - preprodServicePath.length();
+        String rootPath = normalizedPath.substring(0, servicePathIdx + 1);
         String rootUrl =
             new URI(uri.getScheme(), uri.getAuthority(), rootPath, null, null).toString();
         String servicePath = path.substring(servicePathIdx + 1);

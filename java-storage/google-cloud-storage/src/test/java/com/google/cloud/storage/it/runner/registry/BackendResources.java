@@ -48,6 +48,7 @@ import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.net.URI;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -58,17 +59,14 @@ final class BackendResources implements ManagedLifecycle {
 
   private final Backend backend;
   private final ProtectedBucketNames protectedBucketNames;
-  private final ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets;
   private final ImmutableList<RegistryEntry<?>> registryEntries;
 
   private BackendResources(
       Backend backend,
       ProtectedBucketNames protectedBucketNames,
-      ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets,
       ImmutableList<RegistryEntry<?>> registryEntries) {
     this.backend = backend;
     this.protectedBucketNames = protectedBucketNames;
-    this.dynamicBuckets = dynamicBuckets;
     this.registryEntries = registryEntries;
   }
 
@@ -87,8 +85,6 @@ final class BackendResources implements ManagedLifecycle {
   @Override
   public void stop() {
     protectedBucketNames.stop();
-    dynamicBuckets.values().forEach(BucketInfoShim::stop);
-    dynamicBuckets.clear();
   }
 
   @Override
@@ -102,7 +98,6 @@ final class BackendResources implements ManagedLifecycle {
       TestRunScopedInstance<OtelSdkShim> otelSdk,
       TestRunScopedInstance<Zone.ZoneShim> zone) {
     ProtectedBucketNames protectedBucketNames = new ProtectedBucketNames();
-    ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets = new ConcurrentHashMap<>();
 
     TestRunScopedInstance<StorageInstance> storageJson =
         TestRunScopedInstance.of(
@@ -226,8 +221,7 @@ final class BackendResources implements ManagedLifecycle {
         TestRunScopedInstance.of(
             "fixture/BUCKET/[" + backend.name() + "]/DYNAMIC",
             () ->
-                new DynamicBucketLifecycle(
-                    backend, storageJson, ctrl, zone, protectedBucketNames, dynamicBuckets));
+                new DynamicBucketLifecycle(backend, storageJson, ctrl, zone, protectedBucketNames));
     TestRunScopedInstance<BucketInfoShim> bucketRp =
         TestRunScopedInstance.of(
             "fixture/BUCKET/[" + backend.name() + "]/REQUESTER_PAYS",
@@ -236,13 +230,12 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-rp-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
-                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation(zone.get().get().getRegion())
                       .setRequesterPays(true)
                       .build(),
                   storageJson.get().getStorage(),
-                  ctrl.get().getCtrl());
+                  controlClientOrNull(backend, ctrl));
             });
     TestRunScopedInstance<BucketInfoShim> bucketVersioned =
         TestRunScopedInstance.of(
@@ -252,13 +245,12 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-v-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
-                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation(zone.get().get().getRegion())
                       .setVersioningEnabled(true)
                       .build(),
                   storageJson.get().getStorage(),
-                  ctrl.get().getCtrl());
+                  controlClientOrNull(backend, ctrl));
             });
     TestRunScopedInstance<BucketInfoShim> bucketHns =
         TestRunScopedInstance.of(
@@ -268,7 +260,6 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-hns-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
-                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation(zone.get().get().getRegion())
                       .setHierarchicalNamespace(
@@ -279,7 +270,7 @@ final class BackendResources implements ManagedLifecycle {
                               .build())
                       .build(),
                   storageJson.get().getStorage(),
-                  ctrl.get().getCtrl());
+                  controlClientOrNull(backend, ctrl));
             });
     TestRunScopedInstance<BucketInfoShim> bucketRapid =
         TestRunScopedInstance.of(
@@ -289,7 +280,6 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-rapid-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
-                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation("us-central1")
                       .setCustomPlacementConfig(
@@ -305,20 +295,12 @@ final class BackendResources implements ManagedLifecycle {
                               .build())
                       .build(),
                   storageJson.get().getStorage(),
-                  ctrl.get().getCtrl());
+                  controlClientOrNull(backend, ctrl));
             });
-    TestRunScopedInstance<ObjectsFixture> objectsFixture =
+    TestRunScopedInstance<DynamicObjectsFixtureLifecycle> objectsFixture =
         TestRunScopedInstance.of(
             "fixture/OBJECTS/[" + backend.name() + "]",
-            () ->
-                new ObjectsFixture(
-                    storageJson.get().getStorage(),
-                    bucket
-                        .get()
-                        .resolve(
-                            null,
-                            CrossRunIntersection.of(
-                                backend, null, LocationType.REGIONAL_STANDARD))));
+            () -> new DynamicObjectsFixtureLifecycle(storageJson, bucket));
     TestRunScopedInstance<ObjectsFixture> objectsFixtureRp =
         TestRunScopedInstance.of(
             "fixture/OBJECTS/[" + backend.name() + "]/REQUESTER_PAYS",
@@ -338,7 +320,6 @@ final class BackendResources implements ManagedLifecycle {
     return new BackendResources(
         backend,
         protectedBucketNames,
-        dynamicBuckets,
         ImmutableList.of(
             RegistryEntry.of(
                 40, Storage.class, storageJson, transportAndBackendAre(Transport.HTTP, backend)),
@@ -385,10 +366,15 @@ final class BackendResources implements ManagedLifecycle {
             RegistryEntry.of(100, KmsFixture.class, kmsFixture, backendIs(backend))));
   }
 
-  private static final class BucketKey {
+  private static StorageControlClient controlClientOrNull(
+      Backend backend, TestRunScopedInstance<StorageControlInstance> ctrl) {
+    return backend == Backend.TEST_BENCH ? null : ctrl.get().getCtrl();
+  }
+
+  static final class BucketKey {
     private final LocationType locationType;
 
-    private BucketKey(LocationType locationType) {
+    BucketKey(LocationType locationType) {
       this.locationType = locationType;
     }
 
@@ -406,7 +392,7 @@ final class BackendResources implements ManagedLifecycle {
 
     @Override
     public int hashCode() {
-      return java.util.Objects.hash(locationType);
+      return Objects.hash(locationType);
     }
 
     @Override
@@ -415,34 +401,38 @@ final class BackendResources implements ManagedLifecycle {
     }
   }
 
-  private static final class DynamicBucketLifecycle
+  static final class DynamicBucketLifecycle
       implements Registry.StatelessManagedLifecycle<BucketInfo> {
     private final Backend backend;
     private final TestRunScopedInstance<StorageInstance> storageJson;
     private final TestRunScopedInstance<StorageControlInstance> ctrl;
     private final TestRunScopedInstance<Zone.ZoneShim> zone;
     private final ProtectedBucketNames protectedBucketNames;
-    private final ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets;
+    private final ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets =
+        new ConcurrentHashMap<>();
+    private final ConcurrentMap<BucketKey, RuntimeException> locationFailures =
+        new ConcurrentHashMap<>();
+    private final ConcurrentMap<String, String> rapidCacheZones = new ConcurrentHashMap<>();
 
-    private DynamicBucketLifecycle(
+    DynamicBucketLifecycle(
         Backend backend,
         TestRunScopedInstance<StorageInstance> storageJson,
         TestRunScopedInstance<StorageControlInstance> ctrl,
         TestRunScopedInstance<Zone.ZoneShim> zone,
-        ProtectedBucketNames protectedBucketNames,
-        ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets) {
+        ProtectedBucketNames protectedBucketNames) {
       this.backend = backend;
       this.storageJson = storageJson;
       this.ctrl = ctrl;
       this.zone = zone;
       this.protectedBucketNames = protectedBucketNames;
-      this.dynamicBuckets = dynamicBuckets;
     }
 
     @Override
     public void stop() {
-      dynamicBuckets.values().forEach(BucketInfoShim::stop);
+      dynamicBuckets.values().forEach(this::stopBucketShim);
       dynamicBuckets.clear();
+      locationFailures.clear();
+      rapidCacheZones.clear();
     }
 
     @Override
@@ -454,8 +444,34 @@ final class BackendResources implements ManagedLifecycle {
       }
 
       BucketKey key = new BucketKey(lt);
-      BucketInfoShim shim = dynamicBuckets.computeIfAbsent(key, this::createBucketShim);
+      RuntimeException priorFailure = locationFailures.get(key);
+      if (priorFailure != null) {
+        throw priorFailure;
+      }
+      BucketInfoShim shim =
+          dynamicBuckets.computeIfAbsent(
+              key,
+              k -> {
+                try {
+                  return createBucketShim(k);
+                } catch (RuntimeException e) {
+                  locationFailures.put(k, e);
+                  throw e;
+                }
+              });
       return (BucketInfo) shim.get();
+    }
+
+    private void stopBucketShim(BucketInfoShim shim) {
+      BucketInfo info = shim.getBucketInfo();
+      if (info != null) {
+        String targetZone = rapidCacheZones.remove(info.getName());
+        if (targetZone != null && backend != Backend.TEST_BENCH) {
+          RapidCacheHelper.disableRapidCache(
+              controlClientOrNull(backend, ctrl), info.getName(), targetZone);
+        }
+      }
+      shim.stop();
     }
 
     private BucketInfoShim createBucketShim(BucketKey key) {
@@ -467,7 +483,7 @@ final class BackendResources implements ManagedLifecycle {
       String targetZone = zoneName;
 
       Storage storageClientToUse = storageJson.get().getStorage();
-      StorageControlClient controlClientToUse = ctrl.get().getCtrl();
+      StorageControlClient controlClientToUse = controlClientOrNull(backend, ctrl);
 
       if (key.locationType == LocationType.REGIONAL_RAPID
           || key.locationType == LocationType.ZONAL_RAPID) {
@@ -533,16 +549,54 @@ final class BackendResources implements ManagedLifecycle {
       protectedBucketNames.add(bucketName);
 
       BucketInfoShim shim =
-          new BucketInfoShim(
-              backend,
-              builder.build(),
-              key.locationType,
-              targetZone,
-              storageClientToUse,
-              controlClientToUse);
+          new BucketInfoShim(builder.build(), storageClientToUse, controlClientToUse);
 
       shim.start();
+      if (key.locationType == LocationType.REGIONAL_RAPID && backend != Backend.TEST_BENCH) {
+        RapidCacheHelper.createRapidCache(
+            controlClientToUse, shim.getBucketInfo().getName(), targetZone, shim::stop);
+        rapidCacheZones.put(shim.getBucketInfo().getName(), targetZone);
+      }
       return shim;
+    }
+  }
+
+  static final class DynamicObjectsFixtureLifecycle
+      implements Registry.StatelessManagedLifecycle<ObjectsFixture> {
+    private final TestRunScopedInstance<StorageInstance> storageJson;
+    private final TestRunScopedInstance<DynamicBucketLifecycle> bucket;
+    private final ConcurrentMap<BucketKey, ObjectsFixture> dynamicFixtures =
+        new ConcurrentHashMap<>();
+
+    DynamicObjectsFixtureLifecycle(
+        TestRunScopedInstance<StorageInstance> storageJson,
+        TestRunScopedInstance<DynamicBucketLifecycle> bucket) {
+      this.storageJson = storageJson;
+      this.bucket = bucket;
+    }
+
+    @Override
+    public void stop() {
+      dynamicFixtures.values().forEach(ObjectsFixture::stop);
+      dynamicFixtures.clear();
+    }
+
+    @Override
+    public ObjectsFixture resolve(FrameworkField ff, CrossRunIntersection crossRunIntersection) {
+      LocationType lt = crossRunIntersection.getLocationType();
+      if (lt == null) {
+        lt = LocationType.REGIONAL_STANDARD;
+      }
+      BucketKey key = new BucketKey(lt);
+      BucketInfo resolvedBucket = bucket.get().resolve(ff, crossRunIntersection);
+      return dynamicFixtures.computeIfAbsent(
+          key,
+          k -> {
+            ObjectsFixture fixture =
+                new ObjectsFixture(storageJson.get().getStorage(), resolvedBucket);
+            fixture.start();
+            return fixture;
+          });
     }
   }
 }
