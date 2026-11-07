@@ -25,6 +25,7 @@ import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_CLIENT_RE
 import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS;
 import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS;
 import static com.google.cloud.storage.StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS;
+import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_DEADLINE_EXCEEDED;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_DNS_FAILURE;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_NOT_FOUND;
 import static com.google.cloud.storage.StorageErrorTypeMapper.STATUS_OK;
@@ -286,7 +287,8 @@ public final class RetryingMetricsTest {
     assertThat(attemptCounter.get()).isEqualTo(3);
     assertThat(se).isNotNull();
     assertOutcomeMetrics(STATUS_DNS_FAILURE, 3L, 3L);
-    assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_TIMEOUT, 2L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_DEADLINE_EXCEEDED, 1L);
+    assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_TIMEOUT, 1L);
     assertAttr(METRIC_GCP_STORAGE_CLIENT_ERRORS, KEY_ERROR_TYPE, STATUS_DNS_FAILURE, 1L);
   }
 
