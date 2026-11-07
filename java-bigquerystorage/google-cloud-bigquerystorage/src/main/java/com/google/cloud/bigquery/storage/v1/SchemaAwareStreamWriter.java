@@ -175,7 +175,7 @@ public class SchemaAwareStreamWriter<T> implements AutoCloseable {
         throw ex;
       }
       LOG.warning(
-          "Saw unknown field error during proto message conversin within error messages"
+          "Saw unknown field error during proto message conversion within error messages"
               + ex.rowIndexToErrorMessage
               + ", try to refresh the writer with updated schema, stream: "
               + streamName);
