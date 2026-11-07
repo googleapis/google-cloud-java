@@ -76,6 +76,55 @@ public interface RunDeliveryForecastRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. The
+   * [ForecastingLineItems][google.ads.admanager.v1.ForecastingLineItem] to be
+   * forecasted.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ForecastingLineItemList forecasting_line_items = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the forecastingLineItems field is set.
+   */
+  boolean hasForecastingLineItems();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The
+   * [ForecastingLineItems][google.ads.admanager.v1.ForecastingLineItem] to be
+   * forecasted.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ForecastingLineItemList forecasting_line_items = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The forecastingLineItems.
+   */
+  com.google.ads.admanager.v1.ForecastingLineItemList getForecastingLineItems();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The
+   * [ForecastingLineItems][google.ads.admanager.v1.ForecastingLineItem] to be
+   * forecasted.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.admanager.v1.ForecastingLineItemList forecasting_line_items = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.admanager.v1.ForecastingLineItemListOrBuilder getForecastingLineItemsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. Format: `networks/{network_code}`
    * </pre>
    *

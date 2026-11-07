@@ -231,7 +231,6 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
    * **Filterable fields:**
    *
    * * `adUnitCode`
-   * * `adUnitSizes.canonicalName`
    * * `displayName`
    * * `effectiveAdsenseEnabled`
    * * `explicitlyTargeted`
@@ -272,7 +271,6 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
    * **Filterable fields:**
    *
    * * `adUnitCode`
-   * * `adUnitSizes.canonicalName`
    * * `displayName`
    * * `effectiveAdsenseEnabled`
    * * `explicitlyTargeted`
@@ -1138,7 +1136,6 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
      * **Filterable fields:**
      *
      * * `adUnitCode`
-     * * `adUnitSizes.canonicalName`
      * * `displayName`
      * * `effectiveAdsenseEnabled`
      * * `explicitlyTargeted`
@@ -1178,7 +1175,6 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
      * **Filterable fields:**
      *
      * * `adUnitCode`
-     * * `adUnitSizes.canonicalName`
      * * `displayName`
      * * `effectiveAdsenseEnabled`
      * * `explicitlyTargeted`
@@ -1218,7 +1214,6 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
      * **Filterable fields:**
      *
      * * `adUnitCode`
-     * * `adUnitSizes.canonicalName`
      * * `displayName`
      * * `effectiveAdsenseEnabled`
      * * `explicitlyTargeted`
@@ -1257,7 +1252,6 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
      * **Filterable fields:**
      *
      * * `adUnitCode`
-     * * `adUnitSizes.canonicalName`
      * * `displayName`
      * * `effectiveAdsenseEnabled`
      * * `explicitlyTargeted`
@@ -1292,7 +1286,6 @@ public final class ListAdUnitsRequest extends com.google.protobuf.GeneratedMessa
      * **Filterable fields:**
      *
      * * `adUnitCode`
-     * * `adUnitSizes.canonicalName`
      * * `displayName`
      * * `effectiveAdsenseEnabled`
      * * `explicitlyTargeted`

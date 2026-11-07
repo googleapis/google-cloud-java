@@ -41,6 +41,10 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_chronicle_v1_Entity_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_chronicle_v1_Entity_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_chronicle_v1_Watchlist_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_chronicle_v1_Watchlist_fieldAccessorTable;
@@ -95,36 +99,53 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + "&google/cloud/chronicle/v1/entity.proto"
-          + "\022\031google.cloud.chronicle.v1\032\034google/api/"
-          + "annotations.proto\032\027google/api/client.pro"
-          + "to\032\037google/api/field_behavior.proto\032\031goo"
-          + "gle/api/resource.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\341\006\n"
+          + "\022\031google.cloud.chronicle.v1\032\026backstory/e"
+          + "ntity.proto\032\033backstory/entity_risk.proto"
+          + "\032\023backstory/udm.proto\032\034google/api/annota"
+          + "tions.proto\032\027google/api/client.proto\032\037go"
+          + "ogle/api/field_behavior.proto\032\031google/ap"
+          + "i/resource.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\032"
+          + "\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\200\005\n"
+          + "\006Entity\022\014\n"
+          + "\004name\030\001 \001(\t\0222\n"
+          + "\010metadata\030\002 \001(\0132 .google.backstory.EntityMetadata\022&\n"
+          + "\006entity\030\003 \001(\0132\026.google.backstory.Noun\022+\n\n"
+          + "additional\030\005 \001(\0132\027.google.protobuf.Struct\0220\n\n"
+          + "risk_score\030\006 \001(\0132\034.google.backstory.EntityRisk\022(\n"
+          + "\006metric\030\007 \001(\0132\030.google.backstory.Metric\022-\n"
+          + "\trelations\030\010 \003(\0132\032.google.backstory.Relation:\323\002\352A\317\002\n"
+          + "\037chronicle.googleapis.com/Entity\022Nprojects/{project}/locations/{locat"
+          + "ion}/instances/{instance}/entities/{entity}\022cprojects/{project}/locations/{locat"
+          + "ion}/instances/{instance}/analytics/{analytic}/entities/{entity}\022eprojects/{proj"
+          + "ect}/locations/{location}/instances/{ins"
+          + "tance}/watchlists/{watchlist}/entities/{entity}*\010entities2\006entity\"\341\006\n"
           + "\tWatchlist\022\022\n"
           + "\004name\030\001 \001(\tB\004\342A\001\010\022\032\n"
           + "\014display_name\030\002 \001(\tB\004\342A\001\002\022\031\n"
           + "\013description\030\003 \001(\tB\004\342A\001\001\022 \n"
           + "\022multiplying_factor\030\005 \001(\002B\004\342A\001\001\022i\n"
-          + "\033entity_population_mechanism\030\006 \001(\0132>"
-          + ".google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanismB\004\342A\001\002\022L\n"
-          + "\014entity_count\030\007"
-          + " \001(\01320.google.cloud.chronicle.v1.Watchlist.EntityCountB\004\342A\001\003\0225\n"
+          + "\033entity_population_mechanism\030\006 \001(\0132>.google.cloud"
+          + ".chronicle.v1.Watchlist.EntityPopulationMechanismB\004\342A\001\002\022L\n"
+          + "\014entity_count\030\007 \001(\01320."
+          + "google.cloud.chronicle.v1.Watchlist.EntityCountB\004\342A\001\003\0225\n"
           + "\013create_time\030\010"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\t"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022]\n"
           + "\032watchlist_user_preferences\030\n"
-          + " \001(\01323.google.cloud.chronicle.v1.WatchlistUserPreferencesB\004\342A\001\001\032\221\001\n"
+          + " \001(\0132"
+          + "3.google.cloud.chronicle.v1.WatchlistUserPreferencesB\004\342A\001\001\032\221\001\n"
           + "\031EntityPopulationMechanism\022]\n"
-          + "\006manual\030\001 \001(\0132E."
-          + "google.cloud.chronicle.v1.Watchlist.EntityPopulationMechanism.ManualB\004\342A\001\001H\000\032\010\n"
+          + "\006manual\030\001 \001(\0132E.google.cloud."
+          + "chronicle.v1.Watchlist.EntityPopulationMechanism.ManualB\004\342A\001\001H\000\032\010\n"
           + "\006ManualB\013\n"
           + "\tmechanism\0326\n"
           + "\013EntityCount\022\022\n"
           + "\004user\030\001 \001(\005B\004\342A\001\003\022\023\n"
           + "\005asset\030\002 \001(\005B\004\342A\001\003:\224\001\352A\220\001\n"
-          + "\"chronicle.googleapis.com/Watchlist\022Sprojects/{project}/locations/{location}/"
-          + "instances/{instance}/watchlists/{watchlist}*\n"
+          + "\"chronicle.googleapis.com/Watchlist\022Sprojects/{pro"
+          + "ject}/locations/{location}/instances/{instance}/watchlists/{watchlist}*\n"
           + "watchlists2\twatchlist\"0\n"
           + "\030WatchlistUserPreferences\022\024\n"
           + "\006pinned\030\001 \001(\010B\004\342A\001\001\"P\n"
@@ -132,8 +153,8 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB+\342A\001\002\372A$\n"
           + "\"chronicle.googleapis.com/Watchlist\"\235\001\n"
           + "\025ListWatchlistsRequest\022;\n"
-          + "\006parent\030\001 \001(\t"
-          + "B+\342A\001\002\372A$\022\"chronicle.googleapis.com/Watchlist\022\027\n"
+          + "\006parent\030\001 \001("
+          + "\tB+\342A\001\002\372A$\022\"chronicle.googleapis.com/Watchlist\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\"w\n"
@@ -145,8 +166,8 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
           + "\006parent\030\001 \001("
           + "\tB+\342A\001\002\372A$\022\"chronicle.googleapis.com/Watchlist\022\032\n"
           + "\014watchlist_id\030\002 \001(\tB\004\342A\001\001\022=\n"
-          + "\twatchlist\030\003"
-          + " \001(\0132$.google.cloud.chronicle.v1.WatchlistB\004\342A\001\002\"\216\001\n"
+          + "\twatchlist\030\003 \001("
+          + "\0132$.google.cloud.chronicle.v1.WatchlistB\004\342A\001\002\"\216\001\n"
           + "\026UpdateWatchlistRequest\022=\n"
           + "\twatchlist\030\001"
           + " \001(\0132$.google.cloud.chronicle.v1.WatchlistB\004\342A\001\002\0225\n"
@@ -157,48 +178,59 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
           + "\"chronicle.googleapis.com/Watchlist\022\023\n"
           + "\005force\030\002 \001(\010B\004\342A\001\0012\276\010\n\r"
           + "EntityService\022\257\001\n"
-          + "\014GetWatchlist\022..google.cloud.chronicle.v1.GetWatchlistRequest\032$.googl"
-          + "e.cloud.chronicle.v1.Watchlist\"I\332A\004name\202"
-          + "\323\344\223\002<\022:/v1/{name=projects/*/locations/*/instances/*/watchlists/*}\022\302\001\n"
-          + "\016ListWatchlists\0220.google.cloud.chronicle.v1.ListWat"
-          + "chlistsRequest\0321.google.cloud.chronicle."
-          + "v1.ListWatchlistsResponse\"K\332A\006parent\202\323\344\223"
-          + "\002<\022:/v1/{parent=projects/*/locations/*/instances/*}/watchlists\022\331\001\n"
-          + "\017CreateWatchlist\0221.google.cloud.chronicle.v1.CreateWat"
-          + "chlistRequest\032$.google.cloud.chronicle.v"
-          + "1.Watchlist\"m\332A\035parent,watchlist,watchli"
-          + "st_id\202\323\344\223\002G\":/v1/{parent=projects/*/locations/*/instances/*}/watchlists:"
-          + "\twatchlist\022\333\001\n"
-          + "\017UpdateWatchlist\0221.google.cloud.chronicle.v1.UpdateWatchlistRequest\032$.goog"
-          + "le.cloud.chronicle.v1.Watchlist\"o\332A\025watc"
-          + "hlist,update_mask\202\323\344\223\002Q2D/v1/{watchlist."
-          + "name=projects/*/locations/*/instances/*/watchlists/*}:\twatchlist\022\255\001\n"
-          + "\017DeleteWatchlist\0221.google.cloud.chronicle.v1.DeleteW"
-          + "atchlistRequest\032\026.google.protobuf.Empty\"O\332A\n"
-          + "name,force\202\323\344\223\002<*:/v1/{name=projects"
-          + "/*/locations/*/instances/*/watchlists/*}"
-          + "\032L\312A\030chronicle.googleapis.com\322A.https://"
-          + "www.googleapis.com/auth/cloud-platformB\302\001\n"
-          + "\035com.google.cloud.chronicle.v1B\013Entity"
-          + "ProtoP\001Z;cloud.google.com/go/chronicle/a"
-          + "piv1/chroniclepb;chroniclepb\252\002\031Google.Cl"
-          + "oud.Chronicle.V1\312\002\031Google\\Cloud\\Chronicl"
-          + "e\\V1\352\002\034Google::Cloud::Chronicle::V1b\006proto3"
+          + "\014GetWatchlist\022..google.cloud.chronicle.v1."
+          + "GetWatchlistRequest\032$.google.cloud.chron"
+          + "icle.v1.Watchlist\"I\332A\004name\202\323\344\223\002<\022:/v1/{n"
+          + "ame=projects/*/locations/*/instances/*/watchlists/*}\022\302\001\n"
+          + "\016ListWatchlists\0220.google.cloud.chronicle.v1.ListWatchlistsReques"
+          + "t\0321.google.cloud.chronicle.v1.ListWatchl"
+          + "istsResponse\"K\332A\006parent\202\323\344\223\002<\022:/v1/{pare"
+          + "nt=projects/*/locations/*/instances/*}/watchlists\022\331\001\n"
+          + "\017CreateWatchlist\0221.google.cloud.chronicle.v1.CreateWatchlistRequest"
+          + "\032$.google.cloud.chronicle.v1.Watchlist\"m"
+          + "\332A\035parent,watchlist,watchlist_id\202\323\344\223\002G\":"
+          + "/v1/{parent=projects/*/locations/*/instances/*}/watchlists:\twatchlist\022\333\001\n"
+          + "\017UpdateWatchlist\0221.google.cloud.chronicle.v1.Up"
+          + "dateWatchlistRequest\032$.google.cloud.chro"
+          + "nicle.v1.Watchlist\"o\332A\025watchlist,update_"
+          + "mask\202\323\344\223\002Q2D/v1/{watchlist.name=projects"
+          + "/*/locations/*/instances/*/watchlists/*}:\twatchlist\022\255\001\n"
+          + "\017DeleteWatchlist\0221.google"
+          + ".cloud.chronicle.v1.DeleteWatchlistRequest\032\026.google.protobuf.Empty\"O\332A\n"
+          + "name,force\202\323\344\223\002<*:/v1/{name=projects/*/locations/"
+          + "*/instances/*/watchlists/*}\032L\312A\030chronicl"
+          + "e.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\302\001\n"
+          + "\035com.google.cloud.chronicle.v1B\013EntityProtoP\001Z;clou"
+          + "d.google.com/go/chronicle/apiv1/chronicl"
+          + "epb;chroniclepb\252\002\031Google.Cloud.Chronicle"
+          + ".V1\312\002\031Google\\Cloud\\Chronicle\\V1\352\002\034Google"
+          + "::Cloud::Chronicle::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.backstory.EntityProto.getDescriptor(),
+              com.google.backstory.EntityRiskProto.getDescriptor(),
+              com.google.backstory.Udm.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
+    internal_static_google_cloud_chronicle_v1_Entity_descriptor = getDescriptor().getMessageType(0);
+    internal_static_google_cloud_chronicle_v1_Entity_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_chronicle_v1_Entity_descriptor,
+            new java.lang.String[] {
+              "Name", "Metadata", "Entity", "Additional", "RiskScore", "Metric", "Relations",
+            });
     internal_static_google_cloud_chronicle_v1_Watchlist_descriptor =
-        getDescriptor().getMessageType(0);
+        getDescriptor().getMessageType(1);
     internal_static_google_cloud_chronicle_v1_Watchlist_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_Watchlist_descriptor,
@@ -237,7 +269,7 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
               "User", "Asset",
             });
     internal_static_google_cloud_chronicle_v1_WatchlistUserPreferences_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(2);
     internal_static_google_cloud_chronicle_v1_WatchlistUserPreferences_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_WatchlistUserPreferences_descriptor,
@@ -245,7 +277,7 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
               "Pinned",
             });
     internal_static_google_cloud_chronicle_v1_GetWatchlistRequest_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_chronicle_v1_GetWatchlistRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_GetWatchlistRequest_descriptor,
@@ -253,7 +285,7 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_chronicle_v1_ListWatchlistsRequest_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_chronicle_v1_ListWatchlistsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_ListWatchlistsRequest_descriptor,
@@ -261,7 +293,7 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_chronicle_v1_ListWatchlistsResponse_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_chronicle_v1_ListWatchlistsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_ListWatchlistsResponse_descriptor,
@@ -269,7 +301,7 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
               "Watchlists", "NextPageToken",
             });
     internal_static_google_cloud_chronicle_v1_CreateWatchlistRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_chronicle_v1_CreateWatchlistRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_CreateWatchlistRequest_descriptor,
@@ -277,7 +309,7 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
               "Parent", "WatchlistId", "Watchlist",
             });
     internal_static_google_cloud_chronicle_v1_UpdateWatchlistRequest_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_chronicle_v1_UpdateWatchlistRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_UpdateWatchlistRequest_descriptor,
@@ -285,7 +317,7 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
               "Watchlist", "UpdateMask",
             });
     internal_static_google_cloud_chronicle_v1_DeleteWatchlistRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_chronicle_v1_DeleteWatchlistRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_chronicle_v1_DeleteWatchlistRequest_descriptor,
@@ -293,12 +325,16 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
               "Name", "Force",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.backstory.EntityProto.getDescriptor();
+    com.google.backstory.EntityRiskProto.getDescriptor();
+    com.google.backstory.Udm.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

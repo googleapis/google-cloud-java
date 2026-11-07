@@ -55,4 +55,70 @@ public interface RevisionScalingOrBuilder
    * @return The maxInstanceCount.
    */
   int getMaxInstanceCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines a threshold for CPU utilization before scaling begins.
+   * Accepted values are between `0.1` and `0.90` (inclusive) or `0.0` to
+   * disable CPU utilization as threshold for scaling. CPU and concurrency
+   * scaling cannot both be disabled.
+   * </pre>
+   *
+   * <code>optional float cpu_utilization = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the cpuUtilization field is set.
+   */
+  boolean hasCpuUtilization();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines a threshold for CPU utilization before scaling begins.
+   * Accepted values are between `0.1` and `0.90` (inclusive) or `0.0` to
+   * disable CPU utilization as threshold for scaling. CPU and concurrency
+   * scaling cannot both be disabled.
+   * </pre>
+   *
+   * <code>optional float cpu_utilization = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The cpuUtilization.
+   */
+  float getCpuUtilization();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines a threshold for concurrency utilization before scaling
+   * begins. Accepted values are between `0.1` and `0.95` (inclusive) or `0.0`
+   * to disable concurrency utilization as threshold for scaling. CPU and
+   * concurrency scaling cannot both be disabled.
+   * </pre>
+   *
+   * <code>optional float concurrency_utilization = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the concurrencyUtilization field is set.
+   */
+  boolean hasConcurrencyUtilization();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines a threshold for concurrency utilization before scaling
+   * begins. Accepted values are between `0.1` and `0.95` (inclusive) or `0.0`
+   * to disable concurrency utilization as threshold for scaling. CPU and
+   * concurrency scaling cannot both be disabled.
+   * </pre>
+   *
+   * <code>optional float concurrency_utilization = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The concurrencyUtilization.
+   */
+  float getConcurrencyUtilization();
 }

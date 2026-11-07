@@ -57,6 +57,11 @@ public interface ForwardInfoOrBuilder
    *
    * <pre>
    * URI of the resource that the packet is forwarded to.
+   * Format:
+   * * `projects/{project_id}/global/networks/{network_id}` (VPC peering
+   * network)
+   * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}`
+   * (VPN gateway)
    * </pre>
    *
    * <code>string resource_uri = 2;</code>
@@ -70,6 +75,11 @@ public interface ForwardInfoOrBuilder
    *
    * <pre>
    * URI of the resource that the packet is forwarded to.
+   * Format:
+   * * `projects/{project_id}/global/networks/{network_id}` (VPC peering
+   * network)
+   * * `projects/{project_id}/regions/{region}/vpnGateways/{vpn_gateway_id}`
+   * (VPN gateway)
    * </pre>
    *
    * <code>string resource_uri = 2;</code>

@@ -54,6 +54,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
   private EntitySignalsMapping() {
     name_ = "";
     taxonomyCategoryIds_ = emptyLongList();
+    taxonomyCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -81,8 +82,11 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    @java.lang.Deprecated
     AUDIENCE_SEGMENT_ID(3),
+    @java.lang.Deprecated
     CONTENT_BUNDLE_ID(4),
+    @java.lang.Deprecated
     CUSTOM_TARGETING_VALUE_ID(5),
     ENTITY_NOT_SET(0);
     private final int value;
@@ -125,20 +129,76 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     return EntityCase.forNumber(entityCase_);
   }
 
+  private int entityNameCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object entityName_;
+
+  public enum EntityNameCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    AUDIENCE_SEGMENT(10),
+    CONTENT_BUNDLE(11),
+    CUSTOM_TARGETING_VALUE(12),
+    ENTITYNAME_NOT_SET(0);
+    private final int value;
+
+    private EntityNameCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EntityNameCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static EntityNameCase forNumber(int value) {
+      switch (value) {
+        case 10:
+          return AUDIENCE_SEGMENT;
+        case 11:
+          return CONTENT_BUNDLE;
+        case 12:
+          return CUSTOM_TARGETING_VALUE;
+        case 0:
+          return ENTITYNAME_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public EntityNameCase getEntityNameCase() {
+    return EntityNameCase.forNumber(entityNameCase_);
+  }
+
   public static final int AUDIENCE_SEGMENT_ID_FIELD_NUMBER = 3;
 
   /**
    *
    *
    * <pre>
-   * ID of an AudienceSegment that this mapping belongs to.
+   * Deprecated: ID of an AudienceSegment that this mapping belongs to.
    * </pre>
    *
-   * <code>int64 audience_segment_id = 3;</code>
+   * <code>int64 audience_segment_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.audience_segment_id is deprecated. See
+   *     google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=41
    * @return Whether the audienceSegmentId field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasAudienceSegmentId() {
     return entityCase_ == 3;
   }
@@ -147,14 +207,17 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * ID of an AudienceSegment that this mapping belongs to.
+   * Deprecated: ID of an AudienceSegment that this mapping belongs to.
    * </pre>
    *
-   * <code>int64 audience_segment_id = 3;</code>
+   * <code>int64 audience_segment_id = 3 [deprecated = true];</code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.audience_segment_id is deprecated. See
+   *     google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=41
    * @return The audienceSegmentId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getAudienceSegmentId() {
     if (entityCase_ == 3) {
       return (java.lang.Long) entity_;
@@ -168,14 +231,17 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * ID of a ContentBundle that this mapping belongs to.
+   * Deprecated: ID of a ContentBundle that this mapping belongs to.
    * </pre>
    *
-   * <code>int64 content_bundle_id = 4;</code>
+   * <code>int64 content_bundle_id = 4 [deprecated = true];</code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.content_bundle_id is deprecated. See
+   *     google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=44
    * @return Whether the contentBundleId field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasContentBundleId() {
     return entityCase_ == 4;
   }
@@ -184,14 +250,17 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * ID of a ContentBundle that this mapping belongs to.
+   * Deprecated: ID of a ContentBundle that this mapping belongs to.
    * </pre>
    *
-   * <code>int64 content_bundle_id = 4;</code>
+   * <code>int64 content_bundle_id = 4 [deprecated = true];</code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.content_bundle_id is deprecated. See
+   *     google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=44
    * @return The contentBundleId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getContentBundleId() {
     if (entityCase_ == 4) {
       return (java.lang.Long) entity_;
@@ -205,14 +274,17 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * ID of a CustomValue that this mapping belongs to.
+   * Deprecated: ID of a CustomTargetingValue that this mapping belongs to.
    * </pre>
    *
-   * <code>int64 custom_targeting_value_id = 5;</code>
+   * <code>int64 custom_targeting_value_id = 5 [deprecated = true];</code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.custom_targeting_value_id is
+   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=47
    * @return Whether the customTargetingValueId field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasCustomTargetingValueId() {
     return entityCase_ == 5;
   }
@@ -221,19 +293,268 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * ID of a CustomValue that this mapping belongs to.
+   * Deprecated: ID of a CustomTargetingValue that this mapping belongs to.
    * </pre>
    *
-   * <code>int64 custom_targeting_value_id = 5;</code>
+   * <code>int64 custom_targeting_value_id = 5 [deprecated = true];</code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.custom_targeting_value_id is
+   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=47
    * @return The customTargetingValueId.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public long getCustomTargetingValueId() {
     if (entityCase_ == 5) {
       return (java.lang.Long) entity_;
     }
     return 0L;
+  }
+
+  public static final int AUDIENCE_SEGMENT_FIELD_NUMBER = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of an
+   * [AudienceSegment][google.ads.admanager.v1.AudienceSegment] that this
+   * mapping belongs to. Format:
+   * `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * </pre>
+   *
+   * <code>string audience_segment = 10 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the audienceSegment field is set.
+   */
+  public boolean hasAudienceSegment() {
+    return entityNameCase_ == 10;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of an
+   * [AudienceSegment][google.ads.admanager.v1.AudienceSegment] that this
+   * mapping belongs to. Format:
+   * `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * </pre>
+   *
+   * <code>string audience_segment = 10 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The audienceSegment.
+   */
+  public java.lang.String getAudienceSegment() {
+    java.lang.Object ref = "";
+    if (entityNameCase_ == 10) {
+      ref = entityName_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (entityNameCase_ == 10) {
+        entityName_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of an
+   * [AudienceSegment][google.ads.admanager.v1.AudienceSegment] that this
+   * mapping belongs to. Format:
+   * `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * </pre>
+   *
+   * <code>string audience_segment = 10 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for audienceSegment.
+   */
+  public com.google.protobuf.ByteString getAudienceSegmentBytes() {
+    java.lang.Object ref = "";
+    if (entityNameCase_ == 10) {
+      ref = entityName_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (entityNameCase_ == 10) {
+        entityName_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONTENT_BUNDLE_FIELD_NUMBER = 11;
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of a
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle] that this mapping
+   * belongs to. Format:
+   * `networks/{network_code}/contentBundles/{content_bundle_id}`
+   * </pre>
+   *
+   * <code>string content_bundle = 11 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the contentBundle field is set.
+   */
+  public boolean hasContentBundle() {
+    return entityNameCase_ == 11;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of a
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle] that this mapping
+   * belongs to. Format:
+   * `networks/{network_code}/contentBundles/{content_bundle_id}`
+   * </pre>
+   *
+   * <code>string content_bundle = 11 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The contentBundle.
+   */
+  public java.lang.String getContentBundle() {
+    java.lang.Object ref = "";
+    if (entityNameCase_ == 11) {
+      ref = entityName_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (entityNameCase_ == 11) {
+        entityName_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of a
+   * [ContentBundle][google.ads.admanager.v1.ContentBundle] that this mapping
+   * belongs to. Format:
+   * `networks/{network_code}/contentBundles/{content_bundle_id}`
+   * </pre>
+   *
+   * <code>string content_bundle = 11 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for contentBundle.
+   */
+  public com.google.protobuf.ByteString getContentBundleBytes() {
+    java.lang.Object ref = "";
+    if (entityNameCase_ == 11) {
+      ref = entityName_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (entityNameCase_ == 11) {
+        entityName_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CUSTOM_TARGETING_VALUE_FIELD_NUMBER = 12;
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of a
+   * [CustomTargetingValue][google.ads.admanager.v1.CustomTargetingValue] that
+   * this mapping belongs to. Format:
+   * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
+   * </pre>
+   *
+   * <code>string custom_targeting_value = 12 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return Whether the customTargetingValue field is set.
+   */
+  public boolean hasCustomTargetingValue() {
+    return entityNameCase_ == 12;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of a
+   * [CustomTargetingValue][google.ads.admanager.v1.CustomTargetingValue] that
+   * this mapping belongs to. Format:
+   * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
+   * </pre>
+   *
+   * <code>string custom_targeting_value = 12 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The customTargetingValue.
+   */
+  public java.lang.String getCustomTargetingValue() {
+    java.lang.Object ref = "";
+    if (entityNameCase_ == 12) {
+      ref = entityName_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (entityNameCase_ == 12) {
+        entityName_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The resource name of a
+   * [CustomTargetingValue][google.ads.admanager.v1.CustomTargetingValue] that
+   * this mapping belongs to. Format:
+   * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
+   * </pre>
+   *
+   * <code>string custom_targeting_value = 12 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for customTargetingValue.
+   */
+  public com.google.protobuf.ByteString getCustomTargetingValueBytes() {
+    java.lang.Object ref = "";
+    if (entityNameCase_ == 12) {
+      ref = entityName_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (entityNameCase_ == 12) {
+        entityName_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -308,7 +629,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
-   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
+   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=83
    * @return Whether the entitySignalsMappingId field is set.
    */
   @java.lang.Override
@@ -329,7 +650,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    * </code>
    *
    * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
-   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
+   *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=83
    * @return The entitySignalsMappingId.
    */
   @java.lang.Override
@@ -347,16 +668,20 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The IDs of the categories that are associated with the
-   * referencing entity.
+   * Optional. Deprecated: The IDs of the categories that are associated with
+   * the referencing entity.
    * </pre>
    *
-   * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+   *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
    * @return A list containing the taxonomyCategoryIds.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<java.lang.Long> getTaxonomyCategoryIdsList() {
     return taxonomyCategoryIds_;
   }
@@ -365,15 +690,19 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The IDs of the categories that are associated with the
-   * referencing entity.
+   * Optional. Deprecated: The IDs of the categories that are associated with
+   * the referencing entity.
    * </pre>
    *
-   * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+   *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
    * @return The count of taxonomyCategoryIds.
    */
+  @java.lang.Deprecated
   public int getTaxonomyCategoryIdsCount() {
     return taxonomyCategoryIds_.size();
   }
@@ -382,21 +711,113 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. The IDs of the categories that are associated with the
-   * referencing entity.
+   * Optional. Deprecated: The IDs of the categories that are associated with
+   * the referencing entity.
    * </pre>
    *
-   * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * <code>
+   * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+   *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
    * @param index The index of the element to return.
    * @return The taxonomyCategoryIds at the given index.
    */
+  @java.lang.Deprecated
   public long getTaxonomyCategoryIds(int index) {
     return taxonomyCategoryIds_.getLong(index);
   }
 
   private int taxonomyCategoryIdsMemoizedSerializedSize = -1;
+
+  public static final int TAXONOMY_CATEGORIES_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList taxonomyCategories_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource names of the
+   * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+   * associated with the referencing entity. Format:
+   * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+   * </pre>
+   *
+   * <code>
+   * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the taxonomyCategories.
+   */
+  public com.google.protobuf.ProtocolStringList getTaxonomyCategoriesList() {
+    return taxonomyCategories_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource names of the
+   * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+   * associated with the referencing entity. Format:
+   * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+   * </pre>
+   *
+   * <code>
+   * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of taxonomyCategories.
+   */
+  public int getTaxonomyCategoriesCount() {
+    return taxonomyCategories_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource names of the
+   * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+   * associated with the referencing entity. Format:
+   * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+   * </pre>
+   *
+   * <code>
+   * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The taxonomyCategories at the given index.
+   */
+  public java.lang.String getTaxonomyCategories(int index) {
+    return taxonomyCategories_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource names of the
+   * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+   * associated with the referencing entity. Format:
+   * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+   * </pre>
+   *
+   * <code>
+   * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the taxonomyCategories at the given index.
+   */
+  public com.google.protobuf.ByteString getTaxonomyCategoriesBytes(int index) {
+    return taxonomyCategories_.getByteString(index);
+  }
 
   private byte memoizedIsInitialized = -1;
 
@@ -434,6 +855,18 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     }
     for (int i = 0; i < taxonomyCategoryIds_.size(); i++) {
       output.writeInt64NoTag(taxonomyCategoryIds_.getLong(i));
+    }
+    if (entityNameCase_ == 10) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, entityName_);
+    }
+    if (entityNameCase_ == 11) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, entityName_);
+    }
+    if (entityNameCase_ == 12) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 12, entityName_);
+    }
+    for (int i = 0; i < taxonomyCategories_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, taxonomyCategories_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -479,6 +912,23 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       }
       taxonomyCategoryIdsMemoizedSerializedSize = dataSize;
     }
+    if (entityNameCase_ == 10) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, entityName_);
+    }
+    if (entityNameCase_ == 11) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, entityName_);
+    }
+    if (entityNameCase_ == 12) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(12, entityName_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < taxonomyCategories_.size(); i++) {
+        dataSize += computeStringSizeNoTag(taxonomyCategories_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTaxonomyCategoriesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -501,6 +951,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       if (getEntitySignalsMappingId() != other.getEntitySignalsMappingId()) return false;
     }
     if (!getTaxonomyCategoryIdsList().equals(other.getTaxonomyCategoryIdsList())) return false;
+    if (!getTaxonomyCategoriesList().equals(other.getTaxonomyCategoriesList())) return false;
     if (!getEntityCase().equals(other.getEntityCase())) return false;
     switch (entityCase_) {
       case 3:
@@ -511,6 +962,20 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
         break;
       case 5:
         if (getCustomTargetingValueId() != other.getCustomTargetingValueId()) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getEntityNameCase().equals(other.getEntityNameCase())) return false;
+    switch (entityNameCase_) {
+      case 10:
+        if (!getAudienceSegment().equals(other.getAudienceSegment())) return false;
+        break;
+      case 11:
+        if (!getContentBundle().equals(other.getContentBundle())) return false;
+        break;
+      case 12:
+        if (!getCustomTargetingValue().equals(other.getCustomTargetingValue())) return false;
         break;
       case 0:
       default:
@@ -536,6 +1001,10 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + TAXONOMY_CATEGORY_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getTaxonomyCategoryIdsList().hashCode();
     }
+    if (getTaxonomyCategoriesCount() > 0) {
+      hash = (37 * hash) + TAXONOMY_CATEGORIES_FIELD_NUMBER;
+      hash = (53 * hash) + getTaxonomyCategoriesList().hashCode();
+    }
     switch (entityCase_) {
       case 3:
         hash = (37 * hash) + AUDIENCE_SEGMENT_ID_FIELD_NUMBER;
@@ -548,6 +1017,22 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       case 5:
         hash = (37 * hash) + CUSTOM_TARGETING_VALUE_ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCustomTargetingValueId());
+        break;
+      case 0:
+      default:
+    }
+    switch (entityNameCase_) {
+      case 10:
+        hash = (37 * hash) + AUDIENCE_SEGMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getAudienceSegment().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + CONTENT_BUNDLE_FIELD_NUMBER;
+        hash = (53 * hash) + getContentBundle().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + CUSTOM_TARGETING_VALUE_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomTargetingValue().hashCode();
         break;
       case 0:
       default:
@@ -695,8 +1180,11 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       name_ = "";
       entitySignalsMappingId_ = 0L;
       taxonomyCategoryIds_ = emptyLongList();
+      taxonomyCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
       entityCase_ = 0;
       entity_ = null;
+      entityNameCase_ = 0;
+      entityName_ = null;
       return this;
     }
 
@@ -734,17 +1222,21 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
 
     private void buildPartial0(com.google.ads.admanager.v1.EntitySignalsMapping result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.entitySignalsMappingId_ = entitySignalsMappingId_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         taxonomyCategoryIds_.makeImmutable();
         result.taxonomyCategoryIds_ = taxonomyCategoryIds_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        taxonomyCategories_.makeImmutable();
+        result.taxonomyCategories_ = taxonomyCategories_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -752,6 +1244,8 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     private void buildPartialOneofs(com.google.ads.admanager.v1.EntitySignalsMapping result) {
       result.entityCase_ = entityCase_;
       result.entity_ = this.entity_;
+      result.entityNameCase_ = entityNameCase_;
+      result.entityName_ = this.entityName_;
     }
 
     @java.lang.Override
@@ -769,7 +1263,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasEntitySignalsMappingId()) {
@@ -779,10 +1273,20 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
         if (taxonomyCategoryIds_.isEmpty()) {
           taxonomyCategoryIds_ = other.taxonomyCategoryIds_;
           taxonomyCategoryIds_.makeImmutable();
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000100;
         } else {
           ensureTaxonomyCategoryIdsIsMutable();
           taxonomyCategoryIds_.addAll(other.taxonomyCategoryIds_);
+        }
+        onChanged();
+      }
+      if (!other.taxonomyCategories_.isEmpty()) {
+        if (taxonomyCategories_.isEmpty()) {
+          taxonomyCategories_ = other.taxonomyCategories_;
+          bitField0_ |= 0x00000200;
+        } else {
+          ensureTaxonomyCategoriesIsMutable();
+          taxonomyCategories_.addAll(other.taxonomyCategories_);
         }
         onChanged();
       }
@@ -803,6 +1307,33 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
             break;
           }
         case ENTITY_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getEntityNameCase()) {
+        case AUDIENCE_SEGMENT:
+          {
+            entityNameCase_ = 10;
+            entityName_ = other.entityName_;
+            onChanged();
+            break;
+          }
+        case CONTENT_BUNDLE:
+          {
+            entityNameCase_ = 11;
+            entityName_ = other.entityName_;
+            onChanged();
+            break;
+          }
+        case CUSTOM_TARGETING_VALUE:
+          {
+            entityNameCase_ = 12;
+            entityName_ = other.entityName_;
+            onChanged();
+            break;
+          }
+        case ENTITYNAME_NOT_SET:
           {
             break;
           }
@@ -836,13 +1367,13 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 10
             case 16:
               {
                 entitySignalsMappingId_ = input.readInt64();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 16
             case 24:
@@ -881,6 +1412,34 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
                 input.popLimit(limit);
                 break;
               } // case 50
+            case 82:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                entityNameCase_ = 10;
+                entityName_ = s;
+                break;
+              } // case 82
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                entityNameCase_ = 11;
+                entityName_ = s;
+                break;
+              } // case 90
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                entityNameCase_ = 12;
+                entityName_ = s;
+                break;
+              } // case 98
+            case 106:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTaxonomyCategoriesIsMutable();
+                taxonomyCategories_.add(s);
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -912,19 +1471,36 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private int entityNameCase_ = 0;
+    private java.lang.Object entityName_;
+
+    public EntityNameCase getEntityNameCase() {
+      return EntityNameCase.forNumber(entityNameCase_);
+    }
+
+    public Builder clearEntityName() {
+      entityNameCase_ = 0;
+      entityName_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     /**
      *
      *
      * <pre>
-     * ID of an AudienceSegment that this mapping belongs to.
+     * Deprecated: ID of an AudienceSegment that this mapping belongs to.
      * </pre>
      *
-     * <code>int64 audience_segment_id = 3;</code>
+     * <code>int64 audience_segment_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.audience_segment_id is deprecated.
+     *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=41
      * @return Whether the audienceSegmentId field is set.
      */
+    @java.lang.Deprecated
     public boolean hasAudienceSegmentId() {
       return entityCase_ == 3;
     }
@@ -933,13 +1509,16 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * ID of an AudienceSegment that this mapping belongs to.
+     * Deprecated: ID of an AudienceSegment that this mapping belongs to.
      * </pre>
      *
-     * <code>int64 audience_segment_id = 3;</code>
+     * <code>int64 audience_segment_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.audience_segment_id is deprecated.
+     *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=41
      * @return The audienceSegmentId.
      */
+    @java.lang.Deprecated
     public long getAudienceSegmentId() {
       if (entityCase_ == 3) {
         return (java.lang.Long) entity_;
@@ -951,14 +1530,17 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * ID of an AudienceSegment that this mapping belongs to.
+     * Deprecated: ID of an AudienceSegment that this mapping belongs to.
      * </pre>
      *
-     * <code>int64 audience_segment_id = 3;</code>
+     * <code>int64 audience_segment_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.audience_segment_id is deprecated.
+     *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=41
      * @param value The audienceSegmentId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setAudienceSegmentId(long value) {
 
       entityCase_ = 3;
@@ -971,13 +1553,16 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * ID of an AudienceSegment that this mapping belongs to.
+     * Deprecated: ID of an AudienceSegment that this mapping belongs to.
      * </pre>
      *
-     * <code>int64 audience_segment_id = 3;</code>
+     * <code>int64 audience_segment_id = 3 [deprecated = true];</code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.audience_segment_id is deprecated.
+     *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=41
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearAudienceSegmentId() {
       if (entityCase_ == 3) {
         entityCase_ = 0;
@@ -991,13 +1576,16 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * ID of a ContentBundle that this mapping belongs to.
+     * Deprecated: ID of a ContentBundle that this mapping belongs to.
      * </pre>
      *
-     * <code>int64 content_bundle_id = 4;</code>
+     * <code>int64 content_bundle_id = 4 [deprecated = true];</code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.content_bundle_id is deprecated. See
+     *     google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=44
      * @return Whether the contentBundleId field is set.
      */
+    @java.lang.Deprecated
     public boolean hasContentBundleId() {
       return entityCase_ == 4;
     }
@@ -1006,13 +1594,16 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * ID of a ContentBundle that this mapping belongs to.
+     * Deprecated: ID of a ContentBundle that this mapping belongs to.
      * </pre>
      *
-     * <code>int64 content_bundle_id = 4;</code>
+     * <code>int64 content_bundle_id = 4 [deprecated = true];</code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.content_bundle_id is deprecated. See
+     *     google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=44
      * @return The contentBundleId.
      */
+    @java.lang.Deprecated
     public long getContentBundleId() {
       if (entityCase_ == 4) {
         return (java.lang.Long) entity_;
@@ -1024,14 +1615,17 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * ID of a ContentBundle that this mapping belongs to.
+     * Deprecated: ID of a ContentBundle that this mapping belongs to.
      * </pre>
      *
-     * <code>int64 content_bundle_id = 4;</code>
+     * <code>int64 content_bundle_id = 4 [deprecated = true];</code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.content_bundle_id is deprecated. See
+     *     google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=44
      * @param value The contentBundleId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setContentBundleId(long value) {
 
       entityCase_ = 4;
@@ -1044,13 +1638,16 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * ID of a ContentBundle that this mapping belongs to.
+     * Deprecated: ID of a ContentBundle that this mapping belongs to.
      * </pre>
      *
-     * <code>int64 content_bundle_id = 4;</code>
+     * <code>int64 content_bundle_id = 4 [deprecated = true];</code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.content_bundle_id is deprecated. See
+     *     google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=44
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearContentBundleId() {
       if (entityCase_ == 4) {
         entityCase_ = 0;
@@ -1064,13 +1661,16 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * ID of a CustomValue that this mapping belongs to.
+     * Deprecated: ID of a CustomTargetingValue that this mapping belongs to.
      * </pre>
      *
-     * <code>int64 custom_targeting_value_id = 5;</code>
+     * <code>int64 custom_targeting_value_id = 5 [deprecated = true];</code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.custom_targeting_value_id is
+     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=47
      * @return Whether the customTargetingValueId field is set.
      */
+    @java.lang.Deprecated
     public boolean hasCustomTargetingValueId() {
       return entityCase_ == 5;
     }
@@ -1079,13 +1679,16 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * ID of a CustomValue that this mapping belongs to.
+     * Deprecated: ID of a CustomTargetingValue that this mapping belongs to.
      * </pre>
      *
-     * <code>int64 custom_targeting_value_id = 5;</code>
+     * <code>int64 custom_targeting_value_id = 5 [deprecated = true];</code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.custom_targeting_value_id is
+     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=47
      * @return The customTargetingValueId.
      */
+    @java.lang.Deprecated
     public long getCustomTargetingValueId() {
       if (entityCase_ == 5) {
         return (java.lang.Long) entity_;
@@ -1097,14 +1700,17 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * ID of a CustomValue that this mapping belongs to.
+     * Deprecated: ID of a CustomTargetingValue that this mapping belongs to.
      * </pre>
      *
-     * <code>int64 custom_targeting_value_id = 5;</code>
+     * <code>int64 custom_targeting_value_id = 5 [deprecated = true];</code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.custom_targeting_value_id is
+     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=47
      * @param value The customTargetingValueId to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setCustomTargetingValueId(long value) {
 
       entityCase_ = 5;
@@ -1117,19 +1723,493 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * ID of a CustomValue that this mapping belongs to.
+     * Deprecated: ID of a CustomTargetingValue that this mapping belongs to.
      * </pre>
      *
-     * <code>int64 custom_targeting_value_id = 5;</code>
+     * <code>int64 custom_targeting_value_id = 5 [deprecated = true];</code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.custom_targeting_value_id is
+     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=47
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearCustomTargetingValueId() {
       if (entityCase_ == 5) {
         entityCase_ = 0;
         entity_ = null;
         onChanged();
       }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of an
+     * [AudienceSegment][google.ads.admanager.v1.AudienceSegment] that this
+     * mapping belongs to. Format:
+     * `networks/{network_code}/audienceSegments/{audience_segment_id}`
+     * </pre>
+     *
+     * <code>string audience_segment = 10 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the audienceSegment field is set.
+     */
+    @java.lang.Override
+    public boolean hasAudienceSegment() {
+      return entityNameCase_ == 10;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of an
+     * [AudienceSegment][google.ads.admanager.v1.AudienceSegment] that this
+     * mapping belongs to. Format:
+     * `networks/{network_code}/audienceSegments/{audience_segment_id}`
+     * </pre>
+     *
+     * <code>string audience_segment = 10 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The audienceSegment.
+     */
+    @java.lang.Override
+    public java.lang.String getAudienceSegment() {
+      java.lang.Object ref = "";
+      if (entityNameCase_ == 10) {
+        ref = entityName_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (entityNameCase_ == 10) {
+          entityName_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of an
+     * [AudienceSegment][google.ads.admanager.v1.AudienceSegment] that this
+     * mapping belongs to. Format:
+     * `networks/{network_code}/audienceSegments/{audience_segment_id}`
+     * </pre>
+     *
+     * <code>string audience_segment = 10 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for audienceSegment.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAudienceSegmentBytes() {
+      java.lang.Object ref = "";
+      if (entityNameCase_ == 10) {
+        ref = entityName_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (entityNameCase_ == 10) {
+          entityName_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of an
+     * [AudienceSegment][google.ads.admanager.v1.AudienceSegment] that this
+     * mapping belongs to. Format:
+     * `networks/{network_code}/audienceSegments/{audience_segment_id}`
+     * </pre>
+     *
+     * <code>string audience_segment = 10 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The audienceSegment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAudienceSegment(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      entityNameCase_ = 10;
+      entityName_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of an
+     * [AudienceSegment][google.ads.admanager.v1.AudienceSegment] that this
+     * mapping belongs to. Format:
+     * `networks/{network_code}/audienceSegments/{audience_segment_id}`
+     * </pre>
+     *
+     * <code>string audience_segment = 10 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAudienceSegment() {
+      if (entityNameCase_ == 10) {
+        entityNameCase_ = 0;
+        entityName_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of an
+     * [AudienceSegment][google.ads.admanager.v1.AudienceSegment] that this
+     * mapping belongs to. Format:
+     * `networks/{network_code}/audienceSegments/{audience_segment_id}`
+     * </pre>
+     *
+     * <code>string audience_segment = 10 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for audienceSegment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAudienceSegmentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      entityNameCase_ = 10;
+      entityName_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle] that this mapping
+     * belongs to. Format:
+     * `networks/{network_code}/contentBundles/{content_bundle_id}`
+     * </pre>
+     *
+     * <code>string content_bundle = 11 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the contentBundle field is set.
+     */
+    @java.lang.Override
+    public boolean hasContentBundle() {
+      return entityNameCase_ == 11;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle] that this mapping
+     * belongs to. Format:
+     * `networks/{network_code}/contentBundles/{content_bundle_id}`
+     * </pre>
+     *
+     * <code>string content_bundle = 11 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The contentBundle.
+     */
+    @java.lang.Override
+    public java.lang.String getContentBundle() {
+      java.lang.Object ref = "";
+      if (entityNameCase_ == 11) {
+        ref = entityName_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (entityNameCase_ == 11) {
+          entityName_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle] that this mapping
+     * belongs to. Format:
+     * `networks/{network_code}/contentBundles/{content_bundle_id}`
+     * </pre>
+     *
+     * <code>string content_bundle = 11 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for contentBundle.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getContentBundleBytes() {
+      java.lang.Object ref = "";
+      if (entityNameCase_ == 11) {
+        ref = entityName_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (entityNameCase_ == 11) {
+          entityName_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle] that this mapping
+     * belongs to. Format:
+     * `networks/{network_code}/contentBundles/{content_bundle_id}`
+     * </pre>
+     *
+     * <code>string content_bundle = 11 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The contentBundle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContentBundle(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      entityNameCase_ = 11;
+      entityName_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle] that this mapping
+     * belongs to. Format:
+     * `networks/{network_code}/contentBundles/{content_bundle_id}`
+     * </pre>
+     *
+     * <code>string content_bundle = 11 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearContentBundle() {
+      if (entityNameCase_ == 11) {
+        entityNameCase_ = 0;
+        entityName_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of a
+     * [ContentBundle][google.ads.admanager.v1.ContentBundle] that this mapping
+     * belongs to. Format:
+     * `networks/{network_code}/contentBundles/{content_bundle_id}`
+     * </pre>
+     *
+     * <code>string content_bundle = 11 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for contentBundle to set.
+     * @return This builder for chaining.
+     */
+    public Builder setContentBundleBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      entityNameCase_ = 11;
+      entityName_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of a
+     * [CustomTargetingValue][google.ads.admanager.v1.CustomTargetingValue] that
+     * this mapping belongs to. Format:
+     * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
+     * </pre>
+     *
+     * <code>string custom_targeting_value = 12 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return Whether the customTargetingValue field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomTargetingValue() {
+      return entityNameCase_ == 12;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of a
+     * [CustomTargetingValue][google.ads.admanager.v1.CustomTargetingValue] that
+     * this mapping belongs to. Format:
+     * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
+     * </pre>
+     *
+     * <code>string custom_targeting_value = 12 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The customTargetingValue.
+     */
+    @java.lang.Override
+    public java.lang.String getCustomTargetingValue() {
+      java.lang.Object ref = "";
+      if (entityNameCase_ == 12) {
+        ref = entityName_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (entityNameCase_ == 12) {
+          entityName_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of a
+     * [CustomTargetingValue][google.ads.admanager.v1.CustomTargetingValue] that
+     * this mapping belongs to. Format:
+     * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
+     * </pre>
+     *
+     * <code>string custom_targeting_value = 12 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for customTargetingValue.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCustomTargetingValueBytes() {
+      java.lang.Object ref = "";
+      if (entityNameCase_ == 12) {
+        ref = entityName_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (entityNameCase_ == 12) {
+          entityName_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of a
+     * [CustomTargetingValue][google.ads.admanager.v1.CustomTargetingValue] that
+     * this mapping belongs to. Format:
+     * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
+     * </pre>
+     *
+     * <code>string custom_targeting_value = 12 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The customTargetingValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomTargetingValue(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      entityNameCase_ = 12;
+      entityName_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of a
+     * [CustomTargetingValue][google.ads.admanager.v1.CustomTargetingValue] that
+     * this mapping belongs to. Format:
+     * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
+     * </pre>
+     *
+     * <code>string custom_targeting_value = 12 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomTargetingValue() {
+      if (entityNameCase_ == 12) {
+        entityNameCase_ = 0;
+        entityName_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The resource name of a
+     * [CustomTargetingValue][google.ads.admanager.v1.CustomTargetingValue] that
+     * this mapping belongs to. Format:
+     * `networks/{network_code}/customTargetingValues/{custom_targeting_value_id}`
+     * </pre>
+     *
+     * <code>string custom_targeting_value = 12 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for customTargetingValue to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomTargetingValueBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      entityNameCase_ = 12;
+      entityName_ = value;
+      onChanged();
       return this;
     }
 
@@ -1204,7 +2284,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1224,7 +2304,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1249,7 +2329,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1268,13 +2348,13 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
-     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
+     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=83
      * @return Whether the entitySignalsMappingId field is set.
      */
     @java.lang.Override
     @java.lang.Deprecated
     public boolean hasEntitySignalsMappingId() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -1289,7 +2369,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
-     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
+     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=83
      * @return The entitySignalsMappingId.
      */
     @java.lang.Override
@@ -1310,7 +2390,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
-     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
+     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=83
      * @param value The entitySignalsMappingId to set.
      * @return This builder for chaining.
      */
@@ -1318,7 +2398,7 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
     public Builder setEntitySignalsMappingId(long value) {
 
       entitySignalsMappingId_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1335,12 +2415,12 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      * </code>
      *
      * @deprecated google.ads.admanager.v1.EntitySignalsMapping.entity_signals_mapping_id is
-     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=56
+     *     deprecated. See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=83
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearEntitySignalsMappingId() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       entitySignalsMappingId_ = 0L;
       onChanged();
       return this;
@@ -1352,22 +2432,26 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
       if (!taxonomyCategoryIds_.isModifiable()) {
         taxonomyCategoryIds_ = makeMutableCopy(taxonomyCategoryIds_);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
     }
 
     /**
      *
      *
      * <pre>
-     * Optional. The IDs of the categories that are associated with the
-     * referencing entity.
+     * Optional. Deprecated: The IDs of the categories that are associated with
+     * the referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+     *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
      * @return A list containing the taxonomyCategoryIds.
      */
+    @java.lang.Deprecated
     public java.util.List<java.lang.Long> getTaxonomyCategoryIdsList() {
       taxonomyCategoryIds_.makeImmutable();
       return taxonomyCategoryIds_;
@@ -1377,15 +2461,19 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The IDs of the categories that are associated with the
-     * referencing entity.
+     * Optional. Deprecated: The IDs of the categories that are associated with
+     * the referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+     *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
      * @return The count of taxonomyCategoryIds.
      */
+    @java.lang.Deprecated
     public int getTaxonomyCategoryIdsCount() {
       return taxonomyCategoryIds_.size();
     }
@@ -1394,16 +2482,20 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The IDs of the categories that are associated with the
-     * referencing entity.
+     * Optional. Deprecated: The IDs of the categories that are associated with
+     * the referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+     *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
      * @param index The index of the element to return.
      * @return The taxonomyCategoryIds at the given index.
      */
+    @java.lang.Deprecated
     public long getTaxonomyCategoryIds(int index) {
       return taxonomyCategoryIds_.getLong(index);
     }
@@ -1412,22 +2504,26 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The IDs of the categories that are associated with the
-     * referencing entity.
+     * Optional. Deprecated: The IDs of the categories that are associated with
+     * the referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+     *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
      * @param index The index to set the value at.
      * @param value The taxonomyCategoryIds to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTaxonomyCategoryIds(int index, long value) {
 
       ensureTaxonomyCategoryIdsIsMutable();
       taxonomyCategoryIds_.setLong(index, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1436,21 +2532,25 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The IDs of the categories that are associated with the
-     * referencing entity.
+     * Optional. Deprecated: The IDs of the categories that are associated with
+     * the referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+     *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
      * @param value The taxonomyCategoryIds to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addTaxonomyCategoryIds(long value) {
 
       ensureTaxonomyCategoryIdsIsMutable();
       taxonomyCategoryIds_.addLong(value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1459,20 +2559,24 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The IDs of the categories that are associated with the
-     * referencing entity.
+     * Optional. Deprecated: The IDs of the categories that are associated with
+     * the referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+     *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
      * @param values The taxonomyCategoryIds to add.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder addAllTaxonomyCategoryIds(java.lang.Iterable<? extends java.lang.Long> values) {
       ensureTaxonomyCategoryIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, taxonomyCategoryIds_);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1481,18 +2585,250 @@ public final class EntitySignalsMapping extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. The IDs of the categories that are associated with the
-     * referencing entity.
+     * Optional. Deprecated: The IDs of the categories that are associated with
+     * the referencing entity.
      * </pre>
      *
-     * <code>repeated int64 taxonomy_category_ids = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * <code>
+     * repeated int64 taxonomy_category_ids = 6 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @deprecated google.ads.admanager.v1.EntitySignalsMapping.taxonomy_category_ids is deprecated.
+     *     See google/ads/admanager/v1/entity_signals_mapping_messages.proto;l=88
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearTaxonomyCategoryIds() {
+      taxonomyCategoryIds_ = emptyLongList();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList taxonomyCategories_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureTaxonomyCategoriesIsMutable() {
+      if (!taxonomyCategories_.isModifiable()) {
+        taxonomyCategories_ = new com.google.protobuf.LazyStringArrayList(taxonomyCategories_);
+      }
+      bitField0_ |= 0x00000200;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource names of the
+     * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+     * associated with the referencing entity. Format:
+     * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+     * </pre>
+     *
+     * <code>
+     * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the taxonomyCategories.
+     */
+    public com.google.protobuf.ProtocolStringList getTaxonomyCategoriesList() {
+      taxonomyCategories_.makeImmutable();
+      return taxonomyCategories_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource names of the
+     * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+     * associated with the referencing entity. Format:
+     * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+     * </pre>
+     *
+     * <code>
+     * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of taxonomyCategories.
+     */
+    public int getTaxonomyCategoriesCount() {
+      return taxonomyCategories_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource names of the
+     * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+     * associated with the referencing entity. Format:
+     * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+     * </pre>
+     *
+     * <code>
+     * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The taxonomyCategories at the given index.
+     */
+    public java.lang.String getTaxonomyCategories(int index) {
+      return taxonomyCategories_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource names of the
+     * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+     * associated with the referencing entity. Format:
+     * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+     * </pre>
+     *
+     * <code>
+     * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the taxonomyCategories at the given index.
+     */
+    public com.google.protobuf.ByteString getTaxonomyCategoriesBytes(int index) {
+      return taxonomyCategories_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource names of the
+     * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+     * associated with the referencing entity. Format:
+     * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+     * </pre>
+     *
+     * <code>
+     * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The taxonomyCategories to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTaxonomyCategories(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTaxonomyCategoriesIsMutable();
+      taxonomyCategories_.set(index, value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource names of the
+     * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+     * associated with the referencing entity. Format:
+     * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+     * </pre>
+     *
+     * <code>
+     * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The taxonomyCategories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTaxonomyCategories(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTaxonomyCategoriesIsMutable();
+      taxonomyCategories_.add(value);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource names of the
+     * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+     * associated with the referencing entity. Format:
+     * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+     * </pre>
+     *
+     * <code>
+     * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The taxonomyCategories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTaxonomyCategories(java.lang.Iterable<java.lang.String> values) {
+      ensureTaxonomyCategoriesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, taxonomyCategories_);
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource names of the
+     * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+     * associated with the referencing entity. Format:
+     * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+     * </pre>
+     *
+     * <code>
+     * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearTaxonomyCategoryIds() {
-      taxonomyCategoryIds_ = emptyLongList();
-      bitField0_ = (bitField0_ & ~0x00000020);
+    public Builder clearTaxonomyCategories() {
+      taxonomyCategories_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource names of the
+     * [TaxonomyCategory][google.ads.admanager.v1.TaxonomyCategory] that are
+     * associated with the referencing entity. Format:
+     * `networks/{network_code}/taxonomyCategories/{taxonomyCategoryId}`
+     * </pre>
+     *
+     * <code>
+     * repeated string taxonomy_categories = 13 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the taxonomyCategories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTaxonomyCategoriesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureTaxonomyCategoriesIsMutable();
+      taxonomyCategories_.add(value);
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

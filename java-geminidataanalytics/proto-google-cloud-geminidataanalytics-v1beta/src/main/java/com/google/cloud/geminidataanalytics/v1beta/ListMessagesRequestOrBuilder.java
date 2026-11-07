@@ -137,4 +137,20 @@ public interface ListMessagesRequestOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the wait for in-flight writes on the most recent turn is
+   * skipped. By default ListMessages waits for those writes to become durable
+   * so a caller reading right after a chat turn does not miss the tail of that
+   * turn's messages.
+   * </pre>
+   *
+   * <code>bool pending_write_wait_skipped = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The pendingWriteWaitSkipped.
+   */
+  boolean getPendingWriteWaitSkipped();
 }
