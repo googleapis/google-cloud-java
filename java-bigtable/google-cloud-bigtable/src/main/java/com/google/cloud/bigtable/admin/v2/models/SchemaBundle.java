@@ -20,6 +20,7 @@ import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.SchemaBundleName;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
+import java.util.List;
 import javax.annotation.Nonnull;
 
 /**
@@ -41,8 +42,11 @@ public final class SchemaBundle {
   private SchemaBundle(@Nonnull com.google.bigtable.admin.v2.SchemaBundle proto) {
     Preconditions.checkNotNull(proto);
     Preconditions.checkArgument(!proto.getName().isEmpty(), "SchemaBundle must have a name");
+    // proto_schema and avro_schema are defined in a protobuf oneof, so at most one
+    // can be set.
     Preconditions.checkArgument(
-        proto.hasProtoSchema(), "Schemabundle must have a proto_schema field");
+        proto.hasProtoSchema() || proto.hasAvroSchema(),
+        "Schemabundle must have a proto_schema or avro_schema field");
     this.proto = proto;
     this.schemaBundleName = SchemaBundleName.parse(proto.getName());
   }
@@ -65,6 +69,14 @@ public final class SchemaBundle {
       return proto.getProtoSchema().getProtoDescriptors();
     }
     throw new IllegalStateException("This SchemaBundle doesn't have a valid type specified");
+  }
+
+  /** Gets the avro schema of this schema bundle. */
+  public List<String> getAvroSchema() {
+    if (proto.hasAvroSchema()) {
+      return proto.getAvroSchema().getJsonSchemasList();
+    }
+    throw new IllegalStateException("This SchemaBundle does not contain an Avro schema");
   }
 
   /**
