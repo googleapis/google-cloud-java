@@ -233,7 +233,6 @@ public final class ListNativeStylesRequest extends com.google.protobuf.Generated
    * * `creativeTemplate`
    * * `displayName`
    * * `name`
-   * * `size.canonicalName`
    * * `status`
    * </pre>
    *
@@ -267,7 +266,6 @@ public final class ListNativeStylesRequest extends com.google.protobuf.Generated
    * * `creativeTemplate`
    * * `displayName`
    * * `name`
-   * * `size.canonicalName`
    * * `status`
    * </pre>
    *
@@ -1127,7 +1125,6 @@ public final class ListNativeStylesRequest extends com.google.protobuf.Generated
      * * `creativeTemplate`
      * * `displayName`
      * * `name`
-     * * `size.canonicalName`
      * * `status`
      * </pre>
      *
@@ -1160,7 +1157,6 @@ public final class ListNativeStylesRequest extends com.google.protobuf.Generated
      * * `creativeTemplate`
      * * `displayName`
      * * `name`
-     * * `size.canonicalName`
      * * `status`
      * </pre>
      *
@@ -1193,7 +1189,6 @@ public final class ListNativeStylesRequest extends com.google.protobuf.Generated
      * * `creativeTemplate`
      * * `displayName`
      * * `name`
-     * * `size.canonicalName`
      * * `status`
      * </pre>
      *
@@ -1225,7 +1220,6 @@ public final class ListNativeStylesRequest extends com.google.protobuf.Generated
      * * `creativeTemplate`
      * * `displayName`
      * * `name`
-     * * `size.canonicalName`
      * * `status`
      * </pre>
      *
@@ -1253,7 +1247,6 @@ public final class ListNativeStylesRequest extends com.google.protobuf.Generated
      * * `creativeTemplate`
      * * `displayName`
      * * `name`
-     * * `size.canonicalName`
      * * `status`
      * </pre>
      *

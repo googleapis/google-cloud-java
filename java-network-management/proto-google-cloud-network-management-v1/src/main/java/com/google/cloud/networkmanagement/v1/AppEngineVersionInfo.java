@@ -135,7 +135,8 @@ public final class AppEngineVersionInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * URI of an App Engine version.
+   * URI of the App Engine version.
+   * Format: `apps/{app_id}/services/{service_id}/versions/{version_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -159,7 +160,8 @@ public final class AppEngineVersionInfo extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * URI of an App Engine version.
+   * URI of the App Engine version.
+   * Format: `apps/{app_id}/services/{service_id}/versions/{version_id}`
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -785,7 +787,8 @@ public final class AppEngineVersionInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * URI of an App Engine version.
+     * URI of the App Engine version.
+     * Format: `apps/{app_id}/services/{service_id}/versions/{version_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -808,7 +811,8 @@ public final class AppEngineVersionInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * URI of an App Engine version.
+     * URI of the App Engine version.
+     * Format: `apps/{app_id}/services/{service_id}/versions/{version_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -831,7 +835,8 @@ public final class AppEngineVersionInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * URI of an App Engine version.
+     * URI of the App Engine version.
+     * Format: `apps/{app_id}/services/{service_id}/versions/{version_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -853,7 +858,8 @@ public final class AppEngineVersionInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * URI of an App Engine version.
+     * URI of the App Engine version.
+     * Format: `apps/{app_id}/services/{service_id}/versions/{version_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -871,7 +877,8 @@ public final class AppEngineVersionInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * URI of an App Engine version.
+     * URI of the App Engine version.
+     * Format: `apps/{app_id}/services/{service_id}/versions/{version_id}`
      * </pre>
      *
      * <code>string uri = 2;</code>
