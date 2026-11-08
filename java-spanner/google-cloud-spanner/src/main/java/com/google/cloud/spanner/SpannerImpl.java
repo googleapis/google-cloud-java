@@ -25,6 +25,7 @@ import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.SessionClient.SessionId;
 import com.google.cloud.spanner.SpannerOptions.CloseableExecutorProvider;
+import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStub;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
@@ -267,8 +268,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     try {
       final DatabaseAdminStubSettings settings =
           Preconditions.checkNotNull(gapicRpc.getDatabaseAdminStubSettings());
-      return com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.create(
-          settings.createStub());
+      final DatabaseAdminStub stub =
+          gapicRpc instanceof GapicSpannerRpc
+              ? ((GapicSpannerRpc) gapicRpc).createDatabaseAdminStub()
+              : settings.createStub();
+      return com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient.create(stub);
     } catch (IOException ex) {
       throw SpannerExceptionFactory.newSpannerException(ex);
     }

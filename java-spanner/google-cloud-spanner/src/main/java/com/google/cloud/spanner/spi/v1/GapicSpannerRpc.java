@@ -23,6 +23,7 @@ import static com.google.cloud.spanner.XGoogSpannerRequestId.REQUEST_ID_CALL_OPT
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
+import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
 import com.google.api.core.NanoClock;
 import com.google.api.gax.core.CredentialsProvider;
@@ -30,10 +31,13 @@ import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcCallableFactory;
+import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.TimedAttemptSettings;
@@ -41,22 +45,32 @@ import com.google.api.gax.rpc.AlreadyExistsException;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.InstantiatingWatchdogProvider;
+import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.api.gax.rpc.LongRunningClient;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StreamController;
+import com.google.api.gax.rpc.TranslatingUnaryCallable;
 import com.google.api.gax.rpc.TransportChannel;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.rpc.WatchdogProvider;
+import com.google.api.gax.tracing.ApiTracerContext;
+import com.google.api.gax.tracing.SpanName;
+import com.google.api.gax.tracing.TracedOperationCallable;
+import com.google.api.gax.tracing.TracedOperationInitialCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.auth.Credentials;
 import com.google.cloud.RetryHelper;
@@ -87,7 +101,6 @@ import com.google.cloud.spanner.XGoogSpannerRequestId.RequestIdCreator;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStub;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.database.v1.stub.GrpcDatabaseAdminCallableFactory;
-import com.google.cloud.spanner.admin.database.v1.stub.GrpcDatabaseAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.GrpcInstanceAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
@@ -102,6 +115,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.io.Resources;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.RateLimiter;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -111,9 +125,11 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.CancelOperationRequest;
+import com.google.longrunning.DeleteOperationRequest;
 import com.google.longrunning.GetOperationRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsGrpc;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -204,6 +220,7 @@ import io.grpc.ForwardingChannelBuilder2;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
+import io.grpc.Status;
 import io.grpc.auth.MoreCallCredentials;
 import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
@@ -222,6 +239,7 @@ import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ConcurrentHashMap;
@@ -560,44 +578,7 @@ public class GapicSpannerRpc implements SpannerRpc {
                         /* isAdminClient= */ true, isEmulatorEnabled(options, emulatorHost)))
                 .build();
 
-        // Automatically retry RESOURCE_EXHAUSTED for GetOperation if auto-throttling of
-        // administrative requests has been set. The GetOperation RPC is called repeatedly by gax
-        // while polling long-running operations for their progress and can also cause these errors.
-        // The default behavior is not to retry these errors, and this option should normally only
-        // be enabled for (integration) testing.
-        if (options.isAutoThrottleAdministrativeRequests()) {
-          GrpcStubCallableFactory factory =
-              new GrpcDatabaseAdminCallableFactory() {
-                @Override
-                public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(
-                    GrpcCallSettings<RequestT, ResponseT> grpcCallSettings,
-                    UnaryCallSettings<RequestT, ResponseT> callSettings,
-                    ClientContext clientContext) {
-                  // Make GetOperation retry on RESOURCE_EXHAUSTED to prevent polling operations
-                  // from failing with an Administrative requests limit exceeded error.
-                  if (grpcCallSettings
-                      .getMethodDescriptor()
-                      .getFullMethodName()
-                      .equals("google.longrunning.Operations/GetOperation")) {
-                    Set<StatusCode.Code> codes =
-                        ImmutableSet.<StatusCode.Code>builderWithExpectedSize(
-                                callSettings.getRetryableCodes().size() + 1)
-                            .addAll(callSettings.getRetryableCodes())
-                            .add(StatusCode.Code.RESOURCE_EXHAUSTED)
-                            .build();
-                    callSettings = callSettings.toBuilder().setRetryableCodes(codes).build();
-                  }
-                  return super.createUnaryCallable(grpcCallSettings, callSettings, clientContext);
-                }
-              };
-          this.databaseAdminStub =
-              new GrpcDatabaseAdminStubWithCustomCallableFactory(
-                  databaseAdminStubSettings,
-                  ClientContext.create(databaseAdminStubSettings),
-                  factory);
-        } else {
-          this.databaseAdminStub = GrpcDatabaseAdminStub.create(databaseAdminStubSettings);
-        }
+        this.databaseAdminStub = createDatabaseAdminStub();
 
         // Check whether the SPANNER_EMULATOR_HOST env var has been set, and if so, if the emulator
         // is actually running.
@@ -2769,6 +2750,213 @@ public class GapicSpannerRpc implements SpannerRpc {
   @Override
   public DatabaseAdminStubSettings getDatabaseAdminStubSettings() {
     return databaseAdminStubSettings;
+  }
+
+  public DatabaseAdminStub createDatabaseAdminStub() throws IOException {
+    Preconditions.checkNotNull(databaseAdminStubSettings);
+    return new GrpcDatabaseAdminStubWithCustomCallableFactory(
+        databaseAdminStubSettings,
+        ClientContext.create(databaseAdminStubSettings),
+        createDatabaseAdminCallableFactory(throttleAdministrativeRequests));
+  }
+
+  private static GrpcStubCallableFactory createDatabaseAdminCallableFactory(
+      final boolean throttleAdministrativeRequests) {
+    return new GrpcDatabaseAdminCallableFactory() {
+      @Override
+      public <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUnaryCallable(
+          GrpcCallSettings<RequestT, ResponseT> grpcCallSettings,
+          UnaryCallSettings<RequestT, ResponseT> callSettings,
+          ClientContext clientContext) {
+        // Make GetOperation retry on RESOURCE_EXHAUSTED to prevent polling operations
+        // from failing with an Administrative requests limit exceeded error.
+        if (throttleAdministrativeRequests
+            && grpcCallSettings
+                .getMethodDescriptor()
+                .getFullMethodName()
+                .equals("google.longrunning.Operations/GetOperation")) {
+          Set<StatusCode.Code> codes =
+              ImmutableSet.<StatusCode.Code>builderWithExpectedSize(
+                      callSettings.getRetryableCodes().size() + 1)
+                  .addAll(callSettings.getRetryableCodes())
+                  .add(StatusCode.Code.RESOURCE_EXHAUSTED)
+                  .build();
+          callSettings = callSettings.toBuilder().setRetryableCodes(codes).build();
+        }
+        return super.createUnaryCallable(grpcCallSettings, callSettings, clientContext);
+      }
+
+      @Override
+      @SuppressWarnings("unchecked")
+      public <RequestT, ResponseT, MetadataT>
+          OperationCallable<RequestT, ResponseT, MetadataT> createOperationCallable(
+              GrpcCallSettings<RequestT, Operation> grpcCallSettings,
+              OperationCallSettings<RequestT, ResponseT, MetadataT> callSettings,
+              ClientContext clientContext,
+              OperationsStub operationsStub) {
+        if (grpcCallSettings
+            .getMethodDescriptor()
+            .getFullMethodName()
+            .equals(DatabaseAdminGrpc.getUpdateDatabaseDdlMethod().getFullMethodName())) {
+          return (OperationCallable<RequestT, ResponseT, MetadataT>)
+              createIdempotentUpdateDatabaseDdlCallable(
+                  (GrpcCallSettings<UpdateDatabaseDdlRequest, Operation>) grpcCallSettings,
+                  (OperationCallSettings<
+                          UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata>)
+                      callSettings,
+                  clientContext,
+                  operationsStub);
+        }
+        return super.createOperationCallable(
+            grpcCallSettings, callSettings, clientContext, operationsStub);
+      }
+    };
+  }
+
+  /**
+   * Ensures retries of {@code UpdateDatabaseDdl} are idempotent when the caller omits {@code
+   * operation_id}. Generates a client-side {@code operation_id} per logical call and resumes the
+   * existing operation via {@code GetOperation} if a retry fails with {@code ALREADY_EXISTS} after
+   * the initial attempt already started on the server.
+   */
+  private static OperationCallable<UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata>
+      createIdempotentUpdateDatabaseDdlCallable(
+          GrpcCallSettings<UpdateDatabaseDdlRequest, Operation> grpcCallSettings,
+          OperationCallSettings<UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata>
+              callSettings,
+          ClientContext clientContext,
+          OperationsStub operationsStub) {
+    ApiTracerContext apiTracerContext =
+        ApiTracerContext.newBuilder()
+            .setFullMethodName(grpcCallSettings.getMethodDescriptor().getFullMethodName())
+            .setTransport(ApiTracerContext.Transport.GRPC)
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .build();
+    SpanName initialSpanName = SpanName.of(apiTracerContext);
+    SpanName operationSpanName =
+        SpanName.of(initialSpanName.getClientName(), initialSpanName.getMethodName() + "Operation");
+
+    final UnaryCallable<UpdateDatabaseDdlRequest, Operation> baseInitialCallable =
+        GrpcCallableFactory.createBaseUnaryCallable(
+            grpcCallSettings, callSettings.getInitialCallSettings(), clientContext);
+
+    UnaryCallable<UpdateDatabaseDdlRequest, OperationSnapshot> initialSnapshotCallable =
+        new UnaryCallable<UpdateDatabaseDdlRequest, OperationSnapshot>() {
+          @Override
+          public ApiFuture<OperationSnapshot> futureCall(
+              UpdateDatabaseDdlRequest request, ApiCallContext context) {
+            final ApiFuture<Operation> operationFuture;
+            if (request.getOperationId().isEmpty()) {
+              final String operationId = "r" + UUID.randomUUID().toString().replace("-", "_");
+              final UpdateDatabaseDdlRequest requestWithOperationId =
+                  request.toBuilder().setOperationId(operationId).build();
+              final String operationName = request.getDatabase() + "/operations/" + operationId;
+              ApiFuture<Operation> attemptFuture =
+                  baseInitialCallable.futureCall(requestWithOperationId, context);
+              operationFuture =
+                  ApiFutures.catchingAsync(
+                      attemptFuture,
+                      AlreadyExistsException.class,
+                      ignored ->
+                          operationsStub
+                              .getOperationCallable()
+                              .futureCall(
+                                  GetOperationRequest.newBuilder().setName(operationName).build(),
+                                  context),
+                      MoreExecutors.directExecutor());
+            } else {
+              operationFuture = baseInitialCallable.futureCall(request, context);
+            }
+            return ApiFutures.transform(
+                operationFuture,
+                GapicSpannerRpc::toOperationSnapshot,
+                MoreExecutors.directExecutor());
+          }
+        };
+
+    UnaryCallable<UpdateDatabaseDdlRequest, OperationSnapshot> tracedInitialCallable =
+        new TracedOperationInitialCallable<>(
+            initialSnapshotCallable, clientContext.getTracerFactory(), apiTracerContext);
+
+    LongRunningClient longRunningClient = createLongRunningClient(operationsStub);
+    OperationCallable<UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata>
+        operationCallable =
+            Callables.longRunningOperation(
+                tracedInitialCallable, callSettings, clientContext, longRunningClient);
+
+    return new TracedOperationCallable<>(
+            operationCallable, clientContext.getTracerFactory(), operationSpanName)
+        .withDefaultCallContext(clientContext.getDefaultCallContext());
+  }
+
+  private static LongRunningClient createLongRunningClient(OperationsStub operationsStub) {
+    return new LongRunningClient() {
+      @Override
+      public UnaryCallable<String, OperationSnapshot> getOperationCallable() {
+        return TranslatingUnaryCallable.create(
+            operationsStub.getOperationCallable(),
+            operationName -> GetOperationRequest.newBuilder().setName(operationName).build(),
+            GapicSpannerRpc::toOperationSnapshot);
+      }
+
+      @Override
+      public UnaryCallable<String, Void> cancelOperationCallable() {
+        return TranslatingUnaryCallable.create(
+            operationsStub.cancelOperationCallable(),
+            operationName -> CancelOperationRequest.newBuilder().setName(operationName).build(),
+            ignored -> null);
+      }
+
+      @Override
+      public UnaryCallable<String, Void> deleteOperationCallable() {
+        return TranslatingUnaryCallable.create(
+            operationsStub.deleteOperationCallable(),
+            operationName -> DeleteOperationRequest.newBuilder().setName(operationName).build(),
+            ignored -> null);
+      }
+    };
+  }
+
+  private static OperationSnapshot toOperationSnapshot(final Operation operation) {
+    return new OperationSnapshot() {
+      @Override
+      public String getName() {
+        return operation.getName();
+      }
+
+      @Override
+      public Object getMetadata() {
+        return operation.getMetadata();
+      }
+
+      @Override
+      public boolean isDone() {
+        return operation.getDone();
+      }
+
+      @Override
+      public Object getResponse() {
+        return operation.getResponse();
+      }
+
+      @Override
+      public StatusCode getErrorCode() {
+        return GrpcStatusCode.of(
+            Status.fromCodeValue(operation.getError().getCode()).getCode());
+      }
+
+      @Override
+      public String getErrorMessage() {
+        return operation.getError().getMessage();
+      }
+
+      @Override
+      public ErrorDetails getErrorDetails() {
+        return ErrorDetails.builder()
+            .setRawErrorMessages(operation.getError().getDetailsList())
+            .build();
+      }
+    };
   }
 
   @Override
