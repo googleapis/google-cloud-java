@@ -234,7 +234,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
    * * `contractedUnitsBought`
    * * `costType`
    * * `createTime`
-   * * `creativePlaceholders.size.canonicalName`
    * * `dealInfo.externalDealId`
    * * `deliveryRateType`
    * * `displayName`
@@ -242,7 +241,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
    * * `environmentType`
    * * `externalLineItemId`
    * * `goal.units`
-   * * `grpSettings.growbirdNielsenEnabled`
    * * `grpSettings.inTargetRatioEstimateMilliPercent`
    * * `lineItemType`
    * * `missingCreatives`
@@ -253,7 +251,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
    * * `priority`
    * * `roadblockingType`
    * * `startTime`
-   * * `stats.clickThroughRate`
    * * `stats.clicksDelivered`
    * * `stats.impressionsDelivered`
    * * `stats.viewableImpressionsDelivered`
@@ -297,7 +294,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
    * * `contractedUnitsBought`
    * * `costType`
    * * `createTime`
-   * * `creativePlaceholders.size.canonicalName`
    * * `dealInfo.externalDealId`
    * * `deliveryRateType`
    * * `displayName`
@@ -305,7 +301,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
    * * `environmentType`
    * * `externalLineItemId`
    * * `goal.units`
-   * * `grpSettings.growbirdNielsenEnabled`
    * * `grpSettings.inTargetRatioEstimateMilliPercent`
    * * `lineItemType`
    * * `missingCreatives`
@@ -316,7 +311,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
    * * `priority`
    * * `roadblockingType`
    * * `startTime`
-   * * `stats.clickThroughRate`
    * * `stats.clicksDelivered`
    * * `stats.impressionsDelivered`
    * * `stats.viewableImpressionsDelivered`
@@ -1186,7 +1180,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `contractedUnitsBought`
      * * `costType`
      * * `createTime`
-     * * `creativePlaceholders.size.canonicalName`
      * * `dealInfo.externalDealId`
      * * `deliveryRateType`
      * * `displayName`
@@ -1194,7 +1187,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `environmentType`
      * * `externalLineItemId`
      * * `goal.units`
-     * * `grpSettings.growbirdNielsenEnabled`
      * * `grpSettings.inTargetRatioEstimateMilliPercent`
      * * `lineItemType`
      * * `missingCreatives`
@@ -1205,7 +1197,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `priority`
      * * `roadblockingType`
      * * `startTime`
-     * * `stats.clickThroughRate`
      * * `stats.clicksDelivered`
      * * `stats.impressionsDelivered`
      * * `stats.viewableImpressionsDelivered`
@@ -1248,7 +1239,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `contractedUnitsBought`
      * * `costType`
      * * `createTime`
-     * * `creativePlaceholders.size.canonicalName`
      * * `dealInfo.externalDealId`
      * * `deliveryRateType`
      * * `displayName`
@@ -1256,7 +1246,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `environmentType`
      * * `externalLineItemId`
      * * `goal.units`
-     * * `grpSettings.growbirdNielsenEnabled`
      * * `grpSettings.inTargetRatioEstimateMilliPercent`
      * * `lineItemType`
      * * `missingCreatives`
@@ -1267,7 +1256,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `priority`
      * * `roadblockingType`
      * * `startTime`
-     * * `stats.clickThroughRate`
      * * `stats.clicksDelivered`
      * * `stats.impressionsDelivered`
      * * `stats.viewableImpressionsDelivered`
@@ -1310,7 +1298,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `contractedUnitsBought`
      * * `costType`
      * * `createTime`
-     * * `creativePlaceholders.size.canonicalName`
      * * `dealInfo.externalDealId`
      * * `deliveryRateType`
      * * `displayName`
@@ -1318,7 +1305,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `environmentType`
      * * `externalLineItemId`
      * * `goal.units`
-     * * `grpSettings.growbirdNielsenEnabled`
      * * `grpSettings.inTargetRatioEstimateMilliPercent`
      * * `lineItemType`
      * * `missingCreatives`
@@ -1329,7 +1315,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `priority`
      * * `roadblockingType`
      * * `startTime`
-     * * `stats.clickThroughRate`
      * * `stats.clicksDelivered`
      * * `stats.impressionsDelivered`
      * * `stats.viewableImpressionsDelivered`
@@ -1371,7 +1356,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `contractedUnitsBought`
      * * `costType`
      * * `createTime`
-     * * `creativePlaceholders.size.canonicalName`
      * * `dealInfo.externalDealId`
      * * `deliveryRateType`
      * * `displayName`
@@ -1379,7 +1363,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `environmentType`
      * * `externalLineItemId`
      * * `goal.units`
-     * * `grpSettings.growbirdNielsenEnabled`
      * * `grpSettings.inTargetRatioEstimateMilliPercent`
      * * `lineItemType`
      * * `missingCreatives`
@@ -1390,7 +1373,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `priority`
      * * `roadblockingType`
      * * `startTime`
-     * * `stats.clickThroughRate`
      * * `stats.clicksDelivered`
      * * `stats.impressionsDelivered`
      * * `stats.viewableImpressionsDelivered`
@@ -1428,7 +1410,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `contractedUnitsBought`
      * * `costType`
      * * `createTime`
-     * * `creativePlaceholders.size.canonicalName`
      * * `dealInfo.externalDealId`
      * * `deliveryRateType`
      * * `displayName`
@@ -1436,7 +1417,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `environmentType`
      * * `externalLineItemId`
      * * `goal.units`
-     * * `grpSettings.growbirdNielsenEnabled`
      * * `grpSettings.inTargetRatioEstimateMilliPercent`
      * * `lineItemType`
      * * `missingCreatives`
@@ -1447,7 +1427,6 @@ public final class ListLineItemsRequest extends com.google.protobuf.GeneratedMes
      * * `priority`
      * * `roadblockingType`
      * * `startTime`
-     * * `stats.clickThroughRate`
      * * `stats.clicksDelivered`
      * * `stats.impressionsDelivered`
      * * `stats.viewableImpressionsDelivered`

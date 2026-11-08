@@ -250,7 +250,6 @@ public final class ListLineItemCreativeAssociationsRequest
    * * `manualCreativeRotationWeight`
    * * `name`
    * * `sequentialCreativeRotationIndex`
-   * * `sizes.canonicalName`
    * * `startTime`
    * * `status`
    * * `targetingDisplayName`
@@ -292,7 +291,6 @@ public final class ListLineItemCreativeAssociationsRequest
    * * `manualCreativeRotationWeight`
    * * `name`
    * * `sequentialCreativeRotationIndex`
-   * * `sizes.canonicalName`
    * * `startTime`
    * * `status`
    * * `targetingDisplayName`
@@ -1194,7 +1192,6 @@ public final class ListLineItemCreativeAssociationsRequest
      * * `manualCreativeRotationWeight`
      * * `name`
      * * `sequentialCreativeRotationIndex`
-     * * `sizes.canonicalName`
      * * `startTime`
      * * `status`
      * * `targetingDisplayName`
@@ -1235,7 +1232,6 @@ public final class ListLineItemCreativeAssociationsRequest
      * * `manualCreativeRotationWeight`
      * * `name`
      * * `sequentialCreativeRotationIndex`
-     * * `sizes.canonicalName`
      * * `startTime`
      * * `status`
      * * `targetingDisplayName`
@@ -1276,7 +1272,6 @@ public final class ListLineItemCreativeAssociationsRequest
      * * `manualCreativeRotationWeight`
      * * `name`
      * * `sequentialCreativeRotationIndex`
-     * * `sizes.canonicalName`
      * * `startTime`
      * * `status`
      * * `targetingDisplayName`
@@ -1316,7 +1311,6 @@ public final class ListLineItemCreativeAssociationsRequest
      * * `manualCreativeRotationWeight`
      * * `name`
      * * `sequentialCreativeRotationIndex`
-     * * `sizes.canonicalName`
      * * `startTime`
      * * `status`
      * * `targetingDisplayName`
@@ -1352,7 +1346,6 @@ public final class ListLineItemCreativeAssociationsRequest
      * * `manualCreativeRotationWeight`
      * * `name`
      * * `sequentialCreativeRotationIndex`
-     * * `sizes.canonicalName`
      * * `startTime`
      * * `status`
      * * `targetingDisplayName`

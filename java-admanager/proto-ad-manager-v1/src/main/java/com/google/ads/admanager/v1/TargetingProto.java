@@ -45,6 +45,14 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_Targeting_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_InventorySizeTargeting_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_InventorySizeTargeting_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_InventoryUrlTargeting_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_InventoryUrlTargeting_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_admanager_v1_GeoTargeting_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_GeoTargeting_fieldAccessorTable;
@@ -117,9 +125,21 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_CmsMetadataTargeting_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_DateTimeRangeTargeting_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_DateTimeRangeTargeting_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_PublisherProvidedSignalsTargeting_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_PublisherProvidedSignalsTargeting_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_admanager_v1_UserDomainTargeting_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_UserDomainTargeting_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ContextualTargeting_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ContextualTargeting_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_admanager_v1_VideoPositionTargeting_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -148,6 +168,18 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_ads_admanager_v1_FirstPartyMobileApplicationTargeting_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_FirstPartyMobileApplicationTargeting_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_DayPart_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_DayPart_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_DayPartTargeting_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_DayPartTargeting_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_BuyerUserListTargeting_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_BuyerUserListTargeting_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -159,56 +191,83 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n"
           + "\'google/ads/admanager/v1/targeting.prot"
-          + "o\022\027google.ads.admanager.v1\0323google/ads/a"
-          + "dmanager/v1/request_platform_enum.proto\032=google/ads/admanager/v1/targeted_video_"
-          + "bumper_type_enum.proto\0321google/ads/adman"
-          + "ager/v1/video_position_enum.proto\032\037googl"
-          + "e/api/field_behavior.proto\032\031google/api/resource.proto\"\237\007\n"
-          + "\tTargeting\022B\n\r"
-          + "geo_targeting\030\002"
-          + " \001(\0132%.google.ads.admanager.v1.GeoTargetingB\004\342A\001\001\022P\n"
-          + "\024technology_targeting\030\003"
-          + " \001(\0132,.google.ads.admanager.v1.TechnologyTargetingB\004\342A\001\001\022N\n"
-          + "\023inventory_targeting\030\005"
-          + " \001(\0132+.google.ads.admanager.v1.InventoryTargetingB\004\342A\001\001\022[\n"
+          + "o\022\027google.ads.admanager.v1\0327google/ads/a"
+          + "dmanager/v1/dayparting_time_zone_enum.proto\0323google/ads/admanager/v1/request_pla"
+          + "tform_enum.proto\032\"google/ads/admanager/v"
+          + "1/size.proto\032=google/ads/admanager/v1/targeted_video_bumper_type_enum.proto\0321goo"
+          + "gle/ads/admanager/v1/video_position_enum"
+          + ".proto\032\037google/api/field_behavior.proto\032"
+          + "\031google/api/resource.proto\032\033google/type/"
+          + "dayofweek.proto\032\032google/type/interval.proto\032\033google/type/timeofday.proto\"\222\014\n"
+          + "\tTargeting\022U\n"
+          + "\027inventory_url_targeting\030\001 \001(\0132"
+          + "..google.ads.admanager.v1.InventoryUrlTargetingB\004\342A\001\001\022B\n\r"
+          + "geo_targeting\030\002 \001(\0132%.g"
+          + "oogle.ads.admanager.v1.GeoTargetingB\004\342A\001\001\022P\n"
+          + "\024technology_targeting\030\003 \001(\0132,.google"
+          + ".ads.admanager.v1.TechnologyTargetingB\004\342A\001\001\022W\n"
+          + "\030inventory_size_targeting\030\004 \001(\0132/."
+          + "google.ads.admanager.v1.InventorySizeTargetingB\004\342A\001\001\022N\n"
+          + "\023inventory_targeting\030\005 \001("
+          + "\0132+.google.ads.admanager.v1.InventoryTargetingB\004\342A\001\001\022[\n"
           + "\032request_platform_targeting\030\006"
           + " \001(\01321.google.ads.admanager.v1.RequestPlatformTargetingB\004\342A\001\001\022H\n"
           + "\020custom_targeting\030\007"
-          + " \001(\0132(.google.ads.admanager.v1.CustomTargetingB\004\342A\001\001\022Q\n"
+          + " \001(\0132(.google.ads.admanager.v1.CustomTargetingB\004\342A\001\001\022X\n"
+          + "\031date_time_range_targeting\030\010"
+          + " \001(\0132/.google.ads.admanager.v1.DateTimeRangeTargetingB\004\342A\001\001\022n\n"
+          + "$publisher_provided_signals_targeting\030\t \001(\0132:.go"
+          + "ogle.ads.admanager.v1.PublisherProvidedSignalsTargetingB\004\342A\001\001\022Q\n"
           + "\025user_domain_targeting\030\n"
-          + " \001(\0132,.google.ads.admanager.v1.UserDomainTargetingB\004\342A\001\001\022W\n"
+          + " \001(\0132,.google.ads.admanager.v1.UserDomainTargetingB\004\342A\001\001\022P\n"
+          + "\024contextual_targeting\030\013"
+          + " \001(\0132,.google.ads.admanager.v1.ContextualTargetingB\004\342A\001\001\022W\n"
           + "\030video_position_targeting\030\014"
           + " \001(\0132/.google.ads.admanager.v1.VideoPositionTargetingB\004\342A\001\001\022S\n"
           + "\026data_segment_targeting\030\r"
           + " \001(\0132-.google.ads.admanager.v1.DataSegmentTargetingB\004\342A\001\001\022W\n"
-          + "\030request_format_targeting\030\016 \001(\0132/.go"
-          + "ogle.ads.admanager.v1.RequestFormatTargetingB\004\342A\001\001\022J\n"
-          + "\021content_targeting\030\017 \001(\0132)."
-          + "google.ads.admanager.v1.ContentTargetingB\004\342A\001\001\022_\n"
-          + "\034mobile_application_targeting\030\022"
-          + " \001(\01323.google.ads.admanager.v1.MobileApplicationTargetingB\004\342A\001\001\"\226\001\n"
+          + "\030request_format_targeting\030\016 \001(\0132/.goo"
+          + "gle.ads.admanager.v1.RequestFormatTargetingB\004\342A\001\001\022J\n"
+          + "\021content_targeting\030\017 \001(\0132).g"
+          + "oogle.ads.admanager.v1.ContentTargetingB\004\342A\001\001\022_\n"
+          + "\034mobile_application_targeting\030\022 "
+          + "\001(\01323.google.ads.admanager.v1.MobileApplicationTargetingB\004\342A\001\001\022K\n"
+          + "\022day_part_targeting\030\023"
+          + " \001(\0132).google.ads.admanager.v1.DayPartTargetingB\004\342A\001\001\022X\n"
+          + "\031buyer_user_list_targeting\030\024"
+          + " \001(\0132/.google.ads.admanager.v1.BuyerUserListTargetingB\004\342A\001\001\"\246\001\n"
+          + "\026InventorySizeTargeting\022E\n"
+          + "\030targeted_inventory_sizes\030\001"
+          + " \003(\0132\035.google.ads.admanager.v1.SizeB\004\342A\001\001\022E\n"
+          + "\030excluded_inventory_sizes\030\002 \003("
+          + "\0132\035.google.ads.admanager.v1.SizeB\004\342A\001\001\"\271\001\n"
+          + "\025InventoryUrlTargeting\022O\n"
+          + "\027targeted_inventory_urls\030\003 \003(\tB.\342A\001\001\372A\'\n"
+          + "%admanager.googleapis.com/InventoryUrl\022O\n"
+          + "\027excluded_inventory_urls\030\004 \003(\tB.\342A\001\001\372A\'\n"
+          + "%admanager.googleapis.com/InventoryUrl\"\226\001\n"
           + "\014GeoTargeting\022B\n\r"
           + "targeted_geos\030\003 \003(\tB+\342A\001\001\372A$\n"
           + "\"admanager.googleapis.com/GeoTarget\022B\n\r"
           + "excluded_geos\030\004 \003(\tB+\342A\001\001\372A$\n"
           + "\"admanager.googleapis.com/GeoTarget\"\341\005\n"
           + "\023TechnologyTargeting\022N\n"
-          + "\023bandwidth_targeting\030\003 \001(\0132+.google.a"
-          + "ds.admanager.v1.BandwidthTargetingB\004\342A\001\001\022J\n"
-          + "\021browser_targeting\030\004"
-          + " \001(\0132).google.ads.admanager.v1.BrowserTargetingB\004\342A\001\001\022[\n"
-          + "\032browser_language_targeting\030\005 \001(\01321.googl"
-          + "e.ads.admanager.v1.BrowserLanguageTargetingB\004\342A\001\001\022]\n"
+          + "\023bandwidth_targeting\030\003 \001(\0132+.googl"
+          + "e.ads.admanager.v1.BandwidthTargetingB\004\342A\001\001\022J\n"
+          + "\021browser_targeting\030\004 \001(\0132).google."
+          + "ads.admanager.v1.BrowserTargetingB\004\342A\001\001\022[\n"
+          + "\032browser_language_targeting\030\005 \001(\01321.go"
+          + "ogle.ads.admanager.v1.BrowserLanguageTargetingB\004\342A\001\001\022]\n"
           + "\033device_capability_targeting\030\006"
           + " \001(\01322.google.ads.admanager.v1.DeviceCapabilityTargetingB\004\342A\001\001\022Y\n"
-          + "\031device_category_targeting\030\001"
-          + " \001(\01320.google.ads.admanager.v1.DeviceCategoryTargetingB\004\342A\001\001\022a\n"
-          + "\035device_manufacturer_targeting\030\007 \001(\01324.goo"
-          + "gle.ads.admanager.v1.DeviceManufacturerTargetingB\004\342A\001\001\022W\n"
+          + "\031device_category_targeting\030\001 \001(\01320.google.ads.adma"
+          + "nager.v1.DeviceCategoryTargetingB\004\342A\001\001\022a\n"
+          + "\035device_manufacturer_targeting\030\007 \001(\01324."
+          + "google.ads.admanager.v1.DeviceManufacturerTargetingB\004\342A\001\001\022W\n"
           + "\030mobile_carrier_targeting\030\010"
           + " \001(\0132/.google.ads.admanager.v1.MobileCarrierTargetingB\004\342A\001\001\022[\n"
-          + "\032operating_system_targeting\030\002"
-          + " \001(\01321.google.ads.admanager.v1.OperatingSystemTargetingB\004\342A\001\001\"\276\001\n"
+          + "\032operating_system_targeting\030\002 \001(\01321.google.ads.adma"
+          + "nager.v1.OperatingSystemTargetingB\004\342A\001\001\"\276\001\n"
           + "\022BandwidthTargeting\022S\n"
           + "\031targeted_bandwidth_groups\030\003 \003(\tB0\342A\001\001\372A)\n"
           + "\'admanager.googleapis.com/BandwidthGroup\022S\n"
@@ -263,10 +322,10 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
           + "\"excluded_operating_system_versions\030\010 \003(\tB8\342A\001\001\372A1\n"
           + "/admanager.googleapis.com/OperatingSystemVersion\"\364\001\n"
           + "\022InventoryTargeting\022I\n"
-          + "\021targeted_ad_units\030\001 \003("
-          + "\0132(.google.ads.admanager.v1.AdUnitTargetingB\004\342A\001\001\022I\n"
-          + "\021excluded_ad_units\030\002 \003(\0132(.g"
-          + "oogle.ads.admanager.v1.AdUnitTargetingB\004\342A\001\001\022H\n"
+          + "\021targeted_ad_units\030\001"
+          + " \003(\0132(.google.ads.admanager.v1.AdUnitTargetingB\004\342A\001\001\022I\n"
+          + "\021excluded_ad_units\030\002 \003(\0132"
+          + "(.google.ads.admanager.v1.AdUnitTargetingB\004\342A\001\001\022H\n"
           + "\023targeted_placements\030\005 \003(\tB+\342A\001\001\372A$\n"
           + "\"admanager.googleapis.com/Placement\"\227\001\n"
           + "\017AdUnitTargeting\022 \n"
@@ -276,18 +335,18 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
           + "\024_include_descendantsB\n\n"
           + "\010_ad_unit\"y\n"
           + "\030RequestPlatformTargeting\022]\n"
-          + "\021request_platforms\030\001"
-          + " \003(\0162<.google.ads.admanager.v1.RequestPlatformEnum.RequestPlatformB\004\342A\001\001\"i\n"
+          + "\021request_platforms\030\001 \003(\0162<.google.ads.admanager.v1.Req"
+          + "uestPlatformEnum.RequestPlatformB\004\342A\001\001\"i\n"
           + "\017CustomTargeting\022V\n"
           + "\030custom_targeting_clauses\030\001"
           + " \003(\0132..google.ads.admanager.v1.CustomTargetingClauseB\004\342A\001\001\"\245\002\n"
           + "\025CustomTargetingClause\022X\n"
-          + "\031custom_targeting_literals\030\001 "
-          + "\003(\0132/.google.ads.admanager.v1.CustomTargetingLiteralB\004\342A\001\001\022\\\n"
+          + "\031custom_targeting_literals\030\001"
+          + " \003(\0132/.google.ads.admanager.v1.CustomTargetingLiteralB\004\342A\001\001\022\\\n"
           + "\033audience_segment_targetings\030\002"
           + " \003(\01321.google.ads.admanager.v1.AudienceSegmentTargetingB\004\342A\001\001\022T\n"
-          + "\027cms_metadata_targetings\030\003 \003(\0132-.google.ads.a"
-          + "dmanager.v1.CmsMetadataTargetingB\004\342A\001\001\"\207\002\n"
+          + "\027cms_metadata_targetings\030\003 \003(\0132-.google.ad"
+          + "s.admanager.v1.CmsMetadataTargetingB\004\342A\001\001\"\207\002\n"
           + "\026CustomTargetingLiteral\022\025\n"
           + "\010negative\030\001 \001(\010H\000\210\001\001\022W\n"
           + "\024custom_targeting_key\030\004 \001(\tB4\342A\001\001\372A-\n"
@@ -305,10 +364,21 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
           + "\010negative\030\001 \001(\010H\000\210\001\001\022O\n"
           + "\023cms_metadata_values\030\003 \003(\tB2\342A\001\001\372A+\n"
           + ")admanager.googleapis.com/CmsMetadataValueB\013\n"
-          + "\t_negative\"_\n"
+          + "\t_negative\"M\n"
+          + "\026DateTimeRangeTargeting\0223\n"
+          + "\016targeted_range\030\001"
+          + " \003(\0132\025.google.type.IntervalB\004\342A\001\001\"\327\001\n"
+          + "!PublisherProvidedSignalsTargeting\022X\n"
+          + "\034targeted_taxonomy_categories\030\003 \003(\tB2\342A\001\001\372A+\n"
+          + ")admanager.googleapis.com/TaxonomyCategory\022X\n"
+          + "\034excluded_taxonomy_categories\030\004 \003(\tB2\342A\001\001\372A+\n"
+          + ")admanager.googleapis.com/TaxonomyCategory\"_\n"
           + "\023UserDomainTargeting\022#\n"
           + "\025targeted_user_domains\030\001 \003(\tB\004\342A\001\001\022#\n"
-          + "\025excluded_user_domains\030\002 \003(\tB\004\342A\001\001\"_\n"
+          + "\025excluded_user_domains\030\002 \003(\tB\004\342A\001\001\"f\n"
+          + "\023ContextualTargeting\022O\n"
+          + "\027excluded_content_labels\030\006 \003(\tB.\342A\001\001\372A\'\n"
+          + "%admanager.googleapis.com/ContentLabel\"_\n"
           + "\026VideoPositionTargeting\022E\n"
           + "\017video_positions\030\001"
           + " \003(\0132&.google.ads.admanager.v1.VideoPositionB\004\342A\001\001\"\245\003\n\r"
@@ -317,10 +387,10 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
           + "\025reverse_midroll_index\030\002"
           + " \001(\003B\004\342A\001\001H\001\210\001\001\022\037\n"
           + "\014pod_position\030\003 \001(\003B\004\342A\001\001H\002\210\001\001\022Z\n\r"
-          + "position_type\030\005 \001(\01628.google.ads.admanager.v1."
-          + "VideoPositionEnum.VideoPositionB\004\342A\001\001H\003\210\001\001\022l\n"
-          + "\013bumper_type\030\006 \001(\0162L.google.ads.adm"
-          + "anager.v1.TargetedVideoBumperTypeEnum.TargetedVideoBumperTypeB\004\342A\001\001H\004\210\001\001B\020\n"
+          + "position_type\030\005 \001(\01628.google.ads.admanager"
+          + ".v1.VideoPositionEnum.VideoPositionB\004\342A\001\001H\003\210\001\001\022l\n"
+          + "\013bumper_type\030\006 \001(\0162L.google.ads"
+          + ".admanager.v1.TargetedVideoBumperTypeEnum.TargetedVideoBumperTypeB\004\342A\001\001H\004\210\001\001B\020\n"
           + "\016_midroll_indexB\030\n"
           + "\026_reverse_midroll_indexB\017\n\r"
           + "_pod_positionB\020\n"
@@ -358,29 +428,52 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
           + "\030excluded_content_bundles\030\010 \003(\tB/\342A\001\001\372A(\n"
           + "&admanager.googleapis.com/ContentBundle\"\217\001\n"
           + "\032MobileApplicationTargeting\022d\n"
-          + "\025first_party_targeting\030\001 \001(\0132=.goog"
-          + "le.ads.admanager.v1.FirstPartyMobileApplicationTargetingB\004\342A\001\001H\000B\013\n"
+          + "\025first_party_targeting\030\001 \001(\0132=."
+          + "google.ads.admanager.v1.FirstPartyMobileApplicationTargetingB\004\342A\001\001H\000B\013\n"
           + "\ttargeting\"\302\001\n"
           + "$FirstPartyMobileApplicationTargeting\022L\n"
           + "\025targeted_applications\030\003 \003(\tB-\342A\001\001\372A&\n"
           + "$admanager.googleapis.com/Application\022L\n"
           + "\025excluded_applications\030\004 \003(\tB-\342A\001\001\372A&\n"
-          + "$admanager.googleapis.com/ApplicationB\302\001\n"
-          + "\033com.google.ads.admanager.v1B\016TargetingPro"
-          + "toP\001Z@google.golang.org/genproto/googlea"
-          + "pis/ads/admanager/v1;admanager\252\002\027Google."
-          + "Ads.AdManager.V1\312\002\027Google\\Ads\\AdManager\\"
-          + "V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + "$admanager.googleapis.com/Application\"\331\001\n"
+          + "\007DayPart\0226\n"
+          + "\013day_of_week\030\001"
+          + " \001(\0162\026.google.type.DayOfWeekB\004\342A\001\002H\000\210\001\001\0225\n\n"
+          + "start_time\030\002"
+          + " \001(\0132\026.google.type.TimeOfDayB\004\342A\001\002H\001\210\001\001\0223\n"
+          + "\010end_time\030\003"
+          + " \001(\0132\026.google.type.TimeOfDayB\004\342A\001\002H\002\210\001\001B\016\n"
+          + "\014_day_of_weekB\r\n"
+          + "\013_start_timeB\013\n"
+          + "\t_end_time\"\334\001\n"
+          + "\020DayPartTargeting\022B\n"
+          + "\022targeted_day_parts\030\001 \003(\0132"
+          + " .google.ads.admanager.v1.DayPartB\004\342A\001\001\022k\n"
+          + "\024dayparting_time_zone\030\002 \001(\0162B.google.ads.admanager"
+          + ".v1.DaypartingTimeZoneEnum.DaypartingTimeZoneB\004\342A\001\002H\000\210\001\001B\027\n"
+          + "\025_dayparting_time_zone\"E\n"
+          + "\026BuyerUserListTargeting\022+\n"
+          + "\035has_buyer_user_list_targeting\030\003 \001(\010B\004\342A\001\003B\302\001\n"
+          + "\033com.google.ads.admanager.v1B\016TargetingProto"
+          + "P\001Z@google.golang.org/genproto/googleapi"
+          + "s/ads/admanager/v1;admanager\252\002\027Google.Ad"
+          + "s.AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1"
+          + "\352\002\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.ads.admanager.v1.DaypartingTimeZoneEnumProto.getDescriptor(),
               com.google.ads.admanager.v1.RequestPlatformEnumProto.getDescriptor(),
+              com.google.ads.admanager.v1.SizeProto.getDescriptor(),
               com.google.ads.admanager.v1.TargetedVideoBumperTypeEnumProto.getDescriptor(),
               com.google.ads.admanager.v1.VideoPositionEnumProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.type.DayOfWeekProto.getDescriptor(),
+              com.google.type.IntervalProto.getDescriptor(),
+              com.google.type.TimeOfDayProto.getDescriptor(),
             });
     internal_static_google_ads_admanager_v1_Targeting_descriptor =
         getDescriptor().getMessageType(0);
@@ -388,20 +481,43 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_Targeting_descriptor,
             new java.lang.String[] {
+              "InventoryUrlTargeting",
               "GeoTargeting",
               "TechnologyTargeting",
+              "InventorySizeTargeting",
               "InventoryTargeting",
               "RequestPlatformTargeting",
               "CustomTargeting",
+              "DateTimeRangeTargeting",
+              "PublisherProvidedSignalsTargeting",
               "UserDomainTargeting",
+              "ContextualTargeting",
               "VideoPositionTargeting",
               "DataSegmentTargeting",
               "RequestFormatTargeting",
               "ContentTargeting",
               "MobileApplicationTargeting",
+              "DayPartTargeting",
+              "BuyerUserListTargeting",
+            });
+    internal_static_google_ads_admanager_v1_InventorySizeTargeting_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_ads_admanager_v1_InventorySizeTargeting_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_InventorySizeTargeting_descriptor,
+            new java.lang.String[] {
+              "TargetedInventorySizes", "ExcludedInventorySizes",
+            });
+    internal_static_google_ads_admanager_v1_InventoryUrlTargeting_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_ads_admanager_v1_InventoryUrlTargeting_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_InventoryUrlTargeting_descriptor,
+            new java.lang.String[] {
+              "TargetedInventoryUrls", "ExcludedInventoryUrls",
             });
     internal_static_google_ads_admanager_v1_GeoTargeting_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(3);
     internal_static_google_ads_admanager_v1_GeoTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_GeoTargeting_descriptor,
@@ -409,7 +525,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "TargetedGeos", "ExcludedGeos",
             });
     internal_static_google_ads_admanager_v1_TechnologyTargeting_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(4);
     internal_static_google_ads_admanager_v1_TechnologyTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_TechnologyTargeting_descriptor,
@@ -424,7 +540,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "OperatingSystemTargeting",
             });
     internal_static_google_ads_admanager_v1_BandwidthTargeting_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(5);
     internal_static_google_ads_admanager_v1_BandwidthTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BandwidthTargeting_descriptor,
@@ -432,7 +548,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "TargetedBandwidthGroups", "ExcludedBandwidthGroups",
             });
     internal_static_google_ads_admanager_v1_BrowserTargeting_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(6);
     internal_static_google_ads_admanager_v1_BrowserTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BrowserTargeting_descriptor,
@@ -440,7 +556,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "TargetedBrowsers", "ExcludedBrowsers",
             });
     internal_static_google_ads_admanager_v1_BrowserLanguageTargeting_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_ads_admanager_v1_BrowserLanguageTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_BrowserLanguageTargeting_descriptor,
@@ -448,7 +564,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "TargetedBrowserLanguages", "ExcludedBrowserLanguages",
             });
     internal_static_google_ads_admanager_v1_DeviceCategoryTargeting_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(8);
     internal_static_google_ads_admanager_v1_DeviceCategoryTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_DeviceCategoryTargeting_descriptor,
@@ -456,7 +572,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "TargetedCategories", "ExcludedCategories",
             });
     internal_static_google_ads_admanager_v1_DeviceCapabilityTargeting_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(9);
     internal_static_google_ads_admanager_v1_DeviceCapabilityTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_DeviceCapabilityTargeting_descriptor,
@@ -464,7 +580,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "TargetedCapabilities", "ExcludedCapabilities",
             });
     internal_static_google_ads_admanager_v1_DeviceManufacturerTargeting_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_ads_admanager_v1_DeviceManufacturerTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_DeviceManufacturerTargeting_descriptor,
@@ -477,7 +593,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "ExcludedMobileDeviceSubmodels",
             });
     internal_static_google_ads_admanager_v1_MobileCarrierTargeting_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_ads_admanager_v1_MobileCarrierTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_MobileCarrierTargeting_descriptor,
@@ -485,7 +601,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "TargetedMobileCarriers", "ExcludedMobileCarriers",
             });
     internal_static_google_ads_admanager_v1_OperatingSystemTargeting_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_ads_admanager_v1_OperatingSystemTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_OperatingSystemTargeting_descriptor,
@@ -496,7 +612,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "ExcludedOperatingSystemVersions",
             });
     internal_static_google_ads_admanager_v1_InventoryTargeting_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_ads_admanager_v1_InventoryTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_InventoryTargeting_descriptor,
@@ -504,7 +620,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "TargetedAdUnits", "ExcludedAdUnits", "TargetedPlacements",
             });
     internal_static_google_ads_admanager_v1_AdUnitTargeting_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(14);
     internal_static_google_ads_admanager_v1_AdUnitTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_AdUnitTargeting_descriptor,
@@ -512,7 +628,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "IncludeDescendants", "AdUnit",
             });
     internal_static_google_ads_admanager_v1_RequestPlatformTargeting_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(15);
     internal_static_google_ads_admanager_v1_RequestPlatformTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_RequestPlatformTargeting_descriptor,
@@ -520,7 +636,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "RequestPlatforms",
             });
     internal_static_google_ads_admanager_v1_CustomTargeting_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(16);
     internal_static_google_ads_admanager_v1_CustomTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_CustomTargeting_descriptor,
@@ -528,7 +644,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "CustomTargetingClauses",
             });
     internal_static_google_ads_admanager_v1_CustomTargetingClause_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(17);
     internal_static_google_ads_admanager_v1_CustomTargetingClause_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_CustomTargetingClause_descriptor,
@@ -536,7 +652,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "CustomTargetingLiterals", "AudienceSegmentTargetings", "CmsMetadataTargetings",
             });
     internal_static_google_ads_admanager_v1_CustomTargetingLiteral_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(18);
     internal_static_google_ads_admanager_v1_CustomTargetingLiteral_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_CustomTargetingLiteral_descriptor,
@@ -544,7 +660,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "Negative", "CustomTargetingKey", "CustomTargetingValues",
             });
     internal_static_google_ads_admanager_v1_AudienceSegmentTargeting_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(19);
     internal_static_google_ads_admanager_v1_AudienceSegmentTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_AudienceSegmentTargeting_descriptor,
@@ -552,23 +668,47 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "Negative", "AudienceSegments",
             });
     internal_static_google_ads_admanager_v1_CmsMetadataTargeting_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(20);
     internal_static_google_ads_admanager_v1_CmsMetadataTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_CmsMetadataTargeting_descriptor,
             new java.lang.String[] {
               "Negative", "CmsMetadataValues",
             });
+    internal_static_google_ads_admanager_v1_DateTimeRangeTargeting_descriptor =
+        getDescriptor().getMessageType(21);
+    internal_static_google_ads_admanager_v1_DateTimeRangeTargeting_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_DateTimeRangeTargeting_descriptor,
+            new java.lang.String[] {
+              "TargetedRange",
+            });
+    internal_static_google_ads_admanager_v1_PublisherProvidedSignalsTargeting_descriptor =
+        getDescriptor().getMessageType(22);
+    internal_static_google_ads_admanager_v1_PublisherProvidedSignalsTargeting_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_PublisherProvidedSignalsTargeting_descriptor,
+            new java.lang.String[] {
+              "TargetedTaxonomyCategories", "ExcludedTaxonomyCategories",
+            });
     internal_static_google_ads_admanager_v1_UserDomainTargeting_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(23);
     internal_static_google_ads_admanager_v1_UserDomainTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_UserDomainTargeting_descriptor,
             new java.lang.String[] {
               "TargetedUserDomains", "ExcludedUserDomains",
             });
+    internal_static_google_ads_admanager_v1_ContextualTargeting_descriptor =
+        getDescriptor().getMessageType(24);
+    internal_static_google_ads_admanager_v1_ContextualTargeting_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ContextualTargeting_descriptor,
+            new java.lang.String[] {
+              "ExcludedContentLabels",
+            });
     internal_static_google_ads_admanager_v1_VideoPositionTargeting_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(25);
     internal_static_google_ads_admanager_v1_VideoPositionTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_VideoPositionTargeting_descriptor,
@@ -576,7 +716,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "VideoPositions",
             });
     internal_static_google_ads_admanager_v1_VideoPosition_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(26);
     internal_static_google_ads_admanager_v1_VideoPosition_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_VideoPosition_descriptor,
@@ -584,7 +724,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "MidrollIndex", "ReverseMidrollIndex", "PodPosition", "PositionType", "BumperType",
             });
     internal_static_google_ads_admanager_v1_DataSegmentTargeting_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(27);
     internal_static_google_ads_admanager_v1_DataSegmentTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_DataSegmentTargeting_descriptor,
@@ -592,7 +732,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "HasDataSegmentTargeting",
             });
     internal_static_google_ads_admanager_v1_RequestFormatTargeting_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(28);
     internal_static_google_ads_admanager_v1_RequestFormatTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_RequestFormatTargeting_descriptor,
@@ -608,7 +748,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "NativeAdvancedEnabled",
             });
     internal_static_google_ads_admanager_v1_ContentTargeting_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(29);
     internal_static_google_ads_admanager_v1_ContentTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_ContentTargeting_descriptor,
@@ -619,7 +759,7 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "ExcludedContentBundles",
             });
     internal_static_google_ads_admanager_v1_MobileApplicationTargeting_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(30);
     internal_static_google_ads_admanager_v1_MobileApplicationTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_MobileApplicationTargeting_descriptor,
@@ -627,19 +767,47 @@ public final class TargetingProto extends com.google.protobuf.GeneratedFile {
               "FirstPartyTargeting", "Targeting",
             });
     internal_static_google_ads_admanager_v1_FirstPartyMobileApplicationTargeting_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(31);
     internal_static_google_ads_admanager_v1_FirstPartyMobileApplicationTargeting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_FirstPartyMobileApplicationTargeting_descriptor,
             new java.lang.String[] {
               "TargetedApplications", "ExcludedApplications",
             });
+    internal_static_google_ads_admanager_v1_DayPart_descriptor = getDescriptor().getMessageType(32);
+    internal_static_google_ads_admanager_v1_DayPart_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_DayPart_descriptor,
+            new java.lang.String[] {
+              "DayOfWeek", "StartTime", "EndTime",
+            });
+    internal_static_google_ads_admanager_v1_DayPartTargeting_descriptor =
+        getDescriptor().getMessageType(33);
+    internal_static_google_ads_admanager_v1_DayPartTargeting_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_DayPartTargeting_descriptor,
+            new java.lang.String[] {
+              "TargetedDayParts", "DaypartingTimeZone",
+            });
+    internal_static_google_ads_admanager_v1_BuyerUserListTargeting_descriptor =
+        getDescriptor().getMessageType(34);
+    internal_static_google_ads_admanager_v1_BuyerUserListTargeting_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_BuyerUserListTargeting_descriptor,
+            new java.lang.String[] {
+              "HasBuyerUserListTargeting",
+            });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.ads.admanager.v1.DaypartingTimeZoneEnumProto.getDescriptor();
     com.google.ads.admanager.v1.RequestPlatformEnumProto.getDescriptor();
+    com.google.ads.admanager.v1.SizeProto.getDescriptor();
     com.google.ads.admanager.v1.TargetedVideoBumperTypeEnumProto.getDescriptor();
     com.google.ads.admanager.v1.VideoPositionEnumProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.type.DayOfWeekProto.getDescriptor();
+    com.google.type.IntervalProto.getDescriptor();
+    com.google.type.TimeOfDayProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

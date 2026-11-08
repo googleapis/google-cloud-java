@@ -18,12 +18,26 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.LineItemCreativeAssociationServiceClient.ListLineItemCreativeAssociationsPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateLineItemCreativeAssociationsRequest;
+import com.google.ads.admanager.v1.BatchActivateLineItemCreativeAssociationsResponse;
+import com.google.ads.admanager.v1.BatchCreateLineItemCreativeAssociationsRequest;
+import com.google.ads.admanager.v1.BatchCreateLineItemCreativeAssociationsResponse;
+import com.google.ads.admanager.v1.BatchDeactivateLineItemCreativeAssociationsRequest;
+import com.google.ads.admanager.v1.BatchDeactivateLineItemCreativeAssociationsResponse;
+import com.google.ads.admanager.v1.BatchDeleteLineItemCreativeAssociationsRequest;
+import com.google.ads.admanager.v1.BatchUpdateLineItemCreativeAssociationsRequest;
+import com.google.ads.admanager.v1.BatchUpdateLineItemCreativeAssociationsResponse;
+import com.google.ads.admanager.v1.CreateLineItemCreativeAssociationRequest;
 import com.google.ads.admanager.v1.GetLineItemCreativeAssociationRequest;
 import com.google.ads.admanager.v1.LineItemCreativeAssociation;
 import com.google.ads.admanager.v1.ListLineItemCreativeAssociationsRequest;
 import com.google.ads.admanager.v1.ListLineItemCreativeAssociationsResponse;
+import com.google.ads.admanager.v1.PreviewLineItemCreativeAssociationRequest;
+import com.google.ads.admanager.v1.PreviewLineItemCreativeAssociationResponse;
+import com.google.ads.admanager.v1.UpdateLineItemCreativeAssociationRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
 
@@ -55,6 +69,63 @@ public abstract class LineItemCreativeAssociationServiceStub implements Backgrou
       listLineItemCreativeAssociationsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listLineItemCreativeAssociationsCallable()");
+  }
+
+  public UnaryCallable<CreateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+      createLineItemCreativeAssociationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createLineItemCreativeAssociationCallable()");
+  }
+
+  public UnaryCallable<
+          BatchCreateLineItemCreativeAssociationsRequest,
+          BatchCreateLineItemCreativeAssociationsResponse>
+      batchCreateLineItemCreativeAssociationsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchCreateLineItemCreativeAssociationsCallable()");
+  }
+
+  public UnaryCallable<UpdateLineItemCreativeAssociationRequest, LineItemCreativeAssociation>
+      updateLineItemCreativeAssociationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateLineItemCreativeAssociationCallable()");
+  }
+
+  public UnaryCallable<
+          BatchUpdateLineItemCreativeAssociationsRequest,
+          BatchUpdateLineItemCreativeAssociationsResponse>
+      batchUpdateLineItemCreativeAssociationsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchUpdateLineItemCreativeAssociationsCallable()");
+  }
+
+  public UnaryCallable<
+          BatchActivateLineItemCreativeAssociationsRequest,
+          BatchActivateLineItemCreativeAssociationsResponse>
+      batchActivateLineItemCreativeAssociationsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchActivateLineItemCreativeAssociationsCallable()");
+  }
+
+  public UnaryCallable<
+          BatchDeactivateLineItemCreativeAssociationsRequest,
+          BatchDeactivateLineItemCreativeAssociationsResponse>
+      batchDeactivateLineItemCreativeAssociationsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeactivateLineItemCreativeAssociationsCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteLineItemCreativeAssociationsRequest, Empty>
+      batchDeleteLineItemCreativeAssociationsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeleteLineItemCreativeAssociationsCallable()");
+  }
+
+  public UnaryCallable<
+          PreviewLineItemCreativeAssociationRequest, PreviewLineItemCreativeAssociationResponse>
+      previewLineItemCreativeAssociationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: previewLineItemCreativeAssociationCallable()");
   }
 
   @Override

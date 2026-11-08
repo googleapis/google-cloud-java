@@ -121,7 +121,6 @@ public interface ListNativeStylesRequestOrBuilder
    * * `creativeTemplate`
    * * `displayName`
    * * `name`
-   * * `size.canonicalName`
    * * `status`
    * </pre>
    *
@@ -144,7 +143,6 @@ public interface ListNativeStylesRequestOrBuilder
    * * `creativeTemplate`
    * * `displayName`
    * * `name`
-   * * `size.canonicalName`
    * * `status`
    * </pre>
    *

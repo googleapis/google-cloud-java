@@ -119,7 +119,6 @@ public interface ListAdUnitsRequestOrBuilder
    * **Filterable fields:**
    *
    * * `adUnitCode`
-   * * `adUnitSizes.canonicalName`
    * * `displayName`
    * * `effectiveAdsenseEnabled`
    * * `explicitlyTargeted`
@@ -149,7 +148,6 @@ public interface ListAdUnitsRequestOrBuilder
    * **Filterable fields:**
    *
    * * `adUnitCode`
-   * * `adUnitSizes.canonicalName`
    * * `displayName`
    * * `effectiveAdsenseEnabled`
    * * `explicitlyTargeted`

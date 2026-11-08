@@ -228,6 +228,14 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
+   * Notes specific to AudienceSegmentService:
+   * * `OR` operator: Not supported. Multiple conditions can only be combined
+   * using `AND`. Use `IN` for multi-value matching on a single field.
+   * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+   * AND B)`.
+   * * Text-based searches (for example, from using wildcards) are
+   * case-insensitive. Other string comparisons are case-sensitive.
+   *
    * **Filterable fields:**
    *
    * * `adIdSize`
@@ -244,6 +252,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
    * * `thirdPartyAudienceSegment.approvalStatus`
    * * `thirdPartyAudienceSegment.cost`
    * * `thirdPartyAudienceSegment.endTime`
+   * * `thirdPartyAudienceSegment.licenseType`
    * * `thirdPartyAudienceSegment.startTime`
    * </pre>
    *
@@ -272,6 +281,14 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
+   * Notes specific to AudienceSegmentService:
+   * * `OR` operator: Not supported. Multiple conditions can only be combined
+   * using `AND`. Use `IN` for multi-value matching on a single field.
+   * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+   * AND B)`.
+   * * Text-based searches (for example, from using wildcards) are
+   * case-insensitive. Other string comparisons are case-sensitive.
+   *
    * **Filterable fields:**
    *
    * * `adIdSize`
@@ -288,6 +305,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
    * * `thirdPartyAudienceSegment.approvalStatus`
    * * `thirdPartyAudienceSegment.cost`
    * * `thirdPartyAudienceSegment.endTime`
+   * * `thirdPartyAudienceSegment.licenseType`
    * * `thirdPartyAudienceSegment.startTime`
    * </pre>
    *
@@ -1143,6 +1161,14 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Notes specific to AudienceSegmentService:
+     * * `OR` operator: Not supported. Multiple conditions can only be combined
+     * using `AND`. Use `IN` for multi-value matching on a single field.
+     * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+     * AND B)`.
+     * * Text-based searches (for example, from using wildcards) are
+     * case-insensitive. Other string comparisons are case-sensitive.
+     *
      * **Filterable fields:**
      *
      * * `adIdSize`
@@ -1159,6 +1185,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * * `thirdPartyAudienceSegment.approvalStatus`
      * * `thirdPartyAudienceSegment.cost`
      * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.licenseType`
      * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
@@ -1186,6 +1213,14 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Notes specific to AudienceSegmentService:
+     * * `OR` operator: Not supported. Multiple conditions can only be combined
+     * using `AND`. Use `IN` for multi-value matching on a single field.
+     * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+     * AND B)`.
+     * * Text-based searches (for example, from using wildcards) are
+     * case-insensitive. Other string comparisons are case-sensitive.
+     *
      * **Filterable fields:**
      *
      * * `adIdSize`
@@ -1202,6 +1237,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * * `thirdPartyAudienceSegment.approvalStatus`
      * * `thirdPartyAudienceSegment.cost`
      * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.licenseType`
      * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
@@ -1229,6 +1265,14 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Notes specific to AudienceSegmentService:
+     * * `OR` operator: Not supported. Multiple conditions can only be combined
+     * using `AND`. Use `IN` for multi-value matching on a single field.
+     * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+     * AND B)`.
+     * * Text-based searches (for example, from using wildcards) are
+     * case-insensitive. Other string comparisons are case-sensitive.
+     *
      * **Filterable fields:**
      *
      * * `adIdSize`
@@ -1245,6 +1289,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * * `thirdPartyAudienceSegment.approvalStatus`
      * * `thirdPartyAudienceSegment.cost`
      * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.licenseType`
      * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
@@ -1271,6 +1316,14 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Notes specific to AudienceSegmentService:
+     * * `OR` operator: Not supported. Multiple conditions can only be combined
+     * using `AND`. Use `IN` for multi-value matching on a single field.
+     * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+     * AND B)`.
+     * * Text-based searches (for example, from using wildcards) are
+     * case-insensitive. Other string comparisons are case-sensitive.
+     *
      * **Filterable fields:**
      *
      * * `adIdSize`
@@ -1287,6 +1340,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * * `thirdPartyAudienceSegment.approvalStatus`
      * * `thirdPartyAudienceSegment.cost`
      * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.licenseType`
      * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
@@ -1309,6 +1363,14 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
+     * Notes specific to AudienceSegmentService:
+     * * `OR` operator: Not supported. Multiple conditions can only be combined
+     * using `AND`. Use `IN` for multi-value matching on a single field.
+     * * `NOT` operator: Cannot wrap compound expressions. For example, `NOT (A
+     * AND B)`.
+     * * Text-based searches (for example, from using wildcards) are
+     * case-insensitive. Other string comparisons are case-sensitive.
+     *
      * **Filterable fields:**
      *
      * * `adIdSize`
@@ -1325,6 +1387,7 @@ public final class ListAudienceSegmentsRequest extends com.google.protobuf.Gener
      * * `thirdPartyAudienceSegment.approvalStatus`
      * * `thirdPartyAudienceSegment.cost`
      * * `thirdPartyAudienceSegment.endTime`
+     * * `thirdPartyAudienceSegment.licenseType`
      * * `thirdPartyAudienceSegment.startTime`
      * </pre>
      *
