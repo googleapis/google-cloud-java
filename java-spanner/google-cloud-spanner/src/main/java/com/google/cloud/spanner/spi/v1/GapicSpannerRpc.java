@@ -2941,29 +2941,19 @@ public class GapicSpannerRpc implements SpannerRpc {
 
       @Override
       public StatusCode getErrorCode() {
-        if (operation.hasError()) {
-          return GrpcStatusCode.of(
-              Status.fromCodeValue(operation.getError().getCode()).getCode());
-        }
-        return null;
+        return GrpcStatusCode.of(Status.fromCodeValue(operation.getError().getCode()).getCode());
       }
 
       @Override
       public String getErrorMessage() {
-        if (operation.hasError()) {
-          return operation.getError().getMessage();
-        }
-        return null;
+        return operation.getError().getMessage();
       }
 
       @Override
       public ErrorDetails getErrorDetails() {
-        if (operation.hasError()) {
-          return ErrorDetails.builder()
-              .setRawErrorMessages(operation.getError().getDetailsList())
-              .build();
-        }
-        return ErrorDetails.builder().build();
+        return ErrorDetails.builder()
+            .setRawErrorMessages(operation.getError().getDetailsList())
+            .build();
       }
     };
   }

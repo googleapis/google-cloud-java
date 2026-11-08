@@ -285,7 +285,8 @@ public class UpdateDatabaseDdlRetryTest {
               .setOperationId(explicitOpId)
               .build();
       ExecutionException ex =
-          assertThrows(ExecutionException.class, () -> client.updateDatabaseDdlAsync(request).get());
+          assertThrows(
+              ExecutionException.class, () -> client.updateDatabaseDdlAsync(request).get());
       assertThat(ex).hasCauseThat().isInstanceOf(AlreadyExistsException.class);
     }
 
