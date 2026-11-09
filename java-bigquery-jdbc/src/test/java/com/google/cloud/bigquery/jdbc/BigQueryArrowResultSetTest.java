@@ -700,16 +700,20 @@ public class BigQueryArrowResultSetTest {
     TimeZone originalDefault = TimeZone.getDefault();
     try {
       TimeZone.setDefault(TimeZone.getTimeZone(ZoneId.of(jvmZone)));
-      Instant ref = Instant.parse("2025-01-01T12:34:56.123Z");
+      Instant ref = Instant.parse("2025-03-09T02:34:56.123Z");
       BigQueryArrowResultSet rs = createTemporalArrowResultSet(ref);
       assertThat(rs.next()).isTrue();
 
-      assertThat(rs.getString("ts")).isEqualTo("2025-01-01 12:34:56.123000");
-      assertThat(rs.getObject("ts", String.class)).isEqualTo("2025-01-01 12:34:56.123000");
-      assertThat(rs.getString("dt")).isEqualTo("2025-01-01 12:34:56.123000");
+      assertThat(rs.getString("ts")).isEqualTo("2025-03-09 02:34:56.123000");
+      assertThat(rs.getObject("ts", String.class)).isEqualTo("2025-03-09 02:34:56.123000");
+      assertThat(rs.getString("dt")).isEqualTo("2025-03-09 02:34:56.123000");
+      assertThat(rs.getDate("dt").toLocalDate()).isEqualTo(LocalDate.of(2025, 3, 9));
+      assertThat(rs.getObject("dt", Date.class).toLocalDate()).isEqualTo(LocalDate.of(2025, 3, 9));
+      assertThat(rs.getTime("dt").toLocalTime()).isEqualTo(LocalTime.of(2, 34, 56));
+      assertThat(rs.getObject("dt", Time.class).toLocalTime()).isEqualTo(LocalTime.of(2, 34, 56));
 
       long tsMicros = ref.getEpochSecond() * 1_000_000L + ref.getNano() / 1_000L;
-      LocalDateTime dtLocal = LocalDateTime.of(2025, 1, 1, 12, 34, 56, 123_000_000);
+      LocalDateTime dtLocal = LocalDateTime.of(2025, 3, 9, 2, 34, 56, 123_000_000);
 
       Field tsArraySchema =
           Field.newBuilder("ts_array", StandardSQLTypeName.TIMESTAMP)
@@ -718,10 +722,10 @@ public class BigQueryArrowResultSetTest {
       JsonStringArrayList<Long> tsList = new JsonStringArrayList<>();
       tsList.add(tsMicros);
       BigQueryArrowArray tsArrowArray = new BigQueryArrowArray(tsArraySchema, tsList);
-      assertThat(tsArrowArray.toString()).isEqualTo("[2025-01-01 12:34:56.123]");
+      assertThat(tsArrowArray.toString()).isEqualTo("[2025-03-09 02:34:56.123]");
       try (ResultSet nestedTsRs = tsArrowArray.getResultSet()) {
         assertThat(nestedTsRs.next()).isTrue();
-        assertThat(nestedTsRs.getString(2)).isEqualTo("2025-01-01 12:34:56.123000");
+        assertThat(nestedTsRs.getString(2)).isEqualTo("2025-03-09 02:34:56.123000");
       }
 
       Field dtArraySchema =
@@ -731,7 +735,12 @@ public class BigQueryArrowResultSetTest {
       JsonStringArrayList<LocalDateTime> dtList = new JsonStringArrayList<>();
       dtList.add(dtLocal);
       BigQueryArrowArray dtArrowArray = new BigQueryArrowArray(dtArraySchema, dtList);
-      assertThat(dtArrowArray.toString()).isEqualTo("[2025-01-01 12:34:56.123]");
+      assertThat(dtArrowArray.toString()).isEqualTo("[2025-03-09 02:34:56.123]");
+      try (ResultSet nestedDtRs = dtArrowArray.getResultSet()) {
+        assertThat(nestedDtRs.next()).isTrue();
+        assertThat(nestedDtRs.getString(2)).isEqualTo("2025-03-09 02:34:56.123000");
+        assertThat(nestedDtRs.getTime(2).toLocalTime()).isEqualTo(LocalTime.of(2, 34, 56));
+      }
 
       FieldList structSchema =
           FieldList.of(
@@ -742,7 +751,7 @@ public class BigQueryArrowResultSetTest {
       structValues.put("dt", dtLocal);
       BigQueryArrowStruct arrowStruct = new BigQueryArrowStruct(structSchema, structValues);
       assertThat(arrowStruct.toString())
-          .isEqualTo("{\"ts\":\"2025-01-01 12:34:56.123\",\"dt\":\"2025-01-01 12:34:56.123\"}");
+          .isEqualTo("{\"ts\":\"2025-03-09 02:34:56.123\",\"dt\":\"2025-03-09 02:34:56.123\"}");
     } finally {
       TimeZone.setDefault(originalDefault);
     }

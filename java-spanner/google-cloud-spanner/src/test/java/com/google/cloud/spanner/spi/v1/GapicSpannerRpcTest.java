@@ -322,6 +322,7 @@ public class GapicSpannerRpcTest {
 
   @After
   public void reset() throws InterruptedException {
+    SpannerOptionsHelper.resetActiveTracingFramework();
     if (mockSpanner != null) {
       mockSpanner.reset();
     }

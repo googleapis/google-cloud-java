@@ -44,6 +44,38 @@ public final class AssistantProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_discoveryengine_v1_Assistant_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_Assistant_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Assistant_GenerationConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Assistant_GenerationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Assistant_GenerationConfig_SystemInstruction_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Assistant_GenerationConfig_SystemInstruction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Assistant_ToolInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Assistant_ToolInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Assistant_ToolList_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Assistant_ToolList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_BannedPhrase_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_BannedPhrase_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_ModelArmorConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_ModelArmorConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Assistant_EnabledToolsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Assistant_EnabledToolsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -53,21 +85,86 @@ public final class AssistantProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n/google/cloud/discoveryengine/v1/assist"
-          + "ant.proto\022\037google.cloud.discoveryengine."
+      "\n"
+          + "/google/cloud/discoveryengine/v1/assistant.proto\022\037google.cloud.discoveryengine."
           + "v1\032\037google/api/field_behavior.proto\032\031goo"
-          + "gle/api/resource.proto\"\272\001\n\tAssistant\022\022\n\004"
-          + "name\030\001 \001(\tB\004\342A\001\005:\230\001\352A\224\001\n(discoveryengine"
-          + ".googleapis.com/Assistant\022hprojects/{pro"
-          + "ject}/locations/{location}/collections/{"
-          + "collection}/engines/{engine}/assistants/"
-          + "{assistant}B\201\002\n#com.google.cloud.discove"
-          + "ryengine.v1B\016AssistantProtoP\001ZMcloud.goo"
-          + "gle.com/go/discoveryengine/apiv1/discove"
-          + "ryenginepb;discoveryenginepb\242\002\017DISCOVERY"
-          + "ENGINE\252\002\037Google.Cloud.DiscoveryEngine.V1"
-          + "\312\002\037Google\\Cloud\\DiscoveryEngine\\V1\352\002\"Goo"
-          + "gle::Cloud::DiscoveryEngine::V1b\006proto3"
+          + "gle/api/resource.proto\032,google/cloud/dis"
+          + "coveryengine/v1/common.proto\032\037google/protobuf/timestamp.proto\"\255\023\n"
+          + "\tAssistant\022\022\n"
+          + "\004name\030\001 \001(\tB\004\342A\001\005\022\032\n"
+          + "\014display_name\030\002 \001(\tB\004\342A\001\002\022\031\n"
+          + "\013description\030\003 \001(\tB\004\342A\001\001\022\\\n"
+          + "\021generation_config\030\023 \001(\0132;.google.cloud.discove"
+          + "ryengine.v1.Assistant.GenerationConfigB\004\342A\001\001\022]\n"
+          + "\022web_grounding_type\030\004 \001(\0162;.googl"
+          + "e.cloud.discoveryengine.v1.Assistant.WebGroundingTypeB\004\342A\001\001\022.\n"
+          + " default_web_grounding_toggle_off\030\026 \001(\010B\004\342A\001\001\022Y\n\r"
+          + "enabled_tools\030\022 \003(\0132<.google.cloud.discoveryengin"
+          + "e.v1.Assistant.EnabledToolsEntryB\004\342A\001\001\022X\n"
+          + "\017customer_policy\030\014 \001(\01329.google.cloud.d"
+          + "iscoveryengine.v1.Assistant.CustomerPolicyB\004\342A\001\001\0225\n"
+          + "\013create_time\030\030"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
+          + "\013update_time\030\031"
+          + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\032\232\002\n"
+          + "\020GenerationConfig\022\036\n"
+          + "\020default_model_id\030\001 \001(\tB\004\342A\001\001\022\037\n"
+          + "\021allowed_model_ids\030\002 \003(\tB\004\342A\001\001\022i\n"
+          + "\022system_instruction\030\003 \001(\0132M.googl"
+          + "e.cloud.discoveryengine.v1.Assistant.GenerationConfig.SystemInstruction\022\030\n"
+          + "\020default_language\030\004 \001(\t\032@\n"
+          + "\021SystemInstruction\022+\n"
+          + "\035additional_system_instruction\030\002 \001(\tB\004\342A\001\001\0328\n"
+          + "\010ToolInfo\022\021\n"
+          + "\ttool_name\030\001 \001(\t\022\031\n"
+          + "\021tool_display_name\030\002 \001(\t\032R\n"
+          + "\010ToolList\022F\n"
+          + "\ttool_info\030\001"
+          + " \003(\01323.google.cloud.discoveryengine.v1.Assistant.ToolInfo\032\346\007\n"
+          + "\016CustomerPolicy\022d\n"
+          + "\016banned_phrases\030\001 \003(\0132F.google.cl"
+          + "oud.discoveryengine.v1.Assistant.CustomerPolicy.BannedPhraseB\004\342A\001\001\022l\n"
+          + "\022model_armor_config\030\002 \001(\0132J.google.cloud.discoverye"
+          + "ngine.v1.Assistant.CustomerPolicy.ModelArmorConfigB\004\342A\001\001\022[\n"
+          + "\026data_protection_policy\030\003"
+          + " \001(\01325.google.cloud.discoveryengine.v1.DataProtectionPolicyB\004\342A\001\001\032\271\002\n"
+          + "\014BannedPhrase\022\024\n"
+          + "\006phrase\030\001 \001(\tB\004\342A\001\002\022v\n\n"
+          + "match_type\030\002 \001(\0162\\.google.cloud.discoveryengine."
+          + "v1.Assistant.CustomerPolicy.BannedPhrase.BannedPhraseMatchTypeB\004\342A\001\001\022\037\n"
+          + "\021ignore_diacritics\030\003 \001(\010B\004\342A\001\001\"z\n"
+          + "\025BannedPhraseMatchType\022(\n"
+          + "$BANNED_PHRASE_MATCH_TYPE_UNSPECIFIED\020\000\022\027\n"
+          + "\023SIMPLE_STRING_MATCH\020\001\022\036\n"
+          + "\032WORD_BOUNDARY_STRING_MATCH\020\002\032\346\002\n"
+          + "\020ModelArmorConfig\022I\n"
+          + "\024user_prompt_template\030\001 \001(\tB+\342A\001\001\372A$\n"
+          + "\"modelarmor.googleapis.com/Template\022F\n"
+          + "\021response_template\030\002 \001(\tB+\342A\001\001\372A$\n"
+          + "\"modelarmor.googleapis.com/Template\022r\n"
+          + "\014failure_mode\030\003 \001(\0162V.google.cloud.discovery"
+          + "engine.v1.Assistant.CustomerPolicy.ModelArmorConfig.FailureModeB\004\342A\001\001\"K\n"
+          + "\013FailureMode\022\034\n"
+          + "\030FAILURE_MODE_UNSPECIFIED\020\000\022\r\n"
+          + "\tFAIL_OPEN\020\001\022\017\n"
+          + "\013FAIL_CLOSED\020\002\032h\n"
+          + "\021EnabledToolsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022B\n"
+          + "\005value\030\002 \001(\01323.go"
+          + "ogle.cloud.discoveryengine.v1.Assistant.ToolList:\0028\001\"\253\001\n"
+          + "\020WebGroundingType\022\"\n"
+          + "\036WEB_GROUNDING_TYPE_UNSPECIFIED\020\000\022\037\n"
+          + "\033WEB_GROUNDING_TYPE_DISABLED\020\001\022$\n"
+          + " WEB_GROUNDING_TYPE_GOOGLE_SEARCH\020\002\022,\n"
+          + "(WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH\020\003:\230\001\352A\224\001\n"
+          + "(discoveryengine.googleapis.com/Assistant\022hpro"
+          + "jects/{project}/locations/{location}/col"
+          + "lections/{collection}/engines/{engine}/assistants/{assistant}B\201\002\n"
+          + "#com.google.cloud.discoveryengine.v1B\016AssistantProtoP\001Z"
+          + "Mcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;discoveryenginepb\242\002"
+          + "\017DISCOVERYENGINE\252\002\037Google.Cloud.Discover"
+          + "yEngine.V1\312\002\037Google\\Cloud\\DiscoveryEngin"
+          + "e\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -75,6 +172,8 @@ public final class AssistantProto extends com.google.protobuf.GeneratedFile {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.discoveryengine.v1.CommonProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_discoveryengine_v1_Assistant_descriptor =
         getDescriptor().getMessageType(0);
@@ -83,14 +182,93 @@ public final class AssistantProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_discoveryengine_v1_Assistant_descriptor,
             new java.lang.String[] {
               "Name",
+              "DisplayName",
+              "Description",
+              "GenerationConfig",
+              "WebGroundingType",
+              "DefaultWebGroundingToggleOff",
+              "EnabledTools",
+              "CustomerPolicy",
+              "CreateTime",
+              "UpdateTime",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Assistant_GenerationConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Assistant_descriptor.getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_Assistant_GenerationConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Assistant_GenerationConfig_descriptor,
+            new java.lang.String[] {
+              "DefaultModelId", "AllowedModelIds", "SystemInstruction", "DefaultLanguage",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Assistant_GenerationConfig_SystemInstruction_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Assistant_GenerationConfig_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_Assistant_GenerationConfig_SystemInstruction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Assistant_GenerationConfig_SystemInstruction_descriptor,
+            new java.lang.String[] {
+              "AdditionalSystemInstruction",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Assistant_ToolInfo_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Assistant_descriptor.getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_Assistant_ToolInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Assistant_ToolInfo_descriptor,
+            new java.lang.String[] {
+              "ToolName", "ToolDisplayName",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Assistant_ToolList_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Assistant_descriptor.getNestedType(2);
+    internal_static_google_cloud_discoveryengine_v1_Assistant_ToolList_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Assistant_ToolList_descriptor,
+            new java.lang.String[] {
+              "ToolInfo",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Assistant_descriptor.getNestedType(3);
+    internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_descriptor,
+            new java.lang.String[] {
+              "BannedPhrases", "ModelArmorConfig", "DataProtectionPolicy",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_BannedPhrase_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_BannedPhrase_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_BannedPhrase_descriptor,
+            new java.lang.String[] {
+              "Phrase", "MatchType", "IgnoreDiacritics",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_ModelArmorConfig_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_descriptor
+            .getNestedType(1);
+    internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_ModelArmorConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Assistant_CustomerPolicy_ModelArmorConfig_descriptor,
+            new java.lang.String[] {
+              "UserPromptTemplate", "ResponseTemplate", "FailureMode",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Assistant_EnabledToolsEntry_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_Assistant_descriptor.getNestedType(4);
+    internal_static_google_cloud_discoveryengine_v1_Assistant_EnabledToolsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Assistant_EnabledToolsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.discoveryengine.v1.CommonProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
   }

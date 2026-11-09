@@ -2,7 +2,7 @@
   "api_shortname": "navigationconnect",
   "name_pretty": "Navigation Connect",
   "product_documentation": "https://developers.google.com/maps/documentation/navigation/connect",
-  "api_description": "Navigation Connect API.",
+  "api_description": "Navigate and track trips seamlessly with Google Maps or Waze.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-maps-navconnect/latest/overview",
   "release_level": "preview",
   "transport": "grpc+rest",

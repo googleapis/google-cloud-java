@@ -56,6 +56,7 @@ import java.util.UUID;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -87,6 +88,11 @@ public class TransactionManagerImplTest {
   public static void setupOpenTelemetry() {
     SpannerOptions.resetActiveTracingFramework();
     SpannerOptions.enableOpenTelemetryTraces();
+  }
+
+  @AfterClass
+  public static void resetOpenTelemetry() {
+    SpannerOptions.resetActiveTracingFramework();
   }
 
   @Before

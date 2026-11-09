@@ -17,6 +17,8 @@
 package com.google.cloud.developerconnect.v1.stub;
 
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRefsPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRepositoryLinkCommitListPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRepositoryLinkPullRequestListPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchLinkableGitRepositoriesPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListAccountConnectorsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListConnectionsPagedResponse;
@@ -28,6 +30,8 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.developerconnect.v1.AccountConnector;
+import com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest;
+import com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestReviewCommentRequest;
 import com.google.cloud.developerconnect.v1.Connection;
 import com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.CreateConnectionRequest;
@@ -37,12 +41,23 @@ import com.google.cloud.developerconnect.v1.DeleteConnectionRequest;
 import com.google.cloud.developerconnect.v1.DeleteGitRepositoryLinkRequest;
 import com.google.cloud.developerconnect.v1.DeleteSelfRequest;
 import com.google.cloud.developerconnect.v1.DeleteUserRequest;
+import com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest;
+import com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse;
 import com.google.cloud.developerconnect.v1.FetchAccessTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchAccessTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsRequest;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse;
 import com.google.cloud.developerconnect.v1.FetchGitRefsRequest;
 import com.google.cloud.developerconnect.v1.FetchGitRefsResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListResponse;
+import com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest;
 import com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesRequest;
 import com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesResponse;
 import com.google.cloud.developerconnect.v1.FetchReadTokenRequest;
@@ -64,7 +79,12 @@ import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksRequest;
 import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse;
 import com.google.cloud.developerconnect.v1.ListUsersRequest;
 import com.google.cloud.developerconnect.v1.ListUsersResponse;
+import com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest;
+import com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
+import com.google.cloud.developerconnect.v1.PullRequest;
+import com.google.cloud.developerconnect.v1.PullRequestComment;
+import com.google.cloud.developerconnect.v1.PullRequestReviewComment;
 import com.google.cloud.developerconnect.v1.StartOAuthRequest;
 import com.google.cloud.developerconnect.v1.StartOAuthResponse;
 import com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest;
@@ -187,6 +207,12 @@ public abstract class DeveloperConnectStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: fetchReadTokenCallable()");
   }
 
+  public UnaryCallable<OpenGitRepositoryLinkPullRequestRequest, PullRequest>
+      openGitRepositoryLinkPullRequestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: openGitRepositoryLinkPullRequestCallable()");
+  }
+
   public UnaryCallable<
           FetchLinkableGitRepositoriesRequest, FetchLinkableGitRepositoriesPagedResponse>
       fetchLinkableGitRepositoriesPagedCallable() {
@@ -211,6 +237,80 @@ public abstract class DeveloperConnectStub implements BackgroundResource {
 
   public UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable() {
     throw new UnsupportedOperationException("Not implemented: fetchGitRefsCallable()");
+  }
+
+  public UnaryCallable<DiffGitRepositoryLinkCommitRequest, DiffGitRepositoryLinkCommitResponse>
+      diffGitRepositoryLinkCommitCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: diffGitRepositoryLinkCommitCallable()");
+  }
+
+  public UnaryCallable<FetchGitRepositoryLinkCommitRequest, FetchGitRepositoryLinkCommitResponse>
+      fetchGitRepositoryLinkCommitCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchGitRepositoryLinkCommitCallable()");
+  }
+
+  public UnaryCallable<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListPagedResponse>
+      fetchGitRepositoryLinkCommitListPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchGitRepositoryLinkCommitListPagedCallable()");
+  }
+
+  public UnaryCallable<
+          FetchGitRepositoryLinkCommitListRequest, FetchGitRepositoryLinkCommitListResponse>
+      fetchGitRepositoryLinkCommitListCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchGitRepositoryLinkCommitListCallable()");
+  }
+
+  public UnaryCallable<
+          FetchGitRepositoryLinkFileBlameRequest, FetchGitRepositoryLinkFileBlameResponse>
+      fetchGitRepositoryLinkFileBlameCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchGitRepositoryLinkFileBlameCallable()");
+  }
+
+  public UnaryCallable<FetchGitRepositoryLinkPullRequestRequest, PullRequest>
+      fetchGitRepositoryLinkPullRequestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchGitRepositoryLinkPullRequestCallable()");
+  }
+
+  public UnaryCallable<AddGitRepositoryLinkPullRequestCommentRequest, PullRequestComment>
+      addGitRepositoryLinkPullRequestCommentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addGitRepositoryLinkPullRequestCommentCallable()");
+  }
+
+  public UnaryCallable<
+          AddGitRepositoryLinkPullRequestReviewCommentRequest, PullRequestReviewComment>
+      addGitRepositoryLinkPullRequestReviewCommentCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addGitRepositoryLinkPullRequestReviewCommentCallable()");
+  }
+
+  public UnaryCallable<ModifyGitRepositoryLinkPullRequestRequest, PullRequest>
+      modifyGitRepositoryLinkPullRequestCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: modifyGitRepositoryLinkPullRequestCallable()");
+  }
+
+  public UnaryCallable<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListPagedResponse>
+      fetchGitRepositoryLinkPullRequestListPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchGitRepositoryLinkPullRequestListPagedCallable()");
+  }
+
+  public UnaryCallable<
+          FetchGitRepositoryLinkPullRequestListRequest,
+          FetchGitRepositoryLinkPullRequestListResponse>
+      fetchGitRepositoryLinkPullRequestListCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchGitRepositoryLinkPullRequestListCallable()");
   }
 
   public UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsPagedResponse>
