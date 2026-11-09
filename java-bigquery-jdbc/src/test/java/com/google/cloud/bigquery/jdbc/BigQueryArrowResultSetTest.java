@@ -812,4 +812,13 @@ public class BigQueryArrowResultSetTest {
       TimeZone.setDefault(originalDefault);
     }
   }
+
+  @Test
+  public void testGetterWhenNotOnRowThrows() throws SQLException {
+    assertThrows(SQLException.class, () -> bigQueryArrowResultSet.getString(4));
+    assertThat(bigQueryArrowResultSet.next()).isTrue();
+    assertThat(bigQueryArrowResultSet.getString(4)).isEqualTo("text1");
+    assertThat(bigQueryArrowResultSet.next()).isFalse();
+    assertThrows(SQLException.class, () -> bigQueryArrowResultSet.getString(4));
+  }
 }

@@ -30,6 +30,7 @@ import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.channels.Channels;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -226,16 +227,14 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           // Clear vectorSchemaRoot before populating a new batch
           vectorSchemaRoot.clear();
         }
-        org.apache.arrow.vector.ipc.message.ArrowRecordBatch deserializedBatch =
+        // Read straight from the ByteString instead of copying it into a heap byte[] first.
+        try (org.apache.arrow.vector.ipc.message.ArrowRecordBatch deserializedBatch =
             MessageSerializer.deserializeRecordBatch(
-                new ReadChannel(
-                    new ByteArrayReadableSeekableByteChannel(
-                        batch.getSerializedRecordBatch().toByteArray())),
-                allocator);
-
-        vectorLoader.load(deserializedBatch);
-        // Release buffers from batch (they are still held in the vectors in root).
-        deserializedBatch.close();
+                new ReadChannel(Channels.newChannel(batch.getSerializedRecordBatch().newInput())),
+                allocator)) {
+          // The vectors keep their own references to the buffers after the batch is closed.
+          vectorLoader.load(deserializedBatch);
+        }
       } catch (RuntimeException | IOException ex) {
         throw new BigQueryJdbcException(ex);
       }
@@ -356,6 +355,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         value = this.currentNestedBatch.getNestedRecords().get(this.nestedRowIndex);
       }
     } else {
+      if (this.afterLast || this.vectorSchemaRoot == null || this.currentBatchRowIndex < 0) {
+        throw new BigQueryJdbcException("The ResultSet is not positioned on a row.");
+      }
       // get the current column
       // SQL index to Java Index
       FieldVector currentColumn = this.vectorSchemaRoot.getVector(columnIndex - 1);
