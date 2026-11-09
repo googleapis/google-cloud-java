@@ -135,6 +135,31 @@ public enum ProcessingWarningReason implements com.google.protobuf.ProtocolMessa
    * <code>PROCESSING_WARNING_REASON_AWS_AUTH_FAILED = 9;</code>
    */
   PROCESSING_WARNING_REASON_AWS_AUTH_FAILED(9),
+  /**
+   *
+   *
+   * <pre>
+   * A [CustomVariable][google.ads.datamanager.v1.CustomVariable] or
+   * [ItemCustomVariable][google.ads.datamanager.v1.ItemCustomVariable] is not
+   * enabled in the account.
+   * </pre>
+   *
+   * <code>PROCESSING_WARNING_REASON_CUSTOM_VARIABLE_NOT_ENABLED = 10;</code>
+   */
+  PROCESSING_WARNING_REASON_CUSTOM_VARIABLE_NOT_ENABLED(10),
+  /**
+   *
+   *
+   * <pre>
+   * The value of a [CustomVariable][google.ads.datamanager.v1.CustomVariable]
+   * or [ItemCustomVariable][google.ads.datamanager.v1.ItemCustomVariable] is
+   * not among the predefined allowed values configured for the custom variable
+   * on the destination account and will be replaced by an uncategorized value.
+   * </pre>
+   *
+   * <code>PROCESSING_WARNING_REASON_CUSTOM_VARIABLE_NOT_PREDEFINED = 11;</code>
+   */
+  PROCESSING_WARNING_REASON_CUSTOM_VARIABLE_NOT_PREDEFINED(11),
   UNRECOGNIZED(-1),
   ;
 
@@ -262,6 +287,33 @@ public enum ProcessingWarningReason implements com.google.protobuf.ProtocolMessa
    */
   public static final int PROCESSING_WARNING_REASON_AWS_AUTH_FAILED_VALUE = 9;
 
+  /**
+   *
+   *
+   * <pre>
+   * A [CustomVariable][google.ads.datamanager.v1.CustomVariable] or
+   * [ItemCustomVariable][google.ads.datamanager.v1.ItemCustomVariable] is not
+   * enabled in the account.
+   * </pre>
+   *
+   * <code>PROCESSING_WARNING_REASON_CUSTOM_VARIABLE_NOT_ENABLED = 10;</code>
+   */
+  public static final int PROCESSING_WARNING_REASON_CUSTOM_VARIABLE_NOT_ENABLED_VALUE = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * The value of a [CustomVariable][google.ads.datamanager.v1.CustomVariable]
+   * or [ItemCustomVariable][google.ads.datamanager.v1.ItemCustomVariable] is
+   * not among the predefined allowed values configured for the custom variable
+   * on the destination account and will be replaced by an uncategorized value.
+   * </pre>
+   *
+   * <code>PROCESSING_WARNING_REASON_CUSTOM_VARIABLE_NOT_PREDEFINED = 11;</code>
+   */
+  public static final int PROCESSING_WARNING_REASON_CUSTOM_VARIABLE_NOT_PREDEFINED_VALUE = 11;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -306,6 +358,10 @@ public enum ProcessingWarningReason implements com.google.protobuf.ProtocolMessa
         return PROCESSING_WARNING_REASON_INTERNAL_ERROR;
       case 9:
         return PROCESSING_WARNING_REASON_AWS_AUTH_FAILED;
+      case 10:
+        return PROCESSING_WARNING_REASON_CUSTOM_VARIABLE_NOT_ENABLED;
+      case 11:
+        return PROCESSING_WARNING_REASON_CUSTOM_VARIABLE_NOT_PREDEFINED;
       default:
         return null;
     }

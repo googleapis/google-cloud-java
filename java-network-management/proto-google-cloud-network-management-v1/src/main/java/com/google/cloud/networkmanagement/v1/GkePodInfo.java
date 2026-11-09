@@ -199,6 +199,7 @@ public final class GkePodInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the network containing the GKE Pod.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 3;</code>
@@ -223,6 +224,7 @@ public final class GkePodInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * URI of the network containing the GKE Pod.
+   * Format: `projects/{project_id}/global/networks/{network_id}`
    * </pre>
    *
    * <code>string network_uri = 3;</code>
@@ -855,6 +857,7 @@ public final class GkePodInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network containing the GKE Pod.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -878,6 +881,7 @@ public final class GkePodInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network containing the GKE Pod.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -901,6 +905,7 @@ public final class GkePodInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network containing the GKE Pod.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -923,6 +928,7 @@ public final class GkePodInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network containing the GKE Pod.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 3;</code>
@@ -941,6 +947,7 @@ public final class GkePodInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * URI of the network containing the GKE Pod.
+     * Format: `projects/{project_id}/global/networks/{network_id}`
      * </pre>
      *
      * <code>string network_uri = 3;</code>

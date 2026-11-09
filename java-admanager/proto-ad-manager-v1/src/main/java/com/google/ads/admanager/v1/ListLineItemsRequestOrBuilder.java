@@ -122,7 +122,6 @@ public interface ListLineItemsRequestOrBuilder
    * * `contractedUnitsBought`
    * * `costType`
    * * `createTime`
-   * * `creativePlaceholders.size.canonicalName`
    * * `dealInfo.externalDealId`
    * * `deliveryRateType`
    * * `displayName`
@@ -130,7 +129,6 @@ public interface ListLineItemsRequestOrBuilder
    * * `environmentType`
    * * `externalLineItemId`
    * * `goal.units`
-   * * `grpSettings.growbirdNielsenEnabled`
    * * `grpSettings.inTargetRatioEstimateMilliPercent`
    * * `lineItemType`
    * * `missingCreatives`
@@ -141,7 +139,6 @@ public interface ListLineItemsRequestOrBuilder
    * * `priority`
    * * `roadblockingType`
    * * `startTime`
-   * * `stats.clickThroughRate`
    * * `stats.clicksDelivered`
    * * `stats.impressionsDelivered`
    * * `stats.viewableImpressionsDelivered`
@@ -174,7 +171,6 @@ public interface ListLineItemsRequestOrBuilder
    * * `contractedUnitsBought`
    * * `costType`
    * * `createTime`
-   * * `creativePlaceholders.size.canonicalName`
    * * `dealInfo.externalDealId`
    * * `deliveryRateType`
    * * `displayName`
@@ -182,7 +178,6 @@ public interface ListLineItemsRequestOrBuilder
    * * `environmentType`
    * * `externalLineItemId`
    * * `goal.units`
-   * * `grpSettings.growbirdNielsenEnabled`
    * * `grpSettings.inTargetRatioEstimateMilliPercent`
    * * `lineItemType`
    * * `missingCreatives`
@@ -193,7 +188,6 @@ public interface ListLineItemsRequestOrBuilder
    * * `priority`
    * * `roadblockingType`
    * * `startTime`
-   * * `stats.clickThroughRate`
    * * `stats.clicksDelivered`
    * * `stats.impressionsDelivered`
    * * `stats.viewableImpressionsDelivered`

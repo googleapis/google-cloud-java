@@ -233,8 +233,6 @@ public final class ListCreativesRequest extends com.google.protobuf.GeneratedMes
    * * `advertiser`
    * * `displayName`
    * * `name`
-   * * `setTopBoxCreative.externalAssetId,providerId`
-   * * `size.canonicalName,height,width`
    * * `thirdPartyDataDeclarationStatus`
    * * `updateTime`
    * </pre>
@@ -269,8 +267,6 @@ public final class ListCreativesRequest extends com.google.protobuf.GeneratedMes
    * * `advertiser`
    * * `displayName`
    * * `name`
-   * * `setTopBoxCreative.externalAssetId,providerId`
-   * * `size.canonicalName,height,width`
    * * `thirdPartyDataDeclarationStatus`
    * * `updateTime`
    * </pre>
@@ -1131,8 +1127,6 @@ public final class ListCreativesRequest extends com.google.protobuf.GeneratedMes
      * * `advertiser`
      * * `displayName`
      * * `name`
-     * * `setTopBoxCreative.externalAssetId,providerId`
-     * * `size.canonicalName,height,width`
      * * `thirdPartyDataDeclarationStatus`
      * * `updateTime`
      * </pre>
@@ -1166,8 +1160,6 @@ public final class ListCreativesRequest extends com.google.protobuf.GeneratedMes
      * * `advertiser`
      * * `displayName`
      * * `name`
-     * * `setTopBoxCreative.externalAssetId,providerId`
-     * * `size.canonicalName,height,width`
      * * `thirdPartyDataDeclarationStatus`
      * * `updateTime`
      * </pre>
@@ -1201,8 +1193,6 @@ public final class ListCreativesRequest extends com.google.protobuf.GeneratedMes
      * * `advertiser`
      * * `displayName`
      * * `name`
-     * * `setTopBoxCreative.externalAssetId,providerId`
-     * * `size.canonicalName,height,width`
      * * `thirdPartyDataDeclarationStatus`
      * * `updateTime`
      * </pre>
@@ -1235,8 +1225,6 @@ public final class ListCreativesRequest extends com.google.protobuf.GeneratedMes
      * * `advertiser`
      * * `displayName`
      * * `name`
-     * * `setTopBoxCreative.externalAssetId,providerId`
-     * * `size.canonicalName,height,width`
      * * `thirdPartyDataDeclarationStatus`
      * * `updateTime`
      * </pre>
@@ -1265,8 +1253,6 @@ public final class ListCreativesRequest extends com.google.protobuf.GeneratedMes
      * * `advertiser`
      * * `displayName`
      * * `name`
-     * * `setTopBoxCreative.externalAssetId,providerId`
-     * * `size.canonicalName,height,width`
      * * `thirdPartyDataDeclarationStatus`
      * * `updateTime`
      * </pre>

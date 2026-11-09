@@ -121,8 +121,6 @@ public interface ListCreativesRequestOrBuilder
    * * `advertiser`
    * * `displayName`
    * * `name`
-   * * `setTopBoxCreative.externalAssetId,providerId`
-   * * `size.canonicalName,height,width`
    * * `thirdPartyDataDeclarationStatus`
    * * `updateTime`
    * </pre>
@@ -146,8 +144,6 @@ public interface ListCreativesRequestOrBuilder
    * * `advertiser`
    * * `displayName`
    * * `name`
-   * * `setTopBoxCreative.externalAssetId,providerId`
-   * * `size.canonicalName,height,width`
    * * `thirdPartyDataDeclarationStatus`
    * * `updateTime`
    * </pre>

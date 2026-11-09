@@ -822,7 +822,7 @@ public interface EventOrBuilder
    *
    * <pre>
    * Optional. A bucket of any [event
-   * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -838,7 +838,7 @@ public interface EventOrBuilder
    *
    * <pre>
    * Optional. A bucket of any [event
-   * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -854,7 +854,7 @@ public interface EventOrBuilder
    *
    * <pre>
    * Optional. A bucket of any [event
-   * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -870,7 +870,7 @@ public interface EventOrBuilder
    *
    * <pre>
    * Optional. A bucket of any [event
-   * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -887,7 +887,7 @@ public interface EventOrBuilder
    *
    * <pre>
    * Optional. A bucket of any [event
-   * parameters](https://developers.google.com/analytics/devguides/collection/protocol/ga4/reference/events)
+   * parameters](https://developers.google.com/data-manager/api/reference/analytics/recommended-events)
    * to be included within the event that were not already specified using other
    * structured fields.
    * </pre>
@@ -1021,4 +1021,50 @@ public interface EventOrBuilder
    * @return The bytes for appInstanceId.
    */
   com.google.protobuf.ByteString getAppInstanceIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information gathered about the call (if any) which led to this
+   * event.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the callInfo field is set.
+   */
+  boolean hasCallInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information gathered about the call (if any) which led to this
+   * event.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The callInfo.
+   */
+  com.google.ads.datamanager.v1.CallInfo getCallInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Information gathered about the call (if any) which led to this
+   * event.
+   * </pre>
+   *
+   * <code>
+   * .google.ads.datamanager.v1.CallInfo call_info = 24 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.ads.datamanager.v1.CallInfoOrBuilder getCallInfoOrBuilder();
 }

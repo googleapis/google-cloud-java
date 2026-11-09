@@ -52,7 +52,10 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     super(builder);
   }
 
-  private ExecutionTemplate() {}
+  private ExecutionTemplate() {
+    client_ = "";
+    clientVersion_ = "";
+  }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.ExecutionTemplateProto
@@ -487,6 +490,149 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         : template_;
   }
 
+  public static final int DELAY_EXECUTION_FIELD_NUMBER = 8;
+  private boolean delayExecution_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the system will start the execution within the next 12
+   * hours depending on available capacity.
+   * </pre>
+   *
+   * <code>optional bool delay_execution = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the delayExecution field is set.
+   */
+  @java.lang.Override
+  public boolean hasDelayExecution() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, the system will start the execution within the next 12
+   * hours depending on available capacity.
+   * </pre>
+   *
+   * <code>optional bool delay_execution = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The delayExecution.
+   */
+  @java.lang.Override
+  public boolean getDelayExecution() {
+    return delayExecution_;
+  }
+
+  public static final int CLIENT_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object client_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The client.
+   */
+  @java.lang.Override
+  public java.lang.String getClient() {
+    java.lang.Object ref = client_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      client_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary identifier for the API client.
+   * </pre>
+   *
+   * <code>string client = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for client.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getClientBytes() {
+    java.lang.Object ref = client_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      client_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CLIENT_VERSION_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object clientVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The clientVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getClientVersion() {
+    java.lang.Object ref = clientVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clientVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Arbitrary version identifier for the API client.
+   * </pre>
+   *
+   * <code>string client_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for clientVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getClientVersionBytes() {
+    java.lang.Object ref = clientVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      clientVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -513,6 +659,15 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(5, getTemplate());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(8, delayExecution_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(client_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, client_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientVersion_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, clientVersion_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -552,6 +707,15 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getTemplate());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, delayExecution_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(client_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, client_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(clientVersion_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, clientVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -576,6 +740,12 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
     if (hasTemplate()) {
       if (!getTemplate().equals(other.getTemplate())) return false;
     }
+    if (hasDelayExecution() != other.hasDelayExecution()) return false;
+    if (hasDelayExecution()) {
+      if (getDelayExecution() != other.getDelayExecution()) return false;
+    }
+    if (!getClient().equals(other.getClient())) return false;
+    if (!getClientVersion().equals(other.getClientVersion())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -603,6 +773,14 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + TEMPLATE_FIELD_NUMBER;
       hash = (53 * hash) + getTemplate().hashCode();
     }
+    if (hasDelayExecution()) {
+      hash = (37 * hash) + DELAY_EXECUTION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDelayExecution());
+    }
+    hash = (37 * hash) + CLIENT_FIELD_NUMBER;
+    hash = (53 * hash) + getClient().hashCode();
+    hash = (37 * hash) + CLIENT_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getClientVersion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -788,6 +966,9 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         templateBuilder_.dispose();
         templateBuilder_ = null;
       }
+      delayExecution_ = false;
+      client_ = "";
+      clientVersion_ = "";
       return this;
     }
 
@@ -843,6 +1024,16 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         result.template_ = templateBuilder_ == null ? template_ : templateBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.delayExecution_ = delayExecution_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.client_ = client_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.clientVersion_ = clientVersion_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -870,6 +1061,19 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasTemplate()) {
         mergeTemplate(other.getTemplate());
+      }
+      if (other.hasDelayExecution()) {
+        setDelayExecution(other.getDelayExecution());
+      }
+      if (!other.getClient().isEmpty()) {
+        client_ = other.client_;
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      if (!other.getClientVersion().isEmpty()) {
+        clientVersion_ = other.clientVersion_;
+        bitField0_ |= 0x00000080;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -940,6 +1144,24 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 64:
+              {
+                delayExecution_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 64
+            case 74:
+              {
+                client_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 74
+            case 82:
+              {
+                clientVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1805,6 +2027,304 @@ public final class ExecutionTemplate extends com.google.protobuf.GeneratedMessag
         template_ = null;
       }
       return templateBuilder_;
+    }
+
+    private boolean delayExecution_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the system will start the execution within the next 12
+     * hours depending on available capacity.
+     * </pre>
+     *
+     * <code>optional bool delay_execution = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the delayExecution field is set.
+     */
+    @java.lang.Override
+    public boolean hasDelayExecution() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the system will start the execution within the next 12
+     * hours depending on available capacity.
+     * </pre>
+     *
+     * <code>optional bool delay_execution = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The delayExecution.
+     */
+    @java.lang.Override
+    public boolean getDelayExecution() {
+      return delayExecution_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the system will start the execution within the next 12
+     * hours depending on available capacity.
+     * </pre>
+     *
+     * <code>optional bool delay_execution = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The delayExecution to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDelayExecution(boolean value) {
+
+      delayExecution_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the system will start the execution within the next 12
+     * hours depending on available capacity.
+     * </pre>
+     *
+     * <code>optional bool delay_execution = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDelayExecution() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      delayExecution_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object client_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The client.
+     */
+    public java.lang.String getClient() {
+      java.lang.Object ref = client_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        client_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for client.
+     */
+    public com.google.protobuf.ByteString getClientBytes() {
+      java.lang.Object ref = client_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        client_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The client to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClient(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      client_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClient() {
+      client_ = getDefaultInstance().getClient();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary identifier for the API client.
+     * </pre>
+     *
+     * <code>string client = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for client to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      client_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clientVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The clientVersion.
+     */
+    public java.lang.String getClientVersion() {
+      java.lang.Object ref = clientVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for clientVersion.
+     */
+    public com.google.protobuf.ByteString getClientVersionBytes() {
+      java.lang.Object ref = clientVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        clientVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The clientVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      clientVersion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClientVersion() {
+      clientVersion_ = getDefaultInstance().getClientVersion();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Arbitrary version identifier for the API client.
+     * </pre>
+     *
+     * <code>string client_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for clientVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      clientVersion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.run.v2.ExecutionTemplate)
