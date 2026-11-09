@@ -667,6 +667,25 @@ public final class StorageErrorTypeMapperTest {
         .isEqualTo("UNKNOWN");
   }
 
+  @Test(timeout = 5000L)
+  public void mapThrowable_andMapGrpcStatus_cyclicCauseChainTerminates() {
+    RuntimeException exA = new RuntimeException("A");
+    RuntimeException exB = new RuntimeException("B", exA);
+    exA.initCause(exB);
+
+    assertThat(StorageErrorTypeMapper.mapThrowable(exA)).isEqualTo("UNKNOWN");
+    assertThat(StorageErrorTypeMapper.mapGrpcStatus(Status.UNKNOWN.withCause(exA)))
+        .isEqualTo("UNKNOWN");
+
+    ExecutionException eeA = new ExecutionException("A") {};
+    CompletionException ceB = new CompletionException("B", eeA);
+    eeA.initCause(ceB);
+
+    assertThat(StorageErrorTypeMapper.mapThrowable(eeA)).isEqualTo("UNKNOWN");
+    assertThat(StorageErrorTypeMapper.mapGrpcStatus(Status.UNKNOWN.withCause(eeA)))
+        .isEqualTo("UNKNOWN");
+  }
+
   @Test
   public void mapThrowable_unknownFallback() {
     assertThat(StorageErrorTypeMapper.mapThrowable(new IllegalStateException("unexpected state")))
