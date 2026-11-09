@@ -261,6 +261,12 @@ public class GcpManagedChannel extends ManagedChannel {
   private static final ScheduledThreadPoolExecutor SHARED_BACKGROUND_SERVICE =
       createSharedBackgroundService();
 
+  // Channel pool metrics for the built-in metrics pipeline of a Google Cloud client library. Null
+  // when not configured. The attributes are set before the pool joins the reader.
+  @Nullable private GcpChannelPoolBuiltInMetrics builtInMetrics;
+  private Attributes builtInActiveAttributes = Attributes.empty();
+  private Attributes builtInDrainingAttributes = Attributes.empty();
+
   private ScheduledFuture<?> cleanupTask;
   private ScheduledFuture<?> scaleDownTask;
   private ScheduledFuture<?> logMetricsTask;
@@ -441,6 +447,7 @@ public class GcpManagedChannel extends ManagedChannel {
       unresponsiveDropCount = 0;
     }
     initChannels();
+    initBuiltInMetrics();
     GcpChannelPoolOptions channelPoolOptions = options.getChannelPoolOptions();
     if (channelPoolOptions != null) {
       affinityKeyLifetime = channelPoolOptions.getAffinityKeyLifetime();
@@ -1157,6 +1164,41 @@ public class GcpManagedChannel extends ManagedChannel {
         GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportScaleUpPrimeFailures);
+  }
+
+  private void initBuiltInMetrics() {
+    GcpMetricsOptions metricsOptions = options.getMetricsOptions();
+    if (metricsOptions == null || metricsOptions.getBuiltInMetricsMeter() == null) {
+      return;
+    }
+    Attributes poolAttributes =
+        metricsOptions.getBuiltInMetricsAttributes().toBuilder()
+            .put(
+                GcpMetricsConstants.POOL_MODE_LABEL,
+                isDynamicScalingEnabled
+                    ? GcpMetricsConstants.POOL_MODE_DYNAMIC
+                    : GcpMetricsConstants.POOL_MODE_STATIC)
+            .build();
+    builtInActiveAttributes =
+        poolAttributes.toBuilder()
+            .put(GcpMetricsConstants.STATE_LABEL, GcpMetricsConstants.STATE_ACTIVE)
+            .build();
+    builtInDrainingAttributes =
+        poolAttributes.toBuilder()
+            .put(GcpMetricsConstants.STATE_LABEL, GcpMetricsConstants.STATE_DRAINING)
+            .build();
+    builtInMetrics = GcpChannelPoolBuiltInMetrics.forMeter(metricsOptions.getBuiltInMetricsMeter());
+    builtInMetrics.add(this);
+  }
+
+  /**
+   * Adds this pool's active and draining channel counts to {@code totals}, keyed by the built-in
+   * metric attributes. Channels that are still being primed are in neither list and are not
+   * counted.
+   */
+  void addBuiltInChannelCounts(Map<Attributes, Long> totals) {
+    totals.merge(builtInActiveAttributes, (long) channelRefs.size(), Long::sum);
+    totals.merge(builtInDrainingAttributes, (long) removedChannelRefs.size(), Long::sum);
   }
 
   private void setupOtelCommonAttributes(GcpMetricsOptions metricsOptions) {
@@ -2678,6 +2720,9 @@ public class GcpManagedChannel extends ManagedChannel {
 
   private synchronized List<GcpChannelPrimeController.PendingPrime> cancelBackgroundTasks() {
     shuttingDown = true;
+    if (builtInMetrics != null) {
+      builtInMetrics.remove(this);
+    }
     scaleUpSignalPending.set(false);
     if (cleanupTask != null) {
       cleanupTask.cancel(false);

@@ -78,4 +78,14 @@ class GcpMetricsConstants {
   public static String METRIC_CURRENT_ENDPOINT = "current_endpoint";
   public static String METRIC_CHANNEL_POOL_SCALING = "channel_pool_scaling";
   public static String METRIC_SCALE_UP_PRIME_FAILURES = "scale_up_prime_failures";
+
+  // Channel pool metrics reported to the built-in metrics pipeline of a Google Cloud client
+  // library. See GcpMetricsOptions.Builder#withBuiltInMetrics.
+  static final String METRIC_CHANNEL_POOL_CHANNEL_COUNT = "channel_pool.channel_count";
+  static final String POOL_MODE_LABEL = "pool_mode";
+  static final String POOL_MODE_STATIC = "static";
+  static final String POOL_MODE_DYNAMIC = "dynamic";
+  static final String STATE_LABEL = "state";
+  static final String STATE_ACTIVE = "active";
+  static final String STATE_DRAINING = "draining";
 }
