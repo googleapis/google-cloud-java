@@ -44,6 +44,7 @@ import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManager.ConfigListener;
+import com.google.common.collect.Iterables;
 import com.google.protobuf.TextFormat;
 import com.google.protobuf.util.Durations;
 import io.grpc.CallOptions;
@@ -56,10 +57,16 @@ import io.grpc.ManagedChannelBuilder;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Server;
+import io.grpc.ServerBuilder;
+import io.grpc.ServerCall;
+import io.grpc.ServerCallHandler;
+import io.grpc.ServerInterceptor;
 import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
@@ -688,12 +695,107 @@ class ClientConfigurationManagerTest {
     verify(mockExecutor, never()).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
   }
 
+  @Test
+  void metadataDoesNotAccumulateAcrossPollsWithHeaderAttachingInterceptor() throws Exception {
+    manager.close();
+
+    Metadata.Key<String> traceparentKey =
+        Metadata.Key.of("traceparent", Metadata.ASCII_STRING_MARSHALLER);
+    Metadata.Key<String> requestParamsKey =
+        Metadata.Key.of("x-goog-request-params", Metadata.ASCII_STRING_MARSHALLER);
+    Metadata.Key<String> featureFlagsKey =
+        Metadata.Key.of("bigtable-features", Metadata.ASCII_STRING_MARSHALLER);
+
+    List<Integer> traceparentCountsOnServer = new CopyOnWriteArrayList<>();
+    List<Integer> requestParamsCountsOnServer = new CopyOnWriteArrayList<>();
+    List<Integer> featureFlagsCountsOnServer = new CopyOnWriteArrayList<>();
+
+    ServerInterceptor headerCapturingServerInterceptor =
+        new ServerInterceptor() {
+          @Override
+          public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(
+              ServerCall<ReqT, RespT> call, Metadata headers, ServerCallHandler<ReqT, RespT> next) {
+            traceparentCountsOnServer.add(Iterables.size(headers.getAll(traceparentKey)));
+            requestParamsCountsOnServer.add(Iterables.size(headers.getAll(requestParamsKey)));
+            featureFlagsCountsOnServer.add(Iterables.size(headers.getAll(featureFlagsKey)));
+            return next.startCall(call, headers);
+          }
+        };
+
+    // Enforce a tight 1 KiB SETTINGS_MAX_HEADER_LIST_SIZE so any per-poll header accumulation in
+    // ClientConfigurationManager.metadata trips Netty's HpackEncoder HeaderListSizeException
+    // (Status.INTERNAL: "http2 exception") within ~8 polls.
+    Server boundedHeaderServer =
+        ServerBuilder.forPort(0)
+            .addService(service)
+            .intercept(headerCapturingServerInterceptor)
+            .maxInboundMetadataSize(1024)
+            .build()
+            .start();
+
+    ClientInterceptor tracingInterceptor =
+        new ClientInterceptor() {
+          @Override
+          public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+              MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+            return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(
+                next.newCall(method, callOptions)) {
+              @Override
+              public void start(Listener<RespT> responseListener, Metadata headers) {
+                headers.put(
+                    traceparentKey, "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01");
+                super.start(responseListener, headers);
+              }
+            };
+          }
+        };
+
+    ChannelProviders.ChannelProvider tracingChannelProvider =
+        new ForwardingChannelProvider(
+            new ChannelProviders.EmulatorChannelProvider(
+                "localhost", boundedHeaderServer.getPort())) {
+          @Override
+          public ManagedChannelBuilder<?> newChannelBuilder() {
+            return super.newChannelBuilder()
+                .intercept(outstandingRpcCounter)
+                .intercept(tracingInterceptor);
+          }
+        };
+
+    try (ClientConfigurationManager localManager =
+        new ClientConfigurationManager(
+            FEATURE_FLAGS, CLIENT_INFO, tracingChannelProvider, noopDebugTracer, mockExecutor)) {
+      localManager.start().get();
+
+      ArgumentCaptor<Runnable> pollCaptor = ArgumentCaptor.forClass(Runnable.class);
+      verify(mockExecutor, Mockito.atLeastOnce())
+          .schedule(pollCaptor.capture(), anyLong(), any(TimeUnit.class));
+      Runnable scheduledPoll = pollCaptor.getValue();
+
+      for (int i = 0; i < 25; i++) {
+        scheduledPoll.run();
+        outstandingRpcCounter.waitUntilRpcsDone();
+      }
+
+      assertThat(service.requestCount.get()).isEqualTo(26);
+      assertThat(traceparentCountsOnServer).hasSize(26);
+      for (int i = 0; i < 26; i++) {
+        assertThat(traceparentCountsOnServer.get(i)).isEqualTo(1);
+        assertThat(requestParamsCountsOnServer.get(i)).isEqualTo(1);
+        assertThat(featureFlagsCountsOnServer.get(i)).isEqualTo(1);
+      }
+    } finally {
+      boundedHeaderServer.shutdownNow();
+    }
+  }
+
   static class FakeConfigService extends BigtableGrpc.BigtableImplBase {
     private final AtomicReference<ClientConfiguration> config = new AtomicReference<>();
 
     // Number of leading requests to answer with a clean (OK) close that delivers no message,
     // simulating the server closing the stream without ever returning a configuration.
     private final AtomicInteger emptyResponses = new AtomicInteger(0);
+    private final AtomicInteger requestCount = new AtomicInteger(0);
 
     public FakeConfigService() throws IOException {
       ClientConfiguration.Builder builder = ClientConfigurationManager.loadDefault().toBuilder();
@@ -716,6 +818,7 @@ class ClientConfigurationManagerTest {
     public void getClientConfiguration(
         GetClientConfigurationRequest request,
         StreamObserver<ClientConfiguration> responseObserver) {
+      requestCount.incrementAndGet();
       if (emptyResponses.getAndDecrement() > 0) {
         // Close cleanly without sending a message.
         responseObserver.onCompleted();

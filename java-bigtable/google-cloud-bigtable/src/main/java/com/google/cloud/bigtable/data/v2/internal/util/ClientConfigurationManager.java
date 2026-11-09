@@ -120,6 +120,9 @@ public class ClientConfigurationManager implements AutoCloseable {
     }
   }
 
+  // Base metadata template copied into a fresh per-call Metadata in sendRequest().
+  // ClientCall.start() takes ownership of the Metadata passed to it and channel
+  // ClientInterceptors may mutate it in place, so this template must never be passed directly.
   private final Metadata metadata;
   private final GetClientConfigurationRequest request;
   private final ChannelProvider channelProvider;
@@ -347,6 +350,9 @@ public class ClientConfigurationManager implements AutoCloseable {
   private CompletableFuture<ClientConfiguration> sendRequest() {
     CompletableFuture<ClientConfiguration> future = new CompletableFuture<>();
 
+    Metadata headers = new Metadata();
+    headers.merge(this.metadata);
+
     ClientCall<GetClientConfigurationRequest, ClientConfiguration> call =
         channel.newCall(
             BigtableGrpc.getGetClientConfigurationMethod(),
@@ -378,7 +384,7 @@ public class ClientConfigurationManager implements AutoCloseable {
             }
           }
         },
-        metadata);
+        headers);
     call.sendMessage(request);
     call.halfClose();
     call.request(1);
