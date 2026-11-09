@@ -1341,9 +1341,35 @@ public class SessionPoolImplTest {
     waitForOpenRequestCount(5, Duration.ofSeconds(5));
     assertThat(sessionPool.hasSession()).isTrue();
 
+    // Queue a pending vRPC while no ready sessions are available, then update config to empty and
+    // verify the pending vRPC is rejected immediately instead of hanging until deadline.
+    ReentrantLock poolLock = extractPoolLock(sessionPool);
+    UnaryResponseFuture<SessionFakeScriptedResponse> pendingFuture = new UnaryResponseFuture<>();
+    poolLock.lock();
+    try {
+      for (SessionHandle handle : new ArrayList<>(sessionPool.sessions.getAllSessions())) {
+        handle.onSessionClosing();
+      }
+      VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> queuedRpc =
+          sessionPool.newCall(FakeDescriptor.SCRIPTED);
+      queuedRpc.start(
+          SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+          VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+          pendingFuture);
+      assertThat(pendingFuture.isDone()).isFalse();
+    } finally {
+      poolLock.unlock();
+    }
+
     // Update config to empty (session_load == 0 clears session_configuration).
     configListener.onChange(SessionPoolConfiguration.getDefaultInstance());
     assertThat(sessionPool.hasSession()).isFalse();
+    ExecutionException pendingError =
+        assertThrows(ExecutionException.class, () -> pendingFuture.get(5, TimeUnit.SECONDS));
+    assertThat(pendingError).hasCauseThat().isInstanceOf(VRpcException.class);
+    VRpcException vrpcError = (VRpcException) pendingError.getCause();
+    assertThat(vrpcError.getResult().getRejected()).isTrue();
+    assertThat(vrpcError.getStatus().getCode()).isEqualTo(Status.Code.UNAVAILABLE);
 
     // Wait for all sessions to finish closing.
     long deadline = System.currentTimeMillis() + 5000;

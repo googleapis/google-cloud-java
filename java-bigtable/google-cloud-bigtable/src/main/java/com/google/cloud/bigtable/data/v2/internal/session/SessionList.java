@@ -180,15 +180,17 @@ class SessionList {
       AfeHandle afeHandle =
           afeHandles.computeIfAbsent(AfeId.extract(peerInfo), (ignored) -> new AfeHandle());
       this.afe = Optional.of(afeHandle);
-      afeHandle.sessions.add(this);
       afeHandle.refCount++;
       afeHandle.lastConnected = Instant.now();
-      if (afeHandle.sessions.size() == 1) {
-        afesWithReadySessions.add(afeHandle);
-      }
 
       poolStats.startingCount--;
-      poolStats.readyCount++;
+      if (inExpectedCount) {
+        afeHandle.sessions.add(this);
+        if (afeHandle.sessions.size() == 1) {
+          afesWithReadySessions.add(afeHandle);
+        }
+        poolStats.readyCount++;
+      }
     }
 
     /**
@@ -221,7 +223,7 @@ class SessionList {
       poolStats.inUseCount--;
       inUseSessions.remove(this);
 
-      if (session.getState() == SessionState.READY) {
+      if (inExpectedCount && session.getState() == SessionState.READY) {
         poolStats.readyCount++;
         afeHandle.sessions.add(this);
         afeHandle.lastConnected = Instant.now();

@@ -244,7 +244,7 @@ class PoolSizerTest {
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isFalse();
 
     stats.getTestHelper().setInUseCount(2);
-    stats.getTestHelper().setExpectedCapacity(2);
+    stats.getTestHelper().setExpectedCapacity(0);
     assertThat(sizer.getScaleDelta()).isEqualTo(0);
     assertThat(sizer.handleGoAway(GoAwayResponse.getDefaultInstance())).isFalse();
     assertThat(sizer.handleSessionClose(Status.getDefaultInstance())).isFalse();

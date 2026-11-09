@@ -72,7 +72,7 @@ class PoolSizer {
     int effectivePending =
         pendingVRpcsPerSession > 0
             ? (int) Math.ceil((float) pendingRpcs.getSize() / pendingVRpcsPerSession)
-            : 0;
+            : pendingRpcs.getSize();
     int sessionsInUse = effectivePending + stats.getInUseCount();
     int unboundedDesiredIdleSessions = (int) Math.ceil(sessionsInUse * idlesSessionHeadRoom);
     int desiredIdleSessions =
@@ -85,6 +85,9 @@ class PoolSizer {
     if (desiredCapacity < immediateCapacity) {
       return desiredCapacity - immediateCapacity;
     } else if (desiredCapacity > eventualCapacity) {
+      if (maxIdleSessions <= 0) {
+        return 0;
+      }
       return desiredCapacity - eventualCapacity;
     } else {
       return 0;

@@ -281,6 +281,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         configManager.addListener(
             clientConfig -> clientConfig.getSessionConfiguration().getSessionPoolConfiguration(),
             newConfig -> {
+              List<PendingVRpc<?, ?>> toCancel = new ArrayList<>();
               poolLock.lock();
               try {
                 budget.updateConfig(newConfig);
@@ -292,6 +293,7 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                     retryCreateSessionFuture.cancel();
                     retryCreateSessionFuture = null;
                   }
+                  toCancel = popClosableRpcs();
                   CloseSessionRequest closeReq =
                       CloseSessionRequest.newBuilder()
                           .setReason(CloseSessionReason.CLOSE_SESSION_REASON_DOWNSIZE)
@@ -310,6 +312,19 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                 }
               } finally {
                 poolLock.unlock();
+              }
+
+              if (!toCancel.isEmpty()) {
+                VRpcResult cancelResult =
+                    VRpcResult.createRejectedError(
+                        Status.UNAVAILABLE.withDescription("SessionPool configuration disabled"));
+                for (PendingVRpc<?, ?> vrpc : toCancel) {
+                  try {
+                    vrpc.cancelWithResult(cancelResult);
+                  } catch (Throwable t) {
+                    logger.log(Level.WARNING, "Exception dispatching close to op executor", t);
+                  }
+                }
               }
             });
   }
