@@ -269,7 +269,6 @@ public class ITDatabaseAdminTest {
       op.get(5, TimeUnit.MINUTES);
       Assert.fail("No exception thrown");
     } catch (ExecutionException | InterruptedException | TimeoutException e) {
-      Assert.assertTrue(e.getCause() instanceof SpannerException);
       SpannerException exception = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
     }

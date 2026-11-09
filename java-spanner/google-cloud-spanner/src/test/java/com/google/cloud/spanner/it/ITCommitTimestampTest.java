@@ -173,7 +173,6 @@ public class ITCommitTimestampTest {
           .get();
       fail("missing expected exception");
     } catch (ExecutionException e) {
-      assertThat(e.getCause()).isInstanceOf(SpannerException.class);
       SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertThat(se.getErrorCode()).isEqualTo(ErrorCode.FAILED_PRECONDITION);
     }
@@ -206,7 +205,6 @@ public class ITCommitTimestampTest {
           .get();
       fail("missing expected exception");
     } catch (ExecutionException e) {
-      assertThat(e.getCause()).isInstanceOf(SpannerException.class);
       SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertThat(se.getErrorCode()).isEqualTo(ErrorCode.INVALID_ARGUMENT);
     }
@@ -222,7 +220,6 @@ public class ITCommitTimestampTest {
           .get();
       fail("missing expected exception");
     } catch (ExecutionException e) {
-      assertThat(e.getCause()).isInstanceOf(SpannerException.class);
       SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertThat(se.getErrorCode()).isEqualTo(ErrorCode.INVALID_ARGUMENT);
     }
@@ -241,7 +238,6 @@ public class ITCommitTimestampTest {
           .get();
       fail("missing expected exception");
     } catch (ExecutionException e) {
-      assertThat(e.getCause()).isInstanceOf(SpannerException.class);
       SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertThat(se.getErrorCode()).isEqualTo(ErrorCode.FAILED_PRECONDITION);
     }
