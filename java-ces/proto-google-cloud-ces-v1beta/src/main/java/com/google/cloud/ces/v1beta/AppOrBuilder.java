@@ -1280,4 +1280,50 @@ public interface AppOrBuilder
    * @return The bytes of the validationErrors at the given index.
    */
   com.google.protobuf.ByteString getValidationErrorsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. App-specific dashboard settings for linking and configuring
+   * Contact Center Insights dashboards.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dashboardSettings field is set.
+   */
+  boolean hasDashboardSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. App-specific dashboard settings for linking and configuring
+   * Contact Center Insights dashboards.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dashboardSettings.
+   */
+  com.google.cloud.ces.v1beta.DashboardSettings getDashboardSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. App-specific dashboard settings for linking and configuring
+   * Contact Center Insights dashboards.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.DashboardSettings dashboard_settings = 43 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.DashboardSettingsOrBuilder getDashboardSettingsOrBuilder();
 }

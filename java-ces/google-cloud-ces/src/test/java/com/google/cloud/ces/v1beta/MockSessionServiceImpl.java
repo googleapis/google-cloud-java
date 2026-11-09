@@ -137,4 +137,72 @@ public class MockSessionServiceImpl extends SessionServiceImplBase {
         };
     return requestObserver;
   }
+
+  @Override
+  public void streamChatAiAssistant(
+      StreamChatAiAssistantRequest request,
+      StreamObserver<StreamChatAiAssistantResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof StreamChatAiAssistantResponse) {
+      requests.add(request);
+      responseObserver.onNext(((StreamChatAiAssistantResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StreamChatAiAssistant, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  StreamChatAiAssistantResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void cancelAssistantTurn(
+      CancelAssistantTurnRequest request,
+      StreamObserver<CancelAssistantTurnResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CancelAssistantTurnResponse) {
+      requests.add(request);
+      responseObserver.onNext(((CancelAssistantTurnResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelAssistantTurn, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CancelAssistantTurnResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void generateOnboardingSuggestions(
+      GenerateOnboardingSuggestionsRequest request,
+      StreamObserver<GenerateOnboardingSuggestionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateOnboardingSuggestionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateOnboardingSuggestionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateOnboardingSuggestions, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateOnboardingSuggestionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

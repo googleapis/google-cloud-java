@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.services.bigquery.model.QueryParameter;
+import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
@@ -61,12 +62,6 @@ import java.sql.SQLXML;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.OffsetDateTime;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -367,36 +362,13 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     this.parameterHandler.setParameter(parameterIndex, value, value.getClass());
   }
 
-  private boolean setTemporalObject(int parameterIndex, Object value) throws SQLException {
-    if (value instanceof LocalDate) {
-      setDate(parameterIndex, Date.valueOf((LocalDate) value));
-      return true;
+  private boolean setTemporalObject(int parameterIndex, Object value) {
+    Tuple<Object, Class<?>> binding = BigQueryParameterHandler.bindingForJavaTime(value);
+    if (binding == null) {
+      return false;
     }
-    if (value instanceof LocalTime) {
-      setTime(parameterIndex, Time.valueOf((LocalTime) value));
-      return true;
-    }
-    if (value instanceof LocalDateTime) {
-      // Bound as STRING, not DATETIME, to avoid a breaking change: a STRING is accepted by both
-      // DATETIME and TIMESTAMP columns, whereas a typed DATETIME would reject the TIMESTAMP
-      // inserts that work today. The digits are sent unchanged; no JVM zone is involved.
-      setString(
-          parameterIndex, BigQueryParameterHandler.formatDateTimeDigits((LocalDateTime) value));
-      return true;
-    }
-    if (value instanceof OffsetDateTime) {
-      setTimestamp(parameterIndex, Timestamp.from(((OffsetDateTime) value).toInstant()));
-      return true;
-    }
-    if (value instanceof Instant) {
-      setTimestamp(parameterIndex, Timestamp.from((Instant) value));
-      return true;
-    }
-    if (value instanceof ZonedDateTime) {
-      setTimestamp(parameterIndex, Timestamp.from(((ZonedDateTime) value).toInstant()));
-      return true;
-    }
-    return false;
+    this.parameterHandler.setParameter(parameterIndex, binding.x(), binding.y());
+    return true;
   }
 
   @Override

@@ -221,7 +221,7 @@ public interface InvocationConfigOrBuilder
    *
    * <pre>
    * Optional. Configuration for end user authentication.
-   * Note that this should not be set when `service_account` is used.
+   * Do not set if `service_account` is used.
    * </pre>
    *
    * <code>
@@ -237,7 +237,7 @@ public interface InvocationConfigOrBuilder
    *
    * <pre>
    * Optional. Configuration for end user authentication.
-   * Note that this should not be set when `service_account` is used.
+   * Do not set if `service_account` is used.
    * </pre>
    *
    * <code>
@@ -254,7 +254,7 @@ public interface InvocationConfigOrBuilder
    *
    * <pre>
    * Optional. Configuration for end user authentication.
-   * Note that this should not be set when `service_account` is used.
+   * Do not set if `service_account` is used.
    * </pre>
    *
    * <code>
@@ -314,4 +314,62 @@ public interface InvocationConfigOrBuilder
    * @return The queryPriority.
    */
   com.google.cloud.dataform.v1beta1.InvocationConfig.QueryPriority getQueryPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum number of actions that can be executed concurrently.
+   * </pre>
+   *
+   * <code>optional int32 concurrent_actions_limit = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the concurrentActionsLimit field is set.
+   */
+  boolean hasConcurrentActionsLimit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maximum number of actions that can be executed concurrently.
+   * </pre>
+   *
+   * <code>optional int32 concurrent_actions_limit = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The concurrentActionsLimit.
+   */
+  int getConcurrentActionsLimit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the execution mode for the workflow invocation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.InvocationConfig.ExecutionMode execution_mode = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for executionMode.
+   */
+  int getExecutionModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the execution mode for the workflow invocation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.InvocationConfig.ExecutionMode execution_mode = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The executionMode.
+   */
+  com.google.cloud.dataform.v1beta1.InvocationConfig.ExecutionMode getExecutionMode();
 }

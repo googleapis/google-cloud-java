@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.StandardSQLTypeName;
@@ -29,7 +30,9 @@ import java.sql.SQLException;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
@@ -48,16 +51,48 @@ class BigQueryParameterHandler {
   // Locale.ROOT marks these as wire formats; the patterns are numeric-only, so it is a guard, not
   // a fix.
   private static final DateTimeFormatter TIMESTAMP_MICROS_UTC =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSXXX", Locale.ROOT);
+      DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.SSSSSSXXX", Locale.ROOT);
   private static final DateTimeFormatter TIMESTAMP_NANOS_UTC =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSSSSXXX", Locale.ROOT);
+      DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.SSSSSSSSSXXX", Locale.ROOT);
   // DATETIME is a zone-less wall clock; the validator requires six fraction digits and no offset.
   private static final DateTimeFormatter DATETIME_MICROS =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS", Locale.ROOT);
+      DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.SSSSSS", Locale.ROOT);
+  private static final DateTimeFormatter DATE_DIGITS =
+      DateTimeFormatter.ofPattern("uuuu-MM-dd", Locale.ROOT);
+  private static final DateTimeFormatter TIME_MICROS =
+      DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSS", Locale.ROOT);
 
   /** Wall-clock digits for DATETIME (read as UTC if sent to TIMESTAMP). Nanos are truncated. */
   static String formatDateTimeDigits(LocalDateTime value) {
     return DATETIME_MICROS.format(value);
+  }
+
+  /**
+   * The value and declared class a java.time object is bound with by {@code setObject}, or null if
+   * {@code value} is not a supported java.time type. LocalDate and LocalTime stay unboxed so their
+   * digits are sent as-is; LocalDateTime is bound as STRING so both DATETIME and TIMESTAMP columns
+   * accept it.
+   */
+  static Tuple<Object, Class<?>> bindingForJavaTime(Object value) {
+    if (value instanceof LocalDate) {
+      return Tuple.of(value, Date.class);
+    }
+    if (value instanceof LocalTime) {
+      return Tuple.of(value, Time.class);
+    }
+    if (value instanceof LocalDateTime) {
+      return Tuple.of(formatDateTimeDigits((LocalDateTime) value), String.class);
+    }
+    if (value instanceof OffsetDateTime) {
+      return Tuple.of(Timestamp.from(((OffsetDateTime) value).toInstant()), Timestamp.class);
+    }
+    if (value instanceof ZonedDateTime) {
+      return Tuple.of(Timestamp.from(((ZonedDateTime) value).toInstant()), Timestamp.class);
+    }
+    if (value instanceof Instant) {
+      return Tuple.of(Timestamp.from((Instant) value), Timestamp.class);
+    }
+    return null;
   }
 
   BigQueryParameterHandler(int parameterCount) {
@@ -153,6 +188,18 @@ class BigQueryParameterHandler {
         return BigQueryTemporalUtility.truncateFractionalSeconds(
             str, enableTimestampPicos ? 12 : 6);
       }
+    }
+
+    // Civil java.time values are sent as their digits. Boxing into java.sql would shift
+    // 1582-10-05..14 (no such days in its calendar) and drop sub-second TIME digits.
+    if (parameterValue instanceof LocalDate) {
+      return DATE_DIGITS.format((LocalDate) parameterValue);
+    }
+    if (parameterValue instanceof LocalTime) {
+      return TIME_MICROS.format((LocalTime) parameterValue);
+    }
+    if (parameterValue instanceof LocalDateTime) {
+      return DATETIME_MICROS.format((LocalDateTime) parameterValue);
     }
 
     if (parameterValue instanceof Timestamp) {
