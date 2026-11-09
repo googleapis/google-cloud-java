@@ -24,6 +24,7 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpResponseInterceptor;
 import com.google.api.core.ApiClock;
 import com.google.common.collect.ImmutableSet;
+import io.opentelemetry.context.Context;
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
@@ -113,6 +114,7 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
               StorageMetricsContext.recordTtfb(
                   metrics,
                   null,
+                  Context.current(),
                   ttfbSeconds,
                   "http",
                   StorageClientMetrics.NETWORK_PATH_CLOUDPATH,
@@ -123,13 +125,13 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
 
     if (recordDuration) {
       // HttpIOExceptionHandler does not receive the thrown IOException instance from
-      // google-http-client, so transport-level IOExceptions default to STATUS_CONNECTIVITY here
+      // google-http-client, so transport-level IOExceptions default to STATUS_CONNECTION_ERROR here
       // (specific subtypes like TIMEOUT, DNS_FAILURE, and TLS_FAILURE are mapped in Retrying).
       request.setIOExceptionHandler(
           (req, supportsRetry) -> {
             if (recorded.compareAndSet(false, true)) {
               recordDuration(
-                  req, startTimeNanos.get(), "0", StorageErrorTypeMapper.STATUS_CONNECTIVITY);
+                  req, startTimeNanos.get(), "0", StorageErrorTypeMapper.STATUS_CONNECTION_ERROR);
             }
             return existingIoHandler != null
                 && existingIoHandler.handleIOException(req, supportsRetry);
@@ -209,20 +211,10 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
     return parts.length == 1 ? "/{bucket}" : "/{bucket}/{object}";
   }
 
-  static boolean isMediaDownloadRequest(@Nullable HttpRequest request) {
-    if (request == null) {
-      return false;
-    }
-    if (!"GET".equalsIgnoreCase(request.getRequestMethod()) || request.getUrl() == null) {
-      return false;
-    }
-    GenericUrl url = request.getUrl();
-    String path = url.getRawPath();
-    return (path != null && path.startsWith("/download/storage/v1/"))
-        || "media".equals(url.getFirst("alt"));
-  }
-
   private static String extractV1UrlTemplate(String rest) {
+    if ("b".equals(rest)) {
+      return "/storage/v1/b";
+    }
     String[] segments = rest.split("/");
     if (segments.length >= 2 && "b".equals(segments[0])) {
       segments[1] = "{bucket}";
@@ -275,5 +267,18 @@ final class StorageHttpMetricsInterceptor implements HttpRequestInitializer {
       return "/storage/v1/b/{bucket}/o/{object}/moveTo/o/{destinationObject}";
     }
     return "/storage/v1/b/{bucket}/o/{object}";
+  }
+
+  static boolean isMediaDownloadRequest(@Nullable HttpRequest request) {
+    if (request == null) {
+      return false;
+    }
+    if (!"GET".equalsIgnoreCase(request.getRequestMethod()) || request.getUrl() == null) {
+      return false;
+    }
+    GenericUrl url = request.getUrl();
+    String path = url.getRawPath();
+    return (path != null && path.startsWith("/download/storage/v1/"))
+        || "media".equals(url.getFirst("alt"));
   }
 }

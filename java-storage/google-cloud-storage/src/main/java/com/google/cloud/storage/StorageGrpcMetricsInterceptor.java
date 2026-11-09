@@ -28,34 +28,31 @@ import io.grpc.Grpc;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import io.opentelemetry.context.Context;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
 import java.util.concurrent.atomic.AtomicBoolean;
+import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
  * {@link ClientInterceptor} that instruments outgoing gRPC calls to record OpenTelemetry client
  * metrics.
  */
+@NullMarked
 final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
 
-  private static final String DP_IPV6_PREFIX = "2001:4860:8040";
-  private static final String DP_IPV4_PREFIX = "34.126";
-
-  private final StorageClientMetrics metrics;
+  @Nullable private final StorageClientMetrics metrics;
   private final ApiClock clock;
   @Nullable private final String defaultServerAddress;
-  private final boolean isDirectPathEndpoint;
 
   StorageGrpcMetricsInterceptor(
-      StorageClientMetrics metrics, ApiClock clock, @Nullable String defaultEndpoint) {
+      @Nullable StorageClientMetrics metrics, ApiClock clock, @Nullable String defaultEndpoint) {
     this.metrics = metrics;
     this.clock = clock;
     this.defaultServerAddress =
         OpenTelemetryBootstrappingUtils.extractServerAddress(defaultEndpoint);
-    this.isDirectPathEndpoint =
-        defaultEndpoint != null && defaultEndpoint.trim().startsWith("google-c2p:///");
   }
 
   @Override
@@ -65,8 +62,11 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
       return next.newCall(method, callOptions);
     }
 
-    String shortMethod = extractShortMethodName(method.getFullMethodName());
-    boolean isReadMethod = "ReadObject".equals(shortMethod) || "BidiReadObject".equals(shortMethod);
+    String fullMethodName = method.getFullMethodName();
+    String rpcMethod =
+        fullMethodName != null && !fullMethodName.isEmpty() ? fullMethodName : "UNKNOWN";
+    String bareMethod = method.getBareMethodName();
+    boolean isReadMethod = "ReadObject".equals(bareMethod) || "BidiReadObject".equals(bareMethod);
     boolean recordDuration = metrics.getRpcClientCallDuration() != null;
     boolean recordTtfb = isReadMethod && metrics.getTtfb() != null;
     if (!recordDuration && !recordTtfb) {
@@ -80,6 +80,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
     final String serverAddress = resolvedServerAddress != null ? resolvedServerAddress : "";
 
     StorageMetricsContext metricsCtx = StorageMetricsContext.from(callOptions);
+    Context otelContext = metricsCtx != null ? metricsCtx.getOtelContext() : Context.current();
 
     return new SimpleForwardingClientCall<ReqT, RespT>(next.newCall(method, callOptions)) {
       @Override
@@ -91,40 +92,43 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
         super.start(
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
               @Override
-              public void onMessage(RespT message) {
+              public void onMessage(@Nullable RespT message) {
                 // The first response message from the server (including metadata-only
                 // responses for 0-byte objects) marks Time To First Byte (TTFB).
                 if (recordTtfb && ttfbRecorded.compareAndSet(false, true)) {
                   double ttfbSeconds =
                       Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
-                  String networkPath = detectNetworkPath(getAttributes(), isDirectPathEndpoint);
+                  String networkPath = detectNetworkPath(getAttributes());
                   StorageMetricsContext.recordTtfb(
-                      metrics, metricsCtx, ttfbSeconds, "grpc", networkPath, serverAddress);
+                      metrics,
+                      metricsCtx,
+                      otelContext,
+                      ttfbSeconds,
+                      "grpc",
+                      networkPath,
+                      serverAddress);
                 }
                 super.onMessage(message);
               }
 
               @Override
-              public void onClose(Status status, Metadata trailers) {
+              public void onClose(@Nullable Status status, @Nullable Metadata trailers) {
                 try {
                   if (recordDuration && callRecorded.compareAndSet(false, true)) {
                     double durationSeconds =
                         Math.max(0.0, (clock.nanoTime() - startTimeNanos) / 1_000_000_000.0);
-                    String networkPath = detectNetworkPath(getAttributes(), isDirectPathEndpoint);
+                    String networkPath = detectNetworkPath(getAttributes());
                     String statusCode =
                         status != null && status.getCode() != null
                             ? status.getCode().name()
                             : StorageErrorTypeMapper.STATUS_UNKNOWN;
-                    String errorType =
-                        status != null && !status.isOk() && status.getCause() != null
-                            ? StorageErrorTypeMapper.mapThrowable(status.asRuntimeException())
-                            : StorageErrorTypeMapper.mapGrpcStatus(status);
+                    String errorType = StorageErrorTypeMapper.mapGrpcStatus(status);
 
                     StorageMetricsContext.recordRpcCallDuration(
                         metrics,
-                        metricsCtx,
+                        otelContext,
                         durationSeconds,
-                        shortMethod,
+                        rpcMethod,
                         statusCode,
                         networkPath,
                         serverAddress,
@@ -140,19 +144,7 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
     };
   }
 
-  static String extractShortMethodName(@Nullable String fullMethodName) {
-    if (fullMethodName == null || fullMethodName.isEmpty()) {
-      return "UNKNOWN";
-    }
-    int idx = fullMethodName.lastIndexOf('/');
-    if (idx >= 0 && idx < fullMethodName.length() - 1) {
-      return fullMethodName.substring(idx + 1);
-    }
-    return fullMethodName;
-  }
-
-  static String detectNetworkPath(
-      @Nullable Attributes callAttributes, boolean isDirectPathEndpoint) {
+  static String detectNetworkPath(@Nullable Attributes callAttributes) {
     SocketAddress remoteAddr =
         callAttributes != null ? callAttributes.get(Grpc.TRANSPORT_ATTR_REMOTE_ADDR) : null;
     if (remoteAddr instanceof InetSocketAddress) {
@@ -163,15 +155,24 @@ final class StorageGrpcMetricsInterceptor implements ClientInterceptor {
             : StorageClientMetrics.NETWORK_PATH_CLOUDPATH;
       }
     }
-    if (isDirectPathEndpoint) {
-      return StorageClientMetrics.NETWORK_PATH_DIRECTPATH;
-    }
     return StorageClientMetrics.NETWORK_PATH_UNKNOWN;
   }
 
   static boolean isDirectPathIp(InetAddress addr) {
-    String hostAddr = addr.getHostAddress();
-    return hostAddr != null
-        && (hostAddr.startsWith(DP_IPV4_PREFIX) || hostAddr.startsWith(DP_IPV6_PREFIX));
+    byte[] b = addr.getAddress();
+    if (b.length == 4) {
+      // 34.126.0.0/18
+      return b[0] == 34 && b[1] == 126 && (b[2] & 0xC0) == 0;
+    }
+    if (b.length == 16) {
+      // 2001:4860:8040::/42
+      return b[0] == 0x20
+          && b[1] == 0x01
+          && b[2] == 0x48
+          && b[3] == 0x60
+          && b[4] == (byte) 0x80
+          && (b[5] & 0xFC) == 0x40;
+    }
+    return false;
   }
 }
