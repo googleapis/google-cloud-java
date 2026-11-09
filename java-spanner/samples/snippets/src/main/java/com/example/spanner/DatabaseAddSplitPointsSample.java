@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.cloud.spanner.SpannerExceptionFactory;
+import java.util.concurrent.ExecutionException;
 
 public class DatabaseAddSplitPointsSample {
 
@@ -113,7 +114,7 @@ public class DatabaseAddSplitPointsSample {
       databaseAdminClient.addSplitPoints(
           DatabaseName.of(projectId, instanceId, databaseId), splitPoints).get();
 
-    } catch (java.util.concurrent.ExecutionException e) {
+    } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
       throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
