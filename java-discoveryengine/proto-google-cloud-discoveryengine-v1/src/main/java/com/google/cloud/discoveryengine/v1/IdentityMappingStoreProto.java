@@ -68,17 +68,18 @@ public final class IdentityMappingStoreProto extends com.google.protobuf.Generat
           + "\013cmek_config\030\004 \001(\0132+.google.cl"
           + "oud.discoveryengine.v1.CmekConfigB\004\342A\001\003:\221\001\352A\215\001\n"
           + "3discoveryengine.googleapis.com/IdentityMappingStore\022Vprojects/{project}/"
-          + "locations/{location}/identityMappingStores/{identity_mapping_store}\"v\n"
+          + "locations/{location}/identityMappingStores/{identity_mapping_store}\"\234\001\n"
           + "\024IdentityMappingEntry\022\021\n"
           + "\007user_id\030\002 \001(\tH\000\022\022\n"
           + "\010group_id\030\003 \001(\tH\000\022\037\n"
-          + "\021external_identity\030\001 \001(\tB\004\342A\001\002B\026\n"
+          + "\021external_identity\030\001 \001(\tB\004\342A\001\002\022$\n"
+          + "\026external_identity_name\030\004 \001(\tB\004\342A\001\001B\026\n"
           + "\024identity_provider_idB\214\002\n"
-          + "#com.google.cloud.discoveryengine.v1B\031IdentityMap"
-          + "pingStoreProtoP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;di"
-          + "scoveryenginepb\242\002\017DISCOVERYENGINE\252\002\037Goog"
-          + "le.Cloud.DiscoveryEngine.V1\312\002\037Google\\Clo"
-          + "ud\\DiscoveryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
+          + "#com.google.cloud.discoveryengine.v1B\031IdentityMapp"
+          + "ingStoreProtoP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;dis"
+          + "coveryenginepb\242\002\017DISCOVERYENGINE\252\002\037Googl"
+          + "e.Cloud.DiscoveryEngine.V1\312\002\037Google\\Clou"
+          + "d\\DiscoveryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -102,7 +103,7 @@ public final class IdentityMappingStoreProto extends com.google.protobuf.Generat
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_IdentityMappingEntry_descriptor,
             new java.lang.String[] {
-              "UserId", "GroupId", "ExternalIdentity", "IdentityProviderId",
+              "UserId", "GroupId", "ExternalIdentity", "ExternalIdentityName", "IdentityProviderId",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

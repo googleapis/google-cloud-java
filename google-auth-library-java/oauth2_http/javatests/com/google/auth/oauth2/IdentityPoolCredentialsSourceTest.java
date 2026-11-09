@@ -94,7 +94,8 @@ class IdentityPoolCredentialsSourceTest {
             IllegalArgumentException.class,
             () -> new IdentityPoolCredentialSource(credentialSourceMap));
     assertEquals(
-        "Invalid 'certificate' configuration in credential source: Must specify either 'certificate_config_location' or set 'use_default_certificate_config' to true.",
+        "Invalid 'certificate' configuration in credential source: Must specify either"
+            + " 'certificate_config_location' or set 'use_default_certificate_config' to true.",
         exception.getMessage());
   }
 
@@ -113,7 +114,8 @@ class IdentityPoolCredentialsSourceTest {
             () -> new IdentityPoolCredentialSource(credentialSourceMap));
 
     assertEquals(
-        "Invalid 'certificate' configuration in credential source: Cannot specify both 'certificate_config_location' and set 'use_default_certificate_config' to true.",
+        "Invalid 'certificate' configuration in credential source: Cannot specify both"
+            + " 'certificate_config_location' and set 'use_default_certificate_config' to true.",
         exception.getMessage());
   }
 
@@ -149,7 +151,116 @@ class IdentityPoolCredentialsSourceTest {
             () -> new IdentityPoolCredentialSource(credentialSourceMap));
 
     assertEquals(
-        "Invalid type for 'use_default_certificate_config' in certificate configuration: expected Boolean, got String.",
+        "Invalid type for 'use_default_certificate_config' in certificate configuration: expected"
+            + " Boolean, got String.",
+        exception.getMessage());
+  }
+
+  @Test
+  void constructor_fileAndCertificatePresent_isSupported() {
+    Map<String, Object> certificateMap = new HashMap<>();
+    certificateMap.put("use_default_certificate_config", true);
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", "/path/to/file");
+    credentialSourceMap.put("certificate", certificateMap);
+
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+    assertEquals(IdentityPoolCredentialSourceType.FILE, credentialSource.credentialSourceType);
+    assertEquals("/path/to/file", credentialSource.getCredentialLocation());
+    assertNotNull(credentialSource.getCertificateConfig());
+    assertTrue(credentialSource.getCertificateConfig().useDefaultCertificateConfig());
+  }
+
+  @Test
+  void constructor_jsonFormat_withActorTokenFieldName() {
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_field");
+    formatMap.put("actor_token_field_name", "act_field");
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", "/path/to/file");
+    credentialSourceMap.put("format", formatMap);
+
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+    assertEquals("sub_field", credentialSource.subjectTokenFieldName);
+    assertEquals("act_field", credentialSource.actorTokenFieldName);
+  }
+
+  @Test
+  void constructor_actorTokenFieldNameSameAsSubject_throws() {
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "same_field");
+    formatMap.put("actor_token_field_name", "same_field");
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", "/path/to/file");
+    credentialSourceMap.put("format", formatMap);
+
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> new IdentityPoolCredentialSource(credentialSourceMap));
+    assertEquals(
+        "The actor_token_field_name must differ from the subject_token_field_name.",
+        exception.getMessage());
+  }
+
+  @Test
+  void constructor_actorTokenFieldNameEmpty_throws() {
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_field");
+    formatMap.put("actor_token_field_name", "  ");
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", "/path/to/file");
+    credentialSourceMap.put("format", formatMap);
+
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> new IdentityPoolCredentialSource(credentialSourceMap));
+    assertEquals("The actor_token_field_name must not be empty.", exception.getMessage());
+  }
+
+  @Test
+  void constructor_actorTokenFieldNameNull_succeeds() {
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_field");
+    // actor_token_field_name not set
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", "/path/to/file");
+    credentialSourceMap.put("format", formatMap);
+
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+    assertEquals("sub_field", credentialSource.subjectTokenFieldName);
+    assertEquals(null, credentialSource.actorTokenFieldName);
+  }
+
+  @Test
+  void constructor_textFormat_withActorTokenFieldName_throws() {
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "text");
+    formatMap.put("actor_token_field_name", "act_field");
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", "/path/to/file");
+    credentialSourceMap.put("format", formatMap);
+
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> new IdentityPoolCredentialSource(credentialSourceMap));
+    assertEquals(
+        "Actor tokens are only supported for JSON-formatted credential sources.",
         exception.getMessage());
   }
 }

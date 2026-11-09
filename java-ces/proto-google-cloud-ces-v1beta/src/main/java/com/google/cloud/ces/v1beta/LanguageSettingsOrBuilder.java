@@ -118,8 +118,8 @@ public interface LanguageSettingsOrBuilder
    *
    *
    * <pre>
-   * Optional. Enables multilingual support. If true, agents in the app will use
-   * pre-built instructions to improve handling of multilingual input.
+   * Optional. Enables multilingual support. If `true`, agents in the app will
+   * use pre-built instructions to improve handling of multilingual input.
    * </pre>
    *
    * <code>bool enable_multilingual_support = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -151,7 +151,7 @@ public interface LanguageSettingsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.LanguageSettings.fallback_action is deprecated. See
-   *     google/cloud/ces/v1beta/app.proto;l=255
+   *     google/cloud/ces/v1beta/app.proto;l=280
    * @return The fallbackAction.
    */
   @java.lang.Deprecated
@@ -180,7 +180,7 @@ public interface LanguageSettingsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.LanguageSettings.fallback_action is deprecated. See
-   *     google/cloud/ces/v1beta/app.proto;l=255
+   *     google/cloud/ces/v1beta/app.proto;l=280
    * @return The bytes for fallbackAction.
    */
   @java.lang.Deprecated

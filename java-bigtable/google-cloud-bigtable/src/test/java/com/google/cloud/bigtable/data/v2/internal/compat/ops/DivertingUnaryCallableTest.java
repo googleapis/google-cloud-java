@@ -56,7 +56,7 @@ class DivertingUnaryCallableTest {
   @BeforeEach
   void setUp() {
     configManager = mock(ClientConfigurationManager.class);
-    stubSessionLoad(1.0f);
+    stubGlobalDiversion(1.0f);
     classic = new RecordingCallable<>(ApiFutures.immediateFuture("classic"));
     experimental = new RecordingShim<>();
     tracer = new RecordingDebugTagTracer();
@@ -149,28 +149,16 @@ class DivertingUnaryCallableTest {
   }
 
   @Test
-  void fallbackEnabled_noDiversionConfig_usesGlobalSessionLoad() {
+  void noDiversionConfig_flatSessionLoadIgnored() throws Exception {
     stubSessionLoad(1.0f);
-    // READ_ROW still honours the deprecated flat session_load while the server rolls out
-    // SessionDiversionConfiguration.
-    DivertingUnaryCallable<String, String> callable = callable(SessionScope.READ_ROW);
+    for (SessionScope scope : SessionScope.values()) {
+      DivertingUnaryCallable<String, String> callable = callable(scope);
 
-    @SuppressWarnings("unused")
-    ApiFuture<?> ignored = callable.futureCall("req", GrpcCallContext.createDefault());
+      ApiFuture<String> result = callable.futureCall("req", GrpcCallContext.createDefault());
 
-    assertThat(experimental.callCount).isEqualTo(1);
-  }
-
-  @Test
-  void fallbackDisabled_noDiversionConfig_routesToClassic() throws Exception {
-    stubSessionLoad(1.0f);
-    // CheckAndMutateRow is only ever enabled through a diversion configuration.
-    DivertingUnaryCallable<String, String> callable = callable(SessionScope.CHECK_AND_MUTATE_ROW);
-
-    ApiFuture<String> result = callable.futureCall("req", GrpcCallContext.createDefault());
-
-    assertThat(result.get()).isEqualTo("classic");
-    assertThat(experimental.callCount).isEqualTo(0);
+      assertThat(result.get()).isEqualTo("classic");
+      assertThat(experimental.callCount).isEqualTo(0);
+    }
   }
 
   @Test

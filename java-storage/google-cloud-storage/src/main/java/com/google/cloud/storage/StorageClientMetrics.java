@@ -204,8 +204,8 @@ final class StorageClientMetrics {
           meter
               .counterBuilder(METRIC_GCP_STORAGE_CLIENT_ATTEMPTS)
               .setDescription(
-                  "Number of GCS client attempts (individual HTTP requests or gRPC calls), including"
-                      + " retries, resumable upload chunks and list pages.")
+                  "Number of GCS client attempts (individual HTTP requests or gRPC calls),"
+                      + " including retries, resumable upload chunks and list pages.")
               .setUnit("{attempt}")
               .build();
       this.errors =

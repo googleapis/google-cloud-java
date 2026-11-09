@@ -4938,6 +4938,50 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Source code is in a public Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+     * </code>
+     *
+     * @return Whether the gitSource field is set.
+     */
+    boolean hasGitSource();
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is in a public Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+     * </code>
+     *
+     * @return The gitSource.
+     */
+    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource getGitSource();
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is in a public Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSourceOrBuilder
+        getGitSourceOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * Configuration for a Python application.
      * </pre>
      *
@@ -8551,6 +8595,1094 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
     }
 
+    public interface GitSourceOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The HTTPS URL of the public Git repository to clone.
+       * </pre>
+       *
+       * <code>string url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The url.
+       */
+      java.lang.String getUrl();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The HTTPS URL of the public Git repository to clone.
+       * </pre>
+       *
+       * <code>string url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for url.
+       */
+      com.google.protobuf.ByteString getUrlBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Directory, relative to the source root, in which to run the
+       * build.
+       * </pre>
+       *
+       * <code>string dir = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The dir.
+       */
+      java.lang.String getDir();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Directory, relative to the source root, in which to run the
+       * build.
+       * </pre>
+       *
+       * <code>string dir = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for dir.
+       */
+      com.google.protobuf.ByteString getDirBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The revision to fetch from the Git repository: a branch, a
+       * tag, or a full commit SHA. Abbreviated commit SHAs are not supported.
+       * </pre>
+       *
+       * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The revision.
+       */
+      java.lang.String getRevision();
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The revision to fetch from the Git repository: a branch, a
+       * tag, or a full commit SHA. Abbreviated commit SHAs are not supported.
+       * </pre>
+       *
+       * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for revision.
+       */
+      com.google.protobuf.ByteString getRevisionBytes();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies source code to be fetched from a public Git repository.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource}
+     */
+    public static final class GitSource extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)
+        GitSourceOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 6,
+            /* suffix= */ "",
+            "GitSource");
+      }
+
+      // Use GitSource.newBuilder() to construct.
+      private GitSource(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private GitSource() {
+        url_ = "";
+        dir_ = "";
+        revision_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_GitSource_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+            .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_GitSource_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource.class,
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource.Builder
+                    .class);
+      }
+
+      public static final int URL_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object url_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The HTTPS URL of the public Git repository to clone.
+       * </pre>
+       *
+       * <code>string url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The url.
+       */
+      @java.lang.Override
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The HTTPS URL of the public Git repository to clone.
+       * </pre>
+       *
+       * <code>string url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for url.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int DIR_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object dir_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Directory, relative to the source root, in which to run the
+       * build.
+       * </pre>
+       *
+       * <code>string dir = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The dir.
+       */
+      @java.lang.Override
+      public java.lang.String getDir() {
+        java.lang.Object ref = dir_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dir_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Directory, relative to the source root, in which to run the
+       * build.
+       * </pre>
+       *
+       * <code>string dir = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for dir.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDirBytes() {
+        java.lang.Object ref = dir_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          dir_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int REVISION_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object revision_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The revision to fetch from the Git repository: a branch, a
+       * tag, or a full commit SHA. Abbreviated commit SHAs are not supported.
+       * </pre>
+       *
+       * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The revision.
+       */
+      @java.lang.Override
+      public java.lang.String getRevision() {
+        java.lang.Object ref = revision_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          revision_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The revision to fetch from the Git repository: a branch, a
+       * tag, or a full commit SHA. Abbreviated commit SHAs are not supported.
+       * </pre>
+       *
+       * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bytes for revision.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getRevisionBytes() {
+        java.lang.Object ref = revision_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          revision_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, url_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dir_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, dir_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(revision_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 3, revision_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, url_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dir_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, dir_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(revision_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(3, revision_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource other =
+            (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource) obj;
+
+        if (!getUrl().equals(other.getUrl())) return false;
+        if (!getDir().equals(other.getDir())) return false;
+        if (!getRevision().equals(other.getRevision())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + URL_FIELD_NUMBER;
+        hash = (53 * hash) + getUrl().hashCode();
+        hash = (37 * hash) + DIR_FIELD_NUMBER;
+        hash = (53 * hash) + getDir().hashCode();
+        hash = (37 * hash) + REVISION_FIELD_NUMBER;
+        hash = (53 * hash) + getRevision().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies source code to be fetched from a public Git repository.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSourceOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_GitSource_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_GitSource_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource.class,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          url_ = "";
+          dir_ = "";
+          revision_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineProto
+              .internal_static_google_cloud_aiplatform_v1_ReasoningEngineSpec_SourceCodeSpec_GitSource_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource build() {
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+            buildPartial() {
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource result =
+              new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.url_ = url_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.dir_ = dir_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.revision_ = revision_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource other) {
+          if (other
+              == com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+                  .getDefaultInstance()) return this;
+          if (!other.getUrl().isEmpty()) {
+            url_ = other.url_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getDir().isEmpty()) {
+            dir_ = other.dir_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (!other.getRevision().isEmpty()) {
+            revision_ = other.revision_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    url_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    dir_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    revision_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object url_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The HTTPS URL of the public Git repository to clone.
+         * </pre>
+         *
+         * <code>string url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The url.
+         */
+        public java.lang.String getUrl() {
+          java.lang.Object ref = url_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            url_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The HTTPS URL of the public Git repository to clone.
+         * </pre>
+         *
+         * <code>string url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for url.
+         */
+        public com.google.protobuf.ByteString getUrlBytes() {
+          java.lang.Object ref = url_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            url_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The HTTPS URL of the public Git repository to clone.
+         * </pre>
+         *
+         * <code>string url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The url to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUrl(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          url_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The HTTPS URL of the public Git repository to clone.
+         * </pre>
+         *
+         * <code>string url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearUrl() {
+          url_ = getDefaultInstance().getUrl();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The HTTPS URL of the public Git repository to clone.
+         * </pre>
+         *
+         * <code>string url = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for url to set.
+         * @return This builder for chaining.
+         */
+        public Builder setUrlBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          url_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object dir_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Directory, relative to the source root, in which to run the
+         * build.
+         * </pre>
+         *
+         * <code>string dir = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The dir.
+         */
+        public java.lang.String getDir() {
+          java.lang.Object ref = dir_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            dir_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Directory, relative to the source root, in which to run the
+         * build.
+         * </pre>
+         *
+         * <code>string dir = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for dir.
+         */
+        public com.google.protobuf.ByteString getDirBytes() {
+          java.lang.Object ref = dir_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            dir_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Directory, relative to the source root, in which to run the
+         * build.
+         * </pre>
+         *
+         * <code>string dir = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The dir to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDir(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          dir_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Directory, relative to the source root, in which to run the
+         * build.
+         * </pre>
+         *
+         * <code>string dir = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDir() {
+          dir_ = getDefaultInstance().getDir();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Directory, relative to the source root, in which to run the
+         * build.
+         * </pre>
+         *
+         * <code>string dir = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The bytes for dir to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDirBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          dir_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object revision_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The revision to fetch from the Git repository: a branch, a
+         * tag, or a full commit SHA. Abbreviated commit SHAs are not supported.
+         * </pre>
+         *
+         * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The revision.
+         */
+        public java.lang.String getRevision() {
+          java.lang.Object ref = revision_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            revision_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The revision to fetch from the Git repository: a branch, a
+         * tag, or a full commit SHA. Abbreviated commit SHAs are not supported.
+         * </pre>
+         *
+         * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The bytes for revision.
+         */
+        public com.google.protobuf.ByteString getRevisionBytes() {
+          java.lang.Object ref = revision_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            revision_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The revision to fetch from the Git repository: a branch, a
+         * tag, or a full commit SHA. Abbreviated commit SHAs are not supported.
+         * </pre>
+         *
+         * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The revision to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRevision(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          revision_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The revision to fetch from the Git repository: a branch, a
+         * tag, or a full commit SHA. Abbreviated commit SHAs are not supported.
+         * </pre>
+         *
+         * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRevision() {
+          revision_ = getDefaultInstance().getRevision();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. The revision to fetch from the Git repository: a branch, a
+         * tag, or a full commit SHA. Abbreviated commit SHAs are not supported.
+         * </pre>
+         *
+         * <code>string revision = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @param value The bytes for revision to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRevisionBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          revision_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)
+      private static final com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+              .GitSource
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource();
+      }
+
+      public static com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<GitSource> PARSER =
+          new com.google.protobuf.AbstractParser<GitSource>() {
+            @java.lang.Override
+            public GitSource parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<GitSource> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<GitSource> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     public interface PythonSpecOrBuilder
         extends
         // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.PythonSpec)
@@ -9941,6 +11073,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       INLINE_SOURCE(1),
       DEVELOPER_CONNECT_SOURCE(3),
+      GIT_SOURCE(6),
       SOURCE_NOT_SET(0);
       private final int value;
 
@@ -9964,6 +11097,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             return INLINE_SOURCE;
           case 3:
             return DEVELOPER_CONNECT_SOURCE;
+          case 6:
+            return GIT_SOURCE;
           case 0:
             return SOURCE_NOT_SET;
           default:
@@ -10165,6 +11300,72 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           .DeveloperConnectSource.getDefaultInstance();
     }
 
+    public static final int GIT_SOURCE_FIELD_NUMBER = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is in a public Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+     * </code>
+     *
+     * @return Whether the gitSource field is set.
+     */
+    @java.lang.Override
+    public boolean hasGitSource() {
+      return sourceCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is in a public Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+     * </code>
+     *
+     * @return The gitSource.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+        getGitSource() {
+      if (sourceCase_ == 6) {
+        return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)
+            source_;
+      }
+      return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          .getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source code is in a public Git repository.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSourceOrBuilder
+        getGitSourceOrBuilder() {
+      if (sourceCase_ == 6) {
+        return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)
+            source_;
+      }
+      return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          .getDefaultInstance();
+    }
+
     public static final int PYTHON_SPEC_FIELD_NUMBER = 2;
 
     /**
@@ -10336,6 +11537,11 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
                 languageSpec_);
       }
+      if (sourceCase_ == 6) {
+        output.writeMessage(
+            6,
+            (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource) source_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -10374,6 +11580,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                 (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.ImageSpec)
                     languageSpec_);
       }
+      if (sourceCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6,
+                (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)
+                    source_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -10397,6 +11610,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           break;
         case 3:
           if (!getDeveloperConnectSource().equals(other.getDeveloperConnectSource())) return false;
+          break;
+        case 6:
+          if (!getGitSource().equals(other.getGitSource())) return false;
           break;
         case 0:
         default:
@@ -10431,6 +11647,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         case 3:
           hash = (37 * hash) + DEVELOPER_CONNECT_SOURCE_FIELD_NUMBER;
           hash = (53 * hash) + getDeveloperConnectSource().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + GIT_SOURCE_FIELD_NUMBER;
+          hash = (53 * hash) + getGitSource().hashCode();
           break;
         case 0:
         default:
@@ -10596,6 +11816,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         if (developerConnectSourceBuilder_ != null) {
           developerConnectSourceBuilder_.clear();
         }
+        if (gitSourceBuilder_ != null) {
+          gitSourceBuilder_.clear();
+        }
         if (pythonSpecBuilder_ != null) {
           pythonSpecBuilder_.clear();
         }
@@ -10658,6 +11881,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         if (sourceCase_ == 3 && developerConnectSourceBuilder_ != null) {
           result.source_ = developerConnectSourceBuilder_.build();
         }
+        if (sourceCase_ == 6 && gitSourceBuilder_ != null) {
+          result.source_ = gitSourceBuilder_.build();
+        }
         result.languageSpecCase_ = languageSpecCase_;
         result.languageSpec_ = this.languageSpec_;
         if (languageSpecCase_ == 2 && pythonSpecBuilder_ != null) {
@@ -10693,6 +11919,11 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           case DEVELOPER_CONNECT_SOURCE:
             {
               mergeDeveloperConnectSource(other.getDeveloperConnectSource());
+              break;
+            }
+          case GIT_SOURCE:
+            {
+              mergeGitSource(other.getGitSource());
               break;
             }
           case SOURCE_NOT_SET:
@@ -10771,6 +12002,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                   languageSpecCase_ = 5;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      internalGetGitSourceFieldBuilder().getBuilder(), extensionRegistry);
+                  sourceCase_ = 6;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11350,6 +12588,263 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         sourceCase_ = 3;
         onChanged();
         return developerConnectSourceBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource.Builder,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSourceOrBuilder>
+          gitSourceBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a public Git repository.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+       * </code>
+       *
+       * @return Whether the gitSource field is set.
+       */
+      @java.lang.Override
+      public boolean hasGitSource() {
+        return sourceCase_ == 6;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a public Git repository.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+       * </code>
+       *
+       * @return The gitSource.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+          getGitSource() {
+        if (gitSourceBuilder_ == null) {
+          if (sourceCase_ == 6) {
+            return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)
+                source_;
+          }
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+              .getDefaultInstance();
+        } else {
+          if (sourceCase_ == 6) {
+            return gitSourceBuilder_.getMessage();
+          }
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a public Git repository.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+       * </code>
+       */
+      public Builder setGitSource(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource value) {
+        if (gitSourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          source_ = value;
+          onChanged();
+        } else {
+          gitSourceBuilder_.setMessage(value);
+        }
+        sourceCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a public Git repository.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+       * </code>
+       */
+      public Builder setGitSource(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource.Builder
+              builderForValue) {
+        if (gitSourceBuilder_ == null) {
+          source_ = builderForValue.build();
+          onChanged();
+        } else {
+          gitSourceBuilder_.setMessage(builderForValue.build());
+        }
+        sourceCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a public Git repository.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+       * </code>
+       */
+      public Builder mergeGitSource(
+          com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource value) {
+        if (gitSourceBuilder_ == null) {
+          if (sourceCase_ == 6
+              && source_
+                  != com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+                      .getDefaultInstance()) {
+            source_ =
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+                    .newBuilder(
+                        (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                                .GitSource)
+                            source_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            source_ = value;
+          }
+          onChanged();
+        } else {
+          if (sourceCase_ == 6) {
+            gitSourceBuilder_.mergeFrom(value);
+          } else {
+            gitSourceBuilder_.setMessage(value);
+          }
+        }
+        sourceCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a public Git repository.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+       * </code>
+       */
+      public Builder clearGitSource() {
+        if (gitSourceBuilder_ == null) {
+          if (sourceCase_ == 6) {
+            sourceCase_ = 0;
+            source_ = null;
+            onChanged();
+          }
+        } else {
+          if (sourceCase_ == 6) {
+            sourceCase_ = 0;
+            source_ = null;
+          }
+          gitSourceBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a public Git repository.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource.Builder
+          getGitSourceBuilder() {
+        return internalGetGitSourceFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a public Git repository.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSourceOrBuilder
+          getGitSourceOrBuilder() {
+        if ((sourceCase_ == 6) && (gitSourceBuilder_ != null)) {
+          return gitSourceBuilder_.getMessageOrBuilder();
+        } else {
+          if (sourceCase_ == 6) {
+            return (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)
+                source_;
+          }
+          return com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+              .getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Source code is in a public Git repository.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource git_source = 6;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource.Builder,
+              com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSourceOrBuilder>
+          internalGetGitSourceFieldBuilder() {
+        if (gitSourceBuilder_ == null) {
+          if (!(sourceCase_ == 6)) {
+            source_ =
+                com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+                    .getDefaultInstance();
+          }
+          gitSourceBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource
+                      .Builder,
+                  com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec
+                      .GitSourceOrBuilder>(
+                  (com.google.cloud.aiplatform.v1.ReasoningEngineSpec.SourceCodeSpec.GitSource)
+                      source_,
+                  getParentForChildren(),
+                  isClean());
+          source_ = null;
+        }
+        sourceCase_ = 6;
+        onChanged();
+        return gitSourceBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilder<

@@ -18,76 +18,76 @@ package com.google.cloud.storage;
 
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.WatchdogTimeoutException;
+import com.google.common.base.Ascii;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.net.ConnectException;
-import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
-import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
 import javax.net.ssl.SSLException;
-import javax.net.ssl.SSLHandshakeException;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * Centralized package-private utility mapping exceptions and status codes to the standard HLD
- * uppercase canonical error strings.
+ * Centralized package-private utility that maps exceptions and status codes to canonical uppercase
+ * error type strings for client metrics.
  */
 final class StorageErrorTypeMapper {
+
+  private static final int MAX_CAUSE_DEPTH = 20;
 
   static final String STATUS_OK = "OK";
   static final String STATUS_CANCELLED = "CANCELLED";
   static final String STATUS_UNKNOWN = "UNKNOWN";
-  static final String STATUS_INVALID_ARGUMENT = "INVALID_ARGUMENT";
   static final String STATUS_NOT_FOUND = "NOT_FOUND";
-  static final String STATUS_ALREADY_EXISTS = "ALREADY_EXISTS";
-  static final String STATUS_PERMISSION_DENIED = "PERMISSION_DENIED";
-  static final String STATUS_RESOURCE_EXHAUSTED = "RESOURCE_EXHAUSTED";
-  static final String STATUS_FAILED_PRECONDITION = "FAILED_PRECONDITION";
-  static final String STATUS_OUT_OF_RANGE = "OUT_OF_RANGE";
-  static final String STATUS_UNIMPLEMENTED = "UNIMPLEMENTED";
-  static final String STATUS_INTERNAL = "INTERNAL";
   static final String STATUS_UNAVAILABLE = "UNAVAILABLE";
-  static final String STATUS_UNAUTHENTICATED = "UNAUTHENTICATED";
+  static final String STATUS_DEADLINE_EXCEEDED = "DEADLINE_EXCEEDED";
+
+  private static final String STATUS_INVALID_ARGUMENT = "INVALID_ARGUMENT";
+  private static final String STATUS_ABORTED = "ABORTED";
+  private static final String STATUS_PERMISSION_DENIED = "PERMISSION_DENIED";
+  private static final String STATUS_RESOURCE_EXHAUSTED = "RESOURCE_EXHAUSTED";
+  private static final String STATUS_FAILED_PRECONDITION = "FAILED_PRECONDITION";
+  private static final String STATUS_OUT_OF_RANGE = "OUT_OF_RANGE";
+  private static final String STATUS_UNIMPLEMENTED = "UNIMPLEMENTED";
+  private static final String STATUS_INTERNAL = "INTERNAL";
+  private static final String STATUS_UNAUTHENTICATED = "UNAUTHENTICATED";
 
   static final String STATUS_TIMEOUT = "TIMEOUT";
   static final String STATUS_DNS_FAILURE = "DNS_FAILURE";
-  static final String STATUS_CONNECTION_REFUSED = "CONNECTION_REFUSED";
-  static final String STATUS_CONNECTION_RESET = "CONNECTION_RESET";
   static final String STATUS_TLS_FAILURE = "TLS_FAILURE";
-  static final String STATUS_CONNECTIVITY = "CONNECTIVITY";
+  static final String STATUS_CONNECTION_ERROR = "CONNECTION_ERROR";
   static final String STATUS_AUTHENTICATION_ERROR = "AUTHENTICATION_ERROR";
   static final String STATUS_CHECKSUM_MISMATCH = "CHECKSUM_MISMATCH";
 
-  private StorageErrorTypeMapper() {}
-
   static String mapGrpcStatus(@Nullable Status status) {
-    if (status == null || status.getCode() == Status.Code.UNKNOWN) {
-      return STATUS_UNKNOWN;
-    }
-    if (status.getCode() == Status.Code.DEADLINE_EXCEEDED) {
-      return STATUS_TIMEOUT;
-    }
-    return status.getCode().name();
+    return mapGrpcStatus(status, 0);
   }
 
-  private static String mapGaxStatusCode(StatusCode.@Nullable Code code) {
-    if (code == null || code == StatusCode.Code.UNKNOWN) {
+  private static String mapGrpcStatus(@Nullable Status status, int depth) {
+    if (status == null || depth >= MAX_CAUSE_DEPTH) {
       return STATUS_UNKNOWN;
     }
-    if (code == StatusCode.Code.DEADLINE_EXCEEDED) {
-      return STATUS_TIMEOUT;
+    Throwable cause = status.getCause();
+    if (cause != null && hasSpecificClientCause(cause, /* includeAuth= */ true, depth + 1)) {
+      String mappedCause = mapKnownCause(null, cause, depth + 1);
+      if (mappedCause != null) {
+        return mappedCause;
+      }
     }
-    return code.name();
+    if (isServerChecksumGrpcStatus(status)) {
+      return STATUS_CHECKSUM_MISMATCH;
+    }
+    if (status.getCode() == Status.Code.UNKNOWN) {
+      return STATUS_UNKNOWN;
+    }
+    return status.getCode().name();
   }
 
   static String mapHttpResponseCode(int statusCode) {
@@ -104,9 +104,9 @@ final class StorageErrorTypeMapper {
       case 404:
         return STATUS_NOT_FOUND;
       case 408:
-        return STATUS_TIMEOUT;
+        return STATUS_DEADLINE_EXCEEDED;
       case 409:
-        return STATUS_ALREADY_EXISTS;
+        return STATUS_ABORTED;
       case 412:
         return STATUS_FAILED_PRECONDITION;
       case 416:
@@ -123,7 +123,7 @@ final class StorageErrorTypeMapper {
       case 503:
         return STATUS_UNAVAILABLE;
       case 504:
-        return STATUS_TIMEOUT;
+        return STATUS_DEADLINE_EXCEEDED;
       default:
         if (statusCode >= 400 && statusCode < 600) {
           return String.valueOf(statusCode);
@@ -133,14 +133,25 @@ final class StorageErrorTypeMapper {
   }
 
   static String mapThrowable(@Nullable Throwable t) {
+    return mapThrowable(t, 0);
+  }
+
+  private static String mapThrowable(@Nullable Throwable t, int depth) {
     if (t == null) {
       return STATUS_OK;
+    }
+    if (depth >= MAX_CAUSE_DEPTH) {
+      return STATUS_UNKNOWN;
     }
 
     while ((t instanceof ExecutionException || t instanceof CompletionException)
         && t.getCause() != null
         && t.getCause() != t) {
       t = t.getCause();
+      depth++;
+      if (depth >= MAX_CAUSE_DEPTH) {
+        return STATUS_UNKNOWN;
+      }
     }
 
     if (isChecksumMismatch(t)) {
@@ -152,55 +163,45 @@ final class StorageErrorTypeMapper {
     }
 
     if (t instanceof StatusRuntimeException) {
-      if (t.getCause() != null && t.getCause() != t && hasSpecificClientCause(t.getCause(), true)) {
-        return mapThrowable(t.getCause());
-      }
-      return mapGrpcStatus(((StatusRuntimeException) t).getStatus());
+      return mapGrpcStatus(((StatusRuntimeException) t).getStatus(), depth + 1);
     }
 
     if (t instanceof StatusException) {
-      if (t.getCause() != null && t.getCause() != t && hasSpecificClientCause(t.getCause(), true)) {
-        return mapThrowable(t.getCause());
-      }
-      return mapGrpcStatus(((StatusException) t).getStatus());
+      return mapGrpcStatus(((StatusException) t).getStatus(), depth + 1);
     }
 
     if (t instanceof WatchdogTimeoutException
-        || t instanceof DeadlineExceededException
         || t instanceof SocketTimeoutException
         || t instanceof TimeoutException) {
       return STATUS_TIMEOUT;
     }
 
     if (t instanceof ApiException) {
-      if (t.getCause() != null && t.getCause() != t && hasSpecificClientCause(t.getCause(), true)) {
-        return mapThrowable(t.getCause());
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true, depth + 1);
+      if (mappedCause != null) {
+        return mappedCause;
       }
       ApiException apiException = (ApiException) t;
-      StatusCode.Code code = apiException.getStatusCode().getCode();
-      String mapped = mapGaxStatusCode(code);
+      StatusCode statusCode = apiException.getStatusCode();
+      String mapped = mapGaxStatusCode(statusCode != null ? statusCode.getCode() : null);
       if (!STATUS_UNKNOWN.equals(mapped)) {
         return mapped;
       }
     }
 
     if (t instanceof HttpResponseException) {
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true, depth + 1);
+      if (mappedCause != null) {
+        return mappedCause;
+      }
       return mapHttpResponseCode(((HttpResponseException) t).getStatusCode());
     }
 
     if (t instanceof StorageException) {
       StorageException se = (StorageException) t;
-      Throwable cause = se.getCause();
-      if (cause != null
-          && cause != se
-          && (cause instanceof ApiException
-              || cause instanceof StatusRuntimeException
-              || cause instanceof StatusException
-              || hasSpecificClientCause(cause, true))) {
-        String mappedCause = mapThrowable(cause);
-        if (!STATUS_UNKNOWN.equals(mappedCause)) {
-          return mappedCause;
-        }
+      String mappedCause = mapKnownCause(se, se.getCause(), depth + 1);
+      if (mappedCause != null) {
+        return mappedCause;
       }
       if (se.getCode() > 0) {
         return mapHttpResponseCode(se.getCode());
@@ -208,13 +209,9 @@ final class StorageErrorTypeMapper {
     }
 
     if (isAuthException(t)) {
-      if (t.getCause() != null
-          && t.getCause() != t
-          && hasSpecificClientCause(t.getCause(), false)) {
-        String mappedCause = mapThrowable(t.getCause());
-        if (!STATUS_UNKNOWN.equals(mappedCause)) {
-          return mappedCause;
-        }
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ false, depth + 1);
+      if (mappedCause != null) {
+        return mappedCause;
       }
       return STATUS_AUTHENTICATION_ERROR;
     }
@@ -223,57 +220,72 @@ final class StorageErrorTypeMapper {
       return STATUS_DNS_FAILURE;
     }
 
-    if (t instanceof ConnectException) {
-      return STATUS_CONNECTION_REFUSED;
-    }
-
-    if (t instanceof SocketException) {
-      String message = t.getMessage();
-      if (message != null && message.toLowerCase(Locale.US).contains("reset")) {
-        return STATUS_CONNECTION_RESET;
-      }
-      return STATUS_CONNECTIVITY;
-    }
-
-    if (t instanceof SSLHandshakeException || t instanceof SSLException) {
+    if (t instanceof SSLException) {
       return STATUS_TLS_FAILURE;
     }
 
     if (t instanceof IOException) {
-      if (t.getCause() != null && t.getCause() != t && hasSpecificClientCause(t.getCause(), true)) {
-        String mappedCause = mapThrowable(t.getCause());
-        if (!STATUS_UNKNOWN.equals(mappedCause)) {
-          return mappedCause;
-        }
+      String mappedCause = mapSpecificClientCause(t, /* includeAuth= */ true, depth + 1);
+      if (mappedCause != null) {
+        return mappedCause;
       }
-      return STATUS_CONNECTIVITY;
+      return STATUS_CONNECTION_ERROR;
     }
 
-    if (t.getCause() != null && t.getCause() != t) {
-      String causeMapping = mapThrowable(t.getCause());
-      if (!STATUS_UNKNOWN.equals(causeMapping)) {
-        return causeMapping;
-      }
+    String causeMapping = mapKnownCause(t, t.getCause(), depth + 1);
+    if (causeMapping != null) {
+      return causeMapping;
     }
 
     return STATUS_UNKNOWN;
   }
 
-  private static boolean hasSpecificClientCause(@Nullable Throwable t, boolean includeAuth) {
+  private static String mapGaxStatusCode(StatusCode.@Nullable Code code) {
+    if (code == null || code == StatusCode.Code.UNKNOWN) {
+      return STATUS_UNKNOWN;
+    }
+    return code.name();
+  }
+
+  private static @Nullable String mapSpecificClientCause(
+      Throwable t, boolean includeAuth, int depth) {
+    if (depth >= MAX_CAUSE_DEPTH) {
+      return null;
+    }
+    Throwable cause = t.getCause();
+    if (cause != null && cause != t && hasSpecificClientCause(cause, includeAuth, depth)) {
+      return mapKnownCause(t, cause, depth);
+    }
+    return null;
+  }
+
+  private static @Nullable String mapKnownCause(
+      @Nullable Throwable parent, @Nullable Throwable cause, int depth) {
+    if (depth >= MAX_CAUSE_DEPTH) {
+      return null;
+    }
+    if (cause != null && cause != parent) {
+      String mappedCause = mapThrowable(cause, depth);
+      if (!STATUS_UNKNOWN.equals(mappedCause)) {
+        return mappedCause;
+      }
+    }
+    return null;
+  }
+
+  private static boolean hasSpecificClientCause(
+      @Nullable Throwable t, boolean includeAuth, int depth) {
     Throwable current = t;
-    while (current != null) {
+    int currentDepth = depth;
+    while (current != null && currentDepth < MAX_CAUSE_DEPTH) {
       if (current instanceof WatchdogTimeoutException
-          || current instanceof DeadlineExceededException
-          || current instanceof SocketTimeoutException
           || current instanceof TimeoutException
-          || current instanceof UnknownHostException
-          || current instanceof ConnectException
-          || current instanceof SocketException
-          || current instanceof SSLHandshakeException
-          || current instanceof SSLException
           || current instanceof CancellationException
           || isChecksumMismatch(current)
-          || (includeAuth && isAuthException(current))) {
+          || (includeAuth && isAuthException(current))
+          || (current instanceof IOException
+              && !(current instanceof HttpResponseException)
+              && (includeAuth || !isAuthException(current)))) {
         return true;
       }
       Throwable next = current.getCause();
@@ -281,6 +293,7 @@ final class StorageErrorTypeMapper {
         break;
       }
       current = next;
+      currentDepth++;
     }
     return false;
   }
@@ -292,22 +305,77 @@ final class StorageErrorTypeMapper {
     }
     String message = t.getMessage();
     if (message != null) {
-      String lower = message.toLowerCase(Locale.US);
+      String lower = Ascii.toLowerCase(message);
       if (lower.contains("mismatch checksum") || lower.contains("checksum mismatch")) {
+        return true;
+      }
+    }
+    return isServerChecksumError(t);
+  }
+
+  private static boolean isServerChecksumError(Throwable t) {
+    if (t instanceof StatusRuntimeException) {
+      return isServerChecksumGrpcStatus(((StatusRuntimeException) t).getStatus());
+    }
+    if (t instanceof StatusException) {
+      return isServerChecksumGrpcStatus(((StatusException) t).getStatus());
+    }
+    if (t instanceof ApiException) {
+      StatusCode statusCode = ((ApiException) t).getStatusCode();
+      StatusCode.Code code = statusCode != null ? statusCode.getCode() : null;
+      return (code == StatusCode.Code.INVALID_ARGUMENT || code == StatusCode.Code.DATA_LOSS)
+          && hasServerChecksumMismatchMessage(t.getMessage());
+    }
+    if (t instanceof HttpResponseException) {
+      return ((HttpResponseException) t).getStatusCode() == 400
+          && hasServerChecksumMismatchMessage(t.getMessage());
+    }
+    if (t instanceof StorageException) {
+      StorageException se = (StorageException) t;
+      Throwable cause = se.getCause();
+      if (cause instanceof ApiException
+          || cause instanceof StatusRuntimeException
+          || cause instanceof StatusException) {
+        return isServerChecksumError(cause);
+      }
+      return se.getCode() == 400 && hasServerChecksumMismatchMessage(se.getMessage());
+    }
+    return false;
+  }
+
+  private static boolean isServerChecksumGrpcStatus(@Nullable Status status) {
+    if (status == null) {
+      return false;
+    }
+    Status.Code code = status.getCode();
+    return (code == Status.Code.INVALID_ARGUMENT || code == Status.Code.DATA_LOSS)
+        && hasServerChecksumMismatchMessage(status.getDescription());
+  }
+
+  private static boolean hasServerChecksumMismatchMessage(@Nullable String message) {
+    if (message == null) {
+      return false;
+    }
+    String lower = Ascii.toLowerCase(message);
+    return (lower.contains("crc32c") || lower.contains("md5")) && lower.contains("match");
+  }
+
+  private static boolean isAuthException(Throwable t) {
+    for (Class<?> cls = t.getClass();
+        cls != null && cls != Throwable.class;
+        cls = cls.getSuperclass()) {
+      String className = cls.getName();
+      String simpleName = cls.getSimpleName();
+      if (className.startsWith("com.google.auth.")
+          || className.startsWith("com.google.api.client.auth.")
+          || className.contains("GoogleAuthException")
+          || simpleName.equals("OAuth2Exception")
+          || simpleName.equals("AuthenticationException")) {
         return true;
       }
     }
     return false;
   }
 
-  private static boolean isAuthException(Throwable t) {
-    String className = t.getClass().getName();
-    String simpleName = t.getClass().getSimpleName();
-    return className.startsWith("com.google.auth.")
-        || className.startsWith("com.google.api.client.auth.")
-        || simpleName.equals("GoogleAuthException")
-        || simpleName.equals("OAuth2Exception")
-        || simpleName.equals("AuthenticationException")
-        || className.contains("GoogleAuthException");
-  }
+  private StorageErrorTypeMapper() {}
 }
