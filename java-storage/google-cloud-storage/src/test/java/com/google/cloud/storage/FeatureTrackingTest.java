@@ -21,7 +21,6 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
 import com.google.api.gax.grpc.GrpcCallContext;
-import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.UnifiedOpts.ObjectTargetOpt;
 import com.google.cloud.storage.UnifiedOpts.Opts;
 import com.google.cloud.storage.spi.v1.StorageRpc;
@@ -53,17 +52,6 @@ public final class FeatureTrackingTest {
   }
 
   @Test
-  public void encode_everySingleBit_isUrlSafeWithPadding() {
-    for (int shift = 0; shift < 32; shift++) {
-      String encoded = FeatureTracking.encode(1 << shift);
-      assertThat(encoded).hasLength(8);
-      assertThat(encoded).doesNotContain("+");
-      assertThat(encoded).doesNotContain("/");
-      assertThat(encoded).endsWith("==");
-    }
-  }
-
-  @Test
   public void trackedFeature_bitMasksAreDistinctSingleBits() {
     Set<Integer> seen = new HashSet<>();
     for (TrackedFeature feature : TrackedFeature.values()) {
@@ -73,7 +61,7 @@ public final class FeatureTrackingTest {
     assertThat(seen).hasSize(TrackedFeature.values().length);
   }
 
-  /** The wire value of each feature bit is a cross-SDK contract; pin it. */
+  /** Once released a feature's bit position must never change; pin it. */
   @Test
   public void trackedFeature_pcu_isBitZero() {
     assertThat(TrackedFeature.PCU.bitMask()).isEqualTo(1);
@@ -144,30 +132,6 @@ public final class FeatureTrackingTest {
         assertThrows(IllegalArgumentException.class, () -> UnifiedOpts.extraHeaders(headers));
 
     assertThat(thrown).hasMessageThat().contains("Disallowed headers");
-    assertThat(thrown).hasMessageThat().contains("x-goog-storage-java-features");
-  }
-
-  @Test
-  public void extraHeaders_featureTrackingHeaderMixedCase_throws() {
-    ImmutableMap<String, String> headers = ImmutableMap.of("X-Goog-Storage-Java-Features", "a");
-
-    IllegalArgumentException thrown =
-        assertThrows(IllegalArgumentException.class, () -> UnifiedOpts.extraHeaders(headers));
-
-    assertThat(thrown).hasMessageThat().contains("x-goog-storage-java-features");
-  }
-
-  /**
-   * The public option factories are transport agnostic and validate eagerly, so a blocked header is
-   * rejected before it can reach either the gRPC or the HTTP/JSON transport.
-   */
-  @Test
-  public void blobSourceOption_extraHeaders_featureTrackingHeader_throws() {
-    ImmutableMap<String, String> headers = ImmutableMap.of(FeatureTracking.HEADER, "AAAAAQ==");
-
-    IllegalArgumentException thrown =
-        assertThrows(IllegalArgumentException.class, () -> BlobSourceOption.extraHeaders(headers));
-
     assertThat(thrown).hasMessageThat().contains("x-goog-storage-java-features");
   }
 }

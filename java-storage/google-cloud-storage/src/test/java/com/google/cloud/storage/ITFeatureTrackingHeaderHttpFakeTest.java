@@ -59,6 +59,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -142,7 +143,9 @@ public final class ITFeatureTrackingHeaderHttpFakeTest {
           // every single request issued by the session (3 part inserts + 1 compose + 3 deletes)
           // carried the header with the PCU bit set
           () -> assertThat(fake.requestCount.get()).isEqualTo(7),
-          () -> assertThat(fake.featureHeaders).containsExactlyElementsIn(nCopies(7)),
+          () ->
+              assertThat(fake.featureHeaders)
+                  .containsExactlyElementsIn(Collections.nCopies(7, PCU_HEADER_VALUE)),
           () -> assertThat(finalResult.getName()).isEqualTo("o"),
           () -> assertThat(xxd(fake.objects.get("o"))).isEqualTo(xxd(CONTENT)));
     }
@@ -165,20 +168,13 @@ public final class ITFeatureTrackingHeaderHttpFakeTest {
       assertAll(
           () -> assertThat(fake.handlerErrors).isEmpty(),
           () -> assertThat(fake.requestCount.get()).isAtLeast(1),
-          () -> assertThat(fake.featureHeaders).containsExactlyElementsIn(nullCopies(fake)),
+          () ->
+              assertThat(fake.featureHeaders)
+                  .containsExactlyElementsIn(
+                      Collections.nCopies(fake.requestCount.get(), (String) null)),
           () -> assertThat(result.getName()).isEqualTo("o"),
           () -> assertThat(xxd(fake.objects.get("o"))).isEqualTo(xxd(CONTENT)));
     }
-  }
-
-  private static List<String> nCopies(int n) {
-    String[] values = new String[n];
-    Arrays.fill(values, PCU_HEADER_VALUE);
-    return Arrays.asList(values);
-  }
-
-  private static List<String> nullCopies(InMemoryJsonStorage fake) {
-    return Arrays.asList(new String[fake.requestCount.get()]);
   }
 
   private static BlobInfo write(Storage storage, BlobInfo info) throws Exception {
