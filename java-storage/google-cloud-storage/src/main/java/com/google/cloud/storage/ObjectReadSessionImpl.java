@@ -34,7 +34,10 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.locks.ReentrantLock;
@@ -52,6 +55,12 @@ final class ObjectReadSessionImpl implements ObjectReadSession {
 
   private final ConcurrentIdentityMap<ObjectReadSessionStream, ObjectReadSessionState> children;
 
+  // Fast open reads: reads sent in the request that opened the stream, keyed by the config each was
+  // created from. The first readAs with an equal config is given the read instead of sending a new
+  // one.
+  private final ConcurrentMap<ReadProjectionConfig<?>, ObjectReadSessionStreamRead<?>>
+      fastOpenReads;
+
   private volatile boolean open;
 
   ObjectReadSessionImpl(
@@ -59,7 +68,8 @@ final class ObjectReadSessionImpl implements ObjectReadSession {
       ZeroCopyBidiStreamingCallable<BidiReadObjectRequest, BidiReadObjectResponse> callable,
       ObjectReadSessionStream stream,
       ObjectReadSessionState state,
-      RetryContextProvider retryContextProvider) {
+      RetryContextProvider retryContextProvider,
+      Map<ReadProjectionConfig<?>, ObjectReadSessionStreamRead<?>> fastOpenReads) {
     this.executor = executor;
     this.callable = callable;
     this.stream = stream;
@@ -67,6 +77,7 @@ final class ObjectReadSessionImpl implements ObjectReadSession {
     this.resource = state.getMetadata();
     this.retryContextProvider = retryContextProvider;
     this.children = new ConcurrentIdentityMap<>();
+    this.fastOpenReads = new ConcurrentHashMap<>(fastOpenReads);
     this.open = true;
   }
 
@@ -80,6 +91,14 @@ final class ObjectReadSessionImpl implements ObjectReadSession {
     checkState(open, "Session already closed");
     switch (config.getType()) {
       case STREAM_READ:
+        ObjectReadSessionStreamRead<?> fastOpenRead = fastOpenReads.remove(config);
+        if (fastOpenRead != null) {
+          // configs are final classes with a class-exact equals, so an equal config has the same
+          // Projection type
+          @SuppressWarnings("unchecked")
+          Projection projection = (Projection) fastOpenRead.project();
+          return projection;
+        }
         long readId = state.newReadId();
         ObjectReadSessionStreamRead<Projection> read =
             config.cast().newRead(readId, retryContextProvider.create());
@@ -104,6 +123,10 @@ final class ObjectReadSessionImpl implements ObjectReadSession {
         return;
       }
       open = false;
+      // close fast open reads nobody asked for before the stream: an unread channel read holds the
+      // stream's thread, and a completed read is out of the state, so stream.close() can't reach it
+      GrpcUtils.closeAll(fastOpenReads.values());
+      fastOpenReads.clear();
       List<ApiFuture<Void>> closing =
           children.drainEntries((subStream, subStreamState) -> subStream.closeAsync());
       stream.close();
