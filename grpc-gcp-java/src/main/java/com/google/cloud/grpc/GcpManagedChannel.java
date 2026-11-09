@@ -262,10 +262,10 @@ public class GcpManagedChannel extends ManagedChannel {
       createSharedBackgroundService();
 
   // Channel pool metrics for the built-in metrics pipeline of a Google Cloud client library. Null
-  // when not configured. The attributes are set before the pool joins the reader.
-  @Nullable private GcpChannelPoolBuiltInMetrics builtInMetrics;
-  private Attributes builtInActiveAttributes = Attributes.empty();
-  private Attributes builtInDrainingAttributes = Attributes.empty();
+  // when not configured. Set once in the constructor.
+  @Nullable private final GcpChannelPoolBuiltInMetrics builtInMetrics;
+  private final Attributes builtInActiveAttributes;
+  private final Attributes builtInDrainingAttributes;
 
   private ScheduledFuture<?> cleanupTask;
   private ScheduledFuture<?> scaleDownTask;
@@ -447,7 +447,36 @@ public class GcpManagedChannel extends ManagedChannel {
       unresponsiveDropCount = 0;
     }
     initChannels();
-    initBuiltInMetrics();
+    // The built-in metric fields are final, so every thread that later uses this pool (for
+    // example to shut it down) is guaranteed to see them.
+    GcpMetricsOptions metricsOptions = options.getMetricsOptions();
+    Meter builtInMeter = metricsOptions == null ? null : metricsOptions.getBuiltInMetricsMeter();
+    if (builtInMeter == null) {
+      builtInMetrics = null;
+      builtInActiveAttributes = Attributes.empty();
+      builtInDrainingAttributes = Attributes.empty();
+    } else {
+      Attributes poolAttributes =
+          metricsOptions.getBuiltInMetricsAttributes().toBuilder()
+              .put(
+                  GcpMetricsConstants.POOL_MODE_LABEL,
+                  isDynamicScalingEnabled
+                      ? GcpMetricsConstants.POOL_MODE_DYNAMIC
+                      : GcpMetricsConstants.POOL_MODE_STATIC)
+              .build();
+      builtInActiveAttributes =
+          poolAttributes.toBuilder()
+              .put(GcpMetricsConstants.STATE_LABEL, GcpMetricsConstants.STATE_ACTIVE)
+              .build();
+      builtInDrainingAttributes =
+          poolAttributes.toBuilder()
+              .put(GcpMetricsConstants.STATE_LABEL, GcpMetricsConstants.STATE_DRAINING)
+              .build();
+      builtInMetrics = GcpChannelPoolBuiltInMetrics.forMeter(builtInMeter);
+      // Joining happens under the reader's lock, which makes the attributes above visible to the
+      // metric collection thread.
+      builtInMetrics.add(this);
+    }
     GcpChannelPoolOptions channelPoolOptions = options.getChannelPoolOptions();
     if (channelPoolOptions != null) {
       affinityKeyLifetime = channelPoolOptions.getAffinityKeyLifetime();
@@ -1164,31 +1193,6 @@ public class GcpManagedChannel extends ManagedChannel {
         GcpMetricsConstants.COUNT,
         this,
         GcpManagedChannel::reportScaleUpPrimeFailures);
-  }
-
-  private void initBuiltInMetrics() {
-    GcpMetricsOptions metricsOptions = options.getMetricsOptions();
-    if (metricsOptions == null || metricsOptions.getBuiltInMetricsMeter() == null) {
-      return;
-    }
-    Attributes poolAttributes =
-        metricsOptions.getBuiltInMetricsAttributes().toBuilder()
-            .put(
-                GcpMetricsConstants.POOL_MODE_LABEL,
-                isDynamicScalingEnabled
-                    ? GcpMetricsConstants.POOL_MODE_DYNAMIC
-                    : GcpMetricsConstants.POOL_MODE_STATIC)
-            .build();
-    builtInActiveAttributes =
-        poolAttributes.toBuilder()
-            .put(GcpMetricsConstants.STATE_LABEL, GcpMetricsConstants.STATE_ACTIVE)
-            .build();
-    builtInDrainingAttributes =
-        poolAttributes.toBuilder()
-            .put(GcpMetricsConstants.STATE_LABEL, GcpMetricsConstants.STATE_DRAINING)
-            .build();
-    builtInMetrics = GcpChannelPoolBuiltInMetrics.forMeter(metricsOptions.getBuiltInMetricsMeter());
-    builtInMetrics.add(this);
   }
 
   /**
