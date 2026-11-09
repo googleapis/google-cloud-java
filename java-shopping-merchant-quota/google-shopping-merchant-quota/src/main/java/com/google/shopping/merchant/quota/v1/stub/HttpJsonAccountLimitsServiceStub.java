@@ -65,7 +65,7 @@ public class HttpJsonAccountLimitsServiceStub extends AccountLimitsServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetAccountLimitRequest>newBuilder()
                       .setPath(
-                          "/accounts/v1/{name=accounts/*/limits/*}",
+                          "/quota/v1/{name=accounts/*/limits/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetAccountLimitRequest> serializer =
@@ -100,7 +100,7 @@ public class HttpJsonAccountLimitsServiceStub extends AccountLimitsServiceStub {
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListAccountLimitsRequest>newBuilder()
                       .setPath(
-                          "/accounts/v1/{parent=accounts/*}/limits",
+                          "/quota/v1/{parent=accounts/*}/limits",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListAccountLimitsRequest> serializer =

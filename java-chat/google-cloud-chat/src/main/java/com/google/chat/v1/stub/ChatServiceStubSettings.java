@@ -117,6 +117,8 @@ import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
 import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.ReplaceMessageCardsRequest;
+import com.google.chat.v1.ReplaceMessageCardsResponse;
 import com.google.chat.v1.SearchMessageResult;
 import com.google.chat.v1.SearchMessagesRequest;
 import com.google.chat.v1.SearchMessagesResponse;
@@ -337,6 +339,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       listSectionItemsSettings;
   private final UnaryCallSettings<MoveSectionItemRequest, MoveSectionItemResponse>
       moveSectionItemSettings;
+  private final UnaryCallSettings<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+      replaceMessageCardsSettings;
 
   private static final PagedListDescriptor<ListMessagesRequest, ListMessagesResponse, Message>
       LIST_MESSAGES_PAGE_STR_DESC =
@@ -1263,6 +1267,12 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     return moveSectionItemSettings;
   }
 
+  /** Returns the object with the settings used for calls to replaceMessageCards. */
+  public UnaryCallSettings<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+      replaceMessageCardsSettings() {
+    return replaceMessageCardsSettings;
+  }
+
   public ChatServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -1428,6 +1438,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     positionSectionSettings = settingsBuilder.positionSectionSettings().build();
     listSectionItemsSettings = settingsBuilder.listSectionItemsSettings().build();
     moveSectionItemSettings = settingsBuilder.moveSectionItemSettings().build();
+    replaceMessageCardsSettings = settingsBuilder.replaceMessageCardsSettings().build();
   }
 
   @Override
@@ -1541,6 +1552,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
         listSectionItemsSettings;
     private final UnaryCallSettings.Builder<MoveSectionItemRequest, MoveSectionItemResponse>
         moveSectionItemSettings;
+    private final UnaryCallSettings.Builder<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+        replaceMessageCardsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1634,6 +1647,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       positionSectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSectionItemsSettings = PagedCallSettings.newBuilder(LIST_SECTION_ITEMS_PAGE_STR_FACT);
       moveSectionItemSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      replaceMessageCardsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1688,7 +1702,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               listSectionsSettings,
               positionSectionSettings,
               listSectionItemsSettings,
-              moveSectionItemSettings);
+              moveSectionItemSettings,
+              replaceMessageCardsSettings);
       initDefaults(this);
     }
 
@@ -1749,6 +1764,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       positionSectionSettings = settings.positionSectionSettings.toBuilder();
       listSectionItemsSettings = settings.listSectionItemsSettings.toBuilder();
       moveSectionItemSettings = settings.moveSectionItemSettings.toBuilder();
+      replaceMessageCardsSettings = settings.replaceMessageCardsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1803,7 +1819,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               listSectionsSettings,
               positionSectionSettings,
               listSectionItemsSettings,
-              moveSectionItemSettings);
+              moveSectionItemSettings,
+              replaceMessageCardsSettings);
     }
 
     private static Builder createDefault() {
@@ -2088,6 +2105,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .moveSectionItemSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .replaceMessageCardsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2408,6 +2430,12 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     public UnaryCallSettings.Builder<MoveSectionItemRequest, MoveSectionItemResponse>
         moveSectionItemSettings() {
       return moveSectionItemSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to replaceMessageCards. */
+    public UnaryCallSettings.Builder<ReplaceMessageCardsRequest, ReplaceMessageCardsResponse>
+        replaceMessageCardsSettings() {
+      return replaceMessageCardsSettings;
     }
 
     @Override

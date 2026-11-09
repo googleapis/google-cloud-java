@@ -59,4 +59,82 @@ public interface HealthcareFhirConfigOrBuilder
    * @return The enableStaticIndexingForBatchIngestion.
    */
   boolean getEnableStaticIndexingForBatchIngestion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Names of the Group resources to use as a basis for the initial
+   * patient filter, in format
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+   * The filter group must be a FHIR resource name of
+   * type Group, and the filter will be constructed from the direct members of
+   * the group which are Patient resources.
+   * </pre>
+   *
+   * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the initialFilterGroups.
+   */
+  java.util.List<java.lang.String> getInitialFilterGroupsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Names of the Group resources to use as a basis for the initial
+   * patient filter, in format
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+   * The filter group must be a FHIR resource name of
+   * type Group, and the filter will be constructed from the direct members of
+   * the group which are Patient resources.
+   * </pre>
+   *
+   * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of initialFilterGroups.
+   */
+  int getInitialFilterGroupsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Names of the Group resources to use as a basis for the initial
+   * patient filter, in format
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+   * The filter group must be a FHIR resource name of
+   * type Group, and the filter will be constructed from the direct members of
+   * the group which are Patient resources.
+   * </pre>
+   *
+   * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The initialFilterGroups at the given index.
+   */
+  java.lang.String getInitialFilterGroups(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Names of the Group resources to use as a basis for the initial
+   * patient filter, in format
+   * `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Group/{group_id}`.
+   * The filter group must be a FHIR resource name of
+   * type Group, and the filter will be constructed from the direct members of
+   * the group which are Patient resources.
+   * </pre>
+   *
+   * <code>repeated string initial_filter_groups = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the initialFilterGroups at the given index.
+   */
+  com.google.protobuf.ByteString getInitialFilterGroupsBytes(int index);
 }

@@ -16,6 +16,8 @@
 
 package com.google.cloud.discoveryengine.v1;
 
+import static com.google.cloud.discoveryengine.v1.ServingConfigServiceClient.ListServingConfigsPagedResponse;
+
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -23,7 +25,9 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
@@ -82,6 +86,275 @@ public class ServingConfigServiceClientTest {
   }
 
   @Test
+  public void createServingConfigTest() throws Exception {
+    ServingConfig expectedResponse =
+        ServingConfig.newBuilder()
+            .setName(
+                ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setSolutionType(SolutionType.forNumber(0))
+            .setModelId("modelId1226956324")
+            .setDiversityLevel("diversityLevel578206123")
+            .setRankingExpression("rankingExpression2110320494")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllFilterControlIds(new ArrayList<String>())
+            .addAllBoostControlIds(new ArrayList<String>())
+            .addAllRedirectControlIds(new ArrayList<String>())
+            .addAllSynonymsControlIds(new ArrayList<String>())
+            .addAllOnewaySynonymsControlIds(new ArrayList<String>())
+            .addAllDissociateControlIds(new ArrayList<String>())
+            .addAllReplacementControlIds(new ArrayList<String>())
+            .addAllIgnoreControlIds(new ArrayList<String>())
+            .addAllPromoteControlIds(new ArrayList<String>())
+            .setAnswerGenerationSpec(AnswerGenerationSpec.newBuilder().build())
+            .build();
+    mockServingConfigService.addResponse(expectedResponse);
+
+    DataStoreName parent =
+        DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+    ServingConfig servingConfig = ServingConfig.newBuilder().build();
+    String servingConfigId = "servingConfigId-831052759";
+
+    ServingConfig actualResponse =
+        client.createServingConfig(parent, servingConfig, servingConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockServingConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateServingConfigRequest actualRequest = ((CreateServingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(servingConfig, actualRequest.getServingConfig());
+    Assert.assertEquals(servingConfigId, actualRequest.getServingConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createServingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockServingConfigService.addException(exception);
+
+    try {
+      DataStoreName parent =
+          DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+      ServingConfig servingConfig = ServingConfig.newBuilder().build();
+      String servingConfigId = "servingConfigId-831052759";
+      client.createServingConfig(parent, servingConfig, servingConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createServingConfigTest2() throws Exception {
+    ServingConfig expectedResponse =
+        ServingConfig.newBuilder()
+            .setName(
+                ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setSolutionType(SolutionType.forNumber(0))
+            .setModelId("modelId1226956324")
+            .setDiversityLevel("diversityLevel578206123")
+            .setRankingExpression("rankingExpression2110320494")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllFilterControlIds(new ArrayList<String>())
+            .addAllBoostControlIds(new ArrayList<String>())
+            .addAllRedirectControlIds(new ArrayList<String>())
+            .addAllSynonymsControlIds(new ArrayList<String>())
+            .addAllOnewaySynonymsControlIds(new ArrayList<String>())
+            .addAllDissociateControlIds(new ArrayList<String>())
+            .addAllReplacementControlIds(new ArrayList<String>())
+            .addAllIgnoreControlIds(new ArrayList<String>())
+            .addAllPromoteControlIds(new ArrayList<String>())
+            .setAnswerGenerationSpec(AnswerGenerationSpec.newBuilder().build())
+            .build();
+    mockServingConfigService.addResponse(expectedResponse);
+
+    EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+    ServingConfig servingConfig = ServingConfig.newBuilder().build();
+    String servingConfigId = "servingConfigId-831052759";
+
+    ServingConfig actualResponse =
+        client.createServingConfig(parent, servingConfig, servingConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockServingConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateServingConfigRequest actualRequest = ((CreateServingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(servingConfig, actualRequest.getServingConfig());
+    Assert.assertEquals(servingConfigId, actualRequest.getServingConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createServingConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockServingConfigService.addException(exception);
+
+    try {
+      EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      ServingConfig servingConfig = ServingConfig.newBuilder().build();
+      String servingConfigId = "servingConfigId-831052759";
+      client.createServingConfig(parent, servingConfig, servingConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createServingConfigTest3() throws Exception {
+    ServingConfig expectedResponse =
+        ServingConfig.newBuilder()
+            .setName(
+                ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setSolutionType(SolutionType.forNumber(0))
+            .setModelId("modelId1226956324")
+            .setDiversityLevel("diversityLevel578206123")
+            .setRankingExpression("rankingExpression2110320494")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllFilterControlIds(new ArrayList<String>())
+            .addAllBoostControlIds(new ArrayList<String>())
+            .addAllRedirectControlIds(new ArrayList<String>())
+            .addAllSynonymsControlIds(new ArrayList<String>())
+            .addAllOnewaySynonymsControlIds(new ArrayList<String>())
+            .addAllDissociateControlIds(new ArrayList<String>())
+            .addAllReplacementControlIds(new ArrayList<String>())
+            .addAllIgnoreControlIds(new ArrayList<String>())
+            .addAllPromoteControlIds(new ArrayList<String>())
+            .setAnswerGenerationSpec(AnswerGenerationSpec.newBuilder().build())
+            .build();
+    mockServingConfigService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    ServingConfig servingConfig = ServingConfig.newBuilder().build();
+    String servingConfigId = "servingConfigId-831052759";
+
+    ServingConfig actualResponse =
+        client.createServingConfig(parent, servingConfig, servingConfigId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockServingConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateServingConfigRequest actualRequest = ((CreateServingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(servingConfig, actualRequest.getServingConfig());
+    Assert.assertEquals(servingConfigId, actualRequest.getServingConfigId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createServingConfigExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockServingConfigService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ServingConfig servingConfig = ServingConfig.newBuilder().build();
+      String servingConfigId = "servingConfigId-831052759";
+      client.createServingConfig(parent, servingConfig, servingConfigId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteServingConfigTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockServingConfigService.addResponse(expectedResponse);
+
+    ServingConfigName name =
+        ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]");
+
+    client.deleteServingConfig(name);
+
+    List<AbstractMessage> actualRequests = mockServingConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteServingConfigRequest actualRequest = ((DeleteServingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteServingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockServingConfigService.addException(exception);
+
+    try {
+      ServingConfigName name =
+          ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]");
+      client.deleteServingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteServingConfigTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockServingConfigService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteServingConfig(name);
+
+    List<AbstractMessage> actualRequests = mockServingConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteServingConfigRequest actualRequest = ((DeleteServingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteServingConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockServingConfigService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteServingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateServingConfigTest() throws Exception {
     ServingConfig expectedResponse =
         ServingConfig.newBuilder()
@@ -105,6 +378,7 @@ public class ServingConfigServiceClientTest {
             .addAllReplacementControlIds(new ArrayList<String>())
             .addAllIgnoreControlIds(new ArrayList<String>())
             .addAllPromoteControlIds(new ArrayList<String>())
+            .setAnswerGenerationSpec(AnswerGenerationSpec.newBuilder().build())
             .build();
     mockServingConfigService.addResponse(expectedResponse);
 
@@ -135,6 +409,260 @@ public class ServingConfigServiceClientTest {
       ServingConfig servingConfig = ServingConfig.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateServingConfig(servingConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getServingConfigTest() throws Exception {
+    ServingConfig expectedResponse =
+        ServingConfig.newBuilder()
+            .setName(
+                ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setSolutionType(SolutionType.forNumber(0))
+            .setModelId("modelId1226956324")
+            .setDiversityLevel("diversityLevel578206123")
+            .setRankingExpression("rankingExpression2110320494")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllFilterControlIds(new ArrayList<String>())
+            .addAllBoostControlIds(new ArrayList<String>())
+            .addAllRedirectControlIds(new ArrayList<String>())
+            .addAllSynonymsControlIds(new ArrayList<String>())
+            .addAllOnewaySynonymsControlIds(new ArrayList<String>())
+            .addAllDissociateControlIds(new ArrayList<String>())
+            .addAllReplacementControlIds(new ArrayList<String>())
+            .addAllIgnoreControlIds(new ArrayList<String>())
+            .addAllPromoteControlIds(new ArrayList<String>())
+            .setAnswerGenerationSpec(AnswerGenerationSpec.newBuilder().build())
+            .build();
+    mockServingConfigService.addResponse(expectedResponse);
+
+    ServingConfigName name =
+        ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+            "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]");
+
+    ServingConfig actualResponse = client.getServingConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockServingConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetServingConfigRequest actualRequest = ((GetServingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getServingConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockServingConfigService.addException(exception);
+
+    try {
+      ServingConfigName name =
+          ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+              "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]");
+      client.getServingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getServingConfigTest2() throws Exception {
+    ServingConfig expectedResponse =
+        ServingConfig.newBuilder()
+            .setName(
+                ServingConfigName.ofProjectLocationDataStoreServingConfigName(
+                        "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SERVING_CONFIG]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setSolutionType(SolutionType.forNumber(0))
+            .setModelId("modelId1226956324")
+            .setDiversityLevel("diversityLevel578206123")
+            .setRankingExpression("rankingExpression2110320494")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllFilterControlIds(new ArrayList<String>())
+            .addAllBoostControlIds(new ArrayList<String>())
+            .addAllRedirectControlIds(new ArrayList<String>())
+            .addAllSynonymsControlIds(new ArrayList<String>())
+            .addAllOnewaySynonymsControlIds(new ArrayList<String>())
+            .addAllDissociateControlIds(new ArrayList<String>())
+            .addAllReplacementControlIds(new ArrayList<String>())
+            .addAllIgnoreControlIds(new ArrayList<String>())
+            .addAllPromoteControlIds(new ArrayList<String>())
+            .setAnswerGenerationSpec(AnswerGenerationSpec.newBuilder().build())
+            .build();
+    mockServingConfigService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ServingConfig actualResponse = client.getServingConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockServingConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetServingConfigRequest actualRequest = ((GetServingConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getServingConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockServingConfigService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getServingConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listServingConfigsTest() throws Exception {
+    ServingConfig responsesElement = ServingConfig.newBuilder().build();
+    ListServingConfigsResponse expectedResponse =
+        ListServingConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllServingConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockServingConfigService.addResponse(expectedResponse);
+
+    DataStoreName parent =
+        DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+
+    ListServingConfigsPagedResponse pagedListResponse = client.listServingConfigs(parent);
+
+    List<ServingConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getServingConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockServingConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListServingConfigsRequest actualRequest = ((ListServingConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listServingConfigsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockServingConfigService.addException(exception);
+
+    try {
+      DataStoreName parent =
+          DataStoreName.ofProjectLocationDataStoreName("[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+      client.listServingConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listServingConfigsTest2() throws Exception {
+    ServingConfig responsesElement = ServingConfig.newBuilder().build();
+    ListServingConfigsResponse expectedResponse =
+        ListServingConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllServingConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockServingConfigService.addResponse(expectedResponse);
+
+    EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+
+    ListServingConfigsPagedResponse pagedListResponse = client.listServingConfigs(parent);
+
+    List<ServingConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getServingConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockServingConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListServingConfigsRequest actualRequest = ((ListServingConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listServingConfigsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockServingConfigService.addException(exception);
+
+    try {
+      EngineName parent = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+      client.listServingConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listServingConfigsTest3() throws Exception {
+    ServingConfig responsesElement = ServingConfig.newBuilder().build();
+    ListServingConfigsResponse expectedResponse =
+        ListServingConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllServingConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockServingConfigService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListServingConfigsPagedResponse pagedListResponse = client.listServingConfigs(parent);
+
+    List<ServingConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getServingConfigsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockServingConfigService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListServingConfigsRequest actualRequest = ((ListServingConfigsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listServingConfigsExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockServingConfigService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listServingConfigs(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

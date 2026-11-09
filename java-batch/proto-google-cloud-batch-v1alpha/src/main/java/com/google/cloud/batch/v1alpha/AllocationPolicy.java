@@ -15892,6 +15892,133 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * @return The rank.
      */
     int getRank();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of disks to be attached to instances created from this
+     * selection. They override the disks specified in the instance properties.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk> getDisksList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of disks to be attached to instances created from this
+     * selection. They override the disks specified in the instance properties.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk getDisks(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of disks to be attached to instances created from this
+     * selection. They override the disks specified in the instance properties.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getDisksCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of disks to be attached to instances created from this
+     * selection. They override the disks specified in the instance properties.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDiskOrBuilder>
+        getDisksOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of disks to be attached to instances created from this
+     * selection. They override the disks specified in the instance properties.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDiskOrBuilder getDisksOrBuilder(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk to be created and attached to instances created from
+     * this selection. It overrides the boot disk specified in the instance
+     * properties.
+     * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+     * types)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bootDisk field is set.
+     */
+    boolean hasBootDisk();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk to be created and attached to instances created from
+     * this selection. It overrides the boot disk specified in the instance
+     * properties.
+     * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+     * types)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bootDisk.
+     */
+    com.google.cloud.batch.v1alpha.AllocationPolicy.Disk getBootDisk();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk to be created and attached to instances created from
+     * this selection. It overrides the boot disk specified in the instance
+     * properties.
+     * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+     * types)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.batch.v1alpha.AllocationPolicy.DiskOrBuilder getBootDiskOrBuilder();
   }
 
   /**
@@ -15926,6 +16053,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
     private InstanceSelection() {
       machineTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      disks_ = java.util.Collections.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -16075,6 +16203,171 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return rank_;
     }
 
+    public static final int DISKS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk> disks_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of disks to be attached to instances created from this
+     * selection. They override the disks specified in the instance properties.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk>
+        getDisksList() {
+      return disks_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of disks to be attached to instances created from this
+     * selection. They override the disks specified in the instance properties.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDiskOrBuilder>
+        getDisksOrBuilderList() {
+      return disks_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of disks to be attached to instances created from this
+     * selection. They override the disks specified in the instance properties.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public int getDisksCount() {
+      return disks_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of disks to be attached to instances created from this
+     * selection. They override the disks specified in the instance properties.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk getDisks(int index) {
+      return disks_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of disks to be attached to instances created from this
+     * selection. They override the disks specified in the instance properties.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDiskOrBuilder getDisksOrBuilder(
+        int index) {
+      return disks_.get(index);
+    }
+
+    public static final int BOOT_DISK_FIELD_NUMBER = 4;
+    private com.google.cloud.batch.v1alpha.AllocationPolicy.Disk bootDisk_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk to be created and attached to instances created from
+     * this selection. It overrides the boot disk specified in the instance
+     * properties.
+     * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+     * types)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the bootDisk field is set.
+     */
+    @java.lang.Override
+    public boolean hasBootDisk() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk to be created and attached to instances created from
+     * this selection. It overrides the boot disk specified in the instance
+     * properties.
+     * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+     * types)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bootDisk.
+     */
+    @java.lang.Override
+    public com.google.cloud.batch.v1alpha.AllocationPolicy.Disk getBootDisk() {
+      return bootDisk_ == null
+          ? com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.getDefaultInstance()
+          : bootDisk_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Boot disk to be created and attached to instances created from
+     * this selection. It overrides the boot disk specified in the instance
+     * properties.
+     * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+     * types)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.batch.v1alpha.AllocationPolicy.DiskOrBuilder getBootDiskOrBuilder() {
+      return bootDisk_ == null
+          ? com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.getDefaultInstance()
+          : bootDisk_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -16095,6 +16388,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(2, rank_);
       }
+      for (int i = 0; i < disks_.size(); i++) {
+        output.writeMessage(3, disks_.get(i));
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(4, getBootDisk());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -16114,6 +16413,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, rank_);
+      }
+      for (int i = 0; i < disks_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, disks_.get(i));
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBootDisk());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -16136,6 +16441,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (hasRank()) {
         if (getRank() != other.getRank()) return false;
       }
+      if (!getDisksList().equals(other.getDisksList())) return false;
+      if (hasBootDisk() != other.hasBootDisk()) return false;
+      if (hasBootDisk()) {
+        if (!getBootDisk().equals(other.getBootDisk())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -16154,6 +16464,14 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       if (hasRank()) {
         hash = (37 * hash) + RANK_FIELD_NUMBER;
         hash = (53 * hash) + getRank();
+      }
+      if (getDisksCount() > 0) {
+        hash = (37 * hash) + DISKS_FIELD_NUMBER;
+        hash = (53 * hash) + getDisksList().hashCode();
+      }
+      if (hasBootDisk()) {
+        hash = (37 * hash) + BOOT_DISK_FIELD_NUMBER;
+        hash = (53 * hash) + getBootDisk().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -16288,10 +16606,20 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
 
       // Construct using
       // com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetDisksFieldBuilder();
+          internalGetBootDiskFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -16300,6 +16628,18 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         bitField0_ = 0;
         machineTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         rank_ = 0;
+        if (disksBuilder_ == null) {
+          disks_ = java.util.Collections.emptyList();
+        } else {
+          disks_ = null;
+          disksBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        bootDisk_ = null;
+        if (bootDiskBuilder_ != null) {
+          bootDiskBuilder_.dispose();
+          bootDiskBuilder_ = null;
+        }
         return this;
       }
 
@@ -16329,11 +16669,25 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       public com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection buildPartial() {
         com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection result =
             new com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection result) {
+        if (disksBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            disks_ = java.util.Collections.unmodifiableList(disks_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.disks_ = disks_;
+        } else {
+          result.disks_ = disksBuilder_.build();
+        }
       }
 
       private void buildPartial0(
@@ -16347,6 +16701,10 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.rank_ = rank_;
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -16379,6 +16737,36 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasRank()) {
           setRank(other.getRank());
+        }
+        if (disksBuilder_ == null) {
+          if (!other.disks_.isEmpty()) {
+            if (disks_.isEmpty()) {
+              disks_ = other.disks_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureDisksIsMutable();
+              disks_.addAll(other.disks_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.disks_.isEmpty()) {
+            if (disksBuilder_.isEmpty()) {
+              disksBuilder_.dispose();
+              disksBuilder_ = null;
+              disks_ = other.disks_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              disksBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetDisksFieldBuilder()
+                      : null;
+            } else {
+              disksBuilder_.addAllMessages(other.disks_);
+            }
+          }
+        }
+        if (other.hasBootDisk()) {
+          mergeBootDisk(other.getBootDisk());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -16419,6 +16807,27 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 26:
+                {
+                  com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk m =
+                      input.readMessage(
+                          com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.parser(),
+                          extensionRegistry);
+                  if (disksBuilder_ == null) {
+                    ensureDisksIsMutable();
+                    disks_.add(m);
+                  } else {
+                    disksBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      internalGetBootDiskFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -16754,6 +17163,693 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private java.util.List<com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk> disks_ =
+          java.util.Collections.emptyList();
+
+      private void ensureDisksIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          disks_ =
+              new java.util.ArrayList<com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk>(
+                  disks_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.Builder,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDiskOrBuilder>
+          disksBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk>
+          getDisksList() {
+        if (disksBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(disks_);
+        } else {
+          return disksBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public int getDisksCount() {
+        if (disksBuilder_ == null) {
+          return disks_.size();
+        } else {
+          return disksBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk getDisks(int index) {
+        if (disksBuilder_ == null) {
+          return disks_.get(index);
+        } else {
+          return disksBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDisks(
+          int index, com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk value) {
+        if (disksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDisksIsMutable();
+          disks_.set(index, value);
+          onChanged();
+        } else {
+          disksBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setDisks(
+          int index,
+          com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.Builder builderForValue) {
+        if (disksBuilder_ == null) {
+          ensureDisksIsMutable();
+          disks_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          disksBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addDisks(com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk value) {
+        if (disksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDisksIsMutable();
+          disks_.add(value);
+          onChanged();
+        } else {
+          disksBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addDisks(
+          int index, com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk value) {
+        if (disksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDisksIsMutable();
+          disks_.add(index, value);
+          onChanged();
+        } else {
+          disksBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addDisks(
+          com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.Builder builderForValue) {
+        if (disksBuilder_ == null) {
+          ensureDisksIsMutable();
+          disks_.add(builderForValue.build());
+          onChanged();
+        } else {
+          disksBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addDisks(
+          int index,
+          com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.Builder builderForValue) {
+        if (disksBuilder_ == null) {
+          ensureDisksIsMutable();
+          disks_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          disksBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder addAllDisks(
+          java.lang.Iterable<? extends com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk>
+              values) {
+        if (disksBuilder_ == null) {
+          ensureDisksIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, disks_);
+          onChanged();
+        } else {
+          disksBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearDisks() {
+        if (disksBuilder_ == null) {
+          disks_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          disksBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeDisks(int index) {
+        if (disksBuilder_ == null) {
+          ensureDisksIsMutable();
+          disks_.remove(index);
+          onChanged();
+        } else {
+          disksBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.Builder getDisksBuilder(
+          int index) {
+        return internalGetDisksFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDiskOrBuilder
+          getDisksOrBuilder(int index) {
+        if (disksBuilder_ == null) {
+          return disks_.get(index);
+        } else {
+          return disksBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDiskOrBuilder>
+          getDisksOrBuilderList() {
+        if (disksBuilder_ != null) {
+          return disksBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(disks_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.Builder
+          addDisksBuilder() {
+        return internalGetDisksFieldBuilder()
+            .addBuilder(
+                com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.Builder addDisksBuilder(
+          int index) {
+        return internalGetDisksFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of disks to be attached to instances created from this
+       * selection. They override the disks specified in the instance properties.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk disks = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.Builder>
+          getDisksBuilderList() {
+        return internalGetDisksFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.Builder,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDiskOrBuilder>
+          internalGetDisksFieldBuilder() {
+        if (disksBuilder_ == null) {
+          disksBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk,
+                  com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDisk.Builder,
+                  com.google.cloud.batch.v1alpha.AllocationPolicy.AttachedDiskOrBuilder>(
+                  disks_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+          disks_ = null;
+        }
+        return disksBuilder_;
+      }
+
+      private com.google.cloud.batch.v1alpha.AllocationPolicy.Disk bootDisk_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.batch.v1alpha.AllocationPolicy.Disk,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.Builder,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.DiskOrBuilder>
+          bootDiskBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boot disk to be created and attached to instances created from
+       * this selection. It overrides the boot disk specified in the instance
+       * properties.
+       * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+       * types)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the bootDisk field is set.
+       */
+      public boolean hasBootDisk() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boot disk to be created and attached to instances created from
+       * this selection. It overrides the boot disk specified in the instance
+       * properties.
+       * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+       * types)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bootDisk.
+       */
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.Disk getBootDisk() {
+        if (bootDiskBuilder_ == null) {
+          return bootDisk_ == null
+              ? com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.getDefaultInstance()
+              : bootDisk_;
+        } else {
+          return bootDiskBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boot disk to be created and attached to instances created from
+       * this selection. It overrides the boot disk specified in the instance
+       * properties.
+       * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+       * types)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setBootDisk(com.google.cloud.batch.v1alpha.AllocationPolicy.Disk value) {
+        if (bootDiskBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bootDisk_ = value;
+        } else {
+          bootDiskBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boot disk to be created and attached to instances created from
+       * this selection. It overrides the boot disk specified in the instance
+       * properties.
+       * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+       * types)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setBootDisk(
+          com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.Builder builderForValue) {
+        if (bootDiskBuilder_ == null) {
+          bootDisk_ = builderForValue.build();
+        } else {
+          bootDiskBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boot disk to be created and attached to instances created from
+       * this selection. It overrides the boot disk specified in the instance
+       * properties.
+       * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+       * types)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeBootDisk(com.google.cloud.batch.v1alpha.AllocationPolicy.Disk value) {
+        if (bootDiskBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && bootDisk_ != null
+              && bootDisk_
+                  != com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.getDefaultInstance()) {
+            getBootDiskBuilder().mergeFrom(value);
+          } else {
+            bootDisk_ = value;
+          }
+        } else {
+          bootDiskBuilder_.mergeFrom(value);
+        }
+        if (bootDisk_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boot disk to be created and attached to instances created from
+       * this selection. It overrides the boot disk specified in the instance
+       * properties.
+       * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+       * types)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearBootDisk() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        bootDisk_ = null;
+        if (bootDiskBuilder_ != null) {
+          bootDiskBuilder_.dispose();
+          bootDiskBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boot disk to be created and attached to instances created from
+       * this selection. It overrides the boot disk specified in the instance
+       * properties.
+       * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+       * types)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.Builder getBootDiskBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return internalGetBootDiskFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boot disk to be created and attached to instances created from
+       * this selection. It overrides the boot disk specified in the instance
+       * properties.
+       * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+       * types)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.batch.v1alpha.AllocationPolicy.DiskOrBuilder getBootDiskOrBuilder() {
+        if (bootDiskBuilder_ != null) {
+          return bootDiskBuilder_.getMessageOrBuilder();
+        } else {
+          return bootDisk_ == null
+              ? com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.getDefaultInstance()
+              : bootDisk_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Boot disk to be created and attached to instances created from
+       * this selection. It overrides the boot disk specified in the instance
+       * properties.
+       * (e.g., overriding `boot` disk type to Hyperdisk for 4th-gen machine
+       * types)
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.batch.v1alpha.AllocationPolicy.Disk boot_disk = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.batch.v1alpha.AllocationPolicy.Disk,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.Builder,
+              com.google.cloud.batch.v1alpha.AllocationPolicy.DiskOrBuilder>
+          internalGetBootDiskFieldBuilder() {
+        if (bootDiskBuilder_ == null) {
+          bootDiskBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.batch.v1alpha.AllocationPolicy.Disk,
+                  com.google.cloud.batch.v1alpha.AllocationPolicy.Disk.Builder,
+                  com.google.cloud.batch.v1alpha.AllocationPolicy.DiskOrBuilder>(
+                  getBootDisk(), getParentForChildren(), isClean());
+          bootDisk_ = null;
+        }
+        return bootDiskBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.batch.v1alpha.AllocationPolicy.InstanceSelection)
     }
 
@@ -16879,7 +17975,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=706
+   *     google/cloud/batch/v1alpha/job.proto;l=717
    * @return Whether the instance field is set.
    */
   @java.lang.Override
@@ -16900,7 +17996,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=706
+   *     google/cloud/batch/v1alpha/job.proto;l=717
    * @return The instance.
    */
   @java.lang.Override
@@ -17044,7 +18140,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=713
+   *     google/cloud/batch/v1alpha/job.proto;l=724
    * @return A list containing the instanceTemplates.
    */
   @java.lang.Deprecated
@@ -17062,7 +18158,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=713
+   *     google/cloud/batch/v1alpha/job.proto;l=724
    * @return The count of instanceTemplates.
    */
   @java.lang.Deprecated
@@ -17080,7 +18176,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=713
+   *     google/cloud/batch/v1alpha/job.proto;l=724
    * @param index The index of the element to return.
    * @return The instanceTemplates at the given index.
    */
@@ -17099,7 +18195,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>repeated string instance_templates = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=713
+   *     google/cloud/batch/v1alpha/job.proto;l=724
    * @param index The index of the value to return.
    * @return The bytes of the instanceTemplates at the given index.
    */
@@ -17140,7 +18236,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=716
+   *     google/cloud/batch/v1alpha/job.proto;l=727
    * @return A list containing the provisioningModels.
    */
   @java.lang.Override
@@ -17164,7 +18260,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=716
+   *     google/cloud/batch/v1alpha/job.proto;l=727
    * @return The count of provisioningModels.
    */
   @java.lang.Override
@@ -17185,7 +18281,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=716
+   *     google/cloud/batch/v1alpha/job.proto;l=727
    * @param index The index of the element to return.
    * @return The provisioningModels at the given index.
    */
@@ -17208,7 +18304,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=716
+   *     google/cloud/batch/v1alpha/job.proto;l=727
    * @return A list containing the enum numeric values on the wire for provisioningModels.
    */
   @java.lang.Override
@@ -17229,7 +18325,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated. See
-   *     google/cloud/batch/v1alpha/job.proto;l=716
+   *     google/cloud/batch/v1alpha/job.proto;l=727
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of provisioningModels at the given index.
    */
@@ -17256,7 +18352,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=719
+   *     See google/cloud/batch/v1alpha/job.proto;l=730
    * @return The serviceAccountEmail.
    */
   @java.lang.Override
@@ -17283,7 +18379,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
    * <code>string service_account_email = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-   *     See google/cloud/batch/v1alpha/job.proto;l=719
+   *     See google/cloud/batch/v1alpha/job.proto;l=730
    * @return The bytes for serviceAccountEmail.
    */
   @java.lang.Override
@@ -18826,7 +19922,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=706
+     *     google/cloud/batch/v1alpha/job.proto;l=717
      * @return Whether the instance field is set.
      */
     @java.lang.Deprecated
@@ -18846,7 +19942,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=706
+     *     google/cloud/batch/v1alpha/job.proto;l=717
      * @return The instance.
      */
     @java.lang.Deprecated
@@ -19506,7 +20602,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=713
+     *     google/cloud/batch/v1alpha/job.proto;l=724
      * @return A list containing the instanceTemplates.
      */
     @java.lang.Deprecated
@@ -19525,7 +20621,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=713
+     *     google/cloud/batch/v1alpha/job.proto;l=724
      * @return The count of instanceTemplates.
      */
     @java.lang.Deprecated
@@ -19543,7 +20639,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=713
+     *     google/cloud/batch/v1alpha/job.proto;l=724
      * @param index The index of the element to return.
      * @return The instanceTemplates at the given index.
      */
@@ -19562,7 +20658,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=713
+     *     google/cloud/batch/v1alpha/job.proto;l=724
      * @param index The index of the value to return.
      * @return The bytes of the instanceTemplates at the given index.
      */
@@ -19581,7 +20677,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=713
+     *     google/cloud/batch/v1alpha/job.proto;l=724
      * @param index The index to set the value at.
      * @param value The instanceTemplates to set.
      * @return This builder for chaining.
@@ -19608,7 +20704,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=713
+     *     google/cloud/batch/v1alpha/job.proto;l=724
      * @param value The instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -19634,7 +20730,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=713
+     *     google/cloud/batch/v1alpha/job.proto;l=724
      * @param values The instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -19657,7 +20753,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=713
+     *     google/cloud/batch/v1alpha/job.proto;l=724
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -19679,7 +20775,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated string instance_templates = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.instance_templates is deprecated. See
-     *     google/cloud/batch/v1alpha/job.proto;l=713
+     *     google/cloud/batch/v1alpha/job.proto;l=724
      * @param value The bytes of the instanceTemplates to add.
      * @return This builder for chaining.
      */
@@ -19717,7 +20813,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=716
+     *     See google/cloud/batch/v1alpha/job.proto;l=727
      * @return A list containing the provisioningModels.
      */
     @java.lang.Deprecated
@@ -19740,7 +20836,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=716
+     *     See google/cloud/batch/v1alpha/job.proto;l=727
      * @return The count of provisioningModels.
      */
     @java.lang.Deprecated
@@ -19760,7 +20856,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=716
+     *     See google/cloud/batch/v1alpha/job.proto;l=727
      * @param index The index of the element to return.
      * @return The provisioningModels at the given index.
      */
@@ -19782,7 +20878,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=716
+     *     See google/cloud/batch/v1alpha/job.proto;l=727
      * @param index The index to set the value at.
      * @param value The provisioningModels to set.
      * @return This builder for chaining.
@@ -19811,7 +20907,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=716
+     *     See google/cloud/batch/v1alpha/job.proto;l=727
      * @param value The provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -19839,7 +20935,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=716
+     *     See google/cloud/batch/v1alpha/job.proto;l=727
      * @param values The provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -19868,7 +20964,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=716
+     *     See google/cloud/batch/v1alpha/job.proto;l=727
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -19891,7 +20987,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=716
+     *     See google/cloud/batch/v1alpha/job.proto;l=727
      * @return A list containing the enum numeric values on the wire for provisioningModels.
      */
     @java.lang.Deprecated
@@ -19912,7 +21008,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=716
+     *     See google/cloud/batch/v1alpha/job.proto;l=727
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of provisioningModels at the given index.
      */
@@ -19933,7 +21029,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=716
+     *     See google/cloud/batch/v1alpha/job.proto;l=727
      * @param index The index to set the value at.
      * @param value The enum numeric value on the wire for provisioningModels to set.
      * @return This builder for chaining.
@@ -19958,7 +21054,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=716
+     *     See google/cloud/batch/v1alpha/job.proto;l=727
      * @param value The enum numeric value on the wire for provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -19982,7 +21078,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.provisioning_models is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=716
+     *     See google/cloud/batch/v1alpha/job.proto;l=727
      * @param values The enum numeric values on the wire for provisioningModels to add.
      * @return This builder for chaining.
      */
@@ -20008,7 +21104,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=719
+     *     See google/cloud/batch/v1alpha/job.proto;l=730
      * @return The serviceAccountEmail.
      */
     @java.lang.Deprecated
@@ -20034,7 +21130,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=719
+     *     See google/cloud/batch/v1alpha/job.proto;l=730
      * @return The bytes for serviceAccountEmail.
      */
     @java.lang.Deprecated
@@ -20060,7 +21156,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=719
+     *     See google/cloud/batch/v1alpha/job.proto;l=730
      * @param value The serviceAccountEmail to set.
      * @return This builder for chaining.
      */
@@ -20085,7 +21181,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=719
+     *     See google/cloud/batch/v1alpha/job.proto;l=730
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -20106,7 +21202,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>string service_account_email = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1alpha.AllocationPolicy.service_account_email is deprecated.
-     *     See google/cloud/batch/v1alpha/job.proto;l=719
+     *     See google/cloud/batch/v1alpha/job.proto;l=730
      * @param value The bytes for serviceAccountEmail to set.
      * @return This builder for chaining.
      */

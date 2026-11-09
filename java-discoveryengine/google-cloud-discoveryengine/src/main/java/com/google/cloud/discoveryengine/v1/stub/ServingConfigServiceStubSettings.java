@@ -16,7 +16,10 @@
 
 package com.google.cloud.discoveryengine.v1.stub;
 
+import static com.google.cloud.discoveryengine.v1.ServingConfigServiceClient.ListServingConfigsPagedResponse;
+
 import com.google.api.core.ApiFunction;
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.GaxProperties;
@@ -29,19 +32,31 @@ import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.PagedListDescriptor;
+import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.CreateServingConfigRequest;
+import com.google.cloud.discoveryengine.v1.DeleteServingConfigRequest;
+import com.google.cloud.discoveryengine.v1.GetServingConfigRequest;
+import com.google.cloud.discoveryengine.v1.ListServingConfigsRequest;
+import com.google.cloud.discoveryengine.v1.ListServingConfigsResponse;
 import com.google.cloud.discoveryengine.v1.ServingConfig;
 import com.google.cloud.discoveryengine.v1.UpdateServingConfigRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -66,7 +81,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>For example, to set the
  * [RetrySettings](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.retrying.RetrySettings)
- * of updateServingConfig:
+ * of createServingConfig:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -77,10 +92,10 @@ import org.jspecify.annotations.Nullable;
  * ServingConfigServiceStubSettings.Builder servingConfigServiceSettingsBuilder =
  *     ServingConfigServiceStubSettings.newBuilder();
  * servingConfigServiceSettingsBuilder
- *     .updateServingConfigSettings()
+ *     .createServingConfigSettings()
  *     .setRetrySettings(
  *         servingConfigServiceSettingsBuilder
- *             .updateServingConfigSettings()
+ *             .createServingConfigSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -107,15 +122,108 @@ public class ServingConfigServiceStubSettings
     extends StubSettings<ServingConfigServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
+  private final UnaryCallSettings<CreateServingConfigRequest, ServingConfig>
+      createServingConfigSettings;
+  private final UnaryCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigSettings;
   private final UnaryCallSettings<UpdateServingConfigRequest, ServingConfig>
       updateServingConfigSettings;
+  private final UnaryCallSettings<GetServingConfigRequest, ServingConfig> getServingConfigSettings;
+  private final PagedCallSettings<
+          ListServingConfigsRequest, ListServingConfigsResponse, ListServingConfigsPagedResponse>
+      listServingConfigsSettings;
+
+  private static final PagedListDescriptor<
+          ListServingConfigsRequest, ListServingConfigsResponse, ServingConfig>
+      LIST_SERVING_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListServingConfigsRequest, ListServingConfigsResponse, ServingConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListServingConfigsRequest injectToken(
+                ListServingConfigsRequest payload, String token) {
+              return ListServingConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListServingConfigsRequest injectPageSize(
+                ListServingConfigsRequest payload, int pageSize) {
+              return ListServingConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListServingConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListServingConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ServingConfig> extractResources(ListServingConfigsResponse payload) {
+              return payload.getServingConfigsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListServingConfigsRequest, ListServingConfigsResponse, ListServingConfigsPagedResponse>
+      LIST_SERVING_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListServingConfigsRequest,
+              ListServingConfigsResponse,
+              ListServingConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListServingConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListServingConfigsRequest, ListServingConfigsResponse> callable,
+                ListServingConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListServingConfigsResponse> futureResponse) {
+              PageContext<ListServingConfigsRequest, ListServingConfigsResponse, ServingConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SERVING_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListServingConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  /** Returns the object with the settings used for calls to createServingConfig. */
+  public UnaryCallSettings<CreateServingConfigRequest, ServingConfig>
+      createServingConfigSettings() {
+    return createServingConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteServingConfig. */
+  public UnaryCallSettings<DeleteServingConfigRequest, Empty> deleteServingConfigSettings() {
+    return deleteServingConfigSettings;
+  }
 
   /** Returns the object with the settings used for calls to updateServingConfig. */
   public UnaryCallSettings<UpdateServingConfigRequest, ServingConfig>
       updateServingConfigSettings() {
     return updateServingConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getServingConfig. */
+  public UnaryCallSettings<GetServingConfigRequest, ServingConfig> getServingConfigSettings() {
+    return getServingConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listServingConfigs. */
+  public PagedCallSettings<
+          ListServingConfigsRequest, ListServingConfigsResponse, ListServingConfigsPagedResponse>
+      listServingConfigsSettings() {
+    return listServingConfigsSettings;
   }
 
   public ServingConfigServiceStub createStub() throws IOException {
@@ -229,7 +337,11 @@ public class ServingConfigServiceStubSettings
   protected ServingConfigServiceStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
+    createServingConfigSettings = settingsBuilder.createServingConfigSettings().build();
+    deleteServingConfigSettings = settingsBuilder.deleteServingConfigSettings().build();
     updateServingConfigSettings = settingsBuilder.updateServingConfigSettings().build();
+    getServingConfigSettings = settingsBuilder.getServingConfigSettings().build();
+    listServingConfigsSettings = settingsBuilder.listServingConfigsSettings().build();
   }
 
   @Override
@@ -245,8 +357,17 @@ public class ServingConfigServiceStubSettings
   public static class Builder
       extends StubSettings.Builder<ServingConfigServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
+    private final UnaryCallSettings.Builder<CreateServingConfigRequest, ServingConfig>
+        createServingConfigSettings;
+    private final UnaryCallSettings.Builder<DeleteServingConfigRequest, Empty>
+        deleteServingConfigSettings;
     private final UnaryCallSettings.Builder<UpdateServingConfigRequest, ServingConfig>
         updateServingConfigSettings;
+    private final UnaryCallSettings.Builder<GetServingConfigRequest, ServingConfig>
+        getServingConfigSettings;
+    private final PagedCallSettings.Builder<
+            ListServingConfigsRequest, ListServingConfigsResponse, ListServingConfigsPagedResponse>
+        listServingConfigsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -274,20 +395,38 @@ public class ServingConfigServiceStubSettings
     protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
+      createServingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteServingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateServingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getServingConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listServingConfigsSettings = PagedCallSettings.newBuilder(LIST_SERVING_CONFIGS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(updateServingConfigSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createServingConfigSettings,
+              deleteServingConfigSettings,
+              updateServingConfigSettings,
+              getServingConfigSettings,
+              listServingConfigsSettings);
       initDefaults(this);
     }
 
     protected Builder(ServingConfigServiceStubSettings settings) {
       super(settings);
 
+      createServingConfigSettings = settings.createServingConfigSettings.toBuilder();
+      deleteServingConfigSettings = settings.deleteServingConfigSettings.toBuilder();
       updateServingConfigSettings = settings.updateServingConfigSettings.toBuilder();
+      getServingConfigSettings = settings.getServingConfigSettings.toBuilder();
+      listServingConfigsSettings = settings.listServingConfigsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(updateServingConfigSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createServingConfigSettings,
+              deleteServingConfigSettings,
+              updateServingConfigSettings,
+              getServingConfigSettings,
+              listServingConfigsSettings);
     }
 
     private static Builder createDefault() {
@@ -316,7 +455,27 @@ public class ServingConfigServiceStubSettings
 
     private static Builder initDefaults(Builder builder) {
       builder
+          .createServingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteServingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .updateServingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getServingConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listServingConfigsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -338,10 +497,35 @@ public class ServingConfigServiceStubSettings
       return unaryMethodSettingsBuilders;
     }
 
+    /** Returns the builder for the settings used for calls to createServingConfig. */
+    public UnaryCallSettings.Builder<CreateServingConfigRequest, ServingConfig>
+        createServingConfigSettings() {
+      return createServingConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteServingConfig. */
+    public UnaryCallSettings.Builder<DeleteServingConfigRequest, Empty>
+        deleteServingConfigSettings() {
+      return deleteServingConfigSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateServingConfig. */
     public UnaryCallSettings.Builder<UpdateServingConfigRequest, ServingConfig>
         updateServingConfigSettings() {
       return updateServingConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getServingConfig. */
+    public UnaryCallSettings.Builder<GetServingConfigRequest, ServingConfig>
+        getServingConfigSettings() {
+      return getServingConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listServingConfigs. */
+    public PagedCallSettings.Builder<
+            ListServingConfigsRequest, ListServingConfigsResponse, ListServingConfigsPagedResponse>
+        listServingConfigsSettings() {
+      return listServingConfigsSettings;
     }
 
     @Override

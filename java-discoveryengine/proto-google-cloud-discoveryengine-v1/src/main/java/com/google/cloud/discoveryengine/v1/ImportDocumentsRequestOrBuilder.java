@@ -582,7 +582,6 @@ public interface ImportDocumentsRequestOrBuilder
    * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
    * * [SpannerSource][google.cloud.discoveryengine.v1.SpannerSource].
    * * [CloudSqlSource][google.cloud.discoveryengine.v1.CloudSqlSource].
-   * * [FirestoreSource][google.cloud.discoveryengine.v1.FirestoreSource].
    * * [BigtableSource][google.cloud.discoveryengine.v1.BigtableSource].
    * </pre>
    *
@@ -628,7 +627,6 @@ public interface ImportDocumentsRequestOrBuilder
    * must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown.
    * * [SpannerSource][google.cloud.discoveryengine.v1.SpannerSource].
    * * [CloudSqlSource][google.cloud.discoveryengine.v1.CloudSqlSource].
-   * * [FirestoreSource][google.cloud.discoveryengine.v1.FirestoreSource].
    * * [BigtableSource][google.cloud.discoveryengine.v1.BigtableSource].
    * </pre>
    *

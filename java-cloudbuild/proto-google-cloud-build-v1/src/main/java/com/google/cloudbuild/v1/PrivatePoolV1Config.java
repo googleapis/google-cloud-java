@@ -2610,6 +2610,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
     }
   }
 
+  @java.lang.Deprecated
   public interface PrivateServiceConnectOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect)
@@ -2701,11 +2702,13 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
+   * Deprecated: Private Service Connect is no longer supported.
    * Defines the Private Service Connect network configuration for the pool.
    * </pre>
    *
    * Protobuf type {@code google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect}
    */
+  @java.lang.Deprecated
   public static final class PrivateServiceConnect extends com.google.protobuf.GeneratedMessage
       implements
       // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect)
@@ -3050,6 +3053,7 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Deprecated: Private Service Connect is no longer supported.
      * Defines the Private Service Connect network configuration for the pool.
      * </pre>
      *
@@ -3706,16 +3710,20 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+   * Immutable. Deprecated: Private Service Connect is no longer supported.
+   * Private Service Connect(PSC) Network configuration for the pool.
    * </pre>
    *
    * <code>
-   * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.devtools.cloudbuild.v1.PrivatePoolV1Config.private_service_connect is
+   *     deprecated. See google/devtools/cloudbuild/v1/cloudbuild.proto;l=2974
    * @return Whether the privateServiceConnect field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasPrivateServiceConnect() {
     return ((bitField0_ & 0x00000004) != 0);
   }
@@ -3724,16 +3732,20 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+   * Immutable. Deprecated: Private Service Connect is no longer supported.
+   * Private Service Connect(PSC) Network configuration for the pool.
    * </pre>
    *
    * <code>
-   * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
+   * @deprecated google.devtools.cloudbuild.v1.PrivatePoolV1Config.private_service_connect is
+   *     deprecated. See google/devtools/cloudbuild/v1/cloudbuild.proto;l=2974
    * @return The privateServiceConnect.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
       getPrivateServiceConnect() {
     return privateServiceConnect_ == null
@@ -3745,14 +3757,16 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+   * Immutable. Deprecated: Private Service Connect is no longer supported.
+   * Private Service Connect(PSC) Network configuration for the pool.
    * </pre>
    *
    * <code>
-   * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+   * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnectOrBuilder
       getPrivateServiceConnectOrBuilder() {
     return privateServiceConnect_ == null
@@ -4594,15 +4608,19 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * Immutable. Deprecated: Private Service Connect is no longer supported.
+     * Private Service Connect(PSC) Network configuration for the pool.
      * </pre>
      *
      * <code>
-     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.devtools.cloudbuild.v1.PrivatePoolV1Config.private_service_connect is
+     *     deprecated. See google/devtools/cloudbuild/v1/cloudbuild.proto;l=2974
      * @return Whether the privateServiceConnect field is set.
      */
+    @java.lang.Deprecated
     public boolean hasPrivateServiceConnect() {
       return ((bitField0_ & 0x00000004) != 0);
     }
@@ -4611,15 +4629,19 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * Immutable. Deprecated: Private Service Connect is no longer supported.
+     * Private Service Connect(PSC) Network configuration for the pool.
      * </pre>
      *
      * <code>
-     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
+     * @deprecated google.devtools.cloudbuild.v1.PrivatePoolV1Config.private_service_connect is
+     *     deprecated. See google/devtools/cloudbuild/v1/cloudbuild.proto;l=2974
      * @return The privateServiceConnect.
      */
+    @java.lang.Deprecated
     public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect
         getPrivateServiceConnect() {
       if (privateServiceConnectBuilder_ == null) {
@@ -4636,13 +4658,15 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * Immutable. Deprecated: Private Service Connect is no longer supported.
+     * Private Service Connect(PSC) Network configuration for the pool.
      * </pre>
      *
      * <code>
-     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setPrivateServiceConnect(
         com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect value) {
       if (privateServiceConnectBuilder_ == null) {
@@ -4662,13 +4686,15 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * Immutable. Deprecated: Private Service Connect is no longer supported.
+     * Private Service Connect(PSC) Network configuration for the pool.
      * </pre>
      *
      * <code>
-     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setPrivateServiceConnect(
         com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.Builder
             builderForValue) {
@@ -4686,13 +4712,15 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * Immutable. Deprecated: Private Service Connect is no longer supported.
+     * Private Service Connect(PSC) Network configuration for the pool.
      * </pre>
      *
      * <code>
-     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergePrivateServiceConnect(
         com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect value) {
       if (privateServiceConnectBuilder_ == null) {
@@ -4719,13 +4747,15 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * Immutable. Deprecated: Private Service Connect is no longer supported.
+     * Private Service Connect(PSC) Network configuration for the pool.
      * </pre>
      *
      * <code>
-     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearPrivateServiceConnect() {
       bitField0_ = (bitField0_ & ~0x00000004);
       privateServiceConnect_ = null;
@@ -4741,13 +4771,15 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * Immutable. Deprecated: Private Service Connect is no longer supported.
+     * Private Service Connect(PSC) Network configuration for the pool.
      * </pre>
      *
      * <code>
-     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect.Builder
         getPrivateServiceConnectBuilder() {
       bitField0_ |= 0x00000004;
@@ -4759,13 +4791,15 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * Immutable. Deprecated: Private Service Connect is no longer supported.
+     * Private Service Connect(PSC) Network configuration for the pool.
      * </pre>
      *
      * <code>
-     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnectOrBuilder
         getPrivateServiceConnectOrBuilder() {
       if (privateServiceConnectBuilder_ != null) {
@@ -4782,11 +4816,12 @@ public final class PrivatePoolV1Config extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Immutable. Private Service Connect(PSC) Network configuration for the pool.
+     * Immutable. Deprecated: Private Service Connect is no longer supported.
+     * Private Service Connect(PSC) Network configuration for the pool.
      * </pre>
      *
      * <code>
-     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [(.google.api.field_behavior) = IMMUTABLE];
+     * .google.devtools.cloudbuild.v1.PrivatePoolV1Config.PrivateServiceConnect private_service_connect = 5 [deprecated = true, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<

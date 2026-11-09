@@ -79,13 +79,13 @@ public class ChannelFinderGoldenTest {
         switch (event.getRequestCase()) {
           case READ:
             ReadRequest.Builder readBuilder = event.getRead().toBuilder();
-            ChannelEndpoint readEndpoint = finder.findServer(readBuilder);
+            ChannelEndpoint readEndpoint = finder.findServerAndFillRoutingHint(readBuilder);
             assertHintAndServer(
                 testCase.getName(), event, readBuilder.getRoutingHint(), readEndpoint);
             break;
           case SQL:
             ExecuteSqlRequest.Builder sqlBuilder = event.getSql().toBuilder();
-            ChannelEndpoint sqlEndpoint = finder.findServer(sqlBuilder);
+            ChannelEndpoint sqlEndpoint = finder.findServerAndFillRoutingHint(sqlBuilder);
             assertHintAndServer(
                 testCase.getName(), event, sqlBuilder.getRoutingHint(), sqlEndpoint);
             break;

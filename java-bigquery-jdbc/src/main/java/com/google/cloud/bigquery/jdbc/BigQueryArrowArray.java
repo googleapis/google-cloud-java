@@ -122,6 +122,9 @@ class BigQueryArrowArray extends BigQueryBaseArray {
     if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(this.schema)) {
       return BigQueryTemporalUtility.formatTimestampValue(value, true);
     }
+    if (BigQueryTemporalUtility.isRange(this.schema)) {
+      return BigQueryTemporalUtility.formatRange(this.schema, value, this.enableTimestampPicos);
+    }
     return BigQueryTypeRegistry.convert(value, this.schema.getType().getStandardType(), null);
   }
 
