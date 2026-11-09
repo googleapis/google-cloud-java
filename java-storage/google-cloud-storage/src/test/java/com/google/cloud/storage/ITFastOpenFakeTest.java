@@ -814,7 +814,7 @@ public final class ITFastOpenFakeTest {
     try (FakeServer fakeServer = FakeServer.of(server);
         Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
       try (BlobReadSession session =
-          storage.blobReadSession(BLOB_ID, READ_10_TO_20).get(5, SECONDS)) {
+          storage.blobReadSession(BLOB_ID, ImmutableList.of(READ_10_TO_20)).get(5, SECONDS)) {
         byte[] actual = session.readAs(READ_10_TO_20).get(2, SECONDS);
         assertThat(xxd(actual)).isEqualTo(xxd(slice(10, 10)));
       }
@@ -844,7 +844,7 @@ public final class ITFastOpenFakeTest {
                 .build()
                 .getService()) {
       try (BlobReadSession session =
-          storage.blobReadSession(BLOB_ID, READ_10_TO_20).get(5, SECONDS)) {
+          storage.blobReadSession(BLOB_ID, ImmutableList.of(READ_10_TO_20)).get(5, SECONDS)) {
         byte[] actual = session.readAs(READ_10_TO_20).get(2, SECONDS);
         assertThat(xxd(actual)).isEqualTo(xxd(slice(10, 10)));
       }
@@ -879,7 +879,7 @@ public final class ITFastOpenFakeTest {
                 .build()
                 .getService()) {
       try (BlobReadSession session =
-          storage.blobReadSession(BLOB_ID, READ_10_TO_20).get(10, SECONDS)) {
+          storage.blobReadSession(BLOB_ID, ImmutableList.of(READ_10_TO_20)).get(10, SECONDS)) {
         ApiFuture<byte[]> read = session.readAs(READ_10_TO_20);
         assertThrows(ExecutionException.class, () -> read.get(5, SECONDS));
       }
@@ -908,7 +908,7 @@ public final class ITFastOpenFakeTest {
     try (FakeServer fakeServer = FakeServer.of(server);
         Storage storage = tracedStorage(fakeServer, exporter)) {
       try (BlobReadSession session =
-          storage.blobReadSession(BLOB_ID, READ_10_TO_20).get(5, SECONDS)) {
+          storage.blobReadSession(BLOB_ID, ImmutableList.of(READ_10_TO_20)).get(5, SECONDS)) {
         session.readAs(READ_10_TO_20).get(2, SECONDS);
         session.readAs(READ_20_TO_30).get(2, SECONDS);
       }
@@ -937,17 +937,74 @@ public final class ITFastOpenFakeTest {
   }
 
   @Test
-  public void blobReadSession_withANullFastOpenConfig_isAPlainOpen() throws Exception {
+  public void blobReadSession_withNoFastOpenConfigs_isAPlainOpen() throws Exception {
     FakeStorage server = fakeServer(ImmutableMap.of(OPEN, metadataOnly()));
 
     try (FakeServer fakeServer = FakeServer.of(server);
         Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
       BlobReadSession session =
-          storage.blobReadSession(BLOB_ID, (ReadAsFutureBytes) null).get(5, SECONDS);
+          storage.blobReadSession(BLOB_ID, ImmutableList.of()).get(5, SECONDS);
       session.close();
     }
 
     assertThat(requestsReceived).containsExactly(OPEN);
+  }
+
+  @Test
+  public void blobReadSession_withANullList_isRejected() throws Exception {
+    FakeStorage server = fakeServer(ImmutableMap.of());
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      assertThrows(
+          NullPointerException.class,
+          () -> storage.blobReadSession(BLOB_ID, (List<ReadProjectionConfig<?>>) null));
+    }
+
+    assertThat(requestsReceived).isEmpty();
+  }
+
+  @Test
+  public void blobReadSession_withTwoFastOpenConfigs_servesBothFromTheOpen() throws Exception {
+    BidiReadObjectRequest openWithTwoReads =
+        OPEN_WITH_READ_OF_10_TO_20.toBuilder().addReadRanges(getReadRange(2, 20, 10)).build();
+    BidiReadObjectResponse both =
+        metadataAndBytes(1, 10, 10).toBuilder()
+            .addObjectDataRanges(bytes(2, 20, 10).getObjectDataRanges(0))
+            .build();
+    FakeStorage server = fakeServer(ImmutableMap.of(openWithTwoReads, both));
+    TestExporter exporter = new TestExporter();
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = tracedStorage(fakeServer, exporter)) {
+      try (BlobReadSession session =
+          storage
+              .blobReadSession(BLOB_ID, ImmutableList.of(READ_10_TO_20, READ_20_TO_30))
+              .get(5, SECONDS)) {
+        assertThat(xxd(session.readAs(READ_20_TO_30).get(2, SECONDS)))
+            .isEqualTo(xxd(slice(20, 10)));
+        assertThat(xxd(session.readAs(READ_10_TO_20).get(2, SECONDS)))
+            .isEqualTo(xxd(slice(10, 10)));
+      }
+    }
+
+    assertThat(requestsReceived).containsExactly(openWithTwoReads);
+    assertThat(attributeOf(exporter, "blobReadSession/readAs", CACHE_STATUS))
+        .containsExactly("HIT", "HIT");
+  }
+
+  @Test
+  public void blobReadSession_withTheSameConfigTwice_isRejected() throws Exception {
+    FakeStorage server = fakeServer(ImmutableMap.of());
+
+    try (FakeServer fakeServer = FakeServer.of(server);
+        Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
+      assertThrows(
+          IllegalArgumentException.class,
+          () -> storage.blobReadSession(BLOB_ID, ImmutableList.of(READ_10_TO_20, READ_10_TO_20)));
+    }
+
+    assertThat(requestsReceived).isEmpty();
   }
 
   @Test
@@ -959,8 +1016,10 @@ public final class ITFastOpenFakeTest {
       IllegalArgumentException e =
           assertThrows(
               IllegalArgumentException.class,
-              () -> storage.blobReadSession(BLOB_ID, ReadProjectionConfigs.asSeekableChannel()));
-      assertThat(e).hasMessageThat().startsWith("fastOpenConfig must be");
+              () ->
+                  storage.blobReadSession(
+                      BLOB_ID, ImmutableList.of(ReadProjectionConfigs.asSeekableChannel())));
+      assertThat(e).hasMessageThat().startsWith("fastOpenConfigs must");
     }
 
     assertThat(requestsReceived).isEmpty();
@@ -979,7 +1038,8 @@ public final class ITFastOpenFakeTest {
 
     try (FakeServer fakeServer = FakeServer.of(server);
         Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
-      ApiFuture<BlobReadSession> open = storage.blobReadSession(BLOB_ID, READ_10_TO_20);
+      ApiFuture<BlobReadSession> open =
+          storage.blobReadSession(BLOB_ID, ImmutableList.of(READ_10_TO_20));
 
       ExecutionException e = assertThrows(ExecutionException.class, () -> open.get(5, SECONDS));
       assertThat(e).hasCauseThat().isInstanceOf(StorageException.class);
@@ -1002,7 +1062,8 @@ public final class ITFastOpenFakeTest {
         Storage storage = fakeServer.getGrpcStorageOptions().getService()) {
       BlobReadSession session =
           storage
-              .blobReadSession(BLOB_ID, READ_10_TO_20, BlobSourceOption.generationMatch(1))
+              .blobReadSession(
+                  BLOB_ID, ImmutableList.of(READ_10_TO_20), BlobSourceOption.generationMatch(1))
               .get(5, SECONDS);
       session.close();
     }

@@ -1474,22 +1474,16 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
   }
 
   @Override
-  public <Projection> ApiFuture<BlobReadSession> blobReadSession(
+  public ApiFuture<BlobReadSession> blobReadSession(
       BlobId id,
-      @Nullable ReadProjectionConfig<Projection> fastOpenConfig,
+      List<? extends ReadProjectionConfig<?>> fastOpenConfigs,
       BlobSourceOption... options) {
-    if (fastOpenConfig == null) {
-      return blobReadSession(id, ImmutableList.of(), options);
-    }
+    requireNonNull(fastOpenConfigs, "fastOpenConfigs must be non null");
     checkArgument(
-        fastOpenConfig.getType() == ProjectionType.STREAM_READ,
-        "fastOpenConfig must be asFutureBytes(), asFutureByteString() or asChannel(), but was %s",
-        fastOpenConfig);
-    return blobReadSession(id, ImmutableList.of(fastOpenConfig), options);
-  }
-
-  private ApiFuture<BlobReadSession> blobReadSession(
-      BlobId id, List<ReadProjectionConfig<?>> fastOpenConfigs, BlobSourceOption... options) {
+        fastOpenConfigs.stream().allMatch(c -> c.getType() == ProjectionType.STREAM_READ),
+        "fastOpenConfigs must only contain asFutureBytes(), asFutureByteString() or asChannel(),"
+            + " but was %s",
+        fastOpenConfigs);
     Opts<ObjectSourceOpt> opts = Opts.unwrap(options);
     Object object = codecs.blobId().encode(id);
 
@@ -1507,7 +1501,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
 
     GrpcCallContext context = opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
     ApiFuture<ObjectReadSession> session =
-        storageDataClient.readSession(req, context, fastOpenConfigs);
+        storageDataClient.readSession(req, context, ImmutableList.copyOf(fastOpenConfigs));
 
     return BlobReadSessionAdapter.wrap(session);
   }

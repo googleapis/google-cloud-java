@@ -40,6 +40,7 @@ import com.google.cloud.storage.RetryContext.OnSuccess;
 import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.storage.v2.ReadRange;
 import io.opentelemetry.api.OpenTelemetry;
@@ -1476,25 +1477,25 @@ final class OtelStorageDecorator implements Storage {
 
   @Override
   public ApiFuture<BlobReadSession> blobReadSession(BlobId id, BlobSourceOption... options) {
-    return blobReadSession(id, null, options);
+    return blobReadSession(id, ImmutableList.of(), options);
   }
 
   @Override
-  public <Projection> ApiFuture<BlobReadSession> blobReadSession(
+  public ApiFuture<BlobReadSession> blobReadSession(
       BlobId id,
-      @Nullable ReadProjectionConfig<Projection> fastOpenConfig,
+      List<? extends ReadProjectionConfig<?>> fastOpenConfigs,
       BlobSourceOption... options) {
     Span blobReadSessionSpan =
         tracer
             .spanBuilder(BLOB_READ_SESSION)
             .setAttribute("gsutil.uri", id.toGsUtilUriWithGeneration())
-            .setAttribute("gcs.bidi.fast_open", fastOpenConfig != null)
+            .setAttribute("gcs.bidi.fast_open", !fastOpenConfigs.isEmpty())
             .startSpan();
     try (Scope ignore1 = blobReadSessionSpan.makeCurrent()) {
       Context blobReadSessionContext = Context.current();
       Span ready = tracer.spanBuilder(BLOB_READ_SESSION + "/ready").startSpan();
       ApiFuture<BlobReadSession> blobReadSessionApiFuture =
-          delegate.blobReadSession(id, fastOpenConfig, options);
+          delegate.blobReadSession(id, fastOpenConfigs, options);
       ApiFuture<BlobReadSession> futureDecorated =
           ApiFutures.transform(
               blobReadSessionApiFuture,
@@ -1505,7 +1506,7 @@ final class OtelStorageDecorator implements Storage {
                     id,
                     blobReadSessionContext,
                     blobReadSessionSpan,
-                    fastOpenConfig != null);
+                    !fastOpenConfigs.isEmpty());
               },
               MoreExecutors.directExecutor());
       ApiFutures.addCallback(

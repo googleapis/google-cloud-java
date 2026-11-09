@@ -5957,40 +5957,49 @@ public interface Storage extends Service<StorageOptions>, AutoCloseable {
 
   /**
    * Asynchronously set up a new {@link BlobReadSession} for the specified {@link BlobId} and {@code
-   * options}, sending the read described by {@code fastOpenConfig} in the same request that opens
+   * options}, sending the reads described by {@code fastOpenConfigs} in the same request that opens
    * the session ("fast open"). This saves the round trip a separate first read would take.
    *
-   * <p>The first {@link BlobReadSession#readAs(ReadProjectionConfig)} with a config equal to {@code
-   * fastOpenConfig} is given that read; any other {@code readAs} sends a new read. If the fast open
-   * read fails, the error is reported by the returned future or by that first {@code readAs}.
+   * <p>For each config, the first {@link BlobReadSession#readAs(ReadProjectionConfig)} with an
+   * equal config is given its fast open read, in any order; any other {@code readAs} sends a new
+   * read. If a fast open read fails, for example because its range starts past the end of the
+   * object, the error is reported by the returned future or by that first {@code readAs}; the other
+   * fast open reads are not affected.
    *
-   * <h4>Example of reading the first 1 KiB of an object with fast open:</h4>
+   * <p>The bytes of every fast open read are sent whether or not they are asked for. A fast open
+   * read that is never asked for keeps its bytes in memory until the session is closed.
+   *
+   * <h4>Example of reading the first and last 1 KiB of a 1 MiB object with fast open:</h4>
    *
    * <pre>{@code
    * ReadAsFutureBytes first1KiB =
    *     ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(0, 1024));
+   * ReadAsFutureBytes last1KiB =
+   *     ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(1023 * 1024, 1024));
    * try (BlobReadSession session =
-   *     storage.blobReadSession(blobId, first1KiB).get(10, TimeUnit.SECONDS)) {
-   *   byte[] bytes = session.readAs(first1KiB).get(10, TimeUnit.SECONDS);
+   *     storage
+   *         .blobReadSession(blobId, ImmutableList.of(first1KiB, last1KiB))
+   *         .get(10, TimeUnit.SECONDS)) {
+   *   byte[] first = session.readAs(first1KiB).get(10, TimeUnit.SECONDS);
+   *   byte[] last = session.readAs(last1KiB).get(10, TimeUnit.SECONDS);
    * }
    * }</pre>
    *
    * @param id the blob to read from
-   * @param fastOpenConfig the read to send with the open, or {@code null} to only open the session.
-   *     Must be {@link ReadProjectionConfigs#asFutureBytes()}, {@link
-   *     ReadProjectionConfigs#asFutureByteString()} or {@link ReadProjectionConfigs#asChannel()},
-   *     optionally with a range.
+   * @param fastOpenConfigs the reads to send with the open; empty to only open the session. At most
+   *     100, each {@link ReadProjectionConfigs#asFutureBytes()}, {@link
+   *     ReadProjectionConfigs#asFutureByteString()} or {@link ReadProjectionConfigs#asChannel()}
+   *     (optionally with a range), no two equal, and {@code asChannel()} only on its own.
    * @since 2.77.0 This new api is in preview and is subject to breaking changes.
    */
   @BetaApi
   @TransportCompatibility({Transport.GRPC})
-  default <Projection> ApiFuture<BlobReadSession> blobReadSession(
+  default ApiFuture<BlobReadSession> blobReadSession(
       BlobId id,
-      @Nullable ReadProjectionConfig<Projection> fastOpenConfig,
+      List<? extends ReadProjectionConfig<?>> fastOpenConfigs,
       BlobSourceOption... options) {
     return throwGrpcOnly(
-        fmtMethodName(
-            "blobReadSession", BlobId.class, ReadProjectionConfig.class, BlobSourceOption.class));
+        fmtMethodName("blobReadSession", BlobId.class, List.class, BlobSourceOption.class));
   }
 
   /**
