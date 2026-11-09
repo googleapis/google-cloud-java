@@ -151,7 +151,7 @@ public class ITPitrUpdateDatabaseTest {
   }
 
   @Test
-  public void returnsAnErrorWhenAnInvalidRetentionPeriodIsGiven() {
+  public void returnsAnErrorWhenAnInvalidRetentionPeriodIsGiven() throws Exception {
     try {
       dbAdminClient
           .updateDatabaseDdl(

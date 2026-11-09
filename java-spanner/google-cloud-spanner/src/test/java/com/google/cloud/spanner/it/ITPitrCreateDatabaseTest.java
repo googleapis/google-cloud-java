@@ -114,7 +114,7 @@ public class ITPitrCreateDatabaseTest {
   }
 
   @Test(expected = DatabaseNotFoundException.class)
-  public void returnsAnErrorWhenAnInvalidVersionRetentionPeriodIsGiven() {
+  public void returnsAnErrorWhenAnInvalidVersionRetentionPeriodIsGiven() throws Exception {
     final String instanceId = testHelper.getInstanceId().getInstance();
     final String databaseId = testHelper.getUniqueDatabaseId();
     final String extraStatement =
