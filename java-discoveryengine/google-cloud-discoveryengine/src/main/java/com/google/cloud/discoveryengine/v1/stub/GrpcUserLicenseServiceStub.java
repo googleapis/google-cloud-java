@@ -29,6 +29,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesMetadata;
 import com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesRequest;
 import com.google.cloud.discoveryengine.v1.BatchUpdateUserLicensesResponse;
+import com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsRequest;
+import com.google.cloud.discoveryengine.v1.ListLicenseConfigsUsageStatsResponse;
 import com.google.cloud.discoveryengine.v1.ListUserLicensesRequest;
 import com.google.cloud.discoveryengine.v1.ListUserLicensesResponse;
 import com.google.longrunning.Operation;
@@ -62,6 +64,22 @@ public class GrpcUserLicenseServiceStub extends UserLicenseServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<
+          ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+      listLicenseConfigsUsageStatsMethodDescriptor =
+          MethodDescriptor
+              .<ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.UserLicenseService/ListLicenseConfigsUsageStats")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListLicenseConfigsUsageStatsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListLicenseConfigsUsageStatsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<BatchUpdateUserLicensesRequest, Operation>
       batchUpdateUserLicensesMethodDescriptor =
           MethodDescriptor.<BatchUpdateUserLicensesRequest, Operation>newBuilder()
@@ -78,6 +96,9 @@ public class GrpcUserLicenseServiceStub extends UserLicenseServiceStub {
       listUserLicensesCallable;
   private final UnaryCallable<ListUserLicensesRequest, ListUserLicensesPagedResponse>
       listUserLicensesPagedCallable;
+  private final UnaryCallable<
+          ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+      listLicenseConfigsUsageStatsCallable;
   private final UnaryCallable<BatchUpdateUserLicensesRequest, Operation>
       batchUpdateUserLicensesCallable;
   private final OperationCallable<
@@ -142,6 +163,20 @@ public class GrpcUserLicenseServiceStub extends UserLicenseServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+        listLicenseConfigsUsageStatsTransportSettings =
+            GrpcCallSettings
+                .<ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listLicenseConfigsUsageStatsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<BatchUpdateUserLicensesRequest, Operation>
         batchUpdateUserLicensesTransportSettings =
             GrpcCallSettings.<BatchUpdateUserLicensesRequest, Operation>newBuilder()
@@ -161,6 +196,11 @@ public class GrpcUserLicenseServiceStub extends UserLicenseServiceStub {
     this.listUserLicensesPagedCallable =
         callableFactory.createPagedCallable(
             listUserLicensesTransportSettings, settings.listUserLicensesSettings(), clientContext);
+    this.listLicenseConfigsUsageStatsCallable =
+        callableFactory.createUnaryCallable(
+            listLicenseConfigsUsageStatsTransportSettings,
+            settings.listLicenseConfigsUsageStatsSettings(),
+            clientContext);
     this.batchUpdateUserLicensesCallable =
         callableFactory.createUnaryCallable(
             batchUpdateUserLicensesTransportSettings,
@@ -191,6 +231,12 @@ public class GrpcUserLicenseServiceStub extends UserLicenseServiceStub {
   public UnaryCallable<ListUserLicensesRequest, ListUserLicensesPagedResponse>
       listUserLicensesPagedCallable() {
     return listUserLicensesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLicenseConfigsUsageStatsRequest, ListLicenseConfigsUsageStatsResponse>
+      listLicenseConfigsUsageStatsCallable() {
+    return listLicenseConfigsUsageStatsCallable;
   }
 
   @Override

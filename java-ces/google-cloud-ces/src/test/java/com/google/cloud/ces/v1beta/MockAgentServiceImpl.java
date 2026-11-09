@@ -1011,6 +1011,27 @@ public class MockAgentServiceImpl extends AgentServiceImplBase {
   }
 
   @Override
+  public void updateAppVersion(
+      UpdateAppVersionRequest request, StreamObserver<AppVersion> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AppVersion) {
+      requests.add(request);
+      responseObserver.onNext(((AppVersion) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAppVersion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AppVersion.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteAppVersion(
       DeleteAppVersionRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();

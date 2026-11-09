@@ -68,6 +68,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
       queryStatusCallable;
   private final String uploadUrl;
+  private final int chunkSize;
   private final RewindableStreamBuffer buffer;
   private final ApiCallContext callContext;
   private final ExponentialRetryAlgorithm recoveryAlgorithm;
@@ -93,6 +94,7 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
     this.queryStatusCallable =
         checkNotNull(queryStatusCallable, "queryStatusCallable must not be null");
     this.uploadUrl = checkNotNull(uploadUrl, "uploadUrl must not be null");
+    this.chunkSize = chunkSize;
     checkNotNull(payload, "payload must not be null");
     this.callContext = checkNotNull(callContext, "callContext must not be null");
     this.recoveryAlgorithm = checkNotNull(recoveryAlgorithm, "recoveryAlgorithm must not be null");
@@ -107,7 +109,17 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
   }
 
   void start() {
-    progressTracker.onStarted(uploadUrl);
+    progressTracker.onStarted(uploadUrl, chunkSize);
+    registerCancellationListener();
+    try {
+      buffer.fill();
+      transmitChunk();
+    } catch (Throwable t) {
+      uploadResultFuture.setException(t);
+    }
+  }
+
+  private void registerCancellationListener() {
     uploadResultFuture.addListener(
         () -> {
           Future<?> inFlight = inFlightFuture;
@@ -116,12 +128,6 @@ final class ResumableUploadChunkCoordinator<ResponseT> {
           }
         },
         MoreExecutors.directExecutor());
-    try {
-      buffer.fill();
-      transmitChunk();
-    } catch (Throwable t) {
-      uploadResultFuture.setException(t);
-    }
   }
 
   private void transmitChunk() {

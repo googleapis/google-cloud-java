@@ -194,8 +194,8 @@ public interface RunEvaluationRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The app version to evaluate.
-   * Format:
+   * Optional. The app version to evaluate. At most one of `app_version` or
+   * `deployment` can be set. Format:
    * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
    * </pre>
    *
@@ -211,8 +211,8 @@ public interface RunEvaluationRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The app version to evaluate.
-   * Format:
+   * Optional. The app version to evaluate. At most one of `app_version` or
+   * `deployment` can be set. Format:
    * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
    * </pre>
    *

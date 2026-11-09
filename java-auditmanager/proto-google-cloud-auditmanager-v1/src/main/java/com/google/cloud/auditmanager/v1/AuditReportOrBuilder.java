@@ -189,7 +189,7 @@ public interface AuditReportOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-   *     google/cloud/auditmanager/v1/auditmanager.proto;l=877
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=892
    * @return The complianceStandard.
    */
   @java.lang.Deprecated
@@ -209,7 +209,7 @@ public interface AuditReportOrBuilder
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-   *     google/cloud/auditmanager/v1/auditmanager.proto;l=877
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=892
    * @return The bytes for complianceStandard.
    */
   @java.lang.Deprecated
@@ -442,4 +442,86 @@ public interface AuditReportOrBuilder
    * @return The bytes for scopeId.
    */
   com.google.protobuf.ByteString getScopeIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parameter values provided by the user and values for
+   * tunable parameters, stored in the DB, keyed by control name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getCloudControlParameterStatesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parameter values provided by the user and values for
+   * tunable parameters, stored in the DB, keyed by control name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean containsCloudControlParameterStates(java.lang.String key);
+
+  /** Use {@link #getCloudControlParameterStatesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+      getCloudControlParameterStates();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parameter values provided by the user and values for
+   * tunable parameters, stored in the DB, keyed by control name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.CloudControlParameterStates>
+      getCloudControlParameterStatesMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parameter values provided by the user and values for
+   * tunable parameters, stored in the DB, keyed by control name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.auditmanager.v1.CloudControlParameterStates
+      getCloudControlParameterStatesOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.auditmanager.v1.CloudControlParameterStates defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Parameter values provided by the user and values for
+   * tunable parameters, stored in the DB, keyed by control name.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.CloudControlParameterStates&gt; cloud_control_parameter_states = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.auditmanager.v1.CloudControlParameterStates
+      getCloudControlParameterStatesOrThrow(java.lang.String key);
 }

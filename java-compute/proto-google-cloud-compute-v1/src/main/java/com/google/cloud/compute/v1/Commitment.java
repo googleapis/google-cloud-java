@@ -668,6 +668,26 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
     MEMORY_OPTIMIZED_M3(276301372),
     /** <code>MEMORY_OPTIMIZED_M4 = 276301373;</code> */
     MEMORY_OPTIMIZED_M4(276301373),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for M4N machines with less than 6TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_M4N = 512278961;</code>
+     */
+    MEMORY_OPTIMIZED_M4N(512278961),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for M4N machines with 6TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_M4N_6TB = 69895574;</code>
+     */
+    MEMORY_OPTIMIZED_M4N_6TB(69895574),
     /** <code>MEMORY_OPTIMIZED_M4_6TB = 210543650;</code> */
     MEMORY_OPTIMIZED_M4_6TB(210543650),
     /**
@@ -949,6 +969,28 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
     /** <code>MEMORY_OPTIMIZED_M4 = 276301373;</code> */
     public static final int MEMORY_OPTIMIZED_M4_VALUE = 276301373;
 
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for M4N machines with less than 6TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_M4N = 512278961;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_M4N_VALUE = 512278961;
+
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for M4N machines with 6TB of memory.
+     * </pre>
+     *
+     * <code>MEMORY_OPTIMIZED_M4N_6TB = 69895574;</code>
+     */
+    public static final int MEMORY_OPTIMIZED_M4N_6TB_VALUE = 69895574;
+
     /** <code>MEMORY_OPTIMIZED_M4_6TB = 210543650;</code> */
     public static final int MEMORY_OPTIMIZED_M4_6TB_VALUE = 210543650;
 
@@ -1215,6 +1257,10 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
           return MEMORY_OPTIMIZED_M3;
         case 276301373:
           return MEMORY_OPTIMIZED_M4;
+        case 512278961:
+          return MEMORY_OPTIMIZED_M4N;
+        case 69895574:
+          return MEMORY_OPTIMIZED_M4N_6TB;
         case 210543650:
           return MEMORY_OPTIMIZED_M4_6TB;
         case 206669823:
