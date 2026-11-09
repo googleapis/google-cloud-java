@@ -569,11 +569,7 @@ public class ITBackupTest {
     try {
       operation.get();
     } catch (ExecutionException e) {
-      if (e.getCause() instanceof SpannerException) {
-        throw SpannerExceptionFactory.asSpannerException(e.getCause());
-      } else {
-        throw e;
-      }
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     }
   }
 
