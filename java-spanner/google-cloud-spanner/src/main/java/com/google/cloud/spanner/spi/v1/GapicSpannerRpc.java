@@ -534,9 +534,11 @@ public class GapicSpannerRpc implements SpannerRpc {
                   .getStreamWatchdogProvider()
                   .withCheckInterval(pdmlSettings.getStreamWatchdogCheckInterval()));
         }
+        ClientContext partitionedDmlClientContext =
+            createPartitionedDmlClientContext(clientContext, this.keyAwareChannel);
         this.partitionedDmlStub =
             GrpcSpannerStubWithStubSettingsAndClientContext.create(
-                pdmlSettings.build(), clientContext);
+                pdmlSettings.build(), partitionedDmlClientContext);
         this.instanceAdminStubSettings =
             options.getInstanceAdminStubSettings().toBuilder()
                 .setTransportChannelProvider(channelProvider)
@@ -675,6 +677,21 @@ public class GapicSpannerRpc implements SpannerRpc {
       }
     }
     return null;
+  }
+
+  private static ClientContext createPartitionedDmlClientContext(
+      ClientContext clientContext, @Nullable KeyAwareChannel keyAwareChannel) {
+    if (keyAwareChannel == null) {
+      return clientContext;
+    }
+    GrpcTransportChannel defaultTransportChannel =
+        GrpcTransportChannel.create(keyAwareChannel.defaultChannel());
+    return clientContext.toBuilder()
+        .setTransportChannel(defaultTransportChannel)
+        .setDefaultCallContext(
+            clientContext.getDefaultCallContext().withTransportChannel(defaultTransportChannel))
+        .setBackgroundResources(Collections.emptyList())
+        .build();
   }
 
   @Nullable

@@ -172,14 +172,15 @@ abstract class BigQueryBaseArray implements java.sql.Array {
       if (array == null) {
         return "null";
       }
-      if (this.schema.getType().getStandardType() == StandardSQLTypeName.BYTES) {
+      StandardSQLTypeName type = this.schema.getType().getStandardType();
+      if (type == StandardSQLTypeName.BYTES) {
         return Arrays.stream(array)
             .map(
                 element ->
                     element == null ? "null" : Base64.getEncoder().encodeToString((byte[]) element))
             .collect(Collectors.joining(", ", "[", "]"));
       }
-      if (this.schema.getType().getStandardType() == StandardSQLTypeName.TIMESTAMP) {
+      if (type == StandardSQLTypeName.TIMESTAMP) {
         return Arrays.stream(array)
             .map(
                 element -> {
@@ -193,7 +194,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
                 })
             .collect(Collectors.joining(", ", "[", "]"));
       }
-      if (this.schema.getType().getStandardType() == StandardSQLTypeName.TIME) {
+      if (BigQueryTemporalUtility.isCivilTemporalType(type)) {
         StringBuilder sb = new StringBuilder("[");
         for (int i = 0; i < array.length; i++) {
           if (i > 0) {
@@ -202,8 +203,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
           sb.append(
               array[i] == null
                   ? "null"
-                  : BigQueryTypeRegistry.convert(
-                      getRawElement(i), StandardSQLTypeName.TIME, String.class, null));
+                  : BigQueryTypeRegistry.formatCivilTemporalElement(type, getRawElement(i)));
         }
         sb.append("]");
         return sb.toString();

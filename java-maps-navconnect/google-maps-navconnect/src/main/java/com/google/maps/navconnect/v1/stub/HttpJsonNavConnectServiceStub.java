@@ -109,6 +109,8 @@ public class HttpJsonNavConnectServiceStub extends NavConnectServiceStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetTripRequest> serializer =
                             ProtoRestSerializer.create();
+                        serializer.putQueryParam(
+                            fields, "routePolylineFormat", request.getRoutePolylineFormatValue());
                         serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                         return fields;
                       })

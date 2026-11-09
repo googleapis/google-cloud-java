@@ -121,6 +121,7 @@ public class ChatServiceClientHttpJsonTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -196,6 +197,7 @@ public class ChatServiceClientHttpJsonTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -563,6 +565,7 @@ public class ChatServiceClientHttpJsonTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -634,6 +637,7 @@ public class ChatServiceClientHttpJsonTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -705,6 +709,7 @@ public class ChatServiceClientHttpJsonTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
@@ -738,6 +743,7 @@ public class ChatServiceClientHttpJsonTest {
             .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
             .addAllAttachedGifs(new ArrayList<AttachedGif>())
             .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+            .setElements(Elements.newBuilder().build())
             .setMarkupSyntax(MarkupSyntax.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -797,6 +803,7 @@ public class ChatServiceClientHttpJsonTest {
               .setQuotedMessageMetadata(QuotedMessageMetadata.newBuilder().build())
               .addAllAttachedGifs(new ArrayList<AttachedGif>())
               .addAllAccessoryWidgets(new ArrayList<AccessoryWidget>())
+              .setElements(Elements.newBuilder().build())
               .setMarkupSyntax(MarkupSyntax.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -4436,6 +4443,55 @@ public class ChatServiceClientHttpJsonTest {
       String name = "users/user-3436/sections/section-3436/items/item-3436";
       String targetSection = "targetSection-20778988";
       client.moveSectionItem(name, targetSection);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void replaceMessageCardsTest() throws Exception {
+    ReplaceMessageCardsResponse expectedResponse = ReplaceMessageCardsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ReplaceMessageCardsRequest request =
+        ReplaceMessageCardsRequest.newBuilder()
+            .setName(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+            .addAllCardsV2(new ArrayList<CardWithId>())
+            .build();
+
+    ReplaceMessageCardsResponse actualResponse = client.replaceMessageCards(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void replaceMessageCardsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ReplaceMessageCardsRequest request =
+          ReplaceMessageCardsRequest.newBuilder()
+              .setName(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+              .addAllCardsV2(new ArrayList<CardWithId>())
+              .build();
+      client.replaceMessageCards(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

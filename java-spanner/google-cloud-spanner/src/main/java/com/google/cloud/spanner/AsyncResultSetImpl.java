@@ -31,7 +31,9 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.ResultSetStats;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.BlockingDeque;
@@ -42,6 +44,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.annotation.concurrent.GuardedBy;
 
 /** Default implementation for {@link AsyncResultSet}. */
 class AsyncResultSetImpl extends ForwardingStructReader
@@ -94,6 +97,24 @@ class AsyncResultSetImpl extends ForwardingStructReader
 
   /** Supplies the underlying synchronous {@link ResultSet} that will be producing the rows. */
   private final Supplier<ResultSet> delegateResultSet;
+
+  /**
+   * Callback invoked once when query execution begins or when the result set is closed without
+   * starting, allowing callers (like {@link MultiUseReadOnlyTransaction}) to track query lifecycle.
+   */
+  private final Runnable onStartOrClose;
+
+  @GuardedBy("monitor")
+  private boolean startOrCloseNotified;
+
+  @GuardedBy("monitor")
+  private boolean delegateInitialized;
+
+  @GuardedBy("monitor")
+  private boolean delegateClosed;
+
+  @GuardedBy("monitor")
+  private Throwable supplierException;
 
   /**
    * Any exception that occurs while executing the query and iterating over the result set will be
@@ -152,28 +173,120 @@ class AsyncResultSetImpl extends ForwardingStructReader
   private volatile CountDownLatch consumingLatch = new CountDownLatch(0);
 
   AsyncResultSetImpl(ExecutorProvider executorProvider, ResultSet delegate, int bufferSize) {
-    this(executorProvider, Suppliers.ofInstance(Preconditions.checkNotNull(delegate)), bufferSize);
+    this(
+        executorProvider,
+        Suppliers.ofInstance(Preconditions.checkNotNull(delegate)),
+        bufferSize,
+        /* onStartOrClose= */ () -> {},
+        /* delegateInitialized= */ true);
   }
 
   AsyncResultSetImpl(
       ExecutorProvider executorProvider, Supplier<ResultSet> delegate, int bufferSize) {
+    this(executorProvider, delegate, bufferSize, /* onStartOrClose= */ () -> {});
+  }
+
+  AsyncResultSetImpl(
+      ExecutorProvider executorProvider,
+      Supplier<ResultSet> delegate,
+      int bufferSize,
+      Runnable onStartOrClose) {
     this(
         executorProvider,
         Suppliers.memoize(Preconditions.checkNotNull(delegate)),
         bufferSize,
-        true);
+        Preconditions.checkNotNull(onStartOrClose),
+        /* delegateInitialized= */ false);
   }
 
   private AsyncResultSetImpl(
       ExecutorProvider executorProvider,
       Supplier<ResultSet> memoizedDelegate,
       int bufferSize,
-      boolean dummy) {
+      Runnable onStartOrClose,
+      boolean delegateInitialized) {
     super(memoizedDelegate);
     this.executorProvider = Preconditions.checkNotNull(executorProvider);
     this.delegateResultSet = memoizedDelegate;
+    this.onStartOrClose = onStartOrClose;
+    this.delegateInitialized = delegateInitialized;
     this.service = MoreExecutors.listeningDecorator(executorProvider.getExecutor());
     this.buffer = new LinkedBlockingDeque<>(bufferSize);
+  }
+
+  /**
+   * Returns the underlying {@link ResultSet}, lazily initializing it on first access and handling
+   * any necessary early-close reconciliation and start/close notifications.
+   */
+  private ResultSet getOrInitializeDelegate() {
+    try {
+      ResultSet delegate = invokeDelegateSupplier();
+      closeIfClosedBeforeInitialization(delegate);
+      return delegate;
+    } finally {
+      maybeNotifyStartOrClose();
+    }
+  }
+
+  private ResultSet invokeDelegateSupplier() {
+    checkSupplierException();
+    try {
+      return delegateResultSet.get();
+    } catch (Throwable throwable) {
+      synchronized (monitor) {
+        supplierException = throwable;
+      }
+      throw throwable;
+    }
+  }
+
+  private void checkSupplierException() {
+    synchronized (monitor) {
+      if (supplierException != null) {
+        if (supplierException instanceof RuntimeException) {
+          throw (RuntimeException) supplierException;
+        } else if (supplierException instanceof Error) {
+          throw (Error) supplierException;
+        }
+        throw SpannerExceptionFactory.asSpannerException(supplierException);
+      }
+    }
+  }
+
+  private void closeIfClosedBeforeInitialization(ResultSet delegate) {
+    boolean shouldCloseImmediately = false;
+    synchronized (monitor) {
+      if (!delegateInitialized) {
+        delegateInitialized = true;
+        if (delegateClosed) {
+          shouldCloseImmediately = true;
+        }
+      }
+    }
+    if (shouldCloseImmediately) {
+      try {
+        delegate.close();
+      } catch (Throwable throwable) {
+        log.log(Level.FINE, "Ignoring error from closing delegate result set", throwable);
+      }
+    }
+  }
+
+  private void maybeNotifyStartOrClose() {
+    boolean shouldNotify = false;
+    synchronized (monitor) {
+      if (!startOrCloseNotified) {
+        startOrCloseNotified = true;
+        shouldNotify = true;
+      }
+    }
+    if (shouldNotify) {
+      try {
+        onStartOrClose.run();
+      } catch (Throwable throwable) {
+        log.log(Level.WARNING, "Failed to execute onStartOrClose callback", throwable);
+      }
+    }
   }
 
   boolean isUsed() {
@@ -191,14 +304,28 @@ class AsyncResultSetImpl extends ForwardingStructReader
    */
   @Override
   public void close() {
+    boolean shouldCloseDelegate = false;
+    boolean shouldNotifyClose = false;
     synchronized (monitor) {
       if (this.closed) {
         return;
       }
       if (state == State.INITIALIZED || state == State.SYNC) {
-        delegateResultSet.get().close();
+        shouldCloseDelegate = true;
+      }
+      if (state == State.INITIALIZED) {
+        shouldNotifyClose = true;
       }
       this.closed = true;
+    }
+    if (shouldCloseDelegate) {
+      closeDelegateResultSet();
+      if (executorProvider.shouldAutoClose()) {
+        service.shutdown();
+      }
+    }
+    if (shouldNotifyClose) {
+      maybeNotifyStartOrClose();
     }
   }
 
@@ -209,14 +336,18 @@ class AsyncResultSetImpl extends ForwardingStructReader
    */
   @Override
   public void addListener(Runnable listener) {
-    Preconditions.checkState(state == State.INITIALIZED);
-    listeners.add(listener);
+    synchronized (monitor) {
+      Preconditions.checkState(state == State.INITIALIZED);
+      listeners.add(listener);
+    }
   }
 
   @Override
   public void removeListener(Runnable listener) {
-    Preconditions.checkState(state == State.INITIALIZED);
-    listeners.remove(listener);
+    synchronized (monitor) {
+      Preconditions.checkState(state == State.INITIALIZED || closed);
+      listeners.remove(listener);
+    }
   }
 
   /**
@@ -258,10 +389,19 @@ class AsyncResultSetImpl extends ForwardingStructReader
   }
 
   private void closeDelegateResultSet() {
-    try {
-      delegateResultSet.get().close();
-    } catch (Throwable t) {
-      log.log(Level.FINE, "Ignoring error from closing delegate result set", t);
+    boolean shouldClose = false;
+    synchronized (monitor) {
+      if (!delegateClosed) {
+        delegateClosed = true;
+        shouldClose = delegateInitialized;
+      }
+    }
+    if (shouldClose) {
+      try {
+        delegateResultSet.get().close();
+      } catch (Throwable t) {
+        log.log(Level.FINE, "Ignoring error from closing delegate result set", t);
+      }
     }
   }
 
@@ -362,15 +502,23 @@ class AsyncResultSetImpl extends ForwardingStructReader
     public void run() {
       boolean stop = false;
       boolean hasNext = false;
+      ResultSet delegate = null;
       try {
-        hasNext = delegateResultSet.get().next();
+        synchronized (monitor) {
+          stop = shouldStopProducing();
+        }
+        if (!stop) {
+          delegate = getOrInitializeDelegate();
+          hasNext = delegate.next();
+        }
       } catch (Throwable e) {
         synchronized (monitor) {
           executionException = SpannerExceptionFactory.asSpannerException(e);
+          stop = true;
         }
       }
       try {
-        while (!stop && hasNext) {
+        while (!stop && hasNext && delegate != null) {
           try {
             synchronized (monitor) {
               stop = shouldStopProducing();
@@ -395,9 +543,9 @@ class AsyncResultSetImpl extends ForwardingStructReader
               }
             }
             if (!stop) {
-              buffer.put(delegateResultSet.get().getCurrentRowAsStruct());
+              buffer.put(delegate.getCurrentRowAsStruct());
               startCallbackIfNecessary();
-              hasNext = delegateResultSet.get().next();
+              hasNext = delegate.next();
             }
           } catch (Throwable e) {
             synchronized (monitor) {
@@ -435,7 +583,13 @@ class AsyncResultSetImpl extends ForwardingStructReader
         if (executorProvider.shouldAutoClose()) {
           service.shutdown();
         }
-        for (Runnable listener : listeners) {
+        List<Runnable> listenersToNotify = Collections.emptyList();
+        synchronized (monitor) {
+          if (!listeners.isEmpty()) {
+            listenersToNotify = new ArrayList<>(listeners);
+          }
+        }
+        for (Runnable listener : listenersToNotify) {
           listener.run();
         }
         synchronized (monitor) {
@@ -472,6 +626,7 @@ class AsyncResultSetImpl extends ForwardingStructReader
     }
 
     private void startCallbackWithBufferLatchIfNecessary(int bufferLatch) {
+      boolean shouldExecute = false;
       synchronized (monitor) {
         if ((state == State.RUNNING || state == State.CANCELLED)
             && !cursorReturnedDoneOrException) {
@@ -482,7 +637,23 @@ class AsyncResultSetImpl extends ForwardingStructReader
           if (state == State.RUNNING) {
             state = State.CONSUMING;
           }
+          shouldExecute = true;
+        }
+      }
+      if (shouldExecute) {
+        try {
           executor.execute(callbackRunnable);
+        } catch (Throwable t) {
+          synchronized (monitor) {
+            consumingLatch.countDown();
+            while (bufferConsumptionLatch.getCount() > 0L) {
+              bufferConsumptionLatch.countDown();
+            }
+            if (state == State.CONSUMING) {
+              state = State.RUNNING;
+            }
+          }
+          throw t;
         }
       }
     }
@@ -502,7 +673,9 @@ class AsyncResultSetImpl extends ForwardingStructReader
           initiateProduceRows();
         }
       } catch (Throwable exception) {
-        executionException = SpannerExceptionFactory.asSpannerException(exception);
+        synchronized (monitor) {
+          executionException = SpannerExceptionFactory.asSpannerException(exception);
+        }
         initiateProduceRows();
       }
     }
@@ -511,30 +684,55 @@ class AsyncResultSetImpl extends ForwardingStructReader
   /** Sets the callback for this {@link AsyncResultSet}. */
   @Override
   public ApiFuture<Void> setCallback(Executor exec, ReadyCallback cb) {
-    synchronized (monitor) {
-      Preconditions.checkState(!closed, "This AsyncResultSet has been closed");
-      Preconditions.checkState(
-          this.state == State.INITIALIZED, "callback may not be set multiple times");
+    Preconditions.checkNotNull(exec, "exec cannot be null");
+    Preconditions.checkNotNull(cb, "cb cannot be null");
+    boolean shouldClose = false;
+    try {
+      synchronized (monitor) {
+        Preconditions.checkState(!closed, "This AsyncResultSet has been closed");
+        Preconditions.checkState(
+            this.state == State.INITIALIZED, "callback may not be set multiple times");
 
-      // Start to fetch data and buffer these.
-      this.result = SettableApiFuture.create();
-      this.state = State.STREAMING_INITIALIZED;
-      this.service.execute(new InitiateStreamingRunnable());
-      this.executor = MoreExecutors.newSequentialExecutor(Preconditions.checkNotNull(exec));
-      this.callback = Preconditions.checkNotNull(cb);
-      pausedLatch.countDown();
-      return result;
+        // Start to fetch data and buffer these.
+        this.result = SettableApiFuture.create();
+        this.executor = MoreExecutors.newSequentialExecutor(exec);
+        this.callback = cb;
+        this.state = State.STREAMING_INITIALIZED;
+        try {
+          this.service.execute(new InitiateStreamingRunnable());
+        } catch (Throwable throwable) {
+          this.closed = true;
+          shouldClose = true;
+          throw throwable;
+        }
+        pausedLatch.countDown();
+        return result;
+      }
+    } finally {
+      if (shouldClose) {
+        closeDelegateResultSet();
+        maybeNotifyStartOrClose();
+        if (executorProvider.shouldAutoClose()) {
+          service.shutdown();
+        }
+      }
     }
   }
 
   private void initiateProduceRows() {
+    boolean shouldExecute = false;
     synchronized (monitor) {
-      if (this.state == State.STREAMING_INITIALIZED) {
-        this.state = State.RUNNING;
+      if (!produceRowsInitiated) {
+        produceRowsInitiated = true;
+        if (this.state == State.STREAMING_INITIALIZED) {
+          this.state = State.RUNNING;
+        }
+        shouldExecute = true;
       }
-      produceRowsInitiated = true;
     }
-    this.service.execute(new ProduceRowsRunnable());
+    if (shouldExecute) {
+      this.service.execute(new ProduceRowsRunnable());
+    }
   }
 
   Future<Void> getResult() {
@@ -601,15 +799,12 @@ class AsyncResultSetImpl extends ForwardingStructReader
   @Override
   public <T> ApiFuture<List<T>> toListAsync(
       Function<StructReader, T> transformer, Executor executor) {
-    synchronized (monitor) {
-      Preconditions.checkState(!closed, "This AsyncResultSet has been closed");
-      Preconditions.checkState(
-          this.state == State.INITIALIZED, "This AsyncResultSet has already been used.");
-      final SettableApiFuture<List<T>> res = SettableApiFuture.create();
-      CreateListCallback<T> callback = new CreateListCallback<>(res, transformer);
-      ApiFuture<Void> finished = setCallback(executor, callback);
-      return ApiFutures.transformAsync(finished, ignored -> res, MoreExecutors.directExecutor());
-    }
+    Preconditions.checkNotNull(transformer, "transformer cannot be null");
+    Preconditions.checkNotNull(executor, "executor cannot be null");
+    final SettableApiFuture<List<T>> res = SettableApiFuture.create();
+    CreateListCallback<T> callback = new CreateListCallback<>(res, transformer);
+    ApiFuture<Void> finished = setCallback(executor, callback);
+    return ApiFutures.transformAsync(finished, ignored -> res, MoreExecutors.directExecutor());
   }
 
   @Override
@@ -627,28 +822,41 @@ class AsyncResultSetImpl extends ForwardingStructReader
   @Override
   public boolean next() throws SpannerException {
     synchronized (monitor) {
+      Preconditions.checkState(!closed, "This AsyncResultSet has been closed");
       Preconditions.checkState(
           this.state == State.INITIALIZED || this.state == State.SYNC,
           "Cannot call next() on a result set with a callback.");
       this.state = State.SYNC;
     }
-    boolean res = delegateResultSet.get().next();
-    currentRow = res ? delegateResultSet.get().getCurrentRowAsStruct() : null;
+    ResultSet delegate = getOrInitializeDelegate();
+    boolean res = delegate.next();
+    currentRow = res ? delegate.getCurrentRowAsStruct() : null;
     return res;
   }
 
+  /**
+   * Returns query execution statistics. Calling this method after the result set has closed is
+   * allowed because callers frequently inspect statistics or query plans after consuming all rows
+   * and finishing the query.
+   */
   @Override
   public ResultSetStats getStats() {
-    return delegateResultSet.get().getStats();
+    return getOrInitializeDelegate().getStats();
   }
 
+  /**
+   * Returns query metadata. Calling this method after the result set has closed is allowed so
+   * callers can inspect column and type information after consuming all rows. If the result set was
+   * closed before execution started, {@link #getOrInitializeDelegate()} ensures the underlying
+   * delegate is closed immediately to prevent resource leaks.
+   */
   @Override
   public ResultSetMetadata getMetadata() {
-    return delegateResultSet.get().getMetadata();
+    return getOrInitializeDelegate().getMetadata();
   }
 
   boolean initiateStreaming(StreamMessageListener streamMessageListener) {
-    return StreamingUtil.initiateStreaming(delegateResultSet.get(), streamMessageListener);
+    return StreamingUtil.initiateStreaming(getOrInitializeDelegate(), streamMessageListener);
   }
 
   @Override

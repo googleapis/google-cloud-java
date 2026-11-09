@@ -445,4 +445,95 @@ public interface AuditScheduleOrBuilder
    * @return The bytes for errorMessage.
    */
   com.google.protobuf.ByteString getErrorMessageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getParameterOverridesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsParameterOverrides(java.lang.String key);
+
+  /** Use {@link #getParameterOverridesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+      getParameterOverrides();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.auditmanager.v1.ParameterOverrides>
+      getParameterOverridesMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.auditmanager.v1.ParameterOverrides getParameterOverridesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.auditmanager.v1.ParameterOverrides defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Maps dynamic parameter overrides by Cloud Control resource name
+   * at execution time. For example,
+   * `{"organizations/123/locations/global/cloudControls/control-1":
+   * {parameters: [...]}}`
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.auditmanager.v1.ParameterOverrides&gt; parameter_overrides = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.auditmanager.v1.ParameterOverrides getParameterOverridesOrThrow(
+      java.lang.String key);
 }

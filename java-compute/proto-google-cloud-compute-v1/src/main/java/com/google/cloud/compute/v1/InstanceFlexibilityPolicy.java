@@ -123,15 +123,8 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specification of alternative, flexible instance subsets.
-   * One of them will be selected to create the instances
-   * based on various criteria, like:
-   * - ranks,
-   * - location policy,
-   * - current capacity,
-   * - available reservations (you can specify affinity in
-   * InstanceProperties),
-   * - SWAN/GOOSE limitations.
+   * Specifies named instance selections that define properties for instances
+   * created in bulk.
    * Key is an arbitrary, unique RFC1035 string that identifies the instance
    * selection.
    * </pre>
@@ -161,15 +154,8 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specification of alternative, flexible instance subsets.
-   * One of them will be selected to create the instances
-   * based on various criteria, like:
-   * - ranks,
-   * - location policy,
-   * - current capacity,
-   * - available reservations (you can specify affinity in
-   * InstanceProperties),
-   * - SWAN/GOOSE limitations.
+   * Specifies named instance selections that define properties for instances
+   * created in bulk.
    * Key is an arbitrary, unique RFC1035 string that identifies the instance
    * selection.
    * </pre>
@@ -189,15 +175,8 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specification of alternative, flexible instance subsets.
-   * One of them will be selected to create the instances
-   * based on various criteria, like:
-   * - ranks,
-   * - location policy,
-   * - current capacity,
-   * - available reservations (you can specify affinity in
-   * InstanceProperties),
-   * - SWAN/GOOSE limitations.
+   * Specifies named instance selections that define properties for instances
+   * created in bulk.
    * Key is an arbitrary, unique RFC1035 string that identifies the instance
    * selection.
    * </pre>
@@ -226,15 +205,8 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Specification of alternative, flexible instance subsets.
-   * One of them will be selected to create the instances
-   * based on various criteria, like:
-   * - ranks,
-   * - location policy,
-   * - current capacity,
-   * - available reservations (you can specify affinity in
-   * InstanceProperties),
-   * - SWAN/GOOSE limitations.
+   * Specifies named instance selections that define properties for instances
+   * created in bulk.
    * Key is an arbitrary, unique RFC1035 string that identifies the instance
    * selection.
    * </pre>
@@ -689,15 +661,8 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specification of alternative, flexible instance subsets.
-     * One of them will be selected to create the instances
-     * based on various criteria, like:
-     * - ranks,
-     * - location policy,
-     * - current capacity,
-     * - available reservations (you can specify affinity in
-     * InstanceProperties),
-     * - SWAN/GOOSE limitations.
+     * Specifies named instance selections that define properties for instances
+     * created in bulk.
      * Key is an arbitrary, unique RFC1035 string that identifies the instance
      * selection.
      * </pre>
@@ -728,15 +693,8 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specification of alternative, flexible instance subsets.
-     * One of them will be selected to create the instances
-     * based on various criteria, like:
-     * - ranks,
-     * - location policy,
-     * - current capacity,
-     * - available reservations (you can specify affinity in
-     * InstanceProperties),
-     * - SWAN/GOOSE limitations.
+     * Specifies named instance selections that define properties for instances
+     * created in bulk.
      * Key is an arbitrary, unique RFC1035 string that identifies the instance
      * selection.
      * </pre>
@@ -757,15 +715,8 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specification of alternative, flexible instance subsets.
-     * One of them will be selected to create the instances
-     * based on various criteria, like:
-     * - ranks,
-     * - location policy,
-     * - current capacity,
-     * - available reservations (you can specify affinity in
-     * InstanceProperties),
-     * - SWAN/GOOSE limitations.
+     * Specifies named instance selections that define properties for instances
+     * created in bulk.
      * Key is an arbitrary, unique RFC1035 string that identifies the instance
      * selection.
      * </pre>
@@ -794,15 +745,8 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specification of alternative, flexible instance subsets.
-     * One of them will be selected to create the instances
-     * based on various criteria, like:
-     * - ranks,
-     * - location policy,
-     * - current capacity,
-     * - available reservations (you can specify affinity in
-     * InstanceProperties),
-     * - SWAN/GOOSE limitations.
+     * Specifies named instance selections that define properties for instances
+     * created in bulk.
      * Key is an arbitrary, unique RFC1035 string that identifies the instance
      * selection.
      * </pre>
@@ -837,15 +781,8 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specification of alternative, flexible instance subsets.
-     * One of them will be selected to create the instances
-     * based on various criteria, like:
-     * - ranks,
-     * - location policy,
-     * - current capacity,
-     * - available reservations (you can specify affinity in
-     * InstanceProperties),
-     * - SWAN/GOOSE limitations.
+     * Specifies named instance selections that define properties for instances
+     * created in bulk.
      * Key is an arbitrary, unique RFC1035 string that identifies the instance
      * selection.
      * </pre>
@@ -876,15 +813,8 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specification of alternative, flexible instance subsets.
-     * One of them will be selected to create the instances
-     * based on various criteria, like:
-     * - ranks,
-     * - location policy,
-     * - current capacity,
-     * - available reservations (you can specify affinity in
-     * InstanceProperties),
-     * - SWAN/GOOSE limitations.
+     * Specifies named instance selections that define properties for instances
+     * created in bulk.
      * Key is an arbitrary, unique RFC1035 string that identifies the instance
      * selection.
      * </pre>
@@ -911,15 +841,8 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specification of alternative, flexible instance subsets.
-     * One of them will be selected to create the instances
-     * based on various criteria, like:
-     * - ranks,
-     * - location policy,
-     * - current capacity,
-     * - available reservations (you can specify affinity in
-     * InstanceProperties),
-     * - SWAN/GOOSE limitations.
+     * Specifies named instance selections that define properties for instances
+     * created in bulk.
      * Key is an arbitrary, unique RFC1035 string that identifies the instance
      * selection.
      * </pre>
@@ -950,15 +873,8 @@ public final class InstanceFlexibilityPolicy extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Specification of alternative, flexible instance subsets.
-     * One of them will be selected to create the instances
-     * based on various criteria, like:
-     * - ranks,
-     * - location policy,
-     * - current capacity,
-     * - available reservations (you can specify affinity in
-     * InstanceProperties),
-     * - SWAN/GOOSE limitations.
+     * Specifies named instance selections that define properties for instances
+     * created in bulk.
      * Key is an arbitrary, unique RFC1035 string that identifies the instance
      * selection.
      * </pre>

@@ -2164,6 +2164,52 @@ public final class ChatServiceGrpc {
     return getMoveSectionItemMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.ReplaceMessageCardsRequest,
+          com.google.chat.v1.ReplaceMessageCardsResponse>
+      getReplaceMessageCardsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReplaceMessageCards",
+      requestType = com.google.chat.v1.ReplaceMessageCardsRequest.class,
+      responseType = com.google.chat.v1.ReplaceMessageCardsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.ReplaceMessageCardsRequest,
+          com.google.chat.v1.ReplaceMessageCardsResponse>
+      getReplaceMessageCardsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.ReplaceMessageCardsRequest,
+            com.google.chat.v1.ReplaceMessageCardsResponse>
+        getReplaceMessageCardsMethod;
+    if ((getReplaceMessageCardsMethod = ChatServiceGrpc.getReplaceMessageCardsMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getReplaceMessageCardsMethod = ChatServiceGrpc.getReplaceMessageCardsMethod) == null) {
+          ChatServiceGrpc.getReplaceMessageCardsMethod =
+              getReplaceMessageCardsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.ReplaceMessageCardsRequest,
+                          com.google.chat.v1.ReplaceMessageCardsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ReplaceMessageCards"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ReplaceMessageCardsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.ReplaceMessageCardsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("ReplaceMessageCards"))
+                      .build();
+        }
+      }
+    }
+    return getReplaceMessageCardsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ChatServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ChatServiceStub> factory =
@@ -3794,6 +3840,30 @@ public final class ChatServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.chat.v1.MoveSectionItemResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getMoveSectionItemMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replaces the cards included in a message.
+     * A Chat app can only replace cards on a human-created message if the message
+     * already contains cards, and the cards were created by the app.
+     * If the app replaces the cards with an empty list, the cards are removed.
+     * After removing the cards, the app cannot add cards back to the message.
+     * Requires [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.bot`
+     * </pre>
+     */
+    default void replaceMessageCards(
+        com.google.chat.v1.ReplaceMessageCardsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ReplaceMessageCardsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getReplaceMessageCardsMethod(), responseObserver);
     }
   }
 
@@ -5500,6 +5570,32 @@ public final class ChatServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replaces the cards included in a message.
+     * A Chat app can only replace cards on a human-created message if the message
+     * already contains cards, and the cards were created by the app.
+     * If the app replaces the cards with an empty list, the cards are removed.
+     * After removing the cards, the app cannot add cards back to the message.
+     * Requires [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.bot`
+     * </pre>
+     */
+    public void replaceMessageCards(
+        com.google.chat.v1.ReplaceMessageCardsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.ReplaceMessageCardsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReplaceMessageCardsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -7044,6 +7140,28 @@ public final class ChatServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getMoveSectionItemMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replaces the cards included in a message.
+     * A Chat app can only replace cards on a human-created message if the message
+     * already contains cards, and the cards were created by the app.
+     * If the app replaces the cards with an empty list, the cards are removed.
+     * After removing the cards, the app cannot add cards back to the message.
+     * Requires [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.bot`
+     * </pre>
+     */
+    public com.google.chat.v1.ReplaceMessageCardsResponse replaceMessageCards(
+        com.google.chat.v1.ReplaceMessageCardsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getReplaceMessageCardsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -8579,6 +8697,28 @@ public final class ChatServiceGrpc {
         com.google.chat.v1.MoveSectionItemRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMoveSectionItemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replaces the cards included in a message.
+     * A Chat app can only replace cards on a human-created message if the message
+     * already contains cards, and the cards were created by the app.
+     * If the app replaces the cards with an empty list, the cards are removed.
+     * After removing the cards, the app cannot add cards back to the message.
+     * Requires [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.bot`
+     * </pre>
+     */
+    public com.google.chat.v1.ReplaceMessageCardsResponse replaceMessageCards(
+        com.google.chat.v1.ReplaceMessageCardsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReplaceMessageCardsMethod(), getCallOptions(), request);
     }
   }
 
@@ -10141,6 +10281,29 @@ public final class ChatServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getMoveSectionItemMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replaces the cards included in a message.
+     * A Chat app can only replace cards on a human-created message if the message
+     * already contains cards, and the cards were created by the app.
+     * If the app replaces the cards with an empty list, the cards are removed.
+     * After removing the cards, the app cannot add cards back to the message.
+     * Requires [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with the [authorization
+     * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.bot`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.ReplaceMessageCardsResponse>
+        replaceMessageCards(com.google.chat.v1.ReplaceMessageCardsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReplaceMessageCardsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_MESSAGE = 0;
@@ -10195,6 +10358,7 @@ public final class ChatServiceGrpc {
   private static final int METHODID_POSITION_SECTION = 49;
   private static final int METHODID_LIST_SECTION_ITEMS = 50;
   private static final int METHODID_MOVE_SECTION_ITEM = 51;
+  private static final int METHODID_REPLACE_MESSAGE_CARDS = 52;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10489,6 +10653,12 @@ public final class ChatServiceGrpc {
           serviceImpl.moveSectionItem(
               (com.google.chat.v1.MoveSectionItemRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chat.v1.MoveSectionItemResponse>)
+                  responseObserver);
+          break;
+        case METHODID_REPLACE_MESSAGE_CARDS:
+          serviceImpl.replaceMessageCards(
+              (com.google.chat.v1.ReplaceMessageCardsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.ReplaceMessageCardsResponse>)
                   responseObserver);
           break;
         default:
@@ -10828,6 +10998,13 @@ public final class ChatServiceGrpc {
                     com.google.chat.v1.MoveSectionItemRequest,
                     com.google.chat.v1.MoveSectionItemResponse>(
                     service, METHODID_MOVE_SECTION_ITEM)))
+        .addMethod(
+            getReplaceMessageCardsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.ReplaceMessageCardsRequest,
+                    com.google.chat.v1.ReplaceMessageCardsResponse>(
+                    service, METHODID_REPLACE_MESSAGE_CARDS)))
         .build();
   }
 
@@ -10931,6 +11108,7 @@ public final class ChatServiceGrpc {
                       .addMethod(getPositionSectionMethod())
                       .addMethod(getListSectionItemsMethod())
                       .addMethod(getMoveSectionItemMethod())
+                      .addMethod(getReplaceMessageCardsMethod())
                       .build();
         }
       }

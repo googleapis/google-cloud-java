@@ -90,4 +90,41 @@ public interface CardWithIdOrBuilder
    * <code>.google.apps.card.v1.Card card = 2;</code>
    */
   com.google.apps.card.v1.CardOrBuilder getCardOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The app that owns the card.
+   * </pre>
+   *
+   * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the ownerUser field is set.
+   */
+  boolean hasOwnerUser();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The app that owns the card.
+   * </pre>
+   *
+   * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The ownerUser.
+   */
+  com.google.chat.v1.User getOwnerUser();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The app that owns the card.
+   * </pre>
+   *
+   * <code>.google.chat.v1.User owner_user = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.chat.v1.UserOrBuilder getOwnerUserOrBuilder();
 }

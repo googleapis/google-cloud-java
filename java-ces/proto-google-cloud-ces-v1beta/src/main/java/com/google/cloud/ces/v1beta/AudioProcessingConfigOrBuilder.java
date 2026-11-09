@@ -284,4 +284,70 @@ public interface AudioProcessingConfigOrBuilder
    * </code>
    */
   com.google.cloud.ces.v1beta.AmbientSoundConfigOrBuilder getAmbientSoundConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures custom voice samples for voice cloning.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.ces.v1beta.CustomVoiceSample> getCustomVoiceSamplesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures custom voice samples for voice cloning.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.CustomVoiceSample getCustomVoiceSamples(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures custom voice samples for voice cloning.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getCustomVoiceSamplesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures custom voice samples for voice cloning.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.ces.v1beta.CustomVoiceSampleOrBuilder>
+      getCustomVoiceSamplesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configures custom voice samples for voice cloning.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.ces.v1beta.CustomVoiceSample custom_voice_samples = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.CustomVoiceSampleOrBuilder getCustomVoiceSamplesOrBuilder(int index);
 }

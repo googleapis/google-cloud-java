@@ -43,12 +43,12 @@ class ResumableUploadSessionTest {
         ResumableUploadSession.newBuilder().setUploadUrl(UPLOAD_URL).build();
 
     assertThat(session.getUploadUrl()).isEqualTo(UPLOAD_URL);
-    assertThat(session.getChunkGranularity()).isEqualTo(1L);
+    assertThat(session.getChunkGranularity()).isEqualTo(1);
   }
 
   @Test
   void build_withExplicitChunkGranularity_preservesGranularity() {
-    long customChunkGranularity = 256 * 1024L;
+    int customChunkGranularity = 256 * 1024;
 
     ResumableUploadSession session =
         ResumableUploadSession.newBuilder()

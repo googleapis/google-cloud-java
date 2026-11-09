@@ -19,15 +19,26 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.withSettings;
 
+import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.spanner.Options.RpcPriority;
+import com.google.cloud.spanner.XGoogSpannerRequestId.NoopRequestIdCreator;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
+import com.google.protobuf.ByteString;
 import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.DirectedReadOptions.IncludeReplicas;
 import com.google.spanner.v1.DirectedReadOptions.ReplicaSelection;
@@ -41,12 +52,20 @@ import com.google.spanner.v1.ReadRequest.OrderBy;
 import com.google.spanner.v1.RequestOptions;
 import com.google.spanner.v1.RequestOptions.Priority;
 import com.google.spanner.v1.SessionName;
+import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
+import io.opencensus.trace.Tracing;
+import io.opentelemetry.api.OpenTelemetry;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -97,7 +116,7 @@ public class AbstractReadContextTest {
     }
   }
 
-  private final class TestReadContext extends AbstractReadContext {
+  private class TestReadContext extends AbstractReadContext {
     TestReadContext(TestReadContextBuilder builder) {
       super(builder);
     }
@@ -400,5 +419,418 @@ public class AbstractReadContextTest {
             Options.fromQueryOptions(Options.directedRead(DIRECTED_READ_OPTIONS)),
             false);
     assertEquals(DIRECTED_READ_OPTIONS, request.getDirectedReadOptions());
+  }
+
+  private static ISpan createTestSpan() {
+    if (SpannerOptions.getActiveTracingFramework()
+        .equals(SpannerOptions.TracingFramework.OPEN_TELEMETRY)) {
+      return new OpenTelemetrySpan(mock(io.opentelemetry.api.trace.Span.class));
+    } else {
+      return new OpenCensusSpan(io.opencensus.trace.BlankSpan.INSTANCE);
+    }
+  }
+
+  @Test
+  public void testSynchronousStartFailureDoesNotInvokeOnErrorTwice() {
+    SessionImpl session = mock(SessionImpl.class);
+    when(session.getName()).thenReturn("session-1");
+    SpannerRpc rpc = mock(SpannerRpc.class);
+    when(rpc.getExecuteQueryRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(rpc.getExecuteQueryRetryableCodes()).thenReturn(Collections.emptySet());
+    when(rpc.executeQuery(any(), any(), any(), any(), anyBoolean()))
+        .thenThrow(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.FAILED_PRECONDITION, "start failure"));
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(session.getSpanner()).thenReturn(spanner);
+    when(session.getRequestIdCreator()).thenReturn(NoopRequestIdCreator.INSTANCE);
+
+    AtomicInteger onErrorCalls = new AtomicInteger();
+    TestReadContext testContext =
+        new TestReadContext(
+            new TestReadContextBuilder()
+                .setSession(session)
+                .setRpc(rpc)
+                .setDefaultQueryOptions(defaultQueryOptions)
+                .setExecutorProvider(
+                    mock(ExecutorProvider.class, withSettings().withoutAnnotations()))
+                .setTracer(
+                    new TraceWrapper(
+                        Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false))
+                .setSpan(createTestSpan())) {
+          @Override
+          public SpannerException onError(
+              SpannerException exception, boolean withBeginTransaction, boolean lastStatement) {
+            onErrorCalls.incrementAndGet();
+            return super.onError(exception, withBeginTransaction, lastStatement);
+          }
+        };
+
+    try (ResultSet resultSet = testContext.executeQuery(Statement.of("SELECT 1"))) {
+      assertThrows(SpannerException.class, resultSet::next);
+    }
+    assertEquals(1, onErrorCalls.get());
+  }
+
+  @Test
+  public void testCloseDuringStartStreamDoesNotInvokeOnDoneTwice() {
+    SessionImpl session = mock(SessionImpl.class);
+    when(session.getName()).thenReturn("session-1");
+    SpannerRpc rpc = mock(SpannerRpc.class);
+    when(rpc.getExecuteQueryRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(rpc.getExecuteQueryRetryableCodes()).thenReturn(Collections.emptySet());
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(session.getSpanner()).thenReturn(spanner);
+    when(session.getRequestIdCreator()).thenReturn(NoopRequestIdCreator.INSTANCE);
+
+    AtomicInteger onDoneCalls = new AtomicInteger();
+    TestReadContext testContext =
+        new TestReadContext(
+            new TestReadContextBuilder()
+                .setSession(session)
+                .setRpc(rpc)
+                .setDefaultQueryOptions(defaultQueryOptions)
+                .setExecutorProvider(
+                    mock(ExecutorProvider.class, withSettings().withoutAnnotations()))
+                .setTracer(
+                    new TraceWrapper(
+                        Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false))
+                .setSpan(createTestSpan())) {
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            onDoneCalls.incrementAndGet();
+            super.onDone(withBeginTransaction);
+          }
+        };
+
+    try (ResultSet resultSet = testContext.executeQuery(Statement.of("SELECT 1"))) {
+      when(rpc.executeQuery(any(), any(), any(), any(), anyBoolean()))
+          .thenAnswer(
+              invocation -> {
+                resultSet.close();
+                return mock(SpannerRpc.StreamingCall.class);
+              });
+
+      assertThrows(SpannerException.class, resultSet::next);
+    }
+    assertEquals(1, onDoneCalls.get());
+  }
+
+  @Test
+  public void testCloseDuringStartStreamInvokesOnDoneOnlyOnceWithBeginTransaction() {
+    SessionImpl session = mock(SessionImpl.class);
+    when(session.getName()).thenReturn("session-1");
+    SpannerRpc rpc = mock(SpannerRpc.class);
+    when(rpc.getExecuteQueryRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(rpc.getExecuteQueryRetryableCodes()).thenReturn(Collections.emptySet());
+    when(rpc.executeQuery(any(), any(), any(), any(), anyBoolean()))
+        .thenReturn(mock(SpannerRpc.StreamingCall.class));
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(session.getSpanner()).thenReturn(spanner);
+    when(session.getRequestIdCreator()).thenReturn(NoopRequestIdCreator.INSTANCE);
+
+    AtomicInteger onDoneCalls = new AtomicInteger();
+    AtomicBoolean closedBeforeStreamStarted = new AtomicBoolean();
+    AtomicReference<ResultSet> resultSetReference = new AtomicReference<>();
+    TestReadContext testContext =
+        new TestReadContext(
+            new TestReadContextBuilder()
+                .setSession(session)
+                .setRpc(rpc)
+                .setDefaultQueryOptions(defaultQueryOptions)
+                .setExecutorProvider(
+                    mock(ExecutorProvider.class, withSettings().withoutAnnotations()))
+                .setTracer(
+                    new TraceWrapper(
+                        Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false))
+                .setSpan(createTestSpan())) {
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            onDoneCalls.incrementAndGet();
+            super.onDone(withBeginTransaction);
+          }
+
+          @Override
+          void onClosedBeforeStreamStarted(boolean withBeginTransaction) {
+            closedBeforeStreamStarted.set(withBeginTransaction);
+          }
+
+          @Override
+          TransactionSelector getTransactionSelector() {
+            ResultSet currentResultSet = resultSetReference.get();
+            if (currentResultSet != null) {
+              currentResultSet.close();
+            }
+            return TransactionSelector.newBuilder()
+                .setBegin(
+                    TransactionOptions.newBuilder()
+                        .setReadOnly(TransactionOptions.ReadOnly.getDefaultInstance()))
+                .build();
+          }
+        };
+
+    try (ResultSet resultSet = testContext.executeQuery(Statement.of("SELECT 1"))) {
+      resultSetReference.set(resultSet);
+      assertThrows(SpannerException.class, resultSet::next);
+    }
+    assertEquals(1, onDoneCalls.get());
+    assertTrue(closedBeforeStreamStarted.get());
+  }
+
+  @Test(timeout = 10_000)
+  public void testCloseDuringPrepareRequestWhichThrowsCallsOnDoneExactlyOnce() {
+    SessionImpl session = mock(SessionImpl.class);
+    when(session.getName()).thenReturn("session-1");
+    SpannerRpc rpc = mock(SpannerRpc.class);
+    when(rpc.getExecuteQueryRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(rpc.getExecuteQueryRetryableCodes()).thenReturn(Collections.emptySet());
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(session.getSpanner()).thenReturn(spanner);
+    when(session.getRequestIdCreator()).thenReturn(NoopRequestIdCreator.INSTANCE);
+
+    AtomicInteger onDoneCalls = new AtomicInteger();
+    AtomicReference<ResultSet> resultSetReference = new AtomicReference<>();
+    TestReadContext testContext =
+        new TestReadContext(
+            new TestReadContextBuilder()
+                .setSession(session)
+                .setRpc(rpc)
+                .setDefaultQueryOptions(defaultQueryOptions)
+                .setExecutorProvider(
+                    mock(ExecutorProvider.class, withSettings().withoutAnnotations()))
+                .setTracer(
+                    new TraceWrapper(
+                        Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false))
+                .setSpan(createTestSpan())) {
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            onDoneCalls.incrementAndGet();
+            super.onDone(withBeginTransaction);
+          }
+
+          @Override
+          TransactionSelector getTransactionSelector() {
+            ResultSet currentResultSet = resultSetReference.get();
+            if (currentResultSet != null) {
+              currentResultSet.close();
+            }
+            throw new RuntimeException("simulated prepare failure");
+          }
+        };
+
+    try (ResultSet resultSet = testContext.executeQuery(Statement.of("SELECT 1"))) {
+      resultSetReference.set(resultSet);
+      assertThrows(SpannerException.class, resultSet::next);
+    }
+    assertEquals(1, onDoneCalls.get());
+    verify(rpc, never()).executeQuery(any(), any(), any(), any(), anyBoolean());
+  }
+
+  @Test(timeout = 10_000)
+  public void testCloseDuringResetStreamAfterStartThrowsCallsOnDoneExactlyOnce() {
+    SessionImpl session = mock(SessionImpl.class);
+    when(session.getName()).thenReturn("session-1");
+    SpannerRpc rpc = mock(SpannerRpc.class);
+    when(rpc.getExecuteQueryRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(rpc.getExecuteQueryRetryableCodes()).thenReturn(Collections.emptySet());
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(session.getSpanner()).thenReturn(spanner);
+    when(session.getRequestIdCreator()).thenReturn(NoopRequestIdCreator.INSTANCE);
+
+    AtomicInteger onDoneCalls = new AtomicInteger();
+    AtomicReference<ResultSet> resultSetReference = new AtomicReference<>();
+    ISpan mockSpan = mock(ISpan.class);
+    doAnswer(
+            invocation -> {
+              ResultSet currentResultSet = resultSetReference.get();
+              if (currentResultSet != null) {
+                currentResultSet.close();
+              }
+              return null;
+            })
+        .when(mockSpan)
+        .addAnnotation(eq("Stream broken. Not safe to retry"), any(Throwable.class));
+
+    TraceWrapper tracer = mock(TraceWrapper.class);
+    when(tracer.spanBuilderWithExplicitParent(any(), any(), any())).thenReturn(mockSpan);
+
+    TestReadContext testContext =
+        new TestReadContext(
+            new TestReadContextBuilder()
+                .setSession(session)
+                .setRpc(rpc)
+                .setDefaultQueryOptions(defaultQueryOptions)
+                .setExecutorProvider(
+                    mock(ExecutorProvider.class, withSettings().withoutAnnotations()))
+                .setTracer(tracer)
+                .setSpan(mockSpan)) {
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            onDoneCalls.incrementAndGet();
+            super.onDone(withBeginTransaction);
+          }
+        };
+
+    when(rpc.executeQuery(any(), any(), any(), any(), anyBoolean()))
+        .thenThrow(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INTERNAL, "simulated start failure"));
+
+    try (ResultSet resultSet = testContext.executeQuery(Statement.of("SELECT 1"))) {
+      resultSetReference.set(resultSet);
+      assertThrows(SpannerException.class, resultSet::next);
+    }
+    assertEquals(1, onDoneCalls.get());
+  }
+
+  @Test(timeout = 10_000)
+  public void testStartStreamThrowsConcurrentlyWithCloseFailsTransactionWithStartError()
+      throws Exception {
+    SessionImpl session = mock(SessionImpl.class);
+    when(session.getName()).thenReturn("session-1");
+    SpannerRpc rpc = mock(SpannerRpc.class);
+    when(rpc.getExecuteQueryRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(rpc.getExecuteQueryRetryableCodes()).thenReturn(Collections.emptySet());
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(session.getSpanner()).thenReturn(spanner);
+    when(session.getRequestIdCreator()).thenReturn(NoopRequestIdCreator.INSTANCE);
+
+    SettableApiFuture<ByteString> transactionIdFuture = SettableApiFuture.create();
+    AtomicReference<ResultSet> resultSetReference = new AtomicReference<>();
+    ISpan mockSpan = mock(ISpan.class);
+    doAnswer(
+            invocation -> {
+              ResultSet currentResultSet = resultSetReference.get();
+              if (currentResultSet != null) {
+                currentResultSet.close();
+              }
+              return null;
+            })
+        .when(mockSpan)
+        .addAnnotation(eq("Stream broken. Not safe to retry"), any(Throwable.class));
+
+    TraceWrapper tracer = mock(TraceWrapper.class);
+    when(tracer.spanBuilderWithExplicitParent(any(), any(), any())).thenReturn(mockSpan);
+
+    TestReadContext testContext =
+        new TestReadContext(
+            new TestReadContextBuilder()
+                .setSession(session)
+                .setRpc(rpc)
+                .setDefaultQueryOptions(defaultQueryOptions)
+                .setExecutorProvider(
+                    mock(ExecutorProvider.class, withSettings().withoutAnnotations()))
+                .setTracer(tracer)
+                .setSpan(mockSpan)) {
+          @Override
+          TransactionSelector getTransactionSelector() {
+            return TransactionSelector.newBuilder()
+                .setBegin(
+                    TransactionOptions.newBuilder()
+                        .setReadOnly(TransactionOptions.ReadOnly.getDefaultInstance()))
+                .build();
+          }
+
+          @Override
+          void onStartFailed(
+              boolean withBeginTransaction, boolean lastStatement, Throwable throwable) {
+            if (withBeginTransaction && !transactionIdFuture.isDone()) {
+              transactionIdFuture.setException(throwable);
+            }
+          }
+
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            if (withBeginTransaction && !transactionIdFuture.isDone()) {
+              transactionIdFuture.setException(
+                  SpannerExceptionFactory.newSpannerException(
+                      ErrorCode.FAILED_PRECONDITION,
+                      "Read-only transaction was closed before the transaction ID was returned by"
+                          + " Cloud Spanner"));
+            }
+            super.onDone(withBeginTransaction);
+          }
+        };
+
+    when(rpc.executeQuery(any(), any(), any(), any(), anyBoolean()))
+        .thenThrow(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.INTERNAL, "simulated start failure"));
+
+    try (ResultSet resultSet = testContext.executeQuery(Statement.of("SELECT 1"))) {
+      resultSetReference.set(resultSet);
+      assertThrows(SpannerException.class, resultSet::next);
+    }
+
+    ExecutionException executionException =
+        assertThrows(ExecutionException.class, () -> transactionIdFuture.get(1, TimeUnit.SECONDS));
+    assertTrue(executionException.getCause() instanceof SpannerException);
+    SpannerException spannerException = (SpannerException) executionException.getCause();
+    assertEquals(ErrorCode.INTERNAL, spannerException.getErrorCode());
+    assertTrue(spannerException.getMessage().contains("simulated start failure"));
+    verify(session).onReadDone();
+  }
+
+  @Test
+  public void testCloseFreshResultSetBeforeNextPreventsRpcAndThrowsOnNext() {
+    SessionImpl session = mock(SessionImpl.class);
+    when(session.getName()).thenReturn("session-1");
+    SpannerRpc rpc = mock(SpannerRpc.class);
+    when(rpc.getExecuteQueryRetrySettings()).thenReturn(RetrySettings.newBuilder().build());
+    when(rpc.getExecuteQueryRetryableCodes()).thenReturn(Collections.emptySet());
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(session.getSpanner()).thenReturn(spanner);
+    when(session.getRequestIdCreator()).thenReturn(NoopRequestIdCreator.INSTANCE);
+
+    AtomicInteger onDoneCalls = new AtomicInteger();
+    AtomicInteger onErrorCalls = new AtomicInteger();
+    TestReadContext testContext =
+        new TestReadContext(
+            new TestReadContextBuilder()
+                .setSession(session)
+                .setRpc(rpc)
+                .setDefaultQueryOptions(defaultQueryOptions)
+                .setExecutorProvider(
+                    mock(ExecutorProvider.class, withSettings().withoutAnnotations()))
+                .setTracer(
+                    new TraceWrapper(
+                        Tracing.getTracer(), OpenTelemetry.noop().getTracer(""), false))
+                .setSpan(createTestSpan())) {
+          @Override
+          public void onDone(boolean withBeginTransaction) {
+            onDoneCalls.incrementAndGet();
+            super.onDone(withBeginTransaction);
+          }
+
+          @Override
+          public SpannerException onError(
+              SpannerException error, boolean withBeginTransaction, boolean lastStatement) {
+            onErrorCalls.incrementAndGet();
+            return super.onError(error, withBeginTransaction, lastStatement);
+          }
+        };
+
+    ResultSet resultSet = testContext.executeQuery(Statement.of("SELECT 1"));
+    resultSet.close();
+
+    SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
+    assertEquals(ErrorCode.INTERNAL, exception.getErrorCode());
+    verify(rpc, never()).executeQuery(any(), any(), any(), any(), anyBoolean());
+    assertEquals(1, onDoneCalls.get());
+    assertEquals(0, onErrorCalls.get());
   }
 }

@@ -1315,6 +1315,78 @@ public class KeyAwareChannelTest {
   }
 
   @Test
+  public void readWriteTransactionReadAttachesRoutingHintWhilePinnedToAffinityEndpoint()
+      throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("rw-read-routing-hint");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+
+    // Key "n" is owned by server-b, but the transaction is pinned to server-a.
+    ClientCall<ReadRequest, PartialResultSet> call =
+        harness.channel.newCall(SpannerGrpc.getStreamingReadMethod(), CallOptions.DEFAULT);
+    call.start(new CapturingListener<PartialResultSet>(), new Metadata());
+    call.sendMessage(
+        ReadRequest.newBuilder()
+            .setSession(SESSION)
+            .setTable("T")
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .setRoutingHint(RoutingHint.newBuilder().setKey(bytes("n")))
+            .build());
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
+    assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(0);
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ReadRequest, PartialResultSet> delegate =
+        (RecordingClientCall<ReadRequest, PartialResultSet>)
+            harness.endpointCache.latestCallForAddress("server-a:1234");
+    RoutingHint routingHint = delegate.lastMessage.getRoutingHint();
+    assertThat(routingHint.getOperationUid()).isNotEqualTo(0L);
+    assertThat(routingHint.getDatabaseId()).isEqualTo(7L);
+    // The hint describes the split covering key "n" ([m, z), group 2) and its leader tablet.
+    assertThat(routingHint.getKey()).isEqualTo(bytes("m"));
+    assertThat(routingHint.getLimitKey()).isEqualTo(bytes("z"));
+    assertThat(routingHint.getGroupUid()).isEqualTo(2L);
+    assertThat(routingHint.getSplitId()).isEqualTo(2L);
+    assertThat(routingHint.getTabletUid()).isEqualTo(2L);
+  }
+
+  @Test
+  public void readWriteTransactionQueryAttachesRoutingHintWhilePinnedToAffinityEndpoint()
+      throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("rw-query-routing-hint");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+
+    // Key "n" is owned by server-b, but the transaction is pinned to server-a.
+    ClientCall<ExecuteSqlRequest, PartialResultSet> call =
+        harness.channel.newCall(SpannerGrpc.getExecuteStreamingSqlMethod(), CallOptions.DEFAULT);
+    call.start(new CapturingListener<PartialResultSet>(), new Metadata());
+    call.sendMessage(
+        ExecuteSqlRequest.newBuilder()
+            .setSession(SESSION)
+            .setSql("SELECT * FROM T WHERE K = @k")
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .setRoutingHint(RoutingHint.newBuilder().setKey(bytes("n")))
+            .build());
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
+    assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(0);
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteSqlRequest, PartialResultSet> delegate =
+        (RecordingClientCall<ExecuteSqlRequest, PartialResultSet>)
+            harness.endpointCache.latestCallForAddress("server-a:1234");
+    RoutingHint routingHint = delegate.lastMessage.getRoutingHint();
+    assertThat(routingHint.getOperationUid()).isNotEqualTo(0L);
+    assertThat(routingHint.getDatabaseId()).isEqualTo(7L);
+    // The hint describes the split covering key "n" ([m, z), group 2) and its leader tablet.
+    assertThat(routingHint.getKey()).isEqualTo(bytes("m"));
+    assertThat(routingHint.getLimitKey()).isEqualTo(bytes("z"));
+    assertThat(routingHint.getGroupUid()).isEqualTo(2L);
+    assertThat(routingHint.getSplitId()).isEqualTo(2L);
+    assertThat(routingHint.getTabletUid()).isEqualTo(2L);
+  }
+
+  @Test
   public void genericUnimplementedReroutesOnceAndLearnsDefaultOnlyMethod() throws Exception {
     TestHarness harness = createHarness();
     ByteString transactionId = ByteString.copyFromUtf8("generic-unimplemented");
@@ -1898,6 +1970,80 @@ public class KeyAwareChannelTest {
 
     // Still no affinity recorded.
     assertThat(harness.endpointCache.getCount(DEFAULT_ADDRESS)).isEqualTo(0);
+  }
+
+  @Test
+  public void partitionedDmlTransactionDoesNotRecordAffinity() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("pdml-tx-no-affinity");
+
+    // Begin a Partitioned DML transaction via BeginTransaction.
+    ClientCall<BeginTransactionRequest, Transaction> beginCall =
+        harness.channel.newCall(SpannerGrpc.getBeginTransactionMethod(), CallOptions.DEFAULT);
+    beginCall.start(new CapturingListener<Transaction>(), new Metadata());
+    beginCall.sendMessage(
+        BeginTransactionRequest.newBuilder()
+            .setSession(SESSION)
+            .setOptions(
+                TransactionOptions.newBuilder()
+                    .setPartitionedDml(TransactionOptions.PartitionedDml.getDefaultInstance()))
+            .build());
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<BeginTransactionRequest, Transaction> beginDelegate =
+        (RecordingClientCall<BeginTransactionRequest, Transaction>)
+            harness.defaultManagedChannel.latestCall();
+    beginDelegate.emitOnMessage(Transaction.newBuilder().setId(transactionId).build());
+    beginDelegate.emitOnClose(Status.OK, new Metadata());
+
+    // Send a request referencing the Partitioned DML transaction ID. Because no affinity was
+    // recorded on BeginTransaction, the endpoint cache must not be queried for affinity lookup.
+    ClientCall<ExecuteSqlRequest, ResultSet> sqlCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), CallOptions.DEFAULT);
+    sqlCall.start(new CapturingListener<ResultSet>(), new Metadata());
+    sqlCall.sendMessage(
+        ExecuteSqlRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .build());
+    assertThat(harness.endpointCache.getIfPresentCount(DEFAULT_ADDRESS)).isEqualTo(0);
+
+    // Also verify inline TransactionSelector.begin with PartitionedDml does not record affinity.
+    ByteString inlinePdmlId = ByteString.copyFromUtf8("pdml-inline-no-affinity");
+    ClientCall<ExecuteSqlRequest, ResultSet> inlineBeginCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), CallOptions.DEFAULT);
+    inlineBeginCall.start(new CapturingListener<ResultSet>(), new Metadata());
+    inlineBeginCall.sendMessage(
+        ExecuteSqlRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(
+                TransactionSelector.newBuilder()
+                    .setBegin(
+                        TransactionOptions.newBuilder()
+                            .setPartitionedDml(
+                                TransactionOptions.PartitionedDml.getDefaultInstance())))
+            .build());
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteSqlRequest, ResultSet> inlineBeginDelegate =
+        (RecordingClientCall<ExecuteSqlRequest, ResultSet>)
+            harness.defaultManagedChannel.latestCall();
+    inlineBeginDelegate.emitOnMessage(
+        ResultSet.newBuilder()
+            .setMetadata(
+                ResultSetMetadata.newBuilder()
+                    .setTransaction(Transaction.newBuilder().setId(inlinePdmlId)))
+            .build());
+    inlineBeginDelegate.emitOnClose(Status.OK, new Metadata());
+
+    ClientCall<ExecuteSqlRequest, ResultSet> followUpCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), CallOptions.DEFAULT);
+    followUpCall.start(new CapturingListener<ResultSet>(), new Metadata());
+    followUpCall.sendMessage(
+        ExecuteSqlRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(TransactionSelector.newBuilder().setId(inlinePdmlId))
+            .build());
+    assertThat(harness.endpointCache.getIfPresentCount(DEFAULT_ADDRESS)).isEqualTo(0);
   }
 
   @Test

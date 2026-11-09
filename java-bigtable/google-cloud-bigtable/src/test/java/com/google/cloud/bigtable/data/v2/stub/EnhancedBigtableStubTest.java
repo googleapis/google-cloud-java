@@ -521,7 +521,9 @@ public class EnhancedBigtableStubTest {
     Query request = Query.create(TableId.of("table-id")).rowKey("row-key");
     streamingCallable.call(request).iterator().next();
     ReadRowsRequest expected =
-        request.toProto(RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID));
+        request.toProto(RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID)).toBuilder()
+            .setRowsLimit(1)
+            .build();
     assertThat(fakeDataService.popLastRequest()).isEqualTo(expected);
   }
 
@@ -979,6 +981,19 @@ public class EnhancedBigtableStubTest {
           .contains("Canceled due to timeout waiting for next response");
       assertThat(e).hasMessageThat().contains("Canceled due to timeout waiting for next response");
     }
+  }
+
+  @Test
+  public void testReadRowDoesNotMutateQuery() throws Exception {
+    Query query = Query.create(TABLE_ID).rowKey("row-key");
+    enhancedBigtableStub.readRowCallable().call(query);
+    assertThat(fakeDataService.popLastRequest().getRowsLimit()).isEqualTo(1L);
+    assertThat(query).isEqualTo(Query.create(TABLE_ID).rowKey("row-key"));
+
+    // Reusing the query for a multi-row scan should not inherit rows_limit = 1
+    query.rowKey("row-key-2");
+    enhancedBigtableStub.readRowsCallable().all().call(query);
+    assertThat(fakeDataService.popLastRequest().getRowsLimit()).isEqualTo(0L);
   }
 
   private static class MetadataInterceptor implements ServerInterceptor {

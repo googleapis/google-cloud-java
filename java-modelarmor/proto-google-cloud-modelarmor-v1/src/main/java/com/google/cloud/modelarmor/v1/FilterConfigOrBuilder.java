@@ -199,4 +199,93 @@ public interface FilterConfigOrBuilder
    */
   com.google.cloud.modelarmor.v1.MaliciousUriFilterSettingsOrBuilder
       getMaliciousUriFilterSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for customizing filter rules.
+   * Note: This field is not supported in FloorSetting.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the filterRuleSettings field is set.
+   */
+  boolean hasFilterRuleSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for customizing filter rules.
+   * Note: This field is not supported in FloorSetting.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The filterRuleSettings.
+   */
+  com.google.cloud.modelarmor.v1.FilterRuleSettings getFilterRuleSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for customizing filter rules.
+   * Note: This field is not supported in FloorSetting.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.modelarmor.v1.FilterRuleSettingsOrBuilder getFilterRuleSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Child sexual abuse material (CSAM) filter settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the csamFilterSettings field is set.
+   */
+  boolean hasCsamFilterSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Child sexual abuse material (CSAM) filter settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The csamFilterSettings.
+   */
+  com.google.cloud.modelarmor.v1.CsamFilterSettings getCsamFilterSettings();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Child sexual abuse material (CSAM) filter settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.modelarmor.v1.CsamFilterSettingsOrBuilder getCsamFilterSettingsOrBuilder();
 }
