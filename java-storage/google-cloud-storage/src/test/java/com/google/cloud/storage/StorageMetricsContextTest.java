@@ -21,9 +21,9 @@ import static org.junit.Assert.assertThrows;
 
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpResponseException;
+import com.google.api.core.ApiClock;
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import io.grpc.CallOptions;
@@ -40,8 +40,7 @@ import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.lang.reflect.Field;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.concurrent.atomic.AtomicLong;
 import org.jspecify.annotations.Nullable;
 import org.junit.Before;
 import org.junit.Test;
@@ -67,6 +66,7 @@ public final class StorageMetricsContextTest {
   public void create_initializesDefaultState() {
     StorageMetricsContext context = StorageMetricsContext.create("GetObject");
 
+    assertThat(context.getMetrics()).isNull();
     assertThat(context.getOperationName()).isEqualTo("GetObject");
     assertThat(context.getStartTimeNanos()).isGreaterThan(0L);
     assertThat(context.getElapsedSeconds()).isAtLeast(0.0);
@@ -86,6 +86,31 @@ public final class StorageMetricsContextTest {
   }
 
   @Test
+  public void create_withApiClock_usesClockForStartAndElapsedTime() {
+    AtomicLong fakeNanos = new AtomicLong(1_000_000_000L);
+    ApiClock fakeClock =
+        new ApiClock() {
+          @Override
+          public long nanoTime() {
+            return fakeNanos.get();
+          }
+
+          @Override
+          public long millisTime() {
+            return fakeNanos.get() / 1_000_000L;
+          }
+        };
+
+    StorageMetricsContext context =
+        StorageMetricsContext.create(metrics, "GetObject", Attributes.empty(), fakeClock);
+    assertThat(context.getMetrics()).isSameInstanceAs(metrics);
+    assertThat(context.getStartTimeNanos()).isEqualTo(1_000_000_000L);
+
+    fakeNanos.set(3_500_000_000L);
+    assertThat(context.getElapsedSeconds()).isEqualTo(2.5);
+  }
+
+  @Test
   public void create_validatesNonNullArguments() {
     assertThrows(NullPointerException.class, () -> StorageMetricsContext.create(null));
     assertThrows(
@@ -94,6 +119,12 @@ public final class StorageMetricsContextTest {
     assertThrows(
         NullPointerException.class,
         () -> StorageMetricsContext.create("op", Attributes.empty(), null));
+    assertThrows(
+        NullPointerException.class,
+        () -> StorageMetricsContext.create("op", Attributes.empty(), Context.current(), null));
+    assertThrows(
+        NullPointerException.class,
+        () -> StorageMetricsContext.create(metrics, "op", Attributes.empty(), null));
     assertThrows(NullPointerException.class, () -> StorageMetricsContext.createForMultiStep(null));
     assertThrows(
         NullPointerException.class,
@@ -103,6 +134,14 @@ public final class StorageMetricsContextTest {
     assertThrows(
         NullPointerException.class,
         () -> StorageMetricsContext.createForMultiStep("op", Attributes.empty(), null));
+    assertThrows(
+        NullPointerException.class,
+        () ->
+            StorageMetricsContext.createForMultiStep(
+                "op", Attributes.empty(), Context.current(), null));
+    assertThrows(
+        NullPointerException.class,
+        () -> StorageMetricsContext.createForMultiStep(metrics, "op", Attributes.empty(), null));
   }
 
   @Test
@@ -117,7 +156,6 @@ public final class StorageMetricsContextTest {
 
     assertThat(context.getOperationName()).isEqualTo("WriteObject");
     assertThat(context.getBaseAttributes()).isEqualTo(attrs);
-    assertThat(context.getBaseAttributes().toBuilder().build()).isEqualTo(attrs);
   }
 
   @Test
@@ -171,67 +209,15 @@ public final class StorageMetricsContextTest {
 
     GrpcCallContext attachedContext = context.attach(callContext);
     assertThat(attachedContext).isNotNull();
+    assertThat(
+            attachedContext.getCallOptions().getOption(StorageMetricsContext.GRPC_CALL_OPTIONS_KEY))
+        .isSameInstanceAs(context);
 
     StorageMetricsContext extracted = StorageMetricsContext.from(attachedContext);
     assertThat(extracted).isSameInstanceAs(context);
 
     assertThat(StorageMetricsContext.from((GrpcCallContext) null)).isNull();
     assertThat(StorageMetricsContext.from(GrpcCallContext.createDefault())).isNull();
-  }
-
-  @Test
-  public void transportAttachment_apiCallContext() {
-    StorageMetricsContext context = StorageMetricsContext.create("GetObject");
-    ApiCallContext callContext = GrpcCallContext.createDefault();
-
-    ApiCallContext attachedContext = context.attach(callContext);
-    assertThat(attachedContext).isNotNull();
-
-    StorageMetricsContext extracted = StorageMetricsContext.from(attachedContext);
-    assertThat(extracted).isSameInstanceAs(context);
-
-    assertThat(StorageMetricsContext.from((ApiCallContext) null)).isNull();
-  }
-
-  @Test
-  public void transportAttachment_apiCallContext_whenGrpcCallContext_attachesCallOptions() {
-    StorageMetricsContext context = StorageMetricsContext.create("GetObject");
-    ApiCallContext callContext = GrpcCallContext.createDefault();
-
-    ApiCallContext attachedContext = context.attach(callContext);
-    assertThat(attachedContext).isNotNull();
-    assertThat(attachedContext).isInstanceOf(GrpcCallContext.class);
-
-    GrpcCallContext grpcCallContext = (GrpcCallContext) attachedContext;
-    assertThat(grpcCallContext.getOption(StorageMetricsContext.API_CALL_CONTEXT_KEY))
-        .isSameInstanceAs(context);
-    assertThat(
-            grpcCallContext.getCallOptions().getOption(StorageMetricsContext.GRPC_CALL_OPTIONS_KEY))
-        .isSameInstanceAs(context);
-
-    StorageMetricsContext extracted = StorageMetricsContext.from(attachedContext);
-    assertThat(extracted).isSameInstanceAs(context);
-
-    GrpcCallContext callOptionsOnlyContext =
-        GrpcCallContext.createDefault().withCallOptions(context.attach(CallOptions.DEFAULT));
-    assertThat(StorageMetricsContext.from((ApiCallContext) callOptionsOnlyContext))
-        .isSameInstanceAs(context);
-  }
-
-  @Test
-  public void transportAttachment_propertiesMap() {
-    StorageMetricsContext context = StorageMetricsContext.create("GetObject");
-    Map<String, Object> properties = new HashMap<>();
-
-    Map<String, Object> attachedMap = context.attach(properties);
-    assertThat(attachedMap).isSameInstanceAs(properties);
-
-    StorageMetricsContext extracted = StorageMetricsContext.from(properties);
-    assertThat(extracted).isSameInstanceAs(context);
-
-    assertThat(StorageMetricsContext.from((Map<String, Object>) null)).isNull();
-    Map<String, Object> unattached = new HashMap<>();
-    assertThat(StorageMetricsContext.from(unattached)).isNull();
   }
 
   @Test
@@ -256,6 +242,42 @@ public final class StorageMetricsContextTest {
     assertThat(context3.getOperationName()).isEqualTo("DeleteObject");
     assertThat(context3.getBaseAttributes()).isEqualTo(customAttrs);
     assertThat(context3.getOtelContext()).isSameInstanceAs(customContext);
+
+    StorageMetricsContext context4 =
+        StorageMetricsContext.createForMultiStep(metrics, "WriteObject", customAttrs);
+    assertThat(context4.shouldRecordOperationOnRetrierExit()).isFalse();
+    assertThat(context4.getMetrics()).isSameInstanceAs(metrics);
+  }
+
+  @Test
+  public void recordWithBoundMetrics_recordsWithoutPassingMetricsParameter() {
+    Attributes base =
+        metrics.attachClientAttributes(
+            Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc"));
+    StorageMetricsContext context = StorageMetricsContext.create(metrics, "GetObject", base);
+
+    context.recordAttemptFailure(Status.UNAVAILABLE.asRuntimeException());
+    context.recordAttemptSuccess();
+    context.recordOperation(null);
+
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    MetricData attemptsMetric =
+        findMetric(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(attemptsMetric).isNotNull();
+    assertThat(attemptsMetric.getLongSumData().getPoints()).hasSize(2);
+
+    LongPointData errorPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ERRORS);
+    assertThat(errorPoint.getValue()).isEqualTo(1L);
+    assertThat(errorPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID))
+        .isEqualTo(
+            metrics.getClientAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_INSTANCE_ID));
+
+    LongPointData opPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_OPERATIONS);
+    assertThat(opPoint.getValue()).isEqualTo(1L);
+    assertThat(opPoint.getAttributes().get(StorageClientMetrics.KEY_GCP_CLIENT_SERVICE))
+        .isEqualTo(StorageClientMetrics.SERVICE_STORAGE);
   }
 
   @Test
@@ -279,14 +301,16 @@ public final class StorageMetricsContextTest {
   public void recordAttemptSuccess_nullMetrics_noOp() {
     StorageMetricsContext context = StorageMetricsContext.create("GetObject");
     context.recordAttemptSuccess(null);
+    context.recordAttemptSuccess();
+    assertThat(reader.collectAllMetrics()).isEmpty();
   }
 
   @Test
   public void recordAttemptSuccess_whenAttemptsNull_noOp() {
-    SdkMeterProvider provider = SdkMeterProvider.builder().build();
-    StorageClientMetrics metrics = StorageClientMetrics.create(provider, false, false);
+    StorageClientMetrics disabledMetrics = StorageClientMetrics.create(provider, false, false);
     StorageMetricsContext context = StorageMetricsContext.create("GetObject");
-    context.recordAttemptSuccess(metrics);
+    context.recordAttemptSuccess(disabledMetrics);
+    assertThat(reader.collectAllMetrics()).isEmpty();
   }
 
   @Test
@@ -378,6 +402,8 @@ public final class StorageMetricsContextTest {
   public void recordAttemptFailure_nullMetrics_noOp() {
     StorageMetricsContext context = StorageMetricsContext.create("GetObject");
     context.recordAttemptFailure(null, new RuntimeException("boom"));
+    context.recordAttemptFailure(new RuntimeException("boom"));
+    assertThat(reader.collectAllMetrics()).isEmpty();
   }
 
   @Test
@@ -385,6 +411,7 @@ public final class StorageMetricsContextTest {
     StorageClientMetrics disabledMetrics = StorageClientMetrics.create(provider, false, false);
     StorageMetricsContext context = StorageMetricsContext.create("GetObject");
     context.recordAttemptFailure(disabledMetrics, new RuntimeException("err"));
+    assertThat(reader.collectAllMetrics()).isEmpty();
   }
 
   @Test
@@ -546,9 +573,22 @@ public final class StorageMetricsContextTest {
     StorageMetricsContext grpcContext = StorageMetricsContext.create("GetObject", grpcBase);
     grpcContext.recordAttemptFailure(metrics, selfCausing);
 
+    Collection<MetricData> collected = reader.collectAllMetrics();
+    LongPointData grpcPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(grpcPoint.getAttributes().get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE))
+        .isEqualTo(StorageErrorTypeMapper.STATUS_UNKNOWN);
+
+    resetMetrics();
     Attributes httpBase = Attributes.of(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "http");
     StorageMetricsContext httpContext = StorageMetricsContext.create("GetObject", httpBase);
     httpContext.recordAttemptFailure(metrics, selfCausing);
+
+    collected = reader.collectAllMetrics();
+    LongPointData httpPoint =
+        getSinglePoint(collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_ATTEMPTS);
+    assertThat(httpPoint.getAttributes().get(StorageClientMetrics.KEY_HTTP_RESPONSE_STATUS_CODE))
+        .isEqualTo("0");
   }
 
   @Test
