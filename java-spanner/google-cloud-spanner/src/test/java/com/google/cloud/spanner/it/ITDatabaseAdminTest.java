@@ -265,13 +265,10 @@ public class ITDatabaseAdminTest {
     OperationFuture<Database, UpdateDatabaseMetadata> op =
         dbAdminClient.updateDatabase(databaseToUpdate);
 
-    try {
-      op.get(5, TimeUnit.MINUTES);
-      Assert.fail("No exception thrown");
-    } catch (ExecutionException | InterruptedException | TimeoutException e) {
-      SpannerException exception = SpannerExceptionFactory.asSpannerException(e.getCause());
-      assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
-    }
+    ExecutionException e = Assert.assertThrows(
+        ExecutionException.class, () -> op.get(5, TimeUnit.MINUTES));
+    SpannerException exception = SpannerExceptionFactory.asSpannerException(e.getCause());
+    assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
   }
 
   @Test

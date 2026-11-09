@@ -122,7 +122,7 @@ public class ITPitrCreateDatabaseTest {
     try {
       createDatabase(instanceId, databaseId, extraStatement);
       fail("Expected invalid argument error when setting invalid version retention period");
-    } catch (Exception e) {
+    } catch (ExecutionException e) {
       SpannerException spannerException = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertThat(spannerException.getErrorCode()).isEqualTo(ErrorCode.INVALID_ARGUMENT);
     }
