@@ -43,6 +43,7 @@ import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGolden
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListGoldengateDeploymentsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListLocationsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListMinorVersionsPagedResponse;
+import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbDnsZonesPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbNetworksPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListOdbSubnetsPagedResponse;
 import static com.google.cloud.oracledatabase.v1.OracleDatabaseClient.ListPluggableDatabasesPagedResponse;
@@ -561,6 +562,40 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
   public OperationCallSettings<DeleteOdbSubnetRequest, Empty, OperationMetadata>
       deleteOdbSubnetOperationSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings()).deleteOdbSubnetOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listOdbDnsZones. */
+  public PagedCallSettings<
+          ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>
+      listOdbDnsZonesSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).listOdbDnsZonesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getOdbDnsZone. */
+  public UnaryCallSettings<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).getOdbDnsZoneSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createOdbDnsZone. */
+  public UnaryCallSettings<CreateOdbDnsZoneRequest, Operation> createOdbDnsZoneSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createOdbDnsZoneSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createOdbDnsZone. */
+  public OperationCallSettings<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+      createOdbDnsZoneOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).createOdbDnsZoneOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbDnsZone. */
+  public UnaryCallSettings<DeleteOdbDnsZoneRequest, Operation> deleteOdbDnsZoneSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteOdbDnsZoneSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteOdbDnsZone. */
+  public OperationCallSettings<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+      deleteOdbDnsZoneOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).deleteOdbDnsZoneOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listExadbVmClusters. */
@@ -1494,6 +1529,42 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     public OperationCallSettings.Builder<DeleteOdbSubnetRequest, Empty, OperationMetadata>
         deleteOdbSubnetOperationSettings() {
       return getStubSettingsBuilder().deleteOdbSubnetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listOdbDnsZones. */
+    public PagedCallSettings.Builder<
+            ListOdbDnsZonesRequest, ListOdbDnsZonesResponse, ListOdbDnsZonesPagedResponse>
+        listOdbDnsZonesSettings() {
+      return getStubSettingsBuilder().listOdbDnsZonesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getOdbDnsZone. */
+    public UnaryCallSettings.Builder<GetOdbDnsZoneRequest, OdbDnsZone> getOdbDnsZoneSettings() {
+      return getStubSettingsBuilder().getOdbDnsZoneSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbDnsZone. */
+    public UnaryCallSettings.Builder<CreateOdbDnsZoneRequest, Operation>
+        createOdbDnsZoneSettings() {
+      return getStubSettingsBuilder().createOdbDnsZoneSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createOdbDnsZone. */
+    public OperationCallSettings.Builder<CreateOdbDnsZoneRequest, OdbDnsZone, OperationMetadata>
+        createOdbDnsZoneOperationSettings() {
+      return getStubSettingsBuilder().createOdbDnsZoneOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbDnsZone. */
+    public UnaryCallSettings.Builder<DeleteOdbDnsZoneRequest, Operation>
+        deleteOdbDnsZoneSettings() {
+      return getStubSettingsBuilder().deleteOdbDnsZoneSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteOdbDnsZone. */
+    public OperationCallSettings.Builder<DeleteOdbDnsZoneRequest, Empty, OperationMetadata>
+        deleteOdbDnsZoneOperationSettings() {
+      return getStubSettingsBuilder().deleteOdbDnsZoneOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listExadbVmClusters. */

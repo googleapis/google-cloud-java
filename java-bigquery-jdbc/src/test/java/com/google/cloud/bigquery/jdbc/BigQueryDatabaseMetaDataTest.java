@@ -26,6 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
@@ -729,48 +730,57 @@ public class BigQueryDatabaseMetaDataTest {
     results.add(createTableRow(null, "sch_b", "table_0", "TABLE", schemaFields));
     results.add(createTableRow("cat_a", "sch_z", "table_0", "TABLE", schemaFields));
     results.add(createTableRow("cat_a", null, "view_0", "VIEW", schemaFields));
+    results.add(
+        createTableRow("cat_a", "sch_a", "RetailGraph.Product", "GRAPH TABLE", schemaFields));
 
     Comparator<FieldValueList> comparator = dbMetadata.defineGetTablesComparator(schemaFields);
     dbMetadata.sortResults(results, comparator, "getTables", dbMetadata.LOG);
 
-    // Expected order: TABLEs first, then VIEWs. Within type, sort by CAT, SCHEM, NAME
-    assertEquals(6, results.size());
+    // Expected order: GRAPH TABLE first, then TABLEs, then VIEWs. Within type, sort by CAT, SCHEM,
+    // NAME
+    assertEquals(7, results.size());
 
-    // 1. Null cat, sch_b, table_0, TABLE
-    assertTrue(results.get(0).get("TABLE_CAT").isNull(), "Row 0 TABLE_CAT should be null");
-    assertEquals("sch_b", results.get(0).get("TABLE_SCHEM").getStringValue());
-    assertEquals("table_0", results.get(0).get("TABLE_NAME").getStringValue());
-    assertEquals("TABLE", results.get(0).get("TABLE_TYPE").getStringValue());
+    // 1. cat_a, sch_a, RetailGraph.Product, GRAPH TABLE
+    assertEquals("cat_a", results.get(0).get("TABLE_CAT").getStringValue());
+    assertEquals("sch_a", results.get(0).get("TABLE_SCHEM").getStringValue());
+    assertEquals("RetailGraph.Product", results.get(0).get("TABLE_NAME").getStringValue());
+    assertEquals("GRAPH TABLE", results.get(0).get("TABLE_TYPE").getStringValue());
 
-    // 2. cat_a, sch_c, table_2, TABLE
-    assertEquals("cat_a", results.get(1).get("TABLE_CAT").getStringValue());
-    assertEquals("sch_c", results.get(1).get("TABLE_SCHEM").getStringValue());
-    assertEquals("table_2", results.get(1).get("TABLE_NAME").getStringValue());
+    // 2. Null cat, sch_b, table_0, TABLE
+    assertTrue(results.get(1).get("TABLE_CAT").isNull(), "Row 1 TABLE_CAT should be null");
+    assertEquals("sch_b", results.get(1).get("TABLE_SCHEM").getStringValue());
+    assertEquals("table_0", results.get(1).get("TABLE_NAME").getStringValue());
     assertEquals("TABLE", results.get(1).get("TABLE_TYPE").getStringValue());
 
-    // 3. cat_a, sch_z, table_0, TABLE
+    // 3. cat_a, sch_c, table_2, TABLE
     assertEquals("cat_a", results.get(2).get("TABLE_CAT").getStringValue());
-    assertEquals("sch_z", results.get(2).get("TABLE_SCHEM").getStringValue());
-    assertEquals("table_0", results.get(2).get("TABLE_NAME").getStringValue());
+    assertEquals("sch_c", results.get(2).get("TABLE_SCHEM").getStringValue());
+    assertEquals("table_2", results.get(2).get("TABLE_NAME").getStringValue());
     assertEquals("TABLE", results.get(2).get("TABLE_TYPE").getStringValue());
 
-    // 4. cat_a, sch_z, table_1, TABLE
+    // 4. cat_a, sch_z, table_0, TABLE
     assertEquals("cat_a", results.get(3).get("TABLE_CAT").getStringValue());
     assertEquals("sch_z", results.get(3).get("TABLE_SCHEM").getStringValue());
-    assertEquals("table_1", results.get(3).get("TABLE_NAME").getStringValue());
+    assertEquals("table_0", results.get(3).get("TABLE_NAME").getStringValue());
     assertEquals("TABLE", results.get(3).get("TABLE_TYPE").getStringValue());
 
-    // 5. cat_a, null, view_0, VIEW
+    // 5. cat_a, sch_z, table_1, TABLE
     assertEquals("cat_a", results.get(4).get("TABLE_CAT").getStringValue());
-    assertTrue(results.get(4).get("TABLE_SCHEM").isNull(), "Row 4 TABLE_SCHEM should be null");
-    assertEquals("view_0", results.get(4).get("TABLE_NAME").getStringValue());
-    assertEquals("VIEW", results.get(4).get("TABLE_TYPE").getStringValue());
+    assertEquals("sch_z", results.get(4).get("TABLE_SCHEM").getStringValue());
+    assertEquals("table_1", results.get(4).get("TABLE_NAME").getStringValue());
+    assertEquals("TABLE", results.get(4).get("TABLE_TYPE").getStringValue());
 
-    // 6. cat_b, sch_a, view_1, VIEW
-    assertEquals("cat_b", results.get(5).get("TABLE_CAT").getStringValue());
-    assertEquals("sch_a", results.get(5).get("TABLE_SCHEM").getStringValue());
-    assertEquals("view_1", results.get(5).get("TABLE_NAME").getStringValue());
+    // 6. cat_a, null, view_0, VIEW
+    assertEquals("cat_a", results.get(5).get("TABLE_CAT").getStringValue());
+    assertTrue(results.get(5).get("TABLE_SCHEM").isNull(), "Row 5 TABLE_SCHEM should be null");
+    assertEquals("view_0", results.get(5).get("TABLE_NAME").getStringValue());
     assertEquals("VIEW", results.get(5).get("TABLE_TYPE").getStringValue());
+
+    // 7. cat_b, sch_a, view_1, VIEW
+    assertEquals("cat_b", results.get(6).get("TABLE_CAT").getStringValue());
+    assertEquals("sch_a", results.get(6).get("TABLE_SCHEM").getStringValue());
+    assertEquals("view_1", results.get(6).get("TABLE_NAME").getStringValue());
+    assertEquals("VIEW", results.get(6).get("TABLE_TYPE").getStringValue());
   }
 
   @Test
@@ -3342,11 +3352,14 @@ public class BigQueryDatabaseMetaDataTest {
     }
 
     ColumnTypeInfo metadataTypeInfo = dbMetadata.mapBigQueryTypeToJdbc(field);
+    ColumnTypeInfo graphTypeInfo = dbMetadata.getColumnTypeInfoForTypeKind(type.name());
     Integer resultSetType = BigQueryTypeRegistry.toJdbcType(type);
 
     assertNotNull(resultSetType, "ResultSet mapping should exist for " + type);
     assertEquals(
         metadataTypeInfo.jdbcType, (int) resultSetType, "Type mapping mismatch for " + type);
+    assertEquals(metadataTypeInfo.jdbcType, graphTypeInfo.jdbcType);
+    assertEquals(metadataTypeInfo.typeName, graphTypeInfo.typeName);
   }
 
   @Test
@@ -3802,5 +3815,362 @@ public class BigQueryDatabaseMetaDataTest {
 
     assertEquals(
         Arrays.asList("extra-proj1", "extra-proj2", "pcnt-warehouse", "primary-project"), catalogs);
+  }
+
+  @Test
+  public void testPrepareGetTableTypesRows_withGraphTablesEnabled() {
+    Schema schema = BigQueryDatabaseMetaData.defineGetTableTypesSchema();
+    List<FieldValueList> rows = BigQueryDatabaseMetaData.prepareGetTableTypesRows(schema, true);
+
+    List<String> actualTypes = new ArrayList<>();
+    for (FieldValueList row : rows) {
+      actualTypes.add(row.get(0).getStringValue());
+    }
+    assertThat(actualTypes)
+        .containsExactly(
+            "EXTERNAL", "GRAPH TABLE", "MATERIALIZED VIEW", "SNAPSHOT", "TABLE", "VIEW")
+        .inOrder();
+  }
+
+  @Test
+  public void testGetTableTypes_withGraphTablesEnabled() throws SQLException {
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
+    try (ResultSet rs = dbMetadata.getTableTypes()) {
+      List<String> actualTypes = new ArrayList<>();
+      while (rs.next()) {
+        actualTypes.add(rs.getString("TABLE_TYPE"));
+      }
+      assertThat(actualTypes)
+          .containsExactly(
+              "EXTERNAL", "GRAPH TABLE", "MATERIALIZED VIEW", "SNAPSHOT", "TABLE", "VIEW")
+          .inOrder();
+    }
+  }
+
+  @Test
+  public void testShouldSkipGraphColumns() {
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(false);
+    assertTrue(dbMetadata.shouldSkipGraphColumns("%"));
+    assertTrue(dbMetadata.shouldSkipGraphColumns("RetailGraph.Product"));
+
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
+    assertTrue(dbMetadata.shouldSkipGraphColumns("plainTableWithoutDot"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("RetailGraph.Product"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("Retail_Graph.Product"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("Retail_Graph.Product_Node"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("RetailGraph.Product_Node"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("Retail%.Product_Node"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("RetailGraph.Product%"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("%"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns("Retail%"));
+    assertTrue(dbMetadata.shouldSkipGraphColumns("Graph_Node"));
+    assertFalse(dbMetadata.shouldSkipGraphColumns(null));
+  }
+
+  @Test
+  public void testCreateGraphColumnRow_StandardProperty() {
+    FieldList schemaFields = dbMetadata.defineGetColumnsSchema().getFields();
+
+    FieldValueList propRow =
+        FieldValueList.of(
+            dbMetadata.createGraphColumnRow(
+                "test-project",
+                "my_dataset",
+                "RetailGraph.Product",
+                "list_price",
+                "NUMERIC",
+                "list_price",
+                "COLUMN",
+                "List price in USD",
+                1),
+            schemaFields);
+
+    assertEquals("test-project", propRow.get("TABLE_CAT").getStringValue());
+    assertEquals("my_dataset", propRow.get("TABLE_SCHEM").getStringValue());
+    assertEquals("RetailGraph.Product", propRow.get("TABLE_NAME").getStringValue());
+    assertEquals("list_price", propRow.get("COLUMN_NAME").getStringValue());
+    assertEquals(Types.NUMERIC, propRow.get("DATA_TYPE").getLongValue());
+    assertEquals("NUMERIC", propRow.get("TYPE_NAME").getStringValue());
+    assertEquals(38L, propRow.get("COLUMN_SIZE").getLongValue());
+    assertTrue(propRow.get("BUFFER_LENGTH").isNull());
+    assertEquals(9L, propRow.get("DECIMAL_DIGITS").getLongValue());
+    assertEquals(10L, propRow.get("NUM_PREC_RADIX").getLongValue());
+    assertEquals(DatabaseMetaData.columnNullableUnknown, propRow.get("NULLABLE").getLongValue());
+    assertEquals("List price in USD", propRow.get("REMARKS").getStringValue());
+    assertTrue(propRow.get("COLUMN_DEF").isNull());
+    assertEquals(1L, propRow.get("ORDINAL_POSITION").getLongValue());
+    assertEquals("", propRow.get("IS_NULLABLE").getStringValue());
+    assertEquals("NO", propRow.get("IS_AUTOINCREMENT").getStringValue());
+    assertEquals("NO", propRow.get("IS_GENERATEDCOLUMN").getStringValue());
+  }
+
+  @Test
+  public void testCreateGraphColumnRow_MeasureAndComputedProperty() {
+    FieldList schemaFields = dbMetadata.defineGetColumnsSchema().getFields();
+
+    // Measure without description
+    FieldValueList measureRow =
+        FieldValueList.of(
+            dbMetadata.createGraphColumnRow(
+                "test-project",
+                "my_dataset",
+                "RetailGraph.Product",
+                "avg_list_price",
+                "NUMERIC",
+                "AVG(list_price)",
+                "MEASURE",
+                null,
+                2),
+            schemaFields);
+    assertEquals(Types.NUMERIC, measureRow.get("DATA_TYPE").getLongValue());
+    assertEquals("NUMERIC", measureRow.get("TYPE_NAME").getStringValue());
+    assertEquals(38L, measureRow.get("COLUMN_SIZE").getLongValue());
+    assertEquals(9L, measureRow.get("DECIMAL_DIGITS").getLongValue());
+    assertEquals("MEASURE: AVG(list_price)", measureRow.get("REMARKS").getStringValue());
+    assertEquals("YES", measureRow.get("IS_GENERATEDCOLUMN").getStringValue());
+
+    // Measure with description
+    FieldValueList measureWithDescRow =
+        FieldValueList.of(
+            dbMetadata.createGraphColumnRow(
+                "test-project",
+                "my_dataset",
+                "RetailGraph.Product",
+                "avg_list_price",
+                "NUMERIC",
+                "AVG(list_price)",
+                "MEASURE",
+                "Average list price",
+                3),
+            schemaFields);
+    assertEquals(
+        "MEASURE: AVG(list_price) - Average list price",
+        measureWithDescRow.get("REMARKS").getStringValue());
+    assertEquals("YES", measureWithDescRow.get("IS_GENERATEDCOLUMN").getStringValue());
+
+    // Computed property (non-measure, expression differs from column name)
+    FieldValueList computedRow =
+        FieldValueList.of(
+            dbMetadata.createGraphColumnRow(
+                "test-project",
+                "my_dataset",
+                "RetailGraph.Sale",
+                "line_total",
+                "NUMERIC",
+                "quantity * unit_price",
+                "EXPRESSION",
+                "Total line amount",
+                4),
+            schemaFields);
+    assertEquals("Total line amount", computedRow.get("REMARKS").getStringValue());
+    assertEquals("YES", computedRow.get("IS_GENERATEDCOLUMN").getStringValue());
+  }
+
+  @Test
+  public void testShouldSkipGraphTables() {
+    Set<String> tableOnly = Collections.singleton("TABLE");
+    Set<String> graphIncluded = new HashSet<>(Arrays.asList("TABLE", "GRAPH TABLE"));
+
+    // Disabled connection property -> always skip
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(false);
+    assertTrue(dbMetadata.shouldSkipGraphTables(null, null));
+    assertTrue(dbMetadata.shouldSkipGraphTables("%", graphIncluded));
+    assertTrue(dbMetadata.shouldSkipGraphTables("RetailGraph.Product", graphIncluded));
+
+    // Enabled connection property
+    when(bigQueryConnection.isEnableGraphMetadata()).thenReturn(true);
+    // Requested types exclude GRAPH TABLE -> skip
+    assertTrue(dbMetadata.shouldSkipGraphTables("%", tableOnly));
+    // Plain table names without '%' or '.' (including snake_case with '_') -> skip
+    assertTrue(dbMetadata.shouldSkipGraphTables("my_normal_table", null));
+    assertTrue(dbMetadata.shouldSkipGraphTables("plain_table", graphIncluded));
+
+    // Wildcard '%', null pattern, or dot-qualified graph table names -> do not skip
+    assertFalse(dbMetadata.shouldSkipGraphTables(null, null));
+    assertFalse(dbMetadata.shouldSkipGraphTables("%", null));
+    assertFalse(dbMetadata.shouldSkipGraphTables("RetailGraph.Product", null));
+    assertFalse(dbMetadata.shouldSkipGraphTables("Graph_.Person", graphIncluded));
+    assertFalse(dbMetadata.shouldSkipGraphTables("my_graph.%", graphIncluded));
+  }
+
+  @Test
+  public void testResolveGraphRegion() throws SQLException {
+    when(bigQueryConnection.getLocation()).thenReturn(null);
+    assertEquals("region-us", dbMetadata.resolveGraphRegion());
+
+    when(bigQueryConnection.getLocation()).thenReturn("   ");
+    assertEquals("region-us", dbMetadata.resolveGraphRegion());
+
+    when(bigQueryConnection.getLocation()).thenReturn("US");
+    assertEquals("region-us", dbMetadata.resolveGraphRegion());
+
+    when(bigQueryConnection.getLocation()).thenReturn("us-central1");
+    assertEquals("region-us-central1", dbMetadata.resolveGraphRegion());
+
+    when(bigQueryConnection.getLocation()).thenReturn("region-eu");
+    assertEquals("region-eu", dbMetadata.resolveGraphRegion());
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> BigQueryDatabaseMetaData.validateRegionScopeIdentifier("region-US"));
+  }
+
+  @Test
+  public void testGraphTablesSqlContent() throws SQLException {
+    String datasetSql =
+        dbMetadata.replaceSqlParameters(
+            BigQueryDatabaseMetaData.getGraphTablesSqlContent(), "my-project", "my_dataset");
+    assertThat(datasetSql).contains("`my-project.my_dataset.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
+
+    String regionSql =
+        dbMetadata.replaceSqlParameters(
+            BigQueryDatabaseMetaData.getGraphTablesSqlContent(), "my-project", "region-us");
+    assertThat(regionSql).contains("`my-project.region-us.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
+  }
+
+  @Test
+  public void testGraphPrimaryKeysSqlContent() throws SQLException {
+    String datasetSql =
+        dbMetadata.replaceSqlParameters(
+            BigQueryDatabaseMetaData.getGraphPrimaryKeysSqlContent(), "my-project", "my_dataset");
+    assertThat(datasetSql).contains("`my-project.my_dataset.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
+
+    String regionSql =
+        dbMetadata.replaceSqlParameters(
+            BigQueryDatabaseMetaData.getGraphPrimaryKeysSqlContent(), "my-project", "region-us");
+    assertThat(regionSql).contains("`my-project.region-us.INFORMATION_SCHEMA.PROPERTY_GRAPHS`");
+
+    // getPrimaryKeys takes exact names: no LIKE, one bound parameter, key columns + 1-based seq.
+    assertThat(regionSql).doesNotContain("LIKE");
+    assertThat(regionSql).contains("'$.keyColumns'");
+    assertThat(regionSql).contains("kc_off + 1 AS KEY_SEQ");
+  }
+
+  @FunctionalInterface
+  private interface MetadataResultSetSupplier {
+    ResultSet get(BigQueryDatabaseMetaData metadata) throws SQLException;
+  }
+
+  static Stream<Arguments> emptyArgumentMetadataProvider() {
+    return Stream.of(
+        Arguments.of(
+            10,
+            "TABLE_CAT",
+            "REF_GENERATION",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getTables("", null, "%", null),
+                m -> m.getTables(null, "", "%", null),
+                m -> m.getTables(null, null, "", null))),
+        Arguments.of(
+            24,
+            "TABLE_CAT",
+            "IS_GENERATEDCOLUMN",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getColumns("", null, "%", "%"),
+                m -> m.getColumns(null, "", "%", "%"),
+                m -> m.getColumns(null, null, "", "%"),
+                m -> m.getColumns(null, null, "%", ""))),
+        Arguments.of(
+            2,
+            "TABLE_SCHEM",
+            "TABLE_CATALOG",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getSchemas("", null), m -> m.getSchemas(null, ""))),
+        Arguments.of(
+            9,
+            "PROCEDURE_CAT",
+            "SPECIFIC_NAME",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getProcedures("", null, "%"),
+                m -> m.getProcedures(null, "", "%"),
+                m -> m.getProcedures(null, null, ""))),
+        Arguments.of(
+            20,
+            "PROCEDURE_CAT",
+            "SPECIFIC_NAME",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getProcedureColumns("", null, "%", "%"),
+                m -> m.getProcedureColumns(null, "", "%", "%"),
+                m -> m.getProcedureColumns(null, null, "", "%"),
+                m -> m.getProcedureColumns(null, null, "%", ""))),
+        Arguments.of(
+            6,
+            "FUNCTION_CAT",
+            "SPECIFIC_NAME",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getFunctions("", null, "%"),
+                m -> m.getFunctions(null, "", "%"),
+                m -> m.getFunctions(null, null, ""))),
+        Arguments.of(
+            17,
+            "FUNCTION_CAT",
+            "SPECIFIC_NAME",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getFunctionColumns("", null, "%", "%"),
+                m -> m.getFunctionColumns(null, "", "%", "%"),
+                m -> m.getFunctionColumns(null, null, "", "%"),
+                m -> m.getFunctionColumns(null, null, "%", ""))),
+        Arguments.of(
+            6,
+            "TABLE_CAT",
+            "PK_NAME",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getPrimaryKeys("", "dataset", "table"),
+                m -> m.getPrimaryKeys("project", "", "table"),
+                m -> m.getPrimaryKeys("project", "dataset", ""),
+                m -> m.getPrimaryKeys("project", "dataset", null))),
+        Arguments.of(
+            14,
+            "PKTABLE_CAT",
+            "DEFERRABILITY",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getImportedKeys("", "dataset", "table"),
+                m -> m.getImportedKeys("project", "", "table"),
+                m -> m.getImportedKeys("project", "dataset", ""),
+                m -> m.getImportedKeys("project", "dataset", null))),
+        Arguments.of(
+            14,
+            "PKTABLE_CAT",
+            "DEFERRABILITY",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getExportedKeys("", "dataset", "table"),
+                m -> m.getExportedKeys("project", "", "table"),
+                m -> m.getExportedKeys("project", "dataset", ""),
+                m -> m.getExportedKeys("project", "dataset", null))),
+        Arguments.of(
+            14,
+            "PKTABLE_CAT",
+            "DEFERRABILITY",
+            Arrays.<MetadataResultSetSupplier>asList(
+                m -> m.getCrossReference("", "pSchema", "pTable", "fCat", "fSchema", "fTable"),
+                m -> m.getCrossReference("pCat", "", "pTable", "fCat", "fSchema", "fTable"),
+                m -> m.getCrossReference("pCat", "pSchema", "", "fCat", "fSchema", "fTable"),
+                m -> m.getCrossReference("pCat", "pSchema", null, "fCat", "fSchema", "fTable"),
+                m -> m.getCrossReference("pCat", "pSchema", "pTable", "", "fSchema", "fTable"),
+                m -> m.getCrossReference("pCat", "pSchema", "pTable", "fCat", "", "fTable"),
+                m -> m.getCrossReference("pCat", "pSchema", "pTable", "fCat", "fSchema", ""),
+                m -> m.getCrossReference("pCat", "pSchema", "pTable", "fCat", "fSchema", null))));
+  }
+
+  @ParameterizedTest
+  @MethodSource("emptyArgumentMetadataProvider")
+  public void testEmptyOrNullArguments_ReturnsEmptyResultSetWithMetadata(
+      int expectedColumnCount,
+      String firstColumnName,
+      String lastColumnName,
+      List<MetadataResultSetSupplier> suppliers)
+      throws SQLException {
+    for (MetadataResultSetSupplier supplier : suppliers) {
+      try (ResultSet rs = supplier.get(dbMetadata)) {
+        assertNotNull(rs, "ResultSet should not be null");
+        ResultSetMetaData metaData = rs.getMetaData();
+        assertNotNull(metaData, "ResultSetMetaData should not be null");
+        assertEquals(expectedColumnCount, metaData.getColumnCount());
+        assertEquals(firstColumnName, metaData.getColumnName(1));
+        assertEquals(lastColumnName, metaData.getColumnName(expectedColumnCount));
+        assertEquals(1, rs.findColumn(firstColumnName));
+        assertEquals(expectedColumnCount, rs.findColumn(lastColumnName));
+        assertFalse(rs.next(), "ResultSet should have 0 rows");
+      }
+    }
   }
 }

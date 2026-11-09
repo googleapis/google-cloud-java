@@ -1372,6 +1372,26 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         : toolFakeConfig_;
   }
 
+  public static final int READ_ONLY_FIELD_NUMBER = 29;
+  private boolean readOnly_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the tool is read-only. If true, the tool
+   * cannot be modified by the user.
+   * </pre>
+   *
+   * <code>bool read_only = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The readOnly.
+   */
+  @java.lang.Override
+  public boolean getReadOnly() {
+    return readOnly_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1449,6 +1469,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     }
     if (toolTypeCase_ == 25) {
       output.writeMessage(25, (com.google.cloud.ces.v1beta.RemoteAgentTool) toolType_);
+    }
+    if (readOnly_ != false) {
+      output.writeBool(29, readOnly_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1547,6 +1570,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               25, (com.google.cloud.ces.v1beta.RemoteAgentTool) toolType_);
     }
+    if (readOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(29, readOnly_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1583,6 +1609,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
     if (hasToolFakeConfig()) {
       if (!getToolFakeConfig().equals(other.getToolFakeConfig())) return false;
     }
+    if (getReadOnly() != other.getReadOnly()) return false;
     if (!getToolTypeCase().equals(other.getToolTypeCase())) return false;
     switch (toolTypeCase_) {
       case 2:
@@ -1661,6 +1688,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + TOOL_FAKE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getToolFakeConfig().hashCode();
     }
+    hash = (37 * hash) + READ_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReadOnly());
     switch (toolTypeCase_) {
       case 2:
         hash = (37 * hash) + CLIENT_FUNCTION_FIELD_NUMBER;
@@ -1926,6 +1955,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         toolFakeConfigBuilder_.dispose();
         toolFakeConfigBuilder_ = null;
       }
+      readOnly_ = false;
       toolTypeCase_ = 0;
       toolType_ = null;
       return this;
@@ -1996,6 +2026,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         result.toolFakeConfig_ =
             toolFakeConfigBuilder_ == null ? toolFakeConfig_ : toolFakeConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.readOnly_ = readOnly_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2087,6 +2120,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasToolFakeConfig()) {
         mergeToolFakeConfig(other.getToolFakeConfig());
+      }
+      if (other.getReadOnly() != false) {
+        setReadOnly(other.getReadOnly());
       }
       switch (other.getToolTypeCase()) {
         case CLIENT_FUNCTION:
@@ -2320,6 +2356,12 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
                 toolTypeCase_ = 25;
                 break;
               } // case 202
+            case 232:
+              {
+                readOnly_ = input.readBool();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 232
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6653,6 +6695,65 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         toolFakeConfig_ = null;
       }
       return toolFakeConfigBuilder_;
+    }
+
+    private boolean readOnly_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the tool is read-only. If true, the tool
+     * cannot be modified by the user.
+     * </pre>
+     *
+     * <code>bool read_only = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The readOnly.
+     */
+    @java.lang.Override
+    public boolean getReadOnly() {
+      return readOnly_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the tool is read-only. If true, the tool
+     * cannot be modified by the user.
+     * </pre>
+     *
+     * <code>bool read_only = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The readOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReadOnly(boolean value) {
+
+      readOnly_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the tool is read-only. If true, the tool
+     * cannot be modified by the user.
+     * </pre>
+     *
+     * <code>bool read_only = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReadOnly() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      readOnly_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.Tool)

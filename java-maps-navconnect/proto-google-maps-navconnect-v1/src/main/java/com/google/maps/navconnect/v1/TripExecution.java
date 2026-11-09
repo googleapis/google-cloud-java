@@ -251,6 +251,127 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
         : location_;
   }
 
+  public static final int REMAINING_ROUTE_FIELD_NUMBER = 9;
+  private com.google.maps.navconnect.v1.Route remainingRoute_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides the polyline for the remaining portion of the route.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the remainingRoute field is set.
+   */
+  @java.lang.Override
+  public boolean hasRemainingRoute() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides the polyline for the remaining portion of the route.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The remainingRoute.
+   */
+  @java.lang.Override
+  public com.google.maps.navconnect.v1.Route getRemainingRoute() {
+    return remainingRoute_ == null
+        ? com.google.maps.navconnect.v1.Route.getDefaultInstance()
+        : remainingRoute_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides the polyline for the remaining portion of the route.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.navconnect.v1.RouteOrBuilder getRemainingRouteOrBuilder() {
+    return remainingRoute_ == null
+        ? com.google.maps.navconnect.v1.Route.getDefaultInstance()
+        : remainingRoute_;
+  }
+
+  public static final int LAST_ROUTE_DEVIATION_FIELD_NUMBER = 10;
+  private com.google.maps.navconnect.v1.RouteDeviation lastRouteDeviation_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent route deviation event captured during the
+   * trip.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastRouteDeviation field is set.
+   */
+  @java.lang.Override
+  public boolean hasLastRouteDeviation() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent route deviation event captured during the
+   * trip.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastRouteDeviation.
+   */
+  @java.lang.Override
+  public com.google.maps.navconnect.v1.RouteDeviation getLastRouteDeviation() {
+    return lastRouteDeviation_ == null
+        ? com.google.maps.navconnect.v1.RouteDeviation.getDefaultInstance()
+        : lastRouteDeviation_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The most recent route deviation event captured during the
+   * trip.
+   * </pre>
+   *
+   * <code>
+   * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.maps.navconnect.v1.RouteDeviationOrBuilder getLastRouteDeviationOrBuilder() {
+    return lastRouteDeviation_ == null
+        ? com.google.maps.navconnect.v1.RouteDeviation.getDefaultInstance()
+        : lastRouteDeviation_;
+  }
+
   public static final int TRAVELED_DURATION_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration traveledDuration_;
 
@@ -269,7 +390,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTraveledDuration() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -328,7 +449,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRemainingDuration() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -386,7 +507,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTraveledDistanceMeters() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -424,7 +545,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRemainingDistanceMeters() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -462,7 +583,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasStopAddedInRoute() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -505,20 +626,26 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getLocation());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(4, getTraveledDuration());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(5, getRemainingDuration());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeInt32(6, traveledDistanceMeters_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeInt32(7, remainingDistanceMeters_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeBool(8, stopAddedInRoute_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(9, getRemainingRoute());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(10, getLastRouteDeviation());
     }
     getUnknownFields().writeTo(output);
   }
@@ -538,20 +665,26 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLocation());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTraveledDuration());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getRemainingDuration());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, traveledDistanceMeters_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, remainingDistanceMeters_);
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, stopAddedInRoute_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getRemainingRoute());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getLastRouteDeviation());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -580,6 +713,14 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
     if (hasLocation() != other.hasLocation()) return false;
     if (hasLocation()) {
       if (!getLocation().equals(other.getLocation())) return false;
+    }
+    if (hasRemainingRoute() != other.hasRemainingRoute()) return false;
+    if (hasRemainingRoute()) {
+      if (!getRemainingRoute().equals(other.getRemainingRoute())) return false;
+    }
+    if (hasLastRouteDeviation() != other.hasLastRouteDeviation()) return false;
+    if (hasLastRouteDeviation()) {
+      if (!getLastRouteDeviation().equals(other.getLastRouteDeviation())) return false;
     }
     if (hasTraveledDuration() != other.hasTraveledDuration()) return false;
     if (hasTraveledDuration()) {
@@ -623,6 +764,14 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
     if (hasLocation()) {
       hash = (37 * hash) + LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getLocation().hashCode();
+    }
+    if (hasRemainingRoute()) {
+      hash = (37 * hash) + REMAINING_ROUTE_FIELD_NUMBER;
+      hash = (53 * hash) + getRemainingRoute().hashCode();
+    }
+    if (hasLastRouteDeviation()) {
+      hash = (37 * hash) + LAST_ROUTE_DEVIATION_FIELD_NUMBER;
+      hash = (53 * hash) + getLastRouteDeviation().hashCode();
     }
     if (hasTraveledDuration()) {
       hash = (37 * hash) + TRAVELED_DURATION_FIELD_NUMBER;
@@ -788,6 +937,8 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
         internalGetOriginFieldBuilder();
         internalGetDestinationFieldBuilder();
         internalGetLocationFieldBuilder();
+        internalGetRemainingRouteFieldBuilder();
+        internalGetLastRouteDeviationFieldBuilder();
         internalGetTraveledDurationFieldBuilder();
         internalGetRemainingDurationFieldBuilder();
       }
@@ -811,6 +962,16 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
       if (locationBuilder_ != null) {
         locationBuilder_.dispose();
         locationBuilder_ = null;
+      }
+      remainingRoute_ = null;
+      if (remainingRouteBuilder_ != null) {
+        remainingRouteBuilder_.dispose();
+        remainingRouteBuilder_ = null;
+      }
+      lastRouteDeviation_ = null;
+      if (lastRouteDeviationBuilder_ != null) {
+        lastRouteDeviationBuilder_.dispose();
+        lastRouteDeviationBuilder_ = null;
       }
       traveledDuration_ = null;
       if (traveledDurationBuilder_ != null) {
@@ -876,28 +1037,40 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.traveledDuration_ =
-            traveledDurationBuilder_ == null ? traveledDuration_ : traveledDurationBuilder_.build();
+        result.remainingRoute_ =
+            remainingRouteBuilder_ == null ? remainingRoute_ : remainingRouteBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.lastRouteDeviation_ =
+            lastRouteDeviationBuilder_ == null
+                ? lastRouteDeviation_
+                : lastRouteDeviationBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.traveledDuration_ =
+            traveledDurationBuilder_ == null ? traveledDuration_ : traveledDurationBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.remainingDuration_ =
             remainingDurationBuilder_ == null
                 ? remainingDuration_
                 : remainingDurationBuilder_.build();
-        to_bitField0_ |= 0x00000010;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.traveledDistanceMeters_ = traveledDistanceMeters_;
-        to_bitField0_ |= 0x00000020;
-      }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.remainingDistanceMeters_ = remainingDistanceMeters_;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.stopAddedInRoute_ = stopAddedInRoute_;
+        result.traveledDistanceMeters_ = traveledDistanceMeters_;
         to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.remainingDistanceMeters_ = remainingDistanceMeters_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.stopAddedInRoute_ = stopAddedInRoute_;
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -922,6 +1095,12 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasLocation()) {
         mergeLocation(other.getLocation());
+      }
+      if (other.hasRemainingRoute()) {
+        mergeRemainingRoute(other.getRemainingRoute());
+      }
+      if (other.hasLastRouteDeviation()) {
+        mergeLastRouteDeviation(other.getLastRouteDeviation());
       }
       if (other.hasTraveledDuration()) {
         mergeTraveledDuration(other.getTraveledDuration());
@@ -988,34 +1167,48 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetTraveledDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(
                     internalGetRemainingDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 48:
               {
                 traveledDistanceMeters_ = input.readInt32();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 48
             case 56:
               {
                 remainingDistanceMeters_ = input.readInt32();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 56
             case 64:
               {
                 stopAddedInRoute_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 64
+            case 74:
+              {
+                input.readMessage(
+                    internalGetRemainingRouteFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetLastRouteDeviationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1698,6 +1891,441 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
       return locationBuilder_;
     }
 
+    private com.google.maps.navconnect.v1.Route remainingRoute_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.maps.navconnect.v1.Route,
+            com.google.maps.navconnect.v1.Route.Builder,
+            com.google.maps.navconnect.v1.RouteOrBuilder>
+        remainingRouteBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides the polyline for the remaining portion of the route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the remainingRoute field is set.
+     */
+    public boolean hasRemainingRoute() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides the polyline for the remaining portion of the route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The remainingRoute.
+     */
+    public com.google.maps.navconnect.v1.Route getRemainingRoute() {
+      if (remainingRouteBuilder_ == null) {
+        return remainingRoute_ == null
+            ? com.google.maps.navconnect.v1.Route.getDefaultInstance()
+            : remainingRoute_;
+      } else {
+        return remainingRouteBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides the polyline for the remaining portion of the route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRemainingRoute(com.google.maps.navconnect.v1.Route value) {
+      if (remainingRouteBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        remainingRoute_ = value;
+      } else {
+        remainingRouteBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides the polyline for the remaining portion of the route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRemainingRoute(com.google.maps.navconnect.v1.Route.Builder builderForValue) {
+      if (remainingRouteBuilder_ == null) {
+        remainingRoute_ = builderForValue.build();
+      } else {
+        remainingRouteBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides the polyline for the remaining portion of the route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeRemainingRoute(com.google.maps.navconnect.v1.Route value) {
+      if (remainingRouteBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && remainingRoute_ != null
+            && remainingRoute_ != com.google.maps.navconnect.v1.Route.getDefaultInstance()) {
+          getRemainingRouteBuilder().mergeFrom(value);
+        } else {
+          remainingRoute_ = value;
+        }
+      } else {
+        remainingRouteBuilder_.mergeFrom(value);
+      }
+      if (remainingRoute_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides the polyline for the remaining portion of the route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRemainingRoute() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      remainingRoute_ = null;
+      if (remainingRouteBuilder_ != null) {
+        remainingRouteBuilder_.dispose();
+        remainingRouteBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides the polyline for the remaining portion of the route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.navconnect.v1.Route.Builder getRemainingRouteBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetRemainingRouteFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides the polyline for the remaining portion of the route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.navconnect.v1.RouteOrBuilder getRemainingRouteOrBuilder() {
+      if (remainingRouteBuilder_ != null) {
+        return remainingRouteBuilder_.getMessageOrBuilder();
+      } else {
+        return remainingRoute_ == null
+            ? com.google.maps.navconnect.v1.Route.getDefaultInstance()
+            : remainingRoute_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides the polyline for the remaining portion of the route.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.Route remaining_route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.maps.navconnect.v1.Route,
+            com.google.maps.navconnect.v1.Route.Builder,
+            com.google.maps.navconnect.v1.RouteOrBuilder>
+        internalGetRemainingRouteFieldBuilder() {
+      if (remainingRouteBuilder_ == null) {
+        remainingRouteBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.maps.navconnect.v1.Route,
+                com.google.maps.navconnect.v1.Route.Builder,
+                com.google.maps.navconnect.v1.RouteOrBuilder>(
+                getRemainingRoute(), getParentForChildren(), isClean());
+        remainingRoute_ = null;
+      }
+      return remainingRouteBuilder_;
+    }
+
+    private com.google.maps.navconnect.v1.RouteDeviation lastRouteDeviation_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.maps.navconnect.v1.RouteDeviation,
+            com.google.maps.navconnect.v1.RouteDeviation.Builder,
+            com.google.maps.navconnect.v1.RouteDeviationOrBuilder>
+        lastRouteDeviationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent route deviation event captured during the
+     * trip.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastRouteDeviation field is set.
+     */
+    public boolean hasLastRouteDeviation() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent route deviation event captured during the
+     * trip.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastRouteDeviation.
+     */
+    public com.google.maps.navconnect.v1.RouteDeviation getLastRouteDeviation() {
+      if (lastRouteDeviationBuilder_ == null) {
+        return lastRouteDeviation_ == null
+            ? com.google.maps.navconnect.v1.RouteDeviation.getDefaultInstance()
+            : lastRouteDeviation_;
+      } else {
+        return lastRouteDeviationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent route deviation event captured during the
+     * trip.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastRouteDeviation(com.google.maps.navconnect.v1.RouteDeviation value) {
+      if (lastRouteDeviationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastRouteDeviation_ = value;
+      } else {
+        lastRouteDeviationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent route deviation event captured during the
+     * trip.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastRouteDeviation(
+        com.google.maps.navconnect.v1.RouteDeviation.Builder builderForValue) {
+      if (lastRouteDeviationBuilder_ == null) {
+        lastRouteDeviation_ = builderForValue.build();
+      } else {
+        lastRouteDeviationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent route deviation event captured during the
+     * trip.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeLastRouteDeviation(com.google.maps.navconnect.v1.RouteDeviation value) {
+      if (lastRouteDeviationBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && lastRouteDeviation_ != null
+            && lastRouteDeviation_
+                != com.google.maps.navconnect.v1.RouteDeviation.getDefaultInstance()) {
+          getLastRouteDeviationBuilder().mergeFrom(value);
+        } else {
+          lastRouteDeviation_ = value;
+        }
+      } else {
+        lastRouteDeviationBuilder_.mergeFrom(value);
+      }
+      if (lastRouteDeviation_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent route deviation event captured during the
+     * trip.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLastRouteDeviation() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      lastRouteDeviation_ = null;
+      if (lastRouteDeviationBuilder_ != null) {
+        lastRouteDeviationBuilder_.dispose();
+        lastRouteDeviationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent route deviation event captured during the
+     * trip.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.navconnect.v1.RouteDeviation.Builder getLastRouteDeviationBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetLastRouteDeviationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent route deviation event captured during the
+     * trip.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.maps.navconnect.v1.RouteDeviationOrBuilder getLastRouteDeviationOrBuilder() {
+      if (lastRouteDeviationBuilder_ != null) {
+        return lastRouteDeviationBuilder_.getMessageOrBuilder();
+      } else {
+        return lastRouteDeviation_ == null
+            ? com.google.maps.navconnect.v1.RouteDeviation.getDefaultInstance()
+            : lastRouteDeviation_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The most recent route deviation event captured during the
+     * trip.
+     * </pre>
+     *
+     * <code>
+     * .google.maps.navconnect.v1.RouteDeviation last_route_deviation = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.maps.navconnect.v1.RouteDeviation,
+            com.google.maps.navconnect.v1.RouteDeviation.Builder,
+            com.google.maps.navconnect.v1.RouteDeviationOrBuilder>
+        internalGetLastRouteDeviationFieldBuilder() {
+      if (lastRouteDeviationBuilder_ == null) {
+        lastRouteDeviationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.maps.navconnect.v1.RouteDeviation,
+                com.google.maps.navconnect.v1.RouteDeviation.Builder,
+                com.google.maps.navconnect.v1.RouteDeviationOrBuilder>(
+                getLastRouteDeviation(), getParentForChildren(), isClean());
+        lastRouteDeviation_ = null;
+      }
+      return lastRouteDeviationBuilder_;
+    }
+
     private com.google.protobuf.Duration traveledDuration_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Duration,
@@ -1719,7 +2347,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      * @return Whether the traveledDuration field is set.
      */
     public boolean hasTraveledDuration() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -1765,7 +2393,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
       } else {
         traveledDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1787,7 +2415,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
       } else {
         traveledDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1805,7 +2433,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTraveledDuration(com.google.protobuf.Duration value) {
       if (traveledDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && traveledDuration_ != null
             && traveledDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getTraveledDurationBuilder().mergeFrom(value);
@@ -1816,7 +2444,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
         traveledDurationBuilder_.mergeFrom(value);
       }
       if (traveledDuration_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -1834,7 +2462,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTraveledDuration() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       traveledDuration_ = null;
       if (traveledDurationBuilder_ != null) {
         traveledDurationBuilder_.dispose();
@@ -1856,7 +2484,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Duration.Builder getTraveledDurationBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetTraveledDurationFieldBuilder().getBuilder();
     }
@@ -1931,7 +2559,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      * @return Whether the remainingDuration field is set.
      */
     public boolean hasRemainingDuration() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1977,7 +2605,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
       } else {
         remainingDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1999,7 +2627,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
       } else {
         remainingDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2017,7 +2645,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRemainingDuration(com.google.protobuf.Duration value) {
       if (remainingDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && remainingDuration_ != null
             && remainingDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getRemainingDurationBuilder().mergeFrom(value);
@@ -2028,7 +2656,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
         remainingDurationBuilder_.mergeFrom(value);
       }
       if (remainingDuration_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2046,7 +2674,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRemainingDuration() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       remainingDuration_ = null;
       if (remainingDurationBuilder_ != null) {
         remainingDurationBuilder_.dispose();
@@ -2068,7 +2696,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Duration.Builder getRemainingDurationBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetRemainingDurationFieldBuilder().getBuilder();
     }
@@ -2139,7 +2767,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasTraveledDistanceMeters() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2177,7 +2805,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
     public Builder setTraveledDistanceMeters(int value) {
 
       traveledDistanceMeters_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2196,7 +2824,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTraveledDistanceMeters() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       traveledDistanceMeters_ = 0;
       onChanged();
       return this;
@@ -2219,7 +2847,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasRemainingDistanceMeters() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2257,7 +2885,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
     public Builder setRemainingDistanceMeters(int value) {
 
       remainingDistanceMeters_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2276,7 +2904,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearRemainingDistanceMeters() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       remainingDistanceMeters_ = 0;
       onChanged();
       return this;
@@ -2298,7 +2926,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasStopAddedInRoute() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2334,7 +2962,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
     public Builder setStopAddedInRoute(boolean value) {
 
       stopAddedInRoute_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2352,7 +2980,7 @@ public final class TripExecution extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearStopAddedInRoute() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       stopAddedInRoute_ = false;
       onChanged();
       return this;

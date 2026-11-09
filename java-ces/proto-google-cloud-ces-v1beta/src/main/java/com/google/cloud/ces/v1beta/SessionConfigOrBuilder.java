@@ -410,10 +410,17 @@ public interface SessionConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. Whether to enable streaming text outputs from the model.
-   * By default, text outputs from the model are collected before sending to the
-   * client.
-   * NOTE: This is only supported for text (non-voice) sessions via
+   * Optional. Whether to stream text output from the model to the client
+   * incrementally as it is generated. Defaults to `false`.
+   *
+   * * When disabled, the model's text output is buffered, and each text output
+   * sent to the client is a complete sentence. Clients can render each text
+   * output on a new line.
+   * * When enabled, each text output may contain only part of a sentence.
+   * Clients should concatenate consecutive text outputs to render the
+   * complete response.
+   *
+   * NOTE: This is only supported for text (non-voice) sessions using
    * [StreamRunSession][google.cloud.ces.v1beta.SessionService.StreamRunSession]
    * or [BidiRunSession][google.cloud.ces.v1beta.SessionService.BidiRunSession].
    * </pre>
@@ -423,4 +430,45 @@ public interface SessionConfigOrBuilder
    * @return The enableTextStreaming.
    */
   boolean getEnableTextStreaming();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to include LLM thought summaries in the session outputs.
+   * </pre>
+   *
+   * <code>bool include_llm_thought_summary = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The includeLlmThoughtSummary.
+   */
+  boolean getIncludeLlmThoughtSummary();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to exclude diagnostic info from the session output.
+   * </pre>
+   *
+   * <code>bool exclude_diagnostic_info = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The excludeDiagnosticInfo.
+   */
+  boolean getExcludeDiagnosticInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to include intermediate processing update to the client.
+   * If enabled, the update will be sent back in
+   * [SessionOutput.progress][google.cloud.ces.v1beta.SessionOutput.progress].
+   * </pre>
+   *
+   * <code>bool include_progress_update = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The includeProgressUpdate.
+   */
+  boolean getIncludeProgressUpdate();
 }

@@ -27,10 +27,15 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.discoveryengine.v1.stub.HttpJsonDataStoreServiceStub;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.AuditConfig;
+import com.google.iam.v1.Binding;
+import com.google.iam.v1.Policy;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
@@ -106,9 +111,14 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .setIdentityMappingStore(
                 IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
                     .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
+            .setDataProtectionPolicy(DataProtectionPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -181,9 +191,14 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .setIdentityMappingStore(
                 IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
                     .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
+            .setDataProtectionPolicy(DataProtectionPolicy.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -256,9 +271,14 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .setIdentityMappingStore(
                 IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
                     .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
+            .setDataProtectionPolicy(DataProtectionPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -324,9 +344,14 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .setIdentityMappingStore(
                 IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
                     .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
+            .setDataProtectionPolicy(DataProtectionPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -582,9 +607,14 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .setIdentityMappingStore(
                 IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
                     .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
+            .setDataProtectionPolicy(DataProtectionPolicy.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -610,9 +640,14 @@ public class DataStoreServiceClientHttpJsonTest {
             .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
             .setStartingSchema(Schema.newBuilder().build())
             .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+            .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
             .setIdentityMappingStore(
                 IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
                     .toString())
+            .setIsInfobotFaqDataStore(true)
+            .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+            .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
+            .setDataProtectionPolicy(DataProtectionPolicy.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -664,12 +699,221 @@ public class DataStoreServiceClientHttpJsonTest {
               .setDocumentProcessingConfig(DocumentProcessingConfig.newBuilder().build())
               .setStartingSchema(Schema.newBuilder().build())
               .setHealthcareFhirConfig(HealthcareFhirConfig.newBuilder().build())
+              .setServingConfigDataStore(DataStore.ServingConfigDataStore.newBuilder().build())
               .setIdentityMappingStore(
                   IdentityMappingStoreName.of("[PROJECT]", "[LOCATION]", "[IDENTITY_MAPPING_STORE]")
                       .toString())
+              .setIsInfobotFaqDataStore(true)
+              .setFederatedSearchConfig(DataStore.FederatedSearchConfig.newBuilder().build())
+              .setConfigurableBillingApproachUpdateTime(Timestamp.newBuilder().build())
+              .setDataProtectionPolicy(DataProtectionPolicy.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataStore(dataStore, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceName resource =
+        DataStoreName.ofProjectLocationCollectionDataStoreName(
+            "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]");
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceName resource =
+          DataStoreName.ofProjectLocationCollectionDataStoreName(
+              "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]");
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIamPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String resource =
+        "projects/project-9368/locations/location-9368/collections/collection-9368/dataStores/dataStore-9368";
+
+    Policy actualResponse = client.getIamPolicy(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getIamPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String resource =
+          "projects/project-9368/locations/location-9368/collections/collection-9368/dataStores/dataStore-9368";
+      client.getIamPolicy(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceName resource =
+        DataStoreName.ofProjectLocationCollectionDataStoreName(
+            "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]");
+    Policy policy = Policy.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicy(resource, policy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceName resource =
+          DataStoreName.ofProjectLocationCollectionDataStoreName(
+              "[PROJECT]", "[LOCATION]", "[COLLECTION]", "[DATA_STORE]");
+      Policy policy = Policy.newBuilder().build();
+      client.setIamPolicy(resource, policy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void setIamPolicyTest2() throws Exception {
+    Policy expectedResponse =
+        Policy.newBuilder()
+            .setVersion(351608024)
+            .addAllBindings(new ArrayList<Binding>())
+            .addAllAuditConfigs(new ArrayList<AuditConfig>())
+            .setEtag(ByteString.EMPTY)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String resource =
+        "projects/project-9368/locations/location-9368/collections/collection-9368/dataStores/dataStore-9368";
+    Policy policy = Policy.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicy(resource, policy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void setIamPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String resource =
+          "projects/project-9368/locations/location-9368/collections/collection-9368/dataStores/dataStore-9368";
+      Policy policy = Policy.newBuilder().build();
+      client.setIamPolicy(resource, policy);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

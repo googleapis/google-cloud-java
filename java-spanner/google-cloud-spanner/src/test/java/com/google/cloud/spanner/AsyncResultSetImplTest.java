@@ -22,9 +22,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.withSettings;
 
@@ -34,10 +38,14 @@ import com.google.cloud.spanner.AsyncResultSet.CallbackResponse;
 import com.google.cloud.spanner.AsyncResultSet.CursorState;
 import com.google.cloud.spanner.AsyncResultSet.ReadyCallback;
 import com.google.common.base.Function;
+import com.google.common.base.Supplier;
 import com.google.common.collect.Range;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Value;
 import com.google.spanner.v1.PartialResultSet;
+import com.google.spanner.v1.ResultSetMetadata;
+import com.google.spanner.v1.ResultSetStats;
 import java.util.List;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.CountDownLatch;
@@ -46,6 +54,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -607,6 +616,358 @@ public class AsyncResultSetImplTest {
       rs.onStreamMessage(
           PartialResultSet.newBuilder().addValues(Value.newBuilder().build()).build(), false);
       Mockito.verify(mockedProvider.getExecutor(), times(2)).execute(Mockito.any());
+    }
+  }
+
+  @Test
+  public void testGetStatsAndGetMetadata() {
+    ResultSet delegate = mock(ResultSet.class);
+    ResultSetStats expectedStats = ResultSetStats.getDefaultInstance();
+    ResultSetMetadata expectedMetadata = ResultSetMetadata.getDefaultInstance();
+    when(delegate.getStats()).thenReturn(expectedStats);
+    when(delegate.getMetadata()).thenReturn(expectedMetadata);
+
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(simpleProvider, delegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE)) {
+      assertEquals(expectedStats, asyncResultSet.getStats());
+      assertEquals(expectedMetadata, asyncResultSet.getMetadata());
+    }
+  }
+
+  @Test
+  public void testGetStatsAndGetMetadataAfterClose() {
+    ResultSet delegate = mock(ResultSet.class);
+    ResultSetStats expectedStats = ResultSetStats.getDefaultInstance();
+    ResultSetMetadata expectedMetadata = ResultSetMetadata.getDefaultInstance();
+    when(delegate.getStats()).thenReturn(expectedStats);
+    when(delegate.getMetadata()).thenReturn(expectedMetadata);
+
+    AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(simpleProvider, delegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE);
+    asyncResultSet.close();
+    assertEquals(expectedStats, asyncResultSet.getStats());
+    assertEquals(expectedMetadata, asyncResultSet.getMetadata());
+  }
+
+  @Test
+  public void testGetStatsAndGetMetadataAfterCloseWithoutPriorExecutionClosesDelegate() {
+    ResultSet delegate = mock(ResultSet.class);
+    ResultSetStats expectedStats = ResultSetStats.getDefaultInstance();
+    ResultSetMetadata expectedMetadata = ResultSetMetadata.getDefaultInstance();
+    when(delegate.getStats()).thenReturn(expectedStats);
+    when(delegate.getMetadata()).thenReturn(expectedMetadata);
+
+    AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(
+            simpleProvider, () -> delegate, AsyncResultSetImpl.DEFAULT_BUFFER_SIZE);
+    asyncResultSet.close();
+    verify(delegate, never()).close();
+
+    assertEquals(expectedStats, asyncResultSet.getStats());
+    verify(delegate, times(1)).close();
+
+    assertEquals(expectedMetadata, asyncResultSet.getMetadata());
+    // Closing once is sufficient
+    verify(delegate, times(1)).close();
+  }
+
+  @Test
+  public void testOnStartOrCloseCalledOnNext() {
+    ResultSet delegate = mock(ResultSet.class);
+    when(delegate.next()).thenReturn(true, false);
+    AtomicInteger count = new AtomicInteger();
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(simpleProvider, () -> delegate, 10, count::incrementAndGet)) {
+      assertEquals(0, count.get());
+      assertTrue(asyncResultSet.next());
+      assertEquals(1, count.get());
+      assertFalse(asyncResultSet.next());
+      assertEquals(1, count.get());
+    }
+    assertEquals(1, count.get());
+  }
+
+  @Test
+  public void testOnStartOrCloseCalledOnCloseBeforeStartWithoutInitializingDelegate() {
+    @SuppressWarnings("unchecked")
+    Supplier<ResultSet> delegateSupplier = mock(Supplier.class);
+    AtomicInteger count = new AtomicInteger();
+    AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(simpleProvider, delegateSupplier, 10, count::incrementAndGet);
+    assertEquals(0, count.get());
+    asyncResultSet.close();
+    assertEquals(1, count.get());
+    verify(delegateSupplier, never()).get();
+
+    // Calling close a second time is idempotent.
+    asyncResultSet.close();
+    assertEquals(1, count.get());
+  }
+
+  @Test
+  public void testGetStatsOrMetadataOnUnstartedResultSetNotifiesStartOrClose() {
+    ResultSet delegate = mock(ResultSet.class);
+    ResultSetMetadata expectedMetadata = ResultSetMetadata.getDefaultInstance();
+    when(delegate.getMetadata()).thenReturn(expectedMetadata);
+    AtomicInteger count = new AtomicInteger();
+
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(simpleProvider, () -> delegate, 10, count::incrementAndGet)) {
+      assertEquals(0, count.get());
+      assertEquals(expectedMetadata, asyncResultSet.getMetadata());
+      assertEquals(1, count.get());
+    }
+    assertEquals(1, count.get());
+  }
+
+  @Test
+  public void testConstructorWithoutOnStartOrCloseCallback() {
+    ResultSet delegate = mock(ResultSet.class);
+    when(delegate.next()).thenReturn(true, false);
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(simpleProvider, () -> delegate, 10)) {
+      assertTrue(asyncResultSet.next());
+      assertFalse(asyncResultSet.next());
+    }
+  }
+
+  @Test
+  public void testOnStartOrCloseCalledWhenDelegateSupplierFailsOnGetMetadata() {
+    AtomicInteger count = new AtomicInteger();
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(
+            simpleProvider,
+            () -> {
+              throw new RuntimeException("delegate creation failed");
+            },
+            10,
+            count::incrementAndGet)) {
+      assertEquals(0, count.get());
+      assertThrows(RuntimeException.class, asyncResultSet::getMetadata);
+      assertEquals(1, count.get());
+    }
+  }
+
+  @Test
+  public void testOnStartOrCloseCalledOnSetCallback() throws Exception {
+    ResultSet delegate = mock(ResultSet.class);
+    when(delegate.next()).thenReturn(false);
+    AtomicInteger count = new AtomicInteger();
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(simpleProvider, () -> delegate, 10, count::incrementAndGet)) {
+      assertEquals(0, count.get());
+      ApiFuture<Void> future =
+          asyncResultSet.setCallback(
+              MoreExecutors.directExecutor(), ignored -> CallbackResponse.DONE);
+      future.get(10, TimeUnit.SECONDS);
+      assertEquals(1, count.get());
+    }
+  }
+
+  @Test
+  public void testOnStartOrCloseCalledOnInitiateStreamingFailure() {
+    AtomicInteger count = new AtomicInteger();
+    AtomicInteger supplierInvocations = new AtomicInteger();
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(
+            simpleProvider,
+            () -> {
+              supplierInvocations.incrementAndGet();
+              throw new RuntimeException("stream start failure");
+            },
+            10,
+            count::incrementAndGet)) {
+      assertEquals(0, count.get());
+      ApiFuture<Void> future =
+          asyncResultSet.setCallback(
+              MoreExecutors.directExecutor(), ignored -> CallbackResponse.DONE);
+      assertThrows(ExecutionException.class, () -> future.get(10, TimeUnit.SECONDS));
+      assertEquals(1, count.get());
+      assertEquals(1, supplierInvocations.get());
+    }
+  }
+
+  @Test
+  public void testNextAfterCloseThrowsIllegalStateException() {
+    ResultSet delegate = mock(ResultSet.class);
+    AsyncResultSetImpl asyncResultSet = new AsyncResultSetImpl(simpleProvider, () -> delegate, 10);
+    asyncResultSet.close();
+    IllegalStateException exception =
+        assertThrows(IllegalStateException.class, asyncResultSet::next);
+    assertEquals("This AsyncResultSet has been closed", exception.getMessage());
+  }
+
+  @Test
+  public void testCloseAfterSetCallbackDoesNotNotifyBeforeDelegateStarts() throws Exception {
+    CountDownLatch startSupplierLatch = new CountDownLatch(1);
+    CountDownLatch inSupplierLatch = new CountDownLatch(1);
+    ResultSet delegate = mock(ResultSet.class);
+    when(delegate.next()).thenReturn(false);
+    AtomicInteger count = new AtomicInteger();
+    Supplier<ResultSet> supplier =
+        () -> {
+          inSupplierLatch.countDown();
+          try {
+            startSupplierLatch.await();
+          } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+          }
+          return delegate;
+        };
+
+    AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(simpleProvider, supplier, 10, count::incrementAndGet);
+    ApiFuture<Void> future =
+        asyncResultSet.setCallback(
+            MoreExecutors.directExecutor(), ignored -> CallbackResponse.DONE);
+
+    assertTrue(inSupplierLatch.await(5, TimeUnit.SECONDS));
+    // At this point, the delegate supplier is executing, but has not completed.
+    // Closing the AsyncResultSet while streaming is starting should not immediately trigger
+    // onStartOrClose because streaming has already been initiated.
+    asyncResultSet.close();
+    assertEquals(0, count.get());
+
+    // Allow the supplier to complete.
+    startSupplierLatch.countDown();
+    future.get(10, TimeUnit.SECONDS);
+
+    // Now count should be 1.
+    assertEquals(1, count.get());
+  }
+
+  @Test
+  public void testCloseImmediatelyAfterSetCallback() throws Exception {
+    ResultSet delegate = mock(ResultSet.class);
+    when(delegate.next()).thenReturn(false);
+    AtomicInteger count = new AtomicInteger();
+    AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(simpleProvider, () -> delegate, 10, count::incrementAndGet);
+    ApiFuture<Void> future =
+        asyncResultSet.setCallback(
+            MoreExecutors.directExecutor(), ignored -> CallbackResponse.DONE);
+    asyncResultSet.close();
+    future.get(10, TimeUnit.SECONDS);
+    assertEquals(1, count.get());
+    verify(delegate).close();
+  }
+
+  @Test
+  public void testOnStartOrCloseExceptionDoesNotMaskPrimaryException() {
+    Supplier<ResultSet> delegateSupplier =
+        () -> {
+          throw SpannerExceptionFactory.newSpannerException(
+              ErrorCode.NOT_FOUND, "database not found");
+        };
+    Runnable throwingCallback =
+        () -> {
+          throw new RuntimeException("boom in onStartOrClose");
+        };
+
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(simpleProvider, delegateSupplier, 10, throwingCallback)) {
+      SpannerException exception = assertThrows(SpannerException.class, asyncResultSet::next);
+      assertEquals(ErrorCode.NOT_FOUND, exception.getErrorCode());
+      assertTrue(exception.getMessage().contains("database not found"));
+    }
+  }
+
+  @Test
+  public void testSetCallbackRejectsNullArguments() {
+    ResultSet delegate = mock(ResultSet.class);
+    AtomicInteger count = new AtomicInteger();
+    AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(simpleProvider, () -> delegate, 10, count::incrementAndGet);
+
+    assertThrows(
+        NullPointerException.class,
+        () -> asyncResultSet.setCallback(null, ignored -> CallbackResponse.DONE));
+    assertThrows(
+        NullPointerException.class,
+        () -> asyncResultSet.setCallback(MoreExecutors.directExecutor(), null));
+
+    // Because arguments were null, setCallback failed before mutating state.
+    // The result set should still be closeable cleanly, notifying start or close once.
+    assertEquals(0, count.get());
+    asyncResultSet.close();
+    assertEquals(1, count.get());
+  }
+
+  @Test
+  public void testSetCallbackRejectedExecutionNotifiesStartOrClose() {
+    ScheduledExecutorService mockService = mock(ScheduledExecutorService.class);
+    doThrow(new RejectedExecutionException()).when(mockService).execute(any(Runnable.class));
+    ExecutorProvider provider = mock(ExecutorProvider.class, withSettings().withoutAnnotations());
+    when(provider.getExecutor()).thenReturn(mockService);
+    when(provider.shouldAutoClose()).thenReturn(true);
+
+    AtomicInteger count = new AtomicInteger();
+    AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(provider, () -> mock(ResultSet.class), 10, count::incrementAndGet);
+
+    assertThrows(
+        RejectedExecutionException.class,
+        () ->
+            asyncResultSet.setCallback(
+                MoreExecutors.directExecutor(), ignored -> CallbackResponse.DONE));
+
+    // Rejection should immediately trigger start or close notification so that callers
+    // waiting on query initialization are unblocked.
+    assertEquals(1, count.get());
+    verify(mockService).shutdown();
+
+    // Closing afterwards is a no-op and does not notify a second time.
+    asyncResultSet.close();
+    assertEquals(1, count.get());
+  }
+
+  @Test
+  public void testSetCallbackRejectedExecutionClosesInitializedDelegate() {
+    ScheduledExecutorService mockService = mock(ScheduledExecutorService.class);
+    doThrow(new RejectedExecutionException()).when(mockService).execute(any(Runnable.class));
+    ExecutorProvider provider = mock(ExecutorProvider.class, withSettings().withoutAnnotations());
+    when(provider.getExecutor()).thenReturn(mockService);
+    when(provider.shouldAutoClose()).thenReturn(true);
+
+    ResultSet delegate = mock(ResultSet.class);
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(provider, () -> delegate, 10, () -> {})) {
+      // Access metadata to initialize the delegate eagerly
+      assertNull(asyncResultSet.getMetadata());
+
+      assertThrows(
+          RejectedExecutionException.class,
+          () ->
+              asyncResultSet.setCallback(
+                  MoreExecutors.directExecutor(), ignored -> CallbackResponse.DONE));
+    }
+
+    verify(delegate).close();
+    verify(mockService).shutdown();
+  }
+
+  @Test
+  public void testRemoveListenerAfterCloseDoesNotThrow() {
+    ResultSet delegate = mock(ResultSet.class);
+    AsyncResultSetImpl asyncResultSet = new AsyncResultSetImpl(simpleProvider, () -> delegate, 10);
+    Runnable listener = () -> {};
+    asyncResultSet.addListener(listener);
+    asyncResultSet.close();
+
+    // Calling removeListener after close should not throw IllegalStateException
+    asyncResultSet.removeListener(listener);
+  }
+
+  @Test
+  public void testToListAsyncRejectsNullArguments() {
+    ResultSet delegate = mock(ResultSet.class);
+    try (AsyncResultSetImpl asyncResultSet =
+        new AsyncResultSetImpl(simpleProvider, () -> delegate, 10)) {
+      assertThrows(
+          NullPointerException.class,
+          () -> asyncResultSet.toListAsync(null, MoreExecutors.directExecutor()));
+      assertThrows(
+          NullPointerException.class, () -> asyncResultSet.toListAsync(reader -> null, null));
     }
   }
 }

@@ -49,8 +49,14 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.ces.v1beta.BidiSessionClientMessage;
 import com.google.cloud.ces.v1beta.BidiSessionServerMessage;
+import com.google.cloud.ces.v1beta.CancelAssistantTurnRequest;
+import com.google.cloud.ces.v1beta.CancelAssistantTurnResponse;
+import com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest;
+import com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse;
 import com.google.cloud.ces.v1beta.RunSessionRequest;
 import com.google.cloud.ces.v1beta.RunSessionResponse;
+import com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest;
+import com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -133,6 +139,14 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
       streamRunSessionSettings;
   private final StreamingCallSettings<BidiSessionClientMessage, BidiSessionServerMessage>
       bidiRunSessionSettings;
+  private final ServerStreamingCallSettings<
+          StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+      streamChatAiAssistantSettings;
+  private final UnaryCallSettings<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+      cancelAssistantTurnSettings;
+  private final UnaryCallSettings<
+          GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+      generateOnboardingSuggestionsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -204,6 +218,25 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
   public StreamingCallSettings<BidiSessionClientMessage, BidiSessionServerMessage>
       bidiRunSessionSettings() {
     return bidiRunSessionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamChatAiAssistant. */
+  public ServerStreamingCallSettings<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+      streamChatAiAssistantSettings() {
+    return streamChatAiAssistantSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelAssistantTurn. */
+  public UnaryCallSettings<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+      cancelAssistantTurnSettings() {
+    return cancelAssistantTurnSettings;
+  }
+
+  /** Returns the object with the settings used for calls to generateOnboardingSuggestions. */
+  public UnaryCallSettings<
+          GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+      generateOnboardingSuggestionsSettings() {
+    return generateOnboardingSuggestionsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -331,6 +364,10 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
     runSessionSettings = settingsBuilder.runSessionSettings().build();
     streamRunSessionSettings = settingsBuilder.streamRunSessionSettings().build();
     bidiRunSessionSettings = settingsBuilder.bidiRunSessionSettings().build();
+    streamChatAiAssistantSettings = settingsBuilder.streamChatAiAssistantSettings().build();
+    cancelAssistantTurnSettings = settingsBuilder.cancelAssistantTurnSettings().build();
+    generateOnboardingSuggestionsSettings =
+        settingsBuilder.generateOnboardingSuggestionsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -353,6 +390,14 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
         streamRunSessionSettings;
     private final StreamingCallSettings.Builder<BidiSessionClientMessage, BidiSessionServerMessage>
         bidiRunSessionSettings;
+    private final ServerStreamingCallSettings.Builder<
+            StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+        streamChatAiAssistantSettings;
+    private final UnaryCallSettings.Builder<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+        cancelAssistantTurnSettings;
+    private final UnaryCallSettings.Builder<
+            GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+        generateOnboardingSuggestionsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -426,12 +471,19 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
       runSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       streamRunSessionSettings = ServerStreamingCallSettings.newBuilder();
       bidiRunSessionSettings = StreamingCallSettings.newBuilder();
+      streamChatAiAssistantSettings = ServerStreamingCallSettings.newBuilder();
+      cancelAssistantTurnSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateOnboardingSuggestionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              runSessionSettings, listLocationsSettings, getLocationSettings);
+              runSessionSettings,
+              cancelAssistantTurnSettings,
+              generateOnboardingSuggestionsSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -441,12 +493,20 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
       runSessionSettings = settings.runSessionSettings.toBuilder();
       streamRunSessionSettings = settings.streamRunSessionSettings.toBuilder();
       bidiRunSessionSettings = settings.bidiRunSessionSettings.toBuilder();
+      streamChatAiAssistantSettings = settings.streamChatAiAssistantSettings.toBuilder();
+      cancelAssistantTurnSettings = settings.cancelAssistantTurnSettings.toBuilder();
+      generateOnboardingSuggestionsSettings =
+          settings.generateOnboardingSuggestionsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              runSessionSettings, listLocationsSettings, getLocationSettings);
+              runSessionSettings,
+              cancelAssistantTurnSettings,
+              generateOnboardingSuggestionsSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -481,6 +541,21 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
 
       builder
           .streamRunSessionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .streamChatAiAssistantSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .cancelAssistantTurnSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .generateOnboardingSuggestionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -527,6 +602,26 @@ public class SessionServiceStubSettings extends StubSettings<SessionServiceStubS
     public StreamingCallSettings.Builder<BidiSessionClientMessage, BidiSessionServerMessage>
         bidiRunSessionSettings() {
       return bidiRunSessionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamChatAiAssistant. */
+    public ServerStreamingCallSettings.Builder<
+            StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+        streamChatAiAssistantSettings() {
+      return streamChatAiAssistantSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelAssistantTurn. */
+    public UnaryCallSettings.Builder<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+        cancelAssistantTurnSettings() {
+      return cancelAssistantTurnSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateOnboardingSuggestions. */
+    public UnaryCallSettings.Builder<
+            GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+        generateOnboardingSuggestionsSettings() {
+      return generateOnboardingSuggestionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

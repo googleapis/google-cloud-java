@@ -1784,6 +1784,34 @@ public class BigQueryImplTest {
   }
 
   @Test
+  void testListTableDataWithInt64TimestampFormat() throws IOException {
+    TableDataList tableDataPb =
+        new TableDataList()
+            .setTotalRows(1L)
+            .setRows(
+                ImmutableList.of(
+                    new TableRow()
+                        .setF(ImmutableList.of(new TableCell().setV("253402300799999999")))));
+    when(bigqueryRpcMock.listTableDataSkipExceptionTranslation(
+            PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
+        .thenReturn(tableDataPb);
+    bigquery =
+        options.toBuilder()
+            .setDataFormatOptions(
+                DataFormatOptions.newBuilder()
+                    .timestampFormatOptions(DataFormatOptions.TimestampFormatOptions.INT64)
+                    .build())
+            .build()
+            .getService();
+
+    Page<FieldValueList> page = bigquery.listTableData(DATASET, TABLE);
+    assertEquals(
+        253402300799999999L, page.getValues().iterator().next().get(0).getTimestampValue());
+    verify(bigqueryRpcMock)
+        .listTableDataSkipExceptionTranslation(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS);
+  }
+
+  @Test
   void testListTableDataFromTableId() throws IOException {
     when(bigqueryRpcMock.listTableDataSkipExceptionTranslation(
             PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
