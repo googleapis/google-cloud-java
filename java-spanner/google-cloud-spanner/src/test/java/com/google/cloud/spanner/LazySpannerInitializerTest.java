@@ -180,7 +180,7 @@ public class LazySpannerInitializerTest {
         successCount++;
       } catch (ExecutionException e) {
         assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-        assertThat((SpannerExceptionFactory.asSpannerException(e.getCause())).getErrorCode())
+        assertThat(SpannerExceptionFactory.asSpannerException(e.getCause()).getErrorCode())
             .isEqualTo(ErrorCode.UNAVAILABLE);
         failureCount++;
       }
