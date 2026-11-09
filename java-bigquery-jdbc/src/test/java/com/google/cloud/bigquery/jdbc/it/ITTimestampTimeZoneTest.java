@@ -73,6 +73,9 @@ public class ITTimestampTimeZoneTest extends ITBase {
       "SELECT TIMESTAMP '0001-01-01 00:00:00 UTC' AS ts_min, DATETIME '0001-01-01 00:00:00' AS"
           + " dt_min, DATE '0001-01-01' AS d_min, DATETIME '1850-06-01 12:00:00' AS dt_1850,"
           + " DATE '1850-06-01' AS d_1850, DATE '1582-10-10' AS d_gap,"
+          + " DATETIME '2025-03-09 02:30:00' AS dt_dst_gap,"
+          + " [DATETIME '2025-03-09 02:30:00'] AS dt_dst_gap_array,"
+          + " STRUCT(DATETIME '2025-03-09 02:30:00' AS dt) AS dt_dst_gap_struct,"
           + " TIMESTAMP '2025-01-01 12:34:56.123 UTC' AS ts,"
           + " DATETIME '2025-01-01 12:34:56.123' AS dt,"
           + " DATE '2025-01-01' AS d,"
@@ -81,7 +84,8 @@ public class ITTimestampTimeZoneTest extends ITBase {
           + " STRUCT(TIMESTAMP '2025-01-01 12:34:56.123 UTC' AS ts) AS ts_struct,"
           // REST API sends these as scientific notation ("1.0E-6", "-1.0E-6").
           + " TIMESTAMP '1970-01-01 00:00:00.000001 UTC' AS ts_post_epoch,"
-          + " TIMESTAMP '1969-12-31 23:59:59.999999 UTC' AS ts_pre_epoch";
+          + " TIMESTAMP '1969-12-31 23:59:59.999999 UTC' AS ts_pre_epoch,"
+          + " TIMESTAMP '9999-12-31 23:59:59.999999 UTC' AS ts_max";
 
   // Same coercion as an INSERT into a TIMESTAMP column, for TIMESTAMP and STRING parameters.
   private static final String PROBE_TIMESTAMP = "SELECT UNIX_MILLIS(CAST(? AS TIMESTAMP))";
@@ -364,7 +368,12 @@ public class ITTimestampTimeZoneTest extends ITBase {
               assertEquals(
                   Instant.parse("1969-12-31T23:59:59.999999Z"),
                   rs.getTimestamp("ts_pre_epoch").toInstant(),
-                  label(zone, "getTimestamp just before the epoch")));
+                  label(zone, "getTimestamp just before the epoch")),
+          () ->
+              assertEquals(
+                  Instant.parse("9999-12-31T23:59:59.999999Z"),
+                  rs.getTimestamp("ts_max").toInstant(),
+                  label(zone, "getTimestamp at the maximum TIMESTAMP")));
     }
   }
 
@@ -471,7 +480,27 @@ public class ITTimestampTimeZoneTest extends ITBase {
               assertEquals(
                   LocalDate.parse("1582-10-10"),
                   rs.getObject("d_gap", LocalDate.class),
-                  label(zone, "d_gap")));
+                  label(zone, "d_gap")),
+          () ->
+              assertEquals(
+                  LocalDate.of(2025, 3, 9),
+                  rs.getDate("dt_dst_gap").toLocalDate(),
+                  label(zone, "getDate on DST-gap DATETIME")),
+          () ->
+              assertEquals(
+                  LocalTime.of(2, 30, 0),
+                  rs.getTime("dt_dst_gap").toLocalTime(),
+                  label(zone, "getTime on DST-gap DATETIME")),
+          () ->
+              assertEquals(
+                  "[2025-03-09 02:30:00.0]",
+                  rs.getString("dt_dst_gap_array"),
+                  label(zone, "getString on ARRAY<DATETIME> in DST gap")),
+          () ->
+              assertEquals(
+                  "{\"dt\":\"2025-03-09 02:30:00.0\"}",
+                  rs.getString("dt_dst_gap_struct"),
+                  label(zone, "getString on STRUCT<DATETIME> in DST gap")));
     }
   }
 
@@ -614,7 +643,12 @@ public class ITTimestampTimeZoneTest extends ITBase {
               assertEquals(
                   "1969-12-31 23:59:59.999999",
                   rs.getString("ts_pre_epoch"),
-                  label(zone, "getString just before the epoch")));
+                  label(zone, "getString just before the epoch")),
+          () ->
+              assertEquals(
+                  "9999-12-31 23:59:59.999999",
+                  rs.getString("ts_max"),
+                  label(zone, "getString at the maximum TIMESTAMP")));
     }
   }
 

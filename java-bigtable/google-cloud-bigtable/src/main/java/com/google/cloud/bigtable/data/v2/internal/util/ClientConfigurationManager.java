@@ -386,32 +386,8 @@ public class ClientConfigurationManager implements AutoCloseable {
     return future;
   }
 
-  @SuppressWarnings("deprecation")
   private ClientConfiguration normalizeConfig(ClientConfiguration cfg) {
     ClientConfiguration.Builder builder = cfg.toBuilder();
-
-    // TODO: remove this once server is updated
-    // Patch SessionPoolConfiguration (migrating LoadBalancingOptions)
-    if (!cfg.getSessionConfiguration().hasSessionPoolConfiguration()) {
-      builder
-          .getSessionConfigurationBuilder()
-          .clearLoadBalancingOptions()
-          .setSessionPoolConfiguration(
-              defaultConfig.getSessionConfiguration().getSessionPoolConfiguration().toBuilder()
-                  .setLoadBalancingOptions(cfg.getSessionConfiguration().getLoadBalancingOptions())
-                  .build());
-    } else {
-      // ignore LoadBalancing options when we migrated to SessionPoolConfig
-      builder.getSessionConfigurationBuilder().clearLoadBalancingOptions();
-    }
-    // TODO: remove this once server is updated
-    // Patch ChannelPoolConfiguration
-    if (!cfg.getSessionConfiguration().hasChannelConfiguration()) {
-      builder
-          .getSessionConfigurationBuilder()
-          .setChannelConfiguration(
-              defaultConfig.getSessionConfiguration().getChannelConfiguration());
-    }
 
     // Patch debug tag level
     switch (cfg.getTelemetryConfiguration().getDebugTagLevel()) {

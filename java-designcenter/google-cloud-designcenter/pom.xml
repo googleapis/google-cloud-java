@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-designcenter</artifactId>
-  <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-designcenter:current} -->
+  <version>0.2.0</version><!-- {x-version-update:google-cloud-designcenter:current} -->
   <packaging>jar</packaging>
   <name>Google Design Center</name>
   <description>Design Center Design and share deployable application architectures.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-designcenter-parent</artifactId>
-    <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-designcenter:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-designcenter:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-designcenter</site.installationModule>

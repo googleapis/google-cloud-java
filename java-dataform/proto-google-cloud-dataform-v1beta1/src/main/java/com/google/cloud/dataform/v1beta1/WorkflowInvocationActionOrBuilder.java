@@ -163,6 +163,51 @@ public interface WorkflowInvocationActionOrBuilder
    *
    *
    * <pre>
+   * Output only. The workflow action's unit test details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the bigqueryUnitTestAction field is set.
+   */
+  boolean hasBigqueryUnitTestAction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's unit test details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bigqueryUnitTestAction.
+   */
+  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction
+      getBigqueryUnitTestAction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The workflow action's unit test details.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestAction bigquery_unit_test_action = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.WorkflowInvocationAction.BigQueryUnitTestActionOrBuilder
+      getBigqueryUnitTestActionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. This action's identifier. Unique within the workflow
    * invocation.
    * </pre>

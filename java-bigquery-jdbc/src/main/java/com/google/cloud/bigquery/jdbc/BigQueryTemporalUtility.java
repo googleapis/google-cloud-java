@@ -54,7 +54,7 @@ final class BigQueryTemporalUtility {
   private static final BigDecimal MICROS_PER_SECOND = new BigDecimal("1000000");
   private static final DateTimeFormatter BASE_FORMATTER =
       DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.");
-  private static final DateTimeFormatter UTC_TIMESTAMP_TO_STRING_FORMATTER =
+  static final DateTimeFormatter UTC_TIMESTAMP_TO_STRING_FORMATTER =
       new DateTimeFormatterBuilder()
           .appendPattern("uuuu-MM-dd HH:mm:ss.")
           .appendFraction(ChronoField.NANO_OF_SECOND, 1, 9, false)
@@ -392,6 +392,12 @@ final class BigQueryTemporalUtility {
     return UTC_TIMESTAMP_TO_STRING_FORMATTER.format(ts.toInstant());
   }
 
+  static boolean isCivilTemporalType(StandardSQLTypeName type) {
+    return type == StandardSQLTypeName.DATE
+        || type == StandardSQLTypeName.TIME
+        || type == StandardSQLTypeName.DATETIME;
+  }
+
   /**
    * Formats a timestamp value (which may be a {@link Long} epoch microsecond, an ISO-8601 string, a
    * {@link java.sql.Timestamp}, or an epoch decimal string) into a standard UTC JDBC timestamp
@@ -439,10 +445,12 @@ final class BigQueryTemporalUtility {
       throws BigQueryJdbcException {
     Object start;
     Object end;
+    boolean int64Timestamps = false;
     if (value instanceof FieldValue) {
       Range range = ((FieldValue) value).getRangeValue();
       start = range.getStart().isNull() ? null : range.getStart().getStringValue();
       end = range.getEnd().isNull() ? null : range.getEnd().getStringValue();
+      int64Timestamps = Boolean.TRUE.equals(((FieldValue) value).getUseInt64Timestamps());
     } else if (value instanceof Map) {
       start = ((Map<?, ?>) value).get("start");
       end = ((Map<?, ?>) value).get("end");
@@ -450,6 +458,14 @@ final class BigQueryTemporalUtility {
       return value == null ? null : value.toString();
     }
     StandardSQLTypeName elementType = getRangeElementType(field, start != null ? start : end);
+    if (int64Timestamps && elementType == StandardSQLTypeName.TIMESTAMP) {
+      try {
+        start = start == null ? null : Long.valueOf((String) start);
+        end = end == null ? null : Long.valueOf((String) end);
+      } catch (NumberFormatException e) {
+        throw new BigQueryJdbcException("Invalid RANGE bound: " + value, e);
+      }
+    }
     return "["
         + formatRangeBound(start, elementType, enableTimestampPicos)
         + ", "
