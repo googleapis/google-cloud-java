@@ -683,7 +683,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       // TODO: remove the check on if the open params is updated. In the future, server should
       // broadcast session refresh config to all the sessions that needs reconnect and client
       // just need to recreate sessions when pool sizer requries a replacement.
-      if (handle.getSession().isOpenParamsUpdated() || poolSizer.handleGoAway(msg)) {
+      if (!poolSizer.isDisabled()
+          && (handle.getSession().isOpenParamsUpdated() || poolSizer.handleGoAway(msg))) {
         logger.fine(
             String.format(
                 "Adding new session to replace a going away session %s",
@@ -968,6 +969,19 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           ctx.getExecutor().execute(() -> listener.onClose(result));
           return;
         }
+        if (poolSizer.isDisabled()) {
+          VRpcResult result =
+              VRpcResult.createRejectedError(
+                  Status.UNAVAILABLE.withDescription("SessionPool configuration disabled"));
+          ctx.getExecutor()
+              .execute(
+                  () -> {
+                    if (isCancelled) return;
+                    isCancelled = true;
+                    listener.onClose(result);
+                  });
+          return;
+        }
         // Only arm the deadline monitor after we've committed to queueing; otherwise the
         // fast-fail early return above would leak a timer that fires later and emits a phantom
         // tracer.onAttemptFinish on the Active state's stale listener.
@@ -1011,6 +1025,9 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     // region below.
     @SuppressWarnings("GuardedBy")
     private void cancel(Status status, boolean onlyCancelPendingCall) {
+      if (deadlineMonitor != null) {
+        deadlineMonitor.cancel();
+      }
       // The eager removal is only an optimization to skip a wasted session pick in
       // tryDrainPendingRpcs.
       // Use the bounded hot-path acquisition instead of a blocking lock(): this runs on a callback
@@ -1043,6 +1060,9 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
     }
 
     void cancelWithResult(VRpcResult result) {
+      if (deadlineMonitor != null) {
+        deadlineMonitor.cancel();
+      }
       ctx.getExecutor()
           .execute(
               () -> {

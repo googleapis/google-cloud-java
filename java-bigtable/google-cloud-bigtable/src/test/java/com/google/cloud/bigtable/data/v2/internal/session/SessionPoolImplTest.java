@@ -1379,6 +1379,20 @@ public class SessionPoolImplTest {
     assertThat(sessionPool.sessions.getAllSessions()).isEmpty();
     assertThat(sessionPool.sessions.getStats().getExpectedCapacity()).isEqualTo(0);
 
+    // Starting a new call while config is disabled must also fail immediately without queueing.
+    UnaryResponseFuture<SessionFakeScriptedResponse> disabledCallFuture =
+        new UnaryResponseFuture<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> disabledRpc =
+        sessionPool.newCall(FakeDescriptor.SCRIPTED);
+    disabledRpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, vrpcTracer),
+        disabledCallFuture);
+    ExecutionException disabledCallError =
+        assertThrows(ExecutionException.class, () -> disabledCallFuture.get(5, TimeUnit.SECONDS));
+    assertThat(disabledCallError).hasCauseThat().isInstanceOf(VRpcException.class);
+    assertThat(((VRpcException) disabledCallError.getCause()).getResult().getRejected()).isTrue();
+
     // Re-enable SessionPoolConfiguration and verify pool scales back up.
     SessionPoolConfiguration enabledConfig =
         ClientConfigurationManager.loadDefault()

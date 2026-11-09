@@ -66,6 +66,10 @@ class PoolSizer {
     this.pendingVRpcsPerSession = poolConfiguration.getNewSessionQueueLength();
   }
 
+  boolean isDisabled() {
+    return maxIdleSessions <= 0;
+  }
+
   public int getScaleDelta() {
     // Assume each session handles 1 RPC at a time. This should be revisited if sessions get
     // support for multiplexing.
@@ -85,7 +89,7 @@ class PoolSizer {
     if (desiredCapacity < immediateCapacity) {
       return desiredCapacity - immediateCapacity;
     } else if (desiredCapacity > eventualCapacity) {
-      if (maxIdleSessions <= 0) {
+      if (isDisabled()) {
         return 0;
       }
       return desiredCapacity - eventualCapacity;
