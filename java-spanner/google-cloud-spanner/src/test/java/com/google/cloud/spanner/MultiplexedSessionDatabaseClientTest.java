@@ -250,7 +250,8 @@ public class MultiplexedSessionDatabaseClientTest {
 
   @Test
   public void testRetryOfInitialSessionIsInstalledBeforeFailureIsPropagated() throws Exception {
-    assumeTrue(isJava8());
+    // Mockito dynamic mock creation is not supported in GraalVM native-image tests.
+    assumeFalse(isNativeImage());
     Clock clock = mock(Clock.class);
     when(clock.instant()).thenReturn(Instant.now());
     SessionClient sessionClient = mock(SessionClient.class);
@@ -668,6 +669,10 @@ public class MultiplexedSessionDatabaseClientTest {
 
   private boolean isJava8() {
     return JavaVersionUtil.getJavaMajorVersion() == 8;
+  }
+
+  private boolean isNativeImage() {
+    return System.getProperty("org.graalvm.nativeimage.imagecode") != null;
   }
 
   private boolean isWindows() {

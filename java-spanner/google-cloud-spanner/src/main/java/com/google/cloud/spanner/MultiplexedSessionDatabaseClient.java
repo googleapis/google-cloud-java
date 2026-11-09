@@ -286,6 +286,10 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
 
   private void asyncCreateMultiplexedSession(
       SettableApiFuture<SessionReference> sessionReferenceFuture, int remainingAttempts) {
+    if (isClosed || sessionReferenceFuture.isDone()) {
+      sessionReferenceFuture.setException(newClosedException());
+      return;
+    }
     this.sessionClient.asyncCreateMultiplexedSession(
         new SessionConsumer() {
           @Override
@@ -344,7 +348,7 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
             // 2. If a retry was scheduled, initiate it:
             if (retryFuture != null) {
               // Guard against concurrent client close that happened while waking waiters.
-              if (isClientClosed()) {
+              if (isClientClosed() || retryFuture.isDone()) {
                 retryFuture.setException(newClosedException());
                 return;
               }
