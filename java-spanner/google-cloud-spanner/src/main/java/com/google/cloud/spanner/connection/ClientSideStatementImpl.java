@@ -26,6 +26,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Implementation of the {@link ClientSideStatement} interface. The instances of this class are

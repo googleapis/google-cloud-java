@@ -71,6 +71,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Default implementation of {@link TransactionRunner}. */
 class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {

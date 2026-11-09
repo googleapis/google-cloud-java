@@ -53,6 +53,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import javax.annotation.Nullable;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * {@link DatabaseClient} implementation that uses a single multiplexed session to execute

@@ -29,6 +29,7 @@ import com.google.spanner.admin.database.v1.SplitPoints;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 public class DatabaseAddSplitPointsSample {
 

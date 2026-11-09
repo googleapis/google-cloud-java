@@ -34,6 +34,7 @@ import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.locks.ReentrantLock;
 import org.jspecify.annotations.Nullable;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Adapts a stream of {@code PartialResultSet} messages into a stream of {@code Value} messages. */
 class GrpcValueIterator extends AbstractIterator<com.google.protobuf.Value> {

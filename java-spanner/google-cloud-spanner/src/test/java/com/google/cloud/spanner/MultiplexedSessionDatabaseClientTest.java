@@ -59,6 +59,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
 import org.mockito.stubbing.Answer;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 @RunWith(JUnit4.class)
 public class MultiplexedSessionDatabaseClientTest {

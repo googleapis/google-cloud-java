@@ -37,6 +37,7 @@ import com.google.spanner.admin.instance.v1.CreateInstanceConfigMetadata;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceConfigMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Default implementation of {@link InstanceAdminClient} */
 class InstanceAdminClientImpl implements InstanceAdminClient {

@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.jspecify.annotations.Nullable;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 @VisibleForTesting
 class GrpcResultSet extends AbstractResultSet<List<Object>>

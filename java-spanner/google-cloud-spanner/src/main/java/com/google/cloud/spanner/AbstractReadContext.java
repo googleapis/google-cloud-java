@@ -56,6 +56,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.logging.Logger;
 import javax.annotation.concurrent.GuardedBy;
 import org.jspecify.annotations.Nullable;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Abstract base class for all {@link ReadContext}s + concrete implementations of read-only {@link

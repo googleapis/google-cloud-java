@@ -47,6 +47,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Wraps an iterator over partial result sets, supporting resuming RPCs on error. This class keeps

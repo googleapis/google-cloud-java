@@ -103,6 +103,7 @@ import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.junit.runners.MethodSorters;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Integration tests creating, reading, updating and deleting backups. This test class combines

@@ -115,6 +115,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * In-process mock implementation of a Cloud Spanner server. The user must specify the results the

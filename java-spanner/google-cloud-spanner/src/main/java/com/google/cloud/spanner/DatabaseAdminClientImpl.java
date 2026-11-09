@@ -38,6 +38,7 @@ import com.google.spanner.admin.database.v1.*;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Nullable;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Default implementation of {@link DatabaseAdminClient}. */
 class DatabaseAdminClientImpl implements DatabaseAdminClient {

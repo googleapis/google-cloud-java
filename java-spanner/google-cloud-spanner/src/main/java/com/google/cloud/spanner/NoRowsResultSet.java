@@ -21,6 +21,7 @@ import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.ResultSetStats;
 import java.util.List;
 import javax.annotation.Nullable;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 class NoRowsResultSet extends AbstractResultSet<List<Object>> {
   private final ResultSetStats stats;

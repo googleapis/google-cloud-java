@@ -31,6 +31,7 @@ import com.google.rpc.Status;
 import java.time.Duration;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Nullable;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Represents a long-running operation.

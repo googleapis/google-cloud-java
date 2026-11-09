@@ -30,6 +30,7 @@ import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.spanner.v1.BatchWriteResponse;
 import java.util.concurrent.ExecutionException;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Represents a delayed execution of a transaction on a multiplexed session. The execution is

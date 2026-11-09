@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import com.google.cloud.spanner.connection.Connection;
 import java.util.Arrays;
 import java.util.stream.Collectors;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Exception thrown by a {@link Connection} when an automatic DML batch detects that one or more of

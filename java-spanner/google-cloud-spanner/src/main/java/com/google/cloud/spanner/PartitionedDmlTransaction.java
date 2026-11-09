@@ -47,6 +47,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 @InternalApi
 public class PartitionedDmlTransaction implements SessionImpl.SessionTransaction {

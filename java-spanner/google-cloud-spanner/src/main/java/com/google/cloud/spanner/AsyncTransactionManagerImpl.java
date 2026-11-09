@@ -29,6 +29,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Implementation of {@link AsyncTransactionManager}. */
 final class AsyncTransactionManagerImpl

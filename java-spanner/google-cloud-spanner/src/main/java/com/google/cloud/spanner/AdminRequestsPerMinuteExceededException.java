@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import com.google.api.gax.rpc.ApiException;
 import javax.annotation.Nullable;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Exception thrown by Cloud Spanner the number of administrative requests per minute has been

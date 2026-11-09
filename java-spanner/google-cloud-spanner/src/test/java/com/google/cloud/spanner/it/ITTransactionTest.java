@@ -72,6 +72,7 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Integration tests for read-write transactions. */
 @Category(ParallelIntegrationTest.class)

@@ -86,6 +86,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.AdditionalAnswers;
 import org.mockito.invocation.InvocationOnMock;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 @RunWith(JUnit4.class)
 public class ReadWriteTransactionWithInlineBeginTest {

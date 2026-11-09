@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import com.google.api.gax.rpc.ApiException;
 import com.google.protobuf.ByteString;
 import javax.annotation.Nullable;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Exception thrown by Cloud Spanner when an operation detects that a transaction has aborted. This

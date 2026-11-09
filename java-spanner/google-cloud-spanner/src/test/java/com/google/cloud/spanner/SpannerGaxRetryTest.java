@@ -51,6 +51,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 @RunWith(JUnit4.class)
 public class SpannerGaxRetryTest {

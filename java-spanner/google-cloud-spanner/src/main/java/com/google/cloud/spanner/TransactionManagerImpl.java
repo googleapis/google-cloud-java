@@ -21,6 +21,7 @@ import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.SessionImpl.SessionTransaction;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.ByteString;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /** Implementation of {@link TransactionManager}. */
 final class TransactionManagerImpl implements TransactionManager, SessionTransaction {

@@ -22,6 +22,7 @@ import com.google.cloud.Timestamp;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Represents a {@link AsyncRunner} using a multiplexed session that is not yet ready. The execution

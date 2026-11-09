@@ -53,6 +53,7 @@ import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 class GrpcStruct extends Struct implements Serializable {
   private static final com.google.protobuf.Value NULL_VALUE =

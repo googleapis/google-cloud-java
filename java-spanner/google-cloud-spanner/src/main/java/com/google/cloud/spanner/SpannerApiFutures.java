@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 public class SpannerApiFutures {
   public static <T> T get(ApiFuture<T> future) throws SpannerException {

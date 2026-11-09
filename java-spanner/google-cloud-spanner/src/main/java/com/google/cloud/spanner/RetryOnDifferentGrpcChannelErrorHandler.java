@@ -21,6 +21,7 @@ import static com.google.cloud.spanner.SessionImpl.NO_CHANNEL_HINT;
 import com.google.api.core.BetaApi;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
 import javax.annotation.Nonnull;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * An experimental error handler that allows DEADLINE_EXCEEDED errors to be retried on a different

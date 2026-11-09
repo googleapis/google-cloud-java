@@ -82,6 +82,7 @@ import org.junit.runners.JUnit4;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 @RunWith(Enclosed.class)
 public class InlineBeginTransactionTest {

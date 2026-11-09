@@ -23,6 +23,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 
 /**
  * Represents the time duration as a combination of months, days and nanoseconds. Nanoseconds are
