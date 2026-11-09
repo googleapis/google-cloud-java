@@ -58,6 +58,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Strings;
+import com.google.common.base.Throwables;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
@@ -105,7 +106,7 @@ class HttpJsonResumableUploadClientTest {
     ResumableUploadSession session = client.startUploadCallable().call(request);
 
     assertThat(session.getUploadUrl()).isEqualTo(TEST_UPLOAD_URL);
-    assertThat(session.getChunkGranularity()).isEqualTo(262144L);
+    assertThat(session.getChunkGranularity()).isEqualTo(262144);
   }
 
   @Test
@@ -123,7 +124,7 @@ class HttpJsonResumableUploadClientTest {
 
     assertThat(session.getUploadUrl())
         .isEqualTo("https://test.googleapis.com/upload/session/case-insensitive");
-    assertThat(session.getChunkGranularity()).isEqualTo(524288L);
+    assertThat(session.getChunkGranularity()).isEqualTo(524288);
   }
 
   @Test
@@ -140,8 +141,7 @@ class HttpJsonResumableUploadClientTest {
         assertThrows(
             ExecutionException.class, () -> client.startUploadCallable().futureCall(request).get());
 
-    assertThat(exception.getCause()).isInstanceOf(InternalException.class);
-    assertThat(exception.getCause().getCause()).isInstanceOf(NumberFormatException.class);
+    assertThat(Throwables.getRootCause(exception)).isInstanceOf(NumberFormatException.class);
   }
 
   @Test
@@ -158,10 +158,9 @@ class HttpJsonResumableUploadClientTest {
         assertThrows(
             ExecutionException.class, () -> client.startUploadCallable().futureCall(request).get());
 
-    assertThat(exception.getCause()).isInstanceOf(InternalException.class);
-    assertThat(exception.getCause())
+    assertThat(Throwables.getRootCause(exception))
         .hasMessageThat()
-        .contains("Start upload response contained non-positive chunk granularity header: -256");
+        .contains("Response contained non-positive X-Goog-Upload-Chunk-Granularity header: -256");
   }
 
   @Test
@@ -515,6 +514,24 @@ class HttpJsonResumableUploadClientTest {
   }
 
   @Test
+  void queryStatus_withChunkGranularity_returnsGranularity() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(200);
+    httpResponse.addHeader("X-Goog-Upload-Status", "active");
+    httpResponse.addHeader("X-Goog-Upload-Size-Received", "524288");
+    httpResponse.addHeader("X-Goog-Upload-Chunk-Granularity", "262144");
+
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(httpResponse);
+    QueryStatusRequest request = QueryStatusRequest.create(TEST_UPLOAD_URL);
+
+    QueryStatusResponse<String> response = client.queryStatusCallable().call(request);
+
+    assertThat(response.getCommittedOffset()).isEqualTo(524288L);
+    assertThat(response.getChunkGranularity()).isEqualTo(262144);
+    assertThat(response.getUploadStatus()).isEqualTo(ResumableUploadStatus.ACTIVE);
+  }
+
+  @Test
   void queryStatus_finalUpload_returnsCompleteAndResponseBody() {
     MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
     httpResponse.setStatusCode(200);
@@ -590,8 +607,7 @@ class HttpJsonResumableUploadClientTest {
         assertThrows(
             ExecutionException.class,
             () -> missingClient.queryStatusCallable().futureCall(request).get());
-    assertThat(missingException.getCause()).isInstanceOf(InternalException.class);
-    assertThat(missingException.getCause())
+    assertThat(Throwables.getRootCause(missingException))
         .hasMessageThat()
         .contains("Query status response did not contain valid X-Goog-Upload-Size-Received header");
 
@@ -607,10 +623,8 @@ class HttpJsonResumableUploadClientTest {
         assertThrows(
             ExecutionException.class,
             () -> malformedClient.queryStatusCallable().futureCall(request).get());
-    assertThat(malformedException.getCause()).isInstanceOf(InternalException.class);
-    assertThat(malformedException.getCause())
-        .hasMessageThat()
-        .contains("Response contained invalid X-Goog-Upload-Size-Received header: not-a-number");
+    assertThat(Throwables.getRootCause(malformedException))
+        .isInstanceOf(NumberFormatException.class);
   }
 
   private static HttpJsonResumableUploadClient<TestRequest, String> createClient(

@@ -70,6 +70,7 @@ public final class Event extends com.google.protobuf.GeneratedMessage
             com.google.cloud.ces.v1beta.Event.Builder.class);
   }
 
+  private int bitField0_;
   public static final int EVENT_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -123,6 +124,55 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int VARIABLES_FIELD_NUMBER = 2;
+  private com.google.protobuf.Struct variables_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional variables associated with the event.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the variables field is set.
+   */
+  @java.lang.Override
+  public boolean hasVariables() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional variables associated with the event.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The variables.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getVariables() {
+    return variables_ == null ? com.google.protobuf.Struct.getDefaultInstance() : variables_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional variables associated with the event.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getVariablesOrBuilder() {
+    return variables_ == null ? com.google.protobuf.Struct.getDefaultInstance() : variables_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -140,6 +190,9 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(event_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, event_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getVariables());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -151,6 +204,9 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(event_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, event_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getVariables());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -168,6 +224,10 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     com.google.cloud.ces.v1beta.Event other = (com.google.cloud.ces.v1beta.Event) obj;
 
     if (!getEvent().equals(other.getEvent())) return false;
+    if (hasVariables() != other.hasVariables()) return false;
+    if (hasVariables()) {
+      if (!getVariables().equals(other.getVariables())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -181,6 +241,10 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + EVENT_FIELD_NUMBER;
     hash = (53 * hash) + getEvent().hashCode();
+    if (hasVariables()) {
+      hash = (37 * hash) + VARIABLES_FIELD_NUMBER;
+      hash = (53 * hash) + getVariables().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -310,10 +374,19 @@ public final class Event extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.ces.v1beta.Event.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetVariablesFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -321,6 +394,11 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       event_ = "";
+      variables_ = null;
+      if (variablesBuilder_ != null) {
+        variablesBuilder_.dispose();
+        variablesBuilder_ = null;
+      }
       return this;
     }
 
@@ -359,6 +437,12 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.event_ = event_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.variables_ = variablesBuilder_ == null ? variables_ : variablesBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -377,6 +461,9 @@ public final class Event extends com.google.protobuf.GeneratedMessage
         event_ = other.event_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.hasVariables()) {
+        mergeVariables(other.getVariables());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -410,6 +497,13 @@ public final class Event extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    internalGetVariablesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -538,6 +632,196 @@ public final class Event extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Struct variables_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        variablesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional variables associated with the event.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the variables field is set.
+     */
+    public boolean hasVariables() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional variables associated with the event.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The variables.
+     */
+    public com.google.protobuf.Struct getVariables() {
+      if (variablesBuilder_ == null) {
+        return variables_ == null ? com.google.protobuf.Struct.getDefaultInstance() : variables_;
+      } else {
+        return variablesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional variables associated with the event.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setVariables(com.google.protobuf.Struct value) {
+      if (variablesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        variables_ = value;
+      } else {
+        variablesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional variables associated with the event.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder setVariables(com.google.protobuf.Struct.Builder builderForValue) {
+      if (variablesBuilder_ == null) {
+        variables_ = builderForValue.build();
+      } else {
+        variablesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional variables associated with the event.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder mergeVariables(com.google.protobuf.Struct value) {
+      if (variablesBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && variables_ != null
+            && variables_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getVariablesBuilder().mergeFrom(value);
+        } else {
+          variables_ = value;
+        }
+      } else {
+        variablesBuilder_.mergeFrom(value);
+      }
+      if (variables_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional variables associated with the event.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder clearVariables() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      variables_ = null;
+      if (variablesBuilder_ != null) {
+        variablesBuilder_.dispose();
+        variablesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional variables associated with the event.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.Struct.Builder getVariablesBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return internalGetVariablesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional variables associated with the event.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public com.google.protobuf.StructOrBuilder getVariablesOrBuilder() {
+      if (variablesBuilder_ != null) {
+        return variablesBuilder_.getMessageOrBuilder();
+      } else {
+        return variables_ == null ? com.google.protobuf.Struct.getDefaultInstance() : variables_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional variables associated with the event.
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct variables = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        internalGetVariablesFieldBuilder() {
+      if (variablesBuilder_ == null) {
+        variablesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getVariables(), getParentForChildren(), isClean());
+        variables_ = null;
+      }
+      return variablesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.Event)

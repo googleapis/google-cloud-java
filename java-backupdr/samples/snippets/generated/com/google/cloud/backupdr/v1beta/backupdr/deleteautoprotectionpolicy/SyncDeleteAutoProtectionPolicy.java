@@ -41,6 +41,7 @@ public class SyncDeleteAutoProtectionPolicy {
                   AutoProtectionPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]")
                       .toString())
               .setEtag("etag3123477")
+              .setRequestId("requestId693933066")
               .build();
       backupDRClient.deleteAutoProtectionPolicyAsync(request).get();
     }

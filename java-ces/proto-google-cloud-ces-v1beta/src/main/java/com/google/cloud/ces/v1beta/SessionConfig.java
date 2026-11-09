@@ -2240,10 +2240,17 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Whether to enable streaming text outputs from the model.
-   * By default, text outputs from the model are collected before sending to the
-   * client.
-   * NOTE: This is only supported for text (non-voice) sessions via
+   * Optional. Whether to stream text output from the model to the client
+   * incrementally as it is generated. Defaults to `false`.
+   *
+   * * When disabled, the model's text output is buffered, and each text output
+   * sent to the client is a complete sentence. Clients can render each text
+   * output on a new line.
+   * * When enabled, each text output may contain only part of a sentence.
+   * Clients should concatenate consecutive text outputs to render the
+   * complete response.
+   *
+   * NOTE: This is only supported for text (non-voice) sessions using
    * [StreamRunSession][google.cloud.ces.v1beta.SessionService.StreamRunSession]
    * or [BidiRunSession][google.cloud.ces.v1beta.SessionService.BidiRunSession].
    * </pre>
@@ -2255,6 +2262,65 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public boolean getEnableTextStreaming() {
     return enableTextStreaming_;
+  }
+
+  public static final int INCLUDE_LLM_THOUGHT_SUMMARY_FIELD_NUMBER = 21;
+  private boolean includeLlmThoughtSummary_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to include LLM thought summaries in the session outputs.
+   * </pre>
+   *
+   * <code>bool include_llm_thought_summary = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The includeLlmThoughtSummary.
+   */
+  @java.lang.Override
+  public boolean getIncludeLlmThoughtSummary() {
+    return includeLlmThoughtSummary_;
+  }
+
+  public static final int EXCLUDE_DIAGNOSTIC_INFO_FIELD_NUMBER = 24;
+  private boolean excludeDiagnosticInfo_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to exclude diagnostic info from the session output.
+   * </pre>
+   *
+   * <code>bool exclude_diagnostic_info = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The excludeDiagnosticInfo.
+   */
+  @java.lang.Override
+  public boolean getExcludeDiagnosticInfo() {
+    return excludeDiagnosticInfo_;
+  }
+
+  public static final int INCLUDE_PROGRESS_UPDATE_FIELD_NUMBER = 28;
+  private boolean includeProgressUpdate_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to include intermediate processing update to the client.
+   * If enabled, the update will be sent back in
+   * [SessionOutput.progress][google.cloud.ces.v1beta.SessionOutput.progress].
+   * </pre>
+   *
+   * <code>bool include_progress_update = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The includeProgressUpdate.
+   */
+  @java.lang.Override
+  public boolean getIncludeProgressUpdate() {
+    return includeProgressUpdate_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2301,6 +2367,15 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
     if (enableTextStreaming_ != false) {
       output.writeBool(18, enableTextStreaming_);
     }
+    if (includeLlmThoughtSummary_ != false) {
+      output.writeBool(21, includeLlmThoughtSummary_);
+    }
+    if (excludeDiagnosticInfo_ != false) {
+      output.writeBool(24, excludeDiagnosticInfo_);
+    }
+    if (includeProgressUpdate_ != false) {
+      output.writeBool(28, includeProgressUpdate_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2343,6 +2418,15 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
     if (enableTextStreaming_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, enableTextStreaming_);
     }
+    if (includeLlmThoughtSummary_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(21, includeLlmThoughtSummary_);
+    }
+    if (excludeDiagnosticInfo_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(24, excludeDiagnosticInfo_);
+    }
+    if (includeProgressUpdate_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(28, includeProgressUpdate_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2380,6 +2464,9 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
         return false;
     }
     if (getEnableTextStreaming() != other.getEnableTextStreaming()) return false;
+    if (getIncludeLlmThoughtSummary() != other.getIncludeLlmThoughtSummary()) return false;
+    if (getExcludeDiagnosticInfo() != other.getExcludeDiagnosticInfo()) return false;
+    if (getIncludeProgressUpdate() != other.getIncludeProgressUpdate()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2419,6 +2506,12 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + ENABLE_TEXT_STREAMING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableTextStreaming());
+    hash = (37 * hash) + INCLUDE_LLM_THOUGHT_SUMMARY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeLlmThoughtSummary());
+    hash = (37 * hash) + EXCLUDE_DIAGNOSTIC_INFO_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExcludeDiagnosticInfo());
+    hash = (37 * hash) + INCLUDE_PROGRESS_UPDATE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeProgressUpdate());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2599,6 +2692,9 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
         remoteDialogflowQueryParametersBuilder_ = null;
       }
       enableTextStreaming_ = false;
+      includeLlmThoughtSummary_ = false;
+      excludeDiagnosticInfo_ = false;
+      includeProgressUpdate_ = false;
       return this;
     }
 
@@ -2686,6 +2782,15 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.enableTextStreaming_ = enableTextStreaming_;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.includeLlmThoughtSummary_ = includeLlmThoughtSummary_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.excludeDiagnosticInfo_ = excludeDiagnosticInfo_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.includeProgressUpdate_ = includeProgressUpdate_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2762,6 +2867,15 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.getEnableTextStreaming() != false) {
         setEnableTextStreaming(other.getEnableTextStreaming());
+      }
+      if (other.getIncludeLlmThoughtSummary() != false) {
+        setIncludeLlmThoughtSummary(other.getIncludeLlmThoughtSummary());
+      }
+      if (other.getExcludeDiagnosticInfo() != false) {
+        setExcludeDiagnosticInfo(other.getExcludeDiagnosticInfo());
+      }
+      if (other.getIncludeProgressUpdate() != false) {
+        setIncludeProgressUpdate(other.getIncludeProgressUpdate());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2860,6 +2974,24 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 144
+            case 168:
+              {
+                includeLlmThoughtSummary_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 168
+            case 192:
+              {
+                excludeDiagnosticInfo_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 192
+            case 224:
+              {
+                includeProgressUpdate_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 224
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4638,10 +4770,17 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Whether to enable streaming text outputs from the model.
-     * By default, text outputs from the model are collected before sending to the
-     * client.
-     * NOTE: This is only supported for text (non-voice) sessions via
+     * Optional. Whether to stream text output from the model to the client
+     * incrementally as it is generated. Defaults to `false`.
+     *
+     * * When disabled, the model's text output is buffered, and each text output
+     * sent to the client is a complete sentence. Clients can render each text
+     * output on a new line.
+     * * When enabled, each text output may contain only part of a sentence.
+     * Clients should concatenate consecutive text outputs to render the
+     * complete response.
+     *
+     * NOTE: This is only supported for text (non-voice) sessions using
      * [StreamRunSession][google.cloud.ces.v1beta.SessionService.StreamRunSession]
      * or [BidiRunSession][google.cloud.ces.v1beta.SessionService.BidiRunSession].
      * </pre>
@@ -4659,10 +4798,17 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Whether to enable streaming text outputs from the model.
-     * By default, text outputs from the model are collected before sending to the
-     * client.
-     * NOTE: This is only supported for text (non-voice) sessions via
+     * Optional. Whether to stream text output from the model to the client
+     * incrementally as it is generated. Defaults to `false`.
+     *
+     * * When disabled, the model's text output is buffered, and each text output
+     * sent to the client is a complete sentence. Clients can render each text
+     * output on a new line.
+     * * When enabled, each text output may contain only part of a sentence.
+     * Clients should concatenate consecutive text outputs to render the
+     * complete response.
+     *
+     * NOTE: This is only supported for text (non-voice) sessions using
      * [StreamRunSession][google.cloud.ces.v1beta.SessionService.StreamRunSession]
      * or [BidiRunSession][google.cloud.ces.v1beta.SessionService.BidiRunSession].
      * </pre>
@@ -4684,10 +4830,17 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Whether to enable streaming text outputs from the model.
-     * By default, text outputs from the model are collected before sending to the
-     * client.
-     * NOTE: This is only supported for text (non-voice) sessions via
+     * Optional. Whether to stream text output from the model to the client
+     * incrementally as it is generated. Defaults to `false`.
+     *
+     * * When disabled, the model's text output is buffered, and each text output
+     * sent to the client is a complete sentence. Clients can render each text
+     * output on a new line.
+     * * When enabled, each text output may contain only part of a sentence.
+     * Clients should concatenate consecutive text outputs to render the
+     * complete response.
+     *
+     * NOTE: This is only supported for text (non-voice) sessions using
      * [StreamRunSession][google.cloud.ces.v1beta.SessionService.StreamRunSession]
      * or [BidiRunSession][google.cloud.ces.v1beta.SessionService.BidiRunSession].
      * </pre>
@@ -4699,6 +4852,180 @@ public final class SessionConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearEnableTextStreaming() {
       bitField0_ = (bitField0_ & ~0x00000200);
       enableTextStreaming_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean includeLlmThoughtSummary_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include LLM thought summaries in the session outputs.
+     * </pre>
+     *
+     * <code>bool include_llm_thought_summary = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The includeLlmThoughtSummary.
+     */
+    @java.lang.Override
+    public boolean getIncludeLlmThoughtSummary() {
+      return includeLlmThoughtSummary_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include LLM thought summaries in the session outputs.
+     * </pre>
+     *
+     * <code>bool include_llm_thought_summary = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The includeLlmThoughtSummary to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeLlmThoughtSummary(boolean value) {
+
+      includeLlmThoughtSummary_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include LLM thought summaries in the session outputs.
+     * </pre>
+     *
+     * <code>bool include_llm_thought_summary = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeLlmThoughtSummary() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      includeLlmThoughtSummary_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean excludeDiagnosticInfo_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to exclude diagnostic info from the session output.
+     * </pre>
+     *
+     * <code>bool exclude_diagnostic_info = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The excludeDiagnosticInfo.
+     */
+    @java.lang.Override
+    public boolean getExcludeDiagnosticInfo() {
+      return excludeDiagnosticInfo_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to exclude diagnostic info from the session output.
+     * </pre>
+     *
+     * <code>bool exclude_diagnostic_info = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The excludeDiagnosticInfo to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExcludeDiagnosticInfo(boolean value) {
+
+      excludeDiagnosticInfo_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to exclude diagnostic info from the session output.
+     * </pre>
+     *
+     * <code>bool exclude_diagnostic_info = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExcludeDiagnosticInfo() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      excludeDiagnosticInfo_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean includeProgressUpdate_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include intermediate processing update to the client.
+     * If enabled, the update will be sent back in
+     * [SessionOutput.progress][google.cloud.ces.v1beta.SessionOutput.progress].
+     * </pre>
+     *
+     * <code>bool include_progress_update = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The includeProgressUpdate.
+     */
+    @java.lang.Override
+    public boolean getIncludeProgressUpdate() {
+      return includeProgressUpdate_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include intermediate processing update to the client.
+     * If enabled, the update will be sent back in
+     * [SessionOutput.progress][google.cloud.ces.v1beta.SessionOutput.progress].
+     * </pre>
+     *
+     * <code>bool include_progress_update = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The includeProgressUpdate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeProgressUpdate(boolean value) {
+
+      includeProgressUpdate_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to include intermediate processing update to the client.
+     * If enabled, the update will be sent back in
+     * [SessionOutput.progress][google.cloud.ces.v1beta.SessionOutput.progress].
+     * </pre>
+     *
+     * <code>bool include_progress_update = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeProgressUpdate() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      includeProgressUpdate_ = false;
       onChanged();
       return this;
     }

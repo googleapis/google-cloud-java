@@ -98,6 +98,10 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
     if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(currentSchema)) {
       return BigQueryTemporalUtility.formatTimestampValue(currentValue, true);
     }
+    if (BigQueryTemporalUtility.isRange(currentSchema)) {
+      return BigQueryTemporalUtility.formatRange(
+          currentSchema, currentValue, this.enableTimestampPicos);
+    }
     return BigQueryTypeRegistry.convert(
         currentValue, currentSchema.getType().getStandardType(), null);
   }

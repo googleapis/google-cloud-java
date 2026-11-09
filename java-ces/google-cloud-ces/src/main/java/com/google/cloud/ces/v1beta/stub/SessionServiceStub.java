@@ -25,8 +25,14 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.ces.v1beta.BidiSessionClientMessage;
 import com.google.cloud.ces.v1beta.BidiSessionServerMessage;
+import com.google.cloud.ces.v1beta.CancelAssistantTurnRequest;
+import com.google.cloud.ces.v1beta.CancelAssistantTurnResponse;
+import com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsRequest;
+import com.google.cloud.ces.v1beta.GenerateOnboardingSuggestionsResponse;
 import com.google.cloud.ces.v1beta.RunSessionRequest;
 import com.google.cloud.ces.v1beta.RunSessionResponse;
+import com.google.cloud.ces.v1beta.StreamChatAiAssistantRequest;
+import com.google.cloud.ces.v1beta.StreamChatAiAssistantResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -56,6 +62,22 @@ public abstract class SessionServiceStub implements BackgroundResource {
   public BidiStreamingCallable<BidiSessionClientMessage, BidiSessionServerMessage>
       bidiRunSessionCallable() {
     throw new UnsupportedOperationException("Not implemented: bidiRunSessionCallable()");
+  }
+
+  public ServerStreamingCallable<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+      streamChatAiAssistantCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamChatAiAssistantCallable()");
+  }
+
+  public UnaryCallable<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+      cancelAssistantTurnCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelAssistantTurnCallable()");
+  }
+
+  public UnaryCallable<GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+      generateOnboardingSuggestionsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: generateOnboardingSuggestionsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
