@@ -43,6 +43,14 @@ public abstract class ReadProjectionConfig<Projection> {
 
   abstract ProjectionType getType();
 
+  /** The config this one wraps, or {@code this}. Used to match a fast open read. */
+  ReadProjectionConfig<Projection> unwrap() {
+    return this;
+  }
+
+  /** Called when {@code readAs} with this config is served from the fast open read. */
+  void onFastOpenReadClaimed(Projection projection) {}
+
   Projection project(ObjectReadSession session, IOAutoCloseable closeAlongWith) {
     throw new UnsupportedOperationException(
         String.format(Locale.US, "%s#project()", this.getClass().getName()));

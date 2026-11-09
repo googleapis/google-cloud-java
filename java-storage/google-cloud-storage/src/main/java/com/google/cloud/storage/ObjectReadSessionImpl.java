@@ -91,12 +91,13 @@ final class ObjectReadSessionImpl implements ObjectReadSession {
     checkState(open, "Session already closed");
     switch (config.getType()) {
       case STREAM_READ:
-        ObjectReadSessionStreamRead<?> fastOpenRead = fastOpenReads.remove(config);
+        ObjectReadSessionStreamRead<?> fastOpenRead = fastOpenReads.remove(config.unwrap());
         if (fastOpenRead != null) {
           // configs are final classes with a class-exact equals, so an equal config has the same
           // Projection type
           @SuppressWarnings("unchecked")
           Projection projection = (Projection) fastOpenRead.project();
+          config.onFastOpenReadClaimed(projection);
           return projection;
         }
         long readId = state.newReadId();
