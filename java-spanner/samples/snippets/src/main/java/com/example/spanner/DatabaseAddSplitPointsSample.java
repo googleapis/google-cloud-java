@@ -113,9 +113,11 @@ public class DatabaseAddSplitPointsSample {
       databaseAdminClient.addSplitPoints(
           DatabaseName.of(projectId, instanceId, databaseId), splitPoints);
 
-    } catch (Exception e) {
+    } catch (java.util.concurrent.ExecutionException e) {
       // If the operation failed during execution, expose the cause.
       throw SpannerExceptionFactory.asSpannerException(e.getCause());
+    } catch (InterruptedException e) {
+      throw SpannerExceptionFactory.propagateInterrupt(e);
     }
   }
 }
