@@ -39,18 +39,8 @@
       </dependency>
       <dependency>
         <groupId>com.google.shopping.api.grpc</groupId>
-        <artifactId>grpc-google-shopping-merchant-reviews-v1beta</artifactId>
-        <version>0.48.0</version><!-- {x-version-update:grpc-google-shopping-merchant-reviews-v1beta:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.shopping.api.grpc</groupId>
         <artifactId>proto-google-shopping-merchant-reviews-v1</artifactId>
         <version>0.48.0</version><!-- {x-version-update:proto-google-shopping-merchant-reviews-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.shopping.api.grpc</groupId>
-        <artifactId>proto-google-shopping-merchant-reviews-v1beta</artifactId>
-        <version>0.48.0</version><!-- {x-version-update:proto-google-shopping-merchant-reviews-v1beta:current} -->
       </dependency>
       <!-- {x-generated-dependencies-end} -->
 
@@ -61,9 +51,7 @@
     <!-- {x-generated-modules-start} -->
     <module>google-shopping-merchant-reviews</module>
     <module>grpc-google-shopping-merchant-reviews-v1</module>
-    <module>grpc-google-shopping-merchant-reviews-v1beta</module>
     <module>proto-google-shopping-merchant-reviews-v1</module>
-    <module>proto-google-shopping-merchant-reviews-v1beta</module>
     <!-- {x-generated-modules-end} -->
     <module>google-shopping-merchant-reviews-bom</module>
   </modules>
