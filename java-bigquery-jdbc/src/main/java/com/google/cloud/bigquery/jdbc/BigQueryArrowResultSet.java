@@ -32,9 +32,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
@@ -410,6 +408,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(arrayField)) {
         return BigQueryTemporalUtility.formatTimestampValue(value, true);
       }
+      if (BigQueryTemporalUtility.isRange(arrayField)) {
+        return BigQueryTemporalUtility.formatRange(arrayField, value, this.enableTimestampPicos);
+      }
       return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), zone);
     }
 
@@ -431,29 +432,6 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         return new BigQueryArrowArray(
             fieldSchema, newList, this.enableTimestampPicos, this.LOG.getArrowArrayLogger());
       }
-      if (elementTypeName == StandardSQLTypeName.RANGE) {
-        JsonStringArrayList<String> newList = new JsonStringArrayList<>();
-        for (Object item : originalList) {
-          if (item == null) {
-            newList.add(null);
-            continue;
-          }
-          JsonStringHashMap<?, ?> rangeMap = (JsonStringHashMap<?, ?>) item;
-          Object start = rangeMap.get("start");
-          Object end = rangeMap.get("end");
-
-          Object representativeElement = (start != null) ? start : end;
-          StandardSQLTypeName rangeElementType =
-              getRangeElementType(fieldSchema, representativeElement);
-
-          String formattedStart = formatRangeElement(start, rangeElementType);
-          String formattedEnd = formatRangeElement(end, rangeElementType);
-
-          newList.add(String.format("[%s, %s)", formattedStart, formattedEnd));
-        }
-        return new BigQueryArrowArray(
-            fieldSchema, newList, this.enableTimestampPicos, this.LOG.getArrowArrayLogger());
-      }
       return new BigQueryArrowArray(
           fieldSchema, originalList, this.enableTimestampPicos, this.LOG.getArrowArrayLogger());
     }
@@ -466,18 +444,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           this.LOG.getArrowStructLogger());
     }
 
-    if (fieldSchema.getType().getStandardType() == StandardSQLTypeName.RANGE) {
-      JsonStringHashMap<?, ?> rangeMap = (JsonStringHashMap<?, ?>) value;
-      Object start = rangeMap.get("start");
-      Object end = rangeMap.get("end");
-
-      Object representativeElement = (start != null) ? start : end;
-      StandardSQLTypeName elementType = getRangeElementType(fieldSchema, representativeElement);
-
-      String formattedStart = formatRangeElement(start, elementType);
-      String formattedEnd = formatRangeElement(end, elementType);
-
-      return String.format("[%s, %s)", formattedStart, formattedEnd);
+    if (BigQueryTemporalUtility.isRange(fieldSchema)) {
+      return BigQueryTemporalUtility.formatRange(fieldSchema, value, this.enableTimestampPicos);
     }
 
     if ((fieldSchema.getType().getStandardType() == StandardSQLTypeName.NUMERIC
@@ -491,59 +459,6 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       return BigQueryTemporalUtility.formatTimestampValue(value, true);
     }
     return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), zone);
-  }
-
-  private StandardSQLTypeName getRangeElementType(Field field, Object representativeElement) {
-    if (field == null
-        || field.getRangeElementType() == null
-        || field.getRangeElementType().getType() == null) {
-      return getElementTypeFromValue(representativeElement);
-    }
-    try {
-      return StandardSQLTypeName.valueOf(field.getRangeElementType().getType());
-    } catch (IllegalArgumentException ignored) {
-      return getElementTypeFromValue(representativeElement);
-    }
-  }
-
-  private StandardSQLTypeName getElementTypeFromValue(Object element) {
-    if (element == null) {
-      return StandardSQLTypeName.STRING;
-    }
-    if (element instanceof Integer) {
-      return StandardSQLTypeName.DATE;
-    }
-    if (element instanceof Long) {
-      return StandardSQLTypeName.TIMESTAMP;
-    }
-    if (element instanceof LocalDateTime) {
-      return StandardSQLTypeName.DATETIME;
-    }
-    return StandardSQLTypeName.STRING;
-  }
-
-  private String formatRangeElement(Object element, StandardSQLTypeName elementType)
-      throws SQLException {
-    if (element == null) {
-      return "UNBOUNDED";
-    }
-    if (element instanceof Text) {
-      element = element.toString();
-    }
-    switch (elementType) {
-      case DATE:
-        // Arrow gives DATE as an Integer (days since epoch)
-        return LocalDate.ofEpochDay(((Integer) element).longValue()).toString();
-      case DATETIME:
-        // Arrow gives DATETIME as a LocalDateTime
-        Timestamp dtTs = Timestamp.valueOf((LocalDateTime) element);
-        return BigQueryTypeRegistry.convert(dtTs, String.class);
-      case TIMESTAMP:
-        return BigQueryTemporalUtility.formatTimestampValue(element, this.enableTimestampPicos);
-      default:
-        // Fallback for any other unexpected type
-        return element.toString();
-    }
   }
 
   @Override

@@ -1,0 +1,15 @@
+{
+  "api_shortname": "designcenter",
+  "name_pretty": "Design Center",
+  "product_documentation": "https://cloud.google.com/application-design-center/docs",
+  "api_description": "Design and share deployable application architectures.",
+  "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-designcenter/latest/overview",
+  "release_level": "preview",
+  "transport": "grpc+rest",
+  "language": "java",
+  "repo": "googleapis/google-cloud-java",
+  "repo_short": "java-designcenter",
+  "distribution_name": "com.google.cloud:google-cloud-designcenter",
+  "api_id": "designcenter.googleapis.com",
+  "library_type": "GAPIC_AUTO"
+}

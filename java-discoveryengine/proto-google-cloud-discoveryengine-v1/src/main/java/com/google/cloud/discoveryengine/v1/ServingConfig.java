@@ -3758,6 +3758,66 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
     return promoteControlIds_.getByteString(index);
   }
 
+  public static final int ANSWER_GENERATION_SPEC_FIELD_NUMBER = 27;
+  private com.google.cloud.discoveryengine.v1.AnswerGenerationSpec answerGenerationSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for answer generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the answerGenerationSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasAnswerGenerationSpec() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for answer generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The answerGenerationSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.AnswerGenerationSpec getAnswerGenerationSpec() {
+    return answerGenerationSpec_ == null
+        ? com.google.cloud.discoveryengine.v1.AnswerGenerationSpec.getDefaultInstance()
+        : answerGenerationSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The specification for answer generation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.AnswerGenerationSpecOrBuilder
+      getAnswerGenerationSpecOrBuilder() {
+    return answerGenerationSpec_ == null
+        ? com.google.cloud.discoveryengine.v1.AnswerGenerationSpec.getDefaultInstance()
+        : answerGenerationSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3833,6 +3893,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < promoteControlIds_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 26, promoteControlIds_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(27, getAnswerGenerationSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3951,6 +4014,10 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 2 * getPromoteControlIdsList().size();
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(27, getAnswerGenerationSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3991,6 +4058,10 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
     if (!getReplacementControlIdsList().equals(other.getReplacementControlIdsList())) return false;
     if (!getIgnoreControlIdsList().equals(other.getIgnoreControlIdsList())) return false;
     if (!getPromoteControlIdsList().equals(other.getPromoteControlIdsList())) return false;
+    if (hasAnswerGenerationSpec() != other.hasAnswerGenerationSpec()) return false;
+    if (hasAnswerGenerationSpec()) {
+      if (!getAnswerGenerationSpec().equals(other.getAnswerGenerationSpec())) return false;
+    }
     if (!getVerticalConfigCase().equals(other.getVerticalConfigCase())) return false;
     switch (verticalConfigCase_) {
       case 7:
@@ -4068,6 +4139,10 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
     if (getPromoteControlIdsCount() > 0) {
       hash = (37 * hash) + PROMOTE_CONTROL_IDS_FIELD_NUMBER;
       hash = (53 * hash) + getPromoteControlIdsList().hashCode();
+    }
+    if (hasAnswerGenerationSpec()) {
+      hash = (37 * hash) + ANSWER_GENERATION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getAnswerGenerationSpec().hashCode();
     }
     switch (verticalConfigCase_) {
       case 7:
@@ -4227,6 +4302,7 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetCreateTimeFieldBuilder();
         internalGetUpdateTimeFieldBuilder();
+        internalGetAnswerGenerationSpecFieldBuilder();
       }
     }
 
@@ -4265,6 +4341,11 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
       replacementControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       ignoreControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
       promoteControlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      answerGenerationSpec_ = null;
+      if (answerGenerationSpecBuilder_ != null) {
+        answerGenerationSpecBuilder_.dispose();
+        answerGenerationSpecBuilder_ = null;
+      }
       verticalConfigCase_ = 0;
       verticalConfig_ = null;
       return this;
@@ -4366,6 +4447,13 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00040000) != 0)) {
         promoteControlIds_.makeImmutable();
         result.promoteControlIds_ = promoteControlIds_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.answerGenerationSpec_ =
+            answerGenerationSpecBuilder_ == null
+                ? answerGenerationSpec_
+                : answerGenerationSpecBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4517,6 +4605,9 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
           promoteControlIds_.addAll(other.promoteControlIds_);
         }
         onChanged();
+      }
+      if (other.hasAnswerGenerationSpec()) {
+        mergeAnswerGenerationSpec(other.getAnswerGenerationSpec());
       }
       switch (other.getVerticalConfigCase()) {
         case MEDIA_CONFIG:
@@ -4687,6 +4778,13 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
                 promoteControlIds_.add(s);
                 break;
               } // case 210
+            case 218:
+              {
+                input.readMessage(
+                    internalGetAnswerGenerationSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8594,6 +8692,224 @@ public final class ServingConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00040000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1.AnswerGenerationSpec answerGenerationSpec_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.AnswerGenerationSpec,
+            com.google.cloud.discoveryengine.v1.AnswerGenerationSpec.Builder,
+            com.google.cloud.discoveryengine.v1.AnswerGenerationSpecOrBuilder>
+        answerGenerationSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the answerGenerationSpec field is set.
+     */
+    public boolean hasAnswerGenerationSpec() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The answerGenerationSpec.
+     */
+    public com.google.cloud.discoveryengine.v1.AnswerGenerationSpec getAnswerGenerationSpec() {
+      if (answerGenerationSpecBuilder_ == null) {
+        return answerGenerationSpec_ == null
+            ? com.google.cloud.discoveryengine.v1.AnswerGenerationSpec.getDefaultInstance()
+            : answerGenerationSpec_;
+      } else {
+        return answerGenerationSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAnswerGenerationSpec(
+        com.google.cloud.discoveryengine.v1.AnswerGenerationSpec value) {
+      if (answerGenerationSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        answerGenerationSpec_ = value;
+      } else {
+        answerGenerationSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAnswerGenerationSpec(
+        com.google.cloud.discoveryengine.v1.AnswerGenerationSpec.Builder builderForValue) {
+      if (answerGenerationSpecBuilder_ == null) {
+        answerGenerationSpec_ = builderForValue.build();
+      } else {
+        answerGenerationSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAnswerGenerationSpec(
+        com.google.cloud.discoveryengine.v1.AnswerGenerationSpec value) {
+      if (answerGenerationSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && answerGenerationSpec_ != null
+            && answerGenerationSpec_
+                != com.google.cloud.discoveryengine.v1.AnswerGenerationSpec.getDefaultInstance()) {
+          getAnswerGenerationSpecBuilder().mergeFrom(value);
+        } else {
+          answerGenerationSpec_ = value;
+        }
+      } else {
+        answerGenerationSpecBuilder_.mergeFrom(value);
+      }
+      if (answerGenerationSpec_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAnswerGenerationSpec() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      answerGenerationSpec_ = null;
+      if (answerGenerationSpecBuilder_ != null) {
+        answerGenerationSpecBuilder_.dispose();
+        answerGenerationSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.AnswerGenerationSpec.Builder
+        getAnswerGenerationSpecBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return internalGetAnswerGenerationSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1.AnswerGenerationSpecOrBuilder
+        getAnswerGenerationSpecOrBuilder() {
+      if (answerGenerationSpecBuilder_ != null) {
+        return answerGenerationSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return answerGenerationSpec_ == null
+            ? com.google.cloud.discoveryengine.v1.AnswerGenerationSpec.getDefaultInstance()
+            : answerGenerationSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The specification for answer generation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.AnswerGenerationSpec answer_generation_spec = 27 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.discoveryengine.v1.AnswerGenerationSpec,
+            com.google.cloud.discoveryengine.v1.AnswerGenerationSpec.Builder,
+            com.google.cloud.discoveryengine.v1.AnswerGenerationSpecOrBuilder>
+        internalGetAnswerGenerationSpecFieldBuilder() {
+      if (answerGenerationSpecBuilder_ == null) {
+        answerGenerationSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.discoveryengine.v1.AnswerGenerationSpec,
+                com.google.cloud.discoveryengine.v1.AnswerGenerationSpec.Builder,
+                com.google.cloud.discoveryengine.v1.AnswerGenerationSpecOrBuilder>(
+                getAnswerGenerationSpec(), getParentForChildren(), isClean());
+        answerGenerationSpec_ = null;
+      }
+      return answerGenerationSpecBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1.ServingConfig)

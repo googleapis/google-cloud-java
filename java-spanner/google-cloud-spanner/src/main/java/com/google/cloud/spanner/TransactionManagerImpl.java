@@ -92,6 +92,9 @@ final class TransactionManagerImpl implements TransactionManager, SessionTransac
       throw e1;
     } catch (SpannerException e2) {
       txnState = TransactionState.COMMIT_FAILED;
+      if (TransactionRunnerImpl.shouldRollbackOnCommitFailure(e2)) {
+        TransactionRunnerImpl.rollbackBestEffort(txn, e2);
+      }
       throw e2;
     } finally {
       // At this point, if the TransactionState is not ABORTED, then the transaction has reached an

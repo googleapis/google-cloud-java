@@ -187,6 +187,16 @@ public class BigQueryParameterHandlerTest {
     assertEquals("2024-01-01 12:34:56.123456Z", microsFormatted);
   }
 
+  @Test
+  public void testFormatValueForQueryParameter_timestampBeforeYearOneKeepsEra() {
+    // 1 BC is proleptic year 0; "yyyy" printed it as "0001" and silently moved it into AD 1.
+    Timestamp ts = Timestamp.from(Instant.parse("0000-12-30T12:00:00Z"));
+    assertEquals(
+        "0000-12-30 12:00:00.000000Z",
+        BigQueryParameterHandler.formatValueForQueryParameter(
+            ts, StandardSQLTypeName.TIMESTAMP, false));
+  }
+
   @ParameterizedTest
   @ValueSource(strings = {"UTC", "America/New_York", "Asia/Kolkata"})
   public void testFormatValueForQueryParameter_timestampPreservesInstantAcrossJvmZones(

@@ -43,6 +43,8 @@ public class AsyncInitiateDeleteAutoProtectionPolicyBindingLRO {
                   AutoProtectionPolicyBindingName.of(
                           "[PROJECT]", "[LOCATION]", "[AUTO_PROTECTION_POLICY]", "[BINDING]")
                       .toString())
+              .setEtag("etag3123477")
+              .setRequestId("requestId693933066")
               .build();
       OperationFuture<AutoProtectionPolicyBinding, OperationMetadata> future =
           backupDRClient

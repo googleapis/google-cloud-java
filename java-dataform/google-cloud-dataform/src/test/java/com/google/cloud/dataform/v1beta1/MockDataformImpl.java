@@ -971,6 +971,29 @@ public class MockDataformImpl extends DataformImplBase {
   }
 
   @Override
+  public void fetchWorkspaceHistory(
+      FetchWorkspaceHistoryRequest request,
+      StreamObserver<FetchWorkspaceHistoryResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchWorkspaceHistoryResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchWorkspaceHistoryResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchWorkspaceHistory, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchWorkspaceHistoryResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void commitWorkspaceChanges(
       CommitWorkspaceChangesRequest request,
       StreamObserver<CommitWorkspaceChangesResponse> responseObserver) {
@@ -1395,6 +1418,28 @@ public class MockDataformImpl extends DataformImplBase {
                       + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CompilationResult.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createCompilationResultLongRunning(
+      CreateCompilationResultRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCompilationResultLongRunning,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
