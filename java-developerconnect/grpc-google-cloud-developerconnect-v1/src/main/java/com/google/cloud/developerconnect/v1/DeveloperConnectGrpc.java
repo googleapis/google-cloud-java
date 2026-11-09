@@ -562,6 +562,61 @@ public final class DeveloperConnectGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest,
+          com.google.cloud.developerconnect.v1.PullRequest>
+      getOpenGitRepositoryLinkPullRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "OpenGitRepositoryLinkPullRequest",
+      requestType =
+          com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.PullRequest.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest,
+          com.google.cloud.developerconnect.v1.PullRequest>
+      getOpenGitRepositoryLinkPullRequestMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest,
+            com.google.cloud.developerconnect.v1.PullRequest>
+        getOpenGitRepositoryLinkPullRequestMethod;
+    if ((getOpenGitRepositoryLinkPullRequestMethod =
+            DeveloperConnectGrpc.getOpenGitRepositoryLinkPullRequestMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getOpenGitRepositoryLinkPullRequestMethod =
+                DeveloperConnectGrpc.getOpenGitRepositoryLinkPullRequestMethod)
+            == null) {
+          DeveloperConnectGrpc.getOpenGitRepositoryLinkPullRequestMethod =
+              getOpenGitRepositoryLinkPullRequestMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1
+                              .OpenGitRepositoryLinkPullRequestRequest,
+                          com.google.cloud.developerconnect.v1.PullRequest>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "OpenGitRepositoryLinkPullRequest"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .OpenGitRepositoryLinkPullRequestRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.PullRequest
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier(
+                              "OpenGitRepositoryLinkPullRequest"))
+                      .build();
+        }
+      }
+    }
+    return getOpenGitRepositoryLinkPullRequestMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesRequest,
           com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesResponse>
       getFetchLinkableGitRepositoriesMethod;
@@ -711,6 +766,513 @@ public final class DeveloperConnectGrpc {
       }
     }
     return getFetchGitRefsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest,
+          com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse>
+      getDiffGitRepositoryLinkCommitMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DiffGitRepositoryLinkCommit",
+      requestType = com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest,
+          com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse>
+      getDiffGitRepositoryLinkCommitMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest,
+            com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse>
+        getDiffGitRepositoryLinkCommitMethod;
+    if ((getDiffGitRepositoryLinkCommitMethod =
+            DeveloperConnectGrpc.getDiffGitRepositoryLinkCommitMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getDiffGitRepositoryLinkCommitMethod =
+                DeveloperConnectGrpc.getDiffGitRepositoryLinkCommitMethod)
+            == null) {
+          DeveloperConnectGrpc.getDiffGitRepositoryLinkCommitMethod =
+              getDiffGitRepositoryLinkCommitMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest,
+                          com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DiffGitRepositoryLinkCommit"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .DiffGitRepositoryLinkCommitRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .DiffGitRepositoryLinkCommitResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier(
+                              "DiffGitRepositoryLinkCommit"))
+                      .build();
+        }
+      }
+    }
+    return getDiffGitRepositoryLinkCommitMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest,
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse>
+      getFetchGitRepositoryLinkCommitMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchGitRepositoryLinkCommit",
+      requestType = com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest.class,
+      responseType =
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest,
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse>
+      getFetchGitRepositoryLinkCommitMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest,
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse>
+        getFetchGitRepositoryLinkCommitMethod;
+    if ((getFetchGitRepositoryLinkCommitMethod =
+            DeveloperConnectGrpc.getFetchGitRepositoryLinkCommitMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getFetchGitRepositoryLinkCommitMethod =
+                DeveloperConnectGrpc.getFetchGitRepositoryLinkCommitMethod)
+            == null) {
+          DeveloperConnectGrpc.getFetchGitRepositoryLinkCommitMethod =
+              getFetchGitRepositoryLinkCommitMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest,
+                          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchGitRepositoryLinkCommit"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .FetchGitRepositoryLinkCommitRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .FetchGitRepositoryLinkCommitResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier(
+                              "FetchGitRepositoryLinkCommit"))
+                      .build();
+        }
+      }
+    }
+    return getFetchGitRepositoryLinkCommitMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest,
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse>
+      getFetchGitRepositoryLinkCommitListMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchGitRepositoryLinkCommitList",
+      requestType =
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest.class,
+      responseType =
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest,
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse>
+      getFetchGitRepositoryLinkCommitListMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest,
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse>
+        getFetchGitRepositoryLinkCommitListMethod;
+    if ((getFetchGitRepositoryLinkCommitListMethod =
+            DeveloperConnectGrpc.getFetchGitRepositoryLinkCommitListMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getFetchGitRepositoryLinkCommitListMethod =
+                DeveloperConnectGrpc.getFetchGitRepositoryLinkCommitListMethod)
+            == null) {
+          DeveloperConnectGrpc.getFetchGitRepositoryLinkCommitListMethod =
+              getFetchGitRepositoryLinkCommitListMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1
+                              .FetchGitRepositoryLinkCommitListRequest,
+                          com.google.cloud.developerconnect.v1
+                              .FetchGitRepositoryLinkCommitListResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchGitRepositoryLinkCommitList"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .FetchGitRepositoryLinkCommitListRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .FetchGitRepositoryLinkCommitListResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier(
+                              "FetchGitRepositoryLinkCommitList"))
+                      .build();
+        }
+      }
+    }
+    return getFetchGitRepositoryLinkCommitListMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest,
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse>
+      getFetchGitRepositoryLinkFileBlameMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchGitRepositoryLinkFileBlame",
+      requestType =
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest.class,
+      responseType =
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest,
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse>
+      getFetchGitRepositoryLinkFileBlameMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest,
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse>
+        getFetchGitRepositoryLinkFileBlameMethod;
+    if ((getFetchGitRepositoryLinkFileBlameMethod =
+            DeveloperConnectGrpc.getFetchGitRepositoryLinkFileBlameMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getFetchGitRepositoryLinkFileBlameMethod =
+                DeveloperConnectGrpc.getFetchGitRepositoryLinkFileBlameMethod)
+            == null) {
+          DeveloperConnectGrpc.getFetchGitRepositoryLinkFileBlameMethod =
+              getFetchGitRepositoryLinkFileBlameMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest,
+                          com.google.cloud.developerconnect.v1
+                              .FetchGitRepositoryLinkFileBlameResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchGitRepositoryLinkFileBlame"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .FetchGitRepositoryLinkFileBlameRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .FetchGitRepositoryLinkFileBlameResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier(
+                              "FetchGitRepositoryLinkFileBlame"))
+                      .build();
+        }
+      }
+    }
+    return getFetchGitRepositoryLinkFileBlameMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest,
+          com.google.cloud.developerconnect.v1.PullRequest>
+      getFetchGitRepositoryLinkPullRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchGitRepositoryLinkPullRequest",
+      requestType =
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.PullRequest.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest,
+          com.google.cloud.developerconnect.v1.PullRequest>
+      getFetchGitRepositoryLinkPullRequestMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest,
+            com.google.cloud.developerconnect.v1.PullRequest>
+        getFetchGitRepositoryLinkPullRequestMethod;
+    if ((getFetchGitRepositoryLinkPullRequestMethod =
+            DeveloperConnectGrpc.getFetchGitRepositoryLinkPullRequestMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getFetchGitRepositoryLinkPullRequestMethod =
+                DeveloperConnectGrpc.getFetchGitRepositoryLinkPullRequestMethod)
+            == null) {
+          DeveloperConnectGrpc.getFetchGitRepositoryLinkPullRequestMethod =
+              getFetchGitRepositoryLinkPullRequestMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1
+                              .FetchGitRepositoryLinkPullRequestRequest,
+                          com.google.cloud.developerconnect.v1.PullRequest>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "FetchGitRepositoryLinkPullRequest"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .FetchGitRepositoryLinkPullRequestRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.PullRequest
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier(
+                              "FetchGitRepositoryLinkPullRequest"))
+                      .build();
+        }
+      }
+    }
+    return getFetchGitRepositoryLinkPullRequestMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest,
+          com.google.cloud.developerconnect.v1.PullRequestComment>
+      getAddGitRepositoryLinkPullRequestCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddGitRepositoryLinkPullRequestComment",
+      requestType =
+          com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.PullRequestComment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest,
+          com.google.cloud.developerconnect.v1.PullRequestComment>
+      getAddGitRepositoryLinkPullRequestCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest,
+            com.google.cloud.developerconnect.v1.PullRequestComment>
+        getAddGitRepositoryLinkPullRequestCommentMethod;
+    if ((getAddGitRepositoryLinkPullRequestCommentMethod =
+            DeveloperConnectGrpc.getAddGitRepositoryLinkPullRequestCommentMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getAddGitRepositoryLinkPullRequestCommentMethod =
+                DeveloperConnectGrpc.getAddGitRepositoryLinkPullRequestCommentMethod)
+            == null) {
+          DeveloperConnectGrpc.getAddGitRepositoryLinkPullRequestCommentMethod =
+              getAddGitRepositoryLinkPullRequestCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1
+                              .AddGitRepositoryLinkPullRequestCommentRequest,
+                          com.google.cloud.developerconnect.v1.PullRequestComment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "AddGitRepositoryLinkPullRequestComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .AddGitRepositoryLinkPullRequestCommentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.PullRequestComment
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier(
+                              "AddGitRepositoryLinkPullRequestComment"))
+                      .build();
+        }
+      }
+    }
+    return getAddGitRepositoryLinkPullRequestCommentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestReviewCommentRequest,
+          com.google.cloud.developerconnect.v1.PullRequestReviewComment>
+      getAddGitRepositoryLinkPullRequestReviewCommentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddGitRepositoryLinkPullRequestReviewComment",
+      requestType =
+          com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestReviewCommentRequest
+              .class,
+      responseType = com.google.cloud.developerconnect.v1.PullRequestReviewComment.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestReviewCommentRequest,
+          com.google.cloud.developerconnect.v1.PullRequestReviewComment>
+      getAddGitRepositoryLinkPullRequestReviewCommentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1
+                .AddGitRepositoryLinkPullRequestReviewCommentRequest,
+            com.google.cloud.developerconnect.v1.PullRequestReviewComment>
+        getAddGitRepositoryLinkPullRequestReviewCommentMethod;
+    if ((getAddGitRepositoryLinkPullRequestReviewCommentMethod =
+            DeveloperConnectGrpc.getAddGitRepositoryLinkPullRequestReviewCommentMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getAddGitRepositoryLinkPullRequestReviewCommentMethod =
+                DeveloperConnectGrpc.getAddGitRepositoryLinkPullRequestReviewCommentMethod)
+            == null) {
+          DeveloperConnectGrpc.getAddGitRepositoryLinkPullRequestReviewCommentMethod =
+              getAddGitRepositoryLinkPullRequestReviewCommentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1
+                              .AddGitRepositoryLinkPullRequestReviewCommentRequest,
+                          com.google.cloud.developerconnect.v1.PullRequestReviewComment>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "AddGitRepositoryLinkPullRequestReviewComment"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .AddGitRepositoryLinkPullRequestReviewCommentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.PullRequestReviewComment
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier(
+                              "AddGitRepositoryLinkPullRequestReviewComment"))
+                      .build();
+        }
+      }
+    }
+    return getAddGitRepositoryLinkPullRequestReviewCommentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest,
+          com.google.cloud.developerconnect.v1.PullRequest>
+      getModifyGitRepositoryLinkPullRequestMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ModifyGitRepositoryLinkPullRequest",
+      requestType =
+          com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest.class,
+      responseType = com.google.cloud.developerconnect.v1.PullRequest.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest,
+          com.google.cloud.developerconnect.v1.PullRequest>
+      getModifyGitRepositoryLinkPullRequestMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest,
+            com.google.cloud.developerconnect.v1.PullRequest>
+        getModifyGitRepositoryLinkPullRequestMethod;
+    if ((getModifyGitRepositoryLinkPullRequestMethod =
+            DeveloperConnectGrpc.getModifyGitRepositoryLinkPullRequestMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getModifyGitRepositoryLinkPullRequestMethod =
+                DeveloperConnectGrpc.getModifyGitRepositoryLinkPullRequestMethod)
+            == null) {
+          DeveloperConnectGrpc.getModifyGitRepositoryLinkPullRequestMethod =
+              getModifyGitRepositoryLinkPullRequestMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1
+                              .ModifyGitRepositoryLinkPullRequestRequest,
+                          com.google.cloud.developerconnect.v1.PullRequest>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ModifyGitRepositoryLinkPullRequest"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .ModifyGitRepositoryLinkPullRequestRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1.PullRequest
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier(
+                              "ModifyGitRepositoryLinkPullRequest"))
+                      .build();
+        }
+      }
+    }
+    return getModifyGitRepositoryLinkPullRequestMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest,
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListResponse>
+      getFetchGitRepositoryLinkPullRequestListMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchGitRepositoryLinkPullRequestList",
+      requestType =
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest.class,
+      responseType =
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest,
+          com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListResponse>
+      getFetchGitRepositoryLinkPullRequestListMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest,
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListResponse>
+        getFetchGitRepositoryLinkPullRequestListMethod;
+    if ((getFetchGitRepositoryLinkPullRequestListMethod =
+            DeveloperConnectGrpc.getFetchGitRepositoryLinkPullRequestListMethod)
+        == null) {
+      synchronized (DeveloperConnectGrpc.class) {
+        if ((getFetchGitRepositoryLinkPullRequestListMethod =
+                DeveloperConnectGrpc.getFetchGitRepositoryLinkPullRequestListMethod)
+            == null) {
+          DeveloperConnectGrpc.getFetchGitRepositoryLinkPullRequestListMethod =
+              getFetchGitRepositoryLinkPullRequestListMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.developerconnect.v1
+                              .FetchGitRepositoryLinkPullRequestListRequest,
+                          com.google.cloud.developerconnect.v1
+                              .FetchGitRepositoryLinkPullRequestListResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "FetchGitRepositoryLinkPullRequestList"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .FetchGitRepositoryLinkPullRequestListRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.developerconnect.v1
+                                  .FetchGitRepositoryLinkPullRequestListResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DeveloperConnectMethodDescriptorSupplier(
+                              "FetchGitRepositoryLinkPullRequestList"))
+                      .build();
+        }
+      }
+    }
+    return getFetchGitRepositoryLinkPullRequestListMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1516,6 +2078,22 @@ public final class DeveloperConnectGrpc {
      *
      *
      * <pre>
+     * Opens a Pull Request in the remote SCM repository associated with a
+     * GitRepositoryLink.
+     * </pre>
+     */
+    default void openGitRepositoryLinkPullRequest(
+        com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequest>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getOpenGitRepositoryLinkPullRequestMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * FetchLinkableGitRepositories returns a list of git repositories from an SCM
      * that are available to be added to a Connection.
      * </pre>
@@ -1561,6 +2139,148 @@ public final class DeveloperConnectGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getFetchGitRefsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Diff commits for a GitRepositoryLink.
+     * </pre>
+     */
+    default void diffGitRepositoryLinkCommit(
+        com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDiffGitRepositoryLinkCommitMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch Commit details from a Git repository link.
+     * </pre>
+     */
+    default void fetchGitRepositoryLinkCommit(
+        com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchGitRepositoryLinkCommitMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch a list of Commits from a Git repository link.
+     * </pre>
+     */
+    default void fetchGitRepositoryLinkCommitList(
+        com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchGitRepositoryLinkCommitListMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches blame information for a file or line range in a file.
+     * </pre>
+     */
+    default void fetchGitRepositoryLinkFileBlame(
+        com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchGitRepositoryLinkFileBlameMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch Pull Request details from a Git repository link.
+     * </pre>
+     */
+    default void fetchGitRepositoryLinkPullRequest(
+        com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequest>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchGitRepositoryLinkPullRequestMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add a comment to a Pull Request.
+     * </pre>
+     */
+    default void addGitRepositoryLinkPullRequestComment(
+        com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequestComment>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAddGitRepositoryLinkPullRequestCommentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add a review comment (inline on diff) to a Pull Request.
+     * </pre>
+     */
+    default void addGitRepositoryLinkPullRequestReviewComment(
+        com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestReviewCommentRequest
+            request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequestReviewComment>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAddGitRepositoryLinkPullRequestReviewCommentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a Pull Request in the remote SCM repository associated with a
+     * GitRepositoryLink.
+     * </pre>
+     */
+    default void modifyGitRepositoryLinkPullRequest(
+        com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequest>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getModifyGitRepositoryLinkPullRequestMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a list of Pull Requests from the remote repository.
+     * </pre>
+     */
+    default void fetchGitRepositoryLinkPullRequestList(
+        com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFetchGitRepositoryLinkPullRequestListMethod(), responseObserver);
     }
 
     /**
@@ -1961,6 +2681,24 @@ public final class DeveloperConnectGrpc {
      *
      *
      * <pre>
+     * Opens a Pull Request in the remote SCM repository associated with a
+     * GitRepositoryLink.
+     * </pre>
+     */
+    public void openGitRepositoryLinkPullRequest(
+        com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequest>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getOpenGitRepositoryLinkPullRequestMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * FetchLinkableGitRepositories returns a list of git repositories from an SCM
      * that are available to be added to a Connection.
      * </pre>
@@ -2010,6 +2748,167 @@ public final class DeveloperConnectGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getFetchGitRefsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Diff commits for a GitRepositoryLink.
+     * </pre>
+     */
+    public void diffGitRepositoryLinkCommit(
+        com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDiffGitRepositoryLinkCommitMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch Commit details from a Git repository link.
+     * </pre>
+     */
+    public void fetchGitRepositoryLinkCommit(
+        com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchGitRepositoryLinkCommitMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch a list of Commits from a Git repository link.
+     * </pre>
+     */
+    public void fetchGitRepositoryLinkCommitList(
+        com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchGitRepositoryLinkCommitListMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches blame information for a file or line range in a file.
+     * </pre>
+     */
+    public void fetchGitRepositoryLinkFileBlame(
+        com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchGitRepositoryLinkFileBlameMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch Pull Request details from a Git repository link.
+     * </pre>
+     */
+    public void fetchGitRepositoryLinkPullRequest(
+        com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequest>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchGitRepositoryLinkPullRequestMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add a comment to a Pull Request.
+     * </pre>
+     */
+    public void addGitRepositoryLinkPullRequestComment(
+        com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequestComment>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddGitRepositoryLinkPullRequestCommentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add a review comment (inline on diff) to a Pull Request.
+     * </pre>
+     */
+    public void addGitRepositoryLinkPullRequestReviewComment(
+        com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestReviewCommentRequest
+            request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequestReviewComment>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getAddGitRepositoryLinkPullRequestReviewCommentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a Pull Request in the remote SCM repository associated with a
+     * GitRepositoryLink.
+     * </pre>
+     */
+    public void modifyGitRepositoryLinkPullRequest(
+        com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequest>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getModifyGitRepositoryLinkPullRequestMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a list of Pull Requests from the remote repository.
+     * </pre>
+     */
+    public void fetchGitRepositoryLinkPullRequestList(
+        com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchGitRepositoryLinkPullRequestListMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2388,6 +3287,21 @@ public final class DeveloperConnectGrpc {
      *
      *
      * <pre>
+     * Opens a Pull Request in the remote SCM repository associated with a
+     * GitRepositoryLink.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.PullRequest openGitRepositoryLinkPullRequest(
+        com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getOpenGitRepositoryLinkPullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * FetchLinkableGitRepositories returns a list of git repositories from an SCM
      * that are available to be added to a Connection.
      * </pre>
@@ -2430,6 +3344,152 @@ public final class DeveloperConnectGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getFetchGitRefsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Diff commits for a GitRepositoryLink.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse
+        diffGitRepositoryLinkCommit(
+            com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDiffGitRepositoryLinkCommitMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch Commit details from a Git repository link.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse
+        fetchGitRepositoryLinkCommit(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchGitRepositoryLinkCommitMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch a list of Commits from a Git repository link.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse
+        fetchGitRepositoryLinkCommitList(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchGitRepositoryLinkCommitListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches blame information for a file or line range in a file.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse
+        fetchGitRepositoryLinkFileBlame(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchGitRepositoryLinkFileBlameMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch Pull Request details from a Git repository link.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.PullRequest fetchGitRepositoryLinkPullRequest(
+        com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFetchGitRepositoryLinkPullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add a comment to a Pull Request.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.PullRequestComment
+        addGitRepositoryLinkPullRequestComment(
+            com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getAddGitRepositoryLinkPullRequestCommentMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add a review comment (inline on diff) to a Pull Request.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.PullRequestReviewComment
+        addGitRepositoryLinkPullRequestReviewComment(
+            com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestReviewCommentRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getAddGitRepositoryLinkPullRequestReviewCommentMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a Pull Request in the remote SCM repository associated with a
+     * GitRepositoryLink.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.PullRequest modifyGitRepositoryLinkPullRequest(
+        com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getModifyGitRepositoryLinkPullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a list of Pull Requests from the remote repository.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListResponse
+        fetchGitRepositoryLinkPullRequestList(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest
+                request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getFetchGitRepositoryLinkPullRequestListMethod(),
+          getCallOptions(),
+          request);
     }
 
     /**
@@ -2773,6 +3833,20 @@ public final class DeveloperConnectGrpc {
      *
      *
      * <pre>
+     * Opens a Pull Request in the remote SCM repository associated with a
+     * GitRepositoryLink.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.PullRequest openGitRepositoryLinkPullRequest(
+        com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getOpenGitRepositoryLinkPullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * FetchLinkableGitRepositories returns a list of git repositories from an SCM
      * that are available to be added to a Connection.
      * </pre>
@@ -2812,6 +3886,143 @@ public final class DeveloperConnectGrpc {
         com.google.cloud.developerconnect.v1.FetchGitRefsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFetchGitRefsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Diff commits for a GitRepositoryLink.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse
+        diffGitRepositoryLinkCommit(
+            com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDiffGitRepositoryLinkCommitMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch Commit details from a Git repository link.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse
+        fetchGitRepositoryLinkCommit(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchGitRepositoryLinkCommitMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch a list of Commits from a Git repository link.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse
+        fetchGitRepositoryLinkCommitList(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchGitRepositoryLinkCommitListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches blame information for a file or line range in a file.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse
+        fetchGitRepositoryLinkFileBlame(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchGitRepositoryLinkFileBlameMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch Pull Request details from a Git repository link.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.PullRequest fetchGitRepositoryLinkPullRequest(
+        com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchGitRepositoryLinkPullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add a comment to a Pull Request.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.PullRequestComment
+        addGitRepositoryLinkPullRequestComment(
+            com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getAddGitRepositoryLinkPullRequestCommentMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add a review comment (inline on diff) to a Pull Request.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.PullRequestReviewComment
+        addGitRepositoryLinkPullRequestReviewComment(
+            com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestReviewCommentRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getAddGitRepositoryLinkPullRequestReviewCommentMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a Pull Request in the remote SCM repository associated with a
+     * GitRepositoryLink.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.PullRequest modifyGitRepositoryLinkPullRequest(
+        com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModifyGitRepositoryLinkPullRequestMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a list of Pull Requests from the remote repository.
+     * </pre>
+     */
+    public com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListResponse
+        fetchGitRepositoryLinkPullRequestList(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getFetchGitRepositoryLinkPullRequestListMethod(),
+          getCallOptions(),
+          request);
     }
 
     /**
@@ -3153,6 +4364,23 @@ public final class DeveloperConnectGrpc {
      *
      *
      * <pre>
+     * Opens a Pull Request in the remote SCM repository associated with a
+     * GitRepositoryLink.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.PullRequest>
+        openGitRepositoryLinkPullRequest(
+            com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getOpenGitRepositoryLinkPullRequestMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * FetchLinkableGitRepositories returns a list of git repositories from an SCM
      * that are available to be added to a Connection.
      * </pre>
@@ -3195,6 +4423,154 @@ public final class DeveloperConnectGrpc {
         fetchGitRefs(com.google.cloud.developerconnect.v1.FetchGitRefsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getFetchGitRefsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Diff commits for a GitRepositoryLink.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse>
+        diffGitRepositoryLinkCommit(
+            com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDiffGitRepositoryLinkCommitMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch Commit details from a Git repository link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse>
+        fetchGitRepositoryLinkCommit(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchGitRepositoryLinkCommitMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch a list of Commits from a Git repository link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse>
+        fetchGitRepositoryLinkCommitList(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchGitRepositoryLinkCommitListMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches blame information for a file or line range in a file.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse>
+        fetchGitRepositoryLinkFileBlame(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchGitRepositoryLinkFileBlameMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetch Pull Request details from a Git repository link.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.PullRequest>
+        fetchGitRepositoryLinkPullRequest(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchGitRepositoryLinkPullRequestMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add a comment to a Pull Request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.PullRequestComment>
+        addGitRepositoryLinkPullRequestComment(
+            com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddGitRepositoryLinkPullRequestCommentMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add a review comment (inline on diff) to a Pull Request.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.PullRequestReviewComment>
+        addGitRepositoryLinkPullRequestReviewComment(
+            com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestReviewCommentRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getAddGitRepositoryLinkPullRequestReviewCommentMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a Pull Request in the remote SCM repository associated with a
+     * GitRepositoryLink.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.PullRequest>
+        modifyGitRepositoryLinkPullRequest(
+            com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getModifyGitRepositoryLinkPullRequestMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Fetches a list of Pull Requests from the remote repository.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListResponse>
+        fetchGitRepositoryLinkPullRequestList(
+            com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchGitRepositoryLinkPullRequestListMethod(), getCallOptions()),
+          request);
     }
 
     /**
@@ -3377,21 +4753,31 @@ public final class DeveloperConnectGrpc {
   private static final int METHODID_GET_GIT_REPOSITORY_LINK = 8;
   private static final int METHODID_FETCH_READ_WRITE_TOKEN = 9;
   private static final int METHODID_FETCH_READ_TOKEN = 10;
-  private static final int METHODID_FETCH_LINKABLE_GIT_REPOSITORIES = 11;
-  private static final int METHODID_FETCH_GIT_HUB_INSTALLATIONS = 12;
-  private static final int METHODID_FETCH_GIT_REFS = 13;
-  private static final int METHODID_LIST_ACCOUNT_CONNECTORS = 14;
-  private static final int METHODID_GET_ACCOUNT_CONNECTOR = 15;
-  private static final int METHODID_CREATE_ACCOUNT_CONNECTOR = 16;
-  private static final int METHODID_UPDATE_ACCOUNT_CONNECTOR = 17;
-  private static final int METHODID_DELETE_ACCOUNT_CONNECTOR = 18;
-  private static final int METHODID_FETCH_ACCESS_TOKEN = 19;
-  private static final int METHODID_LIST_USERS = 20;
-  private static final int METHODID_DELETE_USER = 21;
-  private static final int METHODID_FETCH_SELF = 22;
-  private static final int METHODID_DELETE_SELF = 23;
-  private static final int METHODID_START_OAUTH = 24;
-  private static final int METHODID_FINISH_OAUTH = 25;
+  private static final int METHODID_OPEN_GIT_REPOSITORY_LINK_PULL_REQUEST = 11;
+  private static final int METHODID_FETCH_LINKABLE_GIT_REPOSITORIES = 12;
+  private static final int METHODID_FETCH_GIT_HUB_INSTALLATIONS = 13;
+  private static final int METHODID_FETCH_GIT_REFS = 14;
+  private static final int METHODID_DIFF_GIT_REPOSITORY_LINK_COMMIT = 15;
+  private static final int METHODID_FETCH_GIT_REPOSITORY_LINK_COMMIT = 16;
+  private static final int METHODID_FETCH_GIT_REPOSITORY_LINK_COMMIT_LIST = 17;
+  private static final int METHODID_FETCH_GIT_REPOSITORY_LINK_FILE_BLAME = 18;
+  private static final int METHODID_FETCH_GIT_REPOSITORY_LINK_PULL_REQUEST = 19;
+  private static final int METHODID_ADD_GIT_REPOSITORY_LINK_PULL_REQUEST_COMMENT = 20;
+  private static final int METHODID_ADD_GIT_REPOSITORY_LINK_PULL_REQUEST_REVIEW_COMMENT = 21;
+  private static final int METHODID_MODIFY_GIT_REPOSITORY_LINK_PULL_REQUEST = 22;
+  private static final int METHODID_FETCH_GIT_REPOSITORY_LINK_PULL_REQUEST_LIST = 23;
+  private static final int METHODID_LIST_ACCOUNT_CONNECTORS = 24;
+  private static final int METHODID_GET_ACCOUNT_CONNECTOR = 25;
+  private static final int METHODID_CREATE_ACCOUNT_CONNECTOR = 26;
+  private static final int METHODID_UPDATE_ACCOUNT_CONNECTOR = 27;
+  private static final int METHODID_DELETE_ACCOUNT_CONNECTOR = 28;
+  private static final int METHODID_FETCH_ACCESS_TOKEN = 29;
+  private static final int METHODID_LIST_USERS = 30;
+  private static final int METHODID_DELETE_USER = 31;
+  private static final int METHODID_FETCH_SELF = 32;
+  private static final int METHODID_DELETE_SELF = 33;
+  private static final int METHODID_START_OAUTH = 34;
+  private static final int METHODID_FINISH_OAUTH = 35;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3475,6 +4861,13 @@ public final class DeveloperConnectGrpc {
                       com.google.cloud.developerconnect.v1.FetchReadTokenResponse>)
                   responseObserver);
           break;
+        case METHODID_OPEN_GIT_REPOSITORY_LINK_PULL_REQUEST:
+          serviceImpl.openGitRepositoryLinkPullRequest(
+              (com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequest>)
+                  responseObserver);
+          break;
         case METHODID_FETCH_LINKABLE_GIT_REPOSITORIES:
           serviceImpl.fetchLinkableGitRepositories(
               (com.google.cloud.developerconnect.v1.FetchLinkableGitRepositoriesRequest) request,
@@ -3494,6 +4887,75 @@ public final class DeveloperConnectGrpc {
               (com.google.cloud.developerconnect.v1.FetchGitRefsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.developerconnect.v1.FetchGitRefsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DIFF_GIT_REPOSITORY_LINK_COMMIT:
+          serviceImpl.diffGitRepositoryLinkCommit(
+              (com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_GIT_REPOSITORY_LINK_COMMIT:
+          serviceImpl.fetchGitRepositoryLinkCommit(
+              (com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_GIT_REPOSITORY_LINK_COMMIT_LIST:
+          serviceImpl.fetchGitRepositoryLinkCommitList(
+              (com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.developerconnect.v1
+                          .FetchGitRepositoryLinkCommitListResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_GIT_REPOSITORY_LINK_FILE_BLAME:
+          serviceImpl.fetchGitRepositoryLinkFileBlame(
+              (com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_GIT_REPOSITORY_LINK_PULL_REQUEST:
+          serviceImpl.fetchGitRepositoryLinkPullRequest(
+              (com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequest>)
+                  responseObserver);
+          break;
+        case METHODID_ADD_GIT_REPOSITORY_LINK_PULL_REQUEST_COMMENT:
+          serviceImpl.addGitRepositoryLinkPullRequestComment(
+              (com.google.cloud.developerconnect.v1.AddGitRepositoryLinkPullRequestCommentRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequestComment>)
+                  responseObserver);
+          break;
+        case METHODID_ADD_GIT_REPOSITORY_LINK_PULL_REQUEST_REVIEW_COMMENT:
+          serviceImpl.addGitRepositoryLinkPullRequestReviewComment(
+              (com.google.cloud.developerconnect.v1
+                      .AddGitRepositoryLinkPullRequestReviewCommentRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.developerconnect.v1.PullRequestReviewComment>)
+                  responseObserver);
+          break;
+        case METHODID_MODIFY_GIT_REPOSITORY_LINK_PULL_REQUEST:
+          serviceImpl.modifyGitRepositoryLinkPullRequest(
+              (com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.developerconnect.v1.PullRequest>)
+                  responseObserver);
+          break;
+        case METHODID_FETCH_GIT_REPOSITORY_LINK_PULL_REQUEST_LIST:
+          serviceImpl.fetchGitRepositoryLinkPullRequestList(
+              (com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestListRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.developerconnect.v1
+                          .FetchGitRepositoryLinkPullRequestListResponse>)
                   responseObserver);
           break;
         case METHODID_LIST_ACCOUNT_CONNECTORS:
@@ -3659,6 +5121,13 @@ public final class DeveloperConnectGrpc {
                     com.google.cloud.developerconnect.v1.FetchReadTokenResponse>(
                     service, METHODID_FETCH_READ_TOKEN)))
         .addMethod(
+            getOpenGitRepositoryLinkPullRequestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.OpenGitRepositoryLinkPullRequestRequest,
+                    com.google.cloud.developerconnect.v1.PullRequest>(
+                    service, METHODID_OPEN_GIT_REPOSITORY_LINK_PULL_REQUEST)))
+        .addMethod(
             getFetchLinkableGitRepositoriesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3679,6 +5148,73 @@ public final class DeveloperConnectGrpc {
                     com.google.cloud.developerconnect.v1.FetchGitRefsRequest,
                     com.google.cloud.developerconnect.v1.FetchGitRefsResponse>(
                     service, METHODID_FETCH_GIT_REFS)))
+        .addMethod(
+            getDiffGitRepositoryLinkCommitMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitRequest,
+                    com.google.cloud.developerconnect.v1.DiffGitRepositoryLinkCommitResponse>(
+                    service, METHODID_DIFF_GIT_REPOSITORY_LINK_COMMIT)))
+        .addMethod(
+            getFetchGitRepositoryLinkCommitMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitRequest,
+                    com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitResponse>(
+                    service, METHODID_FETCH_GIT_REPOSITORY_LINK_COMMIT)))
+        .addMethod(
+            getFetchGitRepositoryLinkCommitListMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListRequest,
+                    com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkCommitListResponse>(
+                    service, METHODID_FETCH_GIT_REPOSITORY_LINK_COMMIT_LIST)))
+        .addMethod(
+            getFetchGitRepositoryLinkFileBlameMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameRequest,
+                    com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkFileBlameResponse>(
+                    service, METHODID_FETCH_GIT_REPOSITORY_LINK_FILE_BLAME)))
+        .addMethod(
+            getFetchGitRepositoryLinkPullRequestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.FetchGitRepositoryLinkPullRequestRequest,
+                    com.google.cloud.developerconnect.v1.PullRequest>(
+                    service, METHODID_FETCH_GIT_REPOSITORY_LINK_PULL_REQUEST)))
+        .addMethod(
+            getAddGitRepositoryLinkPullRequestCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1
+                        .AddGitRepositoryLinkPullRequestCommentRequest,
+                    com.google.cloud.developerconnect.v1.PullRequestComment>(
+                    service, METHODID_ADD_GIT_REPOSITORY_LINK_PULL_REQUEST_COMMENT)))
+        .addMethod(
+            getAddGitRepositoryLinkPullRequestReviewCommentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1
+                        .AddGitRepositoryLinkPullRequestReviewCommentRequest,
+                    com.google.cloud.developerconnect.v1.PullRequestReviewComment>(
+                    service, METHODID_ADD_GIT_REPOSITORY_LINK_PULL_REQUEST_REVIEW_COMMENT)))
+        .addMethod(
+            getModifyGitRepositoryLinkPullRequestMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1.ModifyGitRepositoryLinkPullRequestRequest,
+                    com.google.cloud.developerconnect.v1.PullRequest>(
+                    service, METHODID_MODIFY_GIT_REPOSITORY_LINK_PULL_REQUEST)))
+        .addMethod(
+            getFetchGitRepositoryLinkPullRequestListMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.developerconnect.v1
+                        .FetchGitRepositoryLinkPullRequestListRequest,
+                    com.google.cloud.developerconnect.v1
+                        .FetchGitRepositoryLinkPullRequestListResponse>(
+                    service, METHODID_FETCH_GIT_REPOSITORY_LINK_PULL_REQUEST_LIST)))
         .addMethod(
             getListAccountConnectorsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3819,9 +5355,19 @@ public final class DeveloperConnectGrpc {
                       .addMethod(getGetGitRepositoryLinkMethod())
                       .addMethod(getFetchReadWriteTokenMethod())
                       .addMethod(getFetchReadTokenMethod())
+                      .addMethod(getOpenGitRepositoryLinkPullRequestMethod())
                       .addMethod(getFetchLinkableGitRepositoriesMethod())
                       .addMethod(getFetchGitHubInstallationsMethod())
                       .addMethod(getFetchGitRefsMethod())
+                      .addMethod(getDiffGitRepositoryLinkCommitMethod())
+                      .addMethod(getFetchGitRepositoryLinkCommitMethod())
+                      .addMethod(getFetchGitRepositoryLinkCommitListMethod())
+                      .addMethod(getFetchGitRepositoryLinkFileBlameMethod())
+                      .addMethod(getFetchGitRepositoryLinkPullRequestMethod())
+                      .addMethod(getAddGitRepositoryLinkPullRequestCommentMethod())
+                      .addMethod(getAddGitRepositoryLinkPullRequestReviewCommentMethod())
+                      .addMethod(getModifyGitRepositoryLinkPullRequestMethod())
+                      .addMethod(getFetchGitRepositoryLinkPullRequestListMethod())
                       .addMethod(getListAccountConnectorsMethod())
                       .addMethod(getGetAccountConnectorMethod())
                       .addMethod(getCreateAccountConnectorMethod())

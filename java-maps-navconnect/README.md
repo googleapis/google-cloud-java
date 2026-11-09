@@ -21,20 +21,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-navconnect</artifactId>
-  <version>0.6.0</version>
+  <version>0.7.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.maps:google-maps-navconnect:0.6.0'
+implementation 'com.google.maps:google-maps-navconnect:0.7.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.maps" % "google-maps-navconnect" % "0.6.0"
+libraryDependencies += "com.google.maps" % "google-maps-navconnect" % "0.7.0"
 ```
 
 ## Authentication
@@ -63,7 +63,7 @@ to add `google-maps-navconnect` as a dependency in your code.
 ## About Navigation Connect
 
 
-[Navigation Connect][product-docs] Navigation Connect API.
+[Navigation Connect][product-docs] Navigate and track trips seamlessly with Google Maps or Waze.
 
 See the [Navigation Connect client library docs][javadocs] to learn how to
 use this Navigation Connect Client Library.
@@ -155,7 +155,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-maps-navconnect/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.maps/google-maps-navconnect.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.maps/google-maps-navconnect/0.6.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.maps/google-maps-navconnect/0.7.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

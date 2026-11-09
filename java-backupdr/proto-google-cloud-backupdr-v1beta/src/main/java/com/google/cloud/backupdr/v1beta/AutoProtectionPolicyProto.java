@@ -103,22 +103,23 @@ public final class AutoProtectionPolicyProto extends com.google.protobuf.Generat
     java.lang.String[] descriptorData = {
       "\n"
           + "7google/cloud/backupdr/v1beta/autoprotectionpolicy.proto\022\034google.cloud.backupdr"
-          + ".v1beta\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\342\006\n"
-          + "\024AutoProtectionPolicy\022\022\n"
-          + "\004name\030\001 \001(\tB\004\342A\001\010\022\031\n"
+          + ".v1beta\032\037google/api/field_behavior.proto"
+          + "\032\033google/api/field_info.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\343\006\n"
+          + "\024AutoProtectionPolicy\022\023\n"
+          + "\004name\030\001 \001(\tB\005\342A\002\003\010\022\031\n"
           + "\013description\030\002 \001(\tB\004\342A\001\001\022Q\n"
-          + "\023backup_plan_details\030\003 \003(\0132..go"
-          + "ogle.cloud.backupdr.v1beta.BackupPlanDetailB\004\342A\001\002\022>\n"
+          + "\023backup_plan_details\030\003 \003(\0132..google.cloud"
+          + ".backupdr.v1beta.BackupPlanDetailB\004\342A\001\002\022>\n"
           + "\010criteria\030\004"
           + " \001(\0132&.google.cloud.backupdr.v1beta.CriteriaB\004\342A\001\002\022M\n"
-          + "\005state\030\005"
-          + " \001(\01628.google.cloud.backupdr.v1beta.AutoProtectionPolicy.StateB\004\342A\001\003\022\014\n"
+          + "\005state\030\005 \001(\01628"
+          + ".google.cloud.backupdr.v1beta.AutoProtectionPolicy.StateB\004\342A\001\003\022\014\n"
           + "\004etag\030\006 \001(\t\022K\n"
-          + "\017binding_summary\030\007 \001(\0132,.google"
-          + ".cloud.backupdr.v1beta.BindingSummaryB\004\342A\001\003\022^\n"
-          + "\031policy_evaluation_summary\030\010 \001(\01325"
-          + ".google.cloud.backupdr.v1beta.PolicyEvaluationSummaryB\004\342A\001\003\0225\n"
+          + "\017binding_summary\030\007"
+          + " \001(\0132,.google.cloud.backupdr.v1beta.BindingSummaryB\004\342A\001\003\022^\n"
+          + "\031policy_evaluation_summary\030\010 \001(\01325.google.cl"
+          + "oud.backupdr.v1beta.PolicyEvaluationSummaryB\004\342A\001\003\0225\n"
           + "\013create_time\030\t"
           + " \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n"
           + "\013update_time\030\n"
@@ -129,16 +130,16 @@ public final class AutoProtectionPolicyProto extends com.google.protobuf.Generat
           + "\006ACTIVE\020\002\022\014\n"
           + "\010UPDATING\020\003\022\014\n"
           + "\010DELETING\020\004:\271\001\352A\265\001\n"
-          + ",backupdr.googleapis.com/AutoProtectionPolicy\022Wprojects/{"
-          + "project}/locations/{location}/autoProtectionPolicies/{auto_protection_policy}*\026a"
-          + "utoProtectionPolicies2\024autoProtectionPolicy\"q\n"
+          + ",backupdr.googleapis.com/AutoProtectionPolicy\022Wprojects/{project}/l"
+          + "ocations/{location}/autoProtectionPolici"
+          + "es/{auto_protection_policy}*\026autoProtectionPolicies2\024autoProtectionPolicy\"q\n"
           + "\020BackupPlanDetail\022\033\n\r"
           + "resource_type\030\001 \001(\tB\004\342A\001\002\022@\n"
           + "\013backup_plan\030\002 \001(\tB+\342A\001\002\372A$\n"
           + "\"backupdr.googleapis.com/BackupPlan\"^\n"
           + "\010Criteria\022R\n"
-          + "\023matching_conditions\030\001 \003(\0132"
-          + "/.google.cloud.backupdr.v1beta.MatchingConditionB\004\342A\001\002\"m\n"
+          + "\023matching_conditions\030\001 \003(\0132/.google.c"
+          + "loud.backupdr.v1beta.MatchingConditionB\004\342A\001\002\"m\n"
           + "\021MatchingCondition\022K\n"
           + "\017label_condition\030\001"
           + " \001(\0132*.google.cloud.backupdr.v1beta.KeyValuePairB\004\342A\001\001H\000B\013\n"
@@ -147,52 +148,60 @@ public final class AutoProtectionPolicyProto extends com.google.protobuf.Generat
           + "\027matching_resource_count\030\001 \001(\003B\004\342A\001\003\022&\n"
           + "\030protected_resource_count\030\002 \001(\003B\004\342A\001\003\022#\n"
           + "\025failed_resource_count\030\003 \001(\003B\004\342A\001\003\"-\n"
-          + "\016BindingSummary\022\033\n\r"
+          + "\016BindingSummary\022\033\n"
+          + "\r"
           + "project_count\030\001 \001(\003B\004\342A\001\003\"7\n"
           + "\014KeyValuePair\022\021\n"
           + "\003key\030\001 \001(\tB\004\342A\001\002\022\024\n"
-          + "\006values\030\002 \003(\tB\004\342A\001\002\"\342\001\n"
+          + "\006values\030\002 \003(\tB\004\342A\001\002\"\204\002\n"
           + "!CreateAutoProtectionPolicyRequest\022:\n"
           + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
           + "!locations.googleapis.com/Location\022\'\n"
           + "\031auto_protection_policy_id\030\002 \001(\tB\004\342A\001\002\022X\n"
-          + "\026auto_protection_policy\030\003 \001(\01322.google.cloud."
-          + "backupdr.v1beta.AutoProtectionPolicyB\004\342A\001\002\"e\n"
+          + "\026auto_protection_policy\030\003"
+          + " \001(\01322.google.cloud.backupdr.v1beta.AutoProtectionPolicyB\004\342A\001\002\022"
+          + " \n\n"
+          + "request_id\030\004 \001(\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"e\n"
           + "\036GetAutoProtectionPolicyRequest\022C\n"
           + "\004name\030\001 \001(\tB5\342A\001\002\372A.\n"
-          + ",backupdr.googleapis.com/AutoProtectionPolicy\"\264\001\n"
+          + ",backupdr.googleapis.com/AutoProtectionPolicy\"\326\001\n"
           + "!UpdateAutoProtectionPolicyRequest\022X\n"
-          + "\026auto_protection_policy\030\001"
-          + " \001(\01322.google.cloud.backupdr.v1beta.AutoProtectionPolicyB\004\342A\001\002\0225\n"
-          + "\013update_mask\030\002"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\002\"v\n"
+          + "\026auto_protection_policy\030\001 \001(\0132"
+          + "2.google.cloud.backupdr.v1beta.AutoProtectionPolicyB\004\342A\001\002\0225\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\004\342A\001\001\022"
+          + " \n\n"
+          + "request_id\030\003 \001("
+          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\236\001\n"
           + "!DeleteAutoProtectionPolicyRequest\022C\n"
           + "\004name\030\001 \001(\tB5\342A\001\002\372A.\n"
-          + ",backupdr.googleapis.com/AutoProtectionPolicy\022\014\n"
-          + "\004etag\030\002 \001(\t\"\300\001\n"
+          + ",backupdr.googleapis.com/AutoProtectionPolicy\022\022\n"
+          + "\004etag\030\002 \001(\tB\004\342A\001\001\022 \n\n"
+          + "request_id\030\003 \001("
+          + "\tB\014\342A\001\001\342\214\317\327\010\002\010\001\"\300\001\n"
           + "!ListAutoProtectionPoliciesRequest\022:\n"
           + "\006parent\030\001 \001(\tB*\342A\001\002\372A#\n"
           + "!locations.googleapis.com/Location\022\027\n"
           + "\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\n"
           + "page_token\030\003 \001(\tB\004\342A\001\001\022\024\n"
           + "\006filter\030\004 \001(\tB\004\342A\001\001\022\026\n"
-          + "\010order_by\030\005 \001(\tB\004\342A\001\001\"\250\001\n"
+          + "\010order_by\030\005 \001(\tB\004\342A\001\001\"\256\001\n"
           + "\"ListAutoProtectionPoliciesResponse\022T\n"
-          + "\030auto_protection_policies\030\001 \003(\01322.g"
-          + "oogle.cloud.backupdr.v1beta.AutoProtectionPolicy\022\027\n"
-          + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\tB\335\001\n"
-          + " com.google.cloud.backupdr.v1betaB\031AutoProtectionPolicyProtoP\001"
-          + "Z<cloud.google.com/go/backupdr/apiv1beta"
-          + "/backupdrpb;backupdrpb\252\002\034Google.Cloud.Ba"
-          + "ckupDR.V1Beta\312\002\034Google\\Cloud\\BackupDR\\V1"
-          + "beta\352\002\037Google::Cloud::BackupDR::V1betab\006proto3"
+          + "\030auto_protection_policies\030\001"
+          + " \003(\01322.google.cloud.backupdr.v1beta.AutoProtectionPolicy\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\031\n"
+          + "\013unreachable\030\003 \003(\tB\004\342A\001\006B\335\001\n"
+          + " com.google.cloud.backupdr.v1betaB\031AutoProtectionPolicyProtoP\001Z<cloud.google."
+          + "com/go/backupdr/apiv1beta/backupdrpb;bac"
+          + "kupdrpb\252\002\034Google.Cloud.BackupDR.V1Beta\312\002"
+          + "\034Google\\Cloud\\BackupDR\\V1beta\352\002\037Google::"
+          + "Cloud::BackupDR::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -268,7 +277,7 @@ public final class AutoProtectionPolicyProto extends com.google.protobuf.Generat
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1beta_CreateAutoProtectionPolicyRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "AutoProtectionPolicyId", "AutoProtectionPolicy",
+              "Parent", "AutoProtectionPolicyId", "AutoProtectionPolicy", "RequestId",
             });
     internal_static_google_cloud_backupdr_v1beta_GetAutoProtectionPolicyRequest_descriptor =
         getDescriptor().getMessageType(8);
@@ -284,7 +293,7 @@ public final class AutoProtectionPolicyProto extends com.google.protobuf.Generat
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1beta_UpdateAutoProtectionPolicyRequest_descriptor,
             new java.lang.String[] {
-              "AutoProtectionPolicy", "UpdateMask",
+              "AutoProtectionPolicy", "UpdateMask", "RequestId",
             });
     internal_static_google_cloud_backupdr_v1beta_DeleteAutoProtectionPolicyRequest_descriptor =
         getDescriptor().getMessageType(10);
@@ -292,7 +301,7 @@ public final class AutoProtectionPolicyProto extends com.google.protobuf.Generat
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1beta_DeleteAutoProtectionPolicyRequest_descriptor,
             new java.lang.String[] {
-              "Name", "Etag",
+              "Name", "Etag", "RequestId",
             });
     internal_static_google_cloud_backupdr_v1beta_ListAutoProtectionPoliciesRequest_descriptor =
         getDescriptor().getMessageType(11);
@@ -312,12 +321,14 @@ public final class AutoProtectionPolicyProto extends com.google.protobuf.Generat
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(

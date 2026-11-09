@@ -3454,6 +3454,19 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        *
        *
        * <pre>
+       * Optional. If true, the pdf layout will be refined using an LLM.
+       * </pre>
+       *
+       * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableLlmLayoutParsing.
+       */
+      boolean getEnableLlmLayoutParsing();
+
+      /**
+       *
+       *
+       * <pre>
        * Optional. Contains the required structure types to extract from the
        * document. Supported values:
        *
@@ -3697,6 +3710,21 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
        * @return The bytes of the excludeHtmlIds at the given index.
        */
       com.google.protobuf.ByteString getExcludeHtmlIdsBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the processed document will be made available for
+       * the GetProcessedDocument API.
+       * </pre>
+       *
+       * <code>bool enable_get_processed_document = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enableGetProcessedDocument.
+       */
+      boolean getEnableGetProcessedDocument();
     }
 
     /**
@@ -3792,6 +3820,25 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
       @java.lang.Override
       public boolean getEnableImageAnnotation() {
         return enableImageAnnotation_;
+      }
+
+      public static final int ENABLE_LLM_LAYOUT_PARSING_FIELD_NUMBER = 5;
+      private boolean enableLlmLayoutParsing_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the pdf layout will be refined using an LLM.
+       * </pre>
+       *
+       * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableLlmLayoutParsing.
+       */
+      @java.lang.Override
+      public boolean getEnableLlmLayoutParsing() {
+        return enableLlmLayoutParsing_;
       }
 
       public static final int STRUCTURED_CONTENT_TYPES_FIELD_NUMBER = 9;
@@ -4098,6 +4145,27 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         return excludeHtmlIds_.getByteString(index);
       }
 
+      public static final int ENABLE_GET_PROCESSED_DOCUMENT_FIELD_NUMBER = 14;
+      private boolean enableGetProcessedDocument_ = false;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the processed document will be made available for
+       * the GetProcessedDocument API.
+       * </pre>
+       *
+       * <code>bool enable_get_processed_document = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enableGetProcessedDocument.
+       */
+      @java.lang.Override
+      public boolean getEnableGetProcessedDocument() {
+        return enableGetProcessedDocument_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -4118,6 +4186,9 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         if (enableImageAnnotation_ != false) {
           output.writeBool(2, enableImageAnnotation_);
         }
+        if (enableLlmLayoutParsing_ != false) {
+          output.writeBool(5, enableLlmLayoutParsing_);
+        }
         for (int i = 0; i < structuredContentTypes_.size(); i++) {
           com.google.protobuf.GeneratedMessage.writeString(
               output, 9, structuredContentTypes_.getRaw(i));
@@ -4133,6 +4204,9 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         for (int i = 0; i < excludeHtmlIds_.size(); i++) {
           com.google.protobuf.GeneratedMessage.writeString(output, 12, excludeHtmlIds_.getRaw(i));
         }
+        if (enableGetProcessedDocument_ != false) {
+          output.writeBool(14, enableGetProcessedDocument_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -4147,6 +4221,9 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         }
         if (enableImageAnnotation_ != false) {
           size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enableImageAnnotation_);
+        }
+        if (enableLlmLayoutParsing_ != false) {
+          size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableLlmLayoutParsing_);
         }
         {
           int dataSize = 0;
@@ -4180,6 +4257,11 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           size += dataSize;
           size += 1 * getExcludeHtmlIdsList().size();
         }
+        if (enableGetProcessedDocument_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(
+                  14, enableGetProcessedDocument_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -4205,11 +4287,13 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
 
         if (getEnableTableAnnotation() != other.getEnableTableAnnotation()) return false;
         if (getEnableImageAnnotation() != other.getEnableImageAnnotation()) return false;
+        if (getEnableLlmLayoutParsing() != other.getEnableLlmLayoutParsing()) return false;
         if (!getStructuredContentTypesList().equals(other.getStructuredContentTypesList()))
           return false;
         if (!getExcludeHtmlElementsList().equals(other.getExcludeHtmlElementsList())) return false;
         if (!getExcludeHtmlClassesList().equals(other.getExcludeHtmlClassesList())) return false;
         if (!getExcludeHtmlIdsList().equals(other.getExcludeHtmlIdsList())) return false;
+        if (getEnableGetProcessedDocument() != other.getEnableGetProcessedDocument()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -4225,6 +4309,8 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableTableAnnotation());
         hash = (37 * hash) + ENABLE_IMAGE_ANNOTATION_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableImageAnnotation());
+        hash = (37 * hash) + ENABLE_LLM_LAYOUT_PARSING_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableLlmLayoutParsing());
         if (getStructuredContentTypesCount() > 0) {
           hash = (37 * hash) + STRUCTURED_CONTENT_TYPES_FIELD_NUMBER;
           hash = (53 * hash) + getStructuredContentTypesList().hashCode();
@@ -4241,6 +4327,9 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           hash = (37 * hash) + EXCLUDE_HTML_IDS_FIELD_NUMBER;
           hash = (53 * hash) + getExcludeHtmlIdsList().hashCode();
         }
+        hash = (37 * hash) + ENABLE_GET_PROCESSED_DOCUMENT_FIELD_NUMBER;
+        hash =
+            (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableGetProcessedDocument());
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -4413,10 +4502,12 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           bitField0_ = 0;
           enableTableAnnotation_ = false;
           enableImageAnnotation_ = false;
+          enableLlmLayoutParsing_ = false;
           structuredContentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
           excludeHtmlElements_ = com.google.protobuf.LazyStringArrayList.emptyList();
           excludeHtmlClasses_ = com.google.protobuf.LazyStringArrayList.emptyList();
           excludeHtmlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          enableGetProcessedDocument_ = false;
           return this;
         }
 
@@ -4475,20 +4566,26 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             result.enableImageAnnotation_ = enableImageAnnotation_;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.enableLlmLayoutParsing_ = enableLlmLayoutParsing_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
             structuredContentTypes_.makeImmutable();
             result.structuredContentTypes_ = structuredContentTypes_;
           }
-          if (((from_bitField0_ & 0x00000008) != 0)) {
+          if (((from_bitField0_ & 0x00000010) != 0)) {
             excludeHtmlElements_.makeImmutable();
             result.excludeHtmlElements_ = excludeHtmlElements_;
           }
-          if (((from_bitField0_ & 0x00000010) != 0)) {
+          if (((from_bitField0_ & 0x00000020) != 0)) {
             excludeHtmlClasses_.makeImmutable();
             result.excludeHtmlClasses_ = excludeHtmlClasses_;
           }
-          if (((from_bitField0_ & 0x00000020) != 0)) {
+          if (((from_bitField0_ & 0x00000040) != 0)) {
             excludeHtmlIds_.makeImmutable();
             result.excludeHtmlIds_ = excludeHtmlIds_;
+          }
+          if (((from_bitField0_ & 0x00000080) != 0)) {
+            result.enableGetProcessedDocument_ = enableGetProcessedDocument_;
           }
         }
 
@@ -4521,10 +4618,13 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           if (other.getEnableImageAnnotation() != false) {
             setEnableImageAnnotation(other.getEnableImageAnnotation());
           }
+          if (other.getEnableLlmLayoutParsing() != false) {
+            setEnableLlmLayoutParsing(other.getEnableLlmLayoutParsing());
+          }
           if (!other.structuredContentTypes_.isEmpty()) {
             if (structuredContentTypes_.isEmpty()) {
               structuredContentTypes_ = other.structuredContentTypes_;
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
             } else {
               ensureStructuredContentTypesIsMutable();
               structuredContentTypes_.addAll(other.structuredContentTypes_);
@@ -4534,7 +4634,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           if (!other.excludeHtmlElements_.isEmpty()) {
             if (excludeHtmlElements_.isEmpty()) {
               excludeHtmlElements_ = other.excludeHtmlElements_;
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
             } else {
               ensureExcludeHtmlElementsIsMutable();
               excludeHtmlElements_.addAll(other.excludeHtmlElements_);
@@ -4544,7 +4644,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           if (!other.excludeHtmlClasses_.isEmpty()) {
             if (excludeHtmlClasses_.isEmpty()) {
               excludeHtmlClasses_ = other.excludeHtmlClasses_;
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
             } else {
               ensureExcludeHtmlClassesIsMutable();
               excludeHtmlClasses_.addAll(other.excludeHtmlClasses_);
@@ -4554,12 +4654,15 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           if (!other.excludeHtmlIds_.isEmpty()) {
             if (excludeHtmlIds_.isEmpty()) {
               excludeHtmlIds_ = other.excludeHtmlIds_;
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
             } else {
               ensureExcludeHtmlIdsIsMutable();
               excludeHtmlIds_.addAll(other.excludeHtmlIds_);
             }
             onChanged();
+          }
+          if (other.getEnableGetProcessedDocument() != false) {
+            setEnableGetProcessedDocument(other.getEnableGetProcessedDocument());
           }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
@@ -4599,6 +4702,12 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
                     bitField0_ |= 0x00000002;
                     break;
                   } // case 16
+                case 40:
+                  {
+                    enableLlmLayoutParsing_ = input.readBool();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 40
                 case 74:
                   {
                     java.lang.String s = input.readStringRequireUtf8();
@@ -4627,6 +4736,12 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
                     excludeHtmlIds_.add(s);
                     break;
                   } // case 98
+                case 112:
+                  {
+                    enableGetProcessedDocument_ = input.readBool();
+                    bitField0_ |= 0x00000080;
+                    break;
+                  } // case 112
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4764,6 +4879,65 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           return this;
         }
 
+        private boolean enableLlmLayoutParsing_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the pdf layout will be refined using an LLM.
+         * </pre>
+         *
+         * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enableLlmLayoutParsing.
+         */
+        @java.lang.Override
+        public boolean getEnableLlmLayoutParsing() {
+          return enableLlmLayoutParsing_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the pdf layout will be refined using an LLM.
+         * </pre>
+         *
+         * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The enableLlmLayoutParsing to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEnableLlmLayoutParsing(boolean value) {
+
+          enableLlmLayoutParsing_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the pdf layout will be refined using an LLM.
+         * </pre>
+         *
+         * <code>bool enable_llm_layout_parsing = 5 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEnableLlmLayoutParsing() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          enableLlmLayoutParsing_ = false;
+          onChanged();
+          return this;
+        }
+
         private com.google.protobuf.LazyStringArrayList structuredContentTypes_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -4772,7 +4946,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             structuredContentTypes_ =
                 new com.google.protobuf.LazyStringArrayList(structuredContentTypes_);
           }
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
         }
 
         /**
@@ -4882,7 +5056,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           }
           ensureStructuredContentTypesIsMutable();
           structuredContentTypes_.set(index, value);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -4910,7 +5084,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           }
           ensureStructuredContentTypesIsMutable();
           structuredContentTypes_.add(value);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -4935,7 +5109,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         public Builder addAllStructuredContentTypes(java.lang.Iterable<java.lang.String> values) {
           ensureStructuredContentTypesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, structuredContentTypes_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -4958,7 +5132,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          */
         public Builder clearStructuredContentTypes() {
           structuredContentTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           ;
           onChanged();
           return this;
@@ -4988,7 +5162,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           checkByteStringIsUtf8(value);
           ensureStructuredContentTypesIsMutable();
           structuredContentTypes_.add(value);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -5001,7 +5175,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
             excludeHtmlElements_ =
                 new com.google.protobuf.LazyStringArrayList(excludeHtmlElements_);
           }
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
         }
 
         /**
@@ -5096,7 +5270,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           }
           ensureExcludeHtmlElementsIsMutable();
           excludeHtmlElements_.set(index, value);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -5121,7 +5295,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           }
           ensureExcludeHtmlElementsIsMutable();
           excludeHtmlElements_.add(value);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -5143,7 +5317,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         public Builder addAllExcludeHtmlElements(java.lang.Iterable<java.lang.String> values) {
           ensureExcludeHtmlElementsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeHtmlElements_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -5163,7 +5337,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          */
         public Builder clearExcludeHtmlElements() {
           excludeHtmlElements_ = com.google.protobuf.LazyStringArrayList.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           ;
           onChanged();
           return this;
@@ -5190,7 +5364,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           checkByteStringIsUtf8(value);
           ensureExcludeHtmlElementsIsMutable();
           excludeHtmlElements_.add(value);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -5202,7 +5376,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           if (!excludeHtmlClasses_.isModifiable()) {
             excludeHtmlClasses_ = new com.google.protobuf.LazyStringArrayList(excludeHtmlClasses_);
           }
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
         }
 
         /**
@@ -5297,7 +5471,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           }
           ensureExcludeHtmlClassesIsMutable();
           excludeHtmlClasses_.set(index, value);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -5322,7 +5496,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           }
           ensureExcludeHtmlClassesIsMutable();
           excludeHtmlClasses_.add(value);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -5344,7 +5518,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         public Builder addAllExcludeHtmlClasses(java.lang.Iterable<java.lang.String> values) {
           ensureExcludeHtmlClassesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeHtmlClasses_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -5364,7 +5538,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          */
         public Builder clearExcludeHtmlClasses() {
           excludeHtmlClasses_ = com.google.protobuf.LazyStringArrayList.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           ;
           onChanged();
           return this;
@@ -5391,7 +5565,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           checkByteStringIsUtf8(value);
           ensureExcludeHtmlClassesIsMutable();
           excludeHtmlClasses_.add(value);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -5403,7 +5577,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           if (!excludeHtmlIds_.isModifiable()) {
             excludeHtmlIds_ = new com.google.protobuf.LazyStringArrayList(excludeHtmlIds_);
           }
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
         }
 
         /**
@@ -5493,7 +5667,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           }
           ensureExcludeHtmlIdsIsMutable();
           excludeHtmlIds_.set(index, value);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -5517,7 +5691,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           }
           ensureExcludeHtmlIdsIsMutable();
           excludeHtmlIds_.add(value);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -5538,7 +5712,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
         public Builder addAllExcludeHtmlIds(java.lang.Iterable<java.lang.String> values) {
           ensureExcludeHtmlIdsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeHtmlIds_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -5557,7 +5731,7 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
          */
         public Builder clearExcludeHtmlIds() {
           excludeHtmlIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
           ;
           onChanged();
           return this;
@@ -5583,7 +5757,69 @@ public final class DocumentProcessingConfig extends com.google.protobuf.Generate
           checkByteStringIsUtf8(value);
           ensureExcludeHtmlIdsIsMutable();
           excludeHtmlIds_.add(value);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+
+        private boolean enableGetProcessedDocument_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the processed document will be made available for
+         * the GetProcessedDocument API.
+         * </pre>
+         *
+         * <code>bool enable_get_processed_document = 14 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The enableGetProcessedDocument.
+         */
+        @java.lang.Override
+        public boolean getEnableGetProcessedDocument() {
+          return enableGetProcessedDocument_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the processed document will be made available for
+         * the GetProcessedDocument API.
+         * </pre>
+         *
+         * <code>bool enable_get_processed_document = 14 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The enableGetProcessedDocument to set.
+         * @return This builder for chaining.
+         */
+        public Builder setEnableGetProcessedDocument(boolean value) {
+
+          enableGetProcessedDocument_ = value;
+          bitField0_ |= 0x00000080;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. If true, the processed document will be made available for
+         * the GetProcessedDocument API.
+         * </pre>
+         *
+         * <code>bool enable_get_processed_document = 14 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearEnableGetProcessedDocument() {
+          bitField0_ = (bitField0_ & ~0x00000080);
+          enableGetProcessedDocument_ = false;
           onChanged();
           return this;
         }
