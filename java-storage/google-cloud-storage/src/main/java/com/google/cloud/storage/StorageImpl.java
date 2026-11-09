@@ -244,9 +244,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
             getOptions().getStorageClientMetrics(), "WriteObject");
     Throwable error = null;
     try {
-      if (multiContext != null) {
-        multiContext.setRequestBytes(size);
-      }
       Opts<ObjectTargetOpt> opts = Opts.unwrap(options).resolveFrom(blobInfo);
       final Map<StorageRpc.Option, ?> optionsMap = opts.getRpcOptions();
       BlobInfo.Builder builder = blobInfo.toBuilder().setMd5(null).setCrc32c(null);
@@ -278,6 +275,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
       HttpContentRange contentRange = HttpContentRange.of(ByteRangeSpec.explicit(0L, size), size);
       ResumableOperationResult<StorageObject> put =
           session.put(RewindableContent.of(path), contentRange);
+      if (multiContext != null) {
+        multiContext.setRequestBytes(size);
+      }
       // all exception translation is taken care of down in the JsonResumableSession
       StorageObject object = put.getObject();
       if (object == null) {
@@ -1941,9 +1941,6 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
             getOptions().getStorageClientMetrics(), "WriteObject");
     Throwable error = null;
     try {
-      if (multiContext != null) {
-        multiContext.setRequestBytes(size);
-      }
       final Map<StorageRpc.Option, ?> optionsMap = opts.getRpcOptions();
       BlobInfo.Builder builder = info.toBuilder().setMd5(null).setCrc32c(null);
       BlobInfo updated = opts.blobInfoMapper().apply(builder).build();
@@ -1974,6 +1971,9 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
       HttpContentRange contentRange = HttpContentRange.of(ByteRangeSpec.explicit(0L, size), size);
       ResumableOperationResult<StorageObject> put =
           session.put(RewindableContent.of(path), contentRange);
+      if (multiContext != null) {
+        multiContext.setRequestBytes(size);
+      }
       // all exception translation is taken care of down in the JsonResumableSession
       StorageObject object = put.getObject();
       if (object == null) {
@@ -2016,14 +2016,16 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage, 
     ResultRetryAlgorithm<?> algorithm =
         retryAlgorithmManager.getForObjectsCreate(encoded, optionsMap);
     RewindableContent content = RewindableContent.of(buf);
-    if (metricsContext != null) {
-      metricsContext.setRequestBytes(totalBytes);
-    }
     return retrier.run(
         algorithm,
         () -> {
           content.rewindTo(0);
-          return storageRpc.create(encoded, new RewindableContentInputStream(content), optionsMap);
+          StorageObject created =
+              storageRpc.create(encoded, new RewindableContentInputStream(content), optionsMap);
+          if (metricsContext != null) {
+            metricsContext.setRequestBytes(totalBytes);
+          }
+          return created;
         },
         Conversions.json().blobInfo(),
         metricsContext);

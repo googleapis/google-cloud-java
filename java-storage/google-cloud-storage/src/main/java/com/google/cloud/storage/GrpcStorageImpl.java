@@ -78,6 +78,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Streams;
 import com.google.common.io.ByteStreams;
+import com.google.common.io.CountingInputStream;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -290,10 +291,12 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
                   .setRequest(req)
                   .build();
 
+          CountingInputStream countingStream = new CountingInputStream(inputStreamParam);
           try (UnbufferedWritableByteChannel c = session.open()) {
-            long copied = ByteStreams.copy(Channels.newChannel(inputStreamParam), c);
+            ByteStreams.copy(Channels.newChannel(countingStream), c);
+          } finally {
             if (metricsContext != null) {
-              metricsContext.setRequestBytes(copied);
+              metricsContext.setRequestBytes(countingStream.getCount());
             }
           }
           ApiFuture<WriteObjectResponse> responseApiFuture = session.getResult();
@@ -329,9 +332,7 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
             getOptions().getStorageClientMetrics(), "WriteObject");
     Throwable error = null;
     try {
-      if (multiContext != null) {
-        multiContext.setRequestBytes(Files.size(path));
-      }
+      long size = Files.size(path);
       GrpcCallContext grpcCallContext =
           opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
       WriteObjectRequest req = getWriteObjectRequest(info, opts);
@@ -355,6 +356,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
       try {
         GrpcResumableSession got = session2.get();
         ResumableOperationResult<@Nullable Object> put = got.put(RewindableContent.of(path));
+        if (multiContext != null) {
+          multiContext.setRequestBytes(size);
+        }
         Object object = put.getObject();
         if (object == null) {
           // if by some odd chance the put didn't get the Object, query for it
@@ -414,15 +418,17 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
               .build();
 
       // Specifically not in the try-with, so we don't close the provided stream
-      ReadableByteChannel src =
-          Channels.newChannel(firstNonNull(in, new ByteArrayInputStream(ZERO_BYTES)));
+      CountingInputStream countingStream =
+          new CountingInputStream(firstNonNull(in, new ByteArrayInputStream(ZERO_BYTES)));
+      ReadableByteChannel src = Channels.newChannel(countingStream);
       try (BufferedWritableByteChannel dst = session.open()) {
-        long copied = ByteStreams.copy(src, dst);
-        if (multiContext != null) {
-          multiContext.setRequestBytes(copied);
-        }
+        ByteStreams.copy(src, dst);
       } catch (Exception e) {
         throw StorageException.coalesce(e);
+      } finally {
+        if (multiContext != null) {
+          multiContext.setRequestBytes(countingStream.getCount());
+        }
       }
       return getBlob(session.getResult());
     } catch (Throwable t) {
@@ -1012,9 +1018,6 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
     WriteObjectRequest req = getWriteObjectRequest(blobInfo, optsWithDefaults);
     Hasher hasher = opts.getHasher();
     int totalBytes = buf.remaining();
-    if (metricsContext != null) {
-      metricsContext.setRequestBytes(totalBytes);
-    }
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext(metricsContext));
     RewindableContent content = RewindableContent.of(buf);
     return retrier.run(
@@ -1034,6 +1037,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
 
           try (UnbufferedWritableByteChannel c = session.open()) {
             content.writeTo(c);
+          }
+          if (metricsContext != null) {
+            metricsContext.setRequestBytes(totalBytes);
           }
           return session.getResult();
         },

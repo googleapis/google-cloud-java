@@ -53,7 +53,6 @@ final class StorageMetricsContext {
           StorageClientMetrics.KEY_HTTP_REQUEST_METHOD,
           StorageClientMetrics.KEY_URL_TEMPLATE,
           StorageClientMetrics.KEY_ERROR_TYPE,
-          StorageClientMetrics.KEY_GCP_STORAGE_OPERATION,
           StorageClientMetrics.KEY_GCP_CLIENT_METHOD,
           StorageClientMetrics.KEY_RPC_METHOD);
 
@@ -200,7 +199,7 @@ final class StorageMetricsContext {
     }
   }
 
-  void recordRequestBodySize(@Nullable StorageClientMetrics metrics) {
+  private void recordRequestBodySize(@Nullable StorageClientMetrics metrics) {
     if (metrics == null || metrics.getRequestBodySize() == null) {
       return;
     }
@@ -221,7 +220,7 @@ final class StorageMetricsContext {
             bodyAttrBuilder.put(objKey, val);
           }
         });
-    bodyAttrBuilder.put(StorageClientMetrics.KEY_RPC_METHOD, operationName);
+    bodyAttrBuilder.put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, operationName);
     return bodyAttrBuilder.build();
   }
 

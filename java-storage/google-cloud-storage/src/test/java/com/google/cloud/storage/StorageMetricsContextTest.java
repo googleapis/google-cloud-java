@@ -632,7 +632,7 @@ public final class StorageMetricsContextTest {
             collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
     assertThat(point.getCount()).isEqualTo(1L);
     assertThat(point.getSum()).isEqualTo(2048.0);
-    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_RPC_METHOD))
+    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
         .isEqualTo("WriteObject");
   }
 
@@ -666,7 +666,8 @@ public final class StorageMetricsContextTest {
         getSingleHistogramPoint(
             collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
     Attributes recordedAttrs = point.getAttributes();
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_RPC_METHOD)).isEqualTo("WriteObject");
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
+        .isEqualTo("WriteObject");
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_RPC_SYSTEM_NAME)).isEqualTo("http");
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_SERVER_ADDRESS))
         .isEqualTo("storage.googleapis.com");
@@ -677,7 +678,7 @@ public final class StorageMetricsContextTest {
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE)).isNull();
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_NETWORK_PATH)).isNull();
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_ERROR_TYPE)).isNull();
-    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION)).isNull();
+    assertThat(recordedAttrs.get(StorageClientMetrics.KEY_RPC_METHOD)).isNull();
     assertThat(recordedAttrs.get(StorageClientMetrics.KEY_GCP_CLIENT_METHOD)).isNull();
   }
 
@@ -732,7 +733,7 @@ public final class StorageMetricsContextTest {
             collected, StorageClientMetrics.METRIC_GCP_STORAGE_CLIENT_REQUEST_BODY_SIZE);
     assertThat(point.getCount()).isEqualTo(1L);
     assertThat(point.getSum()).isEqualTo(512.0);
-    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_RPC_METHOD))
+    assertThat(point.getAttributes().get(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION))
         .isEqualTo("WriteObject");
   }
 
