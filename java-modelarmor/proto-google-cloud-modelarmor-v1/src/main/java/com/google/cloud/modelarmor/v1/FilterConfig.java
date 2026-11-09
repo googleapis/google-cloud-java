@@ -308,6 +308,129 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
         : maliciousUriFilterSettings_;
   }
 
+  public static final int FILTER_RULE_SETTINGS_FIELD_NUMBER = 7;
+  private com.google.cloud.modelarmor.v1.FilterRuleSettings filterRuleSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for customizing filter rules.
+   * Note: This field is not supported in FloorSetting.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the filterRuleSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasFilterRuleSettings() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for customizing filter rules.
+   * Note: This field is not supported in FloorSetting.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The filterRuleSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1.FilterRuleSettings getFilterRuleSettings() {
+    return filterRuleSettings_ == null
+        ? com.google.cloud.modelarmor.v1.FilterRuleSettings.getDefaultInstance()
+        : filterRuleSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings for customizing filter rules.
+   * Note: This field is not supported in FloorSetting.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1.FilterRuleSettingsOrBuilder
+      getFilterRuleSettingsOrBuilder() {
+    return filterRuleSettings_ == null
+        ? com.google.cloud.modelarmor.v1.FilterRuleSettings.getDefaultInstance()
+        : filterRuleSettings_;
+  }
+
+  public static final int CSAM_FILTER_SETTINGS_FIELD_NUMBER = 9;
+  private com.google.cloud.modelarmor.v1.CsamFilterSettings csamFilterSettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Child sexual abuse material (CSAM) filter settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the csamFilterSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasCsamFilterSettings() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Child sexual abuse material (CSAM) filter settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The csamFilterSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1.CsamFilterSettings getCsamFilterSettings() {
+    return csamFilterSettings_ == null
+        ? com.google.cloud.modelarmor.v1.CsamFilterSettings.getDefaultInstance()
+        : csamFilterSettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Child sexual abuse material (CSAM) filter settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.modelarmor.v1.CsamFilterSettingsOrBuilder
+      getCsamFilterSettingsOrBuilder() {
+    return csamFilterSettings_ == null
+        ? com.google.cloud.modelarmor.v1.CsamFilterSettings.getDefaultInstance()
+        : csamFilterSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -334,6 +457,12 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(4, getMaliciousUriFilterSettings());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(7, getFilterRuleSettings());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(9, getCsamFilterSettings());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -358,6 +487,12 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, getMaliciousUriFilterSettings());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getFilterRuleSettings());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getCsamFilterSettings());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -393,6 +528,14 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
       if (!getMaliciousUriFilterSettings().equals(other.getMaliciousUriFilterSettings()))
         return false;
     }
+    if (hasFilterRuleSettings() != other.hasFilterRuleSettings()) return false;
+    if (hasFilterRuleSettings()) {
+      if (!getFilterRuleSettings().equals(other.getFilterRuleSettings())) return false;
+    }
+    if (hasCsamFilterSettings() != other.hasCsamFilterSettings()) return false;
+    if (hasCsamFilterSettings()) {
+      if (!getCsamFilterSettings().equals(other.getCsamFilterSettings())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -419,6 +562,14 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
     if (hasMaliciousUriFilterSettings()) {
       hash = (37 * hash) + MALICIOUS_URI_FILTER_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getMaliciousUriFilterSettings().hashCode();
+    }
+    if (hasFilterRuleSettings()) {
+      hash = (37 * hash) + FILTER_RULE_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getFilterRuleSettings().hashCode();
+    }
+    if (hasCsamFilterSettings()) {
+      hash = (37 * hash) + CSAM_FILTER_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getCsamFilterSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -565,6 +716,8 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
         internalGetSdpSettingsFieldBuilder();
         internalGetPiAndJailbreakFilterSettingsFieldBuilder();
         internalGetMaliciousUriFilterSettingsFieldBuilder();
+        internalGetFilterRuleSettingsFieldBuilder();
+        internalGetCsamFilterSettingsFieldBuilder();
       }
     }
 
@@ -591,6 +744,16 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
       if (maliciousUriFilterSettingsBuilder_ != null) {
         maliciousUriFilterSettingsBuilder_.dispose();
         maliciousUriFilterSettingsBuilder_ = null;
+      }
+      filterRuleSettings_ = null;
+      if (filterRuleSettingsBuilder_ != null) {
+        filterRuleSettingsBuilder_.dispose();
+        filterRuleSettingsBuilder_ = null;
+      }
+      csamFilterSettings_ = null;
+      if (csamFilterSettingsBuilder_ != null) {
+        csamFilterSettingsBuilder_.dispose();
+        csamFilterSettingsBuilder_ = null;
       }
       return this;
     }
@@ -653,6 +816,20 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
                 : maliciousUriFilterSettingsBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.filterRuleSettings_ =
+            filterRuleSettingsBuilder_ == null
+                ? filterRuleSettings_
+                : filterRuleSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.csamFilterSettings_ =
+            csamFilterSettingsBuilder_ == null
+                ? csamFilterSettings_
+                : csamFilterSettingsBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -679,6 +856,12 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasMaliciousUriFilterSettings()) {
         mergeMaliciousUriFilterSettings(other.getMaliciousUriFilterSettings());
+      }
+      if (other.hasFilterRuleSettings()) {
+        mergeFilterRuleSettings(other.getFilterRuleSettings());
+      }
+      if (other.hasCsamFilterSettings()) {
+        mergeCsamFilterSettings(other.getCsamFilterSettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -736,6 +919,20 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 58:
+              {
+                input.readMessage(
+                    internalGetFilterRuleSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 58
+            case 74:
+              {
+                input.readMessage(
+                    internalGetCsamFilterSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1621,6 +1818,449 @@ public final class FilterConfig extends com.google.protobuf.GeneratedMessage
         maliciousUriFilterSettings_ = null;
       }
       return maliciousUriFilterSettingsBuilder_;
+    }
+
+    private com.google.cloud.modelarmor.v1.FilterRuleSettings filterRuleSettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.modelarmor.v1.FilterRuleSettings,
+            com.google.cloud.modelarmor.v1.FilterRuleSettings.Builder,
+            com.google.cloud.modelarmor.v1.FilterRuleSettingsOrBuilder>
+        filterRuleSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for customizing filter rules.
+     * Note: This field is not supported in FloorSetting.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the filterRuleSettings field is set.
+     */
+    public boolean hasFilterRuleSettings() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for customizing filter rules.
+     * Note: This field is not supported in FloorSetting.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The filterRuleSettings.
+     */
+    public com.google.cloud.modelarmor.v1.FilterRuleSettings getFilterRuleSettings() {
+      if (filterRuleSettingsBuilder_ == null) {
+        return filterRuleSettings_ == null
+            ? com.google.cloud.modelarmor.v1.FilterRuleSettings.getDefaultInstance()
+            : filterRuleSettings_;
+      } else {
+        return filterRuleSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for customizing filter rules.
+     * Note: This field is not supported in FloorSetting.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFilterRuleSettings(com.google.cloud.modelarmor.v1.FilterRuleSettings value) {
+      if (filterRuleSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        filterRuleSettings_ = value;
+      } else {
+        filterRuleSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for customizing filter rules.
+     * Note: This field is not supported in FloorSetting.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFilterRuleSettings(
+        com.google.cloud.modelarmor.v1.FilterRuleSettings.Builder builderForValue) {
+      if (filterRuleSettingsBuilder_ == null) {
+        filterRuleSettings_ = builderForValue.build();
+      } else {
+        filterRuleSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for customizing filter rules.
+     * Note: This field is not supported in FloorSetting.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeFilterRuleSettings(
+        com.google.cloud.modelarmor.v1.FilterRuleSettings value) {
+      if (filterRuleSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && filterRuleSettings_ != null
+            && filterRuleSettings_
+                != com.google.cloud.modelarmor.v1.FilterRuleSettings.getDefaultInstance()) {
+          getFilterRuleSettingsBuilder().mergeFrom(value);
+        } else {
+          filterRuleSettings_ = value;
+        }
+      } else {
+        filterRuleSettingsBuilder_.mergeFrom(value);
+      }
+      if (filterRuleSettings_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for customizing filter rules.
+     * Note: This field is not supported in FloorSetting.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFilterRuleSettings() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      filterRuleSettings_ = null;
+      if (filterRuleSettingsBuilder_ != null) {
+        filterRuleSettingsBuilder_.dispose();
+        filterRuleSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for customizing filter rules.
+     * Note: This field is not supported in FloorSetting.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1.FilterRuleSettings.Builder
+        getFilterRuleSettingsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetFilterRuleSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for customizing filter rules.
+     * Note: This field is not supported in FloorSetting.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1.FilterRuleSettingsOrBuilder
+        getFilterRuleSettingsOrBuilder() {
+      if (filterRuleSettingsBuilder_ != null) {
+        return filterRuleSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return filterRuleSettings_ == null
+            ? com.google.cloud.modelarmor.v1.FilterRuleSettings.getDefaultInstance()
+            : filterRuleSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Settings for customizing filter rules.
+     * Note: This field is not supported in FloorSetting.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.FilterRuleSettings filter_rule_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.modelarmor.v1.FilterRuleSettings,
+            com.google.cloud.modelarmor.v1.FilterRuleSettings.Builder,
+            com.google.cloud.modelarmor.v1.FilterRuleSettingsOrBuilder>
+        internalGetFilterRuleSettingsFieldBuilder() {
+      if (filterRuleSettingsBuilder_ == null) {
+        filterRuleSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.modelarmor.v1.FilterRuleSettings,
+                com.google.cloud.modelarmor.v1.FilterRuleSettings.Builder,
+                com.google.cloud.modelarmor.v1.FilterRuleSettingsOrBuilder>(
+                getFilterRuleSettings(), getParentForChildren(), isClean());
+        filterRuleSettings_ = null;
+      }
+      return filterRuleSettingsBuilder_;
+    }
+
+    private com.google.cloud.modelarmor.v1.CsamFilterSettings csamFilterSettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.modelarmor.v1.CsamFilterSettings,
+            com.google.cloud.modelarmor.v1.CsamFilterSettings.Builder,
+            com.google.cloud.modelarmor.v1.CsamFilterSettingsOrBuilder>
+        csamFilterSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the csamFilterSettings field is set.
+     */
+    public boolean hasCsamFilterSettings() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The csamFilterSettings.
+     */
+    public com.google.cloud.modelarmor.v1.CsamFilterSettings getCsamFilterSettings() {
+      if (csamFilterSettingsBuilder_ == null) {
+        return csamFilterSettings_ == null
+            ? com.google.cloud.modelarmor.v1.CsamFilterSettings.getDefaultInstance()
+            : csamFilterSettings_;
+      } else {
+        return csamFilterSettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCsamFilterSettings(com.google.cloud.modelarmor.v1.CsamFilterSettings value) {
+      if (csamFilterSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        csamFilterSettings_ = value;
+      } else {
+        csamFilterSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCsamFilterSettings(
+        com.google.cloud.modelarmor.v1.CsamFilterSettings.Builder builderForValue) {
+      if (csamFilterSettingsBuilder_ == null) {
+        csamFilterSettings_ = builderForValue.build();
+      } else {
+        csamFilterSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCsamFilterSettings(
+        com.google.cloud.modelarmor.v1.CsamFilterSettings value) {
+      if (csamFilterSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)
+            && csamFilterSettings_ != null
+            && csamFilterSettings_
+                != com.google.cloud.modelarmor.v1.CsamFilterSettings.getDefaultInstance()) {
+          getCsamFilterSettingsBuilder().mergeFrom(value);
+        } else {
+          csamFilterSettings_ = value;
+        }
+      } else {
+        csamFilterSettingsBuilder_.mergeFrom(value);
+      }
+      if (csamFilterSettings_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCsamFilterSettings() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      csamFilterSettings_ = null;
+      if (csamFilterSettingsBuilder_ != null) {
+        csamFilterSettingsBuilder_.dispose();
+        csamFilterSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1.CsamFilterSettings.Builder
+        getCsamFilterSettingsBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return internalGetCsamFilterSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.modelarmor.v1.CsamFilterSettingsOrBuilder
+        getCsamFilterSettingsOrBuilder() {
+      if (csamFilterSettingsBuilder_ != null) {
+        return csamFilterSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return csamFilterSettings_ == null
+            ? com.google.cloud.modelarmor.v1.CsamFilterSettings.getDefaultInstance()
+            : csamFilterSettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Child sexual abuse material (CSAM) filter settings.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.modelarmor.v1.CsamFilterSettings csam_filter_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.modelarmor.v1.CsamFilterSettings,
+            com.google.cloud.modelarmor.v1.CsamFilterSettings.Builder,
+            com.google.cloud.modelarmor.v1.CsamFilterSettingsOrBuilder>
+        internalGetCsamFilterSettingsFieldBuilder() {
+      if (csamFilterSettingsBuilder_ == null) {
+        csamFilterSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.modelarmor.v1.CsamFilterSettings,
+                com.google.cloud.modelarmor.v1.CsamFilterSettings.Builder,
+                com.google.cloud.modelarmor.v1.CsamFilterSettingsOrBuilder>(
+                getCsamFilterSettings(), getParentForChildren(), isClean());
+        csamFilterSettings_ = null;
+      }
+      return csamFilterSettingsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.modelarmor.v1.FilterConfig)

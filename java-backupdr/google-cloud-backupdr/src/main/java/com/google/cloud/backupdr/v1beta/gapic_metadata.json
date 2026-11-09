@@ -28,6 +28,15 @@
             "CreateManagementServer": {
               "methods": ["createManagementServerAsync", "createManagementServerAsync", "createManagementServerAsync", "createManagementServerOperationCallable", "createManagementServerCallable"]
             },
+            "CreateRestoreTemplate": {
+              "methods": ["createRestoreTemplateAsync", "createRestoreTemplateAsync", "createRestoreTemplateAsync", "createRestoreTemplateOperationCallable", "createRestoreTemplateCallable"]
+            },
+            "CreateRestoreVerificationPlan": {
+              "methods": ["createRestoreVerificationPlanAsync", "createRestoreVerificationPlanAsync", "createRestoreVerificationPlanAsync", "createRestoreVerificationPlanOperationCallable", "createRestoreVerificationPlanCallable"]
+            },
+            "CreateRestoreVerificationPlanAssociation": {
+              "methods": ["createRestoreVerificationPlanAssociationAsync", "createRestoreVerificationPlanAssociationAsync", "createRestoreVerificationPlanAssociationAsync", "createRestoreVerificationPlanAssociationOperationCallable", "createRestoreVerificationPlanAssociationCallable"]
+            },
             "DeleteAutoProtectionPolicy": {
               "methods": ["deleteAutoProtectionPolicyAsync", "deleteAutoProtectionPolicyAsync", "deleteAutoProtectionPolicyAsync", "deleteAutoProtectionPolicyOperationCallable", "deleteAutoProtectionPolicyCallable"]
             },
@@ -45,6 +54,15 @@
             },
             "DeleteManagementServer": {
               "methods": ["deleteManagementServerAsync", "deleteManagementServerAsync", "deleteManagementServerAsync", "deleteManagementServerOperationCallable", "deleteManagementServerCallable"]
+            },
+            "DeleteRestoreTemplate": {
+              "methods": ["deleteRestoreTemplateAsync", "deleteRestoreTemplateAsync", "deleteRestoreTemplateAsync", "deleteRestoreTemplateOperationCallable", "deleteRestoreTemplateCallable"]
+            },
+            "DeleteRestoreVerificationPlan": {
+              "methods": ["deleteRestoreVerificationPlanAsync", "deleteRestoreVerificationPlanAsync", "deleteRestoreVerificationPlanAsync", "deleteRestoreVerificationPlanOperationCallable", "deleteRestoreVerificationPlanCallable"]
+            },
+            "DeleteRestoreVerificationPlanAssociation": {
+              "methods": ["deleteRestoreVerificationPlanAssociationAsync", "deleteRestoreVerificationPlanAssociationAsync", "deleteRestoreVerificationPlanAssociationAsync", "deleteRestoreVerificationPlanAssociationOperationCallable", "deleteRestoreVerificationPlanAssociationCallable"]
             },
             "FetchBackupPlanAssociationsForResourceType": {
               "methods": ["fetchBackupPlanAssociationsForResourceType", "fetchBackupPlanAssociationsForResourceType", "fetchBackupPlanAssociationsForResourceType", "fetchBackupPlanAssociationsForResourceTypePagedCallable", "fetchBackupPlanAssociationsForResourceTypeCallable"]
@@ -97,6 +115,18 @@
             "GetManagementServer": {
               "methods": ["getManagementServer", "getManagementServer", "getManagementServer", "getManagementServerCallable"]
             },
+            "GetRestoreTemplate": {
+              "methods": ["getRestoreTemplate", "getRestoreTemplate", "getRestoreTemplate", "getRestoreTemplateCallable"]
+            },
+            "GetRestoreTemplateExecution": {
+              "methods": ["getRestoreTemplateExecution", "getRestoreTemplateExecution", "getRestoreTemplateExecution", "getRestoreTemplateExecutionCallable"]
+            },
+            "GetRestoreVerificationPlan": {
+              "methods": ["getRestoreVerificationPlan", "getRestoreVerificationPlan", "getRestoreVerificationPlan", "getRestoreVerificationPlanCallable"]
+            },
+            "GetRestoreVerificationPlanAssociation": {
+              "methods": ["getRestoreVerificationPlanAssociation", "getRestoreVerificationPlanAssociation", "getRestoreVerificationPlanAssociation", "getRestoreVerificationPlanAssociationCallable"]
+            },
             "InitializeService": {
               "methods": ["initializeServiceAsync", "initializeServiceOperationCallable", "initializeServiceCallable"]
             },
@@ -142,8 +172,23 @@
             "ListManagementServers": {
               "methods": ["listManagementServers", "listManagementServers", "listManagementServers", "listManagementServersPagedCallable", "listManagementServersCallable"]
             },
+            "ListRestoreTemplateExecutions": {
+              "methods": ["listRestoreTemplateExecutions", "listRestoreTemplateExecutions", "listRestoreTemplateExecutions", "listRestoreTemplateExecutionsPagedCallable", "listRestoreTemplateExecutionsCallable"]
+            },
+            "ListRestoreTemplates": {
+              "methods": ["listRestoreTemplates", "listRestoreTemplates", "listRestoreTemplates", "listRestoreTemplatesPagedCallable", "listRestoreTemplatesCallable"]
+            },
+            "ListRestoreVerificationPlanAssociations": {
+              "methods": ["listRestoreVerificationPlanAssociations", "listRestoreVerificationPlanAssociations", "listRestoreVerificationPlanAssociations", "listRestoreVerificationPlanAssociationsPagedCallable", "listRestoreVerificationPlanAssociationsCallable"]
+            },
+            "ListRestoreVerificationPlans": {
+              "methods": ["listRestoreVerificationPlans", "listRestoreVerificationPlans", "listRestoreVerificationPlans", "listRestoreVerificationPlansPagedCallable", "listRestoreVerificationPlansCallable"]
+            },
             "RestoreBackup": {
               "methods": ["restoreBackupAsync", "restoreBackupAsync", "restoreBackupAsync", "restoreBackupOperationCallable", "restoreBackupCallable"]
+            },
+            "RunRestoreTemplate": {
+              "methods": ["runRestoreTemplateAsync", "runRestoreTemplateAsync", "runRestoreTemplateAsync", "runRestoreTemplateOperationCallable", "runRestoreTemplateCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
@@ -153,6 +198,12 @@
             },
             "TriggerBackup": {
               "methods": ["triggerBackupAsync", "triggerBackupAsync", "triggerBackupAsync", "triggerBackupOperationCallable", "triggerBackupCallable"]
+            },
+            "TriggerRestoreCleanup": {
+              "methods": ["triggerRestoreCleanupAsync", "triggerRestoreCleanupAsync", "triggerRestoreCleanupAsync", "triggerRestoreCleanupOperationCallable", "triggerRestoreCleanupCallable"]
+            },
+            "TriggerRestoreVerification": {
+              "methods": ["triggerRestoreVerificationAsync", "triggerRestoreVerificationAsync", "triggerRestoreVerificationAsync", "triggerRestoreVerificationOperationCallable", "triggerRestoreVerificationCallable"]
             },
             "UpdateAutoProtectionPolicy": {
               "methods": ["updateAutoProtectionPolicyAsync", "updateAutoProtectionPolicyAsync", "updateAutoProtectionPolicyOperationCallable", "updateAutoProtectionPolicyCallable"]
@@ -171,6 +222,9 @@
             },
             "UpdateDataSource": {
               "methods": ["updateDataSourceAsync", "updateDataSourceAsync", "updateDataSourceOperationCallable", "updateDataSourceCallable"]
+            },
+            "UpdateRestoreTemplate": {
+              "methods": ["updateRestoreTemplateAsync", "updateRestoreTemplateAsync", "updateRestoreTemplateOperationCallable", "updateRestoreTemplateCallable"]
             }
           }
         }

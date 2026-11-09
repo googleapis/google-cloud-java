@@ -4156,6 +4156,132 @@ public class DataformClientTest {
   }
 
   @Test
+  public void createCompilationResultLongRunningTest() throws Exception {
+    CompilationResult expectedResponse =
+        CompilationResult.newBuilder()
+            .setName(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
+            .setDataformCoreVersion("dataformCoreVersion1859535851")
+            .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createCompilationResultLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataform.addResponse(resultOperation);
+
+    RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    CompilationResult compilationResult = CompilationResult.newBuilder().build();
+
+    CompilationResult actualResponse =
+        client.createCompilationResultLongRunningAsync(parent, compilationResult).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateCompilationResultRequest actualRequest =
+        ((CreateCompilationResultRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(compilationResult, actualRequest.getCompilationResult());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createCompilationResultLongRunningExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      RepositoryName parent = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      CompilationResult compilationResult = CompilationResult.newBuilder().build();
+      client.createCompilationResultLongRunningAsync(parent, compilationResult).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createCompilationResultLongRunningTest2() throws Exception {
+    CompilationResult expectedResponse =
+        CompilationResult.newBuilder()
+            .setName(
+                CompilationResultName.of(
+                        "[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[COMPILATION_RESULT]")
+                    .toString())
+            .setCodeCompilationConfig(CodeCompilationConfig.newBuilder().build())
+            .setResolvedGitCommitSha("resolvedGitCommitSha1908380763")
+            .setDataformCoreVersion("dataformCoreVersion1859535851")
+            .addAllCompilationErrors(new ArrayList<CompilationResult.CompilationError>())
+            .setDataEncryptionState(DataEncryptionState.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInternalMetadata("internalMetadata6789388")
+            .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createCompilationResultLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDataform.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    CompilationResult compilationResult = CompilationResult.newBuilder().build();
+
+    CompilationResult actualResponse =
+        client.createCompilationResultLongRunningAsync(parent, compilationResult).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataform.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateCompilationResultRequest actualRequest =
+        ((CreateCompilationResultRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(compilationResult, actualRequest.getCompilationResult());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createCompilationResultLongRunningExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataform.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      CompilationResult compilationResult = CompilationResult.newBuilder().build();
+      client.createCompilationResultLongRunningAsync(parent, compilationResult).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void queryCompilationResultActionsTest() throws Exception {
     CompilationResultAction responsesElement = CompilationResultAction.newBuilder().build();
     QueryCompilationResultActionsResponse expectedResponse =

@@ -126,11 +126,12 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
+   * Output only. Operation last update time. If the operation is done, this is
+   * also the finish time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the updateTime field is set.
    */
@@ -143,11 +144,12 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
+   * Output only. Operation last update time. If the operation is done, this is
+   * also the finish time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The updateTime.
    */
@@ -160,11 +162,12 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Operation last update time. If the operation is done, this is also the
-   * finish time.
+   * Output only. Operation last update time. If the operation is done, this is
+   * also the finish time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 2;</code>
+   * <code>.google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -827,11 +830,13 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Operation last update time. If the operation is done, this is also the
-     * finish time.
+     * Output only. Operation last update time. If the operation is done, this is
+     * also the finish time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the updateTime field is set.
      */
@@ -843,11 +848,13 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Operation last update time. If the operation is done, this is also the
-     * finish time.
+     * Output only. Operation last update time. If the operation is done, this is
+     * also the finish time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The updateTime.
      */
@@ -865,11 +872,13 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Operation last update time. If the operation is done, this is also the
-     * finish time.
+     * Output only. Operation last update time. If the operation is done, this is
+     * also the finish time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -889,11 +898,13 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Operation last update time. If the operation is done, this is also the
-     * finish time.
+     * Output only. Operation last update time. If the operation is done, this is
+     * also the finish time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
@@ -910,11 +921,13 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Operation last update time. If the operation is done, this is also the
-     * finish time.
+     * Output only. Operation last update time. If the operation is done, this is
+     * also the finish time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -939,11 +952,13 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Operation last update time. If the operation is done, this is also the
-     * finish time.
+     * Output only. Operation last update time. If the operation is done, this is
+     * also the finish time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearUpdateTime() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -960,11 +975,13 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Operation last update time. If the operation is done, this is also the
-     * finish time.
+     * Output only. Operation last update time. If the operation is done, this is
+     * also the finish time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
       bitField0_ |= 0x00000002;
@@ -976,11 +993,13 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Operation last update time. If the operation is done, this is also the
-     * finish time.
+     * Output only. Operation last update time. If the operation is done, this is
+     * also the finish time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -996,11 +1015,13 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Operation last update time. If the operation is done, this is also the
-     * finish time.
+     * Output only. Operation last update time. If the operation is done, this is
+     * also the finish time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
