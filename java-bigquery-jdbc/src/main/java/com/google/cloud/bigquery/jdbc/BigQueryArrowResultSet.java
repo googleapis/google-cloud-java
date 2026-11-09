@@ -345,6 +345,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
+      if (this.afterLast || this.nestedRowIndex < this.fromIndex) {
+        throw new BigQueryJdbcException("The ResultSet is not positioned on a row.");
+      }
       // For Arrays the first column is Index, ref:
       // https://docs.oracle.com/javase/7/docs/api/java/sql/Array.html#getResultSet()
       if (columnIndex == 1) {
