@@ -111,7 +111,7 @@ public class DatabaseAddSplitPointsSample {
       splitPoints.add(splitPointForIndex);
       splitPoints.add(splitPointForIndexWitTableKey);
       databaseAdminClient.addSplitPoints(
-          DatabaseName.of(projectId, instanceId, databaseId), splitPoints);
+          DatabaseName.of(projectId, instanceId, databaseId), splitPoints).get();
 
     } catch (java.util.concurrent.ExecutionException e) {
       // If the operation failed during execution, expose the cause.
