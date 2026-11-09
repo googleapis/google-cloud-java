@@ -53,7 +53,6 @@ final class StorageMetricsContext {
           StorageClientMetrics.KEY_HTTP_REQUEST_METHOD,
           StorageClientMetrics.KEY_URL_TEMPLATE,
           StorageClientMetrics.KEY_ERROR_TYPE,
-          StorageClientMetrics.KEY_GCP_STORAGE_OPERATION,
           StorageClientMetrics.KEY_GCP_CLIENT_METHOD,
           StorageClientMetrics.KEY_RPC_METHOD);
 
@@ -201,7 +200,7 @@ final class StorageMetricsContext {
     }
   }
 
-  void recordRequestBodySize(@Nullable StorageClientMetrics metrics) {
+  private void recordRequestBodySize(@Nullable StorageClientMetrics metrics) {
     if (metrics == null || metrics.getRequestBodySize() == null) {
       return;
     }
@@ -211,7 +210,7 @@ final class StorageMetricsContext {
     }
   }
 
-  void recordResponseBodySize(@Nullable StorageClientMetrics metrics) {
+  private void recordResponseBodySize(@Nullable StorageClientMetrics metrics) {
     if (metrics == null || metrics.getResponseBodySize() == null) {
       return;
     }
@@ -234,7 +233,7 @@ final class StorageMetricsContext {
             bodyAttrBuilder.put(objKey, val);
           }
         });
-    bodyAttrBuilder.put(StorageClientMetrics.KEY_RPC_METHOD, operationName);
+    bodyAttrBuilder.put(StorageClientMetrics.KEY_GCP_STORAGE_OPERATION, operationName);
     return bodyAttrBuilder.build();
   }
 
@@ -323,9 +322,9 @@ final class StorageMetricsContext {
 
   static void recordRpcCallDuration(
       @Nullable StorageClientMetrics metrics,
-      @Nullable StorageMetricsContext metricsContext,
+      Context otelContext,
       double durationSeconds,
-      String shortMethod,
+      String rpcMethod,
       String statusCode,
       String networkPath,
       String serverAddress,
@@ -333,13 +332,11 @@ final class StorageMetricsContext {
     if (metrics == null || metrics.getRpcClientCallDuration() == null) {
       return;
     }
-    Context otelContext =
-        metricsContext != null ? metricsContext.getOtelContext() : Context.current();
     Attributes attributes =
         metrics
             .clientAttributesBuilder()
             .put(StorageClientMetrics.KEY_RPC_SYSTEM_NAME, "grpc")
-            .put(StorageClientMetrics.KEY_RPC_METHOD, shortMethod)
+            .put(StorageClientMetrics.KEY_RPC_METHOD, rpcMethod)
             .put(StorageClientMetrics.KEY_RPC_RESPONSE_STATUS_CODE, statusCode)
             .put(StorageClientMetrics.KEY_NETWORK_PATH, networkPath)
             .put(StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress)
@@ -377,6 +374,7 @@ final class StorageMetricsContext {
   static void recordTtfb(
       @Nullable StorageClientMetrics metrics,
       @Nullable StorageMetricsContext metricsContext,
+      Context otelContext,
       double ttfbSeconds,
       String rpcSystemName,
       String networkPath,
@@ -384,8 +382,7 @@ final class StorageMetricsContext {
     if (metrics == null || metrics.getTtfb() == null) {
       return;
     }
-    Context otelContext =
-        metricsContext != null ? metricsContext.getOtelContext() : Context.current();
+    Context contextToUse = metricsContext != null ? metricsContext.getOtelContext() : otelContext;
     String operationName =
         metricsContext != null && metricsContext.getOperationName() != null
             ? metricsContext.getOperationName()
@@ -399,7 +396,7 @@ final class StorageMetricsContext {
             .put(
                 StorageClientMetrics.KEY_SERVER_ADDRESS, serverAddress != null ? serverAddress : "")
             .build();
-    metrics.getTtfb().record(ttfbSeconds, attributes, otelContext);
+    metrics.getTtfb().record(ttfbSeconds, attributes, contextToUse);
   }
 
   private Attributes buildAttemptBaseAttributes(StorageClientMetrics metrics) {
