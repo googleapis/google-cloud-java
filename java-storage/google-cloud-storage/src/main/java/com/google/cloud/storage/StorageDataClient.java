@@ -84,6 +84,10 @@ final class StorageDataClient implements AutoCloseable {
         req.getReadRangesList().isEmpty(),
         "ranges included in the initial request are not supported");
     checkArgument(fastOpenConfigs.size() <= 1, "at most one fast open read is supported");
+    checkArgument(
+        fastOpenConfigs.stream().allMatch(c -> c.getType() == ProjectionType.STREAM_READ),
+        "a fast open read must be asFutureBytes(), asFutureByteString() or asChannel(), but was %s",
+        fastOpenConfigs);
     ObjectReadSessionState state = new ObjectReadSessionState(ctx, req);
 
     ZeroCopyBidiStreamingCallable<BidiReadObjectRequest, BidiReadObjectResponse> callable =
