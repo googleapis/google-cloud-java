@@ -1141,6 +1141,8 @@ class ResumableUploadCallableImplTest {
     ResumableUploadFuture<String> future =
         callable.futureCall("resource-path", payloadOf("01234567890123456789"), options);
 
+    assertThat(future.getEffectiveChunkSize()).isNull();
+
     String url = "https://upload.url/progress-transitions";
     startFuture.set(ResumableUploadSession.newBuilder().setUploadUrl(url).build());
 
@@ -1148,13 +1150,13 @@ class ResumableUploadCallableImplTest {
 
     assertThat(listener.awaitTerminal())
         .containsExactly(
-            createProgress(ResumableUploadProgress.STATE_STARTING, 0L, null),
-            createProgress(ResumableUploadProgress.STATE_STARTED, 0L, url),
-            createProgress(ResumableUploadProgress.STATE_UPLOADING, 8L, url),
-            createProgress(ResumableUploadProgress.STATE_RECOVERING, 8L, url),
-            createProgress(ResumableUploadProgress.STATE_OFFSET_RECEIVED, 8L, url),
-            createProgress(ResumableUploadProgress.STATE_UPLOADING, 16L, url),
-            createProgress(ResumableUploadProgress.STATE_FINALIZED, 20L, url))
+            createProgress(ResumableUploadProgress.STATE_STARTING, 0L, null, null),
+            createProgress(ResumableUploadProgress.STATE_STARTED, 0L, url, 8),
+            createProgress(ResumableUploadProgress.STATE_UPLOADING, 8L, url, 8),
+            createProgress(ResumableUploadProgress.STATE_RECOVERING, 8L, url, 8),
+            createProgress(ResumableUploadProgress.STATE_OFFSET_RECEIVED, 8L, url, 8),
+            createProgress(ResumableUploadProgress.STATE_UPLOADING, 16L, url, 8),
+            createProgress(ResumableUploadProgress.STATE_FINALIZED, 20L, url, 8))
         .inOrder();
   }
 
@@ -1175,8 +1177,8 @@ class ResumableUploadCallableImplTest {
 
     assertThat(listener.awaitTerminal())
         .containsExactly(
-            createProgress(ResumableUploadProgress.STATE_STARTING, 0L, null),
-            createProgress(ResumableUploadProgress.STATE_FAILED, 0L, null))
+            createProgress(ResumableUploadProgress.STATE_STARTING, 0L, null, null),
+            createProgress(ResumableUploadProgress.STATE_FAILED, 0L, null, null))
         .inOrder();
   }
 
@@ -1199,7 +1201,7 @@ class ResumableUploadCallableImplTest {
     assertThat(receivedStatuses.get(receivedStatuses.size() - 1))
         .isEqualTo(
             createProgress(
-                ResumableUploadProgress.STATE_FAILED, 0L, "https://upload.url/cancel-progress"));
+                ResumableUploadProgress.STATE_FAILED, 0L, "https://upload.url/cancel-progress", 8));
   }
 
   @Test
@@ -1228,15 +1230,20 @@ class ResumableUploadCallableImplTest {
             createProgress(
                 ResumableUploadProgress.STATE_FINALIZED,
                 5L,
-                "https://upload.url/query-final-progress"));
+                "https://upload.url/query-final-progress",
+                8));
   }
 
   private static ResumableUploadProgress createProgress(
-      String state, long bytesUploaded, @Nullable String uploadUrl) {
+      String state,
+      long bytesUploaded,
+      @Nullable String uploadUrl,
+      @Nullable Integer effectiveChunkSize) {
     return ResumableUploadProgress.newBuilder()
         .setState(state)
         .setBytesUploaded(bytesUploaded)
         .setUploadUrl(uploadUrl)
+        .setEffectiveChunkSize(effectiveChunkSize)
         .build();
   }
 
@@ -1273,6 +1280,7 @@ class ResumableUploadCallableImplTest {
     ExecutionException ex = assertThrows(ExecutionException.class, future::get);
     assertThat(ex.getCause()).isSameInstanceAs(startError);
     assertThat(future.getUploadSessionUrl()).isNull();
+    assertThat(future.getEffectiveChunkSize()).isNull();
   }
 
   @Test
@@ -1298,9 +1306,52 @@ class ResumableUploadCallableImplTest {
     assertThat(ex.getCause()).isInstanceOf(ApiException.class);
     ApiException cause = (ApiException) ex.getCause();
     assertThat(cause.getMessage()).contains(sessionUrl);
+    assertThat(cause.getMessage()).contains("effective chunk size: 8");
     assertThat(cause.getCause()).isSameInstanceAs(transportCause);
     assertThat(cause.getErrorDetails()).isSameInstanceAs(errorDetails);
     assertThat(future.getUploadSessionUrl()).isEqualTo(sessionUrl);
+    assertThat(future.getEffectiveChunkSize()).isEqualTo(8);
+  }
+
+  @Test
+  void testAlignChunkSize() {
+    assertThat(ResumableUploadFutureImpl.alignChunkSize(8, 1)).isEqualTo(8);
+    assertThat(ResumableUploadFutureImpl.alignChunkSize(8, 4)).isEqualTo(8);
+    assertThat(ResumableUploadFutureImpl.alignChunkSize(10, 4)).isEqualTo(8);
+    assertThat(ResumableUploadFutureImpl.alignChunkSize(4, 6)).isEqualTo(6);
+  }
+
+  @Test
+  void testChunkGranularity_alignsChunkSizeAndSurfacesEffectiveSize() throws Exception {
+    when(mockStartCallable.futureCall(any(), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ResumableUploadSession.newBuilder()
+                    .setUploadUrl("https://upload.url/granularity-align")
+                    .setChunkGranularity(4)
+                    .build()));
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.ACTIVE, null)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ChunkUploadResponse.create(ResumableUploadStatus.FINAL, "done")));
+
+    // Configured chunkSize = 10, server granularity = 4 -> aligned down to 8
+    ResumableUploadOptions options = defaultSettings.toBuilder().setChunkSize(10).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", payloadOf("0123456789ab"), options);
+
+    assertThat(future.get()).isEqualTo("done");
+    assertThat(future.getEffectiveChunkSize()).isEqualTo(8);
+
+    ArgumentCaptor<ChunkUploadRequest> captor = ArgumentCaptor.forClass(ChunkUploadRequest.class);
+    verify(mockChunkCallable, times(2)).futureCall(captor.capture(), any());
+    List<ChunkUploadRequest> requests = captor.getAllValues();
+    assertChunk(requests.get(0), 0, 8, false);
+    assertChunk(requests.get(1), 8, 4, true);
   }
 
   @Test

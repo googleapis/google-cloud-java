@@ -893,6 +893,34 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     com.google.cloud.ces.v1beta.SpanOrBuilder getRootSpanOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The intended ground-truth text from the Simulated Caller
+     * (Polysynth). Only populated when word error rate metrics are enabled.
+     * </pre>
+     *
+     * <code>string user_intended_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The userIntendedText.
+     */
+    java.lang.String getUserIntendedText();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The intended ground-truth text from the Simulated Caller
+     * (Polysynth). Only populated when word error rate metrics are enabled.
+     * </pre>
+     *
+     * <code>string user_intended_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for userIntendedText.
+     */
+    com.google.protobuf.ByteString getUserIntendedTextBytes();
   }
 
   /**
@@ -927,6 +955,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
 
     private Turn() {
       messages_ = java.util.Collections.emptyList();
+      userIntendedText_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1088,6 +1117,61 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       return rootSpan_ == null ? com.google.cloud.ces.v1beta.Span.getDefaultInstance() : rootSpan_;
     }
 
+    public static final int USER_INTENDED_TEXT_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userIntendedText_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The intended ground-truth text from the Simulated Caller
+     * (Polysynth). Only populated when word error rate metrics are enabled.
+     * </pre>
+     *
+     * <code>string user_intended_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The userIntendedText.
+     */
+    @java.lang.Override
+    public java.lang.String getUserIntendedText() {
+      java.lang.Object ref = userIntendedText_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userIntendedText_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The intended ground-truth text from the Simulated Caller
+     * (Polysynth). Only populated when word error rate metrics are enabled.
+     * </pre>
+     *
+     * <code>string user_intended_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for userIntendedText.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUserIntendedTextBytes() {
+      java.lang.Object ref = userIntendedText_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        userIntendedText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1108,6 +1192,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(2, getRootSpan());
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userIntendedText_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, userIntendedText_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1122,6 +1209,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRootSpan());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userIntendedText_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, userIntendedText_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1144,6 +1234,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
       if (hasRootSpan()) {
         if (!getRootSpan().equals(other.getRootSpan())) return false;
       }
+      if (!getUserIntendedText().equals(other.getUserIntendedText())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1163,6 +1254,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + ROOT_SPAN_FIELD_NUMBER;
         hash = (53 * hash) + getRootSpan().hashCode();
       }
+      hash = (37 * hash) + USER_INTENDED_TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getUserIntendedText().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1325,6 +1418,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
           rootSpanBuilder_.dispose();
           rootSpanBuilder_ = null;
         }
+        userIntendedText_ = "";
         return this;
       }
 
@@ -1380,6 +1474,9 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
           result.rootSpan_ = rootSpanBuilder_ == null ? rootSpan_ : rootSpanBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.userIntendedText_ = userIntendedText_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1425,6 +1522,11 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasRootSpan()) {
           mergeRootSpan(other.getRootSpan());
+        }
+        if (!other.getUserIntendedText().isEmpty()) {
+          userIntendedText_ = other.userIntendedText_;
+          bitField0_ |= 0x00000004;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1472,6 +1574,12 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  userIntendedText_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2122,6 +2230,122 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
         return rootSpanBuilder_;
       }
 
+      private java.lang.Object userIntendedText_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The intended ground-truth text from the Simulated Caller
+       * (Polysynth). Only populated when word error rate metrics are enabled.
+       * </pre>
+       *
+       * <code>string user_intended_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The userIntendedText.
+       */
+      public java.lang.String getUserIntendedText() {
+        java.lang.Object ref = userIntendedText_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userIntendedText_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The intended ground-truth text from the Simulated Caller
+       * (Polysynth). Only populated when word error rate metrics are enabled.
+       * </pre>
+       *
+       * <code>string user_intended_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for userIntendedText.
+       */
+      public com.google.protobuf.ByteString getUserIntendedTextBytes() {
+        java.lang.Object ref = userIntendedText_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          userIntendedText_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The intended ground-truth text from the Simulated Caller
+       * (Polysynth). Only populated when word error rate metrics are enabled.
+       * </pre>
+       *
+       * <code>string user_intended_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The userIntendedText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIntendedText(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userIntendedText_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The intended ground-truth text from the Simulated Caller
+       * (Polysynth). Only populated when word error rate metrics are enabled.
+       * </pre>
+       *
+       * <code>string user_intended_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUserIntendedText() {
+        userIntendedText_ = getDefaultInstance().getUserIntendedText();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The intended ground-truth text from the Simulated Caller
+       * (Polysynth). Only populated when word error rate metrics are enabled.
+       * </pre>
+       *
+       * <code>string user_intended_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for userIntendedText to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIntendedTextBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        userIntendedText_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.Conversation.Turn)
     }
 
@@ -2456,7 +2680,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-   *     google/cloud/ces/v1beta/conversation.proto;l=133
+   *     google/cloud/ces/v1beta/conversation.proto;l=137
    * @return The enum numeric value on the wire for channelType.
    */
   @java.lang.Override
@@ -2477,7 +2701,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-   *     google/cloud/ces/v1beta/conversation.proto;l=133
+   *     google/cloud/ces/v1beta/conversation.proto;l=137
    * @return The channelType.
    */
   @java.lang.Override
@@ -4704,7 +4928,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=133
+     *     google/cloud/ces/v1beta/conversation.proto;l=137
      * @return The enum numeric value on the wire for channelType.
      */
     @java.lang.Override
@@ -4725,7 +4949,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=133
+     *     google/cloud/ces/v1beta/conversation.proto;l=137
      * @param value The enum numeric value on the wire for channelType to set.
      * @return This builder for chaining.
      */
@@ -4749,7 +4973,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=133
+     *     google/cloud/ces/v1beta/conversation.proto;l=137
      * @return The channelType.
      */
     @java.lang.Override
@@ -4774,7 +4998,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=133
+     *     google/cloud/ces/v1beta/conversation.proto;l=137
      * @param value The channelType to set.
      * @return This builder for chaining.
      */
@@ -4801,7 +5025,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=133
+     *     google/cloud/ces/v1beta/conversation.proto;l=137
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

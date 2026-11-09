@@ -2027,6 +2027,52 @@ public final class AgentServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.UpdateAppVersionRequest,
+          com.google.cloud.ces.v1beta.AppVersion>
+      getUpdateAppVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAppVersion",
+      requestType = com.google.cloud.ces.v1beta.UpdateAppVersionRequest.class,
+      responseType = com.google.cloud.ces.v1beta.AppVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.UpdateAppVersionRequest,
+          com.google.cloud.ces.v1beta.AppVersion>
+      getUpdateAppVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.ces.v1beta.UpdateAppVersionRequest,
+            com.google.cloud.ces.v1beta.AppVersion>
+        getUpdateAppVersionMethod;
+    if ((getUpdateAppVersionMethod = AgentServiceGrpc.getUpdateAppVersionMethod) == null) {
+      synchronized (AgentServiceGrpc.class) {
+        if ((getUpdateAppVersionMethod = AgentServiceGrpc.getUpdateAppVersionMethod) == null) {
+          AgentServiceGrpc.getUpdateAppVersionMethod =
+              getUpdateAppVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.ces.v1beta.UpdateAppVersionRequest,
+                          com.google.cloud.ces.v1beta.AppVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAppVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.UpdateAppVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.AppVersion.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AgentServiceMethodDescriptorSupplier("UpdateAppVersion"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateAppVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.ces.v1beta.DeleteAppVersionRequest, com.google.protobuf.Empty>
       getDeleteAppVersionMethod;
 
@@ -2953,6 +2999,20 @@ public final class AgentServiceGrpc {
      *
      *
      * <pre>
+     * Updates the specified app version.
+     * </pre>
+     */
+    default void updateAppVersion(
+        com.google.cloud.ces.v1beta.UpdateAppVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.AppVersion> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateAppVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified app version.
      * </pre>
      */
@@ -3778,6 +3838,22 @@ public final class AgentServiceGrpc {
      *
      *
      * <pre>
+     * Updates the specified app version.
+     * </pre>
+     */
+    public void updateAppVersion(
+        com.google.cloud.ces.v1beta.UpdateAppVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.AppVersion> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAppVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified app version.
      * </pre>
      */
@@ -4489,6 +4565,20 @@ public final class AgentServiceGrpc {
      *
      *
      * <pre>
+     * Updates the specified app version.
+     * </pre>
+     */
+    public com.google.cloud.ces.v1beta.AppVersion updateAppVersion(
+        com.google.cloud.ces.v1beta.UpdateAppVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateAppVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified app version.
      * </pre>
      */
@@ -5172,6 +5262,19 @@ public final class AgentServiceGrpc {
         com.google.cloud.ces.v1beta.CreateAppVersionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateAppVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified app version.
+     * </pre>
+     */
+    public com.google.cloud.ces.v1beta.AppVersion updateAppVersion(
+        com.google.cloud.ces.v1beta.UpdateAppVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAppVersionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -5882,6 +5985,20 @@ public final class AgentServiceGrpc {
      *
      *
      * <pre>
+     * Updates the specified app version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.ces.v1beta.AppVersion>
+        updateAppVersion(com.google.cloud.ces.v1beta.UpdateAppVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAppVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes the specified app version.
      * </pre>
      */
@@ -5993,11 +6110,12 @@ public final class AgentServiceGrpc {
   private static final int METHODID_LIST_APP_VERSIONS = 43;
   private static final int METHODID_GET_APP_VERSION = 44;
   private static final int METHODID_CREATE_APP_VERSION = 45;
-  private static final int METHODID_DELETE_APP_VERSION = 46;
-  private static final int METHODID_RESTORE_APP_VERSION = 47;
-  private static final int METHODID_GENERATE_APP_RESOURCE = 48;
-  private static final int METHODID_LIST_CHANGELOGS = 49;
-  private static final int METHODID_GET_CHANGELOG = 50;
+  private static final int METHODID_UPDATE_APP_VERSION = 46;
+  private static final int METHODID_DELETE_APP_VERSION = 47;
+  private static final int METHODID_RESTORE_APP_VERSION = 48;
+  private static final int METHODID_GENERATE_APP_RESOURCE = 49;
+  private static final int METHODID_LIST_CHANGELOGS = 50;
+  private static final int METHODID_GET_CHANGELOG = 51;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -6263,6 +6381,12 @@ public final class AgentServiceGrpc {
         case METHODID_CREATE_APP_VERSION:
           serviceImpl.createAppVersion(
               (com.google.cloud.ces.v1beta.CreateAppVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.AppVersion>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_APP_VERSION:
+          serviceImpl.updateAppVersion(
+              (com.google.cloud.ces.v1beta.UpdateAppVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.AppVersion>)
                   responseObserver);
           break;
@@ -6597,6 +6721,12 @@ public final class AgentServiceGrpc {
                     com.google.cloud.ces.v1beta.CreateAppVersionRequest,
                     com.google.cloud.ces.v1beta.AppVersion>(service, METHODID_CREATE_APP_VERSION)))
         .addMethod(
+            getUpdateAppVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ces.v1beta.UpdateAppVersionRequest,
+                    com.google.cloud.ces.v1beta.AppVersion>(service, METHODID_UPDATE_APP_VERSION)))
+        .addMethod(
             getDeleteAppVersionMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -6724,6 +6854,7 @@ public final class AgentServiceGrpc {
                       .addMethod(getListAppVersionsMethod())
                       .addMethod(getGetAppVersionMethod())
                       .addMethod(getCreateAppVersionMethod())
+                      .addMethod(getUpdateAppVersionMethod())
                       .addMethod(getDeleteAppVersionMethod())
                       .addMethod(getRestoreAppVersionMethod())
                       .addMethod(getGenerateAppResourceMethod())

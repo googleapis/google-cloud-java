@@ -25,6 +25,7 @@ import com.google.common.primitives.Ints;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
+import java.util.Locale;
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -106,19 +107,25 @@ public final class HttpStorageRpcHasherHelper {
   }
 
   private boolean isTranscoded(HttpResponse response) {
+    return isDecompressedByServer(response) || isDecompressedByClient(response);
+  }
+
+  /** GCS stored the object gzip-compressed but served it decompressed. */
+  private static boolean isDecompressedByServer(HttpResponse response) {
     com.google.api.client.http.HttpHeaders headers = response.getHeaders();
     String storedEncoding =
         HttpClientContext.firstHeaderValue(headers, "x-goog-stored-content-encoding");
-    String storedLength =
-        HttpClientContext.firstHeaderValue(headers, "x-goog-stored-content-length");
-    return storedEncoding != null || storedLength != null || isDecompressedByClient(response);
+    return isGzip(storedEncoding) && !isGzip(headers.getContentEncoding());
+  }
+
+  private static boolean isGzip(String encoding) {
+    return encoding != null && encoding.trim().toLowerCase(Locale.ROOT).contains("gzip");
   }
 
   private boolean isDecompressedByClient(HttpResponse response) {
     boolean returnRaw = response.getRequest().getResponseReturnRawInputStream();
     if (!returnRaw) {
-      String encoding = response.getHeaders().getContentEncoding();
-      return encoding != null && encoding.contains("gzip");
+      return isGzip(response.getHeaders().getContentEncoding());
     }
     return false;
   }

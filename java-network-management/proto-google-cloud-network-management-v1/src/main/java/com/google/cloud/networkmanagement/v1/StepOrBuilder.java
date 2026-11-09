@@ -791,7 +791,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=318
+   *     google/cloud/networkmanagement/v1/trace.proto;l=321
    * @return Whether the loadBalancer field is set.
    */
   @java.lang.Deprecated
@@ -810,7 +810,7 @@ public interface StepOrBuilder
    * </code>
    *
    * @deprecated google.cloud.networkmanagement.v1.Step.load_balancer is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=318
+   *     google/cloud/networkmanagement/v1/trace.proto;l=321
    * @return The loadBalancer.
    */
   @java.lang.Deprecated
@@ -1612,6 +1612,50 @@ public interface StepOrBuilder
    */
   com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder
       getDmsPrivateConnectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Datastream Private Connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+   * </code>
+   *
+   * @return Whether the datastreamPrivateConnection field is set.
+   */
+  boolean hasDatastreamPrivateConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Datastream Private Connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+   * </code>
+   *
+   * @return The datastreamPrivateConnection.
+   */
+  com.google.cloud.networkmanagement.v1.PrivateConnectionInfo getDatastreamPrivateConnection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Datastream Private Connection.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.PrivateConnectionInfo datastream_private_connection = 44;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.PrivateConnectionInfoOrBuilder
+      getDatastreamPrivateConnectionOrBuilder();
 
   com.google.cloud.networkmanagement.v1.Step.StepInfoCase getStepInfoCase();
 }

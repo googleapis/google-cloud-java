@@ -23,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
+import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.jdbc.BigQueryParameterHandler.BigQueryStatementParameterType;
 import java.io.IOException;
@@ -30,6 +31,9 @@ import java.io.Reader;
 import java.io.StringReader;
 import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -1005,6 +1009,30 @@ public class BigQueryCallableStatementTest {
     assertEquals(expected, actual);
     int scale = statement.getParameterHandler().getParameterScale(PARAM_KEY);
     assertEquals(5, scale);
+  }
+
+  /** Named setObject with java.time must produce the same parameter as positional setObject. */
+  @Test
+  public void testSetObjectJavaTimeParamByName() throws SQLException {
+    BigQueryCallableStatement statement =
+        new BigQueryCallableStatement(bigQueryConnection, "call testProc('?')");
+    BigQueryParameterHandler handler = statement.getParameterHandler();
+
+    statement.setObject(PARAM_KEY, LocalDate.of(1582, 10, 10));
+    assertEquals("DATE 1582-10-10", sentValue(handler));
+    statement.setObject(PARAM_KEY, LocalTime.of(12, 34, 56, 789_123_000));
+    assertEquals("TIME 12:34:56.789123", sentValue(handler));
+    statement.setObject(PARAM_KEY, LocalDateTime.of(2025, 1, 1, 12, 34, 56));
+    assertEquals("STRING 2025-01-01 12:34:56.000000", sentValue(handler));
+  }
+
+  /** The type and value configureParameters would send for {@link #PARAM_KEY}. */
+  private static String sentValue(BigQueryParameterHandler handler) {
+    StandardSQLTypeName type = handler.getSqlType(PARAM_KEY);
+    Object value =
+        BigQueryParameterHandler.formatValueForQueryParameter(
+            handler.getParameter(PARAM_KEY), type, false);
+    return type + " " + QueryParameterValue.of(value, type).getValue();
   }
 
   @Test

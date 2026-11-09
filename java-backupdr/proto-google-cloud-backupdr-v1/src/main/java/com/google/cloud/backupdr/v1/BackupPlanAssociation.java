@@ -62,6 +62,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     dataSource_ = "";
     backupPlanRevisionId_ = "";
     backupPlanRevisionName_ = "";
+    autoProtectionPolicyBinding_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -380,7 +381,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Output only. Identifier. The resource name of BackupPlanAssociation in
-   * below format Format :
+   * below format Format:
    * projects/{project}/locations/{location}/backupPlanAssociations/{backupPlanAssociationId}
    * </pre>
    *
@@ -408,7 +409,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Output only. Identifier. The resource name of BackupPlanAssociation in
-   * below format Format :
+   * below format Format:
    * projects/{project}/locations/{location}/backupPlanAssociations/{backupPlanAssociationId}
    * </pre>
    *
@@ -1161,6 +1162,67 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int AUTO_PROTECTION_POLICY_BINDING_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object autoProtectionPolicyBinding_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the `AutoProtectionPolicyBinding` that
+   * manages this association, if any. Format:
+   * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+   * </pre>
+   *
+   * <code>
+   * string auto_protection_policy_binding = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The autoProtectionPolicyBinding.
+   */
+  @java.lang.Override
+  public java.lang.String getAutoProtectionPolicyBinding() {
+    java.lang.Object ref = autoProtectionPolicyBinding_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      autoProtectionPolicyBinding_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the `AutoProtectionPolicyBinding` that
+   * manages this association, if any. Format:
+   * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+   * </pre>
+   *
+   * <code>
+   * string auto_protection_policy_binding = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for autoProtectionPolicyBinding.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAutoProtectionPolicyBindingBytes() {
+    java.lang.Object ref = autoProtectionPolicyBinding_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      autoProtectionPolicyBinding_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1221,6 +1283,9 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
           (com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties)
               resourceProperties_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(autoProtectionPolicyBinding_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 16, autoProtectionPolicyBinding_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1278,6 +1343,10 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
               (com.google.cloud.backupdr.v1.AlloyDBClusterBackupPlanAssociationProperties)
                   resourceProperties_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(autoProtectionPolicyBinding_)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(16, autoProtectionPolicyBinding_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1311,6 +1380,8 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     if (!getDataSource().equals(other.getDataSource())) return false;
     if (!getBackupPlanRevisionId().equals(other.getBackupPlanRevisionId())) return false;
     if (!getBackupPlanRevisionName().equals(other.getBackupPlanRevisionName())) return false;
+    if (!getAutoProtectionPolicyBinding().equals(other.getAutoProtectionPolicyBinding()))
+      return false;
     if (!getResourcePropertiesCase().equals(other.getResourcePropertiesCase())) return false;
     switch (resourcePropertiesCase_) {
       case 10:
@@ -1363,6 +1434,8 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     hash = (53 * hash) + getBackupPlanRevisionId().hashCode();
     hash = (37 * hash) + BACKUP_PLAN_REVISION_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getBackupPlanRevisionName().hashCode();
+    hash = (37 * hash) + AUTO_PROTECTION_POLICY_BINDING_FIELD_NUMBER;
+    hash = (53 * hash) + getAutoProtectionPolicyBinding().hashCode();
     switch (resourcePropertiesCase_) {
       case 10:
         hash = (37 * hash) + CLOUD_SQL_INSTANCE_BACKUP_PLAN_ASSOCIATION_PROPERTIES_FIELD_NUMBER;
@@ -1558,6 +1631,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       backupPlanRevisionId_ = "";
       backupPlanRevisionName_ = "";
+      autoProtectionPolicyBinding_ = "";
       resourcePropertiesCase_ = 0;
       resourceProperties_ = null;
       return this;
@@ -1643,6 +1717,9 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.backupPlanRevisionName_ = backupPlanRevisionName_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.autoProtectionPolicyBinding_ = autoProtectionPolicyBinding_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1743,6 +1820,11 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       if (!other.getBackupPlanRevisionName().isEmpty()) {
         backupPlanRevisionName_ = other.backupPlanRevisionName_;
         bitField0_ |= 0x00001000;
+        onChanged();
+      }
+      if (!other.getAutoProtectionPolicyBinding().isEmpty()) {
+        autoProtectionPolicyBinding_ = other.autoProtectionPolicyBinding_;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       switch (other.getResourcePropertiesCase()) {
@@ -1882,6 +1964,12 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
                 resourcePropertiesCase_ = 15;
                 break;
               } // case 122
+            case 130:
+              {
+                autoProtectionPolicyBinding_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1922,7 +2010,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. Identifier. The resource name of BackupPlanAssociation in
-     * below format Format :
+     * below format Format:
      * projects/{project}/locations/{location}/backupPlanAssociations/{backupPlanAssociationId}
      * </pre>
      *
@@ -1949,7 +2037,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. Identifier. The resource name of BackupPlanAssociation in
-     * below format Format :
+     * below format Format:
      * projects/{project}/locations/{location}/backupPlanAssociations/{backupPlanAssociationId}
      * </pre>
      *
@@ -1976,7 +2064,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. Identifier. The resource name of BackupPlanAssociation in
-     * below format Format :
+     * below format Format:
      * projects/{project}/locations/{location}/backupPlanAssociations/{backupPlanAssociationId}
      * </pre>
      *
@@ -2002,7 +2090,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. Identifier. The resource name of BackupPlanAssociation in
-     * below format Format :
+     * below format Format:
      * projects/{project}/locations/{location}/backupPlanAssociations/{backupPlanAssociationId}
      * </pre>
      *
@@ -2024,7 +2112,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Output only. Identifier. The resource name of BackupPlanAssociation in
-     * below format Format :
+     * below format Format:
      * projects/{project}/locations/{location}/backupPlanAssociations/{backupPlanAssociationId}
      * </pre>
      *
@@ -4283,6 +4371,137 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       backupPlanRevisionName_ = value;
       bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object autoProtectionPolicyBinding_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the `AutoProtectionPolicyBinding` that
+     * manages this association, if any. Format:
+     * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+     * </pre>
+     *
+     * <code>
+     * string auto_protection_policy_binding = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The autoProtectionPolicyBinding.
+     */
+    public java.lang.String getAutoProtectionPolicyBinding() {
+      java.lang.Object ref = autoProtectionPolicyBinding_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        autoProtectionPolicyBinding_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the `AutoProtectionPolicyBinding` that
+     * manages this association, if any. Format:
+     * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+     * </pre>
+     *
+     * <code>
+     * string auto_protection_policy_binding = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for autoProtectionPolicyBinding.
+     */
+    public com.google.protobuf.ByteString getAutoProtectionPolicyBindingBytes() {
+      java.lang.Object ref = autoProtectionPolicyBinding_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        autoProtectionPolicyBinding_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the `AutoProtectionPolicyBinding` that
+     * manages this association, if any. Format:
+     * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+     * </pre>
+     *
+     * <code>
+     * string auto_protection_policy_binding = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The autoProtectionPolicyBinding to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoProtectionPolicyBinding(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      autoProtectionPolicyBinding_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the `AutoProtectionPolicyBinding` that
+     * manages this association, if any. Format:
+     * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+     * </pre>
+     *
+     * <code>
+     * string auto_protection_policy_binding = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoProtectionPolicyBinding() {
+      autoProtectionPolicyBinding_ = getDefaultInstance().getAutoProtectionPolicyBinding();
+      bitField0_ = (bitField0_ & ~0x00002000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the `AutoProtectionPolicyBinding` that
+     * manages this association, if any. Format:
+     * `projects/{project}/locations/{location}/autoProtectionPolicies/{policy}/bindings/{binding}`.
+     * </pre>
+     *
+     * <code>
+     * string auto_protection_policy_binding = 16 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for autoProtectionPolicyBinding to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoProtectionPolicyBindingBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      autoProtectionPolicyBinding_ = value;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
