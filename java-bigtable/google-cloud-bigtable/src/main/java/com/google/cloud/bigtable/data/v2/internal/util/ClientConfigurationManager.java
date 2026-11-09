@@ -253,8 +253,7 @@ public class ClientConfigurationManager implements AutoCloseable {
             .build();
 
     this.channelProvider = channelProvider;
-    this.channel =
-        overrideConfig.isPresent() ? null : channelProvider.newChannelBuilder().build();
+    this.channel = overrideConfig.isPresent() ? null : channelProvider.newChannelBuilder().build();
     this.debugTagTracer = tracer;
     this.executor = executor;
   }

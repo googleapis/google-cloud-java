@@ -435,8 +435,8 @@ class ClientConfigurationManagerTest {
   }
 
   /**
-   * Restarts the manager with {@code OVERRIDE_USE_DEFAULT_SYS_PROP_KEY=true} and the supplied session
-   * configuration supplied as a sys-prop override, and returns the resolved config.
+   * Restarts the manager with {@code OVERRIDE_USE_DEFAULT_SYS_PROP_KEY=true} and the supplied
+   * session configuration supplied as a sys-prop override, and returns the resolved config.
    */
   private ClientConfiguration startWithSessionOverride(
       SessionClientConfiguration.Builder sessionOverride) throws Exception {
@@ -602,7 +602,8 @@ class ClientConfigurationManagerTest {
     Properties overrideSysProps = new Properties();
     overrideSysProps.setProperty(
         ClientConfigurationManager.DISABLE_DIRECT_ACCESS_FALLBACK_SYS_PROP_KEY, "true");
-    overrideSysProps.setProperty(ClientConfigurationManager.OVERRIDE_USE_DEFAULT_SYS_PROP_KEY, "true");
+    overrideSysProps.setProperty(
+        ClientConfigurationManager.OVERRIDE_USE_DEFAULT_SYS_PROP_KEY, "true");
     String clientConfigOverrides =
         TextFormat.printer()
             .printToString(
@@ -640,7 +641,8 @@ class ClientConfigurationManagerTest {
       assertThat(initialChannelConfig.hasDirectAccessWithFallback()).isFalse();
     }
 
-    // Also verify server-fetched config (without local override) converts direct_access_with_fallback
+    // Also verify server-fetched config (without local override) converts
+    // direct_access_with_fallback
     Properties serverSysProps = new Properties();
     serverSysProps.setProperty(
         ClientConfigurationManager.DISABLE_DIRECT_ACCESS_FALLBACK_SYS_PROP_KEY, "true");
