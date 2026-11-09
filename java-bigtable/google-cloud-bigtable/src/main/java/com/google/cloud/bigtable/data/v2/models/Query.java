@@ -292,13 +292,13 @@ public final class Query implements Serializable {
    *
    * <pre>{@code
    * Query query = Query.create(...).range("a", "z");
-   * Query.QueryPaginator paginator = query.createQueryPaginator(100);
+   * Query.QueryPaginator paginator = query.createPaginator(100);
    * ByteString lastSeenRowKey = ByteString.EMPTY;
    * do {
    *     List<Row> rows = client.readRowsCallable().all().call(paginator.getNextQuery());
    *     for (Row row : rows) {
    *        // do some processing
-   *        lastSeenRow = row;
+   *        lastSeenRowKey = row.getKey();
    *     }
    * } while (paginator.advance(lastSeenRowKey));
    * }</pre>
@@ -421,9 +421,12 @@ public final class Query implements Serializable {
     QueryPaginator(@Nonnull Query query, int pageSize) {
       this.hasOverallLimit = query.builder.getRowsLimit() > 0;
       this.remainingRows = query.builder.getRowsLimit();
-      this.query = query.limit(pageSize);
+      this.query = query.clone();
       if (hasOverallLimit) {
+        this.query.limit(Math.min(pageSize, remainingRows));
         remainingRows -= pageSize;
+      } else {
+        this.query.limit(pageSize);
       }
       this.pageSize = pageSize;
       this.prevSplitPoint = ByteString.EMPTY;
@@ -437,6 +440,12 @@ public final class Query implements Serializable {
     /**
      * Construct the next query. Return true if there are more queries to return. False if we've
      * read everything.
+     *
+     * @param lastSeenRowKey the key of the last row received across the pagination loop. Initialize
+     *     this to {@link ByteString#EMPTY} before the loop and update it as each row is read (see
+     *     {@link #createPaginator(int)}). If the first page is empty, {@link ByteString#EMPTY}
+     *     signals completion; if a subsequent page is empty, passing the unchanged key from the
+     *     previous page signals completion.
      */
     public boolean advance(@Nonnull ByteString lastSeenRowKey) {
       Preconditions.checkNotNull(
@@ -491,13 +500,18 @@ public final class Query implements Serializable {
     return Objects.equal(targetId, query.targetId)
         && Objects.equal(builder.getRows(), query.builder.getRows())
         && Objects.equal(builder.getFilter(), query.builder.getFilter())
-        && Objects.equal(builder.getRowsLimit(), query.builder.getRowsLimit());
+        && Objects.equal(builder.getRowsLimit(), query.builder.getRowsLimit())
+        && Objects.equal(builder.getReversed(), query.builder.getReversed());
   }
 
   @Override
   public int hashCode() {
     return Objects.hashCode(
-        targetId, builder.getRows(), builder.getFilter(), builder.getRowsLimit());
+        targetId,
+        builder.getRows(),
+        builder.getFilter(),
+        builder.getRowsLimit(),
+        builder.getReversed());
   }
 
   @Override
@@ -510,6 +524,7 @@ public final class Query implements Serializable {
         .add("ranges", request.getRows().getRowRangesList())
         .add("filter", request.getFilter())
         .add("limit", request.getRowsLimit())
+        .add("reversed", request.getReversed())
         .toString();
   }
 }

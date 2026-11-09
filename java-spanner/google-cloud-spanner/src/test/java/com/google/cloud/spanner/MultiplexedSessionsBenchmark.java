@@ -86,6 +86,7 @@ public class MultiplexedSessionsBenchmark extends AbstractLatencyBenchmark {
 
     @Setup(Level.Iteration)
     public void setup() throws Exception {
+      SpannerOptions.resetActiveTracingFramework();
       SpannerOptions.enableOpenTelemetryMetrics();
       SpannerOptions.enableOpenTelemetryTraces();
       SpannerOptions options =
@@ -109,7 +110,11 @@ public class MultiplexedSessionsBenchmark extends AbstractLatencyBenchmark {
 
     @TearDown(Level.Iteration)
     public void teardown() throws Exception {
-      spanner.close();
+      try {
+        spanner.close();
+      } finally {
+        SpannerOptions.resetActiveTracingFramework();
+      }
     }
   }
 

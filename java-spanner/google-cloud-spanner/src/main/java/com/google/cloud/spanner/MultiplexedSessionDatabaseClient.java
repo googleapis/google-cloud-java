@@ -33,6 +33,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.Futures;
 import com.google.spanner.v1.BatchWriteResponse;
+import com.google.spanner.v1.TransactionOptions.IsolationLevel;
 import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
@@ -67,14 +68,6 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
    * waitForMinSessions has been reached.
    */
   private static final int MAX_INITIAL_CREATE_SESSION_ATTEMPTS = 10;
-
-  @VisibleForTesting
-  static final Statement DETERMINE_DIALECT_STATEMENT =
-      Statement.newBuilder(
-              "select option_value "
-                  + "from information_schema.database_options "
-                  + "where option_name='database_dialect'")
-          .build();
 
   /**
    * Represents a single transaction on a multiplexed session. This can be both a single-use or
@@ -534,17 +527,18 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
     }
   }
 
-  private final AbstractLazyInitializer<Dialect> dialectSupplier =
-      new AbstractLazyInitializer<Dialect>() {
+  /**
+   * Reads the {@link DatabaseMetadata} with a single query the first time that it is needed, and
+   * caches it for the lifetime of this client. The metadata is not refreshed when the multiplexed
+   * session is replaced.
+   */
+  private final AbstractLazyInitializer<DatabaseMetadata> databaseMetadataSupplier =
+      new AbstractLazyInitializer<DatabaseMetadata>() {
         @Override
-        protected Dialect initialize() {
-          try (ResultSet dialectResultSet = singleUse().executeQuery(DETERMINE_DIALECT_STATEMENT)) {
-            if (dialectResultSet.next()) {
-              return Dialect.fromName(dialectResultSet.getString(0));
-            }
+        protected DatabaseMetadata initialize() {
+          try (ResultSet resultSet = singleUse().executeQuery(DatabaseMetadata.STATEMENT)) {
+            return DatabaseMetadata.fromResultSet(resultSet);
           }
-          // This should not really happen, but it is the safest fallback value.
-          return Dialect.GOOGLE_STANDARD_SQL;
         }
 
         @Override
@@ -556,7 +550,7 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
   @Override
   public Dialect getDialect() {
     try {
-      return dialectSupplier.get();
+      return databaseMetadataSupplier.get().getDialect();
     } catch (Exception exception) {
       throw SpannerExceptionFactory.asSpannerException(exception);
     }
@@ -564,7 +558,16 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
 
   Future<Dialect> getDialectAsync() {
     try {
-      return MAINTAINER_SERVICE.submit(dialectSupplier::get);
+      return MAINTAINER_SERVICE.submit(() -> databaseMetadataSupplier.get().getDialect());
+    } catch (Exception exception) {
+      throw SpannerExceptionFactory.asSpannerException(exception);
+    }
+  }
+
+  @Override
+  public IsolationLevel getDatabaseDefaultIsolationLevel() {
+    try {
+      return databaseMetadataSupplier.get().getDefaultIsolationLevel();
     } catch (Exception exception) {
       throw SpannerExceptionFactory.asSpannerException(exception);
     }

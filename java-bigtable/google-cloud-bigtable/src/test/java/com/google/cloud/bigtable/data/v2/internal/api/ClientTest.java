@@ -27,12 +27,14 @@ import com.google.bigtable.v2.OpenMaterializedViewRequest;
 import com.google.bigtable.v2.OpenSessionResponse;
 import com.google.bigtable.v2.OpenTableRequest;
 import com.google.bigtable.v2.SessionClientConfiguration;
+import com.google.bigtable.v2.SessionDiversionConfiguration;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
 import com.google.bigtable.v2.SessionRequest;
 import com.google.bigtable.v2.SessionResponse;
+import com.google.bigtable.v2.SessionScopeDiversionConfiguration;
 import com.google.bigtable.v2.VirtualRpcResponse;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeServiceBuilder;
@@ -73,7 +75,10 @@ public class ClientTest {
     ClientConfiguration.Builder builder = ClientConfigurationManager.loadDefault().toBuilder();
     builder.setSessionConfiguration(
         SessionClientConfiguration.newBuilder()
-            .setSessionLoad(1)
+            .setSessionDiversionConfiguration(
+                SessionDiversionConfiguration.newBuilder()
+                    .setGlobalDiversion(
+                        SessionScopeDiversionConfiguration.newBuilder().setSessionLoad(1)))
             .setSessionPoolConfiguration(
                 SessionClientConfiguration.SessionPoolConfiguration.newBuilder()
                     .setNewSessionCreationBudget(10)
