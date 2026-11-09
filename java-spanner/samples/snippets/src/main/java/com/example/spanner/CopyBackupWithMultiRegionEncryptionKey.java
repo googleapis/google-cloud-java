@@ -99,7 +99,7 @@ public class CopyBackupWithMultiRegionEncryptionKey {
       destinationBackup = databaseAdminClient.copyBackupAsync(request).get();
       System.out.println("Copied backup [" + destinationBackup.getName() + "]");
     } catch (ExecutionException e) {
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }

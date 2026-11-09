@@ -1628,7 +1628,7 @@ public class DatabaseClientImplTest {
 
     ExecutionException e = assertThrows(ExecutionException.class, fut::get);
     assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-    SpannerException se = (SpannerException) e.getCause();
+    SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
     assertThat(se.getErrorCode()).isEqualTo(ErrorCode.INVALID_ARGUMENT);
 
     executor.shutdown();

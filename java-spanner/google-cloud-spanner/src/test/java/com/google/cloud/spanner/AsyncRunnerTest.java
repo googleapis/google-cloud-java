@@ -139,7 +139,7 @@ public class AsyncRunnerTest extends AbstractAsyncTransactionTest {
         runner.runAsync(txn -> txn.executeUpdateAsync(INVALID_UPDATE_STATEMENT), executor);
     ExecutionException e = assertThrows(ExecutionException.class, () -> updateCount.get());
     assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-    SpannerException se = (SpannerException) e.getCause();
+    SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
     assertThat(se.getErrorCode()).isEqualTo(ErrorCode.INVALID_ARGUMENT);
     assertThat(se.getMessage()).contains("invalid statement");
   }
@@ -288,7 +288,7 @@ public class AsyncRunnerTest extends AbstractAsyncTransactionTest {
             executor);
     ExecutionException e = assertThrows(ExecutionException.class, () -> updateCount.get());
     assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-    SpannerException se = (SpannerException) e.getCause();
+    SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
     assertThat(se.getErrorCode()).isEqualTo(ErrorCode.INVALID_ARGUMENT);
     assertThat(se.getMessage()).contains("mutation limit exceeded");
   }
@@ -358,7 +358,7 @@ public class AsyncRunnerTest extends AbstractAsyncTransactionTest {
             executor);
     ExecutionException e = assertThrows(ExecutionException.class, () -> updateCount.get());
     assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-    SpannerException se = (SpannerException) e.getCause();
+    SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
     assertThat(se.getErrorCode()).isEqualTo(ErrorCode.INVALID_ARGUMENT);
     assertThat(se.getMessage()).contains("invalid statement");
   }
@@ -505,7 +505,7 @@ public class AsyncRunnerTest extends AbstractAsyncTransactionTest {
             executor);
     ExecutionException e = assertThrows(ExecutionException.class, () -> updateCount.get());
     assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-    SpannerException se = (SpannerException) e.getCause();
+    SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
     assertThat(se.getErrorCode()).isEqualTo(ErrorCode.INVALID_ARGUMENT);
     assertThat(se.getMessage()).contains("mutation limit exceeded");
   }

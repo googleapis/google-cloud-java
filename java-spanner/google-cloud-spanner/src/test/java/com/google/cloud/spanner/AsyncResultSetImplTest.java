@@ -176,7 +176,7 @@ public class AsyncResultSetImplTest {
               ExecutionException.class,
               () -> rs.toListAsync(ignored -> new Object(), executor).get());
       assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-      SpannerException se = (SpannerException) e.getCause();
+      SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertThat(se.getErrorCode()).isEqualTo(ErrorCode.INVALID_ARGUMENT);
       assertThat(se.getMessage()).contains("invalid query");
     }
@@ -505,7 +505,7 @@ public class AsyncResultSetImplTest {
           });
       ExecutionException e = assertThrows(ExecutionException.class, () -> rs.getResult().get());
       assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-      SpannerException se = (SpannerException) e.getCause();
+      SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertThat(se.getErrorCode()).isEqualTo(ErrorCode.UNKNOWN);
       assertThat(se.getMessage()).contains("async test");
       assertThat(callbackCounter.get()).isEqualTo(1);
@@ -535,7 +535,7 @@ public class AsyncResultSetImplTest {
       ExecutionException e =
           assertThrows(ExecutionException.class, () -> result.get(30L, TimeUnit.SECONDS));
       assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-      SpannerException se = (SpannerException) e.getCause();
+      SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertThat(se.getErrorCode()).isEqualTo(ErrorCode.UNKNOWN);
       assertThat(se.getMessage()).contains("async test");
       // The producer should stop and release the underlying result set.

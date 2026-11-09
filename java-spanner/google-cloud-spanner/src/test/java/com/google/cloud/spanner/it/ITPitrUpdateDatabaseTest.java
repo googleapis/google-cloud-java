@@ -163,7 +163,7 @@ public class ITPitrUpdateDatabaseTest {
           .get(OPERATION_TIMEOUT.toNanos(), TimeUnit.NANOSECONDS);
       fail("Expected invalid argument error when setting invalid version retention period");
     } catch (Exception e) {
-      SpannerException spannerException = (SpannerException) e.getCause();
+      SpannerException spannerException = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertThat(spannerException.getErrorCode()).isEqualTo(ErrorCode.INVALID_ARGUMENT);
     }
 

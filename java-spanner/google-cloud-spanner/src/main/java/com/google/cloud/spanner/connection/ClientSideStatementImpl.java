@@ -173,7 +173,7 @@ class ClientSideStatementImpl implements ClientSideStatement {
       throw e;
     } catch (InvocationTargetException e) {
       if (e.getCause() instanceof SpannerException) {
-        throw (SpannerException) e.getCause();
+        throw SpannerExceptionFactory.asSpannerException(e.getCause());
       }
       throw new ExecuteException(e.getCause(), this, statement.getStatement().getSql());
     } catch (Exception e) {

@@ -76,7 +76,7 @@ public class CopyBackupSample {
       destinationBackup = operation.get();
       System.out.println("Copied backup [" + destinationBackup.getId() + "]");
     } catch (ExecutionException e) {
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }

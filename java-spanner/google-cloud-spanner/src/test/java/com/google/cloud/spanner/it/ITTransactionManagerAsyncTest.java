@@ -160,7 +160,7 @@ public class ITTransactionManagerAsyncTest {
           txn = manager.resetForRetryAsync();
         } catch (ExecutionException e) {
           assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-          SpannerException se = (SpannerException) e.getCause();
+          SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
           if (env.getTestHelper()
               .getOptions()
               .getSessionPoolOptions()

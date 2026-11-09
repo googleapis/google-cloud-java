@@ -503,7 +503,7 @@ public class ITAsyncExamplesTest {
       fail("missing expected exception");
     } catch (ExecutionException e) {
       assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-      SpannerException se = (SpannerException) e.getCause();
+      SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertThat(se.getErrorCode()).isEqualTo(ErrorCode.CANCELLED);
       assertThat(values).containsExactly("v0");
     }

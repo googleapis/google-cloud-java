@@ -302,7 +302,7 @@ public class SpannerSample {
       System.out.println("Created database [" + db.getName() + "]");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
@@ -331,7 +331,7 @@ public class SpannerSample {
           "Created Performances table in database: [" + databaseName.toString() + "]");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
@@ -457,7 +457,7 @@ public class SpannerSample {
       System.out.println("Added MarketingBudget column");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
@@ -572,7 +572,7 @@ public class SpannerSample {
       System.out.println("Added AlbumsByAlbumTitle index");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
@@ -641,7 +641,7 @@ public class SpannerSample {
       System.out.println("Added AlbumsByAlbumTitle2 index");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
@@ -731,7 +731,7 @@ public class SpannerSample {
       System.out.println("Added LastUpdateTime as a commit timestamp column in Albums table.");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.
@@ -1264,7 +1264,7 @@ public class SpannerSample {
       System.out.println("Created Venues table in database: [" + databaseName.toString() + "]");
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.

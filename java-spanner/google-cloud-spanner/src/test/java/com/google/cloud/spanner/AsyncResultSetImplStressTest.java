@@ -444,7 +444,7 @@ public class AsyncResultSetImplStressTest {
           assertThat(list).containsExactlyElementsIn(createExpectedRows());
         } catch (ExecutionException e) {
           assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-          SpannerException se = (SpannerException) e.getCause();
+          SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
           assertThat(se.getErrorCode()).isEqualTo(ErrorCode.CANCELLED);
           assertThat(cancelledIndexes).contains(index);
         }

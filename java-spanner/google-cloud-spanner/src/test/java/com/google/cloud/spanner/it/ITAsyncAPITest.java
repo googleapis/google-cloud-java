@@ -269,7 +269,7 @@ public class ITAsyncAPITest {
       row.get();
     } catch (ExecutionException e) {
       assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-      SpannerException se = (SpannerException) e.getCause();
+      SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertThat(se.getErrorCode()).isEqualTo(ErrorCode.NOT_FOUND);
       assertThat(se.getMessage()).contains("BadTableName");
     }
@@ -285,7 +285,7 @@ public class ITAsyncAPITest {
       row.get();
     } catch (ExecutionException e) {
       assertThat(e.getCause()).isInstanceOf(SpannerException.class);
-      SpannerException se = (SpannerException) e.getCause();
+      SpannerException se = SpannerExceptionFactory.asSpannerException(e.getCause());
       assertThat(se.getErrorCode()).isEqualTo(ErrorCode.NOT_FOUND);
       assertThat(se.getMessage()).contains("BadColumnName");
     }

@@ -65,7 +65,7 @@ public class CreateDatabaseWithDefaultLeaderSample {
       System.out.println("\tDefault leader: " + createdDatabase.getDefaultLeader());
     } catch (ExecutionException e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     } catch (InterruptedException e) {
       // Throw when a thread is waiting, sleeping, or otherwise occupied,
       // and the thread is interrupted, either before or during the activity.

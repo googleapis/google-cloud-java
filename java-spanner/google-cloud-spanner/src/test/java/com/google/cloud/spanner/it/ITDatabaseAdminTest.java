@@ -269,7 +269,7 @@ public class ITDatabaseAdminTest {
       Assert.fail("No exception thrown");
     } catch (ExecutionException | InterruptedException | TimeoutException e) {
       Assert.assertTrue(e.getCause() instanceof SpannerException);
-      SpannerException exception = ((SpannerException) e.getCause());
+      SpannerException exception = (SpannerExceptionFactory.asSpannerException(e.getCause()));
       assertEquals(ErrorCode.INVALID_ARGUMENT, exception.getErrorCode());
     }
   }

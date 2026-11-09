@@ -114,7 +114,7 @@ public class DatabaseAddSplitPointsSample {
 
     } catch (Exception e) {
       // If the operation failed during execution, expose the cause.
-      throw (SpannerException) e.getCause();
+      throw SpannerExceptionFactory.asSpannerException(e.getCause());
     }
   }
 }
