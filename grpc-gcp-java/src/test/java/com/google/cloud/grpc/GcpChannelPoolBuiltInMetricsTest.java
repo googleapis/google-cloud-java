@@ -64,6 +64,7 @@ public final class GcpChannelPoolBuiltInMetricsTest {
 
   private final ExecutorService executor = MoreExecutors.newDirectExecutorService();
   private final List<ManagedChannel> pools = new ArrayList<>();
+  private final List<SdkMeterProvider> meterProviders = new ArrayList<>();
   private SdkMeterProvider meterProvider;
   private InMemoryMetricReader reader;
   private Meter meter;
@@ -71,7 +72,7 @@ public final class GcpChannelPoolBuiltInMetricsTest {
   @Before
   public void setUp() {
     reader = InMemoryMetricReader.create();
-    meterProvider = SdkMeterProvider.builder().registerMetricReader(reader).build();
+    meterProvider = newMeterProvider(reader);
     meter = meterProvider.get("grpc-gcp");
   }
 
@@ -79,6 +80,9 @@ public final class GcpChannelPoolBuiltInMetricsTest {
   public void tearDown() {
     for (ManagedChannel pool : pools) {
       pool.shutdownNow();
+    }
+    for (SdkMeterProvider provider : meterProviders) {
+      provider.close();
     }
     executor.shutdownNow();
   }
@@ -263,8 +267,7 @@ public final class GcpChannelPoolBuiltInMetricsTest {
   @Test
   public void customerAndBuiltInMetricsStaySeparateWhenBothAreConfigured() {
     InMemoryMetricReader customerReader = InMemoryMetricReader.create();
-    Meter customerMeter =
-        SdkMeterProvider.builder().registerMetricReader(customerReader).build().get("customer");
+    Meter customerMeter = newMeterProvider(customerReader).get("customer");
     newPool(
         GcpChannelPoolOptions.newBuilder().setMaxSize(2).setMinSize(2).build(),
         GcpMetricsOptions.newBuilder()
@@ -358,8 +361,7 @@ public final class GcpChannelPoolBuiltInMetricsTest {
   @Test
   public void poolsOnDifferentMetersAreReportedSeparately() {
     InMemoryMetricReader otherReader = InMemoryMetricReader.create();
-    Meter otherMeter =
-        SdkMeterProvider.builder().registerMetricReader(otherReader).build().get("grpc-gcp");
+    Meter otherMeter = newMeterProvider(otherReader).get("grpc-gcp");
     newStaticPool(2, CLOUDPATH);
     newPool(
         GcpChannelPoolOptions.newBuilder().setMaxSize(3).setMinSize(3).build(),
@@ -482,6 +484,14 @@ public final class GcpChannelPoolBuiltInMetricsTest {
     assertThat(GcpChannelPoolBuiltInMetrics.forMeter(meter).size()).isEqualTo(1);
     longLived.shutdownNow();
     assertThat(collectChannelCounts()).isEmpty();
+  }
+
+  /** Creates a meter provider that is closed after the test. */
+  private SdkMeterProvider newMeterProvider(InMemoryMetricReader metricReader) {
+    SdkMeterProvider provider =
+        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    meterProviders.add(provider);
+    return provider;
   }
 
   private GcpManagedChannelBuilder poolBuilder(int size, Attributes poolAttributes) {
