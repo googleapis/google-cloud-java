@@ -1330,8 +1330,7 @@ public class SessionPoolImplTest {
   @SuppressWarnings({"unchecked", "GuardedBy"})
   void configUpdateToEmptyClosesSessionsAndScalesBackUpWhenEnabled() throws Exception {
     ArgumentCaptor<ClientConfigurationManager.ConfigListener<SessionPoolConfiguration>>
-        listenerCaptor =
-            ArgumentCaptor.forClass(ClientConfigurationManager.ConfigListener.class);
+        listenerCaptor = ArgumentCaptor.forClass(ClientConfigurationManager.ConfigListener.class);
     verify(configManager).addListener(any(), listenerCaptor.capture());
     ClientConfigurationManager.ConfigListener<SessionPoolConfiguration> configListener =
         listenerCaptor.getValue();
