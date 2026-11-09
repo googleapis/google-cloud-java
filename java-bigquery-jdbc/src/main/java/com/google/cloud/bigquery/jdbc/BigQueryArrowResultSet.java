@@ -516,9 +516,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     LOG.finestTrace("isFirst");
     checkClosed();
     if (this.isNested) {
-      return this.nestedRowIndex == this.fromIndex;
+      return !this.afterLast && this.nestedRowIndex == this.fromIndex;
     } else {
-      return this.rowCount == 1;
+      return !this.afterLast && this.rowCount == 1;
     }
   }
 
@@ -527,9 +527,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     LOG.finestTrace("isLast");
     checkClosed();
     if (this.isNested) {
-      return this.nestedRowIndex == this.toIndexExclusive - 1;
+      return !this.afterLast && this.nestedRowIndex == this.toIndexExclusive - 1;
     } else {
-      return this.rowCount == this.totalRows;
+      return !this.afterLast && this.rowCount == this.totalRows;
     }
   }
 }

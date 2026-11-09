@@ -819,6 +819,8 @@ public class BigQueryArrowResultSetTest {
     assertThat(bigQueryArrowResultSet.next()).isTrue();
     assertThat(bigQueryArrowResultSet.getString(4)).isEqualTo("text1");
     assertThat(bigQueryArrowResultSet.next()).isFalse();
+    assertThat(bigQueryArrowResultSet.isFirst()).isFalse();
+    assertThat(bigQueryArrowResultSet.isLast()).isFalse();
     assertThrows(SQLException.class, () -> bigQueryArrowResultSet.getString(4));
 
     // Nested result set (Array.getResultSet) over [10, 20].
@@ -827,6 +829,8 @@ public class BigQueryArrowResultSetTest {
     assertThat(bigQueryArrowResultSetNested.getObject(2)).isEqualTo(10L);
     assertThat(bigQueryArrowResultSetNested.next()).isTrue();
     assertThat(bigQueryArrowResultSetNested.next()).isFalse();
+    assertThat(bigQueryArrowResultSetNested.isFirst()).isFalse();
+    assertThat(bigQueryArrowResultSetNested.isLast()).isFalse();
     assertThrows(SQLException.class, () -> bigQueryArrowResultSetNested.getObject(2));
   }
 }
