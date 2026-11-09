@@ -18,8 +18,15 @@ package com.google.cloud.storage.spi.v1;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.services.storage.Storage;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.storage.StorageOptions;
+import com.google.common.collect.ImmutableList;
+import java.io.IOException;
 import org.junit.Test;
 
 public final class HttpStorageRpcUriTest {
@@ -127,5 +134,78 @@ public final class HttpStorageRpcUriTest {
     assertThat(rpc.getStorage().getServicePath()).isEqualTo("storage/v1/");
     assertThat(rpc.getStorage().getBaseUrl())
         .isEqualTo("https://proxy.example.com/storage/v1beta/storage/v1/");
+  }
+
+  @Test
+  public void nonPreprodHosts_matchMainBaselineExactly() throws IOException {
+    ImmutableList<StorageOptions> nonPreprodConfigs =
+        ImmutableList.of(
+            StorageOptions.http()
+                .setCredentials(NoCredentials.getInstance())
+                .setProjectId("test-project")
+                .build(),
+            StorageOptions.http()
+                .setCredentials(NoCredentials.getInstance())
+                .setProjectId("test-project")
+                .setHost(null)
+                .build(),
+            StorageOptions.http()
+                .setCredentials(NoCredentials.getInstance())
+                .setProjectId("test-project")
+                .setUniverseDomain("my-universe-domain.com")
+                .build(),
+            StorageOptions.http()
+                .setCredentials(NoCredentials.getInstance())
+                .setProjectId("test-project")
+                .setHost("http://127.0.0.1:9000")
+                .build(),
+            StorageOptions.http()
+                .setCredentials(NoCredentials.getInstance())
+                .setProjectId("test-project")
+                .setHost("http://localhost:8080/")
+                .build(),
+            StorageOptions.http()
+                .setCredentials(NoCredentials.getInstance())
+                .setProjectId("test-project")
+                .setHost("http://[::1]")
+                .build(),
+            StorageOptions.http()
+                .setCredentials(NoCredentials.getInstance())
+                .setProjectId("test-project")
+                .setHost("https://proxy.example.com/gcs/")
+                .build(),
+            StorageOptions.http()
+                .setCredentials(NoCredentials.getInstance())
+                .setProjectId("test-project")
+                .setHost("https://proxy.example.com/storage/v1/")
+                .build(),
+            StorageOptions.http()
+                .setCredentials(NoCredentials.getInstance())
+                .setProjectId("test-project")
+                .setHost("https://proxy.example.com/storage/v1-mirror/")
+                .build(),
+            StorageOptions.http()
+                .setCredentials(NoCredentials.getInstance())
+                .setProjectId("test-project")
+                .setHost("https://proxy.example.com/storage/v1beta/")
+                .build());
+
+    JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
+    for (StorageOptions options : nonPreprodConfigs) {
+      HttpTransport transport =
+          ((HttpTransportOptions) options.getTransportOptions()).getHttpTransportFactory().create();
+      Storage baseline =
+          new Storage.Builder(transport, jsonFactory, null)
+              .setRootUrl(options.getHost())
+              .setApplicationName(options.getApplicationName())
+              .build();
+      Storage actual = ((HttpStorageRpc) options.getRpc()).getStorage();
+
+      assertThat(actual.getRootUrl()).isEqualTo(baseline.getRootUrl());
+      assertThat(actual.getServicePath()).isEqualTo(baseline.getServicePath());
+      assertThat(actual.getBaseUrl()).isEqualTo(baseline.getBaseUrl());
+      assertThat(actual.objects().get("b", "o").buildHttpRequestUrl())
+          .isEqualTo(baseline.objects().get("b", "o").buildHttpRequestUrl());
+    }
   }
 }
