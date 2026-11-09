@@ -232,6 +232,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -304,6 +305,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -376,6 +378,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -455,6 +458,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -534,6 +538,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -615,6 +620,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -696,6 +702,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -730,6 +737,7 @@ public class AgentServiceClientHttpJsonTest {
             .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
             .setEvaluationSettings(EvaluationSettings.newBuilder().build())
             .addAllValidationErrors(new ArrayList<String>())
+            .setDashboardSettings(DashboardSettings.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -790,6 +798,7 @@ public class AgentServiceClientHttpJsonTest {
               .addAllEvaluationPersonas(new ArrayList<EvaluationPersona>())
               .setEvaluationSettings(EvaluationSettings.newBuilder().build())
               .addAllValidationErrors(new ArrayList<String>())
+              .setDashboardSettings(DashboardSettings.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateApp(app, updateMask);
@@ -2630,6 +2639,7 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2682,6 +2692,7 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3142,6 +3153,7 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3196,6 +3208,7 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3250,6 +3263,7 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3306,6 +3320,7 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3362,6 +3377,7 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3376,6 +3392,7 @@ public class AgentServiceClientHttpJsonTest {
             .setEtag("etag3123477")
             .setGeneratedSummary("generatedSummary-323053801")
             .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+            .setReadOnly(true)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3416,6 +3433,7 @@ public class AgentServiceClientHttpJsonTest {
               .setEtag("etag3123477")
               .setGeneratedSummary("generatedSummary-323053801")
               .setToolFakeConfig(ToolFakeConfig.newBuilder().build())
+              .setReadOnly(true)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateTool(tool, updateMask);
@@ -4197,6 +4215,8 @@ public class AgentServiceClientHttpJsonTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4252,6 +4272,8 @@ public class AgentServiceClientHttpJsonTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4309,6 +4331,8 @@ public class AgentServiceClientHttpJsonTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4366,6 +4390,8 @@ public class AgentServiceClientHttpJsonTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4423,6 +4449,8 @@ public class AgentServiceClientHttpJsonTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4482,6 +4510,8 @@ public class AgentServiceClientHttpJsonTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4541,6 +4571,8 @@ public class AgentServiceClientHttpJsonTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4558,6 +4590,8 @@ public class AgentServiceClientHttpJsonTest {
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
             .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
             .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+            .setModelSettings(ModelSettings.newBuilder().build())
+            .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -4601,6 +4635,8 @@ public class AgentServiceClientHttpJsonTest {
               .setExperimentConfig(ExperimentConfig.newBuilder().build())
               .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
               .setInstagramCredentials(InstagramCredentials.newBuilder().build())
+              .setModelSettings(ModelSettings.newBuilder().build())
+              .setAgentRegistryDeployment(AgentRegistryDeployment.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDeployment(deployment, updateMask);
@@ -5385,6 +5421,7 @@ public class AgentServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreator("creator1028554796")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setSnapshot(AppSnapshot.newBuilder().build())
             .setEtag("etag3123477")
             .build();
@@ -5435,6 +5472,7 @@ public class AgentServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreator("creator1028554796")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setSnapshot(AppSnapshot.newBuilder().build())
             .setEtag("etag3123477")
             .build();
@@ -5487,6 +5525,7 @@ public class AgentServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreator("creator1028554796")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setSnapshot(AppSnapshot.newBuilder().build())
             .setEtag("etag3123477")
             .build();
@@ -5539,6 +5578,7 @@ public class AgentServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreator("creator1028554796")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setSnapshot(AppSnapshot.newBuilder().build())
             .setEtag("etag3123477")
             .build();
@@ -5591,6 +5631,7 @@ public class AgentServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreator("creator1028554796")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setSnapshot(AppSnapshot.newBuilder().build())
             .setEtag("etag3123477")
             .build();
@@ -5645,6 +5686,7 @@ public class AgentServiceClientHttpJsonTest {
             .setDescription("description-1724546052")
             .setCreator("creator1028554796")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .setSnapshot(AppSnapshot.newBuilder().build())
             .setEtag("etag3123477")
             .build();
@@ -5684,6 +5726,80 @@ public class AgentServiceClientHttpJsonTest {
       AppVersion appVersion = AppVersion.newBuilder().build();
       String appVersionId = "appVersionId303221490";
       client.createAppVersion(parent, appVersion, appVersionId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateAppVersionTest() throws Exception {
+    AppVersion expectedResponse =
+        AppVersion.newBuilder()
+            .setName(AppVersionName.of("[PROJECT]", "[LOCATION]", "[APP]", "[VERSION]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreator("creator1028554796")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSnapshot(AppSnapshot.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AppVersion appVersion =
+        AppVersion.newBuilder()
+            .setName(AppVersionName.of("[PROJECT]", "[LOCATION]", "[APP]", "[VERSION]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setCreator("creator1028554796")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSnapshot(AppSnapshot.newBuilder().build())
+            .setEtag("etag3123477")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AppVersion actualResponse = client.updateAppVersion(appVersion, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateAppVersionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AppVersion appVersion =
+          AppVersion.newBuilder()
+              .setName(
+                  AppVersionName.of("[PROJECT]", "[LOCATION]", "[APP]", "[VERSION]").toString())
+              .setDisplayName("displayName1714148973")
+              .setDescription("description-1724546052")
+              .setCreator("creator1028554796")
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setSnapshot(AppSnapshot.newBuilder().build())
+              .setEtag("etag3123477")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAppVersion(appVersion, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

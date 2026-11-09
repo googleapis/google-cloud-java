@@ -160,4 +160,35 @@ class RowBuilderShimTest {
                     RowCell.create("f1", col, 1_000, ImmutableList.of("lbl"), val1),
                     RowCell.create("f2", col, 2_000, ImmutableList.of("lbl"), val2))));
   }
+
+  @Test
+  void buildRowFromProto_passesCellValueSizeToStartCell() {
+    ByteString key = ByteString.copyFromUtf8("key");
+    ByteString col = ByteString.copyFromUtf8("col");
+    ByteString val = ByteString.copyFromUtf8("hello-world");
+
+    Row proto =
+        Row.newBuilder()
+            .setKey(key)
+            .addFamilies(
+                com.google.bigtable.v2.Family.newBuilder()
+                    .setName("f1")
+                    .addColumns(
+                        com.google.bigtable.v2.Column.newBuilder()
+                            .setQualifier(col)
+                            .addCells(
+                                com.google.bigtable.v2.Cell.newBuilder()
+                                    .setTimestampMicros(1_000)
+                                    .setValue(val)
+                                    .addLabels("lbl"))))
+            .build();
+
+    RowBuilderShim.buildRowFromProto(adapter, proto);
+
+    verify(rowBuilder).startRow(key);
+    verify(rowBuilder).startCell("f1", col, 1_000L, ImmutableList.of("lbl"), val.size());
+    verify(rowBuilder).cellValue(val);
+    verify(rowBuilder).finishCell();
+    verify(rowBuilder).finishRow();
+  }
 }

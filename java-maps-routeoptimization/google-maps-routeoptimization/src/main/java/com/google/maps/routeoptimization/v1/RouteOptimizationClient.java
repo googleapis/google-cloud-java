@@ -126,8 +126,7 @@ import org.jspecify.annotations.Nullable;
  *    <tr>
  *      <td><p> OptimizeToursLongRunning</td>
  *      <td><p> This is a variant of the [OptimizeTours][google.maps.routeoptimization.v1.RouteOptimization.OptimizeTours] method designed for optimizations with large timeout values. It should be preferred over the `OptimizeTours` method for optimizations that take longer than a few minutes.
- * <p>  The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type is [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata]. The [response][google.longrunning.Operation.response] field type is [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse], if successful.
- * <p>  Experimental: See https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for more details.</td>
+ * <p>  The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type is [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata]. The [response][google.longrunning.Operation.response] field type is [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse], if successful.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -145,8 +144,7 @@ import org.jspecify.annotations.Nullable;
  *      <td><p> This is a variant of the [OptimizeToursLongRunning][google.maps.routeoptimization.v1.RouteOptimization.OptimizeToursLongRunning] method designed for optimizations with large timeout values and large input/output sizes.
  * <p>  The client specifies the URI of the `OptimizeToursRequest` stored in Google Cloud Storage and the server writes the `OptimizeToursResponse` to a client-specified Google Cloud Storage URI.
  * <p>  This method should be preferred over the `OptimizeTours` method for optimizations that take longer than a few minutes and input/output sizes that are larger than 8MB, though it can be used for shorter and smaller optimizations as well.
- * <p>  The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type is [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata]. The [response][google.longrunning.Operation.response] field type is [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse], if successful.
- * <p>  Experimental: See https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for more details.</td>
+ * <p>  The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type is [OptimizeToursUriMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata]. The [response][google.longrunning.Operation.response] field type is [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse], if successful.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -556,10 +554,6 @@ public class RouteOptimizationClient implements BackgroundResource {
    * The [response][google.longrunning.Operation.response] field type is
    * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse], if successful.
    *
-   * <p>Experimental: See
-   * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for
-   * more details.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -614,10 +608,6 @@ public class RouteOptimizationClient implements BackgroundResource {
    * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursLongRunningMetadata].
    * The [response][google.longrunning.Operation.response] field type is
    * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse], if successful.
-   *
-   * <p>Experimental: See
-   * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for
-   * more details.
    *
    * <p>Sample code:
    *
@@ -674,10 +664,6 @@ public class RouteOptimizationClient implements BackgroundResource {
    * The [response][google.longrunning.Operation.response] field type is
    * [OptimizeToursResponse][google.maps.routeoptimization.v1.OptimizeToursResponse], if successful.
    *
-   * <p>Experimental: See
-   * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for
-   * more details.
-   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -733,15 +719,10 @@ public class RouteOptimizationClient implements BackgroundResource {
    * <p>The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name
    * of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
    * progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type
-   * is
-   * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
-   * The [response][google.longrunning.Operation.response] field type is
+   * is [OptimizeToursUriMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata]. The
+   * [response][google.longrunning.Operation.response] field type is
    * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse], if
    * successful.
-   *
-   * <p>Experimental: See
-   * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for
-   * more details.
    *
    * <p>Sample code:
    *
@@ -788,15 +769,10 @@ public class RouteOptimizationClient implements BackgroundResource {
    * <p>The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name
    * of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
    * progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type
-   * is
-   * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
-   * The [response][google.longrunning.Operation.response] field type is
+   * is [OptimizeToursUriMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata]. The
+   * [response][google.longrunning.Operation.response] field type is
    * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse], if
    * successful.
-   *
-   * <p>Experimental: See
-   * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for
-   * more details.
    *
    * <p>Sample code:
    *
@@ -843,15 +819,10 @@ public class RouteOptimizationClient implements BackgroundResource {
    * <p>The returned [long-running operation][google.longrunning.Operation] (LRO) will have a name
    * of the format `&lt;parent&gt;/operations/&lt;operation_id&gt;` and can be used to track
    * progress of the computation. The [metadata][google.longrunning.Operation.metadata] field type
-   * is
-   * [OptimizeToursLongRunningMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata].
-   * The [response][google.longrunning.Operation.response] field type is
+   * is [OptimizeToursUriMetadata][google.maps.routeoptimization.v1.OptimizeToursUriMetadata]. The
+   * [response][google.longrunning.Operation.response] field type is
    * [OptimizeToursUriResponse][google.maps.routeoptimization.v1.OptimizeToursUriResponse], if
    * successful.
-   *
-   * <p>Experimental: See
-   * https://developers.google.com/maps/tt/route-optimization/experimental/otlr/make-request for
-   * more details.
    *
    * <p>Sample code:
    *

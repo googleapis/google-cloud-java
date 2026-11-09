@@ -120,6 +120,44 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> StreamChatAiAssistant</td>
+ *      <td><p> Runs Arc, the AI assistant, for the specified assistant session in a streaming fashion.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamChatAiAssistantCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CancelAssistantTurn</td>
+ *      <td><p> Cancels the assistant session's in-flight turn, if any: the explicit user stop for a turn running detached from any stream. A cancel landing on a task that does not host the turn preempts it through the session turn epoch instead, ending it within one lease renewal.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelAssistantTurn(CancelAssistantTurnRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelAssistantTurnCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateOnboardingSuggestions</td>
+ *      <td><p> Generates personalized onboarding suggestions for the Arc zero state: classifies the requesting user (new / exploring / returning) from their assistant-session history in the app and returns suggestion chips (resume a session, continue work, or start something new) to render before any message is sent.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateOnboardingSuggestions(GenerateOnboardingSuggestionsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateOnboardingSuggestionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
  * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
@@ -426,6 +464,178 @@ public class SessionServiceClient implements BackgroundResource {
   public final BidiStreamingCallable<BidiSessionClientMessage, BidiSessionServerMessage>
       bidiRunSessionCallable() {
     return stub.bidiRunSessionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Runs Arc, the AI assistant, for the specified assistant session in a streaming fashion.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+   *   StreamChatAiAssistantRequest request =
+   *       StreamChatAiAssistantRequest.newBuilder()
+   *           .setName(
+   *               AssistantSessionName.of("[PROJECT]", "[LOCATION]", "[APP]", "[ASSISTANT_SESSION]")
+   *                   .toString())
+   *           .setMessage("message954925063")
+   *           .addAllAttachedGcsUris(new ArrayList<String>())
+   *           .setContextToken("contextToken1106626954")
+   *           .setConfirmationResponse(AssistantConfirmationResponse.newBuilder().build())
+   *           .addAllClientCapabilities(
+   *               new ArrayList<StreamChatAiAssistantRequest.ClientCapability>())
+   *           .setOperationCompletedEvent(OperationCompletedEvent.newBuilder().build())
+   *           .setResumeFromSequenceNumber(15486916)
+   *           .setAttachOnly(true)
+   *           .build();
+   *   ServerStream<StreamChatAiAssistantResponse> stream =
+   *       sessionServiceClient.streamChatAiAssistantCallable().call(request);
+   *   for (StreamChatAiAssistantResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final ServerStreamingCallable<StreamChatAiAssistantRequest, StreamChatAiAssistantResponse>
+      streamChatAiAssistantCallable() {
+    return stub.streamChatAiAssistantCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels the assistant session's in-flight turn, if any: the explicit user stop for a turn
+   * running detached from any stream. A cancel landing on a task that does not host the turn
+   * preempts it through the session turn epoch instead, ending it within one lease renewal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+   *   CancelAssistantTurnRequest request =
+   *       CancelAssistantTurnRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setTurnId("turnId-862429576")
+   *           .build();
+   *   CancelAssistantTurnResponse response = sessionServiceClient.cancelAssistantTurn(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CancelAssistantTurnResponse cancelAssistantTurn(CancelAssistantTurnRequest request) {
+    return cancelAssistantTurnCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels the assistant session's in-flight turn, if any: the explicit user stop for a turn
+   * running detached from any stream. A cancel landing on a task that does not host the turn
+   * preempts it through the session turn epoch instead, ending it within one lease renewal.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+   *   CancelAssistantTurnRequest request =
+   *       CancelAssistantTurnRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setTurnId("turnId-862429576")
+   *           .build();
+   *   ApiFuture<CancelAssistantTurnResponse> future =
+   *       sessionServiceClient.cancelAssistantTurnCallable().futureCall(request);
+   *   // Do something.
+   *   CancelAssistantTurnResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelAssistantTurnRequest, CancelAssistantTurnResponse>
+      cancelAssistantTurnCallable() {
+    return stub.cancelAssistantTurnCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates personalized onboarding suggestions for the Arc zero state: classifies the requesting
+   * user (new / exploring / returning) from their assistant-session history in the app and returns
+   * suggestion chips (resume a session, continue work, or start something new) to render before any
+   * message is sent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+   *   GenerateOnboardingSuggestionsRequest request =
+   *       GenerateOnboardingSuggestionsRequest.newBuilder()
+   *           .setName(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .setMaxSuggestions(618824852)
+   *           .build();
+   *   GenerateOnboardingSuggestionsResponse response =
+   *       sessionServiceClient.generateOnboardingSuggestions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateOnboardingSuggestionsResponse generateOnboardingSuggestions(
+      GenerateOnboardingSuggestionsRequest request) {
+    return generateOnboardingSuggestionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates personalized onboarding suggestions for the Arc zero state: classifies the requesting
+   * user (new / exploring / returning) from their assistant-session history in the app and returns
+   * suggestion chips (resume a session, continue work, or start something new) to render before any
+   * message is sent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SessionServiceClient sessionServiceClient = SessionServiceClient.create()) {
+   *   GenerateOnboardingSuggestionsRequest request =
+   *       GenerateOnboardingSuggestionsRequest.newBuilder()
+   *           .setName(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .setMaxSuggestions(618824852)
+   *           .build();
+   *   ApiFuture<GenerateOnboardingSuggestionsResponse> future =
+   *       sessionServiceClient.generateOnboardingSuggestionsCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateOnboardingSuggestionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GenerateOnboardingSuggestionsRequest, GenerateOnboardingSuggestionsResponse>
+      generateOnboardingSuggestionsCallable() {
+    return stub.generateOnboardingSuggestionsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

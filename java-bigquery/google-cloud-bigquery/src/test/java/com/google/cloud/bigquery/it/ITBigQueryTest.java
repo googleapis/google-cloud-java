@@ -1236,8 +1236,12 @@ class ITBigQueryTest {
 
   @Test
   void testLosslessMaxTimestampIntegration() throws InterruptedException {
-    String query = "SELECT TIMESTAMP '9999-12-31 23:59:59.999999 UTC' as max_ts";
-    QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
+    // Two rows, one per page, so the second page is read through tabledata.list.
+    String query =
+        "SELECT max_ts FROM UNNEST([TIMESTAMP '9999-12-31 23:59:59.999999 UTC',"
+            + " TIMESTAMP '9999-12-31 23:59:59.999999 UTC']) AS max_ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query).setMaxResults(1L).build();
 
     // 1. Test lossless 64-bit integer parsing (useInt64Timestamps = true)
     DataFormatOptions losslessOptions =
@@ -1249,7 +1253,7 @@ class ITBigQueryTest {
             .getService();
 
     TableResult losslessResult = losslessBigQuery.query(config);
-    assertEquals(1L, losslessResult.getTotalRows());
+    assertEquals(2L, losslessResult.getTotalRows());
     for (FieldValueList row : losslessResult.iterateAll()) {
       long exactMicros = row.get("max_ts").getTimestampValue();
       assertEquals(253402300799999999L, exactMicros);
@@ -1262,7 +1266,7 @@ class ITBigQueryTest {
         bigquery.getOptions().toBuilder().setDataFormatOptions(floatOptions).build().getService();
 
     TableResult floatResult = floatBigQuery.query(config);
-    assertEquals(1L, floatResult.getTotalRows());
+    assertEquals(2L, floatResult.getTotalRows());
     for (FieldValueList row : floatResult.iterateAll()) {
       long roundedMicros = row.get("max_ts").getTimestampValue();
       assertEquals(253402300800000000L, roundedMicros);
@@ -1277,10 +1281,25 @@ class ITBigQueryTest {
         bigquery.getOptions().toBuilder().setDataFormatOptions(isoOptions).build().getService();
 
     TableResult isoResult = isoBigQuery.query(config);
-    assertEquals(1L, isoResult.getTotalRows());
+    assertEquals(2L, isoResult.getTotalRows());
     for (FieldValueList row : isoResult.iterateAll()) {
       String isoValue = row.get("max_ts").getStringValue();
       assertEquals("9999-12-31T23:59:59.999999Z", isoValue);
+    }
+
+    // 4. Test INT64 timestamp output format
+    DataFormatOptions int64Options =
+        DataFormatOptions.newBuilder()
+            .timestampFormatOptions(DataFormatOptions.TimestampFormatOptions.INT64)
+            .build();
+    BigQuery int64BigQuery =
+        bigquery.getOptions().toBuilder().setDataFormatOptions(int64Options).build().getService();
+
+    TableResult int64Result = int64BigQuery.query(config);
+    assertEquals(2L, int64Result.getTotalRows());
+    for (FieldValueList row : int64Result.iterateAll()) {
+      long exactMicros = row.get("max_ts").getTimestampValue();
+      assertEquals(253402300799999999L, exactMicros);
     }
   }
 

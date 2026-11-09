@@ -1165,7 +1165,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=744
+   *     google/cloud/memorystore/v1/memorystore.proto;l=836
    * @return Whether the ondemandMaintenance field is set.
    */
   @java.lang.Deprecated
@@ -1183,7 +1183,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=744
+   *     google/cloud/memorystore/v1/memorystore.proto;l=836
    * @return The ondemandMaintenance.
    */
   @java.lang.Deprecated
@@ -1776,7 +1776,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-   *     See google/cloud/memorystore/v1/memorystore.proto;l=825
+   *     See google/cloud/memorystore/v1/memorystore.proto;l=917
    * @return The allowFewerZonesDeployment.
    */
   @java.lang.Deprecated
@@ -1950,6 +1950,97 @@ public interface InstanceOrBuilder
    * </code>
    */
   com.google.cloud.memorystore.v1.MigrationConfigOrBuilder getMigrationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ACL policy for the instance.
+   * Format: projects/{project}/locations/{location}/aclPolicies/{acl_policy}
+   * </pre>
+   *
+   * <code>
+   * optional string acl_policy = 60 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the aclPolicy field is set.
+   */
+  boolean hasAclPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ACL policy for the instance.
+   * Format: projects/{project}/locations/{location}/aclPolicies/{acl_policy}
+   * </pre>
+   *
+   * <code>
+   * optional string acl_policy = 60 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The aclPolicy.
+   */
+  java.lang.String getAclPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ACL policy for the instance.
+   * Format: projects/{project}/locations/{location}/aclPolicies/{acl_policy}
+   * </pre>
+   *
+   * <code>
+   * optional string acl_policy = 60 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for aclPolicy.
+   */
+  com.google.protobuf.ByteString getAclPolicyBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the applied ACL policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the aclPolicyInfo field is set.
+   */
+  boolean hasAclPolicyInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the applied ACL policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The aclPolicyInfo.
+   */
+  com.google.cloud.memorystore.v1.AclPolicyInfo getAclPolicyInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the applied ACL policy.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.memorystore.v1.AclPolicyInfo acl_policy_info = 62 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.memorystore.v1.AclPolicyInfoOrBuilder getAclPolicyInfoOrBuilder();
 
   com.google.cloud.memorystore.v1.Instance.ImportSourcesCase getImportSourcesCase();
 }

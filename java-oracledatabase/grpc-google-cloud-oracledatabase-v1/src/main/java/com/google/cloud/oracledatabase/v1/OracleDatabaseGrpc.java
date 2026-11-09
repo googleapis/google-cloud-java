@@ -2029,6 +2029,191 @@ public final class OracleDatabaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest,
+          com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+      getListOdbDnsZonesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListOdbDnsZones",
+      requestType = com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest.class,
+      responseType = com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest,
+          com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+      getListOdbDnsZonesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest,
+            com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+        getListOdbDnsZonesMethod;
+    if ((getListOdbDnsZonesMethod = OracleDatabaseGrpc.getListOdbDnsZonesMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getListOdbDnsZonesMethod = OracleDatabaseGrpc.getListOdbDnsZonesMethod) == null) {
+          OracleDatabaseGrpc.getListOdbDnsZonesMethod =
+              getListOdbDnsZonesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest,
+                          com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListOdbDnsZones"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("ListOdbDnsZones"))
+                      .build();
+        }
+      }
+    }
+    return getListOdbDnsZonesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest,
+          com.google.cloud.oracledatabase.v1.OdbDnsZone>
+      getGetOdbDnsZoneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetOdbDnsZone",
+      requestType = com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest.class,
+      responseType = com.google.cloud.oracledatabase.v1.OdbDnsZone.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest,
+          com.google.cloud.oracledatabase.v1.OdbDnsZone>
+      getGetOdbDnsZoneMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest,
+            com.google.cloud.oracledatabase.v1.OdbDnsZone>
+        getGetOdbDnsZoneMethod;
+    if ((getGetOdbDnsZoneMethod = OracleDatabaseGrpc.getGetOdbDnsZoneMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getGetOdbDnsZoneMethod = OracleDatabaseGrpc.getGetOdbDnsZoneMethod) == null) {
+          OracleDatabaseGrpc.getGetOdbDnsZoneMethod =
+              getGetOdbDnsZoneMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest,
+                          com.google.cloud.oracledatabase.v1.OdbDnsZone>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetOdbDnsZone"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.OdbDnsZone.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("GetOdbDnsZone"))
+                      .build();
+        }
+      }
+    }
+    return getGetOdbDnsZoneMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest,
+          com.google.longrunning.Operation>
+      getCreateOdbDnsZoneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateOdbDnsZone",
+      requestType = com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest,
+          com.google.longrunning.Operation>
+      getCreateOdbDnsZoneMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest,
+            com.google.longrunning.Operation>
+        getCreateOdbDnsZoneMethod;
+    if ((getCreateOdbDnsZoneMethod = OracleDatabaseGrpc.getCreateOdbDnsZoneMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getCreateOdbDnsZoneMethod = OracleDatabaseGrpc.getCreateOdbDnsZoneMethod) == null) {
+          OracleDatabaseGrpc.getCreateOdbDnsZoneMethod =
+              getCreateOdbDnsZoneMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateOdbDnsZone"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("CreateOdbDnsZone"))
+                      .build();
+        }
+      }
+    }
+    return getCreateOdbDnsZoneMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest,
+          com.google.longrunning.Operation>
+      getDeleteOdbDnsZoneMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteOdbDnsZone",
+      requestType = com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest,
+          com.google.longrunning.Operation>
+      getDeleteOdbDnsZoneMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest,
+            com.google.longrunning.Operation>
+        getDeleteOdbDnsZoneMethod;
+    if ((getDeleteOdbDnsZoneMethod = OracleDatabaseGrpc.getDeleteOdbDnsZoneMethod) == null) {
+      synchronized (OracleDatabaseGrpc.class) {
+        if ((getDeleteOdbDnsZoneMethod = OracleDatabaseGrpc.getDeleteOdbDnsZoneMethod) == null) {
+          OracleDatabaseGrpc.getDeleteOdbDnsZoneMethod =
+              getDeleteOdbDnsZoneMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteOdbDnsZone"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new OracleDatabaseMethodDescriptorSupplier("DeleteOdbDnsZone"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteOdbDnsZoneMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.oracledatabase.v1.ListExadbVmClustersRequest,
           com.google.cloud.oracledatabase.v1.ListExadbVmClustersResponse>
       getListExadbVmClustersMethod;
@@ -4736,6 +4921,64 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Lists all the ODB DNS Zones in a given ODB Network.
+     * </pre>
+     */
+    default void listOdbDnsZones(
+        com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListOdbDnsZonesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ODB DNS Zone.
+     * </pre>
+     */
+    default void getOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.OdbDnsZone>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetOdbDnsZoneMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ODB DNS Zone in a given ODB Network.
+     * </pre>
+     */
+    default void createOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateOdbDnsZoneMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ODB DNS Zone.
+     * </pre>
+     */
+    default void deleteOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteOdbDnsZoneMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all the Exadb (Exascale) VM Clusters for the given project and
      * location.
      * </pre>
@@ -6047,6 +6290,72 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Lists all the ODB DNS Zones in a given ODB Network.
+     * </pre>
+     */
+    public void listOdbDnsZones(
+        com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListOdbDnsZonesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ODB DNS Zone.
+     * </pre>
+     */
+    public void getOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.OdbDnsZone>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetOdbDnsZoneMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ODB DNS Zone in a given ODB Network.
+     * </pre>
+     */
+    public void createOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateOdbDnsZoneMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ODB DNS Zone.
+     * </pre>
+     */
+    public void deleteOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteOdbDnsZoneMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all the Exadb (Exascale) VM Clusters for the given project and
      * location.
      * </pre>
@@ -7329,6 +7638,62 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Lists all the ODB DNS Zones in a given ODB Network.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse listOdbDnsZones(
+        com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListOdbDnsZonesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.OdbDnsZone getOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetOdbDnsZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ODB DNS Zone in a given ODB Network.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateOdbDnsZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteOdbDnsZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all the Exadb (Exascale) VM Clusters for the given project and
      * location.
      * </pre>
@@ -8462,6 +8827,58 @@ public final class OracleDatabaseGrpc {
         com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteOdbSubnetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the ODB DNS Zones in a given ODB Network.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse listOdbDnsZones(
+        com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListOdbDnsZonesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.cloud.oracledatabase.v1.OdbDnsZone getOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetOdbDnsZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ODB DNS Zone in a given ODB Network.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateOdbDnsZoneMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteOdbDnsZone(
+        com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteOdbDnsZoneMethod(), getCallOptions(), request);
     }
 
     /**
@@ -9609,6 +10026,60 @@ public final class OracleDatabaseGrpc {
      *
      *
      * <pre>
+     * Lists all the ODB DNS Zones in a given ODB Network.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>
+        listOdbDnsZones(com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListOdbDnsZonesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.oracledatabase.v1.OdbDnsZone>
+        getOdbDnsZone(com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetOdbDnsZoneMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ODB DNS Zone in a given ODB Network.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createOdbDnsZone(com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateOdbDnsZoneMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ODB DNS Zone.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteOdbDnsZone(com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteOdbDnsZoneMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists all the Exadb (Exascale) VM Clusters for the given project and
      * location.
      * </pre>
@@ -10241,46 +10712,50 @@ public final class OracleDatabaseGrpc {
   private static final int METHODID_GET_ODB_SUBNET = 37;
   private static final int METHODID_CREATE_ODB_SUBNET = 38;
   private static final int METHODID_DELETE_ODB_SUBNET = 39;
-  private static final int METHODID_LIST_EXADB_VM_CLUSTERS = 40;
-  private static final int METHODID_GET_EXADB_VM_CLUSTER = 41;
-  private static final int METHODID_CREATE_EXADB_VM_CLUSTER = 42;
-  private static final int METHODID_DELETE_EXADB_VM_CLUSTER = 43;
-  private static final int METHODID_UPDATE_EXADB_VM_CLUSTER = 44;
-  private static final int METHODID_REMOVE_VIRTUAL_MACHINE_EXADB_VM_CLUSTER = 45;
-  private static final int METHODID_LIST_EXASCALE_DB_STORAGE_VAULTS = 46;
-  private static final int METHODID_GET_EXASCALE_DB_STORAGE_VAULT = 47;
-  private static final int METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT = 48;
-  private static final int METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT = 49;
-  private static final int METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES = 50;
-  private static final int METHODID_LIST_DATABASES = 51;
-  private static final int METHODID_GET_DATABASE = 52;
-  private static final int METHODID_LIST_PLUGGABLE_DATABASES = 53;
-  private static final int METHODID_GET_PLUGGABLE_DATABASE = 54;
-  private static final int METHODID_LIST_DB_SYSTEMS = 55;
-  private static final int METHODID_GET_DB_SYSTEM = 56;
-  private static final int METHODID_CREATE_DB_SYSTEM = 57;
-  private static final int METHODID_DELETE_DB_SYSTEM = 58;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENTS = 59;
-  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT = 60;
-  private static final int METHODID_CREATE_GOLDENGATE_DEPLOYMENT = 61;
-  private static final int METHODID_DELETE_GOLDENGATE_DEPLOYMENT = 62;
-  private static final int METHODID_STOP_GOLDENGATE_DEPLOYMENT = 63;
-  private static final int METHODID_START_GOLDENGATE_DEPLOYMENT = 64;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTIONS = 65;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION = 66;
-  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION = 67;
-  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION = 68;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS = 69;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES = 70;
-  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS = 71;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_TYPES = 72;
-  private static final int METHODID_LIST_DB_VERSIONS = 73;
-  private static final int METHODID_LIST_DATABASE_CHARACTER_SETS = 74;
-  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_ASSIGNMENTS = 75;
-  private static final int METHODID_GET_GOLDENGATE_CONNECTION_ASSIGNMENT = 76;
-  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 77;
-  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT = 78;
-  private static final int METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT = 79;
+  private static final int METHODID_LIST_ODB_DNS_ZONES = 40;
+  private static final int METHODID_GET_ODB_DNS_ZONE = 41;
+  private static final int METHODID_CREATE_ODB_DNS_ZONE = 42;
+  private static final int METHODID_DELETE_ODB_DNS_ZONE = 43;
+  private static final int METHODID_LIST_EXADB_VM_CLUSTERS = 44;
+  private static final int METHODID_GET_EXADB_VM_CLUSTER = 45;
+  private static final int METHODID_CREATE_EXADB_VM_CLUSTER = 46;
+  private static final int METHODID_DELETE_EXADB_VM_CLUSTER = 47;
+  private static final int METHODID_UPDATE_EXADB_VM_CLUSTER = 48;
+  private static final int METHODID_REMOVE_VIRTUAL_MACHINE_EXADB_VM_CLUSTER = 49;
+  private static final int METHODID_LIST_EXASCALE_DB_STORAGE_VAULTS = 50;
+  private static final int METHODID_GET_EXASCALE_DB_STORAGE_VAULT = 51;
+  private static final int METHODID_CREATE_EXASCALE_DB_STORAGE_VAULT = 52;
+  private static final int METHODID_DELETE_EXASCALE_DB_STORAGE_VAULT = 53;
+  private static final int METHODID_LIST_DB_SYSTEM_INITIAL_STORAGE_SIZES = 54;
+  private static final int METHODID_LIST_DATABASES = 55;
+  private static final int METHODID_GET_DATABASE = 56;
+  private static final int METHODID_LIST_PLUGGABLE_DATABASES = 57;
+  private static final int METHODID_GET_PLUGGABLE_DATABASE = 58;
+  private static final int METHODID_LIST_DB_SYSTEMS = 59;
+  private static final int METHODID_GET_DB_SYSTEM = 60;
+  private static final int METHODID_CREATE_DB_SYSTEM = 61;
+  private static final int METHODID_DELETE_DB_SYSTEM = 62;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENTS = 63;
+  private static final int METHODID_GET_GOLDENGATE_DEPLOYMENT = 64;
+  private static final int METHODID_CREATE_GOLDENGATE_DEPLOYMENT = 65;
+  private static final int METHODID_DELETE_GOLDENGATE_DEPLOYMENT = 66;
+  private static final int METHODID_STOP_GOLDENGATE_DEPLOYMENT = 67;
+  private static final int METHODID_START_GOLDENGATE_DEPLOYMENT = 68;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTIONS = 69;
+  private static final int METHODID_GET_GOLDENGATE_CONNECTION = 70;
+  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION = 71;
+  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION = 72;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_VERSIONS = 73;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_TYPES = 74;
+  private static final int METHODID_LIST_GOLDENGATE_DEPLOYMENT_ENVIRONMENTS = 75;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_TYPES = 76;
+  private static final int METHODID_LIST_DB_VERSIONS = 77;
+  private static final int METHODID_LIST_DATABASE_CHARACTER_SETS = 78;
+  private static final int METHODID_LIST_GOLDENGATE_CONNECTION_ASSIGNMENTS = 79;
+  private static final int METHODID_GET_GOLDENGATE_CONNECTION_ASSIGNMENT = 80;
+  private static final int METHODID_CREATE_GOLDENGATE_CONNECTION_ASSIGNMENT = 81;
+  private static final int METHODID_DELETE_GOLDENGATE_CONNECTION_ASSIGNMENT = 82;
+  private static final int METHODID_TEST_GOLDENGATE_CONNECTION_ASSIGNMENT = 83;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -10539,6 +11014,29 @@ public final class OracleDatabaseGrpc {
         case METHODID_DELETE_ODB_SUBNET:
           serviceImpl.deleteOdbSubnet(
               (com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_ODB_DNS_ZONES:
+          serviceImpl.listOdbDnsZones(
+              (com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_ODB_DNS_ZONE:
+          serviceImpl.getOdbDnsZone(
+              (com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.oracledatabase.v1.OdbDnsZone>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_ODB_DNS_ZONE:
+          serviceImpl.createOdbDnsZone(
+              (com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_ODB_DNS_ZONE:
+          serviceImpl.deleteOdbDnsZone(
+              (com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_EXADB_VM_CLUSTERS:
@@ -11085,6 +11583,32 @@ public final class OracleDatabaseGrpc {
                     com.google.cloud.oracledatabase.v1.DeleteOdbSubnetRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_ODB_SUBNET)))
         .addMethod(
+            getListOdbDnsZonesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.ListOdbDnsZonesRequest,
+                    com.google.cloud.oracledatabase.v1.ListOdbDnsZonesResponse>(
+                    service, METHODID_LIST_ODB_DNS_ZONES)))
+        .addMethod(
+            getGetOdbDnsZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.GetOdbDnsZoneRequest,
+                    com.google.cloud.oracledatabase.v1.OdbDnsZone>(
+                    service, METHODID_GET_ODB_DNS_ZONE)))
+        .addMethod(
+            getCreateOdbDnsZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.CreateOdbDnsZoneRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_ODB_DNS_ZONE)))
+        .addMethod(
+            getDeleteOdbDnsZoneMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.oracledatabase.v1.DeleteOdbDnsZoneRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_ODB_DNS_ZONE)))
+        .addMethod(
             getListExadbVmClustersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -11449,6 +11973,10 @@ public final class OracleDatabaseGrpc {
                       .addMethod(getGetOdbSubnetMethod())
                       .addMethod(getCreateOdbSubnetMethod())
                       .addMethod(getDeleteOdbSubnetMethod())
+                      .addMethod(getListOdbDnsZonesMethod())
+                      .addMethod(getGetOdbDnsZoneMethod())
+                      .addMethod(getCreateOdbDnsZoneMethod())
+                      .addMethod(getDeleteOdbDnsZoneMethod())
                       .addMethod(getListExadbVmClustersMethod())
                       .addMethod(getGetExadbVmClusterMethod())
                       .addMethod(getCreateExadbVmClusterMethod())

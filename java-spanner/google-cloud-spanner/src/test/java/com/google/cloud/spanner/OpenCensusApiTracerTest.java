@@ -49,6 +49,7 @@ import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Assume;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -95,6 +96,11 @@ public class OpenCensusApiTracerTest extends AbstractMockServerTest {
     // Remove the final modifier from the 'traceComponent' field.
     modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
     field.set(null, failOnOverkillTraceComponent);
+  }
+
+  @AfterClass
+  public static void resetTracing() {
+    SpannerOptions.resetActiveTracingFramework();
   }
 
   @BeforeClass

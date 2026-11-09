@@ -24,6 +24,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1.AdvancedCompleteQueryRequest;
+import com.google.cloud.discoveryengine.v1.AdvancedCompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1.CompleteQueryRequest;
 import com.google.cloud.discoveryengine.v1.CompleteQueryResponse;
 import com.google.cloud.discoveryengine.v1.ImportCompletionSuggestionsMetadata;
@@ -65,6 +67,19 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                   ProtoUtils.marshaller(CompleteQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CompleteQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQueryMethodDescriptor =
+          MethodDescriptor.<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.discoveryengine.v1.CompletionService/AdvancedCompleteQuery")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AdvancedCompleteQueryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AdvancedCompleteQueryResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -118,6 +133,8 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
               .build();
 
   private final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable;
+  private final UnaryCallable<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQueryCallable;
   private final UnaryCallable<ImportSuggestionDenyListEntriesRequest, Operation>
       importSuggestionDenyListEntriesCallable;
   private final OperationCallable<
@@ -202,6 +219,20 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getDataStore())
             .build();
+    GrpcCallSettings<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+        advancedCompleteQueryTransportSettings =
+            GrpcCallSettings
+                .<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>newBuilder()
+                .setMethodDescriptor(advancedCompleteQueryMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "completion_config", String.valueOf(request.getCompletionConfig()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getCompletionConfig())
+                .build();
     GrpcCallSettings<ImportSuggestionDenyListEntriesRequest, Operation>
         importSuggestionDenyListEntriesTransportSettings =
             GrpcCallSettings.<ImportSuggestionDenyListEntriesRequest, Operation>newBuilder()
@@ -254,6 +285,11 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
     this.completeQueryCallable =
         callableFactory.createUnaryCallable(
             completeQueryTransportSettings, settings.completeQuerySettings(), clientContext);
+    this.advancedCompleteQueryCallable =
+        callableFactory.createUnaryCallable(
+            advancedCompleteQueryTransportSettings,
+            settings.advancedCompleteQuerySettings(),
+            clientContext);
     this.importSuggestionDenyListEntriesCallable =
         callableFactory.createUnaryCallable(
             importSuggestionDenyListEntriesTransportSettings,
@@ -310,6 +346,12 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
   @Override
   public UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable() {
     return completeQueryCallable;
+  }
+
+  @Override
+  public UnaryCallable<AdvancedCompleteQueryRequest, AdvancedCompleteQueryResponse>
+      advancedCompleteQueryCallable() {
+    return advancedCompleteQueryCallable;
   }
 
   @Override

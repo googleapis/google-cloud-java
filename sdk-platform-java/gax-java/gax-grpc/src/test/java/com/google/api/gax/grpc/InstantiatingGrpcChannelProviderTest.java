@@ -37,6 +37,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder;
@@ -712,16 +714,19 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     FakeLogHandler logHandler = new FakeLogHandler();
     InstantiatingGrpcChannelProvider.LOG.setLevel(Level.FINE);
     InstantiatingGrpcChannelProvider.LOG.addHandler(logHandler);
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
     InstantiatingGrpcChannelProvider provider =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setAttemptDirectPathXds()
             .setAttemptDirectPath(true)
-            .setEnvProvider(name -> null)
-            .setHeaderProvider(
-                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
             .setExecutor(mock(Executor.class))
             .setEndpoint(DEFAULT_ENDPOINT)
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
             .build();
 
     TransportChannel transportChannel = provider.getTransportChannel();
@@ -741,16 +746,20 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     FakeLogHandler logHandler = new FakeLogHandler();
     InstantiatingGrpcChannelProvider.LOG.setLevel(Level.FINE);
     InstantiatingGrpcChannelProvider.LOG.addHandler(logHandler);
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
     InstantiatingGrpcChannelProvider provider =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setAttemptDirectPathXds()
             .setAttemptDirectPath(true)
             .setAllowNonDefaultServiceAccount(true)
-            .setHeaderProvider(
-                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
             .setExecutor(mock(Executor.class))
             .setEndpoint(DEFAULT_ENDPOINT)
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
             .build();
 
     TransportChannel transportChannel = provider.getTransportChannel();
@@ -932,6 +941,158 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     InstantiatingGrpcChannelProvider provider =
         new InstantiatingGrpcChannelProvider(builder, GCE_PRODUCTION_NAME_AFTER_2016);
     Truth.assertThat(provider.canUseDirectPath()).isFalse();
+  }
+
+  @Test
+  public void canUseDirectPath_attemptDirectPathXdsOverInterconnect_bypassesGceCheck() {
+    System.setProperty("os.name", "Not Linux");
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
+    InstantiatingGrpcChannelProvider.Builder builder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setCredentials(credentials)
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setEnvProvider(envProvider);
+    InstantiatingGrpcChannelProvider provider =
+        new InstantiatingGrpcChannelProvider(builder, "not-gce-product-name");
+    Truth.assertThat(provider.canUseDirectPath()).isTrue();
+  }
+
+  @Test
+  public void
+      canUseDirectPath_attemptDirectPathXdsOverInterconnect_directPathDisabled_returnsFalse() {
+    System.setProperty("os.name", "Not Linux");
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
+    InstantiatingGrpcChannelProvider.Builder builder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setAttemptDirectPath(false)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setCredentials(credentials)
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setEnvProvider(envProvider);
+    InstantiatingGrpcChannelProvider provider =
+        new InstantiatingGrpcChannelProvider(builder, "not-gce-product-name");
+    Truth.assertThat(provider.canUseDirectPath()).isFalse();
+  }
+
+  @Test
+  public void
+      canUseDirectPath_attemptDirectPathXdsOverInterconnect_nonGDUUniverseDomain_returnsFalse() {
+    System.setProperty("os.name", "Not Linux");
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
+    InstantiatingGrpcChannelProvider.Builder builder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setCredentials(credentials)
+            .setEndpoint("test.random.com:443")
+            .setEnvProvider(envProvider);
+    InstantiatingGrpcChannelProvider provider =
+        new InstantiatingGrpcChannelProvider(builder, "not-gce-product-name");
+    Truth.assertThat(provider.canUseDirectPath()).isFalse();
+  }
+
+  @Test
+  public void getTransportChannel_storageTarget_withInterconnect()
+      throws IOException, InterruptedException {
+    System.setProperty("os.name", "Not Linux");
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
+    final java.util.concurrent.atomic.AtomicReference<String> capturedTarget =
+        new java.util.concurrent.atomic.AtomicReference<>();
+    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
+        channelBuilder -> {
+          capturedTarget.set(extractTargetFromChannelBuilder(channelBuilder));
+          return channelBuilder;
+        };
+
+    InstantiatingGrpcChannelProvider.Builder builder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setCredentials(credentials)
+            .setEndpoint("storage.googleapis.com:443")
+            .setEnvProvider(envProvider)
+            .setChannelConfigurator(channelConfigurator);
+
+    InstantiatingGrpcChannelProvider provider =
+        new InstantiatingGrpcChannelProvider(builder, "not-gce-product-name");
+
+    InstantiatingGrpcChannelProvider configuredProvider =
+        (InstantiatingGrpcChannelProvider)
+            provider
+                .withHeaders(Collections.<String, String>emptyMap())
+                .withEndpoint("storage.googleapis.com:443");
+
+    TransportChannel transportChannel = configuredProvider.getTransportChannel();
+    transportChannel.shutdownNow();
+    transportChannel.awaitTermination(5, TimeUnit.SECONDS);
+
+    Truth.assertThat(capturedTarget.get())
+        .contains("google-c2p:///storage-direct.googleapis.com?force-xds");
+  }
+
+  @Test
+  public void getTransportChannel_storageTarget_withInterconnectAndNullCredentials()
+      throws IOException, InterruptedException {
+    System.setProperty("os.name", "Not Linux");
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+    final java.util.concurrent.atomic.AtomicReference<String> capturedTarget =
+        new java.util.concurrent.atomic.AtomicReference<>();
+    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
+        channelBuilder -> {
+          capturedTarget.set(extractTargetFromChannelBuilder(channelBuilder));
+          return channelBuilder;
+        };
+
+    InstantiatingGrpcChannelProvider.Builder builder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setCredentials(null)
+            .setEndpoint("storage.googleapis.com:443")
+            .setEnvProvider(envProvider)
+            .setChannelConfigurator(channelConfigurator);
+
+    InstantiatingGrpcChannelProvider provider =
+        new InstantiatingGrpcChannelProvider(builder, "not-gce-product-name");
+
+    InstantiatingGrpcChannelProvider configuredProvider =
+        (InstantiatingGrpcChannelProvider)
+            provider
+                .withHeaders(Collections.<String, String>emptyMap())
+                .withEndpoint("storage.googleapis.com:443");
+
+    TransportChannel transportChannel = configuredProvider.getTransportChannel();
+    transportChannel.shutdownNow();
+    transportChannel.awaitTermination(5, TimeUnit.SECONDS);
+
+    Truth.assertThat(capturedTarget.get())
+        .contains("google-c2p:///storage-direct.googleapis.com?force-xds");
   }
 
   @Test
@@ -1354,6 +1515,504 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     assertThat(provider.getBackgroundExecutor()).isEqualTo(mockExecutor);
   }
 
+  private static String extractTargetFromChannelBuilder(ManagedChannelBuilder<?> channelBuilder) {
+    try {
+      Class<?> nettyBuilderClass = channelBuilder.getClass();
+      java.lang.reflect.Field delegateField = null;
+      while (nettyBuilderClass != null && delegateField == null) {
+        try {
+          delegateField = nettyBuilderClass.getDeclaredField("delegate");
+        } catch (NoSuchFieldException e) {
+          try {
+            delegateField = nettyBuilderClass.getDeclaredField("managedChannelImplBuilder");
+          } catch (NoSuchFieldException e2) {
+            nettyBuilderClass = nettyBuilderClass.getSuperclass();
+          }
+        }
+      }
+      if (delegateField != null) {
+        delegateField.setAccessible(true);
+        Object delegate = delegateField.get(channelBuilder);
+        Class<?> delegateClass = delegate.getClass();
+        java.lang.reflect.Field targetField = null;
+        while (delegateClass != null && targetField == null) {
+          try {
+            targetField = delegateClass.getDeclaredField("target");
+          } catch (NoSuchFieldException e) {
+            delegateClass = delegateClass.getSuperclass();
+          }
+        }
+        if (targetField != null) {
+          targetField.setAccessible(true);
+          return (String) targetField.get(delegate);
+        }
+      }
+    } catch (Exception e) {
+      throw new RuntimeException(e);
+    }
+    return channelBuilder.toString();
+  }
+
+  @Test
+  void testLogDirectPathMisconfigXdsSetDirectPathNotSet() throws Exception {
+    FakeLogHandler logHandler = new FakeLogHandler();
+    InstantiatingGrpcChannelProvider.LOG.setLevel(Level.FINE);
+    InstantiatingGrpcChannelProvider.LOG.addHandler(logHandler);
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPathXds()
+            .setAttemptDirectPath(false)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class, Mockito.withSettings().withoutAnnotations()))
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
+            .build();
+
+    try {
+      provider.getTransportChannel();
+    } catch (Exception e) {
+      // ignore
+    }
+
+    assertThat(logHandler.getAllMessages())
+        .contains(
+            "DirectPath is misconfigured. The DirectPath XDS option was set, but the"
+                + " attemptDirectPath option was not. Please set both the attemptDirectPath and"
+                + " attemptDirectPathXds options.");
+    InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
+  }
+
+  @Test
+  void testLogDirectPathMisconfigDirectPathSetXdsNotSet() throws Exception {
+    FakeLogHandler logHandler = new FakeLogHandler();
+    InstantiatingGrpcChannelProvider.LOG.setLevel(Level.FINE);
+    InstantiatingGrpcChannelProvider.LOG.addHandler(logHandler);
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, Mockito.withSettings().withoutAnnotations());
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPath(true)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class, Mockito.withSettings().withoutAnnotations()))
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
+            .build();
+
+    try {
+      provider.getTransportChannel();
+    } catch (Exception e) {
+      // ignore
+    }
+
+    assertThat(logHandler.getAllMessages())
+        .contains(
+            "DirectPath is enabled, but DirectPath xDS is not. Please note that DirectPath will"
+                + " soon require xDS to be enabled. Please set the attemptDirectPathXds option.");
+    InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
+  }
+
+  @Test
+  void canUseDirectPath_interconnectEnabledButDirectPathDisabled_fallsBackToCloudPath()
+      throws Exception {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPath(false)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
+            .build();
+
+    Truth.assertThat(provider.canUseDirectPath()).isFalse();
+    ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
+    Truth.assertThat(extractTargetFromChannelBuilder(channelBuilder)).isEqualTo(DEFAULT_ENDPOINT);
+    Truth.assertThat(extractAuthorityFromChannelBuilder(channelBuilder)).isNull();
+    ManagedChannel channel = (ManagedChannel) channelBuilder.build();
+    try {
+      Truth.assertThat(channel.authority()).isEqualTo(DEFAULT_ENDPOINT);
+    } finally {
+      channel.shutdownNow();
+    }
+  }
+
+  @Test
+  void canUseDirectPath_interconnectAndDirectPathEnabledButNonGduUniverse_fallsBackToCloudPath()
+      throws Exception {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint("storage-direct.some-other-universe.com:443")
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
+            .build();
+
+    Truth.assertThat(provider.canUseDirectPath()).isFalse();
+    ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
+    Truth.assertThat(extractTargetFromChannelBuilder(channelBuilder))
+        .isEqualTo("storage-direct.some-other-universe.com:443");
+    Truth.assertThat(extractAuthorityFromChannelBuilder(channelBuilder)).isNull();
+    ManagedChannel channel = (ManagedChannel) channelBuilder.build();
+    try {
+      Truth.assertThat(channel.authority()).isEqualTo("storage-direct.some-other-universe.com:443");
+    } finally {
+      channel.shutdownNow();
+    }
+  }
+
+  @Test
+  void
+      createChannelBuilder_directPathOverInterconnect_storageEndpoint_rewritesTargetWithoutAuthorityOverride()
+          throws Exception {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint("storage.googleapis.com:443")
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
+            .build();
+
+    ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
+    Truth.assertThat(extractTargetFromChannelBuilder(channelBuilder))
+        .isEqualTo("google-c2p:///storage-direct.googleapis.com?force-xds");
+    Truth.assertThat(extractAuthorityFromChannelBuilder(channelBuilder)).isNull();
+    ManagedChannel channel = (ManagedChannel) channelBuilder.build();
+    try {
+      Truth.assertThat(channel.authority()).isEqualTo("storage-direct.googleapis.com");
+    } finally {
+      channel.shutdownNow();
+    }
+  }
+
+  @Test
+  void
+      createChannelBuilder_directPathOverInterconnect_storagePreprodSandboxEndpoint_rewritesTargetWithoutAuthorityOverride()
+          throws Exception {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint("storage-preprod.sandbox.googleapis.com:443")
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
+            .build();
+
+    ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
+    Truth.assertThat(extractTargetFromChannelBuilder(channelBuilder))
+        .isEqualTo("google-c2p:///storage-preprod-direct.sandbox.googleapis.com?force-xds");
+    Truth.assertThat(extractAuthorityFromChannelBuilder(channelBuilder)).isNull();
+    ManagedChannel channel = (ManagedChannel) channelBuilder.build();
+    try {
+      Truth.assertThat(channel.authority())
+          .isEqualTo("storage-preprod-direct.sandbox.googleapis.com");
+    } finally {
+      channel.shutdownNow();
+    }
+  }
+
+  @Test
+  void
+      createChannelBuilder_directPathOverInterconnect_bigtableEndpoint_rewritesTargetWithoutAuthorityOverride()
+          throws Exception {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+
+    // Test with bigtable.googleapis.com:443 (rewritten to bigtable-direct)
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint("bigtable.googleapis.com:443")
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
+            .build();
+
+    ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
+    Truth.assertThat(extractTargetFromChannelBuilder(channelBuilder))
+        .isEqualTo("google-c2p:///bigtable-direct.googleapis.com?force-xds");
+    Truth.assertThat(extractAuthorityFromChannelBuilder(channelBuilder)).isNull();
+    ManagedChannel channel = (ManagedChannel) channelBuilder.build();
+    try {
+      Truth.assertThat(channel.authority()).isEqualTo("bigtable-direct.googleapis.com");
+    } finally {
+      channel.shutdownNow();
+    }
+
+    // Also test if endpoint already has -direct infix
+    InstantiatingGrpcChannelProvider directProvider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint("bigtable-direct.googleapis.com:443")
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
+            .build();
+
+    ManagedChannelBuilder<?> directChannelBuilder = directProvider.createChannelBuilder();
+    Truth.assertThat(extractTargetFromChannelBuilder(directChannelBuilder))
+        .isEqualTo("google-c2p:///bigtable-direct.googleapis.com?force-xds");
+    Truth.assertThat(extractAuthorityFromChannelBuilder(directChannelBuilder)).isNull();
+    ManagedChannel directChannel = (ManagedChannel) directChannelBuilder.build();
+    try {
+      Truth.assertThat(directChannel.authority()).isEqualTo("bigtable-direct.googleapis.com");
+    } finally {
+      directChannel.shutdownNow();
+    }
+  }
+
+  @Test
+  void createChannelBuilder_directPathXdsOnGce_doesNotRewriteHost() throws Exception {
+    System.setProperty("os.name", "Linux");
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+
+    InstantiatingGrpcChannelProvider.Builder builder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXds()
+            .setAttemptDirectPathXdsOverInterconnect(false)
+            .setCredentials(computeEngineCredentials)
+            .setEndpoint("storage.googleapis.com:443")
+            .setEnvProvider(envProvider)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class));
+
+    InstantiatingGrpcChannelProvider provider =
+        new InstantiatingGrpcChannelProvider(builder, GCE_PRODUCTION_NAME_AFTER_2016);
+    Truth.assertThat(provider.canUseDirectPath()).isTrue();
+
+    ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
+    Truth.assertThat(extractTargetFromChannelBuilder(channelBuilder))
+        .isEqualTo("google-c2p:///storage.googleapis.com");
+    Truth.assertThat(extractAuthorityFromChannelBuilder(channelBuilder)).isNull();
+    ManagedChannel channel = (ManagedChannel) channelBuilder.build();
+    try {
+      Truth.assertThat(channel.authority()).isEqualTo("storage.googleapis.com");
+    } finally {
+      channel.shutdownNow();
+    }
+  }
+
+  @Test
+  void canUseDirectPath_interconnectEnabledViaEnvVar_bypassesGceCheckAndRewritesTarget()
+      throws Exception {
+    System.setProperty("os.name", "Not Linux");
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+    when(envProvider.getenv(
+            InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT))
+        .thenReturn("true");
+
+    // 1. Builder option not set (null)
+    InstantiatingGrpcChannelProvider.Builder unsetBuilder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setAttemptDirectPath(true)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint("storage.googleapis.com:443")
+            .setEnvProvider(envProvider);
+    InstantiatingGrpcChannelProvider unsetProvider =
+        new InstantiatingGrpcChannelProvider(unsetBuilder, "not-gce-product-name");
+
+    Truth.assertThat(unsetProvider.isDirectPathXdsEnabled()).isTrue();
+    Truth.assertThat(unsetProvider.canUseDirectPath()).isTrue();
+    ManagedChannelBuilder<?> unsetChannelBuilder = unsetProvider.createChannelBuilder();
+    Truth.assertThat(extractTargetFromChannelBuilder(unsetChannelBuilder))
+        .isEqualTo("google-c2p:///storage-direct.googleapis.com?force-xds");
+    ManagedChannel unsetChannel = (ManagedChannel) unsetChannelBuilder.build();
+    try {
+      Truth.assertThat(unsetChannel.authority()).isEqualTo("storage-direct.googleapis.com");
+    } finally {
+      unsetChannel.shutdownNow();
+    }
+
+    // 2. Builder option explicitly false (simulating GrpcStorageOptions default), env var overrides
+    when(envProvider.getenv(
+            InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT))
+        .thenReturn(" TRUE ");
+    InstantiatingGrpcChannelProvider.Builder falseBuilder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(false)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint("storage.googleapis.com:443")
+            .setEnvProvider(envProvider);
+    InstantiatingGrpcChannelProvider falseProvider =
+        new InstantiatingGrpcChannelProvider(falseBuilder, "not-gce-product-name");
+
+    Truth.assertThat(falseProvider.isDirectPathXdsEnabled()).isTrue();
+    Truth.assertThat(falseProvider.canUseDirectPath()).isTrue();
+    ManagedChannelBuilder<?> falseChannelBuilder = falseProvider.createChannelBuilder();
+    Truth.assertThat(extractTargetFromChannelBuilder(falseChannelBuilder))
+        .isEqualTo("google-c2p:///storage-direct.googleapis.com?force-xds");
+    ManagedChannel falseChannel = (ManagedChannel) falseChannelBuilder.build();
+    try {
+      Truth.assertThat(falseChannel.authority()).isEqualTo("storage-direct.googleapis.com");
+    } finally {
+      falseChannel.shutdownNow();
+    }
+  }
+
+  @Test
+  void
+      canUseDirectPath_interconnectDisabledViaEnvVar_overridesBuilderOptionAndFallsBackToCloudPath()
+          throws Exception {
+    System.setProperty("os.name", "Not Linux");
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+    when(envProvider.getenv(
+            InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT))
+        .thenReturn("false");
+
+    InstantiatingGrpcChannelProvider.Builder builder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint("storage.googleapis.com:443")
+            .setEnvProvider(envProvider);
+    InstantiatingGrpcChannelProvider provider =
+        new InstantiatingGrpcChannelProvider(builder, "not-gce-product-name");
+
+    Truth.assertThat(provider.isDirectPathXdsEnabled()).isFalse();
+    Truth.assertThat(provider.canUseDirectPath()).isFalse();
+    ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
+    Truth.assertThat(extractTargetFromChannelBuilder(channelBuilder))
+        .isEqualTo("storage.googleapis.com:443");
+    ManagedChannel channel = (ManagedChannel) channelBuilder.build();
+    try {
+      Truth.assertThat(channel.authority()).isEqualTo("storage.googleapis.com:443");
+    } finally {
+      channel.shutdownNow();
+    }
+  }
+
+  @Test
+  void canUseDirectPath_interconnectEnabledViaEnvVar_respectsDirectPathKillSwitch() {
+    System.setProperty("os.name", "Not Linux");
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(
+            InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT))
+        .thenReturn("true");
+
+    // Case 1: setAttemptDirectPath(false)
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+    InstantiatingGrpcChannelProvider.Builder disabledOptionBuilder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setAttemptDirectPath(false)
+            .setEndpoint("storage.googleapis.com:443")
+            .setEnvProvider(envProvider);
+    InstantiatingGrpcChannelProvider disabledOptionProvider =
+        new InstantiatingGrpcChannelProvider(disabledOptionBuilder, "not-gce-product-name");
+    Truth.assertThat(disabledOptionProvider.canUseDirectPath()).isFalse();
+
+    // Case 2: GOOGLE_CLOUD_DISABLE_DIRECT_PATH=true
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("true");
+    InstantiatingGrpcChannelProvider.Builder disabledEnvBuilder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setAttemptDirectPath(true)
+            .setEndpoint("storage.googleapis.com:443")
+            .setEnvProvider(envProvider);
+    InstantiatingGrpcChannelProvider disabledEnvProvider =
+        new InstantiatingGrpcChannelProvider(disabledEnvBuilder, "not-gce-product-name");
+    Truth.assertThat(disabledEnvProvider.canUseDirectPath()).isFalse();
+  }
+
+  @Test
+  void canUseDirectPath_interconnectInvalidOrEmptyEnvVar_fallsBackToBuilderOption() {
+    System.setProperty("os.name", "Not Linux");
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+
+    for (String envVal : new String[] {"", "   ", "invalid", "1", "0"}) {
+      when(envProvider.getenv(
+              InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_ENABLE_XDS_OVER_INTERCONNECT))
+          .thenReturn(envVal);
+
+      InstantiatingGrpcChannelProvider.Builder enabledBuilder =
+          InstantiatingGrpcChannelProvider.newBuilder()
+              .setCertificateBasedAccess(certificateBasedAccess)
+              .setAttemptDirectPath(true)
+              .setAttemptDirectPathXdsOverInterconnect(true)
+              .setEndpoint("storage.googleapis.com:443")
+              .setEnvProvider(envProvider);
+      InstantiatingGrpcChannelProvider enabledProvider =
+          new InstantiatingGrpcChannelProvider(enabledBuilder, "not-gce-product-name");
+      Truth.assertThat(enabledProvider.canUseDirectPath()).isTrue();
+
+      InstantiatingGrpcChannelProvider.Builder disabledBuilder =
+          InstantiatingGrpcChannelProvider.newBuilder()
+              .setCertificateBasedAccess(certificateBasedAccess)
+              .setAttemptDirectPath(true)
+              .setAttemptDirectPathXdsOverInterconnect(false)
+              .setEndpoint("storage.googleapis.com:443")
+              .setEnvProvider(envProvider);
+      InstantiatingGrpcChannelProvider disabledProvider =
+          new InstantiatingGrpcChannelProvider(disabledBuilder, "not-gce-product-name");
+      Truth.assertThat(disabledProvider.canUseDirectPath()).isFalse();
+    }
+  }
+
   @Test
   void createChannel_whenDirectPathEnabled_ignoresWorkloadCertPath() throws Exception {
     System.setProperty("os.name", "Linux");
@@ -1505,6 +2164,68 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
     List<String> getAllMessages() {
       return records.stream().map(LogRecord::getMessage).collect(Collectors.toList());
+    }
+  }
+
+  private static String extractAuthorityFromChannelBuilder(
+      ManagedChannelBuilder<?> channelBuilder) {
+    try {
+      Object current = channelBuilder;
+      while (current != null) {
+        Class<?> clazz = current.getClass();
+        java.lang.reflect.Field field = null;
+        while (clazz != null) {
+          try {
+            field = clazz.getDeclaredField("authority");
+            break;
+          } catch (NoSuchFieldException e) {
+            try {
+              field = clazz.getDeclaredField("authorityOverride");
+              break;
+            } catch (NoSuchFieldException e2) {
+              try {
+                field = clazz.getDeclaredField("overrideAuthority");
+                break;
+              } catch (Exception ignored) {
+                // Expected if neither field exists on this class; continue scanning superclasses.
+              }
+            }
+            clazz = clazz.getSuperclass();
+          }
+        }
+        if (field != null) {
+          field.setAccessible(true);
+          Object val = field.get(current);
+          if (val instanceof String && !((String) val).isEmpty()) {
+            return (String) val;
+          }
+        }
+        Class<?> unwrapClass = current.getClass();
+        java.lang.reflect.Field delegateField = null;
+        while (unwrapClass != null && delegateField == null) {
+          try {
+            delegateField = unwrapClass.getDeclaredField("delegate");
+          } catch (NoSuchFieldException e) {
+            try {
+              delegateField = unwrapClass.getDeclaredField("managedChannelImplBuilder");
+            } catch (NoSuchFieldException e2) {
+              unwrapClass = unwrapClass.getSuperclass();
+            }
+          }
+        }
+        if (delegateField != null) {
+          delegateField.setAccessible(true);
+          Object next = delegateField.get(current);
+          if (next != null && next != current) {
+            current = next;
+            continue;
+          }
+        }
+        break;
+      }
+      return null;
+    } catch (Exception e) {
+      throw new RuntimeException(e);
     }
   }
 }

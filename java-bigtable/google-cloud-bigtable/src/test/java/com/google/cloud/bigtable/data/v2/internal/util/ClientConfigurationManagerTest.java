@@ -31,7 +31,6 @@ import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
 import com.google.bigtable.v2.LoadBalancingOptions;
 import com.google.bigtable.v2.LoadBalancingOptions.LeastInFlight;
-import com.google.bigtable.v2.LoadBalancingOptions.PeakEwma;
 import com.google.bigtable.v2.SessionClientConfiguration;
 import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration.DirectAccessWithFallback;
 import com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration;
@@ -266,7 +265,12 @@ class ClientConfigurationManagerTest {
             .printToString(
                 ClientConfiguration.newBuilder()
                     .setSessionConfiguration(
-                        SessionClientConfiguration.newBuilder().setSessionLoad(0.75f))
+                        SessionClientConfiguration.newBuilder()
+                            .setSessionDiversionConfiguration(
+                                SessionDiversionConfiguration.newBuilder()
+                                    .setGlobalDiversion(
+                                        SessionScopeDiversionConfiguration.newBuilder()
+                                            .setSessionLoad(0.75f))))
                     .build());
     Properties sysProps = new Properties();
     sysProps.setProperty(ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, clientConfigOverrides);
@@ -276,79 +280,19 @@ class ClientConfigurationManagerTest {
 
     ClientConfiguration resolvedConfig = manager.start().get();
 
-    // The override must be honoured: session_load and the default SessionPoolConfiguration must
-    // survive normalization instead of being cleared as if sessions were disabled.
-    assertThat(resolvedConfig.getSessionConfiguration().getSessionLoad()).isEqualTo(0.75f);
+    // The override must be honoured: the diversion config and the default SessionPoolConfiguration
+    // must survive normalization instead of being cleared as if sessions were disabled.
+    assertThat(
+            resolvedConfig
+                .getSessionConfiguration()
+                .getSessionDiversionConfiguration()
+                .getGlobalDiversion()
+                .getSessionLoad())
+        .isEqualTo(0.75f);
     assertThat(resolvedConfig.getSessionConfiguration().getSessionPoolConfiguration())
         .isEqualTo(
             manager.getDefaultConfig().getSessionConfiguration().getSessionPoolConfiguration());
     assertThat(manager.areSessionsRequired()).isTrue();
-  }
-
-  /**
-   * The bundled default config must not carry a SessionDiversionConfiguration. A diversion config
-   * is authoritative once present, so one baked into the default would shadow the flat session_load
-   * for every scope -- including in the two windows where the default is the live config: before
-   * the first GetClientConfiguration response, and after handleFailedFetch falls back to it when
-   * the validity window expires.
-   */
-  @Test
-  void defaultConfigDoesNotShadowFlatSessionLoad() throws IOException {
-    ClientConfiguration defaultConfig = ClientConfigurationManager.loadDefault();
-    assertThat(defaultConfig.getSessionConfiguration().hasSessionDiversionConfiguration())
-        .isFalse();
-
-    // A flat session_load merged onto the default -- what the sys-prop override produces -- must
-    // still divert traffic.
-    ClientConfiguration.Builder merged = defaultConfig.toBuilder();
-    merged.getSessionConfigurationBuilder().setSessionLoad(1.0f);
-    assertThat(SessionScope.READ_ROW.resolveSessionLoad(merged.getSessionConfiguration()))
-        .isEqualTo(1.0f);
-    assertThat(SessionScope.divertsAnyTraffic(merged.getSessionConfiguration())).isTrue();
-  }
-
-  @Deprecated
-  @Test
-  void testMigrateSessionPool() throws ExecutionException, InterruptedException {
-    ClientConfiguration defaultConfig = manager.getDefaultConfig();
-
-    // Override LoadBalancingOptions
-    LoadBalancingOptions loadBalancingOptions =
-        LoadBalancingOptions.newBuilder()
-            .setPeakEwma(PeakEwma.newBuilder().setRandomSubsetSize(0))
-            .build();
-
-    ClientConfiguration.Builder legacyBuilder = defaultConfig.toBuilder();
-
-    // Enable sessions
-    legacyBuilder.getSessionConfigurationBuilder().setSessionLoad(0.1f);
-
-    // Now patch default config to be a legacy config
-    // During migration, LoadBalancingOptions are a toplevel config, so clear out the
-    // SessionPoolConfiguration and set the toplevel option
-    legacyBuilder
-        .getSessionConfigurationBuilder()
-        .setLoadBalancingOptions(loadBalancingOptions)
-        .clearSessionPoolConfiguration()
-        .clearChannelConfiguration();
-    ClientConfiguration legacyCfg = legacyBuilder.build();
-
-    service.config.set(legacyCfg);
-    // Fetch initial config
-    ClientConfiguration resolvedConfig = manager.start().get();
-
-    // Make sure that SessionPoolConfiguration got patched with SessionPool & ChannelPool configs
-    // And ensure that the toplevel LoadBalancingOptions got migrated
-    ClientConfiguration.Builder expectedConfig = legacyCfg.toBuilder();
-    expectedConfig
-        .getSessionConfigurationBuilder()
-        .clearLoadBalancingOptions()
-        .setSessionPoolConfiguration(
-            defaultConfig.getSessionConfiguration().getSessionPoolConfiguration().toBuilder()
-                .setLoadBalancingOptions(loadBalancingOptions))
-        .setChannelConfiguration(defaultConfig.getSessionConfiguration().getChannelConfiguration());
-
-    assertThat(resolvedConfig).isEqualTo(expectedConfig.build());
   }
 
   @Test
@@ -361,7 +305,11 @@ class ClientConfigurationManagerTest {
                 ClientConfiguration.newBuilder()
                     .setSessionConfiguration(
                         SessionClientConfiguration.newBuilder()
-                            .setSessionLoad(0.75f)
+                            .setSessionDiversionConfiguration(
+                                SessionDiversionConfiguration.newBuilder()
+                                    .setGlobalDiversion(
+                                        SessionScopeDiversionConfiguration.newBuilder()
+                                            .setSessionLoad(0.75f)))
                             .setSessionPoolConfiguration(
                                 SessionPoolConfiguration.newBuilder().setHeadroom(0.7f)))
                     .build());
@@ -375,7 +323,11 @@ class ClientConfigurationManagerTest {
 
     // The effective config should be the server config with the overlayed fields
     ClientConfiguration.Builder expectedConfig = service.config.get().toBuilder();
-    expectedConfig.getSessionConfigurationBuilder().setSessionLoad(0.75f);
+    expectedConfig
+        .getSessionConfigurationBuilder()
+        .getSessionDiversionConfigurationBuilder()
+        .getGlobalDiversionBuilder()
+        .setSessionLoad(0.75f);
     expectedConfig
         .getSessionConfigurationBuilder()
         .getSessionPoolConfigurationBuilder()
@@ -677,7 +629,11 @@ class ClientConfigurationManagerTest {
                 ClientConfiguration.newBuilder()
                     .setSessionConfiguration(
                         SessionClientConfiguration.newBuilder()
-                            .setSessionLoad(0.75f)
+                            .setSessionDiversionConfiguration(
+                                SessionDiversionConfiguration.newBuilder()
+                                    .setGlobalDiversion(
+                                        SessionScopeDiversionConfiguration.newBuilder()
+                                            .setSessionLoad(0.75f)))
                             .setChannelConfiguration(
                                 SessionClientConfiguration.ChannelPoolConfiguration.newBuilder()
                                     .setDirectAccessWithFallback(
@@ -719,6 +675,19 @@ class ClientConfigurationManagerTest {
     }
   }
 
+  @Test
+  void stopPollingTest() throws Exception {
+    ClientConfiguration stopPollingConfig =
+        service.config.get().toBuilder().setStopPolling(true).build();
+    service.config.set(stopPollingConfig);
+
+    ClientConfiguration initialConfig = manager.start().get();
+    assertThat(initialConfig.getStopPolling()).isTrue();
+    assertThat(initialConfig.hasPollingConfiguration()).isFalse();
+
+    verify(mockExecutor, never()).schedule(any(Runnable.class), anyLong(), any(TimeUnit.class));
+  }
+
   static class FakeConfigService extends BigtableGrpc.BigtableImplBase {
     private final AtomicReference<ClientConfiguration> config = new AtomicReference<>();
 
@@ -728,7 +697,12 @@ class ClientConfigurationManagerTest {
 
     public FakeConfigService() throws IOException {
       ClientConfiguration.Builder builder = ClientConfigurationManager.loadDefault().toBuilder();
-      builder.getSessionConfigurationBuilder().setSessionLoad(0.25f);
+      builder
+          .getSessionConfigurationBuilder()
+          .setSessionDiversionConfiguration(
+              SessionDiversionConfiguration.newBuilder()
+                  .setGlobalDiversion(
+                      SessionScopeDiversionConfiguration.newBuilder().setSessionLoad(0.25f)));
       builder
           .getSessionConfigurationBuilder()
           .getChannelConfigurationBuilder()

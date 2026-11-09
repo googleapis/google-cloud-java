@@ -250,23 +250,26 @@ public final class ChannelFinder {
     }
   }
 
-  public ChannelEndpoint findServer(ReadRequest.Builder reqBuilder) {
-    return findServer(reqBuilder, preferLeader(reqBuilder.getTransaction()), NO_EXCLUDED_ENDPOINTS);
+  public ChannelEndpoint findServerAndFillRoutingHint(ReadRequest.Builder reqBuilder) {
+    return findServerAndFillRoutingHint(
+        reqBuilder, preferLeader(reqBuilder.getTransaction()), NO_EXCLUDED_ENDPOINTS);
   }
 
-  public ChannelEndpoint findServer(
+  public ChannelEndpoint findServerAndFillRoutingHint(
       ReadRequest.Builder reqBuilder, Predicate<String> excludedEndpoints) {
-    return findServer(reqBuilder, preferLeader(reqBuilder.getTransaction()), excludedEndpoints);
+    return findServerAndFillRoutingHint(
+        reqBuilder, preferLeader(reqBuilder.getTransaction()), excludedEndpoints);
   }
 
-  public ChannelEndpoint findServer(ReadRequest.Builder reqBuilder, boolean preferLeader) {
-    return findServer(reqBuilder, preferLeader, NO_EXCLUDED_ENDPOINTS);
+  public ChannelEndpoint findServerAndFillRoutingHint(
+      ReadRequest.Builder reqBuilder, boolean preferLeader) {
+    return findServerAndFillRoutingHint(reqBuilder, preferLeader, NO_EXCLUDED_ENDPOINTS);
   }
 
-  public ChannelEndpoint findServer(
+  public ChannelEndpoint findServerAndFillRoutingHint(
       ReadRequest.Builder reqBuilder, boolean preferLeader, Predicate<String> excludedEndpoints) {
     recipeCache.computeKeys(reqBuilder);
-    return fillRoutingHint(
+    return fillRoutingHintAndSelectEndpoint(
         preferLeader,
         KeyRangeCache.RangeMode.COVERING_SPLIT,
         reqBuilder.getDirectedReadOptions(),
@@ -274,25 +277,28 @@ public final class ChannelFinder {
         excludedEndpoints);
   }
 
-  public ChannelEndpoint findServer(ExecuteSqlRequest.Builder reqBuilder) {
-    return findServer(reqBuilder, preferLeader(reqBuilder.getTransaction()), NO_EXCLUDED_ENDPOINTS);
+  public ChannelEndpoint findServerAndFillRoutingHint(ExecuteSqlRequest.Builder reqBuilder) {
+    return findServerAndFillRoutingHint(
+        reqBuilder, preferLeader(reqBuilder.getTransaction()), NO_EXCLUDED_ENDPOINTS);
   }
 
-  public ChannelEndpoint findServer(
+  public ChannelEndpoint findServerAndFillRoutingHint(
       ExecuteSqlRequest.Builder reqBuilder, Predicate<String> excludedEndpoints) {
-    return findServer(reqBuilder, preferLeader(reqBuilder.getTransaction()), excludedEndpoints);
+    return findServerAndFillRoutingHint(
+        reqBuilder, preferLeader(reqBuilder.getTransaction()), excludedEndpoints);
   }
 
-  public ChannelEndpoint findServer(ExecuteSqlRequest.Builder reqBuilder, boolean preferLeader) {
-    return findServer(reqBuilder, preferLeader, NO_EXCLUDED_ENDPOINTS);
+  public ChannelEndpoint findServerAndFillRoutingHint(
+      ExecuteSqlRequest.Builder reqBuilder, boolean preferLeader) {
+    return findServerAndFillRoutingHint(reqBuilder, preferLeader, NO_EXCLUDED_ENDPOINTS);
   }
 
-  public ChannelEndpoint findServer(
+  public ChannelEndpoint findServerAndFillRoutingHint(
       ExecuteSqlRequest.Builder reqBuilder,
       boolean preferLeader,
       Predicate<String> excludedEndpoints) {
     recipeCache.computeKeys(reqBuilder);
-    return fillRoutingHint(
+    return fillRoutingHintAndSelectEndpoint(
         preferLeader,
         KeyRangeCache.RangeMode.PICK_RANDOM,
         reqBuilder.getDirectedReadOptions(),
@@ -300,11 +306,33 @@ public final class ChannelFinder {
         excludedEndpoints);
   }
 
-  public ChannelEndpoint findServer(BeginTransactionRequest.Builder reqBuilder) {
-    return findServer(reqBuilder, NO_EXCLUDED_ENDPOINTS);
+  /**
+   * Fills the routing hint of {@code reqBuilder} (operation UID, schema generation, database ID,
+   * key, target range and tablet) without selecting an endpoint for the request. Use this when the
+   * request is already bound to an endpoint, for example by read-write transaction affinity.
+   */
+  public void fillRoutingHint(
+      ReadRequest.Builder reqBuilder, boolean preferLeader, Predicate<String> excludedEndpoints) {
+    findServerAndFillRoutingHint(reqBuilder, preferLeader, excludedEndpoints);
   }
 
-  public ChannelEndpoint findServer(
+  /**
+   * Fills the routing hint of {@code reqBuilder} (operation UID, schema generation, database ID,
+   * key, target range and tablet) without selecting an endpoint for the request. Use this when the
+   * request is already bound to an endpoint, for example by read-write transaction affinity.
+   */
+  public void fillRoutingHint(
+      ExecuteSqlRequest.Builder reqBuilder,
+      boolean preferLeader,
+      Predicate<String> excludedEndpoints) {
+    findServerAndFillRoutingHint(reqBuilder, preferLeader, excludedEndpoints);
+  }
+
+  public ChannelEndpoint findServerAndFillRoutingHint(BeginTransactionRequest.Builder reqBuilder) {
+    return findServerAndFillRoutingHint(reqBuilder, NO_EXCLUDED_ENDPOINTS);
+  }
+
+  public ChannelEndpoint findServerAndFillRoutingHint(
       BeginTransactionRequest.Builder reqBuilder, Predicate<String> excludedEndpoints) {
     if (!reqBuilder.hasMutationKey()) {
       return null;
@@ -316,11 +344,11 @@ public final class ChannelFinder {
         excludedEndpoints);
   }
 
-  public ChannelEndpoint fillRoutingHint(CommitRequest.Builder reqBuilder) {
-    return fillRoutingHint(reqBuilder, NO_EXCLUDED_ENDPOINTS);
+  public ChannelEndpoint findServerAndFillRoutingHint(CommitRequest.Builder reqBuilder) {
+    return findServerAndFillRoutingHint(reqBuilder, NO_EXCLUDED_ENDPOINTS);
   }
 
-  public ChannelEndpoint fillRoutingHint(
+  public ChannelEndpoint findServerAndFillRoutingHint(
       CommitRequest.Builder reqBuilder, Predicate<String> excludedEndpoints) {
     Mutation mutation = selectMutationForRouting(reqBuilder.getMutationsList());
     if (mutation == null) {
@@ -365,7 +393,7 @@ public final class ChannelFinder {
       return null;
     }
     recipeCache.applyTargetRange(hintBuilder, target);
-    return fillRoutingHint(
+    return fillRoutingHintAndSelectEndpoint(
         preferLeader,
         KeyRangeCache.RangeMode.COVERING_SPLIT,
         DirectedReadOptions.getDefaultInstance(),
@@ -373,7 +401,7 @@ public final class ChannelFinder {
         excludedEndpoints);
   }
 
-  private ChannelEndpoint fillRoutingHint(
+  private ChannelEndpoint fillRoutingHintAndSelectEndpoint(
       boolean preferLeader,
       KeyRangeCache.RangeMode rangeMode,
       DirectedReadOptions directedReadOptions,

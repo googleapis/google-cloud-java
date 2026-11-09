@@ -105,6 +105,9 @@ public class SessionServiceClientHttpJsonTest {
                     .setRemoteDialogflowQueryParameters(
                         SessionConfig.RemoteDialogflowQueryParameters.newBuilder().build())
                     .setEnableTextStreaming(true)
+                    .setIncludeLlmThoughtSummary(true)
+                    .setExcludeDiagnosticInfo(true)
+                    .setIncludeProgressUpdate(true)
                     .build())
             .addAllInputs(new ArrayList<SessionInput>())
             .build();
@@ -153,6 +156,9 @@ public class SessionServiceClientHttpJsonTest {
                       .setRemoteDialogflowQueryParameters(
                           SessionConfig.RemoteDialogflowQueryParameters.newBuilder().build())
                       .setEnableTextStreaming(true)
+                      .setIncludeLlmThoughtSummary(true)
+                      .setExcludeDiagnosticInfo(true)
+                      .setIncludeProgressUpdate(true)
                       .build())
               .addAllInputs(new ArrayList<SessionInput>())
               .build();
@@ -178,6 +184,123 @@ public class SessionServiceClientHttpJsonTest {
   public void bidiRunSessionUnsupportedMethodTest() throws Exception {
     // The bidiRunSession() method is not supported in REST transport.
     // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void streamChatAiAssistantTest() throws Exception {}
+
+  @Test
+  public void streamChatAiAssistantExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+  }
+
+  @Test
+  public void cancelAssistantTurnTest() throws Exception {
+    CancelAssistantTurnResponse expectedResponse =
+        CancelAssistantTurnResponse.newBuilder().setCancelled(true).build();
+    mockService.addResponse(expectedResponse);
+
+    CancelAssistantTurnRequest request =
+        CancelAssistantTurnRequest.newBuilder()
+            .setName(
+                "projects/project-3303/locations/location-3303/apps/app-3303/assistantSessions/assistantSession-3303")
+            .setTurnId("turnId-862429576")
+            .build();
+
+    CancelAssistantTurnResponse actualResponse = client.cancelAssistantTurn(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelAssistantTurnExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CancelAssistantTurnRequest request =
+          CancelAssistantTurnRequest.newBuilder()
+              .setName(
+                  "projects/project-3303/locations/location-3303/apps/app-3303/assistantSessions/assistantSession-3303")
+              .setTurnId("turnId-862429576")
+              .build();
+      client.cancelAssistantTurn(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateOnboardingSuggestionsTest() throws Exception {
+    GenerateOnboardingSuggestionsResponse expectedResponse =
+        GenerateOnboardingSuggestionsResponse.newBuilder()
+            .addAllSuggestions(new ArrayList<AssistantSuggestion>())
+            .setContextToken("contextToken1106626954")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GenerateOnboardingSuggestionsRequest request =
+        GenerateOnboardingSuggestionsRequest.newBuilder()
+            .setName(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+            .setMaxSuggestions(618824852)
+            .build();
+
+    GenerateOnboardingSuggestionsResponse actualResponse =
+        client.generateOnboardingSuggestions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateOnboardingSuggestionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GenerateOnboardingSuggestionsRequest request =
+          GenerateOnboardingSuggestionsRequest.newBuilder()
+              .setName(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+              .setMaxSuggestions(618824852)
+              .build();
+      client.generateOnboardingSuggestions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test
