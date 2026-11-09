@@ -306,6 +306,17 @@ public class ITAppendableUploadFakeTest {
     BidiWriteHandle writeHandle3 =
         BidiWriteHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-3")).build();
 
+    BidiWriteObjectRequest redirectReconcile1 =
+        reconnect.toBuilder()
+            .setAppendObjectSpec(
+                reconnect.getAppendObjectSpec().toBuilder().setWriteHandle(writeHandle1))
+            .build();
+    BidiWriteObjectRequest redirectReconcile2 =
+        reconnect.toBuilder()
+            .setAppendObjectSpec(
+                reconnect.getAppendObjectSpec().toBuilder().setWriteHandle(writeHandle2))
+            .build();
+
     // 1. First write of "ABC".
     BidiWriteObjectRequest req_open_abc = BidiUploadTestUtils.withFlushAndStateLookup(open_abc);
     BidiWriteObjectResponse res_abc_h1 = res_abc.toBuilder().setWriteHandle(writeHandle1).build();
@@ -320,17 +331,7 @@ public class ITAppendableUploadFakeTest {
 
     // 3. Reconnect to routingToken1
     BidiWriteObjectRequest reconnect_token1 =
-        BidiWriteObjectRequest.newBuilder()
-            .setAppendObjectSpec(
-                AppendObjectSpec.newBuilder()
-                    .setBucket(METADATA.getBucket())
-                    .setObject(METADATA.getName())
-                    .setGeneration(METADATA.getGeneration())
-                    .setWriteHandle(writeHandle1)
-                    .setRoutingToken(routingToken1)
-                    .build())
-            .setStateLookup(true)
-            .build();
+        BidiUploadTestUtils.withRedirectToken(redirectReconcile1, routingToken1);
     BidiWriteObjectResponse res_lookup_token1 =
         BidiWriteObjectResponse.newBuilder()
             .setWriteHandle(writeHandle1)
@@ -347,17 +348,7 @@ public class ITAppendableUploadFakeTest {
 
     // 5. Reconnect to routingToken2
     BidiWriteObjectRequest reconnect_token2 =
-        BidiWriteObjectRequest.newBuilder()
-            .setAppendObjectSpec(
-                AppendObjectSpec.newBuilder()
-                    .setBucket(METADATA.getBucket())
-                    .setObject(METADATA.getName())
-                    .setGeneration(METADATA.getGeneration())
-                    .setWriteHandle(writeHandle1)
-                    .setRoutingToken(routingToken2)
-                    .build())
-            .setStateLookup(true)
-            .build();
+        BidiUploadTestUtils.withRedirectToken(redirectReconcile1, routingToken2);
     BidiWriteObjectResponse res_lookup_token2 =
         BidiWriteObjectResponse.newBuilder()
             .setWriteHandle(writeHandle2)
@@ -370,45 +361,15 @@ public class ITAppendableUploadFakeTest {
 
     // 7. Reconnect to routingToken3
     BidiWriteObjectRequest reconnect_token3 =
-        BidiWriteObjectRequest.newBuilder()
-            .setAppendObjectSpec(
-                AppendObjectSpec.newBuilder()
-                    .setBucket(METADATA.getBucket())
-                    .setObject(METADATA.getName())
-                    .setGeneration(METADATA.getGeneration())
-                    .setWriteHandle(writeHandle2)
-                    .setRoutingToken(routingToken3)
-                    .build())
-            .setStateLookup(true)
-            .build();
+        BidiUploadTestUtils.withRedirectToken(redirectReconcile2, routingToken3);
 
     // 8. Reconnect to routingToken4
     BidiWriteObjectRequest reconnect_token4 =
-        BidiWriteObjectRequest.newBuilder()
-            .setAppendObjectSpec(
-                AppendObjectSpec.newBuilder()
-                    .setBucket(METADATA.getBucket())
-                    .setObject(METADATA.getName())
-                    .setGeneration(METADATA.getGeneration())
-                    .setWriteHandle(writeHandle2)
-                    .setRoutingToken(routingToken4)
-                    .build())
-            .setStateLookup(true)
-            .build();
+        BidiUploadTestUtils.withRedirectToken(redirectReconcile2, routingToken4);
 
     // 9. Reconnect to routingToken5
     BidiWriteObjectRequest reconnect_token5 =
-        BidiWriteObjectRequest.newBuilder()
-            .setAppendObjectSpec(
-                AppendObjectSpec.newBuilder()
-                    .setBucket(METADATA.getBucket())
-                    .setObject(METADATA.getName())
-                    .setGeneration(METADATA.getGeneration())
-                    .setWriteHandle(writeHandle2)
-                    .setRoutingToken(routingToken5)
-                    .build())
-            .setStateLookup(true)
-            .build();
+        BidiUploadTestUtils.withRedirectToken(redirectReconcile2, routingToken5);
     BidiWriteObjectResponse res_lookup_token5 =
         BidiWriteObjectResponse.newBuilder()
             .setWriteHandle(writeHandle3)
