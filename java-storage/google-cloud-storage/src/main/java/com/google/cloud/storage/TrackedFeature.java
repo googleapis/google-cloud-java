@@ -27,10 +27,11 @@ package com.google.cloud.storage;
  */
 enum TrackedFeature {
   /**
-   * A {@link BlobReadSession} opened more than one BidiReadObject stream to serve concurrent reads
-   * which could not share a single stream.
+   * The object was written with a parallel composite upload ({@link
+   * ParallelCompositeUploadBlobWriteSessionConfig}, including Transfer Manager's {@code
+   * allowParallelCompositeUpload}).
    */
-  MULTISTREAM_IN_MRD(0);
+  PCU(0);
 
   private final int bitPosition;
 

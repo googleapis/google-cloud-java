@@ -20,28 +20,24 @@ import static com.google.cloud.storage.TestUtils.assertAll;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
+import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.cloud.storage.Storage.BlobSourceOption;
+import com.google.cloud.storage.UnifiedOpts.ObjectTargetOpt;
+import com.google.cloud.storage.UnifiedOpts.Opts;
+import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 
 public final class FeatureTrackingTest {
 
-  private static final int MULTISTREAM_BIT = TrackedFeature.MULTISTREAM_IN_MRD.bitMask();
+  private static final int PCU_MASK = TrackedFeature.PCU.bitMask();
 
   @Test
   public void encode_knownVectors() throws Exception {
     assertAll(
-        // the service tolerates an all-zero value, even though the client never sends it
         () -> assertThat(FeatureTracking.encode(0)).isEqualTo("AAAAAA=="),
         () -> assertThat(FeatureTracking.encode(1)).isEqualTo("AAAAAQ=="),
         () -> assertThat(FeatureTracking.encode(2)).isEqualTo("AAAAAg=="),
@@ -68,76 +64,6 @@ public final class FeatureTrackingTest {
   }
 
   @Test
-  public void mask_headers_emptyWhenNoFeatureSet() {
-    FeatureTracking.Mask mask = new FeatureTracking.Mask();
-
-    assertThat(mask.get()).isEqualTo(0);
-    assertThat(mask.headers()).isEmpty();
-  }
-
-  @Test
-  public void mask_headers_usesWireHeaderNameAndEncodedValue() {
-    FeatureTracking.Mask mask = new FeatureTracking.Mask();
-
-    mask.set(TrackedFeature.MULTISTREAM_IN_MRD);
-
-    assertThat(mask.headers())
-        .containsExactly("x-goog-storage-java-features", ImmutableList.of("AAAAAQ=="));
-  }
-
-  @Test
-  public void mask_set_isIdempotentAndMonotonic() {
-    FeatureTracking.Mask mask = new FeatureTracking.Mask();
-
-    mask.set(TrackedFeature.MULTISTREAM_IN_MRD);
-    mask.set(TrackedFeature.MULTISTREAM_IN_MRD);
-
-    assertThat(mask.get()).isEqualTo(MULTISTREAM_BIT);
-    assertThat(mask.headers())
-        .containsExactly(
-            FeatureTracking.HEADER, ImmutableList.of(FeatureTracking.encode(MULTISTREAM_BIT)));
-  }
-
-  /**
-   * Several threads concurrently set features on a single shared mask; the result must be the OR of
-   * every feature set, with no lost updates.
-   */
-  @Test
-  public void mask_set_isSafeUnderConcurrentUpdates() throws Exception {
-    int threadCount = 8;
-    int iterationsPerThread = 1_000;
-    FeatureTracking.Mask mask = new FeatureTracking.Mask();
-    CountDownLatch start = new CountDownLatch(1);
-    ExecutorService executor = Executors.newFixedThreadPool(threadCount);
-    try {
-      List<Future<?>> futures = new ArrayList<>();
-      for (int i = 0; i < threadCount; i++) {
-        futures.add(
-            executor.submit(
-                () -> {
-                  start.await();
-                  for (int j = 0; j < iterationsPerThread; j++) {
-                    mask.set(TrackedFeature.MULTISTREAM_IN_MRD);
-                  }
-                  return null;
-                }));
-      }
-      start.countDown();
-      for (Future<?> f : futures) {
-        f.get(30, TimeUnit.SECONDS);
-      }
-    } finally {
-      executor.shutdownNow();
-    }
-
-    int expected = 0;
-    for (TrackedFeature feature : TrackedFeature.values()) {
-      expected |= feature.bitMask();
-    }
-    assertThat(mask.get()).isEqualTo(expected);
-  }
-
-  @Test
   public void trackedFeature_bitMasksAreDistinctSingleBits() {
     Set<Integer> seen = new HashSet<>();
     for (TrackedFeature feature : TrackedFeature.values()) {
@@ -149,8 +75,65 @@ public final class FeatureTrackingTest {
 
   /** The wire value of each feature bit is a cross-SDK contract; pin it. */
   @Test
-  public void trackedFeature_multistreamInMrd_isBitZero() {
-    assertThat(TrackedFeature.MULTISTREAM_IN_MRD.bitMask()).isEqualTo(1);
+  public void trackedFeature_pcu_isBitZero() {
+    assertThat(TrackedFeature.PCU.bitMask()).isEqualTo(1);
+  }
+
+  @Test
+  public void trackedFeatures_zeroMask_throws() {
+    assertThrows(IllegalArgumentException.class, () -> UnifiedOpts.trackedFeatures(0));
+  }
+
+  @Test
+  public void trackedFeatures_grpc_addsHeaderWithLiteralWireNameAndValue() {
+    Opts<ObjectTargetOpt> opts = Opts.from(UnifiedOpts.trackedFeatures(PCU_MASK));
+
+    GrpcCallContext ctx = opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
+
+    assertThat(ctx.getExtraHeaders())
+        .containsExactly("x-goog-storage-java-features", ImmutableList.of("AAAAAQ=="));
+  }
+
+  @Test
+  public void trackedFeatures_http_addsHeaderWithLiteralWireNameAndValue() {
+    Opts<ObjectTargetOpt> opts = Opts.from(UnifiedOpts.trackedFeatures(PCU_MASK));
+
+    ImmutableMap<StorageRpc.Option, ?> rpcOptions = opts.getRpcOptions();
+
+    assertThat(rpcOptions)
+        .containsExactly(
+            StorageRpc.Option.EXTRA_HEADERS,
+            ImmutableMap.of("x-goog-storage-java-features", "AAAAAQ=="));
+  }
+
+  /**
+   * {@link Opts#prepend} drops opts whose type is already present; the tracking header must survive
+   * being prepended to opts which already contain user supplied extra headers, and both must reach
+   * the wire on both transports.
+   */
+  @Test
+  public void trackedFeatures_coexistsWithUserExtraHeaders_grpcAndHttp() throws Exception {
+    Opts<ObjectTargetOpt> userOpts =
+        Opts.from(UnifiedOpts.extraHeaders(ImmutableMap.of("x-user-header", "user-value")));
+    Opts<ObjectTargetOpt> tracked = Opts.from(UnifiedOpts.trackedFeatures(PCU_MASK));
+
+    Opts<ObjectTargetOpt> opts = userOpts.prepend(tracked);
+
+    GrpcCallContext ctx = opts.grpcMetadataMapper().apply(GrpcCallContext.createDefault());
+    ImmutableMap<StorageRpc.Option, ?> rpcOptions = opts.getRpcOptions();
+    assertAll(
+        () ->
+            assertThat(ctx.getExtraHeaders())
+                .containsExactly(
+                    "x-goog-storage-java-features", ImmutableList.of("AAAAAQ=="),
+                    "x-user-header", ImmutableList.of("user-value")),
+        () ->
+            assertThat(rpcOptions)
+                .containsExactly(
+                    StorageRpc.Option.EXTRA_HEADERS,
+                    ImmutableMap.of(
+                        "x-goog-storage-java-features", "AAAAAQ==",
+                        "x-user-header", "user-value")));
   }
 
   @Test

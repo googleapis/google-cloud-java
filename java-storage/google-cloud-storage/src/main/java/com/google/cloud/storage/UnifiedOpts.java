@@ -601,6 +601,20 @@ final class UnifiedOpts {
     return new Headers(extraHeaders);
   }
 
+  /**
+   * Returns an opt attaching the {@link FeatureTracking#HEADER} reporting {@code featureMask}.
+   *
+   * <p>Internal only; this is how the SDK reports its own {@link TrackedFeature} usage and is
+   * therefore not subject to {@link Headers#BLOCKLIST}, which guards user supplied headers.
+   *
+   * @param featureMask bitwise OR of {@link TrackedFeature#bitMask()} for each feature used, must
+   *     be non-zero
+   */
+  static FeatureTrackingHeader trackedFeatures(int featureMask) {
+    checkArgument(featureMask != 0, "featureMask must be non-zero");
+    return new FeatureTrackingHeader(featureMask);
+  }
+
   static DefaultHasherSelector defaultHasherSelector() {
     return DefaultHasherSelector.INSTANCE;
   }
@@ -2222,6 +2236,39 @@ final class UnifiedOpts {
           b.put(key, e.getValue());
         }
       }
+    }
+  }
+
+  /**
+   * SDK internal header reporting {@link TrackedFeature} usage, see {@link #trackedFeatures(int)}.
+   *
+   * <p>This is deliberately a distinct type from {@link Headers}: {@link Opts#prepend(Opts)} drops
+   * an {@code Opt} whose type is already present, so sharing a type with the user supplied {@code
+   * extraHeaders} would silently discard this header whenever a user also set extra headers. The
+   * actual header merging is delegated to a {@link Headers} instance so both transports treat the
+   * two the same way.
+   */
+  static final class FeatureTrackingHeader extends RpcOptVal<ImmutableMap<String, String>>
+      implements BucketObjectHmacKeyAllOpt {
+    private static final long serialVersionUID = 4203371457622633627L;
+
+    private final Headers headers;
+
+    private FeatureTrackingHeader(int featureMask) {
+      super(
+          StorageRpc.Option.EXTRA_HEADERS,
+          ImmutableMap.of(FeatureTracking.HEADER, FeatureTracking.encode(featureMask)));
+      this.headers = new Headers(val);
+    }
+
+    @Override
+    public Mapper<GrpcCallContext> getGrpcMetadataMapper() {
+      return headers.getGrpcMetadataMapper();
+    }
+
+    @Override
+    public Mapper<ImmutableMap.Builder<StorageRpc.Option, Object>> mapper() {
+      return headers.mapper();
     }
   }
 

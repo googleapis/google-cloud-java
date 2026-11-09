@@ -124,6 +124,8 @@ public final class ParallelCompositeUploadBlobWriteSessionConfig extends BlobWri
     implements BlobWriteSessionConfig.HttpCompatible, BlobWriteSessionConfig.GrpcCompatible {
 
   private static final int MAX_PARTS_PER_COMPOSE = 32;
+  private static final Opts<ObjectTargetOpt> PCU_TRACKING =
+      Opts.<ObjectTargetOpt>from(UnifiedOpts.trackedFeatures(TrackedFeature.PCU.bitMask()));
   private final int maxPartsPerCompose;
   private final ExecutorSupplier executorSupplier;
   private final BufferAllocationStrategy bufferAllocationStrategy;
@@ -1027,7 +1029,11 @@ public final class ParallelCompositeUploadBlobWriteSessionConfig extends BlobWri
         StorageInternal s, BlobInfo info, Opts<ObjectTargetOpt> opts) {
       // if crc32cMatch or md5Match were specified, they will already be in opts
       BlobInfo trimmed = info.toBuilder().clearCrc32c().clearMd5().build();
-      return new PCUSession(s, trimmed, opts);
+      // report PCU usage on every request this session issues: part uploads, composes, part
+      // deletes and the empty object create. ParallelCompositeUploadWritableByteChannel derives
+      // its part and source opts from these opts, so prepending here covers all of them.
+      Opts<ObjectTargetOpt> tracked = opts.prepend(PCU_TRACKING);
+      return new PCUSession(s, trimmed, tracked);
     }
 
     private final class PCUSession
