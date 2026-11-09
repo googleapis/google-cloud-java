@@ -90,20 +90,15 @@ class SwitchingChannelPoolTest {
   @SuppressWarnings({"unchecked", "rawtypes"})
   void setUp() {
     metrics = new NoopMetrics();
-    lenient().when(configManager.addListener(any(), any())).thenReturn(listenerHandle);
-    lenient()
-        .when(
-            backgroundExecutor.scheduleWithFixedDelay(
-                any(Runnable.class), anyLong(), anyLong(), any(TimeUnit.class)))
+    when(configManager.addListener(any(), any())).thenReturn(listenerHandle);
+    when(backgroundExecutor.scheduleAtFixedRate(
+            any(Runnable.class), anyLong(), anyLong(), any(TimeUnit.class)))
         .thenReturn((ScheduledFuture) scheduledFuture);
 
-    lenient()
-        .when(primaryProvider.newChannelBuilder())
+    when(primaryProvider.newChannelBuilder()).thenReturn((ManagedChannelBuilder) primaryBuilder);
+    when(primaryBuilder.intercept(any(ClientInterceptor[].class)))
         .thenReturn((ManagedChannelBuilder) primaryBuilder);
-    lenient()
-        .when(primaryBuilder.intercept(any(ClientInterceptor[].class)))
-        .thenReturn((ManagedChannelBuilder) primaryBuilder);
-    lenient().when(primaryBuilder.build()).thenReturn(primaryChannel);
+    when(primaryBuilder.build()).thenReturn(primaryChannel);
 
     lenient()
         .when(fallbackProvider.newChannelBuilder())
@@ -150,6 +145,7 @@ class SwitchingChannelPoolTest {
     // Disable channel pool via updateConfig(getDefaultInstance()) -> closes active pool.
     pool.updateConfig(ChannelPoolConfiguration.getDefaultInstance());
     verify(primaryChannel, times(2)).shutdown();
+    verify(scheduledFuture).cancel(false);
 
     Listener secondListener = mock(Listener.class);
     SessionStream disabledAgainStream =
@@ -178,6 +174,7 @@ class SwitchingChannelPoolTest {
     // Transition to disabled (e.g. session_load = 0 clears session_configuration).
     pool.updateConfig(ChannelPoolConfiguration.getDefaultInstance());
     verify(primaryChannel, times(2)).shutdown();
+    verify(scheduledFuture).cancel(false);
     verify(fallbackProvider, never()).newChannelBuilder();
 
     // Transition back to enabled with CloudPathOnly.
